@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;Landroid/os/Looper;Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 2827
     iput-object p1, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->this$0:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;
 
     iput-object p3, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->val$callback:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
@@ -40,9 +37,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 2830
     const-string v0, "WifiManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,7 +64,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2833
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->this$0:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;
 
     invoke-static {v0}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->access$100(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;)Ljava/lang/ref/WeakReference;
@@ -82,27 +76,21 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 2834
-    .local v0, "manager":Landroid/net/wifi/WifiManager;
     if-nez v0, :cond_0
 
-    .line 2835
     const-string v1, "WifiManager"
 
     const-string v2, "LocalOnlyHotspotCallbackProxy: handle message post GC"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2836
     return-void
 
-    .line 2839
     :cond_0
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2861
     const-string v1, "WifiManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -125,12 +113,9 @@
 
     goto :goto_0
 
-    .line 2854
     :pswitch_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 2855
-    .local v1, "reasonCode":I
     const-string v2, "WifiManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -149,23 +134,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2857
     iget-object v2, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->val$callback:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
 
     invoke-virtual {v2, v1}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;->onFailed(I)V
 
-    .line 2858
     const-string v2, "WifiManager"
 
     const-string v3, "done with the callback..."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2859
     goto :goto_0
 
-    .line 2850
-    .end local v1    # "reasonCode":I
     :pswitch_1
     const-string v1, "WifiManager"
 
@@ -173,42 +153,33 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2851
     iget-object v1, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->val$callback:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;->onStopped()V
 
-    .line 2852
     goto :goto_0
 
-    .line 2841
     :pswitch_2
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/net/wifi/WifiConfiguration;
 
-    .line 2842
-    .local v1, "config":Landroid/net/wifi/WifiConfiguration;
     if-nez v1, :cond_1
 
-    .line 2843
     const-string v2, "WifiManager"
 
     const-string v3, "LocalOnlyHotspotCallbackProxy: config cannot be null."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2844
     iget-object v2, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->val$callback:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
 
     const/4 v3, 0x2
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;->onFailed(I)V
 
-    .line 2845
     return-void
 
-    .line 2847
     :cond_1
     iget-object v2, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;->val$callback:Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
 
@@ -220,11 +191,8 @@
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;->onStarted(Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;)V
 
-    .line 2848
     nop
 
-    .line 2864
-    .end local v1    # "config":Landroid/net/wifi/WifiConfiguration;
     :goto_0
     return-void
 

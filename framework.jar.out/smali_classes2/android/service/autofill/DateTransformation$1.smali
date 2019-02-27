@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/DateTransformation;
     .locals 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 118
     new-instance v0, Landroid/service/autofill/DateTransformation;
 
     const/4 v1, 0x0
@@ -53,7 +50,6 @@
 
     check-cast v1, Landroid/view/autofill/AutofillId;
 
-    .line 119
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
     move-result-object v2
@@ -62,14 +58,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/service/autofill/DateTransformation;-><init>(Landroid/view/autofill/AutofillId;Landroid/icu/text/DateFormat;)V
 
-    .line 118
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 115
     invoke-virtual {p0, p1}, Landroid/service/autofill/DateTransformation$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/DateTransformation;
 
     move-result-object p1
@@ -79,9 +73,7 @@
 
 .method public newArray(I)[Landroid/service/autofill/DateTransformation;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 124
     new-array v0, p1, [Landroid/service/autofill/DateTransformation;
 
     return-object v0
@@ -90,7 +82,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 115
     invoke-virtual {p0, p1}, Landroid/service/autofill/DateTransformation$1;->newArray(I)[Landroid/service/autofill/DateTransformation;
 
     move-result-object p1

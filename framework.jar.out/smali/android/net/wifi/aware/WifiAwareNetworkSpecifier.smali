@@ -52,7 +52,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 142
     new-instance v0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$1;
 
     invoke-direct {v0}, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$1;-><init>()V
@@ -64,47 +63,27 @@
 
 .method public constructor <init>(IIIII[B[BLjava/lang/String;I)V
     .locals 0
-    .param p1, "type"    # I
-    .param p2, "role"    # I
-    .param p3, "clientId"    # I
-    .param p4, "sessionId"    # I
-    .param p5, "peerId"    # I
-    .param p6, "peerMac"    # [B
-    .param p7, "pmk"    # [B
-    .param p8, "passphrase"    # Ljava/lang/String;
-    .param p9, "requestorUid"    # I
 
-    .line 130
     invoke-direct {p0}, Landroid/net/NetworkSpecifier;-><init>()V
 
-    .line 131
     iput p1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->type:I
 
-    .line 132
     iput p2, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->role:I
 
-    .line 133
     iput p3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->clientId:I
 
-    .line 134
     iput p4, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->sessionId:I
 
-    .line 135
     iput p5, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerId:I
 
-    .line 136
     iput-object p6, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerMac:[B
 
-    .line 137
     iput-object p7, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->pmk:[B
 
-    .line 138
     iput-object p8, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->passphrase:Ljava/lang/String;
 
-    .line 139
     iput p9, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->requestorUid:I
 
-    .line 140
     return-void
 .end method
 
@@ -112,17 +91,13 @@
 # virtual methods
 .method public assertValidFromUid(I)V
     .locals 2
-    .param p1, "requestorUid"    # I
 
-    .line 267
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->requestorUid:I
 
     if-ne v0, p1, :cond_0
 
-    .line 270
     return-void
 
-    .line 268
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -136,7 +111,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 176
     const/4 v0, 0x0
 
     return v0
@@ -144,17 +118,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 223
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    .line 224
     return v0
 
-    .line 227
     :cond_0
     instance-of v1, p1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;
 
@@ -162,17 +132,13 @@
 
     if-nez v1, :cond_1
 
-    .line 228
     return v2
 
-    .line 231
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;
 
-    .line 233
-    .local v1, "lhs":Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;
     iget v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->type:I
 
     iget v4, v1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->type:I
@@ -207,7 +173,6 @@
 
     iget-object v4, v1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerMac:[B
 
-    .line 238
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v3
@@ -218,7 +183,6 @@
 
     iget-object v4, v1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->pmk:[B
 
-    .line 239
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v3
@@ -229,7 +193,6 @@
 
     iget-object v4, v1, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->passphrase:Ljava/lang/String;
 
-    .line 240
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -244,7 +207,6 @@
 
     goto :goto_0
 
-    .line 233
     :cond_2
     move v0, v2
 
@@ -255,11 +217,8 @@
 .method public hashCode()I
     .locals 4
 
-    .line 205
     const/16 v0, 0x11
 
-    .line 207
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -268,45 +227,30 @@
 
     add-int/2addr v2, v3
 
-    .line 208
-    .end local v0    # "result":I
-    .local v2, "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->role:I
 
     add-int/2addr v0, v3
 
-    .line 209
-    .end local v2    # "result":I
-    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->clientId:I
 
     add-int/2addr v2, v3
 
-    .line 210
-    .end local v0    # "result":I
-    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->sessionId:I
 
     add-int/2addr v0, v3
 
-    .line 211
-    .end local v2    # "result":I
-    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerId:I
 
     add-int/2addr v2, v3
 
-    .line 212
-    .end local v0    # "result":I
-    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget-object v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerMac:[B
@@ -317,9 +261,6 @@
 
     add-int/2addr v0, v3
 
-    .line 213
-    .end local v2    # "result":I
-    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget-object v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->pmk:[B
@@ -330,9 +271,6 @@
 
     add-int/2addr v2, v3
 
-    .line 214
-    .end local v0    # "result":I
-    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget-object v3, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->passphrase:Ljava/lang/String;
@@ -343,25 +281,18 @@
 
     add-int/2addr v0, v3
 
-    .line 215
-    .end local v2    # "result":I
-    .restart local v0    # "result":I
     mul-int/2addr v1, v0
 
     iget v2, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->requestorUid:I
 
     add-int/2addr v1, v2
 
-    .line 217
-    .end local v0    # "result":I
-    .local v1, "result":I
     return v1
 .end method
 
 .method public isOutOfBand()Z
     .locals 2
 
-    .line 171
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->type:I
 
     const/4 v1, 0x2
@@ -391,14 +322,11 @@
 
 .method public satisfiedBy(Landroid/net/NetworkSpecifier;)Z
     .locals 1
-    .param p1, "other"    # Landroid/net/NetworkSpecifier;
 
-    .line 196
     instance-of v0, p1, Landroid/net/wifi/aware/WifiAwareAgentNetworkSpecifier;
 
     if-eqz v0, :cond_0
 
-    .line 197
     move-object v0, p1
 
     check-cast v0, Landroid/net/wifi/aware/WifiAwareAgentNetworkSpecifier;
@@ -409,7 +337,6 @@
 
     return v0
 
-    .line 199
     :cond_0
     invoke-virtual {p0, p1}, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->equals(Ljava/lang/Object;)Z
 
@@ -421,15 +348,12 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 247
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "WifiAwareNetworkSpecifier ["
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 248
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "type="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -440,7 +364,6 @@
 
     const-string v1, ", role="
 
-    .line 249
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->role:I
@@ -449,7 +372,6 @@
 
     const-string v1, ", clientId="
 
-    .line 250
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->clientId:I
@@ -458,7 +380,6 @@
 
     const-string v1, ", sessionId="
 
-    .line 251
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->sessionId:I
@@ -467,7 +388,6 @@
 
     const-string v1, ", peerId="
 
-    .line 252
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerId:I
@@ -476,7 +396,6 @@
 
     const-string v1, ", peerMac="
 
-    .line 254
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerMac:[B
@@ -495,7 +414,6 @@
 
     const-string v1, ", pmk="
 
-    .line 256
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->pmk:[B
@@ -514,7 +432,6 @@
 
     const-string v1, ", passphrase="
 
-    .line 258
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->passphrase:Ljava/lang/String;
@@ -533,7 +450,6 @@
 
     const-string v1, ", requestorUid="
 
-    .line 259
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->requestorUid:I
@@ -542,10 +458,8 @@
 
     const-string v1, "]"
 
-    .line 260
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 261
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -555,54 +469,42 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 181
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->type:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 182
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->role:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 183
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->clientId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 184
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->sessionId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 185
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 186
     iget-object v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->peerMac:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 187
     iget-object v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->pmk:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 188
     iget-object v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->passphrase:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 189
     iget v0, p0, Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;->requestorUid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 190
     return-void
 .end method

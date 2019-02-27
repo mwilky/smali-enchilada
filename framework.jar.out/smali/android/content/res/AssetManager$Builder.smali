@@ -30,10 +30,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 121
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,21 +45,17 @@
 # virtual methods
 .method public addApkAssets(Landroid/content/res/ApkAssets;)Landroid/content/res/AssetManager$Builder;
     .locals 1
-    .param p1, "apkAssets"    # Landroid/content/res/ApkAssets;
 
-    .line 124
     iget-object v0, p0, Landroid/content/res/AssetManager$Builder;->mUserApkAssets:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 125
     return-object p0
 .end method
 
 .method public build()Landroid/content/res/AssetManager;
     .locals 8
 
-    .line 130
     invoke-static {}, Landroid/content/res/AssetManager;->getSystem()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -70,8 +64,6 @@
 
     move-result-object v0
 
-    .line 132
-    .local v0, "systemApkAssets":[Landroid/content/res/ApkAssets;
     array-length v1, v0
 
     iget-object v2, p0, Landroid/content/res/AssetManager$Builder;->mUserApkAssets:Ljava/util/ArrayList;
@@ -82,34 +74,25 @@
 
     add-int/2addr v1, v2
 
-    .line 133
-    .local v1, "totalApkAssetCount":I
     new-array v2, v1, [Landroid/content/res/ApkAssets;
 
-    .line 135
-    .local v2, "apkAssets":[Landroid/content/res/ApkAssets;
     array-length v3, v0
 
     const/4 v4, 0x0
 
     invoke-static {v0, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 137
     iget-object v3, p0, Landroid/content/res/AssetManager$Builder;->mUserApkAssets:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 138
-    .local v3, "userApkAssetCount":I
     move v5, v4
 
-    .local v5, "i":I
     :goto_0
     if-ge v5, v3, :cond_0
 
-    .line 139
     array-length v6, v0
 
     add-int/2addr v6, v5
@@ -124,13 +107,10 @@
 
     aput-object v7, v2, v6
 
-    .line 138
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 144
-    .end local v5    # "i":I
     :cond_0
     new-instance v5, Landroid/content/res/AssetManager;
 
@@ -138,17 +118,13 @@
 
     invoke-direct {v5, v4, v6}, Landroid/content/res/AssetManager;-><init>(ZLandroid/content/res/AssetManager$1;)V
 
-    .line 145
-    .local v5, "assetManager":Landroid/content/res/AssetManager;
     invoke-static {v5, v2}, Landroid/content/res/AssetManager;->access$102(Landroid/content/res/AssetManager;[Landroid/content/res/ApkAssets;)[Landroid/content/res/ApkAssets;
 
-    .line 146
     invoke-static {v5}, Landroid/content/res/AssetManager;->access$200(Landroid/content/res/AssetManager;)J
 
     move-result-wide v6
 
     invoke-static {v6, v7, v2, v4}, Landroid/content/res/AssetManager;->access$300(J[Landroid/content/res/ApkAssets;Z)V
 
-    .line 148
     return-object v5
 .end method

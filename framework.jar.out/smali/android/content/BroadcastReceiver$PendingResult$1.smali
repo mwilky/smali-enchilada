@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/BroadcastReceiver$PendingResult;Landroid/app/IActivityManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/BroadcastReceiver$PendingResult;
 
-    .line 221
     iput-object p1, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->this$0:Landroid/content/BroadcastReceiver$PendingResult;
 
     iput-object p2, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->val$mgr:Landroid/app/IActivityManager;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 223
     sget-boolean v0, Landroid/app/ActivityThread;->DEBUG_BROADCAST:Z
 
     if-eqz v0, :cond_0
@@ -70,7 +67,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
     :cond_0
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->this$0:Landroid/content/BroadcastReceiver$PendingResult;
 
@@ -78,6 +74,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
-    .line 226
     return-void
 .end method

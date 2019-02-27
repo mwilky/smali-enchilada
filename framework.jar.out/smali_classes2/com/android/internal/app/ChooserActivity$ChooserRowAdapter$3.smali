@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;Lcom/android/internal/app/ChooserActivity$RowViewHolder;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
 
-    .line 1343
     iput-object p1, p0, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter$3;->this$1:Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
 
     iput-object p2, p0, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter$3;->val$holder:Lcom/android/internal/app/ChooserActivity$RowViewHolder;
@@ -46,16 +44,13 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 1346
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter$3;->this$1:Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
 
     iget-object v0, v0, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     iget-object v1, p0, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter$3;->this$1:Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
 
-    .line 1347
     invoke-static {v1}, Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;->access$600(Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;)Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;
 
     move-result-object v1
@@ -74,9 +69,7 @@
 
     move-result-object v1
 
-    .line 1346
     invoke-virtual {v0, v1}, Lcom/android/internal/app/ChooserActivity;->showTargetDetails(Landroid/content/pm/ResolveInfo;)V
 
-    .line 1349
     return v3
 .end method

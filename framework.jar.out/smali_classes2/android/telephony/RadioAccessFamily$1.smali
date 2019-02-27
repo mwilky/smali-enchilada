@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,21 +39,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telephony/RadioAccessFamily;
     .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 141
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 142
-    .local v0, "phoneId":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 144
-    .local v1, "radioAccessFamily":I
     new-instance v2, Landroid/telephony/RadioAccessFamily;
 
     invoke-direct {v2, v0, v1}, Landroid/telephony/RadioAccessFamily;-><init>(II)V
@@ -65,7 +58,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 137
     invoke-virtual {p0, p1}, Landroid/telephony/RadioAccessFamily$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/RadioAccessFamily;
 
     move-result-object p1
@@ -75,9 +67,7 @@
 
 .method public newArray(I)[Landroid/telephony/RadioAccessFamily;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 149
     new-array v0, p1, [Landroid/telephony/RadioAccessFamily;
 
     return-object v0
@@ -86,7 +76,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 137
     invoke-virtual {p0, p1}, Landroid/telephony/RadioAccessFamily$1;->newArray(I)[Landroid/telephony/RadioAccessFamily;
 
     move-result-object p1

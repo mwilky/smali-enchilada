@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/view/NotificationHeaderView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/view/NotificationHeaderView;
 
-    .line 74
     iput-object p1, p0, Landroid/view/NotificationHeaderView$1;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 77
     iget-object v0, p0, Landroid/view/NotificationHeaderView$1;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v0}, Landroid/view/NotificationHeaderView;->access$000(Landroid/view/NotificationHeaderView;)Landroid/graphics/drawable/Drawable;
@@ -47,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 78
     iget-object v0, p0, Landroid/view/NotificationHeaderView$1;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-virtual {v0}, Landroid/view/NotificationHeaderView;->getWidth()I
@@ -64,12 +58,10 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 79
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 81
     :cond_0
     return-void
 .end method

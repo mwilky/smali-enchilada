@@ -27,11 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/ConnectionService$2;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Landroid/telecom/ConnectionRequest;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/telecom/ConnectionService$2;
-    .param p2, "x0"    # Ljava/lang/String;
-    .param p3, "x1"    # Ljava/lang/Object;
 
-    .line 824
     iput-object p1, p0, Landroid/telecom/ConnectionService$2$4;->this$1:Landroid/telecom/ConnectionService$2;
 
     iput-object p4, p0, Landroid/telecom/ConnectionService$2$4;->val$id:Ljava/lang/String;
@@ -50,7 +46,6 @@
 .method public loggedRun()V
     .locals 4
 
-    .line 827
     iget-object v0, p0, Landroid/telecom/ConnectionService$2$4;->this$1:Landroid/telecom/ConnectionService$2;
 
     iget-object v0, v0, Landroid/telecom/ConnectionService$2;->this$0:Landroid/telecom/ConnectionService;
@@ -63,6 +58,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/telecom/ConnectionService;->access$800(Landroid/telecom/ConnectionService;Ljava/lang/String;Landroid/telecom/ConnectionRequest;I)V
 
-    .line 828
     return-void
 .end method

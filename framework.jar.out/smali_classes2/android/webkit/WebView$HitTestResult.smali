@@ -54,15 +54,12 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 515
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 516
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 517
     return-void
 .end method
 
@@ -71,7 +68,6 @@
 .method public getExtra()Ljava/lang/String;
     .locals 1
 
-    .line 554
     iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
     return-object v0
@@ -80,7 +76,6 @@
 .method public getType()I
     .locals 1
 
-    .line 542
     iget v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
     return v0
@@ -88,26 +83,20 @@
 
 .method public setExtra(Ljava/lang/String;)V
     .locals 0
-    .param p1, "extra"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 532
     iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
-    .line 533
     return-void
 .end method
 
 .method public setType(I)V
     .locals 0
-    .param p1, "type"    # I
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 524
     iput p1, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 525
     return-void
 .end method

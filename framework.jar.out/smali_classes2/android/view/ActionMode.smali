@@ -32,10 +32,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ActionMode;->mType:I
@@ -63,7 +61,6 @@
 .method public getTag()Ljava/lang/Object;
     .locals 1
 
-    .line 83
     iget-object v0, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
     return-object v0
@@ -75,7 +72,6 @@
 .method public getTitleOptionalHint()Z
     .locals 1
 
-    .line 157
     iget-boolean v0, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
 
     return v0
@@ -84,7 +80,6 @@
 .method public getType()I
     .locals 1
 
-    .line 195
     iget v0, p0, Landroid/view/ActionMode;->mType:I
 
     return v0
@@ -92,9 +87,7 @@
 
 .method public hide(J)V
     .locals 0
-    .param p1, "duration"    # J
 
-    .line 227
     return-void
 .end method
 
@@ -104,14 +97,12 @@
 .method public invalidateContentRect()V
     .locals 0
 
-    .line 214
     return-void
 .end method
 
 .method public isTitleOptional()Z
     .locals 1
 
-    .line 165
     const/4 v0, 0x0
 
     return v0
@@ -120,7 +111,6 @@
 .method public isUiFocusable()Z
     .locals 1
 
-    .line 284
     const/4 v0, 0x1
 
     return v0
@@ -128,9 +118,7 @@
 
 .method public onWindowFocusChanged(Z)V
     .locals 0
-    .param p1, "hasWindowFocus"    # Z
 
-    .line 272
     return-void
 .end method
 
@@ -145,12 +133,9 @@
 
 .method public setTag(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "tag"    # Ljava/lang/Object;
 
-    .line 69
     iput-object p1, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
-    .line 70
     return-void
 .end method
 
@@ -162,22 +147,16 @@
 
 .method public setTitleOptionalHint(Z)V
     .locals 0
-    .param p1, "titleOptional"    # Z
 
-    .line 146
     iput-boolean p1, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
 
-    .line 147
     return-void
 .end method
 
 .method public setType(I)V
     .locals 0
-    .param p1, "type"    # I
 
-    .line 186
     iput p1, p0, Landroid/view/ActionMode;->mType:I
 
-    .line 187
     return-void
 .end method

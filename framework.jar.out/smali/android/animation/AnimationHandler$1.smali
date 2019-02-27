@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/animation/AnimationHandler;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/animation/AnimationHandler;
 
-    .line 51
     iput-object p1, p0, Landroid/animation/AnimationHandler$1;->this$0:Landroid/animation/AnimationHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public doFrame(J)V
     .locals 3
-    .param p1, "frameTimeNanos"    # J
 
-    .line 54
     iget-object v0, p0, Landroid/animation/AnimationHandler$1;->this$0:Landroid/animation/AnimationHandler;
 
     iget-object v1, p0, Landroid/animation/AnimationHandler$1;->this$0:Landroid/animation/AnimationHandler;
@@ -55,7 +51,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/animation/AnimationHandler;->access$100(Landroid/animation/AnimationHandler;J)V
 
-    .line 55
     iget-object v0, p0, Landroid/animation/AnimationHandler$1;->this$0:Landroid/animation/AnimationHandler;
 
     invoke-static {v0}, Landroid/animation/AnimationHandler;->access$200(Landroid/animation/AnimationHandler;)Ljava/util/ArrayList;
@@ -68,7 +63,6 @@
 
     if-lez v0, :cond_0
 
-    .line 56
     iget-object v0, p0, Landroid/animation/AnimationHandler$1;->this$0:Landroid/animation/AnimationHandler;
 
     invoke-static {v0}, Landroid/animation/AnimationHandler;->access$000(Landroid/animation/AnimationHandler;)Landroid/animation/AnimationHandler$AnimationFrameCallbackProvider;
@@ -77,7 +71,6 @@
 
     invoke-interface {v0, p0}, Landroid/animation/AnimationHandler$AnimationFrameCallbackProvider;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    .line 58
     :cond_0
     return-void
 .end method

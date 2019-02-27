@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService;)V
     .locals 2
-    .param p1, "this$0"    # Landroid/service/euicc/EuiccService;
 
-    .line 188
     iput-object p1, p0, Landroid/service/euicc/EuiccService$1;->this$0:Landroid/service/euicc/EuiccService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 189
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x1
@@ -49,9 +46,7 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
-    .param p1, "r"    # Ljava/lang/Runnable;
 
-    .line 193
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Ljava/lang/StringBuilder;

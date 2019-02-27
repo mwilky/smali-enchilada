@@ -14,16 +14,11 @@
 # direct methods
 .method public varargs constructor <init>(Ljava/time/ZoneId;[Ljava/time/Clock;)V
     .locals 0
-    .param p1, "zone"    # Ljava/time/ZoneId;
-    .param p2, "clocks"    # [Ljava/time/Clock;
 
-    .line 41
     invoke-direct {p0, p1}, Landroid/os/SimpleClock;-><init>(Ljava/time/ZoneId;)V
 
-    .line 42
     iput-object p2, p0, Landroid/os/BestClock;->clocks:[Ljava/time/Clock;
 
-    .line 43
     return-void
 .end method
 
@@ -32,7 +27,6 @@
 .method public millis()J
     .locals 7
 
-    .line 47
     iget-object v0, p0, Landroid/os/BestClock;->clocks:[Ljava/time/Clock;
 
     array-length v1, v0
@@ -44,8 +38,6 @@
 
     aget-object v3, v0, v2
 
-    .line 49
-    .local v3, "clock":Ljava/time/Clock;
     :try_start_0
     invoke-virtual {v3}, Ljava/time/Clock;->millis()J
 
@@ -55,12 +47,9 @@
 
     return-wide v4
 
-    .line 50
     :catch_0
     move-exception v4
 
-    .line 52
-    .local v4, "e":Ljava/time/DateTimeException;
     const-string v5, "BestClock"
 
     invoke-virtual {v4}, Ljava/time/DateTimeException;->toString()Ljava/lang/String;
@@ -69,14 +58,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
-    .end local v3    # "clock":Ljava/time/Clock;
-    .end local v4    # "e":Ljava/time/DateTimeException;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 55
     :cond_0
     new-instance v0, Ljava/time/DateTimeException;
 
@@ -90,7 +75,6 @@
 
     iget-object v2, p0, Landroid/os/BestClock;->clocks:[Ljava/time/Clock;
 
-    .line 56
     invoke-static {v2}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2

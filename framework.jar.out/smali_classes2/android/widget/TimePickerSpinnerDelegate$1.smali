@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/TimePickerSpinnerDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/TimePickerSpinnerDelegate;
 
-    .line 91
     iput-object p1, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onValueChange(Landroid/widget/NumberPicker;II)V
     .locals 2
-    .param p1, "spinner"    # Landroid/widget/NumberPicker;
-    .param p2, "oldVal"    # I
-    .param p3, "newVal"    # I
 
-    .line 93
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Landroid/widget/TimePickerSpinnerDelegate;->access$000(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 94
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-virtual {v0}, Landroid/widget/TimePickerSpinnerDelegate;->is24Hour()Z
@@ -56,7 +49,6 @@
 
     if-nez v0, :cond_2
 
-    .line 95
     const/16 v0, 0xc
 
     const/16 v1, 0xb
@@ -70,7 +62,6 @@
 
     if-ne p3, v1, :cond_2
 
-    .line 97
     :cond_1
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
@@ -84,17 +75,14 @@
 
     invoke-static {v0, v1}, Landroid/widget/TimePickerSpinnerDelegate;->access$102(Landroid/widget/TimePickerSpinnerDelegate;Z)Z
 
-    .line 98
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Landroid/widget/TimePickerSpinnerDelegate;->access$200(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 101
     :cond_2
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$1;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Landroid/widget/TimePickerSpinnerDelegate;->access$300(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 102
     return-void
 .end method

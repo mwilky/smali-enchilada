@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,9 +20,7 @@
 # virtual methods
 .method public duplicateFrame(Landroid/filterfw/core/Frame;)Landroid/filterfw/core/Frame;
     .locals 1
-    .param p1, "frame"    # Landroid/filterfw/core/Frame;
 
-    .line 36
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
@@ -32,20 +29,14 @@
 
     move-result-object v0
 
-    .line 37
-    .local v0, "result":Landroid/filterfw/core/Frame;
     invoke-virtual {v0, p1}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
-    .line 38
     return-object v0
 .end method
 
 .method public duplicateFrameToTarget(Landroid/filterfw/core/Frame;I)Landroid/filterfw/core/Frame;
     .locals 2
-    .param p1, "frame"    # Landroid/filterfw/core/Frame;
-    .param p2, "newTarget"    # I
 
-    .line 42
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
@@ -54,27 +45,20 @@
 
     move-result-object v0
 
-    .line 43
-    .local v0, "newFormat":Landroid/filterfw/core/MutableFrameFormat;
     invoke-virtual {v0, p2}, Landroid/filterfw/core/MutableFrameFormat;->setTarget(I)V
 
-    .line 44
     invoke-virtual {p0, v0}, Landroid/filterfw/core/FrameManager;->newFrame(Landroid/filterfw/core/FrameFormat;)Landroid/filterfw/core/Frame;
 
     move-result-object v1
 
-    .line 45
-    .local v1, "result":Landroid/filterfw/core/Frame;
     invoke-virtual {v1, p1}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
-    .line 46
     return-object v1
 .end method
 
 .method public getContext()Landroid/filterfw/core/FilterContext;
     .locals 1
 
-    .line 54
     iget-object v0, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
     return-object v0
@@ -83,7 +67,6 @@
 .method public getGLEnvironment()Landroid/filterfw/core/GLEnvironment;
     .locals 1
 
-    .line 58
     iget-object v0, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
     if-eqz v0, :cond_0
@@ -117,18 +100,14 @@
 
 .method setContext(Landroid/filterfw/core/FilterContext;)V
     .locals 0
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 65
     iput-object p1, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
-    .line 66
     return-void
 .end method
 
 .method public tearDown()V
     .locals 0
 
-    .line 62
     return-void
 .end method

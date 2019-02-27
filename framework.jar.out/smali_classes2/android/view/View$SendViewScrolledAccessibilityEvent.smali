@@ -31,7 +31,6 @@
 .method private constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    .line 27133
     iput-object p1, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->this$0:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +40,7 @@
 
 .method synthetic constructor <init>(Landroid/view/View;Landroid/view/View$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/view/View;
-    .param p2, "x1"    # Landroid/view/View$1;
 
-    .line 27133
     invoke-direct {p0, p1}, Landroid/view/View$SendViewScrolledAccessibilityEvent;-><init>(Landroid/view/View;)V
 
     return-void
@@ -52,9 +48,7 @@
 
 .method static synthetic access$3200(Landroid/view/View$SendViewScrolledAccessibilityEvent;)V
     .locals 0
-    .param p0, "x0"    # Landroid/view/View$SendViewScrolledAccessibilityEvent;
 
-    .line 27133
     invoke-direct {p0}, Landroid/view/View$SendViewScrolledAccessibilityEvent;->reset()V
 
     return-void
@@ -63,18 +57,14 @@
 .method private reset()V
     .locals 1
 
-    .line 27160
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mIsPending:Z
 
-    .line 27161
     iput v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaX:I
 
-    .line 27162
     iput v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaY:I
 
-    .line 27163
     return-void
 .end method
 
@@ -82,34 +72,27 @@
 # virtual methods
 .method public post(II)V
     .locals 3
-    .param p1, "dx"    # I
-    .param p2, "dy"    # I
 
-    .line 27139
     iget v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaX:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaX:I
 
-    .line 27140
     iget v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaY:I
 
     add-int/2addr v0, p2
 
     iput v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaY:I
 
-    .line 27141
     iget-boolean v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mIsPending:Z
 
     if-nez v0, :cond_0
 
-    .line 27142
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mIsPending:Z
 
-    .line 27143
     iget-object v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->this$0:Landroid/view/View;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getSendRecurringAccessibilityEventsInterval()J
@@ -118,7 +101,6 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 27145
     :cond_0
     return-void
 .end method
@@ -126,7 +108,6 @@
 .method public run()V
     .locals 2
 
-    .line 27149
     iget-object v0, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->this$0:Landroid/view/View;
 
     iget-object v0, v0, Landroid/view/View;->mContext:Landroid/content/Context;
@@ -141,34 +122,26 @@
 
     if-eqz v0, :cond_0
 
-    .line 27150
     const/16 v0, 0x1000
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v0
 
-    .line 27152
-    .local v0, "event":Landroid/view/accessibility/AccessibilityEvent;
     iget v1, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaX:I
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityEvent;->setScrollDeltaX(I)V
 
-    .line 27153
     iget v1, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->mDeltaY:I
 
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityEvent;->setScrollDeltaY(I)V
 
-    .line 27154
     iget-object v1, p0, Landroid/view/View$SendViewScrolledAccessibilityEvent;->this$0:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 27156
-    .end local v0    # "event":Landroid/view/accessibility/AccessibilityEvent;
     :cond_0
     invoke-direct {p0}, Landroid/view/View$SendViewScrolledAccessibilityEvent;->reset()V
 
-    .line 27157
     return-void
 .end method

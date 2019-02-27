@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothBATransmitter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/bluetooth/BluetoothBATransmitter;
 
-    .line 162
     iput-object p1, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onBluetoothStateChange(Z)V
     .locals 3
-    .param p1, "up"    # Z
 
-    .line 164
     const-string v0, "BluetoothBAT"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -56,17 +52,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
     if-nez p1, :cond_0
 
-    .line 166
     const-string v0, "BluetoothBAT"
 
     const-string v1, "Unbinding service..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
@@ -80,14 +73,12 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
-    .line 169
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothBATransmitter;->access$102(Landroid/bluetooth/BluetoothBATransmitter;Landroid/bluetooth/IBluetoothBATransmitter;)Landroid/bluetooth/IBluetoothBATransmitter;
 
-    .line 170
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothBATransmitter;->access$300(Landroid/bluetooth/BluetoothBATransmitter;)Landroid/content/Context;
@@ -107,18 +98,14 @@
 
     goto :goto_0
 
-    .line 174
     :catchall_0
     move-exception v0
 
     goto :goto_1
 
-    .line 171
     :catch_0
     move-exception v0
 
-    .line 172
-    .local v0, "re":Ljava/lang/Exception;
     :try_start_1
     const-string v1, "BluetoothBAT"
 
@@ -128,8 +115,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 174
-    .end local v0    # "re":Ljava/lang/Exception;
     :goto_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
@@ -143,10 +128,8 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->unlock()V
 
-    .line 175
     goto :goto_3
 
-    .line 174
     :goto_1
     iget-object v1, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
@@ -162,7 +145,6 @@
 
     throw v0
 
-    .line 178
     :cond_0
     :try_start_2
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
@@ -177,7 +159,6 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
-    .line 179
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothBATransmitter;->access$100(Landroid/bluetooth/BluetoothBATransmitter;)Landroid/bluetooth/IBluetoothBATransmitter;
@@ -186,14 +167,12 @@
 
     if-nez v0, :cond_1
 
-    .line 180
     const-string v0, "BluetoothBAT"
 
     const-string v1, "Binding service..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothBATransmitter;->doBind()Z
@@ -203,18 +182,14 @@
 
     goto :goto_2
 
-    .line 186
     :catchall_1
     move-exception v0
 
     goto :goto_4
 
-    .line 183
     :catch_1
     move-exception v0
 
-    .line 184
-    .restart local v0    # "re":Ljava/lang/Exception;
     :try_start_3
     const-string v1, "BluetoothBAT"
 
@@ -224,8 +199,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 186
-    .end local v0    # "re":Ljava/lang/Exception;
     :cond_1
     :goto_2
     iget-object v0, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
@@ -240,14 +213,11 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
-    .line 187
     nop
 
-    .line 189
     :goto_3
     return-void
 
-    .line 186
     :goto_4
     iget-object v1, p0, Landroid/bluetooth/BluetoothBATransmitter$1;->this$0:Landroid/bluetooth/BluetoothBATransmitter;
 

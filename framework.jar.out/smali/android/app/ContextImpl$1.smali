@@ -25,7 +25,6 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 484
     iput-object p1, p0, Landroid/app/ContextImpl$1;->val$prefix:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +36,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
     .locals 1
-    .param p1, "dir"    # Ljava/io/File;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 487
     iget-object v0, p0, Landroid/app/ContextImpl$1;->val$prefix:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

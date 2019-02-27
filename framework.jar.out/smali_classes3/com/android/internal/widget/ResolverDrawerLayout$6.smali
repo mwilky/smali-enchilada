@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
-    .line 1057
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$6;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 1060
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$6;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$900(Lcom/android/internal/widget/ResolverDrawerLayout;)Z
@@ -49,12 +45,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1061
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$6;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->dispatchOnDismissed()V
 
-    .line 1063
     :cond_0
     return-void
 .end method

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 416
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,27 +35,21 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/app/NotificationManager;
     .locals 10
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 419
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 420
-    .local v0, "outerContext":Landroid/content/Context;
     new-instance v1, Landroid/app/NotificationManager;
 
     new-instance v2, Landroid/view/ContextThemeWrapper;
 
-    .line 423
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v3
 
     iget v5, v3, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 422
     const/4 v4, 0x0
 
     const v6, 0x103000b
@@ -75,14 +68,12 @@
 
     iget-object v3, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 428
     invoke-virtual {v3}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v3
 
     invoke-direct {v1, v2, v3}, Landroid/app/NotificationManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 420
     return-object v1
 .end method
 
@@ -94,7 +85,6 @@
         }
     .end annotation
 
-    .line 416
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$28;->createService(Landroid/app/ContextImpl;)Landroid/app/NotificationManager;
 
     move-result-object p1

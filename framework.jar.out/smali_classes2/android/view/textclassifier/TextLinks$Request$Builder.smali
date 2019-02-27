@@ -29,17 +29,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "text"    # Ljava/lang/CharSequence;
 
-    .line 378
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 375
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mLegacyFallback:Z
 
-    .line 379
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -48,7 +44,6 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mText:Ljava/lang/CharSequence;
 
-    .line 380
     return-void
 .end method
 
@@ -57,7 +52,6 @@
 .method public build()Landroid/view/textclassifier/TextLinks$Request;
     .locals 8
 
-    .line 440
     new-instance v7, Landroid/view/textclassifier/TextLinks$Request;
 
     iget-object v1, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mText:Ljava/lang/CharSequence;
@@ -81,44 +75,32 @@
 
 .method public setCallingPackageName(Ljava/lang/String;)Landroid/view/textclassifier/TextLinks$Request$Builder;
     .locals 0
-    .param p1, "callingPackageName"    # Ljava/lang/String;
 
-    .line 431
     iput-object p1, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mCallingPackageName:Ljava/lang/String;
 
-    .line 432
     return-object p0
 .end method
 
 .method public setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextLinks$Request$Builder;
     .locals 0
-    .param p1, "defaultLocales"    # Landroid/os/LocaleList;
 
-    .line 390
     iput-object p1, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 391
     return-object p0
 .end method
 
 .method public setEntityConfig(Landroid/view/textclassifier/TextClassifier$EntityConfig;)Landroid/view/textclassifier/TextLinks$Request$Builder;
     .locals 0
-    .param p1, "entityConfig"    # Landroid/view/textclassifier/TextClassifier$EntityConfig;
 
-    .line 404
     iput-object p1, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mEntityConfig:Landroid/view/textclassifier/TextClassifier$EntityConfig;
 
-    .line 405
     return-object p0
 .end method
 
 .method public setLegacyFallback(Z)Landroid/view/textclassifier/TextLinks$Request$Builder;
     .locals 0
-    .param p1, "legacyFallback"    # Z
 
-    .line 419
     iput-boolean p1, p0, Landroid/view/textclassifier/TextLinks$Request$Builder;->mLegacyFallback:Z
 
-    .line 420
     return-object p0
 .end method

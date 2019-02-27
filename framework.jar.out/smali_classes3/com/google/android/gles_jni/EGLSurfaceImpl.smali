@@ -11,29 +11,22 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 23
     invoke-direct {p0}, Ljavax/microedition/khronos/egl/EGLSurface;-><init>()V
 
-    .line 24
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:J
 
-    .line 25
     return-void
 .end method
 
 .method public constructor <init>(J)V
     .locals 0
-    .param p1, "surface"    # J
 
-    .line 26
     invoke-direct {p0}, Ljavax/microedition/khronos/egl/EGLSurface;-><init>()V
 
-    .line 27
     iput-wide p1, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:J
 
-    .line 28
     return-void
 .end method
 
@@ -41,16 +34,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 32
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 33
     :cond_0
     const/4 v1, 0x0
 
@@ -68,14 +58,11 @@
 
     goto :goto_1
 
-    .line 35
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lcom/google/android/gles_jni/EGLSurfaceImpl;
 
-    .line 37
-    .local v2, "that":Lcom/google/android/gles_jni/EGLSurfaceImpl;
     iget-wide v3, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:J
 
     iget-wide v5, v2, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:J
@@ -92,8 +79,6 @@
     :goto_0
     return v0
 
-    .line 33
-    .end local v2    # "that":Lcom/google/android/gles_jni/EGLSurfaceImpl;
     :cond_3
     :goto_1
     return v1
@@ -102,11 +87,8 @@
 .method public hashCode()I
     .locals 7
 
-    .line 47
     const/16 v0, 0x11
 
-    .line 48
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int/2addr v1, v0
@@ -125,8 +107,5 @@
 
     add-int/2addr v1, v2
 
-    .line 49
-    .end local v0    # "result":I
-    .local v1, "result":I
     return v1
 .end method

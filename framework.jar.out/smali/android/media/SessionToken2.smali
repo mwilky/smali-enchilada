@@ -28,30 +28,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "serviceName"    # Ljava/lang/String;
 
-    .line 69
     const/4 v0, -0x1
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/media/SessionToken2;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 70
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "serviceName"    # Ljava/lang/String;
-    .param p4, "uid"    # I
 
-    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -72,29 +61,22 @@
 
     iput-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
-    .line 86
     return-void
 .end method
 
 .method public constructor <init>(Landroid/media/update/SessionToken2Provider;)V
     .locals 0
-    .param p1, "provider"    # Landroid/media/update/SessionToken2Provider;
 
-    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
     iput-object p1, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
-    .line 94
     return-void
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/media/SessionToken2;
     .locals 1
-    .param p0, "bundle"    # Landroid/os/Bundle;
 
-    .line 154
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -110,9 +92,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 103
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/SessionToken2Provider;->equals_impl(Ljava/lang/Object;)Z
@@ -125,7 +105,6 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 136
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->getId_imp()Ljava/lang/String;
@@ -138,7 +117,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 129
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->getPackageName_impl()Ljava/lang/String;
@@ -151,7 +129,6 @@
 .method public getProvider()Landroid/media/update/SessionToken2Provider;
     .locals 1
 
-    .line 115
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     return-object v0
@@ -160,7 +137,6 @@
 .method public getType()I
     .locals 1
 
-    .line 145
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->getType_impl()I
@@ -173,7 +149,6 @@
 .method public getUid()I
     .locals 1
 
-    .line 122
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->getUid_impl()I
@@ -186,7 +161,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 98
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->hashCode_impl()I
@@ -199,7 +173,6 @@
 .method public toBundle()Landroid/os/Bundle;
     .locals 1
 
-    .line 162
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->toBundle_impl()Landroid/os/Bundle;
@@ -212,7 +185,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 108
     iget-object v0, p0, Landroid/media/SessionToken2;->mProvider:Landroid/media/update/SessionToken2Provider;
 
     invoke-interface {v0}, Landroid/media/update/SessionToken2Provider;->toString_impl()Ljava/lang/String;

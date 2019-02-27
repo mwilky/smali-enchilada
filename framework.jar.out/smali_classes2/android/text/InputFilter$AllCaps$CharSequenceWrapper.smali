@@ -31,28 +31,19 @@
 # direct methods
 .method constructor <init>(Ljava/lang/CharSequence;II)V
     .locals 1
-    .param p1, "source"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "end"    # I
 
-    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 111
     iput-object p1, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
-    .line 112
     iput p2, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mStart:I
 
-    .line 113
     iput p3, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mEnd:I
 
-    .line 114
     sub-int v0, p3, p2
 
     iput v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mLength:I
 
-    .line 115
     return-void
 .end method
 
@@ -60,16 +51,13 @@
 # virtual methods
 .method public charAt(I)C
     .locals 2
-    .param p1, "index"    # I
 
-    .line 122
     if-ltz p1, :cond_0
 
     iget v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mLength:I
 
     if-ge p1, v0, :cond_0
 
-    .line 125
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     iget v1, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mStart:I
@@ -82,7 +70,6 @@
 
     return v0
 
-    .line 123
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -93,9 +80,7 @@
 
 .method public getSpanEnd(Ljava/lang/Object;)I
     .locals 2
-    .param p1, "tag"    # Ljava/lang/Object;
 
-    .line 148
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     check-cast v0, Landroid/text/Spanned;
@@ -113,9 +98,7 @@
 
 .method public getSpanFlags(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "tag"    # Ljava/lang/Object;
 
-    .line 152
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     check-cast v0, Landroid/text/Spanned;
@@ -129,9 +112,7 @@
 
 .method public getSpanStart(Ljava/lang/Object;)I
     .locals 2
-    .param p1, "tag"    # Ljava/lang/Object;
 
-    .line 144
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     check-cast v0, Landroid/text/Spanned;
@@ -149,8 +130,6 @@
 
 .method public getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
     .locals 3
-    .param p1, "start"    # I
-    .param p2, "end"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -161,8 +140,6 @@
         }
     .end annotation
 
-    .line 140
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     check-cast v0, Landroid/text/Spanned;
@@ -185,7 +162,6 @@
 .method public length()I
     .locals 1
 
-    .line 118
     iget v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mLength:I
 
     return v0
@@ -193,11 +169,7 @@
 
 .method public nextSpanTransition(IILjava/lang/Class;)I
     .locals 3
-    .param p1, "start"    # I
-    .param p2, "limit"    # I
-    .param p3, "type"    # Ljava/lang/Class;
 
-    .line 156
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     check-cast v0, Landroid/text/Spanned;
@@ -223,10 +195,7 @@
 
 .method public subSequence(II)Ljava/lang/CharSequence;
     .locals 4
-    .param p1, "start"    # I
-    .param p2, "end"    # I
 
-    .line 129
     if-ltz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -237,7 +206,6 @@
 
     if-gt p1, p2, :cond_0
 
-    .line 132
     new-instance v0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;
 
     iget-object v1, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
@@ -254,7 +222,6 @@
 
     return-object v0
 
-    .line 130
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -266,7 +233,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 136
     iget-object v0, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mSource:Ljava/lang/CharSequence;
 
     iget v1, p0, Landroid/text/InputFilter$AllCaps$CharSequenceWrapper;->mStart:I

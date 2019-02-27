@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,8 +28,6 @@
 
 .method public setUpdateListener(Landroid/media/effect/EffectUpdateListener;)V
     .locals 0
-    .param p1, "listener"    # Landroid/media/effect/EffectUpdateListener;
 
-    .line 97
     return-void
 .end method

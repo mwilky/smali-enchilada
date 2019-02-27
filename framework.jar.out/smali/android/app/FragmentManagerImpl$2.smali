@@ -29,9 +29,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/FragmentManagerImpl;Landroid/view/ViewGroup;Landroid/view/View;Landroid/app/Fragment;Landroid/app/Fragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/FragmentManagerImpl;
 
-    .line 1398
     iput-object p1, p0, Landroid/app/FragmentManagerImpl$2;->this$0:Landroid/app/FragmentManagerImpl;
 
     iput-object p2, p0, Landroid/app/FragmentManagerImpl$2;->val$container:Landroid/view/ViewGroup;
@@ -51,31 +49,25 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 9
-    .param p1, "anim"    # Landroid/animation/Animator;
 
-    .line 1401
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$2;->val$container:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Landroid/app/FragmentManagerImpl$2;->val$view:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
 
-    .line 1402
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$2;->val$f:Landroid/app/Fragment;
 
     invoke-virtual {v0}, Landroid/app/Fragment;->getAnimatingAway()Landroid/animation/Animator;
 
     move-result-object v0
 
-    .line 1403
-    .local v0, "animator":Landroid/animation/Animator;
     iget-object v1, p0, Landroid/app/FragmentManagerImpl$2;->val$f:Landroid/app/Fragment;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/app/Fragment;->setAnimatingAway(Landroid/animation/Animator;)V
 
-    .line 1407
     iget-object v1, p0, Landroid/app/FragmentManagerImpl$2;->val$container:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Landroid/app/FragmentManagerImpl$2;->val$view:Landroid/view/View;
@@ -90,7 +82,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1409
     iget-object v3, p0, Landroid/app/FragmentManagerImpl$2;->this$0:Landroid/app/FragmentManagerImpl;
 
     iget-object v4, p0, Landroid/app/FragmentManagerImpl$2;->val$fragment:Landroid/app/Fragment;
@@ -109,7 +100,6 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/app/FragmentManagerImpl;->moveToState(Landroid/app/Fragment;IIIZ)V
 
-    .line 1412
     :cond_0
     return-void
 .end method

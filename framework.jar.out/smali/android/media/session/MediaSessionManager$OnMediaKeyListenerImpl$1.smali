@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;Landroid/view/KeyEvent;Landroid/os/ResultReceiver;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;
 
-    .line 1036
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl$1;->this$0:Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;
 
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl$1;->val$event:Landroid/view/KeyEvent;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 1039
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl$1;->this$0:Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;
 
     invoke-static {v0}, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->access$1200(Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;)Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
@@ -60,8 +57,6 @@
 
     move-result v0
 
-    .line 1040
-    .local v0, "handled":Z
     const-string v1, "SessionManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -80,21 +75,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1041
     iget-object v1, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl$1;->val$result:Landroid/os/ResultReceiver;
 
     if-eqz v1, :cond_0
 
-    .line 1042
     iget-object v1, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl$1;->val$result:Landroid/os/ResultReceiver;
 
-    .line 1043
     const/4 v2, 0x0
 
-    .line 1042
     invoke-virtual {v1, v0, v2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 1046
     :cond_0
     return-void
 .end method

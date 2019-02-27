@@ -34,15 +34,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 3
-    .param p1, "sampleRate"    # I
 
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     iput p1, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mSampleRate:I
 
-    .line 56
     new-instance v0, Ljava/util/Random;
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -53,31 +49,24 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mRng:Ljava/util/Random;
 
-    .line 57
     new-instance v0, Lcom/android/internal/logging/MetricsLogger;
 
     invoke-direct {v0}, Lcom/android/internal/logging/MetricsLogger;-><init>()V
 
     iput-object v0, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
-    .line 58
     return-void
 .end method
 
 .method public constructor <init>(ILcom/android/internal/logging/MetricsLogger;)V
     .locals 3
-    .param p1, "sampleRate"    # I
-    .param p2, "metricsLogger"    # Lcom/android/internal/logging/MetricsLogger;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput p1, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mSampleRate:I
 
-    .line 63
     new-instance v0, Ljava/util/Random;
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -88,26 +77,20 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mRng:Ljava/util/Random;
 
-    .line 64
     iput-object p2, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
-    .line 65
     return-void
 .end method
 
 .method private static debugLog(Landroid/metrics/LogMaker;)V
     .locals 0
-    .param p0, "log"    # Landroid/metrics/LogMaker;
 
-    .line 131
     return-void
 .end method
 
 .method static synthetic lambda$logGenerateLinks$0(Ljava/lang/String;)Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;
     .locals 2
-    .param p0, "k"    # Ljava/lang/String;
 
-    .line 89
     new-instance v0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;
 
     const/4 v1, 0x0
@@ -120,17 +103,14 @@
 .method private shouldLog()Z
     .locals 3
 
-    .line 106
     iget v0, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mSampleRate:I
 
     const/4 v1, 0x1
 
     if-gt v0, v1, :cond_0
 
-    .line 107
     return v1
 
-    .line 109
     :cond_0
     iget-object v0, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mRng:Ljava/util/Random;
 
@@ -153,26 +133,17 @@
 
 .method private writeStats(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;Ljava/lang/CharSequence;J)V
     .locals 3
-    .param p1, "callId"    # Ljava/lang/String;
-    .param p2, "callingPackageName"    # Ljava/lang/String;
-    .param p3, "entityType"    # Ljava/lang/String;
-    .param p4, "stats"    # Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;
-    .param p5, "text"    # Ljava/lang/CharSequence;
-    .param p6, "latencyMs"    # J
 
-    .line 116
     new-instance v0, Landroid/metrics/LogMaker;
 
     const/16 v1, 0x521
 
     invoke-direct {v0, v1}, Landroid/metrics/LogMaker;-><init>(I)V
 
-    .line 117
     invoke-virtual {v0, p2}, Landroid/metrics/LogMaker;->setPackageName(Ljava/lang/String;)Landroid/metrics/LogMaker;
 
     move-result-object v0
 
-    .line 118
     const/16 v1, 0x527
 
     invoke-virtual {v0, v1, p1}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
@@ -181,7 +152,6 @@
 
     iget v1, p4, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinks:I
 
-    .line 119
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -194,7 +164,6 @@
 
     iget v1, p4, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinksTextLength:I
 
-    .line 120
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -205,7 +174,6 @@
 
     move-result-object v0
 
-    .line 121
     invoke-interface {p5}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -220,7 +188,6 @@
 
     move-result-object v0
 
-    .line 122
     invoke-static {p6, p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -231,25 +198,19 @@
 
     move-result-object v0
 
-    .line 123
-    .local v0, "log":Landroid/metrics/LogMaker;
     if-eqz p3, :cond_0
 
-    .line 124
     const/16 v1, 0x526
 
     invoke-virtual {v0, v1, p3}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
 
-    .line 126
     :cond_0
     iget-object v1, p0, Landroid/view/textclassifier/GenerateLinksLogger;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/logging/MetricsLogger;->write(Landroid/metrics/LogMaker;)V
 
-    .line 127
     invoke-static {v0}, Landroid/view/textclassifier/GenerateLinksLogger;->debugLog(Landroid/metrics/LogMaker;)V
 
-    .line 128
     return-void
 .end method
 
@@ -257,31 +218,21 @@
 # virtual methods
 .method public logGenerateLinks(Ljava/lang/CharSequence;Landroid/view/textclassifier/TextLinks;Ljava/lang/String;J)V
     .locals 13
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "links"    # Landroid/view/textclassifier/TextLinks;
-    .param p3, "callingPackageName"    # Ljava/lang/String;
-    .param p4, "latencyMs"    # J
 
-    .line 70
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 72
     invoke-static/range {p3 .. p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
     invoke-direct {p0}, Landroid/view/textclassifier/GenerateLinksLogger;->shouldLog()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 74
     return-void
 
-    .line 78
     :cond_0
     new-instance v0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;
 
@@ -289,14 +240,10 @@
 
     invoke-direct {v0, v1}, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;-><init>(Landroid/view/textclassifier/GenerateLinksLogger$1;)V
 
-    .line 79
-    .local v0, "totalStats":Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;
     new-instance v1, Landroid/util/ArrayMap;
 
     invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 80
-    .local v1, "perEntityTypeStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;>;"
     invoke-virtual {p2}, Landroid/view/textclassifier/TextLinks;->getLinks()Ljava/util/Collection;
 
     move-result-object v2
@@ -319,20 +266,14 @@
 
     check-cast v3, Landroid/view/textclassifier/TextLinks$TextLink;
 
-    .line 81
-    .local v3, "link":Landroid/view/textclassifier/TextLinks$TextLink;
     invoke-virtual {v3}, Landroid/view/textclassifier/TextLinks$TextLink;->getEntityCount()I
 
     move-result v4
 
     if-nez v4, :cond_2
 
-    .line 81
-    .end local v3    # "link":Landroid/view/textclassifier/TextLinks$TextLink;
     goto :goto_0
 
-    .line 82
-    .restart local v3    # "link":Landroid/view/textclassifier/TextLinks$TextLink;
     :cond_2
     const/4 v4, 0x0
 
@@ -340,13 +281,10 @@
 
     move-result-object v4
 
-    .line 83
-    .local v4, "entityType":Ljava/lang/String;
     if-eqz v4, :cond_1
 
     const-string/jumbo v5, "other"
 
-    .line 84
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -355,21 +293,17 @@
 
     const-string v5, ""
 
-    .line 85
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 86
     goto :goto_0
 
-    .line 88
     :cond_3
     invoke-virtual {v0, v3}, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->countLink(Landroid/view/textclassifier/TextLinks$TextLink;)V
 
-    .line 89
     sget-object v5, Landroid/view/textclassifier/-$$Lambda$GenerateLinksLogger$vmbT_h7MLlbrIm0lJJwA-eHQhXk;->INSTANCE:Landroid/view/textclassifier/-$$Lambda$GenerateLinksLogger$vmbT_h7MLlbrIm0lJJwA-eHQhXk;
 
     invoke-interface {v1, v4, v5}, Ljava/util/Map;->computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
@@ -380,12 +314,8 @@
 
     invoke-virtual {v5, v3}, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->countLink(Landroid/view/textclassifier/TextLinks$TextLink;)V
 
-    .line 90
-    .end local v3    # "link":Landroid/view/textclassifier/TextLinks$TextLink;
-    .end local v4    # "entityType":Ljava/lang/String;
     goto :goto_0
 
-    .line 92
     :cond_4
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
@@ -395,8 +325,6 @@
 
     move-result-object v11
 
-    .line 93
-    .local v11, "callId":Ljava/lang/String;
     const/4 v5, 0x0
 
     move-object v2, p0
@@ -413,7 +341,6 @@
 
     invoke-direct/range {v2 .. v9}, Landroid/view/textclassifier/GenerateLinksLogger;->writeStats(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;Ljava/lang/CharSequence;J)V
 
-    .line 94
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -437,8 +364,6 @@
 
     check-cast v12, Ljava/util/Map$Entry;
 
-    .line 95
-    .local v12, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;>;"
     invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -467,11 +392,8 @@
 
     invoke-direct/range {v3 .. v10}, Landroid/view/textclassifier/GenerateLinksLogger;->writeStats(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;Ljava/lang/CharSequence;J)V
 
-    .line 97
-    .end local v12    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;>;"
     goto :goto_1
 
-    .line 98
     :cond_5
     return-void
 .end method

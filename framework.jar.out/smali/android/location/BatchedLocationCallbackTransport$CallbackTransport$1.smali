@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Landroid/location/BatchedLocationCallbackTransport$CallbackTransport;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/location/BatchedLocationCallbackTransport$CallbackTransport;
 
-    .line 56
     iput-object p1, p0, Landroid/location/BatchedLocationCallbackTransport$CallbackTransport$1;->this$1:Landroid/location/BatchedLocationCallbackTransport$CallbackTransport;
 
     iput-object p2, p0, Landroid/location/BatchedLocationCallbackTransport$CallbackTransport$1;->val$locations:Ljava/util/List;
@@ -51,19 +49,16 @@
 # virtual methods
 .method public execute(Landroid/location/BatchedLocationCallback;)V
     .locals 1
-    .param p1, "callback"    # Landroid/location/BatchedLocationCallback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 60
     iget-object v0, p0, Landroid/location/BatchedLocationCallbackTransport$CallbackTransport$1;->val$locations:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/location/BatchedLocationCallback;->onLocationBatch(Ljava/util/List;)V
 
-    .line 61
     return-void
 .end method
 
@@ -75,7 +70,6 @@
         }
     .end annotation
 
-    .line 56
     check-cast p1, Landroid/location/BatchedLocationCallback;
 
     invoke-virtual {p0, p1}, Landroid/location/BatchedLocationCallbackTransport$CallbackTransport$1;->execute(Landroid/location/BatchedLocationCallback;)V

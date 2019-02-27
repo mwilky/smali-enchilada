@@ -33,7 +33,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
@@ -41,9 +40,7 @@
 
 .method static synthetic access$100(Landroid/app/usage/CacheQuotaService;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Landroid/app/usage/CacheQuotaService;
 
-    .line 40
     iget-object v0, p0, Landroid/app/usage/CacheQuotaService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -53,9 +50,7 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 64
     iget-object v0, p0, Landroid/app/usage/CacheQuotaService;->mWrapper:Landroid/app/usage/CacheQuotaService$CacheQuotaServiceWrapper;
 
     return-object v0
@@ -78,10 +73,8 @@
 .method public onCreate()V
     .locals 2
 
-    .line 57
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 58
     new-instance v0, Landroid/app/usage/CacheQuotaService$CacheQuotaServiceWrapper;
 
     const/4 v1, 0x0
@@ -90,7 +83,6 @@
 
     iput-object v0, p0, Landroid/app/usage/CacheQuotaService;->mWrapper:Landroid/app/usage/CacheQuotaService$CacheQuotaServiceWrapper;
 
-    .line 59
     new-instance v0, Landroid/app/usage/CacheQuotaService$ServiceHandler;
 
     invoke-virtual {p0}, Landroid/app/usage/CacheQuotaService;->getMainLooper()Landroid/os/Looper;
@@ -101,6 +93,5 @@
 
     iput-object v0, p0, Landroid/app/usage/CacheQuotaService;->mHandler:Landroid/os/Handler;
 
-    .line 60
     return-void
 .end method

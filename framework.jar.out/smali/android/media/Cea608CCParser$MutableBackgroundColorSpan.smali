@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "color"    # I
 
-    .line 636
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 637
     iput p1, p0, Landroid/media/Cea608CCParser$MutableBackgroundColorSpan;->mColor:I
 
-    .line 638
     return-void
 .end method
 
@@ -41,7 +37,6 @@
 .method public getBackgroundColor()I
     .locals 1
 
-    .line 645
     iget v0, p0, Landroid/media/Cea608CCParser$MutableBackgroundColorSpan;->mColor:I
 
     return v0
@@ -49,24 +44,18 @@
 
 .method public setBackgroundColor(I)V
     .locals 0
-    .param p1, "color"    # I
 
-    .line 641
     iput p1, p0, Landroid/media/Cea608CCParser$MutableBackgroundColorSpan;->mColor:I
 
-    .line 642
     return-void
 .end method
 
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
-    .param p1, "ds"    # Landroid/text/TextPaint;
 
-    .line 650
     iget v0, p0, Landroid/media/Cea608CCParser$MutableBackgroundColorSpan;->mColor:I
 
     iput v0, p1, Landroid/text/TextPaint;->bgColor:I
 
-    .line 651
     return-void
 .end method

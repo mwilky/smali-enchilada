@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 147
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string v1, "INIT"
@@ -49,7 +48,6 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->INIT:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 148
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string v1, "CONNECTED"
@@ -60,7 +58,6 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->CONNECTED:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 149
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string v1, "LISTENING"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->LISTENING:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 150
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string v1, "CLOSED"
@@ -82,7 +78,6 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->CLOSED:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 146
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/bluetooth/BluetoothSocket$SocketState;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 146
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/bluetooth/BluetoothSocket$SocketState;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 146
     const-class v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Landroid/bluetooth/BluetoothSocket$SocketState;
     .locals 1
 
-    .line 146
     sget-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->$VALUES:[Landroid/bluetooth/BluetoothSocket$SocketState;
 
     invoke-virtual {v0}, [Landroid/bluetooth/BluetoothSocket$SocketState;->clone()Ljava/lang/Object;

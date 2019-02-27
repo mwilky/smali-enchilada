@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 65
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
     return-void
@@ -28,14 +27,12 @@
 # virtual methods
 .method public write(I)V
     .locals 1
-    .param p1, "oneByte"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 67
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/speech/RecognitionService;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/speech/RecognitionService;
 
-    .line 76
     iput-object p1, p0, Landroid/speech/RecognitionService$1;->this$0:Landroid/speech/RecognitionService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 79
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 91
     :pswitch_0
     iget-object v0, p0, Landroid/speech/RecognitionService$1;->this$0:Landroid/speech/RecognitionService;
 
@@ -52,7 +47,6 @@
 
     goto :goto_0
 
-    .line 88
     :pswitch_1
     iget-object v0, p0, Landroid/speech/RecognitionService$1;->this$0:Landroid/speech/RecognitionService;
 
@@ -62,10 +56,8 @@
 
     invoke-static {v0, v1}, Landroid/speech/RecognitionService;->access$200(Landroid/speech/RecognitionService;Landroid/speech/IRecognitionListener;)V
 
-    .line 89
     goto :goto_0
 
-    .line 85
     :pswitch_2
     iget-object v0, p0, Landroid/speech/RecognitionService$1;->this$0:Landroid/speech/RecognitionService;
 
@@ -75,17 +67,13 @@
 
     invoke-static {v0, v1}, Landroid/speech/RecognitionService;->access$100(Landroid/speech/RecognitionService;Landroid/speech/IRecognitionListener;)V
 
-    .line 86
     goto :goto_0
 
-    .line 81
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/speech/RecognitionService$StartListeningArgs;
 
-    .line 82
-    .local v0, "args":Landroid/speech/RecognitionService$StartListeningArgs;
     iget-object v1, p0, Landroid/speech/RecognitionService$1;->this$0:Landroid/speech/RecognitionService;
 
     iget-object v2, v0, Landroid/speech/RecognitionService$StartListeningArgs;->mIntent:Landroid/content/Intent;
@@ -96,11 +84,8 @@
 
     invoke-static {v1, v2, v3, v4}, Landroid/speech/RecognitionService;->access$000(Landroid/speech/RecognitionService;Landroid/content/Intent;Landroid/speech/IRecognitionListener;I)V
 
-    .line 83
     nop
 
-    .line 94
-    .end local v0    # "args":Landroid/speech/RecognitionService$StartListeningArgs;
     :goto_0
     return-void
 

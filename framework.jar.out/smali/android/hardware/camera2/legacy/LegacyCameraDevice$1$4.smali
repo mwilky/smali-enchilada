@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
-    .line 228
     iput-object p1, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$4;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 235
     :try_start_0
     iget-object v0, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$4;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
@@ -53,18 +50,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 240
     nop
 
-    .line 241
     return-void
 
-    .line 236
     :catch_0
     move-exception v0
 
-    .line 237
-    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Received remote exception during onRequestQueueEmpty callback: "

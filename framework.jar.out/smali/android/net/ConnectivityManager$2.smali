@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ConnectivityManager;Landroid/os/Handler;Landroid/net/ConnectivityManager$OnStartTetheringCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ConnectivityManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 2321
     iput-object p1, p0, Landroid/net/ConnectivityManager$2;->this$0:Landroid/net/ConnectivityManager;
 
     iput-object p3, p0, Landroid/net/ConnectivityManager$2;->val$callback:Landroid/net/ConnectivityManager$OnStartTetheringCallback;
@@ -40,26 +37,20 @@
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 2324
     if-nez p1, :cond_0
 
-    .line 2325
     iget-object v0, p0, Landroid/net/ConnectivityManager$2;->val$callback:Landroid/net/ConnectivityManager$OnStartTetheringCallback;
 
     invoke-virtual {v0}, Landroid/net/ConnectivityManager$OnStartTetheringCallback;->onTetheringStarted()V
 
     goto :goto_0
 
-    .line 2327
     :cond_0
     iget-object v0, p0, Landroid/net/ConnectivityManager$2;->val$callback:Landroid/net/ConnectivityManager$OnStartTetheringCallback;
 
     invoke-virtual {v0}, Landroid/net/ConnectivityManager$OnStartTetheringCallback;->onTetheringFailed()V
 
-    .line 2329
     :goto_0
     return-void
 .end method

@@ -78,20 +78,16 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 220
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/internal/widget/LockPatternView$CellState;->alpha:F
 
-    .line 231
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/internal/widget/LockPatternView$CellState;->lineEndX:F
 
-    .line 232
     iput v0, p0, Lcom/android/internal/widget/LockPatternView$CellState;->lineEndY:F
 
     return-void

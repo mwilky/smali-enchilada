@@ -22,14 +22,9 @@
 # direct methods
 .method public constructor <init>(Landroid/view/InputChannel;Landroid/os/Looper;Landroid/view/Choreographer;)V
     .locals 2
-    .param p1, "inputChannel"    # Landroid/view/InputChannel;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "choreographer"    # Landroid/view/Choreographer;
 
-    .line 31
     invoke-direct {p0, p1, p2}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 81
     new-instance v0, Landroid/view/BatchedInputEventReceiver$BatchedInputRunnable;
 
     const/4 v1, 0x0
@@ -38,27 +33,22 @@
 
     iput-object v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputRunnable:Landroid/view/BatchedInputEventReceiver$BatchedInputRunnable;
 
-    .line 32
     iput-object p3, p0, Landroid/view/BatchedInputEventReceiver;->mChoreographer:Landroid/view/Choreographer;
 
-    .line 33
     return-void
 .end method
 
 .method private scheduleBatchedInput()V
     .locals 4
 
-    .line 61
     iget-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
     if-nez v0, :cond_0
 
-    .line 62
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
-    .line 63
     iget-object v0, p0, Landroid/view/BatchedInputEventReceiver;->mChoreographer:Landroid/view/Choreographer;
 
     const/4 v1, 0x0
@@ -69,7 +59,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/Choreographer;->postCallback(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 65
     :cond_0
     return-void
 .end method
@@ -77,17 +66,14 @@
 .method private unscheduleBatchedInput()V
     .locals 4
 
-    .line 68
     iget-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
     if-eqz v0, :cond_0
 
-    .line 69
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
-    .line 70
     iget-object v1, p0, Landroid/view/BatchedInputEventReceiver;->mChoreographer:Landroid/view/Choreographer;
 
     iget-object v2, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputRunnable:Landroid/view/BatchedInputEventReceiver$BatchedInputRunnable;
@@ -96,7 +82,6 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/view/Choreographer;->removeCallbacks(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 73
     :cond_0
     return-void
 .end method
@@ -106,31 +91,24 @@
 .method public dispose()V
     .locals 0
 
-    .line 42
     invoke-direct {p0}, Landroid/view/BatchedInputEventReceiver;->unscheduleBatchedInput()V
 
-    .line 43
     invoke-super {p0}, Landroid/view/InputEventReceiver;->dispose()V
 
-    .line 44
     return-void
 .end method
 
 .method doConsumeBatchedInput(J)V
     .locals 2
-    .param p1, "frameTimeNanos"    # J
 
-    .line 47
     iget-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
     if-eqz v0, :cond_0
 
-    .line 48
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/BatchedInputEventReceiver;->mBatchedInputScheduled:Z
 
-    .line 49
     invoke-virtual {p0, p1, p2}, Landroid/view/BatchedInputEventReceiver;->consumeBatchedInputEvents(J)Z
 
     move-result v0
@@ -143,10 +121,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 55
     invoke-direct {p0}, Landroid/view/BatchedInputEventReceiver;->scheduleBatchedInput()V
 
-    .line 58
     :cond_0
     return-void
 .end method
@@ -154,9 +130,7 @@
 .method public onBatchedInputEventPending()V
     .locals 0
 
-    .line 37
     invoke-direct {p0}, Landroid/view/BatchedInputEventReceiver;->scheduleBatchedInput()V
 
-    .line 38
     return-void
 .end method

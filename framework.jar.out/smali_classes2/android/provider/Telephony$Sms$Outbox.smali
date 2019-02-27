@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 712
     const-string v0, "content://sms/outbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,25 +42,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 706
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 707
     return-void
 .end method
 
 .method public static addMessage(ILandroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZJ)Landroid/net/Uri;
     .locals 11
-    .param p0, "subId"    # I
-    .param p1, "resolver"    # Landroid/content/ContentResolver;
-    .param p2, "address"    # Ljava/lang/String;
-    .param p3, "body"    # Ljava/lang/String;
-    .param p4, "subject"    # Ljava/lang/String;
-    .param p5, "date"    # Ljava/lang/Long;
-    .param p6, "deliveryReport"    # Z
-    .param p7, "threadId"    # J
 
-    .line 755
     sget-object v2, Landroid/provider/Telephony$Sms$Outbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v7, 0x1
@@ -91,15 +79,7 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZJ)Landroid/net/Uri;
     .locals 11
-    .param p0, "resolver"    # Landroid/content/ContentResolver;
-    .param p1, "address"    # Ljava/lang/String;
-    .param p2, "body"    # Ljava/lang/String;
-    .param p3, "subject"    # Ljava/lang/String;
-    .param p4, "date"    # Ljava/lang/Long;
-    .param p5, "deliveryReport"    # Z
-    .param p6, "threadId"    # J
 
-    .line 734
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSmsSubscriptionId()I
 
     move-result v0

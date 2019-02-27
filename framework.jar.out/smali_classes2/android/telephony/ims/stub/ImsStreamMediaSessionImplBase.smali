@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34
     invoke-direct {p0}, Lcom/android/ims/internal/IImsStreamMediaSession$Stub;-><init>()V
 
     return-void
@@ -23,6 +22,5 @@
         }
     .end annotation
 
-    .line 39
     return-void
 .end method

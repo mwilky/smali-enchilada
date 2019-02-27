@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
 
-    .line 1458
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,9 +35,7 @@
 # virtual methods
 .method public get(Landroid/widget/Switch;)Ljava/lang/Float;
     .locals 1
-    .param p1, "object"    # Landroid/widget/Switch;
 
-    .line 1461
     invoke-static {p1}, Landroid/widget/Switch;->access$000(Landroid/widget/Switch;)F
 
     move-result v0
@@ -54,7 +50,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1458
     check-cast p1, Landroid/widget/Switch;
 
     invoke-virtual {p0, p1}, Landroid/widget/Switch$1;->get(Landroid/widget/Switch;)Ljava/lang/Float;
@@ -66,20 +61,15 @@
 
 .method public setValue(Landroid/widget/Switch;F)V
     .locals 0
-    .param p1, "object"    # Landroid/widget/Switch;
-    .param p2, "value"    # F
 
-    .line 1466
     invoke-static {p1, p2}, Landroid/widget/Switch;->access$100(Landroid/widget/Switch;F)V
 
-    .line 1467
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 1458
     check-cast p1, Landroid/widget/Switch;
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/Switch$1;->setValue(Landroid/widget/Switch;F)V

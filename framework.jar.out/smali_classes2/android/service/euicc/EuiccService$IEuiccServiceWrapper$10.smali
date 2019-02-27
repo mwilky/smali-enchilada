@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;ILjava/lang/String;ZLandroid/service/euicc/ISwitchToSubscriptionCallback;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
-    .line 559
     iput-object p1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$10;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iput p2, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$10;->val$slotId:I
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 4
 
-    .line 562
     iget-object v0, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$10;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iget-object v0, v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;->this$0:Landroid/service/euicc/EuiccService;
@@ -66,13 +63,10 @@
 
     iget-boolean v3, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$10;->val$forceDeactivateSim:Z
 
-    .line 563
     invoke-virtual {v0, v1, v2, v3}, Landroid/service/euicc/EuiccService;->onSwitchToSubscription(ILjava/lang/String;Z)I
 
     move-result v0
 
-    .line 566
-    .local v0, "result":I
     :try_start_0
     iget-object v1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$10;->val$callback:Landroid/service/euicc/ISwitchToSubscriptionCallback;
 
@@ -80,14 +74,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 569
     goto :goto_0
 
-    .line 567
     :catch_0
     move-exception v1
 
-    .line 570
     :goto_0
     return-void
 .end method

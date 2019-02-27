@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/internal/midi/MidiEventScheduler;)V
     .locals 0
 
-    .line 33
     iput-object p1, p0, Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;->this$0:Lcom/android/internal/midi/MidiEventScheduler;
 
     invoke-direct {p0}, Landroid/media/midi/MidiReceiver;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/midi/MidiEventScheduler;Lcom/android/internal/midi/MidiEventScheduler$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/midi/MidiEventScheduler;
-    .param p2, "x1"    # Lcom/android/internal/midi/MidiEventScheduler$1;
 
-    .line 33
     invoke-direct {p0, p1}, Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;-><init>(Lcom/android/internal/midi/MidiEventScheduler;)V
 
     return-void
@@ -46,28 +42,21 @@
 .method public onFlush()V
     .locals 1
 
-    .line 49
     iget-object v0, p0, Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;->this$0:Lcom/android/internal/midi/MidiEventScheduler;
 
     invoke-virtual {v0}, Lcom/android/internal/midi/MidiEventScheduler;->flush()V
 
-    .line 50
     return-void
 .end method
 
 .method public onSend([BIIJ)V
     .locals 6
-    .param p1, "msg"    # [B
-    .param p2, "offset"    # I
-    .param p3, "count"    # I
-    .param p4, "timestamp"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 41
     iget-object v0, p0, Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;->this$0:Lcom/android/internal/midi/MidiEventScheduler;
 
     move-object v1, p1
@@ -82,16 +71,12 @@
 
     move-result-object v0
 
-    .line 42
-    .local v0, "event":Lcom/android/internal/midi/MidiEventScheduler$MidiEvent;
     if-eqz v0, :cond_0
 
-    .line 43
     iget-object v1, p0, Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;->this$0:Lcom/android/internal/midi/MidiEventScheduler;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/midi/MidiEventScheduler;->add(Lcom/android/internal/midi/EventScheduler$SchedulableEvent;)V
 
-    .line 45
     :cond_0
     return-void
 .end method

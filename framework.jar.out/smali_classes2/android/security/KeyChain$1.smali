@@ -27,12 +27,10 @@
 .method constructor <init>(Ljava/util/concurrent/BlockingQueue;)V
     .locals 0
 
-    .line 735
     iput-object p1, p0, Landroid/security/KeyChain$1;->val$q:Ljava/util/concurrent/BlockingQueue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 736
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
@@ -44,20 +42,15 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 738
     iget-boolean v0, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
 
     if-nez v0, :cond_0
 
-    .line 739
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
 
-    .line 741
     :try_start_0
     iget-object v0, p0, Landroid/security/KeyChain$1;->val$q:Ljava/util/concurrent/BlockingQueue;
 
@@ -73,14 +66,11 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 744
     goto :goto_0
 
-    .line 742
     :catch_0
     move-exception v0
 
-    .line 746
     :cond_0
     :goto_0
     return-void
@@ -88,8 +78,6 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 747
     return-void
 .end method

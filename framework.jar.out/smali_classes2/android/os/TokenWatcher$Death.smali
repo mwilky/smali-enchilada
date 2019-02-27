@@ -28,21 +28,15 @@
 # direct methods
 .method constructor <init>(Landroid/os/TokenWatcher;Landroid/os/IBinder;Ljava/lang/String;)V
     .locals 0
-    .param p2, "token"    # Landroid/os/IBinder;
-    .param p3, "tag"    # Ljava/lang/String;
 
-    .line 200
     iput-object p1, p0, Landroid/os/TokenWatcher$Death;->this$0:Landroid/os/TokenWatcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
     iput-object p2, p0, Landroid/os/TokenWatcher$Death;->token:Landroid/os/IBinder;
 
-    .line 202
     iput-object p3, p0, Landroid/os/TokenWatcher$Death;->tag:Ljava/lang/String;
 
-    .line 203
     return-void
 .end method
 
@@ -51,7 +45,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 207
     iget-object v0, p0, Landroid/os/TokenWatcher$Death;->this$0:Landroid/os/TokenWatcher;
 
     iget-object v1, p0, Landroid/os/TokenWatcher$Death;->token:Landroid/os/IBinder;
@@ -60,7 +53,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/TokenWatcher;->cleanup(Landroid/os/IBinder;Z)V
 
-    .line 208
     return-void
 .end method
 
@@ -72,13 +64,11 @@
         }
     .end annotation
 
-    .line 213
     :try_start_0
     iget-object v0, p0, Landroid/os/TokenWatcher$Death;->token:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 214
     iget-object v0, p0, Landroid/os/TokenWatcher$Death;->this$0:Landroid/os/TokenWatcher;
 
     invoke-static {v0}, Landroid/os/TokenWatcher;->access$200(Landroid/os/TokenWatcher;)Ljava/lang/String;
@@ -103,7 +93,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
     iget-object v0, p0, Landroid/os/TokenWatcher$Death;->this$0:Landroid/os/TokenWatcher;
 
     iget-object v1, p0, Landroid/os/TokenWatcher$Death;->token:Landroid/os/IBinder;
@@ -112,17 +101,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 219
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 220
     nop
 
-    .line 221
     return-void
 
-    .line 219
     :catchall_0
     move-exception v0
 

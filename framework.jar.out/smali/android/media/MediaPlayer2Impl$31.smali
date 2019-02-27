@@ -29,7 +29,6 @@
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;Landroid/os/Message;J)V
     .locals 0
 
-    .line 3189
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$31;->val$mp:Landroid/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/media/MediaPlayer2Impl$31;->val$m:Landroid/os/Message;
@@ -46,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 3192
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$31;->val$mp:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$2500(Landroid/media/MediaPlayer2Impl;)Landroid/media/MediaPlayer2Impl$EventHandler;
@@ -59,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/MediaPlayer2Impl$EventHandler;->handleMessage(Landroid/os/Message;J)V
 
-    .line 3193
     return-void
 .end method

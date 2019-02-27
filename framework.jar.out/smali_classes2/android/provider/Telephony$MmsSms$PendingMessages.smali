@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 2519
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "pending"
@@ -60,9 +59,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2516
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2517
     return-void
 .end method

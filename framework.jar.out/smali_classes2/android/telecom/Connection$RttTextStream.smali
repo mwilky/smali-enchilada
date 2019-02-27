@@ -33,31 +33,23 @@
 # direct methods
 .method public constructor <init>(Landroid/os/ParcelFileDescriptor;Landroid/os/ParcelFileDescriptor;)V
     .locals 3
-    .param p1, "toInCall"    # Landroid/os/ParcelFileDescriptor;
-    .param p2, "fromInCall"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 902
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 897
     const/16 v0, 0x3e8
 
     new-array v0, v0, [C
 
     iput-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mReadBuffer:[C
 
-    .line 903
     iput-object p2, p0, Landroid/telecom/Connection$RttTextStream;->mFdFromInCall:Landroid/os/ParcelFileDescriptor;
 
-    .line 904
     iput-object p1, p0, Landroid/telecom/Connection$RttTextStream;->mFdToInCall:Landroid/os/ParcelFileDescriptor;
 
-    .line 905
     new-instance v0, Ljava/io/InputStreamReader;
 
     new-instance v1, Ljava/io/FileInputStream;
 
-    .line 906
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v2
@@ -68,12 +60,10 @@
 
     iput-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeFromInCall:Ljava/io/InputStreamReader;
 
-    .line 907
     new-instance v0, Ljava/io/OutputStreamWriter;
 
     new-instance v1, Ljava/io/FileOutputStream;
 
-    .line 908
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v2
@@ -84,7 +74,6 @@
 
     iput-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeToInCall:Ljava/io/OutputStreamWriter;
 
-    .line 909
     return-void
 .end method
 
@@ -93,7 +82,6 @@
 .method public getFdFromInCall()Landroid/os/ParcelFileDescriptor;
     .locals 1
 
-    .line 963
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mFdFromInCall:Landroid/os/ParcelFileDescriptor;
 
     return-object v0
@@ -102,7 +90,6 @@
 .method public getFdToInCall()Landroid/os/ParcelFileDescriptor;
     .locals 1
 
-    .line 968
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mFdToInCall:Landroid/os/ParcelFileDescriptor;
 
     return-object v0
@@ -116,7 +103,6 @@
         }
     .end annotation
 
-    .line 939
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeFromInCall:Ljava/io/InputStreamReader;
 
     iget-object v1, p0, Landroid/telecom/Connection$RttTextStream;->mReadBuffer:[C
@@ -129,16 +115,12 @@
 
     move-result v0
 
-    .line 940
-    .local v0, "numRead":I
     if-gez v0, :cond_0
 
-    .line 941
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 943
     :cond_0
     new-instance v1, Ljava/lang/String;
 
@@ -157,7 +139,6 @@
         }
     .end annotation
 
-    .line 954
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeFromInCall:Ljava/io/InputStreamReader;
 
     invoke-virtual {v0}, Ljava/io/InputStreamReader;->ready()Z
@@ -166,14 +147,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 955
     invoke-virtual {p0}, Landroid/telecom/Connection$RttTextStream;->read()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 957
     :cond_0
     const/4 v0, 0x0
 
@@ -182,23 +161,19 @@
 
 .method public write(Ljava/lang/String;)V
     .locals 1
-    .param p1, "input"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 922
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeToInCall:Ljava/io/OutputStreamWriter;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 923
     iget-object v0, p0, Landroid/telecom/Connection$RttTextStream;->mPipeToInCall:Ljava/io/OutputStreamWriter;
 
     invoke-virtual {v0}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 924
     return-void
 .end method

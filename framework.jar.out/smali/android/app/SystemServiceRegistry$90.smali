@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 988
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,14 +35,12 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/hardware/location/ContextHubManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 991
     new-instance v0, Landroid/hardware/location/ContextHubManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -52,7 +49,6 @@
 
     iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 992
     invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
@@ -63,7 +59,6 @@
 
     invoke-direct {v0, v1, v2}, Landroid/hardware/location/ContextHubManager;-><init>(Landroid/content/Context;Landroid/os/Looper;)V
 
-    .line 991
     return-object v0
 .end method
 
@@ -75,7 +70,6 @@
         }
     .end annotation
 
-    .line 988
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$90;->createService(Landroid/app/ContextImpl;)Landroid/hardware/location/ContextHubManager;
 
     move-result-object p1

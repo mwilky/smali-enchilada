@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1298
     new-instance v0, Landroid/hardware/radio/RadioManager$AmBandConfig$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/RadioManager$AmBandConfig$1;-><init>()V
@@ -52,51 +51,35 @@
 
 .method constructor <init>(IIIIIZ)V
     .locals 0
-    .param p1, "region"    # I
-    .param p2, "type"    # I
-    .param p3, "lowerLimit"    # I
-    .param p4, "upperLimit"    # I
-    .param p5, "spacing"    # I
-    .param p6, "stereo"    # Z
 
-    .line 1282
     invoke-direct/range {p0 .. p5}, Landroid/hardware/radio/RadioManager$BandConfig;-><init>(IIIII)V
 
-    .line 1283
     iput-boolean p6, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
-    .line 1284
     return-void
 .end method
 
 .method public constructor <init>(Landroid/hardware/radio/RadioManager$AmBandDescriptor;)V
     .locals 1
-    .param p1, "descriptor"    # Landroid/hardware/radio/RadioManager$AmBandDescriptor;
 
-    .line 1276
     invoke-direct {p0, p1}, Landroid/hardware/radio/RadioManager$BandConfig;-><init>(Landroid/hardware/radio/RadioManager$BandDescriptor;)V
 
-    .line 1277
     invoke-virtual {p1}, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->isStereoSupported()Z
 
     move-result v0
 
     iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
-    .line 1278
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 1294
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/hardware/radio/RadioManager$BandConfig;-><init>(Landroid/os/Parcel;Landroid/hardware/radio/RadioManager$1;)V
 
-    .line 1295
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -113,16 +96,12 @@
     :goto_0
     iput-boolean v1, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
-    .line 1296
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/radio/RadioManager$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/hardware/radio/RadioManager$1;
 
-    .line 1271
     invoke-direct {p0, p1}, Landroid/hardware/radio/RadioManager$AmBandConfig;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -133,7 +112,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 1317
     const/4 v0, 0x0
 
     return v0
@@ -141,17 +119,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 1336
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    .line 1337
     return v0
 
-    .line 1338
     :cond_0
     invoke-super {p0, p1}, Landroid/hardware/radio/RadioManager$BandConfig;->equals(Ljava/lang/Object;)Z
 
@@ -161,26 +135,20 @@
 
     if-nez v1, :cond_1
 
-    .line 1339
     return v2
 
-    .line 1340
     :cond_1
     instance-of v1, p1, Landroid/hardware/radio/RadioManager$AmBandConfig;
 
     if-nez v1, :cond_2
 
-    .line 1341
     return v2
 
-    .line 1342
     :cond_2
     move-object v1, p1
 
     check-cast v1, Landroid/hardware/radio/RadioManager$AmBandConfig;
 
-    .line 1343
-    .local v1, "other":Landroid/hardware/radio/RadioManager$AmBandConfig;
     iget-boolean v3, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
     invoke-virtual {v1}, Landroid/hardware/radio/RadioManager$AmBandConfig;->getStereo()Z
@@ -189,10 +157,8 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 1344
     return v2
 
-    .line 1345
     :cond_3
     return v0
 .end method
@@ -200,7 +166,6 @@
 .method public getStereo()Z
     .locals 1
 
-    .line 1290
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
     return v0
@@ -209,17 +174,12 @@
 .method public hashCode()I
     .locals 4
 
-    .line 1328
     const/16 v0, 0x1f
 
-    .line 1329
-    .local v0, "prime":I
     invoke-super {p0}, Landroid/hardware/radio/RadioManager$BandConfig;->hashCode()I
 
     move-result v1
 
-    .line 1330
-    .local v1, "result":I
     const/16 v2, 0x1f
 
     mul-int/2addr v2, v1
@@ -228,16 +188,12 @@
 
     add-int/2addr v2, v3
 
-    .line 1331
-    .end local v1    # "result":I
-    .local v2, "result":I
     return v2
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1322
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -273,19 +229,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 1311
     invoke-super {p0, p1, p2}, Landroid/hardware/radio/RadioManager$BandConfig;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1312
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandConfig;->mStereo:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 1313
     return-void
 .end method

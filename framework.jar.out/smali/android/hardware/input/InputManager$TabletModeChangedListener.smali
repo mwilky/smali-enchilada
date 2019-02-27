@@ -22,7 +22,6 @@
 .method private constructor <init>(Landroid/hardware/input/InputManager;)V
     .locals 0
 
-    .line 1132
     iput-object p1, p0, Landroid/hardware/input/InputManager$TabletModeChangedListener;->this$0:Landroid/hardware/input/InputManager;
 
     invoke-direct {p0}, Landroid/hardware/input/ITabletModeChangedListener$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Landroid/hardware/input/InputManager;Landroid/hardware/input/InputManager$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/hardware/input/InputManager;
-    .param p2, "x1"    # Landroid/hardware/input/InputManager$1;
 
-    .line 1132
     invoke-direct {p0, p1}, Landroid/hardware/input/InputManager$TabletModeChangedListener;-><init>(Landroid/hardware/input/InputManager;)V
 
     return-void
@@ -45,14 +41,10 @@
 # virtual methods
 .method public onTabletModeChanged(JZ)V
     .locals 1
-    .param p1, "whenNanos"    # J
-    .param p3, "inTabletMode"    # Z
 
-    .line 1135
     iget-object v0, p0, Landroid/hardware/input/InputManager$TabletModeChangedListener;->this$0:Landroid/hardware/input/InputManager;
 
     invoke-static {v0, p1, p2, p3}, Landroid/hardware/input/InputManager;->access$300(Landroid/hardware/input/InputManager;JZ)V
 
-    .line 1136
     return-void
 .end method

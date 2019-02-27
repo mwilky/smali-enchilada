@@ -22,7 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 340
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,11 +31,9 @@
 # virtual methods
 .method public exists(I)Z
     .locals 1
-    .param p1, "userId"    # I
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 349
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UserInfoProvider;->userIds:[I
 
     if-eqz v0, :cond_0
@@ -64,13 +61,11 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 345
     invoke-virtual {p0}, Lcom/android/internal/os/BatteryStatsImpl$UserInfoProvider;->getUserIds()[I
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UserInfoProvider;->userIds:[I
 
-    .line 346
     return-void
 .end method

@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;Landroid/telephony/mbms/IStreamingServiceCallback;II)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
-    .line 176
     iput-object p1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iput-object p2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
@@ -47,9 +45,7 @@
 # virtual methods
 .method public onBroadcastSignalStrengthUpdated(I)V
     .locals 4
-    .param p1, "signalStrength"    # I
 
-    .line 212
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
 
@@ -57,15 +53,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 215
     goto :goto_0
 
-    .line 213
     :catch_0
     move-exception v0
 
-    .line 214
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$uid:I
@@ -74,32 +66,24 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
-    .line 216
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onError(ILjava/lang/String;)V
     .locals 4
-    .param p1, "errorCode"    # I
-    .param p2, "message"    # Ljava/lang/String;
 
-    .line 180
     const/4 v0, -0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 184
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/telephony/mbms/IStreamingServiceCallback;->onError(ILjava/lang/String;)V
 
-    .line 187
     goto :goto_0
 
-    .line 181
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -111,12 +95,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 185
     :catch_0
     move-exception v0
 
-    .line 186
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$uid:I
@@ -125,8 +106,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
-    .line 188
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -134,7 +113,6 @@
 .method public onMediaDescriptionUpdated()V
     .locals 4
 
-    .line 203
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
 
@@ -142,15 +120,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 206
     goto :goto_0
 
-    .line 204
     :catch_0
     move-exception v0
 
-    .line 205
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$uid:I
@@ -159,17 +133,13 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
-    .line 207
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onStreamMethodUpdated(I)V
     .locals 4
-    .param p1, "methodType"    # I
 
-    .line 221
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
 
@@ -177,15 +147,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 224
     goto :goto_0
 
-    .line 222
     :catch_0
     move-exception v0
 
-    .line 223
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$uid:I
@@ -194,18 +160,13 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
-    .line 225
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onStreamStateUpdated(II)V
     .locals 4
-    .param p1, "state"    # I
-    .param p2, "reason"    # I
 
-    .line 194
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$callback:Landroid/telephony/mbms/IStreamingServiceCallback;
 
@@ -213,15 +174,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 197
     goto :goto_0
 
-    .line 195
     :catch_0
     move-exception v0
 
-    .line 196
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$3;->val$uid:I
@@ -230,8 +187,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
-    .line 198
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

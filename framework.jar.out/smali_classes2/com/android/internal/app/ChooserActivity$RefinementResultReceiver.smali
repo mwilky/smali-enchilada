@@ -23,20 +23,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/app/ChooserActivity;Lcom/android/internal/app/ResolverActivity$TargetInfo;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "host"    # Lcom/android/internal/app/ChooserActivity;
-    .param p2, "target"    # Lcom/android/internal/app/ResolverActivity$TargetInfo;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .line 1616
     invoke-direct {p0, p3}, Landroid/os/ResultReceiver;-><init>(Landroid/os/Handler;)V
 
-    .line 1617
     iput-object p1, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mChooserActivity:Lcom/android/internal/app/ChooserActivity;
 
-    .line 1618
     iput-object p2, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mSelectedTarget:Lcom/android/internal/app/ResolverActivity$TargetInfo;
 
-    .line 1619
     return-void
 .end method
 
@@ -45,57 +38,44 @@
 .method public destroy()V
     .locals 1
 
-    .line 1654
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mChooserActivity:Lcom/android/internal/app/ChooserActivity;
 
-    .line 1655
     iput-object v0, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mSelectedTarget:Lcom/android/internal/app/ResolverActivity$TargetInfo;
 
-    .line 1656
     return-void
 .end method
 
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 4
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 1623
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mChooserActivity:Lcom/android/internal/app/ChooserActivity;
 
     if-nez v0, :cond_0
 
-    .line 1624
     const-string v0, "ChooserActivity"
 
     const-string v1, "Destroyed RefinementResultReceiver received a result"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1625
     return-void
 
-    .line 1627
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1628
     const-string v0, "ChooserActivity"
 
     const-string v1, "RefinementResultReceiver received null resultData"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1629
     return-void
 
-    .line 1632
     :cond_1
     packed-switch p1, :pswitch_data_0
 
-    .line 1647
     const-string v0, "ChooserActivity"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -120,16 +100,13 @@
 
     goto :goto_0
 
-    .line 1634
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mChooserActivity:Lcom/android/internal/app/ChooserActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/ChooserActivity;->onRefinementCanceled()V
 
-    .line 1635
     goto :goto_0
 
-    .line 1637
     :pswitch_1
     const-string v0, "android.intent.extra.INTENT"
 
@@ -137,13 +114,10 @@
 
     move-result-object v0
 
-    .line 1638
-    .local v0, "intentParcelable":Landroid/os/Parcelable;
     instance-of v1, v0, Landroid/content/Intent;
 
     if-eqz v1, :cond_2
 
-    .line 1639
     iget-object v1, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mChooserActivity:Lcom/android/internal/app/ChooserActivity;
 
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$RefinementResultReceiver;->mSelectedTarget:Lcom/android/internal/app/ResolverActivity$TargetInfo;
@@ -156,7 +130,6 @@
 
     goto :goto_0
 
-    .line 1642
     :cond_2
     const-string v1, "ChooserActivity"
 
@@ -164,11 +137,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1645
     nop
 
-    .line 1651
-    .end local v0    # "intentParcelable":Landroid/os/Parcelable;
     :goto_0
     return-void
 

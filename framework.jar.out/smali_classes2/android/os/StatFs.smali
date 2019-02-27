@@ -10,27 +10,21 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "path"    # Ljava/lang/String;
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     invoke-static {p1}, Landroid/os/StatFs;->doStat(Ljava/lang/String;)Landroid/system/StructStatVfs;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
-    .line 42
     return-void
 .end method
 
 .method private static doStat(Ljava/lang/String;)Landroid/system/StructStatVfs;
     .locals 4
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 49
     :try_start_0
     invoke-static {p0}, Landroid/system/Os;->statvfs(Ljava/lang/String;)Landroid/system/StructStatVfs;
 
@@ -40,12 +34,9 @@
 
     return-object v0
 
-    .line 50
     :catch_0
     move-exception v0
 
-    .line 51
-    .local v0, "e":Landroid/system/ErrnoException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,7 +65,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 130
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bavail:J
@@ -87,7 +77,6 @@
 .method public getAvailableBlocksLong()J
     .locals 2
 
-    .line 138
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bavail:J
@@ -98,7 +87,6 @@
 .method public getAvailableBytes()J
     .locals 4
 
-    .line 146
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bavail:J
@@ -117,7 +105,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 87
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_blocks:J
@@ -130,7 +117,6 @@
 .method public getBlockCountLong()J
     .locals 2
 
-    .line 95
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_blocks:J
@@ -143,7 +129,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 71
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_frsize:J
@@ -156,7 +141,6 @@
 .method public getBlockSizeLong()J
     .locals 2
 
-    .line 79
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_frsize:J
@@ -169,7 +153,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 103
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bfree:J
@@ -182,7 +165,6 @@
 .method public getFreeBlocksLong()J
     .locals 2
 
-    .line 113
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bfree:J
@@ -193,7 +175,6 @@
 .method public getFreeBytes()J
     .locals 4
 
-    .line 122
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_bfree:J
@@ -210,7 +191,6 @@
 .method public getTotalBytes()J
     .locals 4
 
-    .line 153
     iget-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
     iget-wide v0, v0, Landroid/system/StructStatVfs;->f_blocks:J
@@ -226,15 +206,12 @@
 
 .method public restat(Ljava/lang/String;)V
     .locals 1
-    .param p1, "path"    # Ljava/lang/String;
 
-    .line 63
     invoke-static {p1}, Landroid/os/StatFs;->doStat(Ljava/lang/String;)Landroid/system/StructStatVfs;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/StatFs;->mStat:Landroid/system/StructStatVfs;
 
-    .line 64
     return-void
 .end method

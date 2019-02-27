@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 40
     new-instance v0, Landroid/util/Rational;
 
     const/4 v1, 0x0
@@ -48,7 +47,6 @@
 
     sput-object v0, Landroid/util/Rational;->NaN:Landroid/util/Rational;
 
-    .line 48
     new-instance v0, Landroid/util/Rational;
 
     const/4 v2, 0x1
@@ -57,7 +55,6 @@
 
     sput-object v0, Landroid/util/Rational;->POSITIVE_INFINITY:Landroid/util/Rational;
 
-    .line 56
     new-instance v0, Landroid/util/Rational;
 
     const/4 v3, -0x1
@@ -66,7 +63,6 @@
 
     sput-object v0, Landroid/util/Rational;->NEGATIVE_INFINITY:Landroid/util/Rational;
 
-    .line 64
     new-instance v0, Landroid/util/Rational;
 
     invoke-direct {v0, v1, v2}, Landroid/util/Rational;-><init>(II)V
@@ -78,22 +74,15 @@
 
 .method public constructor <init>(II)V
     .locals 2
-    .param p1, "numerator"    # I
-    .param p2, "denominator"    # I
 
-    .line 101
     invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    .line 103
     if-gez p2, :cond_0
 
-    .line 104
     neg-int p1, p1
 
-    .line 105
     neg-int p2, p2
 
-    .line 109
     :cond_0
     const/4 v0, 0x1
 
@@ -103,84 +92,65 @@
 
     if-lez p1, :cond_1
 
-    .line 110
     iput v0, p0, Landroid/util/Rational;->mNumerator:I
 
-    .line 111
     iput v1, p0, Landroid/util/Rational;->mDenominator:I
 
     goto :goto_0
 
-    .line 112
     :cond_1
     if-nez p2, :cond_2
 
     if-gez p1, :cond_2
 
-    .line 113
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/util/Rational;->mNumerator:I
 
-    .line 114
     iput v1, p0, Landroid/util/Rational;->mDenominator:I
 
     goto :goto_0
 
-    .line 115
     :cond_2
     if-nez p2, :cond_3
 
     if-nez p1, :cond_3
 
-    .line 116
     iput v1, p0, Landroid/util/Rational;->mNumerator:I
 
-    .line 117
     iput v1, p0, Landroid/util/Rational;->mDenominator:I
 
     goto :goto_0
 
-    .line 118
     :cond_3
     if-nez p1, :cond_4
 
-    .line 119
     iput v1, p0, Landroid/util/Rational;->mNumerator:I
 
-    .line 120
     iput v0, p0, Landroid/util/Rational;->mDenominator:I
 
     goto :goto_0
 
-    .line 122
     :cond_4
     invoke-static {p1, p2}, Landroid/util/Rational;->gcd(II)I
 
     move-result v0
 
-    .line 124
-    .local v0, "gcd":I
     div-int v1, p1, v0
 
     iput v1, p0, Landroid/util/Rational;->mNumerator:I
 
-    .line 125
     div-int v1, p2, v0
 
     iput v1, p0, Landroid/util/Rational;->mDenominator:I
 
-    .line 127
-    .end local v0    # "gcd":I
     :goto_0
     return-void
 .end method
 
 .method private equals(Landroid/util/Rational;)Z
     .locals 2
-    .param p1, "other"    # Landroid/util/Rational;
 
-    .line 244
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     iget v1, p1, Landroid/util/Rational;->mNumerator:I
@@ -206,39 +176,24 @@
 
 .method public static gcd(II)I
     .locals 3
-    .param p0, "numerator"    # I
-    .param p1, "denominator"    # I
 
-    .line 314
     move v0, p0
 
-    .line 315
-    .local v0, "a":I
     move v1, v0
 
     move v0, p1
 
-    .line 317
-    .local v0, "b":I
-    .local v1, "a":I
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 318
     move v2, v0
 
-    .line 320
-    .local v2, "oldB":I
     rem-int v0, v1, v0
 
-    .line 321
     move v1, v2
 
-    .line 322
-    .end local v2    # "oldB":I
     goto :goto_0
 
-    .line 324
     :cond_0
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
@@ -249,9 +204,7 @@
 
 .method private static invalidRational(Ljava/lang/String;)Ljava/lang/NumberFormatException;
     .locals 3
-    .param p0, "s"    # Ljava/lang/String;
 
-    .line 545
     new-instance v0, Ljava/lang/NumberFormatException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -280,7 +233,6 @@
 .method private isNegInf()Z
     .locals 1
 
-    .line 206
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-nez v0, :cond_0
@@ -303,7 +255,6 @@
 .method private isPosInf()Z
     .locals 1
 
-    .line 202
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-nez v0, :cond_0
@@ -325,19 +276,16 @@
 
 .method public static parseRational(Ljava/lang/String;)Landroid/util/Rational;
     .locals 4
-    .param p0, "string"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NumberFormatException;
         }
     .end annotation
 
-    .line 578
     const-string/jumbo v0, "string must not be null"
 
     invoke-static {p0, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 580
     const-string v0, "NaN"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -346,12 +294,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 581
     sget-object v0, Landroid/util/Rational;->NaN:Landroid/util/Rational;
 
     return-object v0
 
-    .line 582
     :cond_0
     const-string v0, "Infinity"
 
@@ -361,12 +307,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 583
     sget-object v0, Landroid/util/Rational;->POSITIVE_INFINITY:Landroid/util/Rational;
 
     return-object v0
 
-    .line 584
     :cond_1
     const-string v0, "-Infinity"
 
@@ -376,12 +320,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 585
     sget-object v0, Landroid/util/Rational;->NEGATIVE_INFINITY:Landroid/util/Rational;
 
     return-object v0
 
-    .line 588
     :cond_2
     const/16 v0, 0x3a
 
@@ -389,22 +331,17 @@
 
     move-result v0
 
-    .line 589
-    .local v0, "sep_ix":I
     if-gez v0, :cond_3
 
-    .line 590
     const/16 v1, 0x2f
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 592
     :cond_3
     if-ltz v0, :cond_4
 
-    .line 596
     :try_start_0
     new-instance v1, Landroid/util/Rational;
 
@@ -420,7 +357,6 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 597
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
@@ -433,23 +369,17 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 596
     return-object v1
 
-    .line 598
     :catch_0
     move-exception v1
 
-    .line 599
-    .local v1, "e":Ljava/lang/NumberFormatException;
     invoke-static {p0}, Landroid/util/Rational;->invalidRational(Ljava/lang/String;)Ljava/lang/NumberFormatException;
 
     move-result-object v2
 
     throw v2
 
-    .line 593
-    .end local v1    # "e":Ljava/lang/NumberFormatException;
     :cond_4
     invoke-static {p0}, Landroid/util/Rational;->invalidRational(Ljava/lang/String;)Ljava/lang/NumberFormatException;
 
@@ -460,7 +390,6 @@
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .locals 3
-    .param p1, "in"    # Ljava/io/ObjectInputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -468,17 +397,14 @@
         }
     .end annotation
 
-    .line 514
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 524
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_2
 
-    .line 525
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-eq v0, v1, :cond_1
@@ -489,7 +415,6 @@
 
     goto :goto_0
 
-    .line 528
     :cond_0
     new-instance v0, Ljava/io/InvalidObjectException;
 
@@ -499,18 +424,15 @@
 
     throw v0
 
-    .line 526
     :cond_1
     :goto_0
     return-void
 
-    .line 530
     :cond_2
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-nez v0, :cond_5
 
-    .line 531
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     if-eq v0, v1, :cond_4
@@ -523,7 +445,6 @@
 
     goto :goto_1
 
-    .line 534
     :cond_3
     new-instance v0, Ljava/io/InvalidObjectException;
 
@@ -533,12 +454,10 @@
 
     throw v0
 
-    .line 532
     :cond_4
     :goto_1
     return-void
 
-    .line 537
     :cond_5
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
@@ -550,10 +469,8 @@
 
     if-gt v0, v1, :cond_6
 
-    .line 542
     return-void
 
-    .line 538
     :cond_6
     new-instance v0, Ljava/io/InvalidObjectException;
 
@@ -568,14 +485,11 @@
 # virtual methods
 .method public compareTo(Landroid/util/Rational;)I
     .locals 10
-    .param p1, "another"    # Landroid/util/Rational;
 
-    .line 467
     const-string v0, "another must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 469
     invoke-direct {p0, p1}, Landroid/util/Rational;->equals(Landroid/util/Rational;)Z
 
     move-result v0
@@ -584,10 +498,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 470
     return v1
 
-    .line 471
     :cond_0
     invoke-virtual {p0}, Landroid/util/Rational;->isNaN()Z
 
@@ -597,10 +509,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 472
     return v2
 
-    .line 473
     :cond_1
     invoke-virtual {p1}, Landroid/util/Rational;->isNaN()Z
 
@@ -610,10 +520,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 474
     return v3
 
-    .line 475
     :cond_2
     invoke-direct {p0}, Landroid/util/Rational;->isPosInf()Z
 
@@ -629,7 +537,6 @@
 
     goto :goto_1
 
-    .line 477
     :cond_3
     invoke-direct {p0}, Landroid/util/Rational;->isNegInf()Z
 
@@ -645,7 +552,6 @@
 
     goto :goto_0
 
-    .line 484
     :cond_4
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
@@ -657,8 +563,6 @@
 
     mul-long/2addr v4, v6
 
-    .line 485
-    .local v4, "thisNumerator":J
     iget v0, p1, Landroid/util/Rational;->mNumerator:I
 
     int-to-long v6, v0
@@ -669,36 +573,26 @@
 
     mul-long/2addr v6, v8
 
-    .line 488
-    .local v6, "otherNumerator":J
     cmp-long v0, v4, v6
 
     if-gez v0, :cond_5
 
-    .line 489
     return v3
 
-    .line 490
     :cond_5
     cmp-long v0, v4, v6
 
     if-lez v0, :cond_6
 
-    .line 491
     return v2
 
-    .line 494
     :cond_6
     return v1
 
-    .line 478
-    .end local v4    # "thisNumerator":J
-    .end local v6    # "otherNumerator":J
     :cond_7
     :goto_0
     return v3
 
-    .line 476
     :cond_8
     :goto_1
     return v2
@@ -707,7 +601,6 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 29
     check-cast p1, Landroid/util/Rational;
 
     invoke-virtual {p0, p1}, Landroid/util/Rational;->compareTo(Landroid/util/Rational;)I
@@ -720,19 +613,14 @@
 .method public doubleValue()D
     .locals 6
 
-    .line 338
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     int-to-double v0, v0
 
-    .line 339
-    .local v0, "num":D
     iget v2, p0, Landroid/util/Rational;->mDenominator:I
 
     int-to-double v2, v2
 
-    .line 341
-    .local v2, "den":D
     div-double v4, v0, v2
 
     return-wide v4
@@ -740,9 +628,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 240
     instance-of v0, p1, Landroid/util/Rational;
 
     if-eqz v0, :cond_0
@@ -771,19 +657,14 @@
 .method public floatValue()F
     .locals 3
 
-    .line 355
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     int-to-float v0, v0
 
-    .line 356
-    .local v0, "num":F
     iget v1, p0, Landroid/util/Rational;->mDenominator:I
 
     int-to-float v1, v1
 
-    .line 358
-    .local v1, "den":F
     div-float v2, v0, v1
 
     return v2
@@ -792,7 +673,6 @@
 .method public getDenominator()I
     .locals 1
 
-    .line 149
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     return v0
@@ -801,7 +681,6 @@
 .method public getNumerator()I
     .locals 1
 
-    .line 136
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     return v0
@@ -810,7 +689,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 290
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     shl-int/lit8 v0, v0, 0x10
@@ -821,8 +699,6 @@
 
     or-int/2addr v0, v1
 
-    .line 292
-    .local v0, "numeratorFlipped":I
     iget v1, p0, Landroid/util/Rational;->mDenominator:I
 
     xor-int/2addr v1, v0
@@ -833,19 +709,16 @@
 .method public intValue()I
     .locals 2
 
-    .line 384
     invoke-direct {p0}, Landroid/util/Rational;->isPosInf()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 385
     const v0, 0x7fffffff
 
     return v0
 
-    .line 386
     :cond_0
     invoke-direct {p0}, Landroid/util/Rational;->isNegInf()Z
 
@@ -853,12 +726,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 387
     const/high16 v0, -0x80000000
 
     return v0
 
-    .line 388
     :cond_1
     invoke-virtual {p0}, Landroid/util/Rational;->isNaN()Z
 
@@ -866,12 +737,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 389
     const/4 v0, 0x0
 
     return v0
 
-    .line 391
     :cond_2
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
@@ -885,7 +754,6 @@
 .method public isFinite()Z
     .locals 1
 
-    .line 186
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-eqz v0, :cond_0
@@ -904,7 +772,6 @@
 .method public isInfinite()Z
     .locals 1
 
-    .line 173
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
     if-eqz v0, :cond_0
@@ -927,7 +794,6 @@
 .method public isNaN()Z
     .locals 1
 
-    .line 161
     iget v0, p0, Landroid/util/Rational;->mDenominator:I
 
     if-nez v0, :cond_0
@@ -950,7 +816,6 @@
 .method public isZero()Z
     .locals 1
 
-    .line 198
     invoke-virtual {p0}, Landroid/util/Rational;->isFinite()Z
 
     move-result v0
@@ -975,19 +840,16 @@
 .method public longValue()J
     .locals 2
 
-    .line 418
     invoke-direct {p0}, Landroid/util/Rational;->isPosInf()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 419
     const-wide v0, 0x7fffffffffffffffL
 
     return-wide v0
 
-    .line 420
     :cond_0
     invoke-direct {p0}, Landroid/util/Rational;->isNegInf()Z
 
@@ -995,12 +857,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 421
     const-wide/high16 v0, -0x8000000000000000L
 
     return-wide v0
 
-    .line 422
     :cond_1
     invoke-virtual {p0}, Landroid/util/Rational;->isNaN()Z
 
@@ -1008,12 +868,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 423
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 425
     :cond_2
     iget v0, p0, Landroid/util/Rational;->mNumerator:I
 
@@ -1029,7 +887,6 @@
 .method public shortValue()S
     .locals 1
 
-    .line 440
     invoke-virtual {p0}, Landroid/util/Rational;->intValue()I
 
     move-result v0
@@ -1042,7 +899,6 @@
 .method public toFloat()F
     .locals 1
 
-    .line 281
     invoke-virtual {p0}, Landroid/util/Rational;->floatValue()F
 
     move-result v0
@@ -1053,19 +909,16 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 262
     invoke-virtual {p0}, Landroid/util/Rational;->isNaN()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 263
     const-string v0, "NaN"
 
     return-object v0
 
-    .line 264
     :cond_0
     invoke-direct {p0}, Landroid/util/Rational;->isPosInf()Z
 
@@ -1073,12 +926,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 265
     const-string v0, "Infinity"
 
     return-object v0
 
-    .line 266
     :cond_1
     invoke-direct {p0}, Landroid/util/Rational;->isNegInf()Z
 
@@ -1086,12 +937,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 267
     const-string v0, "-Infinity"
 
     return-object v0
 
-    .line 269
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 

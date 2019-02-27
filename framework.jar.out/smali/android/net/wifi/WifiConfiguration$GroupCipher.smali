@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 316
     const-string v0, "WEP40"
 
     const-string v1, "WEP104"
@@ -67,7 +66,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/PhoneStateListener;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/PhoneStateListener;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 346
     iput-object p1, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 352
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -49,7 +44,6 @@
 
     goto/16 :goto_0
 
-    .line 426
     :sswitch_0
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -61,7 +55,6 @@
 
     goto/16 :goto_0
 
-    .line 417
     :sswitch_1
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -71,10 +64,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onPhysicalChannelConfigurationChanged(Ljava/util/List;)V
 
-    .line 419
     goto/16 :goto_0
 
-    .line 408
     :sswitch_2
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -88,10 +79,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onUserMobileDataStateChanged(Z)V
 
-    .line 409
     goto/16 :goto_0
 
-    .line 405
     :sswitch_3
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -105,10 +94,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onDataActivationStateChanged(I)V
 
-    .line 406
     goto/16 :goto_0
 
-    .line 402
     :sswitch_4
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -122,10 +109,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onVoiceActivationStateChanged(I)V
 
-    .line 403
     goto/16 :goto_0
 
-    .line 414
     :sswitch_5
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -139,10 +124,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onCarrierNetworkChange(Z)V
 
-    .line 415
     goto/16 :goto_0
 
-    .line 411
     :sswitch_6
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -152,10 +135,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onOemHookRawEvent([B)V
 
-    .line 412
     goto/16 :goto_0
 
-    .line 399
     :sswitch_7
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -165,10 +146,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onVoLteServiceStateChanged(Landroid/telephony/VoLteServiceState;)V
 
-    .line 400
     goto/16 :goto_0
 
-    .line 395
     :sswitch_8
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -178,10 +157,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onDataConnectionRealTimeInfoChanged(Landroid/telephony/DataConnectionRealTimeInfo;)V
 
-    .line 397
     goto/16 :goto_0
 
-    .line 391
     :sswitch_9
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -191,10 +168,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onPreciseDataConnectionStateChanged(Landroid/telephony/PreciseDataConnectionState;)V
 
-    .line 393
     goto/16 :goto_0
 
-    .line 388
     :sswitch_a
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -204,10 +179,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onPreciseCallStateChanged(Landroid/telephony/PreciseCallState;)V
 
-    .line 389
     goto/16 :goto_0
 
-    .line 385
     :sswitch_b
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -217,10 +190,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onCellInfoChanged(Ljava/util/List;)V
 
-    .line 386
     goto/16 :goto_0
 
-    .line 382
     :sswitch_c
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -228,10 +199,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onOtaspChanged(I)V
 
-    .line 383
     goto/16 :goto_0
 
-    .line 379
     :sswitch_d
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -241,10 +210,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onSignalStrengthsChanged(Landroid/telephony/SignalStrength;)V
 
-    .line 380
     goto/16 :goto_0
 
-    .line 376
     :sswitch_e
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -252,10 +219,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onDataActivity(I)V
 
-    .line 377
     goto :goto_0
 
-    .line 372
     :sswitch_f
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -265,17 +230,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/PhoneStateListener;->onDataConnectionStateChanged(II)V
 
-    .line 373
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onDataConnectionStateChanged(I)V
 
-    .line 374
     goto :goto_0
 
-    .line 369
     :sswitch_10
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -287,10 +249,8 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/PhoneStateListener;->onCallStateChanged(ILjava/lang/String;)V
 
-    .line 370
     goto :goto_0
 
-    .line 366
     :sswitch_11
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -300,10 +260,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onCellLocationChanged(Landroid/telephony/CellLocation;)V
 
-    .line 367
     goto :goto_0
 
-    .line 363
     :sswitch_12
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -318,10 +276,8 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onCallForwardingIndicatorChanged(Z)V
 
-    .line 364
     goto :goto_0
 
-    .line 360
     :sswitch_13
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -336,10 +292,8 @@
     :cond_1
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onMessageWaitingIndicatorChanged(Z)V
 
-    .line 361
     goto :goto_0
 
-    .line 357
     :sswitch_14
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -347,10 +301,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onSignalStrengthChanged(I)V
 
-    .line 358
     goto :goto_0
 
-    .line 354
     :sswitch_15
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -360,10 +312,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onServiceStateChanged(Landroid/telephony/ServiceState;)V
 
-    .line 355
     goto :goto_0
 
-    .line 423
     :sswitch_16
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$1;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -373,10 +323,8 @@
 
     invoke-virtual {v0, v1}, Landroid/telephony/PhoneStateListener;->onImsCapabilityStatusChange([Z)V
 
-    .line 424
     nop
 
-    .line 431
     :goto_0
     return-void
 

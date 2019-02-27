@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/rtt/WifiRttManager;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/wifi/rtt/WifiRttManager;
 
-    .line 150
     iput-object p1, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->this$0:Landroid/net/wifi/rtt/WifiRttManager;
 
     iput-object p2, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->val$executor:Ljava/util/concurrent/Executor;
@@ -41,10 +39,7 @@
 
 .method static synthetic lambda$onRangingFailure$0(Landroid/net/wifi/rtt/RangingResultCallback;I)V
     .locals 0
-    .param p0, "callback"    # Landroid/net/wifi/rtt/RangingResultCallback;
-    .param p1, "status"    # I
 
-    .line 154
     invoke-virtual {p0, p1}, Landroid/net/wifi/rtt/RangingResultCallback;->onRangingFailure(I)V
 
     return-void
@@ -52,10 +47,7 @@
 
 .method static synthetic lambda$onRangingResults$1(Landroid/net/wifi/rtt/RangingResultCallback;Ljava/util/List;)V
     .locals 0
-    .param p0, "callback"    # Landroid/net/wifi/rtt/RangingResultCallback;
-    .param p1, "results"    # Ljava/util/List;
 
-    .line 161
     invoke-virtual {p0, p1}, Landroid/net/wifi/rtt/RangingResultCallback;->onRangingResults(Ljava/util/List;)V
 
     return-void
@@ -65,17 +57,14 @@
 # virtual methods
 .method public onRangingFailure(I)V
     .locals 3
-    .param p1, "status"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 153
     invoke-static {}, Landroid/net/wifi/rtt/WifiRttManager$1;->clearCallingIdentity()J
 
-    .line 154
     iget-object v0, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->val$callback:Landroid/net/wifi/rtt/RangingResultCallback;
@@ -86,7 +75,6 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 155
     return-void
 .end method
 
@@ -107,11 +95,8 @@
         }
     .end annotation
 
-    .line 160
-    .local p1, "results":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/rtt/RangingResult;>;"
     invoke-static {}, Landroid/net/wifi/rtt/WifiRttManager$1;->clearCallingIdentity()J
 
-    .line 161
     iget-object v0, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/net/wifi/rtt/WifiRttManager$1;->val$callback:Landroid/net/wifi/rtt/RangingResultCallback;
@@ -122,6 +107,5 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 162
     return-void
 .end method

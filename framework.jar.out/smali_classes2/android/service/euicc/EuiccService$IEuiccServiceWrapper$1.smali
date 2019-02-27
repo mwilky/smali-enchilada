@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;ILandroid/telephony/euicc/DownloadableSubscription;ZZLandroid/service/euicc/IDownloadSubscriptionCallback;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
-    .line 406
     iput-object p1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$1;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iput p2, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$1;->val$slotId:I
@@ -59,7 +57,6 @@
 .method public run()V
     .locals 5
 
-    .line 409
     iget-object v0, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$1;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iget-object v0, v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;->this$0:Landroid/service/euicc/EuiccService;
@@ -76,8 +73,6 @@
 
     move-result v0
 
-    .line 412
-    .local v0, "result":I
     :try_start_0
     iget-object v1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$1;->val$callback:Landroid/service/euicc/IDownloadSubscriptionCallback;
 
@@ -85,14 +80,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 415
     goto :goto_0
 
-    .line 413
     :catch_0
     move-exception v1
 
-    .line 416
     :goto_0
     return-void
 .end method

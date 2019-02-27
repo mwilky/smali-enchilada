@@ -20,12 +20,7 @@
 # direct methods
 .method protected constructor <init>(IILandroid/net/wifi/p2p/WifiP2pDevice;[B)V
     .locals 6
-    .param p1, "status"    # I
-    .param p2, "transId"    # I
-    .param p3, "dev"    # Landroid/net/wifi/p2p/WifiP2pDevice;
-    .param p4, "data"    # [B
 
-    .line 82
     const/4 v1, 0x2
 
     move-object v0, p0
@@ -40,17 +35,14 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;-><init>(IIILandroid/net/wifi/p2p/WifiP2pDevice;[B)V
 
-    .line 84
     invoke-direct {p0}, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->parse()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 87
     return-void
 
-    .line 85
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -63,24 +55,17 @@
 
 .method static newInstance(IILandroid/net/wifi/p2p/WifiP2pDevice;[B)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
     .locals 2
-    .param p0, "status"    # I
-    .param p1, "transId"    # I
-    .param p2, "device"    # Landroid/net/wifi/p2p/WifiP2pDevice;
-    .param p3, "data"    # [B
 
-    .line 148
     const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
-    .line 149
     new-instance v1, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
 
     invoke-direct {v1, p0, p1, p2, v0}, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;-><init>(IILandroid/net/wifi/p2p/WifiP2pDevice;[B)V
 
     return-object v1
 
-    .line 153
     :cond_0
     :try_start_0
     new-instance v1, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
@@ -91,33 +76,25 @@
 
     return-object v1
 
-    .line 154
     :catch_0
     move-exception v1
 
-    .line 155
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
     invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    .line 157
-    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     return-object v0
 .end method
 
 .method private parse()Z
     .locals 6
 
-    .line 101
     iget-object v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 103
     return v1
 
-    .line 106
     :cond_0
     iget-object v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
@@ -127,10 +104,8 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 107
     return v2
 
-    .line 110
     :cond_1
     iget-object v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
@@ -140,7 +115,6 @@
 
     iput v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mVersion:I
 
-    .line 111
     new-instance v0, Ljava/lang/String;
 
     iget-object v3, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
@@ -159,15 +133,12 @@
 
     move-result-object v0
 
-    .line 112
-    .local v0, "names":[Ljava/lang/String;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mUniqueServiceNames:Ljava/util/List;
 
-    .line 113
     array-length v3, v0
 
     :goto_0
@@ -175,19 +146,14 @@
 
     aget-object v4, v0, v2
 
-    .line 114
-    .local v4, "name":Ljava/lang/String;
     iget-object v5, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mUniqueServiceNames:Ljava/util/List;
 
     invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 113
-    .end local v4    # "name":Ljava/lang/String;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 116
     :cond_2
     return v1
 .end method
@@ -205,7 +171,6 @@
         }
     .end annotation
 
-    .line 69
     iget-object v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mUniqueServiceNames:Ljava/util/List;
 
     return-object v0
@@ -214,7 +179,6 @@
 .method public getVersion()I
     .locals 1
 
-    .line 51
     iget v0, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mVersion:I
 
     return v0
@@ -223,13 +187,10 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 121
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 122
-    .local v0, "sbuf":Ljava/lang/StringBuffer;
     const-string/jumbo v1, "serviceType:UPnP("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -242,7 +203,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 123
     const-string v1, " status:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -255,7 +215,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 124
     const-string v1, " srcAddr:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -266,7 +225,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 125
     const-string v1, " version:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -293,12 +251,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 126
     iget-object v1, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mUniqueServiceNames:Ljava/util/List;
 
     if-eqz v1, :cond_0
 
-    .line 127
     iget-object v1, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mUniqueServiceNames:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -318,19 +274,14 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 128
-    .local v2, "name":Ljava/lang/String;
     const-string v3, " usn:"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 129
-    .end local v2    # "name":Ljava/lang/String;
     goto :goto_0
 
-    .line 131
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

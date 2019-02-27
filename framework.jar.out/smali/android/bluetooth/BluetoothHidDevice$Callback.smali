@@ -22,7 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,10 +31,7 @@
 # virtual methods
 .method public onAppStatusChanged(Landroid/bluetooth/BluetoothDevice;Z)V
     .locals 3
-    .param p1, "pluggedDevice"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "registered"    # Z
 
-    .line 242
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -60,16 +56,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 248
     return-void
 .end method
 
 .method public onConnectionStateChanged(Landroid/bluetooth/BluetoothDevice;I)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "state"    # I
 
-    .line 260
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,18 +86,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
     return-void
 .end method
 
 .method public onGetReport(Landroid/bluetooth/BluetoothDevice;BBI)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "type"    # B
-    .param p3, "id"    # B
-    .param p4, "bufferSize"    # I
 
-    .line 274
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -142,17 +128,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
     return-void
 .end method
 
 .method public onInterruptData(Landroid/bluetooth/BluetoothDevice;B[B)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "reportId"    # B
-    .param p3, "data"    # [B
 
-    .line 318
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -177,16 +158,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
     return-void
 .end method
 
 .method public onSetProtocol(Landroid/bluetooth/BluetoothDevice;B)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "protocol"    # B
 
-    .line 307
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -211,18 +188,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 308
     return-void
 .end method
 
 .method public onSetReport(Landroid/bluetooth/BluetoothDevice;BB[B)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "type"    # B
-    .param p3, "id"    # B
-    .param p4, "data"    # [B
 
-    .line 296
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -253,15 +224,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     return-void
 .end method
 
 .method public onVirtualCableUnplug(Landroid/bluetooth/BluetoothDevice;)V
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 326
     const-string v0, "BluetoothHidDevCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -280,6 +248,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
     return-void
 .end method

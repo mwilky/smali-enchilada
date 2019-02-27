@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/vibrator/V1_2/IVibrator$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/vibrator/V1_2/IVibrator$Stub;
 
-    .line 637
     iput-object p1, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->this$0:Landroid/hardware/vibrator/V1_2/IVibrator$Stub;
 
     iput-object p2, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,31 +40,24 @@
 # virtual methods
 .method public onValues(II)V
     .locals 2
-    .param p1, "status"    # I
-    .param p2, "lengthMs"    # I
 
-    .line 640
     iget-object v0, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 641
     iget-object v0, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 642
     iget-object v0, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p2}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 643
     iget-object v0, p0, Landroid/hardware/vibrator/V1_2/IVibrator$Stub$3;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 644
     return-void
 .end method

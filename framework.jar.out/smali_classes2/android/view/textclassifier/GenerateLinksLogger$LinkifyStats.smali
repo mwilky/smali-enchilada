@@ -24,7 +24,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,9 +31,7 @@
 
 .method synthetic constructor <init>(Landroid/view/textclassifier/GenerateLinksLogger$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/view/textclassifier/GenerateLinksLogger$1;
 
-    .line 152
     invoke-direct {p0}, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;-><init>()V
 
     return-void
@@ -44,16 +41,13 @@
 # virtual methods
 .method countLink(Landroid/view/textclassifier/TextLinks$TextLink;)V
     .locals 3
-    .param p1, "link"    # Landroid/view/textclassifier/TextLinks$TextLink;
 
-    .line 157
     iget v0, p0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinks:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinks:I
 
-    .line 158
     iget v0, p0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinksTextLength:I
 
     invoke-virtual {p1}, Landroid/view/textclassifier/TextLinks$TextLink;->getEnd()I
@@ -70,6 +64,5 @@
 
     iput v0, p0, Landroid/view/textclassifier/GenerateLinksLogger$LinkifyStats;->mNumLinksTextLength:I
 
-    .line 159
     return-void
 .end method

@@ -28,24 +28,19 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 52
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/filterpacks/imageproc/SimpleImageFilter;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 33
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/filterpacks/imageproc/ToGrayFilter;->mInvertSource:Z
 
-    .line 36
     const/16 v0, 0x280
 
     iput v0, p0, Landroid/filterpacks/imageproc/ToGrayFilter;->mTileSize:I
 
-    .line 53
     return-void
 .end method
 
@@ -53,9 +48,7 @@
 # virtual methods
 .method protected getNativeProgram(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/Program;
     .locals 2
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 64
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Native toGray not implemented yet!"
@@ -67,9 +60,7 @@
 
 .method protected getShaderProgram(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/Program;
     .locals 5
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 69
     const-string v0, "image"
 
     invoke-virtual {p0, v0}, Landroid/filterpacks/imageproc/ToGrayFilter;->getInputFormat(Ljava/lang/String;)Landroid/filterfw/core/FrameFormat;
@@ -80,31 +71,24 @@
 
     move-result v0
 
-    .line 70
-    .local v0, "inputChannels":I
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_1
 
-    .line 74
     new-instance v1, Landroid/filterfw/core/ShaderProgram;
 
     const-string/jumbo v2, "precision mediump float;\nuniform sampler2D tex_sampler_0;\nvarying vec2 v_texcoord;\nvoid main() {\n  vec4 color = texture2D(tex_sampler_0, v_texcoord);\n  float y = dot(color, vec4(0.299, 0.587, 0.114, 0));\n  gl_FragColor = vec4(y, y, y, color.a);\n}\n"
 
     invoke-direct {v1, p1, v2}, Landroid/filterfw/core/ShaderProgram;-><init>(Landroid/filterfw/core/FilterContext;Ljava/lang/String;)V
 
-    .line 75
-    .local v1, "program":Landroid/filterfw/core/ShaderProgram;
     iget v2, p0, Landroid/filterpacks/imageproc/ToGrayFilter;->mTileSize:I
 
     invoke-virtual {v1, v2}, Landroid/filterfw/core/ShaderProgram;->setMaximumTileSize(I)V
 
-    .line 76
     iget-boolean v2, p0, Landroid/filterpacks/imageproc/ToGrayFilter;->mInvertSource:Z
 
     if-eqz v2, :cond_0
 
-    .line 77
     const/4 v2, 0x0
 
     const/high16 v3, -0x40800000    # -1.0f
@@ -113,12 +97,9 @@
 
     invoke-virtual {v1, v2, v4, v4, v3}, Landroid/filterfw/core/ShaderProgram;->setSourceRect(FFFF)V
 
-    .line 78
     :cond_0
     return-object v1
 
-    .line 71
-    .end local v1    # "program":Landroid/filterfw/core/ShaderProgram;
     :cond_1
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -148,7 +129,6 @@
 .method public setupPorts()V
     .locals 2
 
-    .line 57
     const-string v0, "image"
 
     const/4 v1, 0x3
@@ -159,13 +139,11 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/ToGrayFilter;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
-    .line 59
     const-string v0, "image"
 
     const-string v1, "image"
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/ToGrayFilter;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 60
     return-void
 .end method

@@ -17,9 +17,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;)V
     .locals 1
-    .param p1, "layoutManager"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
-    .line 349
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/OrientationHelper;-><init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;Lcom/android/internal/widget/OrientationHelper$1;)V
@@ -31,20 +29,15 @@
 # virtual methods
 .method public getDecoratedEnd(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 388
     nop
 
-    .line 389
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/RecyclerView$LayoutParams;
 
-    .line 390
-    .local v0, "params":Lcom/android/internal/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getDecoratedBottom(Landroid/view/View;)I
@@ -60,20 +53,15 @@
 
 .method public getDecoratedMeasurement(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 372
     nop
 
-    .line 373
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/RecyclerView$LayoutParams;
 
-    .line 374
-    .local v0, "params":Lcom/android/internal/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getDecoratedMeasuredHeight(Landroid/view/View;)I
@@ -93,20 +81,15 @@
 
 .method public getDecoratedMeasurementInOther(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 380
     nop
 
-    .line 381
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/RecyclerView$LayoutParams;
 
-    .line 382
-    .local v0, "params":Lcom/android/internal/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getDecoratedMeasuredWidth(Landroid/view/View;)I
@@ -126,20 +109,15 @@
 
 .method public getDecoratedStart(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 395
     nop
 
-    .line 396
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/RecyclerView$LayoutParams;
 
-    .line 397
-    .local v0, "params":Lcom/android/internal/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getDecoratedTop(Landroid/view/View;)I
@@ -156,7 +134,6 @@
 .method public getEnd()I
     .locals 1
 
-    .line 357
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getHeight()I
@@ -169,7 +146,6 @@
 .method public getEndAfterPadding()I
     .locals 2
 
-    .line 352
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getHeight()I
@@ -190,7 +166,6 @@
 .method public getEndPadding()I
     .locals 1
 
-    .line 425
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getPaddingBottom()I
@@ -203,7 +178,6 @@
 .method public getMode()I
     .locals 1
 
-    .line 430
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getHeightMode()I
@@ -216,7 +190,6 @@
 .method public getModeInOther()I
     .locals 1
 
-    .line 435
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getWidthMode()I
@@ -229,7 +202,6 @@
 .method public getStartAfterPadding()I
     .locals 1
 
-    .line 367
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getPaddingTop()I
@@ -242,7 +214,6 @@
 .method public getTotalSpace()I
     .locals 2
 
-    .line 414
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getHeight()I
@@ -259,22 +230,18 @@
 
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
-    .line 415
     invoke-virtual {v1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getPaddingBottom()I
 
     move-result v1
 
     sub-int/2addr v0, v1
 
-    .line 414
     return v0
 .end method
 
 .method public getTransformedEndWithDecoration(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 402
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
@@ -283,7 +250,6 @@
 
     invoke-virtual {v0, p1, v2, v1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
-    .line 403
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
@@ -293,9 +259,7 @@
 
 .method public getTransformedStartWithDecoration(Landroid/view/View;)I
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 408
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     iget-object v1, p0, Lcom/android/internal/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
@@ -304,7 +268,6 @@
 
     invoke-virtual {v0, p1, v2, v1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
-    .line 409
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mTmpRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -314,25 +277,18 @@
 
 .method public offsetChild(Landroid/view/View;I)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "offset"    # I
 
-    .line 420
     invoke-virtual {p1, p2}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 421
     return-void
 .end method
 
 .method public offsetChildren(I)V
     .locals 1
-    .param p1, "amount"    # I
 
-    .line 362
     iget-object v0, p0, Lcom/android/internal/widget/OrientationHelper$2;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/RecyclerView$LayoutManager;->offsetChildrenVertical(I)V
 
-    .line 363
     return-void
 .end method

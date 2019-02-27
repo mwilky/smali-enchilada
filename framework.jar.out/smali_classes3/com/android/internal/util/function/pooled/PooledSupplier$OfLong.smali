@@ -22,7 +22,6 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledLambda;
     .locals 1
 
-    .line 49
     invoke-interface {p0}, Lcom/android/internal/util/function/pooled/PooledSupplier$OfLong;->recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier$OfLong;
 
     move-result-object v0

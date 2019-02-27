@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/internal/app/IntentForwarderActivity;)V
     .locals 0
 
-    .line 236
     iput-object p1, p0, Lcom/android/internal/app/IntentForwarderActivity$InjectorImpl;->this$0:Lcom/android/internal/app/IntentForwarderActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/app/IntentForwarderActivity;Lcom/android/internal/app/IntentForwarderActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/app/IntentForwarderActivity;
-    .param p2, "x1"    # Lcom/android/internal/app/IntentForwarderActivity$1;
 
-    .line 236
     invoke-direct {p0, p1}, Lcom/android/internal/app/IntentForwarderActivity$InjectorImpl;-><init>(Lcom/android/internal/app/IntentForwarderActivity;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public getIPackageManager()Landroid/content/pm/IPackageManager;
     .locals 1
 
-    .line 240
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
@@ -60,7 +55,6 @@
 .method public getPackageManager()Landroid/content/pm/PackageManager;
     .locals 1
 
-    .line 250
     iget-object v0, p0, Lcom/android/internal/app/IntentForwarderActivity$InjectorImpl;->this$0:Lcom/android/internal/app/IntentForwarderActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/IntentForwarderActivity;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -73,7 +67,6 @@
 .method public getUserManager()Landroid/os/UserManager;
     .locals 2
 
-    .line 245
     iget-object v0, p0, Lcom/android/internal/app/IntentForwarderActivity$InjectorImpl;->this$0:Lcom/android/internal/app/IntentForwarderActivity;
 
     const-class v1, Landroid/os/UserManager;

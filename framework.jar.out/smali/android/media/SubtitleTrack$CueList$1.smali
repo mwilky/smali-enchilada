@@ -39,9 +39,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/SubtitleTrack$CueList;JJ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/SubtitleTrack$CueList;
 
-    .line 458
     iput-object p1, p0, Landroid/media/SubtitleTrack$CueList$1;->this$0:Landroid/media/SubtitleTrack$CueList;
 
     iput-wide p2, p0, Landroid/media/SubtitleTrack$CueList$1;->val$lastTimeMs:J
@@ -68,7 +66,6 @@
         }
     .end annotation
 
-    .line 461
     iget-object v0, p0, Landroid/media/SubtitleTrack$CueList$1;->this$0:Landroid/media/SubtitleTrack$CueList;
 
     iget-boolean v0, v0, Landroid/media/SubtitleTrack$CueList;->DEBUG:Z
@@ -107,7 +104,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 463
     :cond_0
     :try_start_0
     new-instance v0, Landroid/media/SubtitleTrack$CueList$EntryIterator;
@@ -116,7 +112,6 @@
 
     iget-object v2, p0, Landroid/media/SubtitleTrack$CueList$1;->this$0:Landroid/media/SubtitleTrack$CueList;
 
-    .line 464
     invoke-static {v2}, Landroid/media/SubtitleTrack$CueList;->access$200(Landroid/media/SubtitleTrack$CueList;)Ljava/util/SortedMap;
 
     move-result-object v2
@@ -147,15 +142,11 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 463
     return-object v0
 
-    .line 465
     :catch_0
     move-exception v0
 
-    .line 466
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Landroid/media/SubtitleTrack$CueList$EntryIterator;
 
     iget-object v2, p0, Landroid/media/SubtitleTrack$CueList$1;->this$0:Landroid/media/SubtitleTrack$CueList;

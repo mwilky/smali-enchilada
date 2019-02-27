@@ -43,11 +43,7 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Path;JJ)V
     .locals 7
-    .param p1, "path"    # Landroid/graphics/Path;
-    .param p2, "startTime"    # J
-    .param p4, "duration"    # J
 
-    .line 229
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -60,29 +56,20 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/accessibilityservice/GestureDescription$StrokeDescription;-><init>(Landroid/graphics/Path;JJZ)V
 
-    .line 230
     return-void
 .end method
 
 .method public constructor <init>(Landroid/graphics/Path;JJZ)V
     .locals 7
-    .param p1, "path"    # Landroid/graphics/Path;
-    .param p2, "startTime"    # J
-    .param p4, "duration"    # J
-    .param p6, "willContinue"    # Z
 
-    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 215
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinuedStrokeId:I
 
-    .line 248
     iput-boolean p6, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinued:Z
 
-    .line 249
     const-wide/16 v0, 0x0
 
     cmp-long v2, p4, v0
@@ -105,7 +92,6 @@
 
     invoke-static {v2, v5}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 250
     cmp-long v0, p2, v0
 
     if-ltz v0, :cond_1
@@ -122,7 +108,6 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 251
     invoke-virtual {p1}, Landroid/graphics/Path;->isEmpty()Z
 
     move-result v0
@@ -133,16 +118,12 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 252
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    .line 253
-    .local v0, "bounds":Landroid/graphics/RectF;
     invoke-virtual {p1, v0, v4}, Landroid/graphics/Path;->computeBounds(Landroid/graphics/RectF;Z)V
 
-    .line 254
     iget v1, v0, Landroid/graphics/RectF;->bottom:F
 
     const/4 v2, 0x0
@@ -179,21 +160,18 @@
 
     invoke-static {v3, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 257
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1, p1}, Landroid/graphics/Path;-><init>(Landroid/graphics/Path;)V
 
     iput-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPath:Landroid/graphics/Path;
 
-    .line 258
     new-instance v1, Landroid/graphics/PathMeasure;
 
     invoke-direct {v1, p1, v4}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V
 
     iput-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
-    .line 259
     iget-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     invoke-virtual {v1}, Landroid/graphics/PathMeasure;->getLength()F
@@ -204,40 +182,30 @@
 
     if-nez v1, :cond_3
 
-    .line 261
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1, p1}, Landroid/graphics/Path;-><init>(Landroid/graphics/Path;)V
 
-    .line 262
-    .local v1, "tempPath":Landroid/graphics/Path;
     const/high16 v3, -0x40800000    # -1.0f
 
     invoke-virtual {v1, v3, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 263
     const/4 v3, 0x2
 
     new-array v3, v3, [F
 
     iput-object v3, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTapLocation:[F
 
-    .line 264
     new-instance v3, Landroid/graphics/PathMeasure;
 
     invoke-direct {v3, v1, v4}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V
 
-    .line 265
-    .local v3, "pathMeasure":Landroid/graphics/PathMeasure;
     iget-object v5, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTapLocation:[F
 
     const/4 v6, 0x0
 
     invoke-virtual {v3, v2, v5, v6}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
 
-    .line 267
-    .end local v1    # "tempPath":Landroid/graphics/Path;
-    .end local v3    # "pathMeasure":Landroid/graphics/PathMeasure;
     :cond_3
     iget-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
@@ -247,22 +215,18 @@
 
     if-nez v1, :cond_4
 
-    .line 274
     iget-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     iget-object v2, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPath:Landroid/graphics/Path;
 
     invoke-virtual {v1, v2, v4}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
 
-    .line 275
     iput-wide p2, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mStartTime:J
 
-    .line 276
     add-long v1, p2, p4
 
     iput-wide v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mEndTime:J
 
-    .line 277
     invoke-virtual {p0}, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->getLength()F
 
     move-result v1
@@ -273,7 +237,6 @@
 
     iput v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTimeToLengthConversion:F
 
-    .line 278
     sget v1, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->sIdCounter:I
 
     add-int/lit8 v2, v1, 0x1
@@ -282,10 +245,8 @@
 
     iput v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mId:I
 
-    .line 279
     return-void
 
-    .line 268
     :cond_4
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -300,17 +261,11 @@
 # virtual methods
 .method public continueStroke(Landroid/graphics/Path;JJZ)Landroid/accessibilityservice/GestureDescription$StrokeDescription;
     .locals 8
-    .param p1, "path"    # Landroid/graphics/Path;
-    .param p2, "startTime"    # J
-    .param p4, "duration"    # J
-    .param p6, "willContinue"    # Z
 
-    .line 335
     iget-boolean v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinued:Z
 
     if-eqz v0, :cond_0
 
-    .line 339
     new-instance v0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;
 
     move-object v1, v0
@@ -325,17 +280,12 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/accessibilityservice/GestureDescription$StrokeDescription;-><init>(Landroid/graphics/Path;JJZ)V
 
-    .line 341
-    .local v0, "strokeDescription":Landroid/accessibilityservice/GestureDescription$StrokeDescription;
     iget v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mId:I
 
     iput v1, v0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinuedStrokeId:I
 
-    .line 342
     return-object v0
 
-    .line 336
-    .end local v0    # "strokeDescription":Landroid/accessibilityservice/GestureDescription$StrokeDescription;
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -349,7 +299,6 @@
 .method public getContinuedStrokeId()I
     .locals 1
 
-    .line 361
     iget v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinuedStrokeId:I
 
     return v0
@@ -358,7 +307,6 @@
 .method public getDuration()J
     .locals 4
 
-    .line 305
     iget-wide v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mEndTime:J
 
     iget-wide v2, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mStartTime:J
@@ -371,7 +319,6 @@
 .method public getId()I
     .locals 1
 
-    .line 316
     iget v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mId:I
 
     return v0
@@ -380,7 +327,6 @@
 .method getLength()F
     .locals 1
 
-    .line 365
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F
@@ -393,7 +339,6 @@
 .method public getPath()Landroid/graphics/Path;
     .locals 2
 
-    .line 287
     new-instance v0, Landroid/graphics/Path;
 
     iget-object v1, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPath:Landroid/graphics/Path;
@@ -405,15 +350,11 @@
 
 .method getPosForTime(J[F)Z
     .locals 4
-    .param p1, "time"    # J
-    .param p3, "pos"    # [F
 
-    .line 370
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTapLocation:[F
 
     if-eqz v0, :cond_0
 
-    .line 371
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTapLocation:[F
 
     const/4 v1, 0x0
@@ -422,7 +363,6 @@
 
     aput v0, p3, v1
 
-    .line 372
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTapLocation:[F
 
     const/4 v1, 0x1
@@ -431,10 +371,8 @@
 
     aput v0, p3, v1
 
-    .line 373
     return v1
 
-    .line 375
     :cond_0
     iget-wide v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mEndTime:J
 
@@ -444,7 +382,6 @@
 
     if-nez v0, :cond_1
 
-    .line 377
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     invoke-virtual {p0}, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->getLength()F
@@ -457,7 +394,6 @@
 
     return v0
 
-    .line 379
     :cond_1
     iget v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mTimeToLengthConversion:F
 
@@ -469,8 +405,6 @@
 
     mul-float/2addr v0, v2
 
-    .line 380
-    .local v0, "length":F
     iget-object v2, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mPathMeasure:Landroid/graphics/PathMeasure;
 
     invoke-virtual {v2, v0, p3, v1}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
@@ -483,7 +417,6 @@
 .method public getStartTime()J
     .locals 2
 
-    .line 296
     iget-wide v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mStartTime:J
 
     return-wide v0
@@ -491,9 +424,7 @@
 
 .method hasPointForTime(J)Z
     .locals 2
-    .param p1, "time"    # J
 
-    .line 384
     iget-wide v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mStartTime:J
 
     cmp-long v0, p1, v0
@@ -520,7 +451,6 @@
 .method public willContinue()Z
     .locals 1
 
-    .line 351
     iget-boolean v0, p0, Landroid/accessibilityservice/GestureDescription$StrokeDescription;->mContinued:Z
 
     return v0

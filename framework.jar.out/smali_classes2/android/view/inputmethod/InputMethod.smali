@@ -36,24 +36,16 @@
 
 .method public dispatchStartInputWithToken(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;ZLandroid/os/IBinder;)V
     .locals 0
-    .param p1, "inputConnection"    # Landroid/view/inputmethod/InputConnection;
-    .param p2, "editorInfo"    # Landroid/view/inputmethod/EditorInfo;
-    .param p3, "restarting"    # Z
-    .param p4, "startInputToken"    # Landroid/os/IBinder;
 
-    .line 190
     if-eqz p3, :cond_0
 
-    .line 191
     invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputMethod;->restartInput(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V
 
     goto :goto_0
 
-    .line 193
     :cond_0
     invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputMethod;->startInput(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V
 
-    .line 195
     :goto_0
     return-void
 .end method

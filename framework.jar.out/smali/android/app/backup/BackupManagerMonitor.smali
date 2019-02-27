@@ -137,7 +137,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -147,8 +146,6 @@
 # virtual methods
 .method public onEvent(Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "event"    # Landroid/os/Bundle;
 
-    .line 199
     return-void
 .end method

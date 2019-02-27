@@ -17,9 +17,7 @@
 # virtual methods
 .method public isClippingEnablingAllowed(Landroid/view/View;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 99
     invoke-static {p1}, Lcom/android/internal/widget/MessagingPropertyAnimator;->isAnimatingTranslation(Landroid/view/View;)Z
 
     move-result v0
@@ -31,10 +29,7 @@
 
 .method public onClippingStateChanged(Landroid/view/View;Z)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "isClipping"    # Z
 
-    .line 106
     return-void
 .end method
 

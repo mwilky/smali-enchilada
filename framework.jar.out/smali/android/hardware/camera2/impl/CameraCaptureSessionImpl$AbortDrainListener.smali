@@ -25,7 +25,6 @@
 .method private constructor <init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)V
     .locals 0
 
-    .line 911
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$AbortDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
-    .param p2, "x1"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;
 
-    .line 911
     invoke-direct {p0, p1}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$AbortDrainListener;-><init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public onDrained()V
     .locals 2
 
-    .line 915
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$AbortDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$1000(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/impl/CameraDeviceImpl;
@@ -60,7 +55,6 @@
 
     monitor-enter v0
 
-    .line 927
     :try_start_0
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$AbortDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
@@ -70,12 +64,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 928
     monitor-exit v0
 
     return-void
 
-    .line 930
     :cond_0
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$AbortDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
@@ -85,13 +77,10 @@
 
     invoke-virtual {v1}, Landroid/hardware/camera2/utils/TaskSingleDrainer;->beginDrain()V
 
-    .line 931
     monitor-exit v0
 
-    .line 932
     return-void
 
-    .line 931
     :catchall_0
     move-exception v1
 

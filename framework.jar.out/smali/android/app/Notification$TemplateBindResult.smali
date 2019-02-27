@@ -22,7 +22,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 9962
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,9 +29,7 @@
 
 .method synthetic constructor <init>(Landroid/app/Notification$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/app/Notification$1;
 
-    .line 9962
     invoke-direct {p0}, Landroid/app/Notification$TemplateBindResult;-><init>()V
 
     return-void
@@ -43,7 +40,6 @@
 .method public getIconMarginEnd()I
     .locals 1
 
-    .line 9970
     iget v0, p0, Landroid/app/Notification$TemplateBindResult;->mIconMarginEnd:I
 
     return v0
@@ -51,11 +47,8 @@
 
 .method public setIconMarginEnd(I)V
     .locals 0
-    .param p1, "iconMarginEnd"    # I
 
-    .line 9974
     iput p1, p0, Landroid/app/Notification$TemplateBindResult;->mIconMarginEnd:I
 
-    .line 9975
     return-void
 .end method

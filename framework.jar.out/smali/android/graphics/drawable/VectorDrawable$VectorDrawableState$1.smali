@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
 
-    .line 939
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,9 +35,7 @@
 # virtual methods
 .method public get(Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;)Ljava/lang/Float;
     .locals 1
-    .param p1, "state"    # Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
-    .line 947
     invoke-virtual {p1}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->getAlpha()F
 
     move-result v0
@@ -54,7 +50,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 939
     check-cast p1, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState$1;->get(Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;)Ljava/lang/Float;
@@ -66,20 +61,15 @@
 
 .method public setValue(Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;F)V
     .locals 0
-    .param p1, "state"    # Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
-    .param p2, "value"    # F
 
-    .line 942
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;->setAlpha(F)Z
 
-    .line 943
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 939
     check-cast p1, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;
 
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/VectorDrawable$VectorDrawableState$1;->setValue(Landroid/graphics/drawable/VectorDrawable$VectorDrawableState;F)V

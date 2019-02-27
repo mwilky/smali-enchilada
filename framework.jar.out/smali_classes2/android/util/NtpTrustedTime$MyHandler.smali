@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/util/NtpTrustedTime;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "loop"    # Landroid/os/Looper;
 
-    .line 119
     iput-object p1, p0, Landroid/util/NtpTrustedTime$MyHandler;->this$0:Landroid/util/NtpTrustedTime;
 
-    .line 120
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 121
     return-void
 .end method
 
@@ -37,15 +33,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 125
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/net/Network;
 
-    .line 126
-    .local v0, "network":Landroid/net/Network;
     const-string v1, "NtpTrustedTime-OP"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -72,14 +64,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
     iget v1, p1, Landroid/os/Message;->what:I
 
     const/4 v2, 0x1
 
     if-eq v1, v2, :cond_0
 
-    .line 134
     const-string v1, "NtpTrustedTime-OP"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -102,16 +92,13 @@
 
     goto :goto_0
 
-    .line 130
     :cond_0
     iget-object v1, p0, Landroid/util/NtpTrustedTime$MyHandler;->this$0:Landroid/util/NtpTrustedTime;
 
     invoke-static {v1, v0}, Landroid/util/NtpTrustedTime;->access$000(Landroid/util/NtpTrustedTime;Landroid/net/Network;)Z
 
-    .line 131
     nop
 
-    .line 137
     :goto_0
     return-void
 .end method

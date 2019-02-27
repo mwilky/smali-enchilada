@@ -31,10 +31,7 @@
 # direct methods
 .method public constructor <init>(Landroid/print/PrintManager;Landroid/content/Context;)V
     .locals 1
-    .param p1, "printManager"    # Landroid/print/PrintManager;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 53
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -43,14 +40,12 @@
 
     invoke-direct {p0, v0}, Landroid/content/Loader;-><init>(Landroid/content/Context;)V
 
-    .line 54
     new-instance v0, Landroid/print/PrintServiceRecommendationsLoader$MyHandler;
 
     invoke-direct {v0, p0}, Landroid/print/PrintServiceRecommendationsLoader$MyHandler;-><init>(Landroid/print/PrintServiceRecommendationsLoader;)V
 
     iput-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mHandler:Landroid/os/Handler;
 
-    .line 55
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -59,15 +54,12 @@
 
     iput-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mPrintManager:Landroid/print/PrintManager;
 
-    .line 56
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/print/PrintServiceRecommendationsLoader;)V
     .locals 0
-    .param p0, "x0"    # Landroid/print/PrintServiceRecommendationsLoader;
 
-    .line 35
     invoke-direct {p0}, Landroid/print/PrintServiceRecommendationsLoader;->queueNewResult()V
 
     return-void
@@ -76,7 +68,6 @@
 .method private queueNewResult()V
     .locals 2
 
-    .line 67
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
@@ -85,8 +76,6 @@
 
     move-result-object v0
 
-    .line 68
-    .local v0, "m":Landroid/os/Message;
     iget-object v1, p0, Landroid/print/PrintServiceRecommendationsLoader;->mPrintManager:Landroid/print/PrintManager;
 
     invoke-virtual {v1}, Landroid/print/PrintManager;->getPrintServiceRecommendations()Ljava/util/List;
@@ -95,12 +84,10 @@
 
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 69
     iget-object v1, p0, Landroid/print/PrintServiceRecommendationsLoader;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 70
     return-void
 .end method
 
@@ -109,34 +96,28 @@
 .method protected onForceLoad()V
     .locals 0
 
-    .line 60
     invoke-direct {p0}, Landroid/print/PrintServiceRecommendationsLoader;->queueNewResult()V
 
-    .line 61
     return-void
 .end method
 
 .method protected onReset()V
     .locals 0
 
-    .line 99
     invoke-virtual {p0}, Landroid/print/PrintServiceRecommendationsLoader;->onStopLoading()V
 
-    .line 100
     return-void
 .end method
 
 .method protected onStartLoading()V
     .locals 3
 
-    .line 74
     new-instance v0, Landroid/print/PrintServiceRecommendationsLoader$1;
 
     invoke-direct {v0, p0}, Landroid/print/PrintServiceRecommendationsLoader$1;-><init>(Landroid/print/PrintServiceRecommendationsLoader;)V
 
     iput-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mListener:Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;
 
-    .line 81
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mPrintManager:Landroid/print/PrintManager;
 
     iget-object v1, p0, Landroid/print/PrintServiceRecommendationsLoader;->mListener:Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;
@@ -145,7 +126,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/print/PrintManager;->addPrintServiceRecommendationsChangeListener(Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;Landroid/os/Handler;)V
 
-    .line 84
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mPrintManager:Landroid/print/PrintManager;
 
     invoke-virtual {v0}, Landroid/print/PrintManager;->getPrintServiceRecommendations()Ljava/util/List;
@@ -154,31 +134,26 @@
 
     invoke-virtual {p0, v0}, Landroid/print/PrintServiceRecommendationsLoader;->deliverResult(Ljava/lang/Object;)V
 
-    .line 85
     return-void
 .end method
 
 .method protected onStopLoading()V
     .locals 2
 
-    .line 89
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mListener:Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;
 
     if-eqz v0, :cond_0
 
-    .line 90
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mPrintManager:Landroid/print/PrintManager;
 
     iget-object v1, p0, Landroid/print/PrintServiceRecommendationsLoader;->mListener:Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/print/PrintManager;->removePrintServiceRecommendationsChangeListener(Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;)V
 
-    .line 91
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mListener:Landroid/print/PrintManager$PrintServiceRecommendationsChangeListener;
 
-    .line 94
     :cond_0
     iget-object v0, p0, Landroid/print/PrintServiceRecommendationsLoader;->mHandler:Landroid/os/Handler;
 
@@ -186,6 +161,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 95
     return-void
 .end method

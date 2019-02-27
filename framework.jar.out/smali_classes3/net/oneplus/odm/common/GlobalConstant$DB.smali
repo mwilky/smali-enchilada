@@ -45,9 +45,7 @@
 # direct methods
 .method public constructor <init>(Lnet/oneplus/odm/common/GlobalConstant;)V
     .locals 0
-    .param p1, "this$0"    # Lnet/oneplus/odm/common/GlobalConstant;
 
-    .line 21
     iput-object p1, p0, Lnet/oneplus/odm/common/GlobalConstant$DB;->this$0:Lnet/oneplus/odm/common/GlobalConstant;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

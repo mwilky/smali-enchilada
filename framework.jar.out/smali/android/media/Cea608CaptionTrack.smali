@@ -12,16 +12,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/Cea608CCWidget;Landroid/media/MediaFormat;)V
     .locals 2
-    .param p1, "renderingWidget"    # Landroid/media/Cea608CCWidget;
-    .param p2, "format"    # Landroid/media/MediaFormat;
 
-    .line 86
     invoke-direct {p0, p2}, Landroid/media/SubtitleTrack;-><init>(Landroid/media/MediaFormat;)V
 
-    .line 88
     iput-object p1, p0, Landroid/media/Cea608CaptionTrack;->mRenderingWidget:Landroid/media/Cea608CCWidget;
 
-    .line 89
     new-instance v0, Landroid/media/Cea608CCParser;
 
     iget-object v1, p0, Landroid/media/Cea608CaptionTrack;->mRenderingWidget:Landroid/media/Cea608CCWidget;
@@ -30,7 +25,6 @@
 
     iput-object v0, p0, Landroid/media/Cea608CaptionTrack;->mCCParser:Landroid/media/Cea608CCParser;
 
-    .line 90
     return-void
 .end method
 
@@ -39,7 +33,6 @@
 .method public getRenderingWidget()Landroid/media/SubtitleTrack$RenderingWidget;
     .locals 1
 
-    .line 99
     iget-object v0, p0, Landroid/media/Cea608CaptionTrack;->mRenderingWidget:Landroid/media/Cea608CCWidget;
 
     return-object v0
@@ -47,16 +40,11 @@
 
 .method public onData([BZJ)V
     .locals 1
-    .param p1, "data"    # [B
-    .param p2, "eos"    # Z
-    .param p3, "runID"    # J
 
-    .line 94
     iget-object v0, p0, Landroid/media/Cea608CaptionTrack;->mCCParser:Landroid/media/Cea608CCParser;
 
     invoke-virtual {v0, p1}, Landroid/media/Cea608CCParser;->parse([B)V
 
-    .line 95
     return-void
 .end method
 
@@ -71,7 +59,5 @@
         }
     .end annotation
 
-    .line 105
-    .local p1, "activeCues":Ljava/util/Vector;, "Ljava/util/Vector<Landroid/media/SubtitleTrack$Cue;>;"
     return-void
 .end method

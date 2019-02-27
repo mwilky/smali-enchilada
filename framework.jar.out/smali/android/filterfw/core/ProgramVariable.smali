@@ -12,19 +12,13 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/core/Program;Ljava/lang/String;)V
     .locals 0
-    .param p1, "program"    # Landroid/filterfw/core/Program;
-    .param p2, "varName"    # Ljava/lang/String;
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     iput-object p1, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
-    .line 30
     iput-object p2, p0, Landroid/filterfw/core/ProgramVariable;->mVarName:Ljava/lang/String;
 
-    .line 31
     return-void
 .end method
 
@@ -33,7 +27,6 @@
 .method public getProgram()Landroid/filterfw/core/Program;
     .locals 1
 
-    .line 34
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
     return-object v0
@@ -42,12 +35,10 @@
 .method public getValue()Ljava/lang/Object;
     .locals 3
 
-    .line 50
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
     if-eqz v0, :cond_0
 
-    .line 54
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
     iget-object v1, p0, Landroid/filterfw/core/ProgramVariable;->mVarName:Ljava/lang/String;
@@ -58,7 +49,6 @@
 
     return-object v0
 
-    .line 51
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -90,7 +80,6 @@
 .method public getVariableName()Ljava/lang/String;
     .locals 1
 
-    .line 38
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mVarName:Ljava/lang/String;
 
     return-object v0
@@ -98,24 +87,19 @@
 
 .method public setValue(Ljava/lang/Object;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/Object;
 
-    .line 42
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
     if-eqz v0, :cond_0
 
-    .line 46
     iget-object v0, p0, Landroid/filterfw/core/ProgramVariable;->mProgram:Landroid/filterfw/core/Program;
 
     iget-object v1, p0, Landroid/filterfw/core/ProgramVariable;->mVarName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p1}, Landroid/filterfw/core/Program;->setHostValue(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 47
     return-void
 
-    .line 43
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 

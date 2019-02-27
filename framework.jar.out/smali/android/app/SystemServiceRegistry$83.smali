@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 926
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Lcom/oneplus/three_key/ThreeKeyManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 929
     new-instance v0, Lcom/oneplus/three_key/ThreeKeyManager;
 
     invoke-direct {v0, p1}, Lcom/oneplus/three_key/ThreeKeyManager;-><init>(Landroid/content/Context;)V
@@ -54,7 +51,6 @@
         }
     .end annotation
 
-    .line 926
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$83;->createService(Landroid/app/ContextImpl;)Lcom/oneplus/three_key/ThreeKeyManager;
 
     move-result-object p1

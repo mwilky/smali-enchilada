@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 35
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/util/FastPrintWriter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/util/FastPrintWriter$1;
 
-    .line 35
     invoke-direct {p0}, Lcom/android/internal/util/FastPrintWriter$DummyWriter;-><init>()V
 
     return-void
@@ -44,15 +41,12 @@
         }
     .end annotation
 
-    .line 38
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Shouldn\'t be here"
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    .line 40
-    .local v0, "ex":Ljava/lang/UnsupportedOperationException;
     throw v0
 .end method
 
@@ -64,27 +58,20 @@
         }
     .end annotation
 
-    .line 45
     invoke-virtual {p0}, Lcom/android/internal/util/FastPrintWriter$DummyWriter;->close()V
 
-    .line 46
     return-void
 .end method
 
 .method public write([CII)V
     .locals 0
-    .param p1, "buf"    # [C
-    .param p2, "offset"    # I
-    .param p3, "count"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 50
     invoke-virtual {p0}, Lcom/android/internal/util/FastPrintWriter$DummyWriter;->close()V
 
-    .line 51
     return-void
 .end method

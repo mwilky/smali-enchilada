@@ -24,15 +24,11 @@
 # direct methods
 .method constructor <init>(Landroid/os/HandlerThread;)V
     .locals 0
-    .param p1, "thread"    # Landroid/os/HandlerThread;
 
-    .line 1225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1226
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$HandlerThreadExecutor;->mThread:Landroid/os/HandlerThread;
 
-    .line 1227
     return-void
 .end method
 
@@ -40,9 +36,7 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 4
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 1231
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -61,12 +55,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1232
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 1234
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
@@ -80,7 +72,6 @@
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1236
     :goto_0
     return-void
 .end method

@@ -29,9 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/UidRecordProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/UidRecordProto;
 
-    .line 18
     iput-object p1, p0, Lcom/android/server/am/UidRecordProto$ProcStateSequence;->this$0:Lcom/android/server/am/UidRecordProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZZ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
-    .param p2, "mediaCallType"    # I
-    .param p3, "needToWaitForEventToComplete"    # Z
 
-    .line 491
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$9;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-boolean p4, p0, Landroid/media/MediaPlayer2Impl$9;->val$loop:Z
@@ -42,13 +38,11 @@
 .method process()V
     .locals 2
 
-    .line 495
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$9;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iget-boolean v1, p0, Landroid/media/MediaPlayer2Impl$9;->val$loop:Z
 
     invoke-static {v0, v1}, Landroid/media/MediaPlayer2Impl;->access$1400(Landroid/media/MediaPlayer2Impl;Z)V
 
-    .line 496
     return-void
 .end method

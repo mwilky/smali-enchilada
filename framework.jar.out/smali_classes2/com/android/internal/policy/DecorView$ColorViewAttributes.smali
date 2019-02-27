@@ -35,59 +35,31 @@
 # direct methods
 .method private constructor <init>(IIIIILjava/lang/String;II)V
     .locals 0
-    .param p1, "systemUiHideFlag"    # I
-    .param p2, "translucentFlag"    # I
-    .param p3, "verticalGravity"    # I
-    .param p4, "horizontalGravity"    # I
-    .param p5, "seascapeGravity"    # I
-    .param p6, "transitionName"    # Ljava/lang/String;
-    .param p7, "id"    # I
-    .param p8, "hideWindowFlag"    # I
 
-    .line 2371
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2372
     iput p7, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->id:I
 
-    .line 2373
     iput p1, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->systemUiHideFlag:I
 
-    .line 2374
     iput p2, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->translucentFlag:I
 
-    .line 2375
     iput p3, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->verticalGravity:I
 
-    .line 2376
     iput p4, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->horizontalGravity:I
 
-    .line 2377
     iput p5, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->seascapeGravity:I
 
-    .line 2378
     iput-object p6, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->transitionName:Ljava/lang/String;
 
-    .line 2379
     iput p8, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->hideWindowFlag:I
 
-    .line 2380
     return-void
 .end method
 
 .method synthetic constructor <init>(IIIIILjava/lang/String;IILcom/android/internal/policy/DecorView$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
-    .param p6, "x5"    # Ljava/lang/String;
-    .param p7, "x6"    # I
-    .param p8, "x7"    # I
-    .param p9, "x8"    # Lcom/android/internal/policy/DecorView$1;
 
-    .line 2358
     invoke-direct/range {p0 .. p8}, Lcom/android/internal/policy/DecorView$ColorViewAttributes;-><init>(IIIIILjava/lang/String;II)V
 
     return-void
@@ -97,11 +69,7 @@
 # virtual methods
 .method public isPresent(IIZ)Z
     .locals 1
-    .param p1, "sysUiVis"    # I
-    .param p2, "windowFlags"    # I
-    .param p3, "force"    # Z
 
-    .line 2383
     iget v0, p0, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->systemUiHideFlag:I
 
     and-int/2addr v0, p1
@@ -136,18 +104,11 @@
 
 .method public isVisible(IIIZ)Z
     .locals 2
-    .param p1, "sysUiVis"    # I
-    .param p2, "color"    # I
-    .param p3, "windowFlags"    # I
-    .param p4, "force"    # Z
 
-    .line 2396
     invoke-virtual {p0, p1, p3, p4}, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->isPresent(IIZ)Z
 
     move-result v0
 
-    .line 2397
-    .local v0, "present":Z
     invoke-virtual {p0, v0, p2, p3, p4}, Lcom/android/internal/policy/DecorView$ColorViewAttributes;->isVisible(ZIIZ)Z
 
     move-result v1
@@ -157,12 +118,7 @@
 
 .method public isVisible(ZIIZ)Z
     .locals 1
-    .param p1, "present"    # Z
-    .param p2, "color"    # I
-    .param p3, "windowFlags"    # I
-    .param p4, "force"    # Z
 
-    .line 2390
     if-eqz p1, :cond_1
 
     const/high16 v0, -0x1000000

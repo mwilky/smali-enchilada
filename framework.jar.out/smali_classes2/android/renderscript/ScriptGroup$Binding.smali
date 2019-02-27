@@ -23,19 +23,13 @@
 # direct methods
 .method public constructor <init>(Landroid/renderscript/Script$FieldID;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "field"    # Landroid/renderscript/Script$FieldID;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 870
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 871
     iput-object p1, p0, Landroid/renderscript/ScriptGroup$Binding;->mField:Landroid/renderscript/Script$FieldID;
 
-    .line 872
     iput-object p2, p0, Landroid/renderscript/ScriptGroup$Binding;->mValue:Ljava/lang/Object;
 
-    .line 873
     return-void
 .end method
 
@@ -44,7 +38,6 @@
 .method getField()Landroid/renderscript/Script$FieldID;
     .locals 1
 
-    .line 879
     iget-object v0, p0, Landroid/renderscript/ScriptGroup$Binding;->mField:Landroid/renderscript/Script$FieldID;
 
     return-object v0
@@ -53,7 +46,6 @@
 .method getValue()Ljava/lang/Object;
     .locals 1
 
-    .line 885
     iget-object v0, p0, Landroid/renderscript/ScriptGroup$Binding;->mValue:Ljava/lang/Object;
 
     return-object v0

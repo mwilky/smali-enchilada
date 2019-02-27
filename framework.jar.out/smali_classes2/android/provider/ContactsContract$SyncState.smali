@@ -27,26 +27,22 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 706
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "syncstate"
 
-    .line 707
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 706
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 698
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,15 +50,12 @@
 
 .method public static get(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)[B
     .locals 1
-    .param p0, "provider"    # Landroid/content/ContentProviderClient;
-    .param p1, "account"    # Landroid/accounts/Account;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 714
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1}, Landroid/provider/SyncStateContract$Helpers;->get(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B
@@ -74,8 +67,6 @@
 
 .method public static getWithUri(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;
     .locals 1
-    .param p0, "provider"    # Landroid/content/ContentProviderClient;
-    .param p1, "account"    # Landroid/accounts/Account;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +85,6 @@
         }
     .end annotation
 
-    .line 722
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1}, Landroid/provider/SyncStateContract$Helpers;->getWithUri(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)Landroid/util/Pair;
@@ -106,10 +96,7 @@
 
 .method public static newSetOperation(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;
     .locals 1
-    .param p0, "account"    # Landroid/accounts/Account;
-    .param p1, "data"    # [B
 
-    .line 737
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0, p1}, Landroid/provider/SyncStateContract$Helpers;->newSetOperation(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;
@@ -121,20 +108,15 @@
 
 .method public static set(Landroid/content/ContentProviderClient;Landroid/accounts/Account;[B)V
     .locals 1
-    .param p0, "provider"    # Landroid/content/ContentProviderClient;
-    .param p1, "account"    # Landroid/accounts/Account;
-    .param p2, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 730
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1, p2}, Landroid/provider/SyncStateContract$Helpers;->set(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)V
 
-    .line 731
     return-void
 .end method

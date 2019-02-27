@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/RequestThreadManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/camera2/legacy/RequestThreadManager;
 
-    .line 187
     iput-object p1, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,9 @@
 # virtual methods
 .method public onError(ILandroid/hardware/Camera;)V
     .locals 3
-    .param p1, "i"    # I
-    .param p2, "camera"    # Landroid/hardware/Camera;
 
-    .line 190
     packed-switch p1, :pswitch_data_0
 
-    .line 202
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$100(Landroid/hardware/camera2/legacy/RequestThreadManager;)Ljava/lang/String;
@@ -71,7 +65,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$000(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CameraDeviceState;
@@ -84,13 +77,11 @@
 
     goto :goto_0
 
-    .line 197
     :pswitch_0
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->flush()J
 
-    .line 198
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$000(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CameraDeviceState;
@@ -101,16 +92,13 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/legacy/CameraDeviceState;->setError(I)V
 
-    .line 200
     goto :goto_0
 
-    .line 192
     :pswitch_1
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->flush()J
 
-    .line 193
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$1;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$000(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CameraDeviceState;
@@ -121,10 +109,8 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/legacy/CameraDeviceState;->setError(I)V
 
-    .line 195
     nop
 
-    .line 207
     :goto_0
     return-void
 

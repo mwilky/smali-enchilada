@@ -30,37 +30,29 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/telecom/IVideoCallback;)V
     .locals 1
-    .param p1, "delegate"    # Lcom/android/internal/telecom/IVideoCallback;
 
-    .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     new-instance v0, Landroid/telecom/VideoCallbackServant$1;
 
     invoke-direct {v0, p0}, Landroid/telecom/VideoCallbackServant$1;-><init>(Landroid/telecom/VideoCallbackServant;)V
 
     iput-object v0, p0, Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
 
-    .line 112
     new-instance v0, Landroid/telecom/VideoCallbackServant$2;
 
     invoke-direct {v0, p0}, Landroid/telecom/VideoCallbackServant$2;-><init>(Landroid/telecom/VideoCallbackServant;)V
 
     iput-object v0, p0, Landroid/telecom/VideoCallbackServant;->mStub:Lcom/android/internal/telecom/IVideoCallback;
 
-    .line 165
     iput-object p1, p0, Landroid/telecom/VideoCallbackServant;->mDelegate:Lcom/android/internal/telecom/IVideoCallback;
 
-    .line 166
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/telecom/VideoCallbackServant;)Lcom/android/internal/telecom/IVideoCallback;
     .locals 1
-    .param p0, "x0"    # Landroid/telecom/VideoCallbackServant;
 
-    .line 34
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant;->mDelegate:Lcom/android/internal/telecom/IVideoCallback;
 
     return-object v0
@@ -68,9 +60,7 @@
 
 .method static synthetic access$100(Landroid/telecom/VideoCallbackServant;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Landroid/telecom/VideoCallbackServant;
 
-    .line 34
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -81,7 +71,6 @@
 .method public getStub()Lcom/android/internal/telecom/IVideoCallback;
     .locals 1
 
-    .line 169
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant;->mStub:Lcom/android/internal/telecom/IVideoCallback;
 
     return-object v0

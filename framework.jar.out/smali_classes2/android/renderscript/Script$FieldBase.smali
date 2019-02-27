@@ -24,10 +24,8 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 505
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 506
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public getAllocation()Landroid/renderscript/Allocation;
     .locals 1
 
-    .line 517
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -45,7 +42,6 @@
 .method public getElement()Landroid/renderscript/Element;
     .locals 1
 
-    .line 509
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     return-object v0
@@ -54,7 +50,6 @@
 .method public getType()Landroid/renderscript/Type;
     .locals 1
 
-    .line 513
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
@@ -66,10 +61,7 @@
 
 .method protected init(Landroid/renderscript/RenderScript;I)V
     .locals 2
-    .param p1, "rs"    # Landroid/renderscript/RenderScript;
-    .param p2, "dimx"    # I
 
-    .line 495
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     const/4 v1, 0x1
@@ -80,37 +72,29 @@
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 497
     return-void
 .end method
 
 .method protected init(Landroid/renderscript/RenderScript;II)V
     .locals 2
-    .param p1, "rs"    # Landroid/renderscript/RenderScript;
-    .param p2, "dimx"    # I
-    .param p3, "usages"    # I
 
-    .line 500
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     const/4 v1, 0x1
 
     or-int/2addr v1, p3
 
-    .line 501
     invoke-static {p1, v0, p2, v1}, Landroid/renderscript/Allocation;->createSized(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 503
     return-void
 .end method
 
 .method public updateAllocation()V
     .locals 0
 
-    .line 522
     return-void
 .end method

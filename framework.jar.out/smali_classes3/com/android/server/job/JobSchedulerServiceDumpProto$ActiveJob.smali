@@ -34,9 +34,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/job/JobSchedulerServiceDumpProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/job/JobSchedulerServiceDumpProto;
 
-    .line 71
     iput-object p1, p0, Lcom/android/server/job/JobSchedulerServiceDumpProto$ActiveJob;->this$0:Lcom/android/server/job/JobSchedulerServiceDumpProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

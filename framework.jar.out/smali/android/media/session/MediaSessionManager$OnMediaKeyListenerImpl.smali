@@ -23,27 +23,19 @@
 # direct methods
 .method public constructor <init>(Landroid/media/session/MediaSessionManager$OnMediaKeyListener;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "listener"    # Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 1024
     invoke-direct {p0}, Landroid/media/session/IOnMediaKeyListener$Stub;-><init>()V
 
-    .line 1025
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
 
-    .line 1026
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->mHandler:Landroid/os/Handler;
 
-    .line 1027
     return-void
 .end method
 
 .method static synthetic access$1200(Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;)Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
     .locals 1
-    .param p0, "x0"    # Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;
 
-    .line 1020
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
 
     return-object v0
@@ -53,10 +45,7 @@
 # virtual methods
 .method public onMediaKey(Landroid/view/KeyEvent;Landroid/os/ResultReceiver;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/KeyEvent;
-    .param p2, "result"    # Landroid/os/ResultReceiver;
 
-    .line 1031
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnMediaKeyListener;
 
     if-eqz v0, :cond_1
@@ -67,7 +56,6 @@
 
     goto :goto_0
 
-    .line 1036
     :cond_0
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnMediaKeyListenerImpl;->mHandler:Landroid/os/Handler;
 
@@ -77,10 +65,8 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1048
     return-void
 
-    .line 1032
     :cond_1
     :goto_0
     const-string v0, "SessionManager"
@@ -89,6 +75,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1034
     return-void
 .end method

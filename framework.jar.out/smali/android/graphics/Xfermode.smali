@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 32
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 
     iget v0, v0, Landroid/graphics/PorterDuff$Mode;->nativeInt:I
@@ -28,10 +27,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     sget v0, Landroid/graphics/Xfermode;->DEFAULT:I
 
     iput v0, p0, Landroid/graphics/Xfermode;->porterDuffMode:I

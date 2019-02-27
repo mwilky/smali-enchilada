@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/trust/TrustManager;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/trust/TrustManager;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 223
     iput-object p1, p0, Landroid/app/trust/TrustManager$2;->this$0:Landroid/app/trust/TrustManager;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 226
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -49,7 +44,6 @@
 
     goto :goto_3
 
-    .line 235
     :pswitch_0
     invoke-virtual {p1}, Landroid/os/Message;->peekData()Landroid/os/Bundle;
 
@@ -61,19 +55,14 @@
 
     move-result-object v0
 
-    .line 236
-    .local v0, "message":Ljava/lang/CharSequence;
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/app/trust/TrustManager$TrustListener;
 
     invoke-interface {v1, v0}, Landroid/app/trust/TrustManager$TrustListener;->onTrustError(Ljava/lang/CharSequence;)V
 
-    .line 236
-    .end local v0    # "message":Ljava/lang/CharSequence;
     goto :goto_3
 
-    .line 232
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -93,10 +82,8 @@
 
     invoke-interface {v0, v1, v2}, Landroid/app/trust/TrustManager$TrustListener;->onTrustManagedChanged(ZI)V
 
-    .line 233
     goto :goto_3
 
-    .line 228
     :pswitch_2
     invoke-virtual {p1}, Landroid/os/Message;->peekData()Landroid/os/Bundle;
 
@@ -119,8 +106,6 @@
     :cond_1
     move v0, v2
 
-    .line 229
-    .local v0, "flags":I
     :goto_1
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -140,11 +125,8 @@
 
     invoke-interface {v3, v1, v2, v0}, Landroid/app/trust/TrustManager$TrustListener;->onTrustChanged(ZII)V
 
-    .line 230
     nop
 
-    .line 238
-    .end local v0    # "flags":I
     :goto_3
     return-void
 

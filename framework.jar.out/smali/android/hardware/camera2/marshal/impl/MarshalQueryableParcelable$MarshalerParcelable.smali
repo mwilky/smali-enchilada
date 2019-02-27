@@ -46,7 +46,6 @@
 # direct methods
 .method protected constructor <init>(Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable;Landroid/hardware/camera2/utils/TypeReference;I)V
     .locals 2
-    .param p3, "nativeType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,22 +54,16 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
-    .local p2, "typeReference":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<TT;>;"
     iput-object p1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->this$0:Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable;
 
-    .line 49
     invoke-direct {p0, p1, p2, p3}, Landroid/hardware/camera2/marshal/Marshaler;-><init>(Landroid/hardware/camera2/marshal/MarshalQueryable;Landroid/hardware/camera2/utils/TypeReference;I)V
 
-    .line 51
     invoke-virtual {p2}, Landroid/hardware/camera2/utils/TypeReference;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
     iput-object p1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->mClass:Ljava/lang/Class;
 
-    .line 54
     :try_start_0
     iget-object p1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->mClass:Ljava/lang/Class;
 
@@ -82,14 +75,10 @@
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 58
-    .local p1, "creatorField":Ljava/lang/reflect/Field;
     nop
 
-    .line 57
     nop
 
-    .line 61
     const/4 v0, 0x0
 
     :try_start_1
@@ -104,45 +93,31 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 68
     nop
 
-    .line 69
     return-void
 
-    .line 65
     :catch_0
     move-exception v0
 
-    .line 67
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
-    .line 62
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v0
 
-    .line 64
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
-    .line 55
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
-    .end local p1    # "creatorField":Ljava/lang/reflect/Field;
     :catch_2
     move-exception p1
 
-    .line 57
-    .local p1, "e":Ljava/lang/NoSuchFieldException;
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -160,21 +135,15 @@
         }
     .end annotation
 
-    .line 163
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
-    .local p1, "value":Landroid/os/Parcelable;, "TT;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 165
-    .local v0, "parcel":Landroid/os/Parcel;
     const/4 v1, 0x0
 
     :try_start_0
     invoke-interface {p1, v0, v1}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 166
     invoke-virtual {v0}, Landroid/os/Parcel;->marshall()[B
 
     move-result-object v1
@@ -183,18 +152,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 173
-    .local v1, "length":I
     nop
 
-    .line 175
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 173
     return v1
 
-    .line 175
-    .end local v1    # "length":I
     :catchall_0
     move-exception v1
 
@@ -206,8 +169,6 @@
 .method public bridge synthetic calculateMarshalSize(Ljava/lang/Object;)I
     .locals 0
 
-    .line 41
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
     check-cast p1, Landroid/os/Parcelable;
 
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->calculateMarshalSize(Landroid/os/Parcelable;)I
@@ -220,8 +181,6 @@
 .method public getNativeSize()I
     .locals 1
 
-    .line 158
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
     sget v0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->NATIVE_SIZE_DYNAMIC:I
 
     return v0
@@ -229,7 +188,6 @@
 
 .method public marshal(Landroid/os/Parcelable;Ljava/nio/ByteBuffer;)V
     .locals 5
-    .param p2, "buffer"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -238,56 +196,41 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
-    .local p1, "value":Landroid/os/Parcelable;, "TT;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 81
-    .local v0, "parcel":Landroid/os/Parcel;
     const/4 v1, 0x0
 
     :try_start_0
     invoke-interface {p1, v0, v1}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 83
     invoke-virtual {v0}, Landroid/os/Parcel;->hasFileDescriptors()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 88
     invoke-virtual {v0}, Landroid/os/Parcel;->marshall()[B
 
     move-result-object v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 91
-    .local v1, "parcelContents":[B
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 92
     nop
 
-    .line 91
     nop
 
-    .line 94
     array-length v2, v1
 
     if-eqz v2, :cond_0
 
-    .line 98
     invoke-virtual {p2, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 99
     return-void
 
-    .line 95
     :cond_0
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -309,8 +252,6 @@
 
     throw v2
 
-    .line 84
-    .end local v1    # "parcelContents":[B
     :cond_1
     :try_start_1
     new-instance v1, Ljava/lang/UnsupportedOperationException;
@@ -339,7 +280,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 91
     :catchall_0
     move-exception v1
 
@@ -351,8 +291,6 @@
 .method public bridge synthetic marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;)V
     .locals 0
 
-    .line 41
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
     check-cast p1, Landroid/os/Parcelable;
 
     invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->marshal(Landroid/os/Parcelable;Ljava/nio/ByteBuffer;)V
@@ -362,7 +300,6 @@
 
 .method public unmarshal(Ljava/nio/ByteBuffer;)Landroid/os/Parcelable;
     .locals 8
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -371,39 +308,27 @@
         }
     .end annotation
 
-    .line 122
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->mark()Ljava/nio/Buffer;
 
-    .line 124
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 126
-    .local v0, "parcel":Landroid/os/Parcel;
     :try_start_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
-    .line 128
-    .local v1, "maxLength":I
     new-array v2, v1, [B
 
-    .line 129
-    .local v2, "remaining":[B
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 131
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/Parcel;->unmarshall([BII)V
 
-    .line 132
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 134
     iget-object v3, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->mCreator:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -412,20 +337,14 @@
 
     check-cast v3, Landroid/os/Parcelable;
 
-    .line 135
-    .local v3, "value":Landroid/os/Parcelable;, "TT;"
     invoke-virtual {v0}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v4
 
-    .line 137
-    .local v4, "actualLength":I
     if-eqz v4, :cond_0
 
-    .line 142
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->reset()Ljava/nio/Buffer;
 
-    .line 143
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v5
@@ -434,7 +353,6 @@
 
     invoke-virtual {p1, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 150
     iget-object v5, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->mClass:Ljava/lang/Class;
 
     invoke-virtual {v5, v3}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
@@ -445,13 +363,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 152
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 150
     return-object v5
 
-    .line 138
     :cond_0
     :try_start_1
     new-instance v5, Ljava/lang/AssertionError;
@@ -476,11 +391,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 152
-    .end local v1    # "maxLength":I
-    .end local v2    # "remaining":[B
-    .end local v3    # "value":Landroid/os/Parcelable;, "TT;"
-    .end local v4    # "actualLength":I
     :catchall_0
     move-exception v1
 
@@ -492,8 +402,6 @@
 .method public bridge synthetic unmarshal(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
     .locals 0
 
-    .line 41
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable<TT;>.MarshalerParcelable;"
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableParcelable$MarshalerParcelable;->unmarshal(Ljava/nio/ByteBuffer;)Landroid/os/Parcelable;
 
     move-result-object p1

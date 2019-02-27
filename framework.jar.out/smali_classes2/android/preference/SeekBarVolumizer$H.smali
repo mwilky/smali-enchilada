@@ -26,7 +26,6 @@
 .method private constructor <init>(Landroid/preference/SeekBarVolumizer;)V
     .locals 0
 
-    .line 367
     iput-object p1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -36,10 +35,7 @@
 
 .method synthetic constructor <init>(Landroid/preference/SeekBarVolumizer;Landroid/preference/SeekBarVolumizer$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/preference/SeekBarVolumizer;
-    .param p2, "x1"    # Landroid/preference/SeekBarVolumizer$1;
 
-    .line 367
     invoke-direct {p0, p1}, Landroid/preference/SeekBarVolumizer$H;-><init>(Landroid/preference/SeekBarVolumizer;)V
 
     return-void
@@ -49,16 +45,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 372
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 373
     iget-object v0, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-static {v0}, Landroid/preference/SeekBarVolumizer;->access$200(Landroid/preference/SeekBarVolumizer;)Landroid/widget/SeekBar;
@@ -67,21 +60,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 374
     iget-object v0, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-static {v0, v1}, Landroid/preference/SeekBarVolumizer;->access$302(Landroid/preference/SeekBarVolumizer;I)I
 
-    .line 375
     iget-object v0, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     iget v1, p1, Landroid/os/Message;->arg2:I
 
     invoke-static {v0, v1}, Landroid/preference/SeekBarVolumizer;->access$402(Landroid/preference/SeekBarVolumizer;I)I
 
-    .line 376
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -90,8 +80,6 @@
 
     move-result v0
 
-    .line 377
-    .local v0, "muted":Z
     iget-object v1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-static {v1}, Landroid/preference/SeekBarVolumizer;->access$500(Landroid/preference/SeekBarVolumizer;)Z
@@ -100,12 +88,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 378
     iget-object v1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-static {v1, v0}, Landroid/preference/SeekBarVolumizer;->access$502(Landroid/preference/SeekBarVolumizer;Z)Z
 
-    .line 379
     iget-object v1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-static {v1}, Landroid/preference/SeekBarVolumizer;->access$600(Landroid/preference/SeekBarVolumizer;)Landroid/preference/SeekBarVolumizer$Callback;
@@ -114,7 +100,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 380
     iget-object v1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-static {v1}, Landroid/preference/SeekBarVolumizer;->access$600(Landroid/preference/SeekBarVolumizer;)Landroid/preference/SeekBarVolumizer$Callback;
@@ -135,25 +120,18 @@
 
     invoke-interface {v1, v2, v3}, Landroid/preference/SeekBarVolumizer$Callback;->onMuted(ZZ)V
 
-    .line 383
     :cond_0
     iget-object v1, p0, Landroid/preference/SeekBarVolumizer$H;->this$0:Landroid/preference/SeekBarVolumizer;
 
     invoke-virtual {v1}, Landroid/preference/SeekBarVolumizer;->updateSeekBar()V
 
-    .line 386
-    .end local v0    # "muted":Z
     :cond_1
     return-void
 .end method
 
 .method public postUpdateSlider(IIZ)V
     .locals 2
-    .param p1, "volume"    # I
-    .param p2, "lastAudibleVolume"    # I
-    .param p3, "mute"    # Z
 
-    .line 389
     new-instance v0, Ljava/lang/Boolean;
 
     invoke-direct {v0, p3}, Ljava/lang/Boolean;-><init>(Z)V
@@ -166,6 +144,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 390
     return-void
 .end method

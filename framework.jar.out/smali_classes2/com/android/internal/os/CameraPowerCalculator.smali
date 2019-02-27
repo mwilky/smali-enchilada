@@ -17,7 +17,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 33
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/android/internal/os/CameraPowerCalculator;->DEBUG_ONEPLUS:Z
@@ -27,12 +26,9 @@
 
 .method public constructor <init>(Lcom/android/internal/os/PowerProfile;)V
     .locals 2
-    .param p1, "profile"    # Lcom/android/internal/os/PowerProfile;
 
-    .line 37
     invoke-direct {p0}, Lcom/android/internal/os/PowerCalculator;-><init>()V
 
-    .line 38
     const-string v0, "camera.avg"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -41,7 +37,6 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/CameraPowerCalculator;->mCameraPowerOnAvg:D
 
-    .line 39
     return-void
 .end method
 
@@ -49,28 +44,19 @@
 # virtual methods
 .method public calculateApp(Lcom/android/internal/os/BatterySipper;Landroid/os/BatteryStats$Uid;JJI)V
     .locals 14
-    .param p1, "app"    # Lcom/android/internal/os/BatterySipper;
-    .param p2, "u"    # Landroid/os/BatteryStats$Uid;
-    .param p3, "rawRealtimeUs"    # J
-    .param p5, "rawUptimeUs"    # J
-    .param p7, "statsType"    # I
 
     move-object v0, p0
 
     move-object v1, p1
 
-    .line 47
     invoke-virtual/range {p2 .. p2}, Landroid/os/BatteryStats$Uid;->getCameraTurnedOnTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v2
 
-    .line 48
-    .local v2, "timer":Landroid/os/BatteryStats$Timer;
     const-wide/16 v3, 0x0
 
     if-eqz v2, :cond_1
 
-    .line 49
     move-wide/from16 v5, p3
 
     move/from16 v7, p7
@@ -83,11 +69,8 @@
 
     div-long/2addr v8, v10
 
-    .line 50
-    .local v8, "totalTime":J
     iput-wide v8, v1, Lcom/android/internal/os/BatterySipper;->cameraTimeMs:J
 
-    .line 51
     long-to-double v10, v8
 
     iget-wide v12, v0, Lcom/android/internal/os/CameraPowerCalculator;->mCameraPowerOnAvg:D
@@ -100,7 +83,6 @@
 
     iput-wide v10, v1, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
-    .line 54
     sget-boolean v10, Lcom/android/internal/os/CameraPowerCalculator;->DEBUG_ONEPLUS:Z
 
     if-eqz v10, :cond_0
@@ -111,7 +93,6 @@
 
     if-gez v3, :cond_0
 
-    .line 55
     const-string v3, "CameraPowerCalculator"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -138,7 +119,6 @@
 
     iget-wide v10, v1, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
-    .line 57
     invoke-static {v10, v11}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v10
@@ -149,15 +129,11 @@
 
     move-result-object v4
 
-    .line 55
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
-    .end local v8    # "totalTime":J
     :cond_0
     goto :goto_0
 
-    .line 61
     :cond_1
     move-wide/from16 v5, p3
 
@@ -167,10 +143,8 @@
 
     iput-wide v8, v1, Lcom/android/internal/os/BatterySipper;->cameraTimeMs:J
 
-    .line 62
     iput-wide v3, v1, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
-    .line 64
     :goto_0
     return-void
 .end method

@@ -33,9 +33,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2235
     return-void
 .end method

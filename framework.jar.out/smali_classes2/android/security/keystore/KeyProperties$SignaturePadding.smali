@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 479
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method static allToKeymaster([Ljava/lang/String;)[I
     .locals 3
-    .param p0, "paddings"    # [Ljava/lang/String;
 
-    .line 507
     if-eqz p0, :cond_2
 
     array-length v0, p0
@@ -37,23 +34,18 @@
 
     goto :goto_1
 
-    .line 510
     :cond_0
     array-length v0, p0
 
     new-array v0, v0, [I
 
-    .line 511
-    .local v0, "result":[I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, p0
 
     if-ge v1, v2, :cond_1
 
-    .line 512
     aget-object v2, p0, v1
 
     invoke-static {v2}, Landroid/security/keystore/KeyProperties$SignaturePadding;->toKeymaster(Ljava/lang/String;)I
@@ -62,18 +54,13 @@
 
     aput v2, v0, v1
 
-    .line 511
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 514
-    .end local v1    # "i":I
     :cond_1
     return-object v0
 
-    .line 508
-    .end local v0    # "result":[I
     :cond_2
     :goto_1
     sget-object v0, Llibcore/util/EmptyArray;->INT:[I
@@ -83,9 +70,7 @@
 
 .method static fromKeymaster(I)Ljava/lang/String;
     .locals 3
-    .param p0, "padding"    # I
 
-    .line 495
     const/4 v0, 0x3
 
     if-eq p0, v0, :cond_1
@@ -94,12 +79,10 @@
 
     if-ne p0, v0, :cond_0
 
-    .line 497
     const-string v0, "PKCS1"
 
     return-object v0
 
-    .line 501
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -121,7 +104,6 @@
 
     throw v0
 
-    .line 499
     :cond_1
     const-string v0, "PSS"
 
@@ -130,9 +112,7 @@
 
 .method static toKeymaster(Ljava/lang/String;)I
     .locals 3
-    .param p0, "padding"    # Ljava/lang/String;
 
-    .line 482
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -186,7 +166,6 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 488
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -207,13 +186,11 @@
 
     throw v0
 
-    .line 486
     :pswitch_0
     const/4 v0, 0x3
 
     return v0
 
-    .line 484
     :pswitch_1
     const/4 v0, 0x5
 

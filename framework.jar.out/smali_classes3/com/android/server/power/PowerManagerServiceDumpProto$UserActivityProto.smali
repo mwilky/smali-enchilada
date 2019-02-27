@@ -29,9 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/power/PowerManagerServiceDumpProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/PowerManagerServiceDumpProto;
 
-    .line 48
     iput-object p1, p0, Lcom/android/server/power/PowerManagerServiceDumpProto$UserActivityProto;->this$0:Lcom/android/server/power/PowerManagerServiceDumpProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

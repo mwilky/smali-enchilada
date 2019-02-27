@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/MessagingGroup;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/MessagingGroup;
 
-    .line 459
     iput-object p1, p0, Lcom/android/internal/widget/MessagingGroup$1;->this$0:Lcom/android/internal/widget/MessagingGroup;
 
     iput-boolean p2, p0, Lcom/android/internal/widget/MessagingGroup$1;->val$firstLayout:Z
@@ -43,7 +41,6 @@
 .method public onPreDraw()Z
     .locals 5
 
-    .line 462
     iget-object v0, p0, Lcom/android/internal/widget/MessagingGroup$1;->this$0:Lcom/android/internal/widget/MessagingGroup;
 
     invoke-static {v0}, Lcom/android/internal/widget/MessagingGroup;->access$000(Lcom/android/internal/widget/MessagingGroup;)Ljava/util/ArrayList;
@@ -67,8 +64,6 @@
 
     check-cast v1, Lcom/android/internal/widget/MessagingMessage;
 
-    .line 463
-    .local v1, "message":Lcom/android/internal/widget/MessagingMessage;
     invoke-interface {v1}, Lcom/android/internal/widget/MessagingMessage;->getView()Landroid/view/View;
 
     move-result-object v2
@@ -79,10 +74,8 @@
 
     if-nez v2, :cond_0
 
-    .line 464
     goto :goto_0
 
-    .line 466
     :cond_0
     invoke-interface {v1}, Lcom/android/internal/widget/MessagingMessage;->getView()Landroid/view/View;
 
@@ -90,17 +83,14 @@
 
     invoke-static {v2}, Lcom/android/internal/widget/MessagingPropertyAnimator;->fadeIn(Landroid/view/View;)V
 
-    .line 467
     iget-boolean v2, p0, Lcom/android/internal/widget/MessagingGroup$1;->val$firstLayout:Z
 
     if-nez v2, :cond_1
 
-    .line 468
     invoke-interface {v1}, Lcom/android/internal/widget/MessagingMessage;->getView()Landroid/view/View;
 
     move-result-object v2
 
-    .line 469
     invoke-interface {v1}, Lcom/android/internal/widget/MessagingMessage;->getView()Landroid/view/View;
 
     move-result-object v3
@@ -111,15 +101,11 @@
 
     sget-object v4, Lcom/android/internal/widget/MessagingLayout;->LINEAR_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 468
     invoke-static {v2, v3, v4}, Lcom/android/internal/widget/MessagingPropertyAnimator;->startLocalTranslationFrom(Landroid/view/View;ILandroid/view/animation/Interpolator;)V
 
-    .line 472
-    .end local v1    # "message":Lcom/android/internal/widget/MessagingMessage;
     :cond_1
     goto :goto_0
 
-    .line 473
     :cond_2
     iget-object v0, p0, Lcom/android/internal/widget/MessagingGroup$1;->this$0:Lcom/android/internal/widget/MessagingGroup;
 
@@ -129,7 +115,6 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 474
     iget-object v0, p0, Lcom/android/internal/widget/MessagingGroup$1;->this$0:Lcom/android/internal/widget/MessagingGroup;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/MessagingGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -138,7 +123,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 475
     const/4 v0, 0x1
 
     return v0

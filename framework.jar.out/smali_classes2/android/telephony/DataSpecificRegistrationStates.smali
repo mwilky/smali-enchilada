@@ -26,7 +26,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 60
     new-instance v0, Landroid/telephony/DataSpecificRegistrationStates$1;
 
     invoke-direct {v0}, Landroid/telephony/DataSpecificRegistrationStates$1;-><init>()V
@@ -38,42 +37,31 @@
 
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "maxDataCalls"    # I
 
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
     iput p1, p0, Landroid/telephony/DataSpecificRegistrationStates;->maxDataCalls:I
 
-    .line 22
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/DataSpecificRegistrationStates;->maxDataCalls:I
 
-    .line 26
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/telephony/DataSpecificRegistrationStates$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/telephony/DataSpecificRegistrationStates$1;
 
-    .line 13
     invoke-direct {p0, p1}, Landroid/telephony/DataSpecificRegistrationStates;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -84,7 +72,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 35
     const/4 v0, 0x0
 
     return v0
@@ -92,16 +79,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 50
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 52
     :cond_0
     const/4 v1, 0x0
 
@@ -113,14 +97,11 @@
 
     goto :goto_1
 
-    .line 56
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/telephony/DataSpecificRegistrationStates;
 
-    .line 57
-    .local v2, "other":Landroid/telephony/DataSpecificRegistrationStates;
     iget v3, p0, Landroid/telephony/DataSpecificRegistrationStates;->maxDataCalls:I
 
     iget v4, v2, Landroid/telephony/DataSpecificRegistrationStates;->maxDataCalls:I
@@ -135,8 +116,6 @@
     :goto_0
     return v0
 
-    .line 53
-    .end local v2    # "other":Landroid/telephony/DataSpecificRegistrationStates;
     :cond_3
     :goto_1
     return v1
@@ -145,7 +124,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 45
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -170,7 +148,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 40
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,14 +173,10 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 30
     iget v0, p0, Landroid/telephony/DataSpecificRegistrationStates;->maxDataCalls:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 31
     return-void
 .end method

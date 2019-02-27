@@ -21,15 +21,11 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "locales"    # Ljava/lang/String;
 
-    .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 214
     iput-object p1, p0, Landroid/view/textclassifier/TextClassifierImplNative$SelectionOptions;->mLocales:Ljava/lang/String;
 
-    .line 215
     return-void
 .end method
 
@@ -38,7 +34,6 @@
 .method public getLocales()Ljava/lang/String;
     .locals 1
 
-    .line 218
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$SelectionOptions;->mLocales:Ljava/lang/String;
 
     return-object v0

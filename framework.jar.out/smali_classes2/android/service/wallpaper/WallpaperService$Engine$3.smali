@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/wallpaper/WallpaperService$Engine;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/service/wallpaper/WallpaperService$Engine;
 
-    .line 1220
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine$3;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onDisplayAdded(I)V
     .locals 0
-    .param p1, "displayId"    # I
 
-    .line 1234
     return-void
 .end method
 
 .method public onDisplayChanged(I)V
     .locals 1
-    .param p1, "displayId"    # I
 
-    .line 1223
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$3;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     iget-object v0, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mDisplay:Landroid/view/Display;
@@ -59,20 +53,16 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 1224
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$3;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     invoke-virtual {v0}, Landroid/service/wallpaper/WallpaperService$Engine;->reportVisibility()V
 
-    .line 1226
     :cond_0
     return-void
 .end method
 
 .method public onDisplayRemoved(I)V
     .locals 0
-    .param p1, "displayId"    # I
 
-    .line 1230
     return-void
 .end method

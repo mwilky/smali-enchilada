@@ -10,14 +10,11 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 44
     const-string v0, "contrast"
 
     invoke-direct {p0, p1, v0}, Landroid/filterpacks/imageproc/SimpleImageFilter;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 45
     return-void
 .end method
 
@@ -25,9 +22,7 @@
 # virtual methods
 .method protected getNativeProgram(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/Program;
     .locals 3
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 49
     new-instance v0, Landroid/filterfw/core/NativeProgram;
 
     const-string v1, "filterpack_imageproc"
@@ -41,9 +36,7 @@
 
 .method protected getShaderProgram(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/Program;
     .locals 2
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 54
     new-instance v0, Landroid/filterfw/core/ShaderProgram;
 
     const-string/jumbo v1, "precision mediump float;\nuniform sampler2D tex_sampler_0;\nuniform float contrast;\nvarying vec2 v_texcoord;\nvoid main() {\n  vec4 color = texture2D(tex_sampler_0, v_texcoord);\n  color -= 0.5;\n  color *= contrast;\n  color += 0.5;\n  gl_FragColor = color;\n}\n"

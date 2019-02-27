@@ -45,30 +45,21 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/widget/ILockSettings;Landroid/security/KeyStore;)V
     .locals 0
-    .param p1, "binder"    # Lcom/android/internal/widget/ILockSettings;
-    .param p2, "keystore"    # Landroid/security/KeyStore;
 
-    .line 267
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 268
     iput-object p1, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
-    .line 269
     iput-object p2, p0, Landroid/security/keystore/recovery/RecoveryController;->mKeyStore:Landroid/security/KeyStore;
 
-    .line 270
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Landroid/security/keystore/recovery/RecoveryController;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 286
     const-string/jumbo v0, "lock_settings"
 
-    .line 287
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -77,8 +68,6 @@
 
     move-result-object v0
 
-    .line 288
-    .local v0, "lockSettings":Lcom/android/internal/widget/ILockSettings;
     new-instance v1, Landroid/security/keystore/recovery/RecoveryController;
 
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
@@ -92,9 +81,7 @@
 
 .method public static isRecoverableKeyStoreEnabled(Landroid/content/Context;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 299
     const-class v0, Landroid/app/KeyguardManager;
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -103,8 +90,6 @@
 
     check-cast v0, Landroid/app/KeyguardManager;
 
-    .line 300
-    .local v0, "keyguardManager":Landroid/app/KeyguardManager;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isDeviceSecure()Z
@@ -129,7 +114,6 @@
 .method public createRecoverySession()Landroid/security/keystore/recovery/RecoverySession;
     .locals 1
 
-    .line 739
     invoke-static {p0}, Landroid/security/keystore/recovery/RecoverySession;->newInstance(Landroid/security/keystore/recovery/RecoveryController;)Landroid/security/keystore/recovery/RecoverySession;
 
     move-result-object v0
@@ -139,8 +123,6 @@
 
 .method public generateAndStoreKey(Ljava/lang/String;[B)[B
     .locals 2
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "account"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;,
@@ -151,7 +133,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 605
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Operation is not supported, use generateKey"
@@ -163,7 +144,6 @@
 
 .method public generateKey(Ljava/lang/String;)Ljava/security/Key;
     .locals 3
-    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;,
@@ -171,7 +151,6 @@
         }
     .end annotation
 
-    .line 631
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -179,18 +158,14 @@
 
     move-result-object v0
 
-    .line 632
-    .local v0, "grantAlias":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 635
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->getKeyFromGrant(Ljava/lang/String;)Ljava/security/Key;
 
     move-result-object v1
 
     return-object v1
 
-    .line 633
     :cond_0
     new-instance v1, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -204,20 +179,15 @@
     .catch Ljava/security/UnrecoverableKeyException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 640
-    .end local v0    # "grantAlias":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 641
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     iget v1, v0, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v2, 0x17
 
     if-ne v1, v2, :cond_1
 
-    .line 642
     new-instance v1, Landroid/security/keystore/recovery/LockScreenRequiredException;
 
     invoke-virtual {v0}, Landroid/os/ServiceSpecificException;->getMessage()Ljava/lang/String;
@@ -228,7 +198,6 @@
 
     throw v1
 
-    .line 644
     :cond_1
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -236,13 +205,9 @@
 
     throw v1
 
-    .line 638
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 639
-    .local v0, "e":Ljava/security/UnrecoverableKeyException;
     new-instance v1, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     const-string v2, "Failed to get key from keystore"
@@ -251,13 +216,9 @@
 
     throw v1
 
-    .line 636
-    .end local v0    # "e":Ljava/security/UnrecoverableKeyException;
     :catch_2
     move-exception v0
 
-    .line 637
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -267,8 +228,6 @@
 
 .method public generateKey(Ljava/lang/String;[B)Ljava/security/Key;
     .locals 1
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "account"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;,
@@ -279,7 +238,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 616
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -304,7 +262,6 @@
         }
     .end annotation
 
-    .line 459
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -312,8 +269,6 @@
 
     move-result-object v0
 
-    .line 460
-    .local v0, "allStatuses":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -327,26 +282,18 @@
 
     return-object v1
 
-    .line 463
-    .end local v0    # "allStatuses":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
     :catch_0
     move-exception v0
 
-    .line 464
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 461
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 462
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -356,7 +303,6 @@
 
 .method public getAliases(Ljava/lang/String;)Ljava/util/List;
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -377,7 +323,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 450
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -388,7 +333,6 @@
 .method getBinder()Lcom/android/internal/widget/ILockSettings;
     .locals 1
 
-    .line 278
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
     return-object v0
@@ -396,7 +340,6 @@
 
 .method public getKey(Ljava/lang/String;)Ljava/security/Key;
     .locals 2
-    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;,
@@ -404,7 +347,6 @@
         }
     .end annotation
 
-    .line 692
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -412,8 +354,6 @@
 
     move-result-object v0
 
-    .line 693
-    .local v0, "grantAlias":Ljava/lang/String;
     if-eqz v0, :cond_1
 
     const-string v1, ""
@@ -426,7 +366,6 @@
 
     goto :goto_0
 
-    .line 696
     :cond_0
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->getKeyFromGrant(Ljava/lang/String;)Ljava/security/Key;
 
@@ -437,33 +376,24 @@
 
     return-object v1
 
-    .line 694
     :cond_1
     :goto_0
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 699
-    .end local v0    # "grantAlias":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 700
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 697
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 698
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -479,7 +409,6 @@
         }
     .end annotation
 
-    .line 387
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -492,24 +421,19 @@
 
     return-object v0
 
-    .line 390
     :catch_0
     move-exception v0
 
-    .line 391
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     iget v1, v0, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v2, 0x15
 
     if-ne v1, v2, :cond_0
 
-    .line 392
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 394
     :cond_0
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -517,13 +441,9 @@
 
     throw v1
 
-    .line 388
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 389
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -533,14 +453,12 @@
 
 .method getKeyFromGrant(Ljava/lang/String;)Ljava/security/Key;
     .locals 2
-    .param p1, "grantAlias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/UnrecoverableKeyException;
         }
     .end annotation
 
-    .line 708
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mKeyStore:Landroid/security/KeyStore;
 
     const/4 v1, -0x1
@@ -563,7 +481,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 372
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -579,7 +496,6 @@
         }
     .end annotation
 
-    .line 578
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -592,25 +508,18 @@
 
     return-object v0
 
-    .line 581
     :catch_0
     move-exception v0
 
-    .line 582
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 579
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 580
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -620,14 +529,12 @@
 
 .method public getRecoveryStatus(Ljava/lang/String;)I
     .locals 3
-    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 530
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -635,24 +542,18 @@
 
     move-result-object v0
 
-    .line 531
-    .local v0, "allStatuses":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 532
-    .local v1, "status":Ljava/lang/Integer;
     if-nez v1, :cond_0
 
-    .line 533
     const/4 v2, 0x3
 
     return v2
 
-    .line 535
     :cond_0
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -663,27 +564,18 @@
 
     return v2
 
-    .line 539
-    .end local v0    # "allStatuses":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
-    .end local v1    # "status":Ljava/lang/Integer;
     :catch_0
     move-exception v0
 
-    .line 540
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 537
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 538
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -693,8 +585,6 @@
 
 .method public getRecoveryStatus(Ljava/lang/String;Ljava/lang/String;)I
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
@@ -704,7 +594,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 511
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -724,7 +613,6 @@
         }
     .end annotation
 
-    .line 744
     invoke-static {}, Landroid/security/keystore/recovery/TrustedRootCertificates;->getRootCertificates()Ljava/util/Map;
 
     move-result-object v0
@@ -734,8 +622,6 @@
 
 .method public importKey(Ljava/lang/String;[B)Ljava/security/Key;
     .locals 3
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "keyBytes"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;,
@@ -743,7 +629,6 @@
         }
     .end annotation
 
-    .line 662
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -751,18 +636,14 @@
 
     move-result-object v0
 
-    .line 663
-    .local v0, "grantAlias":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 666
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->getKeyFromGrant(Ljava/lang/String;)Ljava/security/Key;
 
     move-result-object v1
 
     return-object v1
 
-    .line 664
     :cond_0
     new-instance v1, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -776,20 +657,15 @@
     .catch Ljava/security/UnrecoverableKeyException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 671
-    .end local v0    # "grantAlias":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 672
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     iget v1, v0, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v2, 0x17
 
     if-ne v1, v2, :cond_1
 
-    .line 673
     new-instance v1, Landroid/security/keystore/recovery/LockScreenRequiredException;
 
     invoke-virtual {v0}, Landroid/os/ServiceSpecificException;->getMessage()Ljava/lang/String;
@@ -800,7 +676,6 @@
 
     throw v1
 
-    .line 675
     :cond_1
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -808,13 +683,9 @@
 
     throw v1
 
-    .line 669
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 670
-    .local v0, "e":Ljava/security/UnrecoverableKeyException;
     new-instance v1, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     const-string v2, "Failed to get key from keystore"
@@ -823,13 +694,9 @@
 
     throw v1
 
-    .line 667
-    .end local v0    # "e":Ljava/security/UnrecoverableKeyException;
     :catch_2
     move-exception v0
 
-    .line 668
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -839,8 +706,6 @@
 
 .method public initRecoveryService(Ljava/lang/String;[B)V
     .locals 1
-    .param p1, "rootCertificateAlias"    # Ljava/lang/String;
-    .param p2, "signedPublicKeyList"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/cert/CertificateException;,
@@ -851,7 +716,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 312
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -861,9 +725,6 @@
 
 .method public initRecoveryService(Ljava/lang/String;[B[B)V
     .locals 3
-    .param p1, "rootCertificateAlias"    # Ljava/lang/String;
-    .param p2, "certificateFile"    # [B
-    .param p3, "signatureFile"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/cert/CertificateException;,
@@ -871,7 +732,6 @@
         }
     .end annotation
 
-    .line 348
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -880,18 +740,13 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 362
     nop
 
-    .line 363
     return-void
 
-    .line 352
     :catch_0
     move-exception v0
 
-    .line 353
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     iget v1, v0, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v2, 0x19
@@ -904,14 +759,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 357
     iget v1, v0, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v2, 0x1d
 
     if-ne v1, v2, :cond_0
 
-    .line 358
     new-instance v1, Ljava/security/cert/CertificateException;
 
     const-string v2, "Downgrading certificate serial version isn\'t supported."
@@ -920,7 +773,6 @@
 
     throw v1
 
-    .line 361
     :cond_0
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
@@ -928,7 +780,6 @@
 
     throw v1
 
-    .line 355
     :cond_1
     new-instance v1, Ljava/security/cert/CertificateException;
 
@@ -938,13 +789,9 @@
 
     throw v1
 
-    .line 350
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 351
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -954,14 +801,12 @@
 
 .method public removeKey(Ljava/lang/String;)V
     .locals 2
-    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 724
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -970,31 +815,22 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 729
     nop
 
-    .line 730
     return-void
 
-    .line 727
     :catch_0
     move-exception v0
 
-    .line 728
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 725
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 726
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -1004,14 +840,12 @@
 
 .method public setRecoverySecretTypes([I)V
     .locals 2
-    .param p1, "secretTypes"    # [I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 557
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -1020,31 +854,22 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 562
     nop
 
-    .line 563
     return-void
 
-    .line 560
     :catch_0
     move-exception v0
 
-    .line 561
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 558
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 559
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -1054,15 +879,12 @@
 
 .method public setRecoveryStatus(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "status"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 495
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -1071,31 +893,22 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 500
     nop
 
-    .line 501
     return-void
 
-    .line 498
     :catch_0
     move-exception v0
 
-    .line 499
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 496
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 497
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -1105,9 +918,6 @@
 
 .method public setRecoveryStatus(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "alias"    # Ljava/lang/String;
-    .param p3, "status"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;,
@@ -1118,7 +928,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 477
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1128,14 +937,12 @@
 
 .method public setServerParams([B)V
     .locals 2
-    .param p1, "serverParams"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 434
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -1144,31 +951,22 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 439
     nop
 
-    .line 440
     return-void
 
-    .line 437
     :catch_0
     move-exception v0
 
-    .line 438
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 435
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 436
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -1178,14 +976,12 @@
 
 .method public setSnapshotCreatedPendingIntent(Landroid/app/PendingIntent;)V
     .locals 2
-    .param p1, "intent"    # Landroid/app/PendingIntent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/recovery/InternalRecoveryServiceException;
         }
     .end annotation
 
-    .line 412
     :try_start_0
     iget-object v0, p0, Landroid/security/keystore/recovery/RecoveryController;->mBinder:Lcom/android/internal/widget/ILockSettings;
 
@@ -1194,31 +990,22 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 417
     nop
 
-    .line 418
     return-void
 
-    .line 415
     :catch_0
     move-exception v0
 
-    .line 416
-    .local v0, "e":Landroid/os/ServiceSpecificException;
     invoke-virtual {p0, v0}, Landroid/security/keystore/recovery/RecoveryController;->wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     move-result-object v1
 
     throw v1
 
-    .line 413
-    .end local v0    # "e":Landroid/os/ServiceSpecificException;
     :catch_1
     move-exception v0
 
-    .line 414
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -1228,16 +1015,13 @@
 
 .method wrapUnexpectedServiceSpecificException(Landroid/os/ServiceSpecificException;)Landroid/security/keystore/recovery/InternalRecoveryServiceException;
     .locals 3
-    .param p1, "e"    # Landroid/os/ServiceSpecificException;
 
-    .line 749
     iget v0, p1, Landroid/os/ServiceSpecificException;->errorCode:I
 
     const/16 v1, 0x16
 
     if-ne v0, v1, :cond_0
 
-    .line 750
     new-instance v0, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 
     invoke-virtual {p1}, Landroid/os/ServiceSpecificException;->getMessage()Ljava/lang/String;
@@ -1248,7 +1032,6 @@
 
     return-object v0
 
-    .line 755
     :cond_0
     new-instance v0, Landroid/security/keystore/recovery/InternalRecoveryServiceException;
 

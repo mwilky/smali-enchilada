@@ -75,47 +75,31 @@
 # direct methods
 .method private constructor <init>(Landroid/media/audiopolicy/AudioMixingRule;Landroid/media/AudioFormat;IIILjava/lang/String;)V
     .locals 2
-    .param p1, "rule"    # Landroid/media/audiopolicy/AudioMixingRule;
-    .param p2, "format"    # Landroid/media/AudioFormat;
-    .param p3, "routeFlags"    # I
-    .param p4, "callbackFlags"    # I
-    .param p5, "deviceType"    # I
-    .param p6, "deviceAddress"    # Ljava/lang/String;
 
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/media/audiopolicy/AudioMix;->mMixType:I
 
-    .line 42
     iput v0, p0, Landroid/media/audiopolicy/AudioMix;->mMixState:I
 
-    .line 54
     iput-object p1, p0, Landroid/media/audiopolicy/AudioMix;->mRule:Landroid/media/audiopolicy/AudioMixingRule;
 
-    .line 55
     iput-object p2, p0, Landroid/media/audiopolicy/AudioMix;->mFormat:Landroid/media/AudioFormat;
 
-    .line 56
     iput p3, p0, Landroid/media/audiopolicy/AudioMix;->mRouteFlags:I
 
-    .line 57
     invoke-virtual {p1}, Landroid/media/audiopolicy/AudioMixingRule;->getTargetMixType()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/audiopolicy/AudioMix;->mMixType:I
 
-    .line 58
     iput p4, p0, Landroid/media/audiopolicy/AudioMix;->mCallbackFlags:I
 
-    .line 59
     iput p5, p0, Landroid/media/audiopolicy/AudioMix;->mDeviceSystemType:I
 
-    .line 60
     if-nez p6, :cond_0
 
     new-instance v0, Ljava/lang/String;
@@ -132,21 +116,12 @@
     :goto_0
     iput-object v0, p0, Landroid/media/audiopolicy/AudioMix;->mDeviceAddress:Ljava/lang/String;
 
-    .line 61
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/media/audiopolicy/AudioMixingRule;Landroid/media/AudioFormat;IIILjava/lang/String;Landroid/media/audiopolicy/AudioMix$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/media/audiopolicy/AudioMixingRule;
-    .param p2, "x1"    # Landroid/media/AudioFormat;
-    .param p3, "x2"    # I
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
-    .param p6, "x5"    # Ljava/lang/String;
-    .param p7, "x6"    # Landroid/media/audiopolicy/AudioMix$1;
 
-    .line 34
     invoke-direct/range {p0 .. p6}, Landroid/media/audiopolicy/AudioMix;-><init>(Landroid/media/audiopolicy/AudioMixingRule;Landroid/media/AudioFormat;IIILjava/lang/String;)V
 
     return-void
@@ -156,16 +131,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 172
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 173
     :cond_0
     const/4 v1, 0x0
 
@@ -183,14 +155,11 @@
 
     goto :goto_1
 
-    .line 175
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/media/audiopolicy/AudioMix;
 
-    .line 176
-    .local v2, "that":Landroid/media/audiopolicy/AudioMix;
     iget v3, p0, Landroid/media/audiopolicy/AudioMix;->mRouteFlags:I
 
     iget v4, v2, Landroid/media/audiopolicy/AudioMix;->mRouteFlags:I
@@ -223,8 +192,6 @@
     :goto_0
     return v0
 
-    .line 173
-    .end local v2    # "that":Landroid/media/audiopolicy/AudioMix;
     :cond_3
     :goto_1
     return v1
@@ -233,7 +200,6 @@
 .method getFormat()Landroid/media/AudioFormat;
     .locals 1
 
-    .line 143
     iget-object v0, p0, Landroid/media/audiopolicy/AudioMix;->mFormat:Landroid/media/AudioFormat;
 
     return-object v0
@@ -244,7 +210,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 134
     iget v0, p0, Landroid/media/audiopolicy/AudioMix;->mMixState:I
 
     return v0
@@ -253,7 +218,6 @@
 .method public getMixType()I
     .locals 1
 
-    .line 152
     iget v0, p0, Landroid/media/audiopolicy/AudioMix;->mMixType:I
 
     return v0
@@ -262,7 +226,6 @@
 .method public getRegistration()Ljava/lang/String;
     .locals 1
 
-    .line 161
     iget-object v0, p0, Landroid/media/audiopolicy/AudioMix;->mDeviceAddress:Ljava/lang/String;
 
     return-object v0
@@ -271,7 +234,6 @@
 .method getRouteFlags()I
     .locals 1
 
-    .line 139
     iget v0, p0, Landroid/media/audiopolicy/AudioMix;->mRouteFlags:I
 
     return v0
@@ -280,7 +242,6 @@
 .method getRule()Landroid/media/audiopolicy/AudioMixingRule;
     .locals 1
 
-    .line 147
     iget-object v0, p0, Landroid/media/audiopolicy/AudioMix;->mRule:Landroid/media/audiopolicy/AudioMixingRule;
 
     return-object v0
@@ -289,7 +250,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 185
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -335,9 +295,7 @@
 
 .method public isAffectingUsage(I)Z
     .locals 1
-    .param p1, "usage"    # I
 
-    .line 166
     iget-object v0, p0, Landroid/media/audiopolicy/AudioMix;->mRule:Landroid/media/audiopolicy/AudioMixingRule;
 
     invoke-virtual {v0, p1}, Landroid/media/audiopolicy/AudioMixingRule;->isAffectingUsage(I)Z
@@ -349,11 +307,8 @@
 
 .method setRegistration(Ljava/lang/String;)V
     .locals 0
-    .param p1, "regId"    # Ljava/lang/String;
 
-    .line 156
     iput-object p1, p0, Landroid/media/audiopolicy/AudioMix;->mDeviceAddress:Ljava/lang/String;
 
-    .line 157
     return-void
 .end method

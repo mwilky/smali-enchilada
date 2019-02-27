@@ -35,11 +35,7 @@
 
 .method public rangeStart(III)V
     .locals 0
-    .param p1, "markerInFrames"    # I
-    .param p2, "start"    # I
-    .param p3, "end"    # I
 
-    .line 169
     return-void
 .end method
 

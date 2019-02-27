@@ -79,7 +79,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 502
     new-instance v0, Landroid/service/autofill/Dataset$1;
 
     invoke-direct {v0}, Landroid/service/autofill/Dataset$1;-><init>()V
@@ -91,70 +90,57 @@
 
 .method private constructor <init>(Landroid/service/autofill/Dataset$Builder;)V
     .locals 1
-    .param p1, "builder"    # Landroid/service/autofill/Dataset$Builder;
 
-    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 107
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$000(Landroid/service/autofill/Dataset$Builder;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mFieldIds:Ljava/util/ArrayList;
 
-    .line 108
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$100(Landroid/service/autofill/Dataset$Builder;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mFieldValues:Ljava/util/ArrayList;
 
-    .line 109
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$200(Landroid/service/autofill/Dataset$Builder;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mFieldPresentations:Ljava/util/ArrayList;
 
-    .line 110
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$300(Landroid/service/autofill/Dataset$Builder;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mFieldFilters:Ljava/util/ArrayList;
 
-    .line 111
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$400(Landroid/service/autofill/Dataset$Builder;)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mPresentation:Landroid/widget/RemoteViews;
 
-    .line 112
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$500(Landroid/service/autofill/Dataset$Builder;)Landroid/content/IntentSender;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mAuthentication:Landroid/content/IntentSender;
 
-    .line 113
     invoke-static {p1}, Landroid/service/autofill/Dataset$Builder;->access$600(Landroid/service/autofill/Dataset$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/autofill/Dataset;->mId:Ljava/lang/String;
 
-    .line 114
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/service/autofill/Dataset$Builder;Landroid/service/autofill/Dataset$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/service/autofill/Dataset$Builder;
-    .param p2, "x1"    # Landroid/service/autofill/Dataset$1;
 
-    .line 96
     invoke-direct {p0, p1}, Landroid/service/autofill/Dataset;-><init>(Landroid/service/autofill/Dataset$Builder;)V
 
     return-void
@@ -165,7 +151,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 488
     const/4 v0, 0x0
 
     return v0
@@ -174,7 +159,6 @@
 .method public getAuthentication()Landroid/content/IntentSender;
     .locals 1
 
-    .line 140
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mAuthentication:Landroid/content/IntentSender;
 
     return-object v0
@@ -191,7 +175,6 @@
         }
     .end annotation
 
-    .line 118
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldIds:Ljava/util/ArrayList;
 
     return-object v0
@@ -199,9 +182,7 @@
 
 .method public getFieldPresentation(I)Landroid/widget/RemoteViews;
     .locals 2
-    .param p1, "index"    # I
 
-    .line 128
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldPresentations:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -210,8 +191,6 @@
 
     check-cast v0, Landroid/widget/RemoteViews;
 
-    .line 129
-    .local v0, "customPresentation":Landroid/widget/RemoteViews;
     if-eqz v0, :cond_0
 
     move-object v1, v0
@@ -236,7 +215,6 @@
         }
     .end annotation
 
-    .line 123
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldValues:Ljava/util/ArrayList;
 
     return-object v0
@@ -244,9 +222,7 @@
 
 .method public getFilter(I)Landroid/service/autofill/Dataset$DatasetFieldFilter;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 135
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldFilters:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -261,7 +237,6 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 189
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mId:Ljava/lang/String;
 
     return-object v0
@@ -270,7 +245,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 145
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldIds:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
@@ -301,7 +275,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 150
     sget-boolean v0, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-nez v0, :cond_0
@@ -312,7 +285,6 @@
 
     return-object v0
 
-    .line 152
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -320,20 +292,16 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 153
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mId:Ljava/lang/String;
 
     if-nez v1, :cond_1
 
-    .line 154
     const-string/jumbo v1, "noId"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 157
     :cond_1
     const-string v1, "id="
 
@@ -351,13 +319,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 159
     :goto_0
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mFieldIds:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_2
 
-    .line 160
     const-string v1, ", fieldIds="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -366,13 +332,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 162
     :cond_2
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mFieldValues:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_3
 
-    .line 163
     const-string v1, ", fieldValues="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -381,13 +345,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 165
     :cond_3
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mFieldPresentations:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_4
 
-    .line 166
     const-string v1, ", fieldPresentations="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -400,13 +362,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 169
     :cond_4
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mFieldFilters:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_5
 
-    .line 170
     const-string v1, ", fieldFilters="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -419,29 +379,24 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 172
     :cond_5
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mPresentation:Landroid/widget/RemoteViews;
 
     if-eqz v1, :cond_6
 
-    .line 173
     const-string v1, ", hasPresentation"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 175
     :cond_6
     iget-object v1, p0, Landroid/service/autofill/Dataset;->mAuthentication:Landroid/content/IntentSender;
 
     if-eqz v1, :cond_7
 
-    .line 176
     const-string v1, ", hasAuthentication"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 178
     :cond_7
     const/16 v1, 0x5d
 
@@ -456,44 +411,34 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 493
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mPresentation:Landroid/widget/RemoteViews;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 494
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldIds:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;I)V
 
-    .line 495
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldValues:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;I)V
 
-    .line 496
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldPresentations:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;I)V
 
-    .line 497
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mFieldFilters:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;I)V
 
-    .line 498
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mAuthentication:Landroid/content/IntentSender;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 499
     iget-object v0, p0, Landroid/service/autofill/Dataset;->mId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 500
     return-void
 .end method

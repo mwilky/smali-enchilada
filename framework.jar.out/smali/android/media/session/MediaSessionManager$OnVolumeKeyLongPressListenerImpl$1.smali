@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;Landroid/view/KeyEvent;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;
 
-    .line 1011
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl$1;->this$0:Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;
 
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl$1;->val$event:Landroid/view/KeyEvent;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1014
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl$1;->this$0:Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;
 
     invoke-static {v0}, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->access$1100(Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;)Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
@@ -54,6 +51,5 @@
 
     invoke-interface {v0, v1}, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;->onVolumeKeyLongPress(Landroid/view/KeyEvent;)V
 
-    .line 1015
     return-void
 .end method

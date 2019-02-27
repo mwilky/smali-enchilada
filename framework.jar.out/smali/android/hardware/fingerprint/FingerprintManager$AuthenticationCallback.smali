@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 235
     invoke-direct {p0}, Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationCallback;-><init>()V
 
     return-void
@@ -31,52 +30,39 @@
 # virtual methods
 .method public onAuthenticationAcquired(I)V
     .locals 0
-    .param p1, "acquireInfo"    # I
 
-    .line 275
     return-void
 .end method
 
 .method public onAuthenticationError(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "errorCode"    # I
-    .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 244
     return-void
 .end method
 
 .method public onAuthenticationFailed()V
     .locals 0
 
-    .line 266
     return-void
 .end method
 
 .method public onAuthenticationHelp(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "helpCode"    # I
-    .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 254
     return-void
 .end method
 
 .method public onAuthenticationSucceeded(Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;)V
     .locals 4
-    .param p1, "result"    # Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;
 
-    .line 283
     new-instance v0, Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;
 
-    .line 284
     invoke-virtual {p1}, Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;->getCryptoObject()Landroid/hardware/biometrics/CryptoObject;
 
     move-result-object v1
 
     check-cast v1, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;
 
-    .line 285
     invoke-virtual {p1}, Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;->getId()Landroid/hardware/biometrics/BiometricAuthenticator$BiometricIdentifier;
 
     move-result-object v2
@@ -89,17 +75,13 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;-><init>(Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;Landroid/hardware/fingerprint/Fingerprint;I)V
 
-    .line 283
     invoke-virtual {p0, v0}, Landroid/hardware/fingerprint/FingerprintManager$AuthenticationCallback;->onAuthenticationSucceeded(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V
 
-    .line 286
     return-void
 .end method
 
 .method public onAuthenticationSucceeded(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V
     .locals 0
-    .param p1, "result"    # Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;
 
-    .line 260
     return-void
 .end method

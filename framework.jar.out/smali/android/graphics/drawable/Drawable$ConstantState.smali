@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method public canApplyTheme()Z
     .locals 1
 
-    .line 1483
     const/4 v0, 0x0
 
     return v0
@@ -43,9 +41,7 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "res"    # Landroid/content/res/Resources;
 
-    .line 1451
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -55,10 +51,7 @@
 
 .method public newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 1470
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

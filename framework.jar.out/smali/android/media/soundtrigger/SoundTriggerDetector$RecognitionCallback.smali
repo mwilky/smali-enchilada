@@ -22,7 +22,6 @@
 .method private constructor <init>(Landroid/media/soundtrigger/SoundTriggerDetector;)V
     .locals 0
 
-    .line 310
     iput-object p1, p0, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;->this$0:Landroid/media/soundtrigger/SoundTriggerDetector;
 
     invoke-direct {p0}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Landroid/media/soundtrigger/SoundTriggerDetector;Landroid/media/soundtrigger/SoundTriggerDetector$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/media/soundtrigger/SoundTriggerDetector;
-    .param p2, "x1"    # Landroid/media/soundtrigger/SoundTriggerDetector$1;
 
-    .line 310
     invoke-direct {p0, p1}, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;-><init>(Landroid/media/soundtrigger/SoundTriggerDetector;)V
 
     return-void
@@ -45,9 +41,7 @@
 # virtual methods
 .method public onError(I)V
     .locals 3
-    .param p1, "status"    # I
 
-    .line 335
     const-string v0, "SoundTriggerDetector"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,7 +60,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 336
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;->this$0:Landroid/media/soundtrigger/SoundTriggerDetector;
 
     invoke-static {v0}, Landroid/media/soundtrigger/SoundTriggerDetector;->access$100(Landroid/media/soundtrigger/SoundTriggerDetector;)Landroid/os/Handler;
@@ -77,15 +70,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 337
     return-void
 .end method
 
 .method public onGenericSoundTriggerDetected(Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;)V
     .locals 9
-    .param p1, "event"    # Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;
 
-    .line 317
     const-string v0, "SoundTriggerDetector"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -104,7 +94,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;->this$0:Landroid/media/soundtrigger/SoundTriggerDetector;
 
     invoke-static {v0}, Landroid/media/soundtrigger/SoundTriggerDetector;->access$100(Landroid/media/soundtrigger/SoundTriggerDetector;)Landroid/os/Handler;
@@ -135,18 +124,14 @@
 
     move-result-object v0
 
-    .line 322
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 323
     return-void
 .end method
 
 .method public onKeyphraseDetected(Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;)V
     .locals 3
-    .param p1, "event"    # Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
 
-    .line 327
     const-string v0, "SoundTriggerDetector"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -165,21 +150,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
     return-void
 .end method
 
 .method public onRecognitionPaused()V
     .locals 2
 
-    .line 344
     const-string v0, "SoundTriggerDetector"
 
     const-string/jumbo v1, "onRecognitionPaused()"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;->this$0:Landroid/media/soundtrigger/SoundTriggerDetector;
 
     invoke-static {v0}, Landroid/media/soundtrigger/SoundTriggerDetector;->access$100(Landroid/media/soundtrigger/SoundTriggerDetector;)Landroid/os/Handler;
@@ -190,21 +172,18 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 346
     return-void
 .end method
 
 .method public onRecognitionResumed()V
     .locals 2
 
-    .line 353
     const-string v0, "SoundTriggerDetector"
 
     const-string/jumbo v1, "onRecognitionResumed()"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerDetector$RecognitionCallback;->this$0:Landroid/media/soundtrigger/SoundTriggerDetector;
 
     invoke-static {v0}, Landroid/media/soundtrigger/SoundTriggerDetector;->access$100(Landroid/media/soundtrigger/SoundTriggerDetector;)Landroid/os/Handler;
@@ -215,6 +194,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 355
     return-void
 .end method

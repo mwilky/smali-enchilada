@@ -49,7 +49,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2944
     const-string v0, "content://android.media.tv/watch_next_program"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -64,7 +63,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 3037
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

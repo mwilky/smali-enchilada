@@ -24,7 +24,6 @@
 .method private constructor <init>(Landroid/widget/AbsListView;)V
     .locals 0
 
-    .line 3147
     iput-object p1, p0, Landroid/widget/AbsListView$WindowRunnnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,10 +33,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/AbsListView;Landroid/widget/AbsListView$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/AbsListView;
-    .param p2, "x1"    # Landroid/widget/AbsListView$1;
 
-    .line 3147
     invoke-direct {p0, p1}, Landroid/widget/AbsListView$WindowRunnnable;-><init>(Landroid/widget/AbsListView;)V
 
     return-void
@@ -48,7 +44,6 @@
 .method public rememberWindowAttachCount()V
     .locals 1
 
-    .line 3151
     iget-object v0, p0, Landroid/widget/AbsListView$WindowRunnnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v0}, Landroid/widget/AbsListView;->access$600(Landroid/widget/AbsListView;)I
@@ -57,14 +52,12 @@
 
     iput v0, p0, Landroid/widget/AbsListView$WindowRunnnable;->mOriginalAttachCount:I
 
-    .line 3152
     return-void
 .end method
 
 .method public sameWindow()Z
     .locals 2
 
-    .line 3155
     iget-object v0, p0, Landroid/widget/AbsListView$WindowRunnnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v0}, Landroid/widget/AbsListView;->access$700(Landroid/widget/AbsListView;)I

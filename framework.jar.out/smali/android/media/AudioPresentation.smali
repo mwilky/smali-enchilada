@@ -53,13 +53,6 @@
 # direct methods
 .method public constructor <init>(IILjava/util/Map;Ljava/lang/String;IZZZ)V
     .locals 1
-    .param p1, "presentationId"    # I
-    .param p2, "programId"    # I
-    .param p4, "language"    # Ljava/lang/String;
-    .param p5, "masteringIndication"    # I
-    .param p6, "audioDescriptionAvailable"    # Z
-    .param p7, "spokenSubtitlesAvailable"    # Z
-    .param p8, "dialogueEnhancementAvailable"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -72,39 +65,28 @@
         }
     .end annotation
 
-    .line 104
-    .local p3, "labels":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
     iput p1, p0, Landroid/media/AudioPresentation;->mPresentationId:I
 
-    .line 106
     iput p2, p0, Landroid/media/AudioPresentation;->mProgramId:I
 
-    .line 107
     iput-object p4, p0, Landroid/media/AudioPresentation;->mLanguage:Ljava/lang/String;
 
-    .line 108
     iput p5, p0, Landroid/media/AudioPresentation;->mMasteringIndication:I
 
-    .line 109
     iput-boolean p6, p0, Landroid/media/AudioPresentation;->mAudioDescriptionAvailable:Z
 
-    .line 110
     iput-boolean p7, p0, Landroid/media/AudioPresentation;->mSpokenSubtitlesAvailable:Z
 
-    .line 111
     iput-boolean p8, p0, Landroid/media/AudioPresentation;->mDialogueEnhancementAvailable:Z
 
-    .line 113
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, p3}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
     iput-object v0, p0, Landroid/media/AudioPresentation;->mLabels:Ljava/util/Map;
 
-    .line 114
     return-void
 .end method
 
@@ -122,13 +104,10 @@
         }
     .end annotation
 
-    .line 142
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 143
-    .local v0, "localeLabels":Ljava/util/Map;, "Ljava/util/Map<Ljava/util/Locale;Ljava/lang/String;>;"
     iget-object v1, p0, Landroid/media/AudioPresentation;->mLabels:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -152,8 +131,6 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 144
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     new-instance v3, Ljava/util/Locale;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -172,11 +149,8 @@
 
     invoke-interface {v0, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 145
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 146
     :cond_0
     return-object v0
 .end method
@@ -184,7 +158,6 @@
 .method public getLocale()Ljava/util/Locale;
     .locals 2
 
-    .line 153
     new-instance v0, Ljava/util/Locale;
 
     iget-object v1, p0, Landroid/media/AudioPresentation;->mLanguage:Ljava/lang/String;
@@ -197,7 +170,6 @@
 .method public getMasteringIndication()I
     .locals 1
 
-    .line 163
     iget v0, p0, Landroid/media/AudioPresentation;->mMasteringIndication:I
 
     return v0
@@ -206,7 +178,6 @@
 .method public getPresentationId()I
     .locals 1
 
-    .line 123
     iget v0, p0, Landroid/media/AudioPresentation;->mPresentationId:I
 
     return v0
@@ -215,7 +186,6 @@
 .method public getProgramId()I
     .locals 1
 
-    .line 133
     iget v0, p0, Landroid/media/AudioPresentation;->mProgramId:I
 
     return v0
@@ -224,7 +194,6 @@
 .method public hasAudioDescription()Z
     .locals 1
 
-    .line 171
     iget-boolean v0, p0, Landroid/media/AudioPresentation;->mAudioDescriptionAvailable:Z
 
     return v0
@@ -233,7 +202,6 @@
 .method public hasDialogueEnhancement()Z
     .locals 1
 
-    .line 187
     iget-boolean v0, p0, Landroid/media/AudioPresentation;->mDialogueEnhancementAvailable:Z
 
     return v0
@@ -242,7 +210,6 @@
 .method public hasSpokenSubtitles()Z
     .locals 1
 
-    .line 179
     iget-boolean v0, p0, Landroid/media/AudioPresentation;->mSpokenSubtitlesAvailable:Z
 
     return v0

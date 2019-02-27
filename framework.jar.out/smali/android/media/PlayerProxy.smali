@@ -21,21 +21,15 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioPlaybackConfiguration;)V
     .locals 2
-    .param p1, "apc"    # Landroid/media/AudioPlaybackConfiguration;
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     if-eqz p1, :cond_0
 
-    .line 49
     iput-object p1, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
-    .line 50
     return-void
 
-    .line 47
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -50,10 +44,7 @@
 # virtual methods
 .method public applyVolumeShaper(Landroid/media/VolumeShaper$Configuration;Landroid/media/VolumeShaper$Operation;)V
     .locals 3
-    .param p1, "configuration"    # Landroid/media/VolumeShaper$Configuration;
-    .param p2, "operation"    # Landroid/media/VolumeShaper$Operation;
 
-    .line 146
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -66,18 +57,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 151
     nop
 
-    .line 152
     return-void
 
-    .line 147
     :catch_0
     move-exception v0
 
-    .line 148
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for applyVolumeShaper operation, player already released?"
@@ -92,7 +78,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 73
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -105,18 +90,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 77
     nop
 
-    .line 78
     return-void
 
-    .line 74
     :catch_0
     move-exception v0
 
-    .line 75
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for pause operation, player already released?"
@@ -128,11 +108,9 @@
 
 .method public setPan(F)V
     .locals 3
-    .param p1, "pan"    # F
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 114
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -145,18 +123,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 118
     nop
 
-    .line 119
     return-void
 
-    .line 115
     :catch_0
     move-exception v0
 
-    .line 116
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for setPan operation, player already released?"
@@ -168,11 +141,9 @@
 
 .method public setStartDelayMs(I)V
     .locals 3
-    .param p1, "delayMs"    # I
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 128
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -185,18 +156,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 133
     nop
 
-    .line 134
     return-void
 
-    .line 129
     :catch_0
     move-exception v0
 
-    .line 130
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for setStartDelayMs operation, player already released?"
@@ -208,11 +174,9 @@
 
 .method public setVolume(F)V
     .locals 3
-    .param p1, "vol"    # F
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 100
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -225,18 +189,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 104
     nop
 
-    .line 105
     return-void
 
-    .line 101
     :catch_0
     move-exception v0
 
-    .line 102
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for setVolume operation, player already released?"
@@ -251,7 +210,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 60
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -264,18 +222,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 64
     nop
 
-    .line 65
     return-void
 
-    .line 61
     :catch_0
     move-exception v0
 
-    .line 62
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for start operation, player already released?"
@@ -290,7 +243,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 86
     :try_start_0
     iget-object v0, p0, Landroid/media/PlayerProxy;->mConf:Landroid/media/AudioPlaybackConfiguration;
 
@@ -303,18 +255,13 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 90
     nop
 
-    .line 91
     return-void
 
-    .line 87
     :catch_0
     move-exception v0
 
-    .line 88
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No player to proxy for stop operation, player already released?"

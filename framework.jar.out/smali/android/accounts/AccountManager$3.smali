@@ -34,11 +34,7 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Ljava/lang/String;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/accounts/AccountManager;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 838
-    .local p3, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<[Landroid/accounts/Account;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$3;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p4, p0, Landroid/accounts/AccountManager$3;->val$type:Ljava/lang/String;
@@ -60,7 +56,6 @@
         }
     .end annotation
 
-    .line 838
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$3;->bundleToResult(Landroid/os/Bundle;)[Landroid/accounts/Account;
 
     move-result-object p1
@@ -70,14 +65,12 @@
 
 .method public bundleToResult(Landroid/os/Bundle;)[Landroid/accounts/Account;
     .locals 4
-    .param p1, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/AuthenticatorException;
         }
     .end annotation
 
-    .line 847
     const-string v0, "accounts"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -86,50 +79,36 @@
 
     if-eqz v0, :cond_1
 
-    .line 850
     const-string v0, "accounts"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
 
     move-result-object v0
 
-    .line 851
-    .local v0, "parcelables":[Landroid/os/Parcelable;
     array-length v1, v0
 
     new-array v1, v1, [Landroid/accounts/Account;
 
-    .line 852
-    .local v1, "descs":[Landroid/accounts/Account;
     const/4 v2, 0x0
 
-    .line 852
-    .local v2, "i":I
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_0
 
-    .line 853
     aget-object v3, v0, v2
 
     check-cast v3, Landroid/accounts/Account;
 
     aput-object v3, v1, v2
 
-    .line 852
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 855
-    .end local v2    # "i":I
     :cond_0
     return-object v1
 
-    .line 848
-    .end local v0    # "parcelables":[Landroid/os/Parcelable;
-    .end local v1    # "descs":[Landroid/accounts/Account;
     :cond_1
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
@@ -148,12 +127,10 @@
         }
     .end annotation
 
-    .line 841
     const/16 v0, 0x1f
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 842
     iget-object v0, p0, Landroid/accounts/AccountManager$3;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -168,7 +145,6 @@
 
     iget-object v4, p0, Landroid/accounts/AccountManager$3;->this$0:Landroid/accounts/AccountManager;
 
-    .line 843
     invoke-static {v4}, Landroid/accounts/AccountManager;->access$100(Landroid/accounts/AccountManager;)Landroid/content/Context;
 
     move-result-object v4
@@ -177,9 +153,7 @@
 
     move-result-object v4
 
-    .line 842
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/accounts/IAccountManager;->getAccountsByFeatures(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 844
     return-void
 .end method

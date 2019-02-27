@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ResolverActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/app/ResolverActivity;
 
-    .line 346
     iput-object p1, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onFullscreenChanged(Z)V
     .locals 2
-    .param p1, "fullscreen"    # Z
 
-    .line 349
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     iget v0, v0, Lcom/android/internal/app/ResolverActivity;->mOriginSysUiVis:I
@@ -49,7 +45,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 350
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
@@ -68,7 +63,6 @@
 
     iput v1, v0, Lcom/android/internal/app/ResolverActivity;->mOriginSysUiVis:I
 
-    .line 351
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
@@ -79,11 +73,9 @@
 
     iput v1, v0, Lcom/android/internal/app/ResolverActivity;->mWhiteFullscreenSysUiVis:I
 
-    .line 353
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 355
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/ResolverActivity;->getWindow()Landroid/view/Window;
@@ -102,7 +94,6 @@
 
     goto :goto_0
 
-    .line 358
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$3;->this$0:Lcom/android/internal/app/ResolverActivity;
 
@@ -120,7 +111,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 360
     :goto_0
     return-void
 .end method

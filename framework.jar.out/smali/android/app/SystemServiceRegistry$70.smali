@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 800
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,23 +35,17 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/secrecy/SecrecyManager;
     .locals 4
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 803
     const-string/jumbo v0, "secrecy"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 804
-    .local v0, "binder":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/secrecy/ISecrecyService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/secrecy/ISecrecyService;
 
     move-result-object v1
 
-    .line 805
-    .local v1, "service":Landroid/secrecy/ISecrecyService;
     new-instance v2, Landroid/secrecy/SecrecyManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -72,7 +65,6 @@
         }
     .end annotation
 
-    .line 800
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$70;->createService(Landroid/app/ContextImpl;)Landroid/secrecy/SecrecyManager;
 
     move-result-object p1

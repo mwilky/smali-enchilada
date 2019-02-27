@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/SharedPreferencesImpl$EditorImpl;Landroid/app/SharedPreferencesImpl$MemoryCommitResult;J)V
     .locals 0
-    .param p1, "this$1"    # Landroid/app/SharedPreferencesImpl$EditorImpl;
 
-    .line 457
     iput-object p1, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$1;->this$1:Landroid/app/SharedPreferencesImpl$EditorImpl;
 
     iput-object p2, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$1;->val$mcr:Landroid/app/SharedPreferencesImpl$MemoryCommitResult;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 1
 
-    .line 461
     :try_start_0
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$1;->val$mcr:Landroid/app/SharedPreferencesImpl$MemoryCommitResult;
 
@@ -57,14 +54,11 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 463
     goto :goto_0
 
-    .line 462
     :catch_0
     move-exception v0
 
-    .line 470
     :goto_0
     return-void
 .end method

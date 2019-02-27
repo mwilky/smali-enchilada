@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/backup/RestoreSession$RestoreObserverWrapper;Landroid/os/Looper;Landroid/app/backup/RestoreSession;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 293
     iput-object p1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     iput-object p3, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->val$this$0:Landroid/app/backup/RestoreSession;
@@ -40,16 +37,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 296
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 307
     :pswitch_0
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -63,7 +57,6 @@
 
     goto :goto_0
 
-    .line 304
     :pswitch_1
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -73,10 +66,8 @@
 
     invoke-virtual {v0, v1}, Landroid/app/backup/RestoreObserver;->restoreFinished(I)V
 
-    .line 305
     goto :goto_0
 
-    .line 301
     :pswitch_2
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -90,10 +81,8 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/backup/RestoreObserver;->onUpdate(ILjava/lang/String;)V
 
-    .line 302
     goto :goto_0
 
-    .line 298
     :pswitch_3
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -103,10 +92,8 @@
 
     invoke-virtual {v0, v1}, Landroid/app/backup/RestoreObserver;->restoreStarting(I)V
 
-    .line 299
     nop
 
-    .line 310
     :goto_0
     return-void
 

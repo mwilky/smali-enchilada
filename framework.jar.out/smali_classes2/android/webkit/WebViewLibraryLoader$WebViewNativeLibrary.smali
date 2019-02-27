@@ -26,18 +26,12 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;J)V
     .locals 0
-    .param p1, "path"    # Ljava/lang/String;
-    .param p2, "size"    # J
 
-    .line 321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 322
     iput-object p1, p0, Landroid/webkit/WebViewLibraryLoader$WebViewNativeLibrary;->path:Ljava/lang/String;
 
-    .line 323
     iput-wide p2, p0, Landroid/webkit/WebViewLibraryLoader$WebViewNativeLibrary;->size:J
 
-    .line 324
     return-void
 .end method

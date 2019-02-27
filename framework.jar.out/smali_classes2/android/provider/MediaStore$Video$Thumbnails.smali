@@ -45,34 +45,28 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2226
     const-string v0, "internal"
 
-    .line 2227
     invoke-static {v0}, Landroid/provider/MediaStore$Video$Thumbnails;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/MediaStore$Video$Thumbnails;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 2233
     const-string v0, "external"
 
-    .line 2234
     invoke-static {v0}, Landroid/provider/MediaStore$Video$Thumbnails;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 2233
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 2148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -80,10 +74,7 @@
 
 .method public static cancelThumbnailRequest(Landroid/content/ContentResolver;J)V
     .locals 6
-    .param p0, "cr"    # Landroid/content/ContentResolver;
-    .param p1, "origId"    # J
 
-    .line 2158
     sget-object v3, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const-wide/16 v4, 0x0
@@ -94,17 +85,12 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/MediaStore$InternalThumbnails;->cancelThumbnailRequest(Landroid/content/ContentResolver;JLandroid/net/Uri;J)V
 
-    .line 2160
     return-void
 .end method
 
 .method public static cancelThumbnailRequest(Landroid/content/ContentResolver;JJ)V
     .locals 6
-    .param p0, "cr"    # Landroid/content/ContentResolver;
-    .param p1, "origId"    # J
-    .param p3, "groupId"    # J
 
-    .line 2208
     sget-object v3, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     move-object v0, p0
@@ -115,15 +101,12 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/MediaStore$InternalThumbnails;->cancelThumbnailRequest(Landroid/content/ContentResolver;JLandroid/net/Uri;J)V
 
-    .line 2209
     return-void
 .end method
 
 .method public static getContentUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
 
-    .line 2219
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -151,12 +134,7 @@
 
 .method public static getThumbnail(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 9
-    .param p0, "cr"    # Landroid/content/ContentResolver;
-    .param p1, "origId"    # J
-    .param p3, "kind"    # I
-    .param p4, "options"    # Landroid/graphics/BitmapFactory$Options;
 
-    .line 2175
     sget-object v7, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const-wide/16 v3, 0x0
@@ -180,13 +158,7 @@
 
 .method public static getThumbnail(Landroid/content/ContentResolver;JJILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 9
-    .param p0, "cr"    # Landroid/content/ContentResolver;
-    .param p1, "origId"    # J
-    .param p3, "groupId"    # J
-    .param p5, "kind"    # I
-    .param p6, "options"    # Landroid/graphics/BitmapFactory$Options;
 
-    .line 2194
     sget-object v7, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const/4 v8, 0x1

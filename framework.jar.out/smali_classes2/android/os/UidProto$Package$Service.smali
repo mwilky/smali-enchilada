@@ -31,9 +31,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/UidProto$Package;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/os/UidProto$Package;
 
-    .line 14
     iput-object p1, p0, Landroid/os/UidProto$Package$Service;->this$1:Landroid/os/UidProto$Package;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

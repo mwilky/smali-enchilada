@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,21 +39,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/Curve;
     .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 42
     invoke-virtual {p1}, Landroid/os/Parcel;->createFloatArray()[F
 
     move-result-object v0
 
-    .line 43
-    .local v0, "x":[F
     invoke-virtual {p1}, Landroid/os/Parcel;->createFloatArray()[F
 
     move-result-object v1
 
-    .line 44
-    .local v1, "y":[F
     new-instance v2, Landroid/hardware/display/Curve;
 
     invoke-direct {v2, v0, v1}, Landroid/hardware/display/Curve;-><init>([F[F)V
@@ -65,7 +58,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
     invoke-virtual {p0, p1}, Landroid/hardware/display/Curve$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/Curve;
 
     move-result-object p1
@@ -75,9 +67,7 @@
 
 .method public newArray(I)[Landroid/hardware/display/Curve;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 48
     new-array v0, p1, [Landroid/hardware/display/Curve;
 
     return-object v0
@@ -86,7 +76,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 40
     invoke-virtual {p0, p1}, Landroid/hardware/display/Curve$1;->newArray(I)[Landroid/hardware/display/Curve;
 
     move-result-object p1

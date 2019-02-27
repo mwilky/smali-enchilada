@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2229
     invoke-direct {p0}, Landroid/os/StrictMode$Span;-><init>()V
 
     return-void
@@ -29,6 +28,5 @@
 .method public finish()V
     .locals 0
 
-    .line 2232
     return-void
 .end method

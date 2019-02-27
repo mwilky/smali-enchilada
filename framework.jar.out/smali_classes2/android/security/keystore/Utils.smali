@@ -7,7 +7,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,9 +14,7 @@
 
 .method static cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
     .locals 1
-    .param p0, "value"    # Ljava/util/Date;
 
-    .line 30
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/util/Date;->clone()Ljava/lang/Object;
@@ -37,9 +34,7 @@
 
 .method static cloneIfNotNull([B)[B
     .locals 1
-    .param p0, "value"    # [B
 
-    .line 34
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, [B->clone()Ljava/lang/Object;

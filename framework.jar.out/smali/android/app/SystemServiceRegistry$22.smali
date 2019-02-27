@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 372
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method public createService()Landroid/view/inputmethod/InputMethodManager;
     .locals 1
 
-    .line 375
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->getInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
@@ -53,7 +51,6 @@
         }
     .end annotation
 
-    .line 372
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$22;->createService()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0

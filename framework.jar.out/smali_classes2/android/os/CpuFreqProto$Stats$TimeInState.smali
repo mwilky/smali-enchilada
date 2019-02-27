@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/CpuFreqProto$Stats;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/os/CpuFreqProto$Stats;
 
-    .line 14
     iput-object p1, p0, Landroid/os/CpuFreqProto$Stats$TimeInState;->this$1:Landroid/os/CpuFreqProto$Stats;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

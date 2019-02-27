@@ -41,7 +41,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1357
     new-instance v0, Landroid/media/session/MediaSession$QueueItem$1;
 
     invoke-direct {v0}, Landroid/media/session/MediaSession$QueueItem$1;-><init>()V
@@ -53,32 +52,23 @@
 
 .method public constructor <init>(Landroid/media/MediaDescription;J)V
     .locals 2
-    .param p1, "description"    # Landroid/media/MediaDescription;
-    .param p2, "id"    # J
 
-    .line 1316
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1317
     if-eqz p1, :cond_1
 
-    .line 1320
     const-wide/16 v0, -0x1
 
     cmp-long v0, p2, v0
 
     if-eqz v0, :cond_0
 
-    .line 1323
     iput-object p1, p0, Landroid/media/session/MediaSession$QueueItem;->mDescription:Landroid/media/MediaDescription;
 
-    .line 1324
     iput-wide p2, p0, Landroid/media/session/MediaSession$QueueItem;->mId:J
 
-    .line 1325
     return-void
 
-    .line 1321
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -88,7 +78,6 @@
 
     throw v0
 
-    .line 1318
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -101,12 +90,9 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 1327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1328
     sget-object v0, Landroid/media/MediaDescription;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -117,23 +103,18 @@
 
     iput-object v0, p0, Landroid/media/session/MediaSession$QueueItem;->mDescription:Landroid/media/MediaDescription;
 
-    .line 1329
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/media/session/MediaSession$QueueItem;->mId:J
 
-    .line 1330
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/media/session/MediaSession$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/media/session/MediaSession$1;
 
-    .line 1300
     invoke-direct {p0, p1}, Landroid/media/session/MediaSession$QueueItem;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -144,7 +125,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 1354
     const/4 v0, 0x0
 
     return v0
@@ -152,33 +132,25 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 1380
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 1381
     return v0
 
-    .line 1384
     :cond_0
     instance-of v1, p1, Landroid/media/session/MediaSession$QueueItem;
 
     if-nez v1, :cond_1
 
-    .line 1385
     return v0
 
-    .line 1388
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/media/session/MediaSession$QueueItem;
 
-    .line 1389
-    .local v1, "item":Landroid/media/session/MediaSession$QueueItem;
     iget-wide v2, p0, Landroid/media/session/MediaSession$QueueItem;->mId:J
 
     iget-wide v4, v1, Landroid/media/session/MediaSession$QueueItem;->mId:J
@@ -187,10 +159,8 @@
 
     if-eqz v2, :cond_2
 
-    .line 1390
     return v0
 
-    .line 1393
     :cond_2
     iget-object v2, p0, Landroid/media/session/MediaSession$QueueItem;->mDescription:Landroid/media/MediaDescription;
 
@@ -202,10 +172,8 @@
 
     if-nez v2, :cond_3
 
-    .line 1394
     return v0
 
-    .line 1397
     :cond_3
     const/4 v0, 0x1
 
@@ -215,7 +183,6 @@
 .method public getDescription()Landroid/media/MediaDescription;
     .locals 1
 
-    .line 1336
     iget-object v0, p0, Landroid/media/session/MediaSession$QueueItem;->mDescription:Landroid/media/MediaDescription;
 
     return-object v0
@@ -224,7 +191,6 @@
 .method public getQueueId()J
     .locals 2
 
-    .line 1343
     iget-wide v0, p0, Landroid/media/session/MediaSession$QueueItem;->mId:J
 
     return-wide v0
@@ -233,7 +199,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1373
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -267,19 +232,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 1348
     iget-object v0, p0, Landroid/media/session/MediaSession$QueueItem;->mDescription:Landroid/media/MediaDescription;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaDescription;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1349
     iget-wide v0, p0, Landroid/media/session/MediaSession$QueueItem;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1350
     return-void
 .end method

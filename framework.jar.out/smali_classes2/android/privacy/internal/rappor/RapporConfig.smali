@@ -29,13 +29,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IDDDII)V
     .locals 19
-    .param p1, "encoderId"    # Ljava/lang/String;
-    .param p2, "numBits"    # I
-    .param p3, "probabilityF"    # D
-    .param p5, "probabilityP"    # D
-    .param p7, "probabilityQ"    # D
-    .param p9, "numCohorts"    # I
-    .param p10, "numBloomHashes"    # I
 
     move-object/from16 v0, p0
 
@@ -49,12 +42,10 @@
 
     move/from16 v8, p9
 
-    .line 54
     move/from16 v9, p10
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v10
@@ -67,12 +58,10 @@
 
     invoke-static {v10, v12}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 56
     move-object/from16 v10, p1
 
     iput-object v10, v0, Landroid/privacy/internal/rappor/RapporConfig;->mEncoderId:Ljava/lang/String;
 
-    .line 57
     const/4 v12, 0x0
 
     if-lez v1, :cond_0
@@ -89,10 +78,8 @@
 
     invoke-static {v13, v14}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 58
     iput v1, v0, Landroid/privacy/internal/rappor/RapporConfig;->mNumBits:I
 
-    .line 59
     const-wide/16 v13, 0x0
 
     cmpl-double v15, v2, v13
@@ -117,10 +104,8 @@
 
     invoke-static {v15, v11}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 61
     iput-wide v2, v0, Landroid/privacy/internal/rappor/RapporConfig;->mProbabilityF:D
 
-    .line 62
     cmpl-double v11, v4, v13
 
     if-ltz v11, :cond_2
@@ -141,10 +126,8 @@
 
     invoke-static {v11, v15}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 64
     iput-wide v4, v0, Landroid/privacy/internal/rappor/RapporConfig;->mProbabilityP:D
 
-    .line 65
     cmpl-double v11, v6, v13
 
     if-ltz v11, :cond_3
@@ -165,10 +148,8 @@
 
     invoke-static {v11, v13}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 67
     iput-wide v6, v0, Landroid/privacy/internal/rappor/RapporConfig;->mProbabilityQ:D
 
-    .line 68
     if-lez v8, :cond_4
 
     const/4 v11, 0x1
@@ -183,10 +164,8 @@
 
     invoke-static {v11, v13}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 69
     iput v8, v0, Landroid/privacy/internal/rappor/RapporConfig;->mNumCohorts:I
 
-    .line 70
     if-lez v9, :cond_5
 
     const/4 v12, 0x1
@@ -198,10 +177,8 @@
 
     invoke-static {v12, v11}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 71
     iput v9, v0, Landroid/privacy/internal/rappor/RapporConfig;->mNumBloomHashes:I
 
-    .line 72
     return-void
 .end method
 
@@ -210,7 +187,6 @@
 .method public getAlgorithm()Ljava/lang/String;
     .locals 1
 
-    .line 76
     const-string v0, "Rappor"
 
     return-object v0
@@ -219,7 +195,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 81
     const-string v0, "EncoderId: %s, NumBits: %d, ProbabilityF: %.3f, ProbabilityP: %.3f, ProbabilityQ: %.3f, NumCohorts: %d, NumBloomHashes: %d"
 
     const/4 v1, 0x7
@@ -234,7 +209,6 @@
 
     iget v2, p0, Landroid/privacy/internal/rappor/RapporConfig;->mNumBits:I
 
-    .line 84
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -275,7 +249,6 @@
 
     iget v2, p0, Landroid/privacy/internal/rappor/RapporConfig;->mNumCohorts:I
 
-    .line 85
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -294,7 +267,6 @@
 
     aput-object v2, v1, v3
 
-    .line 81
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

@@ -65,9 +65,7 @@
 
 .method public onPointerCaptureChanged(Z)V
     .locals 0
-    .param p1, "hasCapture"    # Z
 
-    .line 583
     return-void
 .end method
 
@@ -76,8 +74,6 @@
 
 .method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
     .locals 0
-    .param p2, "menu"    # Landroid/view/Menu;
-    .param p3, "deviceId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,8 +85,6 @@
         }
     .end annotation
 
-    .line 576
-    .local p1, "data":Ljava/util/List;, "Ljava/util/List<Landroid/view/KeyboardShortcutGroup;>;"
     return-void
 .end method
 

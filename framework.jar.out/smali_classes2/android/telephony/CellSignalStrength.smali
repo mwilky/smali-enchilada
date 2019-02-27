@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 38
     const-string/jumbo v0, "none"
 
     const-string/jumbo v1, "poor"
@@ -46,10 +45,8 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     return-void
 .end method
 

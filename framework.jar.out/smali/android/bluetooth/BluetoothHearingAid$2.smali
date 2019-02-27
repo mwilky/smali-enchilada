@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothHearingAid;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/bluetooth/BluetoothHearingAid;
 
-    .line 721
     iput-object p1, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 3
-    .param p1, "className"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 725
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
@@ -55,7 +50,6 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
-    .line 726
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {p2}, Landroid/os/Binder;->allowBlocking(Landroid/os/IBinder;)Landroid/os/IBinder;
@@ -70,7 +64,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 728
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$000(Landroid/bluetooth/BluetoothHearingAid;)Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -83,10 +76,8 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->unlock()V
 
-    .line 729
     nop
 
-    .line 731
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$400(Landroid/bluetooth/BluetoothHearingAid;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -95,7 +86,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 732
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$400(Landroid/bluetooth/BluetoothHearingAid;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -108,11 +98,9 @@
 
     invoke-interface {v0, v1, v2}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 735
     :cond_0
     return-void
 
-    .line 728
     :catchall_0
     move-exception v0
 
@@ -133,9 +121,7 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 2
-    .param p1, "className"    # Landroid/content/ComponentName;
 
-    .line 740
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
@@ -149,7 +135,6 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
-    .line 741
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     const/4 v1, 0x0
@@ -158,7 +143,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 743
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$000(Landroid/bluetooth/BluetoothHearingAid;)Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -171,10 +155,8 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->unlock()V
 
-    .line 744
     nop
 
-    .line 745
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$400(Landroid/bluetooth/BluetoothHearingAid;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -183,7 +165,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 746
     iget-object v0, p0, Landroid/bluetooth/BluetoothHearingAid$2;->this$0:Landroid/bluetooth/BluetoothHearingAid;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHearingAid;->access$400(Landroid/bluetooth/BluetoothHearingAid;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -194,11 +175,9 @@
 
     invoke-interface {v0, v1}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceDisconnected(I)V
 
-    .line 748
     :cond_0
     return-void
 
-    .line 743
     :catchall_0
     move-exception v0
 

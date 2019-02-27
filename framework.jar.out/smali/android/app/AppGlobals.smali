@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,7 +15,6 @@
 .method public static getInitialApplication()Landroid/app/Application;
     .locals 1
 
-    .line 31
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -27,7 +25,6 @@
 .method public static getInitialPackage()Ljava/lang/String;
     .locals 1
 
-    .line 39
     invoke-static {}, Landroid/app/ActivityThread;->currentPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -37,26 +34,19 @@
 
 .method public static getIntCoreSetting(Ljava/lang/String;I)I
     .locals 2
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "defaultValue"    # I
 
-    .line 58
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v0
 
-    .line 59
-    .local v0, "currentActivityThread":Landroid/app/ActivityThread;
     if-eqz v0, :cond_0
 
-    .line 60
     invoke-virtual {v0, p0, p1}, Landroid/app/ActivityThread;->getIntCoreSetting(Ljava/lang/String;I)I
 
     move-result v1
 
     return v1
 
-    .line 62
     :cond_0
     return p1
 .end method
@@ -64,7 +54,6 @@
 .method public static getPackageManager()Landroid/content/pm/IPackageManager;
     .locals 1
 
-    .line 47
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0

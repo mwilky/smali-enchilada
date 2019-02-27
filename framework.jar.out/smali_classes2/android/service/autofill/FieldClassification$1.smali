@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/autofill/FieldClassification;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/autofill/FieldClassification;
 
-    .line 43
     iput-object p1, p0, Landroid/service/autofill/FieldClassification$1;->this$0:Landroid/service/autofill/FieldClassification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/service/autofill/FieldClassification$Match;Landroid/service/autofill/FieldClassification$Match;)I
     .locals 2
-    .param p1, "o1"    # Landroid/service/autofill/FieldClassification$Match;
-    .param p2, "o2"    # Landroid/service/autofill/FieldClassification$Match;
 
-    .line 46
     invoke-static {p1}, Landroid/service/autofill/FieldClassification$Match;->access$000(Landroid/service/autofill/FieldClassification$Match;)F
 
     move-result v0
@@ -67,7 +62,6 @@
 
     return v0
 
-    .line 47
     :cond_0
     invoke-static {p1}, Landroid/service/autofill/FieldClassification$Match;->access$000(Landroid/service/autofill/FieldClassification$Match;)F
 
@@ -85,7 +79,6 @@
 
     return v0
 
-    .line 48
     :cond_1
     const/4 v0, 0x0
 
@@ -95,7 +88,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 43
     check-cast p1, Landroid/service/autofill/FieldClassification$Match;
 
     check-cast p2, Landroid/service/autofill/FieldClassification$Match;

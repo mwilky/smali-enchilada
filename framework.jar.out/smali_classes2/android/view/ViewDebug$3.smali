@@ -29,7 +29,6 @@
 .method constructor <init>(Landroid/view/ViewHierarchyEncoder;Landroid/view/View;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
-    .line 839
     iput-object p1, p0, Landroid/view/ViewDebug$3;->val$encoder:Landroid/view/ViewHierarchyEncoder;
 
     iput-object p2, p0, Landroid/view/ViewDebug$3;->val$view:Landroid/view/View;
@@ -46,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 842
     iget-object v0, p0, Landroid/view/ViewDebug$3;->val$encoder:Landroid/view/ViewHierarchyEncoder;
 
     const-string/jumbo v1, "window:left"
@@ -59,7 +57,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;I)V
 
-    .line 843
     iget-object v0, p0, Landroid/view/ViewDebug$3;->val$encoder:Landroid/view/ViewHierarchyEncoder;
 
     const-string/jumbo v1, "window:top"
@@ -72,18 +69,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;I)V
 
-    .line 844
     iget-object v0, p0, Landroid/view/ViewDebug$3;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Landroid/view/ViewDebug$3;->val$encoder:Landroid/view/ViewHierarchyEncoder;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->encode(Landroid/view/ViewHierarchyEncoder;)V
 
-    .line 845
     iget-object v0, p0, Landroid/view/ViewDebug$3;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 846
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/midi/MidiOutputPort;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/midi/MidiOutputPort;
 
-    .line 52
     iput-object p1, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -36,13 +34,10 @@
 .method public run()V
     .locals 9
 
-    .line 55
     const/16 v0, 0x400
 
     new-array v0, v0, [B
 
-    .line 60
-    .local v0, "buffer":[B
     :goto_0
     :try_start_0
     iget-object v1, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
@@ -57,14 +52,10 @@
 
     move v7, v1
 
-    .line 61
-    .local v7, "count":I
     if-gez v7, :cond_0
 
-    .line 62
     goto :goto_3
 
-    .line 66
     :cond_0
     invoke-static {v0, v7}, Landroid/media/midi/MidiPortImpl;->getPacketType([BI)I
 
@@ -72,16 +63,12 @@
 
     move v8, v1
 
-    .line 67
-    .local v8, "packetType":I
     packed-switch v8, :pswitch_data_0
 
-    .line 81
     const-string v1, "MidiOutputPort"
 
     goto :goto_1
 
-    .line 78
     :pswitch_0
     iget-object v1, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
 
@@ -91,29 +78,21 @@
 
     invoke-virtual {v1}, Lcom/android/internal/midi/MidiDispatcher;->flush()V
 
-    .line 79
     goto :goto_2
 
-    .line 69
     :pswitch_1
     invoke-static {v0, v7}, Landroid/media/midi/MidiPortImpl;->getDataOffset([BI)I
 
     move-result v3
 
-    .line 70
-    .local v3, "offset":I
     invoke-static {v0, v7}, Landroid/media/midi/MidiPortImpl;->getDataSize([BI)I
 
     move-result v4
 
-    .line 71
-    .local v4, "size":I
     invoke-static {v0, v7}, Landroid/media/midi/MidiPortImpl;->getPacketTimestamp([BI)J
 
     move-result-wide v5
 
-    .line 74
-    .local v5, "timestamp":J
     iget-object v1, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
 
     invoke-static {v1}, Landroid/media/midi/MidiOutputPort;->access$100(Landroid/media/midi/MidiOutputPort;)Lcom/android/internal/midi/MidiDispatcher;
@@ -124,13 +103,8 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/internal/midi/MidiDispatcher;->send([BIIJ)V
 
-    .line 75
     goto :goto_2
 
-    .line 81
-    .end local v3    # "offset":I
-    .end local v4    # "size":I
-    .end local v5    # "timestamp":J
     :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -151,24 +125,17 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 84
-    .end local v7    # "count":I
-    .end local v8    # "packetType":I
     :goto_2
     goto :goto_0
 
-    .line 89
     :catchall_0
     move-exception v1
 
     goto :goto_4
 
-    .line 85
     :catch_0
     move-exception v1
 
-    .line 87
-    .local v1, "e":Ljava/io/IOException;
     :try_start_1
     const-string v2, "MidiOutputPort"
 
@@ -178,8 +145,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 89
-    .end local v1    # "e":Ljava/io/IOException;
     :goto_3
     iget-object v1, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
 
@@ -189,13 +154,10 @@
 
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 90
     nop
 
-    .line 91
     return-void
 
-    .line 89
     :goto_4
     iget-object v2, p0, Landroid/media/midi/MidiOutputPort$1;->this$0:Landroid/media/midi/MidiOutputPort;
 

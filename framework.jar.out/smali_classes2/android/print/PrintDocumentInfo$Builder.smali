@@ -21,19 +21,15 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 310
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 313
     new-instance v0, Landroid/print/PrintDocumentInfo;
 
     const/4 v1, 0x0
@@ -42,15 +38,12 @@
 
     iput-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
-    .line 314
     iget-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
     invoke-static {v0, p1}, Landroid/print/PrintDocumentInfo;->access$102(Landroid/print/PrintDocumentInfo;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 315
     return-void
 
-    .line 311
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -66,7 +59,6 @@
 .method public build()Landroid/print/PrintDocumentInfo;
     .locals 3
 
-    .line 363
     iget-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
     invoke-static {v0}, Landroid/print/PrintDocumentInfo;->access$200(Landroid/print/PrintDocumentInfo;)I
@@ -75,14 +67,12 @@
 
     if-nez v0, :cond_0
 
-    .line 364
     iget-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Landroid/print/PrintDocumentInfo;->access$202(Landroid/print/PrintDocumentInfo;I)I
 
-    .line 366
     :cond_0
     new-instance v0, Landroid/print/PrintDocumentInfo;
 
@@ -97,22 +87,17 @@
 
 .method public setContentType(I)Landroid/print/PrintDocumentInfo$Builder;
     .locals 1
-    .param p1, "type"    # I
 
-    .line 350
     iget-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
     invoke-static {v0, p1}, Landroid/print/PrintDocumentInfo;->access$302(Landroid/print/PrintDocumentInfo;I)I
 
-    .line 351
     return-object p0
 .end method
 
 .method public setPageCount(I)Landroid/print/PrintDocumentInfo$Builder;
     .locals 2
-    .param p1, "pageCount"    # I
 
-    .line 328
     if-gez p1, :cond_1
 
     const/4 v0, -0x1
@@ -121,7 +106,6 @@
 
     goto :goto_0
 
-    .line 329
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -131,13 +115,11 @@
 
     throw v0
 
-    .line 333
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/print/PrintDocumentInfo$Builder;->mPrototype:Landroid/print/PrintDocumentInfo;
 
     invoke-static {v0, p1}, Landroid/print/PrintDocumentInfo;->access$202(Landroid/print/PrintDocumentInfo;I)I
 
-    .line 334
     return-object p0
 .end method

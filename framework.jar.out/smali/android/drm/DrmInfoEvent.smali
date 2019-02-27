@@ -20,25 +20,16 @@
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
     .locals 0
-    .param p1, "uniqueId"    # I
-    .param p2, "type"    # I
-    .param p3, "message"    # Ljava/lang/String;
 
-    .line 73
     invoke-direct {p0, p1, p2, p3}, Landroid/drm/DrmEvent;-><init>(IILjava/lang/String;)V
 
-    .line 74
     invoke-direct {p0, p2}, Landroid/drm/DrmInfoEvent;->checkTypeValidity(I)V
 
-    .line 75
     return-void
 .end method
 
 .method public constructor <init>(IILjava/lang/String;Ljava/util/HashMap;)V
     .locals 0
-    .param p1, "uniqueId"    # I
-    .param p2, "type"    # I
-    .param p3, "message"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -50,22 +41,16 @@
         }
     .end annotation
 
-    .line 89
-    .local p4, "attributes":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/drm/DrmEvent;-><init>(IILjava/lang/String;Ljava/util/HashMap;)V
 
-    .line 90
     invoke-direct {p0, p2}, Landroid/drm/DrmInfoEvent;->checkTypeValidity(I)V
 
-    .line 91
     return-void
 .end method
 
 .method private checkTypeValidity(I)V
     .locals 2
-    .param p1, "type"    # I
 
-    .line 99
     const/4 v0, 0x1
 
     if-lt p1, v0, :cond_0
@@ -74,7 +59,6 @@
 
     if-le p1, v0, :cond_2
 
-    .line 102
     :cond_0
     const/16 v0, 0x3e9
 
@@ -86,7 +70,6 @@
 
     goto :goto_0
 
-    .line 104
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -102,16 +85,12 @@
 
     move-result-object v0
 
-    .line 105
-    .local v0, "msg":Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 108
-    .end local v0    # "msg":Ljava/lang/String;
     :cond_2
     :goto_0
     return-void

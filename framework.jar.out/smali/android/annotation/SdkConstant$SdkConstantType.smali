@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 32
     new-instance v0, Landroid/annotation/SdkConstant$SdkConstantType;
 
     const-string v1, "ACTIVITY_INTENT_ACTION"
@@ -91,7 +90,6 @@
 
     sput-object v0, Landroid/annotation/SdkConstant$SdkConstantType;->FEATURE:Landroid/annotation/SdkConstant$SdkConstantType;
 
-    .line 31
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/annotation/SdkConstant$SdkConstantType;
@@ -129,7 +127,6 @@
         }
     .end annotation
 
-    .line 31
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -137,9 +134,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/annotation/SdkConstant$SdkConstantType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 31
     const-class v0, Landroid/annotation/SdkConstant$SdkConstantType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -154,7 +149,6 @@
 .method public static values()[Landroid/annotation/SdkConstant$SdkConstantType;
     .locals 1
 
-    .line 31
     sget-object v0, Landroid/annotation/SdkConstant$SdkConstantType;->$VALUES:[Landroid/annotation/SdkConstant$SdkConstantType;
 
     invoke-virtual {v0}, [Landroid/annotation/SdkConstant$SdkConstantType;->clone()Ljava/lang/Object;

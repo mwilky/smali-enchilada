@@ -21,14 +21,10 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "error"    # I
 
-    .line 85
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 86
     iput p1, p0, Landroid/net/KeepalivePacketData$InvalidPacketException;->error:I
 
-    .line 87
     return-void
 .end method

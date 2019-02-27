@@ -31,12 +31,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "clientId"    # Ljava/lang/String;
 
-    .line 2922
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2915
     new-instance v0, Landroid/media/AudioManager$SafeWaitObject;
 
     const/4 v1, 0x0
@@ -45,18 +42,14 @@
 
     iput-object v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mLock:Landroid/media/AudioManager$SafeWaitObject;
 
-    .line 2916
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mResultReceived:Z
 
-    .line 2919
     iput v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mFocusRequestResult:I
 
-    .line 2923
     iput-object p1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mFocusClientId:Ljava/lang/String;
 
-    .line 2924
     return-void
 .end method
 
@@ -64,34 +57,26 @@
 # virtual methods
 .method notifyResult(I)V
     .locals 2
-    .param p1, "requestResult"    # I
 
-    .line 2930
     iget-object v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mLock:Landroid/media/AudioManager$SafeWaitObject;
 
     monitor-enter v0
 
-    .line 2931
     const/4 v1, 0x1
 
     :try_start_0
     iput-boolean v1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mResultReceived:Z
 
-    .line 2932
     iput p1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mFocusRequestResult:I
 
-    .line 2933
     iget-object v1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mLock:Landroid/media/AudioManager$SafeWaitObject;
 
     invoke-virtual {v1}, Landroid/media/AudioManager$SafeWaitObject;->safeNotify()V
 
-    .line 2934
     monitor-exit v0
 
-    .line 2935
     return-void
 
-    .line 2934
     :catchall_0
     move-exception v1
 
@@ -105,7 +90,6 @@
 .method receivedResult()Z
     .locals 1
 
-    .line 2926
     iget-boolean v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mResultReceived:Z
 
     return v0
@@ -114,7 +98,6 @@
 .method requestResult()I
     .locals 1
 
-    .line 2927
     iget v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mFocusRequestResult:I
 
     return v0
@@ -122,27 +105,22 @@
 
 .method public waitForResult(J)V
     .locals 2
-    .param p1, "timeOutMs"    # J
 
-    .line 2938
     iget-object v0, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mLock:Landroid/media/AudioManager$SafeWaitObject;
 
     monitor-enter v0
 
-    .line 2939
     :try_start_0
     iget-boolean v1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mResultReceived:Z
 
     if-eqz v1, :cond_0
 
-    .line 2941
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    .line 2944
     :cond_0
     :try_start_1
     iget-object v1, p0, Landroid/media/AudioManager$BlockingFocusResultReceiver;->mLock:Landroid/media/AudioManager$SafeWaitObject;
@@ -152,21 +130,17 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2945
     goto :goto_0
 
     :catch_0
     move-exception v1
 
-    .line 2946
     :goto_0
     :try_start_2
     monitor-exit v0
 
-    .line 2947
     return-void
 
-    .line 2946
     :catchall_0
     move-exception v1
 

@@ -14,12 +14,9 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 37
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
-    .line 38
     return-void
 .end method
 
@@ -27,17 +24,13 @@
 # virtual methods
 .method public process(Landroid/filterfw/core/FilterContext;)V
     .locals 6
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 48
     const-string v0, "frame"
 
     invoke-virtual {p0, v0}, Landroid/filterpacks/base/GLTextureTarget;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
     move-result-object v0
 
-    .line 50
-    .local v0, "input":Landroid/filterfw/core/Frame;
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
@@ -46,7 +39,6 @@
 
     move-result v1
 
-    .line 51
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
@@ -55,15 +47,12 @@
 
     move-result v2
 
-    .line 50
     const/4 v3, 0x3
 
     invoke-static {v1, v2, v3, v3}, Landroid/filterfw/format/ImageFormat;->create(IIII)Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v1
 
-    .line 55
-    .local v1, "format":Landroid/filterfw/core/FrameFormat;
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v2
@@ -78,21 +67,16 @@
 
     move-result-object v2
 
-    .line 58
-    .local v2, "frame":Landroid/filterfw/core/Frame;
     invoke-virtual {v2, v0}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
-    .line 59
     invoke-virtual {v2}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
-    .line 60
     return-void
 .end method
 
 .method public setupPorts()V
     .locals 2
 
-    .line 42
     const-string v0, "frame"
 
     const/4 v1, 0x3
@@ -103,6 +87,5 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/base/GLTextureTarget;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
-    .line 43
     return-void
 .end method

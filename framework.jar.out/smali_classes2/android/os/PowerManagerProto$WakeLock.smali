@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/PowerManagerProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/os/PowerManagerProto;
 
-    .line 17
     iput-object p1, p0, Landroid/os/PowerManagerProto$WakeLock;->this$0:Landroid/os/PowerManagerProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

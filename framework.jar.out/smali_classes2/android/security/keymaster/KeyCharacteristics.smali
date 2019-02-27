@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 34
     new-instance v0, Landroid/security/keymaster/KeyCharacteristics$1;
 
     invoke-direct {v0}, Landroid/security/keymaster/KeyCharacteristics$1;-><init>()V
@@ -41,7 +40,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,15 +47,11 @@
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .locals 0
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
     invoke-virtual {p0, p1}, Landroid/security/keymaster/KeyCharacteristics;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 51
     return-void
 .end method
 
@@ -66,7 +60,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 55
     const/4 v0, 0x0
 
     return v0
@@ -74,9 +67,7 @@
 
 .method public getBoolean(I)Z
     .locals 1
-    .param p1, "tag"    # I
 
-    .line 144
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1}, Landroid/security/keymaster/KeymasterArguments;->containsTag(I)Z
@@ -85,7 +76,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 145
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1}, Landroid/security/keymaster/KeymasterArguments;->getBoolean(I)Z
@@ -94,7 +84,6 @@
 
     return v0
 
-    .line 147
     :cond_0
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
@@ -107,9 +96,7 @@
 
 .method public getDate(I)Ljava/util/Date;
     .locals 3
-    .param p1, "tag"    # I
 
-    .line 131
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     const/4 v1, 0x0
@@ -118,14 +105,10 @@
 
     move-result-object v0
 
-    .line 132
-    .local v0, "result":Ljava/util/Date;
     if-eqz v0, :cond_0
 
-    .line 133
     return-object v0
 
-    .line 135
     :cond_0
     iget-object v2, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
@@ -138,9 +121,7 @@
 
 .method public getEnum(I)Ljava/lang/Integer;
     .locals 2
-    .param p1, "tag"    # I
 
-    .line 76
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1}, Landroid/security/keymaster/KeymasterArguments;->containsTag(I)Z
@@ -151,7 +132,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 77
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1, v1}, Landroid/security/keymaster/KeymasterArguments;->getEnum(II)I
@@ -164,7 +144,6 @@
 
     return-object v0
 
-    .line 78
     :cond_0
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
@@ -174,7 +153,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 79
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1, v1}, Landroid/security/keymaster/KeymasterArguments;->getEnum(II)I
@@ -187,7 +165,6 @@
 
     return-object v0
 
-    .line 81
     :cond_1
     const/4 v0, 0x0
 
@@ -196,7 +173,6 @@
 
 .method public getEnums(I)Ljava/util/List;
     .locals 2
-    .param p1, "tag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -206,13 +182,10 @@
         }
     .end annotation
 
-    .line 91
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 92
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     iget-object v1, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v1, p1}, Landroid/security/keymaster/KeymasterArguments;->getEnums(I)Ljava/util/List;
@@ -221,7 +194,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 93
     iget-object v1, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v1, p1}, Landroid/security/keymaster/KeymasterArguments;->getEnums(I)Ljava/util/List;
@@ -230,16 +202,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 94
     return-object v0
 .end method
 
 .method public getUnsignedInt(IJ)J
     .locals 2
-    .param p1, "tag"    # I
-    .param p2, "defaultValue"    # J
 
-    .line 104
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1}, Landroid/security/keymaster/KeymasterArguments;->containsTag(I)Z
@@ -248,7 +216,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 105
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/security/keymaster/KeymasterArguments;->getUnsignedInt(IJ)J
@@ -257,7 +224,6 @@
 
     return-wide v0
 
-    .line 107
     :cond_0
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
@@ -270,7 +236,6 @@
 
 .method public getUnsignedLongs(I)Ljava/util/List;
     .locals 2
-    .param p1, "tag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -280,13 +245,10 @@
         }
     .end annotation
 
-    .line 117
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 118
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Ljava/math/BigInteger;>;"
     iget-object v1, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v1, p1}, Landroid/security/keymaster/KeymasterArguments;->getUnsignedLongs(I)Ljava/util/List;
@@ -295,7 +257,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 119
     iget-object v1, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v1, p1}, Landroid/security/keymaster/KeymasterArguments;->getUnsignedLongs(I)Ljava/util/List;
@@ -304,15 +265,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 120
     return-object v0
 .end method
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 65
     sget-object v0, Landroid/security/keymaster/KeymasterArguments;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -323,7 +281,6 @@
 
     iput-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
-    .line 66
     sget-object v0, Landroid/security/keymaster/KeymasterArguments;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -334,25 +291,19 @@
 
     iput-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
-    .line 67
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 60
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->swEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1, p2}, Landroid/security/keymaster/KeymasterArguments;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 61
     iget-object v0, p0, Landroid/security/keymaster/KeyCharacteristics;->hwEnforced:Landroid/security/keymaster/KeymasterArguments;
 
     invoke-virtual {v0, p1, p2}, Landroid/security/keymaster/KeymasterArguments;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 62
     return-void
 .end method

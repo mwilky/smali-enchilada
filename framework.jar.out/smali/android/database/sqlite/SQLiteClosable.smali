@@ -14,10 +14,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
@@ -30,29 +28,23 @@
 .method public acquireReference()V
     .locals 3
 
-    .line 53
     monitor-enter p0
 
-    .line 54
     :try_start_0
     iget v0, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
 
     if-lez v0, :cond_0
 
-    .line 58
     iget v0, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
 
-    .line 59
     monitor-exit p0
 
-    .line 60
     return-void
 
-    .line 55
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -74,7 +66,6 @@
 
     throw v0
 
-    .line 59
     :catchall_0
     move-exception v0
 
@@ -88,10 +79,8 @@
 .method public close()V
     .locals 0
 
-    .line 106
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->releaseReference()V
 
-    .line 107
     return-void
 .end method
 
@@ -103,24 +92,18 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 43
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->onAllReferencesReleased()V
 
-    .line 44
     return-void
 .end method
 
 .method public releaseReference()V
     .locals 3
 
-    .line 69
     const/4 v0, 0x0
 
-    .line 70
-    .local v0, "refCountIsZero":Z
     monitor-enter p0
 
-    .line 71
     :try_start_0
     iget v1, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
 
@@ -140,22 +123,17 @@
     :goto_0
     move v0, v2
 
-    .line 72
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 73
     if-eqz v0, :cond_1
 
-    .line 74
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->onAllReferencesReleased()V
 
-    .line 76
     :cond_1
     return-void
 
-    .line 72
     :catchall_0
     move-exception v1
 
@@ -172,14 +150,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 87
     const/4 v0, 0x0
 
-    .line 88
-    .local v0, "refCountIsZero":Z
     monitor-enter p0
 
-    .line 89
     :try_start_0
     iget v1, p0, Landroid/database/sqlite/SQLiteClosable;->mReferenceCount:I
 
@@ -199,22 +173,17 @@
     :goto_0
     move v0, v2
 
-    .line 90
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 91
     if-eqz v0, :cond_1
 
-    .line 92
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->onAllReferencesReleasedFromContainer()V
 
-    .line 94
     :cond_1
     return-void
 
-    .line 90
     :catchall_0
     move-exception v1
 

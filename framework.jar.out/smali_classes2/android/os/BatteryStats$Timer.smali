@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 494
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 
 .method public getCurrentDurationMsLocked(J)J
     .locals 2
-    .param p1, "elapsedRealtimeMs"    # J
 
-    .line 536
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -41,9 +38,7 @@
 
 .method public getMaxDurationMsLocked(J)J
     .locals 2
-    .param p1, "elapsedRealtimeMs"    # J
 
-    .line 528
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -52,7 +47,6 @@
 .method public getSubTimer()Landroid/os/BatteryStats$Timer;
     .locals 1
 
-    .line 561
     const/4 v0, 0x0
 
     return-object v0
@@ -63,9 +57,7 @@
 
 .method public getTotalDurationMsLocked(J)J
     .locals 2
-    .param p1, "elapsedRealtimeMs"    # J
 
-    .line 551
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -77,7 +69,6 @@
 .method public isRunningLocked()Z
     .locals 1
 
-    .line 570
     const/4 v0, 0x0
 
     return v0

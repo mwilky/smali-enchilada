@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,14 +22,11 @@
 
 .method public static wrap(Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;
     .locals 2
-    .param p0, "cs"    # Landroid/text/style/CharacterStyle;
 
-    .line 37
     instance-of v0, p0, Landroid/text/style/MetricAffectingSpan;
 
     if-eqz v0, :cond_0
 
-    .line 38
     new-instance v0, Landroid/text/style/MetricAffectingSpan$Passthrough;
 
     move-object v1, p0
@@ -41,7 +37,6 @@
 
     return-object v0
 
-    .line 40
     :cond_0
     new-instance v0, Landroid/text/style/CharacterStyle$Passthrough;
 
@@ -55,7 +50,6 @@
 .method public getUnderlying()Landroid/text/style/CharacterStyle;
     .locals 0
 
-    .line 50
     return-object p0
 .end method
 

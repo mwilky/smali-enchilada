@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputManager$SessionCallbackRecord;ILjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 598
     iput-object p1, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$5;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     iput p2, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$5;->val$type:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 601
     iget-object v0, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$5;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->access$000(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$SessionCallback;
@@ -66,6 +63,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/tv/TvInputManager$SessionCallback;->onTrackSelected(Landroid/media/tv/TvInputManager$Session;ILjava/lang/String;)V
 
-    .line 602
     return-void
 .end method

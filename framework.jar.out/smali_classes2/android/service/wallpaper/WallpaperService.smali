@@ -68,10 +68,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 79
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 118
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -83,9 +81,7 @@
 
 .method static synthetic access$300(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
     .locals 1
-    .param p0, "x0"    # Landroid/service/wallpaper/WallpaperService;
 
-    .line 79
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
     return-object v0
@@ -95,11 +91,7 @@
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 3
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "out"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 1474
     const-string v0, "State of wallpaper "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -110,10 +102,8 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1475
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
@@ -123,7 +113,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1476
     iget-object v1, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -132,8 +121,6 @@
 
     check-cast v1, Landroid/service/wallpaper/WallpaperService$Engine;
 
-    .line 1477
-    .local v1, "engine":Landroid/service/wallpaper/WallpaperService$Engine;
     const-string v2, "  Engine "
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -144,28 +131,21 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1478
     const-string v2, "    "
 
     invoke-virtual {v1, v2, p1, p2, p3}, Landroid/service/wallpaper/WallpaperService$Engine;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 1475
-    .end local v1    # "engine":Landroid/service/wallpaper/WallpaperService$Engine;
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1480
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 1461
     new-instance v0, Landroid/service/wallpaper/WallpaperService$IWallpaperServiceWrapper;
 
     invoke-direct {v0, p0, p0}, Landroid/service/wallpaper/WallpaperService$IWallpaperServiceWrapper;-><init>(Landroid/service/wallpaper/WallpaperService;Landroid/service/wallpaper/WallpaperService;)V
@@ -176,10 +156,8 @@
 .method public onCreate()V
     .locals 0
 
-    .line 1443
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 1444
     return-void
 .end method
 
@@ -189,13 +167,10 @@
 .method public onDestroy()V
     .locals 2
 
-    .line 1448
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 1449
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
@@ -205,7 +180,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1450
     iget-object v1, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -216,18 +190,14 @@
 
     invoke-virtual {v1}, Landroid/service/wallpaper/WallpaperService$Engine;->detach()V
 
-    .line 1449
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1452
-    .end local v0    # "i":I
     :cond_0
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1453
     return-void
 .end method

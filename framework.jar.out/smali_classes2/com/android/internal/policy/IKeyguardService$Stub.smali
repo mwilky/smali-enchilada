@@ -77,31 +77,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 14
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 15
     const-string v0, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {p0, p0, v0}, Lcom/android/internal/policy/IKeyguardService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 16
     return-void
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Lcom/android/internal/policy/IKeyguardService;
     .locals 2
-    .param p0, "obj"    # Landroid/os/IBinder;
 
-    .line 23
     if-nez p0, :cond_0
 
-    .line 24
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 26
     :cond_0
     const-string v0, "com.android.internal.policy.IKeyguardService"
 
@@ -109,22 +102,18 @@
 
     move-result-object v0
 
-    .line 27
-    .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
     instance-of v1, v0, Lcom/android/internal/policy/IKeyguardService;
 
     if-eqz v1, :cond_1
 
-    .line 28
     move-object v1, v0
 
     check-cast v1, Lcom/android/internal/policy/IKeyguardService;
 
     return-object v1
 
-    .line 30
     :cond_1
     new-instance v1, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;
 
@@ -138,27 +127,19 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
-    .line 34
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 7
-    .param p1, "code"    # I
-    .param p2, "data"    # Landroid/os/Parcel;
-    .param p3, "reply"    # Landroid/os/Parcel;
-    .param p4, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 38
     const-string v0, "com.android.internal.policy.IKeyguardService"
 
-    .line 39
-    .local v0, "descriptor":Ljava/lang/String;
     const v1, 0x5f4e5446
 
     const/4 v2, 0x1
@@ -171,18 +152,15 @@
 
     packed-switch p1, :pswitch_data_0
 
-    .line 230
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
 
     return v1
 
-    .line 222
     :pswitch_0
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 224
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -196,80 +174,53 @@
     :cond_0
     move v1, v3
 
-    .line 225
-    .local v1, "_arg0":Z
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->notifyLidSwitchChanged(Z)V
 
-    .line 226
     return v2
 
-    .line 216
-    .end local v1    # "_arg0":Z
     :pswitch_1
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 217
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onShortPowerPressedGoHome()V
 
-    .line 218
     return v2
 
-    .line 206
     :pswitch_2
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 208
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
-    .line 210
-    .local v3, "_arg0":J
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v5
 
-    .line 211
-    .local v5, "_arg1":J
     invoke-virtual {p0, v3, v4, v5, v6}, Lcom/android/internal/policy/IKeyguardService$Stub;->startKeyguardExitAnimation(JJ)V
 
-    .line 212
     return v2
 
-    .line 200
-    .end local v3    # "_arg0":J
-    .end local v5    # "_arg1":J
     :pswitch_3
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 201
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onBootCompleted()V
 
-    .line 202
     return v2
 
-    .line 192
     :pswitch_4
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 194
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 195
-    .local v1, "_arg0":I
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->setCurrentUser(I)V
 
-    .line 196
     return v2
 
-    .line 184
-    .end local v1    # "_arg0":I
     :pswitch_5
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 186
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -283,26 +234,19 @@
     :cond_1
     move v1, v3
 
-    .line 187
-    .local v1, "_arg0":Z
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->setSwitchingUser(Z)V
 
-    .line 188
     return v2
 
-    .line 171
-    .end local v1    # "_arg0":Z
     :pswitch_6
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 173
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 174
     sget-object v1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -311,38 +255,26 @@
 
     check-cast v1, Landroid/os/Bundle;
 
-    .local v1, "_arg0":Landroid/os/Bundle;
     goto :goto_0
 
-    .line 177
-    .end local v1    # "_arg0":Landroid/os/Bundle;
     :cond_2
     nop
 
-    .line 179
-    .restart local v1    # "_arg0":Landroid/os/Bundle;
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->doKeyguardTimeout(Landroid/os/Bundle;)V
 
-    .line 180
     return v2
 
-    .line 165
-    .end local v1    # "_arg0":Landroid/os/Bundle;
     :pswitch_7
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 166
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onSystemReady()V
 
-    .line 167
     return v2
 
-    .line 157
     :pswitch_8
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 159
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -356,49 +288,34 @@
     :cond_3
     move v1, v3
 
-    .line 160
-    .local v1, "_arg0":Z
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->setKeyguardEnabled(Z)V
 
-    .line 161
     return v2
 
-    .line 151
-    .end local v1    # "_arg0":Z
     :pswitch_9
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 152
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onScreenTurnedOff()V
 
-    .line 153
     return v2
 
-    .line 145
     :pswitch_a
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 146
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onScreenTurningOff()V
 
-    .line 147
     return v2
 
-    .line 139
     :pswitch_b
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 140
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onScreenTurnedOn()V
 
-    .line 141
     return v2
 
-    .line 131
     :pswitch_c
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 133
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
@@ -407,45 +324,31 @@
 
     move-result-object v1
 
-    .line 134
-    .local v1, "_arg0":Lcom/android/internal/policy/IKeyguardDrawnCallback;
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->onScreenTurningOn(Lcom/android/internal/policy/IKeyguardDrawnCallback;)V
 
-    .line 135
     return v2
 
-    .line 125
-    .end local v1    # "_arg0":Lcom/android/internal/policy/IKeyguardDrawnCallback;
     :pswitch_d
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 126
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onFinishedWakingUp()V
 
-    .line 127
     return v2
 
-    .line 119
     :pswitch_e
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 120
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onStartedWakingUp()V
 
-    .line 121
     return v2
 
-    .line 109
     :pswitch_f
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 111
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 113
-    .local v1, "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -456,58 +359,39 @@
 
     nop
 
-    .line 114
-    .local v3, "_arg1":Z
     :cond_4
     invoke-virtual {p0, v1, v3}, Lcom/android/internal/policy/IKeyguardService$Stub;->onFinishedGoingToSleep(IZ)V
 
-    .line 115
     return v2
 
-    .line 101
-    .end local v1    # "_arg0":I
-    .end local v3    # "_arg1":Z
     :pswitch_10
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 103
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 104
-    .restart local v1    # "_arg0":I
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->onStartedGoingToSleep(I)V
 
-    .line 105
     return v2
 
-    .line 95
-    .end local v1    # "_arg0":I
     :pswitch_11
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 96
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onDreamingStopped()V
 
-    .line 97
     return v2
 
-    .line 89
     :pswitch_12
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 90
     invoke-virtual {p0}, Lcom/android/internal/policy/IKeyguardService$Stub;->onDreamingStarted()V
 
-    .line 91
     return v2
 
-    .line 74
     :pswitch_13
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 76
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
@@ -516,15 +400,12 @@
 
     move-result-object v3
 
-    .line 78
-    .local v3, "_arg0":Lcom/android/internal/policy/IKeyguardDismissCallback;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_5
 
-    .line 79
     sget-object v1, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -533,29 +414,19 @@
 
     check-cast v1, Ljava/lang/CharSequence;
 
-    .local v1, "_arg1":Ljava/lang/CharSequence;
     goto :goto_1
 
-    .line 82
-    .end local v1    # "_arg1":Ljava/lang/CharSequence;
     :cond_5
     nop
 
-    .line 84
-    .restart local v1    # "_arg1":Ljava/lang/CharSequence;
     :goto_1
     invoke-virtual {p0, v3, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->dismiss(Lcom/android/internal/policy/IKeyguardDismissCallback;Ljava/lang/CharSequence;)V
 
-    .line 85
     return v2
 
-    .line 66
-    .end local v1    # "_arg1":Ljava/lang/CharSequence;
-    .end local v3    # "_arg0":Lcom/android/internal/policy/IKeyguardDismissCallback;
     :pswitch_14
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 68
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
@@ -564,19 +435,13 @@
 
     move-result-object v1
 
-    .line 69
-    .local v1, "_arg0":Lcom/android/internal/policy/IKeyguardExitCallback;
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->verifyUnlock(Lcom/android/internal/policy/IKeyguardExitCallback;)V
 
-    .line 70
     return v2
 
-    .line 58
-    .end local v1    # "_arg0":Lcom/android/internal/policy/IKeyguardExitCallback;
     :pswitch_15
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 60
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
@@ -585,19 +450,13 @@
 
     move-result-object v1
 
-    .line 61
-    .local v1, "_arg0":Lcom/android/internal/policy/IKeyguardStateCallback;
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IKeyguardService$Stub;->addStateMonitorCallback(Lcom/android/internal/policy/IKeyguardStateCallback;)V
 
-    .line 62
     return v2
 
-    .line 48
-    .end local v1    # "_arg0":Lcom/android/internal/policy/IKeyguardStateCallback;
     :pswitch_16
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -611,8 +470,6 @@
     :cond_6
     move v1, v3
 
-    .line 52
-    .local v1, "_arg0":Z
     :goto_2
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -624,21 +481,14 @@
 
     nop
 
-    .line 53
-    .local v3, "_arg1":Z
     :cond_7
     invoke-virtual {p0, v1, v3}, Lcom/android/internal/policy/IKeyguardService$Stub;->setOccluded(ZZ)V
 
-    .line 54
     return v2
 
-    .line 43
-    .end local v1    # "_arg0":Z
-    .end local v3    # "_arg1":Z
     :cond_8
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 44
     return v2
 
     nop

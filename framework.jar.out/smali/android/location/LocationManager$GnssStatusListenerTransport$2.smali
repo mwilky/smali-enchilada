@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/location/LocationManager$GnssStatusListenerTransport;Landroid/location/LocationManager;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/location/LocationManager$GnssStatusListenerTransport;
 
-    .line 1819
     iput-object p1, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$2;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     iput-object p2, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$2;->val$this$0:Landroid/location/LocationManager;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onNmeaMessage(Ljava/lang/String;J)V
     .locals 1
-    .param p1, "nmea"    # Ljava/lang/String;
-    .param p2, "timestamp"    # J
 
-    .line 1822
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$2;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->access$900(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GpsStatus$NmeaListener;
@@ -54,6 +49,5 @@
 
     invoke-interface {v0, p2, p3, p1}, Landroid/location/GpsStatus$NmeaListener;->onNmeaReceived(JLjava/lang/String;)V
 
-    .line 1823
     return-void
 .end method

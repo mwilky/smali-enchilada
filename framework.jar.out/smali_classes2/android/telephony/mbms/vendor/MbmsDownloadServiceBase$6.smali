@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;ILandroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/IDownloadProgressListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
-    .line 392
     iput-object p1, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     iput p2, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->val$uid:I
@@ -51,7 +49,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 395
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     iget v1, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->val$uid:I
@@ -64,7 +61,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;->onAppCallbackDied(II)V
 
-    .line 396
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     invoke-static {v0}, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;->access$200(Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;)Ljava/util/Map;
@@ -79,7 +75,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 397
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$6;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     invoke-static {v0}, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;->access$100(Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;)Ljava/util/Map;
@@ -94,6 +89,5 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 398
     return-void
 .end method

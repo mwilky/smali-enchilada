@@ -25,7 +25,6 @@
 .method private constructor <init>(Landroid/content/ContentProviderClient;)V
     .locals 0
 
-    .line 573
     iput-object p1, p0, Landroid/content/ContentProviderClient$NotRespondingRunnable;->this$0:Landroid/content/ContentProviderClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Landroid/content/ContentProviderClient;Landroid/content/ContentProviderClient$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/content/ContentProviderClient;
-    .param p2, "x1"    # Landroid/content/ContentProviderClient$1;
 
-    .line 573
     invoke-direct {p0, p1}, Landroid/content/ContentProviderClient$NotRespondingRunnable;-><init>(Landroid/content/ContentProviderClient;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 576
     const-string v0, "ContentProviderClient"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,7 +69,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 577
     iget-object v0, p0, Landroid/content/ContentProviderClient$NotRespondingRunnable;->this$0:Landroid/content/ContentProviderClient;
 
     invoke-static {v0}, Landroid/content/ContentProviderClient;->access$200(Landroid/content/ContentProviderClient;)Landroid/content/ContentResolver;
@@ -89,6 +83,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->appNotRespondingViaProvider(Landroid/content/IContentProvider;)V
 
-    .line 578
     return-void
 .end method

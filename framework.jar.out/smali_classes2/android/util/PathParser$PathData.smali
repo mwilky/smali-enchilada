@@ -22,38 +22,30 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 68
     invoke-static {}, Landroid/util/PathParser;->access$000()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 69
     return-void
 .end method
 
 .method public constructor <init>(Landroid/util/PathParser$PathData;)V
     .locals 2
-    .param p1, "data"    # Landroid/util/PathParser$PathData;
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 72
     iget-wide v0, p1, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     invoke-static {v0, v1}, Landroid/util/PathParser;->access$100(J)J
@@ -62,23 +54,18 @@
 
     iput-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 73
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 4
-    .param p1, "pathString"    # Ljava/lang/String;
 
-    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 76
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -89,17 +76,14 @@
 
     iput-wide v2, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 77
     iget-wide v2, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     cmp-long v0, v2, v0
 
     if-eqz v0, :cond_0
 
-    .line 80
     return-void
 
-    .line 78
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -132,7 +116,6 @@
         }
     .end annotation
 
-    .line 98
     iget-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     const-wide/16 v2, 0x0
@@ -141,26 +124,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 99
     iget-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     invoke-static {v0, v1}, Landroid/util/PathParser;->access$400(J)V
 
-    .line 100
     iput-wide v2, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
-    .line 102
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 103
     return-void
 .end method
 
 .method public getNativePtr()J
     .locals 2
 
-    .line 83
     iget-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     return-wide v0
@@ -168,15 +146,12 @@
 
 .method public setPathData(Landroid/util/PathParser$PathData;)V
     .locals 4
-    .param p1, "source"    # Landroid/util/PathParser$PathData;
 
-    .line 93
     iget-wide v0, p0, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     iget-wide v2, p1, Landroid/util/PathParser$PathData;->mNativePathData:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/util/PathParser;->access$300(JJ)V
 
-    .line 94
     return-void
 .end method

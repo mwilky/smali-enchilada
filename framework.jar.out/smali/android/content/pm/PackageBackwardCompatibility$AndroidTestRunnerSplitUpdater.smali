@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 174
     invoke-direct {p0}, Landroid/content/pm/PackageSharedLibraryUpdater;-><init>()V
 
     return-void
@@ -31,15 +30,12 @@
 # virtual methods
 .method public updatePackage(Landroid/content/pm/PackageParser$Package;)V
     .locals 2
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
 
-    .line 180
     const-string v0, "android.test.runner"
 
     const-string v1, "android.test.mock"
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/content/pm/PackageBackwardCompatibility$AndroidTestRunnerSplitUpdater;->prefixImplicitDependency(Landroid/content/pm/PackageParser$Package;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 181
     return-void
 .end method

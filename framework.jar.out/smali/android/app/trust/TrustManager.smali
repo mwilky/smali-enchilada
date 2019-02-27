@@ -45,12 +45,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "b"    # Landroid/os/IBinder;
 
-    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
     new-instance v0, Landroid/app/trust/TrustManager$2;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -61,29 +58,24 @@
 
     iput-object v0, p0, Landroid/app/trust/TrustManager;->mHandler:Landroid/os/Handler;
 
-    .line 49
     invoke-static {p1}, Landroid/app/trust/ITrustManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
-    .line 50
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/trust/TrustManager;->mTrustListeners:Landroid/util/ArrayMap;
 
-    .line 51
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/app/trust/TrustManager;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Landroid/app/trust/TrustManager;
 
-    .line 35
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -94,7 +86,6 @@
 .method public clearAllFingerprints()V
     .locals 2
 
-    .line 217
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -102,18 +93,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 220
     nop
 
-    .line 221
     return-void
 
-    .line 218
     :catch_0
     move-exception v0
 
-    .line 219
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -123,9 +109,7 @@
 
 .method public isTrustUsuallyManaged(I)Z
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 191
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -137,12 +121,9 @@
 
     return v0
 
-    .line 192
     :catch_0
     move-exception v0
 
-    .line 193
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -152,40 +133,29 @@
 
 .method public registerTrustListener(Landroid/app/trust/TrustManager$TrustListener;)V
     .locals 2
-    .param p1, "trustListener"    # Landroid/app/trust/TrustManager$TrustListener;
 
-    .line 137
     :try_start_0
     new-instance v0, Landroid/app/trust/TrustManager$1;
 
     invoke-direct {v0, p0, p1}, Landroid/app/trust/TrustManager$1;-><init>(Landroid/app/trust/TrustManager;Landroid/app/trust/TrustManager$TrustListener;)V
 
-    .line 161
-    .local v0, "iTrustListener":Landroid/app/trust/ITrustListener$Stub;
     iget-object v1, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
     invoke-interface {v1, v0}, Landroid/app/trust/ITrustManager;->registerTrustListener(Landroid/app/trust/ITrustListener;)V
 
-    .line 162
     iget-object v1, p0, Landroid/app/trust/TrustManager;->mTrustListeners:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 165
-    .end local v0    # "iTrustListener":Landroid/app/trust/ITrustListener$Stub;
     nop
 
-    .line 166
     return-void
 
-    .line 163
     :catch_0
     move-exception v0
 
-    .line 164
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -195,9 +165,7 @@
 
 .method public reportEnabledTrustAgentsChanged(I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 111
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -205,18 +173,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 114
     nop
 
-    .line 115
     return-void
 
-    .line 112
     :catch_0
     move-exception v0
 
-    .line 113
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -227,7 +190,6 @@
 .method public reportKeyguardShowingChanged()V
     .locals 2
 
-    .line 124
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -235,18 +197,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 127
     nop
 
-    .line 128
     return-void
 
-    .line 125
     :catch_0
     move-exception v0
 
-    .line 126
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -256,10 +213,7 @@
 
 .method public reportUnlockAttempt(ZI)V
     .locals 2
-    .param p1, "successful"    # Z
-    .param p2, "userId"    # I
 
-    .line 78
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -267,18 +221,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 81
     nop
 
-    .line 82
     return-void
 
-    .line 79
     :catch_0
     move-exception v0
 
-    .line 80
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -288,10 +237,7 @@
 
 .method public reportUnlockLockout(II)V
     .locals 2
-    .param p1, "timeoutMs"    # I
-    .param p2, "userId"    # I
 
-    .line 98
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -299,18 +245,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 101
     nop
 
-    .line 102
     return-void
 
-    .line 99
     :catch_0
     move-exception v0
 
-    .line 100
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -320,10 +261,7 @@
 
 .method public setDeviceLockedForUser(IZ)V
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "locked"    # Z
 
-    .line 63
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -331,18 +269,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 66
     nop
 
-    .line 67
     return-void
 
-    .line 64
     :catch_0
     move-exception v0
 
-    .line 65
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -352,9 +285,7 @@
 
 .method public unlockedByFingerprintForUser(I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 205
     :try_start_0
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -362,18 +293,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 208
     nop
 
-    .line 209
     return-void
 
-    .line 206
     :catch_0
     move-exception v0
 
-    .line 207
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -383,9 +309,7 @@
 
 .method public unregisterTrustListener(Landroid/app/trust/TrustManager$TrustListener;)V
     .locals 3
-    .param p1, "trustListener"    # Landroid/app/trust/TrustManager$TrustListener;
 
-    .line 174
     iget-object v0, p0, Landroid/app/trust/TrustManager;->mTrustListeners:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -394,11 +318,8 @@
 
     check-cast v0, Landroid/app/trust/ITrustListener;
 
-    .line 175
-    .local v0, "iTrustListener":Landroid/app/trust/ITrustListener;
     if-eqz v0, :cond_0
 
-    .line 177
     :try_start_0
     iget-object v1, p0, Landroid/app/trust/TrustManager;->mService:Landroid/app/trust/ITrustManager;
 
@@ -406,23 +327,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 180
     goto :goto_0
 
-    .line 178
     :catch_0
     move-exception v1
 
-    .line 179
-    .local v1, "e":Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v2
 
     throw v2
 
-    .line 182
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     return-void

@@ -21,48 +21,35 @@
 # direct methods
 .method constructor <init>(F)V
     .locals 1
-    .param p1, "fraction"    # F
 
-    .line 311
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
-    .line 312
     iput p1, p0, Landroid/animation/Keyframe$IntKeyframe;->mFraction:F
 
-    .line 313
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     iput-object v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mValueType:Ljava/lang/Class;
 
-    .line 314
     return-void
 .end method
 
 .method constructor <init>(FI)V
     .locals 1
-    .param p1, "fraction"    # F
-    .param p2, "value"    # I
 
-    .line 304
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
-    .line 305
     iput p1, p0, Landroid/animation/Keyframe$IntKeyframe;->mFraction:F
 
-    .line 306
     iput p2, p0, Landroid/animation/Keyframe$IntKeyframe;->mValue:I
 
-    .line 307
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     iput-object v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mValueType:Ljava/lang/Class;
 
-    .line 308
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mHasValue:Z
 
-    .line 309
     return-void
 .end method
 
@@ -71,12 +58,10 @@
 .method public clone()Landroid/animation/Keyframe$IntKeyframe;
     .locals 3
 
-    .line 333
     iget-boolean v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mHasValue:Z
 
     if-eqz v0, :cond_0
 
-    .line 334
     new-instance v0, Landroid/animation/Keyframe$IntKeyframe;
 
     invoke-virtual {p0}, Landroid/animation/Keyframe$IntKeyframe;->getFraction()F
@@ -89,7 +74,6 @@
 
     goto :goto_0
 
-    .line 335
     :cond_0
     new-instance v0, Landroid/animation/Keyframe$IntKeyframe;
 
@@ -99,8 +83,6 @@
 
     invoke-direct {v0, v1}, Landroid/animation/Keyframe$IntKeyframe;-><init>(F)V
 
-    .line 336
-    .local v0, "kfClone":Landroid/animation/Keyframe$IntKeyframe;
     :goto_0
     invoke-virtual {p0}, Landroid/animation/Keyframe$IntKeyframe;->getInterpolator()Landroid/animation/TimeInterpolator;
 
@@ -108,19 +90,16 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Keyframe$IntKeyframe;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 337
     iget-boolean v1, p0, Landroid/animation/Keyframe$IntKeyframe;->mValueWasSetOnStart:Z
 
     iput-boolean v1, v0, Landroid/animation/Keyframe$IntKeyframe;->mValueWasSetOnStart:Z
 
-    .line 338
     return-object v0
 .end method
 
 .method public bridge synthetic clone()Landroid/animation/Keyframe;
     .locals 1
 
-    .line 297
     invoke-virtual {p0}, Landroid/animation/Keyframe$IntKeyframe;->clone()Landroid/animation/Keyframe$IntKeyframe;
 
     move-result-object v0
@@ -136,7 +115,6 @@
         }
     .end annotation
 
-    .line 297
     invoke-virtual {p0}, Landroid/animation/Keyframe$IntKeyframe;->clone()Landroid/animation/Keyframe$IntKeyframe;
 
     move-result-object v0
@@ -147,7 +125,6 @@
 .method public getIntValue()I
     .locals 1
 
-    .line 317
     iget v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mValue:I
 
     return v0
@@ -156,7 +133,6 @@
 .method public getValue()Ljava/lang/Object;
     .locals 1
 
-    .line 321
     iget v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mValue:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -168,9 +144,7 @@
 
 .method public setValue(Ljava/lang/Object;)V
     .locals 2
-    .param p1, "value"    # Ljava/lang/Object;
 
-    .line 325
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -181,7 +155,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 326
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Integer;
@@ -192,12 +165,10 @@
 
     iput v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mValue:I
 
-    .line 327
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/animation/Keyframe$IntKeyframe;->mHasValue:Z
 
-    .line 329
     :cond_0
     return-void
 .end method

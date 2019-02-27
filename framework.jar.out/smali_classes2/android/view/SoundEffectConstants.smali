@@ -19,7 +19,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,9 +26,7 @@
 
 .method public static getContantForFocusDirection(I)I
     .locals 2
-    .param p0, "direction"    # I
 
-    .line 44
     const/16 v0, 0x11
 
     if-eq p0, v0, :cond_3
@@ -48,7 +45,6 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 56
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT, FOCUS_FORWARD, FOCUS_BACKWARD}."
@@ -57,27 +53,23 @@
 
     throw v0
 
-    .line 49
     :cond_0
     :pswitch_0
     const/4 v0, 0x4
 
     return v0
 
-    .line 46
     :cond_1
     const/4 v0, 0x3
 
     return v0
 
-    .line 54
     :cond_2
     :pswitch_1
     const/4 v0, 0x2
 
     return v0
 
-    .line 51
     :cond_3
     const/4 v0, 0x1
 

@@ -14,15 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Path;FFLandroid/graphics/PathDashPathEffect$Style;)V
     .locals 3
-    .param p1, "shape"    # Landroid/graphics/Path;
-    .param p2, "advance"    # F
-    .param p3, "phase"    # F
-    .param p4, "style"    # Landroid/graphics/PathDashPathEffect$Style;
 
-    .line 43
     invoke-direct {p0}, Landroid/graphics/PathEffect;-><init>()V
 
-    .line 44
     invoke-virtual {p1}, Landroid/graphics/Path;->readOnlyNI()J
 
     move-result-wide v0
@@ -35,7 +29,6 @@
 
     iput-wide v0, p0, Landroid/graphics/PathDashPathEffect;->native_instance:J
 
-    .line 46
     return-void
 .end method
 

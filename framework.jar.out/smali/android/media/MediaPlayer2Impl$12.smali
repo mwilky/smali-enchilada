@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZLjava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
-    .param p2, "mediaCallType"    # I
-    .param p3, "needToWaitForEventToComplete"    # Z
 
-    .line 665
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$12;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p4, p0, Landroid/media/MediaPlayer2Impl$12;->val$label:Ljava/lang/Object;
@@ -39,10 +35,7 @@
 
 .method public static synthetic lambda$process$0(Landroid/media/MediaPlayer2Impl$12;Landroid/util/Pair;Ljava/lang/Object;)V
     .locals 2
-    .param p1, "cb"    # Landroid/util/Pair;
-    .param p2, "label"    # Ljava/lang/Object;
 
-    .line 670
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;
@@ -59,7 +52,6 @@
 .method process()V
     .locals 6
 
-    .line 668
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$12;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$1800(Landroid/media/MediaPlayer2Impl;)Ljava/lang/Object;
@@ -68,7 +60,6 @@
 
     monitor-enter v0
 
-    .line 669
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$12;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -93,8 +84,6 @@
 
     check-cast v2, Landroid/util/Pair;
 
-    .line 670
-    .local v2, "cb":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/concurrent/Executor;Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;>;"
     iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v3, Ljava/util/concurrent/Executor;
@@ -107,18 +96,13 @@
 
     invoke-interface {v3, v5}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 672
-    .end local v2    # "cb":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/concurrent/Executor;Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;>;"
     goto :goto_0
 
-    .line 673
     :cond_0
     monitor-exit v0
 
-    .line 674
     return-void
 
-    .line 673
     :catchall_0
     move-exception v1
 

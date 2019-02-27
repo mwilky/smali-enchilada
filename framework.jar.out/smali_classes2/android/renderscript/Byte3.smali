@@ -15,73 +15,52 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     return-void
 .end method
 
 .method public constructor <init>(BBB)V
     .locals 0
-    .param p1, "initX"    # B
-    .param p2, "initY"    # B
-    .param p3, "initZ"    # B
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     iput-byte p1, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 34
     iput-byte p2, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 35
     iput-byte p3, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 36
     return-void
 .end method
 
 .method public constructor <init>(Landroid/renderscript/Byte3;)V
     .locals 1
-    .param p1, "source"    # Landroid/renderscript/Byte3;
 
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
     iget-byte v0, p1, Landroid/renderscript/Byte3;->x:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 41
     iget-byte v0, p1, Landroid/renderscript/Byte3;->y:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 42
     iget-byte v0, p1, Landroid/renderscript/Byte3;->z:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 43
     return-void
 .end method
 
 .method public static add(Landroid/renderscript/Byte3;B)Landroid/renderscript/Byte3;
     .locals 2
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # B
 
-    .line 91
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 92
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     add-int/2addr v1, p1
@@ -90,7 +69,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 93
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     add-int/2addr v1, p1
@@ -99,7 +77,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 94
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     add-int/2addr v1, p1
@@ -108,22 +85,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 96
     return-object v0
 .end method
 
 .method public static add(Landroid/renderscript/Byte3;Landroid/renderscript/Byte3;)Landroid/renderscript/Byte3;
     .locals 3
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # Landroid/renderscript/Byte3;
 
-    .line 64
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 65
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->x:B
@@ -134,7 +105,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 66
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->y:B
@@ -145,7 +115,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 67
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->z:B
@@ -156,22 +125,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 69
     return-object v0
 .end method
 
 .method public static div(Landroid/renderscript/Byte3;B)Landroid/renderscript/Byte3;
     .locals 2
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # B
 
-    .line 253
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 254
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     div-int/2addr v1, p1
@@ -180,7 +143,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 255
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     div-int/2addr v1, p1
@@ -189,7 +151,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 256
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     div-int/2addr v1, p1
@@ -198,22 +159,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 258
     return-object v0
 .end method
 
 .method public static div(Landroid/renderscript/Byte3;Landroid/renderscript/Byte3;)Landroid/renderscript/Byte3;
     .locals 3
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # Landroid/renderscript/Byte3;
 
-    .line 226
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 227
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->x:B
@@ -224,7 +179,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 228
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->y:B
@@ -235,7 +189,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 229
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->z:B
@@ -246,16 +199,12 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 231
     return-object v0
 .end method
 
 .method public static dotProduct(Landroid/renderscript/Byte3;Landroid/renderscript/Byte3;)B
     .locals 3
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # Landroid/renderscript/Byte3;
 
-    .line 297
     iget-byte v0, p1, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
@@ -293,16 +242,11 @@
 
 .method public static mul(Landroid/renderscript/Byte3;B)Landroid/renderscript/Byte3;
     .locals 2
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # B
 
-    .line 199
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 200
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     mul-int/2addr v1, p1
@@ -311,7 +255,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 201
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     mul-int/2addr v1, p1
@@ -320,7 +263,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 202
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     mul-int/2addr v1, p1
@@ -329,22 +271,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 204
     return-object v0
 .end method
 
 .method public static mul(Landroid/renderscript/Byte3;Landroid/renderscript/Byte3;)Landroid/renderscript/Byte3;
     .locals 3
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # Landroid/renderscript/Byte3;
 
-    .line 172
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 173
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->x:B
@@ -355,7 +291,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 174
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->y:B
@@ -366,7 +301,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 175
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->z:B
@@ -377,22 +311,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 177
     return-object v0
 .end method
 
 .method public static sub(Landroid/renderscript/Byte3;B)Landroid/renderscript/Byte3;
     .locals 2
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # B
 
-    .line 145
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 146
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     sub-int/2addr v1, p1
@@ -401,7 +329,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 147
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     sub-int/2addr v1, p1
@@ -410,7 +337,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 148
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     sub-int/2addr v1, p1
@@ -419,22 +345,16 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 150
     return-object v0
 .end method
 
 .method public static sub(Landroid/renderscript/Byte3;Landroid/renderscript/Byte3;)Landroid/renderscript/Byte3;
     .locals 3
-    .param p0, "a"    # Landroid/renderscript/Byte3;
-    .param p1, "b"    # Landroid/renderscript/Byte3;
 
-    .line 118
     new-instance v0, Landroid/renderscript/Byte3;
 
     invoke-direct {v0}, Landroid/renderscript/Byte3;-><init>()V
 
-    .line 119
-    .local v0, "result":Landroid/renderscript/Byte3;
     iget-byte v1, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->x:B
@@ -445,7 +365,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->x:B
 
-    .line 120
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->y:B
@@ -456,7 +375,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->y:B
 
-    .line 121
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v2, p1, Landroid/renderscript/Byte3;->z:B
@@ -467,7 +385,6 @@
 
     iput-byte v1, v0, Landroid/renderscript/Byte3;->z:B
 
-    .line 123
     return-object v0
 .end method
 
@@ -475,9 +392,7 @@
 # virtual methods
 .method public add(B)V
     .locals 1
-    .param p1, "value"    # B
 
-    .line 78
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     add-int/2addr v0, p1
@@ -486,7 +401,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 79
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     add-int/2addr v0, p1
@@ -495,7 +409,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 80
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     add-int/2addr v0, p1
@@ -504,15 +417,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 81
     return-void
 .end method
 
 .method public add(Landroid/renderscript/Byte3;)V
     .locals 2
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 51
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -523,7 +433,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 52
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->y:B
@@ -534,7 +443,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 53
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->z:B
@@ -545,19 +453,14 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 54
     return-void
 .end method
 
 .method public addAt(IB)V
     .locals 2
-    .param p1, "i"    # I
-    .param p2, "value"    # B
 
-    .line 393
     packed-switch p1, :pswitch_data_0
 
-    .line 404
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v1, "Index: i"
@@ -566,7 +469,6 @@
 
     throw v0
 
-    .line 401
     :pswitch_0
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
@@ -576,10 +478,8 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 402
     return-void
 
-    .line 398
     :pswitch_1
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
@@ -589,10 +489,8 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 399
     return-void
 
-    .line 395
     :pswitch_2
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
@@ -602,7 +500,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 396
     return-void
 
     :pswitch_data_0
@@ -615,10 +512,7 @@
 
 .method public addMultiple(Landroid/renderscript/Byte3;B)V
     .locals 2
-    .param p1, "a"    # Landroid/renderscript/Byte3;
-    .param p2, "factor"    # B
 
-    .line 307
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -631,7 +525,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 308
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->y:B
@@ -644,7 +537,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 309
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->z:B
@@ -657,43 +549,34 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 310
     return-void
 .end method
 
 .method public copyTo([BI)V
     .locals 2
-    .param p1, "data"    # [B
-    .param p2, "offset"    # I
 
-    .line 415
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     aput-byte v0, p1, p2
 
-    .line 416
     add-int/lit8 v0, p2, 0x1
 
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
 
     aput-byte v1, p1, v0
 
-    .line 417
     add-int/lit8 v0, p2, 0x2
 
     iget-byte v1, p0, Landroid/renderscript/Byte3;->z:B
 
     aput-byte v1, p1, v0
 
-    .line 418
     return-void
 .end method
 
 .method public div(B)V
     .locals 1
-    .param p1, "value"    # B
 
-    .line 240
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     div-int/2addr v0, p1
@@ -702,7 +585,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 241
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     div-int/2addr v0, p1
@@ -711,7 +593,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 242
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     div-int/2addr v0, p1
@@ -720,15 +601,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 243
     return-void
 .end method
 
 .method public div(Landroid/renderscript/Byte3;)V
     .locals 2
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 213
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -739,7 +617,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 214
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->y:B
@@ -750,7 +627,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 215
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->z:B
@@ -761,15 +637,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 216
     return-void
 .end method
 
 .method public dotProduct(Landroid/renderscript/Byte3;)B
     .locals 3
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 286
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -808,7 +681,6 @@
 .method public elementSum()B
     .locals 2
 
-    .line 342
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p0, Landroid/renderscript/Byte3;->y:B
@@ -826,12 +698,9 @@
 
 .method public get(I)B
     .locals 2
-    .param p1, "i"    # I
 
-    .line 352
     packed-switch p1, :pswitch_data_0
 
-    .line 360
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v1, "Index: i"
@@ -840,19 +709,16 @@
 
     throw v0
 
-    .line 358
     :pswitch_0
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     return v0
 
-    .line 356
     :pswitch_1
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     return v0
 
-    .line 354
     :pswitch_2
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
@@ -869,7 +735,6 @@
 .method public length()B
     .locals 1
 
-    .line 267
     const/4 v0, 0x3
 
     return v0
@@ -877,9 +742,7 @@
 
 .method public mul(B)V
     .locals 1
-    .param p1, "value"    # B
 
-    .line 186
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     mul-int/2addr v0, p1
@@ -888,7 +751,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 187
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     mul-int/2addr v0, p1
@@ -897,7 +759,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 188
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     mul-int/2addr v0, p1
@@ -906,15 +767,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 189
     return-void
 .end method
 
 .method public mul(Landroid/renderscript/Byte3;)V
     .locals 2
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 159
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -925,7 +783,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 160
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->y:B
@@ -936,7 +793,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 161
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->z:B
@@ -947,14 +803,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 162
     return-void
 .end method
 
 .method public negate()V
     .locals 1
 
-    .line 274
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     neg-int v0, v0
@@ -963,7 +817,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 275
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     neg-int v0, v0
@@ -972,7 +825,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 276
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     neg-int v0, v0
@@ -981,42 +833,32 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 277
     return-void
 .end method
 
 .method public set(Landroid/renderscript/Byte3;)V
     .locals 1
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 318
     iget-byte v0, p1, Landroid/renderscript/Byte3;->x:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 319
     iget-byte v0, p1, Landroid/renderscript/Byte3;->y:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 320
     iget-byte v0, p1, Landroid/renderscript/Byte3;->z:B
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 321
     return-void
 .end method
 
 .method public setAt(IB)V
     .locals 2
-    .param p1, "i"    # I
-    .param p2, "value"    # B
 
-    .line 371
     packed-switch p1, :pswitch_data_0
 
-    .line 382
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v1, "Index: i"
@@ -1025,25 +867,19 @@
 
     throw v0
 
-    .line 379
     :pswitch_0
     iput-byte p2, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 380
     return-void
 
-    .line 376
     :pswitch_1
     iput-byte p2, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 377
     return-void
 
-    .line 373
     :pswitch_2
     iput-byte p2, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 374
     return-void
 
     :pswitch_data_0
@@ -1056,28 +892,19 @@
 
 .method public setValues(BBB)V
     .locals 0
-    .param p1, "a"    # B
-    .param p2, "b"    # B
-    .param p3, "c"    # B
 
-    .line 331
     iput-byte p1, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 332
     iput-byte p2, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 333
     iput-byte p3, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 334
     return-void
 .end method
 
 .method public sub(B)V
     .locals 1
-    .param p1, "value"    # B
 
-    .line 132
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     sub-int/2addr v0, p1
@@ -1086,7 +913,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 133
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     sub-int/2addr v0, p1
@@ -1095,7 +921,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 134
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     sub-int/2addr v0, p1
@@ -1104,15 +929,12 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 135
     return-void
 .end method
 
 .method public sub(Landroid/renderscript/Byte3;)V
     .locals 2
-    .param p1, "a"    # Landroid/renderscript/Byte3;
 
-    .line 105
     iget-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->x:B
@@ -1123,7 +945,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->x:B
 
-    .line 106
     iget-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->y:B
@@ -1134,7 +955,6 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->y:B
 
-    .line 107
     iget-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
     iget-byte v1, p1, Landroid/renderscript/Byte3;->z:B
@@ -1145,6 +965,5 @@
 
     iput-byte v0, p0, Landroid/renderscript/Byte3;->z:B
 
-    .line 108
     return-void
 .end method

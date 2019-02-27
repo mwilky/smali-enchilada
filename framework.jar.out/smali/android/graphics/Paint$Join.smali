@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 424
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "MITER"
@@ -51,7 +50,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
-    .line 428
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "ROUND"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
-    .line 432
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "BEVEL"
@@ -73,7 +70,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
-    .line 420
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Join;
@@ -97,28 +93,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "nativeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 434
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 435
     iput p3, p0, Landroid/graphics/Paint$Join;->nativeInt:I
 
-    .line 436
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Paint$Join;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 420
     const-class v0, Landroid/graphics/Paint$Join;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -133,7 +123,6 @@
 .method public static values()[Landroid/graphics/Paint$Join;
     .locals 1
 
-    .line 420
     sget-object v0, Landroid/graphics/Paint$Join;->$VALUES:[Landroid/graphics/Paint$Join;
 
     invoke-virtual {v0}, [Landroid/graphics/Paint$Join;->clone()Ljava/lang/Object;

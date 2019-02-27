@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;FFI)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;
 
-    .line 851
     iput-object p1, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->this$0:Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;
 
     iput p2, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->val$overflowButtonStartX:F
@@ -47,10 +45,7 @@
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 4
-    .param p1, "interpolatedTime"    # F
-    .param p2, "t"    # Landroid/view/animation/Transformation;
 
-    .line 854
     iget v0, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->val$overflowButtonStartX:F
 
     iget v1, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->val$overflowButtonTargetX:F
@@ -63,8 +58,6 @@
 
     add-float/2addr v0, v1
 
-    .line 856
-    .local v0, "overflowButtonX":F
     iget-object v1, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->this$0:Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-static {v1}, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;->access$1300(Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;)Z
@@ -73,12 +66,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 857
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 858
     :cond_0
     iget-object v1, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->this$0:Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;
 
@@ -96,13 +87,9 @@
 
     int-to-float v1, v1
 
-    .line 859
-    .local v1, "deltaContainerWidth":F
     :goto_0
     add-float v2, v0, v1
 
-    .line 860
-    .local v2, "actualOverflowButtonX":F
     iget-object v3, p0, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup$7;->this$0:Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-static {v3}, Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;->access$1900(Lcom/android/internal/widget/FloatingToolbar$FloatingToolbarPopup;)Landroid/widget/ImageButton;
@@ -111,6 +98,5 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setX(F)V
 
-    .line 861
     return-void
 .end method

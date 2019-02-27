@@ -31,9 +31,7 @@
 # direct methods
 .method constructor <init>(Landroid/renderscript/Mesh$Builder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/renderscript/Mesh$Builder;
 
-    .line 194
     iput-object p1, p0, Landroid/renderscript/Mesh$Builder$Entry;->this$0:Landroid/renderscript/Mesh$Builder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

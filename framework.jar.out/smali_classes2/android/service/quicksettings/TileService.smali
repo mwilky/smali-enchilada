@@ -47,10 +47,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 80
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 142
     new-instance v0, Landroid/service/quicksettings/TileService$H;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -61,7 +59,6 @@
 
     iput-object v0, p0, Landroid/service/quicksettings/TileService;->mHandler:Landroid/service/quicksettings/TileService$H;
 
-    .line 144
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/service/quicksettings/TileService;->mListening:Z
@@ -71,9 +68,7 @@
 
 .method static synthetic access$000(Landroid/service/quicksettings/TileService;)Landroid/os/IBinder;
     .locals 1
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mTileToken:Landroid/os/IBinder;
 
     return-object v0
@@ -81,9 +76,7 @@
 
 .method static synthetic access$100(Landroid/service/quicksettings/TileService;)Landroid/service/quicksettings/IQSService;
     .locals 1
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
     return-object v0
@@ -91,9 +84,7 @@
 
 .method static synthetic access$200(Landroid/service/quicksettings/TileService;)Landroid/service/quicksettings/TileService$H;
     .locals 1
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mHandler:Landroid/service/quicksettings/TileService$H;
 
     return-object v0
@@ -101,9 +92,7 @@
 
 .method static synthetic access$300(Landroid/service/quicksettings/TileService;)Z
     .locals 1
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
 
-    .line 80
     iget-boolean v0, p0, Landroid/service/quicksettings/TileService;->mListening:Z
 
     return v0
@@ -111,10 +100,7 @@
 
 .method static synthetic access$302(Landroid/service/quicksettings/TileService;Z)Z
     .locals 0
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
-    .param p1, "x1"    # Z
 
-    .line 80
     iput-boolean p1, p0, Landroid/service/quicksettings/TileService;->mListening:Z
 
     return p1
@@ -122,10 +108,7 @@
 
 .method static synthetic access$402(Landroid/service/quicksettings/TileService;Landroid/os/IBinder;)Landroid/os/IBinder;
     .locals 0
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
-    .param p1, "x1"    # Landroid/os/IBinder;
 
-    .line 80
     iput-object p1, p0, Landroid/service/quicksettings/TileService;->mToken:Landroid/os/IBinder;
 
     return-object p1
@@ -133,9 +116,7 @@
 
 .method static synthetic access$500(Landroid/service/quicksettings/TileService;)Ljava/lang/Runnable;
     .locals 1
-    .param p0, "x0"    # Landroid/service/quicksettings/TileService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mUnlockRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -144,7 +125,6 @@
 .method public static isQuickSettingsSupported()Z
     .locals 2
 
-    .line 435
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -160,33 +140,25 @@
 
 .method public static final requestListeningState(Landroid/content/Context;Landroid/content/ComponentName;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "component"    # Landroid/content/ComponentName;
 
-    .line 445
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.service.quicksettings.action.REQUEST_LISTENING"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 446
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.intent.extra.COMPONENT_NAME"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 447
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 448
     const-string v1, "android.permission.BIND_QUICK_SETTINGS_TILE"
 
     invoke-virtual {p0, v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 449
     return-void
 .end method
 
@@ -195,7 +167,6 @@
 .method public final getQsTile()Landroid/service/quicksettings/Tile;
     .locals 1
 
-    .line 323
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mTile:Landroid/service/quicksettings/Tile;
 
     return-object v0
@@ -204,7 +175,6 @@
 .method public final isLocked()Z
     .locals 2
 
-    .line 298
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -216,12 +186,9 @@
 
     return v0
 
-    .line 299
     :catch_0
     move-exception v0
 
-    .line 300
-    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x1
 
     return v1
@@ -230,7 +197,6 @@
 .method public final isSecure()Z
     .locals 2
 
-    .line 279
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -242,12 +208,9 @@
 
     return v0
 
-    .line 280
     :catch_0
     move-exception v0
 
-    .line 281
-    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x1
 
     return v1
@@ -255,9 +218,7 @@
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 328
     const-string/jumbo v0, "service"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getIBinderExtra(Ljava/lang/String;)Landroid/os/IBinder;
@@ -270,7 +231,6 @@
 
     iput-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
-    .line 329
     const-string/jumbo v0, "token"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getIBinderExtra(Ljava/lang/String;)Landroid/os/IBinder;
@@ -279,7 +239,6 @@
 
     iput-object v0, p0, Landroid/service/quicksettings/TileService;->mTileToken:Landroid/os/IBinder;
 
-    .line 331
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -293,15 +252,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 334
     nop
 
-    .line 335
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mTile:Landroid/service/quicksettings/Tile;
 
     if-eqz v0, :cond_0
 
-    .line 336
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mTile:Landroid/service/quicksettings/Tile;
 
     iget-object v1, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
@@ -310,14 +266,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/service/quicksettings/Tile;->setService(Landroid/service/quicksettings/IQSService;Landroid/os/IBinder;)V
 
-    .line 337
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mHandler:Landroid/service/quicksettings/TileService$H;
 
     const/4 v1, 0x7
 
     invoke-virtual {v0, v1}, Landroid/service/quicksettings/TileService$H;->sendEmptyMessage(I)Z
 
-    .line 339
     :cond_0
     new-instance v0, Landroid/service/quicksettings/TileService$2;
 
@@ -325,12 +279,9 @@
 
     return-object v0
 
-    .line 332
     :catch_0
     move-exception v0
 
-    .line 333
-    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Unable to reach IQSService"
@@ -343,75 +294,61 @@
 .method public onClick()V
     .locals 0
 
-    .line 199
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 1
 
-    .line 153
     iget-boolean v0, p0, Landroid/service/quicksettings/TileService;->mListening:Z
 
     if-eqz v0, :cond_0
 
-    .line 154
     invoke-virtual {p0}, Landroid/service/quicksettings/TileService;->onStopListening()V
 
-    .line 155
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/service/quicksettings/TileService;->mListening:Z
 
-    .line 157
     :cond_0
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 158
     return-void
 .end method
 
 .method public onStartListening()V
     .locals 0
 
-    .line 187
     return-void
 .end method
 
 .method public onStopListening()V
     .locals 0
 
-    .line 193
     return-void
 .end method
 
 .method public onTileAdded()V
     .locals 0
 
-    .line 168
     return-void
 .end method
 
 .method public onTileRemoved()V
     .locals 0
 
-    .line 174
     return-void
 .end method
 
 .method public final setStatusIcon(Landroid/graphics/drawable/Icon;Ljava/lang/String;)V
     .locals 2
-    .param p1, "icon"    # Landroid/graphics/drawable/Icon;
-    .param p2, "contentDescription"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 213
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
     if-eqz v0, :cond_0
 
-    .line 215
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -421,14 +358,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 217
     goto :goto_0
 
-    .line 216
     :catch_0
     move-exception v0
 
-    .line 219
     :cond_0
     :goto_0
     return-void
@@ -436,9 +370,7 @@
 
 .method public final showDialog(Landroid/app/Dialog;)V
     .locals 2
-    .param p1, "dialog"    # Landroid/app/Dialog;
 
-    .line 231
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -451,7 +383,6 @@
 
     iput-object v1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    .line 232
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -460,7 +391,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 233
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -475,10 +405,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 247
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
-    .line 249
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -488,26 +416,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 251
     goto :goto_0
 
-    .line 250
     :catch_0
     move-exception v0
 
-    .line 252
     :goto_0
     return-void
 .end method
 
 .method public final startActivityAndCollapse(Landroid/content/Intent;)V
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 308
     invoke-virtual {p0, p1}, Landroid/service/quicksettings/TileService;->startActivity(Landroid/content/Intent;)V
 
-    .line 310
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -517,26 +439,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 312
     goto :goto_0
 
-    .line 311
     :catch_0
     move-exception v0
 
-    .line 313
     :goto_0
     return-void
 .end method
 
 .method public final unlockAndRun(Ljava/lang/Runnable;)V
     .locals 2
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 262
     iput-object p1, p0, Landroid/service/quicksettings/TileService;->mUnlockRunnable:Ljava/lang/Runnable;
 
-    .line 264
     :try_start_0
     iget-object v0, p0, Landroid/service/quicksettings/TileService;->mService:Landroid/service/quicksettings/IQSService;
 
@@ -546,14 +462,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 266
     goto :goto_0
 
-    .line 265
     :catch_0
     move-exception v0
 
-    .line 267
     :goto_0
     return-void
 .end method

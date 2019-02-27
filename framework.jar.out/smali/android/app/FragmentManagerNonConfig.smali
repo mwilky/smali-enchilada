@@ -45,18 +45,12 @@
         }
     .end annotation
 
-    .line 40
-    .local p1, "fragments":Ljava/util/List;, "Ljava/util/List<Landroid/app/Fragment;>;"
-    .local p2, "childNonConfigs":Ljava/util/List;, "Ljava/util/List<Landroid/app/FragmentManagerNonConfig;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     iput-object p1, p0, Landroid/app/FragmentManagerNonConfig;->mFragments:Ljava/util/List;
 
-    .line 42
     iput-object p2, p0, Landroid/app/FragmentManagerNonConfig;->mChildNonConfigs:Ljava/util/List;
 
-    .line 43
     return-void
 .end method
 
@@ -73,7 +67,6 @@
         }
     .end annotation
 
-    .line 56
     iget-object v0, p0, Landroid/app/FragmentManagerNonConfig;->mChildNonConfigs:Ljava/util/List;
 
     return-object v0
@@ -90,7 +83,6 @@
         }
     .end annotation
 
-    .line 49
     iget-object v0, p0, Landroid/app/FragmentManagerNonConfig;->mFragments:Ljava/util/List;
 
     return-object v0

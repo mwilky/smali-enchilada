@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$UidObserverRegistrationProto;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$UidObserverRegistrationProto;
 
-    .line 42
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$UidObserverRegistrationProto$ProcState;->this$1:Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$UidObserverRegistrationProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

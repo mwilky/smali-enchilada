@@ -34,7 +34,6 @@
 .method private constructor <init>(Landroid/widget/Editor$SuggestionHelper;)V
     .locals 0
 
-    .line 3407
     iput-object p1, p0, Landroid/widget/Editor$SuggestionHelper$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +43,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/Editor$SuggestionHelper;Landroid/widget/Editor$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/Editor$SuggestionHelper;
-    .param p2, "x1"    # Landroid/widget/Editor$1;
 
-    .line 3407
     invoke-direct {p0, p1}, Landroid/widget/Editor$SuggestionHelper$SuggestionSpanComparator;-><init>(Landroid/widget/Editor$SuggestionHelper;)V
 
     return-void
@@ -57,25 +53,17 @@
 # virtual methods
 .method public compare(Landroid/text/style/SuggestionSpan;Landroid/text/style/SuggestionSpan;)I
     .locals 8
-    .param p1, "span1"    # Landroid/text/style/SuggestionSpan;
-    .param p2, "span2"    # Landroid/text/style/SuggestionSpan;
 
-    .line 3409
     invoke-virtual {p1}, Landroid/text/style/SuggestionSpan;->getFlags()I
 
     move-result v0
 
-    .line 3410
-    .local v0, "flag1":I
     invoke-virtual {p2}, Landroid/text/style/SuggestionSpan;->getFlags()I
 
     move-result v1
 
-    .line 3411
-    .local v1, "flag2":I
     if-eq v0, v1, :cond_7
 
-    .line 3413
     and-int/lit8 v2, v0, 0x1
 
     const/4 v3, 0x0
@@ -91,8 +79,6 @@
     :cond_0
     move v2, v3
 
-    .line 3414
-    .local v2, "easy1":Z
     :goto_0
     and-int/lit8 v5, v1, 0x1
 
@@ -105,8 +91,6 @@
     :cond_1
     move v5, v3
 
-    .line 3415
-    .local v5, "easy2":Z
     :goto_1
     and-int/lit8 v6, v0, 0x2
 
@@ -119,8 +103,6 @@
     :cond_2
     move v6, v3
 
-    .line 3416
-    .local v6, "misspelled1":Z
     :goto_2
     and-int/lit8 v7, v1, 0x2
 
@@ -130,8 +112,6 @@
 
     nop
 
-    .line 3417
-    .local v3, "misspelled2":Z
     :cond_3
     const/4 v7, -0x1
 
@@ -141,7 +121,6 @@
 
     return v7
 
-    .line 3418
     :cond_4
     if-eqz v5, :cond_5
 
@@ -149,23 +128,16 @@
 
     return v4
 
-    .line 3419
     :cond_5
     if-eqz v6, :cond_6
 
     return v7
 
-    .line 3420
     :cond_6
     if-eqz v3, :cond_7
 
     return v4
 
-    .line 3423
-    .end local v2    # "easy1":Z
-    .end local v3    # "misspelled2":Z
-    .end local v5    # "easy2":Z
-    .end local v6    # "misspelled1":Z
     :cond_7
     iget-object v2, p0, Landroid/widget/Editor$SuggestionHelper$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionHelper;
 
@@ -207,7 +179,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 3407
     check-cast p1, Landroid/text/style/SuggestionSpan;
 
     check-cast p2, Landroid/text/style/SuggestionSpan;

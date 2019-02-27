@@ -33,7 +33,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -106,7 +105,6 @@
 .method public getPackageList()Landroid/content/pm/PackageList;
     .locals 1
 
-    .line 535
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageManagerInternal;->getPackageList(Landroid/content/pm/PackageManagerInternal$PackageListObserver;)Landroid/content/pm/PackageList;

@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 274
     const-string v0, "NONE"
 
     const-string v1, "TKIP"
@@ -56,7 +55,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

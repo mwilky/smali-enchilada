@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/Editor;
 
-    .line 360
     iput-object p1, p0, Landroid/widget/Editor$3;->this$0:Landroid/widget/Editor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 363
     iget-object v0, p0, Landroid/widget/Editor$3;->this$0:Landroid/widget/Editor;
 
     invoke-static {v0}, Landroid/widget/Editor;->access$500(Landroid/widget/Editor;)Landroid/view/ActionMode;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 364
     iget-object v0, p0, Landroid/widget/Editor$3;->this$0:Landroid/widget/Editor;
 
     invoke-static {v0}, Landroid/widget/Editor;->access$500(Landroid/widget/Editor;)Landroid/view/ActionMode;
@@ -59,7 +55,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ActionMode;->hide(J)V
 
-    .line 366
     :cond_0
     return-void
 .end method

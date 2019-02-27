@@ -41,45 +41,35 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 54
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
-    .line 36
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mAngle:F
 
-    .line 39
     const/high16 v0, 0x42340000    # 45.0f
 
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mMaxAngle:F
 
-    .line 42
     const/16 v0, 0x280
 
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mTileSize:I
 
-    .line 47
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mWidth:I
 
-    .line 48
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mHeight:I
 
-    .line 49
     iput v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mTarget:I
 
-    .line 55
     return-void
 .end method
 
 .method private updateParameters()V
     .locals 13
 
-    .line 116
     iget v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mAngle:F
 
     const v1, 0x3c8efa35
@@ -94,8 +84,6 @@
 
     double-to-float v0, v2
 
-    .line 117
-    .local v0, "cosTheta":F
     iget v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mAngle:F
 
     mul-float/2addr v2, v1
@@ -108,8 +96,6 @@
 
     double-to-float v1, v1
 
-    .line 119
-    .local v1, "sinTheta":F
     iget v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mMaxAngle:F
 
     const/4 v3, 0x0
@@ -118,7 +104,6 @@
 
     if-lez v2, :cond_1
 
-    .line 121
     iget v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mMaxAngle:F
 
     const/high16 v3, 0x42b40000    # 90.0f
@@ -135,7 +120,6 @@
     :goto_0
     iput v3, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mMaxAngle:F
 
-    .line 123
     new-instance v2, Landroid/filterfw/geometry/Point;
 
     neg-float v3, v0
@@ -172,8 +156,6 @@
 
     invoke-direct {v2, v3, v4}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
-    .line 126
-    .local v2, "p0":Landroid/filterfw/geometry/Point;
     new-instance v3, Landroid/filterfw/geometry/Point;
 
     iget v4, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mWidth:I
@@ -206,8 +188,6 @@
 
     invoke-direct {v3, v4, v5}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
-    .line 129
-    .local v3, "p1":Landroid/filterfw/geometry/Point;
     new-instance v4, Landroid/filterfw/geometry/Point;
 
     neg-float v5, v0
@@ -244,8 +224,6 @@
 
     invoke-direct {v4, v5, v6}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
-    .line 132
-    .local v4, "p2":Landroid/filterfw/geometry/Point;
     new-instance v5, Landroid/filterfw/geometry/Point;
 
     iget v6, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mWidth:I
@@ -278,8 +256,6 @@
 
     invoke-direct {v5, v6, v7}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
-    .line 135
-    .local v5, "p3":Landroid/filterfw/geometry/Point;
     iget v6, v2, Landroid/filterfw/geometry/Point;->x:F
 
     invoke-static {v6}, Ljava/lang/Math;->abs(F)F
@@ -296,8 +272,6 @@
 
     move-result v6
 
-    .line 136
-    .local v6, "maxWidth":F
     iget v7, v2, Landroid/filterfw/geometry/Point;->y:F
 
     invoke-static {v7}, Ljava/lang/Math;->abs(F)F
@@ -314,8 +288,6 @@
 
     move-result v7
 
-    .line 138
-    .local v7, "maxHeight":F
     iget v8, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mWidth:I
 
     int-to-float v8, v8
@@ -336,8 +308,6 @@
 
     mul-float/2addr v8, v9
 
-    .line 141
-    .local v8, "scale":F
     iget v10, v2, Landroid/filterfw/geometry/Point;->x:F
 
     mul-float/2addr v10, v8
@@ -364,7 +334,6 @@
 
     invoke-virtual {v2, v10, v11}, Landroid/filterfw/geometry/Point;->set(FF)V
 
-    .line 142
     iget v10, v3, Landroid/filterfw/geometry/Point;->x:F
 
     mul-float/2addr v10, v8
@@ -391,7 +360,6 @@
 
     invoke-virtual {v3, v10, v11}, Landroid/filterfw/geometry/Point;->set(FF)V
 
-    .line 143
     iget v10, v4, Landroid/filterfw/geometry/Point;->x:F
 
     mul-float/2addr v10, v8
@@ -418,7 +386,6 @@
 
     invoke-virtual {v4, v10, v11}, Landroid/filterfw/geometry/Point;->set(FF)V
 
-    .line 144
     iget v10, v5, Landroid/filterfw/geometry/Point;->x:F
 
     mul-float/2addr v10, v8
@@ -445,31 +412,18 @@
 
     invoke-virtual {v5, v10, v11}, Landroid/filterfw/geometry/Point;->set(FF)V
 
-    .line 146
     new-instance v9, Landroid/filterfw/geometry/Quad;
 
     invoke-direct {v9, v2, v3, v4, v5}, Landroid/filterfw/geometry/Quad;-><init>(Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;)V
 
-    .line 147
-    .local v9, "quad":Landroid/filterfw/geometry/Quad;
     iget-object v10, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mProgram:Landroid/filterfw/core/Program;
 
     check-cast v10, Landroid/filterfw/core/ShaderProgram;
 
     invoke-virtual {v10, v9}, Landroid/filterfw/core/ShaderProgram;->setSourceRegion(Landroid/filterfw/geometry/Quad;)V
 
-    .line 148
     return-void
 
-    .line 120
-    .end local v2    # "p0":Landroid/filterfw/geometry/Point;
-    .end local v3    # "p1":Landroid/filterfw/geometry/Point;
-    .end local v4    # "p2":Landroid/filterfw/geometry/Point;
-    .end local v5    # "p3":Landroid/filterfw/geometry/Point;
-    .end local v6    # "maxWidth":F
-    .end local v7    # "maxHeight":F
-    .end local v8    # "scale":F
-    .end local v9    # "quad":Landroid/filterfw/geometry/Quad;
     :cond_1
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -484,57 +438,40 @@
 # virtual methods
 .method public fieldPortValueUpdated(Ljava/lang/String;Landroid/filterfw/core/FilterContext;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 80
     iget-object v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mProgram:Landroid/filterfw/core/Program;
 
     if-eqz v0, :cond_0
 
-    .line 81
     invoke-direct {p0}, Landroid/filterpacks/imageproc/StraightenFilter;->updateParameters()V
 
-    .line 83
     :cond_0
     return-void
 .end method
 
 .method public initProgram(Landroid/filterfw/core/FilterContext;I)V
     .locals 3
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
-    .param p2, "target"    # I
 
-    .line 64
     const/4 v0, 0x3
 
     if-ne p2, v0, :cond_0
 
-    .line 66
     invoke-static {p1}, Landroid/filterfw/core/ShaderProgram;->createIdentity(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/ShaderProgram;
 
     move-result-object v0
 
-    .line 67
-    .local v0, "shaderProgram":Landroid/filterfw/core/ShaderProgram;
     iget v1, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mTileSize:I
 
     invoke-virtual {v0, v1}, Landroid/filterfw/core/ShaderProgram;->setMaximumTileSize(I)V
 
-    .line 68
     iput-object v0, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    .line 69
     nop
 
-    .line 75
-    .end local v0    # "shaderProgram":Landroid/filterfw/core/ShaderProgram;
     iput p2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mTarget:I
 
-    .line 76
     return-void
 
-    .line 72
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -563,23 +500,17 @@
 
 .method public process(Landroid/filterfw/core/FilterContext;)V
     .locals 4
-    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
-    .line 88
     const-string v0, "image"
 
     invoke-virtual {p0, v0}, Landroid/filterpacks/imageproc/StraightenFilter;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
     move-result-object v0
 
-    .line 89
-    .local v0, "input":Landroid/filterfw/core/Frame;
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
-    .line 92
-    .local v1, "inputFormat":Landroid/filterfw/core/FrameFormat;
     iget-object v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mProgram:Landroid/filterfw/core/Program;
 
     if-eqz v2, :cond_0
@@ -592,7 +523,6 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 93
     :cond_0
     invoke-virtual {v1}, Landroid/filterfw/core/FrameFormat;->getTarget()I
 
@@ -600,7 +530,6 @@
 
     invoke-virtual {p0, p1, v2}, Landroid/filterpacks/imageproc/StraightenFilter;->initProgram(Landroid/filterfw/core/FilterContext;I)V
 
-    .line 97
     :cond_1
     invoke-virtual {v1}, Landroid/filterfw/core/FrameFormat;->getWidth()I
 
@@ -618,7 +547,6 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 98
     :cond_2
     invoke-virtual {v1}, Landroid/filterfw/core/FrameFormat;->getWidth()I
 
@@ -626,17 +554,14 @@
 
     iput v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mWidth:I
 
-    .line 99
     invoke-virtual {v1}, Landroid/filterfw/core/FrameFormat;->getHeight()I
 
     move-result v2
 
     iput v2, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mHeight:I
 
-    .line 100
     invoke-direct {p0}, Landroid/filterpacks/imageproc/StraightenFilter;->updateParameters()V
 
-    .line 103
     :cond_3
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
@@ -646,28 +571,22 @@
 
     move-result-object v2
 
-    .line 106
-    .local v2, "output":Landroid/filterfw/core/Frame;
     iget-object v3, p0, Landroid/filterpacks/imageproc/StraightenFilter;->mProgram:Landroid/filterfw/core/Program;
 
     invoke-virtual {v3, v0, v2}, Landroid/filterfw/core/Program;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
 
-    .line 109
     const-string v3, "image"
 
     invoke-virtual {p0, v3, v2}, Landroid/filterpacks/imageproc/StraightenFilter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
-    .line 112
     invoke-virtual {v2}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
-    .line 113
     return-void
 .end method
 
 .method public setupPorts()V
     .locals 2
 
-    .line 59
     const-string v0, "image"
 
     const/4 v1, 0x3
@@ -678,13 +597,11 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/StraightenFilter;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
-    .line 60
     const-string v0, "image"
 
     const-string v1, "image"
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/StraightenFilter;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 61
     return-void
 .end method

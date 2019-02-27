@@ -41,13 +41,8 @@
         }
     .end annotation
 
-    .line 54
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "lower":Ljava/lang/Comparable;, "TT;"
-    .local p2, "upper":Ljava/lang/Comparable;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     const-string/jumbo v0, "lower must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -58,7 +53,6 @@
 
     iput-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
-    .line 56
     const-string/jumbo v0, "upper must not be null"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -69,17 +63,14 @@
 
     iput-object v0, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
-    .line 58
     invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
 
     if-gtz v0, :cond_0
 
-    .line 61
     return-void
 
-    .line 59
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -102,9 +93,6 @@
         }
     .end annotation
 
-    .line 78
-    .local p0, "lower":Ljava/lang/Comparable;, "TT;"
-    .local p1, "upper":Ljava/lang/Comparable;, "TT;"
     new-instance v0, Landroid/util/Range;
 
     invoke-direct {v0, p0, p1}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
@@ -122,14 +110,10 @@
         }
     .end annotation
 
-    .line 174
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "value":Ljava/lang/Comparable;, "TT;"
     const-string/jumbo v0, "value must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 176
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     invoke-interface {p1, v0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
@@ -138,12 +122,10 @@
 
     if-gez v0, :cond_0
 
-    .line 177
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     return-object v0
 
-    .line 178
     :cond_0
     iget-object v0, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
@@ -153,12 +135,10 @@
 
     if-lez v0, :cond_1
 
-    .line 179
     iget-object v0, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     return-object v0
 
-    .line 181
     :cond_1
     return-object p1
 .end method
@@ -173,14 +153,10 @@
         }
     .end annotation
 
-    .line 132
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "range":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const-string/jumbo v0, "value must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 134
     iget-object v0, p1, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     iget-object v1, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
@@ -202,8 +178,6 @@
     :cond_0
     move v0, v1
 
-    .line 135
-    .local v0, "gteLower":Z
     :goto_0
     iget-object v3, p1, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
@@ -222,8 +196,6 @@
     :cond_1
     move v3, v1
 
-    .line 137
-    .local v3, "lteUpper":Z
     :goto_1
     if-eqz v0, :cond_2
 
@@ -245,14 +217,10 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "value":Ljava/lang/Comparable;, "TT;"
     const-string/jumbo v0, "value must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     invoke-interface {p1, v0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
@@ -272,8 +240,6 @@
     :cond_0
     move v0, v1
 
-    .line 115
-    .local v0, "gteLower":Z
     :goto_0
     iget-object v3, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
@@ -290,8 +256,6 @@
     :cond_1
     move v3, v1
 
-    .line 117
-    .local v3, "lteUpper":Z
     :goto_1
     if-eqz v0, :cond_2
 
@@ -307,39 +271,29 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 150
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 151
     return v0
 
-    .line 152
     :cond_0
     const/4 v1, 0x1
 
     if-ne p0, p1, :cond_1
 
-    .line 153
     return v1
 
-    .line 154
     :cond_1
     instance-of v2, p1, Landroid/util/Range;
 
     if-eqz v2, :cond_3
 
-    .line 156
     move-object v2, p1
 
     check-cast v2, Landroid/util/Range;
 
-    .line 157
-    .local v2, "other":Landroid/util/Range;
     iget-object v3, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     iget-object v4, v2, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
@@ -367,8 +321,6 @@
     :cond_2
     return v0
 
-    .line 159
-    .end local v2    # "other":Landroid/util/Range;
     :cond_3
     return v0
 .end method
@@ -385,14 +337,10 @@
         }
     .end annotation
 
-    .line 273
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "range":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const-string/jumbo v0, "range must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
     iget-object v0, p1, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     iget-object v1, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
@@ -401,8 +349,6 @@
 
     move-result v0
 
-    .line 276
-    .local v0, "cmpLower":I
     iget-object v1, p1, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     iget-object v2, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
@@ -411,25 +357,19 @@
 
     move-result v1
 
-    .line 278
-    .local v1, "cmpUpper":I
     if-gtz v0, :cond_0
 
     if-ltz v1, :cond_0
 
-    .line 280
     return-object p1
 
-    .line 281
     :cond_0
     if-ltz v0, :cond_1
 
     if-gtz v1, :cond_1
 
-    .line 283
     return-object p0
 
-    .line 286
     :cond_1
     if-ltz v0, :cond_2
 
@@ -440,7 +380,6 @@
     :cond_2
     iget-object v2, p1, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
-    .line 287
     :goto_0
     if-gtz v1, :cond_3
 
@@ -451,7 +390,6 @@
     :cond_3
     iget-object v3, p1, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
-    .line 285
     :goto_1
     invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
@@ -470,14 +408,10 @@
         }
     .end annotation
 
-    .line 334
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "value":Ljava/lang/Comparable;, "TT;"
     const-string/jumbo v0, "value must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 335
     invoke-virtual {p0, p1, p1}, Landroid/util/Range;->extend(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
     move-result-object v0
@@ -495,44 +429,32 @@
         }
     .end annotation
 
-    .line 305
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "lower":Ljava/lang/Comparable;, "TT;"
-    .local p2, "upper":Ljava/lang/Comparable;, "TT;"
     const-string/jumbo v0, "lower must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 306
     const-string/jumbo v0, "upper must not be null"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 308
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     invoke-interface {p1, v0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 309
-    .local v0, "cmpLower":I
     iget-object v1, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     invoke-interface {p2, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 311
-    .local v1, "cmpUpper":I
     if-ltz v0, :cond_0
 
     if-gtz v1, :cond_0
 
-    .line 313
     return-object p0
 
-    .line 316
     :cond_0
     if-ltz v0, :cond_1
 
@@ -540,7 +462,6 @@
 
     goto :goto_0
 
-    .line 317
     :cond_1
     move-object v2, p1
 
@@ -551,7 +472,6 @@
 
     goto :goto_1
 
-    .line 315
     :cond_2
     move-object v3, p2
 
@@ -571,8 +491,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     return-object v0
@@ -586,8 +504,6 @@
         }
     .end annotation
 
-    .line 96
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     iget-object v0, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     return-object v0
@@ -596,8 +512,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 353
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Comparable;
@@ -633,14 +547,10 @@
         }
     .end annotation
 
-    .line 205
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "range":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const-string/jumbo v0, "range must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 207
     iget-object v0, p1, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     iget-object v1, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
@@ -649,8 +559,6 @@
 
     move-result v0
 
-    .line 208
-    .local v0, "cmpLower":I
     iget-object v1, p1, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     iget-object v2, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
@@ -659,25 +567,19 @@
 
     move-result v1
 
-    .line 210
-    .local v1, "cmpUpper":I
     if-gtz v0, :cond_0
 
     if-ltz v1, :cond_0
 
-    .line 212
     return-object p0
 
-    .line 213
     :cond_0
     if-ltz v0, :cond_1
 
     if-gtz v1, :cond_1
 
-    .line 215
     return-object p1
 
-    .line 218
     :cond_1
     if-gtz v0, :cond_2
 
@@ -688,7 +590,6 @@
     :cond_2
     iget-object v2, p1, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
-    .line 219
     :goto_0
     if-ltz v1, :cond_3
 
@@ -699,7 +600,6 @@
     :cond_3
     iget-object v3, p1, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
-    .line 217
     :goto_1
     invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
@@ -718,44 +618,32 @@
         }
     .end annotation
 
-    .line 237
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
-    .local p1, "lower":Ljava/lang/Comparable;, "TT;"
-    .local p2, "upper":Ljava/lang/Comparable;, "TT;"
     const-string/jumbo v0, "lower must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 238
     const-string/jumbo v0, "upper must not be null"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 240
     iget-object v0, p0, Landroid/util/Range;->mLower:Ljava/lang/Comparable;
 
     invoke-interface {p1, v0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 241
-    .local v0, "cmpLower":I
     iget-object v1, p0, Landroid/util/Range;->mUpper:Ljava/lang/Comparable;
 
     invoke-interface {p2, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 243
-    .local v1, "cmpUpper":I
     if-gtz v0, :cond_0
 
     if-ltz v1, :cond_0
 
-    .line 245
     return-object p0
 
-    .line 248
     :cond_0
     if-gtz v0, :cond_1
 
@@ -763,7 +651,6 @@
 
     goto :goto_0
 
-    .line 249
     :cond_1
     move-object v2, p1
 
@@ -774,7 +661,6 @@
 
     goto :goto_1
 
-    .line 247
     :cond_2
     move-object v3, p2
 
@@ -789,8 +675,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 345
-    .local p0, "this":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     const-string v0, "[%s, %s]"
 
     const/4 v1, 0x2

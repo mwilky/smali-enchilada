@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 177
     sget-object v0, Landroid/provider/BlockedNumberContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "blocked"
@@ -49,9 +48,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
     return-void
 .end method

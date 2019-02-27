@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/se/omapi/SEService$SEListener;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/se/omapi/SEService$SEListener;
 
-    .line 88
     iput-object p1, p0, Landroid/se/omapi/SEService$SEListener$1;->this$1:Landroid/se/omapi/SEService$SEListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 1
 
-    .line 91
     iget-object v0, p0, Landroid/se/omapi/SEService$SEListener$1;->this$1:Landroid/se/omapi/SEService$SEListener;
 
     iget-object v0, v0, Landroid/se/omapi/SEService$SEListener;->mListener:Landroid/se/omapi/SEService$OnConnectedListener;
 
     invoke-interface {v0}, Landroid/se/omapi/SEService$OnConnectedListener;->onConnected()V
 
-    .line 92
     return-void
 .end method

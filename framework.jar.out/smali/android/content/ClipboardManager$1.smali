@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/ClipboardManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/ClipboardManager;
 
-    .line 58
     iput-object p1, p0, Landroid/content/ClipboardManager$1;->this$0:Landroid/content/ClipboardManager;
 
     invoke-direct {p0}, Landroid/content/IOnPrimaryClipChangedListener$Stub;-><init>()V
@@ -34,12 +32,10 @@
 .method public static synthetic lambda$dispatchPrimaryClipChanged$0(Landroid/content/ClipboardManager$1;)V
     .locals 1
 
-    .line 62
     iget-object v0, p0, Landroid/content/ClipboardManager$1;->this$0:Landroid/content/ClipboardManager;
 
     invoke-virtual {v0}, Landroid/content/ClipboardManager;->reportPrimaryClipChanged()V
 
-    .line 63
     return-void
 .end method
 
@@ -48,7 +44,6 @@
 .method public dispatchPrimaryClipChanged()V
     .locals 2
 
-    .line 61
     iget-object v0, p0, Landroid/content/ClipboardManager$1;->this$0:Landroid/content/ClipboardManager;
 
     invoke-static {v0}, Landroid/content/ClipboardManager;->access$000(Landroid/content/ClipboardManager;)Landroid/os/Handler;
@@ -61,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 64
     return-void
 .end method

@@ -37,14 +37,9 @@
 # direct methods
 .method constructor <init>(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;)V
     .locals 8
-    .param p1, "source"    # Landroid/graphics/ColorSpace;
-    .param p2, "destination"    # Landroid/graphics/ColorSpace;
-    .param p3, "intent"    # Landroid/graphics/ColorSpace$RenderIntent;
 
-    .line 3453
     nop
 
-    .line 3454
     invoke-virtual {p1}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v0
@@ -61,7 +56,6 @@
 
     move-result-object v0
 
-    .line 3455
     move-object v4, v0
 
     goto :goto_0
@@ -78,7 +72,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3456
     invoke-static {}, Landroid/graphics/ColorSpace;->access$1100()[F
 
     move-result-object v0
@@ -87,7 +80,6 @@
 
     move-result-object v0
 
-    .line 3457
     move-object v5, v0
 
     goto :goto_1
@@ -100,7 +92,6 @@
 
     move-result-object v7
 
-    .line 3453
     move-object v1, p0
 
     move-object v2, p1
@@ -111,55 +102,32 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/graphics/ColorSpace$Connector;-><init>(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;[F)V
 
-    .line 3458
     return-void
 .end method
 
 .method private constructor <init>(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;[F)V
     .locals 0
-    .param p1, "source"    # Landroid/graphics/ColorSpace;
-    .param p2, "destination"    # Landroid/graphics/ColorSpace;
-    .param p3, "transformSource"    # Landroid/graphics/ColorSpace;
-    .param p4, "transformDestination"    # Landroid/graphics/ColorSpace;
-    .param p5, "intent"    # Landroid/graphics/ColorSpace$RenderIntent;
-    .param p6, "transform"    # [F
 
-    .line 3469
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3470
     iput-object p1, p0, Landroid/graphics/ColorSpace$Connector;->mSource:Landroid/graphics/ColorSpace;
 
-    .line 3471
     iput-object p2, p0, Landroid/graphics/ColorSpace$Connector;->mDestination:Landroid/graphics/ColorSpace;
 
-    .line 3472
     iput-object p3, p0, Landroid/graphics/ColorSpace$Connector;->mTransformSource:Landroid/graphics/ColorSpace;
 
-    .line 3473
     iput-object p4, p0, Landroid/graphics/ColorSpace$Connector;->mTransformDestination:Landroid/graphics/ColorSpace;
 
-    .line 3474
     iput-object p5, p0, Landroid/graphics/ColorSpace$Connector;->mIntent:Landroid/graphics/ColorSpace$RenderIntent;
 
-    .line 3475
     iput-object p6, p0, Landroid/graphics/ColorSpace$Connector;->mTransform:[F
 
-    .line 3476
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;[FLandroid/graphics/ColorSpace$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/graphics/ColorSpace;
-    .param p2, "x1"    # Landroid/graphics/ColorSpace;
-    .param p3, "x2"    # Landroid/graphics/ColorSpace;
-    .param p4, "x3"    # Landroid/graphics/ColorSpace;
-    .param p5, "x4"    # Landroid/graphics/ColorSpace$RenderIntent;
-    .param p6, "x5"    # [F
-    .param p7, "x6"    # Landroid/graphics/ColorSpace$1;
 
-    .line 3436
     invoke-direct/range {p0 .. p6}, Landroid/graphics/ColorSpace$Connector;-><init>(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;[F)V
 
     return-void
@@ -167,11 +135,7 @@
 
 .method private static computeTransform(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace$RenderIntent;)[F
     .locals 10
-    .param p0, "source"    # Landroid/graphics/ColorSpace;
-    .param p1, "destination"    # Landroid/graphics/ColorSpace;
-    .param p2, "intent"    # Landroid/graphics/ColorSpace$RenderIntent;
 
-    .line 3485
     sget-object v0, Landroid/graphics/ColorSpace$RenderIntent;->ABSOLUTE:Landroid/graphics/ColorSpace$RenderIntent;
 
     const/4 v1, 0x0
@@ -180,7 +144,6 @@
 
     return-object v1
 
-    .line 3487
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
@@ -201,8 +164,6 @@
     :cond_1
     move v0, v3
 
-    .line 3488
-    .local v0, "srcRGB":Z
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
@@ -219,8 +180,6 @@
     :cond_2
     move v2, v3
 
-    .line 3490
-    .local v2, "dstRGB":Z
     :goto_1
     if-eqz v0, :cond_3
 
@@ -228,7 +187,6 @@
 
     return-object v1
 
-    .line 3492
     :cond_3
     if-nez v0, :cond_5
 
@@ -236,11 +194,9 @@
 
     goto :goto_2
 
-    .line 3503
     :cond_4
     return-object v1
 
-    .line 3493
     :cond_5
     :goto_2
     if-eqz v0, :cond_6
@@ -255,8 +211,6 @@
     :goto_3
     check-cast v1, Landroid/graphics/ColorSpace$Rgb;
 
-    .line 3494
-    .local v1, "rgb":Landroid/graphics/ColorSpace$Rgb;
     if-eqz v0, :cond_7
 
     invoke-static {v1}, Landroid/graphics/ColorSpace$Rgb;->access$000(Landroid/graphics/ColorSpace$Rgb;)[F
@@ -274,8 +228,6 @@
 
     move-result-object v5
 
-    .line 3495
-    .local v5, "srcXYZ":[F
     :goto_4
     if-eqz v2, :cond_8
 
@@ -294,8 +246,6 @@
 
     move-result-object v6
 
-    .line 3496
-    .local v6, "dstXYZ":[F
     :goto_5
     const/4 v7, 0x3
 
@@ -332,9 +282,7 @@
 
 .method static identity(Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;
     .locals 2
-    .param p0, "source"    # Landroid/graphics/ColorSpace;
 
-    .line 3685
     new-instance v0, Landroid/graphics/ColorSpace$Connector$1;
 
     sget-object v1, Landroid/graphics/ColorSpace$RenderIntent;->RELATIVE:Landroid/graphics/ColorSpace$RenderIntent;
@@ -349,7 +297,6 @@
 .method public getDestination()Landroid/graphics/ColorSpace;
     .locals 1
 
-    .line 3527
     iget-object v0, p0, Landroid/graphics/ColorSpace$Connector;->mDestination:Landroid/graphics/ColorSpace;
 
     return-object v0
@@ -358,7 +305,6 @@
 .method public getRenderIntent()Landroid/graphics/ColorSpace$RenderIntent;
     .locals 1
 
-    .line 3539
     iget-object v0, p0, Landroid/graphics/ColorSpace$Connector;->mIntent:Landroid/graphics/ColorSpace$RenderIntent;
 
     return-object v0
@@ -367,7 +313,6 @@
 .method public getSource()Landroid/graphics/ColorSpace;
     .locals 1
 
-    .line 3515
     iget-object v0, p0, Landroid/graphics/ColorSpace$Connector;->mSource:Landroid/graphics/ColorSpace;
 
     return-object v0
@@ -375,11 +320,7 @@
 
 .method public transform(FFF)[F
     .locals 2
-    .param p1, "r"    # F
-    .param p2, "g"    # F
-    .param p3, "b"    # F
 
-    .line 3561
     const/4 v0, 0x3
 
     new-array v0, v0, [F
@@ -405,22 +346,17 @@
 
 .method public transform([F)[F
     .locals 4
-    .param p1, "v"    # [F
 
-    .line 3578
     iget-object v0, p0, Landroid/graphics/ColorSpace$Connector;->mTransformSource:Landroid/graphics/ColorSpace;
 
     invoke-virtual {v0, p1}, Landroid/graphics/ColorSpace;->toXyz([F)[F
 
     move-result-object v0
 
-    .line 3579
-    .local v0, "xyz":[F
     iget-object v1, p0, Landroid/graphics/ColorSpace$Connector;->mTransform:[F
 
     if-eqz v1, :cond_0
 
-    .line 3580
     const/4 v1, 0x0
 
     aget v2, v0, v1
@@ -433,7 +369,6 @@
 
     aput v2, v0, v1
 
-    .line 3581
     const/4 v1, 0x1
 
     aget v2, v0, v1
@@ -446,7 +381,6 @@
 
     aput v2, v0, v1
 
-    .line 3582
     const/4 v1, 0x2
 
     aget v2, v0, v1
@@ -459,7 +393,6 @@
 
     aput v2, v0, v1
 
-    .line 3584
     :cond_0
     iget-object v1, p0, Landroid/graphics/ColorSpace$Connector;->mTransformDestination:Landroid/graphics/ColorSpace;
 

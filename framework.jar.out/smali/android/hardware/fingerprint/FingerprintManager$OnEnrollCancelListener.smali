@@ -25,7 +25,6 @@
 .method private constructor <init>(Landroid/hardware/fingerprint/FingerprintManager;)V
     .locals 0
 
-    .line 116
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$OnEnrollCancelListener;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Landroid/hardware/fingerprint/FingerprintManager;Landroid/hardware/fingerprint/FingerprintManager$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/hardware/fingerprint/FingerprintManager;
-    .param p2, "x1"    # Landroid/hardware/fingerprint/FingerprintManager$1;
 
-    .line 116
     invoke-direct {p0, p1}, Landroid/hardware/fingerprint/FingerprintManager$OnEnrollCancelListener;-><init>(Landroid/hardware/fingerprint/FingerprintManager;)V
 
     return-void
@@ -49,11 +45,9 @@
 .method public onCancel()V
     .locals 1
 
-    .line 119
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$OnEnrollCancelListener;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     invoke-static {v0}, Landroid/hardware/fingerprint/FingerprintManager;->access$000(Landroid/hardware/fingerprint/FingerprintManager;)V
 
-    .line 120
     return-void
 .end method

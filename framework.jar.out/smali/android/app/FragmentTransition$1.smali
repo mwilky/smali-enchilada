@@ -24,7 +24,6 @@
 .method constructor <init>(Landroid/view/View;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 337
     iput-object p1, p0, Landroid/app/FragmentTransition$1;->val$fragmentView:Landroid/view/View;
 
     iput-object p2, p0, Landroid/app/FragmentTransition$1;->val$exitingViews:Ljava/util/ArrayList;
@@ -38,25 +37,20 @@
 # virtual methods
 .method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 2
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 340
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 341
     iget-object v0, p0, Landroid/app/FragmentTransition$1;->val$fragmentView:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 342
     iget-object v0, p0, Landroid/app/FragmentTransition$1;->val$exitingViews:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/app/FragmentTransition;->access$000(Ljava/util/ArrayList;I)V
 
-    .line 343
     return-void
 .end method

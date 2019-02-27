@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 50
     new-instance v0, Landroid/view/autofill/ParcelableMap$1;
 
     invoke-direct {v0}, Landroid/view/autofill/ParcelableMap$1;-><init>()V
@@ -46,12 +45,9 @@
 
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "size"    # I
 
-    .line 32
     invoke-direct {p0, p1}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 33
     return-void
 .end method
 
@@ -60,7 +56,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 37
     const/4 v0, 0x0
 
     return v0
@@ -68,17 +63,13 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 42
     invoke-virtual {p0}, Landroid/view/autofill/ParcelableMap;->size()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 44
     invoke-virtual {p0}, Landroid/view/autofill/ParcelableMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -100,8 +91,6 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 45
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -112,7 +101,6 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 46
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -121,11 +109,8 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 47
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroid/view/autofill/AutofillId;Landroid/view/autofill/AutofillValue;>;"
     goto :goto_0
 
-    .line 48
     :cond_0
     return-void
 .end method

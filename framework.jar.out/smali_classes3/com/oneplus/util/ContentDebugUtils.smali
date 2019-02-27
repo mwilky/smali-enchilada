@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 173
     const-string v0, "content://media/external/op_debug"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -30,7 +29,6 @@
 
     sput-object v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_URI:Landroid/net/Uri;
 
-    .line 176
     const-string v0, "persist.debug.content.all"
 
     const/4 v1, 0x0
@@ -41,7 +39,6 @@
 
     sput-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_ALL:Z
 
-    .line 179
     const-string v0, "persist.debug.content.dumpstack"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -50,7 +47,6 @@
 
     sput-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_DUMP_STACK:Z
 
-    .line 182
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sget-boolean v1, Lcom/oneplus/util/ContentDebugUtils;->DBG_ALL:Z
@@ -65,7 +61,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -73,15 +68,11 @@
 
 .method private static getUriVolumeName(Landroid/net/Uri;)Ljava/lang/String;
     .locals 2
-    .param p0, "uri"    # Landroid/net/Uri;
 
-    .line 140
     invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
 
-    .line 141
-    .local v0, "segments":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -90,7 +81,6 @@
 
     if-lez v1, :cond_0
 
-    .line 142
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -101,7 +91,6 @@
 
     return-object v1
 
-    .line 144
     :cond_0
     const/4 v1, 0x0
 
@@ -110,9 +99,7 @@
 
 .method public static isExternalMediaUri(Landroid/net/Uri;)Z
     .locals 2
-    .param p0, "uri"    # Landroid/net/Uri;
 
-    .line 64
     if-eqz p0, :cond_0
 
     const-string v0, "media"
@@ -143,12 +130,10 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 65
     const/4 v0, 0x1
 
     return v0
 
-    .line 67
     :cond_0
     const/4 v0, 0x0
 
@@ -157,76 +142,53 @@
 
 .method private static packContentValues(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/content/ContentValues;
     .locals 6
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "action"    # Ljava/lang/String;
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "sel"    # Ljava/lang/String;
-    .param p4, "selArgs"    # [Ljava/lang/String;
-    .param p5, "pkgName"    # Ljava/lang/String;
 
-    .line 150
     const/4 v0, 0x0
 
-    .line 151
-    .local v0, "strUri":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 152
-    .local v1, "strSelArgs":Ljava/lang/String;
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 153
-    .local v2, "pack_values":Landroid/content/ContentValues;
     if-eqz p4, :cond_0
 
-    .line 154
     invoke-static {p4}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 156
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 157
     invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 159
     :cond_1
     const-string v3, "_tag"
 
     invoke-virtual {v2, v3, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 160
     const-string v3, "_action"
 
     invoke-virtual {v2, v3, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 161
     const-string v3, "_uri"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 162
     const-string v3, "sel"
 
     invoke-virtual {v2, v3, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 163
     const-string v3, "sel_arg"
 
     invoke-virtual {v2, v3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 164
     const-string v3, "_pkg_name"
 
     invoke-virtual {v2, v3, p5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 166
     sget-boolean v3, Lcom/oneplus/util/ContentDebugUtils;->DBG:Z
 
     if-eqz v3, :cond_2
@@ -251,32 +213,20 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
     :cond_2
     return-object v2
 .end method
 
 .method public static saveDbgMsg(Landroid/content/ContentProvider;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p0, "provider"    # Landroid/content/ContentProvider;
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "uri"    # Landroid/net/Uri;
-    .param p4, "sel"    # Ljava/lang/String;
-    .param p5, "selArgs"    # [Ljava/lang/String;
-    .param p6, "pkgName"    # Ljava/lang/String;
 
-    .line 122
     if-eqz p3, :cond_1
 
-    .line 123
     :try_start_0
     invoke-virtual {p3}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 124
-    .local v0, "strUri":Ljava/lang/String;
     const-string v1, "deletedata=false"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -285,20 +235,16 @@
 
     if-nez v1, :cond_1
 
-    .line 125
     invoke-static/range {p1 .. p6}, Lcom/oneplus/util/ContentDebugUtils;->packContentValues(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object v1
 
-    .line 127
-    .local v1, "dbg_values":Landroid/content/ContentValues;
     invoke-static {p3}, Lcom/oneplus/util/ContentDebugUtils;->isExternalMediaUri(Landroid/net/Uri;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 128
     sget-object v2, Lcom/oneplus/util/ContentDebugUtils;->DBG_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v2, v1}, Landroid/content/ContentProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -306,11 +252,8 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v0    # "strUri":Ljava/lang/String;
-    .end local v1    # "dbg_values":Landroid/content/ContentValues;
     goto :goto_0
 
-    .line 134
     :catchall_0
     move-exception v0
 
@@ -331,11 +274,9 @@
     :cond_0
     throw v0
 
-    .line 132
     :catch_0
     move-exception v0
 
-    .line 134
     sget-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_DUMP_STACK:Z
 
     if-eqz v0, :cond_2
@@ -367,28 +308,19 @@
     :goto_1
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 136
     :cond_2
     return-void
 .end method
 
 .method public static saveDbgMsg(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 8
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "path"    # Ljava/lang/String;
 
-    .line 75
     if-eqz p0, :cond_5
 
-    .line 76
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 77
-    .local v6, "pkgName":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -405,11 +337,8 @@
 
     move-object v7, v0
 
-    .line 79
-    .local v7, "providerClient":Landroid/content/ContentProviderClient;
     if-eqz v7, :cond_3
 
-    .line 80
     const/4 v2, 0x0
 
     const/4 v4, 0x0
@@ -427,8 +356,6 @@
 
     move-result-object v0
 
-    .line 82
-    .local v0, "dbg_values":Landroid/content/ContentValues;
     sget-object v1, Lcom/oneplus/util/ContentDebugUtils;->DBG_URI:Landroid/net/Uri;
 
     invoke-virtual {v7, v1, v0}, Landroid/content/ContentProviderClient;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -436,10 +363,8 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v0    # "dbg_values":Landroid/content/ContentValues;
     goto :goto_0
 
-    .line 86
     :catchall_0
     move-exception v0
 
@@ -457,21 +382,17 @@
 
     invoke-static {v1, v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 87
     :cond_0
     if-eqz v7, :cond_1
 
-    .line 88
     invoke-virtual {v7}, Landroid/content/ContentProviderClient;->release()Z
 
     :cond_1
     throw v0
 
-    .line 84
     :catch_0
     move-exception v0
 
-    .line 86
     sget-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_DUMP_STACK:Z
 
     if-eqz v0, :cond_2
@@ -486,13 +407,11 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 87
     :cond_2
     if-eqz v7, :cond_5
 
     goto :goto_1
 
-    .line 86
     :cond_3
     :goto_0
     sget-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_DUMP_STACK:Z
@@ -509,44 +428,28 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 87
     :cond_4
     if-eqz v7, :cond_5
 
-    .line 88
     :goto_1
     invoke-virtual {v7}, Landroid/content/ContentProviderClient;->release()Z
 
-    .line 92
-    .end local v6    # "pkgName":Ljava/lang/String;
-    .end local v7    # "providerClient":Landroid/content/ContentProviderClient;
     :cond_5
     return-void
 .end method
 
 .method public static saveDbgMsg(Landroid/content/IContentProvider;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p0, "iProvider"    # Landroid/content/IContentProvider;
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "uri"    # Landroid/net/Uri;
-    .param p4, "sel"    # Ljava/lang/String;
-    .param p5, "selArgs"    # [Ljava/lang/String;
-    .param p6, "pkgName"    # Ljava/lang/String;
 
-    .line 100
     if-eqz p3, :cond_1
 
     if-eqz p0, :cond_1
 
-    .line 101
     :try_start_0
     invoke-virtual {p3}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 102
-    .local v0, "strUri":Ljava/lang/String;
     const-string v1, "deletedata=false"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -555,20 +458,16 @@
 
     if-nez v1, :cond_1
 
-    .line 103
     invoke-static/range {p1 .. p6}, Lcom/oneplus/util/ContentDebugUtils;->packContentValues(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object v1
 
-    .line 105
-    .local v1, "dbg_values":Landroid/content/ContentValues;
     invoke-static {p3}, Lcom/oneplus/util/ContentDebugUtils;->isExternalMediaUri(Landroid/net/Uri;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 106
     sget-object v2, Lcom/oneplus/util/ContentDebugUtils;->DBG_URI:Landroid/net/Uri;
 
     invoke-interface {p0, p6, v2, v1}, Landroid/content/IContentProvider;->insert(Ljava/lang/String;Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -576,11 +475,8 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v0    # "strUri":Ljava/lang/String;
-    .end local v1    # "dbg_values":Landroid/content/ContentValues;
     goto :goto_0
 
-    .line 112
     :catchall_0
     move-exception v0
 
@@ -601,11 +497,9 @@
     :cond_0
     throw v0
 
-    .line 110
     :catch_0
     move-exception v0
 
-    .line 112
     sget-boolean v0, Lcom/oneplus/util/ContentDebugUtils;->DBG_DUMP_STACK:Z
 
     if-eqz v0, :cond_2
@@ -637,7 +531,6 @@
     :goto_1
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 114
     :cond_2
     return-void
 .end method

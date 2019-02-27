@@ -17,14 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;Landroid/hardware/biometrics/BiometricAuthenticator$BiometricIdentifier;I)V
     .locals 0
-    .param p1, "crypto"    # Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
-    .param p2, "identifier"    # Landroid/hardware/biometrics/BiometricAuthenticator$BiometricIdentifier;
-    .param p3, "userId"    # I
 
-    .line 298
     invoke-direct {p0, p1, p2, p3}, Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;-><init>(Landroid/hardware/biometrics/CryptoObject;Landroid/hardware/biometrics/BiometricAuthenticator$BiometricIdentifier;I)V
 
-    .line 299
     return-void
 .end method
 
@@ -33,7 +28,6 @@
 .method public getCryptoObject()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
     .locals 1
 
-    .line 306
     invoke-super {p0}, Landroid/hardware/biometrics/BiometricAuthenticator$AuthenticationResult;->getCryptoObject()Landroid/hardware/biometrics/CryptoObject;
 
     move-result-object v0
@@ -46,7 +40,6 @@
 .method public bridge synthetic getCryptoObject()Landroid/hardware/biometrics/CryptoObject;
     .locals 1
 
-    .line 288
     invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$AuthenticationResult;->getCryptoObject()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
 
     move-result-object v0

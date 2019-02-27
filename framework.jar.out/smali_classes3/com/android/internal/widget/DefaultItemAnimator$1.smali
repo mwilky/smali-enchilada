@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/DefaultItemAnimator;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/DefaultItemAnimator;
 
-    .line 122
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 8
 
-    .line 125
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -63,8 +60,6 @@
 
     check-cast v1, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;
 
-    .line 126
-    .local v1, "moveInfo":Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;
     iget-object v2, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v3, v1, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->holder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
@@ -79,17 +74,13 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/internal/widget/DefaultItemAnimator;->animateMoveImpl(Lcom/android/internal/widget/RecyclerView$ViewHolder;IIII)V
 
-    .line 128
-    .end local v1    # "moveInfo":Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;
     goto :goto_0
 
-    .line 129
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->val$moves:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 130
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$1;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v0, v0, Lcom/android/internal/widget/DefaultItemAnimator;->mMovesList:Ljava/util/ArrayList;
@@ -98,6 +89,5 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 131
     return-void
 .end method

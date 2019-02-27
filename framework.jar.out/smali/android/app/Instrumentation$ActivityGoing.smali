@@ -26,17 +26,13 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Instrumentation;Landroid/app/Instrumentation$ActivityWaiter;)V
     .locals 0
-    .param p2, "waiter"    # Landroid/app/Instrumentation$ActivityWaiter;
 
-    .line 2386
     iput-object p1, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2387
     iput-object p2, p0, Landroid/app/Instrumentation$ActivityGoing;->mWaiter:Landroid/app/Instrumentation$ActivityWaiter;
 
-    .line 2388
     return-void
 .end method
 
@@ -45,7 +41,6 @@
 .method public final queueIdle()Z
     .locals 3
 
-    .line 2391
     iget-object v0, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     invoke-static {v0}, Landroid/app/Instrumentation;->access$200(Landroid/app/Instrumentation;)Ljava/lang/Object;
@@ -54,7 +49,6 @@
 
     monitor-enter v0
 
-    .line 2392
     :try_start_0
     iget-object v1, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
@@ -66,7 +60,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 2393
     iget-object v1, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     invoke-static {v1}, Landroid/app/Instrumentation;->access$200(Landroid/app/Instrumentation;)Ljava/lang/Object;
@@ -75,15 +68,12 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 2394
     monitor-exit v0
 
-    .line 2395
     const/4 v0, 0x0
 
     return v0
 
-    .line 2394
     :catchall_0
     move-exception v1
 

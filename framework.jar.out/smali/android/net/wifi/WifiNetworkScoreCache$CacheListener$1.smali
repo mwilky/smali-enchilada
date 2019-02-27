@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;
 
-    .line 298
     iput-object p1, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener$1;->this$0:Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;
 
     iput-object p2, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener$1;->val$updatedNetworks:Ljava/util/List;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 301
     iget-object v0, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener$1;->this$0:Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;
 
     iget-object v1, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener$1;->val$updatedNetworks:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;->networkCacheUpdated(Ljava/util/List;)V
 
-    .line 302
     return-void
 .end method

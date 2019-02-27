@@ -40,77 +40,57 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "iface"    # Ljava/lang/String;
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->creationTimeMs:J
 
-    .line 37
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->totalWakeups:J
 
-    .line 38
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->rootWakeups:J
 
-    .line 39
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->systemWakeups:J
 
-    .line 40
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->nonApplicationWakeups:J
 
-    .line 41
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->applicationWakeups:J
 
-    .line 42
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->noUidWakeups:J
 
-    .line 43
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->durationSec:J
 
-    .line 45
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2UnicastCount:J
 
-    .line 46
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2MulticastCount:J
 
-    .line 47
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2BroadcastCount:J
 
-    .line 49
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Landroid/net/metrics/WakeupStats;->ethertypes:Landroid/util/SparseIntArray;
 
-    .line 50
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Landroid/net/metrics/WakeupStats;->ipNextHeaders:Landroid/util/SparseIntArray;
 
-    .line 53
     iput-object p1, p0, Landroid/net/metrics/WakeupStats;->iface:Ljava/lang/String;
 
-    .line 54
     return-void
 .end method
 
 .method private static increment(Landroid/util/SparseIntArray;I)V
     .locals 1
-    .param p0, "counters"    # Landroid/util/SparseIntArray;
-    .param p1, "key"    # I
 
-    .line 131
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/util/SparseIntArray;->get(II)I
@@ -119,11 +99,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 132
-    .local v0, "newcount":I
     invoke-virtual {p0, p1, v0}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 133
     return-void
 .end method
 
@@ -131,9 +108,7 @@
 # virtual methods
 .method public countEvent(Landroid/net/metrics/WakeupEvent;)V
     .locals 4
-    .param p1, "ev"    # Landroid/net/metrics/WakeupEvent;
 
-    .line 63
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->totalWakeups:J
 
     const-wide/16 v2, 0x1
@@ -142,7 +117,6 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->totalWakeups:J
 
-    .line 64
     iget v0, p1, Landroid/net/metrics/WakeupEvent;->uid:I
 
     const/16 v1, 0x3e8
@@ -151,14 +125,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 75
     iget v0, p1, Landroid/net/metrics/WakeupEvent;->uid:I
 
     const/16 v1, 0x2710
 
     if-lt v0, v1, :cond_0
 
-    .line 76
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->applicationWakeups:J
 
     add-long/2addr v0, v2
@@ -167,7 +139,6 @@
 
     goto :goto_0
 
-    .line 78
     :cond_0
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->nonApplicationWakeups:J
 
@@ -177,7 +148,6 @@
 
     goto :goto_0
 
-    .line 66
     :pswitch_0
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->rootWakeups:J
 
@@ -185,10 +155,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->rootWakeups:J
 
-    .line 67
     goto :goto_0
 
-    .line 72
     :pswitch_1
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->noUidWakeups:J
 
@@ -196,10 +164,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->noUidWakeups:J
 
-    .line 73
     goto :goto_0
 
-    .line 69
     :cond_1
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->systemWakeups:J
 
@@ -207,10 +173,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->systemWakeups:J
 
-    .line 70
     nop
 
-    .line 83
     :goto_0
     iget-object v0, p1, Landroid/net/metrics/WakeupEvent;->dstHwAddr:Landroid/net/MacAddress;
 
@@ -222,7 +186,6 @@
 
     goto :goto_1
 
-    .line 91
     :pswitch_2
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2BroadcastCount:J
 
@@ -230,10 +193,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2BroadcastCount:J
 
-    .line 92
     goto :goto_1
 
-    .line 88
     :pswitch_3
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2MulticastCount:J
 
@@ -241,10 +202,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2MulticastCount:J
 
-    .line 89
     goto :goto_1
 
-    .line 85
     :pswitch_4
     iget-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2UnicastCount:J
 
@@ -252,10 +211,8 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->l2UnicastCount:J
 
-    .line 86
     nop
 
-    .line 97
     :goto_1
     iget-object v0, p0, Landroid/net/metrics/WakeupStats;->ethertypes:Landroid/util/SparseIntArray;
 
@@ -263,19 +220,16 @@
 
     invoke-static {v0, v1}, Landroid/net/metrics/WakeupStats;->increment(Landroid/util/SparseIntArray;I)V
 
-    .line 98
     iget v0, p1, Landroid/net/metrics/WakeupEvent;->ipNextHeader:I
 
     if-ltz v0, :cond_2
 
-    .line 99
     iget-object v0, p0, Landroid/net/metrics/WakeupStats;->ipNextHeaders:Landroid/util/SparseIntArray;
 
     iget v1, p1, Landroid/net/metrics/WakeupEvent;->ipNextHeader:I
 
     invoke-static {v0, v1}, Landroid/net/metrics/WakeupStats;->increment(Landroid/util/SparseIntArray;I)V
 
-    .line 101
     :cond_2
     return-void
 
@@ -298,10 +252,8 @@
 .method public toString()Ljava/lang/String;
     .locals 10
 
-    .line 105
     invoke-virtual {p0}, Landroid/net/metrics/WakeupStats;->updateDuration()V
 
-    .line 106
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ", "
@@ -312,13 +264,10 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 107
-    .local v0, "j":Ljava/util/StringJoiner;
     iget-object v1, p0, Landroid/net/metrics/WakeupStats;->iface:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 108
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -341,7 +290,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 109
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -360,7 +308,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 110
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -379,7 +326,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 111
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -398,7 +344,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 112
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -417,7 +362,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 113
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -436,7 +380,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 114
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -455,7 +398,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 115
     const-string/jumbo v1, "l2 unicast/multicast/broadcast: %d/%d/%d"
 
     const/4 v2, 0x3
@@ -464,7 +406,6 @@
 
     iget-wide v3, p0, Landroid/net/metrics/WakeupStats;->l2UnicastCount:J
 
-    .line 116
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -493,18 +434,14 @@
 
     aput-object v3, v2, v6
 
-    .line 115
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 117
     move v1, v4
 
-    .line 117
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Landroid/net/metrics/WakeupStats;->ethertypes:Landroid/util/SparseIntArray;
 
@@ -514,23 +451,18 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 118
     iget-object v2, p0, Landroid/net/metrics/WakeupStats;->ethertypes:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v2
 
-    .line 119
-    .local v2, "eth":I
     iget-object v3, p0, Landroid/net/metrics/WakeupStats;->ethertypes:Landroid/util/SparseIntArray;
 
     invoke-virtual {v3, v1}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v3
 
-    .line 120
-    .local v3, "count":I
     const-string v7, "ethertype 0x%x: %d"
 
     new-array v8, v6, [Ljava/lang/Object;
@@ -553,20 +485,13 @@
 
     invoke-virtual {v0, v7}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 117
-    .end local v2    # "eth":I
-    .end local v3    # "count":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 122
-    .end local v1    # "i":I
     :cond_0
     move v1, v4
 
-    .line 122
-    .restart local v1    # "i":I
     :goto_1
     iget-object v2, p0, Landroid/net/metrics/WakeupStats;->ipNextHeaders:Landroid/util/SparseIntArray;
 
@@ -576,23 +501,18 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 123
     iget-object v2, p0, Landroid/net/metrics/WakeupStats;->ipNextHeaders:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v2
 
-    .line 124
-    .local v2, "proto":I
     iget-object v3, p0, Landroid/net/metrics/WakeupStats;->ipNextHeaders:Landroid/util/SparseIntArray;
 
     invoke-virtual {v3, v1}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v3
 
-    .line 125
-    .restart local v3    # "count":I
     const-string v7, "ipNxtHdr %d: %d"
 
     new-array v8, v6, [Ljava/lang/Object;
@@ -615,15 +535,10 @@
 
     invoke-virtual {v0, v7}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 122
-    .end local v2    # "proto":I
-    .end local v3    # "count":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 127
-    .end local v1    # "i":I
     :cond_1
     invoke-virtual {v0}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
 
@@ -635,7 +550,6 @@
 .method public updateDuration()V
     .locals 4
 
-    .line 58
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -650,6 +564,5 @@
 
     iput-wide v0, p0, Landroid/net/metrics/WakeupStats;->durationSec:J
 
-    .line 59
     return-void
 .end method

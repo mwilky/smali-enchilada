@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 1247
     new-instance v0, Landroid/graphics/Canvas$VertexMode;
 
     const-string v1, "TRIANGLES"
@@ -51,7 +50,6 @@
 
     sput-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLES:Landroid/graphics/Canvas$VertexMode;
 
-    .line 1248
     new-instance v0, Landroid/graphics/Canvas$VertexMode;
 
     const-string v1, "TRIANGLE_STRIP"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLE_STRIP:Landroid/graphics/Canvas$VertexMode;
 
-    .line 1249
     new-instance v0, Landroid/graphics/Canvas$VertexMode;
 
     const-string v1, "TRIANGLE_FAN"
@@ -73,7 +70,6 @@
 
     sput-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLE_FAN:Landroid/graphics/Canvas$VertexMode;
 
-    .line 1246
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Canvas$VertexMode;
@@ -97,28 +93,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "nativeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 1251
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 1252
     iput p3, p0, Landroid/graphics/Canvas$VertexMode;->nativeInt:I
 
-    .line 1253
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 1246
     const-class v0, Landroid/graphics/Canvas$VertexMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -133,7 +123,6 @@
 .method public static values()[Landroid/graphics/Canvas$VertexMode;
     .locals 1
 
-    .line 1246
     sget-object v0, Landroid/graphics/Canvas$VertexMode;->$VALUES:[Landroid/graphics/Canvas$VertexMode;
 
     invoke-virtual {v0}, [Landroid/graphics/Canvas$VertexMode;->clone()Ljava/lang/Object;

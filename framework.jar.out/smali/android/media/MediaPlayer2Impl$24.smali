@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;Landroid/os/HandlerThread;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
 
-    .line 2121
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$24;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/media/MediaPlayer2Impl$24;->val$thread:Landroid/os/HandlerThread;
@@ -43,13 +41,10 @@
 .method public run()V
     .locals 5
 
-    .line 2124
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    .line 2125
-    .local v0, "context":Landroid/content/Context;
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$24;->this$0:Landroid/media/MediaPlayer2Impl;
 
     new-instance v2, Landroid/media/SubtitleController;
@@ -66,7 +61,6 @@
 
     invoke-static {v1, v2}, Landroid/media/MediaPlayer2Impl;->access$3202(Landroid/media/MediaPlayer2Impl;Landroid/media/SubtitleController;)Landroid/media/SubtitleController;
 
-    .line 2126
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$24;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$3200(Landroid/media/MediaPlayer2Impl;)Landroid/media/SubtitleController;
@@ -79,7 +73,6 @@
 
     invoke-virtual {v1, v2}, Landroid/media/SubtitleController;->setAnchor(Landroid/media/SubtitleController$Anchor;)V
 
-    .line 2136
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$24;->val$thread:Landroid/os/HandlerThread;
 
     invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -88,6 +81,5 @@
 
     invoke-virtual {v1}, Landroid/os/Looper;->quitSafely()V
 
-    .line 2137
     return-void
 .end method

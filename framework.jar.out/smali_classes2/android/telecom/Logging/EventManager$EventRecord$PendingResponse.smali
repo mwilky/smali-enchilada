@@ -29,28 +29,18 @@
 # direct methods
 .method public constructor <init>(Landroid/telecom/Logging/EventManager$EventRecord;Ljava/lang/String;JJLjava/lang/String;)V
     .locals 0
-    .param p2, "requestEventId"    # Ljava/lang/String;
-    .param p3, "requestEventTimeMillis"    # J
-    .param p5, "timeoutMillis"    # J
-    .param p7, "name"    # Ljava/lang/String;
 
-    .line 175
     iput-object p1, p0, Landroid/telecom/Logging/EventManager$EventRecord$PendingResponse;->this$1:Landroid/telecom/Logging/EventManager$EventRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
     iput-object p2, p0, Landroid/telecom/Logging/EventManager$EventRecord$PendingResponse;->requestEventId:Ljava/lang/String;
 
-    .line 177
     iput-wide p3, p0, Landroid/telecom/Logging/EventManager$EventRecord$PendingResponse;->requestEventTimeMillis:J
 
-    .line 178
     iput-wide p5, p0, Landroid/telecom/Logging/EventManager$EventRecord$PendingResponse;->timeoutMillis:J
 
-    .line 179
     iput-object p7, p0, Landroid/telecom/Logging/EventManager$EventRecord$PendingResponse;->name:Ljava/lang/String;
 
-    .line 180
     return-void
 .end method

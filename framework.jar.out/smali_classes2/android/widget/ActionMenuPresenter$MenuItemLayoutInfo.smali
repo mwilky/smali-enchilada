@@ -25,30 +25,23 @@
 # direct methods
 .method constructor <init>(Landroid/view/View;Z)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "preLayout"    # Z
 
-    .line 1033
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1034
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->left:I
 
-    .line 1035
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->top:I
 
-    .line 1036
     if-eqz p2, :cond_0
 
-    .line 1039
     iget v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->left:I
 
     int-to-float v0, v0
@@ -63,7 +56,6 @@
 
     iput v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->left:I
 
-    .line 1040
     iget v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->top:I
 
     int-to-float v0, v0
@@ -78,10 +70,8 @@
 
     iput v0, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->top:I
 
-    .line 1042
     :cond_0
     iput-object p1, p0, Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;->view:Landroid/view/View;
 
-    .line 1043
     return-void
 .end method

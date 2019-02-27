@@ -25,7 +25,6 @@
 .method private constructor <init>(Landroid/widget/AutoCompleteTextView;)V
     .locals 0
 
-    .line 1311
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView$DropDownItemClickListener;->this$0:Landroid/widget/AutoCompleteTextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/AutoCompleteTextView;Landroid/widget/AutoCompleteTextView$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/AutoCompleteTextView;
-    .param p2, "x1"    # Landroid/widget/AutoCompleteTextView$1;
 
-    .line 1311
     invoke-direct {p0, p1}, Landroid/widget/AutoCompleteTextView$DropDownItemClickListener;-><init>(Landroid/widget/AutoCompleteTextView;)V
 
     return-void
@@ -48,16 +44,10 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p1, "parent"    # Landroid/widget/AdapterView;
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
-    .line 1313
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView$DropDownItemClickListener;->this$0:Landroid/widget/AutoCompleteTextView;
 
     invoke-static {v0, p2, p3, p4, p5}, Landroid/widget/AutoCompleteTextView;->access$500(Landroid/widget/AutoCompleteTextView;Landroid/view/View;IJ)V
 
-    .line 1314
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor;Landroid/widget/Editor$SuggestionInfo;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/Editor;
 
-    .line 2756
     iput-object p1, p0, Landroid/widget/Editor$4;->this$0:Landroid/widget/Editor;
 
     iput-object p2, p0, Landroid/widget/Editor$4;->val$info:Landroid/widget/Editor$SuggestionInfo;
@@ -42,16 +40,13 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 2759
     iget-object v0, p0, Landroid/widget/Editor$4;->this$0:Landroid/widget/Editor;
 
     iget-object v1, p0, Landroid/widget/Editor$4;->val$info:Landroid/widget/Editor$SuggestionInfo;
 
     invoke-static {v0, v1}, Landroid/widget/Editor;->access$1600(Landroid/widget/Editor;Landroid/widget/Editor$SuggestionInfo;)V
 
-    .line 2760
     const/4 v0, 0x1
 
     return v0

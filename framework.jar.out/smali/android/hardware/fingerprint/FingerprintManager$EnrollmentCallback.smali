@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 297
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,26 +27,18 @@
 # virtual methods
 .method public onEnrollmentError(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "errMsgId"    # I
-    .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 304
     return-void
 .end method
 
 .method public onEnrollmentHelp(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "helpMsgId"    # I
-    .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 314
     return-void
 .end method
 
 .method public onEnrollmentProgress(I)V
     .locals 0
-    .param p1, "remaining"    # I
 
-    .line 322
     return-void
 .end method

@@ -25,23 +25,15 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ZZ)V
     .locals 0
-    .param p1, "path"    # Ljava/lang/String;
-    .param p2, "sharedLib"    # Z
-    .param p3, "overlay"    # Z
 
-    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
     iput-object p1, p0, Landroid/app/ResourcesManager$ApkKey;->path:Ljava/lang/String;
 
-    .line 103
     iput-boolean p2, p0, Landroid/app/ResourcesManager$ApkKey;->sharedLib:Z
 
-    .line 104
     iput-boolean p3, p0, Landroid/app/ResourcesManager$ApkKey;->overlay:Z
 
-    .line 105
     return-void
 .end method
 
@@ -49,26 +41,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 118
     instance-of v0, p1, Landroid/app/ResourcesManager$ApkKey;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 119
     return v1
 
-    .line 121
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/app/ResourcesManager$ApkKey;
 
-    .line 122
-    .local v0, "other":Landroid/app/ResourcesManager$ApkKey;
     iget-object v2, p0, Landroid/app/ResourcesManager$ApkKey;->path:Ljava/lang/String;
 
     iget-object v3, v0, Landroid/app/ResourcesManager$ApkKey;->path:Ljava/lang/String;
@@ -102,11 +88,8 @@
 .method public hashCode()I
     .locals 4
 
-    .line 109
     const/4 v0, 0x1
 
-    .line 110
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -119,9 +102,6 @@
 
     add-int/2addr v2, v3
 
-    .line 111
-    .end local v0    # "result":I
-    .local v2, "result":I
     mul-int v0, v1, v2
 
     iget-boolean v3, p0, Landroid/app/ResourcesManager$ApkKey;->sharedLib:Z
@@ -132,9 +112,6 @@
 
     add-int/2addr v0, v3
 
-    .line 112
-    .end local v2    # "result":I
-    .restart local v0    # "result":I
     mul-int/2addr v1, v0
 
     iget-boolean v2, p0, Landroid/app/ResourcesManager$ApkKey;->overlay:Z
@@ -145,8 +122,5 @@
 
     add-int/2addr v1, v2
 
-    .line 113
-    .end local v0    # "result":I
-    .local v1, "result":I
     return v1
 .end method

@@ -23,14 +23,10 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Intent;)V
     .locals 0
-    .param p1, "_intent"    # Landroid/content/Intent;
 
-    .line 2378
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2379
     iput-object p1, p0, Landroid/app/Instrumentation$ActivityWaiter;->intent:Landroid/content/Intent;
 
-    .line 2380
     return-void
 .end method

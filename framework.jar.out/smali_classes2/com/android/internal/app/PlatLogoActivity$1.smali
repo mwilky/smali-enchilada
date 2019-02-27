@@ -28,21 +28,17 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/PlatLogoActivity;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/internal/app/PlatLogoActivity;
 
-    .line 181
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 182
     new-instance v0, Landroid/view/MotionEvent$PointerCoords;
 
     invoke-direct {v0}, Landroid/view/MotionEvent$PointerCoords;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->pc0:Landroid/view/MotionEvent$PointerCoords;
 
-    .line 183
     new-instance v0, Landroid/view/MotionEvent$PointerCoords;
 
     invoke-direct {v0}, Landroid/view/MotionEvent$PointerCoords;-><init>()V
@@ -56,10 +52,7 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 6
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .line 187
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -74,7 +67,6 @@
 
     goto :goto_0
 
-    .line 190
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -82,19 +74,16 @@
 
     if-le v0, v1, :cond_1
 
-    .line 191
     const/4 v0, 0x0
 
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$1;->pc0:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v0, v2}, Landroid/view/MotionEvent;->getPointerCoords(ILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 192
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->pc1:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v1, v0}, Landroid/view/MotionEvent;->getPointerCoords(ILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 193
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/PlatLogoActivity;->bg:Lcom/android/internal/app/PlatLogoActivity$PBackground;
@@ -135,7 +124,6 @@
 
     invoke-virtual {v0, v2}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->setRadius(F)V
 
-    .line 197
     :cond_1
     :goto_0
     return v1

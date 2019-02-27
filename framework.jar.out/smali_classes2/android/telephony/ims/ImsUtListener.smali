@@ -19,15 +19,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/ims/internal/IImsUtListener;)V
     .locals 0
-    .param p1, "serviceInterface"    # Lcom/android/ims/internal/IImsUtListener;
 
-    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 106
     iput-object p1, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
-    .line 107
     return-void
 .end method
 
@@ -35,9 +31,7 @@
 # virtual methods
 .method public onSupplementaryServiceIndication(Landroid/telephony/ims/ImsSsData;)V
     .locals 3
-    .param p1, "ssData"    # Landroid/telephony/ims/ImsSsData;
 
-    .line 96
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -45,33 +39,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 99
     goto :goto_0
 
-    .line 97
     :catch_0
     move-exception v0
 
-    .line 98
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "onSupplementaryServiceIndication: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationCallBarringQueried(I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "cbInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
-    .line 72
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -81,33 +66,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 75
     goto :goto_0
 
-    .line 73
     :catch_0
     move-exception v0
 
-    .line 74
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationCallBarringQueried: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationCallForwardQueried(I[Landroid/telephony/ims/ImsCallForwardInfo;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "cfInfo"    # [Landroid/telephony/ims/ImsCallForwardInfo;
 
-    .line 80
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -117,33 +93,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 83
     goto :goto_0
 
-    .line 81
     :catch_0
     move-exception v0
 
-    .line 82
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationCallForwardQueried: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationCallWaitingQueried(I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "cwInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
-    .line 88
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -153,33 +120,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 91
     goto :goto_0
 
-    .line 89
     :catch_0
     move-exception v0
 
-    .line 90
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationCallWaitingQueried: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationQueried(ILandroid/os/Bundle;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "ssInfo"    # Landroid/os/Bundle;
 
-    .line 56
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -189,33 +147,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 59
     goto :goto_0
 
-    .line 57
     :catch_0
     move-exception v0
 
-    .line 58
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationQueried: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationQueryFailed(ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
-    .line 64
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -225,33 +174,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 67
     goto :goto_0
 
-    .line 65
     :catch_0
     move-exception v0
 
-    .line 66
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationQueryFailed: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationUpdateFailed(ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
-    .line 48
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -261,32 +201,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     goto :goto_0
 
-    .line 49
     :catch_0
     move-exception v0
 
-    .line 50
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationUpdateFailed: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 52
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onUtConfigurationUpdated(I)V
     .locals 3
-    .param p1, "id"    # I
 
-    .line 40
     :try_start_0
     iget-object v0, p0, Landroid/telephony/ims/ImsUtListener;->mServiceInterface:Lcom/android/ims/internal/IImsUtListener;
 
@@ -296,23 +228,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 43
     goto :goto_0
 
-    .line 41
     :catch_0
     move-exception v0
 
-    .line 42
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ImsUtListener"
 
     const-string/jumbo v2, "utConfigurationUpdated: remote exception"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 44
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

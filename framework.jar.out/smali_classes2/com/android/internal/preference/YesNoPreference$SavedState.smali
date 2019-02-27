@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 143
     new-instance v0, Lcom/android/internal/preference/YesNoPreference$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/preference/YesNoPreference$SavedState$1;-><init>()V
@@ -46,12 +45,9 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 129
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 130
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -68,18 +64,14 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/internal/preference/YesNoPreference$SavedState;->wasPositiveResult:Z
 
-    .line 131
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .line 140
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 141
     return-void
 .end method
 
@@ -87,17 +79,12 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 135
     invoke-super {p0, p1, p2}, Landroid/preference/Preference$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 136
     iget-boolean v0, p0, Lcom/android/internal/preference/YesNoPreference$SavedState;->wasPositiveResult:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 137
     return-void
 .end method

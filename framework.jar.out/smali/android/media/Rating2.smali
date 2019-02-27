@@ -35,23 +35,17 @@
 # direct methods
 .method public constructor <init>(Landroid/media/update/Rating2Provider;)V
     .locals 0
-    .param p1, "provider"    # Landroid/media/update/Rating2Provider;
 
-    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
     iput-object p1, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
-    .line 102
     return-void
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/media/Rating2;
     .locals 1
-    .param p0, "bundle"    # Landroid/os/Bundle;
 
-    .line 133
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -65,9 +59,7 @@
 
 .method public static newHeartRating(Z)Landroid/media/Rating2;
     .locals 1
-    .param p0, "hasHeart"    # Z
 
-    .line 165
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -81,9 +73,7 @@
 
 .method public static newPercentageRating(F)Landroid/media/Rating2;
     .locals 1
-    .param p0, "percent"    # F
 
-    .line 204
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -97,10 +87,7 @@
 
 .method public static newStarRating(IF)Landroid/media/Rating2;
     .locals 1
-    .param p0, "starRatingStyle"    # I
-    .param p1, "starRating"    # F
 
-    .line 193
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -114,9 +101,7 @@
 
 .method public static newThumbRating(Z)Landroid/media/Rating2;
     .locals 1
-    .param p0, "thumbIsUp"    # Z
 
-    .line 176
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -130,9 +115,7 @@
 
 .method public static newUnratedRating(I)Landroid/media/Rating2;
     .locals 1
-    .param p0, "ratingStyle"    # I
 
-    .line 154
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -148,9 +131,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 118
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/Rating2Provider;->equals_impl(Ljava/lang/Object;)Z
@@ -163,7 +144,6 @@
 .method public getPercentRating()F
     .locals 1
 
-    .line 258
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->getPercentRating_impl()F
@@ -176,7 +156,6 @@
 .method public getProvider()Landroid/media/update/Rating2Provider;
     .locals 1
 
-    .line 113
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     return-object v0
@@ -185,7 +164,6 @@
 .method public getRatingStyle()I
     .locals 1
 
-    .line 222
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->getRatingStyle_impl()I
@@ -198,7 +176,6 @@
 .method public getStarRating()F
     .locals 1
 
-    .line 249
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->getStarRating_impl()F
@@ -211,7 +188,6 @@
 .method public hasHeart()Z
     .locals 1
 
-    .line 231
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->hasHeart_impl()Z
@@ -224,7 +200,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 123
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->hashCode_impl()I
@@ -237,7 +212,6 @@
 .method public isRated()Z
     .locals 1
 
-    .line 212
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->isRated_impl()Z
@@ -250,7 +224,6 @@
 .method public isThumbUp()Z
     .locals 1
 
-    .line 240
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->isThumbUp_impl()Z
@@ -263,7 +236,6 @@
 .method public toBundle()Landroid/os/Bundle;
     .locals 1
 
-    .line 141
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->toBundle_impl()Landroid/os/Bundle;
@@ -276,7 +248,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 106
     iget-object v0, p0, Landroid/media/Rating2;->mProvider:Landroid/media/update/Rating2Provider;
 
     invoke-interface {v0}, Landroid/media/update/Rating2Provider;->toString_impl()Ljava/lang/String;

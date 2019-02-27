@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/settings/suggestions/SuggestionService;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/settings/suggestions/SuggestionService;
 
-    .line 41
     iput-object p1, p0, Landroid/service/settings/suggestions/SuggestionService$1;->this$0:Landroid/service/settings/suggestions/SuggestionService;
 
     invoke-direct {p0}, Landroid/service/settings/suggestions/ISuggestionService$Stub;-><init>()V
@@ -35,14 +33,11 @@
 # virtual methods
 .method public dismissSuggestion(Landroid/service/settings/suggestions/Suggestion;)V
     .locals 1
-    .param p1, "suggestion"    # Landroid/service/settings/suggestions/Suggestion;
 
-    .line 55
     iget-object v0, p0, Landroid/service/settings/suggestions/SuggestionService$1;->this$0:Landroid/service/settings/suggestions/SuggestionService;
 
     invoke-virtual {v0, p1}, Landroid/service/settings/suggestions/SuggestionService;->onSuggestionDismissed(Landroid/service/settings/suggestions/Suggestion;)V
 
-    .line 56
     return-void
 .end method
 
@@ -57,7 +52,6 @@
         }
     .end annotation
 
-    .line 47
     iget-object v0, p0, Landroid/service/settings/suggestions/SuggestionService$1;->this$0:Landroid/service/settings/suggestions/SuggestionService;
 
     invoke-virtual {v0}, Landroid/service/settings/suggestions/SuggestionService;->onGetSuggestions()Ljava/util/List;
@@ -69,13 +63,10 @@
 
 .method public launchSuggestion(Landroid/service/settings/suggestions/Suggestion;)V
     .locals 1
-    .param p1, "suggestion"    # Landroid/service/settings/suggestions/Suggestion;
 
-    .line 63
     iget-object v0, p0, Landroid/service/settings/suggestions/SuggestionService$1;->this$0:Landroid/service/settings/suggestions/SuggestionService;
 
     invoke-virtual {v0, p1}, Landroid/service/settings/suggestions/SuggestionService;->onSuggestionLaunched(Landroid/service/settings/suggestions/Suggestion;)V
 
-    .line 64
     return-void
 .end method

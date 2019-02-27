@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
 .method public static getMode()I
     .locals 1
 
-    .line 41
     sget v0, Lcom/android/internal/os/RoSystemProperties;->FACTORYTEST:I
 
     return v0
@@ -33,7 +31,6 @@
 .method public static isLongPressOnPowerOffEnabled()Z
     .locals 2
 
-    .line 49
     const-string v0, "factory.long_press_power_off"
 
     const/4 v1, 0x0

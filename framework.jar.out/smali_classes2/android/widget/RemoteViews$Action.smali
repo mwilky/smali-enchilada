@@ -33,7 +33,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,9 +40,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/RemoteViews$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/RemoteViews$1;
 
-    .line 409
     invoke-direct {p0}, Landroid/widget/RemoteViews$Action;-><init>()V
 
     return-void
@@ -62,7 +59,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 418
     const/4 v0, 0x0
 
     return v0
@@ -74,7 +70,6 @@
 .method public getUniqueKey()Ljava/lang/String;
     .locals 2
 
-    .line 432
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -102,9 +97,7 @@
 
 .method public hasSameAppInfo(Landroid/content/pm/ApplicationInfo;)Z
     .locals 1
-    .param p1, "parentInfo"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 453
     const/4 v0, 0x1
 
     return v0
@@ -112,18 +105,13 @@
 
 .method public initActionAsync(Landroid/widget/RemoteViews$ViewTree;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/widget/RemoteViews$Action;
     .locals 0
-    .param p1, "root"    # Landroid/widget/RemoteViews$ViewTree;
-    .param p2, "rootParent"    # Landroid/view/ViewGroup;
-    .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
 
-    .line 441
     return-object p0
 .end method
 
 .method public mergeBehavior()I
     .locals 1
 
-    .line 426
     const/4 v0, 0x0
 
     return v0
@@ -132,7 +120,6 @@
 .method public prefersAsyncApply()Z
     .locals 1
 
-    .line 445
     const/4 v0, 0x0
 
     return v0
@@ -140,9 +127,7 @@
 
 .method public setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
     .locals 0
-    .param p1, "bitmapCache"    # Landroid/widget/RemoteViews$BitmapCache;
 
-    .line 423
     return-void
 .end method
 
@@ -157,7 +142,5 @@
         }
     .end annotation
 
-    .line 458
-    .local p1, "visitor":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Landroid/net/Uri;>;"
     return-void
 .end method

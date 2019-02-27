@@ -14,7 +14,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,7 +24,6 @@
 .method public getChangingConfiguration()I
     .locals 1
 
-    .line 30
     iget v0, p0, Landroid/view/animation/BaseInterpolator;->mChangingConfiguration:I
 
     return v0
@@ -33,11 +31,8 @@
 
 .method setChangingConfiguration(I)V
     .locals 0
-    .param p1, "changingConfiguration"    # I
 
-    .line 37
     iput p1, p0, Landroid/view/animation/BaseInterpolator;->mChangingConfiguration:I
 
-    .line 38
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/menu/StandardMenuPopup;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/view/menu/StandardMenuPopup;
 
-    .line 60
     iput-object p1, p0, Lcom/android/internal/view/menu/StandardMenuPopup$1;->this$0:Lcom/android/internal/view/menu/StandardMenuPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onGlobalLayout()V
     .locals 2
 
-    .line 66
     iget-object v0, p0, Lcom/android/internal/view/menu/StandardMenuPopup$1;->this$0:Lcom/android/internal/view/menu/StandardMenuPopup;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/StandardMenuPopup;->isShowing()Z
@@ -60,15 +57,12 @@
 
     if-nez v0, :cond_2
 
-    .line 67
     iget-object v0, p0, Lcom/android/internal/view/menu/StandardMenuPopup$1;->this$0:Lcom/android/internal/view/menu/StandardMenuPopup;
 
     invoke-static {v0}, Lcom/android/internal/view/menu/StandardMenuPopup;->access$100(Lcom/android/internal/view/menu/StandardMenuPopup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 68
-    .local v0, "anchor":Landroid/view/View;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/View;->isShown()Z
@@ -79,7 +73,6 @@
 
     goto :goto_0
 
-    .line 72
     :cond_0
     iget-object v1, p0, Lcom/android/internal/view/menu/StandardMenuPopup$1;->this$0:Lcom/android/internal/view/menu/StandardMenuPopup;
 
@@ -89,19 +82,14 @@
 
     invoke-virtual {v1}, Landroid/widget/MenuPopupWindow;->show()V
 
-    .end local v0    # "anchor":Landroid/view/View;
     goto :goto_1
 
-    .line 69
-    .restart local v0    # "anchor":Landroid/view/View;
     :cond_1
     :goto_0
     iget-object v1, p0, Lcom/android/internal/view/menu/StandardMenuPopup$1;->this$0:Lcom/android/internal/view/menu/StandardMenuPopup;
 
     invoke-virtual {v1}, Lcom/android/internal/view/menu/StandardMenuPopup;->dismiss()V
 
-    .line 75
-    .end local v0    # "anchor":Landroid/view/View;
     :cond_2
     :goto_1
     return-void

@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 133
     new-instance v0, Landroid/accounts/AuthenticatorDescription$1;
 
     invoke-direct {v0}, Landroid/accounts/AuthenticatorDescription$1;-><init>()V
@@ -50,54 +49,45 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    .line 91
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
-    .line 92
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->labelId:I
 
-    .line 93
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->iconId:I
 
-    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->smallIconId:I
 
-    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->accountPreferencesId:I
 
-    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -114,16 +104,12 @@
     :goto_0
     iput-boolean v1, p0, Landroid/accounts/AuthenticatorDescription;->customTokens:Z
 
-    .line 97
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/accounts/AuthenticatorDescription$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/accounts/AuthenticatorDescription$1;
 
-    .line 25
     invoke-direct {p0, p1}, Landroid/accounts/AuthenticatorDescription;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -131,50 +117,33 @@
 
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "type"    # Ljava/lang/String;
 
-    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
     iput-object p1, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    .line 81
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
-    .line 82
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->labelId:I
 
-    .line 83
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->iconId:I
 
-    .line 84
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->smallIconId:I
 
-    .line 85
     iput v0, p0, Landroid/accounts/AuthenticatorDescription;->accountPreferencesId:I
 
-    .line 86
     iput-boolean v0, p0, Landroid/accounts/AuthenticatorDescription;->customTokens:Z
 
-    .line 87
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IIII)V
     .locals 8
-    .param p1, "type"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "labelId"    # I
-    .param p4, "iconId"    # I
-    .param p5, "smallIconId"    # I
-    .param p6, "prefId"    # I
 
-    .line 66
     const/4 v7, 0x0
 
     move-object v0, p0
@@ -193,54 +162,34 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/accounts/AuthenticatorDescription;-><init>(Ljava/lang/String;Ljava/lang/String;IIIIZ)V
 
-    .line 67
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IIIIZ)V
     .locals 2
-    .param p1, "type"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "labelId"    # I
-    .param p4, "iconId"    # I
-    .param p5, "smallIconId"    # I
-    .param p6, "prefId"    # I
-    .param p7, "customTokens"    # Z
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     if-eqz p1, :cond_1
 
-    .line 54
     if-eqz p2, :cond_0
 
-    .line 55
     iput-object p1, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    .line 56
     iput-object p2, p0, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
-    .line 57
     iput p3, p0, Landroid/accounts/AuthenticatorDescription;->labelId:I
 
-    .line 58
     iput p4, p0, Landroid/accounts/AuthenticatorDescription;->iconId:I
 
-    .line 59
     iput p5, p0, Landroid/accounts/AuthenticatorDescription;->smallIconId:I
 
-    .line 60
     iput p6, p0, Landroid/accounts/AuthenticatorDescription;->accountPreferencesId:I
 
-    .line 61
     iput-boolean p7, p0, Landroid/accounts/AuthenticatorDescription;->customTokens:Z
 
-    .line 62
     return-void
 
-    .line 54
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -250,7 +199,6 @@
 
     throw v0
 
-    .line 53
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -263,19 +211,15 @@
 
 .method public static newKey(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
     .locals 2
-    .param p0, "type"    # Ljava/lang/String;
 
-    .line 75
     if-eqz p0, :cond_0
 
-    .line 76
     new-instance v0, Landroid/accounts/AuthenticatorDescription;
 
     invoke-direct {v0, p0}, Landroid/accounts/AuthenticatorDescription;-><init>(Ljava/lang/String;)V
 
     return-object v0
 
-    .line 75
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -291,7 +235,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 101
     const/4 v0, 0x0
 
     return v0
@@ -299,16 +242,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 111
     if-ne p1, p0, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    .line 112
     :cond_0
     instance-of v0, p1, Landroid/accounts/AuthenticatorDescription;
 
@@ -318,14 +258,11 @@
 
     return v0
 
-    .line 113
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/accounts/AuthenticatorDescription;
 
-    .line 114
-    .local v0, "other":Landroid/accounts/AuthenticatorDescription;
     iget-object v1, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
     iget-object v2, v0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
@@ -340,7 +277,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 106
     iget-object v0, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -353,7 +289,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 118
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -379,46 +314,36 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 123
     iget-object v0, p0, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 124
     iget-object v0, p0, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 125
     iget v0, p0, Landroid/accounts/AuthenticatorDescription;->labelId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 126
     iget v0, p0, Landroid/accounts/AuthenticatorDescription;->iconId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 127
     iget v0, p0, Landroid/accounts/AuthenticatorDescription;->smallIconId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 128
     iget v0, p0, Landroid/accounts/AuthenticatorDescription;->accountPreferencesId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 129
     iget-boolean v0, p0, Landroid/accounts/AuthenticatorDescription;->customTokens:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 130
     return-void
 .end method

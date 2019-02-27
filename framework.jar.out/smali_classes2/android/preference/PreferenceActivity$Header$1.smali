@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 532
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/preference/PreferenceActivity$Header;
     .locals 1
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 534
     new-instance v0, Landroid/preference/PreferenceActivity$Header;
 
     invoke-direct {v0, p1}, Landroid/preference/PreferenceActivity$Header;-><init>(Landroid/os/Parcel;)V
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 532
     invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity$Header$1;->createFromParcel(Landroid/os/Parcel;)Landroid/preference/PreferenceActivity$Header;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Landroid/preference/PreferenceActivity$Header;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 537
     new-array v0, p1, [Landroid/preference/PreferenceActivity$Header;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 532
     invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity$Header$1;->newArray(I)[Landroid/preference/PreferenceActivity$Header;
 
     move-result-object p1

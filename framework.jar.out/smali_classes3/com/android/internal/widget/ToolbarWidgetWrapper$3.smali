@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ToolbarWidgetWrapper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/ToolbarWidgetWrapper;
 
-    .line 607
     iput-object p1, p0, Lcom/android/internal/widget/ToolbarWidgetWrapper$3;->this$0:Lcom/android/internal/widget/ToolbarWidgetWrapper;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 610
     iget-object v0, p0, Lcom/android/internal/widget/ToolbarWidgetWrapper$3;->this$0:Lcom/android/internal/widget/ToolbarWidgetWrapper;
 
     invoke-static {v0}, Lcom/android/internal/widget/ToolbarWidgetWrapper;->access$000(Lcom/android/internal/widget/ToolbarWidgetWrapper;)Landroid/widget/Toolbar;
@@ -48,6 +44,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Toolbar;->setVisibility(I)V
 
-    .line 611
     return-void
 .end method

@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 122
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     const-string v1, "NONE"
@@ -51,7 +50,6 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->NONE:Landroid/mtp/MtpStorageManager$MtpOperation;
 
-    .line 123
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     const-string v1, "ADD"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->ADD:Landroid/mtp/MtpStorageManager$MtpOperation;
 
-    .line 124
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     const-string v1, "RENAME"
@@ -73,7 +70,6 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->RENAME:Landroid/mtp/MtpStorageManager$MtpOperation;
 
-    .line 125
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     const-string v1, "COPY"
@@ -84,7 +80,6 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->COPY:Landroid/mtp/MtpStorageManager$MtpOperation;
 
-    .line 126
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     const-string v1, "DELETE"
@@ -95,7 +90,6 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->DELETE:Landroid/mtp/MtpStorageManager$MtpOperation;
 
-    .line 121
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/mtp/MtpStorageManager$MtpOperation;
@@ -133,7 +127,6 @@
         }
     .end annotation
 
-    .line 121
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -141,9 +134,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/mtp/MtpStorageManager$MtpOperation;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 121
     const-class v0, Landroid/mtp/MtpStorageManager$MtpOperation;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -158,7 +149,6 @@
 .method public static values()[Landroid/mtp/MtpStorageManager$MtpOperation;
     .locals 1
 
-    .line 121
     sget-object v0, Landroid/mtp/MtpStorageManager$MtpOperation;->$VALUES:[Landroid/mtp/MtpStorageManager$MtpOperation;
 
     invoke-virtual {v0}, [Landroid/mtp/MtpStorageManager$MtpOperation;->clone()Ljava/lang/Object;

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,26 +30,19 @@
 # virtual methods
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 0
-    .param p1, "certs"    # [Ljava/security/cert/X509Certificate;
-    .param p2, "authType"    # Ljava/lang/String;
 
-    .line 87
     return-void
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .locals 0
-    .param p1, "certs"    # [Ljava/security/cert/X509Certificate;
-    .param p2, "authType"    # Ljava/lang/String;
 
-    .line 88
     return-void
 .end method
 
 .method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
     .locals 1
 
-    .line 86
     const/4 v0, 0x0
 
     return-object v0

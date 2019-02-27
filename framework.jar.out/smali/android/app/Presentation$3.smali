@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/Presentation;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/Presentation;
 
-    .line 359
     iput-object p1, p0, Landroid/app/Presentation$3;->this$0:Landroid/app/Presentation;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 362
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -46,13 +42,11 @@
 
     goto :goto_0
 
-    .line 364
     :cond_0
     iget-object v0, p0, Landroid/app/Presentation$3;->this$0:Landroid/app/Presentation;
 
     invoke-virtual {v0}, Landroid/app/Presentation;->cancel()V
 
-    .line 367
     :goto_0
     return-void
 .end method

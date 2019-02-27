@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/VrManager$CallbackEntry;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/VrManager$CallbackEntry;
 
-    .line 28
     iput-object p1, p0, Landroid/app/VrManager$CallbackEntry$1;->this$0:Landroid/app/VrManager$CallbackEntry;
 
     invoke-direct {p0}, Landroid/service/vr/IVrStateCallbacks$Stub;-><init>()V
@@ -33,9 +31,7 @@
 
 .method public static synthetic lambda$onVrStateChanged$0(Landroid/app/VrManager$CallbackEntry$1;Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 31
     iget-object v0, p0, Landroid/app/VrManager$CallbackEntry$1;->this$0:Landroid/app/VrManager$CallbackEntry;
 
     iget-object v0, v0, Landroid/app/VrManager$CallbackEntry;->mCallback:Landroid/app/VrStateCallback;
@@ -49,9 +45,7 @@
 # virtual methods
 .method public onVrStateChanged(Z)V
     .locals 2
-    .param p1, "enabled"    # Z
 
-    .line 31
     iget-object v0, p0, Landroid/app/VrManager$CallbackEntry$1;->this$0:Landroid/app/VrManager$CallbackEntry;
 
     iget-object v0, v0, Landroid/app/VrManager$CallbackEntry;->mHandler:Landroid/os/Handler;
@@ -62,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 32
     return-void
 .end method

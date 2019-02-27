@@ -25,25 +25,15 @@
 # direct methods
 .method public constructor <init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILjava/lang/String;J)V
     .locals 0
-    .param p2, "callerIdentity"    # Ljava/lang/Object;
-    .param p3, "callerUid"    # I
-    .param p4, "callerPid"    # I
-    .param p5, "utteranceId"    # Ljava/lang/String;
-    .param p6, "duration"    # J
 
-    .line 1171
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 1172
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;II)V
 
-    .line 1173
     iput-object p5, p0, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->mUtteranceId:Ljava/lang/String;
 
-    .line 1174
     iput-wide p6, p0, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->mDuration:J
 
-    .line 1175
     return-void
 .end method
 
@@ -52,7 +42,6 @@
 .method public getUtteranceId()Ljava/lang/String;
     .locals 1
 
-    .line 1195
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->mUtteranceId:Ljava/lang/String;
 
     return-object v0
@@ -61,7 +50,6 @@
 .method public isValid()Z
     .locals 1
 
-    .line 1179
     const/4 v0, 0x1
 
     return v0
@@ -70,7 +58,6 @@
 .method protected playImpl()V
     .locals 5
 
-    .line 1184
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeechService;->access$300(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/AudioPlaybackHandler;
@@ -79,7 +66,6 @@
 
     new-instance v1, Landroid/speech/tts/SilencePlaybackQueueItem;
 
-    .line 1185
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SilenceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
@@ -88,16 +74,13 @@
 
     invoke-direct {v1, p0, v2, v3, v4}, Landroid/speech/tts/SilencePlaybackQueueItem;-><init>(Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;Ljava/lang/Object;J)V
 
-    .line 1184
     invoke-virtual {v0, v1}, Landroid/speech/tts/AudioPlaybackHandler;->enqueue(Landroid/speech/tts/PlaybackQueueItem;)V
 
-    .line 1186
     return-void
 .end method
 
 .method protected stopImpl()V
     .locals 0
 
-    .line 1191
     return-void
 .end method

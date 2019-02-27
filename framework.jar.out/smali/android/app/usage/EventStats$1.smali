@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,64 +39,53 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/usage/EventStats;
     .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 166
     new-instance v0, Landroid/app/usage/EventStats;
 
     invoke-direct {v0}, Landroid/app/usage/EventStats;-><init>()V
 
-    .line 167
-    .local v0, "stats":Landroid/app/usage/EventStats;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/app/usage/EventStats;->mEventType:I
 
-    .line 168
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/app/usage/EventStats;->mBeginTimeStamp:J
 
-    .line 169
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/app/usage/EventStats;->mEndTimeStamp:J
 
-    .line 170
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/app/usage/EventStats;->mLastEventTime:J
 
-    .line 171
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/app/usage/EventStats;->mTotalTime:J
 
-    .line 172
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/app/usage/EventStats;->mCount:I
 
-    .line 173
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 163
     invoke-virtual {p0, p1}, Landroid/app/usage/EventStats$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/usage/EventStats;
 
     move-result-object p1
@@ -107,9 +95,7 @@
 
 .method public newArray(I)[Landroid/app/usage/EventStats;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 178
     new-array v0, p1, [Landroid/app/usage/EventStats;
 
     return-object v0
@@ -118,7 +104,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 163
     invoke-virtual {p0, p1}, Landroid/app/usage/EventStats$1;->newArray(I)[Landroid/app/usage/EventStats;
 
     move-result-object p1

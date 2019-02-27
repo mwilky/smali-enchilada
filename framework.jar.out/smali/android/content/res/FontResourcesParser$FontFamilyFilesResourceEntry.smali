@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>([Landroid/content/res/FontResourcesParser$FontFileResourceEntry;)V
     .locals 0
-    .param p1, "entries"    # [Landroid/content/res/FontResourcesParser$FontFileResourceEntry;
 
-    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 121
     iput-object p1, p0, Landroid/content/res/FontResourcesParser$FontFamilyFilesResourceEntry;->mEntries:[Landroid/content/res/FontResourcesParser$FontFileResourceEntry;
 
-    .line 122
     return-void
 .end method
 
@@ -41,7 +37,6 @@
 .method public getEntries()[Landroid/content/res/FontResourcesParser$FontFileResourceEntry;
     .locals 1
 
-    .line 125
     iget-object v0, p0, Landroid/content/res/FontResourcesParser$FontFamilyFilesResourceEntry;->mEntries:[Landroid/content/res/FontResourcesParser$FontFileResourceEntry;
 
     return-object v0

@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,16 +27,12 @@
 # virtual methods
 .method public onGestureDetected(I)V
     .locals 0
-    .param p1, "gesture"    # I
 
-    .line 183
     return-void
 .end method
 
 .method public onGestureDetectionAvailabilityChanged(Z)V
     .locals 0
-    .param p1, "available"    # Z
 
-    .line 175
     return-void
 .end method

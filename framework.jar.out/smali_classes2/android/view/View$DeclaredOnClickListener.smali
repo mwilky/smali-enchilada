@@ -30,32 +30,22 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;Ljava/lang/String;)V
     .locals 0
-    .param p1, "hostView"    # Landroid/view/View;
-    .param p2, "methodName"    # Ljava/lang/String;
 
-    .line 5668
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5669
     iput-object p1, p0, Landroid/view/View$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
-    .line 5670
     iput-object p2, p0, Landroid/view/View$DeclaredOnClickListener;->mMethodName:Ljava/lang/String;
 
-    .line 5671
     return-void
 .end method
 
 .method private resolveMethod(Landroid/content/Context;Ljava/lang/String;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 5692
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 5694
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->isRestricted()Z
 
@@ -63,7 +53,6 @@
 
     if-nez v0, :cond_0
 
-    .line 5695
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -84,37 +73,27 @@
 
     move-result-object v0
 
-    .line 5696
-    .local v0, "method":Ljava/lang/reflect/Method;
     if-eqz v0, :cond_0
 
-    .line 5697
     iput-object v0, p0, Landroid/view/View$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
-    .line 5698
     iput-object p1, p0, Landroid/view/View$DeclaredOnClickListener;->mResolvedContext:Landroid/content/Context;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5699
     return-void
 
-    .line 5704
-    .end local v0    # "method":Ljava/lang/reflect/Method;
     :cond_0
     goto :goto_1
 
-    .line 5702
     :catch_0
     move-exception v0
 
-    .line 5706
     :goto_1
     instance-of v0, p1, Landroid/content/ContextWrapper;
 
     if-eqz v0, :cond_1
 
-    .line 5707
     move-object v0, p1
 
     check-cast v0, Landroid/content/ContextWrapper;
@@ -125,13 +104,11 @@
 
     goto :goto_0
 
-    .line 5710
     :cond_1
     const/4 p1, 0x0
 
     goto :goto_0
 
-    .line 5714
     :cond_2
     iget-object v0, p0, Landroid/view/View$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
@@ -139,13 +116,10 @@
 
     move-result v0
 
-    .line 5715
-    .local v0, "id":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_3
 
-    .line 5716
     const-string v1, ""
 
     goto :goto_2
@@ -183,8 +157,6 @@
 
     move-result-object v1
 
-    .line 5717
-    .local v1, "idText":Ljava/lang/String;
     :goto_2
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -206,7 +178,6 @@
 
     iget-object v4, p0, Landroid/view/View$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
-    .line 5719
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v4
@@ -228,14 +199,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 5675
     iget-object v0, p0, Landroid/view/View$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
     if-nez v0, :cond_0
 
-    .line 5676
     iget-object v0, p0, Landroid/view/View$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -246,7 +214,6 @@
 
     invoke-direct {p0, v0, v1}, Landroid/view/View$DeclaredOnClickListener;->resolveMethod(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 5680
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/view/View$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
@@ -266,18 +233,13 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5687
     nop
 
-    .line 5688
     return-void
 
-    .line 5684
     :catch_0
     move-exception v0
 
-    .line 5685
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Could not execute method for android:onClick"
@@ -286,13 +248,9 @@
 
     throw v1
 
-    .line 5681
-    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v0
 
-    .line 5682
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Could not execute non-public method for android:onClick"

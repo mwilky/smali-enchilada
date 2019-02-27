@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/backup/RestoreSet;
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 75
     new-instance v0, Landroid/app/backup/RestoreSet;
 
     const/4 v1, 0x0
@@ -55,7 +52,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 73
     invoke-virtual {p0, p1}, Landroid/app/backup/RestoreSet$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/backup/RestoreSet;
 
     move-result-object p1
@@ -65,9 +61,7 @@
 
 .method public newArray(I)[Landroid/app/backup/RestoreSet;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 79
     new-array v0, p1, [Landroid/app/backup/RestoreSet;
 
     return-object v0
@@ -76,7 +70,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 73
     invoke-virtual {p0, p1}, Landroid/app/backup/RestoreSet$1;->newArray(I)[Landroid/app/backup/RestoreSet;
 
     move-result-object p1

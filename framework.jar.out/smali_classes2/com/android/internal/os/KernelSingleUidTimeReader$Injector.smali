@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 243
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,14 +30,12 @@
 # virtual methods
 .method public readData(Ljava/lang/String;)[B
     .locals 1
-    .param p1, "procFile"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 245
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/hdmi/HdmiTvClient;Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/hdmi/HdmiTvClient;
 
-    .line 405
     iput-object p1, p0, Landroid/hardware/hdmi/HdmiTvClient$4;->this$0:Landroid/hardware/hdmi/HdmiTvClient;
 
     iput-object p2, p0, Landroid/hardware/hdmi/HdmiTvClient$4;->val$listener:Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;
@@ -39,16 +37,10 @@
 # virtual methods
 .method public onReceived(III[B)V
     .locals 1
-    .param p1, "portId"    # I
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .param p4, "data"    # [B
 
-    .line 408
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiTvClient$4;->val$listener:Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;->onReceived(III[B)V
 
-    .line 409
     return-void
 .end method

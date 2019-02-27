@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,32 +39,25 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
     .locals 7
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 92
     new-instance v6, Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
 
-    .line 93
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v4
 
-    .line 97
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v5
@@ -74,14 +66,12 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;B[B)V
 
-    .line 92
     return-object v6
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 87
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
 
     move-result-object p1
@@ -91,9 +81,7 @@
 
 .method public newArray(I)[Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 102
     new-array v0, p1, [Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
 
     return-object v0
@@ -102,7 +90,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 87
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings$1;->newArray(I)[Landroid/bluetooth/BluetoothHidDeviceAppSdpSettings;
 
     move-result-object p1

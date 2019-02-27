@@ -17,13 +17,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "detailMessage"    # Ljava/lang/String;
 
-    .line 74
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/media/MediaCasException;-><init>(Ljava/lang/String;Landroid/media/MediaCasException$1;)V
 
-    .line 75
     return-void
 .end method

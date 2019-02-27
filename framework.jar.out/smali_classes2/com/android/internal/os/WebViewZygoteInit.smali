@@ -22,7 +22,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,20 +29,15 @@
 
 .method public static main([Ljava/lang/String;)V
     .locals 12
-    .param p0, "argv"    # [Ljava/lang/String;
 
-    .line 129
     const-string v0, "WebViewZygoteInit"
 
     const-string v1, "Starting WebViewZygoteInit"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
     const/4 v0, 0x0
 
-    .line 132
-    .local v0, "socketName":Ljava/lang/String;
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -53,13 +47,10 @@
 
     aget-object v3, p0, v2
 
-    .line 133
-    .local v3, "arg":Ljava/lang/String;
     const-string v4, "WebViewZygoteInit"
 
     invoke-static {v4, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     const-string v4, "--zygote-socket="
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -68,7 +59,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 135
     const-string v4, "--zygote-socket="
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
@@ -79,18 +69,14 @@
 
     move-result-object v0
 
-    .line 132
-    .end local v3    # "arg":Ljava/lang/String;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 138
     :cond_1
     if-eqz v0, :cond_3
 
-    .line 143
     :try_start_0
     sget v3, Landroid/system/OsConstants;->PR_SET_NO_NEW_PRIVS:I
 
@@ -106,10 +92,8 @@
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 146
     nop
 
-    .line 148
     new-instance v1, Lcom/android/internal/os/WebViewZygoteInit$WebViewZygoteServer;
 
     const/4 v2, 0x0
@@ -118,13 +102,11 @@
 
     sput-object v1, Lcom/android/internal/os/WebViewZygoteInit;->sServer:Lcom/android/internal/os/ZygoteServer;
 
-    .line 152
     :try_start_1
     sget-object v1, Lcom/android/internal/os/WebViewZygoteInit;->sServer:Lcom/android/internal/os/ZygoteServer;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/os/ZygoteServer;->registerServerSocketAtAbstractName(Ljava/lang/String;)V
 
-    .line 156
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -141,7 +123,6 @@
 
     invoke-static {v1}, Lcom/android/internal/os/Zygote;->nativeAllowFileAcrossFork(Ljava/lang/String;)V
 
-    .line 160
     sget-object v1, Lcom/android/internal/os/WebViewZygoteInit;->sServer:Lcom/android/internal/os/ZygoteServer;
 
     const-string v2, ","
@@ -159,41 +140,29 @@
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 165
-    .local v1, "caller":Ljava/lang/Runnable;
     sget-object v2, Lcom/android/internal/os/WebViewZygoteInit;->sServer:Lcom/android/internal/os/ZygoteServer;
 
     invoke-virtual {v2}, Lcom/android/internal/os/ZygoteServer;->closeServerSocket()V
 
-    .line 166
     nop
 
-    .line 165
     nop
 
-    .line 170
     if-eqz v1, :cond_2
 
-    .line 171
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 173
     :cond_2
     return-void
 
-    .line 165
-    .end local v1    # "caller":Ljava/lang/Runnable;
     :catchall_0
     move-exception v1
 
     goto :goto_1
 
-    .line 161
     :catch_0
     move-exception v1
 
-    .line 162
-    .local v1, "e":Ljava/lang/RuntimeException;
     :try_start_2
     const-string v2, "WebViewZygoteInit"
 
@@ -201,13 +170,10 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 163
     throw v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 165
-    .end local v1    # "e":Ljava/lang/RuntimeException;
     :goto_1
     sget-object v2, Lcom/android/internal/os/WebViewZygoteInit;->sServer:Lcom/android/internal/os/ZygoteServer;
 
@@ -215,12 +181,9 @@
 
     throw v1
 
-    .line 144
     :catch_1
     move-exception v1
 
-    .line 145
-    .local v1, "ex":Landroid/system/ErrnoException;
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Failed to set PR_SET_NO_NEW_PRIVS"
@@ -229,8 +192,6 @@
 
     throw v2
 
-    .line 139
-    .end local v1    # "ex":Landroid/system/ErrnoException;
     :cond_3
     new-instance v1, Ljava/lang/RuntimeException;
 

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/statusbar/NotificationVisibility;
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 158
     invoke-static {p1}, Lcom/android/internal/statusbar/NotificationVisibility;->access$000(Landroid/os/Parcel;)Lcom/android/internal/statusbar/NotificationVisibility;
 
     move-result-object v0
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 155
     invoke-virtual {p0, p1}, Lcom/android/internal/statusbar/NotificationVisibility$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/statusbar/NotificationVisibility;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Lcom/android/internal/statusbar/NotificationVisibility;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 163
     new-array v0, p1, [Lcom/android/internal/statusbar/NotificationVisibility;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 155
     invoke-virtual {p0, p1}, Lcom/android/internal/statusbar/NotificationVisibility$1;->newArray(I)[Lcom/android/internal/statusbar/NotificationVisibility;
 
     move-result-object p1

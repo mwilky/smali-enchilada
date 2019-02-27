@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/media/MediaRouterClientState;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 75
     new-instance v0, Landroid/media/MediaRouterClientState;
 
     invoke-direct {v0, p1}, Landroid/media/MediaRouterClientState;-><init>(Landroid/os/Parcel;)V
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 72
     invoke-virtual {p0, p1}, Landroid/media/MediaRouterClientState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/MediaRouterClientState;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Landroid/media/MediaRouterClientState;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 80
     new-array v0, p1, [Landroid/media/MediaRouterClientState;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 72
     invoke-virtual {p0, p1}, Landroid/media/MediaRouterClientState$1;->newArray(I)[Landroid/media/MediaRouterClientState;
 
     move-result-object p1

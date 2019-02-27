@@ -17,10 +17,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
     new-instance v0, Landroid/database/DataSetObservable;
 
     invoke-direct {v0}, Landroid/database/DataSetObservable;-><init>()V
@@ -34,11 +32,7 @@
 # virtual methods
 .method public destroyItem(Landroid/view/View;ILjava/lang/Object;)V
     .locals 2
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 192
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Required method destroyItem was not overridden"
@@ -50,33 +44,23 @@
 
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 124
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/widget/PagerAdapter;->destroyItem(Landroid/view/View;ILjava/lang/Object;)V
 
-    .line 125
     return-void
 .end method
 
 .method public finishUpdate(Landroid/view/View;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/View;
 
-    .line 219
     return-void
 .end method
 
 .method public finishUpdate(Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/ViewGroup;
 
-    .line 148
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/PagerAdapter;->finishUpdate(Landroid/view/View;)V
 
-    .line 149
     return-void
 .end method
 
@@ -85,9 +69,7 @@
 
 .method public getItemPosition(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 268
     const/4 v0, -0x1
 
     return v0
@@ -95,9 +77,7 @@
 
 .method public getPageTitle(I)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "position"    # I
 
-    .line 307
     const/4 v0, 0x0
 
     return-object v0
@@ -105,9 +85,7 @@
 
 .method public getPageWidth(I)F
     .locals 1
-    .param p1, "position"    # I
 
-    .line 318
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
@@ -115,10 +93,7 @@
 
 .method public instantiateItem(Landroid/view/View;I)Ljava/lang/Object;
     .locals 2
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
 
-    .line 175
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Required method instantiateItem was not overridden"
@@ -130,10 +105,7 @@
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
 
-    .line 110
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/widget/PagerAdapter;->instantiateItem(Landroid/view/View;I)Ljava/lang/Object;
 
     move-result-object v0
@@ -147,41 +119,32 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 276
     iget-object v0, p0, Lcom/android/internal/widget/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0}, Landroid/database/DataSetObservable;->notifyChanged()V
 
-    .line 277
     return-void
 .end method
 
 .method public registerDataSetObserver(Landroid/database/DataSetObserver;)V
     .locals 1
-    .param p1, "observer"    # Landroid/database/DataSetObserver;
 
-    .line 285
     iget-object v0, p0, Lcom/android/internal/widget/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->registerObserver(Ljava/lang/Object;)V
 
-    .line 286
     return-void
 .end method
 
 .method public restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
     .locals 0
-    .param p1, "state"    # Landroid/os/Parcelable;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
-    .line 250
     return-void
 .end method
 
 .method public saveState()Landroid/os/Parcelable;
     .locals 1
 
-    .line 239
     const/4 v0, 0x0
 
     return-object v0
@@ -189,55 +152,38 @@
 
 .method public setPrimaryItem(Landroid/view/View;ILjava/lang/Object;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 207
     return-void
 .end method
 
 .method public setPrimaryItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 137
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/widget/PagerAdapter;->setPrimaryItem(Landroid/view/View;ILjava/lang/Object;)V
 
-    .line 138
     return-void
 .end method
 
 .method public startUpdate(Landroid/view/View;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/View;
 
-    .line 159
     return-void
 .end method
 
 .method public startUpdate(Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "container"    # Landroid/view/ViewGroup;
 
-    .line 95
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/PagerAdapter;->startUpdate(Landroid/view/View;)V
 
-    .line 96
     return-void
 .end method
 
 .method public unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
     .locals 1
-    .param p1, "observer"    # Landroid/database/DataSetObserver;
 
-    .line 294
     iget-object v0, p0, Lcom/android/internal/widget/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->unregisterObserver(Ljava/lang/Object;)V
 
-    .line 295
     return-void
 .end method

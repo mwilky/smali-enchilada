@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/view/accessibility/CaptioningManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/view/accessibility/CaptioningManager;
 
-    .line 252
     iput-object p1, p0, Landroid/view/accessibility/CaptioningManager$1;->this$0:Landroid/view/accessibility/CaptioningManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 255
     iget-object v0, p0, Landroid/view/accessibility/CaptioningManager$1;->this$0:Landroid/view/accessibility/CaptioningManager;
 
     invoke-static {v0}, Landroid/view/accessibility/CaptioningManager;->access$400(Landroid/view/accessibility/CaptioningManager;)V
 
-    .line 256
     return-void
 .end method

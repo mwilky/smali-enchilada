@@ -29,12 +29,7 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/os/Bundle;Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/UserHandle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/accounts/AccountManager;
-    .param p2, "activity"    # Landroid/app/Activity;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .line 3262
-    .local p4, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$23;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$23;->val$sessionBundle:Landroid/os/Bundle;
@@ -60,7 +55,6 @@
         }
     .end annotation
 
-    .line 3265
     iget-object v0, p0, Landroid/accounts/AccountManager$23;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -92,14 +86,11 @@
 
     iget-object v0, p0, Landroid/accounts/AccountManager$23;->val$userHandle:Landroid/os/UserHandle;
 
-    .line 3270
     invoke-virtual {v0}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v6
 
-    .line 3265
     invoke-interface/range {v1 .. v6}, Landroid/accounts/IAccountManager;->finishSessionAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/os/Bundle;ZLandroid/os/Bundle;I)V
 
-    .line 3271
     return-void
 .end method

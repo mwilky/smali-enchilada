@@ -24,7 +24,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 477
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,9 +31,7 @@
 
 .method public static getContentUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
 
-    .line 487
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,10 +59,7 @@
 
 .method public static final getContentUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
-    .param p1, "rowId"    # J
 
-    .line 501
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -95,9 +89,7 @@
 
 .method public static final getDirectoryUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
 
-    .line 539
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -125,9 +117,7 @@
 
 .method public static getMtpObjectsUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
 
-    .line 510
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -155,10 +145,7 @@
 
 .method public static final getMtpObjectsUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
-    .param p1, "fileId"    # J
 
-    .line 520
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -188,10 +175,7 @@
 
 .method public static final getMtpReferencesUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
-    .param p1, "fileId"    # J
 
-    .line 530
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -51,14 +51,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 55
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
-    .line 58
     const/4 v0, 0x0
 
     sput-object v0, Landroid/os/SystemProperties;->sRoReads:Ljava/util/HashMap;
@@ -69,23 +67,18 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     return-void
 .end method
 
 .method public static addChangeCallback(Ljava/lang/Runnable;)V
     .locals 2
-    .param p0, "callback"    # Ljava/lang/Runnable;
 
-    .line 194
     sget-object v0, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 195
     :try_start_0
     sget-object v1, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
@@ -95,22 +88,17 @@
 
     if-nez v1, :cond_0
 
-    .line 196
     invoke-static {}, Landroid/os/SystemProperties;->native_add_change_callback()V
 
-    .line 198
     :cond_0
     sget-object v1, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 199
     monitor-exit v0
 
-    .line 200
     return-void
 
-    .line 199
     :catchall_0
     move-exception v1
 
@@ -124,12 +112,10 @@
 .method private static callChangeCallbacks()V
     .locals 6
 
-    .line 204
     sget-object v0, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 206
     :try_start_0
     sget-object v1, Landroid/os/SystemProperties;->sChangeCallbacks:Ljava/util/ArrayList;
 
@@ -139,12 +125,10 @@
 
     if-nez v1, :cond_0
 
-    .line 207
     monitor-exit v0
 
     return-void
 
-    .line 209
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
@@ -152,11 +136,8 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 210
-    .local v1, "callbacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Runnable;>;"
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -166,7 +147,6 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 212
     :try_start_1
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -179,15 +159,11 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 216
     goto :goto_1
 
-    .line 213
     :catch_0
     move-exception v3
 
-    .line 214
-    .local v3, "t":Ljava/lang/Throwable;
     :try_start_2
     const-string v4, "SystemProperties"
 
@@ -195,23 +171,16 @@
 
     invoke-static {v4, v5, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 210
-    .end local v3    # "t":Ljava/lang/Throwable;
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 218
-    .end local v1    # "callbacks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Runnable;>;"
-    .end local v2    # "i":I
     :cond_1
     monitor-exit v0
 
-    .line 219
     return-void
 
-    .line 218
     :catchall_0
     move-exception v1
 
@@ -224,11 +193,9 @@
 
 .method public static get(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 101
     invoke-static {p0}, Landroid/os/SystemProperties;->native_get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -238,12 +205,9 @@
 
 .method public static get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "def"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 118
     invoke-static {p0, p1}, Landroid/os/SystemProperties;->native_get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -253,12 +217,9 @@
 
 .method public static getBoolean(Ljava/lang/String;Z)Z
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "def"    # Z
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 168
     invoke-static {p0, p1}, Landroid/os/SystemProperties;->native_get_boolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -268,12 +229,9 @@
 
 .method public static getInt(Ljava/lang/String;I)I
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "def"    # I
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 133
     invoke-static {p0, p1}, Landroid/os/SystemProperties;->native_get_int(Ljava/lang/String;I)I
 
     move-result v0
@@ -283,12 +241,9 @@
 
 .method public static getLong(Ljava/lang/String;J)J
     .locals 2
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "def"    # J
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 148
     invoke-static {p0, p1, p2}, Landroid/os/SystemProperties;->native_get_long(Ljava/lang/String;J)J
 
     move-result-wide v0
@@ -322,28 +277,21 @@
 
 .method private static onKeyAccess(Ljava/lang/String;)V
     .locals 0
-    .param p0, "key"    # Ljava/lang/String;
 
-    .line 62
     return-void
 .end method
 
 .method public static reportSyspropChanged()V
     .locals 0
 
-    .line 226
     invoke-static {}, Landroid/os/SystemProperties;->native_report_sysprop_change()V
 
-    .line 227
     return-void
 .end method
 
 .method public static set(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "val"    # Ljava/lang/String;
 
-    .line 178
     if-eqz p1, :cond_1
 
     const-string/jumbo v0, "ro."
@@ -364,7 +312,6 @@
 
     goto :goto_0
 
-    .line 179
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -398,11 +345,9 @@
 
     throw v0
 
-    .line 183
     :cond_1
     :goto_0
     invoke-static {p0, p1}, Landroid/os/SystemProperties;->native_set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 184
     return-void
 .end method

@@ -27,7 +27,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2445
     invoke-direct {p0}, Landroid/hardware/camera2/utils/TypeReference;-><init>()V
 
     return-void

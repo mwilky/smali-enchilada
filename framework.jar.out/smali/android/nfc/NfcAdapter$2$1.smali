@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/nfc/NfcAdapter$2;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/nfc/NfcAdapter$2;
 
-    .line 1721
     iput-object p1, p0, Landroid/nfc/NfcAdapter$2$1;->this$1:Landroid/nfc/NfcAdapter$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 1
 
-    .line 1724
     iget-object v0, p0, Landroid/nfc/NfcAdapter$2$1;->this$1:Landroid/nfc/NfcAdapter$2;
 
     iget-object v0, v0, Landroid/nfc/NfcAdapter$2;->val$tagRemovedListener:Landroid/nfc/NfcAdapter$OnTagRemovedListener;
 
     invoke-interface {v0}, Landroid/nfc/NfcAdapter$OnTagRemovedListener;->onTagRemoved()V
 
-    .line 1725
     return-void
 .end method

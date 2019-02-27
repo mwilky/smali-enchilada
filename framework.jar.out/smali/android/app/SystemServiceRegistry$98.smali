@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1062
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Lcom/oneplus/longshot/LongScreenshotManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 1065
     invoke-static {}, Lcom/oneplus/longshot/LongScreenshotManager;->getInstance()Lcom/oneplus/longshot/LongScreenshotManager;
 
     move-result-object v0
@@ -54,7 +51,6 @@
         }
     .end annotation
 
-    .line 1062
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$98;->createService(Landroid/app/ContextImpl;)Lcom/oneplus/longshot/LongScreenshotManager;
 
     move-result-object p1

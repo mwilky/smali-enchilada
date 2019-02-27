@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 2375
     sget-object v0, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "rate"
@@ -41,9 +40,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2369
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2370
     return-void
 .end method

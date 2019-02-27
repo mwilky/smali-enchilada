@@ -25,10 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;Landroid/telephony/mbms/IDownloadProgressListener;ILandroid/telephony/mbms/DownloadRequest;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
-    .param p2, "listener"    # Landroid/telephony/mbms/IDownloadProgressListener;
 
-    .line 382
     iput-object p1, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$5;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     iput p3, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$5;->val$uid:I
@@ -44,9 +41,7 @@
 # virtual methods
 .method protected onRemoteException(Landroid/os/RemoteException;)V
     .locals 3
-    .param p1, "e"    # Landroid/os/RemoteException;
 
-    .line 385
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$5;->this$0:Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;
 
     iget v1, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$5;->val$uid:I
@@ -59,6 +54,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase;->onAppCallbackDied(II)V
 
-    .line 386
     return-void
 .end method

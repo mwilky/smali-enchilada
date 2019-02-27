@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x1"    # Ljava/lang/String;
 
-    .line 86
-    .local p1, "x0":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/graphics/PointF;>;"
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -39,9 +36,7 @@
 # virtual methods
 .method public get(Landroid/transition/ChangeBounds$ViewBounds;)Landroid/graphics/PointF;
     .locals 1
-    .param p1, "viewBounds"    # Landroid/transition/ChangeBounds$ViewBounds;
 
-    .line 94
     const/4 v0, 0x0
 
     return-object v0
@@ -50,7 +45,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 86
     check-cast p1, Landroid/transition/ChangeBounds$ViewBounds;
 
     invoke-virtual {p0, p1}, Landroid/transition/ChangeBounds$2;->get(Landroid/transition/ChangeBounds$ViewBounds;)Landroid/graphics/PointF;
@@ -62,20 +56,15 @@
 
 .method public set(Landroid/transition/ChangeBounds$ViewBounds;Landroid/graphics/PointF;)V
     .locals 0
-    .param p1, "viewBounds"    # Landroid/transition/ChangeBounds$ViewBounds;
-    .param p2, "topLeft"    # Landroid/graphics/PointF;
 
-    .line 89
     invoke-virtual {p1, p2}, Landroid/transition/ChangeBounds$ViewBounds;->setTopLeft(Landroid/graphics/PointF;)V
 
-    .line 90
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 86
     check-cast p1, Landroid/transition/ChangeBounds$ViewBounds;
 
     check-cast p2, Landroid/graphics/PointF;

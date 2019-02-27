@@ -30,7 +30,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 899
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 
 .method synthetic constructor <init>(Landroid/content/pm/PackageParser$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/content/pm/PackageParser$1;
 
-    .line 899
     invoke-direct {p0}, Landroid/content/pm/PackageParser$SplitNameComparator;-><init>()V
 
     return-void
@@ -51,7 +48,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 899
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Ljava/lang/String;
@@ -65,27 +61,20 @@
 
 .method public compare(Ljava/lang/String;Ljava/lang/String;)I
     .locals 1
-    .param p1, "lhs"    # Ljava/lang/String;
-    .param p2, "rhs"    # Ljava/lang/String;
 
-    .line 902
     if-nez p1, :cond_0
 
-    .line 903
     const/4 v0, -0x1
 
     return v0
 
-    .line 904
     :cond_0
     if-nez p2, :cond_1
 
-    .line 905
     const/4 v0, 0x1
 
     return v0
 
-    .line 907
     :cond_1
     invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 

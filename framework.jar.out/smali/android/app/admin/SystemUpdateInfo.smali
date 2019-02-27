@@ -48,7 +48,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 114
     new-instance v0, Landroid/app/admin/SystemUpdateInfo$1;
 
     invoke-direct {v0}, Landroid/app/admin/SystemUpdateInfo$1;-><init>()V
@@ -60,53 +59,39 @@
 
 .method private constructor <init>(JI)V
     .locals 0
-    .param p1, "receivedTime"    # J
-    .param p3, "securityPatchState"    # I
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
     iput-wide p1, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
 
-    .line 73
     iput p3, p0, Landroid/app/admin/SystemUpdateInfo;->mSecurityPatchState:I
 
-    .line 74
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
 
-    .line 78
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/admin/SystemUpdateInfo;->mSecurityPatchState:I
 
-    .line 79
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/app/admin/SystemUpdateInfo$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/app/admin/SystemUpdateInfo$1;
 
-    .line 36
     invoke-direct {p0, p1}, Landroid/app/admin/SystemUpdateInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -114,16 +99,13 @@
 
 .method public static of(J)Landroid/app/admin/SystemUpdateInfo;
     .locals 2
-    .param p0, "receivedTime"    # J
 
-    .line 84
     const-wide/16 v0, -0x1
 
     cmp-long v0, p0, v0
 
     if-nez v0, :cond_0
 
-    .line 85
     const/4 v0, 0x0
 
     goto :goto_0
@@ -135,17 +117,13 @@
 
     invoke-direct {v0, p0, p1, v1}, Landroid/app/admin/SystemUpdateInfo;-><init>(JI)V
 
-    .line 84
     :goto_0
     return-object v0
 .end method
 
 .method public static of(JZ)Landroid/app/admin/SystemUpdateInfo;
     .locals 2
-    .param p0, "receivedTime"    # J
-    .param p2, "isSecurityPatch"    # Z
 
-    .line 91
     const-wide/16 v0, -0x1
 
     cmp-long v0, p0, v0
@@ -159,7 +137,6 @@
     :cond_0
     new-instance v0, Landroid/app/admin/SystemUpdateInfo;
 
-    .line 92
     if-eqz p2, :cond_1
 
     const/4 v1, 0x2
@@ -172,16 +149,13 @@
     :goto_0
     invoke-direct {v0, p0, p1, v1}, Landroid/app/admin/SystemUpdateInfo;-><init>(JI)V
 
-    .line 91
     :goto_1
     return-object v0
 .end method
 
 .method public static readFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/app/admin/SystemUpdateInfo;
     .locals 5
-    .param p0, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
 
-    .line 140
     const-string/jumbo v0, "original-build"
 
     const/4 v1, 0x0
@@ -190,8 +164,6 @@
 
     move-result-object v0
 
-    .line 141
-    .local v0, "buildFingerprint":Ljava/lang/String;
     sget-object v2, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -200,14 +172,11 @@
 
     if-nez v2, :cond_0
 
-    .line 142
     return-object v1
 
-    .line 144
     :cond_0
     const-string/jumbo v2, "received-time"
 
-    .line 145
     invoke-interface {p0, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -216,11 +185,8 @@
 
     move-result-wide v2
 
-    .line 146
-    .local v2, "receivedTime":J
     const-string/jumbo v4, "security-patch-state"
 
-    .line 147
     invoke-interface {p0, v1, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -229,8 +195,6 @@
 
     move-result v1
 
-    .line 148
-    .local v1, "securityPatchState":I
     new-instance v4, Landroid/app/admin/SystemUpdateInfo;
 
     invoke-direct {v4, v2, v3, v1}, Landroid/app/admin/SystemUpdateInfo;-><init>(JI)V
@@ -240,12 +204,9 @@
 
 .method private static securityPatchStateToString(I)Ljava/lang/String;
     .locals 3
-    .param p0, "state"    # I
 
-    .line 169
     packed-switch p0, :pswitch_data_0
 
-    .line 177
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -266,19 +227,16 @@
 
     throw v0
 
-    .line 173
     :pswitch_0
     const-string/jumbo v0, "true"
 
     return-object v0
 
-    .line 171
     :pswitch_1
     const-string v0, "false"
 
     return-object v0
 
-    .line 175
     :pswitch_2
     const-string/jumbo v0, "unknown"
 
@@ -299,7 +257,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 153
     const/4 v0, 0x0
 
     return v0
@@ -307,16 +264,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 183
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 184
     :cond_0
     const/4 v1, 0x0
 
@@ -334,14 +288,11 @@
 
     goto :goto_1
 
-    .line 185
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/app/admin/SystemUpdateInfo;
 
-    .line 186
-    .local v2, "that":Landroid/app/admin/SystemUpdateInfo;
     iget-wide v3, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
 
     iget-wide v5, v2, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
@@ -364,8 +315,6 @@
     :goto_0
     return v0
 
-    .line 184
-    .end local v2    # "that":Landroid/app/admin/SystemUpdateInfo;
     :cond_3
     :goto_1
     return v1
@@ -374,7 +323,6 @@
 .method public getReceivedTime()J
     .locals 2
 
-    .line 101
     iget-wide v0, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
 
     return-wide v0
@@ -383,7 +331,6 @@
 .method public getSecurityPatchState()I
     .locals 1
 
-    .line 111
     iget v0, p0, Landroid/app/admin/SystemUpdateInfo;->mSecurityPatchState:I
 
     return v0
@@ -392,7 +339,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 192
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -427,7 +373,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 164
     const-string v0, "SystemUpdateInfo (receivedTime = %d, securityPatchState = %s)"
 
     const/4 v1, 0x2
@@ -436,7 +381,6 @@
 
     iget-wide v2, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
 
-    .line 165
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -455,7 +399,6 @@
 
     aput-object v2, v1, v3
 
-    .line 164
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -465,43 +408,34 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 158
     invoke-virtual {p0}, Landroid/app/admin/SystemUpdateInfo;->getReceivedTime()J
 
     move-result-wide v0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 159
     invoke-virtual {p0}, Landroid/app/admin/SystemUpdateInfo;->getSecurityPatchState()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 160
     return-void
 .end method
 
 .method public writeToXml(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;)V
     .locals 4
-    .param p1, "out"    # Lorg/xmlpull/v1/XmlSerializer;
-    .param p2, "tag"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 129
     const/4 v0, 0x0
 
     invoke-interface {p1, v0, p2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 130
     const-string/jumbo v1, "received-time"
 
     iget-wide v2, p0, Landroid/app/admin/SystemUpdateInfo;->mReceivedTime:J
@@ -512,7 +446,6 @@
 
     invoke-interface {p1, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 131
     const-string/jumbo v1, "security-patch-state"
 
     iget v2, p0, Landroid/app/admin/SystemUpdateInfo;->mSecurityPatchState:I
@@ -523,16 +456,13 @@
 
     invoke-interface {p1, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 132
     const-string/jumbo v1, "original-build"
 
     sget-object v2, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
     invoke-interface {p1, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 133
     invoke-interface {p1, v0, p2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 134
     return-void
 .end method

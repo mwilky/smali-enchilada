@@ -24,13 +24,9 @@
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     return-void
 .end method
 
@@ -44,7 +40,6 @@
         }
     .end annotation
 
-    .line 34
     new-instance v0, Ljava/lang/CloneNotSupportedException;
 
     const-string v1, "doesn\'t implement Cloneable"
@@ -57,42 +52,36 @@
 .method protected onSyncInit()V
     .locals 0
 
-    .line 66
     return-void
 .end method
 
 .method public resetSync()V
     .locals 0
 
-    .line 50
     return-void
 .end method
 
 .method public run()V
     .locals 0
 
-    .line 38
     return-void
 .end method
 
 .method public startSync()V
     .locals 0
 
-    .line 56
     return-void
 .end method
 
 .method public stopSync()V
     .locals 0
 
-    .line 63
     return-void
 .end method
 
 .method public sync()V
     .locals 0
 
-    .line 44
     return-void
 .end method
 

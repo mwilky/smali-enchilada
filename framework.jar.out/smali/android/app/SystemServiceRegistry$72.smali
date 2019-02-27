@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 825
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,28 +35,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/media/tv/TvInputManager;
     .locals 4
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 828
     const-string/jumbo v0, "tv_input"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 829
-    .local v0, "iBinder":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/media/tv/ITvInputManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/tv/ITvInputManager;
 
     move-result-object v1
 
-    .line 830
-    .local v1, "service":Landroid/media/tv/ITvInputManager;
     new-instance v2, Landroid/media/tv/TvInputManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getUserId()I
@@ -77,7 +70,6 @@
         }
     .end annotation
 
-    .line 825
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$72;->createService(Landroid/app/ContextImpl;)Landroid/media/tv/TvInputManager;
 
     move-result-object p1

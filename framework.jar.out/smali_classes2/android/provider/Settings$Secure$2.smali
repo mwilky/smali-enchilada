@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 7180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 10
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 7183
     const/4 v0, 0x0
 
     if-eqz p1, :cond_3
@@ -46,7 +43,6 @@
 
     goto :goto_2
 
-    .line 7186
     :cond_0
     const-string v1, ","
 
@@ -54,35 +50,25 @@
 
     move-result-object v1
 
-    .line 7187
-    .local v1, "ttsLocales":[Ljava/lang/String;
     const/4 v2, 0x1
 
-    .line 7188
-    .local v2, "valid":Z
     array-length v3, v1
 
     move v4, v2
 
     move v2, v0
 
-    .end local v2    # "valid":Z
-    .local v4, "valid":Z
     :goto_0
     if-ge v2, v3, :cond_2
 
     aget-object v5, v1, v2
 
-    .line 7189
-    .local v5, "ttsLocale":Ljava/lang/String;
     const-string v6, ":"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v6
 
-    .line 7190
-    .local v6, "parts":[Ljava/lang/String;
     array-length v7, v6
 
     const/4 v8, 0x2
@@ -93,7 +79,6 @@
 
     aget-object v7, v6, v0
 
-    .line 7191
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v7
@@ -104,7 +89,6 @@
 
     aget-object v8, v6, v0
 
-    .line 7192
     invoke-interface {v7, v8}, Landroid/provider/SettingsValidators$Validator;->validate(Ljava/lang/String;)Z
 
     move-result v7
@@ -115,7 +99,6 @@
 
     aget-object v8, v6, v9
 
-    .line 7193
     invoke-interface {v7, v8}, Landroid/provider/SettingsValidators$Validator;->validate(Ljava/lang/String;)Z
 
     move-result v7
@@ -130,20 +113,13 @@
     :goto_1
     or-int/2addr v4, v9
 
-    .line 7188
-    .end local v5    # "ttsLocale":Ljava/lang/String;
-    .end local v6    # "parts":[Ljava/lang/String;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 7195
     :cond_2
     return v4
 
-    .line 7184
-    .end local v1    # "ttsLocales":[Ljava/lang/String;
-    .end local v4    # "valid":Z
     :cond_3
     :goto_2
     return v0

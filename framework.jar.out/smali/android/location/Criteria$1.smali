@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 328
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,50 +39,41 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/location/Criteria;
     .locals 4
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 331
     new-instance v0, Landroid/location/Criteria;
 
     invoke-direct {v0}, Landroid/location/Criteria;-><init>()V
 
-    .line 332
-    .local v0, "c":Landroid/location/Criteria;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$002(Landroid/location/Criteria;I)I
 
-    .line 333
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$102(Landroid/location/Criteria;I)I
 
-    .line 334
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$202(Landroid/location/Criteria;I)I
 
-    .line 335
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$302(Landroid/location/Criteria;I)I
 
-    .line 336
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$402(Landroid/location/Criteria;I)I
 
-    .line 337
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -104,7 +94,6 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$502(Landroid/location/Criteria;Z)Z
 
-    .line 338
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -121,7 +110,6 @@
     :goto_1
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$602(Landroid/location/Criteria;Z)Z
 
-    .line 339
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -138,7 +126,6 @@
     :goto_2
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$702(Landroid/location/Criteria;Z)Z
 
-    .line 340
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -152,14 +139,12 @@
     :cond_3
     invoke-static {v0, v2}, Landroid/location/Criteria;->access$802(Landroid/location/Criteria;Z)Z
 
-    .line 341
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 328
     invoke-virtual {p0, p1}, Landroid/location/Criteria$1;->createFromParcel(Landroid/os/Parcel;)Landroid/location/Criteria;
 
     move-result-object p1
@@ -169,9 +154,7 @@
 
 .method public newArray(I)[Landroid/location/Criteria;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 346
     new-array v0, p1, [Landroid/location/Criteria;
 
     return-object v0
@@ -180,7 +163,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 328
     invoke-virtual {p0, p1}, Landroid/location/Criteria$1;->newArray(I)[Landroid/location/Criteria;
 
     move-result-object p1

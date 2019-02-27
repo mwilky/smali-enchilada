@@ -33,15 +33,11 @@
 # direct methods
 .method constructor <init>(Landroid/app/backup/BackupManager;Landroid/content/Context;Landroid/app/backup/BackupObserver;)V
     .locals 2
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "observer"    # Landroid/app/backup/BackupObserver;
 
-    .line 825
     iput-object p1, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->this$0:Landroid/app/backup/BackupManager;
 
     invoke-direct {p0}, Landroid/app/backup/IBackupObserver$Stub;-><init>()V
 
-    .line 826
     new-instance v0, Landroid/app/backup/BackupManager$BackupObserverWrapper$1;
 
     invoke-virtual {p2}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -52,10 +48,8 @@
 
     iput-object v0, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 847
     iput-object p3, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mObserver:Landroid/app/backup/BackupObserver;
 
-    .line 848
     return-void
 .end method
 
@@ -63,14 +57,11 @@
 # virtual methods
 .method public backupFinished(I)V
     .locals 4
-    .param p1, "status"    # I
 
-    .line 865
     iget-object v0, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 866
     const/4 v2, 0x3
 
     const/4 v3, 0x0
@@ -79,24 +70,18 @@
 
     move-result-object v1
 
-    .line 865
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 867
     return-void
 .end method
 
 .method public onResult(Ljava/lang/String;I)V
     .locals 4
-    .param p1, "currentPackage"    # Ljava/lang/String;
-    .param p2, "status"    # I
 
-    .line 859
     iget-object v0, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 860
     const/4 v2, 0x2
 
     const/4 v3, 0x0
@@ -105,24 +90,18 @@
 
     move-result-object v1
 
-    .line 859
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 861
     return-void
 .end method
 
 .method public onUpdate(Ljava/lang/String;Landroid/app/backup/BackupProgress;)V
     .locals 4
-    .param p1, "currentPackage"    # Ljava/lang/String;
-    .param p2, "backupProgress"    # Landroid/app/backup/BackupProgress;
 
-    .line 853
     iget-object v0, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/BackupManager$BackupObserverWrapper;->mHandler:Landroid/os/Handler;
 
-    .line 854
     invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
@@ -133,9 +112,7 @@
 
     move-result-object v1
 
-    .line 853
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 855
     return-void
 .end method

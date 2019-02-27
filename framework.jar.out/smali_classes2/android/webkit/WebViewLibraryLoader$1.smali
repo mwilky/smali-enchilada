@@ -25,7 +25,6 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 109
     iput-object p1, p0, Landroid/webkit/WebViewLibraryLoader$1;->val$abi:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 113
     :try_start_0
     invoke-static {}, Landroid/webkit/WebViewLibraryLoader;->access$000()Ljava/lang/String;
 
@@ -66,7 +64,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
     invoke-static {}, Landroid/webkit/WebViewFactory;->getUpdateService()Landroid/webkit/IWebViewUpdateService;
 
     move-result-object v0
@@ -75,15 +72,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 117
     goto :goto_0
 
-    .line 115
     :catch_0
     move-exception v0
 
-    .line 116
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-static {}, Landroid/webkit/WebViewLibraryLoader;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -108,8 +101,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

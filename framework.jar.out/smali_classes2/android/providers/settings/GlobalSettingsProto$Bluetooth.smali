@@ -55,9 +55,7 @@
 # direct methods
 .method public constructor <init>(Landroid/providers/settings/GlobalSettingsProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/providers/settings/GlobalSettingsProto;
 
-    .line 133
     iput-object p1, p0, Landroid/providers/settings/GlobalSettingsProto$Bluetooth;->this$0:Landroid/providers/settings/GlobalSettingsProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

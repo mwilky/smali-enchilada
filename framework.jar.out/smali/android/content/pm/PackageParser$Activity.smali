@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 7748
     new-instance v0, Landroid/content/pm/PackageParser$Activity$1;
 
     invoke-direct {v0}, Landroid/content/pm/PackageParser$Activity$1;-><init>()V
@@ -52,16 +51,11 @@
 
 .method public constructor <init>(Landroid/content/pm/PackageParser$ParseComponentArgs;Landroid/content/pm/ActivityInfo;)V
     .locals 2
-    .param p1, "args"    # Landroid/content/pm/PackageParser$ParseComponentArgs;
-    .param p2, "_info"    # Landroid/content/pm/ActivityInfo;
 
-    .line 7684
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParseComponentArgs;Landroid/content/pm/ComponentInfo;)V
 
-    .line 7685
     iput-object p2, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    .line 7686
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->owner:Landroid/content/pm/PackageParser$Package;
@@ -70,18 +64,14 @@
 
     iput-object v1, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 7687
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 7734
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/os/Parcel;)V
 
-    .line 7735
     const-class v0, Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -96,14 +86,12 @@
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    .line 7736
     invoke-virtual {p1}, Landroid/os/Parcel;->readBoolean()Z
 
     move-result v0
 
     iput-boolean v0, p0, Landroid/content/pm/PackageParser$Activity;->mHasMaxAspectRatio:Z
 
-    .line 7738
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -123,11 +111,8 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
-    .line 7739
-    .local v1, "aii":Landroid/content/pm/PackageParser$ActivityIntentInfo;
     iput-object p0, v1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
-    .line 7740
     invoke-virtual {v1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->getOrder()I
 
     move-result v2
@@ -140,11 +125,8 @@
 
     iput v2, p0, Landroid/content/pm/PackageParser$Activity;->order:I
 
-    .line 7741
-    .end local v1    # "aii":Landroid/content/pm/PackageParser$ActivityIntentInfo;
     goto :goto_0
 
-    .line 7743
     :cond_0
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
@@ -152,7 +134,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 7744
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
@@ -165,17 +146,13 @@
 
     iput-object v1, v0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
-    .line 7746
     :cond_1
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/content/pm/PackageParser$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/content/pm/PackageParser$1;
 
-    .line 7675
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Activity;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -183,10 +160,7 @@
 
 .method static synthetic access$200(Landroid/content/pm/PackageParser$Activity;F)V
     .locals 0
-    .param p0, "x0"    # Landroid/content/pm/PackageParser$Activity;
-    .param p1, "x1"    # F
 
-    .line 7675
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Activity;->setMaxAspectRatio(F)V
 
     return-void
@@ -194,9 +168,7 @@
 
 .method static synthetic access$300(Landroid/content/pm/PackageParser$Activity;)Z
     .locals 1
-    .param p0, "x0"    # Landroid/content/pm/PackageParser$Activity;
 
-    .line 7675
     invoke-direct {p0}, Landroid/content/pm/PackageParser$Activity;->hasMaxAspectRatio()Z
 
     move-result v0
@@ -207,7 +179,6 @@
 .method private hasMaxAspectRatio()Z
     .locals 1
 
-    .line 7680
     iget-boolean v0, p0, Landroid/content/pm/PackageParser$Activity;->mHasMaxAspectRatio:Z
 
     return v0
@@ -215,9 +186,7 @@
 
 .method private setMaxAspectRatio(F)V
     .locals 2
-    .param p1, "maxAspectRatio"    # F
 
-    .line 7696
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget v0, v0, Landroid/content/pm/ActivityInfo;->resizeMode:I
@@ -236,7 +205,6 @@
 
     goto :goto_0
 
-    .line 7702
     :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -250,22 +218,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 7704
     return-void
 
-    .line 7707
     :cond_1
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iput p1, v0, Landroid/content/pm/ActivityInfo;->maxAspectRatio:F
 
-    .line 7708
     iput-boolean v1, p0, Landroid/content/pm/PackageParser$Activity;->mHasMaxAspectRatio:Z
 
-    .line 7709
     return-void
 
-    .line 7699
     :cond_2
     :goto_0
     return-void
@@ -276,7 +239,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 7723
     const/4 v0, 0x0
 
     return v0
@@ -284,37 +246,29 @@
 
 .method public setPackageName(Ljava/lang/String;)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 7690
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
-    .line 7691
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iput-object p1, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 7692
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 7712
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 7713
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "Activity{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7714
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -325,20 +279,16 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7715
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 7716
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageParser$Activity;->appendComponentShortName(Ljava/lang/StringBuilder;)V
 
-    .line 7717
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 7718
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -348,24 +298,18 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 7728
     invoke-super {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 7729
     iget-object v0, p0, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     or-int/lit8 v1, p2, 0x2
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 7730
     iget-boolean v0, p0, Landroid/content/pm/PackageParser$Activity;->mHasMaxAspectRatio:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBoolean(Z)V
 
-    .line 7731
     return-void
 .end method

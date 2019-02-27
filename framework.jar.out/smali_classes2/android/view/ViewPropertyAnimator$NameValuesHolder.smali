@@ -25,22 +25,14 @@
 # direct methods
 .method constructor <init>(IFF)V
     .locals 0
-    .param p1, "nameConstant"    # I
-    .param p2, "fromValue"    # F
-    .param p3, "deltaValue"    # F
 
-    .line 239
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 240
     iput p1, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mNameConstant:I
 
-    .line 241
     iput p2, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mFromValue:F
 
-    .line 242
     iput p3, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mDeltaValue:F
 
-    .line 243
     return-void
 .end method

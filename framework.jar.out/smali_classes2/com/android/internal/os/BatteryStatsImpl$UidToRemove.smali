@@ -30,36 +30,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/os/BatteryStatsImpl;IIJ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl;
-    .param p2, "startUid"    # I
-    .param p3, "endUid"    # I
-    .param p4, "timestamp"    # J
 
-    .line 291
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 292
     iput p2, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->startUid:I
 
-    .line 293
     iput p3, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->endUid:I
 
-    .line 294
     iput-wide p4, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->timeAddedInQueue:J
 
-    .line 295
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/internal/os/BatteryStatsImpl;IJ)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl;
-    .param p2, "uid"    # I
-    .param p3, "timestamp"    # J
 
-    .line 287
     move-object v0, p0
 
     move-object v1, p1
@@ -72,7 +59,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;-><init>(Lcom/android/internal/os/BatteryStatsImpl;IIJ)V
 
-    .line 288
     return-void
 .end method
 
@@ -81,14 +67,12 @@
 .method remove()V
     .locals 3
 
-    .line 298
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->startUid:I
 
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->endUid:I
 
     if-ne v0, v1, :cond_2
 
-    .line 299
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuTimeReader:Lcom/android/internal/os/KernelUidCpuTimeReader;
@@ -97,7 +81,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/os/KernelUidCpuTimeReader;->removeUid(I)V
 
-    .line 300
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuFreqTimeReader:Lcom/android/internal/os/KernelUidCpuFreqTimeReader;
@@ -106,7 +89,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/os/KernelUidCpuFreqTimeReader;->removeUid(I)V
 
-    .line 301
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-static {v0}, Lcom/android/internal/os/BatteryStatsImpl;->access$000(Lcom/android/internal/os/BatteryStatsImpl;)Lcom/android/internal/os/BatteryStatsImpl$Constants;
@@ -117,7 +99,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 302
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuActiveTimeReader:Lcom/android/internal/os/KernelUidCpuActiveTimeReader;
@@ -126,7 +107,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/os/KernelUidCpuActiveTimeReader;->removeUid(I)V
 
-    .line 303
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuClusterTimeReader:Lcom/android/internal/os/KernelUidCpuClusterTimeReader;
@@ -135,7 +115,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/os/KernelUidCpuClusterTimeReader;->removeUid(I)V
 
-    .line 305
     :cond_0
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -143,7 +122,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 306
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelSingleUidTimeReader:Lcom/android/internal/os/KernelSingleUidTimeReader;
@@ -152,7 +130,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/os/KernelSingleUidTimeReader;->removeUid(I)V
 
-    .line 308
     :cond_1
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -160,7 +137,6 @@
 
     goto :goto_0
 
-    .line 309
     :cond_2
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->startUid:I
 
@@ -168,7 +144,6 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 310
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuFreqTimeReader:Lcom/android/internal/os/KernelUidCpuFreqTimeReader;
@@ -179,7 +154,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/KernelUidCpuFreqTimeReader;->removeUidsInRange(II)V
 
-    .line 311
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuTimeReader:Lcom/android/internal/os/KernelUidCpuTimeReader;
@@ -190,7 +164,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/KernelUidCpuTimeReader;->removeUidsInRange(II)V
 
-    .line 312
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-static {v0}, Lcom/android/internal/os/BatteryStatsImpl;->access$000(Lcom/android/internal/os/BatteryStatsImpl;)Lcom/android/internal/os/BatteryStatsImpl$Constants;
@@ -201,7 +174,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 313
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuActiveTimeReader:Lcom/android/internal/os/KernelUidCpuActiveTimeReader;
@@ -212,7 +184,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/KernelUidCpuActiveTimeReader;->removeUidsInRange(II)V
 
-    .line 314
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelUidCpuClusterTimeReader:Lcom/android/internal/os/KernelUidCpuClusterTimeReader;
@@ -223,7 +194,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/KernelUidCpuClusterTimeReader;->removeUidsInRange(II)V
 
-    .line 316
     :cond_3
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -231,7 +201,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 317
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mKernelSingleUidTimeReader:Lcom/android/internal/os/KernelSingleUidTimeReader;
@@ -242,7 +211,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/os/KernelSingleUidTimeReader;->removeUidsInRange(II)V
 
-    .line 320
     :cond_4
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$UidToRemove;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -250,7 +218,6 @@
 
     goto :goto_0
 
-    .line 322
     :cond_5
     const-string v0, "BatteryStatsImpl"
 
@@ -280,7 +247,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 324
     :goto_0
     return-void
 .end method

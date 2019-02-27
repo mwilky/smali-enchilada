@@ -191,7 +191,6 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    .line 147
     const-string v0, "default"
 
     const-string v1, "mms"
@@ -224,7 +223,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

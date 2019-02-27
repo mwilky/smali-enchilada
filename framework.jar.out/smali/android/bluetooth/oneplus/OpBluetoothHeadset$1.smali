@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/oneplus/OpBluetoothHeadset;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/bluetooth/oneplus/OpBluetoothHeadset;
 
-    .line 26
     iput-object p1, p0, Landroid/bluetooth/oneplus/OpBluetoothHeadset$1;->this$0:Landroid/bluetooth/oneplus/OpBluetoothHeadset;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,17 @@
 # virtual methods
 .method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
     .locals 3
-    .param p1, "profile"    # I
-    .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
-    .line 38
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_0
 
-    .line 39
     iget-object v0, p0, Landroid/bluetooth/oneplus/OpBluetoothHeadset$1;->this$0:Landroid/bluetooth/oneplus/OpBluetoothHeadset;
 
     invoke-static {v0, p2}, Landroid/bluetooth/oneplus/OpBluetoothHeadset;->access$002(Landroid/bluetooth/oneplus/OpBluetoothHeadset;Landroid/bluetooth/BluetoothProfile;)Landroid/bluetooth/BluetoothProfile;
 
     goto :goto_0
 
-    .line 41
     :cond_0
     const-string v0, "OpBluetoothHeadset"
 
@@ -73,21 +66,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     :goto_0
     return-void
 .end method
 
 .method public onServiceDisconnected(I)V
     .locals 3
-    .param p1, "profile"    # I
 
-    .line 30
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_0
 
-    .line 31
     iget-object v0, p0, Landroid/bluetooth/oneplus/OpBluetoothHeadset$1;->this$0:Landroid/bluetooth/oneplus/OpBluetoothHeadset;
 
     const/4 v1, 0x0
@@ -96,7 +85,6 @@
 
     goto :goto_0
 
-    .line 33
     :cond_0
     const-string v0, "OpBluetoothHeadset"
 
@@ -116,7 +104,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 34
     :goto_0
     return-void
 .end method

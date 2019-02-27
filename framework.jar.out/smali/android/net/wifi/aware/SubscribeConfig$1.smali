@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,39 +39,27 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/aware/SubscribeConfig;
     .locals 19
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 157
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v11
 
-    .line 158
-    .local v11, "serviceName":[B
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v12
 
-    .line 159
-    .local v12, "ssi":[B
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v13
 
-    .line 160
-    .local v13, "matchFilter":[B
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v14
 
-    .line 161
-    .local v14, "subscribeType":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
-    .line 162
-    .local v15, "ttlSec":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -90,15 +77,11 @@
     :cond_0
     move v6, v1
 
-    .line 163
-    .local v6, "enableTerminateNotification":Z
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
-    .line 164
-    .local v16, "minDistanceMm":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -112,15 +95,11 @@
     :cond_1
     move v7, v1
 
-    .line 165
-    .local v7, "minDistanceMmSet":Z
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
-    .line 166
-    .local v17, "maxDistanceMm":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -134,8 +113,6 @@
     :cond_2
     move v9, v1
 
-    .line 168
-    .local v9, "maxDistanceMmSet":Z
     :goto_2
     new-instance v18, Landroid/net/wifi/aware/SubscribeConfig;
 
@@ -163,7 +140,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 149
     invoke-virtual {p0, p1}, Landroid/net/wifi/aware/SubscribeConfig$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/aware/SubscribeConfig;
 
     move-result-object p1
@@ -173,9 +149,7 @@
 
 .method public newArray(I)[Landroid/net/wifi/aware/SubscribeConfig;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 152
     new-array v0, p1, [Landroid/net/wifi/aware/SubscribeConfig;
 
     return-object v0
@@ -184,7 +158,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 149
     invoke-virtual {p0, p1}, Landroid/net/wifi/aware/SubscribeConfig$1;->newArray(I)[Landroid/net/wifi/aware/SubscribeConfig;
 
     move-result-object p1

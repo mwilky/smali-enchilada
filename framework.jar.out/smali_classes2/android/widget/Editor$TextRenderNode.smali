@@ -25,12 +25,9 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 250
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 251
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroid/view/RenderNode;->create(Ljava/lang/String;Landroid/view/View;)Landroid/view/RenderNode;
@@ -39,15 +36,12 @@
 
     iput-object v0, p0, Landroid/widget/Editor$TextRenderNode;->renderNode:Landroid/view/RenderNode;
 
-    .line 252
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/Editor$TextRenderNode;->isDirty:Z
 
-    .line 253
     iput-boolean v0, p0, Landroid/widget/Editor$TextRenderNode;->needsToBeShifted:Z
 
-    .line 254
     return-void
 .end method
 
@@ -56,7 +50,6 @@
 .method needsRecord()Z
     .locals 1
 
-    .line 256
     iget-boolean v0, p0, Landroid/widget/Editor$TextRenderNode;->isDirty:Z
 
     if-nez v0, :cond_1

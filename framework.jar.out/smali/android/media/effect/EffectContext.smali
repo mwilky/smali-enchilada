@@ -23,42 +23,34 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/effect/EffectContext;->GL_STATE_FBO:I
 
-    .line 38
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/effect/EffectContext;->GL_STATE_PROGRAM:I
 
-    .line 39
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/media/effect/EffectContext;->GL_STATE_ARRAYBUFFER:I
 
-    .line 40
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/media/effect/EffectContext;->GL_STATE_COUNT:I
 
-    .line 46
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
-    .line 90
     new-instance v0, Landroid/filterfw/core/FilterContext;
 
     invoke-direct {v0}, Landroid/filterfw/core/FilterContext;-><init>()V
 
     iput-object v0, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
-    .line 91
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     new-instance v1, Landroid/filterfw/core/CachedFrameManager;
@@ -67,62 +59,48 @@
 
     invoke-virtual {v0, v1}, Landroid/filterfw/core/FilterContext;->setFrameManager(Landroid/filterfw/core/FrameManager;)V
 
-    .line 92
     new-instance v0, Landroid/media/effect/EffectFactory;
 
     invoke-direct {v0, p0}, Landroid/media/effect/EffectFactory;-><init>(Landroid/media/effect/EffectContext;)V
 
     iput-object v0, p0, Landroid/media/effect/EffectContext;->mFactory:Landroid/media/effect/EffectFactory;
 
-    .line 93
     return-void
 .end method
 
 .method public static createWithCurrentGlContext()Landroid/media/effect/EffectContext;
     .locals 1
 
-    .line 57
     new-instance v0, Landroid/media/effect/EffectContext;
 
     invoke-direct {v0}, Landroid/media/effect/EffectContext;-><init>()V
 
-    .line 58
-    .local v0, "result":Landroid/media/effect/EffectContext;
     invoke-direct {v0}, Landroid/media/effect/EffectContext;->initInCurrentGlContext()V
 
-    .line 59
     return-object v0
 .end method
 
 .method private initInCurrentGlContext()V
     .locals 2
 
-    .line 96
     invoke-static {}, Landroid/filterfw/core/GLEnvironment;->isAnyContextActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 100
     new-instance v0, Landroid/filterfw/core/GLEnvironment;
 
     invoke-direct {v0}, Landroid/filterfw/core/GLEnvironment;-><init>()V
 
-    .line 101
-    .local v0, "glEnvironment":Landroid/filterfw/core/GLEnvironment;
     invoke-virtual {v0}, Landroid/filterfw/core/GLEnvironment;->initWithCurrentContext()V
 
-    .line 102
     iget-object v1, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     invoke-virtual {v1, v0}, Landroid/filterfw/core/FilterContext;->initGLEnvironment(Landroid/filterfw/core/GLEnvironment;)V
 
-    .line 103
     return-void
 
-    .line 97
-    .end local v0    # "glEnvironment":Landroid/filterfw/core/GLEnvironment;
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -138,15 +116,12 @@
 .method final assertValidGLState()V
     .locals 3
 
-    .line 106
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     invoke-virtual {v0}, Landroid/filterfw/core/FilterContext;->getGLEnvironment()Landroid/filterfw/core/GLEnvironment;
 
     move-result-object v0
 
-    .line 107
-    .local v0, "glEnv":Landroid/filterfw/core/GLEnvironment;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/filterfw/core/GLEnvironment;->isContextActive()Z
@@ -157,11 +132,9 @@
 
     goto :goto_0
 
-    .line 114
     :cond_0
     return-void
 
-    .line 108
     :cond_1
     :goto_0
     invoke-static {}, Landroid/filterfw/core/GLEnvironment;->isAnyContextActive()Z
@@ -170,7 +143,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 109
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Applying effect in wrong GL context!"
@@ -179,7 +151,6 @@
 
     throw v1
 
-    .line 111
     :cond_2
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -193,7 +164,6 @@
 .method public getFactory()Landroid/media/effect/EffectFactory;
     .locals 1
 
-    .line 71
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mFactory:Landroid/media/effect/EffectFactory;
 
     return-object v0
@@ -202,24 +172,20 @@
 .method public release()V
     .locals 1
 
-    .line 85
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     invoke-virtual {v0}, Landroid/filterfw/core/FilterContext;->tearDown()V
 
-    .line 86
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/effect/EffectContext;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
-    .line 87
     return-void
 .end method
 
 .method final restoreGLState()V
     .locals 2
 
-    .line 123
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const/4 v1, 0x0
@@ -230,7 +196,6 @@
 
     invoke-static {v1, v0}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    .line 124
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const/4 v1, 0x1
@@ -239,7 +204,6 @@
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    .line 125
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const/4 v1, 0x2
@@ -250,14 +214,12 @@
 
     invoke-static {v1, v0}, Landroid/opengl/GLES20;->glBindBuffer(II)V
 
-    .line 126
     return-void
 .end method
 
 .method final saveGLState()V
     .locals 3
 
-    .line 117
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const v1, 0x8ca6
@@ -266,7 +228,6 @@
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glGetIntegerv(I[II)V
 
-    .line 118
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const v1, 0x8b8d
@@ -275,7 +236,6 @@
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glGetIntegerv(I[II)V
 
-    .line 119
     iget-object v0, p0, Landroid/media/effect/EffectContext;->mOldState:[I
 
     const v1, 0x8894
@@ -284,6 +244,5 @@
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glGetIntegerv(I[II)V
 
-    .line 120
     return-void
 .end method

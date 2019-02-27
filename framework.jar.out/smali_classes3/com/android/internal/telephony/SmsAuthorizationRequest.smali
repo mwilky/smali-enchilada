@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 90
     new-instance v0, Lcom/android/internal/telephony/SmsAuthorizationRequest$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/SmsAuthorizationRequest$1;-><init>()V
@@ -46,12 +45,9 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -62,65 +58,48 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->service:Lcom/android/internal/telephony/ISmsSecurityService;
 
-    .line 58
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->token:Landroid/os/IBinder;
 
-    .line 59
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->packageName:Ljava/lang/String;
 
-    .line 60
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->destinationAddress:Ljava/lang/String;
 
-    .line 61
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->message:Ljava/lang/String;
 
-    .line 62
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/internal/telephony/ISmsSecurityService;Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "service"    # Lcom/android/internal/telephony/ISmsSecurityService;
-    .param p2, "binderToken"    # Landroid/os/IBinder;
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "destinationAddress"    # Ljava/lang/String;
-    .param p5, "message"    # Ljava/lang/String;
 
-    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     iput-object p1, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->service:Lcom/android/internal/telephony/ISmsSecurityService;
 
-    .line 70
     iput-object p2, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->token:Landroid/os/IBinder;
 
-    .line 71
     iput-object p3, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->packageName:Ljava/lang/String;
 
-    .line 72
     iput-object p4, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->destinationAddress:Ljava/lang/String;
 
-    .line 73
     iput-object p5, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->message:Ljava/lang/String;
 
-    .line 74
     return-void
 .end method
 
@@ -134,21 +113,18 @@
         }
     .end annotation
 
-    .line 104
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->service:Lcom/android/internal/telephony/ISmsSecurityService;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, p0, v1}, Lcom/android/internal/telephony/ISmsSecurityService;->sendResponse(Lcom/android/internal/telephony/SmsAuthorizationRequest;Z)Z
 
-    .line 105
     return-void
 .end method
 
 .method public describeContents()I
     .locals 1
 
-    .line 87
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +133,6 @@
 .method public getToken()Landroid/os/IBinder;
     .locals 1
 
-    .line 112
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->token:Landroid/os/IBinder;
 
     return-object v0
@@ -171,21 +146,18 @@
         }
     .end annotation
 
-    .line 108
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->service:Lcom/android/internal/telephony/ISmsSecurityService;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Lcom/android/internal/telephony/ISmsSecurityService;->sendResponse(Lcom/android/internal/telephony/SmsAuthorizationRequest;Z)Z
 
-    .line 109
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 117
     const-string v0, "[%s] (%s) # %s"
 
     const/4 v1, 0x3
@@ -219,10 +191,7 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 78
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->service:Lcom/android/internal/telephony/ISmsSecurityService;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/ISmsSecurityService;->asBinder()Landroid/os/IBinder;
@@ -231,26 +200,21 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 79
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->token:Landroid/os/IBinder;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 80
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 81
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->destinationAddress:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 82
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAuthorizationRequest;->message:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 83
     return-void
 .end method

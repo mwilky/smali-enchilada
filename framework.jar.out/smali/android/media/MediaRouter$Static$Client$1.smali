@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaRouter$Static$Client;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/media/MediaRouter$Static$Client;
 
-    .line 591
     iput-object p1, p0, Landroid/media/MediaRouter$Static$Client$1;->this$1:Landroid/media/MediaRouter$Static$Client;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 594
     iget-object v0, p0, Landroid/media/MediaRouter$Static$Client$1;->this$1:Landroid/media/MediaRouter$Static$Client;
 
     iget-object v1, p0, Landroid/media/MediaRouter$Static$Client$1;->this$1:Landroid/media/MediaRouter$Static$Client;
@@ -50,14 +47,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 595
     iget-object v0, p0, Landroid/media/MediaRouter$Static$Client$1;->this$1:Landroid/media/MediaRouter$Static$Client;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static$Client;->this$0:Landroid/media/MediaRouter$Static;
 
     invoke-virtual {v0}, Landroid/media/MediaRouter$Static;->updateClientState()V
 
-    .line 597
     :cond_0
     return-void
 .end method

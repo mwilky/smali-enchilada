@@ -36,10 +36,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/media/MediaBrowserService;Ljava/lang/Object;Landroid/service/media/MediaBrowserService$ConnectionRecord;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/media/MediaBrowserService;
-    .param p2, "debug"    # Ljava/lang/Object;
 
-    .line 673
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$3;->this$0:Landroid/service/media/MediaBrowserService;
 
     iput-object p3, p0, Landroid/service/media/MediaBrowserService$3;->val$connection:Landroid/service/media/MediaBrowserService$ConnectionRecord;
@@ -58,7 +55,6 @@
 .method bridge synthetic onResultSent(Ljava/lang/Object;I)V
     .locals 0
 
-    .line 673
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Landroid/service/media/MediaBrowserService$3;->onResultSent(Ljava/util/List;I)V
@@ -68,7 +64,6 @@
 
 .method onResultSent(Ljava/util/List;I)V
     .locals 6
-    .param p2, "flag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,8 +73,6 @@
         }
     .end annotation
 
-    .line 676
-    .local p1, "list":Ljava/util/List;, "Ljava/util/List<Landroid/media/browse/MediaBrowser$MediaItem;>;"
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$3;->this$0:Landroid/service/media/MediaBrowserService;
 
     invoke-static {v0}, Landroid/service/media/MediaBrowserService;->access$000(Landroid/service/media/MediaBrowserService;)Landroid/util/ArrayMap;
@@ -102,16 +95,13 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 681
     return-void
 
-    .line 685
     :cond_0
     and-int/lit8 v0, p2, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 686
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$3;->this$0:Landroid/service/media/MediaBrowserService;
 
     iget-object v1, p0, Landroid/service/media/MediaBrowserService$3;->val$options:Landroid/os/Bundle;
@@ -125,8 +115,6 @@
     :cond_1
     move-object v0, p1
 
-    .line 688
-    .local v0, "filteredList":Ljava/util/List;, "Ljava/util/List<Landroid/media/browse/MediaBrowser$MediaItem;>;"
     :goto_0
     if-nez v0, :cond_2
 
@@ -139,8 +127,6 @@
 
     invoke-direct {v1, v0}, Landroid/content/pm/ParceledListSlice;-><init>(Ljava/util/List;)V
 
-    .line 690
-    .local v1, "pls":Landroid/content/pm/ParceledListSlice;, "Landroid/content/pm/ParceledListSlice<Landroid/media/browse/MediaBrowser$MediaItem;>;"
     :goto_1
     :try_start_0
     iget-object v2, p0, Landroid/service/media/MediaBrowserService$3;->val$connection:Landroid/service/media/MediaBrowserService$ConnectionRecord;
@@ -155,15 +141,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 695
     goto :goto_2
 
-    .line 691
     :catch_0
     move-exception v2
 
-    .line 693
-    .local v2, "ex":Landroid/os/RemoteException;
     const-string v3, "MediaBrowserService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -194,8 +176,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 696
-    .end local v2    # "ex":Landroid/os/RemoteException;
     :goto_2
     return-void
 .end method

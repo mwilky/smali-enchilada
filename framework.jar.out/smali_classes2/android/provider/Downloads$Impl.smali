@@ -217,44 +217,36 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 91
     const-string v0, "content://downloads/my_downloads"
 
-    .line 92
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Downloads$Impl;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 98
     const-string v0, "content://downloads/all_downloads"
 
-    .line 99
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Downloads$Impl;->ALL_DOWNLOADS_CONTENT_URI:Landroid/net/Uri;
 
-    .line 108
     const-string v0, "content://downloads/public_downloads"
 
-    .line 109
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Downloads$Impl;->PUBLICLY_ACCESSIBLE_DOWNLOADS_URI:Landroid/net/Uri;
 
-    .line 108
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -262,9 +254,7 @@
 
 .method public static isNotificationToBeDisplayed(I)Z
     .locals 2
-    .param p0, "visibility"    # I
 
-    .line 560
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_1
@@ -287,9 +277,7 @@
 
 .method public static isStatusClientError(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 543
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_0
@@ -311,9 +299,7 @@
 
 .method public static isStatusCompleted(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 569
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_0
@@ -345,9 +331,7 @@
 
 .method public static isStatusError(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 536
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_0
@@ -369,9 +353,7 @@
 
 .method public static isStatusInformational(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 522
     const/16 v0, 0x64
 
     if-lt p0, v0, :cond_0
@@ -393,9 +375,7 @@
 
 .method public static isStatusServerError(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 550
     const/16 v0, 0x1f4
 
     if-lt p0, v0, :cond_0
@@ -417,9 +397,7 @@
 
 .method public static isStatusSuccess(I)Z
     .locals 1
-    .param p0, "status"    # I
 
-    .line 529
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_0
@@ -441,9 +419,7 @@
 
 .method public static statusToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "status"    # I
 
-    .line 733
     const/16 v0, 0xbe
 
     if-eq p0, v0, :cond_2
@@ -464,152 +440,127 @@
 
     packed-switch p0, :pswitch_data_3
 
-    .line 758
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 757
     :pswitch_0
     const-string v0, "BLOCKED"
 
     return-object v0
 
-    .line 756
     :pswitch_1
     const-string v0, "TOO_MANY_REDIRECTS"
 
     return-object v0
 
-    .line 755
     :pswitch_2
     const-string v0, "HTTP_EXCEPTION"
 
     return-object v0
 
-    .line 754
     :pswitch_3
     const-string v0, "HTTP_DATA_ERROR"
 
     return-object v0
 
-    .line 753
     :pswitch_4
     const-string v0, "UNHANDLED_HTTP_CODE"
 
     return-object v0
 
-    .line 752
     :pswitch_5
     const-string v0, "UNHANDLED_REDIRECT"
 
     return-object v0
 
-    .line 751
     :pswitch_6
     const-string v0, "FILE_ERROR"
 
     return-object v0
 
-    .line 750
     :pswitch_7
     const-string v0, "UNKNOWN_ERROR"
 
     return-object v0
 
-    .line 749
     :pswitch_8
     const-string v0, "CANCELED"
 
     return-object v0
 
-    .line 748
     :pswitch_9
     const-string v0, "CANNOT_RESUME"
 
     return-object v0
 
-    .line 747
     :pswitch_a
     const-string v0, "FILE_ALREADY_EXISTS_ERROR"
 
     return-object v0
 
-    .line 746
     :pswitch_b
     const-string v0, "PRECONDITION_FAILED"
 
     return-object v0
 
-    .line 745
     :pswitch_c
     const-string v0, "LENGTH_REQUIRED"
 
     return-object v0
 
-    .line 742
     :pswitch_d
     const-string v0, "SUCCESS"
 
     return-object v0
 
-    .line 741
     :pswitch_e
     const-string v0, "DEVICE_NOT_FOUND_ERROR"
 
     return-object v0
 
-    .line 740
     :pswitch_f
     const-string v0, "INSUFFICIENT_SPACE_ERROR"
 
     return-object v0
 
-    .line 739
     :pswitch_10
     const-string v0, "QUEUED_FOR_WIFI"
 
     return-object v0
 
-    .line 738
     :pswitch_11
     const-string v0, "WAITING_FOR_NETWORK"
 
     return-object v0
 
-    .line 737
     :pswitch_12
     const-string v0, "WAITING_TO_RETRY"
 
     return-object v0
 
-    .line 736
     :pswitch_13
     const-string v0, "PAUSED_BY_APP"
 
     return-object v0
 
-    .line 735
     :pswitch_14
     const-string v0, "RUNNING"
 
     return-object v0
 
-    .line 744
     :cond_0
     const-string v0, "NOT_ACCEPTABLE"
 
     return-object v0
 
-    .line 743
     :cond_1
     const-string v0, "BAD_REQUEST"
 
     return-object v0
 
-    .line 734
     :cond_2
     const-string v0, "PENDING"
 

@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport;
 
-    .line 67
     iput-object p1, p0, Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport$2;->this$1:Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport;
 
     iput p2, p0, Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport$2;->val$status:I
@@ -51,19 +49,16 @@
 # virtual methods
 .method public execute(Landroid/location/GnssMeasurementsEvent$Callback;)V
     .locals 1
-    .param p1, "callback"    # Landroid/location/GnssMeasurementsEvent$Callback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 71
     iget v0, p0, Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport$2;->val$status:I
 
     invoke-virtual {p1, v0}, Landroid/location/GnssMeasurementsEvent$Callback;->onStatusChanged(I)V
 
-    .line 72
     return-void
 .end method
 
@@ -75,7 +70,6 @@
         }
     .end annotation
 
-    .line 67
     check-cast p1, Landroid/location/GnssMeasurementsEvent$Callback;
 
     invoke-virtual {p0, p1}, Landroid/location/GnssMeasurementCallbackTransport$ListenerTransport$2;->execute(Landroid/location/GnssMeasurementsEvent$Callback;)V

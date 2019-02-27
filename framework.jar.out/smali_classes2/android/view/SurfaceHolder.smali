@@ -57,7 +57,6 @@
 .method public lockHardwareCanvas()Landroid/graphics/Canvas;
     .locals 2
 
-    .line 276
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This SurfaceHolder doesn\'t support lockHardwareCanvas"

@@ -41,15 +41,11 @@
 # direct methods
 .method private constructor <init>(Landroid/widget/Magnifier;)V
     .locals 3
-    .param p1, "magnifier"    # Landroid/widget/Magnifier;
 
-    .line 4374
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4375
     iput-object p1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
-    .line 4377
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -62,14 +58,12 @@
 
     iput-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
-    .line 4378
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x64
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 4379
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/view/animation/LinearInterpolator;
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 4380
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/widget/-$$Lambda$Editor$MagnifierMotionAnimator$E-RaelOMgCHAzvKgSSZE-hDYeIg;
@@ -87,7 +80,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 4388
     return-void
 
     nop
@@ -101,10 +93,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/Magnifier;Landroid/widget/Editor$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/Magnifier;
-    .param p2, "x1"    # Landroid/widget/Editor$1;
 
-    .line 4354
     invoke-direct {p0, p1}, Landroid/widget/Editor$MagnifierMotionAnimator;-><init>(Landroid/widget/Magnifier;)V
 
     return-void
@@ -112,9 +101,7 @@
 
 .method static synthetic access$100(Landroid/widget/Editor$MagnifierMotionAnimator;)V
     .locals 0
-    .param p0, "x0"    # Landroid/widget/Editor$MagnifierMotionAnimator;
 
-    .line 4354
     invoke-direct {p0}, Landroid/widget/Editor$MagnifierMotionAnimator;->update()V
 
     return-void
@@ -122,9 +109,7 @@
 
 .method static synthetic access$5400(Landroid/widget/Editor$MagnifierMotionAnimator;)Landroid/widget/Magnifier;
     .locals 1
-    .param p0, "x0"    # Landroid/widget/Editor$MagnifierMotionAnimator;
 
-    .line 4354
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
     return-object v0
@@ -132,11 +117,7 @@
 
 .method static synthetic access$6100(Landroid/widget/Editor$MagnifierMotionAnimator;FF)V
     .locals 0
-    .param p0, "x0"    # Landroid/widget/Editor$MagnifierMotionAnimator;
-    .param p1, "x1"    # F
-    .param p2, "x2"    # F
 
-    .line 4354
     invoke-direct {p0, p1, p2}, Landroid/widget/Editor$MagnifierMotionAnimator;->show(FF)V
 
     return-void
@@ -144,9 +125,7 @@
 
 .method static synthetic access$6200(Landroid/widget/Editor$MagnifierMotionAnimator;)V
     .locals 0
-    .param p0, "x0"    # Landroid/widget/Editor$MagnifierMotionAnimator;
 
-    .line 4354
     invoke-direct {p0}, Landroid/widget/Editor$MagnifierMotionAnimator;->dismiss()V
 
     return-void
@@ -155,30 +134,24 @@
 .method private dismiss()V
     .locals 1
 
-    .line 4430
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
     invoke-virtual {v0}, Landroid/widget/Magnifier;->dismiss()V
 
-    .line 4431
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 4432
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifierIsShowing:Z
 
-    .line 4433
     return-void
 .end method
 
 .method public static synthetic lambda$new$0(Landroid/widget/Editor$MagnifierMotionAnimator;Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 4382
     iget v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartX:F
 
     iget v1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastX:F
@@ -187,7 +160,6 @@
 
     sub-float/2addr v1, v2
 
-    .line 4383
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v2
@@ -198,7 +170,6 @@
 
     iput v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationCurrentX:F
 
-    .line 4384
     iget v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartY:F
 
     iget v1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastY:F
@@ -207,7 +178,6 @@
 
     sub-float/2addr v1, v2
 
-    .line 4385
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v2
@@ -218,7 +188,6 @@
 
     iput v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationCurrentY:F
 
-    .line 4386
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
     iget v1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationCurrentX:F
@@ -227,16 +196,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/Magnifier;->show(FF)V
 
-    .line 4387
     return-void
 .end method
 
 .method private show(FF)V
     .locals 3
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
-    .line 4397
     iget-boolean v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifierIsShowing:Z
 
     const/4 v1, 0x1
@@ -256,12 +221,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 4399
-    .local v0, "startNewAnimation":Z
     :goto_0
     if-eqz v0, :cond_2
 
-    .line 4400
     iget-object v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->isRunning()Z
@@ -270,35 +232,29 @@
 
     if-eqz v2, :cond_1
 
-    .line 4401
     iget-object v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 4402
     iget v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationCurrentX:F
 
     iput v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartX:F
 
-    .line 4403
     iget v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationCurrentY:F
 
     iput v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartY:F
 
     goto :goto_1
 
-    .line 4405
     :cond_1
     iget v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastX:F
 
     iput v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartX:F
 
-    .line 4406
     iget v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastY:F
 
     iput v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimationStartY:F
 
-    .line 4408
     :goto_1
     iget-object v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
@@ -306,7 +262,6 @@
 
     goto :goto_2
 
-    .line 4410
     :cond_2
     iget-object v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
@@ -316,34 +271,27 @@
 
     if-nez v2, :cond_3
 
-    .line 4411
     iget-object v2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
     invoke-virtual {v2, p1, p2}, Landroid/widget/Magnifier;->show(FF)V
 
-    .line 4414
     :cond_3
     :goto_2
     iput p1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastX:F
 
-    .line 4415
     iput p2, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mLastY:F
 
-    .line 4416
     iput-boolean v1, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifierIsShowing:Z
 
-    .line 4417
     return-void
 .end method
 
 .method private update()V
     .locals 1
 
-    .line 4423
     iget-object v0, p0, Landroid/widget/Editor$MagnifierMotionAnimator;->mMagnifier:Landroid/widget/Magnifier;
 
     invoke-virtual {v0}, Landroid/widget/Magnifier;->update()V
 
-    .line 4424
     return-void
 .end method

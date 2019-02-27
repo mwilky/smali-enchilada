@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 33
 
-    .line 931
     const-string v0, "RCL"
 
     const-string v1, "BS"
@@ -75,7 +74,6 @@
 
     sput-object v0, Landroid/media/Cea608CCParser$CCData;->mCtrlCodeMap:[Ljava/lang/String;
 
-    .line 938
     const-string/jumbo v1, "\u00ae"
 
     const-string/jumbo v2, "\u00b0"
@@ -114,7 +112,6 @@
 
     sput-object v0, Landroid/media/Cea608CCParser$CCData;->mSpecialCharMap:[Ljava/lang/String;
 
-    .line 957
     const-string/jumbo v1, "\u00c1"
 
     const-string/jumbo v2, "\u00c9"
@@ -185,7 +182,6 @@
 
     sput-object v0, Landroid/media/Cea608CCParser$CCData;->mSpanishCharMap:[Ljava/lang/String;
 
-    .line 994
     const-string/jumbo v1, "\u00c3"
 
     const-string/jumbo v2, "\u00e3"
@@ -261,31 +257,21 @@
 
 .method constructor <init>(BBB)V
     .locals 0
-    .param p1, "type"    # B
-    .param p2, "data1"    # B
-    .param p3, "data2"    # B
 
-    .line 1044
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1045
     iput-byte p1, p0, Landroid/media/Cea608CCParser$CCData;->mType:B
 
-    .line 1046
     iput-byte p2, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
-    .line 1047
     iput-byte p3, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
-    .line 1048
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/media/Cea608CCParser$CCData;)Z
     .locals 1
-    .param p0, "x0"    # Landroid/media/Cea608CCParser$CCData;
 
-    .line 926
     invoke-direct {p0}, Landroid/media/Cea608CCParser$CCData;->isExtendedChar()Z
 
     move-result v0
@@ -295,9 +281,7 @@
 
 .method private ctrlCodeToString(I)Ljava/lang/String;
     .locals 2
-    .param p1, "ctrlCode"    # I
 
-    .line 1104
     sget-object v0, Landroid/media/Cea608CCParser$CCData;->mCtrlCodeMap:[Ljava/lang/String;
 
     add-int/lit8 v1, p1, -0x20
@@ -309,26 +293,20 @@
 
 .method static fromByteArray([B)[Landroid/media/Cea608CCParser$CCData;
     .locals 6
-    .param p0, "data"    # [B
 
-    .line 1032
     array-length v0, p0
 
     div-int/lit8 v0, v0, 0x3
 
     new-array v0, v0, [Landroid/media/Cea608CCParser$CCData;
 
-    .line 1034
-    .local v0, "ccData":[Landroid/media/Cea608CCParser$CCData;
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_0
 
-    .line 1035
     new-instance v2, Landroid/media/Cea608CCParser$CCData;
 
     mul-int/lit8 v3, v1, 0x3
@@ -351,22 +329,17 @@
 
     aput-object v2, v0, v1
 
-    .line 1034
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1041
-    .end local v1    # "i":I
     :cond_0
     return-object v0
 .end method
 
 .method private getBasicChar(B)C
     .locals 1
-    .param p1, "data"    # B
 
-    .line 1125
     const/16 v0, 0x2a
 
     if-eq p1, v0, :cond_1
@@ -379,75 +352,61 @@
 
     packed-switch p1, :pswitch_data_1
 
-    .line 1136
     int-to-char v0, p1
 
     goto :goto_0
 
-    .line 1135
     :pswitch_0
     const/16 v0, 0x2588
 
     goto :goto_0
 
-    .line 1134
     :pswitch_1
     const/16 v0, 0xf1
 
     goto :goto_0
 
-    .line 1133
     :pswitch_2
     const/16 v0, 0xd1
 
     goto :goto_0
 
-    .line 1132
     :pswitch_3
     const/16 v0, 0xf7
 
     goto :goto_0
 
-    .line 1131
     :pswitch_4
     const/16 v0, 0xe7
 
     goto :goto_0
 
-    .line 1130
     :pswitch_5
     const/16 v0, 0xfa
 
     goto :goto_0
 
-    .line 1129
     :pswitch_6
     const/16 v0, 0xf3
 
     goto :goto_0
 
-    .line 1128
     :pswitch_7
     const/16 v0, 0xed
 
     goto :goto_0
 
-    .line 1127
     :cond_0
     const/16 v0, 0xe9
 
     goto :goto_0
 
-    .line 1126
     :cond_1
     const/16 v0, 0xe1
 
-    .line 1136
-    .local v0, "c":C
     :goto_0
     nop
 
-    .line 1138
     return v0
 
     nop
@@ -472,7 +431,6 @@
 .method private getBasicChars()Ljava/lang/String;
     .locals 4
 
-    .line 1142
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x20
@@ -485,15 +443,12 @@
 
     if-gt v0, v2, :cond_1
 
-    .line 1143
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/4 v3, 0x2
 
     invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1144
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-byte v3, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     invoke-direct {p0, v3}, Landroid/media/Cea608CCParser$CCData;->getBasicChar(B)C
@@ -502,7 +457,6 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1145
     iget-byte v3, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
     if-lt v3, v1, :cond_0
@@ -511,7 +465,6 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 1146
     iget-byte v1, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
     invoke-direct {p0, v1}, Landroid/media/Cea608CCParser$CCData;->getBasicChar(B)C
@@ -520,7 +473,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1148
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -528,8 +480,6 @@
 
     return-object v1
 
-    .line 1151
-    .end local v0    # "builder":Ljava/lang/StringBuilder;
     :cond_1
     const/4 v0, 0x0
 
@@ -539,7 +489,6 @@
 .method private getExtendedChar()Ljava/lang/String;
     .locals 4
 
-    .line 1164
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x3f
@@ -565,7 +514,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 1167
     sget-object v0, Landroid/media/Cea608CCParser$CCData;->mSpanishCharMap:[Ljava/lang/String;
 
     iget-byte v1, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
@@ -576,7 +524,6 @@
 
     return-object v0
 
-    .line 1168
     :cond_1
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
@@ -599,7 +546,6 @@
 
     if-gt v0, v1, :cond_3
 
-    .line 1171
     sget-object v0, Landroid/media/Cea608CCParser$CCData;->mProtugueseCharMap:[Ljava/lang/String;
 
     iget-byte v1, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
@@ -610,7 +556,6 @@
 
     return-object v0
 
-    .line 1174
     :cond_3
     const/4 v0, 0x0
 
@@ -620,7 +565,6 @@
 .method private getSpecialChar()Ljava/lang/String;
     .locals 3
 
-    .line 1155
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x11
@@ -646,7 +590,6 @@
 
     if-gt v0, v2, :cond_1
 
-    .line 1157
     sget-object v0, Landroid/media/Cea608CCParser$CCData;->mSpecialCharMap:[Ljava/lang/String;
 
     iget-byte v2, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
@@ -657,7 +600,6 @@
 
     return-object v0
 
-    .line 1160
     :cond_1
     const/4 v0, 0x0
 
@@ -667,7 +609,6 @@
 .method private isBasicChar()Z
     .locals 2
 
-    .line 1108
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x20
@@ -694,7 +635,6 @@
 .method private isExtendedChar()Z
     .locals 2
 
-    .line 1117
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x12
@@ -746,7 +686,6 @@
 .method private isSpecialChar()Z
     .locals 2
 
-    .line 1112
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x11
@@ -788,7 +727,6 @@
 .method getCtrlCode()I
     .locals 2
 
-    .line 1051
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x14
@@ -814,12 +752,10 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 1053
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
     return v0
 
-    .line 1055
     :cond_1
     const/4 v0, -0x1
 
@@ -829,29 +765,22 @@
 .method getDisplayText()Ljava/lang/String;
     .locals 1
 
-    .line 1090
     invoke-direct {p0}, Landroid/media/Cea608CCParser$CCData;->getBasicChars()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1092
-    .local v0, "str":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 1093
     invoke-direct {p0}, Landroid/media/Cea608CCParser$CCData;->getSpecialChar()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1095
     if-nez v0, :cond_0
 
-    .line 1096
     invoke-direct {p0}, Landroid/media/Cea608CCParser$CCData;->getExtendedChar()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1100
     :cond_0
     return-object v0
 .end method
@@ -859,7 +788,6 @@
 .method getMidRow()Landroid/media/Cea608CCParser$StyleCode;
     .locals 2
 
-    .line 1061
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x11
@@ -885,7 +813,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 1063
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
     invoke-static {v0}, Landroid/media/Cea608CCParser$StyleCode;->fromByte(B)Landroid/media/Cea608CCParser$StyleCode;
@@ -894,7 +821,6 @@
 
     return-object v0
 
-    .line 1065
     :cond_1
     const/4 v0, 0x0
 
@@ -904,7 +830,6 @@
 .method getPAC()Landroid/media/Cea608CCParser$PAC;
     .locals 2
 
-    .line 1069
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     and-int/lit8 v0, v0, 0x70
@@ -933,7 +858,6 @@
 
     if-nez v0, :cond_1
 
-    .line 1072
     :cond_0
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
@@ -945,7 +869,6 @@
 
     return-object v0
 
-    .line 1074
     :cond_1
     const/4 v0, 0x0
 
@@ -955,7 +878,6 @@
 .method getTabOffset()I
     .locals 2
 
-    .line 1078
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x17
@@ -981,14 +903,12 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 1080
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData2:B
 
     and-int/lit8 v0, v0, 0x3
 
     return v0
 
-    .line 1082
     :cond_1
     const/4 v0, 0x0
 
@@ -998,7 +918,6 @@
 .method isDisplayableChar()Z
     .locals 1
 
-    .line 1086
     invoke-direct {p0}, Landroid/media/Cea608CCParser$CCData;->isBasicChar()Z
 
     move-result v0
@@ -1035,7 +954,6 @@
 .method public toString()Ljava/lang/String;
     .locals 11
 
-    .line 1181
     iget-byte v0, p0, Landroid/media/Cea608CCParser$CCData;->mData1:B
 
     const/16 v1, 0x10
@@ -1054,7 +972,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1183
     const-string v0, "[%d]Null: %02x %02x"
 
     new-array v1, v2, [Ljava/lang/Object;
@@ -1089,19 +1006,15 @@
 
     return-object v0
 
-    .line 1186
     :cond_0
     invoke-virtual {p0}, Landroid/media/Cea608CCParser$CCData;->getCtrlCode()I
 
     move-result v0
 
-    .line 1187
-    .local v0, "ctrlCode":I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 1188
     const-string v1, "[%d]%s"
 
     new-array v2, v3, [Ljava/lang/Object;
@@ -1126,17 +1039,13 @@
 
     return-object v1
 
-    .line 1191
     :cond_1
     invoke-virtual {p0}, Landroid/media/Cea608CCParser$CCData;->getTabOffset()I
 
     move-result v1
 
-    .line 1192
-    .local v1, "tabOffset":I
     if-lez v1, :cond_2
 
-    .line 1193
     const-string v2, "[%d]Tab%d"
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -1161,17 +1070,13 @@
 
     return-object v2
 
-    .line 1196
     :cond_2
     invoke-virtual {p0}, Landroid/media/Cea608CCParser$CCData;->getPAC()Landroid/media/Cea608CCParser$PAC;
 
     move-result-object v6
 
-    .line 1197
-    .local v6, "pac":Landroid/media/Cea608CCParser$PAC;
     if-eqz v6, :cond_3
 
-    .line 1198
     const-string v2, "[%d]PAC: %s"
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -1196,17 +1101,13 @@
 
     return-object v2
 
-    .line 1201
     :cond_3
     invoke-virtual {p0}, Landroid/media/Cea608CCParser$CCData;->getMidRow()Landroid/media/Cea608CCParser$StyleCode;
 
     move-result-object v7
 
-    .line 1202
-    .local v7, "m":Landroid/media/Cea608CCParser$StyleCode;
     if-eqz v7, :cond_4
 
-    .line 1203
     const-string v2, "[%d]Mid-row: %s"
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -1231,7 +1132,6 @@
 
     return-object v2
 
-    .line 1206
     :cond_4
     invoke-virtual {p0}, Landroid/media/Cea608CCParser$CCData;->isDisplayableChar()Z
 
@@ -1239,7 +1139,6 @@
 
     if-eqz v8, :cond_5
 
-    .line 1207
     const-string v8, "[%d]Displayable: %s (%02x %02x)"
 
     const/4 v9, 0x4
@@ -1248,7 +1147,6 @@
 
     iget-byte v10, p0, Landroid/media/Cea608CCParser$CCData;->mType:B
 
-    .line 1208
     invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v10
@@ -1277,14 +1175,12 @@
 
     aput-object v3, v9, v2
 
-    .line 1207
     invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 1211
     :cond_5
     const-string v8, "[%d]Invalid: %02x %02x"
 

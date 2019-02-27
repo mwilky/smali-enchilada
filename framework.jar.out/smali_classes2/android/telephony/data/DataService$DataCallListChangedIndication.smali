@@ -31,7 +31,6 @@
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroid/telephony/data/IDataServiceCallback;)V
     .locals 0
-    .param p2, "callback"    # Landroid/telephony/data/IDataServiceCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,16 +42,11 @@
         }
     .end annotation
 
-    .line 319
-    .local p1, "dataCallList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/data/DataCallResponse;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 320
     iput-object p1, p0, Landroid/telephony/data/DataService$DataCallListChangedIndication;->dataCallList:Ljava/util/List;
 
-    .line 321
     iput-object p2, p0, Landroid/telephony/data/DataService$DataCallListChangedIndication;->callback:Landroid/telephony/data/IDataServiceCallback;
 
-    .line 322
     return-void
 .end method

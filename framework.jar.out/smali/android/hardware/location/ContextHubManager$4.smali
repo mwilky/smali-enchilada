@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/location/ContextHubManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/location/ContextHubManager;
 
-    .line 725
     iput-object p1, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
     invoke-direct {p0}, Landroid/hardware/location/IContextHubCallback$Stub;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onMessageReceipt(IILandroid/hardware/location/ContextHubMessage;)V
     .locals 8
-    .param p1, "hubId"    # I
-    .param p2, "nanoAppId"    # I
-    .param p3, "message"    # Landroid/hardware/location/ContextHubMessage;
 
-    .line 729
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
     invoke-static {v0}, Landroid/hardware/location/ContextHubManager;->access$000(Landroid/hardware/location/ContextHubManager;)Landroid/hardware/location/ContextHubManager$Callback;
@@ -48,10 +42,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 730
     monitor-enter p0
 
-    .line 731
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
@@ -59,8 +51,6 @@
 
     move-result-object v3
 
-    .line 732
-    .local v3, "callback":Landroid/hardware/location/ContextHubManager$Callback;
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
     invoke-static {v0}, Landroid/hardware/location/ContextHubManager;->access$100(Landroid/hardware/location/ContextHubManager;)Landroid/os/Handler;
@@ -69,7 +59,6 @@
 
     if-nez v0, :cond_0
 
-    .line 733
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
@@ -89,8 +78,6 @@
 
     move-result-object v0
 
-    .line 734
-    .local v0, "handler":Landroid/os/Handler;
     :goto_0
     new-instance v7, Landroid/hardware/location/ContextHubManager$4$1;
 
@@ -108,9 +95,6 @@
 
     invoke-virtual {v0, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 740
-    .end local v0    # "handler":Landroid/os/Handler;
-    .end local v3    # "callback":Landroid/hardware/location/ContextHubManager$Callback;
     monitor-exit p0
 
     goto :goto_1
@@ -124,7 +108,6 @@
 
     throw v0
 
-    .line 741
     :cond_1
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
@@ -134,10 +117,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 744
     monitor-enter p0
 
-    .line 745
     :try_start_1
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4;->this$0:Landroid/hardware/location/ContextHubManager;
 
@@ -147,7 +128,6 @@
 
     invoke-interface {v0, p1, p2, p3}, Landroid/hardware/location/ContextHubManager$ICallback;->onMessageReceipt(IILandroid/hardware/location/ContextHubMessage;)V
 
-    .line 746
     monitor-exit p0
 
     goto :goto_1
@@ -161,7 +141,6 @@
 
     throw v0
 
-    .line 748
     :cond_2
     :goto_1
     return-void

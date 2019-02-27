@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothAvrcpController;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/bluetooth/BluetoothAvrcpController;
 
-    .line 88
     iput-object p1, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
@@ -35,12 +33,9 @@
 # virtual methods
 .method public onBluetoothStateChange(Z)V
     .locals 4
-    .param p1, "up"    # Z
 
-    .line 91
     if-nez p1, :cond_0
 
-    .line 93
     iget-object v0, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothAvrcpController;->access$000(Landroid/bluetooth/BluetoothAvrcpController;)Landroid/content/ServiceConnection;
@@ -49,7 +44,6 @@
 
     monitor-enter v0
 
-    .line 95
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
@@ -57,7 +51,6 @@
 
     invoke-static {v1, v2}, Landroid/bluetooth/BluetoothAvrcpController;->access$102(Landroid/bluetooth/BluetoothAvrcpController;Landroid/bluetooth/IBluetoothAvrcpController;)Landroid/bluetooth/IBluetoothAvrcpController;
 
-    .line 96
     iget-object v1, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothAvrcpController;->access$200(Landroid/bluetooth/BluetoothAvrcpController;)Landroid/content/Context;
@@ -75,21 +68,16 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 99
     goto :goto_0
 
-    .line 100
     :catchall_0
     move-exception v1
 
     goto :goto_1
 
-    .line 97
     :catch_0
     move-exception v1
 
-    .line 98
-    .local v1, "re":Ljava/lang/Exception;
     :try_start_1
     const-string v2, "BluetoothAvrcpController"
 
@@ -97,8 +85,6 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 100
-    .end local v1    # "re":Ljava/lang/Exception;
     :goto_0
     monitor-exit v0
 
@@ -111,7 +97,6 @@
 
     throw v1
 
-    .line 102
     :cond_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
@@ -121,7 +106,6 @@
 
     monitor-enter v0
 
-    .line 104
     :try_start_2
     iget-object v1, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
@@ -131,7 +115,6 @@
 
     if-nez v1, :cond_1
 
-    .line 106
     iget-object v1, p0, Landroid/bluetooth/BluetoothAvrcpController$1;->this$0:Landroid/bluetooth/BluetoothAvrcpController;
 
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothAvrcpController;->doBind()Z
@@ -139,22 +122,17 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 110
     :cond_1
     goto :goto_2
 
-    .line 111
     :catchall_1
     move-exception v1
 
     goto :goto_4
 
-    .line 108
     :catch_1
     move-exception v1
 
-    .line 109
-    .restart local v1    # "re":Ljava/lang/Exception;
     :try_start_3
     const-string v2, "BluetoothAvrcpController"
 
@@ -162,16 +140,12 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 111
-    .end local v1    # "re":Ljava/lang/Exception;
     :goto_2
     monitor-exit v0
 
-    .line 113
     :goto_3
     return-void
 
-    .line 111
     :goto_4
     monitor-exit v0
     :try_end_3

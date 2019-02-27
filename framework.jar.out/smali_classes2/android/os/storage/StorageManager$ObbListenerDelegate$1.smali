@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/os/storage/StorageManager$ObbListenerDelegate;Landroid/os/Looper;Landroid/os/storage/StorageManager;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/os/storage/StorageManager$ObbListenerDelegate;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 426
     iput-object p1, p0, Landroid/os/storage/StorageManager$ObbListenerDelegate$1;->this$1:Landroid/os/storage/StorageManager$ObbListenerDelegate;
 
     iput-object p3, p0, Landroid/os/storage/StorageManager$ObbListenerDelegate$1;->val$this$0:Landroid/os/storage/StorageManager;
@@ -40,23 +37,17 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 429
     iget-object v0, p0, Landroid/os/storage/StorageManager$ObbListenerDelegate$1;->this$1:Landroid/os/storage/StorageManager$ObbListenerDelegate;
 
     invoke-virtual {v0}, Landroid/os/storage/StorageManager$ObbListenerDelegate;->getListener()Landroid/os/storage/OnObbStateChangeListener;
 
     move-result-object v0
 
-    .line 430
-    .local v0, "changeListener":Landroid/os/storage/OnObbStateChangeListener;
     if-nez v0, :cond_0
 
-    .line 431
     return-void
 
-    .line 434
     :cond_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -66,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/storage/OnObbStateChangeListener;->onObbStateChange(Ljava/lang/String;I)V
 
-    .line 435
     return-void
 .end method

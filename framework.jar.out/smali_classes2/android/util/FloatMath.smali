@@ -12,7 +12,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,9 +19,7 @@
 
 .method public static ceil(F)F
     .locals 2
-    .param p0, "value"    # F
 
-    .line 59
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
@@ -36,9 +33,7 @@
 
 .method public static cos(F)F
     .locals 2
-    .param p0, "angle"    # F
 
-    .line 81
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
@@ -52,9 +47,7 @@
 
 .method public static exp(F)F
     .locals 2
-    .param p0, "value"    # F
 
-    .line 105
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
@@ -68,9 +61,7 @@
 
 .method public static floor(F)F
     .locals 2
-    .param p0, "value"    # F
 
-    .line 47
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
@@ -84,10 +75,7 @@
 
 .method public static hypot(FF)F
     .locals 4
-    .param p0, "x"    # F
-    .param p1, "y"    # F
 
-    .line 131
     float-to-double v0, p0
 
     float-to-double v2, p1
@@ -103,10 +91,7 @@
 
 .method public static pow(FF)F
     .locals 4
-    .param p0, "x"    # F
-    .param p1, "y"    # F
 
-    .line 118
     float-to-double v0, p0
 
     float-to-double v2, p1
@@ -122,9 +107,7 @@
 
 .method public static sin(F)F
     .locals 2
-    .param p0, "angle"    # F
 
-    .line 70
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -138,9 +121,7 @@
 
 .method public static sqrt(F)F
     .locals 2
-    .param p0, "value"    # F
 
-    .line 93
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D

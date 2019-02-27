@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 40
     const/16 v0, 0x30
 
     new-array v0, v0, [B
@@ -33,7 +32,6 @@
 
     sput-object v0, Landroid/privacy/internal/rappor/RapporEncoder;->INSECURE_SECRET:[B
 
-    .line 54
     new-instance v0, Ljava/security/SecureRandom;
 
     invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
@@ -99,9 +97,6 @@
 
 .method private constructor <init>(Landroid/privacy/internal/rappor/RapporConfig;Z[B)V
     .locals 24
-    .param p1, "config"    # Landroid/privacy/internal/rappor/RapporConfig;
-    .param p2, "secureEncoder"    # Z
-    .param p3, "userSecret"    # [B
 
     move-object/from16 v0, p0
 
@@ -109,29 +104,20 @@
 
     move/from16 v2, p2
 
-    .line 64
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     iput-object v1, v0, Landroid/privacy/internal/rappor/RapporEncoder;->mConfig:Landroid/privacy/internal/rappor/RapporConfig;
 
-    .line 66
     iput-boolean v2, v0, Landroid/privacy/internal/rappor/RapporEncoder;->mIsSecure:Z
 
-    .line 68
     if-eqz v2, :cond_0
 
-    .line 70
     sget-object v3, Landroid/privacy/internal/rappor/RapporEncoder;->sSecureRandom:Ljava/security/SecureRandom;
 
-    .line 76
-    .local v3, "random":Ljava/util/Random;
     move-object/from16 v4, p3
 
     goto :goto_0
 
-    .line 73
-    .end local v3    # "random":Ljava/util/Random;
     :cond_0
     new-instance v3, Ljava/util/Random;
 
@@ -143,13 +129,8 @@
 
     invoke-direct {v3, v4, v5}, Ljava/util/Random;-><init>(J)V
 
-    .line 74
-    .restart local v3    # "random":Ljava/util/Random;
     sget-object v4, Landroid/privacy/internal/rappor/RapporEncoder;->INSECURE_SECRET:[B
 
-    .line 76
-    .end local p3    # "userSecret":[B
-    .local v4, "userSecret":[B
     :goto_0
     new-instance v14, Lcom/google/android/rappor/Encoder;
 
@@ -203,16 +184,12 @@
 
     iput-object v5, v0, Landroid/privacy/internal/rappor/RapporEncoder;->mEncoder:Lcom/google/android/rappor/Encoder;
 
-    .line 80
     return-void
 .end method
 
 .method public static createEncoder(Landroid/privacy/internal/rappor/RapporConfig;[B)Landroid/privacy/internal/rappor/RapporEncoder;
     .locals 2
-    .param p0, "config"    # Landroid/privacy/internal/rappor/RapporConfig;
-    .param p1, "userSecret"    # [B
 
-    .line 101
     new-instance v0, Landroid/privacy/internal/rappor/RapporEncoder;
 
     const/4 v1, 0x1
@@ -224,9 +201,7 @@
 
 .method public static createInsecureEncoderForTest(Landroid/privacy/internal/rappor/RapporConfig;)Landroid/privacy/internal/rappor/RapporEncoder;
     .locals 3
-    .param p0, "config"    # Landroid/privacy/internal/rappor/RapporConfig;
 
-    .line 112
     new-instance v0, Landroid/privacy/internal/rappor/RapporEncoder;
 
     const/4 v1, 0x0
@@ -240,9 +215,7 @@
 
 .method private getInsecureSeed(Ljava/lang/String;)J
     .locals 4
-    .param p1, "input"    # Ljava/lang/String;
 
-    .line 84
     :try_start_0
     const-string v0, "SHA-256"
 
@@ -250,8 +223,6 @@
 
     move-result-object v0
 
-    .line 85
-    .local v0, "digest":Ljava/security/MessageDigest;
     sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
@@ -262,8 +233,6 @@
 
     move-result-object v1
 
-    .line 86
-    .local v1, "bytes":[B
     invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v2
@@ -276,14 +245,9 @@
 
     return-wide v2
 
-    .line 87
-    .end local v0    # "digest":Ljava/security/MessageDigest;
-    .end local v1    # "bytes":[B
     :catch_0
     move-exception v0
 
-    .line 89
-    .local v0, "e":Ljava/security/NoSuchAlgorithmException;
     new-instance v1, Ljava/lang/AssertionError;
 
     const-string v2, "Unable generate insecure seed"
@@ -297,9 +261,7 @@
 # virtual methods
 .method public encodeBits([B)[B
     .locals 1
-    .param p1, "bits"    # [B
 
-    .line 127
     iget-object v0, p0, Landroid/privacy/internal/rappor/RapporEncoder;->mEncoder:Lcom/google/android/rappor/Encoder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/rappor/Encoder;->encodeBits([B)[B
@@ -311,9 +273,7 @@
 
 .method public encodeBoolean(Z)[B
     .locals 1
-    .param p1, "original"    # Z
 
-    .line 122
     iget-object v0, p0, Landroid/privacy/internal/rappor/RapporEncoder;->mEncoder:Lcom/google/android/rappor/Encoder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/rappor/Encoder;->encodeBoolean(Z)[B
@@ -325,9 +285,7 @@
 
 .method public encodeString(Ljava/lang/String;)[B
     .locals 1
-    .param p1, "original"    # Ljava/lang/String;
 
-    .line 117
     iget-object v0, p0, Landroid/privacy/internal/rappor/RapporEncoder;->mEncoder:Lcom/google/android/rappor/Encoder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/rappor/Encoder;->encodeString(Ljava/lang/String;)[B
@@ -340,7 +298,6 @@
 .method public bridge synthetic getConfig()Landroid/privacy/DifferentialPrivacyConfig;
     .locals 1
 
-    .line 37
     invoke-virtual {p0}, Landroid/privacy/internal/rappor/RapporEncoder;->getConfig()Landroid/privacy/internal/rappor/RapporConfig;
 
     move-result-object v0
@@ -351,7 +308,6 @@
 .method public getConfig()Landroid/privacy/internal/rappor/RapporConfig;
     .locals 1
 
-    .line 132
     iget-object v0, p0, Landroid/privacy/internal/rappor/RapporEncoder;->mConfig:Landroid/privacy/internal/rappor/RapporConfig;
 
     return-object v0
@@ -360,7 +316,6 @@
 .method public isInsecureEncoderForTest()Z
     .locals 1
 
-    .line 137
     iget-boolean v0, p0, Landroid/privacy/internal/rappor/RapporEncoder;->mIsSecure:Z
 
     xor-int/lit8 v0, v0, 0x1

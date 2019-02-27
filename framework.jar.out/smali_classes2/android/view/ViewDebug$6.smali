@@ -27,7 +27,6 @@
 .method constructor <init>(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
     .locals 0
 
-    .line 1736
     iput-object p1, p0, Landroid/view/ViewDebug$6;->val$view:Landroid/view/View;
 
     iput-object p2, p0, Landroid/view/ViewDebug$6;->val$p:Landroid/view/ViewGroup$LayoutParams;
@@ -42,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 1739
     iget-object v0, p0, Landroid/view/ViewDebug$6;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Landroid/view/ViewDebug$6;->val$p:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1740
     return-void
 .end method

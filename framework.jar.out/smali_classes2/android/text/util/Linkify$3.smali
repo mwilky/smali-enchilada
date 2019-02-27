@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,7 @@
 # virtual methods
 .method public final transformUrl(Ljava/util/regex/Matcher;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "match"    # Ljava/util/regex/Matcher;
-    .param p2, "url"    # Ljava/lang/String;
 
-    .line 178
     invoke-static {p1}, Landroid/util/Patterns;->digitsAndPlusOnly(Ljava/util/regex/Matcher;)Ljava/lang/String;
 
     move-result-object v0

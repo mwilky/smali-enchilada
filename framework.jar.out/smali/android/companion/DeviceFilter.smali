@@ -45,9 +45,6 @@
         }
     .end annotation
 
-    .line 61
-    .local p0, "filter":Landroid/companion/DeviceFilter;, "Landroid/companion/DeviceFilter<TD;>;"
-    .local p1, "device":Landroid/os/Parcelable;, "TD;"
     if-eqz p0, :cond_1
 
     invoke-interface {p0, p1}, Landroid/companion/DeviceFilter;->matches(Landroid/os/Parcelable;)Z

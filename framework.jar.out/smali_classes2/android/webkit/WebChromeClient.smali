@@ -16,7 +16,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +26,6 @@
 .method public getDefaultVideoPoster()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 410
     const/4 v0, 0x0
 
     return-object v0
@@ -36,7 +34,6 @@
 .method public getVideoLoadingProgressView()Landroid/view/View;
     .locals 1
 
-    .line 422
     const/4 v0, 0x0
 
     return-object v0
@@ -54,36 +51,26 @@
         }
     .end annotation
 
-    .line 428
-    .local p1, "callback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<[Ljava/lang/String;>;"
     return-void
 .end method
 
 .method public onCloseWindow(Landroid/webkit/WebView;)V
     .locals 0
-    .param p1, "window"    # Landroid/webkit/WebView;
 
-    .line 173
     return-void
 .end method
 
 .method public onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
-    .param p1, "message"    # Ljava/lang/String;
-    .param p2, "lineNumber"    # I
-    .param p3, "sourceID"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 384
     return-void
 .end method
 
 .method public onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z
     .locals 3
-    .param p1, "consoleMessage"    # Landroid/webkit/ConsoleMessage;
 
-    .line 394
     invoke-virtual {p1}, Landroid/webkit/ConsoleMessage;->message()Ljava/lang/String;
 
     move-result-object v0
@@ -92,15 +79,12 @@
 
     move-result v1
 
-    .line 395
     invoke-virtual {p1}, Landroid/webkit/ConsoleMessage;->sourceId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 394
     invoke-virtual {p0, v0, v1, v2}, Landroid/webkit/WebChromeClient;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 396
     const/4 v0, 0x0
 
     return v0
@@ -108,12 +92,7 @@
 
 .method public onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
     .locals 1
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "isDialog"    # Z
-    .param p3, "isUserGesture"    # Z
-    .param p4, "resultMsg"    # Landroid/os/Message;
 
-    .line 150
     const/4 v0, 0x0
 
     return v0
@@ -121,58 +100,39 @@
 
 .method public onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V
     .locals 0
-    .param p1, "url"    # Ljava/lang/String;
-    .param p2, "databaseIdentifier"    # Ljava/lang/String;
-    .param p3, "quota"    # J
-    .param p5, "estimatedDatabaseSize"    # J
-    .param p7, "totalQuota"    # J
-    .param p9, "quotaUpdater"    # Landroid/webkit/WebStorage$QuotaUpdater;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 275
     invoke-interface {p9, p3, p4}, Landroid/webkit/WebStorage$QuotaUpdater;->updateQuota(J)V
 
-    .line 276
     return-void
 .end method
 
 .method public onGeolocationPermissionsHidePrompt()V
     .locals 0
 
-    .line 330
     return-void
 .end method
 
 .method public onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V
     .locals 1
-    .param p1, "origin"    # Ljava/lang/String;
-    .param p2, "callback"    # Landroid/webkit/GeolocationPermissions$Callback;
 
-    .line 321
     const/16 v0, 0x36
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 322
     return-void
 .end method
 
 .method public onHideCustomView()V
     .locals 0
 
-    .line 106
     return-void
 .end method
 
 .method public onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "message"    # Ljava/lang/String;
-    .param p4, "result"    # Landroid/webkit/JsResult;
 
-    .line 187
     const/4 v0, 0x0
 
     return v0
@@ -180,12 +140,7 @@
 
 .method public onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "message"    # Ljava/lang/String;
-    .param p4, "result"    # Landroid/webkit/JsResult;
 
-    .line 245
     const/4 v0, 0x0
 
     return v0
@@ -193,12 +148,7 @@
 
 .method public onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
     .locals 1
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "message"    # Ljava/lang/String;
-    .param p4, "result"    # Landroid/webkit/JsResult;
 
-    .line 205
     const/4 v0, 0x0
 
     return v0
@@ -206,13 +156,7 @@
 
 .method public onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z
     .locals 1
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "message"    # Ljava/lang/String;
-    .param p4, "defaultValue"    # Ljava/lang/String;
-    .param p5, "result"    # Landroid/webkit/JsPromptResult;
 
-    .line 224
     const/4 v0, 0x0
 
     return v0
@@ -223,7 +167,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 371
     const/4 v0, 0x1
 
     return v0
@@ -231,108 +174,74 @@
 
 .method public onPermissionRequest(Landroid/webkit/PermissionRequest;)V
     .locals 0
-    .param p1, "request"    # Landroid/webkit/PermissionRequest;
 
-    .line 343
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
-    .line 344
     return-void
 .end method
 
 .method public onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V
     .locals 0
-    .param p1, "request"    # Landroid/webkit/PermissionRequest;
 
-    .line 352
     return-void
 .end method
 
 .method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "newProgress"    # I
 
-    .line 36
     return-void
 .end method
 
 .method public onReachedMaxAppCacheSize(JJLandroid/webkit/WebStorage$QuotaUpdater;)V
     .locals 0
-    .param p1, "requiredStorage"    # J
-    .param p3, "quota"    # J
-    .param p5, "quotaUpdater"    # Landroid/webkit/WebStorage$QuotaUpdater;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 298
     invoke-interface {p5, p3, p4}, Landroid/webkit/WebStorage$QuotaUpdater;->updateQuota(J)V
 
-    .line 299
     return-void
 .end method
 
 .method public onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "icon"    # Landroid/graphics/Bitmap;
 
-    .line 50
     return-void
 .end method
 
 .method public onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "title"    # Ljava/lang/String;
 
-    .line 43
     return-void
 .end method
 
 .method public onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "precomposed"    # Z
 
-    .line 59
     return-void
 .end method
 
 .method public onRequestFocus(Landroid/webkit/WebView;)V
     .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
 
-    .line 159
     return-void
 .end method
 
 .method public onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "requestedOrientation"    # I
-    .param p3, "callback"    # Landroid/webkit/WebChromeClient$CustomViewCallback;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 98
     return-void
 .end method
 
 .method public onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "callback"    # Landroid/webkit/WebChromeClient$CustomViewCallback;
 
-    .line 83
     return-void
 .end method
 
 .method public onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z
     .locals 1
-    .param p1, "webView"    # Landroid/webkit/WebView;
-    .param p3, "fileChooserParams"    # Landroid/webkit/WebChromeClient$FileChooserParams;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -346,8 +255,6 @@
         }
     .end annotation
 
-    .line 451
-    .local p2, "filePathCallback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<[Landroid/net/Uri;>;"
     const/4 v0, 0x0
 
     return v0
@@ -355,8 +262,6 @@
 
 .method public openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p2, "acceptType"    # Ljava/lang/String;
-    .param p3, "capture"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
@@ -375,12 +280,9 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 554
-    .local p1, "uploadFile":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<Landroid/net/Uri;>;"
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 555
     return-void
 .end method

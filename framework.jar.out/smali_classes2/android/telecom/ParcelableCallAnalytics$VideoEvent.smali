@@ -49,7 +49,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 39
     new-instance v0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent$1;
 
     invoke-direct {v0}, Landroid/telecom/ParcelableCallAnalytics$VideoEvent$1;-><init>()V
@@ -61,55 +60,41 @@
 
 .method public constructor <init>(IJI)V
     .locals 0
-    .param p1, "eventName"    # I
-    .param p2, "timeSinceLastEvent"    # J
-    .param p4, "videoState"    # I
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     iput p1, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mEventName:I
 
-    .line 59
     iput-wide p2, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mTimeSinceLastEvent:J
 
-    .line 60
     iput p4, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mVideoState:I
 
-    .line 61
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mEventName:I
 
-    .line 65
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mTimeSinceLastEvent:J
 
-    .line 66
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mVideoState:I
 
-    .line 67
     return-void
 .end method
 
@@ -118,7 +103,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -127,7 +111,6 @@
 .method public getEventName()I
     .locals 1
 
-    .line 70
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mEventName:I
 
     return v0
@@ -136,7 +119,6 @@
 .method public getTimeSinceLastEvent()J
     .locals 2
 
-    .line 74
     iget-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mTimeSinceLastEvent:J
 
     return-wide v0
@@ -145,7 +127,6 @@
 .method public getVideoState()I
     .locals 1
 
-    .line 78
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mVideoState:I
 
     return v0
@@ -153,24 +134,18 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 88
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mEventName:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 89
     iget-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mTimeSinceLastEvent:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 90
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;->mVideoState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 91
     return-void
 .end method

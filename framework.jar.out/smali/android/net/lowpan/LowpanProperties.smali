@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 22
     new-instance v0, Landroid/net/lowpan/LowpanProperties$LowpanStandardProperty;
 
     const-string v1, "android.net.lowpan.property.CHANNEL_MASK"
@@ -47,7 +46,6 @@
 
     sput-object v0, Landroid/net/lowpan/LowpanProperties;->KEY_CHANNEL_MASK:Landroid/net/lowpan/LowpanProperty;
 
-    .line 25
     new-instance v0, Landroid/net/lowpan/LowpanProperties$LowpanStandardProperty;
 
     const-string v1, "android.net.lowpan.property.MAX_TX_POWER"
@@ -64,7 +62,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

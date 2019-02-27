@@ -65,8 +65,6 @@
 # direct methods
 .method constructor <init>(Landroid/widget/TextView;ILjava/util/function/Supplier;Ljava/util/function/Consumer;Ljava/util/function/Supplier;)V
     .locals 1
-    .param p1, "textView"    # Landroid/widget/TextView;
-    .param p2, "timeOut"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,10 +82,6 @@
         }
     .end annotation
 
-    .line 885
-    .local p3, "selectionResultSupplier":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<Landroid/widget/SelectionActionModeHelper$SelectionResult;>;"
-    .local p4, "selectionResultCallback":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Landroid/widget/SelectionActionModeHelper$SelectionResult;>;"
-    .local p5, "timeOutResultSupplier":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<Landroid/widget/SelectionActionModeHelper$SelectionResult;>;"
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getHandler()Landroid/os/Handler;
@@ -102,7 +96,6 @@
     :goto_0
     invoke-direct {p0, v0}, Landroid/os/AsyncTask;-><init>(Landroid/os/Handler;)V
 
-    .line 886
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -111,10 +104,8 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTextView:Landroid/widget/TextView;
 
-    .line 887
     iput p2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTimeOutDuration:I
 
-    .line 888
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -123,7 +114,6 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mSelectionResultSupplier:Ljava/util/function/Supplier;
 
-    .line 889
     invoke-static {p4}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -132,7 +122,6 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mSelectionResultCallback:Ljava/util/function/Consumer;
 
-    .line 890
     invoke-static {p5}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -141,7 +130,6 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTimeOutResultSupplier:Ljava/util/function/Supplier;
 
-    .line 892
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTextView:Landroid/widget/TextView;
 
     invoke-static {v0}, Landroid/widget/SelectionActionModeHelper;->access$500(Landroid/widget/TextView;)Ljava/lang/CharSequence;
@@ -154,7 +142,6 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mOriginalText:Ljava/lang/String;
 
-    .line 893
     return-void
 .end method
 
@@ -169,7 +156,6 @@
 .method private onTimeOut()V
     .locals 2
 
-    .line 913
     invoke-virtual {p0}, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->getStatus()Landroid/os/AsyncTask$Status;
 
     move-result-object v0
@@ -178,7 +164,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 914
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTimeOutResultSupplier:Ljava/util/function/Supplier;
 
     invoke-interface {v0}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
@@ -189,13 +174,11 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->onPostExecute(Landroid/widget/SelectionActionModeHelper$SelectionResult;)V
 
-    .line 916
     :cond_0
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->cancel(Z)Z
 
-    .line 917
     return-void
 .end method
 
@@ -203,15 +186,11 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/widget/SelectionActionModeHelper$SelectionResult;
     .locals 4
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 898
     new-instance v0, Landroid/widget/-$$Lambda$SelectionActionModeHelper$TextClassificationAsyncTask$D5tkmK-caFBtl9ux2L0aUfUee4E;
 
-    .local v0, "onTimeOut":Ljava/lang/Runnable;
     invoke-direct {v0, p0}, Landroid/widget/-$$Lambda$SelectionActionModeHelper$TextClassificationAsyncTask$D5tkmK-caFBtl9ux2L0aUfUee4E;-><init>(Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;)V
 
-    .line 899
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTextView:Landroid/widget/TextView;
 
     iget v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTimeOutDuration:I
@@ -220,7 +199,6 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 900
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mSelectionResultSupplier:Ljava/util/function/Supplier;
 
     invoke-interface {v1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
@@ -229,20 +207,16 @@
 
     check-cast v1, Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
-    .line 901
-    .local v1, "result":Landroid/widget/SelectionActionModeHelper$SelectionResult;
     iget-object v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 902
     return-object v1
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 863
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->doInBackground([Ljava/lang/Void;)Landroid/widget/SelectionActionModeHelper$SelectionResult;
@@ -254,9 +228,7 @@
 
 .method protected onPostExecute(Landroid/widget/SelectionActionModeHelper$SelectionResult;)V
     .locals 2
-    .param p1, "result"    # Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
-    .line 908
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mOriginalText:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mTextView:Landroid/widget/TextView;
@@ -281,19 +253,16 @@
     :goto_0
     move-object p1, v0
 
-    .line 909
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->mSelectionResultCallback:Ljava/util/function/Consumer;
 
     invoke-interface {v0, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 910
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 863
     check-cast p1, Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
     invoke-virtual {p0, p1}, Landroid/widget/SelectionActionModeHelper$TextClassificationAsyncTask;->onPostExecute(Landroid/widget/SelectionActionModeHelper$SelectionResult;)V

@@ -24,15 +24,12 @@
 # direct methods
 .method protected constructor <init>(I)V
     .locals 2
-    .param p1, "keymasterPadding"    # I
 
-    .line 83
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
     invoke-direct {p0, v0, p1, v1}, Landroid/security/keystore/AndroidKeyStore3DESCipherSpi;-><init>(IIZ)V
 
-    .line 84
     return-void
 .end method

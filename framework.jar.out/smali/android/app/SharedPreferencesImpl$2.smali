@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/SharedPreferencesImpl;Landroid/app/SharedPreferencesImpl$MemoryCommitResult;ZLjava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/SharedPreferencesImpl;
 
-    .line 638
     iput-object p1, p0, Landroid/app/SharedPreferencesImpl$2;->this$0:Landroid/app/SharedPreferencesImpl;
 
     iput-object p2, p0, Landroid/app/SharedPreferencesImpl$2;->val$mcr:Landroid/app/SharedPreferencesImpl$MemoryCommitResult;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 641
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$2;->this$0:Landroid/app/SharedPreferencesImpl;
 
     invoke-static {v0}, Landroid/app/SharedPreferencesImpl;->access$800(Landroid/app/SharedPreferencesImpl;)Ljava/lang/Object;
@@ -60,7 +57,6 @@
 
     monitor-enter v0
 
-    .line 642
     :try_start_0
     iget-object v1, p0, Landroid/app/SharedPreferencesImpl$2;->this$0:Landroid/app/SharedPreferencesImpl;
 
@@ -70,12 +66,10 @@
 
     invoke-static {v1, v2, v3}, Landroid/app/SharedPreferencesImpl;->access$900(Landroid/app/SharedPreferencesImpl;Landroid/app/SharedPreferencesImpl$MemoryCommitResult;Z)V
 
-    .line 643
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 644
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$2;->this$0:Landroid/app/SharedPreferencesImpl;
 
     invoke-static {v0}, Landroid/app/SharedPreferencesImpl;->access$200(Landroid/app/SharedPreferencesImpl;)Ljava/lang/Object;
@@ -84,32 +78,26 @@
 
     monitor-enter v1
 
-    .line 645
     :try_start_1
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$2;->this$0:Landroid/app/SharedPreferencesImpl;
 
     invoke-static {v0}, Landroid/app/SharedPreferencesImpl;->access$310(Landroid/app/SharedPreferencesImpl;)I
 
-    .line 646
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 647
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$2;->val$postWriteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 648
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$2;->val$postWriteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 650
     :cond_0
     return-void
 
-    .line 646
     :catchall_0
     move-exception v0
 
@@ -120,7 +108,6 @@
 
     throw v0
 
-    .line 643
     :catchall_1
     move-exception v1
 

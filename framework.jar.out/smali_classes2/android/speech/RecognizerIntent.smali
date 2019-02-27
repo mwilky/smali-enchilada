@@ -73,26 +73,20 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     return-void
 .end method
 
 .method public static final getVoiceDetailsIntent(Landroid/content/Context;)Landroid/content/Intent;
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 335
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.speech.action.WEB_SEARCH"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 336
-    .local v0, "voiceSearchIntent":Landroid/content/Intent;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -103,8 +97,6 @@
 
     move-result-object v1
 
-    .line 338
-    .local v1, "ri":Landroid/content/pm/ResolveInfo;
     const/4 v2, 0x0
 
     if-eqz v1, :cond_2
@@ -121,7 +113,6 @@
 
     goto :goto_0
 
-    .line 340
     :cond_0
     iget-object v3, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -133,13 +124,10 @@
 
     move-result-object v3
 
-    .line 341
-    .local v3, "className":Ljava/lang/String;
     if-nez v3, :cond_1
 
     return-object v2
 
-    .line 343
     :cond_1
     new-instance v2, Landroid/content/Intent;
 
@@ -147,8 +135,6 @@
 
     invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 344
-    .local v2, "detailsIntent":Landroid/content/Intent;
     new-instance v4, Landroid/content/ComponentName;
 
     iget-object v5, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -159,12 +145,8 @@
 
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 345
     return-object v2
 
-    .line 338
-    .end local v2    # "detailsIntent":Landroid/content/Intent;
-    .end local v3    # "className":Ljava/lang/String;
     :cond_2
     :goto_0
     return-object v2

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$CallbackImpl;Landroid/media/session/MediaSession$Token;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/session/MediaSessionManager$CallbackImpl;
 
-    .line 1084
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$3;->this$0:Landroid/media/session/MediaSessionManager$CallbackImpl;
 
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$3;->val$sessionToken:Landroid/media/session/MediaSession$Token;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1087
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$3;->this$0:Landroid/media/session/MediaSessionManager$CallbackImpl;
 
     invoke-static {v0}, Landroid/media/session/MediaSessionManager$CallbackImpl;->access$1300(Landroid/media/session/MediaSessionManager$CallbackImpl;)Landroid/media/session/MediaSessionManager$Callback;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/media/session/MediaSessionManager$Callback;->onAddressedPlayerChanged(Landroid/media/session/MediaSession$Token;)V
 
-    .line 1088
     return-void
 .end method

@@ -63,15 +63,12 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     const/16 v0, 0x4000
 
     iput v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
-    .line 71
     return-void
 .end method
 
@@ -80,19 +77,16 @@
 .method public getDevicePropCode()I
     .locals 3
 
-    .line 153
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     const/16 v1, 0x4006
 
     if-ne v0, v1, :cond_0
 
-    .line 155
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 157
     :cond_0
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 
@@ -108,7 +102,6 @@
 .method public getEventCode()I
     .locals 1
 
-    .line 78
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     return v0
@@ -117,19 +110,16 @@
 .method public getObjectFormatCode()I
     .locals 3
 
-    .line 198
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     const v1, 0xc802
 
     if-ne v0, v1, :cond_0
 
-    .line 200
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter2:I
 
     return v0
 
-    .line 202
     :cond_0
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 
@@ -145,12 +135,10 @@
 .method public getObjectHandle()I
     .locals 3
 
-    .line 106
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 120
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 
     iget v1, p0, Landroid/mtp/MtpEvent;->mEventCode:I
@@ -161,37 +149,31 @@
 
     throw v0
 
-    .line 118
     :sswitch_0
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 116
     :sswitch_1
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 114
     :sswitch_2
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 112
     :sswitch_3
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 110
     :sswitch_4
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 108
     :sswitch_5
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
@@ -215,12 +197,10 @@
 .method public getObjectPropCode()I
     .locals 3
 
-    .line 182
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 188
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 
     iget v1, p0, Landroid/mtp/MtpEvent;->mEventCode:I
@@ -231,13 +211,11 @@
 
     throw v0
 
-    .line 186
     :pswitch_0
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 184
     :pswitch_1
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter2:I
 
@@ -257,7 +235,6 @@
 .method public getParameter1()I
     .locals 1
 
-    .line 83
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
@@ -266,7 +243,6 @@
 .method public getParameter2()I
     .locals 1
 
-    .line 88
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter2:I
 
     return v0
@@ -275,7 +251,6 @@
 .method public getParameter3()I
     .locals 1
 
-    .line 93
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter3:I
 
     return v0
@@ -284,7 +259,6 @@
 .method public getStorageId()I
     .locals 3
 
-    .line 133
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     const/16 v1, 0x400a
@@ -297,7 +271,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 143
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 
     iget v1, p0, Landroid/mtp/MtpEvent;->mEventCode:I
@@ -308,25 +281,21 @@
 
     throw v0
 
-    .line 137
     :pswitch_0
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 135
     :pswitch_1
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 141
     :cond_0
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 139
     :cond_1
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
@@ -346,19 +315,16 @@
 .method public getTransactionId()I
     .locals 3
 
-    .line 167
     iget v0, p0, Landroid/mtp/MtpEvent;->mEventCode:I
 
     const/16 v1, 0x400d
 
     if-ne v0, v1, :cond_0
 
-    .line 169
     iget v0, p0, Landroid/mtp/MtpEvent;->mParameter1:I
 
     return v0
 
-    .line 171
     :cond_0
     new-instance v0, Landroid/mtp/MtpEvent$IllegalParameterAccess;
 

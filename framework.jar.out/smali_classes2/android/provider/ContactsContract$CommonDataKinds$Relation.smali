@@ -57,7 +57,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 7026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -65,11 +64,7 @@
 
 .method public static final getTypeLabel(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 2
-    .param p0, "res"    # Landroid/content/res/Resources;
-    .param p1, "type"    # I
-    .param p2, "label"    # Ljava/lang/CharSequence;
 
-    .line 7085
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -78,17 +73,13 @@
 
     if-nez v0, :cond_0
 
-    .line 7086
     return-object p2
 
-    .line 7088
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Relation;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 7089
-    .local v0, "labelRes":I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -98,95 +89,78 @@
 
 .method public static final getTypeLabelResource(I)I
     .locals 1
-    .param p0, "type"    # I
 
-    .line 7057
     packed-switch p0, :pswitch_data_0
 
-    .line 7074
     const v0, 0x1040433
 
     return v0
 
-    .line 7073
     :pswitch_0
     const v0, 0x10405ac
 
     return v0
 
-    .line 7072
     :pswitch_1
     const v0, 0x10405ab
 
     return v0
 
-    .line 7071
     :pswitch_2
     const v0, 0x10405aa
 
     return v0
 
-    .line 7070
     :pswitch_3
     const v0, 0x10405a9
 
     return v0
 
-    .line 7068
     :pswitch_4
     const v0, 0x10405a8
 
     return v0
 
-    .line 7067
     :pswitch_5
     const v0, 0x10405a7
 
     return v0
 
-    .line 7066
     :pswitch_6
     const v0, 0x10405a6
 
     return v0
 
-    .line 7065
     :pswitch_7
     const v0, 0x10405a5
 
     return v0
 
-    .line 7064
     :pswitch_8
     const v0, 0x10405a4
 
     return v0
 
-    .line 7063
     :pswitch_9
     const v0, 0x10405a3
 
     return v0
 
-    .line 7062
     :pswitch_a
     const v0, 0x10405a2
 
     return v0
 
-    .line 7060
     :pswitch_b
     const v0, 0x10405a0
 
     return v0
 
-    .line 7059
     :pswitch_c
     const v0, 0x104059f
 
     return v0
 
-    .line 7058
     :pswitch_d
     const v0, 0x104059e
 

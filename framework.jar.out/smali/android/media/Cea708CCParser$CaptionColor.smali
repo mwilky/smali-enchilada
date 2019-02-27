@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 838
     const/4 v0, 0x4
 
     new-array v1, v0, [I
@@ -51,7 +50,6 @@
 
     sput-object v1, Landroid/media/Cea708CCParser$CaptionColor;->COLOR_MAP:[I
 
-    .line 839
     new-array v0, v0, [I
 
     fill-array-data v0, :array_1
@@ -79,27 +77,17 @@
 
 .method public constructor <init>(IIII)V
     .locals 0
-    .param p1, "opacity"    # I
-    .param p2, "red"    # I
-    .param p3, "green"    # I
-    .param p4, "blue"    # I
 
-    .line 846
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 847
     iput p1, p0, Landroid/media/Cea708CCParser$CaptionColor;->opacity:I
 
-    .line 848
     iput p2, p0, Landroid/media/Cea708CCParser$CaptionColor;->red:I
 
-    .line 849
     iput p3, p0, Landroid/media/Cea708CCParser$CaptionColor;->green:I
 
-    .line 850
     iput p4, p0, Landroid/media/Cea708CCParser$CaptionColor;->blue:I
 
-    .line 851
     return-void
 .end method
 
@@ -108,7 +96,6 @@
 .method public getArgbValue()I
     .locals 5
 
-    .line 854
     sget-object v0, Landroid/media/Cea708CCParser$CaptionColor;->OPACITY_MAP:[I
 
     iget v1, p0, Landroid/media/Cea708CCParser$CaptionColor;->opacity:I

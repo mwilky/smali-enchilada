@@ -99,7 +99,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -107,13 +106,7 @@
 
 .method static synthetic access$100(III[BI)I
     .locals 1
-    .param p0, "x0"    # I
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
-    .param p3, "x3"    # [B
-    .param p4, "x4"    # I
 
-    .line 40
     invoke-static {p0, p1, p2, p3, p4}, Landroid/hardware/hdmi/HdmiRecordSources;->threeFieldsToSixBytes(III[BI)I
 
     move-result v0
@@ -123,11 +116,7 @@
 
 .method static synthetic access$200(S[BI)I
     .locals 1
-    .param p0, "x0"    # S
-    .param p1, "x1"    # [B
-    .param p2, "x2"    # I
 
-    .line 40
     invoke-static {p0, p1, p2}, Landroid/hardware/hdmi/HdmiRecordSources;->shortToByteArray(S[BI)I
 
     move-result v0
@@ -137,11 +126,9 @@
 
 .method public static checkRecordSource([B)Z
     .locals 5
-    .param p0, "recordSource"    # [B
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 762
     const/4 v0, 0x0
 
     if-eqz p0, :cond_6
@@ -152,26 +139,19 @@
 
     goto :goto_0
 
-    .line 764
     :cond_0
     aget-byte v1, p0, v0
 
-    .line 765
-    .local v1, "recordSourceType":I
     array-length v2, p0
 
     const/4 v3, 0x1
 
     sub-int/2addr v2, v3
 
-    .line 766
-    .local v2, "extraDataSize":I
     packed-switch v1, :pswitch_data_0
 
-    .line 778
     return v0
 
-    .line 776
     :pswitch_0
     const/4 v4, 0x2
 
@@ -184,7 +164,6 @@
     :cond_1
     return v0
 
-    .line 774
     :pswitch_1
     if-ne v2, v3, :cond_2
 
@@ -195,7 +174,6 @@
     :cond_2
     return v0
 
-    .line 772
     :pswitch_2
     const/4 v4, 0x4
 
@@ -208,7 +186,6 @@
     :cond_3
     return v0
 
-    .line 770
     :pswitch_3
     const/4 v4, 0x7
 
@@ -221,7 +198,6 @@
     :cond_4
     return v0
 
-    .line 768
     :pswitch_4
     if-nez v2, :cond_5
 
@@ -232,9 +208,6 @@
     :cond_5
     return v0
 
-    .line 762
-    .end local v1    # "recordSourceType":I
-    .end local v2    # "extraDataSize":I
     :cond_6
     :goto_0
     return v0
@@ -253,32 +226,25 @@
 
 .method public static ofAnalogue(III)Landroid/hardware/hdmi/HdmiRecordSources$AnalogueServiceSource;
     .locals 3
-    .param p0, "broadcastType"    # I
-    .param p1, "frequency"    # I
-    .param p2, "broadcastSystem"    # I
 
-    .line 585
     if-ltz p0, :cond_2
 
     const/4 v0, 0x2
 
     if-gt p0, v0, :cond_2
 
-    .line 590
     if-ltz p1, :cond_1
 
     const v0, 0xffff
 
     if-gt p1, v0, :cond_1
 
-    .line 595
     if-ltz p2, :cond_0
 
     const/16 v0, 0x1f
 
     if-gt p2, v0, :cond_0
 
-    .line 603
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$AnalogueServiceSource;
 
     const/4 v1, 0x0
@@ -287,7 +253,6 @@
 
     return-object v0
 
-    .line 598
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -307,7 +272,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 599
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -328,7 +292,6 @@
 
     throw v0
 
-    .line 591
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -348,7 +311,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 592
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -369,7 +331,6 @@
 
     throw v0
 
-    .line 587
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -389,7 +350,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 588
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -413,18 +373,13 @@
 
 .method public static ofArib(ILandroid/hardware/hdmi/HdmiRecordSources$AribData;)Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
     .locals 3
-    .param p0, "aribType"    # I
-    .param p1, "data"    # Landroid/hardware/hdmi/HdmiRecordSources$AribData;
 
-    .line 405
     if-eqz p1, :cond_1
 
-    .line 408
     if-eqz p0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 417
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -443,7 +398,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 418
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "type should not be null."
@@ -452,7 +406,6 @@
 
     throw v0
 
-    .line 413
     :cond_0
     :pswitch_0
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
@@ -465,7 +418,6 @@
 
     return-object v0
 
-    .line 406
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -489,20 +441,15 @@
 
 .method public static ofAtsc(ILandroid/hardware/hdmi/HdmiRecordSources$AtscData;)Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
     .locals 3
-    .param p0, "atscType"    # I
-    .param p1, "data"    # Landroid/hardware/hdmi/HdmiRecordSources$AtscData;
 
-    .line 436
     if-eqz p1, :cond_1
 
-    .line 439
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 448
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -521,7 +468,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 449
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -542,7 +488,6 @@
 
     throw v0
 
-    .line 444
     :cond_0
     :pswitch_0
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
@@ -555,7 +500,6 @@
 
     return-object v0
 
-    .line 437
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -577,13 +521,9 @@
 
 .method public static ofDigitalChannelId(ILandroid/hardware/hdmi/HdmiRecordSources$DigitalChannelData;)Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
     .locals 3
-    .param p0, "broadcastSystem"    # I
-    .param p1, "data"    # Landroid/hardware/hdmi/HdmiRecordSources$DigitalChannelData;
 
-    .line 363
     if-eqz p1, :cond_0
 
-    .line 366
     packed-switch p0, :pswitch_data_0
 
     packed-switch p0, :pswitch_data_1
@@ -592,7 +532,6 @@
 
     packed-switch p0, :pswitch_data_3
 
-    .line 385
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -611,7 +550,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -632,7 +570,6 @@
 
     throw v0
 
-    .line 380
     :pswitch_0
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
 
@@ -644,7 +581,6 @@
 
     return-object v0
 
-    .line 364
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -688,20 +624,15 @@
 
 .method public static ofDvb(ILandroid/hardware/hdmi/HdmiRecordSources$DvbData;)Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
     .locals 3
-    .param p0, "dvbType"    # I
-    .param p1, "data"    # Landroid/hardware/hdmi/HdmiRecordSources$DvbData;
 
-    .line 468
     if-eqz p1, :cond_1
 
-    .line 471
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 481
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -720,7 +651,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -741,7 +671,6 @@
 
     throw v0
 
-    .line 477
     :cond_0
     :pswitch_0
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;
@@ -754,7 +683,6 @@
 
     return-object v0
 
-    .line 469
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -777,16 +705,13 @@
 
 .method public static ofExternalPhysicalAddress(I)Landroid/hardware/hdmi/HdmiRecordSources$ExternalPhysicalAddress;
     .locals 3
-    .param p0, "physicalAddress"    # I
 
-    .line 704
     const/high16 v0, -0x10000
 
     and-int/2addr v0, p0
 
     if-nez v0, :cond_0
 
-    .line 709
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$ExternalPhysicalAddress;
 
     const/4 v1, 0x0
@@ -795,7 +720,6 @@
 
     return-object v0
 
-    .line 705
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -815,7 +739,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 706
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -839,9 +762,7 @@
 
 .method public static ofExternalPlug(I)Landroid/hardware/hdmi/HdmiRecordSources$ExternalPlugData;
     .locals 3
-    .param p0, "plugNumber"    # I
 
-    .line 660
     const/4 v0, 0x1
 
     if-lt p0, v0, :cond_0
@@ -850,7 +771,6 @@
 
     if-gt p0, v0, :cond_0
 
-    .line 664
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$ExternalPlugData;
 
     const/4 v1, 0x0
@@ -859,7 +779,6 @@
 
     return-object v0
 
-    .line 661
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -879,7 +798,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 662
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -904,7 +822,6 @@
 .method public static ofOwnSource()Landroid/hardware/hdmi/HdmiRecordSources$OwnSource;
     .locals 2
 
-    .line 100
     new-instance v0, Landroid/hardware/hdmi/HdmiRecordSources$OwnSource;
 
     const/4 v1, 0x0
@@ -916,11 +833,7 @@
 
 .method private static shortToByteArray(S[BI)I
     .locals 2
-    .param p0, "value"    # S
-    .param p1, "byteArray"    # [B
-    .param p2, "index"    # I
 
-    .line 751
     ushr-int/lit8 v0, p0, 0x8
 
     and-int/lit16 v0, v0, 0xff
@@ -929,7 +842,6 @@
 
     aput-byte v0, p1, p2
 
-    .line 752
     add-int/lit8 v0, p2, 0x1
 
     and-int/lit16 v1, p0, 0xff
@@ -938,7 +850,6 @@
 
     aput-byte v1, p1, v0
 
-    .line 753
     const/4 v0, 0x2
 
     return v0
@@ -946,32 +857,23 @@
 
 .method private static threeFieldsToSixBytes(III[BI)I
     .locals 2
-    .param p0, "first"    # I
-    .param p1, "second"    # I
-    .param p2, "third"    # I
-    .param p3, "data"    # [B
-    .param p4, "index"    # I
 
-    .line 744
     int-to-short v0, p0
 
     invoke-static {v0, p3, p4}, Landroid/hardware/hdmi/HdmiRecordSources;->shortToByteArray(S[BI)I
 
-    .line 745
     int-to-short v0, p1
 
     add-int/lit8 v1, p4, 0x2
 
     invoke-static {v0, p3, v1}, Landroid/hardware/hdmi/HdmiRecordSources;->shortToByteArray(S[BI)I
 
-    .line 746
     int-to-short v0, p2
 
     add-int/lit8 v1, p4, 0x4
 
     invoke-static {v0, p3, v1}, Landroid/hardware/hdmi/HdmiRecordSources;->shortToByteArray(S[BI)I
 
-    .line 747
     const/4 v0, 0x6
 
     return v0

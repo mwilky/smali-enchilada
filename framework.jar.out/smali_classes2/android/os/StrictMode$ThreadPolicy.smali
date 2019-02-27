@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 444
     new-instance v0, Landroid/os/StrictMode$ThreadPolicy;
 
     const/4 v1, 0x0
@@ -52,34 +51,21 @@
 
 .method private constructor <init>(ILandroid/os/StrictMode$OnThreadViolationListener;Ljava/util/concurrent/Executor;)V
     .locals 0
-    .param p1, "mask"    # I
-    .param p2, "listener"    # Landroid/os/StrictMode$OnThreadViolationListener;
-    .param p3, "executor"    # Ljava/util/concurrent/Executor;
 
-    .line 450
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 451
     iput p1, p0, Landroid/os/StrictMode$ThreadPolicy;->mask:I
 
-    .line 452
     iput-object p2, p0, Landroid/os/StrictMode$ThreadPolicy;->mListener:Landroid/os/StrictMode$OnThreadViolationListener;
 
-    .line 453
     iput-object p3, p0, Landroid/os/StrictMode$ThreadPolicy;->mCallbackExecutor:Ljava/util/concurrent/Executor;
 
-    .line 454
     return-void
 .end method
 
 .method synthetic constructor <init>(ILandroid/os/StrictMode$OnThreadViolationListener;Ljava/util/concurrent/Executor;Landroid/os/StrictMode$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Landroid/os/StrictMode$OnThreadViolationListener;
-    .param p3, "x2"    # Ljava/util/concurrent/Executor;
-    .param p4, "x3"    # Landroid/os/StrictMode$1;
 
-    .line 442
     invoke-direct {p0, p1, p2, p3}, Landroid/os/StrictMode$ThreadPolicy;-><init>(ILandroid/os/StrictMode$OnThreadViolationListener;Ljava/util/concurrent/Executor;)V
 
     return-void
@@ -90,7 +76,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 458
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

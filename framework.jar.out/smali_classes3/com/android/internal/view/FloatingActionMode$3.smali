@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/FloatingActionMode;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/view/FloatingActionMode;
 
-    .line 92
     iput-object p1, p0, Lcom/android/internal/view/FloatingActionMode$3;->this$0:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onMenuItemSelected(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/view/MenuItem;
 
-    .line 98
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$3;->this$0:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-static {v0}, Lcom/android/internal/view/FloatingActionMode;->access$200(Lcom/android/internal/view/FloatingActionMode;)Landroid/view/ActionMode$Callback2;
@@ -59,8 +54,6 @@
 
 .method public onMenuModeChange(Lcom/android/internal/view/menu/MenuBuilder;)V
     .locals 0
-    .param p1, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 94
     return-void
 .end method

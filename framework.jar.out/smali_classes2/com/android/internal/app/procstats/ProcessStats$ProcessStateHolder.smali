@@ -23,14 +23,10 @@
 # direct methods
 .method public constructor <init>(J)V
     .locals 0
-    .param p1, "_appVersion"    # J
 
-    .line 1854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1855
     iput-wide p1, p0, Lcom/android/internal/app/procstats/ProcessStats$ProcessStateHolder;->appVersion:J
 
-    .line 1856
     return-void
 .end method

@@ -11,7 +11,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,7 +24,6 @@
         }
     .end annotation
 
-    .line 47
     :try_start_0
     invoke-static {}, Landroid/security/GateKeeper;->getService()Landroid/service/gatekeeper/IGateKeeperService;
 
@@ -43,12 +41,9 @@
 
     return-wide v0
 
-    .line 48
     :catch_0
     move-exception v0
 
-    .line 49
-    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Failed to obtain secure user ID from gatekeeper"
@@ -61,27 +56,20 @@
 .method public static getService()Landroid/service/gatekeeper/IGateKeeperService;
     .locals 3
 
-    .line 37
     const-string v0, "android.service.gatekeeper.IGateKeeperService"
 
-    .line 38
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 37
     invoke-static {v0}, Landroid/service/gatekeeper/IGateKeeperService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/gatekeeper/IGateKeeperService;
 
     move-result-object v0
 
-    .line 39
-    .local v0, "service":Landroid/service/gatekeeper/IGateKeeperService;
     if-eqz v0, :cond_0
 
-    .line 42
     return-object v0
 
-    .line 40
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 

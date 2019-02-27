@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 88
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/net/NetworkPinner$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/net/NetworkPinner$1;
 
-    .line 88
     invoke-direct {p0}, Lcom/android/server/net/NetworkPinner$Callback;-><init>()V
 
     return-void
@@ -38,14 +35,11 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 4
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 91
     sget-object v0, Lcom/android/server/net/NetworkPinner;->sLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 92
     :try_start_0
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$000()Lcom/android/server/net/NetworkPinner$Callback;
 
@@ -57,7 +51,6 @@
 
     return-void
 
-    .line 94
     :cond_0
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$100()Landroid/net/ConnectivityManager;
 
@@ -73,17 +66,14 @@
 
     if-nez v1, :cond_1
 
-    .line 95
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$100()Landroid/net/ConnectivityManager;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Landroid/net/ConnectivityManager;->bindProcessToNetwork(Landroid/net/Network;)Z
 
-    .line 96
     sput-object p1, Lcom/android/server/net/NetworkPinner;->sNetwork:Landroid/net/Network;
 
-    .line 97
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$200()Ljava/lang/String;
 
     move-result-object v1
@@ -104,19 +94,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     :cond_1
     sget-object v1, Lcom/android/server/net/NetworkPinner;->sLock:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 100
     monitor-exit v0
 
-    .line 101
     return-void
 
-    .line 100
     :catchall_0
     move-exception v1
 
@@ -129,14 +115,11 @@
 
 .method public onLost(Landroid/net/Network;)V
     .locals 4
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 105
     sget-object v0, Lcom/android/server/net/NetworkPinner;->sLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 106
     :try_start_0
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$000()Lcom/android/server/net/NetworkPinner$Callback;
 
@@ -148,7 +131,6 @@
 
     return-void
 
-    .line 108
     :cond_0
     sget-object v1, Lcom/android/server/net/NetworkPinner;->sNetwork:Landroid/net/Network;
 
@@ -172,10 +154,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 109
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->unpin()V
 
-    .line 110
     invoke-static {}, Lcom/android/server/net/NetworkPinner;->access$200()Ljava/lang/String;
 
     move-result-object v1
@@ -196,19 +176,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     :cond_1
     sget-object v1, Lcom/android/server/net/NetworkPinner;->sLock:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 113
     monitor-exit v0
 
-    .line 114
     return-void
 
-    .line 113
     :catchall_0
     move-exception v1
 

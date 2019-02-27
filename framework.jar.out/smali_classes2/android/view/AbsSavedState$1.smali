@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 27
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/view/AbsSavedState;-><init>(Landroid/view/AbsSavedState$1;)V

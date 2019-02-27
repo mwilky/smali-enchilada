@@ -59,9 +59,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ApplicationInfoProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/pm/ApplicationInfoProto;
 
-    .line 31
     iput-object p1, p0, Landroid/content/pm/ApplicationInfoProto$Detail;->this$0:Landroid/content/pm/ApplicationInfoProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -12,19 +12,13 @@
 # direct methods
 .method public constructor <init>(Ljava/security/KeyPair;[Ljava/security/cert/Certificate;)V
     .locals 0
-    .param p1, "keyPair"    # Ljava/security/KeyPair;
-    .param p2, "attestationRecord"    # [Ljava/security/cert/Certificate;
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     iput-object p1, p0, Landroid/security/AttestedKeyPair;->mKeyPair:Ljava/security/KeyPair;
 
-    .line 43
     iput-object p2, p0, Landroid/security/AttestedKeyPair;->mAttestationRecord:[Ljava/security/cert/Certificate;
 
-    .line 44
     return-void
 .end method
 
@@ -41,19 +35,16 @@
         }
     .end annotation
 
-    .line 70
     iget-object v0, p0, Landroid/security/AttestedKeyPair;->mAttestationRecord:[Ljava/security/cert/Certificate;
 
     if-nez v0, :cond_0
 
-    .line 71
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     return-object v0
 
-    .line 73
     :cond_0
     iget-object v0, p0, Landroid/security/AttestedKeyPair;->mAttestationRecord:[Ljava/security/cert/Certificate;
 
@@ -67,7 +58,6 @@
 .method public getKeyPair()Ljava/security/KeyPair;
     .locals 1
 
-    .line 51
     iget-object v0, p0, Landroid/security/AttestedKeyPair;->mKeyPair:Ljava/security/KeyPair;
 
     return-object v0

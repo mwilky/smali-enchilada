@@ -27,27 +27,21 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "ruleNum"    # I
 
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     new-array v0, p1, [I
 
     iput-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRules:[I
 
-    .line 69
     new-array v0, p1, [[Landroid/service/carrier/CarrierIdentifier;
 
     iput-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mCarrierIds:[[Landroid/service/carrier/CarrierIdentifier;
 
-    .line 70
     new-array v0, p1, [I
 
     iput-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRuleFlags:[I
 
-    .line 71
     return-void
 .end method
 
@@ -55,8 +49,6 @@
 # virtual methods
 .method public add(ILjava/util/List;I)Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;
     .locals 3
-    .param p1, "policyRules"    # I
-    .param p3, "policyRuleFlags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -67,8 +59,6 @@
         }
     .end annotation
 
-    .line 95
-    .local p2, "carrierId":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     iget v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
 
     iget-object v1, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRules:[I
@@ -77,14 +67,12 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 98
     iget-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRules:[I
 
     iget v1, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
 
     aput p1, v0, v1
 
-    .line 99
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -93,7 +81,6 @@
 
     if-lez v0, :cond_0
 
-    .line 100
     iget-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mCarrierIds:[[Landroid/service/carrier/CarrierIdentifier;
 
     iget v1, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
@@ -112,7 +99,6 @@
 
     aput-object v2, v0, v1
 
-    .line 102
     :cond_0
     iget-object v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRuleFlags:[I
 
@@ -120,17 +106,14 @@
 
     aput p3, v0, v1
 
-    .line 103
     iget v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
 
-    .line 104
     return-object p0
 
-    .line 96
     :cond_1
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
@@ -144,7 +127,6 @@
 .method public build()Landroid/telephony/euicc/EuiccRulesAuthTable;
     .locals 5
 
-    .line 78
     iget v0, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPosition:I
 
     iget-object v1, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRules:[I
@@ -153,7 +135,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 85
     new-instance v0, Landroid/telephony/euicc/EuiccRulesAuthTable;
 
     iget-object v1, p0, Landroid/telephony/euicc/EuiccRulesAuthTable$Builder;->mPolicyRules:[I
@@ -168,7 +149,6 @@
 
     return-object v0
 
-    .line 79
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/preference/PreferenceFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/preference/PreferenceFragment;
 
-    .line 454
     iput-object p1, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 458
     iget-object v0, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-static {v0}, Landroid/preference/PreferenceFragment;->access$100(Landroid/preference/PreferenceFragment;)Landroid/widget/ListView;
@@ -53,13 +47,10 @@
 
     move-result-object v0
 
-    .line 459
-    .local v0, "selectedItem":Ljava/lang/Object;
     instance-of v1, v0, Landroid/preference/Preference;
 
     if-eqz v1, :cond_0
 
-    .line 460
     iget-object v1, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-static {v1}, Landroid/preference/PreferenceFragment;->access$100(Landroid/preference/PreferenceFragment;)Landroid/widget/ListView;
@@ -70,8 +61,6 @@
 
     move-result-object v1
 
-    .line 461
-    .local v1, "selectedView":Landroid/view/View;
     move-object v2, v0
 
     check-cast v2, Landroid/preference/Preference;
@@ -82,8 +71,6 @@
 
     return v2
 
-    .line 464
-    .end local v1    # "selectedView":Landroid/view/View;
     :cond_0
     const/4 v1, 0x0
 

@@ -80,10 +80,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 396
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 397
     return-void
 .end method
 
@@ -91,45 +89,33 @@
 # virtual methods
 .method public setActivity(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;
     .locals 0
-    .param p1, "activity"    # Landroid/content/ComponentName;
 
-    .line 432
     iput-object p1, p0, Landroid/content/pm/LauncherApps$ShortcutQuery;->mActivity:Landroid/content/ComponentName;
 
-    .line 433
     return-object p0
 .end method
 
 .method public setChangedSince(J)Landroid/content/pm/LauncherApps$ShortcutQuery;
     .locals 0
-    .param p1, "changedSince"    # J
 
-    .line 405
     iput-wide p1, p0, Landroid/content/pm/LauncherApps$ShortcutQuery;->mChangedSince:J
 
-    .line 406
     return-object p0
 .end method
 
 .method public setPackage(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;
     .locals 0
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 413
     iput-object p1, p0, Landroid/content/pm/LauncherApps$ShortcutQuery;->mPackage:Ljava/lang/String;
 
-    .line 414
     return-object p0
 .end method
 
 .method public setQueryFlags(I)Landroid/content/pm/LauncherApps$ShortcutQuery;
     .locals 0
-    .param p1, "queryFlags"    # I
 
-    .line 448
     iput p1, p0, Landroid/content/pm/LauncherApps$ShortcutQuery;->mQueryFlags:I
 
-    .line 449
     return-object p0
 .end method
 
@@ -145,10 +131,7 @@
         }
     .end annotation
 
-    .line 422
-    .local p1, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iput-object p1, p0, Landroid/content/pm/LauncherApps$ShortcutQuery;->mShortcutIds:Ljava/util/List;
 
-    .line 423
     return-object p0
 .end method

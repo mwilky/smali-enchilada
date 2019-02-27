@@ -38,15 +38,12 @@
 .method public constructor <init>(Lcom/android/internal/app/PlatLogoActivity;)V
     .locals 0
 
-    .line 45
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->randomizePalette()V
 
-    .line 47
     return-void
 .end method
 
@@ -54,11 +51,9 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 23
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     move-object/from16 v0, p0
 
-    .line 103
     move-object/from16 v7, p1
 
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->dp:F
@@ -83,7 +78,6 @@
 
     iput v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->dp:F
 
-    .line 104
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getWidth()I
 
@@ -91,16 +85,12 @@
 
     int-to-float v9, v1
 
-    .line 105
-    .local v9, "width":F
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v1
 
     int-to-float v10, v1
 
-    .line 106
-    .local v10, "height":F
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     cmpl-float v1, v1, v8
@@ -109,21 +99,18 @@
 
     if-nez v1, :cond_1
 
-    .line 107
     div-float v1, v9, v11
 
     div-float v2, v10, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->setPosition(FF)V
 
-    .line 108
     const/high16 v1, 0x40c00000    # 6.0f
 
     div-float v1, v9, v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->setRadius(F)V
 
-    .line 110
     :cond_1
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
@@ -131,50 +118,40 @@
 
     mul-float v12, v1, v2
 
-    .line 112
-    .local v12, "inner_w":F
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
     move-object v13, v1
 
-    .line 113
-    .local v13, "paint":Landroid/graphics/Paint;
     sget-object v1, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 114
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->x:F
 
     iget v2, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->y:F
 
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 116
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
 
     move-object v6, v1
 
-    .line 117
-    .local v6, "p":Landroid/graphics/Path;
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
 
     invoke-virtual {v6, v1, v10}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 118
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
 
     invoke-virtual {v6, v1, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 119
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v15, v1
@@ -203,7 +180,6 @@
 
     invoke-virtual/range {v14 .. v21}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
-    .line 120
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
@@ -212,7 +188,6 @@
 
     invoke-virtual {v6, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 122
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v1
@@ -231,26 +206,17 @@
 
     mul-float/2addr v1, v2
 
-    .line 123
-    .local v1, "w":F
     sget-object v2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v13, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 125
     const/4 v2, 0x0
 
     move v15, v1
 
-    .end local v1    # "w":F
-    .local v2, "i":I
-    .local v15, "w":F
     :goto_0
     move v14, v2
 
-    .line 126
-    .end local v2    # "i":I
-    .local v14, "i":I
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     mul-float/2addr v1, v11
@@ -265,7 +231,6 @@
 
     if-lez v1, :cond_2
 
-    .line 127
     iget-object v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     iget-object v3, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
@@ -280,7 +245,6 @@
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 131
     neg-float v1, v15
 
     div-float v2, v1, v11
@@ -299,11 +263,8 @@
 
     move-object v6, v13
 
-    .end local v6    # "p":Landroid/graphics/Path;
-    .local v11, "p":Landroid/graphics/Path;
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawOval(FFFFLandroid/graphics/Paint;)V
 
-    .line 132
     float-to-double v1, v15
 
     float-to-double v3, v12
@@ -338,12 +299,8 @@
 
     double-to-float v15, v1
 
-    .line 133
     add-int/lit8 v2, v14, 0x1
 
-    .line 125
-    .end local v14    # "i":I
-    .restart local v2    # "i":I
     move-object v6, v11
 
     const/4 v8, 0x0
@@ -352,16 +309,9 @@
 
     goto :goto_0
 
-    .line 137
-    .end local v2    # "i":I
-    .end local v11    # "p":Landroid/graphics/Path;
-    .restart local v6    # "p":Landroid/graphics/Path;
-    .restart local v14    # "i":I
     :cond_2
     move-object v11, v6
 
-    .end local v6    # "p":Landroid/graphics/Path;
-    .restart local v11    # "p":Landroid/graphics/Path;
     iget-object v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     iget v3, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->darkest:I
@@ -380,7 +330,6 @@
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 138
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v2, v1
@@ -399,17 +348,14 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawOval(FFFFLandroid/graphics/Paint;)V
 
-    .line 140
     invoke-virtual {v11}, Landroid/graphics/Path;->reset()V
 
-    .line 141
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
 
     invoke-virtual {v11, v1, v10}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 142
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
@@ -418,7 +364,6 @@
 
     invoke-virtual {v11, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 143
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
@@ -441,14 +386,10 @@
 
     move-object v14, v11
 
-    .end local v14    # "i":I
-    .local v5, "i":I
     move v6, v15
 
     move v15, v1
 
-    .end local v15    # "w":F
-    .local v6, "w":F
     move/from16 v16, v2
 
     move/from16 v17, v3
@@ -457,7 +398,6 @@
 
     invoke-virtual/range {v14 .. v21}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
-    .line 144
     iget v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
     neg-float v1, v1
@@ -468,19 +408,16 @@
 
     invoke-virtual {v11, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 146
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 147
     const/high16 v1, 0x40000000    # 2.0f
 
     mul-float/2addr v1, v12
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 148
     iget-object v1, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     iget v2, v0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->darkest:I
@@ -489,28 +426,22 @@
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 149
     invoke-virtual {v7, v11, v13}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 150
     invoke-virtual {v13, v12}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 151
     const/4 v1, -0x1
 
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 152
     invoke-virtual {v7, v11, v13}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 153
     return-void
 .end method
 
 .method public getOpacity()I
     .locals 1
 
-    .line 167
     const/4 v0, 0x0
 
     return v0
@@ -518,9 +449,7 @@
 
 .method public lum(I)F
     .locals 3
-    .param p1, "rgb"    # I
 
-    .line 76
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -565,7 +494,6 @@
 .method public randomizePalette()V
     .locals 12
 
-    .line 84
     invoke-static {}, Ljava/lang/Math;->random()D
 
     move-result-wide v0
@@ -580,8 +508,6 @@
 
     add-int/2addr v0, v1
 
-    .line 85
-    .local v0, "slots":I
     const/4 v2, 0x3
 
     new-array v2, v2, [F
@@ -610,23 +536,17 @@
 
     move-object v1, v2
 
-    .line 86
-    .local v1, "color":[F
     new-array v2, v0, [I
 
     iput-object v2, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
-    .line 87
     iput v5, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->darkest:I
 
-    .line 88
     move v2, v5
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 89
     iget-object v3, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     invoke-static {v1}, Landroid/graphics/Color;->HSVToColor([F)I
@@ -635,7 +555,6 @@
 
     aput v7, v3, v2
 
-    .line 90
     aget v3, v1, v5
 
     int-to-float v7, v0
@@ -646,7 +565,6 @@
 
     aput v3, v1, v5
 
-    .line 91
     iget-object v3, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     aget v3, v3, v2
@@ -671,21 +589,16 @@
 
     iput v2, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->darkest:I
 
-    .line 88
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 94
-    .end local v2    # "i":I
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 95
-    .local v2, "str":Ljava/lang/StringBuilder;
     iget-object v3, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->palette:[I
 
     array-length v4, v3
@@ -697,8 +610,6 @@
 
     aget v8, v3, v7
 
-    .line 96
-    .local v8, "c":I
     const-string v9, "#%08x "
 
     new-array v10, v6, [Ljava/lang/Object;
@@ -715,13 +626,10 @@
 
     invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 95
-    .end local v8    # "c":I
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
-    .line 98
     :cond_2
     const-string v3, "PlatLogoActivity"
 
@@ -741,57 +649,42 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     return-void
 .end method
 
 .method public setAlpha(I)V
     .locals 0
-    .param p1, "alpha"    # I
 
-    .line 158
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 0
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
-    .line 163
     return-void
 .end method
 
 .method public setOffset(F)V
     .locals 0
-    .param p1, "o"    # F
 
-    .line 68
     iput p1, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->offset:F
 
-    .line 69
     return-void
 .end method
 
 .method public setPosition(FF)V
     .locals 0
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
-    .line 60
     iput p1, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->x:F
 
-    .line 61
     iput p2, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->y:F
 
-    .line 62
     return-void
 .end method
 
 .method public setRadius(F)V
     .locals 2
-    .param p1, "r"    # F
 
-    .line 53
     iget v0, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->dp:F
 
     const/high16 v1, 0x42400000    # 48.0f
@@ -804,6 +697,5 @@
 
     iput v0, p0, Lcom/android/internal/app/PlatLogoActivity$PBackground;->radius:F
 
-    .line 54
     return-void
 .end method

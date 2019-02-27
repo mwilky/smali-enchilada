@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 202
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/view/accessibility/AccessibilityManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 205
     invoke-static {p1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
     move-result-object v0
@@ -54,7 +51,6 @@
         }
     .end annotation
 
-    .line 202
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$1;->createService(Landroid/app/ContextImpl;)Landroid/view/accessibility/AccessibilityManager;
 
     move-result-object p1

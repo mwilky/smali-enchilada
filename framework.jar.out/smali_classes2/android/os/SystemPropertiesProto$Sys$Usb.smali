@@ -41,9 +41,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/SystemPropertiesProto$Sys;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/os/SystemPropertiesProto$Sys;
 
-    .line 962
     iput-object p1, p0, Landroid/os/SystemPropertiesProto$Sys$Usb;->this$1:Landroid/os/SystemPropertiesProto$Sys;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

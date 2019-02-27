@@ -7,10 +7,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "contains static methods only"
@@ -22,9 +20,7 @@
 
 .method public static varargs and([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;
     .locals 2
-    .param p0, "validators"    # [Landroid/service/autofill/Validator;
 
-    .line 43
     new-instance v0, Landroid/service/autofill/RequiredValidators;
 
     invoke-static {p0}, Landroid/service/autofill/Validators;->getInternalValidators([Landroid/service/autofill/Validator;)[Landroid/service/autofill/InternalValidator;
@@ -38,30 +34,22 @@
 
 .method private static getInternalValidators([Landroid/service/autofill/Validator;)[Landroid/service/autofill/InternalValidator;
     .locals 5
-    .param p0, "validators"    # [Landroid/service/autofill/Validator;
 
-    .line 75
     const-string/jumbo v0, "validators"
 
     invoke-static {p0, v0}, Lcom/android/internal/util/Preconditions;->checkArrayElementsNotNull([Ljava/lang/Object;Ljava/lang/String;)[Ljava/lang/Object;
 
-    .line 77
     array-length v0, p0
 
     new-array v0, v0, [Landroid/service/autofill/InternalValidator;
 
-    .line 79
-    .local v0, "internals":[Landroid/service/autofill/InternalValidator;
     const/4 v1, 0x0
 
-    .line 79
-    .local v1, "i":I
     :goto_0
     array-length v2, p0
 
     if-ge v1, v2, :cond_0
 
-    .line 80
     aget-object v2, p0, v1
 
     instance-of v2, v2, Landroid/service/autofill/InternalValidator;
@@ -90,29 +78,23 @@
 
     invoke-static {v2, v3}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 82
     aget-object v2, p0, v1
 
     check-cast v2, Landroid/service/autofill/InternalValidator;
 
     aput-object v2, v0, v1
 
-    .line 79
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 84
-    .end local v1    # "i":I
     :cond_0
     return-object v0
 .end method
 
 .method public static not(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;
     .locals 3
-    .param p0, "validator"    # Landroid/service/autofill/Validator;
 
-    .line 69
     instance-of v0, p0, Landroid/service/autofill/InternalValidator;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,7 +113,6 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 71
     new-instance v0, Landroid/service/autofill/NegationValidator;
 
     move-object v1, p0
@@ -145,9 +126,7 @@
 
 .method public static varargs or([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;
     .locals 2
-    .param p0, "validators"    # [Landroid/service/autofill/Validator;
 
-    .line 56
     new-instance v0, Landroid/service/autofill/OptionalValidators;
 
     invoke-static {p0}, Landroid/service/autofill/Validators;->getInternalValidators([Landroid/service/autofill/Validator;)[Landroid/service/autofill/InternalValidator;

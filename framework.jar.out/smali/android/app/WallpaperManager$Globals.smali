@@ -43,41 +43,31 @@
 # direct methods
 .method constructor <init>(Landroid/app/IWallpaperManager;Landroid/os/Looper;)V
     .locals 1
-    .param p1, "service"    # Landroid/app/IWallpaperManager;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 293
     invoke-direct {p0}, Landroid/app/IWallpaperManagerCallback$Stub;-><init>()V
 
-    .line 286
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
 
-    .line 294
     iput-object p1, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
-    .line 295
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/app/WallpaperManager$Globals;->mMainLooperHandler:Landroid/os/Handler;
 
-    .line 296
     invoke-virtual {p0}, Landroid/app/WallpaperManager$Globals;->forgetLoadedWallpaper()V
 
-    .line 297
     return-void
 .end method
 
 .method static synthetic access$200(Landroid/app/WallpaperManager$Globals;)Landroid/app/IWallpaperManager;
     .locals 1
-    .param p0, "x0"    # Landroid/app/WallpaperManager$Globals;
 
-    .line 283
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
     return-object v0
@@ -85,18 +75,13 @@
 
 .method private getCurrentWallpaperLocked(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
     .locals 9
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "userId"    # I
-    .param p3, "hardware"    # Z
 
-    .line 465
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 466
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -105,18 +90,14 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 467
     return-object v1
 
-    .line 471
     :cond_0
     :try_start_0
     new-instance v7, Landroid/os/Bundle;
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
-    .line 472
-    .local v7, "params":Landroid/os/Bundle;
     iget-object v3, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
     invoke-virtual {p1}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -135,35 +116,26 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 474
-    .local v0, "fd":Landroid/os/ParcelFileDescriptor;
     if-eqz v0, :cond_2
 
-    .line 476
     :try_start_1
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 477
-    .local v2, "options":Landroid/graphics/BitmapFactory$Options;
     if-eqz p3, :cond_1
 
-    .line 478
     sget-object v3, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     iput-object v3, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 480
     :cond_1
     nop
 
-    .line 481
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v3
 
-    .line 480
     invoke-static {v3, v1, v2}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -171,28 +143,21 @@
     .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 485
     :try_start_2
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 480
     return-object v3
 
-    .line 485
-    .end local v2    # "options":Landroid/graphics/BitmapFactory$Options;
     :catchall_0
     move-exception v1
 
     goto :goto_0
 
-    .line 482
     :catch_0
     move-exception v2
 
-    .line 483
-    .local v2, "e":Ljava/lang/OutOfMemoryError;
     :try_start_3
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
@@ -204,15 +169,11 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 485
-    .end local v2    # "e":Ljava/lang/OutOfMemoryError;
     :try_start_4
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 486
     goto :goto_1
 
-    .line 485
     :goto_0
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
@@ -220,22 +181,15 @@
     :try_end_4
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 490
-    .end local v0    # "fd":Landroid/os/ParcelFileDescriptor;
-    .end local v7    # "params":Landroid/os/Bundle;
     :cond_2
     :goto_1
     nop
 
-    .line 491
     return-object v1
 
-    .line 488
     :catch_1
     move-exception v0
 
-    .line 489
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -245,28 +199,20 @@
 
 .method private getDefaultWallpaper(Landroid/content/Context;I)Landroid/graphics/Bitmap;
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "which"    # I
 
-    .line 495
     invoke-static {p1, p2}, Landroid/app/WallpaperManager;->openDefaultWallpaper(Landroid/content/Context;I)Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 496
-    .local v0, "is":Ljava/io/InputStream;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 498
     :try_start_0
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 499
-    .local v2, "options":Landroid/graphics/BitmapFactory$Options;
     invoke-static {v0, v1, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -274,25 +220,18 @@
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 503
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 499
     return-object v3
 
-    .line 503
-    .end local v2    # "options":Landroid/graphics/BitmapFactory$Options;
     :catchall_0
     move-exception v1
 
     goto :goto_0
 
-    .line 500
     :catch_0
     move-exception v2
 
-    .line 501
-    .local v2, "e":Ljava/lang/OutOfMemoryError;
     :try_start_1
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
@@ -304,20 +243,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 503
-    .end local v2    # "e":Ljava/lang/OutOfMemoryError;
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 504
     goto :goto_1
 
-    .line 503
     :goto_0
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw v1
 
-    .line 506
     :cond_0
     :goto_1
     return-object v1
@@ -325,19 +259,13 @@
 
 .method public static synthetic lambda$onWallpaperColorsChanged$1(Landroid/app/WallpaperManager$Globals;Landroid/util/Pair;Landroid/app/WallpaperColors;II)V
     .locals 2
-    .param p1, "listener"    # Landroid/util/Pair;
-    .param p2, "colors"    # Landroid/app/WallpaperColors;
-    .param p3, "which"    # I
-    .param p4, "userId"    # I
 
-    .line 367
     invoke-static {}, Landroid/app/WallpaperManager;->access$100()Landroid/app/WallpaperManager$Globals;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 368
     :try_start_0
     iget-object v1, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
 
@@ -345,28 +273,21 @@
 
     move-result v1
 
-    .line 369
-    .local v1, "stillExists":Z
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 370
     if-eqz v1, :cond_0
 
-    .line 371
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Landroid/app/WallpaperManager$OnColorsChangedListener;
 
     invoke-interface {v0, p2, p3, p4}, Landroid/app/WallpaperManager$OnColorsChangedListener;->onColorsChanged(Landroid/app/WallpaperColors;II)V
 
-    .line 373
     :cond_0
     return-void
 
-    .line 369
-    .end local v1    # "stillExists":Z
     :catchall_0
     move-exception v1
 
@@ -380,10 +301,7 @@
 
 .method static synthetic lambda$removeOnColorsChangedListener$0(Landroid/app/WallpaperManager$OnColorsChangedListener;Landroid/util/Pair;)Z
     .locals 1
-    .param p0, "callback"    # Landroid/app/WallpaperManager$OnColorsChangedListener;
-    .param p1, "pair"    # Landroid/util/Pair;
 
-    .line 341
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     if-ne v0, p0, :cond_0
@@ -403,14 +321,9 @@
 # virtual methods
 .method public addOnColorsChangedListener(Landroid/app/WallpaperManager$OnColorsChangedListener;Landroid/os/Handler;I)V
     .locals 3
-    .param p1, "callback"    # Landroid/app/WallpaperManager$OnColorsChangedListener;
-    .param p2, "handler"    # Landroid/os/Handler;
-    .param p3, "userId"    # I
 
-    .line 318
     monitor-enter p0
 
-    .line 319
     :try_start_0
     iget-boolean v0, p0, Landroid/app/WallpaperManager$Globals;->mColorCallbackRegistered:Z
     :try_end_0
@@ -418,13 +331,11 @@
 
     if-nez v0, :cond_0
 
-    .line 321
     :try_start_1
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
     invoke-interface {v0, p0, p3}, Landroid/app/IWallpaperManager;->registerWallpaperColorsCallback(Landroid/app/IWallpaperManagerCallback;I)V
 
-    .line 322
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/WallpaperManager$Globals;->mColorCallbackRegistered:Z
@@ -432,15 +343,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 326
     goto :goto_0
 
-    .line 323
     :catch_0
     move-exception v0
 
-    .line 325
-    .local v0, "e":Landroid/os/RemoteException;
     :try_start_2
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
@@ -450,8 +357,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 328
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
@@ -462,13 +367,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 329
     monitor-exit p0
 
-    .line 330
     return-void
 
-    .line 329
     :catchall_0
     move-exception v0
 
@@ -482,30 +384,23 @@
 .method forgetLoadedWallpaper()V
     .locals 2
 
-    .line 457
     monitor-enter p0
 
-    .line 458
     const/4 v0, 0x0
 
     :try_start_0
     iput-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
-    .line 459
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaperUserId:I
 
-    .line 460
     iput-object v0, p0, Landroid/app/WallpaperManager$Globals;->mDefaultWallpaper:Landroid/graphics/Bitmap;
 
-    .line 461
     monitor-exit p0
 
-    .line 462
     return-void
 
-    .line 461
     :catchall_0
     move-exception v0
 
@@ -518,10 +413,7 @@
 
 .method getWallpaperColors(II)Landroid/app/WallpaperColors;
     .locals 2
-    .param p1, "which"    # I
-    .param p2, "userId"    # I
 
-    .line 379
     const/4 v0, 0x2
 
     if-eq p1, v0, :cond_1
@@ -532,7 +424,6 @@
 
     goto :goto_0
 
-    .line 380
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -542,7 +433,6 @@
 
     throw v0
 
-    .line 385
     :cond_1
     :goto_0
     :try_start_0
@@ -556,11 +446,9 @@
 
     return-object v0
 
-    .line 386
     :catch_0
     move-exception v0
 
-    .line 389
     const/4 v0, 0x0
 
     return-object v0
@@ -569,23 +457,16 @@
 .method public onWallpaperChanged()V
     .locals 0
 
-    .line 305
     invoke-virtual {p0}, Landroid/app/WallpaperManager$Globals;->forgetLoadedWallpaper()V
 
-    .line 306
     return-void
 .end method
 
 .method public onWallpaperColorsChanged(Landroid/app/WallpaperColors;II)V
     .locals 10
-    .param p1, "colors"    # Landroid/app/WallpaperColors;
-    .param p2, "which"    # I
-    .param p3, "userId"    # I
 
-    .line 357
     monitor-enter p0
 
-    .line 358
     :try_start_0
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
 
@@ -606,26 +487,18 @@
 
     check-cast v1, Landroid/util/Pair;
 
-    .line 359
-    .local v1, "listener":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/app/WallpaperManager$OnColorsChangedListener;Landroid/os/Handler;>;"
     iget-object v2, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v2, Landroid/os/Handler;
 
-    .line 360
-    .local v2, "handler":Landroid/os/Handler;
     iget-object v3, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     if-nez v3, :cond_0
 
-    .line 361
     iget-object v3, p0, Landroid/app/WallpaperManager$Globals;->mMainLooperHandler:Landroid/os/Handler;
 
     move-object v2, v3
 
-    .line 363
-    .end local v2    # "handler":Landroid/os/Handler;
-    .local v8, "handler":Landroid/os/Handler;
     :cond_0
     move-object v8, v2
 
@@ -647,19 +520,13 @@
 
     invoke-virtual {v8, v9}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 374
-    .end local v1    # "listener":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/app/WallpaperManager$OnColorsChangedListener;Landroid/os/Handler;>;"
-    .end local v8    # "handler":Landroid/os/Handler;
     goto :goto_0
 
-    .line 375
     :cond_1
     monitor-exit p0
 
-    .line 376
     return-void
 
-    .line 375
     :catchall_0
     move-exception v0
 
@@ -672,11 +539,7 @@
 
 .method public peekWallpaperBitmap(Landroid/content/Context;ZI)Landroid/graphics/Bitmap;
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "returnDefault"    # Z
-    .param p3, "which"    # I
 
-    .line 394
     invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
 
     move-result v4
@@ -700,20 +563,13 @@
 
 .method public peekWallpaperBitmap(Landroid/content/Context;ZIIZ)Landroid/graphics/Bitmap;
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "returnDefault"    # Z
-    .param p3, "which"    # I
-    .param p4, "userId"    # I
-    .param p5, "hardware"    # Z
 
-    .line 400
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 402
     :try_start_0
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
@@ -727,10 +583,8 @@
 
     if-nez v0, :cond_0
 
-    .line 403
     return-object v1
 
-    .line 407
     :cond_0
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
@@ -740,7 +594,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 408
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -749,7 +602,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     const/4 v1, 0x1
@@ -758,41 +610,30 @@
 
     move-result-object v0
 
-    .line 410
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
     const/high16 v1, -0x1000000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 411
     return-object v0
 
-    .line 416
-    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     :cond_1
     goto :goto_0
 
-    .line 414
     :catch_0
     move-exception v0
 
-    .line 415
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
     throw v1
 
-    .line 418
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_2
     :goto_0
     monitor-enter p0
 
-    .line 419
     :try_start_1
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
@@ -804,32 +645,27 @@
 
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
-    .line 420
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 421
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
     monitor-exit p0
 
     return-object v0
 
-    .line 423
     :cond_3
     iput-object v1, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
-    .line 424
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaperUserId:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 426
     :try_start_2
     invoke-direct {p0, p1, p4, p5}, Landroid/app/WallpaperManager$Globals;->getCurrentWallpaperLocked(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
 
@@ -837,23 +673,18 @@
 
     iput-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
-    .line 427
     iput p4, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaperUserId:I
     :try_end_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 438
     :goto_1
     goto :goto_2
 
-    .line 430
     :catch_1
     move-exception v0
 
-    .line 431
-    .local v0, "e":Ljava/lang/SecurityException;
     :try_start_3
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -865,7 +696,6 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 432
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -876,17 +706,12 @@
 
     goto :goto_2
 
-    .line 436
     :cond_4
     throw v0
 
-    .line 428
-    .end local v0    # "e":Ljava/lang/SecurityException;
     :catch_2
     move-exception v0
 
-    .line 429
-    .local v0, "e":Ljava/lang/OutOfMemoryError;
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -907,61 +732,45 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v0    # "e":Ljava/lang/OutOfMemoryError;
     goto :goto_1
 
-    .line 439
     :goto_2
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_5
 
-    .line 440
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mCachedWallpaper:Landroid/graphics/Bitmap;
 
     monitor-exit p0
 
     return-object v0
 
-    .line 442
     :cond_5
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 443
     if-eqz p2, :cond_7
 
-    .line 444
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mDefaultWallpaper:Landroid/graphics/Bitmap;
 
-    .line 445
-    .local v0, "defaultWallpaper":Landroid/graphics/Bitmap;
     if-nez v0, :cond_6
 
-    .line 446
     invoke-direct {p0, p1, p3}, Landroid/app/WallpaperManager$Globals;->getDefaultWallpaper(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 447
-    .end local v0    # "defaultWallpaper":Landroid/graphics/Bitmap;
-    .local v1, "defaultWallpaper":Landroid/graphics/Bitmap;
     monitor-enter p0
 
-    .line 448
     :try_start_4
     iput-object v1, p0, Landroid/app/WallpaperManager$Globals;->mDefaultWallpaper:Landroid/graphics/Bitmap;
 
-    .line 449
     monitor-exit p0
 
-    .line 451
     move-object v0, v1
 
     goto :goto_3
 
-    .line 449
     :catchall_0
     move-exception v0
 
@@ -971,19 +780,13 @@
 
     throw v0
 
-    .line 451
-    .end local v1    # "defaultWallpaper":Landroid/graphics/Bitmap;
-    .restart local v0    # "defaultWallpaper":Landroid/graphics/Bitmap;
     :cond_6
     :goto_3
     return-object v0
 
-    .line 453
-    .end local v0    # "defaultWallpaper":Landroid/graphics/Bitmap;
     :cond_7
     return-object v1
 
-    .line 442
     :catchall_1
     move-exception v0
 
@@ -997,13 +800,9 @@
 
 .method public removeOnColorsChangedListener(Landroid/app/WallpaperManager$OnColorsChangedListener;I)V
     .locals 3
-    .param p1, "callback"    # Landroid/app/WallpaperManager$OnColorsChangedListener;
-    .param p2, "userId"    # I
 
-    .line 340
     monitor-enter p0
 
-    .line 341
     :try_start_0
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
 
@@ -1013,7 +812,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->removeIf(Ljava/util/function/Predicate;)Z
 
-    .line 343
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mColorListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1026,14 +824,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 344
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/WallpaperManager$Globals;->mColorCallbackRegistered:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 346
     :try_start_1
     iget-object v0, p0, Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
 
@@ -1042,15 +838,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 350
     goto :goto_0
 
-    .line 347
     :catch_0
     move-exception v0
 
-    .line 349
-    .local v0, "e":Landroid/os/RemoteException;
     :try_start_2
     invoke-static {}, Landroid/app/WallpaperManager;->access$000()Ljava/lang/String;
 
@@ -1060,16 +852,12 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 352
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     monitor-exit p0
 
-    .line 353
     return-void
 
-    .line 352
     :catchall_0
     move-exception v0
 

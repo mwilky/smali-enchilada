@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/hardware/hdmi/HdmiTvClient$InputChangeListener;)V
     .locals 0
 
-    .line 147
     iput-object p1, p0, Landroid/hardware/hdmi/HdmiTvClient$2;->val$listener:Landroid/hardware/hdmi/HdmiTvClient$InputChangeListener;
 
     invoke-direct {p0}, Landroid/hardware/hdmi/IHdmiInputChangeListener$Stub;-><init>()V
@@ -34,13 +33,10 @@
 # virtual methods
 .method public onChanged(Landroid/hardware/hdmi/HdmiDeviceInfo;)V
     .locals 1
-    .param p1, "info"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
 
-    .line 150
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiTvClient$2;->val$listener:Landroid/hardware/hdmi/HdmiTvClient$InputChangeListener;
 
     invoke-interface {v0, p1}, Landroid/hardware/hdmi/HdmiTvClient$InputChangeListener;->onChanged(Landroid/hardware/hdmi/HdmiDeviceInfo;)V
 
-    .line 151
     return-void
 .end method

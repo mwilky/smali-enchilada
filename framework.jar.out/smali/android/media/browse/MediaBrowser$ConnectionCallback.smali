@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 866
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,20 +28,17 @@
 .method public onConnected()V
     .locals 0
 
-    .line 871
     return-void
 .end method
 
 .method public onConnectionFailed()V
     .locals 0
 
-    .line 883
     return-void
 .end method
 
 .method public onConnectionSuspended()V
     .locals 0
 
-    .line 877
     return-void
 .end method

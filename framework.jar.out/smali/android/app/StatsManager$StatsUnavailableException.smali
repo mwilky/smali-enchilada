@@ -17,9 +17,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "reason"    # Ljava/lang/String;
 
-    .line 391
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -36,16 +34,12 @@
 
     invoke-direct {p0, v0}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
 
-    .line 392
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 2
-    .param p1, "reason"    # Ljava/lang/String;
-    .param p2, "e"    # Ljava/lang/Throwable;
 
-    .line 395
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,6 +56,5 @@
 
     invoke-direct {p0, v0, p2}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 396
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method public constructor <init>(Landroid/media/audiofx/DynamicsProcessing$EqBand;)V
     .locals 2
-    .param p1, "cfg"    # Landroid/media/audiofx/DynamicsProcessing$EqBand;
 
-    .line 487
     invoke-virtual {p1}, Landroid/media/audiofx/DynamicsProcessing$EqBand;->isEnabled()Z
 
     move-result v0
@@ -34,28 +32,20 @@
 
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/DynamicsProcessing$BandBase;-><init>(ZF)V
 
-    .line 488
     iget v0, p1, Landroid/media/audiofx/DynamicsProcessing$EqBand;->mGain:F
 
     iput v0, p0, Landroid/media/audiofx/DynamicsProcessing$EqBand;->mGain:F
 
-    .line 489
     return-void
 .end method
 
 .method public constructor <init>(ZFF)V
     .locals 0
-    .param p1, "enabled"    # Z
-    .param p2, "cutoffFrequency"    # F
-    .param p3, "gain"    # F
 
-    .line 478
     invoke-direct {p0, p1, p2}, Landroid/media/audiofx/DynamicsProcessing$BandBase;-><init>(ZF)V
 
-    .line 479
     iput p3, p0, Landroid/media/audiofx/DynamicsProcessing$EqBand;->mGain:F
 
-    .line 480
     return-void
 .end method
 
@@ -64,7 +54,6 @@
 .method public getGain()F
     .locals 1
 
-    .line 504
     iget v0, p0, Landroid/media/audiofx/DynamicsProcessing$EqBand;->mGain:F
 
     return v0
@@ -72,32 +61,25 @@
 
 .method public setGain(F)V
     .locals 0
-    .param p1, "gain"    # F
 
-    .line 512
     iput p1, p0, Landroid/media/audiofx/DynamicsProcessing$EqBand;->mGain:F
 
-    .line 513
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 494
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-super {p0}, Landroid/media/audiofx/DynamicsProcessing$BandBase;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 495
     const-string v1, " Gain: %f\n"
 
     const/4 v2, 0x1
@@ -120,7 +102,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 496
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

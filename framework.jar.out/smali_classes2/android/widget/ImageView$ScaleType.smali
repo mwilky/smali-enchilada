@@ -50,7 +50,6 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    .line 762
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "MATRIX"
@@ -61,7 +60,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->MATRIX:Landroid/widget/ImageView$ScaleType;
 
-    .line 767
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "FIT_XY"
@@ -72,7 +70,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
-    .line 772
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "FIT_START"
@@ -83,7 +80,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
 
-    .line 778
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "FIT_CENTER"
@@ -94,7 +90,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
-    .line 783
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "FIT_END"
@@ -105,7 +100,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->FIT_END:Landroid/widget/ImageView$ScaleType;
 
-    .line 788
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "CENTER"
@@ -116,7 +110,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    .line 796
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "CENTER_CROP"
@@ -127,7 +120,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
-    .line 804
     new-instance v0, Landroid/widget/ImageView$ScaleType;
 
     const-string v1, "CENTER_INSIDE"
@@ -138,7 +130,6 @@
 
     sput-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
-    .line 756
     const/16 v0, 0x8
 
     new-array v0, v0, [Landroid/widget/ImageView$ScaleType;
@@ -182,28 +173,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "ni"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 806
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 807
     iput p3, p0, Landroid/widget/ImageView$ScaleType;->nativeInt:I
 
-    .line 808
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/widget/ImageView$ScaleType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 756
     const-class v0, Landroid/widget/ImageView$ScaleType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -218,7 +203,6 @@
 .method public static values()[Landroid/widget/ImageView$ScaleType;
     .locals 1
 
-    .line 756
     sget-object v0, Landroid/widget/ImageView$ScaleType;->$VALUES:[Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0}, [Landroid/widget/ImageView$ScaleType;->clone()Ljava/lang/Object;

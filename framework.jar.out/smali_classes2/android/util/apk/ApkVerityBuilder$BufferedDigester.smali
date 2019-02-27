@@ -36,35 +36,28 @@
 # direct methods
 .method private constructor <init>([BLjava/nio/ByteBuffer;)V
     .locals 2
-    .param p1, "salt"    # [B
-    .param p2, "output"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/NoSuchAlgorithmException;
         }
     .end annotation
 
-    .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
     const/16 v0, 0x20
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mDigestBuffer:[B
 
-    .line 184
     iput-object p1, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mSalt:[B
 
-    .line 185
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mOutput:Ljava/nio/ByteBuffer;
 
-    .line 186
     const-string v0, "SHA-256"
 
     invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
@@ -73,34 +66,27 @@
 
     iput-object v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mMd:Ljava/security/MessageDigest;
 
-    .line 187
     iget-object v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mMd:Ljava/security/MessageDigest;
 
     iget-object v1, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mSalt:[B
 
     invoke-virtual {v0, v1}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 188
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
-    .line 189
     return-void
 .end method
 
 .method synthetic constructor <init>([BLjava/nio/ByteBuffer;Landroid/util/apk/ApkVerityBuilder$1;)V
     .locals 0
-    .param p1, "x0"    # [B
-    .param p2, "x1"    # Ljava/nio/ByteBuffer;
-    .param p3, "x2"    # Landroid/util/apk/ApkVerityBuilder$1;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/NoSuchAlgorithmException;
         }
     .end annotation
 
-    .line 165
     invoke-direct {p0, p1, p2}, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;-><init>([BLjava/nio/ByteBuffer;)V
 
     return-void
@@ -108,9 +94,7 @@
 
 .method static synthetic access$100(Landroid/util/apk/ApkVerityBuilder$BufferedDigester;)V
     .locals 0
-    .param p0, "x0"    # Landroid/util/apk/ApkVerityBuilder$BufferedDigester;
 
-    .line 165
     invoke-direct {p0}, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->fillUpLastOutputChunk()V
 
     return-void
@@ -119,7 +103,6 @@
 .method private fillUpLastOutputChunk()V
     .locals 3
 
-    .line 227
     iget-object v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mOutput:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
@@ -128,14 +111,10 @@
 
     rem-int/lit16 v0, v0, 0x1000
 
-    .line 228
-    .local v0, "lastBlockSize":I
     if-nez v0, :cond_0
 
-    .line 229
     return-void
 
-    .line 231
     :cond_0
     iget-object v1, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mOutput:Ljava/nio/ByteBuffer;
 
@@ -147,7 +126,6 @@
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 232
     return-void
 .end method
 
@@ -161,15 +139,12 @@
         }
     .end annotation
 
-    .line 221
     iget v0, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
     if-nez v0, :cond_0
 
-    .line 224
     return-void
 
-    .line 222
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -196,30 +171,23 @@
 
 .method public consume(Ljava/nio/ByteBuffer;)V
     .locals 7
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/DigestException;
         }
     .end annotation
 
-    .line 199
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
 
-    .line 200
-    .local v0, "offset":I
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
-    .line 201
-    .local v1, "remaining":I
     :goto_0
     if-lez v1, :cond_1
 
-    .line 202
     iget v2, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
     const/16 v3, 0x1000
@@ -230,8 +198,6 @@
 
     move-result v2
 
-    .line 204
-    .local v2, "allowance":I
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v4
@@ -240,30 +206,24 @@
 
     invoke-virtual {p1, v4}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 205
     iget-object v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mMd:Ljava/security/MessageDigest;
 
     invoke-virtual {v4, p1}, Ljava/security/MessageDigest;->update(Ljava/nio/ByteBuffer;)V
 
-    .line 206
     add-int/2addr v0, v2
 
-    .line 207
     sub-int/2addr v1, v2
 
-    .line 208
     iget v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
     add-int/2addr v4, v2
 
     iput v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
-    .line 210
     iget v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
     if-ne v4, v3, :cond_0
 
-    .line 211
     iget-object v3, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mMd:Ljava/security/MessageDigest;
 
     iget-object v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mDigestBuffer:[B
@@ -276,29 +236,23 @@
 
     invoke-virtual {v3, v4, v6, v5}, Ljava/security/MessageDigest;->digest([BII)I
 
-    .line 212
     iget-object v3, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mOutput:Ljava/nio/ByteBuffer;
 
     iget-object v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mDigestBuffer:[B
 
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 214
     iget-object v3, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mMd:Ljava/security/MessageDigest;
 
     iget-object v4, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mSalt:[B
 
     invoke-virtual {v3, v4}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 215
     iput v6, p0, Landroid/util/apk/ApkVerityBuilder$BufferedDigester;->mBytesDigestedSinceReset:I
 
-    .line 217
-    .end local v2    # "allowance":I
     :cond_0
     goto :goto_0
 
-    .line 218
     :cond_1
     return-void
 .end method

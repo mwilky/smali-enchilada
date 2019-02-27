@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/PeriodicAdvertisingManager;Landroid/os/Handler;Landroid/bluetooth/le/PeriodicAdvertisingCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/bluetooth/le/PeriodicAdvertisingManager;
 
-    .line 201
     iput-object p1, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->this$0:Landroid/bluetooth/le/PeriodicAdvertisingManager;
 
     iput-object p2, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$handler:Landroid/os/Handler;
@@ -43,9 +41,7 @@
 # virtual methods
 .method public onPeriodicAdvertisingReport(Landroid/bluetooth/le/PeriodicAdvertisingReport;)V
     .locals 2
-    .param p1, "report"    # Landroid/bluetooth/le/PeriodicAdvertisingReport;
 
-    .line 223
     iget-object v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$2;
@@ -54,20 +50,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 229
     return-void
 .end method
 
 .method public onSyncEstablished(ILandroid/bluetooth/BluetoothDevice;IIII)V
     .locals 11
-    .param p1, "syncHandle"    # I
-    .param p2, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p3, "advertisingSid"    # I
-    .param p4, "skip"    # I
-    .param p5, "timeout"    # I
-    .param p6, "status"    # I
 
-    .line 205
     move-object v8, p0
 
     iget-object v9, v8, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$handler:Landroid/os/Handler;
@@ -94,15 +82,12 @@
 
     invoke-virtual {v9, v10}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 220
     return-void
 .end method
 
 .method public onSyncLost(I)V
     .locals 2
-    .param p1, "syncHandle"    # I
 
-    .line 232
     iget-object v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$3;
@@ -111,6 +96,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 241
     return-void
 .end method

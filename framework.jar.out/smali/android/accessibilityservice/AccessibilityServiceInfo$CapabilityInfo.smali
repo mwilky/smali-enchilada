@@ -25,22 +25,14 @@
 # direct methods
 .method public constructor <init>(III)V
     .locals 0
-    .param p1, "capability"    # I
-    .param p2, "titleResId"    # I
-    .param p3, "descResId"    # I
 
-    .line 1127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1128
     iput p1, p0, Landroid/accessibilityservice/AccessibilityServiceInfo$CapabilityInfo;->capability:I
 
-    .line 1129
     iput p2, p0, Landroid/accessibilityservice/AccessibilityServiceInfo$CapabilityInfo;->titleResId:I
 
-    .line 1130
     iput p3, p0, Landroid/accessibilityservice/AccessibilityServiceInfo$CapabilityInfo;->descResId:I
 
-    .line 1131
     return-void
 .end method

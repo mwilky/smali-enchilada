@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/menu/CascadingMenuPopup$3;Lcom/android/internal/view/menu/CascadingMenuPopup$CascadingMenuInfo;Landroid/view/MenuItem;Lcom/android/internal/view/menu/MenuBuilder;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/internal/view/menu/CascadingMenuPopup$3;
 
-    .line 156
     iput-object p1, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->this$1:Lcom/android/internal/view/menu/CascadingMenuPopup$3;
 
     iput-object p2, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Lcom/android/internal/view/menu/CascadingMenuPopup$CascadingMenuInfo;
@@ -51,14 +49,12 @@
 .method public run()V
     .locals 3
 
-    .line 161
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Lcom/android/internal/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 164
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->this$1:Lcom/android/internal/view/menu/CascadingMenuPopup$3;
 
     iget-object v0, v0, Lcom/android/internal/view/menu/CascadingMenuPopup$3;->this$0:Lcom/android/internal/view/menu/CascadingMenuPopup;
@@ -67,21 +63,18 @@
 
     invoke-static {v0, v2}, Lcom/android/internal/view/menu/CascadingMenuPopup;->access$502(Lcom/android/internal/view/menu/CascadingMenuPopup;Z)Z
 
-    .line 165
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Lcom/android/internal/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
     iget-object v0, v0, Lcom/android/internal/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu:Lcom/android/internal/view/menu/MenuBuilder;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/MenuBuilder;->close(Z)V
 
-    .line 166
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->this$1:Lcom/android/internal/view/menu/CascadingMenuPopup$3;
 
     iget-object v0, v0, Lcom/android/internal/view/menu/CascadingMenuPopup$3;->this$0:Lcom/android/internal/view/menu/CascadingMenuPopup;
 
     invoke-static {v0, v1}, Lcom/android/internal/view/menu/CascadingMenuPopup;->access$502(Lcom/android/internal/view/menu/CascadingMenuPopup;Z)Z
 
-    .line 170
     :cond_0
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$item:Landroid/view/MenuItem;
 
@@ -99,14 +92,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 171
     iget-object v0, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$menu:Lcom/android/internal/view/menu/MenuBuilder;
 
     iget-object v2, p0, Lcom/android/internal/view/menu/CascadingMenuPopup$3$1;->val$item:Landroid/view/MenuItem;
 
     invoke-virtual {v0, v2, v1}, Lcom/android/internal/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;I)Z
 
-    .line 173
     :cond_1
     return-void
 .end method

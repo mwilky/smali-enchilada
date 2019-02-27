@@ -107,81 +107,64 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 251
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 252
     return-void
 .end method
 
 .method public constructor <init>(Landroid/app/usage/UsageEvents$Event;)V
     .locals 2
-    .param p1, "orig"    # Landroid/app/usage/UsageEvents$Event;
 
-    .line 255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 256
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 257
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
-    .line 258
     iget-wide v0, p1, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
     iput-wide v0, p0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 259
     iget v0, p1, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
     iput v0, p0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 260
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 261
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
-    .line 262
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mAction:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mAction:Ljava/lang/String;
 
-    .line 263
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mContentType:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mContentType:Ljava/lang/String;
 
-    .line 264
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mContentAnnotations:[Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mContentAnnotations:[Ljava/lang/String;
 
-    .line 265
     iget v0, p1, Landroid/app/usage/UsageEvents$Event;->mFlags:I
 
     iput v0, p0, Landroid/app/usage/UsageEvents$Event;->mFlags:I
 
-    .line 266
     iget v0, p1, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
     iput v0, p0, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
-    .line 267
     iget-object v0, p1, Landroid/app/usage/UsageEvents$Event;->mNotificationChannelId:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mNotificationChannelId:Ljava/lang/String;
 
-    .line 268
     return-void
 .end method
 
@@ -190,7 +173,6 @@
 .method public getAppStandbyBucket()I
     .locals 2
 
-    .line 342
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
     const/high16 v1, -0x10000
@@ -205,7 +187,6 @@
 .method public getClassName()Ljava/lang/String;
     .locals 1
 
-    .line 282
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
     return-object v0
@@ -214,7 +195,6 @@
 .method public getConfiguration()Landroid/content/res/Configuration;
     .locals 1
 
-    .line 312
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
     return-object v0
@@ -223,7 +203,6 @@
 .method public getEventType()I
     .locals 1
 
-    .line 304
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
     return v0
@@ -234,7 +213,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 364
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mNotificationChannelId:Ljava/lang/String;
 
     return-object v0
@@ -243,41 +221,33 @@
 .method public getObfuscatedIfInstantApp()Landroid/app/usage/UsageEvents$Event;
     .locals 2
 
-    .line 369
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mFlags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-nez v0, :cond_0
 
-    .line 370
     return-object p0
 
-    .line 372
     :cond_0
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0, p0}, Landroid/app/usage/UsageEvents$Event;-><init>(Landroid/app/usage/UsageEvents$Event;)V
 
-    .line 373
-    .local v0, "ret":Landroid/app/usage/UsageEvents$Event;
     const-string v1, "android.instant_app"
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 374
     const-string v1, "android.instant_class"
 
     iput-object v1, v0, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
-    .line 378
     return-object v0
 .end method
 
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 274
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
     return-object v0
@@ -286,7 +256,6 @@
 .method public getShortcutId()Ljava/lang/String;
     .locals 1
 
-    .line 322
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
     return-object v0
@@ -295,7 +264,6 @@
 .method public getStandbyBucket()I
     .locals 2
 
-    .line 332
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
     const/high16 v1, -0x10000
@@ -310,7 +278,6 @@
 .method public getStandbyReason()I
     .locals 2
 
-    .line 354
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
     const v1, 0xffff
@@ -323,7 +290,6 @@
 .method public getTimeStamp()J
     .locals 2
 
-    .line 291
     iget-wide v0, p0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
     return-wide v0

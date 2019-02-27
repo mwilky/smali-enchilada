@@ -42,20 +42,15 @@
 # direct methods
 .method constructor <init>(JLandroid/renderscript/RenderScript;)V
     .locals 2
-    .param p1, "id"    # J
-    .param p3, "rs"    # Landroid/renderscript/RenderScript;
 
-    .line 78
     invoke-direct {p0, p1, p2, p3}, Landroid/renderscript/BaseObj;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 79
     iget-object v0, p0, Landroid/renderscript/Program;->guard:Ldalvik/system/CloseGuard;
 
     const-string v1, "destroy"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 80
     return-void
 .end method
 
@@ -63,10 +58,7 @@
 # virtual methods
 .method public bindConstants(Landroid/renderscript/Allocation;I)V
     .locals 8
-    .param p1, "a"    # Landroid/renderscript/Allocation;
-    .param p2, "slot"    # I
 
-    .line 147
     if-ltz p2, :cond_3
 
     iget-object v0, p0, Landroid/renderscript/Program;->mConstants:[Landroid/renderscript/Type;
@@ -75,10 +67,8 @@
 
     if-ge p2, v0, :cond_3
 
-    .line 150
     if-eqz p1, :cond_1
 
-    .line 151
     invoke-virtual {p1}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
     move-result-object v0
@@ -105,7 +95,6 @@
 
     goto :goto_0
 
-    .line 152
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -115,7 +104,6 @@
 
     throw v0
 
-    .line 154
     :cond_1
     :goto_0
     if-eqz p1, :cond_2
@@ -136,8 +124,6 @@
 
     goto :goto_1
 
-    .line 155
-    .local v6, "id":J
     :goto_2
     iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
@@ -151,11 +137,8 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/renderscript/RenderScript;->nProgramBindConstants(JIJ)V
 
-    .line 156
     return-void
 
-    .line 148
-    .end local v6    # "id":J
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -168,27 +151,22 @@
 
 .method public bindSampler(Landroid/renderscript/Sampler;I)V
     .locals 8
-    .param p1, "vs"    # Landroid/renderscript/Sampler;
-    .param p2, "slot"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
-    .line 191
     iget-object v0, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 192
     if-ltz p2, :cond_1
 
     iget v0, p0, Landroid/renderscript/Program;->mTextureCount:I
 
     if-ge p2, v0, :cond_1
 
-    .line 196
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
@@ -207,8 +185,6 @@
 
     goto :goto_0
 
-    .line 197
-    .local v6, "id":J
     :goto_1
     iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
@@ -222,11 +198,8 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/renderscript/RenderScript;->nProgramBindSampler(JIJ)V
 
-    .line 198
     return-void
 
-    .line 193
-    .end local v6    # "id":J
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -239,27 +212,22 @@
 
 .method public bindTexture(Landroid/renderscript/Allocation;I)V
     .locals 8
-    .param p1, "va"    # Landroid/renderscript/Allocation;
-    .param p2, "slot"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
-    .line 167
     iget-object v0, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 168
     if-ltz p2, :cond_3
 
     iget v0, p0, Landroid/renderscript/Program;->mTextureCount:I
 
     if-ge p2, v0, :cond_3
 
-    .line 171
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
@@ -282,7 +250,6 @@
 
     goto :goto_0
 
-    .line 173
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -292,7 +259,6 @@
 
     throw v0
 
-    .line 176
     :cond_1
     :goto_0
     if-eqz p1, :cond_2
@@ -313,8 +279,6 @@
 
     goto :goto_1
 
-    .line 177
-    .local v6, "id":J
     :goto_2
     iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
@@ -328,11 +292,8 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/renderscript/RenderScript;->nProgramBindTexture(JIJ)V
 
-    .line 178
     return-void
 
-    .line 169
-    .end local v6    # "id":J
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -345,9 +306,7 @@
 
 .method public getConstant(I)Landroid/renderscript/Type;
     .locals 2
-    .param p1, "slot"    # I
 
-    .line 99
     if-ltz p1, :cond_0
 
     iget-object v0, p0, Landroid/renderscript/Program;->mConstants:[Landroid/renderscript/Type;
@@ -356,14 +315,12 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 102
     iget-object v0, p0, Landroid/renderscript/Program;->mConstants:[Landroid/renderscript/Type;
 
     aget-object v0, v0, p1
 
     return-object v0
 
-    .line 100
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -377,7 +334,6 @@
 .method public getConstantCount()I
     .locals 1
 
-    .line 88
     iget-object v0, p0, Landroid/renderscript/Program;->mConstants:[Landroid/renderscript/Type;
 
     if-eqz v0, :cond_0
@@ -398,7 +354,6 @@
 .method public getTextureCount()I
     .locals 1
 
-    .line 110
     iget v0, p0, Landroid/renderscript/Program;->mTextureCount:I
 
     return v0
@@ -406,23 +361,19 @@
 
 .method public getTextureName(I)Ljava/lang/String;
     .locals 2
-    .param p1, "slot"    # I
 
-    .line 132
     if-ltz p1, :cond_0
 
     iget v0, p0, Landroid/renderscript/Program;->mTextureCount:I
 
     if-ge p1, v0, :cond_0
 
-    .line 135
     iget-object v0, p0, Landroid/renderscript/Program;->mTextureNames:[Ljava/lang/String;
 
     aget-object v0, v0, p1
 
     return-object v0
 
-    .line 133
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -435,23 +386,19 @@
 
 .method public getTextureType(I)Landroid/renderscript/Program$TextureType;
     .locals 2
-    .param p1, "slot"    # I
 
-    .line 119
     if-ltz p1, :cond_0
 
     iget v0, p0, Landroid/renderscript/Program;->mTextureCount:I
 
     if-ge p1, v0, :cond_0
 
-    .line 122
     iget-object v0, p0, Landroid/renderscript/Program;->mTextures:[Landroid/renderscript/Program$TextureType;
 
     aget-object v0, v0, p1
 
     return-object v0
 
-    .line 120
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

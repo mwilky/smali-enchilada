@@ -21,14 +21,10 @@
 # direct methods
 .method constructor <init>([B)V
     .locals 0
-    .param p1, "bytes"    # [B
 
-    .line 326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 327
     iput-object p1, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem$ListEntry;->mBytes:[B
 
-    .line 328
     return-void
 .end method

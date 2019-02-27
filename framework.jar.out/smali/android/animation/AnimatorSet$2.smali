@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/animation/AnimatorSet;Landroid/animation/AnimatorSet;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/animation/AnimatorSet;
 
-    .line 1342
     iput-object p1, p0, Landroid/animation/AnimatorSet$2;->this$0:Landroid/animation/AnimatorSet;
 
     iput-object p2, p0, Landroid/animation/AnimatorSet$2;->val$anim:Landroid/animation/AnimatorSet;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1345
     iget-object v0, p0, Landroid/animation/AnimatorSet$2;->val$anim:Landroid/animation/AnimatorSet;
 
     invoke-static {v0}, Landroid/animation/AnimatorSet;->access$100(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
@@ -54,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1349
     iget-object v0, p0, Landroid/animation/AnimatorSet$2;->val$anim:Landroid/animation/AnimatorSet;
 
     invoke-static {v0}, Landroid/animation/AnimatorSet;->access$100(Landroid/animation/AnimatorSet;)Landroid/util/ArrayMap;
@@ -71,10 +66,8 @@
 
     iput-boolean v1, v0, Landroid/animation/AnimatorSet$Node;->mEnded:Z
 
-    .line 1351
     return-void
 
-    .line 1346
     :cond_0
     new-instance v0, Landroid/util/AndroidRuntimeException;
 

@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 785
     new-instance v0, Landroid/graphics/ColorSpace$Adaptation;
 
     const-string v1, "BRADFORD"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Adaptation;->BRADFORD:Landroid/graphics/ColorSpace$Adaptation;
 
-    .line 793
     new-instance v0, Landroid/graphics/ColorSpace$Adaptation;
 
     const-string v1, "VON_KRIES"
@@ -72,7 +70,6 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Adaptation;->VON_KRIES:Landroid/graphics/ColorSpace$Adaptation;
 
-    .line 802
     new-instance v0, Landroid/graphics/ColorSpace$Adaptation;
 
     const-string v1, "CIECAT02"
@@ -87,7 +84,6 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Adaptation;->CIECAT02:Landroid/graphics/ColorSpace$Adaptation;
 
-    .line 780
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/ColorSpace$Adaptation;
@@ -152,28 +148,22 @@
 
 .method private constructor <init>(Ljava/lang/String;I[F)V
     .locals 0
-    .param p3, "transform"    # [F
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([F)V"
         }
     .end annotation
 
-    .line 810
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 811
     iput-object p3, p0, Landroid/graphics/ColorSpace$Adaptation;->mTransform:[F
 
-    .line 812
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/ColorSpace$Adaptation;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 780
     const-class v0, Landroid/graphics/ColorSpace$Adaptation;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -188,7 +178,6 @@
 .method public static values()[Landroid/graphics/ColorSpace$Adaptation;
     .locals 1
 
-    .line 780
     sget-object v0, Landroid/graphics/ColorSpace$Adaptation;->$VALUES:[Landroid/graphics/ColorSpace$Adaptation;
 
     invoke-virtual {v0}, [Landroid/graphics/ColorSpace$Adaptation;->clone()Ljava/lang/Object;

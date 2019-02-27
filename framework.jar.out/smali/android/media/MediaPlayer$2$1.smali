@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer$2;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/media/MediaPlayer$2;
 
-    .line 2770
     iput-object p1, p0, Landroid/media/MediaPlayer$2$1;->this$1:Landroid/media/MediaPlayer$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getSubtitleLooper()Landroid/os/Looper;
     .locals 1
 
-    .line 2777
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -49,8 +46,6 @@
 
 .method public setSubtitleWidget(Landroid/media/SubtitleTrack$RenderingWidget;)V
     .locals 0
-    .param p1, "subtitleWidget"    # Landroid/media/SubtitleTrack$RenderingWidget;
 
-    .line 2773
     return-void
 .end method

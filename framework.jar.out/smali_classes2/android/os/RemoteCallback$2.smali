@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/os/RemoteCallback;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/os/RemoteCallback;
 
-    .line 68
     iput-object p1, p0, Landroid/os/RemoteCallback$2;->this$0:Landroid/os/RemoteCallback;
 
     iput-object p2, p0, Landroid/os/RemoteCallback$2;->val$result:Landroid/os/Bundle;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 71
     iget-object v0, p0, Landroid/os/RemoteCallback$2;->this$0:Landroid/os/RemoteCallback;
 
     invoke-static {v0}, Landroid/os/RemoteCallback;->access$000(Landroid/os/RemoteCallback;)Landroid/os/RemoteCallback$OnResultListener;
@@ -54,6 +51,5 @@
 
     invoke-interface {v0, v1}, Landroid/os/RemoteCallback$OnResultListener;->onResult(Landroid/os/Bundle;)V
 
-    .line 72
     return-void
 .end method

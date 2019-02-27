@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telephony/data/DataCallResponse;
     .locals 1
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 250
     new-instance v0, Landroid/telephony/data/DataCallResponse;
 
     invoke-direct {v0, p1}, Landroid/telephony/data/DataCallResponse;-><init>(Landroid/os/Parcel;)V
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 247
     invoke-virtual {p0, p1}, Landroid/telephony/data/DataCallResponse$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/data/DataCallResponse;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Landroid/telephony/data/DataCallResponse;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 255
     new-array v0, p1, [Landroid/telephony/data/DataCallResponse;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 247
     invoke-virtual {p0, p1}, Landroid/telephony/data/DataCallResponse$1;->newArray(I)[Landroid/telephony/data/DataCallResponse;
 
     move-result-object p1

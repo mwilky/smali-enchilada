@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/PlatLogoActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/app/PlatLogoActivity;
 
-    .line 210
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onTimeUpdate(Landroid/animation/TimeAnimator;JJ)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/TimeAnimator;
-    .param p2, "totalTime"    # J
-    .param p4, "deltaTime"    # J
 
-    .line 213
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/PlatLogoActivity;->bg:Lcom/android/internal/app/PlatLogoActivity$PBackground;
@@ -55,13 +49,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->setOffset(F)V
 
-    .line 214
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/PlatLogoActivity;->bg:Lcom/android/internal/app/PlatLogoActivity$PBackground;
 
     invoke-virtual {v0}, Lcom/android/internal/app/PlatLogoActivity$PBackground;->invalidateSelf()V
 
-    .line 215
     return-void
 .end method

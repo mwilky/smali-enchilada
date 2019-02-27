@@ -39,9 +39,7 @@
 # direct methods
 .method public constructor <init>(Landroid/service/notification/RankingHelperProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/notification/RankingHelperProto;
 
-    .line 11
     iput-object p1, p0, Landroid/service/notification/RankingHelperProto$RecordProto;->this$0:Landroid/service/notification/RankingHelperProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,27 +39,19 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/hdmi/HdmiPortInfo;
     .locals 11
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 133
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 134
-    .local v7, "id":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
-    .line 135
-    .local v8, "type":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 136
-    .local v9, "address":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -78,8 +69,6 @@
     :cond_0
     move v4, v1
 
-    .line 137
-    .local v4, "cec":Z
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -94,8 +83,6 @@
     :cond_1
     move v6, v1
 
-    .line 138
-    .local v6, "arc":Z
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -110,8 +97,6 @@
     :cond_2
     move v5, v1
 
-    .line 139
-    .local v5, "mhl":Z
     :goto_2
     new-instance v10, Landroid/hardware/hdmi/HdmiPortInfo;
 
@@ -131,7 +116,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 130
     invoke-virtual {p0, p1}, Landroid/hardware/hdmi/HdmiPortInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/hdmi/HdmiPortInfo;
 
     move-result-object p1
@@ -141,9 +125,7 @@
 
 .method public newArray(I)[Landroid/hardware/hdmi/HdmiPortInfo;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 144
     new-array v0, p1, [Landroid/hardware/hdmi/HdmiPortInfo;
 
     return-object v0
@@ -152,7 +134,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 130
     invoke-virtual {p0, p1}, Landroid/hardware/hdmi/HdmiPortInfo$1;->newArray(I)[Landroid/hardware/hdmi/HdmiPortInfo;
 
     move-result-object p1

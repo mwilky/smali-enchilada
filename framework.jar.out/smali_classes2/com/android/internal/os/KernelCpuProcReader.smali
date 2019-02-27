@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 64
     new-instance v0, Lcom/android/internal/os/KernelCpuProcReader;
 
     const-string v1, "/proc/uid_cpupower/time_in_state"
@@ -52,7 +51,6 @@
 
     sput-object v0, Lcom/android/internal/os/KernelCpuProcReader;->mFreqTimeReader:Lcom/android/internal/os/KernelCpuProcReader;
 
-    .line 66
     new-instance v0, Lcom/android/internal/os/KernelCpuProcReader;
 
     const-string v1, "/proc/uid_cpupower/concurrent_active_time"
@@ -61,7 +59,6 @@
 
     sput-object v0, Lcom/android/internal/os/KernelCpuProcReader;->mActiveTimeReader:Lcom/android/internal/os/KernelCpuProcReader;
 
-    .line 68
     new-instance v0, Lcom/android/internal/os/KernelCpuProcReader;
 
     const-string v1, "/proc/uid_cpupower/concurrent_policy_time"
@@ -75,24 +72,19 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "procFile"    # Ljava/lang/String;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
     const-wide/16 v0, 0xbb8
 
     iput-wide v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mThrottleInterval:J
 
-    .line 85
     const-wide/high16 v0, -0x8000000000000000L
 
     iput-wide v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mLastReadTime:J
 
-    .line 91
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;
@@ -103,7 +95,6 @@
 
     iput-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mProc:Ljava/nio/file/Path;
 
-    .line 92
     const/16 v0, 0x2000
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -112,19 +103,16 @@
 
     iput-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
-    .line 93
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 94
     return-void
 .end method
 
 .method public static getActiveTimeReaderInstance()Lcom/android/internal/os/KernelCpuProcReader;
     .locals 1
 
-    .line 76
     sget-object v0, Lcom/android/internal/os/KernelCpuProcReader;->mActiveTimeReader:Lcom/android/internal/os/KernelCpuProcReader;
 
     return-object v0
@@ -133,7 +121,6 @@
 .method public static getClusterTimeReaderInstance()Lcom/android/internal/os/KernelCpuProcReader;
     .locals 1
 
-    .line 80
     sget-object v0, Lcom/android/internal/os/KernelCpuProcReader;->mClusterTimeReader:Lcom/android/internal/os/KernelCpuProcReader;
 
     return-object v0
@@ -142,7 +129,6 @@
 .method public static getFreqTimeReaderInstance()Lcom/android/internal/os/KernelCpuProcReader;
     .locals 1
 
-    .line 72
     sget-object v0, Lcom/android/internal/os/KernelCpuProcReader;->mFreqTimeReader:Lcom/android/internal/os/KernelCpuProcReader;
 
     return-object v0
@@ -151,7 +137,6 @@
 .method private resize()Z
     .locals 3
 
-    .line 158
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
@@ -162,12 +147,10 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 159
     const/4 v0, 0x0
 
     return v0
 
-    .line 161
     :cond_0
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
@@ -183,15 +166,12 @@
 
     move-result v0
 
-    .line 163
-    .local v0, "newSize":I
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
-    .line 164
     return v2
 .end method
 
@@ -200,7 +180,6 @@
 .method public readBytes()Ljava/nio/ByteBuffer;
     .locals 9
 
-    .line 107
     iget v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
     const/4 v1, 0x0
@@ -209,10 +188,8 @@
 
     if-lt v0, v2, :cond_0
 
-    .line 108
     return-object v1
 
-    .line 110
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -228,7 +205,6 @@
 
     if-gez v0, :cond_2
 
-    .line 111
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
@@ -251,7 +227,6 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 113
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
@@ -268,11 +243,9 @@
 
     return-object v0
 
-    .line 115
     :cond_1
     return-object v1
 
-    .line 117
     :cond_2
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -280,18 +253,14 @@
 
     iput-wide v2, p0, Lcom/android/internal/os/KernelCpuProcReader;->mLastReadTime:J
 
-    .line 118
     iget-object v0, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 119
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReadsMask()I
 
     move-result v0
 
-    .line 120
-    .local v0, "oldMask":I
     const/4 v2, 0x1
 
     :try_start_0
@@ -314,8 +283,6 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 121
-    .local v3, "fc":Ljava/nio/channels/FileChannel;
     :goto_0
     :try_start_1
     iget-object v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
@@ -332,21 +299,18 @@
 
     if-ne v4, v5, :cond_5
 
-    .line 122
     invoke-direct {p0}, Lcom/android/internal/os/KernelCpuProcReader;->resize()Z
 
     move-result v4
 
     if-nez v4, :cond_4
 
-    .line 123
     iget v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
     add-int/2addr v4, v2
 
     iput v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
-    .line 124
     const-string v4, "KernelCpuProcReader"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -370,10 +334,8 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 125
     nop
 
-    .line 129
     if-eqz v3, :cond_3
 
     :try_start_2
@@ -384,14 +346,11 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 139
     :cond_3
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicyMask(I)V
 
-    .line 125
     return-object v1
 
-    .line 127
     :cond_4
     const-wide/16 v4, 0x0
 
@@ -403,7 +362,6 @@
 
     goto :goto_0
 
-    .line 129
     :cond_5
     if-eqz v3, :cond_6
 
@@ -415,20 +373,15 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 139
-    .end local v3    # "fc":Ljava/nio/channels/FileChannel;
     :cond_6
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicyMask(I)V
 
-    .line 140
     nop
 
-    .line 141
     iget-object v1, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 142
     iget-object v1, p0, Lcom/android/internal/os/KernelCpuProcReader;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
@@ -445,8 +398,6 @@
 
     return-object v1
 
-    .line 129
-    .restart local v3    # "fc":Ljava/nio/channels/FileChannel;
     :catchall_0
     move-exception v4
 
@@ -454,7 +405,6 @@
 
     goto :goto_1
 
-    .line 120
     :catch_0
     move-exception v4
 
@@ -463,7 +413,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 129
     :catchall_1
     move-exception v5
 
@@ -509,19 +458,14 @@
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    .line 139
-    .end local v3    # "fc":Ljava/nio/channels/FileChannel;
     :catchall_2
     move-exception v1
 
     goto :goto_3
 
-    .line 134
     :catch_2
     move-exception v3
 
-    .line 135
-    .local v3, "e":Ljava/io/IOException;
     :try_start_8
     iget v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
@@ -529,7 +473,6 @@
 
     iput v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
-    .line 136
     const-string v2, "KernelCpuProcReader"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -552,22 +495,15 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 137
     nop
 
-    .line 139
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicyMask(I)V
 
-    .line 137
     return-object v1
 
-    .line 129
-    .end local v3    # "e":Ljava/io/IOException;
     :catch_3
     move-exception v3
 
-    .line 131
-    .restart local v3    # "e":Ljava/io/IOException;
     :try_start_9
     iget v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
@@ -575,7 +511,6 @@
 
     iput v4, p0, Lcom/android/internal/os/KernelCpuProcReader;->mErrors:I
 
-    .line 132
     const-string v2, "KernelCpuProcReader"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -598,17 +533,12 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
-    .line 133
     nop
 
-    .line 139
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicyMask(I)V
 
-    .line 133
     return-object v1
 
-    .line 139
-    .end local v3    # "e":Ljava/io/IOException;
     :goto_3
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicyMask(I)V
 
@@ -617,19 +547,15 @@
 
 .method public setThrottleInterval(J)V
     .locals 2
-    .param p1, "throttleInterval"    # J
 
-    .line 152
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-ltz v0, :cond_0
 
-    .line 153
     iput-wide p1, p0, Lcom/android/internal/os/KernelCpuProcReader;->mThrottleInterval:J
 
-    .line 155
     :cond_0
     return-void
 .end method

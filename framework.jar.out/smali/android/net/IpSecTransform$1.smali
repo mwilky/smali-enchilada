@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/IpSecTransform;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/IpSecTransform;
 
-    .line 217
     iput-object p1, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$PacketKeepaliveCallback;-><init>()V
@@ -33,9 +31,7 @@
 
 .method public static synthetic lambda$onError$2(Landroid/net/IpSecTransform$1;I)V
     .locals 1
-    .param p1, "error"    # I
 
-    .line 238
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-static {v0}, Landroid/net/IpSecTransform;->access$200(Landroid/net/IpSecTransform;)Landroid/net/IpSecTransform$NattKeepaliveCallback;
@@ -50,7 +46,6 @@
 .method public static synthetic lambda$onStarted$0(Landroid/net/IpSecTransform$1;)V
     .locals 1
 
-    .line 222
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-static {v0}, Landroid/net/IpSecTransform;->access$200(Landroid/net/IpSecTransform;)Landroid/net/IpSecTransform$NattKeepaliveCallback;
@@ -65,7 +60,6 @@
 .method public static synthetic lambda$onStopped$1(Landroid/net/IpSecTransform$1;)V
     .locals 1
 
-    .line 230
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-static {v0}, Landroid/net/IpSecTransform;->access$200(Landroid/net/IpSecTransform;)Landroid/net/IpSecTransform$NattKeepaliveCallback;
@@ -81,12 +75,9 @@
 # virtual methods
 .method public onError(I)V
     .locals 2
-    .param p1, "error"    # I
 
-    .line 236
     monitor-enter p0
 
-    .line 237
     :try_start_0
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
@@ -94,7 +85,6 @@
 
     invoke-static {v0, v1}, Landroid/net/IpSecTransform;->access$102(Landroid/net/IpSecTransform;Landroid/net/ConnectivityManager$PacketKeepalive;)Landroid/net/ConnectivityManager$PacketKeepalive;
 
-    .line 238
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-static {v0}, Landroid/net/IpSecTransform;->access$000(Landroid/net/IpSecTransform;)Landroid/os/Handler;
@@ -107,13 +97,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 239
     monitor-exit p0
 
-    .line 240
     return-void
 
-    .line 239
     :catchall_0
     move-exception v0
 
@@ -127,10 +114,8 @@
 .method public onStarted()V
     .locals 2
 
-    .line 221
     monitor-enter p0
 
-    .line 222
     :try_start_0
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
@@ -144,13 +129,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 223
     monitor-exit p0
 
-    .line 224
     return-void
 
-    .line 223
     :catchall_0
     move-exception v0
 
@@ -164,10 +146,8 @@
 .method public onStopped()V
     .locals 2
 
-    .line 228
     monitor-enter p0
 
-    .line 229
     :try_start_0
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
@@ -175,7 +155,6 @@
 
     invoke-static {v0, v1}, Landroid/net/IpSecTransform;->access$102(Landroid/net/IpSecTransform;Landroid/net/ConnectivityManager$PacketKeepalive;)Landroid/net/ConnectivityManager$PacketKeepalive;
 
-    .line 230
     iget-object v0, p0, Landroid/net/IpSecTransform$1;->this$0:Landroid/net/IpSecTransform;
 
     invoke-static {v0}, Landroid/net/IpSecTransform;->access$000(Landroid/net/IpSecTransform;)Landroid/os/Handler;
@@ -188,13 +167,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 231
     monitor-exit p0
 
-    .line 232
     return-void
 
-    .line 231
     :catchall_0
     move-exception v0
 

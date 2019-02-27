@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 724
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/hardware/camera2/CameraManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 727
     new-instance v0, Landroid/hardware/camera2/CameraManager;
 
     invoke-direct {v0, p1}, Landroid/hardware/camera2/CameraManager;-><init>(Landroid/content/Context;)V
@@ -54,7 +51,6 @@
         }
     .end annotation
 
-    .line 724
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$62;->createService(Landroid/app/ContextImpl;)Landroid/hardware/camera2/CameraManager;
 
     move-result-object p1

@@ -29,11 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/BatteryStatsImpl$Uid;Lcom/android/internal/os/BatteryStatsImpl;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl$Uid;
-    .param p2, "x0"    # Lcom/android/internal/os/BatteryStatsImpl;
-    .param p3, "uid"    # I
 
-    .line 6895
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$Uid$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl$Uid;
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -48,7 +44,6 @@
 .method public instantiateObject()Lcom/android/internal/os/BatteryStatsImpl$DualTimer;
     .locals 8
 
-    .line 6897
     new-instance v7, Lcom/android/internal/os/BatteryStatsImpl$DualTimer;
 
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Uid$2;->this$0:Lcom/android/internal/os/BatteryStatsImpl$Uid;
@@ -83,7 +78,6 @@
 .method public bridge synthetic instantiateObject()Ljava/lang/Object;
     .locals 1
 
-    .line 6895
     invoke-virtual {p0}, Lcom/android/internal/os/BatteryStatsImpl$Uid$2;->instantiateObject()Lcom/android/internal/os/BatteryStatsImpl$DualTimer;
 
     move-result-object v0

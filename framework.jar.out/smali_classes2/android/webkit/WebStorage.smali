@@ -18,7 +18,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +26,6 @@
 .method public static getInstance()Landroid/webkit/WebStorage;
     .locals 1
 
-    .line 194
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -44,15 +42,12 @@
 .method public deleteAllData()V
     .locals 0
 
-    .line 186
     return-void
 .end method
 
 .method public deleteOrigin(Ljava/lang/String;)V
     .locals 0
-    .param p1, "origin"    # Ljava/lang/String;
 
-    .line 177
     return-void
 .end method
 
@@ -67,14 +62,11 @@
         }
     .end annotation
 
-    .line 134
-    .local p1, "callback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<Ljava/util/Map;>;"
     return-void
 .end method
 
 .method public getQuotaForOrigin(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
     .locals 0
-    .param p1, "origin"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,14 +77,11 @@
         }
     .end annotation
 
-    .line 156
-    .local p2, "callback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     return-void
 .end method
 
 .method public getUsageForOrigin(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
     .locals 0
-    .param p1, "origin"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,18 +92,13 @@
         }
     .end annotation
 
-    .line 145
-    .local p2, "callback":Landroid/webkit/ValueCallback;, "Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     return-void
 .end method
 
 .method public setQuotaForOrigin(Ljava/lang/String;J)V
     .locals 0
-    .param p1, "origin"    # Ljava/lang/String;
-    .param p2, "quota"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 168
     return-void
 .end method

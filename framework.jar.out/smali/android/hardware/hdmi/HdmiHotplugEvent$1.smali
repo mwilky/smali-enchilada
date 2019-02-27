@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,15 +39,11 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/hdmi/HdmiHotplugEvent;
     .locals 3
-    .param p1, "p"    # Landroid/os/Parcel;
 
-    .line 97
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 98
-    .local v0, "port":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v1
@@ -65,8 +60,6 @@
     :goto_0
     move v1, v2
 
-    .line 99
-    .local v1, "connected":Z
     new-instance v2, Landroid/hardware/hdmi/HdmiHotplugEvent;
 
     invoke-direct {v2, v0, v1}, Landroid/hardware/hdmi/HdmiHotplugEvent;-><init>(IZ)V
@@ -77,7 +70,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 87
     invoke-virtual {p0, p1}, Landroid/hardware/hdmi/HdmiHotplugEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/hdmi/HdmiHotplugEvent;
 
     move-result-object p1
@@ -87,9 +79,7 @@
 
 .method public newArray(I)[Landroid/hardware/hdmi/HdmiHotplugEvent;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 103
     new-array v0, p1, [Landroid/hardware/hdmi/HdmiHotplugEvent;
 
     return-object v0
@@ -98,7 +88,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 87
     invoke-virtual {p0, p1}, Landroid/hardware/hdmi/HdmiHotplugEvent$1;->newArray(I)[Landroid/hardware/hdmi/HdmiHotplugEvent;
 
     move-result-object p1

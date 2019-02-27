@@ -29,26 +29,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;II)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "startIndex"    # I
-    .param p3, "endIndex"    # I
 
-    .line 571
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 572
     invoke-static {p1, p2, p3}, Landroid/view/textclassifier/TextClassifier$Utils;->checkArgument(Ljava/lang/CharSequence;II)V
 
-    .line 573
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mText:Ljava/lang/CharSequence;
 
-    .line 574
     iput p2, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mStartIndex:I
 
-    .line 575
     iput p3, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mEndIndex:I
 
-    .line 576
     return-void
 .end method
 
@@ -57,7 +48,6 @@
 .method public build()Landroid/view/textclassifier/TextClassification$Request;
     .locals 8
 
-    .line 609
     new-instance v7, Landroid/view/textclassifier/TextClassification$Request;
 
     iget-object v1, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mText:Ljava/lang/CharSequence;
@@ -81,22 +71,16 @@
 
 .method public setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextClassification$Request$Builder;
     .locals 0
-    .param p1, "defaultLocales"    # Landroid/os/LocaleList;
 
-    .line 587
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 588
     return-object p0
 .end method
 
 .method public setReferenceTime(Ljava/time/ZonedDateTime;)Landroid/view/textclassifier/TextClassification$Request$Builder;
     .locals 0
-    .param p1, "referenceTime"    # Ljava/time/ZonedDateTime;
 
-    .line 600
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Request$Builder;->mReferenceTime:Ljava/time/ZonedDateTime;
 
-    .line 601
     return-object p0
 .end method

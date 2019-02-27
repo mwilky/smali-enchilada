@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/power/WakeLockProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/WakeLockProto;
 
-    .line 11
     iput-object p1, p0, Lcom/android/server/power/WakeLockProto$WakeLockFlagsProto;->this$0:Lcom/android/server/power/WakeLockProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

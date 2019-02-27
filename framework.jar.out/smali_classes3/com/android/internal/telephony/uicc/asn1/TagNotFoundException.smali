@@ -10,15 +10,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "tag"    # I
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 26
     iput p1, p0, Lcom/android/internal/telephony/uicc/asn1/TagNotFoundException;->mTag:I
 
-    .line 27
     return-void
 .end method
 
@@ -27,7 +23,6 @@
 .method public getMessage()Ljava/lang/String;
     .locals 2
 
-    .line 36
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -60,7 +55,6 @@
 .method public getTag()I
     .locals 1
 
-    .line 31
     iget v0, p0, Lcom/android/internal/telephony/uicc/asn1/TagNotFoundException;->mTag:I
 
     return v0

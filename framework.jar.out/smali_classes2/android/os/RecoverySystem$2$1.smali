@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/os/RecoverySystem$2;IJ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/os/RecoverySystem$2;
 
-    .line 462
     iput-object p1, p0, Landroid/os/RecoverySystem$2$1;->this$0:Landroid/os/RecoverySystem$2;
 
     iput p2, p0, Landroid/os/RecoverySystem$2$1;->val$progress:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 5
 
-    .line 467
     iget v0, p0, Landroid/os/RecoverySystem$2$1;->val$progress:I
 
     iget-object v1, p0, Landroid/os/RecoverySystem$2$1;->this$0:Landroid/os/RecoverySystem$2;
@@ -77,20 +74,17 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 469
     :cond_1
     iget v0, p0, Landroid/os/RecoverySystem$2$1;->val$progress:I
 
     if-ne v0, v2, :cond_2
 
-    .line 470
     const-string v0, "RecoverySystem"
 
     const-string v1, "100% complete process the ota package , notify the result"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 473
     :cond_2
     iget-object v0, p0, Landroid/os/RecoverySystem$2$1;->this$0:Landroid/os/RecoverySystem$2;
 
@@ -98,14 +92,12 @@
 
     iput v1, v0, Landroid/os/RecoverySystem$2;->lastProgress:I
 
-    .line 474
     iget-object v0, p0, Landroid/os/RecoverySystem$2$1;->this$0:Landroid/os/RecoverySystem$2;
 
     iget-wide v1, p0, Landroid/os/RecoverySystem$2$1;->val$now:J
 
     iput-wide v1, v0, Landroid/os/RecoverySystem$2;->lastPublishTime:J
 
-    .line 475
     iget-object v0, p0, Landroid/os/RecoverySystem$2$1;->this$0:Landroid/os/RecoverySystem$2;
 
     iget-object v0, v0, Landroid/os/RecoverySystem$2;->val$listener:Landroid/os/RecoverySystem$ProgressListener;
@@ -114,7 +106,6 @@
 
     invoke-interface {v0, v1}, Landroid/os/RecoverySystem$ProgressListener;->onProgress(I)V
 
-    .line 477
     :cond_3
     return-void
 .end method

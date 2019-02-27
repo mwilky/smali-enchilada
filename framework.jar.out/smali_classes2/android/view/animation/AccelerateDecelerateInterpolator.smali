@@ -15,22 +15,16 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 33
     invoke-direct {p0}, Landroid/view/animation/BaseInterpolator;-><init>()V
 
-    .line 34
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 37
     invoke-direct {p0}, Landroid/view/animation/BaseInterpolator;-><init>()V
 
-    .line 38
     return-void
 .end method
 
@@ -39,7 +33,6 @@
 .method public createNativeInterpolator()J
     .locals 2
 
-    .line 47
     invoke-static {}, Lcom/android/internal/view/animation/NativeInterpolatorFactoryHelper;->createAccelerateDecelerateInterpolator()J
 
     move-result-wide v0
@@ -49,9 +42,7 @@
 
 .method public getInterpolation(F)F
     .locals 4
-    .param p1, "input"    # F
 
-    .line 41
     const/high16 v0, 0x3f800000    # 1.0f
 
     add-float/2addr v0, p1

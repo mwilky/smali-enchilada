@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/job/JobService;Landroid/app/Service;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/job/JobService;
-    .param p2, "service"    # Landroid/app/Service;
 
-    .line 59
     iput-object p1, p0, Landroid/app/job/JobService$1;->this$0:Landroid/app/job/JobService;
 
     invoke-direct {p0, p2}, Landroid/app/job/JobServiceEngine;-><init>(Landroid/app/Service;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onStartJob(Landroid/app/job/JobParameters;)Z
     .locals 1
-    .param p1, "params"    # Landroid/app/job/JobParameters;
 
-    .line 62
     iget-object v0, p0, Landroid/app/job/JobService$1;->this$0:Landroid/app/job/JobService;
 
     invoke-virtual {v0, p1}, Landroid/app/job/JobService;->onStartJob(Landroid/app/job/JobParameters;)Z
@@ -50,9 +45,7 @@
 
 .method public onStopJob(Landroid/app/job/JobParameters;)Z
     .locals 1
-    .param p1, "params"    # Landroid/app/job/JobParameters;
 
-    .line 67
     iget-object v0, p0, Landroid/app/job/JobService$1;->this$0:Landroid/app/job/JobService;
 
     invoke-virtual {v0, p1}, Landroid/app/job/JobService;->onStopJob(Landroid/app/job/JobParameters;)Z

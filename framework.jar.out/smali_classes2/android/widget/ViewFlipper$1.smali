@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ViewFlipper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/ViewFlipper;
 
-    .line 68
     iput-object p1, p0, Landroid/widget/ViewFlipper$1;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 71
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -55,19 +48,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 73
     iget-object v1, p0, Landroid/widget/ViewFlipper$1;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-static {v1, v2}, Landroid/widget/ViewFlipper;->access$002(Landroid/widget/ViewFlipper;Z)Z
 
-    .line 74
     iget-object v1, p0, Landroid/widget/ViewFlipper$1;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-static {v1}, Landroid/widget/ViewFlipper;->access$100(Landroid/widget/ViewFlipper;)V
 
     goto :goto_0
 
-    .line 75
     :cond_0
     const-string v1, "android.intent.action.USER_PRESENT"
 
@@ -77,19 +67,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 76
     iget-object v1, p0, Landroid/widget/ViewFlipper$1;->this$0:Landroid/widget/ViewFlipper;
 
     const/4 v3, 0x1
 
     invoke-static {v1, v3}, Landroid/widget/ViewFlipper;->access$002(Landroid/widget/ViewFlipper;Z)Z
 
-    .line 77
     iget-object v1, p0, Landroid/widget/ViewFlipper$1;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-static {v1, v2}, Landroid/widget/ViewFlipper;->access$200(Landroid/widget/ViewFlipper;Z)V
 
-    .line 79
     :cond_1
     :goto_0
     return-void

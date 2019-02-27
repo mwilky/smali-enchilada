@@ -60,19 +60,12 @@
         }
     .end annotation
 
-    .line 2274
-    .local p0, "this":Landroid/widget/GridLayout$Assoc;, "Landroid/widget/GridLayout$Assoc<TK;TV;>;"
-    .local p1, "keyType":Ljava/lang/Class;, "Ljava/lang/Class<TK;>;"
-    .local p2, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<TV;>;"
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2275
     iput-object p1, p0, Landroid/widget/GridLayout$Assoc;->keyType:Ljava/lang/Class;
 
-    .line 2276
     iput-object p2, p0, Landroid/widget/GridLayout$Assoc;->valueType:Ljava/lang/Class;
 
-    .line 2277
     return-void
 .end method
 
@@ -94,9 +87,6 @@
         }
     .end annotation
 
-    .line 2280
-    .local p0, "keyType":Ljava/lang/Class;, "Ljava/lang/Class<TK;>;"
-    .local p1, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<TV;>;"
     new-instance v0, Landroid/widget/GridLayout$Assoc;
 
     invoke-direct {v0, p0, p1}, Landroid/widget/GridLayout$Assoc;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
@@ -116,14 +106,10 @@
         }
     .end annotation
 
-    .line 2289
-    .local p0, "this":Landroid/widget/GridLayout$Assoc;, "Landroid/widget/GridLayout$Assoc<TK;TV;>;"
     invoke-virtual {p0}, Landroid/widget/GridLayout$Assoc;->size()I
 
     move-result v0
 
-    .line 2290
-    .local v0, "N":I
     iget-object v1, p0, Landroid/widget/GridLayout$Assoc;->keyType:Ljava/lang/Class;
 
     invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
@@ -132,8 +118,6 @@
 
     check-cast v1, [Ljava/lang/Object;
 
-    .line 2291
-    .local v1, "keys":[Ljava/lang/Object;, "[TK;"
     iget-object v2, p0, Landroid/widget/GridLayout$Assoc;->valueType:Ljava/lang/Class;
 
     invoke-static {v2, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
@@ -142,15 +126,11 @@
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 2292
-    .local v2, "values":[Ljava/lang/Object;, "[TV;"
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 2293
     invoke-virtual {p0, v3}, Landroid/widget/GridLayout$Assoc;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -161,7 +141,6 @@
 
     aput-object v4, v1, v3
 
-    .line 2294
     invoke-virtual {p0, v3}, Landroid/widget/GridLayout$Assoc;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -172,13 +151,10 @@
 
     aput-object v4, v2, v3
 
-    .line 2292
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 2296
-    .end local v3    # "i":I
     :cond_0
     new-instance v3, Landroid/widget/GridLayout$PackedMap;
 
@@ -197,16 +173,11 @@
         }
     .end annotation
 
-    .line 2284
-    .local p0, "this":Landroid/widget/GridLayout$Assoc;, "Landroid/widget/GridLayout$Assoc<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/GridLayout$Assoc;->add(Ljava/lang/Object;)Z
 
-    .line 2285
     return-void
 .end method

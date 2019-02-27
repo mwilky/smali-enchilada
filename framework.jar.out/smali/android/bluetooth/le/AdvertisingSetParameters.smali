@@ -74,7 +74,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 230
     new-instance v0, Landroid/bluetooth/le/AdvertisingSetParameters$1;
 
     invoke-direct {v0}, Landroid/bluetooth/le/AdvertisingSetParameters$1;-><init>()V
@@ -86,12 +85,9 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -112,7 +108,6 @@
     :goto_0
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mConnectable:Z
 
-    .line 127
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -129,7 +124,6 @@
     :goto_1
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mScannable:Z
 
-    .line 128
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -146,7 +140,6 @@
     :goto_2
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsLegacy:Z
 
-    .line 129
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -163,7 +156,6 @@
     :goto_3
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsAnonymous:Z
 
-    .line 130
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -177,44 +169,36 @@
     :cond_4
     iput-boolean v1, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIncludeTxPower:Z
 
-    .line 131
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mPrimaryPhy:I
 
-    .line 132
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mSecondaryPhy:I
 
-    .line 133
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mInterval:I
 
-    .line 134
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mTxPowerLevel:I
 
-    .line 135
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/bluetooth/le/AdvertisingSetParameters$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/bluetooth/le/AdvertisingSetParameters$1;
 
-    .line 31
     invoke-direct {p0, p1}, Landroid/bluetooth/le/AdvertisingSetParameters;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -222,64 +206,33 @@
 
 .method private constructor <init>(ZZZZZIIII)V
     .locals 0
-    .param p1, "connectable"    # Z
-    .param p2, "scannable"    # Z
-    .param p3, "isLegacy"    # Z
-    .param p4, "isAnonymous"    # Z
-    .param p5, "includeTxPower"    # Z
-    .param p6, "primaryPhy"    # I
-    .param p7, "secondaryPhy"    # I
-    .param p8, "interval"    # I
-    .param p9, "txPowerLevel"    # I
 
-    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mConnectable:Z
 
-    .line 115
     iput-boolean p2, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mScannable:Z
 
-    .line 116
     iput-boolean p3, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsLegacy:Z
 
-    .line 117
     iput-boolean p4, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsAnonymous:Z
 
-    .line 118
     iput-boolean p5, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIncludeTxPower:Z
 
-    .line 119
     iput p6, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mPrimaryPhy:I
 
-    .line 120
     iput p7, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mSecondaryPhy:I
 
-    .line 121
     iput p8, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mInterval:I
 
-    .line 122
     iput p9, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mTxPowerLevel:I
 
-    .line 123
     return-void
 .end method
 
 .method synthetic constructor <init>(ZZZZZIIIILandroid/bluetooth/le/AdvertisingSetParameters$1;)V
     .locals 0
-    .param p1, "x0"    # Z
-    .param p2, "x1"    # Z
-    .param p3, "x2"    # Z
-    .param p4, "x3"    # Z
-    .param p5, "x4"    # Z
-    .param p6, "x5"    # I
-    .param p7, "x6"    # I
-    .param p8, "x7"    # I
-    .param p9, "x8"    # I
-    .param p10, "x9"    # Landroid/bluetooth/le/AdvertisingSetParameters$1;
 
-    .line 31
     invoke-direct/range {p0 .. p9}, Landroid/bluetooth/le/AdvertisingSetParameters;-><init>(ZZZZZIIII)V
 
     return-void
@@ -290,7 +243,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 214
     const/4 v0, 0x0
 
     return v0
@@ -299,7 +251,6 @@
 .method public getInterval()I
     .locals 1
 
-    .line 190
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mInterval:I
 
     return v0
@@ -308,7 +259,6 @@
 .method public getPrimaryPhy()I
     .locals 1
 
-    .line 176
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mPrimaryPhy:I
 
     return v0
@@ -317,7 +267,6 @@
 .method public getSecondaryPhy()I
     .locals 1
 
-    .line 183
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mSecondaryPhy:I
 
     return v0
@@ -326,7 +275,6 @@
 .method public getTxPowerLevel()I
     .locals 1
 
-    .line 197
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mTxPowerLevel:I
 
     return v0
@@ -335,7 +283,6 @@
 .method public includeTxPower()Z
     .locals 1
 
-    .line 169
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIncludeTxPower:Z
 
     return v0
@@ -344,7 +291,6 @@
 .method public isAnonymous()Z
     .locals 1
 
-    .line 162
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsAnonymous:Z
 
     return v0
@@ -353,7 +299,6 @@
 .method public isConnectable()Z
     .locals 1
 
-    .line 141
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mConnectable:Z
 
     return v0
@@ -362,7 +307,6 @@
 .method public isLegacy()Z
     .locals 1
 
-    .line 155
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsLegacy:Z
 
     return v0
@@ -371,7 +315,6 @@
 .method public isScannable()Z
     .locals 1
 
-    .line 148
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mScannable:Z
 
     return v0
@@ -380,7 +323,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 202
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -462,54 +404,42 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 219
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mConnectable:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 220
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mScannable:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 221
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsLegacy:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 222
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIsAnonymous:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 223
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mIncludeTxPower:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 224
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mPrimaryPhy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 225
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mSecondaryPhy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 226
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mInterval:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 227
     iget v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters;->mTxPowerLevel:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 228
     return-void
 .end method

@@ -23,37 +23,25 @@
 # direct methods
 .method constructor <init>(II)V
     .locals 0
-    .param p1, "hour"    # I
-    .param p2, "minute"    # I
 
-    .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 195
     iput p1, p0, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;->mHour:I
 
-    .line 196
     iput p2, p0, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;->mMinute:I
 
-    .line 197
     return-void
 .end method
 
 .method static toBcdByte(I)B
     .locals 3
-    .param p0, "value"    # I
 
-    .line 206
     div-int/lit8 v0, p0, 0xa
 
     rem-int/lit8 v0, v0, 0xa
 
-    .line 207
-    .local v0, "digitOfTen":I
     rem-int/lit8 v1, p0, 0xa
 
-    .line 208
-    .local v1, "digitOfOne":I
     shl-int/lit8 v2, v0, 0x4
 
     or-int/2addr v2, v1
@@ -67,10 +55,7 @@
 # virtual methods
 .method toByteArray([BI)I
     .locals 2
-    .param p1, "data"    # [B
-    .param p2, "index"    # I
 
-    .line 200
     iget v0, p0, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;->mHour:I
 
     invoke-static {v0}, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;->toBcdByte(I)B
@@ -79,7 +64,6 @@
 
     aput-byte v0, p1, p2
 
-    .line 201
     add-int/lit8 v0, p2, 0x1
 
     iget v1, p0, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;->mMinute:I
@@ -90,7 +74,6 @@
 
     aput-byte v1, p1, v0
 
-    .line 202
     const/4 v0, 0x2
 
     return v0

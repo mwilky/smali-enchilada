@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConnection$Callback;Landroid/telecom/RemoteConnection;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telecom/RemoteConnection;
 
-    .line 1284
     iput-object p1, p0, Landroid/telecom/RemoteConnection$6;->this$0:Landroid/telecom/RemoteConnection;
 
     iput-object p2, p0, Landroid/telecom/RemoteConnection$6;->val$callback:Landroid/telecom/RemoteConnection$Callback;
@@ -47,13 +45,11 @@
 .method public run()V
     .locals 2
 
-    .line 1287
     iget-object v0, p0, Landroid/telecom/RemoteConnection$6;->val$callback:Landroid/telecom/RemoteConnection$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConnection$6;->val$connection:Landroid/telecom/RemoteConnection;
 
     invoke-virtual {v0, v1}, Landroid/telecom/RemoteConnection$Callback;->onDestroyed(Landroid/telecom/RemoteConnection;)V
 
-    .line 1288
     return-void
 .end method

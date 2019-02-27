@@ -395,42 +395,34 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 106
     const-string v0, "gsm.sim.state.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_SIM_STATE_2:Ljava/lang/String;
 
-    .line 107
     const-string v0, "gsm.sim.operator.numeric.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_ICC_OPERATOR_NUMERIC_2:Ljava/lang/String;
 
-    .line 108
     const-string v0, "gsm.sim.operator.alpha.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_ICC_OPERATOR_ALPHA_2:Ljava/lang/String;
 
-    .line 109
     const-string v0, "gsm.sim.operator.iso-country.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_ICC_OPERATOR_ISO_COUNTRY_2:Ljava/lang/String;
 
-    .line 114
     const-string v0, "gsm.sim.operator.default-name"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_ICC_OPERATOR_DEFAULT_NAME:Ljava/lang/String;
 
-    .line 115
     const-string v0, "gsm.sim.operator.default-name.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_ICC_OPERATOR_DEFAULT_NAME_2:Ljava/lang/String;
 
-    .line 116
     const-string v0, "gsm.network.type.2"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->PROPERTY_DATA_NETWORK_TYPE_2:Ljava/lang/String;
 
-    .line 261
     const-string v0, "QOEMHOOK"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -441,12 +433,10 @@
 
     sput v0, Landroid/telephony/OemTelephonyConstant;->mHeaderSize:I
 
-    .line 309
     const-string/jumbo v0, "prop.oem.data_dormant_interval"
 
     sput-object v0, Landroid/telephony/OemTelephonyConstant;->DORMANT_PROBE_INTERVAL:Ljava/lang/String;
 
-    .line 336
     const-string/jumbo v0, "sys.oem.rf.modemtest"
 
     const/4 v1, 0x0
@@ -457,7 +447,6 @@
 
     sput-boolean v0, Landroid/telephony/OemTelephonyConstant;->OEM_RF_MODE:Z
 
-    .line 383
     const-string/jumbo v0, "ril.iccid.sim1"
 
     const-string/jumbo v1, "ril.iccid.sim2"
@@ -478,7 +467,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

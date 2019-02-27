@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 250
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,8 +30,6 @@
 # virtual methods
 .method public println(Ljava/lang/String;)V
     .locals 0
-    .param p1, "x"    # Ljava/lang/String;
 
-    .line 253
     return-void
 .end method

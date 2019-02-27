@@ -14,13 +14,9 @@
 # direct methods
 .method constructor <init>(JLandroid/renderscript/RenderScript;)V
     .locals 0
-    .param p1, "id"    # J
-    .param p3, "rs"    # Landroid/renderscript/RenderScript;
 
-    .line 53
     invoke-direct {p0, p1, p2, p3}, Landroid/renderscript/Program;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 54
     return-void
 .end method
 
@@ -28,9 +24,7 @@
 # virtual methods
 .method public getInput(I)Landroid/renderscript/Element;
     .locals 2
-    .param p1, "slot"    # I
 
-    .line 70
     if-ltz p1, :cond_0
 
     iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
@@ -39,14 +33,12 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 73
     iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     aget-object v0, v0, p1
 
     return-object v0
 
-    .line 71
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -60,7 +52,6 @@
 .method public getInputCount()I
     .locals 1
 
-    .line 61
     iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     if-eqz v0, :cond_0

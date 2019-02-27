@@ -431,7 +431,6 @@
 .method static constructor <clinit>()V
     .locals 45
 
-    .line 217
     const-string v0, "l"
 
     const-string v1, "c"
@@ -444,7 +443,6 @@
 
     sput-object v0, Landroid/os/BatteryStats;->STAT_NAMES:[Ljava/lang/String;
 
-    .line 382
     const/4 v0, 0x5
 
     new-array v1, v0, [J
@@ -453,7 +451,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->JOB_FRESHNESS_BUCKETS:[J
 
-    .line 2074
     const-string v1, "dark"
 
     const-string v2, "dim"
@@ -470,7 +467,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->SCREEN_BRIGHTNESS_NAMES:[Ljava/lang/String;
 
-    .line 2078
     const-string v1, "0"
 
     const-string v2, "1"
@@ -487,7 +483,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->SCREEN_BRIGHTNESS_SHORT_NAMES:[Ljava/lang/String;
 
-    .line 2289
     const-string/jumbo v2, "none"
 
     const-string v3, "gprs"
@@ -536,7 +531,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->DATA_CONNECTION_NAMES:[Ljava/lang/String;
 
-    .line 2335
     const-string v2, "invalid"
 
     const-string v3, "disconn"
@@ -569,7 +563,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->WIFI_SUPPL_STATE_NAMES:[Ljava/lang/String;
 
-    .line 2341
     const-string v2, "inv"
 
     const-string v3, "dsc"
@@ -602,7 +595,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->WIFI_SUPPL_STATE_SHORT_NAMES:[Ljava/lang/String;
 
-    .line 2347
     const/16 v1, 0x12
 
     new-array v1, v1, [Landroid/os/BatteryStats$BitDescription;
@@ -923,7 +915,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->HISTORY_STATE_DESCRIPTIONS:[Landroid/os/BatteryStats$BitDescription;
 
-    .line 2378
     const/16 v1, 0x10
 
     new-array v1, v1, [Landroid/os/BatteryStats$BitDescription;
@@ -1224,7 +1215,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->HISTORY_STATE2_DESCRIPTIONS:[Landroid/os/BatteryStats$BitDescription;
 
-    .line 2408
     const-string/jumbo v23, "null"
 
     const-string/jumbo v24, "proc"
@@ -1275,7 +1265,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->HISTORY_EVENT_NAMES:[Ljava/lang/String;
 
-    .line 2414
     const-string v23, "Enl"
 
     const-string v24, "Epr"
@@ -1326,17 +1315,14 @@
 
     sput-object v1, Landroid/os/BatteryStats;->HISTORY_EVENT_CHECKIN_NAMES:[Ljava/lang/String;
 
-    .line 2425
     sget-object v1, Landroid/os/-$$Lambda$IyvVQC-0mKtsfXbnO0kDL64hrk0;->INSTANCE:Landroid/os/-$$Lambda$IyvVQC-0mKtsfXbnO0kDL64hrk0;
 
     sput-object v1, Landroid/os/BatteryStats;->sUidToString:Landroid/os/BatteryStats$IntToString;
 
-    .line 2426
     sget-object v1, Landroid/os/-$$Lambda$BatteryStats$q1UvBdLgHRZVzc68BxdksTmbuCw;->INSTANCE:Landroid/os/-$$Lambda$BatteryStats$q1UvBdLgHRZVzc68BxdksTmbuCw;
 
     sput-object v1, Landroid/os/BatteryStats;->sIntToString:Landroid/os/BatteryStats$IntToString;
 
-    .line 2428
     const/16 v1, 0x16
 
     new-array v1, v1, [Landroid/os/BatteryStats$IntToString;
@@ -1459,7 +1445,6 @@
 
     sput-object v1, Landroid/os/BatteryStats;->HISTORY_EVENT_INT_FORMATTERS:[Landroid/os/BatteryStats$IntToString;
 
-    .line 2484
     const-string/jumbo v3, "off"
 
     const-string/jumbo v4, "scanning"
@@ -1482,7 +1467,6 @@
 
     sput-object v0, Landroid/os/BatteryStats;->WIFI_STATE_NAMES:[Ljava/lang/String;
 
-    .line 2845
     const/16 v0, 0xa
 
     new-array v1, v0, [I
@@ -1491,14 +1475,12 @@
 
     sput-object v1, Landroid/os/BatteryStats;->STEP_LEVEL_MODES_OF_INTEREST:[I
 
-    .line 2857
     new-array v0, v0, [I
 
     fill-array-data v0, :array_2
 
     sput-object v0, Landroid/os/BatteryStats;->STEP_LEVEL_MODE_VALUES:[I
 
-    .line 2869
     const-string/jumbo v1, "screen off"
 
     const-string/jumbo v2, "screen off power save"
@@ -1568,10 +1550,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 362
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x20
@@ -1580,7 +1560,6 @@
 
     iput-object v0, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
-    .line 363
     new-instance v0, Ljava/util/Formatter;
 
     iget-object v1, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
@@ -1589,7 +1568,6 @@
 
     iput-object v0, p0, Landroid/os/BatteryStats;->mFormatter:Ljava/util/Formatter;
 
-    .line 6079
     const-wide/16 v0, 0x1388
 
     iput-wide v0, p0, Landroid/os/BatteryStats;->timeout:J
@@ -1599,20 +1577,13 @@
 
 .method private static computeWakeLock(Landroid/os/BatteryStats$Timer;JI)J
     .locals 6
-    .param p0, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p1, "elapsedRealtimeUs"    # J
-    .param p3, "which"    # I
 
-    .line 3055
     if-eqz p0, :cond_0
 
-    .line 3057
     invoke-virtual {p0, p1, p2, p3}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v0
 
-    .line 3058
-    .local v0, "totalTimeMicros":J
     const-wide/16 v2, 0x1f4
 
     add-long/2addr v2, v0
@@ -1621,13 +1592,8 @@
 
     div-long/2addr v2, v4
 
-    .line 3059
-    .local v2, "totalTimeMillis":J
     return-wide v2
 
-    .line 3061
-    .end local v0    # "totalTimeMicros":J
-    .end local v2    # "totalTimeMillis":J
     :cond_0
     const-wide/16 v0, 0x0
 
@@ -1636,18 +1602,13 @@
 
 .method private static controllerActivityHasData(Landroid/os/BatteryStats$ControllerActivityCounter;I)Z
     .locals 10
-    .param p0, "counter"    # Landroid/os/BatteryStats$ControllerActivityCounter;
-    .param p1, "which"    # I
 
-    .line 3309
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 3310
     return v0
 
-    .line 3313
     :cond_0
     invoke-virtual {p0}, Landroid/os/BatteryStats$ControllerActivityCounter;->getIdleTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
@@ -1665,7 +1626,6 @@
 
     if-nez v1, :cond_4
 
-    .line 3314
     invoke-virtual {p0}, Landroid/os/BatteryStats$ControllerActivityCounter;->getRxTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v1
@@ -1678,7 +1638,6 @@
 
     if-nez v1, :cond_4
 
-    .line 3315
     invoke-virtual {p0}, Landroid/os/BatteryStats$ControllerActivityCounter;->getPowerCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v1
@@ -1693,7 +1652,6 @@
 
     goto :goto_1
 
-    .line 3319
     :cond_1
     invoke-virtual {p0}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
@@ -1708,8 +1666,6 @@
 
     aget-object v7, v1, v6
 
-    .line 3320
-    .local v7, "c":Landroid/os/BatteryStats$LongCounter;
     invoke-virtual {v7, p1}, Landroid/os/BatteryStats$LongCounter;->getCountLocked(I)J
 
     move-result-wide v8
@@ -1718,21 +1674,16 @@
 
     if-eqz v8, :cond_2
 
-    .line 3321
     return v2
 
-    .line 3319
-    .end local v7    # "c":Landroid/os/BatteryStats$LongCounter;
     :cond_2
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 3324
     :cond_3
     return v0
 
-    .line 3316
     :cond_4
     :goto_1
     return v2
@@ -1740,33 +1691,22 @@
 
 .method private static final dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
     .locals 6
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "uid"    # I
-    .param p2, "category"    # Ljava/lang/String;
-    .param p3, "type"    # Ljava/lang/String;
-    .param p4, "counter"    # Landroid/os/BatteryStats$ControllerActivityCounter;
-    .param p5, "which"    # I
 
-    .line 3339
     invoke-static {p4, p5}, Landroid/os/BatteryStats;->controllerActivityHasData(Landroid/os/BatteryStats$ControllerActivityCounter;I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3340
     return-void
 
-    .line 3343
     :cond_0
     invoke-static {p0, p1, p2, p3}, Landroid/os/BatteryStats;->dumpLineHeader(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 3344
     const-string v0, ","
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3345
     invoke-virtual {p4}, Landroid/os/BatteryStats$ControllerActivityCounter;->getIdleTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v0
@@ -1777,12 +1717,10 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 3346
     const-string v0, ","
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3347
     invoke-virtual {p4}, Landroid/os/BatteryStats$ControllerActivityCounter;->getRxTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v0
@@ -1793,12 +1731,10 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 3348
     const-string v0, ","
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3349
     invoke-virtual {p4}, Landroid/os/BatteryStats$ControllerActivityCounter;->getPowerCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v0
@@ -1813,7 +1749,6 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 3350
     invoke-virtual {p4}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v0
@@ -1827,61 +1762,44 @@
 
     aget-object v3, v0, v2
 
-    .line 3351
-    .local v3, "c":Landroid/os/BatteryStats$LongCounter;
     const-string v4, ","
 
     invoke-virtual {p0, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3352
     invoke-virtual {v3, p5}, Landroid/os/BatteryStats$LongCounter;->getCountLocked(I)J
 
     move-result-wide v4
 
     invoke-virtual {p0, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 3350
-    .end local v3    # "c":Landroid/os/BatteryStats$LongCounter;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 3354
     :cond_1
     invoke-virtual {p0}, Ljava/io/PrintWriter;->println()V
 
-    .line 3355
     return-void
 .end method
 
 .method private static dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
     .locals 11
-    .param p0, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p1, "fieldId"    # J
-    .param p3, "counter"    # Landroid/os/BatteryStats$ControllerActivityCounter;
-    .param p4, "which"    # I
 
-    .line 3363
     invoke-static {p3, p4}, Landroid/os/BatteryStats;->controllerActivityHasData(Landroid/os/BatteryStats$ControllerActivityCounter;I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3364
     return-void
 
-    .line 3367
     :cond_0
     invoke-virtual {p0, p1, p2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 3369
-    .local v0, "cToken":J
     const-wide v2, 0x10300000001L
 
-    .line 3370
     invoke-virtual {p3}, Landroid/os/BatteryStats$ControllerActivityCounter;->getIdleTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v4
@@ -1890,13 +1808,10 @@
 
     move-result-wide v4
 
-    .line 3369
     invoke-virtual {p0, v2, v3, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3371
     nop
 
-    .line 3372
     invoke-virtual {p3}, Landroid/os/BatteryStats$ControllerActivityCounter;->getRxTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v2
@@ -1905,15 +1820,12 @@
 
     move-result-wide v2
 
-    .line 3371
     const-wide v4, 0x10300000002L
 
     invoke-virtual {p0, v4, v5, v2, v3}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3373
     const-wide v2, 0x10300000003L
 
-    .line 3374
     invoke-virtual {p3}, Landroid/os/BatteryStats$ControllerActivityCounter;->getPowerCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v6
@@ -1926,75 +1838,51 @@
 
     div-long/2addr v6, v8
 
-    .line 3373
     invoke-virtual {p0, v2, v3, v6, v7}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3377
     invoke-virtual {p3}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v2
 
-    .line 3378
-    .local v2, "txCounters":[Landroid/os/BatteryStats$LongCounter;
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     array-length v6, v2
 
     if-ge v3, v6, :cond_1
 
-    .line 3379
     aget-object v6, v2, v3
 
-    .line 3380
-    .local v6, "c":Landroid/os/BatteryStats$LongCounter;
     const-wide v7, 0x20b00000004L
 
     invoke-virtual {p0, v7, v8}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v7
 
-    .line 3381
-    .local v7, "tToken":J
     const-wide v9, 0x10500000001L
 
     invoke-virtual {p0, v9, v10, v3}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 3382
     invoke-virtual {v6, p4}, Landroid/os/BatteryStats$LongCounter;->getCountLocked(I)J
 
     move-result-wide v9
 
     invoke-virtual {p0, v4, v5, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3383
     invoke-virtual {p0, v7, v8}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 3378
-    .end local v6    # "c":Landroid/os/BatteryStats$LongCounter;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 3386
-    .end local v3    # "i":I
-    .end local v7    # "tToken":J
     :cond_1
     invoke-virtual {p0, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 3387
     return-void
 .end method
 
 .method private dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
     .locals 15
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
-    .param p3, "label"    # Ljava/lang/String;
-    .param p4, "steps"    # Landroid/os/BatteryStats$LevelStepTracker;
-    .param p5, "tmpSb"    # Ljava/lang/StringBuilder;
-    .param p6, "tmpOutInt"    # [I
 
     move-object/from16 v0, p1
 
@@ -2002,13 +1890,10 @@
 
     move-object/from16 v2, p5
 
-    .line 6815
     if-nez p4, :cond_0
 
-    .line 6816
     return-void
 
-    .line 6818
     :cond_0
     const-wide/16 v4, 0x0
 
@@ -2022,8 +1907,6 @@
 
     move-result-wide v9
 
-    .line 6819
-    .local v9, "timeRemaining":J
     const-wide/16 v11, 0x0
 
     cmp-long v3, v9, v11
@@ -2032,7 +1915,6 @@
 
     if-ltz v3, :cond_1
 
-    .line 6820
     invoke-virtual/range {p1 .. p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2041,16 +1923,12 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6821
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 6822
     invoke-static {v2, v9, v10}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 6823
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 6824
     const-string v3, " (from "
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2059,28 +1937,22 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6825
     const-string v3, " steps)"
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6827
     :cond_1
     move v3, v13
 
-    .local v3, "i":I
     :goto_0
     move v8, v3
 
-    .end local v3    # "i":I
-    .local v8, "i":I
     sget-object v3, Landroid/os/BatteryStats;->STEP_LEVEL_MODES_OF_INTEREST:[I
 
     array-length v3, v3
 
     if-ge v8, v3, :cond_3
 
-    .line 6828
     sget-object v3, Landroid/os/BatteryStats;->STEP_LEVEL_MODES_OF_INTEREST:[I
 
     aget v3, v3, v8
@@ -2099,19 +1971,14 @@
 
     move-object/from16 v8, p6
 
-    .end local v8    # "i":I
-    .local v14, "i":I
     invoke-virtual/range {v3 .. v8}, Landroid/os/BatteryStats$LevelStepTracker;->computeTimeEstimate(JJ[I)J
 
     move-result-wide v3
 
-    .line 6830
-    .local v3, "estimatedTime":J
     cmp-long v5, v3, v11
 
     if-lez v5, :cond_2
 
-    .line 6831
     invoke-virtual/range {p1 .. p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2120,28 +1987,22 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6832
     sget-object v5, Landroid/os/BatteryStats;->STEP_LEVEL_MODE_LABELS:[Ljava/lang/String;
 
     aget-object v5, v5, v14
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6833
     const-string v5, " time: "
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6834
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 6835
     invoke-static {v2, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 6836
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 6837
     const-string v5, " (from "
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2150,30 +2011,21 @@
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6838
     const-string v5, " steps)"
 
     invoke-virtual {v0, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6827
-    .end local v3    # "estimatedTime":J
     :cond_2
     add-int/lit8 v3, v14, 0x1
 
-    .end local v14    # "i":I
-    .local v3, "i":I
     goto :goto_0
 
-    .line 6841
-    .end local v3    # "i":I
     :cond_3
     return-void
 .end method
 
 .method private dumpDailyPackageChanges(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/util/ArrayList;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2185,14 +2037,10 @@
         }
     .end annotation
 
-    .line 6845
-    .local p3, "changes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
     if-nez p3, :cond_0
 
-    .line 6846
     return-void
 
-    .line 6848
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -2200,10 +2048,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6849
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -2211,20 +2057,16 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 6850
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/os/BatteryStats$PackageChange;
 
-    .line 6851
-    .local v1, "pc":Landroid/os/BatteryStats$PackageChange;
     iget-boolean v2, v1, Landroid/os/BatteryStats$PackageChange;->mUpdate:Z
 
     if-eqz v2, :cond_1
 
-    .line 6852
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v2, "  Update "
@@ -2235,7 +2077,6 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6853
     const-string v2, " vers="
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2246,7 +2087,6 @@
 
     goto :goto_1
 
-    .line 6855
     :cond_1
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -2258,54 +2098,38 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6849
-    .end local v1    # "pc":Landroid/os/BatteryStats$PackageChange;
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 6858
-    .end local v0    # "i":I
     :cond_2
     return-void
 .end method
 
 .method private static dumpDurationSteps(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$LevelStepTracker;)V
     .locals 21
-    .param p0, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p1, "fieldId"    # J
-    .param p3, "steps"    # Landroid/os/BatteryStats$LevelStepTracker;
 
     move-object/from16 v0, p0
 
-    .line 6670
     move-object/from16 v1, p3
 
     if-nez v1, :cond_0
 
-    .line 6671
     return-void
 
-    .line 6673
     :cond_0
     iget v2, v1, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 6674
-    .local v2, "count":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_6
 
-    .line 6675
     invoke-virtual/range {p0 .. p2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 6676
-    .local v4, "token":J
     const-wide v6, 0x10300000001L
 
     invoke-virtual {v1, v3}, Landroid/os/BatteryStats$LevelStepTracker;->getDurationAt(I)J
@@ -2314,7 +2138,6 @@
 
     invoke-virtual {v0, v6, v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 6677
     const-wide v6, 0x10500000002L
 
     invoke-virtual {v1, v3}, Landroid/os/BatteryStats$LevelStepTracker;->getLevelAt(I)I
@@ -2323,27 +2146,20 @@
 
     invoke-virtual {v0, v6, v7, v8}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 6679
     invoke-virtual {v1, v3}, Landroid/os/BatteryStats$LevelStepTracker;->getInitModeAt(I)I
 
     move-result v6
 
     int-to-long v6, v6
 
-    .line 6680
-    .local v6, "initMode":J
     invoke-virtual {v1, v3}, Landroid/os/BatteryStats$LevelStepTracker;->getModModeAt(I)I
 
     move-result v8
 
     int-to-long v8, v8
 
-    .line 6682
-    .local v8, "modMode":J
     const/4 v10, 0x0
 
-    .line 6683
-    .local v10, "ds":I
     const-wide/16 v11, 0x3
 
     and-long v13, v8, v11
@@ -2356,7 +2172,6 @@
 
     if-nez v13, :cond_1
 
-    .line 6684
     and-long/2addr v11, v6
 
     long-to-int v11, v11
@@ -2365,51 +2180,38 @@
 
     packed-switch v11, :pswitch_data_0
 
-    .line 6698
     const/4 v10, 0x5
 
     goto :goto_1
 
-    .line 6695
     :pswitch_0
     const/4 v10, 0x4
 
-    .line 6696
     goto :goto_1
 
-    .line 6692
     :pswitch_1
     const/4 v10, 0x3
 
-    .line 6693
     goto :goto_1
 
-    .line 6689
     :pswitch_2
     const/4 v10, 0x1
 
-    .line 6690
     goto :goto_1
 
-    .line 6686
     :pswitch_3
     const/4 v10, 0x2
 
-    .line 6687
     nop
 
-    .line 6702
     :cond_1
     :goto_1
     const-wide v11, 0x10e00000003L
 
     invoke-virtual {v0, v11, v12, v10}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 6704
     const/4 v11, 0x0
 
-    .line 6705
-    .local v11, "psm":I
     const-wide/16 v12, 0x4
 
     and-long v17, v8, v12
@@ -2420,14 +2222,12 @@
 
     if-nez v17, :cond_3
 
-    .line 6706
     and-long/2addr v12, v6
 
     cmp-long v12, v12, v15
 
     if-eqz v12, :cond_2
 
-    .line 6707
     goto :goto_2
 
     :cond_2
@@ -2436,17 +2236,13 @@
     :goto_2
     move v11, v14
 
-    .line 6709
     :cond_3
     const-wide v12, 0x10e00000004L
 
     invoke-virtual {v0, v12, v13, v11}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 6711
     const/4 v12, 0x0
 
-    .line 6712
-    .local v12, "im":I
     const-wide/16 v13, 0x8
 
     and-long v19, v8, v13
@@ -2455,14 +2251,12 @@
 
     if-nez v17, :cond_5
 
-    .line 6713
     and-long/2addr v13, v6
 
     cmp-long v13, v13, v15
 
     if-eqz v13, :cond_4
 
-    .line 6714
     goto :goto_3
 
     :cond_4
@@ -2471,28 +2265,17 @@
     :goto_3
     move/from16 v12, v18
 
-    .line 6716
     :cond_5
     const-wide v13, 0x10e00000005L
 
     invoke-virtual {v0, v13, v14, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 6718
     invoke-virtual {v0, v4, v5}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 6674
-    .end local v4    # "token":J
-    .end local v6    # "initMode":J
-    .end local v8    # "modMode":J
-    .end local v10    # "ds":I
-    .end local v11    # "psm":I
-    .end local v12    # "im":I
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
-    .line 6720
-    .end local v3    # "i":I
     :cond_6
     return-void
 
@@ -2509,11 +2292,6 @@
 
 .method private static dumpDurationSteps(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Z)Z
     .locals 27
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "header"    # Ljava/lang/String;
-    .param p3, "steps"    # Landroid/os/BatteryStats$LevelStepTracker;
-    .param p4, "checkin"    # Z
 
     move-object/from16 v0, p0
 
@@ -2521,78 +2299,56 @@
 
     move-object/from16 v2, p3
 
-    .line 6589
     const/4 v3, 0x0
 
     if-nez v2, :cond_0
 
-    .line 6590
     return v3
 
-    .line 6592
     :cond_0
     iget v4, v2, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 6593
-    .local v4, "count":I
     if-gtz v4, :cond_1
 
-    .line 6594
     return v3
 
-    .line 6596
     :cond_1
     if-nez p4, :cond_2
 
-    .line 6597
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6599
     :cond_2
     const/4 v5, 0x5
 
     new-array v5, v5, [Ljava/lang/String;
 
-    .line 6600
-    .local v5, "lineArgs":[Ljava/lang/String;
     move v6, v3
 
-    .line 6600
-    .local v6, "i":I
     :goto_0
     const/4 v7, 0x1
 
     if-ge v6, v4, :cond_11
 
-    .line 6601
     invoke-virtual {v2, v6}, Landroid/os/BatteryStats$LevelStepTracker;->getDurationAt(I)J
 
     move-result-wide v8
 
-    .line 6602
-    .local v8, "duration":J
     invoke-virtual {v2, v6}, Landroid/os/BatteryStats$LevelStepTracker;->getLevelAt(I)I
 
     move-result v10
 
-    .line 6603
-    .local v10, "level":I
     invoke-virtual {v2, v6}, Landroid/os/BatteryStats$LevelStepTracker;->getInitModeAt(I)I
 
     move-result v11
 
     int-to-long v11, v11
 
-    .line 6604
-    .local v11, "initMode":J
     invoke-virtual {v2, v6}, Landroid/os/BatteryStats$LevelStepTracker;->getModModeAt(I)I
 
     move-result v13
 
     int-to-long v13, v13
 
-    .line 6605
-    .local v13, "modMode":J
     const-wide/16 v15, 0x8
 
     const-wide/16 v17, 0x4
@@ -2603,21 +2359,18 @@
 
     if-eqz p4, :cond_8
 
-    .line 6606
     invoke-static {v8, v9}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v23
 
     aput-object v23, v5, v3
 
-    .line 6607
     invoke-static {v10}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v23
 
     aput-object v23, v5, v7
 
-    .line 6608
     and-long v23, v13, v19
 
     cmp-long v23, v23, v21
@@ -2626,28 +2379,22 @@
 
     if-nez v23, :cond_3
 
-    .line 6609
     move/from16 v25, v4
 
     and-long v3, v11, v19
 
-    .line 6609
-    .end local v4    # "count":I
-    .local v25, "count":I
     long-to-int v3, v3
 
     add-int/2addr v3, v7
 
     packed-switch v3, :pswitch_data_0
 
-    .line 6614
     const-string v3, "?"
 
     aput-object v3, v5, v24
 
     goto :goto_1
 
-    .line 6613
     :pswitch_0
     const-string/jumbo v3, "sds"
 
@@ -2655,7 +2402,6 @@
 
     goto :goto_1
 
-    .line 6612
     :pswitch_1
     const-string/jumbo v3, "sd"
 
@@ -2663,7 +2409,6 @@
 
     goto :goto_1
 
-    .line 6611
     :pswitch_2
     const-string/jumbo v3, "s+"
 
@@ -2671,7 +2416,6 @@
 
     goto :goto_1
 
-    .line 6610
     :pswitch_3
     const-string/jumbo v3, "s-"
 
@@ -2679,20 +2423,13 @@
 
     goto :goto_1
 
-    .line 6617
-    .end local v25    # "count":I
-    .restart local v4    # "count":I
     :cond_3
     move/from16 v25, v4
 
-    .line 6617
-    .end local v4    # "count":I
-    .restart local v25    # "count":I
     const-string v3, ""
 
     aput-object v3, v5, v24
 
-    .line 6619
     :goto_1
     and-long v3, v13, v17
 
@@ -2702,7 +2439,6 @@
 
     if-nez v3, :cond_5
 
-    .line 6620
     and-long v17, v11, v17
 
     cmp-long v3, v17, v21
@@ -2721,13 +2457,11 @@
 
     goto :goto_3
 
-    .line 6622
     :cond_5
     const-string v3, ""
 
     aput-object v3, v5, v4
 
-    .line 6624
     :goto_3
     and-long v3, v13, v15
 
@@ -2737,7 +2471,6 @@
 
     if-nez v3, :cond_7
 
-    .line 6625
     and-long/2addr v15, v11
 
     cmp-long v3, v15, v21
@@ -2756,13 +2489,11 @@
 
     goto :goto_5
 
-    .line 6627
     :cond_7
     const-string v3, ""
 
     aput-object v3, v5, v4
 
-    .line 6629
     :goto_5
     const-string v3, "i"
 
@@ -2776,18 +2507,11 @@
 
     goto/16 :goto_b
 
-    .line 6631
-    .end local v25    # "count":I
-    .restart local v4    # "count":I
     :cond_8
     move/from16 v25, v4
 
-    .line 6631
-    .end local v4    # "count":I
-    .restart local v25    # "count":I
     invoke-virtual/range {p0 .. p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6632
     const-string v4, "#"
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -2798,33 +2522,26 @@
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6633
     invoke-static {v8, v9, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 6634
     const-string v4, " to "
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v0, v10}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6635
     const/4 v4, 0x0
 
-    .line 6636
-    .local v4, "haveModes":Z
     and-long v23, v13, v19
 
     cmp-long v23, v23, v21
 
     if-nez v23, :cond_9
 
-    .line 6637
     const-string v3, " ("
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6638
     and-long v1, v11, v19
 
     long-to-int v1, v1
@@ -2833,14 +2550,12 @@
 
     packed-switch v1, :pswitch_data_1
 
-    .line 6643
     const-string/jumbo v1, "screen-?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto :goto_6
 
-    .line 6642
     :pswitch_4
     const-string/jumbo v1, "screen-doze-suspend"
 
@@ -2848,7 +2563,6 @@
 
     goto :goto_6
 
-    .line 6641
     :pswitch_5
     const-string/jumbo v1, "screen-doze"
 
@@ -2856,7 +2570,6 @@
 
     goto :goto_6
 
-    .line 6640
     :pswitch_6
     const-string/jumbo v1, "screen-on"
 
@@ -2864,17 +2577,14 @@
 
     goto :goto_6
 
-    .line 6639
     :pswitch_7
     const-string/jumbo v1, "screen-off"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6645
     :goto_6
     const/4 v4, 0x1
 
-    .line 6647
     :cond_9
     and-long v1, v13, v17
 
@@ -2882,7 +2592,6 @@
 
     if-nez v1, :cond_c
 
-    .line 6648
     if-eqz v4, :cond_a
 
     const-string v1, ", "
@@ -2895,14 +2604,12 @@
     :goto_7
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6649
     and-long v1, v11, v17
 
     cmp-long v1, v1, v21
 
     if-eqz v1, :cond_b
 
-    .line 6650
     const-string/jumbo v1, "power-save-on"
 
     goto :goto_8
@@ -2910,14 +2617,11 @@
     :cond_b
     const-string/jumbo v1, "power-save-off"
 
-    .line 6649
     :goto_8
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6651
     const/4 v4, 0x1
 
-    .line 6653
     :cond_c
     and-long v1, v13, v15
 
@@ -2925,7 +2629,6 @@
 
     if-nez v1, :cond_f
 
-    .line 6654
     if-eqz v4, :cond_d
 
     const-string v1, ", "
@@ -2938,14 +2641,12 @@
     :goto_9
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6655
     and-long v1, v11, v15
 
     cmp-long v1, v1, v21
 
     if-eqz v1, :cond_e
 
-    .line 6656
     const-string v1, "device-idle-on"
 
     goto :goto_a
@@ -2953,32 +2654,21 @@
     :cond_e
     const-string v1, "device-idle-off"
 
-    .line 6655
     :goto_a
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6657
     const/4 v4, 0x1
 
-    .line 6659
     :cond_f
     if-eqz v4, :cond_10
 
-    .line 6660
     const-string v1, ")"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6662
     :cond_10
     invoke-virtual/range {p0 .. p0}, Ljava/io/PrintWriter;->println()V
 
-    .line 6600
-    .end local v4    # "haveModes":Z
-    .end local v8    # "duration":J
-    .end local v10    # "level":I
-    .end local v11    # "initMode":J
-    .end local v13    # "modMode":J
     :goto_b
     add-int/lit8 v6, v6, 0x1
 
@@ -2992,16 +2682,9 @@
 
     goto/16 :goto_0
 
-    .line 6665
-    .end local v6    # "i":I
-    .end local v25    # "count":I
-    .local v4, "count":I
     :cond_11
     move/from16 v25, v4
 
-    .line 6665
-    .end local v4    # "count":I
-    .restart local v25    # "count":I
     return v7
 
     nop
@@ -3027,40 +2710,25 @@
 
 .method private dumpHistoryLocked(Ljava/io/PrintWriter;IJZ)V
     .locals 28
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "flags"    # I
-    .param p3, "histStart"    # J
-    .param p5, "checkin"    # Z
 
     move-object/from16 v8, p1
 
-    .line 6730
     new-instance v0, Landroid/os/BatteryStats$HistoryPrinter;
 
     invoke-direct {v0}, Landroid/os/BatteryStats$HistoryPrinter;-><init>()V
 
-    .line 6731
-    .local v0, "hprinter":Landroid/os/BatteryStats$HistoryPrinter;
     new-instance v1, Landroid/os/BatteryStats$HistoryItem;
 
     invoke-direct {v1}, Landroid/os/BatteryStats$HistoryItem;-><init>()V
 
     move-object v11, v1
 
-    .line 6732
-    .local v11, "rec":Landroid/os/BatteryStats$HistoryItem;
     const-wide/16 v1, -0x1
 
-    .line 6733
-    .local v1, "lastTime":J
     const-wide/16 v3, -0x1
 
-    .line 6734
-    .local v3, "baseTime":J
     const/4 v5, 0x0
 
-    .line 6735
-    .local v5, "printed":Z
     move v6, v5
 
     move-wide v4, v3
@@ -3069,18 +2737,9 @@
 
     const/4 v1, 0x0
 
-    .end local v3    # "baseTime":J
-    .end local v5    # "printed":Z
-    .local v1, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v2, "lastTime":J
-    .local v4, "baseTime":J
-    .local v6, "printed":Z
     :goto_0
     move-object v13, v1
 
-    .line 6736
-    .end local v1    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v13, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move-object/from16 v14, p0
 
     invoke-virtual {v14, v11}, Landroid/os/BatteryStats;->getNextHistoryLocked(Landroid/os/BatteryStats$HistoryItem;)Z
@@ -3091,20 +2750,14 @@
 
     if-eqz v1, :cond_11
 
-    .line 6737
     iget-wide v2, v11, Landroid/os/BatteryStats$HistoryItem;->time:J
 
-    .line 6738
     cmp-long v1, v4, v15
 
     if-gez v1, :cond_0
 
-    .line 6739
     move-wide v4, v2
 
-    .line 6741
-    .end local v4    # "baseTime":J
-    .local v17, "baseTime":J
     :cond_0
     move-wide/from16 v17, v4
 
@@ -3114,7 +2767,6 @@
 
     if-ltz v1, :cond_10
 
-    .line 6742
     cmp-long v1, p3, v15
 
     const/16 v19, 0x1
@@ -3125,7 +2777,6 @@
 
     if-nez v6, :cond_e
 
-    .line 6743
     iget-byte v1, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     const/4 v4, 0x5
@@ -3150,38 +2801,27 @@
 
     if-ne v1, v5, :cond_1
 
-    .line 6747
     move-wide v15, v2
 
     move-object/from16 v20, v13
 
     goto :goto_2
 
-    .line 6751
     :cond_1
     move-object/from16 v20, v13
 
     iget-wide v12, v11, Landroid/os/BatteryStats$HistoryItem;->currentTime:J
 
-    .end local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v20, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     cmp-long v1, v12, v15
 
     if-eqz v1, :cond_3
 
-    .line 6752
     const/4 v12, 0x1
 
-    .line 6753
-    .end local v6    # "printed":Z
-    .local v12, "printed":Z
     iget-byte v13, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 6754
-    .local v13, "cmd":B
     iput-byte v4, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 6755
     and-int/lit8 v1, p2, 0x20
 
     if-eqz v1, :cond_2
@@ -3200,29 +2840,20 @@
 
     move-object v2, v11
 
-    .end local v2    # "lastTime":J
-    .local v15, "lastTime":J
     move-wide/from16 v3, v17
 
     move/from16 v5, p5
 
     invoke-virtual/range {v0 .. v6}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6757
     iput-byte v13, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 6759
-    .end local v13    # "cmd":B
     move/from16 v21, v12
 
     move v12, v7
 
     goto :goto_4
 
-    .end local v12    # "printed":Z
-    .end local v15    # "lastTime":J
-    .restart local v2    # "lastTime":J
-    .restart local v6    # "printed":Z
     :cond_3
     move-wide v15, v2
 
@@ -3230,30 +2861,16 @@
 
     move v12, v7
 
-    .end local v2    # "lastTime":J
-    .restart local v15    # "lastTime":J
     goto :goto_4
 
-    .line 6747
-    .end local v15    # "lastTime":J
-    .end local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v2    # "lastTime":J
-    .local v13, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_4
     move-wide v15, v2
 
     move-object/from16 v20, v13
 
-    .end local v2    # "lastTime":J
-    .end local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v15    # "lastTime":J
-    .restart local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :goto_2
     const/4 v12, 0x1
 
-    .line 6748
-    .end local v6    # "printed":Z
-    .restart local v12    # "printed":Z
     and-int/lit8 v1, p2, 0x20
 
     if-eqz v1, :cond_5
@@ -3282,23 +2899,17 @@
 
     move v7, v13
 
-    .end local v12    # "printed":Z
-    .local v21, "printed":Z
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6750
     iput-byte v12, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 6759
     :goto_4
     if-eqz v20, :cond_d
 
-    .line 6760
     iget-byte v1, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     if-eqz v1, :cond_7
 
-    .line 6761
     and-int/lit8 v1, p2, 0x20
 
     if-eqz v1, :cond_6
@@ -3323,58 +2934,40 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6763
     iput-byte v12, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 6765
     :cond_7
     iget v13, v11, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    .line 6766
-    .local v13, "oldEventCode":I
     iget-object v7, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 6767
-    .local v7, "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
     new-instance v1, Landroid/os/BatteryStats$HistoryTag;
 
     invoke-direct {v1}, Landroid/os/BatteryStats$HistoryTag;-><init>()V
 
     iput-object v1, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 6768
     move v1, v12
 
-    .local v1, "i":I
     :goto_6
     move v6, v1
 
-    .end local v1    # "i":I
-    .local v6, "i":I
     const/16 v1, 0x16
 
     if-ge v6, v1, :cond_c
 
-    .line 6769
     nop
 
-    .line 6770
     move-object/from16 v4, v20
 
     invoke-virtual {v4, v6}, Landroid/os/BatteryStats$HistoryEventTracker;->getStateForEvent(I)Ljava/util/HashMap;
 
     move-result-object v5
 
-    .line 6771
-    .end local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v4, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v5, "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     if-nez v5, :cond_8
 
-    .line 6772
     nop
 
-    .line 6768
     move-object/from16 v24, v4
 
     move/from16 v26, v6
@@ -3385,7 +2978,6 @@
 
     goto/16 :goto_a
 
-    .line 6775
     :cond_8
     invoke-virtual {v5}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -3410,24 +3002,17 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 6776
-    .local v2, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/util/SparseIntArray;
 
-    .line 6777
-    .local v1, "uids":Landroid/util/SparseIntArray;
     move/from16 v20, v12
 
-    .local v20, "j":I
     :goto_8
     move/from16 v22, v20
 
-    .end local v20    # "j":I
-    .local v22, "j":I
     invoke-virtual {v1}, Landroid/util/SparseIntArray;->size()I
 
     move-result v12
@@ -3436,12 +3021,8 @@
 
     if-ge v14, v12, :cond_a
 
-    .line 6778
-    .end local v22    # "j":I
-    .local v14, "j":I
     iput v6, v11, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    .line 6779
     iget-object v12, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -3454,11 +3035,8 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .end local v2    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v23, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     iput-object v2, v12, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
-    .line 6780
     iget-object v2, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-virtual {v1, v14}, Landroid/util/SparseIntArray;->keyAt(I)I
@@ -3467,7 +3045,6 @@
 
     iput v12, v2, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
-    .line 6781
     iget-object v2, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-virtual {v1, v14}, Landroid/util/SparseIntArray;->valueAt(I)I
@@ -3476,7 +3053,6 @@
 
     iput v12, v2, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
-    .line 6782
     and-int/lit8 v2, p2, 0x20
 
     if-eqz v2, :cond_9
@@ -3493,14 +3069,10 @@
 
     move-object v1, v0
 
-    .end local v1    # "uids":Landroid/util/SparseIntArray;
-    .local v20, "uids":Landroid/util/SparseIntArray;
     move-object/from16 v22, v23
 
     move-object v2, v8
 
-    .end local v23    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v22, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     move-object/from16 v23, v3
 
     move-object v3, v11
@@ -3511,37 +3083,24 @@
 
     move-wide/from16 v4, v17
 
-    .end local v4    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v24, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v25, "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     move/from16 v26, v6
 
     move/from16 v6, p5
 
-    .end local v6    # "i":I
-    .local v26, "i":I
     move-object v9, v7
 
     move v7, v12
 
-    .end local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .local v9, "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6784
     const/4 v10, 0x0
 
     iput-object v10, v11, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 6785
     iput-object v10, v11, Landroid/os/BatteryStats$HistoryItem;->wakelockTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 6777
     add-int/lit8 v1, v14, 0x1
 
-    .end local v14    # "j":I
-    .local v1, "j":I
     move-object v7, v9
 
     move-object/from16 v2, v22
@@ -3566,18 +3125,6 @@
 
     goto :goto_8
 
-    .line 6787
-    .end local v1    # "j":I
-    .end local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v20    # "uids":Landroid/util/SparseIntArray;
-    .end local v22    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v25    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v26    # "i":I
-    .restart local v4    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v6    # "i":I
-    .restart local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
     :cond_a
     move-object/from16 v23, v3
 
@@ -3591,29 +3138,12 @@
 
     const/4 v10, 0x0
 
-    .line 6775
-    .end local v4    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v6    # "i":I
-    .end local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v25    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v26    # "i":I
     const/4 v12, 0x0
 
     move-object/from16 v14, p0
 
     goto/16 :goto_7
 
-    .line 6768
-    .end local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v25    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v26    # "i":I
-    .restart local v4    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v6    # "i":I
-    .restart local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
     :cond_b
     move-object/from16 v24, v4
 
@@ -3623,17 +3153,9 @@
 
     const/4 v10, 0x0
 
-    .end local v4    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v6    # "i":I
-    .end local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v26    # "i":I
     :goto_a
     add-int/lit8 v1, v26, 0x1
 
-    .end local v26    # "i":I
-    .local v1, "i":I
     move-object v7, v9
 
     move-object/from16 v20, v24
@@ -3644,12 +3166,6 @@
 
     goto/16 :goto_6
 
-    .line 6789
-    .end local v1    # "i":I
-    .end local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .local v20, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_c
     move-object v9, v7
 
@@ -3657,44 +3173,23 @@
 
     const/4 v10, 0x0
 
-    .end local v7    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     iput v13, v11, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    .line 6790
     iput-object v9, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 6791
     const/4 v1, 0x0
 
-    .line 6794
-    .end local v9    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v13    # "oldEventCode":I
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v1, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move-object/from16 v24, v1
 
     goto :goto_b
 
-    .end local v1    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_d
     move-object/from16 v24, v20
 
     const/4 v10, 0x0
 
-    .end local v20    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     goto :goto_b
 
-    .end local v15    # "lastTime":J
-    .end local v21    # "printed":Z
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v2, "lastTime":J
-    .local v6, "printed":Z
-    .local v13, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_e
     move-wide v15, v2
 
@@ -3702,14 +3197,8 @@
 
     const/4 v10, 0x0
 
-    .end local v2    # "lastTime":J
-    .end local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v15    # "lastTime":J
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move/from16 v21, v6
 
-    .end local v6    # "printed":Z
-    .restart local v21    # "printed":Z
     :goto_b
     and-int/lit8 v1, p2, 0x20
 
@@ -3735,7 +3224,6 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6735
     move-wide v2, v15
 
     move/from16 v6, v21
@@ -3744,12 +3232,6 @@
 
     goto/16 :goto_0
 
-    .end local v15    # "lastTime":J
-    .end local v21    # "printed":Z
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v2    # "lastTime":J
-    .restart local v6    # "printed":Z
-    .restart local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_10
     move-wide v15, v2
 
@@ -3759,32 +3241,17 @@
 
     move-object/from16 v1, v24
 
-    .end local v2    # "lastTime":J
-    .end local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v15    # "lastTime":J
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     goto/16 :goto_0
 
-    .line 6807
-    .end local v15    # "lastTime":J
-    .end local v17    # "baseTime":J
-    .end local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v2    # "lastTime":J
-    .local v4, "baseTime":J
-    .restart local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_11
     move-object/from16 v24, v13
 
-    .end local v13    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v24    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     cmp-long v1, p3, v15
 
     if-ltz v1, :cond_13
 
-    .line 6808
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->commitCurrentHistoryBatchLocked()V
 
-    .line 6809
     if-eqz p5, :cond_12
 
     const-string v7, "NEXT: "
@@ -3803,23 +3270,15 @@
 
     invoke-virtual {v8, v12, v13}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 6811
     :cond_13
     return-void
 .end method
 
 .method private static final varargs dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 4
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "uid"    # I
-    .param p2, "category"    # Ljava/lang/String;
-    .param p3, "type"    # Ljava/lang/String;
-    .param p4, "args"    # [Ljava/lang/Object;
 
-    .line 3235
     invoke-static {p0, p1, p2, p3}, Landroid/os/BatteryStats;->dumpLineHeader(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 3236
     array-length v0, p4
 
     const/4 v1, 0x0
@@ -3829,69 +3288,48 @@
 
     aget-object v2, p4, v1
 
-    .line 3237
-    .local v2, "arg":Ljava/lang/Object;
     const/16 v3, 0x2c
 
     invoke-virtual {p0, v3}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 3238
     invoke-virtual {p0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 3236
-    .end local v2    # "arg":Ljava/lang/Object;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3240
     :cond_0
     invoke-virtual {p0}, Ljava/io/PrintWriter;->println()V
 
-    .line 3241
     return-void
 .end method
 
 .method private static final dumpLineHeader(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "uid"    # I
-    .param p2, "category"    # Ljava/lang/String;
-    .param p3, "type"    # Ljava/lang/String;
 
-    .line 3216
     const/16 v0, 0x9
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 3217
     const/16 v0, 0x2c
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 3218
     invoke-virtual {p0, p1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 3219
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 3220
     invoke-virtual {p0, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3221
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 3222
     invoke-virtual {p0, p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 3223
     return-void
 .end method
 
 .method private dumpProtoAppsLocked(Landroid/util/proto/ProtoOutputStream;Lcom/android/internal/os/BatteryStatsHelper;Ljava/util/List;)V
     .locals 90
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "helper"    # Lcom/android/internal/os/BatteryStatsHelper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3903,16 +3341,12 @@
         }
     .end annotation
 
-    .local p3, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     move-object/from16 v7, p1
 
-    .line 7186
     move-object/from16 v8, p3
 
     const/4 v9, 0x0
 
-    .line 7187
-    .local v9, "which":I
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -3921,40 +3355,28 @@
 
     mul-long v10, v0, v2
 
-    .line 7188
-    .local v10, "rawUptimeUs":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v12
 
-    .line 7189
-    .local v12, "rawRealtimeMs":J
     mul-long v14, v12, v2
 
-    .line 7190
-    .local v14, "rawRealtimeUs":J
     move-object/from16 v6, p0
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BatteryStats;->getBatteryUptime(J)J
 
     move-result-wide v4
 
-    .line 7192
-    .local v4, "batteryUptimeUs":J
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     move-object v3, v0
 
-    .line 7193
-    .local v3, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     if-eqz v8, :cond_1
 
-    .line 7194
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->size()I
 
@@ -3962,74 +3384,50 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 7195
     invoke-interface {v8, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/pm/ApplicationInfo;
 
-    .line 7196
-    .local v2, "ai":Landroid/content/pm/ApplicationInfo;
     iget v1, v2, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-static {v1}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v1
 
-    .line 7197
-    .local v1, "aid":I
     invoke-virtual {v3, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v17
 
     check-cast v17, Ljava/util/ArrayList;
 
-    .line 7198
-    .local v17, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-nez v17, :cond_0
 
-    .line 7199
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7200
-    .end local v17    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v8, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v3, v1, v8}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     goto :goto_1
 
-    .line 7202
-    .end local v8    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .restart local v17    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_0
     move-object/from16 v8, v17
 
-    .end local v17    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .restart local v8    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_1
     move/from16 v18, v1
 
     iget-object v1, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .end local v1    # "aid":I
-    .local v18, "aid":I
     invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7194
-    .end local v2    # "ai":Landroid/content/pm/ApplicationInfo;
-    .end local v8    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .end local v18    # "aid":I
     add-int/lit8 v0, v0, 0x1
 
     move-object/from16 v8, p3
 
     goto :goto_0
 
-    .line 7206
-    .end local v0    # "i":I
     :cond_1
     new-instance v0, Landroid/util/SparseArray;
 
@@ -4037,20 +3435,14 @@
 
     move-object v8, v0
 
-    .line 7207
-    .local v8, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getUsageList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 7208
-    .local v1, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     if-eqz v1, :cond_3
 
-    .line 7209
     const/4 v0, 0x0
 
-    .restart local v0    # "i":I
     :goto_2
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -4058,33 +3450,24 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 7210
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/internal/os/BatterySipper;
 
-    .line 7211
-    .local v2, "bs":Lcom/android/internal/os/BatterySipper;
     move-object/from16 v19, v1
 
     iget-object v1, v2, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
-    .end local v1    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v19, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     move/from16 v20, v9
 
     sget-object v9, Lcom/android/internal/os/BatterySipper$DrainType;->APP:Lcom/android/internal/os/BatterySipper$DrainType;
 
-    .end local v9    # "which":I
-    .local v20, "which":I
     if-eq v1, v9, :cond_2
 
-    .line 7213
     goto :goto_3
 
-    .line 7215
     :cond_2
     iget-object v1, v2, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
@@ -4094,8 +3477,6 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 7209
-    .end local v2    # "bs":Lcom/android/internal/os/BatterySipper;
     :goto_3
     add-int/lit8 v0, v0, 0x1
 
@@ -4105,56 +3486,34 @@
 
     goto :goto_2
 
-    .line 7219
-    .end local v0    # "i":I
-    .end local v19    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v20    # "which":I
-    .restart local v1    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v9    # "which":I
     :cond_3
     move-object/from16 v19, v1
 
     move/from16 v20, v9
 
-    .end local v1    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v9    # "which":I
-    .restart local v19    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v20    # "which":I
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v9
 
-    .line 7220
-    .local v9, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-virtual {v9}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 7221
-    .local v1, "n":I
     const/4 v0, 0x0
 
-    .local v0, "iu":I
     :goto_4
     move v2, v0
 
-    .end local v0    # "iu":I
-    .local v2, "iu":I
     if-ge v2, v1, :cond_26
 
-    .line 7222
     move/from16 v21, v1
 
     const-wide v0, 0x20b00000005L
 
-    .end local v1    # "n":I
-    .local v21, "n":I
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 7223
-    .local v0, "uTkn":J
     invoke-virtual {v9, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v17
@@ -4163,31 +3522,20 @@
 
     check-cast v6, Landroid/os/BatteryStats$Uid;
 
-    .line 7225
-    .local v6, "u":Landroid/os/BatteryStats$Uid;
     move-wide/from16 v23, v0
 
     invoke-virtual {v9, v2}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v1
 
-    .line 7226
-    .end local v0    # "uTkn":J
-    .local v1, "uid":I
-    .local v23, "uTkn":J
     move/from16 v26, v2
 
     move-object/from16 v25, v3
 
     const-wide v2, 0x10500000001L
 
-    .end local v2    # "iu":I
-    .end local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .local v25, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .local v26, "iu":I
     invoke-virtual {v7, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7229
     invoke-static {v1}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v0
@@ -4198,15 +3546,10 @@
 
     move-result-object v0
 
-    .end local v25    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .restart local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 7230
-    .local v0, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-nez v0, :cond_4
 
-    .line 7231
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -4215,20 +3558,14 @@
 
     goto :goto_5
 
-    .line 7233
     :cond_4
     move-object v2, v0
 
-    .line 7234
-    .end local v0    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v2, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_5
     invoke-virtual {v6}, Landroid/os/BatteryStats$Uid;->getPackageStats()Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 7235
-    .local v0, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v17
@@ -4237,40 +3574,27 @@
 
     const/4 v1, 0x1
 
-    .end local v1    # "uid":I
-    .local v29, "uid":I
     add-int/lit8 v17, v17, -0x1
 
-    .local v17, "ipkg":I
     :goto_6
     move/from16 v30, v17
 
-    .end local v17    # "ipkg":I
-    .local v30, "ipkg":I
     const-wide/16 v31, 0x0
 
     move-object/from16 v33, v2
 
-    .end local v2    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v33, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     move/from16 v1, v30
 
     if-ltz v1, :cond_8
 
-    .line 7236
-    .end local v30    # "ipkg":I
-    .local v1, "ipkg":I
     invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 7237
-    .local v2, "pkg":Ljava/lang/String;
     nop
 
-    .line 7238
     invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v17
@@ -4281,24 +3605,18 @@
 
     check-cast v0, Landroid/os/BatteryStats$Uid$Pkg;
 
-    .end local v0    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .local v35, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     invoke-virtual {v0}, Landroid/os/BatteryStats$Uid$Pkg;->getServiceStats()Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 7239
-    .local v0, "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v17
 
     if-nez v17, :cond_5
 
-    .line 7244
     nop
 
-    .line 7235
     move-object/from16 v44, v3
 
     move-wide/from16 v45, v4
@@ -4319,7 +3637,6 @@
 
     goto/16 :goto_9
 
-    .line 7247
     :cond_5
     move-object/from16 v38, v9
 
@@ -4333,25 +3650,14 @@
 
     move-result-wide v14
 
-    .line 7248
-    .end local v9    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v10    # "rawUptimeUs":J
-    .local v14, "pToken":J
-    .local v36, "rawUptimeUs":J
-    .local v38, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v39, "rawRealtimeUs":J
     const-wide v9, 0x10900000001L
 
     invoke-virtual {v7, v9, v10, v2}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7250
     move-object/from16 v9, v33
 
     invoke-virtual {v9, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 7252
-    .end local v33    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v9, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v10
@@ -4360,11 +3666,9 @@
 
     sub-int/2addr v10, v11
 
-    .local v10, "isvc":I
     :goto_7
     if-ltz v10, :cond_7
 
-    .line 7253
     invoke-virtual {v0, v10}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v17
@@ -4373,8 +3677,6 @@
 
     check-cast v11, Landroid/os/BatteryStats$Uid$Pkg$Serv;
 
-    .line 7255
-    .local v11, "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
     move-object/from16 v41, v2
 
     move-wide/from16 v42, v12
@@ -4385,34 +3687,22 @@
 
     move-result-wide v12
 
-    .end local v2    # "pkg":Ljava/lang/String;
-    .end local v12    # "rawRealtimeMs":J
-    .local v41, "pkg":Ljava/lang/String;
-    .local v42, "rawRealtimeMs":J
     invoke-static {v12, v13}, Landroid/os/BatteryStats;->roundUsToMs(J)J
 
     move-result-wide v12
 
-    .line 7256
-    .local v12, "startTimeMs":J
     move-object/from16 v44, v3
 
     invoke-virtual {v11, v2}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getStarts(I)I
 
     move-result v3
 
-    .line 7257
-    .local v3, "starts":I
-    .local v44, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     move-wide/from16 v45, v4
 
     invoke-virtual {v11, v2}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getLaunches(I)I
 
     move-result v4
 
-    .line 7258
-    .local v4, "launches":I
-    .local v45, "batteryUptimeUs":J
     cmp-long v5, v12, v31
 
     if-nez v5, :cond_6
@@ -4421,10 +3711,8 @@
 
     if-nez v4, :cond_6
 
-    .line 7259
     nop
 
-    .line 7252
     move-object/from16 v48, v6
 
     move-object/from16 v49, v8
@@ -4433,7 +3721,6 @@
 
     goto :goto_8
 
-    .line 7262
     :cond_6
     move/from16 v47, v3
 
@@ -4445,12 +3732,6 @@
 
     move-result-wide v5
 
-    .line 7264
-    .end local v3    # "starts":I
-    .end local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .local v5, "sToken":J
-    .local v47, "starts":I
-    .local v48, "u":Landroid/os/BatteryStats$Uid;
     invoke-virtual {v0, v10}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4465,38 +3746,22 @@
 
     invoke-virtual {v7, v8, v9, v2}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7265
-    .end local v8    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v9    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v49, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .local v50, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-wide v2, 0x10300000002L
 
     invoke-virtual {v7, v2, v3, v12, v13}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7266
     const-wide v2, 0x10500000003L
 
     move/from16 v8, v47
 
     invoke-virtual {v7, v2, v3, v8}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7267
-    .end local v47    # "starts":I
-    .local v8, "starts":I
     const-wide v2, 0x10500000004L
 
     invoke-virtual {v7, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7269
     invoke-virtual {v7, v5, v6}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7252
-    .end local v4    # "launches":I
-    .end local v5    # "sToken":J
-    .end local v8    # "starts":I
-    .end local v11    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .end local v12    # "startTimeMs":J
     :goto_8
     add-int/lit8 v10, v10, -0x1
 
@@ -4518,22 +3783,6 @@
 
     goto/16 :goto_7
 
-    .line 7271
-    .end local v10    # "isvc":I
-    .end local v41    # "pkg":Ljava/lang/String;
-    .end local v42    # "rawRealtimeMs":J
-    .end local v44    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v45    # "batteryUptimeUs":J
-    .end local v48    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v49    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v50    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .restart local v2    # "pkg":Ljava/lang/String;
-    .local v3, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .local v4, "batteryUptimeUs":J
-    .restart local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .local v8, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v9    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v12, "rawRealtimeMs":J
     :cond_7
     move-object/from16 v41, v2
 
@@ -4549,31 +3798,11 @@
 
     move-wide/from16 v42, v12
 
-    .end local v2    # "pkg":Ljava/lang/String;
-    .end local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v4    # "batteryUptimeUs":J
-    .end local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v8    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v9    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .end local v12    # "rawRealtimeMs":J
-    .restart local v41    # "pkg":Ljava/lang/String;
-    .restart local v42    # "rawRealtimeMs":J
-    .restart local v44    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .restart local v45    # "batteryUptimeUs":J
-    .restart local v48    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v49    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v50    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v7, v14, v15}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7235
-    .end local v0    # "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
-    .end local v14    # "pToken":J
-    .end local v41    # "pkg":Ljava/lang/String;
     :goto_9
     add-int/lit8 v17, v1, -0x1
 
-    .end local v1    # "ipkg":I
-    .restart local v17    # "ipkg":I
     move-object/from16 v0, v35
 
     move-wide/from16 v10, v36
@@ -4598,28 +3827,6 @@
 
     goto/16 :goto_6
 
-    .line 7276
-    .end local v17    # "ipkg":I
-    .end local v35    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v36    # "rawUptimeUs":J
-    .end local v38    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v39    # "rawRealtimeUs":J
-    .end local v42    # "rawRealtimeMs":J
-    .end local v44    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v45    # "batteryUptimeUs":J
-    .end local v48    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v49    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v50    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v0, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .restart local v4    # "batteryUptimeUs":J
-    .restart local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v8    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .local v9, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v10, "rawUptimeUs":J
-    .restart local v12    # "rawRealtimeMs":J
-    .local v14, "rawRealtimeUs":J
-    .restart local v33    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_8
     move-object/from16 v35, v0
 
@@ -4641,34 +3848,12 @@
 
     move-object/from16 v50, v33
 
-    .end local v0    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v4    # "batteryUptimeUs":J
-    .end local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v8    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v9    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v10    # "rawUptimeUs":J
-    .end local v12    # "rawRealtimeMs":J
-    .end local v14    # "rawRealtimeUs":J
-    .end local v33    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .restart local v35    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v36    # "rawUptimeUs":J
-    .restart local v38    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v39    # "rawRealtimeUs":J
-    .restart local v42    # "rawRealtimeMs":J
-    .restart local v44    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .restart local v45    # "batteryUptimeUs":J
-    .restart local v48    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v49    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v50    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object/from16 v1, v50
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .end local v50    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local v1, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_a
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -4682,29 +3867,20 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 7277
-    .local v2, "p":Ljava/lang/String;
     const-wide v3, 0x20b00000002L
 
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 7278
-    .local v5, "pToken":J
     const-wide v8, 0x10900000001L
 
     invoke-virtual {v7, v8, v9, v2}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7279
     invoke-virtual {v7, v5, v6}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7280
-    .end local v2    # "p":Ljava/lang/String;
-    .end local v5    # "pToken":J
     goto :goto_a
 
-    .line 7283
     :cond_9
     const-wide v3, 0x20b00000002L
 
@@ -4716,38 +3892,26 @@
 
     move-result-object v0
 
-    .end local v48    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v6    # "u":Landroid/os/BatteryStats$Uid;
     const-wide v10, 0x10300000001L
 
     if-eqz v0, :cond_b
 
-    .line 7284
     invoke-virtual {v6}, Landroid/os/BatteryStats$Uid;->getAggregatedPartialWakelockTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v0
 
-    .line 7286
-    .local v0, "timer":Landroid/os/BatteryStats$Timer;
     move-wide/from16 v12, v42
 
     invoke-virtual {v0, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v14
 
-    .line 7287
-    .end local v42    # "rawRealtimeMs":J
-    .restart local v12    # "rawRealtimeMs":J
-    .local v14, "totTimeMs":J
     invoke-virtual {v0}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v2
 
-    .line 7288
-    .local v2, "bgTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v2, :cond_a
 
-    .line 7289
     invoke-virtual {v2, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v16
@@ -4760,47 +3924,29 @@
     :goto_b
     move-wide/from16 v51, v16
 
-    .line 7290
-    .local v51, "bgTimeMs":J
     const-wide v3, 0x10b00000018L
 
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v3
 
-    .line 7291
-    .local v3, "awToken":J
     invoke-virtual {v7, v10, v11, v14, v15}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7292
     move-wide/from16 v8, v51
 
     const-wide v10, 0x10300000002L
 
     invoke-virtual {v7, v10, v11, v8, v9}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7293
-    .end local v51    # "bgTimeMs":J
-    .local v8, "bgTimeMs":J
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .end local v0    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v2    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v3    # "awToken":J
-    .end local v8    # "bgTimeMs":J
-    .end local v14    # "totTimeMs":J
     goto :goto_c
 
-    .line 7297
-    .end local v12    # "rawRealtimeMs":J
-    .restart local v42    # "rawRealtimeMs":J
     :cond_b
     move-wide/from16 v12, v42
 
     const-wide v10, 0x10300000002L
 
-    .end local v42    # "rawRealtimeMs":J
-    .restart local v12    # "rawRealtimeMs":J
     :goto_c
     const-wide v2, 0x10b00000008L
 
@@ -4816,10 +3962,6 @@
 
     move-object v0, v7
 
-    .end local v23    # "uTkn":J
-    .end local v35    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .local v9, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .local v14, "uTkn":J
     move-object/from16 v17, v1
 
     move-object/from16 v10, v19
@@ -4832,74 +3974,46 @@
 
     move-wide v1, v2
 
-    .end local v1    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .end local v19    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v21    # "n":I
-    .end local v26    # "iu":I
-    .end local v29    # "uid":I
-    .local v5, "uid":I
-    .local v10, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v11, "n":I
-    .local v16, "iu":I
-    .local v17, "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object/from16 v18, v44
 
     move-object v3, v4
 
-    .end local v44    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .local v18, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     move/from16 v53, v5
 
     move-wide/from16 v23, v45
 
     move-wide/from16 v4, v39
 
-    .end local v5    # "uid":I
-    .end local v45    # "batteryUptimeUs":J
-    .local v23, "batteryUptimeUs":J
-    .local v53, "uid":I
     move-object/from16 v54, v10
 
     move-object v10, v6
 
     move v6, v8
 
-    .end local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .local v10, "u":Landroid/os/BatteryStats$Uid;
-    .local v54, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7300
     const-wide v0, 0x10b00000003L
 
-    .line 7301
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v2
 
-    .line 7300
     const/4 v8, 0x0
 
     invoke-static {v7, v0, v1, v2, v8}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7304
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v19
 
-    .line 7305
-    .local v19, "bleTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v19, :cond_e
 
-    .line 7306
     const-wide v0, 0x10b00000006L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 7308
-    .local v4, "bmToken":J
     const-wide v1, 0x10b00000001L
 
     const/4 v6, 0x0
@@ -4912,54 +4026,40 @@
 
     move-wide/from16 v4, v39
 
-    .end local v4    # "bmToken":J
-    .local v55, "bmToken":J
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7310
     const-wide v1, 0x10b00000002L
 
-    .line 7311
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v3
 
-    .line 7310
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7313
     const-wide v1, 0x10b00000003L
 
-    .line 7314
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothUnoptimizedScanTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v3
 
-    .line 7313
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7316
     const-wide v1, 0x10b00000004L
 
-    .line 7317
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothUnoptimizedScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v3
 
-    .line 7316
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7319
     const-wide v0, 0x10500000005L
 
-    .line 7320
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v2
 
     if-eqz v2, :cond_c
 
-    .line 7321
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v2
@@ -4970,24 +4070,20 @@
 
     goto :goto_d
 
-    .line 7319
     :cond_c
     move v2, v8
 
     :goto_d
     invoke-virtual {v7, v0, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7322
     const-wide v0, 0x10500000006L
 
-    .line 7323
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v2
 
     if-eqz v2, :cond_d
 
-    .line 7324
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v2
@@ -4998,20 +4094,16 @@
 
     goto :goto_e
 
-    .line 7322
     :cond_d
     move v2, v8
 
     :goto_e
     invoke-virtual {v7, v0, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7326
     move-wide/from16 v0, v55
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7330
-    .end local v55    # "bmToken":J
     :cond_e
     const-wide v1, 0x10b00000009L
 
@@ -5027,15 +4119,12 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7333
     const-wide v0, 0x10b00000007L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 7334
-    .local v4, "cpuToken":J
     invoke-virtual {v10, v8}, Landroid/os/BatteryStats$Uid;->getUserCpuTimeUs(I)J
 
     move-result-wide v0
@@ -5048,7 +4137,6 @@
 
     invoke-virtual {v7, v2, v3, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7335
     invoke-virtual {v10, v8}, Landroid/os/BatteryStats$Uid;->getSystemCpuTimeUs(I)J
 
     move-result-wide v0
@@ -5061,22 +4149,16 @@
 
     invoke-virtual {v7, v2, v3, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7337
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getCpuFreqs()[J
 
     move-result-object v6
 
-    .line 7338
-    .local v6, "cpuFreqs":[J
     if-eqz v6, :cond_10
 
-    .line 7339
     invoke-virtual {v10, v8}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(I)[J
 
     move-result-object v0
 
-    .line 7342
-    .local v0, "cpuFreqTimeMs":[J
     if-eqz v0, :cond_10
 
     array-length v1, v0
@@ -5085,43 +4167,32 @@
 
     if-ne v1, v2, :cond_10
 
-    .line 7343
     invoke-virtual {v10, v8}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(I)[J
 
     move-result-object v1
 
-    .line 7344
-    .local v1, "screenOffCpuFreqTimeMs":[J
     if-nez v1, :cond_f
 
-    .line 7345
     array-length v2, v0
 
     new-array v1, v2, [J
 
-    .line 7347
     :cond_f
     move v2, v8
 
-    .local v2, "ic":I
     :goto_f
     array-length v3, v0
 
     if-ge v2, v3, :cond_10
 
-    .line 7348
     move-object/from16 v57, v9
 
     const-wide v8, 0x20b00000003L
 
-    .end local v9    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .local v57, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v8
 
-    .line 7349
-    .local v8, "cToken":J
     add-int/lit8 v3, v2, 0x1
 
     move/from16 v60, v11
@@ -5132,11 +4203,6 @@
 
     invoke-virtual {v7, v11, v12, v3}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7350
-    .end local v11    # "n":I
-    .end local v12    # "rawRealtimeMs":J
-    .local v58, "rawRealtimeMs":J
-    .local v60, "n":I
     aget-wide v11, v0, v2
 
     move-wide/from16 v61, v14
@@ -5145,20 +4211,14 @@
 
     invoke-virtual {v7, v13, v14, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7352
-    .end local v14    # "uTkn":J
-    .local v61, "uTkn":J
     aget-wide v11, v1, v2
 
     const-wide v13, 0x10300000003L
 
     invoke-virtual {v7, v13, v14, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7354
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7347
-    .end local v8    # "cToken":J
     add-int/lit8 v2, v2, 0x1
 
     move-object/from16 v9, v57
@@ -5173,18 +4233,6 @@
 
     goto :goto_f
 
-    .line 7359
-    .end local v0    # "cpuFreqTimeMs":[J
-    .end local v1    # "screenOffCpuFreqTimeMs":[J
-    .end local v2    # "ic":I
-    .end local v57    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v58    # "rawRealtimeMs":J
-    .end local v60    # "n":I
-    .end local v61    # "uTkn":J
-    .restart local v9    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v11    # "n":I
-    .restart local v12    # "rawRealtimeMs":J
-    .restart local v14    # "uTkn":J
     :cond_10
     move-object/from16 v57, v9
 
@@ -5194,17 +4242,8 @@
 
     move-wide/from16 v61, v14
 
-    .end local v9    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v11    # "n":I
-    .end local v12    # "rawRealtimeMs":J
-    .end local v14    # "uTkn":J
-    .restart local v57    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v58    # "rawRealtimeMs":J
-    .restart local v60    # "n":I
-    .restart local v61    # "uTkn":J
     const/4 v0, 0x0
 
-    .local v0, "procState":I
     :goto_10
     const-wide v8, 0x10e00000001L
 
@@ -5212,15 +4251,12 @@
 
     if-ge v0, v11, :cond_14
 
-    .line 7360
     const/4 v1, 0x0
 
     invoke-virtual {v10, v1, v0}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(II)[J
 
     move-result-object v2
 
-    .line 7361
-    .local v2, "timesMs":[J
     if-eqz v2, :cond_13
 
     array-length v3, v2
@@ -5229,21 +4265,16 @@
 
     if-ne v3, v11, :cond_13
 
-    .line 7362
     invoke-virtual {v10, v1, v0}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(II)[J
 
     move-result-object v3
 
-    .line 7363
-    .local v3, "screenOffTimesMs":[J
     if-nez v3, :cond_11
 
-    .line 7364
     array-length v1, v2
 
     new-array v3, v1, [J
 
-    .line 7366
     :cond_11
     const-wide v11, 0x20b00000004L
 
@@ -5251,35 +4282,27 @@
 
     move-result-wide v11
 
-    .line 7367
-    .local v11, "procToken":J
     invoke-virtual {v7, v8, v9, v0}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7368
     const/4 v1, 0x0
 
-    .local v1, "ic":I
     :goto_11
     array-length v8, v2
 
     if-ge v1, v8, :cond_12
 
-    .line 7369
     const-wide v13, 0x20b00000002L
 
     invoke-virtual {v7, v13, v14}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v8
 
-    .line 7370
-    .restart local v8    # "cToken":J
     add-int/lit8 v15, v1, 0x1
 
     const-wide v13, 0x10500000001L
 
     invoke-virtual {v7, v13, v14, v15}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7371
     aget-wide v13, v2, v1
 
     move-wide/from16 v63, v4
@@ -5288,54 +4311,34 @@
 
     invoke-virtual {v7, v4, v5, v13, v14}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7373
-    .end local v4    # "cpuToken":J
-    .local v63, "cpuToken":J
     aget-wide v13, v3, v1
 
     const-wide v4, 0x10300000003L
 
     invoke-virtual {v7, v4, v5, v13, v14}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7375
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7368
-    .end local v8    # "cToken":J
     add-int/lit8 v1, v1, 0x1
 
     move-wide/from16 v4, v63
 
     goto :goto_11
 
-    .line 7377
-    .end local v1    # "ic":I
-    .end local v63    # "cpuToken":J
-    .restart local v4    # "cpuToken":J
     :cond_12
     move-wide/from16 v63, v4
 
     const-wide v4, 0x10300000003L
 
-    .end local v4    # "cpuToken":J
-    .restart local v63    # "cpuToken":J
     invoke-virtual {v7, v11, v12}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .end local v2    # "timesMs":[J
-    .end local v3    # "screenOffTimesMs":[J
-    .end local v11    # "procToken":J
     goto :goto_12
 
-    .line 7359
-    .end local v63    # "cpuToken":J
-    .restart local v4    # "cpuToken":J
     :cond_13
     move-wide/from16 v63, v4
 
     const-wide v4, 0x10300000003L
 
-    .end local v4    # "cpuToken":J
-    .restart local v63    # "cpuToken":J
     :goto_12
     add-int/lit8 v0, v0, 0x1
 
@@ -5343,24 +4346,15 @@
 
     goto :goto_10
 
-    .line 7380
-    .end local v0    # "procState":I
-    .end local v63    # "cpuToken":J
-    .restart local v4    # "cpuToken":J
     :cond_14
     move-wide/from16 v63, v4
 
     const-wide v4, 0x10300000003L
 
-    .end local v4    # "cpuToken":J
-    .restart local v63    # "cpuToken":J
     move-wide/from16 v12, v63
 
     invoke-virtual {v7, v12, v13}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7383
-    .end local v63    # "cpuToken":J
-    .local v12, "cpuToken":J
     const-wide v1, 0x10b0000000aL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getFlashlightTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -5375,23 +4369,16 @@
 
     const-wide v11, 0x10300000002L
 
-    .end local v12    # "cpuToken":J
-    .local v65, "cpuToken":J
     move-wide/from16 v21, v65
 
     move-wide/from16 v4, v39
 
-    .end local v65    # "cpuToken":J
-    .local v21, "cpuToken":J
     move-object v13, v6
 
     move v6, v14
 
-    .end local v6    # "cpuFreqs":[J
-    .local v13, "cpuFreqs":[J
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7387
     const-wide v1, 0x10b0000000bL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getForegroundActivityTimer()Landroid/os/BatteryStats$Timer;
@@ -5402,7 +4389,6 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7391
     const-wide v1, 0x10b0000000cL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getForegroundServiceTimer()Landroid/os/BatteryStats$Timer;
@@ -5411,13 +4397,10 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7395
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getJobCompletionStats()Landroid/util/ArrayMap;
 
     move-result-object v14
 
-    .line 7396
-    .local v14, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -5426,11 +4409,8 @@
 
     move-object v15, v0
 
-    .line 7403
-    .local v15, "reasons":[I
     const/4 v0, 0x0
 
-    .local v0, "ic":I
     :goto_13
     invoke-virtual {v14}, Landroid/util/ArrayMap;->size()I
 
@@ -5438,26 +4418,20 @@
 
     if-ge v0, v1, :cond_17
 
-    .line 7404
     invoke-virtual {v14, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/util/SparseIntArray;
 
-    .line 7405
-    .local v1, "types":Landroid/util/SparseIntArray;
     if-eqz v1, :cond_16
 
-    .line 7406
     const-wide v2, 0x20b00000010L
 
     invoke-virtual {v7, v2, v3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7408
-    .local v2, "jcToken":J
     invoke-virtual {v14, v0}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -5468,7 +4442,6 @@
 
     invoke-virtual {v7, v11, v12, v6}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7410
     array-length v6, v15
 
     const/4 v11, 0x0
@@ -5478,8 +4451,6 @@
 
     aget v12, v15, v11
 
-    .line 7411
-    .local v12, "r":I
     move-object/from16 v67, v13
 
     move-object/from16 v68, v14
@@ -5490,14 +4461,8 @@
 
     move-result-wide v13
 
-    .line 7412
-    .end local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v13, "rToken":J
-    .local v67, "cpuFreqs":[J
-    .local v68, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-virtual {v7, v8, v9, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7413
     const/4 v4, 0x0
 
     invoke-virtual {v1, v12, v4}, Landroid/util/SparseIntArray;->get(II)I
@@ -5508,12 +4473,8 @@
 
     invoke-virtual {v7, v8, v9, v5}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7414
     invoke-virtual {v7, v13, v14}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7410
-    .end local v12    # "r":I
-    .end local v13    # "rToken":J
     add-int/lit8 v11, v11, 0x1
 
     move-object/from16 v13, v67
@@ -5524,40 +4485,20 @@
 
     goto :goto_14
 
-    .line 7417
-    .end local v67    # "cpuFreqs":[J
-    .end local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v13, "cpuFreqs":[J
-    .restart local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     :cond_15
     move-object/from16 v67, v13
 
     move-object/from16 v68, v14
 
-    .end local v13    # "cpuFreqs":[J
-    .end local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v67    # "cpuFreqs":[J
-    .restart local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-virtual {v7, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .end local v1    # "types":Landroid/util/SparseIntArray;
-    .end local v2    # "jcToken":J
     goto :goto_15
 
-    .line 7403
-    .end local v67    # "cpuFreqs":[J
-    .end local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v13    # "cpuFreqs":[J
-    .restart local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     :cond_16
     move-object/from16 v67, v13
 
     move-object/from16 v68, v14
 
-    .end local v13    # "cpuFreqs":[J
-    .end local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v67    # "cpuFreqs":[J
-    .restart local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     :goto_15
     add-int/lit8 v0, v0, 0x1
 
@@ -5571,12 +4512,6 @@
 
     goto :goto_13
 
-    .line 7422
-    .end local v0    # "ic":I
-    .end local v67    # "cpuFreqs":[J
-    .end local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v13    # "cpuFreqs":[J
-    .restart local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     :cond_17
     move-object/from16 v67, v13
 
@@ -5584,16 +4519,10 @@
 
     const-wide v8, 0x10500000002L
 
-    .end local v13    # "cpuFreqs":[J
-    .end local v14    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v67    # "cpuFreqs":[J
-    .restart local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getJobStats()Landroid/util/ArrayMap;
 
     move-result-object v11
 
-    .line 7423
-    .local v11, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v11}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
@@ -5602,15 +4531,11 @@
 
     sub-int/2addr v0, v12
 
-    .local v0, "ij":I
     :goto_16
     move v13, v0
 
-    .end local v0    # "ij":I
-    .local v13, "ij":I
     if-ltz v13, :cond_18
 
-    .line 7424
     invoke-virtual {v11, v13}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -5619,22 +4544,16 @@
 
     check-cast v14, Landroid/os/BatteryStats$Timer;
 
-    .line 7425
-    .local v14, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v14}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v25
 
-    .line 7426
-    .local v25, "bgTimer":Landroid/os/BatteryStats$Timer;
     const-wide v0, 0x20b0000000fL
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 7428
-    .local v4, "jToken":J
     invoke-virtual {v11, v13}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -5645,7 +4564,6 @@
 
     invoke-virtual {v7, v1, v2, v0}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7430
     const-wide v1, 0x10b00000002L
 
     const/4 v6, 0x0
@@ -5658,185 +4576,137 @@
 
     move-wide/from16 v4, v39
 
-    .end local v4    # "jToken":J
-    .local v8, "jToken":J
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7431
     const-wide v1, 0x10b00000003L
 
     move-object/from16 v3, v25
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7433
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7423
-    .end local v8    # "jToken":J
-    .end local v14    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v25    # "bgTimer":Landroid/os/BatteryStats$Timer;
     add-int/lit8 v0, v13, -0x1
 
-    .end local v13    # "ij":I
-    .restart local v0    # "ij":I
     const-wide v8, 0x10500000002L
 
     goto :goto_16
 
-    .line 7437
-    .end local v0    # "ij":I
     :cond_18
     const-wide v0, 0x10b00000004L
 
-    .line 7438
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v2
 
-    .line 7437
     const/4 v3, 0x0
 
     invoke-static {v7, v0, v1, v2, v3}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7441
     const-wide v0, 0x10b00000011L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v8
 
-    .line 7442
-    .local v8, "nToken":J
     nop
 
-    .line 7443
     invoke-virtual {v10, v3, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v0
 
-    .line 7442
     const-wide v4, 0x10300000001L
 
     invoke-virtual {v7, v4, v5, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7444
     nop
 
-    .line 7445
     invoke-virtual {v10, v12, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v0
 
-    .line 7444
     const-wide v4, 0x10300000002L
 
     invoke-virtual {v7, v4, v5, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7446
     nop
 
-    .line 7447
     const/4 v13, 0x2
 
     invoke-virtual {v10, v13, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v0
 
-    .line 7446
     const-wide v4, 0x10300000003L
 
     invoke-virtual {v7, v4, v5, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7448
     const-wide v0, 0x10300000004L
 
     const/4 v2, 0x3
 
-    .line 7449
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7448
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7450
     const-wide v0, 0x10300000005L
 
     const/4 v2, 0x4
 
-    .line 7451
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7450
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7452
     const-wide v0, 0x10300000006L
 
     const/4 v2, 0x5
 
-    .line 7453
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7452
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7454
     const-wide v0, 0x10300000007L
 
-    .line 7455
     invoke-virtual {v10, v3, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7454
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7456
     const-wide v0, 0x10300000008L
 
-    .line 7457
     invoke-virtual {v10, v12, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7456
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7458
     const-wide v0, 0x10300000009L
 
-    .line 7459
     invoke-virtual {v10, v13, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7458
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7460
     const-wide v0, 0x1030000000aL
 
     const/4 v2, 0x3
 
-    .line 7461
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7460
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7462
     const-wide v0, 0x1030000000bL
 
-    .line 7463
     invoke-virtual {v10, v3}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveTime(I)J
 
     move-result-wide v4
@@ -5845,150 +4715,114 @@
 
     move-result-wide v4
 
-    .line 7462
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7464
     const-wide v0, 0x1050000000cL
 
-    .line 7465
     invoke-virtual {v10, v3}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveCount(I)I
 
     move-result v2
 
-    .line 7464
     invoke-virtual {v7, v0, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7466
     const-wide v0, 0x1050000000dL
 
-    .line 7467
     invoke-virtual {v10, v3}, Landroid/os/BatteryStats$Uid;->getMobileRadioApWakeupCount(I)J
 
     move-result-wide v4
 
-    .line 7466
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7468
     const-wide v0, 0x1050000000eL
 
-    .line 7469
     invoke-virtual {v10, v3}, Landroid/os/BatteryStats$Uid;->getWifiRadioApWakeupCount(I)J
 
     move-result-wide v4
 
-    .line 7468
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7470
     const-wide v0, 0x1030000000fL
 
     const/4 v2, 0x6
 
-    .line 7471
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7470
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7472
     const-wide v0, 0x10300000010L
 
-    .line 7473
     const/4 v2, 0x7
 
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7472
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7474
     const-wide v0, 0x10300000011L
 
     const/16 v2, 0x8
 
-    .line 7475
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7474
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7476
     const-wide v0, 0x10300000012L
 
     const/16 v2, 0x9
 
-    .line 7477
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v4
 
-    .line 7476
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7478
     const-wide v0, 0x10300000013L
 
     const/4 v2, 0x6
 
-    .line 7479
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7478
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7480
     const-wide v0, 0x10300000014L
 
-    .line 7481
     const/4 v2, 0x7
 
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7480
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7482
     const-wide v0, 0x10300000015L
 
     const/16 v2, 0x8
 
-    .line 7483
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7482
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7484
     const-wide v0, 0x10300000016L
 
     const/16 v2, 0x9
 
-    .line 7485
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 7484
     invoke-virtual {v7, v0, v1, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7486
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7489
     move-object/from16 v14, v49
 
     move/from16 v6, v53
@@ -5997,107 +4831,77 @@
 
     move-result-object v0
 
-    .end local v49    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v53    # "uid":I
-    .local v6, "uid":I
-    .local v14, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     move-object v4, v0
 
     check-cast v4, Lcom/android/internal/os/BatterySipper;
 
-    .line 7490
-    .local v4, "bs":Lcom/android/internal/os/BatterySipper;
     if-eqz v4, :cond_19
 
-    .line 7491
     const-wide v0, 0x10b00000012L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 7492
-    .local v0, "bsToken":J
     const-wide v2, 0x10100000001L
 
     move-object/from16 v69, v14
 
     iget-wide v13, v4, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .end local v14    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .local v69, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     invoke-virtual {v7, v2, v3, v13, v14}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 7493
     const-wide v2, 0x10800000002L
 
     iget-boolean v5, v4, Lcom/android/internal/os/BatterySipper;->shouldHide:Z
 
     invoke-virtual {v7, v2, v3, v5}, Landroid/util/proto/ProtoOutputStream;->write(JZ)V
 
-    .line 7494
     const-wide v2, 0x10100000003L
 
     iget-wide v13, v4, Lcom/android/internal/os/BatterySipper;->screenPowerMah:D
 
     invoke-virtual {v7, v2, v3, v13, v14}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 7495
     const-wide v2, 0x10100000004L
 
     iget-wide v13, v4, Lcom/android/internal/os/BatterySipper;->proportionalSmearMah:D
 
     invoke-virtual {v7, v2, v3, v13, v14}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 7497
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .end local v0    # "bsToken":J
     goto :goto_17
 
-    .line 7501
-    .end local v69    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v14    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     :cond_19
     move-object/from16 v69, v14
 
-    .line 7502
-    .end local v14    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v69    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     :goto_17
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getProcessStats()Landroid/util/ArrayMap;
 
     move-result-object v13
 
-    .line 7503
-    .local v13, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     invoke-virtual {v13}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
 
     sub-int/2addr v0, v12
 
-    .local v0, "ipr":I
     :goto_18
     if-ltz v0, :cond_1a
 
-    .line 7504
     invoke-virtual {v13, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/os/BatteryStats$Uid$Proc;
 
-    .line 7505
-    .local v1, "ps":Landroid/os/BatteryStats$Uid$Proc;
     const-wide v2, 0x20b00000013L
 
     invoke-virtual {v7, v2, v3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7507
-    .local v2, "prToken":J
     invoke-virtual {v13, v0}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -6110,9 +4914,6 @@
 
     invoke-virtual {v7, v12, v13, v5}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7508
-    .end local v13    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .local v70, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     const/4 v5, 0x0
 
     invoke-virtual {v1, v5}, Landroid/os/BatteryStats$Uid$Proc;->getUserTime(I)J
@@ -6125,9 +4926,6 @@
 
     invoke-virtual {v7, v5, v6, v12, v13}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7509
-    .end local v6    # "uid":I
-    .local v71, "uid":I
     const/4 v5, 0x0
 
     invoke-virtual {v1, v5}, Landroid/os/BatteryStats$Uid$Proc;->getSystemTime(I)J
@@ -6138,7 +4936,6 @@
 
     invoke-virtual {v7, v5, v6, v12, v13}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7510
     const-wide v12, 0x10300000004L
 
     const/4 v14, 0x0
@@ -6149,7 +4946,6 @@
 
     invoke-virtual {v7, v12, v13, v5, v6}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7511
     const-wide v5, 0x10500000005L
 
     invoke-virtual {v1, v14}, Landroid/os/BatteryStats$Uid$Proc;->getStarts(I)I
@@ -6158,7 +4954,6 @@
 
     invoke-virtual {v7, v5, v6, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7512
     const-wide v5, 0x10500000006L
 
     invoke-virtual {v1, v14}, Landroid/os/BatteryStats$Uid$Proc;->getNumAnrs(I)I
@@ -6167,7 +4962,6 @@
 
     invoke-virtual {v7, v5, v6, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7513
     const-wide v5, 0x10500000007L
 
     invoke-virtual {v1, v14}, Landroid/os/BatteryStats$Uid$Proc;->getNumCrashes(I)I
@@ -6176,12 +4970,8 @@
 
     invoke-virtual {v7, v5, v6, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7515
     invoke-virtual {v7, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7503
-    .end local v1    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v2    # "prToken":J
     add-int/lit8 v0, v0, -0x1
 
     move-object/from16 v13, v70
@@ -6192,42 +4982,26 @@
 
     goto :goto_18
 
-    .line 7519
-    .end local v0    # "ipr":I
-    .end local v70    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v71    # "uid":I
-    .restart local v6    # "uid":I
-    .restart local v13    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     :cond_1a
     move/from16 v71, v6
 
     move-object/from16 v70, v13
 
-    .end local v6    # "uid":I
-    .end local v13    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v70    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v71    # "uid":I
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getSensorStats()Landroid/util/SparseArray;
 
     move-result-object v12
 
-    .line 7520
-    .local v12, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     const/4 v0, 0x0
 
-    .local v0, "ise":I
     :goto_19
     move v13, v0
 
-    .end local v0    # "ise":I
-    .local v13, "ise":I
     invoke-virtual {v12}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
     if-ge v13, v0, :cond_1c
 
-    .line 7521
     invoke-virtual {v12, v13}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -6236,20 +5010,14 @@
 
     check-cast v14, Landroid/os/BatteryStats$Uid$Sensor;
 
-    .line 7522
-    .local v14, "se":Landroid/os/BatteryStats$Uid$Sensor;
     invoke-virtual {v14}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v25
 
-    .line 7523
-    .local v25, "timer":Landroid/os/BatteryStats$Timer;
     if-nez v25, :cond_1b
 
-    .line 7524
     nop
 
-    .line 7520
     move-object/from16 v27, v4
 
     move/from16 v28, v71
@@ -6258,37 +5026,27 @@
 
     goto :goto_1a
 
-    .line 7526
     :cond_1b
     invoke-virtual {v14}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorBackgroundTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v26
 
-    .line 7527
-    .local v26, "bgTimer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v12, v13}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v6
 
-    .line 7528
-    .local v6, "sensorNumber":I
     const-wide v0, 0x20b00000015L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v1
 
-    .line 7530
-    .local v1, "seToken":J
     move-wide/from16 v72, v1
 
     const-wide v1, 0x10500000001L
 
     invoke-virtual {v7, v1, v2, v6}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7532
-    .end local v1    # "seToken":J
-    .local v72, "seToken":J
     const-wide v27, 0x10b00000002L
 
     const/16 v29, 0x0
@@ -6301,29 +5059,20 @@
 
     move-wide/from16 v1, v27
 
-    .end local v72    # "seToken":J
-    .local v74, "seToken":J
     move-object/from16 v3, v25
 
     move-object/from16 v27, v4
 
     move-wide/from16 v4, v39
 
-    .end local v4    # "bs":Lcom/android/internal/os/BatterySipper;
-    .local v27, "bs":Lcom/android/internal/os/BatterySipper;
     move/from16 v30, v6
 
     move/from16 v28, v71
 
     move/from16 v6, v29
 
-    .end local v6    # "sensorNumber":I
-    .end local v71    # "uid":I
-    .local v28, "uid":I
-    .local v30, "sensorNumber":I
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7533
     const-wide v1, 0x10b00000003L
 
     const/4 v6, 0x0
@@ -6332,52 +5081,31 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7535
     move-wide/from16 v0, v74
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7520
-    .end local v14    # "se":Landroid/os/BatteryStats$Uid$Sensor;
-    .end local v25    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v26    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v30    # "sensorNumber":I
-    .end local v74    # "seToken":J
     :goto_1a
     add-int/lit8 v0, v13, 0x1
 
-    .end local v13    # "ise":I
-    .restart local v0    # "ise":I
     move-object/from16 v4, v27
 
     move/from16 v71, v28
 
     goto :goto_19
 
-    .line 7539
-    .end local v0    # "ise":I
-    .end local v27    # "bs":Lcom/android/internal/os/BatterySipper;
-    .end local v28    # "uid":I
-    .restart local v4    # "bs":Lcom/android/internal/os/BatterySipper;
-    .restart local v71    # "uid":I
     :cond_1c
     move-object/from16 v27, v4
 
     move/from16 v28, v71
 
-    .end local v4    # "bs":Lcom/android/internal/os/BatterySipper;
-    .end local v71    # "uid":I
-    .restart local v27    # "bs":Lcom/android/internal/os/BatterySipper;
-    .restart local v28    # "uid":I
     const/4 v0, 0x0
 
-    .local v0, "ips":I
     :goto_1b
     const/4 v1, 0x7
 
     if-ge v0, v1, :cond_1e
 
-    .line 7540
     move-wide/from16 v13, v39
 
     const/4 v2, 0x0
@@ -6386,27 +5114,20 @@
 
     move-result-wide v3
 
-    .end local v39    # "rawRealtimeUs":J
-    .local v13, "rawRealtimeUs":J
     invoke-static {v3, v4}, Landroid/os/BatteryStats;->roundUsToMs(J)J
 
     move-result-wide v2
 
-    .line 7541
-    .local v2, "durMs":J
     cmp-long v4, v2, v31
 
     if-nez v4, :cond_1d
 
-    .line 7542
     nop
 
-    .line 7539
     move-wide/from16 v78, v8
 
     goto :goto_1c
 
-    .line 7544
     :cond_1d
     const-wide v4, 0x20b00000014L
 
@@ -6414,17 +5135,12 @@
 
     move-result-wide v4
 
-    .line 7545
-    .local v4, "stToken":J
     move-wide/from16 v76, v2
 
     const-wide v1, 0x10e00000001L
 
     invoke-virtual {v7, v1, v2, v0}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7546
-    .end local v2    # "durMs":J
-    .local v76, "durMs":J
     move-wide/from16 v78, v8
 
     move-wide/from16 v1, v76
@@ -6433,16 +5149,8 @@
 
     invoke-virtual {v7, v8, v9, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7547
-    .end local v8    # "nToken":J
-    .end local v76    # "durMs":J
-    .local v1, "durMs":J
-    .local v78, "nToken":J
     invoke-virtual {v7, v4, v5}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7539
-    .end local v1    # "durMs":J
-    .end local v4    # "stToken":J
     :goto_1c
     add-int/lit8 v0, v0, 0x1
 
@@ -6452,27 +5160,15 @@
 
     goto :goto_1b
 
-    .line 7551
-    .end local v0    # "ips":I
-    .end local v13    # "rawRealtimeUs":J
-    .end local v78    # "nToken":J
-    .restart local v8    # "nToken":J
-    .restart local v39    # "rawRealtimeUs":J
     :cond_1e
     move-wide/from16 v78, v8
 
     move-wide/from16 v13, v39
 
-    .end local v8    # "nToken":J
-    .end local v39    # "rawRealtimeUs":J
-    .restart local v13    # "rawRealtimeUs":J
-    .restart local v78    # "nToken":J
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getSyncStats()Landroid/util/ArrayMap;
 
     move-result-object v8
 
-    .line 7552
-    .local v8, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v8}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
@@ -6481,15 +5177,11 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "isy":I
     :goto_1d
     move v9, v0
 
-    .end local v0    # "isy":I
-    .local v9, "isy":I
     if-ltz v9, :cond_1f
 
-    .line 7553
     invoke-virtual {v8, v9}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -6498,22 +5190,16 @@
 
     check-cast v6, Landroid/os/BatteryStats$Timer;
 
-    .line 7554
-    .local v6, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v6}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v25
 
-    .line 7555
-    .local v25, "bgTimer":Landroid/os/BatteryStats$Timer;
     const-wide v0, 0x20b00000016L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 7557
-    .local v4, "syToken":J
     invoke-virtual {v8, v9}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -6524,7 +5210,6 @@
 
     invoke-virtual {v7, v1, v2, v0}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7559
     const-wide v1, 0x10b00000002L
 
     const/16 v26, 0x0
@@ -6537,17 +5222,12 @@
 
     move-wide v4, v13
 
-    .end local v4    # "syToken":J
-    .local v80, "syToken":J
     move-object/from16 v29, v6
 
     move/from16 v6, v26
 
-    .end local v6    # "timer":Landroid/os/BatteryStats$Timer;
-    .local v29, "timer":Landroid/os/BatteryStats$Timer;
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7560
     const-wide v1, 0x10b00000003L
 
     const/4 v6, 0x0
@@ -6556,23 +5236,14 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7562
     move-wide/from16 v0, v80
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7552
-    .end local v25    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v29    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v80    # "syToken":J
     add-int/lit8 v0, v9, -0x1
 
-    .end local v9    # "isy":I
-    .restart local v0    # "isy":I
     goto :goto_1d
 
-    .line 7566
-    .end local v0    # "isy":I
     :cond_1f
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->hasUserActivity()Z
 
@@ -6580,58 +5251,41 @@
 
     if-eqz v0, :cond_21
 
-    .line 7567
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_1e
     const/4 v1, 0x4
 
     if-ge v0, v1, :cond_21
 
-    .line 7568
     const/4 v1, 0x0
 
     invoke-virtual {v10, v0, v1}, Landroid/os/BatteryStats$Uid;->getUserActivityCount(II)I
 
     move-result v2
 
-    .line 7569
-    .local v2, "val":I
     if-eqz v2, :cond_20
 
-    .line 7570
     const-wide v3, 0x20b00000017L
 
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v3
 
-    .line 7571
-    .local v3, "uaToken":J
     const-wide v5, 0x10e00000001L
 
     invoke-virtual {v7, v5, v6, v0}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7572
     move-object/from16 v82, v8
 
     const-wide v8, 0x10500000002L
 
     invoke-virtual {v7, v8, v9, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7573
-    .end local v8    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v82, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .end local v2    # "val":I
-    .end local v3    # "uaToken":J
     goto :goto_1f
 
-    .line 7567
-    .end local v82    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v8    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_20
     move-object/from16 v82, v8
 
@@ -6639,8 +5293,6 @@
 
     const-wide v8, 0x10500000002L
 
-    .end local v8    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v82    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :goto_1f
     add-int/lit8 v0, v0, 0x1
 
@@ -6648,17 +5300,11 @@
 
     goto :goto_1e
 
-    .line 7579
-    .end local v0    # "i":I
-    .end local v82    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v8    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_21
     move-object/from16 v82, v8
 
     const-wide v8, 0x10500000002L
 
-    .end local v8    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v82    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-wide v1, 0x10b0000000dL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getVibratorOnTimer()Landroid/os/BatteryStats$Timer;
@@ -6673,7 +5319,6 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7582
     const-wide v1, 0x10b0000000eL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getVideoTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -6682,13 +5327,10 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7585
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getWakelockStats()Landroid/util/ArrayMap;
 
     move-result-object v6
 
-    .line 7586
-    .local v6, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-virtual {v6}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
@@ -6697,15 +5339,11 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "iw":I
     :goto_20
     move v4, v0
 
-    .end local v0    # "iw":I
-    .local v4, "iw":I
     if-ltz v4, :cond_23
 
-    .line 7587
     invoke-virtual {v6, v4}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -6714,16 +5352,12 @@
 
     check-cast v5, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 7588
-    .local v5, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     const-wide v0, 0x20b00000019L
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v1
 
-    .line 7589
-    .local v1, "wToken":J
     invoke-virtual {v6, v4}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -6734,7 +5368,6 @@
 
     invoke-virtual {v7, v8, v9, v0}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7590
     const-wide v8, 0x10b00000002L
 
     const/4 v0, 0x1
@@ -6751,38 +5384,26 @@
 
     move-wide v1, v8
 
-    .end local v1    # "wToken":J
-    .local v83, "wToken":J
     move v8, v4
 
     move-object v9, v5
 
     move-wide v4, v13
 
-    .end local v4    # "iw":I
-    .end local v5    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .local v8, "iw":I
-    .local v9, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     move-object/from16 v26, v6
 
     move/from16 v6, v25
 
-    .end local v6    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v26, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7592
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 7593
-    .local v6, "pTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v6, :cond_22
 
-    .line 7594
     const-wide v1, 0x10b00000003L
 
     const/16 v25, 0x0
@@ -6799,12 +5420,8 @@
 
     move/from16 v6, v25
 
-    .end local v6    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v11, "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v85, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7595
     const-wide v1, 0x10b00000004L
 
     invoke-virtual {v11}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
@@ -6817,18 +5434,11 @@
 
     goto :goto_21
 
-    .line 7598
-    .end local v85    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v6    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v11, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_22
     move-object/from16 v85, v11
 
     move-object v11, v6
 
-    .end local v6    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v11, "pTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v85    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :goto_21
     const-wide v1, 0x10b00000005L
 
@@ -6850,19 +5460,12 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7600
     move-wide/from16 v0, v83
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7586
-    .end local v9    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .end local v11    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .end local v83    # "wToken":J
     add-int/lit8 v0, v8, -0x1
 
-    .end local v8    # "iw":I
-    .restart local v0    # "iw":I
     move-object/from16 v6, v26
 
     move-object/from16 v11, v85
@@ -6871,21 +5474,11 @@
 
     goto/16 :goto_20
 
-    .line 7604
-    .end local v0    # "iw":I
-    .end local v26    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v85    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v6, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v11, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_23
     move-object/from16 v26, v6
 
     move-object/from16 v85, v11
 
-    .end local v6    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v11    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v26    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v85    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-wide v1, 0x10b0000001cL
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getMulticastWakelockStats()Landroid/os/BatteryStats$Timer;
@@ -6900,38 +5493,29 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7608
     move-object/from16 v8, v57
 
     invoke-virtual {v8}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
 
-    .end local v57    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .local v8, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     const/4 v1, 0x1
 
     sub-int/2addr v0, v1
 
-    .local v0, "ipkg":I
     :goto_22
     if-ltz v0, :cond_25
 
-    .line 7609
     invoke-virtual {v8, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/os/BatteryStats$Uid$Pkg;
 
-    .line 7610
-    .local v1, "ps":Landroid/os/BatteryStats$Uid$Pkg;
     invoke-virtual {v1}, Landroid/os/BatteryStats$Uid$Pkg;->getWakeupAlarmStats()Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    .line 7611
-    .local v2, "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     invoke-virtual {v2}, Landroid/util/ArrayMap;->size()I
 
     move-result v3
@@ -6940,19 +5524,15 @@
 
     sub-int/2addr v3, v4
 
-    .local v3, "iwa":I
     :goto_23
     if-ltz v3, :cond_24
 
-    .line 7612
     const-wide v5, 0x20b0000001aL
 
     invoke-virtual {v7, v5, v6}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 7613
-    .local v5, "waToken":J
     invoke-virtual {v2, v3}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -6965,12 +5545,8 @@
 
     invoke-virtual {v7, v4, v5, v9}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7614
-    .end local v5    # "waToken":J
-    .local v86, "waToken":J
     nop
 
-    .line 7615
     invoke-virtual {v2, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -6983,60 +5559,44 @@
 
     move-result v6
 
-    .line 7614
     const-wide v4, 0x10500000002L
 
     invoke-virtual {v7, v4, v5, v6}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7616
     move-wide/from16 v4, v86
 
     invoke-virtual {v7, v4, v5}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7611
-    .end local v86    # "waToken":J
     add-int/lit8 v3, v3, -0x1
 
     const/4 v4, 0x1
 
     goto :goto_23
 
-    .line 7608
-    .end local v1    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .end local v2    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .end local v3    # "iwa":I
     :cond_24
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_22
 
-    .line 7621
-    .end local v0    # "ipkg":I
     :cond_25
     const-wide v0, 0x10b00000005L
 
-    .line 7622
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v2
 
-    .line 7621
     const/4 v3, 0x0
 
     invoke-static {v7, v0, v1, v2, v3}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7625
     const-wide v0, 0x10b0000001bL
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v4
 
-    .line 7626
-    .local v4, "wToken":J
     nop
 
-    .line 7627
     invoke-virtual {v10, v13, v14, v3}, Landroid/os/BatteryStats$Uid;->getFullWifiLockTime(JI)J
 
     move-result-wide v0
@@ -7045,12 +5605,10 @@
 
     move-result-wide v0
 
-    .line 7626
     const-wide v2, 0x10300000001L
 
     invoke-virtual {v7, v2, v3, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7628
     const-wide v1, 0x10b00000003L
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getWifiScanTimer()Landroid/os/BatteryStats$Timer;
@@ -7065,14 +5623,10 @@
 
     move-wide v4, v13
 
-    .end local v4    # "wToken":J
-    .local v88, "wToken":J
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7630
     nop
 
-    .line 7631
     const/4 v9, 0x0
 
     invoke-virtual {v10, v13, v14, v9}, Landroid/os/BatteryStats$Uid;->getWifiRunningTime(JI)J
@@ -7083,12 +5637,10 @@
 
     move-result-wide v0
 
-    .line 7630
     const-wide v2, 0x10300000002L
 
     invoke-virtual {v7, v2, v3, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7632
     const-wide v1, 0x10b00000004L
 
     invoke-virtual {v10}, Landroid/os/BatteryStats$Uid;->getWifiScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
@@ -7099,41 +5651,16 @@
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7634
     move-wide/from16 v0, v88
 
     invoke-virtual {v7, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7636
-    .end local v88    # "wToken":J
-    .local v0, "wToken":J
     move-wide/from16 v2, v61
 
     invoke-virtual {v7, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7221
-    .end local v0    # "wToken":J
-    .end local v8    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v10    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v12    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v15    # "reasons":[I
-    .end local v17    # "pkgs":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .end local v19    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v21    # "cpuToken":J
-    .end local v26    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v27    # "bs":Lcom/android/internal/os/BatterySipper;
-    .end local v28    # "uid":I
-    .end local v61    # "uTkn":J
-    .end local v67    # "cpuFreqs":[J
-    .end local v68    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v70    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v78    # "nToken":J
-    .end local v82    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v85    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     add-int/lit8 v0, v16, 0x1
 
-    .end local v16    # "iu":I
-    .local v0, "iu":I
     move-object/from16 v6, p0
 
     move-wide v14, v13
@@ -7156,26 +5683,6 @@
 
     goto/16 :goto_4
 
-    .line 7638
-    .end local v0    # "iu":I
-    .end local v13    # "rawRealtimeUs":J
-    .end local v18    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v23    # "batteryUptimeUs":J
-    .end local v36    # "rawUptimeUs":J
-    .end local v38    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v54    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v58    # "rawRealtimeMs":J
-    .end local v60    # "n":I
-    .end local v69    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .local v1, "n":I
-    .local v3, "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .local v4, "batteryUptimeUs":J
-    .local v8, "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .local v9, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v10, "rawUptimeUs":J
-    .local v12, "rawRealtimeMs":J
-    .local v14, "rawRealtimeUs":J
-    .local v19, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_26
     move/from16 v60, v1
 
@@ -7195,24 +5702,6 @@
 
     move-object/from16 v54, v19
 
-    .end local v1    # "n":I
-    .end local v3    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .end local v4    # "batteryUptimeUs":J
-    .end local v8    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v9    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v10    # "rawUptimeUs":J
-    .end local v12    # "rawRealtimeMs":J
-    .end local v14    # "rawRealtimeUs":J
-    .end local v19    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v13    # "rawRealtimeUs":J
-    .restart local v18    # "aidToPackages":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/util/ArrayList<Ljava/lang/String;>;>;"
-    .restart local v23    # "batteryUptimeUs":J
-    .restart local v36    # "rawUptimeUs":J
-    .restart local v38    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v54    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v58    # "rawRealtimeMs":J
-    .restart local v60    # "n":I
-    .restart local v69    # "uidToSipper":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Lcom/android/internal/os/BatterySipper;>;"
     return-void
 
     :array_0
@@ -7227,25 +5716,19 @@
 
 .method private dumpProtoHistoryLocked(Landroid/util/proto/ProtoOutputStream;IJ)V
     .locals 29
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "flags"    # I
-    .param p3, "histStart"    # J
 
     move-object/from16 v1, p0
 
     move-object/from16 v9, p1
 
-    .line 7641
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->startIteratingHistoryLocked()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 7642
     return-void
 
-    .line 7645
     :cond_0
     const-wide v2, 0x10500000001L
 
@@ -7253,7 +5736,6 @@
 
     invoke-virtual {v9, v2, v3, v0}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7646
     const-wide v4, 0x10300000002L
 
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getParcelVersion()I
@@ -7262,34 +5744,26 @@
 
     invoke-virtual {v9, v4, v5, v0}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7647
     nop
 
-    .line 7648
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getStartPlatformVersion()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7647
     const-wide v4, 0x10900000003L
 
     invoke-virtual {v9, v4, v5, v0}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7649
     const-wide v6, 0x10900000004L
 
-    .line 7650
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getEndPlatformVersion()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7649
     invoke-virtual {v9, v6, v7, v0}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7654
     const/4 v6, 0x0
 
-    .local v6, "i":I
     :goto_0
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryStringPoolSize()I
@@ -7298,18 +5772,14 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 7655
     const-wide v7, 0x20b00000005L
 
     invoke-virtual {v9, v7, v8}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v7
 
-    .line 7656
-    .local v7, "token":J
     invoke-virtual {v9, v2, v3, v6}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7657
     const-wide v11, 0x10500000002L
 
     invoke-virtual {v1, v6}, Landroid/os/BatteryStats;->getHistoryTagPoolUid(I)I
@@ -7318,71 +5788,46 @@
 
     invoke-virtual {v9, v11, v12, v13}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7658
     nop
 
-    .line 7659
     invoke-virtual {v1, v6}, Landroid/os/BatteryStats;->getHistoryTagPoolString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 7658
     invoke-virtual {v9, v4, v5, v11}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7660
     invoke-virtual {v9, v7, v8}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7654
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 7664
-    .end local v6    # "i":I
-    .end local v7    # "token":J
     :cond_1
     new-instance v2, Landroid/os/BatteryStats$HistoryPrinter;
 
     invoke-direct {v2}, Landroid/os/BatteryStats$HistoryPrinter;-><init>()V
 
-    .line 7665
-    .local v2, "hprinter":Landroid/os/BatteryStats$HistoryPrinter;
     new-instance v3, Landroid/os/BatteryStats$HistoryItem;
 
     invoke-direct {v3}, Landroid/os/BatteryStats$HistoryItem;-><init>()V
 
     move-object v11, v3
 
-    .line 7666
-    .local v11, "rec":Landroid/os/BatteryStats$HistoryItem;
     const-wide/16 v3, -0x1
 
-    .line 7667
-    .local v3, "lastTime":J
     const-wide/16 v5, -0x1
 
-    .line 7668
-    .local v5, "baseTime":J
     const/4 v7, 0x0
 
-    .line 7669
-    .local v7, "printed":Z
     move-wide v13, v5
 
     move-wide v4, v3
 
     const/4 v3, 0x0
 
-    .end local v5    # "baseTime":J
-    .local v3, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v4, "lastTime":J
-    .local v13, "baseTime":J
     :goto_1
     move-object v8, v3
 
-    .line 7670
-    .end local v3    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v8, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     invoke-virtual {v1, v11}, Landroid/os/BatteryStats;->getNextHistoryLocked(Landroid/os/BatteryStats$HistoryItem;)Z
 
     move-result v3
@@ -7391,26 +5836,16 @@
 
     if-eqz v3, :cond_13
 
-    .line 7671
     iget-wide v0, v11, Landroid/os/BatteryStats$HistoryItem;->time:J
 
-    .line 7672
-    .end local v4    # "lastTime":J
-    .local v0, "lastTime":J
     cmp-long v3, v13, v15
 
     if-gez v3, :cond_2
 
-    .line 7673
     move-wide v3, v0
 
-    .line 7675
-    .end local v13    # "baseTime":J
-    .local v3, "baseTime":J
     move-wide v13, v3
 
-    .end local v3    # "baseTime":J
-    .restart local v13    # "baseTime":J
     :cond_2
     iget-wide v3, v11, Landroid/os/BatteryStats$HistoryItem;->time:J
 
@@ -7418,7 +5853,6 @@
 
     if-ltz v3, :cond_12
 
-    .line 7676
     cmp-long v3, p3, v15
 
     const/16 v18, 0x1
@@ -7427,7 +5861,6 @@
 
     if-nez v7, :cond_10
 
-    .line 7677
     iget-byte v3, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     const/4 v4, 0x5
@@ -7454,7 +5887,6 @@
 
     goto :goto_3
 
-    .line 7685
     :cond_3
     iget-wide v5, v11, Landroid/os/BatteryStats$HistoryItem;->currentTime:J
 
@@ -7462,21 +5894,14 @@
 
     if-eqz v3, :cond_5
 
-    .line 7686
     const/4 v15, 0x1
 
-    .line 7687
-    .end local v7    # "printed":Z
-    .local v15, "printed":Z
     iget-byte v3, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     move v7, v3
 
-    .line 7688
-    .local v7, "cmd":B
     iput-byte v4, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 7689
     and-int/lit8 v3, p2, 0x20
 
     if-eqz v3, :cond_4
@@ -7499,15 +5924,10 @@
 
     move/from16 v7, v16
 
-    .end local v7    # "cmd":B
-    .local v12, "cmd":B
     invoke-virtual/range {v2 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Landroid/util/proto/ProtoOutputStream;Landroid/os/BatteryStats$HistoryItem;JZ)V
 
-    .line 7691
     iput-byte v12, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 7693
-    .end local v12    # "cmd":B
     move-wide/from16 v19, v0
 
     move-object v0, v8
@@ -7516,8 +5936,6 @@
 
     goto :goto_5
 
-    .end local v15    # "printed":Z
-    .local v7, "printed":Z
     :cond_5
     move-wide/from16 v19, v0
 
@@ -7527,14 +5945,10 @@
 
     goto :goto_5
 
-    .line 7681
     :cond_6
     :goto_3
     const/4 v12, 0x1
 
-    .line 7682
-    .end local v7    # "printed":Z
-    .local v12, "printed":Z
     and-int/lit8 v3, p2, 0x20
 
     if-eqz v3, :cond_7
@@ -7561,26 +5975,19 @@
 
     move v8, v15
 
-    .end local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v0, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v19, "lastTime":J
     invoke-virtual/range {v3 .. v8}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Landroid/util/proto/ProtoOutputStream;Landroid/os/BatteryStats$HistoryItem;JZ)V
 
-    .line 7684
     const/4 v1, 0x0
 
     iput-byte v1, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
-    .line 7693
     :goto_5
     if-eqz v0, :cond_f
 
-    .line 7694
     iget-byte v1, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     if-eqz v1, :cond_9
 
-    .line 7695
     and-int/lit8 v1, p2, 0x20
 
     if-eqz v1, :cond_8
@@ -7603,14 +6010,12 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Landroid/util/proto/ProtoOutputStream;Landroid/os/BatteryStats$HistoryItem;JZ)V
 
-    .line 7697
     const/4 v1, 0x0
 
     iput-byte v1, v11, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     goto :goto_7
 
-    .line 7699
     :cond_9
     const/4 v1, 0x0
 
@@ -7619,51 +6024,37 @@
 
     move v8, v3
 
-    .line 7700
-    .local v8, "oldEventCode":I
     iget-object v3, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     move-object v6, v3
 
-    .line 7701
-    .local v6, "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
     new-instance v3, Landroid/os/BatteryStats$HistoryTag;
 
     invoke-direct {v3}, Landroid/os/BatteryStats$HistoryTag;-><init>()V
 
     iput-object v3, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 7702
     move v3, v1
 
-    .local v3, "i":I
     :goto_8
     move v7, v3
 
-    .end local v3    # "i":I
-    .local v7, "i":I
     const/16 v3, 0x16
 
     if-ge v7, v3, :cond_e
 
-    .line 7703
     nop
 
-    .line 7704
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats$HistoryEventTracker;->getStateForEvent(I)Ljava/util/HashMap;
 
     move-result-object v3
 
     move-object v5, v3
 
-    .line 7705
-    .local v5, "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     if-nez v5, :cond_a
 
-    .line 7706
     nop
 
-    .line 7702
     move-object/from16 v23, v0
 
     move-object v1, v6
@@ -7678,7 +6069,6 @@
 
     goto/16 :goto_c
 
-    .line 7709
     :cond_a
     invoke-virtual {v5}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -7701,8 +6091,6 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 7710
-    .local v3, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v15
@@ -7711,16 +6099,11 @@
 
     move-object/from16 v21, v15
 
-    .line 7711
-    .local v21, "uids":Landroid/util/SparseIntArray;
     move v15, v1
 
-    .local v15, "j":I
     :goto_a
     move/from16 v22, v15
 
-    .end local v15    # "j":I
-    .local v22, "j":I
     move-object/from16 v23, v0
 
     move-object/from16 v1, v21
@@ -7729,23 +6112,14 @@
 
     move-result v0
 
-    .end local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v21    # "uids":Landroid/util/SparseIntArray;
-    .local v1, "uids":Landroid/util/SparseIntArray;
-    .local v23, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move/from16 v24, v12
 
     move/from16 v12, v22
 
     if-ge v12, v0, :cond_c
 
-    .line 7712
-    .end local v22    # "j":I
-    .local v12, "j":I
-    .local v24, "printed":Z
     iput v7, v11, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    .line 7713
     iget-object v0, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -7758,11 +6132,8 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .end local v3    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v25, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     iput-object v3, v0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
-    .line 7714
     iget-object v0, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-virtual {v1, v12}, Landroid/util/SparseIntArray;->keyAt(I)I
@@ -7771,7 +6142,6 @@
 
     iput v3, v0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
-    .line 7715
     iget-object v0, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     invoke-virtual {v1, v12}, Landroid/util/SparseIntArray;->valueAt(I)I
@@ -7780,7 +6150,6 @@
 
     iput v3, v0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
-    .line 7716
     and-int/lit8 v0, p2, 0x20
 
     if-eqz v0, :cond_b
@@ -7797,8 +6166,6 @@
 
     move-object v3, v2
 
-    .end local v25    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v15, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     move-object/from16 v16, v4
 
     move-object v4, v9
@@ -7807,8 +6174,6 @@
 
     move-object v5, v11
 
-    .end local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .local v17, "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     move-object/from16 v26, v1
 
     move-object v1, v6
@@ -7817,32 +6182,20 @@
 
     move-wide v6, v13
 
-    .end local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v7    # "i":I
-    .local v1, "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .local v21, "i":I
-    .local v26, "uids":Landroid/util/SparseIntArray;
     move v10, v8
 
     move v8, v0
 
-    .end local v8    # "oldEventCode":I
-    .local v10, "oldEventCode":I
     invoke-virtual/range {v3 .. v8}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Landroid/util/proto/ProtoOutputStream;Landroid/os/BatteryStats$HistoryItem;JZ)V
 
-    .line 7718
     const/4 v0, 0x0
 
     iput-object v0, v11, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 7719
     iput-object v0, v11, Landroid/os/BatteryStats$HistoryItem;->wakelockTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 7711
     add-int/lit8 v3, v12, 0x1
 
-    .end local v12    # "j":I
-    .local v3, "j":I
     move-object v6, v1
 
     move v8, v10
@@ -7869,18 +6222,6 @@
 
     goto :goto_a
 
-    .line 7721
-    .end local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v3    # "j":I
-    .end local v10    # "oldEventCode":I
-    .end local v15    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v17    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v21    # "i":I
-    .end local v26    # "uids":Landroid/util/SparseIntArray;
-    .restart local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v7    # "i":I
-    .restart local v8    # "oldEventCode":I
     :cond_c
     move-object/from16 v16, v4
 
@@ -7894,15 +6235,6 @@
 
     const/4 v0, 0x0
 
-    .line 7709
-    .end local v5    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v7    # "i":I
-    .end local v8    # "oldEventCode":I
-    .restart local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v10    # "oldEventCode":I
-    .restart local v17    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .restart local v21    # "i":I
     move-object/from16 v0, v23
 
     move/from16 v12, v24
@@ -7911,18 +6243,6 @@
 
     goto/16 :goto_9
 
-    .line 7702
-    .end local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v10    # "oldEventCode":I
-    .end local v17    # "active":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v21    # "i":I
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v24    # "printed":Z
-    .restart local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v7    # "i":I
-    .restart local v8    # "oldEventCode":I
-    .local v12, "printed":Z
     :cond_d
     move-object/from16 v23, v0
 
@@ -7936,21 +6256,9 @@
 
     const/4 v0, 0x0
 
-    .end local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v7    # "i":I
-    .end local v8    # "oldEventCode":I
-    .end local v12    # "printed":Z
-    .restart local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v10    # "oldEventCode":I
-    .restart local v21    # "i":I
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v24    # "printed":Z
     :goto_c
     add-int/lit8 v3, v21, 0x1
 
-    .end local v21    # "i":I
-    .local v3, "i":I
     move-object v6, v1
 
     move v8, v10
@@ -7963,16 +6271,6 @@
 
     goto/16 :goto_8
 
-    .line 7723
-    .end local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v3    # "i":I
-    .end local v10    # "oldEventCode":I
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v24    # "printed":Z
-    .restart local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v8    # "oldEventCode":I
-    .restart local v12    # "printed":Z
     :cond_e
     move-object/from16 v23, v0
 
@@ -7984,34 +6282,16 @@
 
     const/4 v0, 0x0
 
-    .end local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v6    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .end local v8    # "oldEventCode":I
-    .end local v12    # "printed":Z
-    .restart local v1    # "oldEventTag":Landroid/os/BatteryStats$HistoryTag;
-    .restart local v10    # "oldEventCode":I
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v24    # "printed":Z
     iput v10, v11, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    .line 7724
     iput-object v1, v11, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 7725
     const/4 v1, 0x0
 
-    .line 7728
-    .end local v10    # "oldEventCode":I
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .local v1, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move-object/from16 v23, v1
 
     goto :goto_d
 
-    .end local v1    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v24    # "printed":Z
-    .restart local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v12    # "printed":Z
     :cond_f
     move-object/from16 v23, v0
 
@@ -8019,18 +6299,8 @@
 
     const/4 v0, 0x0
 
-    .end local v0    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v12    # "printed":Z
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v24    # "printed":Z
     goto :goto_d
 
-    .end local v19    # "lastTime":J
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v24    # "printed":Z
-    .local v0, "lastTime":J
-    .local v7, "printed":Z
-    .local v8, "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_10
     move-wide/from16 v19, v0
 
@@ -8038,14 +6308,8 @@
 
     const/4 v0, 0x0
 
-    .end local v0    # "lastTime":J
-    .end local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v19    # "lastTime":J
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     move/from16 v24, v7
 
-    .end local v7    # "printed":Z
-    .restart local v24    # "printed":Z
     :goto_d
     and-int/lit8 v1, p2, 0x20
 
@@ -8069,7 +6333,6 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Landroid/util/proto/ProtoOutputStream;Landroid/os/BatteryStats$HistoryItem;JZ)V
 
-    .line 7669
     move-wide/from16 v4, v19
 
     move-object/from16 v3, v23
@@ -8080,12 +6343,6 @@
 
     goto/16 :goto_1
 
-    .end local v19    # "lastTime":J
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .end local v24    # "printed":Z
-    .restart local v0    # "lastTime":J
-    .restart local v7    # "printed":Z
-    .restart local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_12
     move-wide/from16 v19, v0
 
@@ -8097,30 +6354,17 @@
 
     move-object/from16 v1, p0
 
-    .end local v0    # "lastTime":J
-    .end local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v19    # "lastTime":J
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     goto/16 :goto_1
 
-    .line 7732
-    .end local v19    # "lastTime":J
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v4    # "lastTime":J
-    .restart local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_13
     move-object/from16 v23, v8
 
-    .end local v8    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
-    .restart local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     cmp-long v0, p3, v15
 
     if-ltz v0, :cond_14
 
-    .line 7733
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->commitCurrentHistoryBatchLocked()V
 
-    .line 7734
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -8147,23 +6391,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7738
-    .end local v2    # "hprinter":Landroid/os/BatteryStats$HistoryPrinter;
-    .end local v4    # "lastTime":J
-    .end local v7    # "printed":Z
-    .end local v11    # "rec":Landroid/os/BatteryStats$HistoryItem;
-    .end local v13    # "baseTime":J
-    .end local v23    # "tracker":Landroid/os/BatteryStats$HistoryEventTracker;
     :cond_14
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->finishIteratingHistoryLocked()V
 
-    .line 7739
     nop
 
-    .line 7740
     return-void
 
-    .line 7738
     :catchall_0
     move-exception v0
 
@@ -8174,22 +6408,17 @@
 
 .method private dumpProtoSystemLocked(Landroid/util/proto/ProtoOutputStream;Lcom/android/internal/os/BatteryStatsHelper;)V
     .locals 99
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "helper"    # Lcom/android/internal/os/BatteryStatsHelper;
 
     move-object/from16 v0, p0
 
     move-object/from16 v8, p1
 
-    .line 7743
     const-wide v1, 0x10b00000006L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v9
 
-    .line 7744
-    .local v9, "sToken":J
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -8198,30 +6427,20 @@
 
     mul-long v13, v1, v11
 
-    .line 7745
-    .local v13, "rawUptimeUs":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v15
 
-    .line 7746
-    .local v15, "rawRealtimeMs":J
     mul-long v5, v15, v11
 
-    .line 7747
-    .local v5, "rawRealtimeUs":J
     const/16 v17, 0x0
 
-    .line 7750
-    .local v17, "which":I
     const-wide v1, 0x10b00000001L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7751
-    .local v2, "bToken":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getStartClockTime()J
 
     move-result-wide v11
@@ -8230,11 +6449,8 @@
 
     const-wide v9, 0x10300000001L
 
-    .end local v9    # "sToken":J
-    .local v20, "sToken":J
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7752
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getStartCount()I
 
     move-result v1
@@ -8243,10 +6459,8 @@
 
     invoke-virtual {v8, v11, v12, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7753
     nop
 
-    .line 7754
     const/4 v7, 0x0
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/BatteryStats;->computeRealtime(JI)J
@@ -8257,220 +6471,172 @@
 
     div-long v11, v22, v18
 
-    .line 7753
     const-wide v9, 0x10300000003L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7755
     nop
 
-    .line 7756
     invoke-virtual {v0, v13, v14, v7}, Landroid/os/BatteryStats;->computeUptime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7755
     const-wide v9, 0x10300000004L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7757
     nop
 
-    .line 7758
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/BatteryStats;->computeBatteryRealtime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7757
     const-wide v9, 0x10300000005L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7759
     nop
 
-    .line 7760
     invoke-virtual {v0, v13, v14, v7}, Landroid/os/BatteryStats;->computeBatteryUptime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7759
     const-wide v9, 0x10300000006L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7761
     nop
 
-    .line 7762
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/BatteryStats;->computeBatteryScreenOffRealtime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7761
     const-wide v9, 0x10300000007L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7763
     nop
 
-    .line 7764
     invoke-virtual {v0, v13, v14, v7}, Landroid/os/BatteryStats;->computeBatteryScreenOffUptime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7763
     const-wide v9, 0x10300000008L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7765
     nop
 
-    .line 7766
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/BatteryStats;->getScreenDozeTime(JI)J
 
     move-result-wide v11
 
     div-long v11, v11, v18
 
-    .line 7765
     const-wide v9, 0x10300000009L
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7767
     nop
 
-    .line 7768
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getEstimatedBatteryCapacity()I
 
     move-result v1
 
-    .line 7767
     const-wide v11, 0x1030000000aL
 
     invoke-virtual {v8, v11, v12, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7769
     nop
 
-    .line 7770
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getMinLearnedBatteryCapacity()I
 
     move-result v1
 
-    .line 7769
     const-wide v11, 0x1030000000bL
 
     invoke-virtual {v8, v11, v12, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7771
     nop
 
-    .line 7772
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getMaxLearnedBatteryCapacity()I
 
     move-result v1
 
-    .line 7771
     const-wide v11, 0x1030000000cL
 
     invoke-virtual {v8, v11, v12, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7773
     invoke-virtual {v8, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7776
     const-wide v11, 0x10b00000002L
 
     invoke-virtual {v8, v11, v12}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v11
 
-    .line 7777
-    .local v11, "bdToken":J
     nop
 
-    .line 7778
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getLowDischargeAmountSinceCharge()I
 
     move-result v1
 
-    .line 7777
     const-wide v9, 0x10500000001L
 
     invoke-virtual {v8, v9, v10, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7779
     nop
 
-    .line 7780
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHighDischargeAmountSinceCharge()I
 
     move-result v1
 
-    .line 7779
     const-wide v9, 0x10500000002L
 
     invoke-virtual {v8, v9, v10, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7781
     nop
 
-    .line 7782
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOnSinceCharge()I
 
     move-result v1
 
-    .line 7781
     const-wide v9, 0x10500000003L
 
     invoke-virtual {v8, v9, v10, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7783
     nop
 
-    .line 7784
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOffSinceCharge()I
 
     move-result v1
 
-    .line 7783
     const-wide v9, 0x10500000004L
 
     invoke-virtual {v8, v9, v10, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7785
     nop
 
-    .line 7786
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenDozeSinceCharge()I
 
     move-result v1
 
-    .line 7785
     const-wide v9, 0x10500000005L
 
     invoke-virtual {v8, v9, v10, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7787
     nop
 
-    .line 7788
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats;->getUahDischarge(I)J
 
     move-result-wide v9
@@ -8479,92 +6645,72 @@
 
     div-long v9, v9, v18
 
-    .line 7787
     move-wide/from16 v37, v2
 
     const-wide v1, 0x10300000006L
 
     invoke-virtual {v8, v1, v2, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7789
-    .end local v2    # "bToken":J
-    .local v37, "bToken":J
     nop
 
-    .line 7790
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats;->getUahDischargeScreenOff(I)J
 
     move-result-wide v1
 
     div-long v1, v1, v18
 
-    .line 7789
     const-wide v3, 0x10300000007L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7791
     nop
 
-    .line 7792
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats;->getUahDischargeScreenDoze(I)J
 
     move-result-wide v1
 
     div-long v1, v1, v18
 
-    .line 7791
     const-wide v3, 0x10300000008L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7793
     nop
 
-    .line 7794
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats;->getUahDischargeLightDoze(I)J
 
     move-result-wide v1
 
     div-long v1, v1, v18
 
-    .line 7793
     const-wide v3, 0x10300000009L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7795
     nop
 
-    .line 7796
     invoke-virtual {v0, v7}, Landroid/os/BatteryStats;->getUahDischargeDeepDoze(I)J
 
     move-result-wide v1
 
     div-long v1, v1, v18
 
-    .line 7795
     const-wide v3, 0x1030000000aL
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7797
     invoke-virtual {v8, v11, v12}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7800
     invoke-virtual {v0, v5, v6}, Landroid/os/BatteryStats;->computeChargeTimeRemaining(J)J
 
     move-result-wide v1
 
-    .line 7802
-    .local v1, "timeRemainingUs":J
     const-wide/16 v3, 0x0
 
     cmp-long v3, v1, v3
 
     if-ltz v3, :cond_0
 
-    .line 7804
     const-wide/16 v3, 0x3e8
 
     div-long v9, v1, v3
@@ -8573,30 +6719,22 @@
 
     invoke-virtual {v8, v3, v4, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7816
-    .end local v1    # "timeRemainingUs":J
-    .local v9, "timeRemainingUs":J
     :goto_0
     move-wide v9, v1
 
     goto :goto_1
 
-    .line 7806
-    .end local v9    # "timeRemainingUs":J
-    .restart local v1    # "timeRemainingUs":J
     :cond_0
     invoke-virtual {v0, v5, v6}, Landroid/os/BatteryStats;->computeBatteryTimeRemaining(J)J
 
     move-result-wide v1
 
-    .line 7808
     const-wide/16 v3, 0x0
 
     cmp-long v3, v1, v3
 
     if-ltz v3, :cond_1
 
-    .line 7809
     const-wide/16 v3, 0x3e8
 
     div-long v9, v1, v3
@@ -8607,7 +6745,6 @@
 
     goto :goto_0
 
-    .line 7811
     :cond_1
     const-wide v3, 0x10300000004L
 
@@ -8617,9 +6754,6 @@
 
     goto :goto_0
 
-    .line 7816
-    .end local v1    # "timeRemainingUs":J
-    .restart local v9    # "timeRemainingUs":J
     :goto_1
     const-wide v1, 0x20b00000005L
 
@@ -8629,22 +6763,17 @@
 
     invoke-static {v8, v1, v2, v3}, Landroid/os/BatteryStats;->dumpDurationSteps(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$LevelStepTracker;)V
 
-    .line 7819
     move v1, v7
 
-    .local v1, "i":I
     :goto_2
     move v4, v1
 
-    .end local v1    # "i":I
-    .local v4, "i":I
     const/16 v1, 0x15
 
     const/4 v7, 0x1
 
     if-ge v4, v1, :cond_5
 
-    .line 7821
     if-nez v4, :cond_2
 
     goto :goto_3
@@ -8652,23 +6781,15 @@
     :cond_2
     const/4 v7, 0x0
 
-    .line 7822
-    .local v7, "isNone":Z
     :goto_3
     move v1, v4
 
-    .line 7823
-    .local v1, "telephonyNetworkType":I
     const/16 v2, 0x14
 
     if-ne v4, v2, :cond_3
 
-    .line 7824
     const/4 v1, 0x0
 
-    .line 7826
-    .end local v1    # "telephonyNetworkType":I
-    .local v2, "telephonyNetworkType":I
     :cond_3
     move v2, v1
 
@@ -8676,40 +6797,27 @@
 
     const-wide v5, 0x20b00000008L
 
-    .end local v5    # "rawRealtimeUs":J
-    .local v43, "rawRealtimeUs":J
     invoke-virtual {v8, v5, v6}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 7827
-    .local v5, "pdcToken":J
     if-eqz v7, :cond_4
 
-    .line 7828
     move-wide/from16 v45, v5
 
     const-wide v5, 0x10800000002L
 
-    .end local v5    # "pdcToken":J
-    .local v45, "pdcToken":J
     invoke-virtual {v8, v5, v6, v7}, Landroid/util/proto/ProtoOutputStream;->write(JZ)V
 
     goto :goto_4
 
-    .line 7830
-    .end local v45    # "pdcToken":J
-    .restart local v5    # "pdcToken":J
     :cond_4
     move-wide/from16 v45, v5
 
-    .end local v5    # "pdcToken":J
-    .restart local v45    # "pdcToken":J
     const-wide v5, 0x10e00000001L
 
     invoke-virtual {v8, v5, v6, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7832
     :goto_4
     const-wide v5, 0x10b00000003L
 
@@ -8725,24 +6833,16 @@
 
     move-wide v2, v5
 
-    .end local v2    # "telephonyNetworkType":I
-    .local v39, "telephonyNetworkType":I
     move/from16 v40, v4
 
     move-object/from16 v4, v22
 
-    .end local v4    # "i":I
-    .local v40, "i":I
     move-wide/from16 v47, v43
 
     move-wide/from16 v49, v45
 
     move-wide/from16 v5, v47
 
-    .end local v43    # "rawRealtimeUs":J
-    .end local v45    # "pdcToken":J
-    .local v47, "rawRealtimeUs":J
-    .local v49, "pdcToken":J
     move/from16 v22, v7
 
     move-wide/from16 v51, v9
@@ -8751,37 +6851,20 @@
 
     move/from16 v7, v23
 
-    .end local v7    # "isNone":Z
-    .end local v9    # "timeRemainingUs":J
-    .local v22, "isNone":Z
-    .local v51, "timeRemainingUs":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7834
     move-wide/from16 v1, v49
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7819
-    .end local v22    # "isNone":Z
-    .end local v39    # "telephonyNetworkType":I
-    .end local v49    # "pdcToken":J
     add-int/lit8 v1, v40, 0x1
 
-    .end local v40    # "i":I
-    .local v1, "i":I
     move v7, v9
 
     move-wide/from16 v9, v51
 
     goto :goto_2
 
-    .line 7838
-    .end local v1    # "i":I
-    .end local v47    # "rawRealtimeUs":J
-    .end local v51    # "timeRemainingUs":J
-    .local v5, "rawRealtimeUs":J
-    .restart local v9    # "timeRemainingUs":J
     :cond_5
     move-wide/from16 v47, v5
 
@@ -8791,10 +6874,6 @@
 
     const/4 v9, 0x0
 
-    .end local v5    # "rawRealtimeUs":J
-    .end local v9    # "timeRemainingUs":J
-    .restart local v47    # "rawRealtimeUs":J
-    .restart local v51    # "timeRemainingUs":J
     const-wide v1, 0x20b00000006L
 
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
@@ -8803,16 +6882,12 @@
 
     invoke-static {v8, v1, v2, v3}, Landroid/os/BatteryStats;->dumpDurationSteps(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$LevelStepTracker;)V
 
-    .line 7841
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getCpuFreqs()[J
 
     move-result-object v10
 
-    .line 7842
-    .local v10, "cpuFreqs":[J
     if-eqz v10, :cond_6
 
-    .line 7843
     array-length v1, v10
 
     move v2, v9
@@ -8822,236 +6897,177 @@
 
     aget-wide v3, v10, v2
 
-    .line 7844
-    .local v3, "i":J
     const-wide v5, 0x20300000007L
 
     invoke-virtual {v8, v5, v6, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7843
-    .end local v3    # "i":J
     add-int/lit8 v2, v2, 0x1
 
     const-wide v5, 0x10e00000001L
 
     goto :goto_5
 
-    .line 7849
     :cond_6
     const-wide v1, 0x10b00000009L
 
-    .line 7850
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v3
 
-    .line 7849
     invoke-static {v8, v1, v2, v3, v9}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7853
     const-wide v1, 0x10b0000000aL
 
-    .line 7854
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v3
 
-    .line 7853
     invoke-static {v8, v1, v2, v3, v9}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7857
     const-wide v1, 0x10b0000000cL
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 7858
-    .local v5, "gnToken":J
     nop
 
-    .line 7859
     invoke-virtual {v0, v9, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7858
     const-wide v3, 0x10300000001L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7860
     nop
 
-    .line 7861
     invoke-virtual {v0, v7, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7860
     const-wide v3, 0x10300000002L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7862
     nop
 
-    .line 7863
     invoke-virtual {v0, v9, v9}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v1
 
-    .line 7862
     const-wide v3, 0x10300000005L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7864
     nop
 
-    .line 7865
     invoke-virtual {v0, v7, v9}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v1
 
-    .line 7864
     const-wide v3, 0x10300000006L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7866
     nop
 
-    .line 7867
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7866
     move-wide/from16 v53, v5
 
     const-wide v4, 0x10300000003L
 
     invoke-virtual {v8, v4, v5, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7868
-    .end local v5    # "gnToken":J
-    .local v53, "gnToken":J
     const/4 v1, 0x3
 
-    .line 7869
     invoke-virtual {v0, v1, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7868
     const-wide v3, 0x10300000004L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7870
     nop
 
-    .line 7871
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4, v9}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v1
 
-    .line 7870
     const-wide v5, 0x10300000007L
 
     invoke-virtual {v8, v5, v6, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7872
     const/4 v1, 0x3
 
-    .line 7873
     invoke-virtual {v0, v1, v9}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v1
 
-    .line 7872
     const-wide v5, 0x10300000008L
 
     invoke-virtual {v8, v5, v6, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7874
     const/4 v1, 0x4
 
-    .line 7875
     invoke-virtual {v0, v1, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7874
     const-wide v5, 0x10300000009L
 
     invoke-virtual {v8, v5, v6, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7876
     const/4 v1, 0x5
 
-    .line 7877
     invoke-virtual {v0, v1, v9}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v1
 
-    .line 7876
     const-wide v5, 0x1030000000aL
 
     invoke-virtual {v8, v5, v6, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7878
     move-wide/from16 v5, v53
 
     invoke-virtual {v8, v5, v6}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7881
-    .end local v53    # "gnToken":J
-    .restart local v5    # "gnToken":J
     const-wide v1, 0x10b0000000bL
 
-    .line 7882
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v3
 
-    .line 7881
     invoke-static {v8, v1, v2, v3, v9}, Landroid/os/BatteryStats;->dumpControllerActivityProto(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 7886
     const-wide v1, 0x10b0000000dL
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7887
-    .local v2, "gwToken":J
     nop
 
-    .line 7888
     move-wide/from16 v7, v47
 
     invoke-virtual {v0, v7, v8, v9}, Landroid/os/BatteryStats;->getWifiOnTime(JI)J
 
     move-result-wide v22
 
-    .end local v47    # "rawRealtimeUs":J
-    .local v7, "rawRealtimeUs":J
     move-wide/from16 v55, v5
 
     const-wide/16 v18, 0x3e8
 
     div-long v4, v22, v18
 
-    .line 7887
-    .end local v5    # "gnToken":J
-    .local v55, "gnToken":J
     move-wide v6, v7
 
     move-object/from16 v57, v10
@@ -9062,14 +7078,8 @@
 
     invoke-virtual {v8, v9, v10, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7889
-    .end local v7    # "rawRealtimeUs":J
-    .end local v10    # "cpuFreqs":[J
-    .local v6, "rawRealtimeUs":J
-    .local v57, "cpuFreqs":[J
     nop
 
-    .line 7890
     const/4 v1, 0x0
 
     invoke-virtual {v0, v6, v7, v1}, Landroid/os/BatteryStats;->getGlobalWifiRunningTime(JI)J
@@ -9078,21 +7088,16 @@
 
     div-long v4, v4, v18
 
-    .line 7889
     const-wide v9, 0x10300000002L
 
     invoke-virtual {v8, v9, v10, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7891
     invoke-virtual {v8, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7894
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getKernelWakelockStats()Ljava/util/Map;
 
     move-result-object v9
 
-    .line 7895
-    .local v9, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v9}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -9116,26 +7121,18 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 7896
-    .local v5, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-wide/from16 v58, v2
 
     const-wide v1, 0x20b0000000eL
 
-    .end local v2    # "gwToken":J
-    .local v58, "gwToken":J
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7897
-    .local v2, "kwToken":J
     move-wide/from16 v60, v2
 
     const-wide v1, 0x10900000001L
 
-    .end local v2    # "kwToken":J
-    .local v60, "kwToken":J
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -9144,7 +7141,6 @@
 
     invoke-virtual {v8, v1, v2, v3}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7898
     const-wide v2, 0x10b00000002L
 
     invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -9163,10 +7159,6 @@
 
     move-wide/from16 v62, v60
 
-    .end local v58    # "gwToken":J
-    .end local v60    # "kwToken":J
-    .local v33, "gwToken":J
-    .local v62, "kwToken":J
     move-object/from16 v23, v5
 
     move-wide/from16 v64, v6
@@ -9175,33 +7167,20 @@
 
     move-wide/from16 v5, v64
 
-    .end local v5    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v6    # "rawRealtimeUs":J
-    .end local v55    # "gnToken":J
-    .local v23, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v35, "gnToken":J
-    .local v64, "rawRealtimeUs":J
     move-object/from16 v66, v9
 
     const/4 v9, 0x1
 
     move/from16 v7, v22
 
-    .end local v9    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v66, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 7900
     move-wide/from16 v1, v62
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7901
-    .end local v23    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v62    # "kwToken":J
     nop
 
-    .line 7895
     move-wide/from16 v2, v33
 
     move-wide/from16 v6, v64
@@ -9210,15 +7189,6 @@
 
     goto :goto_6
 
-    .line 7905
-    .end local v33    # "gwToken":J
-    .end local v35    # "gnToken":J
-    .end local v64    # "rawRealtimeUs":J
-    .end local v66    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v2, "gwToken":J
-    .restart local v6    # "rawRealtimeUs":J
-    .restart local v9    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v55    # "gnToken":J
     :cond_7
     move-wide/from16 v33, v2
 
@@ -9230,38 +7200,20 @@
 
     const/4 v9, 0x1
 
-    .end local v2    # "gwToken":J
-    .end local v6    # "rawRealtimeUs":J
-    .end local v9    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v55    # "gnToken":J
-    .restart local v33    # "gwToken":J
-    .restart local v35    # "gnToken":J
-    .restart local v64    # "rawRealtimeUs":J
-    .restart local v66    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-wide/16 v1, 0x0
 
-    .line 7906
-    .local v1, "fullWakeLockTimeTotalUs":J
     const-wide/16 v3, 0x0
 
-    .line 7908
-    .local v3, "partialWakeLockTimeTotalUs":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v10
 
-    .line 7909
-    .local v10, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move-wide/from16 v22, v1
 
     move-wide/from16 v39, v3
 
     const/4 v1, 0x0
 
-    .end local v3    # "partialWakeLockTimeTotalUs":J
-    .local v1, "iu":I
-    .local v22, "fullWakeLockTimeTotalUs":J
-    .local v39, "partialWakeLockTimeTotalUs":J
     :goto_7
     invoke-virtual {v10}, Landroid/util/SparseArray;->size()I
 
@@ -9269,52 +7221,39 @@
 
     if-ge v1, v2, :cond_b
 
-    .line 7910
     invoke-virtual {v10, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Uid;
 
-    .line 7912
-    .local v2, "u":Landroid/os/BatteryStats$Uid;
     nop
 
-    .line 7913
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid;->getWakelockStats()Landroid/util/ArrayMap;
 
     move-result-object v3
 
-    .line 7914
-    .local v3, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-virtual {v3}, Landroid/util/ArrayMap;->size()I
 
     move-result v4
 
     sub-int/2addr v4, v9
 
-    .local v4, "iw":I
     :goto_8
     if-ltz v4, :cond_a
 
-    .line 7915
     invoke-virtual {v3, v4}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 7917
-    .local v5, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     invoke-virtual {v5, v9}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 7918
-    .local v6, "fullWakeTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v6, :cond_8
 
-    .line 7919
     move-object/from16 v67, v2
 
     move-object/from16 v68, v3
@@ -9327,21 +7266,10 @@
 
     move-result-wide v41
 
-    .end local v3    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v64    # "rawRealtimeUs":J
-    .local v2, "rawRealtimeUs":J
-    .local v67, "u":Landroid/os/BatteryStats$Uid;
-    .local v68, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     add-long v22, v22, v41
 
     goto :goto_9
 
-    .line 7923
-    .end local v67    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v68    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v2, "u":Landroid/os/BatteryStats$Uid;
-    .restart local v3    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v64    # "rawRealtimeUs":J
     :cond_8
     move-object/from16 v67, v2
 
@@ -9351,31 +7279,19 @@
 
     const/4 v7, 0x0
 
-    .end local v3    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v64    # "rawRealtimeUs":J
-    .local v2, "rawRealtimeUs":J
-    .restart local v67    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v68    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     :goto_9
     invoke-virtual {v5, v7}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v9
 
-    .line 7924
-    .local v9, "partialWakeTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v9, :cond_9
 
-    .line 7925
     invoke-virtual {v9, v2, v3, v7}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v41
 
     add-long v39, v39, v41
 
-    .line 7914
-    .end local v5    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .end local v6    # "fullWakeTimer":Landroid/os/BatteryStats$Timer;
-    .end local v9    # "partialWakeTimer":Landroid/os/BatteryStats$Timer;
     :cond_9
     add-int/lit8 v4, v4, -0x1
 
@@ -9389,43 +7305,26 @@
 
     goto :goto_8
 
-    .line 7909
-    .end local v2    # "rawRealtimeUs":J
-    .end local v4    # "iw":I
-    .end local v67    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v68    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v64    # "rawRealtimeUs":J
     :cond_a
     move-wide/from16 v2, v64
 
-    .end local v64    # "rawRealtimeUs":J
-    .restart local v2    # "rawRealtimeUs":J
     add-int/lit8 v1, v1, 0x1
 
     const/4 v9, 0x1
 
     goto :goto_7
 
-    .line 7930
-    .end local v1    # "iu":I
-    .end local v2    # "rawRealtimeUs":J
-    .restart local v64    # "rawRealtimeUs":J
     :cond_b
     move-wide/from16 v2, v64
 
-    .end local v64    # "rawRealtimeUs":J
-    .restart local v2    # "rawRealtimeUs":J
     const-wide v4, 0x10b0000000fL
 
     invoke-virtual {v8, v4, v5}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 7931
-    .local v5, "mToken":J
     nop
 
-    .line 7932
     const/4 v1, 0x0
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/BatteryStats;->getScreenOnTime(JI)J
@@ -9438,17 +7337,12 @@
 
     div-long v1, v41, v18
 
-    .line 7931
-    .end local v2    # "rawRealtimeUs":J
-    .local v69, "rawRealtimeUs":J
     const-wide v3, 0x10300000001L
 
     invoke-virtual {v8, v3, v4, v1, v2}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7933
     nop
 
-    .line 7934
     move-wide/from16 v2, v69
 
     const/4 v1, 0x0
@@ -9457,41 +7351,30 @@
 
     move-result-wide v41
 
-    .end local v69    # "rawRealtimeUs":J
-    .restart local v2    # "rawRealtimeUs":J
     move-object/from16 v71, v10
 
     div-long v9, v41, v18
 
-    .line 7933
-    .end local v10    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v71, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move-wide/from16 v72, v11
 
     const-wide v11, 0x10300000002L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7935
-    .end local v11    # "bdToken":J
-    .local v72, "bdToken":J
     div-long v9, v22, v18
 
     const-wide v11, 0x10300000003L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7937
     div-long v9, v39, v18
 
     const-wide v11, 0x10300000004L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7939
     nop
 
-    .line 7940
     const/4 v1, 0x0
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/BatteryStats;->getMobileRadioActiveTime(JI)J
@@ -9500,41 +7383,32 @@
 
     div-long v9, v9, v18
 
-    .line 7939
     const-wide v11, 0x10300000005L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7941
     nop
 
-    .line 7942
     invoke-virtual {v0, v1}, Landroid/os/BatteryStats;->getMobileRadioActiveAdjustedTime(I)J
 
     move-result-wide v9
 
     div-long v9, v9, v18
 
-    .line 7941
     const-wide v11, 0x10300000006L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7943
     const-wide v9, 0x10500000007L
 
-    .line 7944
     invoke-virtual {v0, v1}, Landroid/os/BatteryStats;->getMobileRadioActiveCount(I)I
 
     move-result v4
 
-    .line 7943
     invoke-virtual {v8, v9, v10, v4}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7945
     const-wide v9, 0x10500000008L
 
-    .line 7946
     invoke-virtual {v0, v1}, Landroid/os/BatteryStats;->getMobileRadioActiveUnknownTime(I)J
 
     move-result-wide v11
@@ -9543,54 +7417,42 @@
 
     div-long v11, v11, v18
 
-    .line 7945
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7947
     nop
 
-    .line 7948
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/BatteryStats;->getInteractiveTime(JI)J
 
     move-result-wide v9
 
     div-long v9, v9, v18
 
-    .line 7947
     const-wide v11, 0x10300000009L
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7949
     nop
 
-    .line 7950
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/BatteryStats;->getPowerSaveModeEnabledTime(JI)J
 
     move-result-wide v9
 
     div-long v9, v9, v18
 
-    .line 7949
     const-wide v11, 0x1030000000aL
 
     invoke-virtual {v8, v11, v12, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7951
     const-wide v9, 0x1050000000bL
 
-    .line 7952
     invoke-virtual {v0, v1}, Landroid/os/BatteryStats;->getNumConnectivityChange(I)I
 
     move-result v4
 
-    .line 7951
     invoke-virtual {v8, v9, v10, v4}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7953
     const-wide v9, 0x1030000000cL
 
-    .line 7954
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4, v2, v3, v1}, Landroid/os/BatteryStats;->getDeviceIdleModeTime(IJI)J
@@ -9601,24 +7463,18 @@
 
     div-long v11, v11, v18
 
-    .line 7953
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7955
     const-wide v9, 0x1050000000dL
 
-    .line 7956
     invoke-virtual {v0, v4, v1}, Landroid/os/BatteryStats;->getDeviceIdleModeCount(II)I
 
     move-result v7
 
-    .line 7955
     invoke-virtual {v8, v9, v10, v7}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7957
     const-wide v9, 0x1030000000eL
 
-    .line 7958
     invoke-virtual {v0, v4, v2, v3, v1}, Landroid/os/BatteryStats;->getDeviceIdlingTime(IJI)J
 
     move-result-wide v11
@@ -9627,35 +7483,26 @@
 
     div-long v11, v11, v18
 
-    .line 7957
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7959
     const-wide v9, 0x1050000000fL
 
-    .line 7960
     invoke-virtual {v0, v4, v1}, Landroid/os/BatteryStats;->getDeviceIdlingCount(II)I
 
     move-result v7
 
-    .line 7959
     invoke-virtual {v8, v9, v10, v7}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7961
     const-wide v9, 0x10300000010L
 
-    .line 7962
     invoke-virtual {v0, v4}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
 
     move-result-wide v11
 
-    .line 7961
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7963
     const-wide v9, 0x10300000011L
 
-    .line 7964
     const/4 v1, 0x0
 
     const/4 v4, 0x1
@@ -9668,24 +7515,18 @@
 
     div-long v11, v11, v18
 
-    .line 7963
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7965
     const-wide v9, 0x10500000012L
 
-    .line 7966
     invoke-virtual {v0, v4, v1}, Landroid/os/BatteryStats;->getDeviceIdleModeCount(II)I
 
     move-result v7
 
-    .line 7965
     invoke-virtual {v8, v9, v10, v7}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7967
     const-wide v9, 0x10300000013L
 
-    .line 7968
     invoke-virtual {v0, v4, v2, v3, v1}, Landroid/os/BatteryStats;->getDeviceIdlingTime(IJI)J
 
     move-result-wide v11
@@ -9694,97 +7535,70 @@
 
     div-long v11, v11, v18
 
-    .line 7967
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7969
     const-wide v9, 0x10500000014L
 
-    .line 7970
     invoke-virtual {v0, v4, v1}, Landroid/os/BatteryStats;->getDeviceIdlingCount(II)I
 
     move-result v7
 
-    .line 7969
     invoke-virtual {v8, v9, v10, v7}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7971
     const-wide v9, 0x10300000015L
 
-    .line 7972
     invoke-virtual {v0, v4}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
 
     move-result-wide v11
 
-    .line 7971
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7973
     invoke-virtual {v8, v5, v6}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7976
     nop
 
-    .line 7977
     const/4 v1, 0x0
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/os/BatteryStats;->getWifiMulticastWakelockTime(JI)J
 
     move-result-wide v9
 
-    .line 7978
-    .local v9, "multicastWakeLockTimeTotalUs":J
     invoke-virtual {v0, v1}, Landroid/os/BatteryStats;->getWifiMulticastWakelockCount(I)I
 
     move-result v11
 
-    .line 7979
-    .local v11, "multicastWakeLockCountTotal":I
     move-wide/from16 v74, v2
 
     const-wide v1, 0x10b00000017L
 
-    .end local v2    # "rawRealtimeUs":J
-    .local v74, "rawRealtimeUs":J
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 7980
-    .local v2, "wmctToken":J
     move-wide/from16 v76, v5
 
     const-wide/16 v18, 0x3e8
 
     div-long v4, v9, v18
 
-    .end local v5    # "mToken":J
-    .local v76, "mToken":J
     const-wide v6, 0x10300000001L
 
     invoke-virtual {v8, v6, v7, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 7982
     const-wide v4, 0x10500000002L
 
     invoke-virtual {v8, v4, v5, v11}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7984
     invoke-virtual {v8, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7987
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getUsageList()Ljava/util/List;
 
     move-result-object v12
 
-    .line 7988
-    .local v12, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     if-eqz v12, :cond_c
 
-    .line 7989
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_a
     invoke-interface {v12}, Ljava/util/List;->size()I
 
@@ -9792,31 +7606,22 @@
 
     if-ge v1, v4, :cond_c
 
-    .line 7990
     invoke-interface {v12, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/internal/os/BatterySipper;
 
-    .line 7991
-    .local v4, "bs":Lcom/android/internal/os/BatterySipper;
     const/4 v5, 0x0
 
-    .line 7992
-    .local v5, "n":I
     const/4 v6, 0x0
 
-    .line 7993
-    .local v6, "uid":I
     sget-object v7, Landroid/os/BatteryStats$2;->$SwitchMap$com$android$internal$os$BatterySipper$DrainType:[I
 
     move-wide/from16 v78, v2
 
     iget-object v2, v4, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
-    .end local v2    # "wmctToken":J
-    .local v78, "wmctToken":J
     invoke-virtual {v2}, Lcom/android/internal/os/BatterySipper$DrainType;->ordinal()I
 
     move-result v2
@@ -9825,44 +7630,34 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 8038
     :goto_b
     const/4 v7, 0x0
 
     goto :goto_c
 
-    .line 8035
     :pswitch_0
     const/16 v5, 0xc
 
     goto :goto_b
 
-    .line 8032
     :pswitch_1
     const/16 v5, 0xb
 
-    .line 8033
     goto :goto_b
 
-    .line 8029
     :pswitch_2
     const/16 v5, 0xa
 
-    .line 8030
     goto :goto_b
 
-    .line 8026
     :pswitch_3
     const/16 v5, 0x9
 
-    .line 8027
     goto :goto_b
 
-    .line 8022
     :pswitch_4
     const/16 v5, 0x8
 
-    .line 8023
     iget v2, v4, Lcom/android/internal/os/BatterySipper;->userId:I
 
     const/4 v7, 0x0
@@ -9871,91 +7666,71 @@
 
     move-result v6
 
-    .line 8024
     goto :goto_c
 
-    .line 8020
     :pswitch_5
     const/4 v7, 0x0
 
-    .line 7989
     move-wide/from16 v80, v9
 
     goto :goto_d
 
-    .line 8016
     :pswitch_6
     const/4 v7, 0x0
 
     const/4 v5, 0x6
 
-    .line 8017
     goto :goto_c
 
-    .line 8013
     :pswitch_7
     const/4 v7, 0x0
 
     const/4 v5, 0x7
 
-    .line 8014
     goto :goto_c
 
-    .line 8010
     :pswitch_8
     const/4 v7, 0x0
 
     const/4 v5, 0x5
 
-    .line 8011
     goto :goto_c
 
-    .line 8007
     :pswitch_9
     const/4 v7, 0x0
 
     const/4 v5, 0x4
 
-    .line 8008
     goto :goto_c
 
-    .line 8004
     :pswitch_a
     const/4 v7, 0x0
 
     const/4 v5, 0x3
 
-    .line 8005
     goto :goto_c
 
-    .line 8001
     :pswitch_b
     const/4 v7, 0x0
 
     const/4 v5, 0x2
 
-    .line 8002
     goto :goto_c
 
-    .line 7998
     :pswitch_c
     const/4 v7, 0x0
 
     const/4 v5, 0x1
 
-    .line 7999
     goto :goto_c
 
-    .line 7995
     :pswitch_d
     const/4 v7, 0x0
 
     const/16 v5, 0xd
 
-    .line 7996
     nop
 
-    .line 8038
     :goto_c
     const-wide v2, 0x20b00000011L
 
@@ -9963,22 +7738,16 @@
 
     move-result-wide v2
 
-    .line 8039
-    .local v2, "puiToken":J
     move-wide/from16 v80, v9
 
     const-wide v9, 0x10e00000001L
 
     invoke-virtual {v8, v9, v10, v5}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8040
-    .end local v9    # "multicastWakeLockTimeTotalUs":J
-    .local v80, "multicastWakeLockTimeTotalUs":J
     const-wide v9, 0x10500000002L
 
     invoke-virtual {v8, v9, v10, v6}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8041
     const-wide v9, 0x10100000003L
 
     move/from16 v82, v5
@@ -9987,41 +7756,28 @@
 
     iget-wide v5, v4, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .end local v5    # "n":I
-    .end local v6    # "uid":I
-    .local v82, "n":I
-    .local v83, "uid":I
     invoke-virtual {v8, v9, v10, v5, v6}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8042
     const-wide v5, 0x10800000004L
 
     iget-boolean v9, v4, Lcom/android/internal/os/BatterySipper;->shouldHide:Z
 
     invoke-virtual {v8, v5, v6, v9}, Landroid/util/proto/ProtoOutputStream;->write(JZ)V
 
-    .line 8043
     const-wide v5, 0x10100000005L
 
     iget-wide v9, v4, Lcom/android/internal/os/BatterySipper;->screenPowerMah:D
 
     invoke-virtual {v8, v5, v6, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8044
     const-wide v5, 0x10100000006L
 
     iget-wide v9, v4, Lcom/android/internal/os/BatterySipper;->proportionalSmearMah:D
 
     invoke-virtual {v8, v5, v6, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8046
     invoke-virtual {v8, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7989
-    .end local v2    # "puiToken":J
-    .end local v4    # "bs":Lcom/android/internal/os/BatterySipper;
-    .end local v82    # "n":I
-    .end local v83    # "uid":I
     :goto_d
     add-int/lit8 v1, v1, 0x1
 
@@ -10031,12 +7787,6 @@
 
     goto/16 :goto_a
 
-    .line 8051
-    .end local v1    # "i":I
-    .end local v78    # "wmctToken":J
-    .end local v80    # "multicastWakeLockTimeTotalUs":J
-    .local v2, "wmctToken":J
-    .restart local v9    # "multicastWakeLockTimeTotalUs":J
     :cond_c
     move-wide/from16 v78, v2
 
@@ -10044,21 +7794,14 @@
 
     const/4 v7, 0x0
 
-    .end local v2    # "wmctToken":J
-    .end local v9    # "multicastWakeLockTimeTotalUs":J
-    .restart local v78    # "wmctToken":J
-    .restart local v80    # "multicastWakeLockTimeTotalUs":J
     const-wide v1, 0x10b00000012L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v9
 
-    .line 8052
-    .local v9, "pusToken":J
     const-wide v1, 0x10100000001L
 
-    .line 8053
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getPowerProfile()Lcom/android/internal/os/PowerProfile;
 
     move-result-object v3
@@ -10067,10 +7810,8 @@
 
     move-result-wide v3
 
-    .line 8052
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8054
     const-wide v1, 0x10100000002L
 
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getComputedPower()D
@@ -10079,7 +7820,6 @@
 
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8055
     const-wide v1, 0x10100000003L
 
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getMinDrainedPower()D
@@ -10088,7 +7828,6 @@
 
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8056
     const-wide v1, 0x10100000004L
 
     invoke-virtual/range {p2 .. p2}, Lcom/android/internal/os/BatteryStatsHelper;->getMaxDrainedPower()D
@@ -10097,22 +7836,16 @@
 
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JD)V
 
-    .line 8057
     invoke-virtual {v8, v9, v10}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8060
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getRpmStats()Ljava/util/Map;
 
     move-result-object v5
 
-    .line 8061
-    .local v5, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getScreenOffRpmStats()Ljava/util/Map;
 
     move-result-object v6
 
-    .line 8062
-    .local v6, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -10136,8 +7869,6 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 8063
-    .local v2, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v84, v4
 
     const-wide v3, 0x20b00000013L
@@ -10146,8 +7877,6 @@
 
     move-result-wide v3
 
-    .line 8064
-    .local v3, "rpmToken":J
     const-wide v7, 0x10900000001L
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -10164,12 +7893,8 @@
 
     invoke-virtual {v8, v3, v4, v1}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 8065
-    .end local v3    # "rpmToken":J
-    .local v85, "rpmToken":J
     const-wide v3, 0x10b00000002L
 
-    .line 8066
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -10180,7 +7905,6 @@
 
     const/16 v18, 0x0
 
-    .line 8065
     move-object v1, v8
 
     move-wide/from16 v87, v9
@@ -10197,17 +7921,6 @@
 
     move-wide v2, v3
 
-    .end local v2    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v11    # "multicastWakeLockCountTotal":I
-    .end local v74    # "rawRealtimeUs":J
-    .end local v78    # "wmctToken":J
-    .end local v85    # "rpmToken":J
-    .local v9, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v10, "rpmToken":J
-    .local v24, "rawRealtimeUs":J
-    .local v26, "wmctToken":J
-    .local v87, "pusToken":J
-    .local v89, "multicastWakeLockCountTotal":I
     move-object/from16 v19, v84
 
     move-object v4, v7
@@ -10220,12 +7933,6 @@
 
     move-wide/from16 v5, v24
 
-    .end local v5    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v6    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v76    # "mToken":J
-    .local v7, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v28, "mToken":J
-    .local v30, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v90, v12
 
     const/16 v31, 0x0
@@ -10234,15 +7941,10 @@
 
     move/from16 v7, v18
 
-    .end local v7    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v12, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v90, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8067
     const-wide v2, 0x10b00000003L
 
-    .line 8068
     invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -10257,20 +7959,14 @@
 
     const/4 v7, 0x0
 
-    .line 8067
     move-object v1, v8
 
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8069
     invoke-virtual {v8, v10, v11}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8070
-    .end local v9    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v10    # "rpmToken":J
     nop
 
-    .line 8062
     move-object v6, v12
 
     move-object/from16 v4, v19
@@ -10287,22 +7983,6 @@
 
     goto/16 :goto_e
 
-    .line 8073
-    .end local v24    # "rawRealtimeUs":J
-    .end local v26    # "wmctToken":J
-    .end local v28    # "mToken":J
-    .end local v30    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v87    # "pusToken":J
-    .end local v89    # "multicastWakeLockCountTotal":I
-    .end local v90    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v5    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v6    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v9, "pusToken":J
-    .restart local v11    # "multicastWakeLockCountTotal":I
-    .local v12, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v74    # "rawRealtimeUs":J
-    .restart local v76    # "mToken":J
-    .restart local v78    # "wmctToken":J
     :cond_d
     move-object/from16 v30, v5
 
@@ -10322,47 +8002,25 @@
 
     move-object v12, v6
 
-    .end local v5    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v6    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v9    # "pusToken":J
-    .end local v11    # "multicastWakeLockCountTotal":I
-    .end local v74    # "rawRealtimeUs":J
-    .end local v76    # "mToken":J
-    .end local v78    # "wmctToken":J
-    .local v12, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v24    # "rawRealtimeUs":J
-    .restart local v26    # "wmctToken":J
-    .restart local v28    # "mToken":J
-    .restart local v30    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v87    # "pusToken":J
-    .restart local v89    # "multicastWakeLockCountTotal":I
-    .restart local v90    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     move/from16 v1, v31
 
-    .restart local v1    # "i":I
     :goto_f
     move v9, v1
 
-    .end local v1    # "i":I
-    .local v9, "i":I
     const/4 v1, 0x5
 
     if-ge v9, v1, :cond_e
 
-    .line 8074
     const-wide v1, 0x20b00000014L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v10
 
-    .line 8075
-    .local v10, "sbToken":J
     const-wide v1, 0x10e00000001L
 
     invoke-virtual {v8, v1, v2, v9}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8076
     const-wide v2, 0x10b00000002L
 
     invoke-virtual {v0, v9}, Landroid/os/BatteryStats;->getScreenBrightnessTimer(I)Landroid/os/BatteryStats$Timer;
@@ -10377,19 +8035,12 @@
 
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8078
     invoke-virtual {v8, v10, v11}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8073
-    .end local v10    # "sbToken":J
     add-int/lit8 v1, v9, 0x1
 
-    .end local v9    # "i":I
-    .restart local v1    # "i":I
     goto :goto_f
 
-    .line 8082
-    .end local v1    # "i":I
     :cond_e
     const-wide v2, 0x10b00000015L
 
@@ -10405,33 +8056,25 @@
 
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8086
     move/from16 v1, v31
 
-    .restart local v1    # "i":I
     :goto_10
     move v9, v1
 
-    .end local v1    # "i":I
-    .restart local v9    # "i":I
     sget v1, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     if-ge v9, v1, :cond_f
 
-    .line 8087
     const-wide v1, 0x20b00000010L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v10
 
-    .line 8088
-    .local v10, "pssToken":J
     const-wide v1, 0x10e00000001L
 
     invoke-virtual {v8, v1, v2, v9}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8089
     const-wide v2, 0x10b00000002L
 
     invoke-virtual {v0, v9}, Landroid/os/BatteryStats;->getPhoneSignalStrengthTimer(I)Landroid/os/BatteryStats$Timer;
@@ -10446,26 +8089,17 @@
 
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8091
     invoke-virtual {v8, v10, v11}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8086
-    .end local v10    # "pssToken":J
     add-int/lit8 v1, v9, 0x1
 
-    .end local v9    # "i":I
-    .restart local v1    # "i":I
     goto :goto_10
 
-    .line 8095
-    .end local v1    # "i":I
     :cond_f
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWakeupReasonStats()Ljava/util/Map;
 
     move-result-object v9
 
-    .line 8096
-    .local v9, "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v9}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -10489,16 +8123,12 @@
 
     check-cast v11, Ljava/util/Map$Entry;
 
-    .line 8097
-    .local v11, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-wide v1, 0x20b00000016L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 8098
-    .local v5, "wrToken":J
     const-wide v1, 0x10900000001L
 
     invoke-interface {v11}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -10509,7 +8139,6 @@
 
     invoke-virtual {v8, v1, v2, v3}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 8099
     const-wide v2, 0x10b00000002L
 
     invoke-interface {v11}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -10528,48 +8157,34 @@
 
     move-wide/from16 v5, v24
 
-    .end local v5    # "wrToken":J
-    .local v91, "wrToken":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8100
     move-wide/from16 v1, v91
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8101
-    .end local v11    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v91    # "wrToken":J
     goto :goto_11
 
-    .line 8104
     :cond_10
     move/from16 v1, v31
 
-    .restart local v1    # "i":I
     :goto_12
     move v10, v1
 
-    .end local v1    # "i":I
-    .local v10, "i":I
     const/4 v1, 0x5
 
     if-ge v10, v1, :cond_11
 
-    .line 8105
     const-wide v1, 0x20b00000018L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 8106
-    .local v5, "wssToken":J
     const-wide v1, 0x10e00000001L
 
     invoke-virtual {v8, v1, v2, v10}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8107
     const-wide v2, 0x10b00000002L
 
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getWifiSignalStrengthTimer(I)Landroid/os/BatteryStats$Timer;
@@ -10584,52 +8199,36 @@
 
     move-wide/from16 v5, v24
 
-    .end local v5    # "wssToken":J
-    .local v93, "wssToken":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8109
     move-wide/from16 v1, v93
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8104
-    .end local v93    # "wssToken":J
     add-int/lit8 v1, v10, 0x1
 
-    .end local v10    # "i":I
-    .restart local v1    # "i":I
     goto :goto_12
 
-    .line 8113
-    .end local v1    # "i":I
     :cond_11
     move/from16 v1, v31
 
-    .restart local v1    # "i":I
     :goto_13
     move v10, v1
 
-    .end local v1    # "i":I
-    .restart local v10    # "i":I
     const/16 v1, 0x8
 
     if-ge v10, v1, :cond_12
 
-    .line 8114
     const-wide v1, 0x20b00000019L
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 8115
-    .local v5, "wsToken":J
     const-wide v1, 0x10e00000001L
 
     invoke-virtual {v8, v1, v2, v10}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8116
     const-wide v2, 0x10b00000002L
 
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getWifiStateTimer(I)Landroid/os/BatteryStats$Timer;
@@ -10644,52 +8243,36 @@
 
     move-wide/from16 v5, v24
 
-    .end local v5    # "wsToken":J
-    .local v95, "wsToken":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8118
     move-wide/from16 v1, v95
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8113
-    .end local v95    # "wsToken":J
     add-int/lit8 v1, v10, 0x1
 
-    .end local v10    # "i":I
-    .restart local v1    # "i":I
     goto :goto_13
 
-    .line 8122
-    .end local v1    # "i":I
     :cond_12
     nop
 
-    .local v31, "i":I
     :goto_14
     move/from16 v10, v31
 
-    .end local v31    # "i":I
-    .restart local v10    # "i":I
     const/16 v1, 0xd
 
     if-ge v10, v1, :cond_13
 
-    .line 8123
     const-wide v1, 0x20b0000001aL
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v5
 
-    .line 8124
-    .local v5, "wssToken":J
     const-wide v2, 0x10e00000001L
 
     invoke-virtual {v8, v2, v3, v10}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 8125
     const-wide v18, 0x10b00000002L
 
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getWifiSupplStateTimer(I)Landroid/os/BatteryStats$Timer;
@@ -10708,35 +8291,23 @@
 
     move-wide/from16 v5, v24
 
-    .end local v5    # "wssToken":J
-    .local v97, "wssToken":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
 
-    .line 8127
     move-wide/from16 v1, v97
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8122
-    .end local v97    # "wssToken":J
     add-int/lit8 v1, v10, 0x1
 
-    .end local v10    # "i":I
-    .restart local v1    # "i":I
     move/from16 v31, v1
 
     goto :goto_14
 
-    .line 8130
-    .end local v1    # "i":I
     :cond_13
     move-wide/from16 v1, v20
 
     invoke-virtual {v8, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 8131
-    .end local v20    # "sToken":J
-    .local v1, "sToken":J
     return-void
 
     :pswitch_data_0
@@ -10760,22 +8331,13 @@
 
 .method private dumpRPMStatsLocked(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 10
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "sourcefile"    # Ljava/lang/String;
 
-    .line 6082
     const/4 v0, 0x0
 
-    .line 6083
-    .local v0, "fis":Ljava/io/FileInputStream;
     const/16 v1, 0x400
 
-    .line 6084
-    .local v1, "buf_size":I
     new-array v2, v1, [B
 
-    .line 6086
-    .local v2, "buffer":[B
     :try_start_0
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -10783,17 +8345,12 @@
 
     move-object v0, v3
 
-    .line 6087
     const/4 v3, 0x0
 
-    .line 6088
-    .local v3, "length":I
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 6089
-    .local v4, "nowELAPSED":J
     :cond_0
     invoke-virtual {v0, v2}, Ljava/io/FileInputStream;->read([B)I
 
@@ -10805,7 +8362,6 @@
 
     if-eq v6, v7, :cond_1
 
-    .line 6090
     new-instance v6, Ljava/lang/String;
 
     const/4 v7, 0x0
@@ -10814,7 +8370,6 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6091
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
@@ -10827,7 +8382,6 @@
 
     if-ltz v6, :cond_0
 
-    .line 6092
     const-string v6, "**** Exceed read timeout, force exit ***"
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -10836,16 +8390,11 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 6093
     nop
 
-    .line 6102
-    .end local v3    # "length":I
-    .end local v4    # "nowELAPSED":J
     :cond_1
     nop
 
-    .line 6103
     :try_start_1
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -10853,30 +8402,23 @@
 
     goto :goto_0
 
-    .line 6104
     :catch_0
     move-exception v3
 
-    .line 6106
     goto :goto_1
 
-    .line 6105
     :cond_2
     :goto_0
     goto :goto_1
 
-    .line 6101
     :catchall_0
     move-exception v3
 
     goto :goto_2
 
-    .line 6098
     :catch_1
     move-exception v3
 
-    .line 6099
-    .local v3, "e":Ljava/io/IOException;
     :try_start_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -10896,11 +8438,8 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 6102
-    .end local v3    # "e":Ljava/io/IOException;
     if-eqz v0, :cond_2
 
-    .line 6103
     :try_start_3
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_3
@@ -10908,12 +8447,9 @@
 
     goto :goto_0
 
-    .line 6096
     :catch_2
     move-exception v3
 
-    .line 6097
-    .local v3, "e":Ljava/io/FileNotFoundException;
     :try_start_4
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -10933,11 +8469,8 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 6102
-    .end local v3    # "e":Ljava/io/FileNotFoundException;
     if-eqz v0, :cond_2
 
-    .line 6103
     :try_start_5
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_5
@@ -10945,18 +8478,14 @@
 
     goto :goto_0
 
-    .line 6107
     :goto_1
     return-void
 
-    .line 6101
     :goto_2
     nop
 
-    .line 6102
     if-eqz v0, :cond_3
 
-    .line 6103
     :try_start_6
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_6
@@ -10964,13 +8493,11 @@
 
     goto :goto_3
 
-    .line 6104
     :catch_3
     move-exception v4
 
     nop
 
-    .line 6105
     :cond_3
     :goto_3
     throw v3
@@ -10978,52 +8505,36 @@
 
 .method private static dumpTimeEstimate(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Z
     .locals 2
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "label1"    # Ljava/lang/String;
-    .param p2, "label2"    # Ljava/lang/String;
-    .param p3, "label3"    # Ljava/lang/String;
-    .param p4, "estimatedTime"    # J
 
-    .line 6574
     const-wide/16 v0, 0x0
 
     cmp-long v0, p4, v0
 
     if-gez v0, :cond_0
 
-    .line 6575
     const/4 v0, 0x0
 
     return v0
 
-    .line 6577
     :cond_0
     invoke-virtual {p0, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6578
     invoke-virtual {p0, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6579
     invoke-virtual {p0, p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6580
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 6581
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {v0, p4, p5}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 6582
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 6583
     invoke-virtual {p0}, Ljava/io/PrintWriter;->println()V
 
-    .line 6584
     const/4 v1, 0x1
 
     return v1
@@ -11031,23 +8542,15 @@
 
 .method private static dumpTimer(Landroid/util/proto/ProtoOutputStream;JLandroid/os/BatteryStats$Timer;JI)V
     .locals 18
-    .param p0, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p1, "fieldId"    # J
-    .param p3, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p4, "rawRealtimeUs"    # J
-    .param p6, "which"    # I
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
 
-    .line 3277
     if-nez v1, :cond_0
 
-    .line 3278
     return-void
 
-    .line 3281
     :cond_0
     invoke-virtual/range {p3 .. p6}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
@@ -11057,16 +8560,12 @@
 
     move-result-wide v3
 
-    .line 3282
-    .local v3, "timeMs":J
     move/from16 v5, p6
 
     invoke-virtual {v1, v5}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v6
 
-    .line 3283
-    .local v6, "count":I
     const-wide/16 v7, 0x3e8
 
     div-long v9, p4, v7
@@ -11075,24 +8574,18 @@
 
     move-result-wide v9
 
-    .line 3284
-    .local v9, "maxDurationMs":J
     div-long v11, p4, v7
 
     invoke-virtual {v1, v11, v12}, Landroid/os/BatteryStats$Timer;->getCurrentDurationMsLocked(J)J
 
     move-result-wide v11
 
-    .line 3285
-    .local v11, "curDurationMs":J
     div-long v7, p4, v7
 
     invoke-virtual {v1, v7, v8}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v7
 
-    .line 3286
-    .local v7, "totalDurationMs":J
     const-wide/16 v13, 0x0
 
     cmp-long v13, v3, v13
@@ -11115,85 +8608,61 @@
 
     if-eqz v13, :cond_5
 
-    .line 3288
     :cond_1
     invoke-virtual/range {p0 .. p2}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v1
 
-    .line 3289
-    .local v1, "token":J
     move-wide/from16 v16, v1
 
     const-wide v1, 0x10300000001L
 
-    .end local v1    # "token":J
-    .local v16, "token":J
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3290
     const-wide v1, 0x10300000002L
 
     invoke-virtual {v0, v1, v2, v6}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 3292
     cmp-long v1, v9, v14
 
     if-eqz v1, :cond_2
 
-    .line 3293
     const-wide v1, 0x10300000003L
 
     invoke-virtual {v0, v1, v2, v9, v10}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3295
     :cond_2
     cmp-long v1, v11, v14
 
     if-eqz v1, :cond_3
 
-    .line 3296
     const-wide v1, 0x10300000004L
 
     invoke-virtual {v0, v1, v2, v11, v12}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3298
     :cond_3
     cmp-long v1, v7, v14
 
     if-eqz v1, :cond_4
 
-    .line 3299
     const-wide v1, 0x10300000005L
 
     invoke-virtual {v0, v1, v2, v7, v8}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 3301
     :cond_4
     move-wide/from16 v1, v16
 
     invoke-virtual {v0, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 3303
-    .end local v16    # "token":J
     :cond_5
     return-void
 .end method
 
 .method private static final dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
     .locals 6
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "uid"    # I
-    .param p2, "category"    # Ljava/lang/String;
-    .param p3, "type"    # Ljava/lang/String;
-    .param p4, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p5, "rawRealtime"    # J
-    .param p7, "which"    # I
 
-    .line 3256
     if-eqz p4, :cond_1
 
-    .line 3258
     invoke-virtual {p4, p5, p6, p7}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v0
@@ -11202,14 +8671,10 @@
 
     move-result-wide v0
 
-    .line 3259
-    .local v0, "totalTime":J
     invoke-virtual {p4, p7}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v2
 
-    .line 3260
-    .local v2, "count":I
     const-wide/16 v3, 0x0
 
     cmp-long v3, v0, v3
@@ -11218,7 +8683,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 3261
     :cond_0
     const/4 v3, 0x2
 
@@ -11242,100 +8706,73 @@
 
     invoke-static {p0, p1, p2, p3, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3264
-    .end local v0    # "totalTime":J
-    .end local v2    # "count":I
     :cond_1
     return-void
 .end method
 
 .method public static final formatTimeMs(Ljava/lang/StringBuilder;J)V
     .locals 4
-    .param p0, "sb"    # Ljava/lang/StringBuilder;
-    .param p1, "time"    # J
 
-    .line 3010
     const-wide/16 v0, 0x3e8
 
     div-long v2, p1, v0
 
-    .line 3011
-    .local v2, "sec":J
     invoke-static {p0, v2, v3}, Landroid/os/BatteryStats;->formatTimeRaw(Ljava/lang/StringBuilder;J)V
 
-    .line 3012
     mul-long/2addr v0, v2
 
     sub-long v0, p1, v0
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3013
     const-string/jumbo v0, "ms "
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3014
     return-void
 .end method
 
 .method public static final formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
     .locals 4
-    .param p0, "sb"    # Ljava/lang/StringBuilder;
-    .param p1, "time"    # J
 
-    .line 3017
     const-wide/16 v0, 0x3e8
 
     div-long v2, p1, v0
 
-    .line 3018
-    .local v2, "sec":J
     invoke-static {p0, v2, v3}, Landroid/os/BatteryStats;->formatTimeRaw(Ljava/lang/StringBuilder;J)V
 
-    .line 3019
     mul-long/2addr v0, v2
 
     sub-long v0, p1, v0
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3020
     const-string/jumbo v0, "ms"
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3021
     return-void
 .end method
 
 .method private static final formatTimeRaw(Ljava/lang/StringBuilder;J)V
     .locals 13
-    .param p0, "out"    # Ljava/lang/StringBuilder;
-    .param p1, "seconds"    # J
 
-    .line 2982
     const-wide/32 v0, 0x15180
 
     div-long v0, p1, v0
 
-    .line 2983
-    .local v0, "days":J
     const-wide/16 v2, 0x0
 
     cmp-long v4, v0, v2
 
     if-eqz v4, :cond_0
 
-    .line 2984
     invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 2985
     const-string v4, "d "
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2987
     :cond_0
     const-wide/16 v4, 0x3c
 
@@ -11347,16 +8784,12 @@
 
     mul-long/2addr v6, v8
 
-    .line 2989
-    .local v6, "used":J
     sub-long v8, p1, v6
 
     const-wide/16 v10, 0xe10
 
     div-long/2addr v8, v10
 
-    .line 2990
-    .local v8, "hours":J
     cmp-long v10, v8, v2
 
     if-nez v10, :cond_1
@@ -11365,16 +8798,13 @@
 
     if-eqz v10, :cond_2
 
-    .line 2991
     :cond_1
     invoke-virtual {p0, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 2992
     const-string v10, "h "
 
     invoke-virtual {p0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2994
     :cond_2
     mul-long v10, v8, v4
 
@@ -11382,13 +8812,10 @@
 
     add-long/2addr v6, v10
 
-    .line 2996
     sub-long v10, p1, v6
 
     div-long/2addr v10, v4
 
-    .line 2997
-    .local v10, "mins":J
     cmp-long v12, v10, v2
 
     if-nez v12, :cond_3
@@ -11397,22 +8824,18 @@
 
     if-eqz v12, :cond_4
 
-    .line 2998
     :cond_3
     invoke-virtual {p0, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 2999
     const-string/jumbo v12, "m "
 
     invoke-virtual {p0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3001
     :cond_4
     mul-long/2addr v4, v10
 
     add-long/2addr v6, v4
 
-    .line 3003
     cmp-long v4, p1, v2
 
     if-nez v4, :cond_5
@@ -11421,18 +8844,15 @@
 
     if-eqz v2, :cond_6
 
-    .line 3004
     :cond_5
     sub-long v2, p1, v6
 
     invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3005
     const-string/jumbo v2, "s "
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3007
     :cond_6
     return-void
 .end method
@@ -11449,77 +8869,61 @@
 
 .method public static mapToInternalProcessState(I)I
     .locals 3
-    .param p0, "procState"    # I
 
-    .line 583
     const/16 v0, 0x13
 
     if-ne p0, v0, :cond_0
 
-    .line 584
     return v0
 
-    .line 585
     :cond_0
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_1
 
-    .line 586
     const/4 v0, 0x0
 
     return v0
 
-    .line 587
     :cond_1
     const/4 v1, 0x3
 
     if-ne p0, v1, :cond_2
 
-    .line 589
     const/4 v0, 0x1
 
     return v0
 
-    .line 590
     :cond_2
     const/4 v2, 0x5
 
     if-gt p0, v2, :cond_3
 
-    .line 592
     return v0
 
-    .line 593
     :cond_3
     const/16 v0, 0xa
 
     if-gt p0, v0, :cond_4
 
-    .line 594
     return v1
 
-    .line 595
     :cond_4
     const/16 v0, 0xb
 
     if-gt p0, v0, :cond_5
 
-    .line 596
     const/4 v0, 0x4
 
     return v0
 
-    .line 597
     :cond_5
     const/16 v0, 0xc
 
     if-gt p0, v0, :cond_6
 
-    .line 598
     return v2
 
-    .line 600
     :cond_6
     const/4 v0, 0x6
 
@@ -11528,48 +8932,31 @@
 
 .method static printBitDescriptions(Ljava/lang/StringBuilder;IILandroid/os/BatteryStats$HistoryTag;[Landroid/os/BatteryStats$BitDescription;Z)V
     .locals 6
-    .param p0, "sb"    # Ljava/lang/StringBuilder;
-    .param p1, "oldval"    # I
-    .param p2, "newval"    # I
-    .param p3, "wakelockTag"    # Landroid/os/BatteryStats$HistoryTag;
-    .param p4, "descriptions"    # [Landroid/os/BatteryStats$BitDescription;
-    .param p5, "longNames"    # Z
 
-    .line 6112
     xor-int v0, p1, p2
 
-    .line 6113
-    .local v0, "diff":I
     if-nez v0, :cond_0
 
     return-void
 
-    .line 6114
     :cond_0
     const/4 v1, 0x0
 
-    .line 6115
-    .local v1, "didWake":Z
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     array-length v3, p4
 
     if-ge v2, v3, :cond_a
 
-    .line 6116
     aget-object v3, p4, v2
 
-    .line 6117
-    .local v3, "bd":Landroid/os/BatteryStats$BitDescription;
     iget v4, v3, Landroid/os/BatteryStats$BitDescription;->mask:I
 
     and-int/2addr v4, v0
 
     if-eqz v4, :cond_9
 
-    .line 6118
     if-eqz p5, :cond_1
 
     const-string v4, " "
@@ -11582,12 +8969,10 @@
     :goto_1
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6119
     iget v4, v3, Landroid/os/BatteryStats$BitDescription;->shift:I
 
     if-gez v4, :cond_5
 
-    .line 6120
     iget v4, v3, Landroid/os/BatteryStats$BitDescription;->mask:I
 
     and-int/2addr v4, p2
@@ -11604,7 +8989,6 @@
     :goto_2
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6121
     if-eqz p5, :cond_3
 
     iget-object v4, v3, Landroid/os/BatteryStats$BitDescription;->name:Ljava/lang/String;
@@ -11617,7 +9001,6 @@
     :goto_3
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6122
     iget v4, v3, Landroid/os/BatteryStats$BitDescription;->mask:I
 
     const/high16 v5, 0x40000000    # 2.0f
@@ -11626,40 +9009,32 @@
 
     if-eqz p3, :cond_9
 
-    .line 6123
     const/4 v1, 0x1
 
-    .line 6124
     const-string v4, "="
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6125
     if-eqz p5, :cond_4
 
-    .line 6126
     iget v4, p3, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     invoke-static {p0, v4}, Landroid/os/UserHandle;->formatUid(Ljava/lang/StringBuilder;I)V
 
-    .line 6127
     const-string v4, ":\""
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6128
     iget-object v4, p3, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6129
     const-string v4, "\""
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_6
 
-    .line 6131
     :cond_4
     iget v4, p3, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
@@ -11667,7 +9042,6 @@
 
     goto :goto_6
 
-    .line 6135
     :cond_5
     if-eqz p5, :cond_6
 
@@ -11681,12 +9055,10 @@
     :goto_4
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6136
     const-string v4, "="
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6137
     iget v4, v3, Landroid/os/BatteryStats$BitDescription;->mask:I
 
     and-int/2addr v4, p2
@@ -11695,8 +9067,6 @@
 
     shr-int/2addr v4, v5
 
-    .line 6138
-    .local v4, "val":I
     iget-object v5, v3, Landroid/os/BatteryStats$BitDescription;->values:[Ljava/lang/String;
 
     if-eqz v5, :cond_8
@@ -11709,7 +9079,6 @@
 
     if-ge v4, v5, :cond_8
 
-    .line 6139
     if-eqz p5, :cond_7
 
     iget-object v5, v3, Landroid/os/BatteryStats$BitDescription;->values:[Ljava/lang/String;
@@ -11728,27 +9097,20 @@
 
     goto :goto_6
 
-    .line 6141
     :cond_8
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 6115
-    .end local v3    # "bd":Landroid/os/BatteryStats$BitDescription;
-    .end local v4    # "val":I
     :cond_9
     :goto_6
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 6146
-    .end local v2    # "i":I
     :cond_a
     if-nez v1, :cond_d
 
     if-eqz p3, :cond_d
 
-    .line 6147
     if-eqz p5, :cond_b
 
     const-string v2, " wake_lock="
@@ -11761,38 +9123,31 @@
     :goto_7
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6148
     if-eqz p5, :cond_c
 
-    .line 6149
     iget v2, p3, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     invoke-static {p0, v2}, Landroid/os/UserHandle;->formatUid(Ljava/lang/StringBuilder;I)V
 
-    .line 6150
     const-string v2, ":\""
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6151
     iget-object v2, p3, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6152
     const-string v2, "\""
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_8
 
-    .line 6154
     :cond_c
     iget v2, p3, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 6157
     :cond_d
     :goto_8
     return-void
@@ -11800,12 +9155,6 @@
 
 .method private final printControllerActivity(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
     .locals 27
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "sb"    # Ljava/lang/StringBuilder;
-    .param p3, "prefix"    # Ljava/lang/String;
-    .param p4, "controllerName"    # Ljava/lang/String;
-    .param p5, "counter"    # Landroid/os/BatteryStats$ControllerActivityCounter;
-    .param p6, "which"    # I
 
     move-object/from16 v0, p0
 
@@ -11815,7 +9164,6 @@
 
     move-object/from16 v3, p4
 
-    .line 3401
     move/from16 v4, p6
 
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getIdleTimeCounter()Landroid/os/BatteryStats$LongCounter;
@@ -11826,8 +9174,6 @@
 
     move-result-wide v5
 
-    .line 3402
-    .local v5, "idleTimeMs":J
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getRxTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v7
@@ -11836,8 +9182,6 @@
 
     move-result-wide v7
 
-    .line 3403
-    .local v7, "rxTimeMs":J
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getPowerCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v9
@@ -11846,11 +9190,8 @@
 
     move-result-wide v9
 
-    .line 3405
-    .local v9, "powerDrainMaMs":J
     nop
 
-    .line 3406
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v11
@@ -11865,12 +9206,8 @@
 
     div-long/2addr v11, v13
 
-    .line 3407
-    .local v11, "totalControllerActivityTimeMs":J
     const-wide/16 v13, 0x0
 
-    .line 3408
-    .local v13, "totalTxTimeMs":J
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v15
@@ -11879,9 +9216,6 @@
 
     array-length v13, v15
 
-    .line 3408
-    .end local v13    # "totalTxTimeMs":J
-    .local v16, "totalTxTimeMs":J
     const/4 v14, 0x0
 
     :goto_0
@@ -11891,23 +9225,18 @@
 
     aget-object v13, v15, v14
 
-    .line 3409
-    .local v13, "txState":Landroid/os/BatteryStats$LongCounter;
     invoke-virtual {v13, v4}, Landroid/os/BatteryStats$LongCounter;->getCountLocked(I)J
 
     move-result-wide v20
 
     add-long v16, v16, v20
 
-    .line 3408
-    .end local v13    # "txState":Landroid/os/BatteryStats$LongCounter;
     add-int/lit8 v14, v14, 0x1
 
     move/from16 v13, v19
 
     goto :goto_0
 
-    .line 3412
     :cond_0
     const-string v13, "WiFi"
 
@@ -11917,7 +9246,6 @@
 
     if-eqz v13, :cond_1
 
-    .line 3413
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getScanTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v13
@@ -11926,56 +9254,44 @@
 
     move-result-wide v13
 
-    .line 3414
-    .local v13, "scanTimeMs":J
     const/4 v15, 0x0
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3415
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3416
     const-string v15, "     "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3417
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3418
     const-string v15, " Scan time:  "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3419
     invoke-static {v2, v13, v14}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3420
     const-string v15, "("
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3421
     invoke-virtual {v0, v13, v14, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3422
     const-string v15, ")"
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3423
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v1, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3425
     add-long v19, v5, v7
 
     add-long v19, v19, v16
@@ -11984,59 +9300,44 @@
 
     sub-long v13, v11, v19
 
-    .line 3427
-    .local v13, "sleepTimeMs":J
-    .local v22, "scanTimeMs":J
     const/4 v15, 0x0
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3428
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3429
     const-string v15, "     "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3430
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3431
     const-string v15, " Sleep time:  "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3432
     invoke-static {v2, v13, v14}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3433
     const-string v15, "("
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3434
     invoke-virtual {v0, v13, v14, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3435
     const-string v15, ")"
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3436
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v1, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3439
-    .end local v13    # "sleepTimeMs":J
-    .end local v22    # "scanTimeMs":J
     :cond_1
     const-string v13, "Cellular"
 
@@ -12046,7 +9347,6 @@
 
     if-eqz v13, :cond_2
 
-    .line 3440
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getSleepTimeCounter()Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v13
@@ -12055,175 +9355,137 @@
 
     move-result-wide v13
 
-    .line 3441
-    .restart local v13    # "sleepTimeMs":J
     const/4 v15, 0x0
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3442
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3443
     const-string v15, "     "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3444
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3445
     const-string v15, " Sleep time:  "
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3446
     invoke-static {v2, v13, v14}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3447
     const-string v15, "("
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3448
     invoke-virtual {v0, v13, v14, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3449
     const-string v15, ")"
 
     invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3450
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v15
 
     invoke-virtual {v1, v15}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3453
-    .end local v13    # "sleepTimeMs":J
     :cond_2
     const/4 v13, 0x0
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3454
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3455
     const-string v13, "     "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3456
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3457
     const-string v13, " Idle time:   "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3458
     invoke-static {v2, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3459
     const-string v13, "("
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3460
     invoke-virtual {v0, v5, v6, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v13
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3461
     const-string v13, ")"
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3462
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v13
 
     invoke-virtual {v1, v13}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3464
     const/4 v13, 0x0
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3465
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3466
     const-string v13, "     "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3468
     const-string v13, " Rx time:     "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3469
     invoke-static {v2, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3470
     const-string v13, "("
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3471
     invoke-virtual {v0, v7, v8, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v13
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3472
     const-string v13, ")"
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3473
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v13
 
     invoke-virtual {v1, v13}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3475
     const/4 v13, 0x0
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3476
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3477
     const-string v13, "     "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3478
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3479
     const-string v13, " Tx time:     "
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3482
     const/4 v14, -0x1
 
     invoke-virtual/range {p4 .. p4}, Ljava/lang/String;->hashCode()I
@@ -12251,7 +9513,6 @@
     :goto_1
     if-eqz v14, :cond_5
 
-    .line 3492
     const-string v13, "[0]"
 
     const-string v14, "[1]"
@@ -12262,9 +9523,6 @@
 
     const-string v5, "[3]"
 
-    .line 3492
-    .end local v5    # "idleTimeMs":J
-    .local v24, "idleTimeMs":J
     const-string v6, "[4]"
 
     filled-new-array {v13, v14, v15, v5, v6}, [Ljava/lang/String;
@@ -12273,15 +9531,9 @@
 
     goto :goto_2
 
-    .line 3484
-    .end local v24    # "idleTimeMs":J
-    .restart local v5    # "idleTimeMs":J
     :cond_5
     move-wide/from16 v24, v5
 
-    .line 3484
-    .end local v5    # "idleTimeMs":J
-    .restart local v24    # "idleTimeMs":J
     const-string v5, "   less than 0dBm: "
 
     const-string v6, "   0dBm to 8dBm: "
@@ -12296,15 +9548,11 @@
 
     move-result-object v5
 
-    .line 3490
-    .local v5, "powerLevel":[Ljava/lang/String;
     nop
 
-    .line 3492
     :goto_2
     nop
 
-    .line 3495
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v6
@@ -12317,28 +9565,21 @@
 
     move-result v6
 
-    .line 3496
-    .local v6, "numTxLvls":I
     const/4 v13, 0x1
 
     if-le v6, v13, :cond_7
 
-    .line 3497
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v13
 
     invoke-virtual {v1, v13}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3498
     const/4 v13, 0x0
 
-    .line 3498
-    .local v13, "lvl":I
     :goto_3
     if-ge v13, v6, :cond_6
 
-    .line 3499
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v14
@@ -12349,90 +9590,62 @@
 
     move-result-wide v14
 
-    .line 3500
-    .local v14, "txLvlTimeMs":J
     move/from16 v26, v6
 
     const/4 v6, 0x0
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3501
-    .end local v6    # "numTxLvls":I
-    .local v26, "numTxLvls":I
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3502
     const-string v6, "    "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3503
     aget-object v6, v5, v13
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3504
     const-string v6, " "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3505
     invoke-static {v2, v14, v15}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3506
     const-string v6, "("
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3507
     invoke-virtual {v0, v14, v15, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3508
     const-string v6, ")"
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3509
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3498
-    .end local v14    # "txLvlTimeMs":J
     add-int/lit8 v13, v13, 0x1
 
     move/from16 v6, v26
 
     goto :goto_3
 
-    .line 3520
-    .end local v13    # "lvl":I
-    .end local v26    # "numTxLvls":I
-    .restart local v6    # "numTxLvls":I
     :cond_6
     move/from16 v26, v6
 
-    .line 3520
-    .end local v6    # "numTxLvls":I
-    .restart local v26    # "numTxLvls":I
     goto :goto_4
 
-    .line 3512
-    .end local v26    # "numTxLvls":I
-    .restart local v6    # "numTxLvls":I
     :cond_7
     move/from16 v26, v6
 
-    .line 3512
-    .end local v6    # "numTxLvls":I
-    .restart local v26    # "numTxLvls":I
     invoke-virtual/range {p5 .. p5}, Landroid/os/BatteryStats$ControllerActivityCounter;->getTxTimeCounters()[Landroid/os/BatteryStats$LongCounter;
 
     move-result-object v6
@@ -12445,36 +9658,28 @@
 
     move-result-wide v13
 
-    .line 3513
-    .local v13, "txLvlTimeMs":J
     invoke-static {v2, v13, v14}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3514
     const-string v6, "("
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3515
     invoke-virtual {v0, v13, v14, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3516
     const-string v6, ")"
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3517
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3520
-    .end local v13    # "txLvlTimeMs":J
     :goto_4
     const-wide/16 v13, 0x0
 
@@ -12482,23 +9687,18 @@
 
     if-lez v6, :cond_8
 
-    .line 3521
     const/4 v6, 0x0
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3522
     invoke-virtual/range {p2 .. p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3523
     const-string v6, "     "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3524
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3525
     const-string v6, " Battery drain: "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -12509,69 +9709,48 @@
 
     div-double v13, v13, v18
 
-    .line 3526
     invoke-static {v13, v14}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 3525
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3527
     const-string/jumbo v6, "mAh"
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3528
     invoke-virtual/range {p2 .. p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3530
     :cond_8
     return-void
 .end method
 
 .method private final printControllerActivityIfInteresting(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
     .locals 1
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "sb"    # Ljava/lang/StringBuilder;
-    .param p3, "prefix"    # Ljava/lang/String;
-    .param p4, "controllerName"    # Ljava/lang/String;
-    .param p5, "counter"    # Landroid/os/BatteryStats$ControllerActivityCounter;
-    .param p6, "which"    # I
 
-    .line 3393
     invoke-static {p5, p6}, Landroid/os/BatteryStats;->controllerActivityHasData(Landroid/os/BatteryStats$ControllerActivityCounter;I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3394
     invoke-direct/range {p0 .. p6}, Landroid/os/BatteryStats;->printControllerActivity(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3396
     :cond_0
     return-void
 .end method
 
 .method private printSizeValue(Ljava/io/PrintWriter;J)V
     .locals 5
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "size"    # J
 
-    .line 6546
     long-to-float v0, p2
 
-    .line 6547
-    .local v0, "result":F
     const-string v1, ""
 
-    .line 6548
-    .local v1, "suffix":Ljava/lang/String;
     const/high16 v2, 0x46200000    # 10240.0f
 
     cmpl-float v3, v0, v2
@@ -12580,93 +9759,67 @@
 
     if-ltz v3, :cond_0
 
-    .line 6549
     const-string v1, "KB"
 
-    .line 6550
     div-float/2addr v0, v4
 
-    .line 6552
     :cond_0
     cmpl-float v3, v0, v2
 
     if-ltz v3, :cond_1
 
-    .line 6553
     const-string v1, "MB"
 
-    .line 6554
     div-float/2addr v0, v4
 
-    .line 6556
     :cond_1
     cmpl-float v3, v0, v2
 
     if-ltz v3, :cond_2
 
-    .line 6557
     const-string v1, "GB"
 
-    .line 6558
     div-float/2addr v0, v4
 
-    .line 6560
     :cond_2
     cmpl-float v3, v0, v2
 
     if-ltz v3, :cond_3
 
-    .line 6561
     const-string v1, "TB"
 
-    .line 6562
     div-float/2addr v0, v4
 
-    .line 6564
     :cond_3
     cmpl-float v2, v0, v2
 
     if-ltz v2, :cond_4
 
-    .line 6565
     const-string v1, "PB"
 
-    .line 6566
     div-float/2addr v0, v4
 
-    .line 6568
     :cond_4
     float-to-int v2, v0
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6569
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6570
     return-void
 .end method
 
 .method private static final printTimer(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JILjava/lang/String;Ljava/lang/String;)Z
     .locals 15
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
-    .param p2, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p3, "rawRealtimeUs"    # J
-    .param p5, "which"    # I
-    .param p6, "prefix"    # Ljava/lang/String;
-    .param p7, "type"    # Ljava/lang/String;
 
     move-object/from16 v0, p1
 
     move-object/from16 v1, p2
 
-    .line 3133
     const/4 v2, 0x0
 
     if-eqz v1, :cond_4
 
-    .line 3135
     invoke-virtual/range {p2 .. p5}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v3
@@ -12679,85 +9832,66 @@
 
     div-long/2addr v3, v5
 
-    .line 3137
-    .local v3, "totalTimeMs":J
     move/from16 v7, p5
 
     invoke-virtual {v1, v7}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v8
 
-    .line 3138
-    .local v8, "count":I
     const-wide/16 v9, 0x0
 
     cmp-long v11, v3, v9
 
     if-eqz v11, :cond_3
 
-    .line 3139
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3140
     move-object/from16 v11, p6
 
     invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3141
     const-string v2, "    "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3142
     move-object/from16 v12, p7
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3143
     const-string v2, ": "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3144
     invoke-static {v0, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3145
     const-string/jumbo v2, "realtime ("
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3146
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 3147
     const-string v2, " times)"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3148
     div-long v9, p3, v5
 
     invoke-virtual {v1, v9, v10}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v9
 
-    .line 3149
-    .local v9, "maxDurationMs":J
     const-wide/16 v13, 0x0
 
     cmp-long v2, v9, v13
 
     if-ltz v2, :cond_0
 
-    .line 3150
     const-string v2, " max="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3151
     invoke-virtual {v0, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3153
     :cond_0
     invoke-virtual/range {p2 .. p2}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
@@ -12765,44 +9899,35 @@
 
     if-eqz v2, :cond_2
 
-    .line 3154
     div-long v5, p3, v5
 
     invoke-virtual {v1, v5, v6}, Landroid/os/BatteryStats$Timer;->getCurrentDurationMsLocked(J)J
 
     move-result-wide v5
 
-    .line 3155
-    .local v5, "currentMs":J
     const-wide/16 v13, 0x0
 
     cmp-long v2, v5, v13
 
     if-ltz v2, :cond_1
 
-    .line 3156
     const-string v2, " (running for "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3157
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3158
     const-string/jumbo v2, "ms)"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 3160
     :cond_1
     const-string v2, " (running)"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3163
-    .end local v5    # "currentMs":J
     :cond_2
     :goto_0
     invoke-virtual/range {p1 .. p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -12813,15 +9938,10 @@
 
     invoke-virtual {v5, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 3164
     const/4 v2, 0x1
 
     return v2
 
-    .line 3167
-    .end local v3    # "totalTimeMs":J
-    .end local v8    # "count":I
-    .end local v9    # "maxDurationMs":J
     :cond_3
     move-object v5, p0
 
@@ -12842,12 +9962,6 @@
 
 .method private static final printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
     .locals 19
-    .param p0, "sb"    # Ljava/lang/StringBuilder;
-    .param p1, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p2, "elapsedRealtimeUs"    # J
-    .param p4, "name"    # Ljava/lang/String;
-    .param p5, "which"    # I
-    .param p6, "linePrefix"    # Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -12859,62 +9973,47 @@
 
     move/from16 v5, p5
 
-    .line 3077
     move-object/from16 v6, p6
 
     if-eqz v1, :cond_5
 
-    .line 3078
     invoke-static {v1, v2, v3, v5}, Landroid/os/BatteryStats;->computeWakeLock(Landroid/os/BatteryStats$Timer;JI)J
 
     move-result-wide v7
 
-    .line 3080
-    .local v7, "totalTimeMillis":J
     invoke-virtual {v1, v5}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v9
 
-    .line 3081
-    .local v9, "count":I
     const-wide/16 v10, 0x0
 
     cmp-long v12, v7, v10
 
     if-eqz v12, :cond_5
 
-    .line 3082
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3083
     invoke-static {v0, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 3084
     if-eqz v4, :cond_0
 
-    .line 3085
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3086
     const/16 v12, 0x20
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3088
     :cond_0
     const/16 v12, 0x28
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3089
     invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 3090
     const-string v12, " times)"
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3091
     const-wide/16 v12, 0x3e8
 
     div-long v14, v2, v12
@@ -12923,21 +10022,16 @@
 
     move-result-wide v14
 
-    .line 3092
-    .local v14, "maxDurationMs":J
     cmp-long v16, v14, v10
 
     if-ltz v16, :cond_1
 
-    .line 3093
     const-string v10, " max="
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3094
     invoke-virtual {v0, v14, v15}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3097
     :cond_1
     div-long v10, v2, v12
 
@@ -12945,21 +10039,16 @@
 
     move-result-wide v10
 
-    .line 3098
-    .local v10, "totalDurMs":J
     cmp-long v16, v10, v7
 
     if-lez v16, :cond_2
 
-    .line 3099
     const-string v12, " actual="
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3100
     invoke-virtual {v0, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3102
     :cond_2
     invoke-virtual/range {p1 .. p1}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
@@ -12967,7 +10056,6 @@
 
     if-eqz v12, :cond_4
 
-    .line 3103
     const-wide/16 v12, 0x3e8
 
     div-long v12, v2, v12
@@ -12976,60 +10064,41 @@
 
     move-result-wide v12
 
-    .line 3104
-    .local v12, "currentMs":J
     const-wide/16 v16, 0x0
 
     cmp-long v16, v12, v16
 
     if-ltz v16, :cond_3
 
-    .line 3105
     const-string v1, " (running for "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3106
     invoke-virtual {v0, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3107
     const-string/jumbo v1, "ms)"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 3109
     :cond_3
     const-string v1, " (running)"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3113
-    .end local v12    # "currentMs":J
     :cond_4
     :goto_0
     const-string v1, ", "
 
     return-object v1
 
-    .line 3116
-    .end local v7    # "totalTimeMillis":J
-    .end local v9    # "count":I
-    .end local v10    # "totalDurMs":J
-    .end local v14    # "maxDurationMs":J
     :cond_5
     return-object v6
 .end method
 
 .method private static final printWakeLockCheckin(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
     .locals 19
-    .param p0, "sb"    # Ljava/lang/StringBuilder;
-    .param p1, "timer"    # Landroid/os/BatteryStats$Timer;
-    .param p2, "elapsedRealtimeUs"    # J
-    .param p4, "name"    # Ljava/lang/String;
-    .param p5, "which"    # I
-    .param p6, "linePrefix"    # Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -13041,60 +10110,42 @@
 
     move/from16 v5, p5
 
-    .line 3183
     const-wide/16 v6, 0x0
 
-    .line 3184
-    .local v6, "totalTimeMicros":J
     const/4 v8, 0x0
 
-    .line 3185
-    .local v8, "count":I
     const-wide/16 v9, 0x0
 
-    .line 3186
-    .local v9, "max":J
     const-wide/16 v11, 0x0
 
-    .line 3187
-    .local v11, "current":J
     const-wide/16 v13, 0x0
 
-    .line 3188
-    .local v13, "totalDuration":J
     const-wide/16 v15, 0x3e8
 
     if-eqz v1, :cond_0
 
-    .line 3189
     invoke-virtual {v1, v2, v3, v5}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v6
 
-    .line 3190
     invoke-virtual {v1, v5}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v8
 
-    .line 3191
     move-wide/from16 v17, v6
 
     div-long v5, v2, v15
 
-    .end local v6    # "totalTimeMicros":J
-    .local v17, "totalTimeMicros":J
     invoke-virtual {v1, v5, v6}, Landroid/os/BatteryStats$Timer;->getCurrentDurationMsLocked(J)J
 
     move-result-wide v11
 
-    .line 3192
     div-long v5, v2, v15
 
     invoke-virtual {v1, v5, v6}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v9
 
-    .line 3193
     div-long v5, v2, v15
 
     invoke-virtual {v1, v5, v6}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
@@ -13103,20 +10154,14 @@
 
     goto :goto_0
 
-    .line 3195
-    .end local v17    # "totalTimeMicros":J
-    .restart local v6    # "totalTimeMicros":J
     :cond_0
     move-wide/from16 v17, v6
 
-    .end local v6    # "totalTimeMicros":J
-    .restart local v17    # "totalTimeMicros":J
     :goto_0
     move-object/from16 v5, p6
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3196
     const-wide/16 v6, 0x1f4
 
     add-long v6, v17, v6
@@ -13125,12 +10170,10 @@
 
     invoke-virtual {v0, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3197
     const/16 v6, 0x2c
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3198
     if-eqz v4, :cond_1
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -13155,31 +10198,22 @@
     :goto_1
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3199
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 3200
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3201
     invoke-virtual {v0, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3202
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3203
     invoke-virtual {v0, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3207
     if-eqz v4, :cond_2
 
-    .line 3208
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3209
     invoke-virtual {v0, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 3211
     :cond_2
     const-string v6, ","
 
@@ -13188,41 +10222,31 @@
 
 .method private printmAh(Ljava/io/PrintWriter;D)V
     .locals 1
-    .param p1, "printer"    # Ljava/io/PrintWriter;
-    .param p2, "power"    # D
 
-    .line 4309
     invoke-static {p2, p3}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4310
     return-void
 .end method
 
 .method private printmAh(Ljava/lang/StringBuilder;D)V
     .locals 1
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
-    .param p2, "power"    # D
 
-    .line 4313
     invoke-static {p2, p3}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4314
     return-void
 .end method
 
 .method private static roundUsToMs(J)J
     .locals 4
-    .param p0, "timeUs"    # J
 
-    .line 3051
     const-wide/16 v0, 0x1f4
 
     add-long/2addr v0, p0
@@ -13265,12 +10289,7 @@
 
 .method public final dumpCheckinLocked(Landroid/content/Context;Ljava/io/PrintWriter;II)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "which"    # I
-    .param p4, "reqUid"    # I
 
-    .line 3536
     invoke-static {p1}, Lcom/android/internal/os/BatteryStatsHelper;->checkWifiOnly(Landroid/content/Context;)Z
 
     move-result v5
@@ -13287,17 +10306,11 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/os/BatteryStats;->dumpCheckinLocked(Landroid/content/Context;Ljava/io/PrintWriter;IIZ)V
 
-    .line 3537
     return-void
 .end method
 
 .method public final dumpCheckinLocked(Landroid/content/Context;Ljava/io/PrintWriter;IIZ)V
     .locals 371
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "which"    # I
-    .param p4, "reqUid"    # I
-    .param p5, "wifiOnly"    # Z
 
     move-object/from16 v0, p0
 
@@ -13307,7 +10320,6 @@
 
     move/from16 v11, p4
 
-    .line 3546
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -13316,154 +10328,104 @@
 
     mul-long v14, v1, v12
 
-    .line 3547
-    .local v14, "rawUptime":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v7
 
-    .line 3548
-    .local v7, "rawRealtimeMs":J
     mul-long v5, v7, v12
 
-    .line 3549
-    .local v5, "rawRealtime":J
     invoke-virtual {v0, v14, v15}, Landroid/os/BatteryStats;->getBatteryUptime(J)J
 
     move-result-wide v3
 
-    .line 3550
-    .local v3, "batteryUptime":J
     invoke-virtual {v0, v14, v15, v10}, Landroid/os/BatteryStats;->computeBatteryUptime(JI)J
 
     move-result-wide v16
 
-    .line 3551
-    .local v16, "whichBatteryUptime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->computeBatteryRealtime(JI)J
 
     move-result-wide v18
 
-    .line 3552
-    .local v18, "whichBatteryRealtime":J
     invoke-virtual {v0, v14, v15, v10}, Landroid/os/BatteryStats;->computeBatteryScreenOffUptime(JI)J
 
     move-result-wide v20
 
-    .line 3553
-    .local v20, "whichBatteryScreenOffUptime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->computeBatteryScreenOffRealtime(JI)J
 
     move-result-wide v22
 
-    .line 3555
-    .local v22, "whichBatteryScreenOffRealtime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->computeRealtime(JI)J
 
     move-result-wide v24
 
-    .line 3556
-    .local v24, "totalRealtime":J
     invoke-virtual {v0, v14, v15, v10}, Landroid/os/BatteryStats;->computeUptime(JI)J
 
     move-result-wide v26
 
-    .line 3557
-    .local v26, "totalUptime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->getScreenOnTime(JI)J
 
     move-result-wide v28
 
-    .line 3558
-    .local v28, "screenOnTime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->getScreenDozeTime(JI)J
 
     move-result-wide v30
 
-    .line 3559
-    .local v30, "screenDozeTime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->getInteractiveTime(JI)J
 
     move-result-wide v32
 
-    .line 3560
-    .local v32, "interactiveTime":J
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->getPowerSaveModeEnabledTime(JI)J
 
     move-result-wide v34
 
-    .line 3561
-    .local v34, "powerSaveModeEnabledTime":J
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v5, v6, v10}, Landroid/os/BatteryStats;->getDeviceIdleModeTime(IJI)J
 
     move-result-wide v36
 
-    .line 3563
-    .local v36, "deviceIdleModeLightTime":J
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v5, v6, v10}, Landroid/os/BatteryStats;->getDeviceIdleModeTime(IJI)J
 
     move-result-wide v38
 
-    .line 3565
-    .local v38, "deviceIdleModeFullTime":J
     invoke-virtual {v0, v2, v5, v6, v10}, Landroid/os/BatteryStats;->getDeviceIdlingTime(IJI)J
 
     move-result-wide v40
 
-    .line 3567
-    .local v40, "deviceLightIdlingTime":J
     invoke-virtual {v0, v1, v5, v6, v10}, Landroid/os/BatteryStats;->getDeviceIdlingTime(IJI)J
 
     move-result-wide v42
 
-    .line 3569
-    .local v42, "deviceIdlingTime":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getNumConnectivityChange(I)I
 
     move-result v1
 
-    .line 3570
-    .local v1, "connChanges":I
     invoke-virtual {v0, v5, v6, v10}, Landroid/os/BatteryStats;->getPhoneOnTime(JI)J
 
     move-result-wide v45
 
-    .line 3571
-    .local v45, "phoneOnTime":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getUahDischarge(I)J
 
     move-result-wide v47
 
-    .line 3572
-    .local v47, "dischargeCount":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getUahDischargeScreenOff(I)J
 
     move-result-wide v49
 
-    .line 3573
-    .local v49, "dischargeScreenOffCount":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getUahDischargeScreenDoze(I)J
 
     move-result-wide v51
 
-    .line 3574
-    .local v51, "dischargeScreenDozeCount":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getUahDischargeLightDoze(I)J
 
     move-result-wide v53
 
-    .line 3575
-    .local v53, "dischargeLightDozeCount":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getUahDischargeDeepDoze(I)J
 
     move-result-wide v55
 
-    .line 3577
-    .local v55, "dischargeDeepDozeCount":J
     new-instance v2, Ljava/lang/StringBuilder;
 
     const/16 v12, 0x80
@@ -13472,41 +10434,28 @@
 
     move-object v12, v2
 
-    .line 3579
-    .local v12, "sb":Ljava/lang/StringBuilder;
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v13
 
-    .line 3580
-    .local v13, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-virtual {v13}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
-    .line 3582
-    .local v2, "NU":I
     sget-object v60, Landroid/os/BatteryStats;->STAT_NAMES:[Ljava/lang/String;
 
     move-wide/from16 v61, v14
 
     aget-object v14, v60, v10
 
-    .line 3585
-    .local v14, "category":Ljava/lang/String;
-    .local v61, "rawUptime":J
     const-string v15, "bt"
 
     move/from16 v63, v1
 
     const/16 v1, 0xc
 
-    .line 3585
-    .end local v1    # "connChanges":I
-    .local v63, "connChanges":I
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 3586
     if-nez v10, :cond_0
 
     move-wide/from16 v64, v3
@@ -13515,24 +10464,15 @@
 
     move-result v3
 
-    .line 3586
-    .end local v3    # "batteryUptime":J
-    .local v64, "batteryUptime":J
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 3586
-    .end local v64    # "batteryUptime":J
-    .restart local v3    # "batteryUptime":J
     :cond_0
     move-wide/from16 v64, v3
 
-    .line 3586
-    .end local v3    # "batteryUptime":J
-    .restart local v64    # "batteryUptime":J
     const-string v3, "N/A"
 
     :goto_0
@@ -13546,9 +10486,6 @@
 
     div-long v4, v18, v58
 
-    .line 3587
-    .end local v5    # "rawRealtime":J
-    .local v66, "rawRealtime":J
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -13569,7 +10506,6 @@
 
     div-long v3, v24, v58
 
-    .line 3588
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -13588,7 +10524,6 @@
 
     aput-object v3, v1, v5
 
-    .line 3589
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getStartClockTime()J
 
     move-result-wide v3
@@ -13603,7 +10538,6 @@
 
     div-long v4, v22, v58
 
-    .line 3590
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -13622,7 +10556,6 @@
 
     aput-object v3, v1, v4
 
-    .line 3591
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getEstimatedBatteryCapacity()I
 
     move-result v3
@@ -13635,7 +10568,6 @@
 
     aput-object v3, v1, v4
 
-    .line 3592
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getMinLearnedBatteryCapacity()I
 
     move-result v3
@@ -13666,59 +10598,41 @@
 
     div-long v4, v30, v58
 
-    .line 3593
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
 
     aput-object v4, v1, v3
 
-    .line 3585
     const/4 v3, 0x0
 
     invoke-static {v9, v3, v14, v15, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3597
     const-wide/16 v3, 0x0
 
-    .line 3598
-    .local v3, "fullWakeLockTimeTotal":J
     const-wide/16 v76, 0x0
 
-    .line 3600
-    .local v76, "partialWakeLockTimeTotal":J
     move-wide/from16 v78, v76
 
     const/4 v1, 0x0
 
     move-wide/from16 v76, v3
 
-    .line 3600
-    .end local v3    # "fullWakeLockTimeTotal":J
-    .local v1, "iu":I
-    .local v76, "fullWakeLockTimeTotal":J
-    .local v78, "partialWakeLockTimeTotal":J
     :goto_1
     if-ge v1, v2, :cond_4
 
-    .line 3601
     invoke-virtual {v13, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/BatteryStats$Uid;
 
-    .line 3603
-    .local v3, "u":Landroid/os/BatteryStats$Uid;
     nop
 
-    .line 3604
     invoke-virtual {v3}, Landroid/os/BatteryStats$Uid;->getWakelockStats()Landroid/util/ArrayMap;
 
     move-result-object v4
 
-    .line 3605
-    .local v4, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-virtual {v4}, Landroid/util/ArrayMap;->size()I
 
     move-result v5
@@ -13727,12 +10641,9 @@
 
     sub-int/2addr v5, v15
 
-    .line 3605
-    .local v5, "iw":I
     :goto_2
     if-ltz v5, :cond_3
 
-    .line 3606
     invoke-virtual {v4, v5}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v57
@@ -13741,20 +10652,14 @@
 
     check-cast v6, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 3608
-    .local v6, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     move/from16 v81, v2
 
     invoke-virtual {v6, v15}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v2
 
-    .line 3609
-    .local v2, "fullWakeTimer":Landroid/os/BatteryStats$Timer;
-    .local v81, "NU":I
     if-eqz v2, :cond_1
 
-    .line 3610
     move-wide/from16 v82, v7
 
     move-wide/from16 v7, v66
@@ -13763,27 +10668,15 @@
 
     move-result-wide v66
 
-    .line 3610
-    .end local v66    # "rawRealtime":J
-    .local v7, "rawRealtime":J
-    .local v82, "rawRealtimeMs":J
     add-long v76, v76, v66
 
     goto :goto_3
 
-    .line 3614
-    .end local v82    # "rawRealtimeMs":J
-    .local v7, "rawRealtimeMs":J
-    .restart local v66    # "rawRealtime":J
     :cond_1
     move-wide/from16 v82, v7
 
     move-wide/from16 v7, v66
 
-    .line 3614
-    .end local v66    # "rawRealtime":J
-    .local v7, "rawRealtime":J
-    .restart local v82    # "rawRealtimeMs":J
     :goto_3
     move-object/from16 v84, v2
 
@@ -13793,22 +10686,14 @@
 
     move-result-object v2
 
-    .line 3615
-    .local v2, "partialWakeTimer":Landroid/os/BatteryStats$Timer;
-    .local v84, "fullWakeTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v2, :cond_2
 
-    .line 3616
     invoke-virtual {v2, v7, v8, v10}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v66
 
     add-long v78, v78, v66
 
-    .line 3605
-    .end local v2    # "partialWakeTimer":Landroid/os/BatteryStats$Timer;
-    .end local v6    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .end local v84    # "fullWakeTimer":Landroid/os/BatteryStats$Timer;
     :cond_2
     add-int/lit8 v5, v5, -0x1
 
@@ -13824,15 +10709,6 @@
 
     goto :goto_2
 
-    .line 3600
-    .end local v3    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v4    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v5    # "iw":I
-    .end local v81    # "NU":I
-    .end local v82    # "rawRealtimeMs":J
-    .local v2, "NU":I
-    .local v7, "rawRealtimeMs":J
-    .restart local v66    # "rawRealtime":J
     :cond_3
     move/from16 v81, v2
 
@@ -13840,12 +10716,6 @@
 
     move-wide/from16 v7, v66
 
-    .line 3600
-    .end local v2    # "NU":I
-    .end local v66    # "rawRealtime":J
-    .local v7, "rawRealtime":J
-    .restart local v81    # "NU":I
-    .restart local v82    # "rawRealtimeMs":J
     add-int/lit8 v1, v1, 0x1
 
     move-wide/from16 v7, v82
@@ -13854,13 +10724,6 @@
 
     goto :goto_1
 
-    .line 3623
-    .end local v1    # "iu":I
-    .end local v81    # "NU":I
-    .end local v82    # "rawRealtimeMs":J
-    .restart local v2    # "NU":I
-    .local v7, "rawRealtimeMs":J
-    .restart local v66    # "rawRealtime":J
     :cond_4
     move/from16 v81, v2
 
@@ -13868,28 +10731,18 @@
 
     move-wide/from16 v7, v66
 
-    .line 3623
-    .end local v2    # "NU":I
-    .end local v66    # "rawRealtime":J
-    .local v7, "rawRealtime":J
-    .restart local v81    # "NU":I
-    .restart local v82    # "rawRealtimeMs":J
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v10}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v5
 
-    .line 3624
-    .local v5, "mobileRxTotalBytes":J
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v10}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v3
 
-    .line 3625
-    .local v3, "mobileTxTotalBytes":J
     move-wide/from16 v86, v3
 
     const/4 v15, 0x2
@@ -13898,10 +10751,6 @@
 
     move-result-wide v2
 
-    .line 3626
-    .end local v3    # "mobileTxTotalBytes":J
-    .local v2, "wifiRxTotalBytes":J
-    .local v86, "mobileTxTotalBytes":J
     move-wide/from16 v88, v7
 
     const/4 v4, 0x3
@@ -13910,19 +10759,12 @@
 
     move-result-wide v7
 
-    .line 3627
-    .local v7, "wifiTxTotalBytes":J
-    .local v88, "rawRealtime":J
     move-wide/from16 v90, v5
 
     invoke-virtual {v0, v1, v10}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v4
 
-    .line 3628
-    .end local v5    # "mobileRxTotalBytes":J
-    .local v4, "mobileRxTotalPackets":J
-    .local v90, "mobileRxTotalBytes":J
     move-object/from16 v93, v12
 
     move-object/from16 v94, v13
@@ -13933,21 +10775,12 @@
 
     move-result-wide v12
 
-    .line 3629
-    .end local v13    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v12, "mobileTxTotalPackets":J
-    .local v93, "sb":Ljava/lang/StringBuilder;
-    .local v94, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move-wide/from16 v96, v12
 
     invoke-virtual {v0, v15, v10}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v11
 
-    .line 3630
-    .end local v12    # "mobileTxTotalPackets":J
-    .local v11, "wifiRxTotalPackets":J
-    .local v96, "mobileTxTotalPackets":J
     move-object/from16 v98, v14
 
     const/4 v1, 0x3
@@ -13956,10 +10789,6 @@
 
     move-result-wide v13
 
-    .line 3631
-    .end local v14    # "category":Ljava/lang/String;
-    .local v13, "wifiTxTotalPackets":J
-    .local v98, "category":Ljava/lang/String;
     move-wide/from16 v99, v13
 
     const/4 v1, 0x4
@@ -13968,9 +10797,6 @@
 
     move-result-wide v13
 
-    .line 3632
-    .local v13, "btRxTotalBytes":J
-    .local v99, "wifiTxTotalPackets":J
     move-wide/from16 v101, v13
 
     const/4 v1, 0x5
@@ -13979,16 +10805,12 @@
 
     move-result-wide v13
 
-    .line 3633
-    .local v13, "btTxTotalBytes":J
-    .local v101, "btRxTotalBytes":J
     const-string v1, "gn"
 
     const/16 v6, 0xa
 
     new-array v15, v6, [Ljava/lang/Object;
 
-    .line 3634
     move-wide/from16 v103, v7
 
     move-wide/from16 v6, v90
@@ -13997,11 +10819,6 @@
 
     move-result-object v8
 
-    .line 3634
-    .end local v7    # "wifiTxTotalBytes":J
-    .end local v90    # "mobileRxTotalBytes":J
-    .local v6, "mobileRxTotalBytes":J
-    .local v103, "wifiTxTotalBytes":J
     const/16 v60, 0x0
 
     aput-object v8, v15, v60
@@ -14014,10 +10831,6 @@
 
     move-result-object v8
 
-    .line 3634
-    .end local v86    # "mobileTxTotalBytes":J
-    .local v6, "mobileTxTotalBytes":J
-    .local v106, "mobileRxTotalBytes":J
     const/16 v57, 0x1
 
     aput-object v8, v15, v57
@@ -14038,14 +10851,10 @@
 
     move-result-object v8
 
-    .end local v103    # "wifiTxTotalBytes":J
-    .local v2, "wifiTxTotalBytes":J
-    .local v108, "wifiRxTotalBytes":J
     const/16 v60, 0x3
 
     aput-object v8, v15, v60
 
-    .line 3635
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v8
@@ -14062,9 +10871,6 @@
 
     move-result-object v8
 
-    .end local v96    # "mobileTxTotalPackets":J
-    .local v2, "mobileTxTotalPackets":J
-    .local v110, "wifiTxTotalBytes":J
     const/16 v67, 0x5
 
     aput-object v8, v15, v67
@@ -14085,14 +10891,10 @@
 
     move-result-object v8
 
-    .end local v99    # "wifiTxTotalPackets":J
-    .local v2, "wifiTxTotalPackets":J
-    .local v112, "mobileTxTotalPackets":J
     const/16 v70, 0x7
 
     aput-object v8, v15, v70
 
-    .line 3636
     move-wide/from16 v114, v2
 
     move-wide/from16 v2, v101
@@ -14101,10 +10903,6 @@
 
     move-result-object v8
 
-    .line 3636
-    .end local v101    # "btRxTotalBytes":J
-    .local v2, "btRxTotalBytes":J
-    .local v114, "wifiTxTotalPackets":J
     const/16 v71, 0x8
 
     aput-object v8, v15, v71
@@ -14117,7 +10915,6 @@
 
     aput-object v8, v15, v72
 
-    .line 3633
     move-wide/from16 v116, v2
 
     move-object/from16 v8, v98
@@ -14126,21 +10923,14 @@
 
     invoke-static {v9, v2, v8, v1, v15}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3639
-    .end local v2    # "btRxTotalBytes":J
-    .end local v98    # "category":Ljava/lang/String;
-    .local v8, "category":Ljava/lang/String;
-    .local v116, "btRxTotalBytes":J
     const/4 v3, 0x0
 
     const-string v15, "gmcd"
 
-    .line 3640
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v68
 
-    .line 3639
     move-wide/from16 v118, v11
 
     move/from16 v12, v44
@@ -14149,10 +10939,6 @@
 
     move-object v1, v9
 
-    .line 3639
-    .end local v63    # "connChanges":I
-    .local v11, "connChanges":I
-    .local v118, "wifiRxTotalPackets":J
     move/from16 v44, v2
 
     move/from16 v12, v57
@@ -14171,18 +10957,6 @@
 
     move v2, v3
 
-    .end local v81    # "NU":I
-    .end local v108    # "wifiRxTotalBytes":J
-    .end local v110    # "wifiTxTotalBytes":J
-    .end local v112    # "mobileTxTotalPackets":J
-    .end local v114    # "wifiTxTotalPackets":J
-    .end local v116    # "btRxTotalBytes":J
-    .local v73, "wifiRxTotalBytes":J
-    .local v80, "wifiTxTotalBytes":J
-    .local v84, "mobileTxTotalPackets":J
-    .local v86, "wifiTxTotalPackets":J
-    .local v90, "btRxTotalBytes":J
-    .local v120, "NU":I
     move-wide/16 v369, v6
 
     move-wide/from16 v6, v64
@@ -14191,10 +10965,6 @@
 
     move-object v3, v8
 
-    .line 3639
-    .end local v64    # "batteryUptime":J
-    .local v6, "batteryUptime":J
-    .local v63, "mobileTxTotalBytes":J
     move-wide/from16 v70, v4
 
     move/from16 v5, v44
@@ -14203,9 +10973,6 @@
 
     move-object v4, v15
 
-    .line 3639
-    .end local v4    # "mobileRxTotalPackets":J
-    .local v70, "mobileRxTotalPackets":J
     move-wide/from16 v127, v13
 
     move-wide/from16 v12, v88
@@ -14214,13 +10981,6 @@
 
     move-object/from16 v5, v68
 
-    .line 3639
-    .end local v13    # "btTxTotalBytes":J
-    .end local v88    # "rawRealtime":J
-    .end local v106    # "mobileRxTotalBytes":J
-    .local v12, "rawRealtime":J
-    .local v14, "mobileRxTotalBytes":J
-    .local v127, "btTxTotalBytes":J
     move-wide/from16 v133, v14
 
     move-wide v14, v6
@@ -14229,25 +10989,16 @@
 
     move v6, v10
 
-    .line 3639
-    .end local v6    # "batteryUptime":J
-    .local v14, "batteryUptime":J
-    .local v133, "mobileRxTotalBytes":J
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3643
     invoke-virtual {v0, v12, v13, v10}, Landroid/os/BatteryStats;->getWifiOnTime(JI)J
 
     move-result-wide v65
 
-    .line 3644
-    .local v65, "wifiOnTime":J
     invoke-virtual {v0, v12, v13, v10}, Landroid/os/BatteryStats;->getGlobalWifiRunningTime(JI)J
 
     move-result-wide v67
 
-    .line 3645
-    .local v67, "wifiRunningTime":J
     const-string v1, "gwfl"
 
     const/4 v2, 0x5
@@ -14260,9 +11011,6 @@
 
     div-long v7, v65, v4
 
-    .line 3645
-    .end local v8    # "category":Ljava/lang/String;
-    .local v135, "category":Ljava/lang/String;
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -14273,7 +11021,6 @@
 
     div-long v6, v67, v4
 
-    .line 3646
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -14306,24 +11053,18 @@
 
     aput-object v2, v3, v7
 
-    .line 3645
     move-object/from16 v6, v135
 
     invoke-static {v9, v8, v6, v1, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3648
-    .end local v135    # "category":Ljava/lang/String;
-    .local v6, "category":Ljava/lang/String;
     const/4 v2, 0x0
 
     const-string v4, "gwfcd"
 
-    .line 3649
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v5
 
-    .line 3648
     move-object v1, v9
 
     move-object v3, v6
@@ -14332,25 +11073,18 @@
 
     move v6, v10
 
-    .line 3648
-    .end local v6    # "category":Ljava/lang/String;
-    .local v137, "category":Ljava/lang/String;
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3652
     const-string v4, "gble"
 
-    .line 3653
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v5
 
-    .line 3652
     move-object/from16 v3, v137
 
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3656
     const-string/jumbo v1, "m"
 
     const/16 v2, 0x15
@@ -14361,7 +11095,6 @@
 
     div-long v5, v28, v3
 
-    .line 3657
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -14380,7 +11113,6 @@
 
     div-long v5, v76, v3
 
-    .line 3658
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -14399,7 +11131,6 @@
 
     aput-object v5, v2, v6
 
-    .line 3659
     invoke-virtual {v0, v12, v13, v10}, Landroid/os/BatteryStats;->getMobileRadioActiveTime(JI)J
 
     move-result-wide v5
@@ -14412,7 +11143,6 @@
 
     aput-object v5, v2, v7
 
-    .line 3660
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getMobileRadioActiveAdjustedTime(I)J
 
     move-result-wide v5
@@ -14439,7 +11169,6 @@
 
     div-long v6, v34, v3
 
-    .line 3661
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -14466,7 +11195,6 @@
 
     aput-object v5, v2, v7
 
-    .line 3662
     const/4 v5, 0x2
 
     invoke-virtual {v0, v5, v10}, Landroid/os/BatteryStats;->getDeviceIdleModeCount(II)I
@@ -14493,7 +11221,6 @@
 
     const/16 v3, 0xc
 
-    .line 3663
     invoke-virtual {v0, v5, v10}, Landroid/os/BatteryStats;->getDeviceIdlingCount(II)I
 
     move-result v4
@@ -14506,7 +11233,6 @@
 
     const/16 v3, 0xd
 
-    .line 3664
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getMobileRadioActiveCount(I)I
 
     move-result v4
@@ -14519,7 +11245,6 @@
 
     const/16 v3, 0xe
 
-    .line 3665
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getMobileRadioActiveUnknownTime(I)J
 
     move-result-wide v4
@@ -14546,7 +11271,6 @@
 
     const/16 v3, 0x10
 
-    .line 3666
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4, v10}, Landroid/os/BatteryStats;->getDeviceIdleModeCount(II)I
@@ -14571,7 +11295,6 @@
 
     const/16 v3, 0x12
 
-    .line 3667
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4, v10}, Landroid/os/BatteryStats;->getDeviceIdlingCount(II)I
@@ -14586,7 +11309,6 @@
 
     const/16 v3, 0x13
 
-    .line 3668
     invoke-virtual {v0, v4}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
 
     move-result-wide v5
@@ -14599,7 +11321,6 @@
 
     const/16 v3, 0x14
 
-    .line 3669
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
@@ -14612,30 +11333,21 @@
 
     aput-object v4, v2, v3
 
-    .line 3656
     move-object/from16 v8, v137
 
     const/4 v3, 0x0
 
     invoke-static {v9, v3, v8, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3672
-    .end local v137    # "category":Ljava/lang/String;
-    .restart local v8    # "category":Ljava/lang/String;
     const/4 v1, 0x5
 
     new-array v2, v1, [Ljava/lang/Object;
 
-    .line 3673
-    .local v2, "args":[Ljava/lang/Object;
     const/4 v3, 0x0
 
-    .line 3673
-    .local v3, "i":I
     :goto_4
     if-ge v3, v1, :cond_5
 
-    .line 3674
     invoke-virtual {v0, v3, v12, v13, v10}, Landroid/os/BatteryStats;->getScreenBrightnessTime(IJI)J
 
     move-result-wide v4
@@ -14650,15 +11362,12 @@
 
     aput-object v1, v2, v3
 
-    .line 3673
     add-int/lit8 v3, v3, 0x1
 
     const/4 v1, 0x5
 
     goto :goto_4
 
-    .line 3676
-    .end local v3    # "i":I
     :cond_5
     const-string v1, "br"
 
@@ -14666,24 +11375,17 @@
 
     invoke-static {v9, v3, v8, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3679
     sget v1, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 3680
-    .end local v2    # "args":[Ljava/lang/Object;
-    .local v1, "args":[Ljava/lang/Object;
     const/4 v2, 0x0
 
-    .line 3680
-    .local v2, "i":I
     :goto_5
     sget v3, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     if-ge v2, v3, :cond_6
 
-    .line 3681
     invoke-virtual {v0, v2, v12, v13, v10}, Landroid/os/BatteryStats;->getPhoneSignalStrengthTime(IJI)J
 
     move-result-wide v3
@@ -14698,13 +11400,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3680
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 3683
-    .end local v2    # "i":I
     :cond_6
     const-string/jumbo v2, "sgt"
 
@@ -14712,14 +11411,12 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3684
     const-string/jumbo v2, "sst"
 
     const/4 v4, 0x1
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    .line 3685
     invoke-virtual {v0, v12, v13, v10}, Landroid/os/BatteryStats;->getPhoneSignalScanningTime(JI)J
 
     move-result-wide v6
@@ -14734,20 +11431,15 @@
 
     aput-object v4, v5, v3
 
-    .line 3684
     invoke-static {v9, v3, v8, v2, v5}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3686
     const/4 v2, 0x0
 
-    .line 3686
-    .restart local v2    # "i":I
     :goto_6
     sget v3, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     if-ge v2, v3, :cond_7
 
-    .line 3687
     invoke-virtual {v0, v2, v10}, Landroid/os/BatteryStats;->getPhoneSignalStrengthCount(II)I
 
     move-result v3
@@ -14758,13 +11450,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3686
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 3689
-    .end local v2    # "i":I
     :cond_7
     const-string/jumbo v2, "sgc"
 
@@ -14772,22 +11461,17 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3692
     const/16 v2, 0x15
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    .line 3693
     const/4 v2, 0x0
 
-    .line 3693
-    .restart local v2    # "i":I
     :goto_7
     const/16 v3, 0x15
 
     if-ge v2, v3, :cond_8
 
-    .line 3694
     invoke-virtual {v0, v2, v12, v13, v10}, Landroid/os/BatteryStats;->getPhoneDataConnectionTime(IJI)J
 
     move-result-wide v3
@@ -14802,13 +11486,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3693
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_7
 
-    .line 3696
-    .end local v2    # "i":I
     :cond_8
     const-string v2, "dct"
 
@@ -14816,17 +11497,13 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3697
     const/4 v2, 0x0
 
-    .line 3697
-    .restart local v2    # "i":I
     :goto_8
     const/16 v3, 0x15
 
     if-ge v2, v3, :cond_9
 
-    .line 3698
     invoke-virtual {v0, v2, v10}, Landroid/os/BatteryStats;->getPhoneDataConnectionCount(II)I
 
     move-result v3
@@ -14837,13 +11514,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3697
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_8
 
-    .line 3700
-    .end local v2    # "i":I
     :cond_9
     const-string v2, "dcc"
 
@@ -14851,20 +11525,15 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3703
     const/16 v2, 0x8
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    .line 3704
     const/4 v3, 0x0
 
-    .line 3704
-    .restart local v3    # "i":I
     :goto_9
     if-ge v3, v2, :cond_a
 
-    .line 3705
     invoke-virtual {v0, v3, v12, v13, v10}, Landroid/os/BatteryStats;->getWifiStateTime(IJI)J
 
     move-result-wide v4
@@ -14879,15 +11548,12 @@
 
     aput-object v2, v1, v3
 
-    .line 3704
     add-int/lit8 v3, v3, 0x1
 
     const/16 v2, 0x8
 
     goto :goto_9
 
-    .line 3707
-    .end local v3    # "i":I
     :cond_a
     const-string/jumbo v2, "wst"
 
@@ -14895,17 +11561,13 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3708
     const/4 v2, 0x0
 
-    .line 3708
-    .restart local v2    # "i":I
     :goto_a
     const/16 v3, 0x8
 
     if-ge v2, v3, :cond_b
 
-    .line 3709
     invoke-virtual {v0, v2, v10}, Landroid/os/BatteryStats;->getWifiStateCount(II)I
 
     move-result v3
@@ -14916,13 +11578,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3708
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_a
 
-    .line 3711
-    .end local v2    # "i":I
     :cond_b
     const-string/jumbo v2, "wsc"
 
@@ -14930,22 +11589,17 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3714
     const/16 v2, 0xd
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    .line 3715
     const/4 v2, 0x0
 
-    .line 3715
-    .restart local v2    # "i":I
     :goto_b
     const/16 v3, 0xd
 
     if-ge v2, v3, :cond_c
 
-    .line 3716
     invoke-virtual {v0, v2, v12, v13, v10}, Landroid/os/BatteryStats;->getWifiSupplStateTime(IJI)J
 
     move-result-wide v3
@@ -14960,13 +11614,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3715
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_b
 
-    .line 3718
-    .end local v2    # "i":I
     :cond_c
     const-string/jumbo v2, "wsst"
 
@@ -14974,17 +11625,13 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3719
     const/4 v2, 0x0
 
-    .line 3719
-    .restart local v2    # "i":I
     :goto_c
     const/16 v3, 0xd
 
     if-ge v2, v3, :cond_d
 
-    .line 3720
     invoke-virtual {v0, v2, v10}, Landroid/os/BatteryStats;->getWifiSupplStateCount(II)I
 
     move-result v3
@@ -14995,13 +11642,10 @@
 
     aput-object v3, v1, v2
 
-    .line 3719
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_c
 
-    .line 3722
-    .end local v2    # "i":I
     :cond_d
     const-string/jumbo v2, "wssc"
 
@@ -15009,22 +11653,15 @@
 
     invoke-static {v9, v3, v8, v2, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3725
     const/4 v2, 0x5
 
     new-array v7, v2, [Ljava/lang/Object;
 
-    .line 3726
-    .end local v1    # "args":[Ljava/lang/Object;
-    .local v7, "args":[Ljava/lang/Object;
     const/4 v1, 0x0
 
-    .line 3726
-    .local v1, "i":I
     :goto_d
     if-ge v1, v2, :cond_e
 
-    .line 3727
     invoke-virtual {v0, v1, v12, v13, v10}, Landroid/os/BatteryStats;->getWifiSignalStrengthTime(IJI)J
 
     move-result-wide v2
@@ -15039,15 +11676,12 @@
 
     aput-object v2, v7, v1
 
-    .line 3726
     add-int/lit8 v1, v1, 0x1
 
     const/4 v2, 0x5
 
     goto :goto_d
 
-    .line 3729
-    .end local v1    # "i":I
     :cond_e
     const-string/jumbo v1, "wsgt"
 
@@ -15055,17 +11689,13 @@
 
     invoke-static {v9, v2, v8, v1, v7}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3730
     const/4 v1, 0x0
 
-    .line 3730
-    .restart local v1    # "i":I
     :goto_e
     const/4 v2, 0x5
 
     if-ge v1, v2, :cond_f
 
-    .line 3731
     invoke-virtual {v0, v1, v10}, Landroid/os/BatteryStats;->getWifiSignalStrengthCount(II)I
 
     move-result v2
@@ -15076,13 +11706,10 @@
 
     aput-object v2, v7, v1
 
-    .line 3730
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_e
 
-    .line 3733
-    .end local v1    # "i":I
     :cond_f
     const-string/jumbo v1, "wsgc"
 
@@ -15090,22 +11717,16 @@
 
     invoke-static {v9, v2, v8, v1, v7}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3736
     nop
 
-    .line 3737
     invoke-virtual {v0, v12, v13, v10}, Landroid/os/BatteryStats;->getWifiMulticastWakelockTime(JI)J
 
     move-result-wide v88
 
-    .line 3738
-    .local v88, "multicastWakeLockTimeTotalMicros":J
     invoke-virtual {v0, v10}, Landroid/os/BatteryStats;->getWifiMulticastWakelockCount(I)I
 
     move-result v6
 
-    .line 3739
-    .local v6, "multicastWakeLockCountTotal":I
     const-string/jumbo v1, "wmct"
 
     const/4 v2, 0x2
@@ -15118,7 +11739,6 @@
 
     div-long v2, v88, v4
 
-    .line 3740
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -15127,7 +11747,6 @@
 
     aput-object v2, v147, v3
 
-    .line 3741
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -15136,17 +11755,14 @@
 
     aput-object v2, v147, v4
 
-    .line 3739
     move-object/from16 v2, v147
 
     invoke-static {v9, v3, v8, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3743
     const/4 v1, 0x2
 
     if-ne v10, v1, :cond_10
 
-    .line 3744
     const-string/jumbo v2, "lv"
 
     new-array v4, v1, [Ljava/lang/Object;
@@ -15161,7 +11777,6 @@
 
     aput-object v1, v4, v3
 
-    .line 3745
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeCurrentLevel()I
 
     move-result v1
@@ -15174,23 +11789,19 @@
 
     aput-object v1, v4, v5
 
-    .line 3744
     invoke-static {v9, v3, v8, v2, v4}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3748
     :cond_10
     const/4 v1, 0x2
 
     if-ne v10, v1, :cond_11
 
-    .line 3749
     const-string v1, "dc"
 
     const/16 v2, 0xa
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    .line 3750
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeStartLevel()I
 
     move-result v2
@@ -15209,7 +11820,6 @@
 
     aput-object v2, v3, v4
 
-    .line 3751
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeStartLevel()I
 
     move-result v2
@@ -15228,7 +11838,6 @@
 
     aput-object v2, v3, v4
 
-    .line 3752
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOn()I
 
     move-result v2
@@ -15261,11 +11870,6 @@
 
     div-long v6, v47, v4
 
-    .line 3753
-    .end local v6    # "multicastWakeLockCountTotal":I
-    .end local v7    # "args":[Ljava/lang/Object;
-    .local v148, "args":[Ljava/lang/Object;
-    .local v149, "multicastWakeLockCountTotal":I
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -15284,7 +11888,6 @@
 
     aput-object v2, v3, v6
 
-    .line 3754
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenDoze()I
 
     move-result v2
@@ -15309,7 +11912,6 @@
 
     div-long v6, v53, v4
 
-    .line 3755
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -15328,12 +11930,10 @@
 
     aput-object v2, v3, v4
 
-    .line 3749
     const/4 v2, 0x0
 
     invoke-static {v9, v2, v8, v1, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3766
     const/16 v6, 0x8
 
     const/16 v7, 0x9
@@ -15342,11 +11942,6 @@
 
     goto/16 :goto_f
 
-    .line 3757
-    .end local v148    # "args":[Ljava/lang/Object;
-    .end local v149    # "multicastWakeLockCountTotal":I
-    .restart local v6    # "multicastWakeLockCountTotal":I
-    .restart local v7    # "args":[Ljava/lang/Object;
     :cond_11
     move/from16 v149, v6
 
@@ -15354,18 +11949,12 @@
 
     const/4 v2, 0x0
 
-    .line 3757
-    .end local v6    # "multicastWakeLockCountTotal":I
-    .end local v7    # "args":[Ljava/lang/Object;
-    .restart local v148    # "args":[Ljava/lang/Object;
-    .restart local v149    # "multicastWakeLockCountTotal":I
     const-string v1, "dc"
 
     const/16 v7, 0xa
 
     new-array v3, v7, [Ljava/lang/Object;
 
-    .line 3758
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getLowDischargeAmountSinceCharge()I
 
     move-result v4
@@ -15388,7 +11977,6 @@
 
     aput-object v2, v3, v4
 
-    .line 3759
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOnSinceCharge()I
 
     move-result v2
@@ -15401,7 +11989,6 @@
 
     aput-object v2, v3, v4
 
-    .line 3760
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOffSinceCharge()I
 
     move-result v2
@@ -15420,9 +12007,6 @@
 
     div-long v7, v47, v4
 
-    .line 3761
-    .end local v8    # "category":Ljava/lang/String;
-    .local v150, "category":Ljava/lang/String;
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -15441,7 +12025,6 @@
 
     aput-object v2, v3, v6
 
-    .line 3762
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenDozeSinceCharge()I
 
     move-result v2
@@ -15466,7 +12049,6 @@
 
     div-long v6, v53, v4
 
-    .line 3763
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -15485,16 +12067,12 @@
 
     aput-object v2, v3, v7
 
-    .line 3757
     move-object/from16 v8, v150
 
     const/4 v2, 0x0
 
     invoke-static {v9, v2, v8, v1, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3766
-    .end local v150    # "category":Ljava/lang/String;
-    .restart local v8    # "category":Ljava/lang/String;
     :goto_f
     const-wide/16 v96, 0x1f4
 
@@ -15504,22 +12082,16 @@
 
     if-gez v5, :cond_14
 
-    .line 3767
-    .end local v118    # "wifiRxTotalPackets":J
-    .local v98, "wifiRxTotalPackets":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getKernelWakelockStats()Ljava/util/Map;
 
     move-result-object v3
 
-    .line 3768
-    .local v3, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v3}, Ljava/util/Map;->size()I
 
     move-result v1
 
     if-lez v1, :cond_12
 
-    .line 3769
     invoke-interface {v3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -15543,17 +12115,12 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 3770
-    .local v2, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v1, v93
 
     const/4 v6, 0x0
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3771
-    .end local v93    # "sb":Ljava/lang/StringBuilder;
-    .local v1, "sb":Ljava/lang/StringBuilder;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -15566,25 +12133,16 @@
 
     move-object/from16 v156, v1
 
-    .line 3771
-    .end local v1    # "sb":Ljava/lang/StringBuilder;
-    .local v156, "sb":Ljava/lang/StringBuilder;
     move-object/from16 v157, v2
 
     move-object v2, v6
 
-    .line 3771
-    .end local v2    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v157, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v69, v3
 
     move-object/from16 v72, v4
 
     move-wide v3, v12
 
-    .line 3771
-    .end local v3    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v69, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move v6, v5
 
     move-object/from16 v5, v57
@@ -15593,9 +12151,6 @@
 
     move v6, v10
 
-    .line 3771
-    .end local v149    # "multicastWakeLockCountTotal":I
-    .local v57, "multicastWakeLockCountTotal":I
     move/from16 v163, v11
 
     move-wide/from16 v161, v14
@@ -15608,17 +12163,8 @@
 
     move-object/from16 v7, v60
 
-    .line 3771
-    .end local v11    # "connChanges":I
-    .end local v82    # "rawRealtimeMs":J
-    .end local v148    # "args":[Ljava/lang/Object;
-    .local v14, "rawRealtimeMs":J
-    .local v44, "args":[Ljava/lang/Object;
-    .local v161, "batteryUptime":J
-    .local v163, "connChanges":I
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->printWakeLockCheckin(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    .line 3772
     const-string v1, "kwl"
 
     const/4 v2, 0x2
@@ -15633,16 +12179,12 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3773
     move-object/from16 v4, v157
 
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 3773
-    .end local v157    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v4, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     check-cast v5, Ljava/lang/String;
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -15665,20 +12207,14 @@
 
     move-result-object v2
 
-    .end local v156    # "sb":Ljava/lang/StringBuilder;
-    .local v7, "sb":Ljava/lang/StringBuilder;
     const/4 v6, 0x1
 
     aput-object v2, v3, v6
 
-    .line 3772
     invoke-static {v9, v5, v8, v1, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3774
-    .end local v4    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     nop
 
-    .line 3769
     move-object/from16 v93, v7
 
     move-object/from16 v3, v69
@@ -15699,20 +12235,6 @@
 
     goto/16 :goto_10
 
-    .line 3776
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .end local v44    # "args":[Ljava/lang/Object;
-    .end local v57    # "multicastWakeLockCountTotal":I
-    .end local v69    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v161    # "batteryUptime":J
-    .end local v163    # "connChanges":I
-    .restart local v3    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v11    # "connChanges":I
-    .local v14, "batteryUptime":J
-    .restart local v82    # "rawRealtimeMs":J
-    .restart local v93    # "sb":Ljava/lang/StringBuilder;
-    .restart local v148    # "args":[Ljava/lang/Object;
-    .restart local v149    # "multicastWakeLockCountTotal":I
     :cond_12
     move-object/from16 v69, v3
 
@@ -15730,32 +12252,16 @@
 
     move/from16 v57, v149
 
-    .end local v3    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v11    # "connChanges":I
-    .end local v82    # "rawRealtimeMs":J
-    .end local v93    # "sb":Ljava/lang/StringBuilder;
-    .end local v148    # "args":[Ljava/lang/Object;
-    .end local v149    # "multicastWakeLockCountTotal":I
-    .restart local v7    # "sb":Ljava/lang/StringBuilder;
-    .local v14, "rawRealtimeMs":J
-    .restart local v44    # "args":[Ljava/lang/Object;
-    .restart local v57    # "multicastWakeLockCountTotal":I
-    .restart local v69    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v161    # "batteryUptime":J
-    .restart local v163    # "connChanges":I
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWakeupReasonStats()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 3777
-    .local v1, "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v1}, Ljava/util/Map;->size()I
 
     move-result v2
 
     if-lez v2, :cond_13
 
-    .line 3778
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -15777,8 +12283,6 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 3781
-    .local v3, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -15789,8 +12293,6 @@
 
     move-result-wide v4
 
-    .line 3782
-    .local v4, "totalTimeMicros":J
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -15801,15 +12303,10 @@
 
     move-result v6
 
-    .line 3783
-    .local v6, "count":I
     move-object/from16 v164, v1
 
     const-string/jumbo v1, "wr"
 
-    .line 3783
-    .end local v1    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v164, "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v165, v2
 
     new-array v2, v11, [Ljava/lang/Object;
@@ -15822,12 +12319,8 @@
 
     const-string v14, "\""
 
-    .line 3783
-    .end local v14    # "rawRealtimeMs":J
-    .local v166, "rawRealtimeMs":J
     invoke-virtual {v11, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3784
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v14
@@ -15870,18 +12363,12 @@
 
     aput-object v11, v2, v14
 
-    .line 3783
     const/4 v11, 0x0
 
     invoke-static {v9, v11, v8, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3785
-    .end local v3    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v4    # "totalTimeMicros":J
-    .end local v6    # "count":I
     nop
 
-    .line 3778
     move-object/from16 v1, v164
 
     move-object/from16 v2, v165
@@ -15892,32 +12379,11 @@
 
     goto :goto_11
 
-    .line 3789
-    .end local v69    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v164    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v166    # "rawRealtimeMs":J
-    .restart local v14    # "rawRealtimeMs":J
     :cond_13
     move-wide/from16 v166, v14
 
-    .line 3789
-    .end local v14    # "rawRealtimeMs":J
-    .restart local v166    # "rawRealtimeMs":J
     goto :goto_12
 
-    .line 3789
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .end local v44    # "args":[Ljava/lang/Object;
-    .end local v57    # "multicastWakeLockCountTotal":I
-    .end local v161    # "batteryUptime":J
-    .end local v163    # "connChanges":I
-    .end local v166    # "rawRealtimeMs":J
-    .restart local v11    # "connChanges":I
-    .local v14, "batteryUptime":J
-    .restart local v82    # "rawRealtimeMs":J
-    .restart local v93    # "sb":Ljava/lang/StringBuilder;
-    .restart local v148    # "args":[Ljava/lang/Object;
-    .restart local v149    # "multicastWakeLockCountTotal":I
     :cond_14
     move/from16 v163, v11
 
@@ -15931,32 +12397,15 @@
 
     move/from16 v57, v149
 
-    .line 3789
-    .end local v11    # "connChanges":I
-    .end local v14    # "batteryUptime":J
-    .end local v82    # "rawRealtimeMs":J
-    .end local v93    # "sb":Ljava/lang/StringBuilder;
-    .end local v148    # "args":[Ljava/lang/Object;
-    .end local v149    # "multicastWakeLockCountTotal":I
-    .restart local v7    # "sb":Ljava/lang/StringBuilder;
-    .restart local v44    # "args":[Ljava/lang/Object;
-    .restart local v57    # "multicastWakeLockCountTotal":I
-    .restart local v161    # "batteryUptime":J
-    .restart local v163    # "connChanges":I
-    .restart local v166    # "rawRealtimeMs":J
     :goto_12
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getRpmStats()Ljava/util/Map;
 
     move-result-object v11
 
-    .line 3790
-    .local v11, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getScreenOffRpmStats()Ljava/util/Map;
 
     move-result-object v14
 
-    .line 3791
-    .local v14, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v11}, Ljava/util/Map;->size()I
 
     move-result v1
@@ -15965,7 +12414,6 @@
 
     if-lez v1, :cond_17
 
-    .line 3792
     invoke-interface {v11}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -15987,21 +12435,16 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 3793
-    .restart local v2    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const/4 v3, 0x0
 
     invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3794
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/BatteryStats$Timer;
 
-    .line 3795
-    .local v3, "totalTimer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v3, v12, v13, v10}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v4
@@ -16012,14 +12455,10 @@
 
     div-long v4, v4, v58
 
-    .line 3796
-    .local v4, "timeMs":J
     invoke-virtual {v3, v10}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v6
 
-    .line 3797
-    .restart local v6    # "count":I
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v15
@@ -16030,11 +12469,8 @@
 
     check-cast v15, Landroid/os/BatteryStats$Timer;
 
-    .line 3798
-    .local v15, "screenOffTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v15, :cond_15
 
-    .line 3799
     invoke-virtual {v15, v12, v13, v10}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v92
@@ -16050,12 +12486,9 @@
     :cond_15
     move-wide/from16 v92, v82
 
-    .line 3800
-    .local v92, "screenOffTimeMs":J
     :goto_14
     if-eqz v15, :cond_16
 
-    .line 3801
     invoke-virtual {v15, v10}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v60
@@ -16065,8 +12498,6 @@
     :cond_16
     const/16 v60, 0x0
 
-    .line 3807
-    .local v60, "screenOffCount":I
     :goto_15
     move-object/from16 v168, v1
 
@@ -16080,11 +12511,6 @@
 
     new-array v11, v3, [Ljava/lang/Object;
 
-    .line 3807
-    .end local v3    # "totalTimer":Landroid/os/BatteryStats$Timer;
-    .end local v11    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v169, "totalTimer":Landroid/os/BatteryStats$Timer;
-    .local v170, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -16093,12 +12519,8 @@
 
     const-string v14, "\""
 
-    .line 3807
-    .end local v14    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v171, "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3808
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v14
@@ -16135,20 +12557,10 @@
 
     aput-object v3, v11, v69
 
-    .line 3807
     invoke-static {v9, v14, v8, v1, v11}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3810
-    .end local v2    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v4    # "timeMs":J
-    .end local v6    # "count":I
-    .end local v15    # "screenOffTimer":Landroid/os/BatteryStats$Timer;
-    .end local v60    # "screenOffCount":I
-    .end local v92    # "screenOffTimeMs":J
-    .end local v169    # "totalTimer":Landroid/os/BatteryStats$Timer;
     nop
 
-    .line 3792
     move-object/from16 v1, v168
 
     move-object/from16 v11, v170
@@ -16157,11 +12569,6 @@
 
     goto/16 :goto_13
 
-    .line 3813
-    .end local v170    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v171    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v11    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v14    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_17
     move-object/from16 v170, v11
 
@@ -16169,11 +12576,6 @@
 
     const/4 v14, 0x0
 
-    .line 3813
-    .end local v11    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v14    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v170    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v171    # "screenOffRpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     new-instance v1, Lcom/android/internal/os/BatteryStatsHelper;
 
     move-object/from16 v11, p1
@@ -16184,22 +12586,16 @@
 
     move-object v14, v1
 
-    .line 3814
-    .local v14, "helper":Lcom/android/internal/os/BatteryStatsHelper;
     invoke-virtual {v14, v0}, Lcom/android/internal/os/BatteryStatsHelper;->create(Landroid/os/BatteryStats;)V
 
-    .line 3815
     const/4 v6, -0x1
 
     invoke-virtual {v14, v10, v6}, Lcom/android/internal/os/BatteryStatsHelper;->refreshStats(II)V
 
-    .line 3816
     invoke-virtual {v14}, Lcom/android/internal/os/BatteryStatsHelper;->getUsageList()Ljava/util/List;
 
     move-result-object v5
 
-    .line 3817
-    .local v5, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     if-eqz v5, :cond_19
 
     invoke-interface {v5}, Ljava/util/List;->size()I
@@ -16208,14 +12604,12 @@
 
     if-lez v1, :cond_19
 
-    .line 3818
     const-string/jumbo v1, "pws"
 
     const/4 v4, 0x4
 
     new-array v2, v4, [Ljava/lang/Object;
 
-    .line 3819
     invoke-virtual {v14}, Lcom/android/internal/os/BatteryStatsHelper;->getPowerProfile()Lcom/android/internal/os/PowerProfile;
 
     move-result-object v3
@@ -16226,9 +12620,6 @@
 
     move-result-wide v6
 
-    .line 3819
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .local v172, "sb":Ljava/lang/StringBuilder;
     invoke-static {v6, v7}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v3
@@ -16237,7 +12628,6 @@
 
     aput-object v3, v2, v6
 
-    .line 3820
     invoke-virtual {v14}, Lcom/android/internal/os/BatteryStatsHelper;->getComputedPower()D
 
     move-result-wide v6
@@ -16250,7 +12640,6 @@
 
     aput-object v3, v2, v6
 
-    .line 3821
     invoke-virtual {v14}, Lcom/android/internal/os/BatteryStatsHelper;->getMinDrainedPower()D
 
     move-result-wide v6
@@ -16263,7 +12652,6 @@
 
     aput-object v3, v2, v6
 
-    .line 3822
     invoke-virtual {v14}, Lcom/android/internal/os/BatteryStatsHelper;->getMaxDrainedPower()D
 
     move-result-wide v6
@@ -16276,23 +12664,16 @@
 
     aput-object v3, v2, v6
 
-    .line 3818
     const/4 v3, 0x0
 
     invoke-static {v9, v3, v8, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3823
     const/4 v1, 0x0
 
-    .line 3824
-    .local v1, "uid":I
     move v2, v1
 
     const/4 v1, 0x0
 
-    .line 3824
-    .local v1, "i":I
-    .local v2, "uid":I
     :goto_16
     invoke-interface {v5}, Ljava/util/List;->size()I
 
@@ -16300,15 +12681,12 @@
 
     if-ge v1, v3, :cond_18
 
-    .line 3825
     invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/internal/os/BatterySipper;
 
-    .line 3827
-    .local v3, "bs":Lcom/android/internal/os/BatterySipper;
     sget-object v6, Landroid/os/BatteryStats$2;->$SwitchMap$com$android$internal$os$BatterySipper$DrainType:[I
 
     iget-object v7, v3, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
@@ -16321,48 +12699,30 @@
 
     packed-switch v6, :pswitch_data_0
 
-    .line 3873
     const-string v6, "???"
 
     goto :goto_17
 
-    .line 3870
     :pswitch_0
     const-string/jumbo v6, "memory"
 
-    .line 3871
-    .local v6, "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3867
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_1
     const-string v6, "camera"
 
-    .line 3868
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3864
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_2
     const-string/jumbo v6, "over"
 
-    .line 3865
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3861
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_3
     const-string/jumbo v6, "unacc"
 
-    .line 3862
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3857
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_4
     iget v6, v3, Lcom/android/internal/os/BatterySipper;->userId:I
 
@@ -16372,15 +12732,10 @@
 
     move-result v2
 
-    .line 3858
     const-string/jumbo v6, "user"
 
-    .line 3859
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3853
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_5
     iget-object v6, v3, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
@@ -16388,90 +12743,53 @@
 
     move-result v2
 
-    .line 3854
     const-string/jumbo v6, "uid"
 
-    .line 3855
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3850
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_6
     const-string v6, "flashlight"
 
-    .line 3851
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3847
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_7
     const-string/jumbo v6, "scrn"
 
-    .line 3848
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3844
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_8
     const-string v6, "blue"
 
-    .line 3845
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3841
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_9
     const-string/jumbo v6, "wifi"
 
-    .line 3842
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3838
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_a
     const-string/jumbo v6, "phone"
 
-    .line 3839
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3835
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_b
     const-string v6, "cell"
 
-    .line 3836
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3832
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_c
     const-string v6, "idle"
 
-    .line 3833
-    .restart local v6    # "label":Ljava/lang/String;
     goto :goto_17
 
-    .line 3829
-    .end local v6    # "label":Ljava/lang/String;
     :pswitch_d
     const-string v6, "ambi"
 
-    .line 3830
-    .restart local v6    # "label":Ljava/lang/String;
     nop
 
-    .line 3873
     :goto_17
     nop
 
-    .line 3875
     const-string/jumbo v7, "pwi"
 
     move-object/from16 v173, v5
@@ -16480,9 +12798,6 @@
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    .line 3875
-    .end local v5    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v173, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     const/4 v4, 0x0
 
     aput-object v6, v5, v4
@@ -16491,9 +12806,6 @@
 
     iget-wide v14, v3, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .line 3876
-    .end local v14    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .local v174, "helper":Lcom/android/internal/os/BatteryStatsHelper;
     invoke-static {v14, v15}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v4
@@ -16502,7 +12814,6 @@
 
     aput-object v4, v5, v14
 
-    .line 3877
     iget-boolean v4, v3, Lcom/android/internal/os/BatterySipper;->shouldHide:Z
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -16515,7 +12826,6 @@
 
     iget-wide v14, v3, Lcom/android/internal/os/BatterySipper;->screenPowerMah:D
 
-    .line 3878
     invoke-static {v14, v15}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v4
@@ -16526,7 +12836,6 @@
 
     iget-wide v14, v3, Lcom/android/internal/os/BatterySipper;->proportionalSmearMah:D
 
-    .line 3879
     invoke-static {v14, v15}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v4
@@ -16535,12 +12844,8 @@
 
     aput-object v4, v5, v14
 
-    .line 3875
     invoke-static {v9, v2, v8, v7, v5}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3824
-    .end local v3    # "bs":Lcom/android/internal/os/BatterySipper;
-    .end local v6    # "label":Ljava/lang/String;
     add-int/lit8 v1, v1, 0x1
 
     move-object/from16 v5, v173
@@ -16553,32 +12858,13 @@
 
     goto/16 :goto_16
 
-    .line 3883
-    .end local v1    # "i":I
-    .end local v2    # "uid":I
-    .end local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v174    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v5    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v14    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :cond_18
     move-object/from16 v173, v5
 
     move-object/from16 v174, v14
 
-    .line 3883
-    .end local v5    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v14    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v174    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     goto :goto_18
 
-    .line 3883
-    .end local v172    # "sb":Ljava/lang/StringBuilder;
-    .end local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v174    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v5    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v7    # "sb":Ljava/lang/StringBuilder;
-    .restart local v14    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :cond_19
     move-object/from16 v173, v5
 
@@ -16586,42 +12872,26 @@
 
     move-object/from16 v174, v14
 
-    .line 3883
-    .end local v5    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .end local v14    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v172    # "sb":Ljava/lang/StringBuilder;
-    .restart local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v174    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :goto_18
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getCpuFreqs()[J
 
     move-result-object v14
 
-    .line 3884
-    .local v14, "cpuFreqs":[J
     if-eqz v14, :cond_1c
 
-    .line 3885
     move-object/from16 v7, v172
 
     const/4 v1, 0x0
 
     invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3886
-    .end local v172    # "sb":Ljava/lang/StringBuilder;
-    .restart local v7    # "sb":Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
-    .line 3886
-    .restart local v1    # "i":I
     :goto_19
     array-length v2, v14
 
     if-ge v1, v2, :cond_1b
 
-    .line 3887
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -16648,13 +12918,10 @@
 
     invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3886
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_19
 
-    .line 3889
-    .end local v1    # "i":I
     :cond_1b
     const-string v1, "gcf"
 
@@ -16674,53 +12941,33 @@
 
     goto :goto_1b
 
-    .line 3893
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .restart local v172    # "sb":Ljava/lang/StringBuilder;
     :cond_1c
     move-object/from16 v7, v172
 
-    .line 3893
-    .end local v172    # "sb":Ljava/lang/StringBuilder;
-    .restart local v7    # "sb":Ljava/lang/StringBuilder;
     :goto_1b
     const/4 v1, 0x0
 
-    .line 3893
-    .local v1, "iu":I
     :goto_1c
     move v15, v1
 
-    .line 3893
-    .end local v1    # "iu":I
-    .local v15, "iu":I
     move/from16 v6, v120
 
     if-ge v15, v6, :cond_64
 
-    .line 3894
-    .end local v120    # "NU":I
-    .local v6, "NU":I
     move-object/from16 v5, v94
 
     invoke-virtual {v5, v15}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v4
 
-    .line 3895
-    .end local v94    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v4, "uid":I
-    .local v5, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move/from16 v3, p4
 
     if-ltz v3, :cond_1d
 
     if-eq v4, v3, :cond_1d
 
-    .line 3896
     nop
 
-    .line 3893
     move-object/from16 v60, v5
 
     move/from16 v92, v6
@@ -16769,7 +13016,6 @@
 
     goto/16 :goto_57
 
-    .line 3898
     :cond_1d
     invoke-virtual {v5, v15}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -16779,8 +13025,6 @@
 
     check-cast v2, Landroid/os/BatteryStats$Uid;
 
-    .line 3901
-    .local v2, "u":Landroid/os/BatteryStats$Uid;
     move-object/from16 v175, v14
 
     move/from16 v176, v15
@@ -16791,11 +13035,6 @@
 
     move-result-wide v14
 
-    .line 3902
-    .end local v15    # "iu":I
-    .local v14, "mobileBytesRx":J
-    .local v175, "cpuFreqs":[J
-    .local v176, "iu":I
     move-wide/from16 v177, v12
 
     const/4 v1, 0x1
@@ -16804,10 +13043,6 @@
 
     move-result-wide v11
 
-    .line 3903
-    .end local v12    # "rawRealtime":J
-    .local v11, "mobileBytesTx":J
-    .local v177, "rawRealtime":J
     move/from16 v180, v6
 
     move-object/from16 v179, v7
@@ -16818,11 +13053,6 @@
 
     move-result-wide v6
 
-    .line 3904
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .local v6, "wifiBytesRx":J
-    .local v179, "sb":Ljava/lang/StringBuilder;
-    .local v180, "NU":I
     move/from16 v181, v4
 
     const/4 v13, 0x3
@@ -16831,10 +13061,6 @@
 
     move-result-wide v3
 
-    .line 3905
-    .end local v4    # "uid":I
-    .local v3, "wifiBytesTx":J
-    .local v181, "uid":I
     move-object/from16 v182, v8
 
     const/4 v13, 0x0
@@ -16843,39 +13069,26 @@
 
     move-result-wide v8
 
-    .line 3906
-    .local v8, "mobilePacketsRx":J
-    .local v182, "category":Ljava/lang/String;
     move-wide/from16 v183, v8
 
     invoke-virtual {v2, v1, v10}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v8
 
-    .line 3907
-    .local v8, "mobilePacketsTx":J
-    .local v183, "mobilePacketsRx":J
     invoke-virtual {v2, v10}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveTime(I)J
 
     move-result-wide v0
 
-    .line 3908
-    .local v0, "mobileActiveTime":J
     invoke-virtual {v2, v10}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveCount(I)I
 
     move-result v13
 
-    .line 3909
-    .local v13, "mobileActiveCount":I
     move-wide/from16 v185, v0
 
     invoke-virtual {v2, v10}, Landroid/os/BatteryStats$Uid;->getMobileRadioApWakeupCount(I)J
 
     move-result-wide v0
 
-    .line 3910
-    .local v0, "mobileWakeup":J
-    .local v185, "mobileActiveTime":J
     move-wide/from16 v188, v0
 
     move-object/from16 v187, v5
@@ -16886,11 +13099,6 @@
 
     move-result-wide v0
 
-    .line 3911
-    .end local v5    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v0, "wifiPacketsRx":J
-    .local v187, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v188, "mobileWakeup":J
     move-wide/from16 v190, v0
 
     const/4 v5, 0x3
@@ -16899,18 +13107,12 @@
 
     move-result-wide v0
 
-    .line 3912
-    .local v0, "wifiPacketsTx":J
-    .local v190, "wifiPacketsRx":J
     move-wide/from16 v192, v0
 
     invoke-virtual {v2, v10}, Landroid/os/BatteryStats$Uid;->getWifiRadioApWakeupCount(I)J
 
     move-result-wide v0
 
-    .line 3913
-    .local v0, "wifiWakeup":J
-    .local v192, "wifiPacketsTx":J
     move-wide/from16 v194, v0
 
     const/4 v5, 0x4
@@ -16919,9 +13121,6 @@
 
     move-result-wide v0
 
-    .line 3914
-    .local v0, "btBytesRx":J
-    .local v194, "wifiWakeup":J
     move-wide/from16 v196, v0
 
     const/4 v5, 0x5
@@ -16930,9 +13129,6 @@
 
     move-result-wide v0
 
-    .line 3916
-    .local v0, "btBytesTx":J
-    .local v196, "btBytesRx":J
     move-wide/from16 v198, v0
 
     const/4 v5, 0x6
@@ -16941,9 +13137,6 @@
 
     move-result-wide v0
 
-    .line 3918
-    .local v0, "mobileBytesBgRx":J
-    .local v198, "btBytesTx":J
     move-wide/from16 v200, v0
 
     const/4 v5, 0x7
@@ -16952,9 +13145,6 @@
 
     move-result-wide v0
 
-    .line 3920
-    .local v0, "mobileBytesBgTx":J
-    .local v200, "mobileBytesBgRx":J
     move-wide/from16 v202, v0
 
     const/16 v5, 0x8
@@ -16963,9 +13153,6 @@
 
     move-result-wide v0
 
-    .line 3921
-    .local v0, "wifiBytesBgRx":J
-    .local v202, "mobileBytesBgTx":J
     move-wide/from16 v204, v0
 
     const/16 v5, 0x9
@@ -16974,9 +13161,6 @@
 
     move-result-wide v0
 
-    .line 3922
-    .local v0, "wifiBytesBgTx":J
-    .local v204, "wifiBytesBgRx":J
     move-wide/from16 v206, v0
 
     const/4 v5, 0x6
@@ -16985,9 +13169,6 @@
 
     move-result-wide v0
 
-    .line 3924
-    .local v0, "mobilePacketsBgRx":J
-    .local v206, "wifiBytesBgTx":J
     move-wide/from16 v208, v0
 
     const/4 v5, 0x7
@@ -16996,9 +13177,6 @@
 
     move-result-wide v0
 
-    .line 3926
-    .local v0, "mobilePacketsBgTx":J
-    .local v208, "mobilePacketsBgRx":J
     move-wide/from16 v210, v0
 
     const/16 v5, 0x8
@@ -17007,9 +13185,6 @@
 
     move-result-wide v0
 
-    .line 3928
-    .local v0, "wifiPacketsBgRx":J
-    .local v210, "mobilePacketsBgTx":J
     move-wide/from16 v212, v0
 
     const/16 v5, 0x9
@@ -17018,9 +13193,6 @@
 
     move-result-wide v0
 
-    .line 3931
-    .local v0, "wifiPacketsBgTx":J
-    .local v212, "wifiPacketsBgRx":J
     cmp-long v5, v14, v82
 
     if-gtz v5, :cond_1f
@@ -17109,7 +13281,6 @@
 
     goto :goto_1d
 
-    .line 3951
     :cond_1e
     move-wide/from16 v246, v0
 
@@ -17165,7 +13336,6 @@
 
     goto/16 :goto_1e
 
-    .line 3939
     :cond_1f
     :goto_1d
     const-string/jumbo v5, "nt"
@@ -17190,7 +13360,6 @@
 
     aput-object v60, v10, v69
 
-    .line 3940
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v60
@@ -17207,7 +13376,6 @@
 
     aput-object v60, v10, v69
 
-    .line 3941
     move-wide/from16 v214, v3
 
     move-wide/from16 v3, v183
@@ -17216,10 +13384,6 @@
 
     move-result-object v60
 
-    .line 3941
-    .end local v183    # "mobilePacketsRx":J
-    .local v3, "mobilePacketsRx":J
-    .local v214, "wifiBytesTx":J
     const/16 v69, 0x4
 
     aput-object v60, v10, v69
@@ -17232,7 +13396,6 @@
 
     aput-object v60, v10, v72
 
-    .line 3942
     move-wide/from16 v216, v3
 
     move-wide/from16 v3, v190
@@ -17241,10 +13404,6 @@
 
     move-result-object v60
 
-    .line 3942
-    .end local v190    # "wifiPacketsRx":J
-    .local v3, "wifiPacketsRx":J
-    .local v216, "mobilePacketsRx":J
     const/16 v72, 0x6
 
     aput-object v60, v10, v72
@@ -17257,15 +13416,10 @@
 
     move-result-object v60
 
-    .line 3942
-    .end local v192    # "wifiPacketsTx":J
-    .local v3, "wifiPacketsTx":J
-    .local v218, "wifiPacketsRx":J
     const/16 v75, 0x7
 
     aput-object v60, v10, v75
 
-    .line 3943
     move-wide/from16 v220, v3
 
     move-wide/from16 v3, v185
@@ -17274,10 +13428,6 @@
 
     move-result-object v60
 
-    .line 3943
-    .end local v185    # "mobileActiveTime":J
-    .local v3, "mobileActiveTime":J
-    .local v220, "wifiPacketsTx":J
     const/16 v92, 0x8
 
     aput-object v60, v10, v92
@@ -17290,7 +13440,6 @@
 
     aput-object v60, v10, v93
 
-    .line 3944
     move-wide/from16 v222, v3
 
     move-wide/from16 v3, v196
@@ -17299,19 +13448,12 @@
 
     move-result-object v60
 
-    .line 3944
-    .end local v196    # "btBytesRx":J
-    .local v3, "btBytesRx":J
-    .local v222, "mobileActiveTime":J
     move-wide/from16 v224, v8
 
     const/16 v9, 0xa
 
     aput-object v60, v10, v9
 
-    .line 3944
-    .end local v8    # "mobilePacketsTx":J
-    .local v224, "mobilePacketsTx":J
     const/16 v8, 0xb
 
     move-wide/from16 v226, v3
@@ -17322,10 +13464,6 @@
 
     move-result-object v60
 
-    .line 3944
-    .end local v198    # "btBytesTx":J
-    .local v3, "btBytesTx":J
-    .local v226, "btBytesRx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0xc
@@ -17338,10 +13476,6 @@
 
     move-result-object v60
 
-    .line 3944
-    .end local v188    # "mobileWakeup":J
-    .local v3, "mobileWakeup":J
-    .local v228, "btBytesTx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0xd
@@ -17354,15 +13488,10 @@
 
     move-result-object v60
 
-    .line 3944
-    .end local v194    # "wifiWakeup":J
-    .local v3, "wifiWakeup":J
-    .local v230, "mobileWakeup":J
     aput-object v60, v10, v8
 
     const/16 v8, 0xe
 
-    .line 3945
     move-wide/from16 v232, v3
 
     move-wide/from16 v3, v200
@@ -17371,10 +13500,6 @@
 
     move-result-object v60
 
-    .line 3945
-    .end local v200    # "mobileBytesBgRx":J
-    .local v3, "mobileBytesBgRx":J
-    .local v232, "wifiWakeup":J
     aput-object v60, v10, v8
 
     const/16 v8, 0xf
@@ -17387,10 +13512,6 @@
 
     move-result-object v60
 
-    .line 3945
-    .end local v202    # "mobileBytesBgTx":J
-    .local v3, "mobileBytesBgTx":J
-    .local v234, "mobileBytesBgRx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x10
@@ -17403,10 +13524,6 @@
 
     move-result-object v60
 
-    .line 3945
-    .end local v204    # "wifiBytesBgRx":J
-    .local v3, "wifiBytesBgRx":J
-    .local v236, "mobileBytesBgTx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x11
@@ -17419,15 +13536,10 @@
 
     move-result-object v60
 
-    .line 3945
-    .end local v206    # "wifiBytesBgTx":J
-    .local v3, "wifiBytesBgTx":J
-    .local v238, "wifiBytesBgRx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x12
 
-    .line 3946
     move-wide/from16 v240, v3
 
     move-wide/from16 v3, v208
@@ -17436,10 +13548,6 @@
 
     move-result-object v60
 
-    .line 3946
-    .end local v208    # "mobilePacketsBgRx":J
-    .local v3, "mobilePacketsBgRx":J
-    .local v240, "wifiBytesBgTx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x13
@@ -17452,10 +13560,6 @@
 
     move-result-object v60
 
-    .line 3946
-    .end local v210    # "mobilePacketsBgTx":J
-    .local v3, "mobilePacketsBgTx":J
-    .local v242, "mobilePacketsBgRx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x14
@@ -17468,10 +13572,6 @@
 
     move-result-object v60
 
-    .line 3946
-    .end local v212    # "wifiPacketsBgRx":J
-    .local v3, "wifiPacketsBgRx":J
-    .local v244, "mobilePacketsBgTx":J
     aput-object v60, v10, v8
 
     const/16 v8, 0x15
@@ -17482,7 +13582,6 @@
 
     aput-object v60, v10, v8
 
-    .line 3939
     move-wide/from16 v246, v0
 
     move/from16 v0, v181
@@ -17495,23 +13594,13 @@
 
     invoke-static {v8, v0, v9, v5, v10}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3951
-    .end local v181    # "uid":I
-    .end local v182    # "category":Ljava/lang/String;
-    .end local v216    # "mobilePacketsRx":J
-    .local v0, "uid":I
-    .local v9, "category":Ljava/lang/String;
-    .local v94, "mobilePacketsRx":J
-    .local v246, "wifiPacketsBgTx":J
     :goto_1e
     const-string/jumbo v5, "mcd"
 
-    .line 3952
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v10
 
-    .line 3951
     move-wide/from16 v135, v3
 
     move-wide/from16 v104, v218
@@ -17544,50 +13633,14 @@
 
     move-object v1, v8
 
-    .end local v3    # "wifiPacketsBgRx":J
-    .end local v218    # "wifiPacketsRx":J
-    .end local v220    # "wifiPacketsTx":J
-    .end local v222    # "mobileActiveTime":J
-    .end local v226    # "btBytesRx":J
-    .end local v228    # "btBytesTx":J
-    .end local v230    # "mobileWakeup":J
-    .end local v232    # "wifiWakeup":J
-    .end local v234    # "mobileBytesBgRx":J
-    .end local v236    # "mobileBytesBgTx":J
-    .end local v238    # "wifiBytesBgRx":J
-    .end local v240    # "wifiBytesBgTx":J
-    .end local v242    # "mobilePacketsBgRx":J
-    .end local v244    # "mobilePacketsBgTx":J
-    .end local v246    # "wifiPacketsBgTx":J
-    .local v100, "mobileActiveTime":J
-    .local v102, "mobileWakeup":J
-    .local v104, "wifiPacketsRx":J
-    .local v106, "wifiPacketsTx":J
-    .local v108, "wifiWakeup":J
-    .local v110, "btBytesRx":J
-    .local v112, "btBytesTx":J
-    .local v114, "mobileBytesBgRx":J
-    .local v116, "mobileBytesBgTx":J
-    .local v118, "wifiBytesBgRx":J
-    .local v123, "wifiBytesBgTx":J
-    .local v125, "mobilePacketsBgRx":J
-    .local v130, "mobilePacketsBgTx":J
-    .local v135, "wifiPacketsBgRx":J
-    .local v137, "wifiPacketsBgTx":J
     move-object v4, v2
 
     move v2, v0
 
-    .line 3951
-    .end local v2    # "u":Landroid/os/BatteryStats$Uid;
-    .local v4, "u":Landroid/os/BatteryStats$Uid;
     move-wide/from16 v139, v214
 
     move-object v3, v9
 
-    .line 3951
-    .end local v214    # "wifiBytesTx":J
-    .local v139, "wifiBytesTx":J
     move-wide/from16 v248, v11
 
     move/from16 v12, v69
@@ -17596,10 +13649,6 @@
 
     move-object v4, v5
 
-    .line 3951
-    .end local v4    # "u":Landroid/os/BatteryStats$Uid;
-    .local v11, "u":Landroid/os/BatteryStats$Uid;
-    .local v248, "mobileBytesTx":J
     move/from16 v72, v92
 
     move/from16 v75, v93
@@ -17610,11 +13659,6 @@
 
     move-object v5, v10
 
-    .line 3951
-    .end local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v187    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v60, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v69, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     move-wide/from16 v141, v6
 
     move/from16 v92, v180
@@ -17625,42 +13669,26 @@
 
     move v6, v10
 
-    .line 3951
-    .end local v6    # "wifiBytesRx":J
-    .end local v180    # "NU":I
-    .local v92, "NU":I
-    .local v141, "wifiBytesRx":J
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3955
     move-wide/from16 v6, v177
 
     invoke-virtual {v11, v6, v7, v10}, Landroid/os/BatteryStats$Uid;->getFullWifiLockTime(JI)J
 
     move-result-wide v4
 
-    .line 3956
-    .end local v177    # "rawRealtime":J
-    .local v4, "fullWifiLockOnTime":J
-    .local v6, "rawRealtime":J
     invoke-virtual {v11, v6, v7, v10}, Landroid/os/BatteryStats$Uid;->getWifiScanTime(JI)J
 
     move-result-wide v2
 
-    .line 3957
-    .local v2, "wifiScanTime":J
     invoke-virtual {v11, v10}, Landroid/os/BatteryStats$Uid;->getWifiScanCount(I)I
 
     move-result v1
 
-    .line 3958
-    .local v1, "wifiScanCount":I
     invoke-virtual {v11, v10}, Landroid/os/BatteryStats$Uid;->getWifiScanBackgroundCount(I)I
 
     move-result v12
 
-    .line 3960
-    .local v12, "wifiScanCountBg":I
     invoke-virtual {v11, v6, v7}, Landroid/os/BatteryStats$Uid;->getWifiScanActualTime(J)J
 
     move-result-wide v144
@@ -17675,11 +13703,6 @@
 
     div-long v13, v144, v58
 
-    .line 3961
-    .end local v14    # "mobileBytesRx":J
-    .local v13, "wifiScanActualTimeMs":J
-    .local v250, "mobileBytesRx":J
-    .local v252, "mobileActiveCount":I
     invoke-virtual {v11, v6, v7}, Landroid/os/BatteryStats$Uid;->getWifiScanBackgroundTime(J)J
 
     move-result-wide v144
@@ -17690,19 +13713,12 @@
 
     div-long v8, v144, v58
 
-    .line 3963
-    .end local v9    # "category":Ljava/lang/String;
-    .local v8, "wifiScanActualTimeMsBg":J
-    .local v253, "category":Ljava/lang/String;
     move-wide/from16 v254, v8
 
     invoke-virtual {v11, v6, v7, v10}, Landroid/os/BatteryStats$Uid;->getWifiRunningTime(JI)J
 
     move-result-wide v8
 
-    .line 3964
-    .local v8, "uidWifiRunningTime":J
-    .local v254, "wifiScanActualTimeMsBg":J
     cmp-long v15, v4, v82
 
     if-nez v15, :cond_21
@@ -17725,9 +13741,6 @@
 
     cmp-long v15, v6, v82
 
-    .end local v254    # "wifiScanActualTimeMsBg":J
-    .local v6, "wifiScanActualTimeMsBg":J
-    .local v256, "rawRealtime":J
     if-nez v15, :cond_22
 
     cmp-long v15, v8, v82
@@ -17736,7 +13749,6 @@
 
     goto :goto_1f
 
-    .line 3973
     :cond_20
     move-wide/16 v259, v4
 
@@ -17754,19 +13766,11 @@
 
     goto :goto_20
 
-    .line 3967
-    .end local v256    # "rawRealtime":J
-    .local v6, "rawRealtime":J
-    .restart local v254    # "wifiScanActualTimeMsBg":J
     :cond_21
     move-wide/16 v256, v6
 
     move-wide/from16 v6, v254
 
-    .line 3967
-    .end local v254    # "wifiScanActualTimeMsBg":J
-    .local v6, "wifiScanActualTimeMsBg":J
-    .restart local v256    # "rawRealtime":J
     :cond_22
     :goto_1f
     const-string/jumbo v15, "wfl"
@@ -17777,9 +13781,6 @@
 
     new-array v11, v10, [Ljava/lang/Object;
 
-    .line 3967
-    .end local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .local v258, "u":Landroid/os/BatteryStats$Uid;
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v10
@@ -17790,9 +13791,6 @@
 
     aput-object v10, v11, v4
 
-    .line 3967
-    .end local v4    # "fullWifiLockOnTime":J
-    .local v259, "fullWifiLockOnTime":J
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -17801,7 +13799,6 @@
 
     aput-object v5, v11, v10
 
-    .line 3968
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -17818,7 +13815,6 @@
 
     aput-object v5, v11, v10
 
-    .line 3969
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -17843,7 +13839,6 @@
 
     aput-object v5, v11, v10
 
-    .line 3970
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -17864,7 +13859,6 @@
 
     aput-object v4, v11, v75
 
-    .line 3967
     move-wide/from16 v144, v6
 
     move-object/from16 v6, v253
@@ -17873,44 +13867,27 @@
 
     invoke-static {v7, v0, v6, v15, v11}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 3973
-    .end local v253    # "category":Ljava/lang/String;
-    .local v6, "category":Ljava/lang/String;
-    .local v144, "wifiScanActualTimeMsBg":J
     :goto_20
     const-string/jumbo v4, "wfcd"
 
-    .line 3974
     move-object/from16 v11, v258
 
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v15
 
-    .line 3973
-    .end local v258    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v11    # "u":Landroid/os/BatteryStats$Uid;
     move/from16 v120, v1
 
     move-object v1, v7
 
-    .line 3973
-    .end local v1    # "wifiScanCount":I
-    .local v120, "wifiScanCount":I
     move-wide/from16 v146, v2
 
     move v2, v0
 
-    .line 3973
-    .end local v2    # "wifiScanTime":J
-    .local v146, "wifiScanTime":J
     move-object v3, v6
 
     move-wide/from16 v148, v259
 
-    .line 3973
-    .end local v259    # "fullWifiLockOnTime":J
-    .local v148, "fullWifiLockOnTime":J
     move-object v5, v15
 
     move-object/16 v263, v6
@@ -17921,57 +13898,38 @@
 
     move v6, v15
 
-    .line 3973
-    .end local v6    # "category":Ljava/lang/String;
-    .end local v256    # "rawRealtime":J
-    .local v261, "rawRealtime":J
-    .local v263, "category":Ljava/lang/String;
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 3976
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 3977
-    .local v6, "bleTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v6, :cond_2c
 
-    .line 3979
     move-wide/from16 v4, v261
 
     invoke-virtual {v6, v4, v5, v15}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v1
 
-    .line 3979
-    .end local v261    # "rawRealtime":J
-    .local v4, "rawRealtime":J
     add-long v1, v1, v96
 
     const-wide/16 v58, 0x3e8
 
     div-long v1, v1, v58
 
-    .line 3981
-    .local v1, "totalTime":J
     cmp-long v3, v1, v82
 
     if-eqz v3, :cond_2b
 
-    .line 3982
     invoke-virtual {v6, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v3
 
-    .line 3983
-    .local v3, "count":I
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
 
-    .line 3984
-    .local v10, "bleTimerBg":Landroid/os/BatteryStats$Timer;
     if-eqz v10, :cond_23
 
     invoke-virtual {v10, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -17986,8 +13944,6 @@
     :goto_21
     move/16 v264, v132
 
-    .line 3986
-    .local v264, "countBg":I
     move-wide/16 v268, v4
 
     move/16 v265, v12
@@ -18000,17 +13956,8 @@
 
     move-result-wide v4
 
-    .line 3987
-    .end local v13    # "wifiScanActualTimeMs":J
-    .end local v166    # "rawRealtimeMs":J
-    .local v4, "actualTime":J
-    .local v12, "rawRealtimeMs":J
-    .local v265, "wifiScanCountBg":I
-    .local v266, "wifiScanActualTimeMs":J
-    .local v268, "rawRealtime":J
     if-eqz v10, :cond_24
 
-    .line 3988
     invoke-virtual {v10, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v150
@@ -18023,15 +13970,12 @@
     :goto_22
     move-wide/16 v270, v150
 
-    .line 3990
-    .local v270, "actualTimeBg":J
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v14
 
     if-eqz v14, :cond_25
 
-    .line 3991
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v14
@@ -18045,8 +13989,6 @@
     :cond_25
     const/4 v14, 0x0
 
-    .line 3992
-    .local v14, "resultCount":I
     :goto_23
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
@@ -18054,35 +13996,23 @@
 
     if-eqz v132, :cond_26
 
-    .line 3993
     move-object/16 v272, v6
 
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v6
 
-    .line 3993
-    .end local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v272, "bleTimer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v6, v15}, Landroid/os/BatteryStats$Counter;->getCountLocked(I)I
 
     move-result v6
 
     goto :goto_24
 
-    .line 3993
-    .end local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
     :cond_26
     move-object/16 v272, v6
 
-    .line 3993
-    .end local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
     const/4 v6, 0x0
 
-    .line 3995
-    .local v6, "resultCountBg":I
     :goto_24
     move-wide/16 v273, v8
 
@@ -18090,12 +14020,8 @@
 
     move-result-object v8
 
-    .line 3996
-    .local v8, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .local v273, "uidWifiRunningTime":J
     if-eqz v8, :cond_27
 
-    .line 3997
     invoke-virtual {v8, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v150
@@ -18108,11 +14034,8 @@
     :goto_25
     move-wide/16 v275, v150
 
-    .line 3998
-    .local v275, "unoptimizedScanTotalTime":J
     if-eqz v8, :cond_28
 
-    .line 3999
     invoke-virtual {v8, v12, v13}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v150
@@ -18125,20 +14048,14 @@
     :goto_26
     move-wide/16 v277, v150
 
-    .line 4001
-    .local v277, "unoptimizedScanMaxTime":J
     nop
 
-    .line 4002
     invoke-virtual {v11}, Landroid/os/BatteryStats$Uid;->getBluetoothUnoptimizedScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v9
 
-    .line 4003
-    .local v9, "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
     if-eqz v9, :cond_29
 
-    .line 4004
     invoke-virtual {v9, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v150
@@ -18151,11 +14068,8 @@
     :goto_27
     move-wide/16 v279, v150
 
-    .line 4005
-    .local v279, "unoptimizedScanTotalTimeBg":J
     if-eqz v9, :cond_2a
 
-    .line 4006
     invoke-virtual {v9, v12, v13}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v150
@@ -18168,22 +14082,14 @@
     :goto_28
     move-wide/16 v281, v150
 
-    .line 4008
-    .local v281, "unoptimizedScanMaxTimeBg":J
     move-object/16 v283, v8
 
     const-string v8, "blem"
 
-    .line 4008
-    .end local v8    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .local v283, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     move-object/16 v284, v9
 
     const/16 v9, 0xb
 
-    .line 4008
-    .end local v9    # "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
-    .local v284, "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
     new-array v9, v9, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -18202,7 +14108,6 @@
 
     aput-object v132, v9, v122
 
-    .line 4009
     move-wide/16 v285, v1
 
     move/from16 v1, v264
@@ -18211,10 +14116,6 @@
 
     move-result-object v2
 
-    .line 4009
-    .end local v264    # "countBg":I
-    .local v1, "countBg":I
-    .local v285, "totalTime":J
     const/16 v121, 0x2
 
     aput-object v2, v9, v121
@@ -18235,9 +14136,6 @@
 
     move-result-object v132
 
-    .end local v270    # "actualTimeBg":J
-    .local v1, "actualTimeBg":J
-    .local v287, "countBg":I
     const/16 v150, 0x4
 
     aput-object v132, v9, v150
@@ -18258,7 +14156,6 @@
 
     aput-object v132, v9, v150
 
-    .line 4010
     move-wide/16 v288, v1
 
     move-wide/from16 v1, v275
@@ -18267,19 +14164,12 @@
 
     move-result-object v132
 
-    .line 4010
-    .end local v275    # "unoptimizedScanTotalTime":J
-    .local v1, "unoptimizedScanTotalTime":J
-    .local v288, "actualTimeBg":J
     move-object/16 v290, v10
 
     const/4 v10, 0x7
 
     aput-object v132, v9, v10
 
-    .line 4010
-    .end local v10    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .local v290, "bleTimerBg":Landroid/os/BatteryStats$Timer;
     move-object/16 v291, v11
 
     move-wide/from16 v10, v279
@@ -18288,14 +14178,8 @@
 
     move-result-object v132
 
-    .line 4010
-    .end local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v279    # "unoptimizedScanTotalTimeBg":J
-    .local v10, "unoptimizedScanTotalTimeBg":J
-    .local v291, "u":Landroid/os/BatteryStats$Uid;
     aput-object v132, v9, v72
 
-    .line 4011
     move-wide/16 v292, v1
 
     move-wide/from16 v1, v277
@@ -18304,10 +14188,6 @@
 
     move-result-object v132
 
-    .line 4011
-    .end local v277    # "unoptimizedScanMaxTime":J
-    .local v1, "unoptimizedScanMaxTime":J
-    .local v292, "unoptimizedScanTotalTime":J
     aput-object v132, v9, v75
 
     move-wide/16 v294, v1
@@ -18318,55 +14198,18 @@
 
     move-result-object v132
 
-    .line 4011
-    .end local v281    # "unoptimizedScanMaxTimeBg":J
-    .local v1, "unoptimizedScanMaxTimeBg":J
-    .local v294, "unoptimizedScanMaxTime":J
     const/16 v150, 0xa
 
     aput-object v132, v9, v150
 
-    .line 4008
     move-wide/16 v296, v10
 
     move-object/from16 v10, v263
 
     invoke-static {v7, v0, v10, v8, v9}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4008
-    .end local v1    # "unoptimizedScanMaxTimeBg":J
-    .end local v3    # "count":I
-    .end local v4    # "actualTime":J
-    .end local v6    # "resultCountBg":I
-    .end local v14    # "resultCount":I
-    .end local v263    # "category":Ljava/lang/String;
-    .end local v283    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .end local v284    # "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v285    # "totalTime":J
-    .end local v287    # "countBg":I
-    .end local v288    # "actualTimeBg":J
-    .end local v290    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v292    # "unoptimizedScanTotalTime":J
-    .end local v294    # "unoptimizedScanMaxTime":J
-    .local v10, "category":Ljava/lang/String;
     goto :goto_29
 
-    .line 4015
-    .end local v10    # "category":Ljava/lang/String;
-    .end local v265    # "wifiScanCountBg":I
-    .end local v266    # "wifiScanActualTimeMs":J
-    .end local v268    # "rawRealtime":J
-    .end local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v273    # "uidWifiRunningTime":J
-    .end local v291    # "u":Landroid/os/BatteryStats$Uid;
-    .local v4, "rawRealtime":J
-    .local v6, "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v8, "uidWifiRunningTime":J
-    .restart local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .local v12, "wifiScanCountBg":I
-    .restart local v13    # "wifiScanActualTimeMs":J
-    .restart local v166    # "rawRealtimeMs":J
-    .restart local v263    # "category":Ljava/lang/String;
     :cond_2b
     move-wide/16 v268, v4
 
@@ -18384,39 +14227,8 @@
 
     move-object/from16 v10, v263
 
-    .end local v4    # "rawRealtime":J
-    .end local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v8    # "uidWifiRunningTime":J
-    .end local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v13    # "wifiScanActualTimeMs":J
-    .end local v166    # "rawRealtimeMs":J
-    .end local v263    # "category":Ljava/lang/String;
-    .restart local v10    # "category":Ljava/lang/String;
-    .local v12, "rawRealtimeMs":J
-    .restart local v265    # "wifiScanCountBg":I
-    .restart local v266    # "wifiScanActualTimeMs":J
-    .restart local v268    # "rawRealtime":J
-    .restart local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v273    # "uidWifiRunningTime":J
-    .restart local v291    # "u":Landroid/os/BatteryStats$Uid;
     goto :goto_29
 
-    .line 4015
-    .end local v10    # "category":Ljava/lang/String;
-    .end local v265    # "wifiScanCountBg":I
-    .end local v266    # "wifiScanActualTimeMs":J
-    .end local v268    # "rawRealtime":J
-    .end local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v273    # "uidWifiRunningTime":J
-    .end local v291    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v8    # "uidWifiRunningTime":J
-    .restart local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .local v12, "wifiScanCountBg":I
-    .restart local v13    # "wifiScanActualTimeMs":J
-    .restart local v166    # "rawRealtimeMs":J
-    .restart local v261    # "rawRealtime":J
-    .restart local v263    # "category":Ljava/lang/String;
     :cond_2c
     move-object/16 v272, v6
 
@@ -18434,34 +14246,15 @@
 
     move-object/from16 v10, v263
 
-    .end local v6    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v8    # "uidWifiRunningTime":J
-    .end local v11    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v13    # "wifiScanActualTimeMs":J
-    .end local v166    # "rawRealtimeMs":J
-    .end local v261    # "rawRealtime":J
-    .end local v263    # "category":Ljava/lang/String;
-    .restart local v10    # "category":Ljava/lang/String;
-    .local v12, "rawRealtimeMs":J
-    .restart local v265    # "wifiScanCountBg":I
-    .restart local v266    # "wifiScanActualTimeMs":J
-    .restart local v268    # "rawRealtime":J
-    .restart local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v273    # "uidWifiRunningTime":J
-    .restart local v291    # "u":Landroid/os/BatteryStats$Uid;
     :goto_29
     const-string v4, "ble"
 
-    .line 4016
     move-object/from16 v9, v291
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v5
 
-    .line 4015
-    .end local v291    # "u":Landroid/os/BatteryStats$Uid;
-    .local v9, "u":Landroid/os/BatteryStats$Uid;
     move-object v1, v7
 
     move v2, v0
@@ -18470,73 +14263,47 @@
 
     move-wide/16 v298, v268
 
-    .line 4015
-    .end local v268    # "rawRealtime":J
-    .local v298, "rawRealtime":J
     move-object/from16 v11, v272
 
     move v6, v15
 
-    .line 4015
-    .end local v272    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v11, "bleTimer":Landroid/os/BatteryStats$Timer;
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpControllerActivityLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 4018
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->hasUserActivity()Z
 
     move-result v1
 
     if-eqz v1, :cond_30
 
-    .line 4019
     const/4 v1, 0x4
 
     new-array v2, v1, [Ljava/lang/Object;
 
-    .line 4020
-    .end local v44    # "args":[Ljava/lang/Object;
-    .local v2, "args":[Ljava/lang/Object;
     const/4 v3, 0x0
 
-    .line 4021
-    .local v3, "hasData":Z
     move v4, v3
 
     const/4 v3, 0x0
 
-    .line 4021
-    .local v3, "i":I
-    .local v4, "hasData":Z
     :goto_2a
     if-ge v3, v1, :cond_2e
 
-    .line 4022
     invoke-virtual {v9, v3, v15}, Landroid/os/BatteryStats$Uid;->getUserActivityCount(II)I
 
     move-result v1
 
-    .line 4023
-    .local v1, "val":I
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v2, v3
 
-    .line 4024
     if-eqz v1, :cond_2d
 
     const/4 v1, 0x1
 
-    .line 4021
-    .end local v4    # "hasData":Z
-    .local v1, "hasData":Z
     move v4, v1
 
-    .line 4021
-    .end local v1    # "hasData":Z
-    .restart local v4    # "hasData":Z
     :cond_2d
     add-int/lit8 v3, v3, 0x1
 
@@ -18544,24 +14311,16 @@
 
     goto :goto_2a
 
-    .line 4026
-    .end local v3    # "i":I
     :cond_2e
     if-eqz v4, :cond_2f
 
-    .line 4027
     const-string/jumbo v1, "ua"
 
     invoke-static {v7, v0, v10, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4031
-    .end local v4    # "hasData":Z
     :cond_2f
     move-object/from16 v44, v2
 
-    .line 4031
-    .end local v2    # "args":[Ljava/lang/Object;
-    .restart local v44    # "args":[Ljava/lang/Object;
     :cond_30
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getAggregatedPartialWakelockTimer()Landroid/os/BatteryStats$Timer;
 
@@ -18569,28 +14328,20 @@
 
     if-eqz v1, :cond_32
 
-    .line 4032
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getAggregatedPartialWakelockTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v1
 
-    .line 4034
-    .local v1, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v1, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v2
 
-    .line 4035
-    .local v2, "totTimeMs":J
     invoke-virtual {v1}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v4
 
-    .line 4036
-    .local v4, "bgTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v4, :cond_31
 
-    .line 4037
     invoke-virtual {v4, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v5
@@ -18600,8 +14351,6 @@
     :cond_31
     move-wide/from16 v5, v82
 
-    .line 4038
-    .local v5, "bgTimeMs":J
     :goto_2b
     const-string v8, "awl"
 
@@ -18611,9 +14360,6 @@
 
     new-array v1, v14, [Ljava/lang/Object;
 
-    .line 4038
-    .end local v1    # "timer":Landroid/os/BatteryStats$Timer;
-    .local v300, "timer":Landroid/os/BatteryStats$Timer;
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v14
@@ -18632,13 +14378,8 @@
 
     invoke-static {v7, v0, v10, v8, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .end local v2    # "totTimeMs":J
-    .end local v4    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v5    # "bgTimeMs":J
-    .end local v300    # "timer":Landroid/os/BatteryStats$Timer;
     goto :goto_2c
 
-    .line 4041
     :cond_32
     const/16 v122, 0x1
 
@@ -18647,25 +14388,17 @@
 
     move-result-object v14
 
-    .line 4042
-    .local v14, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-virtual {v14}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 4042
-    .local v1, "iw":I
     :goto_2d
     move v8, v1
 
-    .line 4042
-    .end local v1    # "iw":I
-    .local v8, "iw":I
     if-ltz v8, :cond_38
 
-    .line 4043
     invoke-virtual {v14, v8}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -18674,21 +14407,14 @@
 
     check-cast v6, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 4044
-    .local v6, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     const-string v132, ""
 
-    .line 4045
-    .local v132, "linePrefix":Ljava/lang/String;
     move-object/from16 v5, v179
 
     const/4 v1, 0x0
 
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4046
-    .end local v179    # "sb":Ljava/lang/StringBuilder;
-    .local v5, "sb":Ljava/lang/StringBuilder;
     const/4 v1, 0x1
 
     invoke-virtual {v6, v1}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -18705,19 +14431,12 @@
 
     move-object/from16 v5, v150
 
-    .line 4046
-    .end local v5    # "sb":Ljava/lang/StringBuilder;
-    .local v151, "sb":Ljava/lang/StringBuilder;
     move-object/16 v301, v11
 
     move-object v11, v6
 
     move v6, v15
 
-    .line 4046
-    .end local v6    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .local v11, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .local v301, "bleTimer":Landroid/os/BatteryStats$Timer;
     move-wide/16 v302, v12
 
     move-object/from16 v13, v151
@@ -18726,24 +14445,16 @@
 
     move-object/from16 v7, v132
 
-    .line 4046
-    .end local v12    # "rawRealtimeMs":J
-    .end local v151    # "sb":Ljava/lang/StringBuilder;
-    .local v13, "sb":Ljava/lang/StringBuilder;
-    .local v302, "rawRealtimeMs":J
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->printWakeLockCheckin(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v132
 
-    .line 4048
     const/4 v1, 0x0
 
     invoke-virtual {v11, v1}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v7
 
-    .line 4049
-    .local v7, "pTimer":Landroid/os/BatteryStats$Timer;
     const-string/jumbo v5, "p"
 
     move-object v1, v13
@@ -18756,15 +14467,10 @@
 
     move-object/from16 v7, v132
 
-    .line 4049
-    .end local v7    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v9, "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v304, "u":Landroid/os/BatteryStats$Uid;
     invoke-static/range {v1 .. v7}, Landroid/os/BatteryStats;->printWakeLockCheckin(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v132
 
-    .line 4051
     if-eqz v9, :cond_33
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
@@ -18796,7 +14502,6 @@
 
     move-result-object v132
 
-    .line 4053
     const/4 v1, 0x2
 
     invoke-virtual {v11, v1}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -18813,24 +14518,18 @@
 
     move-result-object v1
 
-    .line 4057
-    .end local v132    # "linePrefix":Ljava/lang/String;
-    .local v1, "linePrefix":Ljava/lang/String;
     invoke-virtual {v13}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
     if-lez v2, :cond_37
 
-    .line 4058
     invoke-virtual {v14, v8}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 4059
-    .local v2, "name":Ljava/lang/String;
     const/16 v3, 0x2c
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(I)I
@@ -18839,7 +14538,6 @@
 
     if-ltz v3, :cond_34
 
-    .line 4060
     const/16 v3, 0x2c
 
     const/16 v4, 0x5f
@@ -18848,7 +14546,6 @@
 
     move-result-object v2
 
-    .line 4062
     :cond_34
     const/16 v6, 0xa
 
@@ -18858,14 +14555,12 @@
 
     if-ltz v3, :cond_35
 
-    .line 4063
     const/16 v3, 0x5f
 
     invoke-virtual {v2, v6, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4065
     :cond_35
     const/16 v3, 0xd
 
@@ -18875,7 +14570,6 @@
 
     if-ltz v3, :cond_36
 
-    .line 4066
     const/16 v3, 0xd
 
     const/16 v4, 0x5f
@@ -18884,7 +14578,6 @@
 
     move-result-object v2
 
-    .line 4068
     :cond_36
     const-string/jumbo v3, "wl"
 
@@ -18906,22 +14599,14 @@
 
     invoke-static {v12, v0, v10, v3, v5}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .end local v1    # "linePrefix":Ljava/lang/String;
-    .end local v2    # "name":Ljava/lang/String;
-    .end local v9    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .end local v11    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     goto :goto_30
 
-    .line 4042
     :cond_37
     const/16 v6, 0xa
 
     :goto_30
     add-int/lit8 v1, v8, -0x1
 
-    .line 4042
-    .end local v8    # "iw":I
-    .local v1, "iw":I
     move-object v7, v12
 
     move-object/from16 v179, v13
@@ -18934,16 +14619,6 @@
 
     goto/16 :goto_2d
 
-    .line 4073
-    .end local v1    # "iw":I
-    .end local v13    # "sb":Ljava/lang/StringBuilder;
-    .end local v301    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v302    # "rawRealtimeMs":J
-    .end local v304    # "u":Landroid/os/BatteryStats$Uid;
-    .local v9, "u":Landroid/os/BatteryStats$Uid;
-    .local v11, "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v12    # "rawRealtimeMs":J
-    .restart local v179    # "sb":Ljava/lang/StringBuilder;
     :cond_38
     move-object/16 v304, v9
 
@@ -18957,62 +14632,38 @@
 
     move-object v12, v7
 
-    .line 4073
-    .end local v9    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v11    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v12    # "rawRealtimeMs":J
-    .end local v179    # "sb":Ljava/lang/StringBuilder;
-    .restart local v13    # "sb":Ljava/lang/StringBuilder;
-    .restart local v301    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v302    # "rawRealtimeMs":J
-    .restart local v304    # "u":Landroid/os/BatteryStats$Uid;
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getMulticastWakelockStats()Landroid/os/BatteryStats$Timer;
 
     move-result-object v11
 
-    .line 4074
-    .end local v304    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v9    # "u":Landroid/os/BatteryStats$Uid;
-    .local v11, "mcTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v11, :cond_3a
 
-    .line 4075
     nop
 
-    .line 4076
     move-wide/from16 v7, v298
 
     invoke-virtual {v11, v7, v8, v15}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v1
 
-    .line 4076
-    .end local v298    # "rawRealtime":J
-    .local v7, "rawRealtime":J
     const-wide/16 v3, 0x3e8
 
     div-long/2addr v1, v3
 
-    .line 4077
-    .local v1, "totalMcWakelockTimeMs":J
     invoke-virtual {v11, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v3
 
-    .line 4078
-    .local v3, "countMcWakelock":I
     cmp-long v4, v1, v82
 
     if-lez v4, :cond_39
 
-    .line 4079
     const-string/jumbo v4, "wmc"
 
     const/4 v5, 0x2
 
     new-array v6, v5, [Ljava/lang/Object;
 
-    .line 4080
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -19029,58 +14680,40 @@
 
     aput-object v5, v6, v122
 
-    .line 4079
     invoke-static {v12, v0, v10, v4, v6}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4079
-    .end local v1    # "totalMcWakelockTimeMs":J
-    .end local v3    # "countMcWakelock":I
     goto :goto_31
 
-    .line 4084
     :cond_39
     const/16 v122, 0x1
 
     goto :goto_31
 
-    .line 4084
-    .end local v7    # "rawRealtime":J
-    .restart local v298    # "rawRealtime":J
     :cond_3a
     move-wide/from16 v7, v298
 
     const/16 v122, 0x1
 
-    .line 4084
-    .end local v298    # "rawRealtime":J
-    .restart local v7    # "rawRealtime":J
     :goto_31
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getSyncStats()Landroid/util/ArrayMap;
 
     move-result-object v6
 
-    .line 4085
-    .local v6, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v6}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 4085
-    .local v1, "isy":I
     :goto_32
     if-ltz v1, :cond_3e
 
-    .line 4086
     invoke-virtual {v6, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Timer;
 
-    .line 4088
-    .local v2, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v2, v7, v8, v15}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v3
@@ -19091,26 +14724,18 @@
 
     div-long v3, v3, v58
 
-    .line 4089
-    .local v3, "totalTime":J
     invoke-virtual {v2, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v5
 
-    .line 4090
-    .local v5, "count":I
     move-object/16 v305, v11
 
     invoke-virtual {v2}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v11
 
-    .line 4091
-    .local v11, "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v305, "mcTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v11, :cond_3b
 
-    .line 4092
     move-object/16 v307, v13
 
     move-object/16 v306, v14
@@ -19121,20 +14746,8 @@
 
     move-result-wide v150
 
-    .line 4092
-    .end local v14    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v302    # "rawRealtimeMs":J
-    .local v13, "rawRealtimeMs":J
-    .local v306, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v307, "sb":Ljava/lang/StringBuilder;
     goto :goto_33
 
-    .line 4092
-    .end local v306    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v307    # "sb":Ljava/lang/StringBuilder;
-    .local v13, "sb":Ljava/lang/StringBuilder;
-    .restart local v14    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v302    # "rawRealtimeMs":J
     :cond_3b
     move-object/16 v307, v13
 
@@ -19142,19 +14755,11 @@
 
     move-wide/from16 v13, v302
 
-    .line 4092
-    .end local v14    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v302    # "rawRealtimeMs":J
-    .local v13, "rawRealtimeMs":J
-    .restart local v306    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v307    # "sb":Ljava/lang/StringBuilder;
     const-wide/16 v150, -0x1
 
     :goto_33
     move-wide/16 v308, v150
 
-    .line 4093
-    .local v308, "bgTime":J
     if-eqz v11, :cond_3c
 
     invoke-virtual {v11, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -19169,20 +14774,14 @@
     :goto_34
     move/16 v310, v132
 
-    .line 4094
-    .local v310, "bgCount":I
     cmp-long v132, v3, v82
 
     if-eqz v132, :cond_3d
 
-    .line 4095
     move-object/16 v311, v2
 
     const-string/jumbo v2, "sy"
 
-    .line 4095
-    .end local v2    # "timer":Landroid/os/BatteryStats$Timer;
-    .local v311, "timer":Landroid/os/BatteryStats$Timer;
     move-object/16 v312, v11
 
     move-wide/16 v313, v13
@@ -19191,11 +14790,6 @@
 
     new-array v13, v11, [Ljava/lang/Object;
 
-    .line 4095
-    .end local v11    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v13    # "rawRealtimeMs":J
-    .local v312, "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v313, "rawRealtimeMs":J
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -19224,7 +14818,6 @@
 
     aput-object v11, v13, v14
 
-    .line 4096
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -19249,9 +14842,6 @@
 
     move-result-object v11
 
-    .end local v308    # "bgTime":J
-    .local v3, "bgTime":J
-    .local v315, "totalTime":J
     const/4 v14, 0x3
 
     aput-object v11, v13, v14
@@ -19262,34 +14852,17 @@
 
     move-result-object v14
 
-    .line 4096
-    .end local v310    # "bgCount":I
-    .local v11, "bgCount":I
     const/16 v132, 0x4
 
     aput-object v14, v13, v132
 
-    .line 4095
     invoke-static {v12, v0, v10, v2, v13}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4095
-    .end local v3    # "bgTime":J
-    .end local v5    # "count":I
-    .end local v11    # "bgCount":I
-    .end local v311    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v312    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v315    # "totalTime":J
     goto :goto_35
 
-    .line 4085
-    .end local v313    # "rawRealtimeMs":J
-    .restart local v13    # "rawRealtimeMs":J
     :cond_3d
     move-wide/16 v313, v13
 
-    .line 4085
-    .end local v13    # "rawRealtimeMs":J
-    .restart local v313    # "rawRealtimeMs":J
     :goto_35
     add-int/lit8 v1, v1, -0x1
 
@@ -19303,16 +14876,6 @@
 
     goto/16 :goto_32
 
-    .line 4100
-    .end local v1    # "isy":I
-    .end local v305    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v306    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v307    # "sb":Ljava/lang/StringBuilder;
-    .end local v313    # "rawRealtimeMs":J
-    .local v11, "mcTimer":Landroid/os/BatteryStats$Timer;
-    .local v13, "sb":Ljava/lang/StringBuilder;
-    .restart local v14    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v302    # "rawRealtimeMs":J
     :cond_3e
     move-object/16 v305, v11
 
@@ -19322,21 +14885,10 @@
 
     move-wide/16 v313, v302
 
-    .line 4100
-    .end local v11    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v13    # "sb":Ljava/lang/StringBuilder;
-    .end local v14    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v302    # "rawRealtimeMs":J
-    .restart local v305    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v306    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v307    # "sb":Ljava/lang/StringBuilder;
-    .restart local v313    # "rawRealtimeMs":J
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getJobStats()Landroid/util/ArrayMap;
 
     move-result-object v11
 
-    .line 4101
-    .local v11, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v11}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
@@ -19345,20 +14897,15 @@
 
     sub-int/2addr v1, v2
 
-    .line 4101
-    .local v1, "ij":I
     :goto_36
     if-ltz v1, :cond_42
 
-    .line 4102
     invoke-virtual {v11, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Timer;
 
-    .line 4104
-    .restart local v2    # "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v2, v7, v8, v15}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v3
@@ -19369,23 +14916,16 @@
 
     div-long/2addr v3, v13
 
-    .line 4105
-    .local v3, "totalTime":J
     invoke-virtual {v2, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v5
 
-    .line 4106
-    .restart local v5    # "count":I
     invoke-virtual {v2}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v13
 
-    .line 4107
-    .local v13, "bgTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v13, :cond_3f
 
-    .line 4108
     move-object/16 v319, v6
 
     move-wide/16 v317, v7
@@ -19396,20 +14936,8 @@
 
     move-result-wide v150
 
-    .line 4108
-    .end local v7    # "rawRealtime":J
-    .end local v313    # "rawRealtimeMs":J
-    .local v6, "rawRealtimeMs":J
-    .local v317, "rawRealtime":J
-    .local v319, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     goto :goto_37
 
-    .line 4108
-    .end local v317    # "rawRealtime":J
-    .end local v319    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v6, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v7    # "rawRealtime":J
-    .restart local v313    # "rawRealtimeMs":J
     :cond_3f
     move-object/16 v319, v6
 
@@ -19417,19 +14945,11 @@
 
     move-wide/from16 v6, v313
 
-    .line 4108
-    .end local v7    # "rawRealtime":J
-    .end local v313    # "rawRealtimeMs":J
-    .local v6, "rawRealtimeMs":J
-    .restart local v317    # "rawRealtime":J
-    .restart local v319    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-wide/16 v150, -0x1
 
     :goto_37
     move-wide/16 v320, v150
 
-    .line 4109
-    .local v320, "bgTime":J
     if-eqz v13, :cond_40
 
     invoke-virtual {v13, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -19441,14 +14961,11 @@
     :cond_40
     move/from16 v8, v93
 
-    .line 4110
-    .local v8, "bgCount":I
     :goto_38
     cmp-long v14, v3, v82
 
     if-eqz v14, :cond_41
 
-    .line 4111
     const-string v14, "jb"
 
     move-object/16 v322, v2
@@ -19459,11 +14976,6 @@
 
     new-array v6, v2, [Ljava/lang/Object;
 
-    .line 4111
-    .end local v2    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v6    # "rawRealtimeMs":J
-    .local v322, "timer":Landroid/os/BatteryStats$Timer;
-    .local v323, "rawRealtimeMs":J
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -19492,7 +15004,6 @@
 
     aput-object v2, v6, v7
 
-    .line 4112
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -19517,10 +15028,6 @@
 
     move-result-object v4
 
-    .end local v3    # "totalTime":J
-    .end local v320    # "bgTime":J
-    .local v2, "bgTime":J
-    .local v325, "totalTime":J
     const/4 v7, 0x3
 
     aput-object v4, v6, v7
@@ -19533,27 +15040,13 @@
 
     aput-object v4, v6, v7
 
-    .line 4111
     invoke-static {v12, v0, v10, v14, v6}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4111
-    .end local v2    # "bgTime":J
-    .end local v5    # "count":I
-    .end local v8    # "bgCount":I
-    .end local v13    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v322    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v325    # "totalTime":J
     goto :goto_39
 
-    .line 4101
-    .end local v323    # "rawRealtimeMs":J
-    .restart local v6    # "rawRealtimeMs":J
     :cond_41
     move-wide/16 v323, v6
 
-    .line 4101
-    .end local v6    # "rawRealtimeMs":J
-    .restart local v323    # "rawRealtimeMs":J
     :goto_39
     add-int/lit8 v1, v1, -0x1
 
@@ -19565,14 +15058,6 @@
 
     goto/16 :goto_36
 
-    .line 4116
-    .end local v1    # "ij":I
-    .end local v317    # "rawRealtime":J
-    .end local v319    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v323    # "rawRealtimeMs":J
-    .local v6, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v7    # "rawRealtime":J
-    .restart local v313    # "rawRealtimeMs":J
     :cond_42
     move-object/16 v319, v6
 
@@ -19580,19 +15065,10 @@
 
     move-wide/16 v323, v313
 
-    .line 4116
-    .end local v6    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v7    # "rawRealtime":J
-    .end local v313    # "rawRealtimeMs":J
-    .restart local v317    # "rawRealtime":J
-    .restart local v319    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v323    # "rawRealtimeMs":J
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getJobCompletionStats()Landroid/util/ArrayMap;
 
     move-result-object v13
 
-    .line 4117
-    .local v13, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-virtual {v13}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
@@ -19601,23 +15077,17 @@
 
     sub-int/2addr v1, v2
 
-    .line 4117
-    .local v1, "ic":I
     :goto_3a
     if-ltz v1, :cond_44
 
-    .line 4118
     invoke-virtual {v13, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/util/SparseIntArray;
 
-    .line 4119
-    .local v2, "types":Landroid/util/SparseIntArray;
     if-eqz v2, :cond_43
 
-    .line 4120
     const-string v3, "jbc"
 
     const/4 v4, 0x6
@@ -19632,7 +15102,6 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4121
     invoke-virtual {v13, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -19653,7 +15122,6 @@
 
     aput-object v4, v5, v6
 
-    .line 4122
     invoke-virtual {v2, v6, v6}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v4
@@ -19666,7 +15134,6 @@
 
     aput-object v4, v5, v7
 
-    .line 4123
     invoke-virtual {v2, v7, v6}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v4
@@ -19679,7 +15146,6 @@
 
     aput-object v4, v5, v7
 
-    .line 4124
     invoke-virtual {v2, v7, v6}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v4
@@ -19692,7 +15158,6 @@
 
     aput-object v4, v5, v7
 
-    .line 4125
     invoke-virtual {v2, v7, v6}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v4
@@ -19705,7 +15170,6 @@
 
     aput-object v4, v5, v7
 
-    .line 4126
     invoke-virtual {v2, v7, v6}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v4
@@ -19718,33 +15182,24 @@
 
     aput-object v4, v5, v6
 
-    .line 4120
     invoke-static {v12, v0, v10, v3, v5}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4117
-    .end local v2    # "types":Landroid/util/SparseIntArray;
     :cond_43
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_3a
 
-    .line 4131
-    .end local v1    # "ic":I
     :cond_44
     move-object/from16 v14, v307
 
     invoke-virtual {v9, v14, v15}, Landroid/os/BatteryStats$Uid;->getDeferredJobsCheckinLineLocked(Ljava/lang/StringBuilder;I)V
 
-    .line 4132
-    .end local v307    # "sb":Ljava/lang/StringBuilder;
-    .local v14, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_45
 
-    .line 4133
     const-string v1, "jbd"
 
     const/4 v2, 0x1
@@ -19763,7 +15218,6 @@
 
     goto :goto_3b
 
-    .line 4136
     :cond_45
     const/4 v8, 0x0
 
@@ -19794,15 +15248,6 @@
 
     move-wide/from16 v6, v329
 
-    .end local v11    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v317    # "rawRealtime":J
-    .end local v319    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v323    # "rawRealtimeMs":J
-    .local v10, "rawRealtimeMs":J
-    .local v132, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v327, "category":Ljava/lang/String;
-    .local v328, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v329, "rawRealtime":J
     move-object/16 v332, v13
 
     move-wide/from16 v150, v224
@@ -19815,18 +15260,8 @@
 
     move v8, v15
 
-    .line 4136
-    .end local v13    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v224    # "mobilePacketsTx":J
-    .end local v273    # "uidWifiRunningTime":J
-    .end local v327    # "category":Ljava/lang/String;
-    .local v150, "mobilePacketsTx":J
-    .local v152, "uidWifiRunningTime":J
-    .local v331, "category":Ljava/lang/String;
-    .local v332, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4138
     const-string v4, "cam"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getCameraTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -19837,7 +15272,6 @@
 
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4140
     const-string/jumbo v4, "vid"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getVideoTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -19846,7 +15280,6 @@
 
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4142
     const-string v4, "aud"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getAudioTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -19855,50 +15288,35 @@
 
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4145
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getSensorStats()Landroid/util/SparseArray;
 
     move-result-object v8
 
-    .line 4146
-    .local v8, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-virtual {v8}, Landroid/util/SparseArray;->size()I
 
     move-result v6
 
-    .line 4147
-    .local v6, "NSE":I
     move v1, v13
 
-    .line 4147
-    .local v1, "ise":I
     :goto_3c
     if-ge v1, v6, :cond_4a
 
-    .line 4148
     invoke-virtual {v8, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Uid$Sensor;
 
-    .line 4149
-    .local v2, "se":Landroid/os/BatteryStats$Uid$Sensor;
     invoke-virtual {v8, v1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v3
 
-    .line 4150
-    .local v3, "sensorNumber":I
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v4
 
-    .line 4151
-    .local v4, "timer":Landroid/os/BatteryStats$Timer;
     if-eqz v4, :cond_49
 
-    .line 4153
     move-object/16 v333, v14
 
     move-wide/from16 v13, v329
@@ -19907,11 +15325,6 @@
 
     move-result-wide v154
 
-    .line 4153
-    .end local v14    # "sb":Ljava/lang/StringBuilder;
-    .end local v329    # "rawRealtime":J
-    .local v13, "rawRealtime":J
-    .local v333, "sb":Ljava/lang/StringBuilder;
     add-long v154, v154, v96
 
     move/16 v334, v6
@@ -19920,30 +15333,20 @@
 
     div-long v5, v154, v58
 
-    .line 4155
-    .end local v6    # "NSE":I
-    .local v5, "totalTime":J
-    .local v334, "NSE":I
     cmp-long v7, v5, v82
 
     if-eqz v7, :cond_48
 
-    .line 4156
     invoke-virtual {v4, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v7
 
-    .line 4157
-    .local v7, "count":I
     move-object/16 v335, v8
 
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorBackgroundTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v8
 
-    .line 4158
-    .local v8, "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v335, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     if-eqz v8, :cond_46
 
     invoke-virtual {v8, v15}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -19958,20 +15361,14 @@
     :goto_3d
     move/16 v336, v154
 
-    .line 4160
-    .local v336, "bgCount":I
     move-wide/16 v337, v13
 
     invoke-virtual {v4, v10, v11}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v13
 
-    .line 4161
-    .local v13, "actualTime":J
-    .local v337, "rawRealtime":J
     if-eqz v8, :cond_47
 
-    .line 4162
     invoke-virtual {v8, v10, v11}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v154
@@ -19984,15 +15381,10 @@
     :goto_3e
     move-wide/16 v339, v154
 
-    .line 4163
-    .local v339, "bgActualTime":J
     move-object/16 v341, v2
 
     const-string/jumbo v2, "sr"
 
-    .line 4163
-    .end local v2    # "se":Landroid/os/BatteryStats$Uid$Sensor;
-    .local v341, "se":Landroid/os/BatteryStats$Uid$Sensor;
     move-object/16 v342, v4
 
     move-object/16 v343, v8
@@ -20001,11 +15393,6 @@
 
     new-array v8, v4, [Ljava/lang/Object;
 
-    .line 4163
-    .end local v4    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v8    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v342, "timer":Landroid/os/BatteryStats$Timer;
-    .local v343, "bgTimer":Landroid/os/BatteryStats$Timer;
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -20022,7 +15409,6 @@
 
     aput-object v4, v8, v122
 
-    .line 4164
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -20037,9 +15423,6 @@
 
     move-result-object v154
 
-    .line 4164
-    .end local v336    # "bgCount":I
-    .local v4, "bgCount":I
     const/16 v155, 0x3
 
     aput-object v154, v8, v155
@@ -20062,45 +15445,18 @@
 
     move-result-object v154
 
-    .end local v4    # "bgCount":I
-    .end local v339    # "bgActualTime":J
-    .local v3, "bgActualTime":J
-    .local v344, "sensorNumber":I
-    .local v345, "bgCount":I
     const/16 v129, 0x5
 
     aput-object v154, v8, v129
 
-    .line 4163
     move-wide/16 v346, v10
 
     move-object/from16 v10, v331
 
     invoke-static {v12, v0, v10, v2, v8}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4163
-    .end local v3    # "bgActualTime":J
-    .end local v5    # "totalTime":J
-    .end local v7    # "count":I
-    .end local v13    # "actualTime":J
-    .end local v331    # "category":Ljava/lang/String;
-    .end local v341    # "se":Landroid/os/BatteryStats$Uid$Sensor;
-    .end local v342    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v343    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v344    # "sensorNumber":I
-    .end local v345    # "bgCount":I
-    .local v10, "category":Ljava/lang/String;
-    .local v346, "rawRealtimeMs":J
     goto :goto_3f
 
-    .line 4147
-    .end local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v337    # "rawRealtime":J
-    .end local v346    # "rawRealtimeMs":J
-    .local v8, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v10, "rawRealtimeMs":J
-    .local v13, "rawRealtime":J
-    .restart local v331    # "category":Ljava/lang/String;
     :cond_48
     move-object/16 v335, v8
 
@@ -20110,28 +15466,8 @@
 
     move-object/from16 v10, v331
 
-    .line 4147
-    .end local v8    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v13    # "rawRealtime":J
-    .end local v331    # "category":Ljava/lang/String;
-    .local v10, "category":Ljava/lang/String;
-    .restart local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v337    # "rawRealtime":J
-    .restart local v346    # "rawRealtimeMs":J
     goto :goto_3f
 
-    .line 4147
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .end local v334    # "NSE":I
-    .end local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v337    # "rawRealtime":J
-    .end local v346    # "rawRealtimeMs":J
-    .restart local v6    # "NSE":I
-    .restart local v8    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v10, "rawRealtimeMs":J
-    .restart local v14    # "sb":Ljava/lang/StringBuilder;
-    .restart local v329    # "rawRealtime":J
-    .restart local v331    # "category":Ljava/lang/String;
     :cond_49
     move/16 v334, v6
 
@@ -20145,17 +15481,6 @@
 
     move-object/from16 v10, v331
 
-    .end local v6    # "NSE":I
-    .end local v8    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v14    # "sb":Ljava/lang/StringBuilder;
-    .end local v329    # "rawRealtime":J
-    .end local v331    # "category":Ljava/lang/String;
-    .local v10, "category":Ljava/lang/String;
-    .restart local v333    # "sb":Ljava/lang/StringBuilder;
-    .restart local v334    # "NSE":I
-    .restart local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v337    # "rawRealtime":J
-    .restart local v346    # "rawRealtimeMs":J
     :goto_3f
     add-int/lit8 v1, v1, 0x1
 
@@ -20175,19 +15500,6 @@
 
     goto/16 :goto_3c
 
-    .line 4169
-    .end local v1    # "ise":I
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .end local v334    # "NSE":I
-    .end local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v337    # "rawRealtime":J
-    .end local v346    # "rawRealtimeMs":J
-    .restart local v6    # "NSE":I
-    .restart local v8    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v10, "rawRealtimeMs":J
-    .restart local v14    # "sb":Ljava/lang/StringBuilder;
-    .restart local v329    # "rawRealtime":J
-    .restart local v331    # "category":Ljava/lang/String;
     :cond_4a
     move/16 v334, v6
 
@@ -20201,17 +15513,6 @@
 
     move-object/from16 v10, v331
 
-    .end local v6    # "NSE":I
-    .end local v8    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v14    # "sb":Ljava/lang/StringBuilder;
-    .end local v329    # "rawRealtime":J
-    .end local v331    # "category":Ljava/lang/String;
-    .local v10, "category":Ljava/lang/String;
-    .restart local v333    # "sb":Ljava/lang/StringBuilder;
-    .restart local v334    # "NSE":I
-    .restart local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v337    # "rawRealtime":J
-    .restart local v346    # "rawRealtimeMs":J
     const-string/jumbo v4, "vib"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getVibratorOnTimer()Landroid/os/BatteryStats$Timer;
@@ -20228,19 +15529,12 @@
 
     move-wide/from16 v6, v337
 
-    .line 4169
-    .end local v334    # "NSE":I
-    .local v11, "NSE":I
     move-object/from16 v13, v335
 
     move v8, v15
 
-    .line 4169
-    .end local v335    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v13, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4172
     const-string v4, "fg"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getForegroundActivityTimer()Landroid/os/BatteryStats$Timer;
@@ -20249,7 +15543,6 @@
 
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4175
     const-string v4, "fgs"
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getForegroundServiceTimer()Landroid/os/BatteryStats$Timer;
@@ -20258,41 +15551,27 @@
 
     invoke-static/range {v1 .. v8}, Landroid/os/BatteryStats;->dumpTimer(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$Timer;JI)V
 
-    .line 4178
     const/4 v1, 0x7
 
     new-array v2, v1, [Ljava/lang/Object;
 
-    .line 4179
-    .local v2, "stateTimes":[Ljava/lang/Object;
     const-wide/16 v3, 0x0
 
-    .line 4180
-    .local v3, "totalStateTime":J
     move-wide v4, v3
 
     const/4 v3, 0x0
 
-    .line 4180
-    .local v3, "ips":I
-    .local v4, "totalStateTime":J
     :goto_40
     if-ge v3, v1, :cond_4b
 
-    .line 4181
     move-wide/from16 v7, v337
 
     invoke-virtual {v9, v3, v7, v8, v15}, Landroid/os/BatteryStats$Uid;->getProcessStateTime(IJI)J
 
     move-result-wide v154
 
-    .line 4182
-    .end local v337    # "rawRealtime":J
-    .local v7, "rawRealtime":J
-    .local v154, "time":J
     add-long v4, v4, v154
 
-    .line 4183
     add-long v156, v154, v96
 
     move-wide/16 v348, v4
@@ -20301,17 +15580,12 @@
 
     div-long v4, v156, v58
 
-    .line 4183
-    .end local v4    # "totalStateTime":J
-    .local v348, "totalStateTime":J
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
     aput-object v1, v2, v3
 
-    .line 4180
-    .end local v154    # "time":J
     add-int/lit8 v3, v3, 0x1
 
     move-wide/from16 v4, v348
@@ -20320,41 +15594,26 @@
 
     goto :goto_40
 
-    .line 4185
-    .end local v3    # "ips":I
-    .end local v7    # "rawRealtime":J
-    .end local v348    # "totalStateTime":J
-    .restart local v4    # "totalStateTime":J
-    .restart local v337    # "rawRealtime":J
     :cond_4b
     move-wide/from16 v7, v337
 
-    .line 4185
-    .end local v337    # "rawRealtime":J
-    .restart local v7    # "rawRealtime":J
     cmp-long v1, v4, v82
 
     if-lez v1, :cond_4c
 
-    .line 4186
     const-string/jumbo v1, "st"
 
     invoke-static {v12, v0, v10, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4189
     :cond_4c
     invoke-virtual {v9, v15}, Landroid/os/BatteryStats$Uid;->getUserCpuTimeUs(I)J
 
     move-result-wide v154
 
-    .line 4190
-    .local v154, "userCpuTimeUs":J
     invoke-virtual {v9, v15}, Landroid/os/BatteryStats$Uid;->getSystemCpuTimeUs(I)J
 
     move-result-wide v156
 
-    .line 4191
-    .local v156, "systemCpuTimeUs":J
     cmp-long v1, v154, v82
 
     if-gtz v1, :cond_4e
@@ -20365,7 +15624,6 @@
 
     goto :goto_41
 
-    .line 4197
     :cond_4d
     move-object/16 v350, v2
 
@@ -20373,7 +15631,6 @@
 
     goto :goto_42
 
-    .line 4192
     :cond_4e
     :goto_41
     const-string v1, "cpu"
@@ -20388,9 +15645,6 @@
 
     div-long v2, v154, v58
 
-    .line 4192
-    .end local v2    # "stateTimes":[Ljava/lang/Object;
-    .local v350, "stateTimes":[Ljava/lang/Object;
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -20403,9 +15657,6 @@
 
     div-long v3, v156, v58
 
-    .line 4192
-    .end local v4    # "totalStateTime":J
-    .local v351, "totalStateTime":J
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -20414,7 +15665,6 @@
 
     aput-object v2, v6, v3
 
-    .line 4193
     const/4 v2, 0x0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -20425,20 +15675,15 @@
 
     aput-object v3, v6, v2
 
-    .line 4192
     invoke-static {v12, v0, v10, v1, v6}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4197
     :goto_42
     if-eqz v175, :cond_5b
 
-    .line 4198
     invoke-virtual {v9, v15}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(I)[J
 
     move-result-object v1
 
-    .line 4201
-    .local v1, "cpuFreqTimeMs":[J
     if-eqz v1, :cond_54
 
     array-length v2, v1
@@ -20447,31 +15692,21 @@
 
     array-length v4, v3
 
-    .line 4201
-    .end local v175    # "cpuFreqs":[J
-    .local v3, "cpuFreqs":[J
     if-ne v2, v4, :cond_53
 
-    .line 4202
     move-object/from16 v2, v333
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4203
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .local v2, "sb":Ljava/lang/StringBuilder;
     const/4 v4, 0x0
 
-    .line 4203
-    .local v4, "i":I
     :goto_43
     array-length v5, v1
 
     if-ge v4, v5, :cond_50
 
-    .line 4204
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -20492,8 +15727,6 @@
 
     aget-wide v6, v1, v4
 
-    .end local v7    # "rawRealtime":J
-    .local v353, "rawRealtime":J
     invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -20502,42 +15735,28 @@
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4203
     add-int/lit8 v4, v4, 0x1
 
     move-wide/from16 v7, v353
 
     goto :goto_43
 
-    .line 4206
-    .end local v4    # "i":I
-    .end local v353    # "rawRealtime":J
-    .restart local v7    # "rawRealtime":J
     :cond_50
     move-wide/16 v353, v7
 
-    .line 4206
-    .end local v7    # "rawRealtime":J
-    .restart local v353    # "rawRealtime":J
     invoke-virtual {v9, v15}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(I)[J
 
     move-result-object v4
 
-    .line 4207
-    .local v4, "screenOffCpuFreqTimeMs":[J
     if-eqz v4, :cond_51
 
-    .line 4208
     const/4 v5, 0x0
 
-    .line 4208
-    .local v5, "i":I
     :goto_45
     array-length v6, v4
 
     if-ge v5, v6, :cond_52
 
-    .line 4209
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -20556,35 +15775,26 @@
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4208
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_45
 
-    .line 4212
-    .end local v5    # "i":I
     :cond_51
     const/4 v5, 0x0
 
-    .line 4212
-    .restart local v5    # "i":I
     :goto_46
     array-length v6, v1
 
     if-ge v5, v6, :cond_52
 
-    .line 4213
     const-string v6, ",0"
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4212
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_46
 
-    .line 4216
-    .end local v5    # "i":I
     :cond_52
     const-string v5, "ctf"
 
@@ -20600,7 +15810,6 @@
 
     array-length v6, v1
 
-    .line 4217
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -20617,37 +15826,17 @@
 
     aput-object v6, v7, v8
 
-    .line 4216
     invoke-static {v12, v0, v10, v5, v7}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4216
-    .end local v4    # "screenOffCpuFreqTimeMs":[J
     goto :goto_47
 
-    .line 4220
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
-    .end local v353    # "rawRealtime":J
-    .restart local v7    # "rawRealtime":J
-    .restart local v333    # "sb":Ljava/lang/StringBuilder;
     :cond_53
     move-wide/16 v353, v7
 
     move-object/from16 v2, v333
 
-    .line 4220
-    .end local v7    # "rawRealtime":J
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .restart local v2    # "sb":Ljava/lang/StringBuilder;
-    .restart local v353    # "rawRealtime":J
     goto :goto_47
 
-    .line 4220
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
-    .end local v3    # "cpuFreqs":[J
-    .end local v353    # "rawRealtime":J
-    .restart local v7    # "rawRealtime":J
-    .restart local v175    # "cpuFreqs":[J
-    .restart local v333    # "sb":Ljava/lang/StringBuilder;
     :cond_54
     move-wide/16 v353, v7
 
@@ -20655,30 +15844,18 @@
 
     move-object/from16 v2, v333
 
-    .line 4220
-    .end local v7    # "rawRealtime":J
-    .end local v175    # "cpuFreqs":[J
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .restart local v2    # "sb":Ljava/lang/StringBuilder;
-    .restart local v3    # "cpuFreqs":[J
-    .restart local v353    # "rawRealtime":J
     :goto_47
     const/4 v4, 0x0
 
-    .line 4220
-    .local v4, "procState":I
     :goto_48
     const/4 v5, 0x7
 
     if-ge v4, v5, :cond_5a
 
-    .line 4221
     invoke-virtual {v9, v15, v4}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(II)[J
 
     move-result-object v5
 
-    .line 4222
-    .local v5, "timesMs":[J
     if-eqz v5, :cond_59
 
     array-length v6, v5
@@ -20687,22 +15864,17 @@
 
     if-ne v6, v7, :cond_59
 
-    .line 4223
     const/4 v6, 0x0
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4224
     const/4 v6, 0x0
 
-    .line 4224
-    .local v6, "i":I
     :goto_49
     array-length v7, v5
 
     if-ge v6, v7, :cond_56
 
-    .line 4225
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -20723,8 +15895,6 @@
 
     aget-wide v13, v5, v6
 
-    .end local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v355, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-virtual {v7, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -20733,42 +15903,28 @@
 
     invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4224
     add-int/lit8 v6, v6, 0x1
 
     move-object/from16 v13, v355
 
     goto :goto_49
 
-    .line 4227
-    .end local v6    # "i":I
-    .end local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     :cond_56
     move-object/16 v355, v13
 
-    .line 4227
-    .end local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-virtual {v9, v15, v4}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(II)[J
 
     move-result-object v6
 
-    .line 4229
-    .local v6, "screenOffTimesMs":[J
     if-eqz v6, :cond_57
 
-    .line 4230
     const/4 v7, 0x0
 
-    .line 4230
-    .local v7, "i":I
     :goto_4b
     array-length v8, v6
 
     if-ge v7, v8, :cond_58
 
-    .line 4231
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -20787,35 +15943,26 @@
 
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4230
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4b
 
-    .line 4234
-    .end local v7    # "i":I
     :cond_57
     const/4 v7, 0x0
 
-    .line 4234
-    .restart local v7    # "i":I
     :goto_4c
     array-length v8, v5
 
     if-ge v7, v8, :cond_58
 
-    .line 4235
     const-string v8, ",0"
 
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4234
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4c
 
-    .line 4238
-    .end local v7    # "i":I
     :cond_58
     const-string v7, "ctf"
 
@@ -20833,7 +15980,6 @@
 
     array-length v8, v5
 
-    .line 4239
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -20850,23 +15996,13 @@
 
     aput-object v8, v13, v14
 
-    .line 4238
     invoke-static {v12, v0, v10, v7, v13}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4238
-    .end local v5    # "timesMs":[J
-    .end local v6    # "screenOffTimesMs":[J
     goto :goto_4d
 
-    .line 4220
-    .end local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     :cond_59
     move-object/16 v355, v13
 
-    .line 4220
-    .end local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     :goto_4d
     add-int/lit8 v4, v4, 0x1
 
@@ -20874,28 +16010,11 @@
 
     goto/16 :goto_48
 
-    .line 4244
-    .end local v1    # "cpuFreqTimeMs":[J
-    .end local v4    # "procState":I
-    .end local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     :cond_5a
     move-object/16 v355, v13
 
-    .line 4244
-    .end local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     goto :goto_4e
 
-    .line 4244
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
-    .end local v3    # "cpuFreqs":[J
-    .end local v353    # "rawRealtime":J
-    .end local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v7, "rawRealtime":J
-    .restart local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v175    # "cpuFreqs":[J
-    .restart local v333    # "sb":Ljava/lang/StringBuilder;
     :cond_5b
     move-wide/16 v353, v7
 
@@ -20905,22 +16024,11 @@
 
     move-object/from16 v2, v333
 
-    .line 4245
-    .end local v7    # "rawRealtime":J
-    .end local v13    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v175    # "cpuFreqs":[J
-    .end local v333    # "sb":Ljava/lang/StringBuilder;
-    .restart local v2    # "sb":Ljava/lang/StringBuilder;
-    .restart local v3    # "cpuFreqs":[J
-    .restart local v353    # "rawRealtime":J
-    .restart local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     :goto_4e
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid;->getProcessStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 4246
-    .local v1, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v4
@@ -20929,32 +16037,23 @@
 
     sub-int/2addr v4, v5
 
-    .line 4246
-    .local v4, "ipr":I
     :goto_4f
     if-ltz v4, :cond_5e
 
-    .line 4247
     invoke-virtual {v1, v4}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/os/BatteryStats$Uid$Proc;
 
-    .line 4249
-    .local v5, "ps":Landroid/os/BatteryStats$Uid$Proc;
     invoke-virtual {v5, v15}, Landroid/os/BatteryStats$Uid$Proc;->getUserTime(I)J
 
     move-result-wide v6
 
-    .line 4250
-    .local v6, "userMillis":J
     invoke-virtual {v5, v15}, Landroid/os/BatteryStats$Uid$Proc;->getSystemTime(I)J
 
     move-result-wide v13
 
-    .line 4251
-    .local v13, "systemMillis":J
     move-object/16 v357, v2
 
     move-object/16 v356, v3
@@ -20963,35 +16062,22 @@
 
     move-result-wide v2
 
-    .line 4252
-    .end local v3    # "cpuFreqs":[J
-    .local v2, "foregroundMillis":J
-    .local v356, "cpuFreqs":[J
-    .local v357, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v5, v15}, Landroid/os/BatteryStats$Uid$Proc;->getStarts(I)I
 
     move-result v8
 
-    .line 4253
-    .local v8, "starts":I
     move/16 v358, v11
 
     invoke-virtual {v5, v15}, Landroid/os/BatteryStats$Uid$Proc;->getNumCrashes(I)I
 
     move-result v11
 
-    .line 4254
-    .local v11, "numCrashes":I
-    .local v358, "NSE":I
     move-object/16 v359, v9
 
     invoke-virtual {v5, v15}, Landroid/os/BatteryStats$Uid$Proc;->getNumAnrs(I)I
 
     move-result v9
 
-    .line 4256
-    .local v9, "numAnrs":I
-    .local v359, "u":Landroid/os/BatteryStats$Uid;
     cmp-long v158, v6, v82
 
     if-nez v158, :cond_5d
@@ -21012,45 +16098,23 @@
 
     goto :goto_50
 
-    .line 4246
-    .end local v2    # "foregroundMillis":J
-    .end local v5    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v6    # "userMillis":J
-    .end local v8    # "starts":I
-    .end local v9    # "numAnrs":I
-    .end local v11    # "numCrashes":I
-    .end local v13    # "systemMillis":J
     :cond_5c
     move v5, v0
 
     goto :goto_51
 
-    .line 4258
-    .restart local v2    # "foregroundMillis":J
-    .restart local v5    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v6    # "userMillis":J
-    .restart local v8    # "starts":I
-    .restart local v9    # "numAnrs":I
-    .restart local v11    # "numCrashes":I
-    .restart local v13    # "systemMillis":J
     :cond_5d
     :goto_50
     move-object/16 v360, v5
 
     const-string/jumbo v5, "pr"
 
-    .line 4258
-    .end local v5    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .local v360, "ps":Landroid/os/BatteryStats$Uid$Proc;
     move/16 v361, v0
 
     const/4 v15, 0x7
 
     new-array v0, v15, [Ljava/lang/Object;
 
-    .line 4258
-    .end local v0    # "uid":I
-    .local v361, "uid":I
     new-instance v15, Ljava/lang/StringBuilder;
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
@@ -21081,7 +16145,6 @@
 
     aput-object v5, v0, v15
 
-    .line 4259
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -21130,23 +16193,12 @@
 
     aput-object v5, v0, v15
 
-    .line 4258
     move/from16 v5, v361
 
     move-object/from16 v15, v362
 
     invoke-static {v12, v5, v10, v15, v0}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4246
-    .end local v2    # "foregroundMillis":J
-    .end local v6    # "userMillis":J
-    .end local v8    # "starts":I
-    .end local v9    # "numAnrs":I
-    .end local v11    # "numCrashes":I
-    .end local v13    # "systemMillis":J
-    .end local v360    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v361    # "uid":I
-    .local v5, "uid":I
     :goto_51
     add-int/lit8 v4, v4, -0x1
 
@@ -21164,18 +16216,6 @@
 
     goto/16 :goto_4f
 
-    .line 4263
-    .end local v4    # "ipr":I
-    .end local v5    # "uid":I
-    .end local v356    # "cpuFreqs":[J
-    .end local v357    # "sb":Ljava/lang/StringBuilder;
-    .end local v358    # "NSE":I
-    .end local v359    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v0    # "uid":I
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    .restart local v3    # "cpuFreqs":[J
-    .local v9, "u":Landroid/os/BatteryStats$Uid;
-    .local v11, "NSE":I
     :cond_5e
     move v5, v0
 
@@ -21187,27 +16227,12 @@
 
     move/16 v358, v11
 
-    .line 4264
-    .end local v0    # "uid":I
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
-    .end local v3    # "cpuFreqs":[J
-    .end local v9    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v11    # "NSE":I
-    .restart local v5    # "uid":I
-    .restart local v356    # "cpuFreqs":[J
-    .restart local v357    # "sb":Ljava/lang/StringBuilder;
-    .restart local v358    # "NSE":I
-    .restart local v359    # "u":Landroid/os/BatteryStats$Uid;
     move-object/from16 v0, v359
 
     invoke-virtual {v0}, Landroid/os/BatteryStats$Uid;->getPackageStats()Landroid/util/ArrayMap;
 
     move-result-object v2
 
-    .line 4265
-    .end local v359    # "u":Landroid/os/BatteryStats$Uid;
-    .local v0, "u":Landroid/os/BatteryStats$Uid;
-    .local v2, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     invoke-virtual {v2}, Landroid/util/ArrayMap;->size()I
 
     move-result v3
@@ -21216,30 +16241,21 @@
 
     sub-int/2addr v3, v4
 
-    .line 4265
-    .local v3, "ipkg":I
     :goto_52
     if-ltz v3, :cond_63
 
-    .line 4266
     invoke-virtual {v2, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/os/BatteryStats$Uid$Pkg;
 
-    .line 4267
-    .local v4, "ps":Landroid/os/BatteryStats$Uid$Pkg;
     const/4 v6, 0x0
 
-    .line 4268
-    .local v6, "wakeups":I
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid$Pkg;->getWakeupAlarmStats()Landroid/util/ArrayMap;
 
     move-result-object v7
 
-    .line 4269
-    .local v7, "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     invoke-virtual {v7}, Landroid/util/ArrayMap;->size()I
 
     move-result v8
@@ -21248,12 +16264,9 @@
 
     sub-int/2addr v8, v9
 
-    .line 4269
-    .local v8, "iwa":I
     :goto_53
     if-ltz v8, :cond_5f
 
-    .line 4270
     invoke-virtual {v7, v8}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -21268,11 +16281,8 @@
 
     move-result v9
 
-    .line 4271
-    .local v9, "count":I
     add-int/2addr v6, v9
 
-    .line 4272
     invoke-virtual {v7, v8}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -21287,8 +16297,6 @@
 
     move-result-object v13
 
-    .line 4273
-    .local v13, "name":Ljava/lang/String;
     const-string/jumbo v14, "wua"
 
     move-object/16 v363, v0
@@ -21297,9 +16305,6 @@
 
     new-array v0, v15, [Ljava/lang/Object;
 
-    .line 4273
-    .end local v0    # "u":Landroid/os/BatteryStats$Uid;
-    .local v363, "u":Landroid/os/BatteryStats$Uid;
     const/4 v15, 0x0
 
     aput-object v13, v0, v15
@@ -21314,19 +16319,12 @@
 
     invoke-static {v12, v5, v10, v14, v0}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4269
-    .end local v9    # "count":I
-    .end local v13    # "name":Ljava/lang/String;
     add-int/lit8 v8, v8, -0x1
 
     move-object/from16 v0, v363
 
     goto :goto_53
 
-    .line 4275
-    .end local v8    # "iwa":I
-    .end local v363    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v0    # "u":Landroid/os/BatteryStats$Uid;
     :cond_5f
     move-object/16 v363, v0
 
@@ -21334,60 +16332,41 @@
 
     const/16 v122, 0x1
 
-    .line 4275
-    .end local v0    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v363    # "u":Landroid/os/BatteryStats$Uid;
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid$Pkg;->getServiceStats()Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 4276
-    .local v0, "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v8
 
     add-int/lit8 v8, v8, -0x1
 
-    .line 4276
-    .local v8, "isvc":I
     :goto_54
     if-ltz v8, :cond_62
 
-    .line 4277
     invoke-virtual {v0, v8}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/os/BatteryStats$Uid$Pkg$Serv;
 
-    .line 4278
-    .local v9, "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
     move-wide/from16 v13, v161
 
     invoke-virtual {v9, v13, v14, v11}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getStartTime(JI)J
 
     move-result-wide v158
 
-    .line 4279
-    .end local v161    # "batteryUptime":J
-    .local v13, "batteryUptime":J
-    .local v158, "startTime":J
     invoke-virtual {v9, v11}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getStarts(I)I
 
     move-result v15
 
-    .line 4280
-    .local v15, "starts":I
     move-object/16 v364, v1
 
     invoke-virtual {v9, v11}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getLaunches(I)I
 
     move-result v1
 
-    .line 4281
-    .local v1, "launches":I
-    .local v364, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     cmp-long v160, v158, v82
 
     if-nez v160, :cond_61
@@ -21398,11 +16377,6 @@
 
     goto :goto_55
 
-    .line 4276
-    .end local v1    # "launches":I
-    .end local v9    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .end local v15    # "starts":I
-    .end local v158    # "startTime":J
     :cond_60
     move-object/16 v365, v4
 
@@ -21426,20 +16400,12 @@
 
     goto :goto_56
 
-    .line 4282
-    .restart local v1    # "launches":I
-    .restart local v9    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .restart local v15    # "starts":I
-    .restart local v158    # "startTime":J
     :cond_61
     :goto_55
     move-object/16 v365, v4
 
     const-string v4, "apk"
 
-    .line 4282
-    .end local v4    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .local v365, "ps":Landroid/os/BatteryStats$Uid$Pkg;
     move-object/16 v366, v7
 
     move-object/16 v367, v9
@@ -21448,11 +16414,6 @@
 
     new-array v9, v7, [Ljava/lang/Object;
 
-    .line 4283
-    .end local v7    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .end local v9    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .local v366, "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .local v367, "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v160
@@ -21461,7 +16422,6 @@
 
     aput-object v160, v9, v161
 
-    .line 4284
     invoke-virtual {v2, v3}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v160
@@ -21470,7 +16430,6 @@
 
     aput-object v160, v9, v122
 
-    .line 4285
     invoke-virtual {v0, v8}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v160
@@ -21485,9 +16444,6 @@
 
     div-long v7, v158, v58
 
-    .line 4286
-    .end local v8    # "isvc":I
-    .local v368, "isvc":I
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
@@ -21496,7 +16452,6 @@
 
     aput-object v7, v9, v8
 
-    .line 4287
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -21505,7 +16460,6 @@
 
     aput-object v7, v9, v160
 
-    .line 4288
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -21514,22 +16468,13 @@
 
     aput-object v7, v9, v129
 
-    .line 4282
     invoke-static {v12, v5, v10, v4, v9}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 4276
-    .end local v1    # "launches":I
-    .end local v15    # "starts":I
-    .end local v158    # "startTime":J
-    .end local v367    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
     :goto_56
     move/from16 v1, v368
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 4276
-    .end local v368    # "isvc":I
-    .local v1, "isvc":I
     move v8, v1
 
     move-wide/from16 v161, v13
@@ -21542,15 +16487,6 @@
 
     goto/16 :goto_54
 
-    .line 4265
-    .end local v0    # "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
-    .end local v6    # "wakeups":I
-    .end local v13    # "batteryUptime":J
-    .end local v364    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v365    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .end local v366    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .local v1, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v161    # "batteryUptime":J
     :cond_62
     move-object/16 v364, v1
 
@@ -21570,10 +16506,6 @@
 
     const/16 v161, 0x0
 
-    .end local v1    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v161    # "batteryUptime":J
-    .restart local v13    # "batteryUptime":J
-    .restart local v364    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     add-int/lit8 v3, v3, -0x1
 
     move-wide/from16 v161, v13
@@ -21582,55 +16514,6 @@
 
     goto/16 :goto_52
 
-    .line 3893
-    .end local v2    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v3    # "ipkg":I
-    .end local v5    # "uid":I
-    .end local v13    # "batteryUptime":J
-    .end local v94    # "mobilePacketsRx":J
-    .end local v100    # "mobileActiveTime":J
-    .end local v102    # "mobileWakeup":J
-    .end local v104    # "wifiPacketsRx":J
-    .end local v106    # "wifiPacketsTx":J
-    .end local v108    # "wifiWakeup":J
-    .end local v110    # "btBytesRx":J
-    .end local v112    # "btBytesTx":J
-    .end local v114    # "mobileBytesBgRx":J
-    .end local v116    # "mobileBytesBgTx":J
-    .end local v118    # "wifiBytesBgRx":J
-    .end local v120    # "wifiScanCount":I
-    .end local v123    # "wifiBytesBgTx":J
-    .end local v125    # "mobilePacketsBgRx":J
-    .end local v130    # "mobilePacketsBgTx":J
-    .end local v132    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v135    # "wifiPacketsBgRx":J
-    .end local v137    # "wifiPacketsBgTx":J
-    .end local v139    # "wifiBytesTx":J
-    .end local v141    # "wifiBytesRx":J
-    .end local v144    # "wifiScanActualTimeMsBg":J
-    .end local v146    # "wifiScanTime":J
-    .end local v148    # "fullWifiLockOnTime":J
-    .end local v150    # "mobilePacketsTx":J
-    .end local v152    # "uidWifiRunningTime":J
-    .end local v154    # "userCpuTimeUs":J
-    .end local v156    # "systemCpuTimeUs":J
-    .end local v248    # "mobileBytesTx":J
-    .end local v250    # "mobileBytesRx":J
-    .end local v252    # "mobileActiveCount":I
-    .end local v265    # "wifiScanCountBg":I
-    .end local v266    # "wifiScanActualTimeMs":J
-    .end local v301    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v305    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v306    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v328    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v332    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v350    # "stateTimes":[Ljava/lang/Object;
-    .end local v351    # "totalStateTime":J
-    .end local v355    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v358    # "NSE":I
-    .end local v363    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v364    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v161    # "batteryUptime":J
     :cond_63
     move-wide/from16 v13, v161
 
@@ -21650,14 +16533,9 @@
 
     const/16 v161, 0x0
 
-    .end local v161    # "batteryUptime":J
-    .restart local v13    # "batteryUptime":J
     :goto_57
     add-int/lit8 v1, v176, 0x1
 
-    .line 3893
-    .end local v176    # "iu":I
-    .local v1, "iu":I
     move-object v8, v10
 
     move v10, v11
@@ -21686,26 +16564,6 @@
 
     goto/16 :goto_1c
 
-    .line 4293
-    .end local v1    # "iu":I
-    .end local v10    # "category":Ljava/lang/String;
-    .end local v13    # "batteryUptime":J
-    .end local v60    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v69    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v92    # "NU":I
-    .end local v346    # "rawRealtimeMs":J
-    .end local v353    # "rawRealtime":J
-    .end local v356    # "cpuFreqs":[J
-    .end local v357    # "sb":Ljava/lang/StringBuilder;
-    .local v6, "NU":I
-    .local v7, "sb":Ljava/lang/StringBuilder;
-    .local v8, "category":Ljava/lang/String;
-    .local v12, "rawRealtime":J
-    .local v14, "cpuFreqs":[J
-    .local v94, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v161    # "batteryUptime":J
-    .restart local v166    # "rawRealtimeMs":J
-    .restart local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_64
     move/from16 v92, v6
 
@@ -21729,24 +16587,6 @@
 
     move-object v12, v9
 
-    .end local v6    # "NU":I
-    .end local v7    # "sb":Ljava/lang/StringBuilder;
-    .end local v8    # "category":Ljava/lang/String;
-    .end local v12    # "rawRealtime":J
-    .end local v14    # "cpuFreqs":[J
-    .end local v94    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v161    # "batteryUptime":J
-    .end local v166    # "rawRealtimeMs":J
-    .end local v173    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v10    # "category":Ljava/lang/String;
-    .restart local v13    # "batteryUptime":J
-    .restart local v60    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v69    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v92    # "NU":I
-    .restart local v346    # "rawRealtimeMs":J
-    .restart local v353    # "rawRealtime":J
-    .restart local v356    # "cpuFreqs":[J
-    .restart local v357    # "sb":Ljava/lang/StringBuilder;
     return-void
 
     :pswitch_data_0
@@ -21770,10 +16610,6 @@
 
 .method public dumpCheckinLocked(Landroid/content/Context;Ljava/io/PrintWriter;Ljava/util/List;IJ)V
     .locals 19
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p4, "flags"    # I
-    .param p5, "histStart"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -21785,18 +16621,14 @@
         }
     .end annotation
 
-    .line 7061
-    .local p3, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     move-object/from16 v7, p0
 
     move-object/from16 v8, p2
 
     move-object/from16 v9, p3
 
-    .line 7061
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->prepareForDumpLocked()V
 
-    .line 7063
     const-string v0, "i"
 
     const-string/jumbo v1, "vers"
@@ -21805,7 +16637,6 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 7064
     const/16 v3, 0x20
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -21836,7 +16667,6 @@
 
     aput-object v3, v2, v12
 
-    .line 7065
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getEndPlatformVersion()Ljava/lang/String;
 
     move-result-object v3
@@ -21845,10 +16675,8 @@
 
     aput-object v3, v2, v4
 
-    .line 7063
     invoke-static {v8, v10, v0, v1, v2}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 7067
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryBaseTime()J
 
     move-result-wide v0
@@ -21859,24 +16687,18 @@
 
     add-long v13, v0, v2
 
-    .line 7069
-    .local v13, "now":J
     and-int/lit8 v0, p4, 0x18
 
     if-eqz v0, :cond_1
 
-    .line 7070
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->startIteratingHistoryLocked()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 7072
     move v0, v10
 
-    .line 7072
-    .local v0, "i":I
     :goto_0
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryStringPoolSize()I
@@ -21885,7 +16707,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 7073
     const/16 v1, 0x9
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(I)V
@@ -21894,40 +16715,32 @@
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 7074
     const-string v2, "hsp"
 
     invoke-virtual {v8, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 7075
     invoke-virtual {v8, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 7076
     const-string v1, ","
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7077
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats;->getHistoryTagPoolUid(I)I
 
     move-result v1
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 7078
     const-string v1, ",\""
 
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7079
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats;->getHistoryTagPoolString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7080
-    .local v1, "str":Ljava/lang/String;
     const-string v2, "\\"
 
     const-string v3, "\\\\"
@@ -21938,7 +16751,6 @@
 
     move-object v1, v2
 
-    .line 7081
     const-string v2, "\""
 
     const-string v3, "\\\""
@@ -21949,25 +16761,18 @@
 
     move-object v1, v2
 
-    .line 7082
     invoke-virtual {v8, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7083
     const-string v2, "\""
 
     invoke-virtual {v8, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7084
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 7072
-    .end local v1    # "str":Ljava/lang/String;
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 7086
-    .end local v0    # "i":I
     :cond_0
     const/4 v6, 0x1
 
@@ -21983,13 +16788,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7088
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->finishIteratingHistoryLocked()V
 
-    .line 7089
     goto :goto_1
 
-    .line 7088
     :catchall_0
     move-exception v0
 
@@ -21997,31 +16799,23 @@
 
     throw v0
 
-    .line 7093
     :cond_1
     :goto_1
     and-int/lit8 v0, p4, 0x8
 
     if-eqz v0, :cond_2
 
-    .line 7094
     return-void
 
-    .line 7097
     :cond_2
     if-eqz v9, :cond_6
 
-    .line 7098
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 7099
-    .local v0, "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
     move v1, v10
 
-    .line 7099
-    .local v1, "i":I
     :goto_2
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->size()I
 
@@ -22029,34 +16823,26 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 7100
     invoke-interface {v9, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/pm/ApplicationInfo;
 
-    .line 7101
-    .local v2, "ai":Landroid/content/pm/ApplicationInfo;
     iget v3, v2, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    .line 7102
     invoke-static {v3}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result v3
 
-    .line 7101
     invoke-virtual {v0, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/util/Pair;
 
-    .line 7103
-    .local v3, "pkgs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;"
     if-nez v3, :cond_3
 
-    .line 7104
     new-instance v4, Landroid/util/Pair;
 
     new-instance v5, Ljava/util/ArrayList;
@@ -22071,7 +16857,6 @@
 
     move-object v3, v4
 
-    .line 7105
     iget v4, v2, Landroid/content/pm/ApplicationInfo;->uid:I
 
     invoke-static {v4}, Landroid/os/UserHandle;->getAppId(I)I
@@ -22080,7 +16865,6 @@
 
     invoke-virtual {v0, v4, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 7107
     :cond_3
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -22090,40 +16874,26 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7099
-    .end local v2    # "ai":Landroid/content/pm/ApplicationInfo;
-    .end local v3    # "pkgs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;"
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 7109
-    .end local v1    # "i":I
     :cond_4
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v1
 
-    .line 7110
-    .local v1, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
-    .line 7111
-    .local v2, "NU":I
     new-array v3, v12, [Ljava/lang/String;
 
-    .line 7112
-    .local v3, "lineArgs":[Ljava/lang/String;
     move v4, v10
 
-    .line 7112
-    .local v4, "i":I
     :goto_3
     if-ge v4, v2, :cond_6
 
-    .line 7113
     invoke-virtual {v1, v4}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v5
@@ -22132,16 +16902,12 @@
 
     move-result v5
 
-    .line 7114
-    .local v5, "uid":I
     invoke-virtual {v0, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/util/Pair;
 
-    .line 7115
-    .local v6, "pkgs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;"
     if-eqz v6, :cond_5
 
     iget-object v12, v6, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -22152,18 +16918,14 @@
 
     if-nez v12, :cond_5
 
-    .line 7116
     iget-object v12, v6, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v12, Landroid/util/MutableBoolean;
 
     iput-boolean v11, v12, Landroid/util/MutableBoolean;->value:Z
 
-    .line 7117
     move v12, v10
 
-    .line 7117
-    .local v12, "j":I
     :goto_4
     iget-object v11, v6, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -22175,14 +16937,12 @@
 
     if-ge v12, v11, :cond_5
 
-    .line 7118
     invoke-static {v5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v11
 
     aput-object v11, v3, v10
 
-    .line 7119
     iget-object v11, v6, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v11, Ljava/util/ArrayList;
@@ -22197,28 +16957,20 @@
 
     aput-object v11, v3, v15
 
-    .line 7120
     const-string v11, "i"
 
     move-object/from16 v16, v0
 
     const-string/jumbo v0, "uid"
 
-    .line 7120
-    .end local v0    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .local v16, "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
     move-object/from16 v17, v1
 
     move-object v1, v3
 
     check-cast v1, [Ljava/lang/Object;
 
-    .line 7120
-    .end local v1    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v17, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-static {v8, v10, v11, v0, v1}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 7117
     add-int/lit8 v12, v12, 0x1
 
     move-object/from16 v0, v16
@@ -22229,24 +16981,11 @@
 
     goto :goto_4
 
-    .line 7112
-    .end local v5    # "uid":I
-    .end local v6    # "pkgs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;"
-    .end local v12    # "j":I
-    .end local v16    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .end local v17    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v0    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .restart local v1    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     :cond_5
     move-object/from16 v16, v0
 
     move-object/from16 v17, v1
 
-    .line 7112
-    .end local v0    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .end local v1    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v16    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .restart local v17    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     add-int/lit8 v4, v4, 0x1
 
     move-object/from16 v0, v16
@@ -22257,18 +16996,11 @@
 
     goto :goto_3
 
-    .line 7126
-    .end local v2    # "NU":I
-    .end local v3    # "lineArgs":[Ljava/lang/String;
-    .end local v4    # "i":I
-    .end local v16    # "uids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/util/Pair<Ljava/util/ArrayList<Ljava/lang/String;>;Landroid/util/MutableBoolean;>;>;"
-    .end local v17    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     :cond_6
     and-int/lit8 v0, p4, 0x4
 
     if-nez v0, :cond_a
 
-    .line 7127
     const-string v0, ""
 
     const-string v1, "dsd"
@@ -22281,11 +17013,8 @@
 
     invoke-static {v8, v0, v1, v2, v3}, Landroid/os/BatteryStats;->dumpDurationSteps(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Z)Z
 
-    .line 7128
     new-array v0, v3, [Ljava/lang/String;
 
-    .line 7129
-    .local v0, "lineArgs":[Ljava/lang/String;
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -22298,22 +17027,18 @@
 
     move-result-wide v1
 
-    .line 7130
-    .local v1, "timeRemaining":J
     const-wide/16 v5, 0x0
 
     cmp-long v11, v1, v5
 
     if-ltz v11, :cond_7
 
-    .line 7131
     invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v11
 
     aput-object v11, v0, v10
 
-    .line 7132
     const-string v11, "i"
 
     const-string v12, "dtr"
@@ -22324,7 +17049,6 @@
 
     invoke-static {v8, v10, v11, v12, v5}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 7135
     :cond_7
     const-string v5, ""
 
@@ -22338,7 +17062,6 @@
 
     invoke-static {v8, v5, v6, v11, v12}, Landroid/os/BatteryStats;->dumpDurationSteps(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Z)Z
 
-    .line 7136
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
@@ -22349,23 +17072,18 @@
 
     move-result-wide v5
 
-    .line 7137
-    .end local v1    # "timeRemaining":J
-    .local v5, "timeRemaining":J
     const-wide/16 v1, 0x0
 
     cmp-long v1, v5, v1
 
     if-ltz v1, :cond_8
 
-    .line 7138
     invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v1
 
     aput-object v1, v0, v10
 
-    .line 7139
     const-string v1, "i"
 
     const-string v2, "ctr"
@@ -22376,7 +17094,6 @@
 
     invoke-static {v8, v10, v1, v2, v3}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 7142
     :cond_8
     const/4 v4, 0x0
 
@@ -22401,36 +17118,23 @@
 
     move v5, v11
 
-    .line 7142
-    .end local v5    # "timeRemaining":J
-    .local v15, "timeRemaining":J
     move v6, v10
 
     invoke-virtual/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpCheckinLocked(Landroid/content/Context;Ljava/io/PrintWriter;IIZ)V
 
-    .line 7145
-    .end local v0    # "lineArgs":[Ljava/lang/String;
-    .end local v15    # "timeRemaining":J
     :cond_a
     return-void
 .end method
 
 .method public dumpLocked(Landroid/content/Context;Ljava/io/PrintWriter;IIJ)V
     .locals 28
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "flags"    # I
-    .param p4, "reqUid"    # I
-    .param p5, "histStart"    # J
 
     move-object/from16 v14, p0
 
     move-object/from16 v15, p2
 
-    .line 6867
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->prepareForDumpLocked()V
 
-    .line 6869
     and-int/lit8 v0, p3, 0xe
 
     if-eqz v0, :cond_0
@@ -22445,8 +17149,6 @@
     :goto_0
     move/from16 v16, v0
 
-    .line 6872
-    .local v16, "filtering":Z
     and-int/lit8 v0, p3, 0x8
 
     const-wide/16 v8, 0x0
@@ -22455,7 +17157,6 @@
 
     if-nez v16, :cond_6
 
-    .line 6873
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryTotalSize()I
 
@@ -22463,29 +17164,23 @@
 
     int-to-long v10, v0
 
-    .line 6874
-    .local v10, "historyTotalSize":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryUsedSize()I
 
     move-result v0
 
     int-to-long v6, v0
 
-    .line 6875
-    .local v6, "historyUsedSize":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->startIteratingHistoryLocked()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 6877
     :try_start_0
     const-string v0, "Battery History ("
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6878
     const-wide/16 v0, 0x64
 
     mul-long/2addr v0, v6
@@ -22494,40 +17189,32 @@
 
     invoke-virtual {v15, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 6879
     const-string v0, "% used, "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6880
     invoke-direct {v14, v15, v6, v7}, Landroid/os/BatteryStats;->printSizeValue(Ljava/io/PrintWriter;J)V
 
-    .line 6881
     const-string v0, " used of "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6882
     invoke-direct {v14, v15, v10, v11}, Landroid/os/BatteryStats;->printSizeValue(Ljava/io/PrintWriter;J)V
 
-    .line 6883
     const-string v0, ", "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6884
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryStringPoolSize()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6885
     const-string v0, " strings using "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6886
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHistoryStringPoolBytes()I
 
     move-result v0
@@ -22536,14 +17223,12 @@
 
     invoke-direct {v14, v15, v0, v1}, Landroid/os/BatteryStats;->printSizeValue(Ljava/io/PrintWriter;J)V
 
-    .line 6887
     const-string v0, "):"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 6888
     const/4 v0, 0x0
 
     move-object v1, v14
@@ -22558,54 +17243,35 @@
 
     move v6, v0
 
-    .line 6888
-    .end local v6    # "historyUsedSize":J
-    .local v17, "historyUsedSize":J
     :try_start_1
     invoke-direct/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpHistoryLocked(Ljava/io/PrintWriter;IJZ)V
 
-    .line 6889
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 6891
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->finishIteratingHistoryLocked()V
 
-    .line 6892
     goto :goto_2
 
-    .line 6891
     :catchall_0
     move-exception v0
 
     goto :goto_1
 
-    .line 6891
-    .end local v17    # "historyUsedSize":J
-    .restart local v6    # "historyUsedSize":J
     :catchall_1
     move-exception v0
 
     move-wide/from16 v17, v6
 
-    .line 6891
-    .end local v6    # "historyUsedSize":J
-    .restart local v17    # "historyUsedSize":J
     :goto_1
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->finishIteratingHistoryLocked()V
 
     throw v0
 
-    .line 6895
-    .end local v17    # "historyUsedSize":J
-    .restart local v6    # "historyUsedSize":J
     :cond_2
     move-wide/from16 v17, v6
 
-    .line 6895
-    .end local v6    # "historyUsedSize":J
-    .restart local v17    # "historyUsedSize":J
     :goto_2
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->startIteratingOldHistoryLocked()Z
 
@@ -22613,29 +17279,21 @@
 
     if-eqz v0, :cond_6
 
-    .line 6897
     :try_start_2
     new-instance v0, Landroid/os/BatteryStats$HistoryItem;
 
     invoke-direct {v0}, Landroid/os/BatteryStats$HistoryItem;-><init>()V
 
-    .line 6898
-    .local v0, "rec":Landroid/os/BatteryStats$HistoryItem;
     const-string v1, "Old battery History:"
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6899
     new-instance v1, Landroid/os/BatteryStats$HistoryPrinter;
 
     invoke-direct {v1}, Landroid/os/BatteryStats$HistoryPrinter;-><init>()V
 
-    .line 6900
-    .local v1, "hprinter":Landroid/os/BatteryStats$HistoryPrinter;
     const-wide/16 v2, -0x1
 
-    .line 6901
-    .local v2, "baseTime":J
     :goto_3
     invoke-virtual {v14, v0}, Landroid/os/BatteryStats;->getNextOldHistoryLocked(Landroid/os/BatteryStats$HistoryItem;)Z
 
@@ -22643,19 +17301,14 @@
 
     if-eqz v4, :cond_5
 
-    .line 6902
     cmp-long v4, v2, v8
 
     if-gez v4, :cond_3
 
-    .line 6903
     iget-wide v4, v0, Landroid/os/BatteryStats$HistoryItem;->time:J
 
     move-wide v2, v4
 
-    .line 6905
-    .end local v2    # "baseTime":J
-    .local v19, "baseTime":J
     :cond_3
     move-wide/from16 v19, v2
 
@@ -22681,29 +17334,19 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats$HistoryPrinter;->printNextItem(Ljava/io/PrintWriter;Landroid/os/BatteryStats$HistoryItem;JZZ)V
 
-    .line 6900
     move-wide/from16 v2, v19
 
     goto :goto_3
 
-    .line 6907
-    .end local v19    # "baseTime":J
-    .restart local v2    # "baseTime":J
     :cond_5
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 6909
-    .end local v0    # "rec":Landroid/os/BatteryStats$HistoryItem;
-    .end local v1    # "hprinter":Landroid/os/BatteryStats$HistoryPrinter;
-    .end local v2    # "baseTime":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->finishIteratingOldHistoryLocked()V
 
-    .line 6910
     goto :goto_5
 
-    .line 6909
     :catchall_2
     move-exception v0
 
@@ -22711,9 +17354,6 @@
 
     throw v0
 
-    .line 6914
-    .end local v10    # "historyTotalSize":J
-    .end local v17    # "historyUsedSize":J
     :cond_6
     :goto_5
     if-eqz v16, :cond_7
@@ -22722,71 +17362,48 @@
 
     if-nez v0, :cond_7
 
-    .line 6915
     return-void
 
-    .line 6918
     :cond_7
     if-nez v16, :cond_d
 
-    .line 6919
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v0
 
-    .line 6920
-    .local v0, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 6921
-    .local v1, "NU":I
     const/4 v2, 0x0
 
-    .line 6922
-    .local v2, "didPid":Z
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 6923
-    .local v3, "nowRealtime":J
     move v5, v2
 
     const/4 v2, 0x0
 
-    .line 6923
-    .local v2, "i":I
-    .local v5, "didPid":Z
     :goto_6
     if-ge v2, v1, :cond_c
 
-    .line 6924
     invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/os/BatteryStats$Uid;
 
-    .line 6925
-    .local v6, "uid":Landroid/os/BatteryStats$Uid;
     invoke-virtual {v6}, Landroid/os/BatteryStats$Uid;->getPidStats()Landroid/util/SparseArray;
 
     move-result-object v7
 
-    .line 6926
-    .local v7, "pids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Pid;>;"
     if-eqz v7, :cond_b
 
-    .line 6927
     move v10, v5
 
     const/4 v5, 0x0
 
-    .line 6927
-    .local v5, "j":I
-    .local v10, "didPid":Z
     :goto_7
     invoke-virtual {v7}, Landroid/util/SparseArray;->size()I
 
@@ -22794,26 +17411,20 @@
 
     if-ge v5, v11, :cond_a
 
-    .line 6928
     invoke-virtual {v7, v5}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v11
 
     check-cast v11, Landroid/os/BatteryStats$Uid$Pid;
 
-    .line 6929
-    .local v11, "pid":Landroid/os/BatteryStats$Uid$Pid;
     if-nez v10, :cond_8
 
-    .line 6930
     const-string v13, "Per-PID Stats:"
 
     invoke-virtual {v15, v13}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6931
     const/4 v10, 0x1
 
-    .line 6933
     :cond_8
     iget-wide v8, v11, Landroid/os/BatteryStats$Uid$Pid;->mWakeSumMs:J
 
@@ -22821,7 +17432,6 @@
 
     if-lez v13, :cond_9
 
-    .line 6934
     iget-wide v12, v11, Landroid/os/BatteryStats$Uid$Pid;->mWakeStartMs:J
 
     sub-long v12, v3, v12
@@ -22834,8 +17444,6 @@
     :goto_8
     add-long/2addr v8, v12
 
-    .line 6935
-    .local v8, "time":J
     const-string v12, "  PID "
 
     invoke-virtual {v15, v12}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -22846,38 +17454,25 @@
 
     invoke-virtual {v15, v12}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6936
     const-string v12, " wake time: "
 
     invoke-virtual {v15, v12}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6937
     invoke-static {v8, v9, v15}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 6938
     const-string v12, ""
 
     invoke-virtual {v15, v12}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6927
-    .end local v8    # "time":J
-    .end local v11    # "pid":Landroid/os/BatteryStats$Uid$Pid;
     add-int/lit8 v5, v5, 0x1
 
     const-wide/16 v8, 0x0
 
     goto :goto_7
 
-    .line 6923
-    .end local v5    # "j":I
-    .end local v6    # "uid":Landroid/os/BatteryStats$Uid;
-    .end local v7    # "pids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Pid;>;"
     :cond_a
     move v5, v10
 
-    .line 6923
-    .end local v10    # "didPid":Z
-    .local v5, "didPid":Z
     :cond_b
     add-int/lit8 v2, v2, 0x1
 
@@ -22885,19 +17480,11 @@
 
     goto :goto_6
 
-    .line 6942
-    .end local v2    # "i":I
     :cond_c
     if-eqz v5, :cond_d
 
-    .line 6943
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 6947
-    .end local v0    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v1    # "NU":I
-    .end local v3    # "nowRealtime":J
-    .end local v5    # "didPid":Z
     :cond_d
     if-eqz v16, :cond_f
 
@@ -22907,25 +17494,21 @@
 
     goto :goto_9
 
-    .line 6977
     :cond_e
     const/4 v12, 0x0
 
     goto/16 :goto_b
 
-    .line 6948
     :cond_f
     :goto_9
     const-string v0, "  "
 
     const-string v1, "Discharge step durations:"
 
-    .line 6949
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
 
     move-result-object v2
 
-    .line 6948
     const/4 v3, 0x0
 
     invoke-static {v15, v0, v1, v2, v3}, Landroid/os/BatteryStats;->dumpDurationSteps(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Z)Z
@@ -22936,67 +17519,50 @@
 
     if-eqz v0, :cond_12
 
-    .line 6950
     nop
 
-    .line 6951
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     mul-long/2addr v0, v7
 
-    .line 6950
     invoke-virtual {v14, v0, v1}, Landroid/os/BatteryStats;->computeBatteryTimeRemaining(J)J
 
     move-result-wide v9
 
-    .line 6952
-    .local v9, "timeRemaining":J
     const-wide/16 v0, 0x0
 
     cmp-long v2, v9, v0
 
     if-ltz v2, :cond_10
 
-    .line 6953
     const-string v0, "  Estimated discharge time remaining: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6954
     div-long v0, v9, v7
 
     invoke-static {v0, v1, v15}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 6955
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 6957
     :cond_10
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
 
     move-result-object v0
 
-    .line 6958
-    .local v0, "steps":Landroid/os/BatteryStats$LevelStepTracker;
     const/4 v1, 0x0
 
-    .line 6958
-    .local v1, "i":I
     :goto_a
     move v11, v1
 
-    .line 6958
-    .end local v1    # "i":I
-    .local v11, "i":I
     sget-object v1, Landroid/os/BatteryStats;->STEP_LEVEL_MODES_OF_INTEREST:[I
 
     array-length v1, v1
 
     if-ge v11, v1, :cond_11
 
-    .line 6959
     const-string v2, "  Estimated "
 
     sget-object v1, Landroid/os/BatteryStats;->STEP_LEVEL_MODE_LABELS:[Ljava/lang/String;
@@ -23019,7 +17585,6 @@
 
     const/16 v26, 0x0
 
-    .line 6960
     move-object/from16 v21, v0
 
     move-wide/from16 v22, v5
@@ -23030,38 +17595,26 @@
 
     move-result-wide v5
 
-    .line 6959
     move-object v1, v15
 
     invoke-static/range {v1 .. v6}, Landroid/os/BatteryStats;->dumpTimeEstimate(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Z
 
-    .line 6958
     add-int/lit8 v1, v11, 0x1
 
-    .line 6958
-    .end local v11    # "i":I
-    .restart local v1    # "i":I
     goto :goto_a
 
-    .line 6963
-    .end local v1    # "i":I
     :cond_11
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 6965
-    .end local v0    # "steps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v9    # "timeRemaining":J
     :cond_12
     const-string v0, "  "
 
     const-string v1, "Charge step durations:"
 
-    .line 6966
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getChargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
 
     move-result-object v2
 
-    .line 6965
     const/4 v12, 0x0
 
     invoke-static {v15, v0, v1, v2, v12}, Landroid/os/BatteryStats;->dumpDurationSteps(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Z)Z
@@ -23070,48 +17623,37 @@
 
     if-eqz v0, :cond_14
 
-    .line 6967
     nop
 
-    .line 6968
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     mul-long/2addr v0, v7
 
-    .line 6967
     invoke-virtual {v14, v0, v1}, Landroid/os/BatteryStats;->computeChargeTimeRemaining(J)J
 
     move-result-wide v0
 
-    .line 6969
-    .local v0, "timeRemaining":J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
     if-ltz v2, :cond_13
 
-    .line 6970
     const-string v2, "  Estimated charge time remaining: "
 
     invoke-virtual {v15, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6971
     div-long v2, v0, v7
 
     invoke-static {v2, v3, v15}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 6972
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 6974
     :cond_13
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 6977
-    .end local v0    # "timeRemaining":J
     :cond_14
     :goto_b
     if-eqz v16, :cond_16
@@ -23122,130 +17664,99 @@
 
     goto :goto_c
 
-    .line 7047
     :cond_15
     move v4, v12
 
     goto/16 :goto_13
 
-    .line 6978
     :cond_16
     :goto_c
     const-string v0, "Daily stats:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6979
     const-string v0, "  Current start time: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6980
     const-string/jumbo v0, "yyyy-MM-dd-HH-mm-ss"
 
-    .line 6981
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getCurrentDailyStartTime()J
 
     move-result-wide v1
 
-    .line 6980
     invoke-static {v0, v1, v2}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 6981
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6980
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6982
     const-string v0, "  Next min deadline: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6983
     const-string/jumbo v0, "yyyy-MM-dd-HH-mm-ss"
 
-    .line 6984
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getNextMinDailyDeadline()J
 
     move-result-wide v1
 
-    .line 6983
     invoke-static {v0, v1, v2}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 6984
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6983
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6985
     const-string v0, "  Next max deadline: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6986
     const-string/jumbo v0, "yyyy-MM-dd-HH-mm-ss"
 
-    .line 6987
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getNextMaxDailyDeadline()J
 
     move-result-wide v1
 
-    .line 6986
     invoke-static {v0, v1, v2}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 6987
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6986
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6988
     new-instance v6, Ljava/lang/StringBuilder;
 
     const/16 v0, 0x40
 
     invoke-direct {v6, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 6989
-    .local v6, "sb":Ljava/lang/StringBuilder;
     const/4 v0, 0x1
 
     new-array v13, v0, [I
 
-    .line 6990
-    .local v13, "outInt":[I
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDailyDischargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
 
     move-result-object v11
 
-    .line 6991
-    .local v11, "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDailyChargeLevelStepTracker()Landroid/os/BatteryStats$LevelStepTracker;
 
     move-result-object v10
 
-    .line 6992
-    .local v10, "csteps":Landroid/os/BatteryStats$LevelStepTracker;
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDailyPackageChanges()Ljava/util/ArrayList;
 
     move-result-object v9
 
-    .line 6993
-    .local v9, "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
     iget v1, v11, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
     if-gtz v1, :cond_18
@@ -23258,7 +17769,6 @@
 
     goto :goto_d
 
-    .line 7015
     :cond_17
     move v5, v0
 
@@ -23274,7 +17784,6 @@
 
     goto/16 :goto_f
 
-    .line 6994
     :cond_18
     :goto_d
     and-int/lit8 v1, p3, 0x4
@@ -23283,7 +17792,6 @@
 
     if-nez v16, :cond_19
 
-    .line 6995
     move v5, v0
 
     move-object v3, v9
@@ -23298,13 +17806,11 @@
 
     goto :goto_e
 
-    .line 7007
     :cond_19
     const-string v1, "  Current daily steps:"
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 7008
     const-string v3, "    "
 
     const-string v4, "Discharge"
@@ -23319,7 +17825,6 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7010
     const-string v1, "    "
 
     const-string v2, "Charge"
@@ -23332,23 +17837,14 @@
 
     move-object v9, v1
 
-    .line 7010
-    .end local v9    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
-    .local v3, "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
     move-object v1, v10
 
     move-object v10, v2
 
-    .line 7010
-    .end local v10    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .local v1, "csteps":Landroid/os/BatteryStats$LevelStepTracker;
     move-object v2, v11
 
     move-object v11, v1
 
-    .line 7010
-    .end local v11    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .local v2, "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
     move v4, v12
 
     move-object v12, v6
@@ -23357,22 +17853,10 @@
 
     move-object v0, v13
 
-    .line 7010
-    .end local v13    # "outInt":[I
-    .local v0, "outInt":[I
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
     goto :goto_f
 
-    .line 6995
-    .end local v0    # "outInt":[I
-    .end local v1    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v2    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v3    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
-    .restart local v9    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
-    .restart local v10    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .restart local v11    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .restart local v13    # "outInt":[I
     :cond_1a
     move v5, v0
 
@@ -23386,15 +17870,6 @@
 
     move-object v0, v13
 
-    .line 6995
-    .end local v9    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
-    .end local v10    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v11    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v13    # "outInt":[I
-    .restart local v0    # "outInt":[I
-    .restart local v1    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .restart local v2    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .restart local v3    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
     :goto_e
     const-string v7, "    "
 
@@ -23406,7 +17881,6 @@
 
     if-eqz v7, :cond_1b
 
-    .line 6997
     const-string v9, "      "
 
     const-string v10, "Discharge"
@@ -23423,7 +17897,6 @@
 
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7000
     :cond_1b
     const-string v7, "    "
 
@@ -23435,7 +17908,6 @@
 
     if-eqz v7, :cond_1c
 
-    .line 7002
     const-string v9, "      "
 
     const-string v10, "Charge"
@@ -23452,18 +17924,14 @@
 
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7005
     :cond_1c
     const-string v7, "    "
 
     invoke-direct {v14, v15, v7, v3}, Landroid/os/BatteryStats;->dumpDailyPackageChanges(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 7015
     :goto_f
     move v7, v4
 
-    .line 7016
-    .local v7, "curIndex":I
     :goto_10
     invoke-virtual {v14, v7}, Landroid/os/BatteryStats;->getDailyItemLocked(I)Landroid/os/BatteryStats$DailyItem;
 
@@ -23471,30 +17939,21 @@
 
     move-object v13, v8
 
-    .line 7016
-    .local v13, "dit":Landroid/os/BatteryStats$DailyItem;
     if-eqz v8, :cond_22
 
-    .line 7017
     add-int/lit8 v17, v7, 0x1
 
-    .line 7018
-    .end local v7    # "curIndex":I
-    .local v17, "curIndex":I
     and-int/lit8 v7, p3, 0x4
 
     if-eqz v7, :cond_1d
 
-    .line 7019
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 7021
     :cond_1d
     const-string v7, "  Daily from "
 
     invoke-virtual {v15, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7022
     const-string/jumbo v7, "yyyy-MM-dd-HH-mm-ss"
 
     iget-wide v8, v13, Landroid/os/BatteryStats$DailyItem;->mStartTime:J
@@ -23509,12 +17968,10 @@
 
     invoke-virtual {v15, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7023
     const-string v7, " to "
 
     invoke-virtual {v15, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7024
     const-string/jumbo v7, "yyyy-MM-dd-HH-mm-ss"
 
     iget-wide v8, v13, Landroid/os/BatteryStats$DailyItem;->mEndTime:J
@@ -23529,24 +17986,20 @@
 
     invoke-virtual {v15, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 7025
     const-string v7, ":"
 
     invoke-virtual {v15, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 7026
     and-int/lit8 v7, p3, 0x4
 
     if-nez v7, :cond_1f
 
     if-nez v16, :cond_1e
 
-    .line 7027
     move-object v5, v13
 
     goto :goto_11
 
-    .line 7039
     :cond_1e
     const-string v9, "    "
 
@@ -23564,12 +18017,8 @@
 
     move-object v13, v0
 
-    .line 7039
-    .end local v13    # "dit":Landroid/os/BatteryStats$DailyItem;
-    .local v5, "dit":Landroid/os/BatteryStats$DailyItem;
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7041
     const-string v9, "    "
 
     const-string v10, "Charge"
@@ -23580,15 +18029,9 @@
 
     goto :goto_12
 
-    .line 7027
-    .end local v5    # "dit":Landroid/os/BatteryStats$DailyItem;
-    .restart local v13    # "dit":Landroid/os/BatteryStats$DailyItem;
     :cond_1f
     move-object v5, v13
 
-    .line 7027
-    .end local v13    # "dit":Landroid/os/BatteryStats$DailyItem;
-    .restart local v5    # "dit":Landroid/os/BatteryStats$DailyItem;
     :goto_11
     const-string v7, "      "
 
@@ -23602,7 +18045,6 @@
 
     if-eqz v7, :cond_20
 
-    .line 7029
     const-string v9, "        "
 
     const-string v10, "Discharge"
@@ -23619,7 +18061,6 @@
 
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7032
     :cond_20
     const-string v7, "      "
 
@@ -23633,7 +18074,6 @@
 
     if-eqz v7, :cond_21
 
-    .line 7034
     const-string v9, "        "
 
     const-string v10, "Charge"
@@ -23650,7 +18090,6 @@
 
     invoke-direct/range {v7 .. v13}, Landroid/os/BatteryStats;->dumpDailyLevelStepSummary(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$LevelStepTracker;Ljava/lang/StringBuilder;[I)V
 
-    .line 7037
     :cond_21
     const-string v7, "    "
 
@@ -23658,8 +18097,6 @@
 
     invoke-direct {v14, v15, v7, v8}, Landroid/os/BatteryStats;->dumpDailyPackageChanges(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 7015
-    .end local v5    # "dit":Landroid/os/BatteryStats$DailyItem;
     :goto_12
     move/from16 v7, v17
 
@@ -23667,26 +18104,11 @@
 
     goto/16 :goto_10
 
-    .line 7045
-    .end local v17    # "curIndex":I
-    .restart local v7    # "curIndex":I
-    .restart local v13    # "dit":Landroid/os/BatteryStats$DailyItem;
     :cond_22
     move-object v5, v13
 
-    .line 7045
-    .end local v13    # "dit":Landroid/os/BatteryStats$DailyItem;
-    .restart local v5    # "dit":Landroid/os/BatteryStats$DailyItem;
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 7047
-    .end local v0    # "outInt":[I
-    .end local v1    # "csteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v2    # "dsteps":Landroid/os/BatteryStats$LevelStepTracker;
-    .end local v3    # "pkgc":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$PackageChange;>;"
-    .end local v5    # "dit":Landroid/os/BatteryStats$DailyItem;
-    .end local v6    # "sb":Ljava/lang/StringBuilder;
-    .end local v7    # "curIndex":I
     :goto_13
     if-eqz v16, :cond_23
 
@@ -23694,13 +18116,11 @@
 
     if-eqz v0, :cond_25
 
-    .line 7048
     :cond_23
     const-string v0, "Statistics since last charge:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 7049
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -23719,7 +18139,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7050
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getIsOnBattery()Z
 
     move-result v1
@@ -23730,10 +18149,8 @@
 
     move-result-object v0
 
-    .line 7049
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 7051
     const-string v0, ""
 
     const/4 v5, 0x0
@@ -23762,23 +18179,15 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/os/BatteryStats;->dumpLocked(Landroid/content/Context;Ljava/io/PrintWriter;Ljava/lang/String;IIZ)V
 
-    .line 7053
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 7055
     :cond_25
     return-void
 .end method
 
 .method public final dumpLocked(Landroid/content/Context;Ljava/io/PrintWriter;Ljava/lang/String;II)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "prefix"    # Ljava/lang/String;
-    .param p4, "which"    # I
-    .param p5, "reqUid"    # I
 
-    .line 4321
     invoke-static {p1}, Lcom/android/internal/os/BatteryStatsHelper;->checkWifiOnly(Landroid/content/Context;)Z
 
     move-result v6
@@ -23797,18 +18206,11 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/os/BatteryStats;->dumpLocked(Landroid/content/Context;Ljava/io/PrintWriter;Ljava/lang/String;IIZ)V
 
-    .line 4322
     return-void
 .end method
 
 .method public final dumpLocked(Landroid/content/Context;Ljava/io/PrintWriter;Ljava/lang/String;IIZ)V
     .locals 419
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "prefix"    # Ljava/lang/String;
-    .param p4, "which"    # I
-    .param p5, "reqUid"    # I
-    .param p6, "wifiOnly"    # Z
 
     move-object/from16 v7, p0
 
@@ -23820,7 +18222,6 @@
 
     move/from16 v11, p5
 
-    .line 4327
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -23829,99 +18230,68 @@
 
     mul-long v9, v0, v16
 
-    .line 4328
-    .local v9, "rawUptime":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     mul-long v5, v0, v16
 
-    .line 4329
-    .local v5, "rawRealtime":J
     const-wide/16 v18, 0x1f4
 
     add-long v0, v5, v18
 
     div-long v3, v0, v16
 
-    .line 4330
-    .local v3, "rawRealtimeMs":J
     invoke-virtual {v7, v9, v10}, Landroid/os/BatteryStats;->getBatteryUptime(J)J
 
     move-result-wide v1
 
-    .line 4332
-    .local v1, "batteryUptime":J
     move-wide/from16 v20, v3
 
     invoke-virtual {v7, v9, v10, v13}, Landroid/os/BatteryStats;->computeBatteryUptime(JI)J
 
     move-result-wide v3
 
-    .line 4333
-    .local v3, "whichBatteryUptime":J
-    .local v20, "rawRealtimeMs":J
     move-wide/from16 v22, v1
 
     invoke-virtual {v7, v5, v6, v13}, Landroid/os/BatteryStats;->computeBatteryRealtime(JI)J
 
     move-result-wide v1
 
-    .line 4334
-    .local v1, "whichBatteryRealtime":J
-    .local v22, "batteryUptime":J
     invoke-virtual {v7, v5, v6, v13}, Landroid/os/BatteryStats;->computeRealtime(JI)J
 
     move-result-wide v11
 
-    .line 4335
-    .local v11, "totalRealtime":J
     invoke-virtual {v7, v9, v10, v13}, Landroid/os/BatteryStats;->computeUptime(JI)J
 
     move-result-wide v25
 
-    .line 4336
-    .local v25, "totalUptime":J
     move-wide/from16 v27, v3
 
     invoke-virtual {v7, v9, v10, v13}, Landroid/os/BatteryStats;->computeBatteryScreenOffUptime(JI)J
 
     move-result-wide v3
 
-    .line 4337
-    .local v3, "whichBatteryScreenOffUptime":J
-    .local v27, "whichBatteryUptime":J
     move-wide/from16 v29, v9
 
     invoke-virtual {v7, v5, v6, v13}, Landroid/os/BatteryStats;->computeBatteryScreenOffRealtime(JI)J
 
     move-result-wide v9
 
-    .line 4339
-    .local v9, "whichBatteryScreenOffRealtime":J
-    .local v29, "rawUptime":J
     invoke-virtual {v7, v5, v6}, Landroid/os/BatteryStats;->computeBatteryTimeRemaining(J)J
 
     move-result-wide v31
 
-    .line 4340
-    .local v31, "batteryTimeRemaining":J
     invoke-virtual {v7, v5, v6}, Landroid/os/BatteryStats;->computeChargeTimeRemaining(J)J
 
     move-result-wide v33
 
-    .line 4341
-    .local v33, "chargeTimeRemaining":J
     move-wide/from16 v35, v3
 
     invoke-virtual {v7, v5, v6, v13}, Landroid/os/BatteryStats;->getScreenDozeTime(JI)J
 
     move-result-wide v3
 
-    .line 4343
-    .local v3, "screenDozeTime":J
-    .local v35, "whichBatteryScreenOffUptime":J
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v8, 0x80
@@ -23930,69 +18300,48 @@
 
     move-object v8, v0
 
-    .line 4345
-    .local v8, "sb":Ljava/lang/StringBuilder;
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getUidStats()Landroid/util/SparseArray;
 
     move-result-object v0
 
-    .line 4346
-    .local v0, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move-wide/from16 v37, v5
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v5
 
-    .line 4348
-    .local v5, "NU":I
-    .local v37, "rawRealtime":J
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getEstimatedBatteryCapacity()I
 
     move-result v6
 
-    .line 4349
-    .local v6, "estimatedBatteryCapacity":I
     move-object/from16 v39, v0
 
     const/4 v0, 0x0
 
-    .line 4349
-    .end local v0    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v39, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     if-lez v6, :cond_0
 
-    .line 4350
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4351
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4352
     const-string v0, "  Estimated battery capacity: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4353
     move-wide/from16 v41, v3
 
     int-to-double v3, v6
 
-    .line 4353
-    .end local v3    # "screenDozeTime":J
-    .local v41, "screenDozeTime":J
     invoke-static {v3, v4}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4354
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4355
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24001,59 +18350,42 @@
 
     goto :goto_0
 
-    .line 4358
-    .end local v41    # "screenDozeTime":J
-    .restart local v3    # "screenDozeTime":J
     :cond_0
     move-wide/from16 v41, v3
 
-    .line 4358
-    .end local v3    # "screenDozeTime":J
-    .restart local v41    # "screenDozeTime":J
     :goto_0
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getMinLearnedBatteryCapacity()I
 
     move-result v4
 
-    .line 4359
-    .local v4, "minLearnedBatteryCapacity":I
     if-lez v4, :cond_1
 
-    .line 4360
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4361
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4362
     const-string v0, "  Min learned battery capacity: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4363
     div-int/lit16 v0, v4, 0x3e8
 
     move/from16 v43, v4
 
     int-to-double v3, v0
 
-    .line 4363
-    .end local v4    # "minLearnedBatteryCapacity":I
-    .local v43, "minLearnedBatteryCapacity":I
     invoke-static {v3, v4}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4364
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4365
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24062,59 +18394,42 @@
 
     goto :goto_1
 
-    .line 4367
-    .end local v43    # "minLearnedBatteryCapacity":I
-    .restart local v4    # "minLearnedBatteryCapacity":I
     :cond_1
     move/from16 v43, v4
 
-    .line 4367
-    .end local v4    # "minLearnedBatteryCapacity":I
-    .restart local v43    # "minLearnedBatteryCapacity":I
     :goto_1
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getMaxLearnedBatteryCapacity()I
 
     move-result v4
 
-    .line 4368
-    .local v4, "maxLearnedBatteryCapacity":I
     if-lez v4, :cond_2
 
-    .line 4369
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4370
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4371
     const-string v0, "  Max learned battery capacity: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4372
     div-int/lit16 v0, v4, 0x3e8
 
     move/from16 v44, v4
 
     int-to-double v3, v0
 
-    .line 4372
-    .end local v4    # "maxLearnedBatteryCapacity":I
-    .local v44, "maxLearnedBatteryCapacity":I
     invoke-static {v3, v4}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4373
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4374
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24123,29 +18438,20 @@
 
     goto :goto_2
 
-    .line 4377
-    .end local v44    # "maxLearnedBatteryCapacity":I
-    .restart local v4    # "maxLearnedBatteryCapacity":I
     :cond_2
     move/from16 v44, v4
 
-    .line 4377
-    .end local v4    # "maxLearnedBatteryCapacity":I
-    .restart local v44    # "maxLearnedBatteryCapacity":I
     :goto_2
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4378
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4379
     const-string v0, "  Time on battery: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4380
     div-long v3, v1, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
@@ -24154,24 +18460,20 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4381
     invoke-virtual {v7, v1, v2, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4382
     const-string v0, ") realtime, "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4383
     div-long v3, v27, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4384
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24182,290 +18484,222 @@
 
     move-result-object v0
 
-    .line 4384
-    .end local v27    # "whichBatteryUptime":J
-    .local v3, "whichBatteryUptime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4385
     const-string v0, ") uptime"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4386
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4388
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4389
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4390
     const-string v0, "  Time on battery screen off: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4391
     move-wide/from16 v45, v3
 
     div-long v3, v9, v16
 
-    .line 4391
-    .end local v3    # "whichBatteryUptime":J
-    .local v45, "whichBatteryUptime":J
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4392
     invoke-virtual {v7, v9, v10, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4393
     const-string v0, ") realtime, "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4394
     div-long v3, v35, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4395
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4396
     move-wide/from16 v3, v35
 
     invoke-virtual {v7, v3, v4, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4396
-    .end local v35    # "whichBatteryScreenOffUptime":J
-    .local v3, "whichBatteryScreenOffUptime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4397
     const-string v0, ") uptime"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4398
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4400
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4401
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4402
     const-string v0, "  Time on battery screen doze: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4403
     move-wide/from16 v47, v3
 
     div-long v3, v41, v16
 
-    .line 4403
-    .end local v3    # "whichBatteryScreenOffUptime":J
-    .local v47, "whichBatteryScreenOffUptime":J
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4404
     move-wide/from16 v3, v41
 
     invoke-virtual {v7, v3, v4, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4404
-    .end local v41    # "screenDozeTime":J
-    .local v3, "screenDozeTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4405
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4406
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4408
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4409
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4410
     const-string v0, "  Total run time: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4411
     move-wide/from16 v49, v3
 
     div-long v3, v11, v16
 
-    .line 4411
-    .end local v3    # "screenDozeTime":J
-    .local v49, "screenDozeTime":J
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4412
     const-string/jumbo v0, "realtime, "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4413
     div-long v3, v25, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4414
     const-string/jumbo v0, "uptime"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4415
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4416
     const-wide/16 v27, 0x0
 
     cmp-long v0, v31, v27
 
     if-ltz v0, :cond_3
 
-    .line 4417
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4418
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4419
     const-string v0, "  Battery time remaining: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4420
     div-long v3, v31, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4421
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4423
     :cond_3
     cmp-long v0, v33, v27
 
     if-ltz v0, :cond_4
 
-    .line 4424
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4425
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4426
     const-string v0, "  Charge time remaining: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4427
     div-long v3, v33, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4428
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4431
     :cond_4
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getUahDischarge(I)J
 
     move-result-wide v3
 
-    .line 4432
-    .local v3, "dischargeCount":J
     cmp-long v0, v3, v27
 
     const-wide v35, 0x408f400000000000L    # 1000.0
 
     if-ltz v0, :cond_5
 
-    .line 4433
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4434
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4435
     const-string v0, "  Discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4436
     move-wide/from16 v51, v9
 
     long-to-double v9, v3
 
-    .line 4436
-    .end local v9    # "whichBatteryScreenOffRealtime":J
-    .local v51, "whichBatteryScreenOffRealtime":J
     div-double v9, v9, v35
 
     invoke-static {v9, v10}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24474,12 +18708,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4437
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4438
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24488,47 +18720,32 @@
 
     goto :goto_3
 
-    .line 4441
-    .end local v51    # "whichBatteryScreenOffRealtime":J
-    .restart local v9    # "whichBatteryScreenOffRealtime":J
     :cond_5
     move-wide/from16 v51, v9
 
-    .line 4441
-    .end local v9    # "whichBatteryScreenOffRealtime":J
-    .restart local v51    # "whichBatteryScreenOffRealtime":J
     :goto_3
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getUahDischargeScreenOff(I)J
 
     move-result-wide v9
 
-    .line 4442
-    .local v9, "dischargeScreenOffCount":J
     cmp-long v0, v9, v27
 
     if-ltz v0, :cond_6
 
-    .line 4443
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4444
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4445
     const-string v0, "  Screen off discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4446
     move-wide/from16 v53, v11
 
     long-to-double v11, v9
 
-    .line 4446
-    .end local v11    # "totalRealtime":J
-    .local v53, "totalRealtime":J
     div-double v11, v11, v35
 
     invoke-static {v11, v12}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24537,12 +18754,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4447
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4448
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24551,51 +18766,34 @@
 
     goto :goto_4
 
-    .line 4451
-    .end local v53    # "totalRealtime":J
-    .restart local v11    # "totalRealtime":J
     :cond_6
     move-wide/from16 v53, v11
 
-    .line 4451
-    .end local v11    # "totalRealtime":J
-    .restart local v53    # "totalRealtime":J
     :goto_4
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getUahDischargeScreenDoze(I)J
 
     move-result-wide v11
 
-    .line 4452
-    .local v11, "dischargeScreenDozeCount":J
     cmp-long v0, v11, v27
 
     if-ltz v0, :cond_7
 
-    .line 4453
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4454
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4455
     const-string v0, "  Screen doze discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4456
     move/from16 v55, v5
 
     move/from16 v56, v6
 
     long-to-double v5, v11
 
-    .line 4456
-    .end local v5    # "NU":I
-    .end local v6    # "estimatedBatteryCapacity":I
-    .local v55, "NU":I
-    .local v56, "estimatedBatteryCapacity":I
     div-double v5, v5, v35
 
     invoke-static {v5, v6}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24604,12 +18802,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4457
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4458
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24618,51 +18814,32 @@
 
     goto :goto_5
 
-    .line 4461
-    .end local v55    # "NU":I
-    .end local v56    # "estimatedBatteryCapacity":I
-    .restart local v5    # "NU":I
-    .restart local v6    # "estimatedBatteryCapacity":I
     :cond_7
     move/from16 v55, v5
 
     move/from16 v56, v6
 
-    .line 4461
-    .end local v5    # "NU":I
-    .end local v6    # "estimatedBatteryCapacity":I
-    .restart local v55    # "NU":I
-    .restart local v56    # "estimatedBatteryCapacity":I
     :goto_5
     sub-long v5, v3, v9
 
-    .line 4462
-    .local v5, "dischargeScreenOnCount":J
     cmp-long v0, v5, v27
 
     if-ltz v0, :cond_8
 
-    .line 4463
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4464
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4465
     const-string v0, "  Screen on discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4466
     move-wide/from16 v57, v3
 
     long-to-double v3, v5
 
-    .line 4466
-    .end local v3    # "dischargeCount":J
-    .local v57, "dischargeCount":J
     div-double v3, v3, v35
 
     invoke-static {v3, v4}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24671,12 +18848,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4467
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4468
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24685,47 +18860,32 @@
 
     goto :goto_6
 
-    .line 4471
-    .end local v57    # "dischargeCount":J
-    .restart local v3    # "dischargeCount":J
     :cond_8
     move-wide/from16 v57, v3
 
-    .line 4471
-    .end local v3    # "dischargeCount":J
-    .restart local v57    # "dischargeCount":J
     :goto_6
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getUahDischargeLightDoze(I)J
 
     move-result-wide v3
 
-    .line 4472
-    .local v3, "dischargeLightDozeCount":J
     cmp-long v0, v3, v27
 
     if-ltz v0, :cond_9
 
-    .line 4473
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4474
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4475
     const-string v0, "  Device light doze discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4476
     move-wide/from16 v59, v5
 
     long-to-double v5, v3
 
-    .line 4476
-    .end local v5    # "dischargeScreenOnCount":J
-    .local v59, "dischargeScreenOnCount":J
     div-double v5, v5, v35
 
     invoke-static {v5, v6}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24734,12 +18894,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4477
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4478
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24748,47 +18906,32 @@
 
     goto :goto_7
 
-    .line 4481
-    .end local v59    # "dischargeScreenOnCount":J
-    .restart local v5    # "dischargeScreenOnCount":J
     :cond_9
     move-wide/from16 v59, v5
 
-    .line 4481
-    .end local v5    # "dischargeScreenOnCount":J
-    .restart local v59    # "dischargeScreenOnCount":J
     :goto_7
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getUahDischargeDeepDoze(I)J
 
     move-result-wide v5
 
-    .line 4482
-    .local v5, "dischargeDeepDozeCount":J
     cmp-long v0, v5, v27
 
     if-ltz v0, :cond_a
 
-    .line 4483
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4484
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4485
     const-string v0, "  Device deep doze discharge: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4486
     move-wide/from16 v61, v3
 
     long-to-double v3, v5
 
-    .line 4486
-    .end local v3    # "dischargeLightDozeCount":J
-    .local v61, "dischargeLightDozeCount":J
     div-double v3, v3, v35
 
     invoke-static {v3, v4}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -24797,12 +18940,10 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4487
     const-string v0, " mAh"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4488
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -24811,21 +18952,14 @@
 
     goto :goto_8
 
-    .line 4491
-    .end local v61    # "dischargeLightDozeCount":J
-    .restart local v3    # "dischargeLightDozeCount":J
     :cond_a
     move-wide/from16 v61, v3
 
-    .line 4491
-    .end local v3    # "dischargeLightDozeCount":J
-    .restart local v61    # "dischargeLightDozeCount":J
     :goto_8
     const-string v0, "  Start clock time: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4492
     const-string/jumbo v0, "yyyy-MM-dd-HH-mm-ss"
 
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getStartClockTime()J
@@ -24842,7 +18976,6 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4494
     move-wide/from16 v63, v11
 
     move-wide/from16 v3, v37
@@ -24851,29 +18984,18 @@
 
     move-result-wide v11
 
-    .line 4495
-    .end local v37    # "rawRealtime":J
-    .local v3, "rawRealtime":J
-    .local v11, "screenOnTime":J
-    .local v63, "dischargeScreenDozeCount":J
     move-wide/from16 v65, v9
 
     invoke-virtual {v7, v3, v4, v13}, Landroid/os/BatteryStats;->getInteractiveTime(JI)J
 
     move-result-wide v9
 
-    .line 4496
-    .local v9, "interactiveTime":J
-    .local v65, "dischargeScreenOffCount":J
     move-wide/from16 v67, v5
 
     invoke-virtual {v7, v3, v4, v13}, Landroid/os/BatteryStats;->getPowerSaveModeEnabledTime(JI)J
 
     move-result-wide v5
 
-    .line 4497
-    .local v5, "powerSaveModeEnabledTime":J
-    .local v67, "dischargeDeepDozeCount":J
     const/4 v0, 0x1
 
     move-wide/from16 v69, v5
@@ -24882,9 +19004,6 @@
 
     move-result-wide v5
 
-    .line 4499
-    .local v5, "deviceIdleModeLightTime":J
-    .local v69, "powerSaveModeEnabledTime":J
     const/4 v0, 0x2
 
     move-wide/from16 v72, v5
@@ -24893,9 +19012,6 @@
 
     move-result-wide v5
 
-    .line 4501
-    .local v5, "deviceIdleModeFullTime":J
-    .local v72, "deviceIdleModeLightTime":J
     move-wide/from16 v75, v5
 
     const/4 v0, 0x1
@@ -24904,9 +19020,6 @@
 
     move-result-wide v5
 
-    .line 4503
-    .local v5, "deviceLightIdlingTime":J
-    .local v75, "deviceIdleModeFullTime":J
     move-wide/from16 v77, v5
 
     const/4 v0, 0x2
@@ -24915,38 +19028,26 @@
 
     move-result-wide v5
 
-    .line 4505
-    .local v5, "deviceIdlingTime":J
-    .local v77, "deviceLightIdlingTime":J
     move-wide/from16 v79, v5
 
     invoke-virtual {v7, v3, v4, v13}, Landroid/os/BatteryStats;->getPhoneOnTime(JI)J
 
     move-result-wide v5
 
-    .line 4506
-    .local v5, "phoneOnTime":J
-    .local v79, "deviceIdlingTime":J
     invoke-virtual {v7, v3, v4, v13}, Landroid/os/BatteryStats;->getGlobalWifiRunningTime(JI)J
 
     move-result-wide v35
 
-    .line 4507
-    .local v35, "wifiRunningTime":J
     invoke-virtual {v7, v3, v4, v13}, Landroid/os/BatteryStats;->getWifiOnTime(JI)J
 
     move-result-wide v37
 
-    .line 4508
-    .local v37, "wifiOnTime":J
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4509
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4510
     const-string v0, "  Screen on: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24955,12 +19056,8 @@
 
     div-long v5, v11, v16
 
-    .line 4510
-    .end local v5    # "phoneOnTime":J
-    .local v81, "phoneOnTime":J
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4511
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24971,7 +19068,6 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4512
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24982,7 +19078,6 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4513
     const-string/jumbo v0, "x, Interactive: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24991,7 +19086,6 @@
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4514
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25002,123 +19096,90 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4515
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4516
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4517
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4518
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4519
     const-string v0, "  Screen brightnesses:"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4520
     const/4 v0, 0x0
 
-    .line 4521
-    .local v0, "didOne":Z
     move v5, v0
 
     const/4 v0, 0x0
 
-    .line 4521
-    .local v0, "i":I
-    .local v5, "didOne":Z
     :goto_9
     const/4 v6, 0x5
 
     if-ge v0, v6, :cond_c
 
-    .line 4522
     move-wide/from16 v83, v9
 
     invoke-virtual {v7, v0, v3, v4, v13}, Landroid/os/BatteryStats;->getScreenBrightnessTime(IJI)J
 
     move-result-wide v9
 
-    .line 4523
-    .local v9, "time":J
-    .local v83, "interactiveTime":J
     cmp-long v6, v9, v27
 
     if-nez v6, :cond_b
 
-    .line 4524
     goto :goto_a
 
-    .line 4526
     :cond_b
     const-string v6, "\n    "
 
     invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4527
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4528
     const/4 v5, 0x1
 
-    .line 4529
     sget-object v6, Landroid/os/BatteryStats;->SCREEN_BRIGHTNESS_NAMES:[Ljava/lang/String;
 
     aget-object v6, v6, v0
 
     invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4530
     const-string v6, " "
 
     invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4531
     move/from16 v85, v5
 
     div-long v5, v9, v16
 
-    .line 4531
-    .end local v5    # "didOne":Z
-    .local v85, "didOne":Z
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4532
     const-string v5, "("
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4533
     invoke-virtual {v7, v9, v10, v11, v12}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4534
     const-string v5, ")"
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4521
-    .end local v9    # "time":J
     move/from16 v5, v85
 
-    .line 4521
-    .end local v85    # "didOne":Z
-    .restart local v5    # "didOne":Z
     :goto_a
     add-int/lit8 v0, v0, 0x1
 
@@ -25126,23 +19187,15 @@
 
     goto :goto_9
 
-    .line 4536
-    .end local v0    # "i":I
-    .end local v83    # "interactiveTime":J
-    .local v9, "interactiveTime":J
     :cond_c
     move-wide/from16 v83, v9
 
-    .line 4536
-    .end local v9    # "interactiveTime":J
-    .restart local v83    # "interactiveTime":J
     if-nez v5, :cond_d
 
     const-string v0, " (no activity)"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4537
     :cond_d
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -25150,52 +19203,40 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4538
     cmp-long v0, v69, v27
 
     if-eqz v0, :cond_e
 
-    .line 4539
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4540
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4541
     const-string v0, "  Power save mode enabled: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4542
     div-long v9, v69, v16
 
     invoke-static {v8, v9, v10}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4543
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4544
     move-wide/from16 v9, v69
 
     invoke-virtual {v7, v9, v10, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4544
-    .end local v69    # "powerSaveModeEnabledTime":J
-    .local v9, "powerSaveModeEnabledTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4545
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4546
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -25204,44 +19245,32 @@
 
     goto :goto_b
 
-    .line 4548
-    .end local v9    # "powerSaveModeEnabledTime":J
-    .restart local v69    # "powerSaveModeEnabledTime":J
     :cond_e
     move-wide/from16 v9, v69
 
-    .line 4548
-    .end local v69    # "powerSaveModeEnabledTime":J
-    .restart local v9    # "powerSaveModeEnabledTime":J
     :goto_b
     cmp-long v0, v77, v27
 
     if-eqz v0, :cond_f
 
-    .line 4549
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4550
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4551
     const-string v0, "  Device light idling: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4552
     div-long v6, v77, v16
 
     invoke-static {v8, v6, v7}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4553
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4554
     move/from16 v88, v5
 
     move-wide/from16 v5, v77
@@ -25252,13 +19281,8 @@
 
     move-result-object v0
 
-    .line 4554
-    .end local v77    # "deviceLightIdlingTime":J
-    .local v5, "deviceLightIdlingTime":J
-    .local v88, "didOne":Z
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4555
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25271,17 +19295,12 @@
 
     move-result v5
 
-    .line 4555
-    .end local v5    # "deviceLightIdlingTime":J
-    .local v89, "deviceLightIdlingTime":J
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4556
     const-string/jumbo v0, "x"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4557
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -25290,67 +19309,46 @@
 
     goto :goto_c
 
-    .line 4559
-    .end local v88    # "didOne":Z
-    .end local v89    # "deviceLightIdlingTime":J
-    .local v5, "didOne":Z
-    .restart local v77    # "deviceLightIdlingTime":J
     :cond_f
     move/from16 v88, v5
 
     move-wide/from16 v89, v77
 
-    .line 4559
-    .end local v5    # "didOne":Z
-    .end local v77    # "deviceLightIdlingTime":J
-    .restart local v88    # "didOne":Z
-    .restart local v89    # "deviceLightIdlingTime":J
     :goto_c
     cmp-long v0, v72, v27
 
     if-eqz v0, :cond_10
 
-    .line 4560
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4561
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4562
     const-string v0, "  Idle mode light time: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4563
     div-long v5, v72, v16
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4564
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4565
     move-wide/from16 v5, v72
 
     invoke-virtual {v7, v5, v6, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4565
-    .end local v72    # "deviceIdleModeLightTime":J
-    .local v5, "deviceIdleModeLightTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4566
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4567
     move-wide/from16 v91, v5
 
     const/4 v0, 0x1
@@ -25359,29 +19357,22 @@
 
     move-result v5
 
-    .line 4567
-    .end local v5    # "deviceIdleModeLightTime":J
-    .local v91, "deviceIdleModeLightTime":J
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4568
     const-string/jumbo v5, "x"
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4569
     const-string v5, " -- longest "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4570
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
 
     move-result-wide v5
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4571
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -25390,56 +19381,40 @@
 
     goto :goto_d
 
-    .line 4573
-    .end local v91    # "deviceIdleModeLightTime":J
-    .restart local v72    # "deviceIdleModeLightTime":J
     :cond_10
     move-wide/from16 v91, v72
 
-    .line 4573
-    .end local v72    # "deviceIdleModeLightTime":J
-    .restart local v91    # "deviceIdleModeLightTime":J
     :goto_d
     cmp-long v0, v79, v27
 
     if-eqz v0, :cond_11
 
-    .line 4574
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4575
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4576
     const-string v0, "  Device full idling: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4577
     div-long v5, v79, v16
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4578
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4579
     move-wide/from16 v5, v79
 
     invoke-virtual {v7, v5, v6, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4579
-    .end local v79    # "deviceIdlingTime":J
-    .local v5, "deviceIdlingTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4580
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25452,17 +19427,12 @@
 
     move-result v5
 
-    .line 4580
-    .end local v5    # "deviceIdlingTime":J
-    .local v93, "deviceIdlingTime":J
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4581
     const-string/jumbo v0, "x"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4582
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -25471,61 +19441,44 @@
 
     goto :goto_e
 
-    .line 4584
-    .end local v93    # "deviceIdlingTime":J
-    .restart local v79    # "deviceIdlingTime":J
     :cond_11
     move-wide/from16 v93, v79
 
-    .line 4584
-    .end local v79    # "deviceIdlingTime":J
-    .restart local v93    # "deviceIdlingTime":J
     :goto_e
     cmp-long v0, v75, v27
 
     if-eqz v0, :cond_12
 
-    .line 4585
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4586
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4587
     const-string v0, "  Idle mode full time: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4588
     div-long v5, v75, v16
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4589
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4590
     move-wide/from16 v5, v75
 
     invoke-virtual {v7, v5, v6, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4590
-    .end local v75    # "deviceIdleModeFullTime":J
-    .local v5, "deviceIdleModeFullTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4591
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4592
     move-wide/from16 v95, v5
 
     const/4 v0, 0x2
@@ -25534,29 +19487,22 @@
 
     move-result v5
 
-    .line 4592
-    .end local v5    # "deviceIdleModeFullTime":J
-    .local v95, "deviceIdleModeFullTime":J
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4593
     const-string/jumbo v5, "x"
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4594
     const-string v5, " -- longest "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4595
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats;->getLongestDeviceIdleModeTime(I)J
 
     move-result-wide v5
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4596
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -25565,29 +19511,20 @@
 
     goto :goto_f
 
-    .line 4598
-    .end local v95    # "deviceIdleModeFullTime":J
-    .restart local v75    # "deviceIdleModeFullTime":J
     :cond_12
     move-wide/from16 v95, v75
 
-    .line 4598
-    .end local v75    # "deviceIdleModeFullTime":J
-    .restart local v95    # "deviceIdleModeFullTime":J
     :goto_f
     cmp-long v0, v81, v27
 
     if-eqz v0, :cond_13
 
-    .line 4599
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4600
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4601
     const-string v0, "  Active phone call: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25596,7 +19533,6 @@
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4602
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25607,12 +19543,8 @@
 
     move-result-object v0
 
-    .line 4602
-    .end local v81    # "phoneOnTime":J
-    .local v5, "phoneOnTime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4603
     const-string v0, ") "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -25629,88 +19561,53 @@
 
     goto :goto_10
 
-    .line 4605
-    .end local v5    # "phoneOnTime":J
-    .restart local v81    # "phoneOnTime":J
     :cond_13
     move-wide/from16 v5, v81
 
-    .line 4605
-    .end local v81    # "phoneOnTime":J
-    .restart local v5    # "phoneOnTime":J
     :goto_10
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getNumConnectivityChange(I)I
 
     move-result v0
 
-    .line 4606
-    .local v0, "connChanges":I
     if-eqz v0, :cond_14
 
-    .line 4607
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4608
     move-wide/from16 v97, v5
 
     const-string v5, "  Connectivity changes: "
 
-    .line 4608
-    .end local v5    # "phoneOnTime":J
-    .local v97, "phoneOnTime":J
     invoke-virtual {v15, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
     goto :goto_11
 
-    .line 4612
-    .end local v97    # "phoneOnTime":J
-    .restart local v5    # "phoneOnTime":J
     :cond_14
     move-wide/from16 v97, v5
 
-    .line 4612
-    .end local v5    # "phoneOnTime":J
-    .restart local v97    # "phoneOnTime":J
     :goto_11
     const-wide/16 v5, 0x0
 
-    .line 4613
-    .local v5, "fullWakeLockTimeTotalMicros":J
     const-wide/16 v41, 0x0
 
-    .line 4615
-    .local v41, "partialWakeLockTimeTotalMicros":J
     move/from16 v99, v0
 
     new-instance v0, Ljava/util/ArrayList;
 
-    .line 4615
-    .end local v0    # "connChanges":I
-    .local v99, "connChanges":I
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4617
-    .local v0, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     move-wide/from16 v69, v41
 
     move-wide/from16 v41, v5
 
     const/4 v5, 0x0
 
-    .line 4617
-    .local v5, "iu":I
-    .local v41, "fullWakeLockTimeTotalMicros":J
-    .local v69, "partialWakeLockTimeTotalMicros":J
     :goto_12
     move/from16 v6, v55
 
     if-ge v5, v6, :cond_19
 
-    .line 4618
-    .end local v55    # "NU":I
-    .local v6, "NU":I
     move/from16 v100, v6
 
     move-object/from16 v6, v39
@@ -25719,31 +19616,20 @@
 
     move-result-object v39
 
-    .line 4618
-    .end local v39    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v6, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v100, "NU":I
     move-object/from16 v101, v6
 
     move-object/from16 v6, v39
 
     check-cast v6, Landroid/os/BatteryStats$Uid;
 
-    .line 4620
-    .local v6, "u":Landroid/os/BatteryStats$Uid;
-    .local v101, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     nop
 
-    .line 4621
     move-wide/from16 v102, v9
 
     invoke-virtual {v6}, Landroid/os/BatteryStats$Uid;->getWakelockStats()Landroid/util/ArrayMap;
 
     move-result-object v9
 
-    .line 4622
-    .local v9, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v102, "powerSaveModeEnabledTime":J
     invoke-virtual {v9}, Landroid/util/ArrayMap;->size()I
 
     move-result v10
@@ -25754,41 +19640,29 @@
 
     sub-int/2addr v10, v11
 
-    .line 4622
-    .end local v11    # "screenOnTime":J
-    .local v10, "iw":I
-    .local v104, "screenOnTime":J
     :goto_13
     if-ltz v10, :cond_18
 
-    .line 4623
     invoke-virtual {v9, v10}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v12
 
     check-cast v12, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 4625
-    .local v12, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     move-wide/from16 v106, v1
 
     invoke-virtual {v12, v11}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v1
 
-    .line 4626
-    .local v1, "fullWakeTimer":Landroid/os/BatteryStats$Timer;
-    .local v106, "whichBatteryRealtime":J
     if-eqz v1, :cond_15
 
-    .line 4627
     invoke-virtual {v1, v3, v4, v13}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v72
 
     add-long v41, v41, v72
 
-    .line 4631
     :cond_15
     const/4 v2, 0x0
 
@@ -25796,27 +19670,20 @@
 
     move-result-object v11
 
-    .line 4632
-    .local v11, "partialWakeTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v11, :cond_17
 
-    .line 4633
     invoke-virtual {v11, v3, v4, v13}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v72
 
-    .line 4635
-    .local v72, "totalTimeMicros":J
     cmp-long v2, v72, v27
 
     if-lez v2, :cond_17
 
-    .line 4636
     move/from16 v24, p5
 
     if-gez v24, :cond_16
 
-    .line 4640
     new-instance v2, Landroid/os/BatteryStats$TimerEntry;
 
     invoke-virtual {v9, v10}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -25841,18 +19708,11 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4643
     :cond_16
     add-long v69, v69, v72
 
-    .line 4643
-    .end local v1    # "fullWakeTimer":Landroid/os/BatteryStats$Timer;
-    .end local v11    # "partialWakeTimer":Landroid/os/BatteryStats$Timer;
-    .end local v12    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .end local v72    # "totalTimeMicros":J
     goto :goto_14
 
-    .line 4622
     :cond_17
     move/from16 v24, p5
 
@@ -25865,20 +19725,11 @@
 
     goto :goto_13
 
-    .line 4617
-    .end local v6    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v9    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v10    # "iw":I
-    .end local v106    # "whichBatteryRealtime":J
-    .local v1, "whichBatteryRealtime":J
     :cond_18
     move-wide/from16 v106, v1
 
     move/from16 v24, p5
 
-    .line 4617
-    .end local v1    # "whichBatteryRealtime":J
-    .restart local v106    # "whichBatteryRealtime":J
     add-int/lit8 v5, v5, 0x1
 
     move/from16 v55, v100
@@ -25891,18 +19742,6 @@
 
     goto :goto_12
 
-    .line 4649
-    .end local v5    # "iu":I
-    .end local v100    # "NU":I
-    .end local v101    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v102    # "powerSaveModeEnabledTime":J
-    .end local v104    # "screenOnTime":J
-    .end local v106    # "whichBatteryRealtime":J
-    .restart local v1    # "whichBatteryRealtime":J
-    .local v6, "NU":I
-    .local v9, "powerSaveModeEnabledTime":J
-    .local v11, "screenOnTime":J
-    .restart local v39    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     :cond_19
     move-wide/from16 v106, v1
 
@@ -25916,33 +19755,18 @@
 
     move/from16 v24, p5
 
-    .line 4649
-    .end local v1    # "whichBatteryRealtime":J
-    .end local v6    # "NU":I
-    .end local v9    # "powerSaveModeEnabledTime":J
-    .end local v11    # "screenOnTime":J
-    .end local v39    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v100    # "NU":I
-    .restart local v101    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v102    # "powerSaveModeEnabledTime":J
-    .restart local v104    # "screenOnTime":J
-    .restart local v106    # "whichBatteryRealtime":J
     const/4 v1, 0x0
 
     invoke-virtual {v7, v1, v13}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v11
 
-    .line 4650
-    .local v11, "mobileRxTotalBytes":J
     const/4 v2, 0x1
 
     invoke-virtual {v7, v2, v13}, Landroid/os/BatteryStats;->getNetworkActivityBytes(II)J
 
     move-result-wide v9
 
-    .line 4651
-    .local v9, "mobileTxTotalBytes":J
     move-wide/from16 v108, v3
 
     const/4 v5, 0x2
@@ -25951,10 +19775,6 @@
 
     move-result-wide v2
 
-    .line 4652
-    .end local v3    # "rawRealtime":J
-    .local v2, "wifiRxTotalBytes":J
-    .local v108, "rawRealtime":J
     const/4 v6, 0x3
 
     move-wide/from16 v111, v2
@@ -25963,16 +19783,10 @@
 
     move-result-wide v3
 
-    .line 4653
-    .end local v2    # "wifiRxTotalBytes":J
-    .local v3, "wifiTxTotalBytes":J
-    .local v111, "wifiRxTotalBytes":J
     invoke-virtual {v7, v1, v13}, Landroid/os/BatteryStats;->getNetworkActivityPackets(II)J
 
     move-result-wide v5
 
-    .line 4654
-    .local v5, "mobileRxTotalPackets":J
     move-wide/from16 v115, v3
 
     const/4 v1, 0x1
@@ -25981,9 +19795,6 @@
 
     move-result-wide v3
 
-    .line 4655
-    .local v3, "mobileTxTotalPackets":J
-    .local v115, "wifiTxTotalBytes":J
     move-object/from16 v117, v0
 
     const/4 v2, 0x2
@@ -25992,9 +19803,6 @@
 
     move-result-wide v0
 
-    .line 4656
-    .local v0, "wifiRxTotalPackets":J
-    .local v117, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     move-wide/from16 v120, v0
 
     const/4 v2, 0x3
@@ -26003,9 +19811,6 @@
 
     move-result-wide v0
 
-    .line 4657
-    .local v0, "wifiTxTotalPackets":J
-    .local v120, "wifiRxTotalPackets":J
     const/4 v2, 0x4
 
     move-wide/from16 v123, v0
@@ -26014,9 +19819,6 @@
 
     move-result-wide v0
 
-    .line 4658
-    .local v0, "btRxTotalBytes":J
-    .local v123, "wifiTxTotalPackets":J
     move-wide/from16 v126, v0
 
     const/4 v2, 0x5
@@ -26025,22 +19827,16 @@
 
     move-result-wide v0
 
-    .line 4660
-    .local v0, "btTxTotalBytes":J
-    .local v126, "btRxTotalBytes":J
     cmp-long v39, v41, v27
 
     if-eqz v39, :cond_1a
 
-    .line 4661
     const/4 v2, 0x0
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4662
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4663
     const-string v2, "  Total full wakelock time: "
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -26051,12 +19847,8 @@
 
     div-long v0, v71, v16
 
-    .line 4663
-    .end local v0    # "btTxTotalBytes":J
-    .local v129, "btTxTotalBytes":J
     invoke-static {v8, v0, v1}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 4665
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -26065,29 +19857,20 @@
 
     goto :goto_15
 
-    .line 4668
-    .end local v129    # "btTxTotalBytes":J
-    .restart local v0    # "btTxTotalBytes":J
     :cond_1a
     move-wide/from16 v129, v0
 
-    .line 4668
-    .end local v0    # "btTxTotalBytes":J
-    .restart local v129    # "btTxTotalBytes":J
     :goto_15
     cmp-long v0, v69, v27
 
     if-eqz v0, :cond_1b
 
-    .line 4669
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4670
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4671
     const-string v0, "  Total partial wakelock time: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -26098,86 +19881,65 @@
 
     invoke-static {v8, v0, v1}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 4673
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4676
     :cond_1b
     nop
 
-    .line 4677
     move-wide/from16 v1, v108
 
     invoke-virtual {v7, v1, v2, v13}, Landroid/os/BatteryStats;->getWifiMulticastWakelockTime(JI)J
 
     move-result-wide v71
 
-    .line 4678
-    .end local v108    # "rawRealtime":J
-    .local v1, "rawRealtime":J
-    .local v71, "multicastWakeLockTimeTotalMicros":J
     invoke-virtual {v7, v13}, Landroid/os/BatteryStats;->getWifiMulticastWakelockCount(I)I
 
     move-result v0
 
-    .line 4679
-    .local v0, "multicastWakeLockCountTotal":I
     cmp-long v39, v71, v27
 
     if-eqz v39, :cond_1c
 
-    .line 4680
     move-wide/from16 v131, v3
 
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4681
-    .end local v3    # "mobileTxTotalPackets":J
-    .local v131, "mobileTxTotalPackets":J
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4682
     const-string v3, "  Total WiFi Multicast wakelock Count: "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4683
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4684
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4686
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4687
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4688
     const-string v3, "  Total WiFi Multicast wakelock time: "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4689
     add-long v3, v71, v18
 
     div-long v3, v3, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 4690
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -26186,128 +19948,94 @@
 
     goto :goto_16
 
-    .line 4693
-    .end local v131    # "mobileTxTotalPackets":J
-    .restart local v3    # "mobileTxTotalPackets":J
     :cond_1c
     move-wide/from16 v131, v3
 
-    .line 4693
-    .end local v3    # "mobileTxTotalPackets":J
-    .restart local v131    # "mobileTxTotalPackets":J
     :goto_16
     const-string v3, ""
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4694
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4695
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4696
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4697
     const-string v3, "  CONNECTIVITY POWER SUMMARY START"
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4698
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4700
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4701
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4702
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4703
     const-string v3, "  Logging duration for connectivity statistics: "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4704
     div-long v3, v106, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4705
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4707
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4708
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4709
     const-string v3, "  Cellular Statistics:"
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4710
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4712
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4713
     const/4 v3, 0x0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4714
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4715
     const-string v3, "     Cellular kernel active time: "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4716
     invoke-virtual {v7, v1, v2, v13}, Landroid/os/BatteryStats;->getMobileRadioActiveTime(JI)J
 
     move-result-wide v3
 
-    .line 4717
-    .local v3, "mobileActiveTime":J
     move/from16 v135, v0
 
     move-wide/from16 v133, v1
 
     div-long v0, v3, v16
 
-    .line 4717
-    .end local v0    # "multicastWakeLockCountTotal":I
-    .end local v1    # "rawRealtime":J
-    .local v133, "rawRealtime":J
-    .local v135, "multicastWakeLockCountTotal":I
     invoke-static {v8, v0, v1}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4718
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -26318,24 +20046,18 @@
 
     move-result-object v0
 
-    .line 4718
-    .end local v106    # "whichBatteryRealtime":J
-    .local v1, "whichBatteryRealtime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4719
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4720
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4722
     const-string v0, "     Cellular data received: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -26346,7 +20068,6 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4723
     const-string v0, "     Cellular data sent: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -26357,14 +20078,12 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4724
     const-string v0, "     Cellular packets received: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v15, v5, v6}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 4725
     const-string v0, "     Cellular packets sent: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -26375,46 +20094,29 @@
 
     invoke-virtual {v15, v3, v4}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 4727
-    .end local v131    # "mobileTxTotalPackets":J
-    .local v3, "mobileTxTotalPackets":J
-    .local v136, "mobileActiveTime":J
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4728
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4729
     const-string v0, "     Cellular Radio Access Technology:"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4730
     const/4 v0, 0x0
 
-    .line 4731
-    .end local v88    # "didOne":Z
-    .local v0, "didOne":Z
     move/from16 v39, v0
 
     const/4 v0, 0x0
 
-    .line 4731
-    .local v0, "i":I
-    .local v39, "didOne":Z
     :goto_17
     move-wide/from16 v138, v3
 
     const/16 v3, 0x15
 
-    .line 4731
-    .end local v3    # "mobileTxTotalPackets":J
-    .local v138, "mobileTxTotalPackets":J
     if-ge v0, v3, :cond_1e
 
-    .line 4732
     move-wide/from16 v140, v5
 
     move-wide/from16 v3, v133
@@ -26423,88 +20125,59 @@
 
     move-result-wide v5
 
-    .line 4733
-    .end local v133    # "rawRealtime":J
-    .local v3, "rawRealtime":J
-    .local v5, "time":J
-    .local v140, "mobileRxTotalPackets":J
     cmp-long v55, v5, v27
 
     if-nez v55, :cond_1d
 
-    .line 4734
     nop
 
-    .line 4731
     move-wide/from16 v142, v9
 
     goto :goto_18
 
-    .line 4736
     :cond_1d
     move-wide/from16 v142, v9
 
     const-string v9, "\n       "
 
-    .line 4736
-    .end local v9    # "mobileTxTotalBytes":J
-    .local v142, "mobileTxTotalBytes":J
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4737
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4738
     const/4 v9, 0x1
 
-    .line 4739
-    .end local v39    # "didOne":Z
-    .local v9, "didOne":Z
     sget-object v10, Landroid/os/BatteryStats;->DATA_CONNECTION_NAMES:[Ljava/lang/String;
 
     aget-object v10, v10, v0
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4740
     const-string v10, " "
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4741
     move/from16 v144, v9
 
     div-long v9, v5, v16
 
-    .line 4741
-    .end local v9    # "didOne":Z
-    .local v144, "didOne":Z
     invoke-static {v8, v9, v10}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4742
     const-string v9, "("
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4743
     invoke-virtual {v7, v5, v6, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4744
     const-string v9, ") "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4731
-    .end local v5    # "time":J
     move/from16 v39, v144
 
-    .line 4731
-    .end local v144    # "didOne":Z
-    .restart local v39    # "didOne":Z
     :goto_18
     add-int/lit8 v0, v0, 0x1
 
@@ -26518,14 +20191,6 @@
 
     goto :goto_17
 
-    .line 4746
-    .end local v0    # "i":I
-    .end local v3    # "rawRealtime":J
-    .end local v140    # "mobileRxTotalPackets":J
-    .end local v142    # "mobileTxTotalBytes":J
-    .local v5, "mobileRxTotalPackets":J
-    .local v9, "mobileTxTotalBytes":J
-    .restart local v133    # "rawRealtime":J
     :cond_1e
     move-wide/from16 v140, v5
 
@@ -26533,20 +20198,12 @@
 
     move-wide/from16 v3, v133
 
-    .line 4746
-    .end local v5    # "mobileRxTotalPackets":J
-    .end local v9    # "mobileTxTotalBytes":J
-    .end local v133    # "rawRealtime":J
-    .restart local v3    # "rawRealtime":J
-    .restart local v140    # "mobileRxTotalPackets":J
-    .restart local v142    # "mobileTxTotalBytes":J
     if-nez v39, :cond_1f
 
     const-string v0, " (no activity)"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4747
     :cond_1f
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -26554,20 +20211,16 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4749
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4750
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4751
     const-string v5, "     Cellular Rx signal strength (RSRP):"
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4752
     const-string/jumbo v5, "very poor (less than -128dBm): "
 
     const-string/jumbo v6, "poor (-128dBm to -118dBm): "
@@ -26584,13 +20237,8 @@
 
     move-object v10, v0
 
-    .line 4758
-    .local v10, "cellularRxSignalStrengthDescription":[Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 4759
-    .end local v39    # "didOne":Z
-    .local v0, "didOne":Z
     sget v5, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     array-length v6, v10
@@ -26599,100 +20247,68 @@
 
     move-result v9
 
-    .line 4761
-    .local v9, "numCellularRxBins":I
     move/from16 v39, v0
 
     const/4 v0, 0x0
 
-    .line 4761
-    .local v0, "i":I
-    .restart local v39    # "didOne":Z
     :goto_19
     if-ge v0, v9, :cond_21
 
-    .line 4762
     invoke-virtual {v7, v0, v3, v4, v13}, Landroid/os/BatteryStats;->getPhoneSignalStrengthTime(IJI)J
 
     move-result-wide v5
 
-    .line 4763
-    .local v5, "time":J
     cmp-long v40, v5, v27
 
     if-nez v40, :cond_20
 
-    .line 4764
     nop
 
-    .line 4761
     move-wide/from16 v146, v3
 
     goto :goto_1a
 
-    .line 4766
     :cond_20
     move-wide/from16 v146, v3
 
     const-string v3, "\n       "
 
-    .line 4766
-    .end local v3    # "rawRealtime":J
-    .local v146, "rawRealtime":J
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4767
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4768
     const/4 v3, 0x1
 
-    .line 4769
-    .end local v39    # "didOne":Z
-    .local v3, "didOne":Z
     aget-object v4, v10, v0
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4770
     const-string v4, " "
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4771
     move/from16 v148, v3
 
     div-long v3, v5, v16
 
-    .line 4771
-    .end local v3    # "didOne":Z
-    .local v148, "didOne":Z
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4772
     const-string v3, "("
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4773
     invoke-virtual {v7, v5, v6, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4774
     const-string v3, ") "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4761
-    .end local v5    # "time":J
     move/from16 v39, v148
 
-    .line 4761
-    .end local v148    # "didOne":Z
-    .restart local v39    # "didOne":Z
     :goto_1a
     add-int/lit8 v0, v0, 0x1
 
@@ -26700,23 +20316,15 @@
 
     goto :goto_19
 
-    .line 4776
-    .end local v0    # "i":I
-    .end local v146    # "rawRealtime":J
-    .local v3, "rawRealtime":J
     :cond_21
     move-wide/from16 v146, v3
 
-    .line 4776
-    .end local v3    # "rawRealtime":J
-    .restart local v146    # "rawRealtime":J
     if-nez v39, :cond_22
 
     const-string v0, " (no activity)"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4777
     :cond_22
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -26724,15 +20332,12 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4779
     const-string v4, "Cellular"
 
-    .line 4780
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v5
 
-    .line 4779
     move/from16 v152, v9
 
     move-object/from16 v151, v10
@@ -26761,27 +20366,6 @@
 
     move-object v0, v7
 
-    .end local v9    # "numCellularRxBins":I
-    .end local v10    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v99    # "connChanges":I
-    .end local v101    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v117    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v120    # "wifiRxTotalPackets":J
-    .end local v123    # "wifiTxTotalPackets":J
-    .end local v126    # "btRxTotalBytes":J
-    .end local v129    # "btTxTotalBytes":J
-    .end local v135    # "multicastWakeLockCountTotal":I
-    .local v3, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v6, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v11, "wifiRxTotalPackets":J
-    .local v40, "connChanges":I
-    .local v55, "multicastWakeLockCountTotal":I
-    .local v149, "mobileRxTotalBytes":J
-    .local v151, "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .local v152, "numCellularRxBins":I
-    .local v153, "btRxTotalBytes":J
-    .local v155, "btTxTotalBytes":J
-    .local v157, "wifiTxTotalPackets":J
     move-wide/from16 v162, v1
 
     move-wide/from16 v160, v22
@@ -26790,12 +20374,6 @@
 
     move-object v1, v15
 
-    .line 4779
-    .end local v1    # "whichBatteryRealtime":J
-    .end local v146    # "rawRealtime":J
-    .local v22, "rawRealtime":J
-    .local v160, "batteryUptime":J
-    .local v162, "whichBatteryRealtime":J
     move-wide/from16 v164, v111
 
     const/16 v73, 0x5
@@ -26804,9 +20382,6 @@
 
     move-object v2, v8
 
-    .line 4779
-    .end local v111    # "wifiRxTotalBytes":J
-    .local v164, "wifiRxTotalBytes":J
     move-object/from16 v169, v3
 
     move-wide/from16 v167, v20
@@ -26831,21 +20406,6 @@
 
     move-object v3, v14
 
-    .end local v3    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v115    # "wifiTxTotalBytes":J
-    .end local v136    # "mobileActiveTime":J
-    .end local v138    # "mobileTxTotalPackets":J
-    .local v20, "rawRealtime":J
-    .local v22, "whichBatteryUptime":J
-    .local v45, "whichBatteryScreenOffUptime":J
-    .local v47, "screenDozeTime":J
-    .local v49, "dischargeCount":J
-    .local v57, "dischargeLightDozeCount":J
-    .local v61, "mobileTxTotalPackets":J
-    .local v167, "rawRealtimeMs":J
-    .local v169, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v170, "wifiTxTotalBytes":J
-    .local v172, "mobileActiveTime":J
     move-wide/from16 v174, v20
 
     move-wide/from16 v20, v59
@@ -26868,85 +20428,48 @@
 
     move-wide/from16 v87, v140
 
-    .end local v89    # "deviceLightIdlingTime":J
-    .end local v91    # "deviceIdleModeLightTime":J
-    .end local v93    # "deviceIdlingTime":J
-    .end local v95    # "deviceIdleModeFullTime":J
-    .end local v97    # "phoneOnTime":J
-    .end local v100    # "NU":I
-    .end local v102    # "powerSaveModeEnabledTime":J
-    .end local v140    # "mobileRxTotalPackets":J
-    .local v20, "dischargeScreenOnCount":J
-    .local v59, "dischargeDeepDozeCount":J
-    .local v67, "powerSaveModeEnabledTime":J
-    .local v75, "deviceIdleModeLightTime":J
-    .local v77, "deviceIdleModeFullTime":J
-    .local v79, "deviceLightIdlingTime":J
-    .local v81, "deviceIdlingTime":J
-    .local v85, "phoneOnTime":J
-    .local v87, "mobileRxTotalPackets":J
-    .local v174, "rawRealtime":J
-    .local v176, "NU":I
     move-object/from16 v177, v6
 
     move v6, v13
 
-    .line 4779
-    .end local v6    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v177, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     invoke-direct/range {v0 .. v6}, Landroid/os/BatteryStats;->printControllerActivity(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 4782
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4783
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4784
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4785
     const-string v0, "  Wifi Statistics:"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4786
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4788
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4789
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4790
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4791
     const-string v0, "     Wifi kernel active time: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4792
     move-wide/from16 v5, v174
 
     invoke-virtual {v7, v5, v6, v13}, Landroid/os/BatteryStats;->getWifiActiveTime(JI)J
 
     move-result-wide v3
 
-    .line 4793
-    .end local v174    # "rawRealtime":J
-    .local v3, "wifiActiveTime":J
-    .local v5, "rawRealtime":J
     div-long v0, v3, v16
 
     invoke-static {v8, v0, v1}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4794
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -26957,24 +20480,18 @@
 
     move-result-object v0
 
-    .line 4794
-    .end local v162    # "whichBatteryRealtime":J
-    .restart local v1    # "whichBatteryRealtime":J
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4795
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4796
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4798
     const-string v0, "     Wifi data received: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -26985,12 +20502,8 @@
 
     move-result-object v0
 
-    .line 4798
-    .end local v164    # "wifiRxTotalBytes":J
-    .local v9, "wifiRxTotalBytes":J
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4799
     const-string v0, "     Wifi data sent: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -27003,20 +20516,14 @@
 
     move-result-object v0
 
-    .line 4799
-    .end local v170    # "wifiTxTotalBytes":J
-    .local v9, "wifiTxTotalBytes":J
-    .local v182, "wifiRxTotalBytes":J
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4800
     const-string v0, "     Wifi packets received: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v15, v11, v12}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 4801
     const-string v0, "     Wifi packets sent: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -27027,126 +20534,84 @@
 
     invoke-virtual {v15, v9, v10}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 4803
-    .end local v157    # "wifiTxTotalPackets":J
-    .local v9, "wifiTxTotalPackets":J
-    .local v184, "wifiTxTotalBytes":J
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4804
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4805
     const-string v0, "     Wifi states:"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4806
     const/4 v0, 0x0
 
-    .line 4807
-    .end local v39    # "didOne":Z
-    .local v0, "didOne":Z
     move/from16 v39, v0
 
     const/4 v0, 0x0
 
-    .line 4807
-    .local v0, "i":I
-    .restart local v39    # "didOne":Z
     :goto_1b
     move-wide/from16 v186, v3
 
     const/16 v3, 0x8
 
-    .line 4807
-    .end local v3    # "wifiActiveTime":J
-    .local v186, "wifiActiveTime":J
     if-ge v0, v3, :cond_24
 
-    .line 4808
     invoke-virtual {v7, v0, v5, v6, v13}, Landroid/os/BatteryStats;->getWifiStateTime(IJI)J
 
     move-result-wide v3
 
-    .line 4809
-    .local v3, "time":J
     cmp-long v73, v3, v27
 
     if-nez v73, :cond_23
 
-    .line 4810
     nop
 
-    .line 4807
     move-wide/from16 v188, v9
 
     goto :goto_1c
 
-    .line 4812
     :cond_23
     move-wide/from16 v188, v9
 
     const-string v9, "\n       "
 
-    .line 4812
-    .end local v9    # "wifiTxTotalPackets":J
-    .local v188, "wifiTxTotalPackets":J
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4813
     const/4 v9, 0x1
 
-    .line 4814
-    .end local v39    # "didOne":Z
-    .local v9, "didOne":Z
     sget-object v10, Landroid/os/BatteryStats;->WIFI_STATE_NAMES:[Ljava/lang/String;
 
     aget-object v10, v10, v0
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4815
     const-string v10, " "
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4816
     move/from16 v190, v9
 
     div-long v9, v3, v16
 
-    .line 4816
-    .end local v9    # "didOne":Z
-    .local v190, "didOne":Z
     invoke-static {v8, v9, v10}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4817
     const-string v9, "("
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4818
     invoke-virtual {v7, v3, v4, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4819
     const-string v9, ") "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4807
-    .end local v3    # "time":J
     move/from16 v39, v190
 
-    .line 4807
-    .end local v190    # "didOne":Z
-    .restart local v39    # "didOne":Z
     :goto_1c
     add-int/lit8 v0, v0, 0x1
 
@@ -27156,23 +20621,15 @@
 
     goto :goto_1b
 
-    .line 4821
-    .end local v0    # "i":I
-    .end local v188    # "wifiTxTotalPackets":J
-    .local v9, "wifiTxTotalPackets":J
     :cond_24
     move-wide/from16 v188, v9
 
-    .line 4821
-    .end local v9    # "wifiTxTotalPackets":J
-    .restart local v188    # "wifiTxTotalPackets":J
     if-nez v39, :cond_25
 
     const-string v0, " (no activity)"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4822
     :cond_25
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -27180,113 +20637,81 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4824
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4825
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4826
     const-string v0, "     Wifi supplicant states:"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4827
     const/4 v0, 0x0
 
-    .line 4828
-    .end local v39    # "didOne":Z
-    .local v0, "didOne":Z
     move v3, v0
 
     const/4 v0, 0x0
 
-    .line 4828
-    .local v0, "i":I
-    .local v3, "didOne":Z
     :goto_1d
     const/16 v4, 0xd
 
     if-ge v0, v4, :cond_27
 
-    .line 4829
     invoke-virtual {v7, v0, v5, v6, v13}, Landroid/os/BatteryStats;->getWifiSupplStateTime(IJI)J
 
     move-result-wide v9
 
-    .line 4830
-    .local v9, "time":J
     cmp-long v4, v9, v27
 
     if-nez v4, :cond_26
 
-    .line 4831
     goto :goto_1e
 
-    .line 4833
     :cond_26
     const-string v4, "\n       "
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4834
     const/4 v3, 0x1
 
-    .line 4835
     sget-object v4, Landroid/os/BatteryStats;->WIFI_SUPPL_STATE_NAMES:[Ljava/lang/String;
 
     aget-object v4, v4, v0
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4836
     const-string v4, " "
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4837
     move/from16 v191, v3
 
     div-long v3, v9, v16
 
-    .line 4837
-    .end local v3    # "didOne":Z
-    .local v191, "didOne":Z
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4838
     const-string v3, "("
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4839
     invoke-virtual {v7, v9, v10, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4840
     const-string v3, ") "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4828
-    .end local v9    # "time":J
     move/from16 v3, v191
 
-    .line 4828
-    .end local v191    # "didOne":Z
-    .restart local v3    # "didOne":Z
     :goto_1e
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1d
 
-    .line 4842
-    .end local v0    # "i":I
     :cond_27
     if-nez v3, :cond_28
 
@@ -27294,7 +20719,6 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4843
     :cond_28
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -27302,20 +20726,16 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4845
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4846
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4847
     const-string v0, "     Wifi Rx signal strength (RSSI):"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4848
     const-string/jumbo v0, "very poor (less than -88.75dBm): "
 
     const-string/jumbo v4, "poor (-88.75 to -77.5dBm): "
@@ -27328,22 +20748,14 @@
 
     const-string v3, "great (greater than -55dBm): "
 
-    .line 4848
-    .end local v3    # "didOne":Z
-    .local v192, "didOne":Z
     filled-new-array {v0, v4, v9, v10, v3}, [Ljava/lang/String;
 
     move-result-object v0
 
     move-object v10, v0
 
-    .line 4854
-    .local v10, "wifiRxSignalStrengthDescription":[Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 4855
-    .end local v192    # "didOne":Z
-    .local v0, "didOne":Z
     array-length v3, v10
 
     const/4 v9, 0x5
@@ -27352,104 +20764,70 @@
 
     move-result v4
 
-    .line 4857
-    .local v4, "numWifiRxBins":I
     move/from16 v39, v0
 
     const/4 v0, 0x0
 
-    .line 4857
-    .local v0, "i":I
-    .restart local v39    # "didOne":Z
     :goto_1f
     if-ge v0, v4, :cond_2a
 
-    .line 4858
     move-object/from16 v193, v10
 
     invoke-virtual {v7, v0, v5, v6, v13}, Landroid/os/BatteryStats;->getWifiSignalStrengthTime(IJI)J
 
     move-result-wide v9
 
-    .line 4859
-    .end local v10    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v9    # "time":J
-    .local v193, "wifiRxSignalStrengthDescription":[Ljava/lang/String;
     cmp-long v3, v9, v27
 
     if-nez v3, :cond_29
 
-    .line 4860
     nop
 
-    .line 4857
     move/from16 v195, v4
 
     goto :goto_20
 
-    .line 4862
     :cond_29
     const-string v3, "\n    "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4863
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4864
     const/4 v3, 0x1
 
-    .line 4865
-    .end local v39    # "didOne":Z
-    .restart local v3    # "didOne":Z
     move/from16 v194, v3
 
     const-string v3, "     "
 
-    .line 4865
-    .end local v3    # "didOne":Z
-    .local v194, "didOne":Z
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4866
     aget-object v3, v193, v0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4867
     move/from16 v195, v4
 
     div-long v3, v9, v16
 
-    .line 4867
-    .end local v4    # "numWifiRxBins":I
-    .local v195, "numWifiRxBins":I
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4868
     const-string v3, "("
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4869
     invoke-virtual {v7, v9, v10, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4870
     const-string v3, ") "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4857
-    .end local v9    # "time":J
     move/from16 v39, v194
 
-    .line 4857
-    .end local v194    # "didOne":Z
-    .restart local v39    # "didOne":Z
     :goto_20
     add-int/lit8 v0, v0, 0x1
 
@@ -27461,29 +20839,17 @@
 
     goto :goto_1f
 
-    .line 4872
-    .end local v0    # "i":I
-    .end local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v195    # "numWifiRxBins":I
-    .restart local v4    # "numWifiRxBins":I
-    .restart local v10    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
     :cond_2a
     move/from16 v195, v4
 
     move-object/from16 v193, v10
 
-    .line 4872
-    .end local v4    # "numWifiRxBins":I
-    .end local v10    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v195    # "numWifiRxBins":I
     if-nez v39, :cond_2b
 
     const-string v0, " (no activity)"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4873
     :cond_2b
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -27491,96 +20857,66 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4875
     const-string v4, "WiFi"
 
-    .line 4876
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v9
 
-    .line 4875
     move-object v0, v7
 
     move-wide v2, v1
 
     move-object v1, v15
 
-    .line 4875
-    .end local v1    # "whichBatteryRealtime":J
-    .local v2, "whichBatteryRealtime":J
     move-wide/from16 v196, v11
 
     move-wide v11, v2
 
     move-object v2, v8
 
-    .line 4875
-    .end local v2    # "whichBatteryRealtime":J
-    .local v11, "whichBatteryRealtime":J
-    .local v196, "wifiRxTotalPackets":J
     move-wide/from16 v73, v186
 
     move-object v3, v14
 
-    .line 4875
-    .end local v186    # "wifiActiveTime":J
-    .local v73, "wifiActiveTime":J
     move/from16 v89, v195
 
-    .line 4875
-    .end local v195    # "numWifiRxBins":I
-    .local v89, "numWifiRxBins":I
     move-wide/from16 v198, v11
 
     move-wide v10, v5
 
     move-object v5, v9
 
-    .line 4875
-    .end local v5    # "rawRealtime":J
-    .end local v11    # "whichBatteryRealtime":J
-    .local v10, "rawRealtime":J
-    .local v198, "whichBatteryRealtime":J
     move v6, v13
 
     invoke-direct/range {v0 .. v6}, Landroid/os/BatteryStats;->printControllerActivity(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 4878
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4879
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4880
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4881
     const-string v1, "  GPS Statistics:"
 
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4882
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4884
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4885
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4886
     const-string v0, "     GPS signal quality (Top 4 Average CN0):"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4887
     const-string/jumbo v0, "poor (less than 20 dBHz): "
 
     const-string v1, "good (greater than 20 dBHz): "
@@ -27591,8 +20927,6 @@
 
     move-object v12, v0
 
-    .line 4890
-    .local v12, "gpsSignalQualityDescription":[Ljava/lang/String;
     array-length v0, v12
 
     const/4 v9, 0x2
@@ -27601,116 +20935,82 @@
 
     move-result v6
 
-    .line 4892
-    .local v6, "numGpsSignalQualityBins":I
     const/4 v0, 0x0
 
-    .line 4892
-    .restart local v0    # "i":I
     :goto_21
     if-ge v0, v6, :cond_2c
 
-    .line 4893
     invoke-virtual {v7, v0, v10, v11, v13}, Landroid/os/BatteryStats;->getGpsSignalQualityTime(IJI)J
 
     move-result-wide v1
 
-    .line 4894
-    .local v1, "time":J
     const-string v3, "\n    "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4895
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4896
     const-string v3, "  "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4897
     aget-object v3, v12, v0
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4898
     div-long v3, v1, v16
 
     invoke-static {v8, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4899
     const-string v3, "("
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4900
     move-wide/from16 v4, v198
 
     invoke-virtual {v7, v1, v2, v4, v5}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4900
-    .end local v198    # "whichBatteryRealtime":J
-    .local v4, "whichBatteryRealtime":J
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4901
     const-string v3, ") "
 
     invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4892
-    .end local v1    # "time":J
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_21
 
-    .line 4903
-    .end local v0    # "i":I
-    .end local v4    # "whichBatteryRealtime":J
-    .restart local v198    # "whichBatteryRealtime":J
     :cond_2c
     move-wide/from16 v4, v198
 
-    .line 4903
-    .end local v198    # "whichBatteryRealtime":J
-    .restart local v4    # "whichBatteryRealtime":J
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4905
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getGpsBatteryDrainMaMs()J
 
     move-result-wide v2
 
-    .line 4906
-    .local v2, "gpsBatteryDrainMaMs":J
     cmp-long v0, v2, v27
 
     if-lez v0, :cond_2d
 
-    .line 4907
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4908
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4909
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4910
     const-string v0, "     Battery Drain (mAh): "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4911
     long-to-double v0, v2
 
     const-wide v90, 0x414b774000000000L    # 3600000.0
@@ -27723,46 +21023,37 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4912
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4915
     :cond_2d
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4916
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4917
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4918
     const-string v0, "  CONNECTIVITY POWER SUMMARY END"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4919
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4920
     const-string v0, ""
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4922
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4923
     const-string v0, "  Bluetooth total received: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -27773,12 +21064,8 @@
 
     move-result-object v9
 
-    .line 4923
-    .end local v153    # "btRxTotalBytes":J
-    .local v0, "btRxTotalBytes":J
     invoke-virtual {v15, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4924
     const-string v9, ", sent: "
 
     invoke-virtual {v15, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -27793,16 +21080,8 @@
 
     move-result-object v4
 
-    .line 4924
-    .end local v4    # "whichBatteryRealtime":J
-    .end local v6    # "numGpsSignalQualityBins":I
-    .end local v155    # "btTxTotalBytes":J
-    .local v5, "btTxTotalBytes":J
-    .local v200, "numGpsSignalQualityBins":I
-    .local v201, "whichBatteryRealtime":J
     invoke-virtual {v15, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4926
     invoke-virtual {v7, v10, v11, v13}, Landroid/os/BatteryStats;->getBluetoothScanTime(JI)J
 
     move-result-wide v90
@@ -27811,32 +21090,24 @@
 
     div-long v9, v90, v16
 
-    .line 4927
-    .end local v10    # "rawRealtime":J
-    .local v9, "bluetoothScanTimeMs":J
-    .local v203, "rawRealtime":J
     const/4 v4, 0x0
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 4928
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4929
     const-string v4, "  Bluetooth scan time: "
 
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v8, v9, v10}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 4930
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v15, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4932
     const-string v4, "Bluetooth"
 
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
@@ -27847,88 +21118,64 @@
 
     move-object v0, v7
 
-    .line 4932
-    .end local v0    # "btRxTotalBytes":J
-    .local v90, "btRxTotalBytes":J
     move-object v1, v15
 
     move-wide/from16 v92, v2
 
     move-object v2, v8
 
-    .line 4932
-    .end local v2    # "gpsBatteryDrainMaMs":J
-    .local v92, "gpsBatteryDrainMaMs":J
     move-object v3, v14
 
     move-wide/from16 v205, v9
 
     move-wide/from16 v9, v201
 
-    .line 4932
-    .end local v201    # "whichBatteryRealtime":J
-    .local v9, "whichBatteryRealtime":J
-    .local v205, "bluetoothScanTimeMs":J
     move-wide/from16 v94, v5
 
     move-object v5, v11
 
-    .line 4932
-    .end local v5    # "btTxTotalBytes":J
-    .local v94, "btTxTotalBytes":J
     move/from16 v96, v200
 
     move v6, v13
 
-    .line 4932
-    .end local v200    # "numGpsSignalQualityBins":I
-    .local v96, "numGpsSignalQualityBins":I
     invoke-direct/range {v0 .. v6}, Landroid/os/BatteryStats;->printControllerActivity(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 4935
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 4937
     const/4 v11, 0x2
 
     if-ne v13, v11, :cond_2f
 
-    .line 4938
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getIsOnBattery()Z
 
     move-result v0
 
     if-eqz v0, :cond_2e
 
-    .line 4939
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  Device is currently unplugged"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4940
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Discharge cycle start level: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4941
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeStartLevel()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4942
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Discharge cycle current level: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4943
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeCurrentLevel()I
 
     move-result v0
@@ -27937,7 +21184,6 @@
 
     goto :goto_22
 
-    .line 4945
     :cond_2e
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -27945,35 +21191,30 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4946
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Last discharge cycle start level: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4947
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeStartLevel()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4948
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Last discharge cycle end level: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4949
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeCurrentLevel()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4951
     :goto_22
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -27981,49 +21222,42 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4952
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOn()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4953
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged while screen off: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4954
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOff()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4955
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged while screen doze: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4956
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenDoze()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4957
     const-string v0, " "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_23
 
-    .line 4959
     :cond_2f
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -28031,80 +21265,68 @@
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4960
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged (lower bound): "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4961
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getLowDischargeAmountSinceCharge()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4962
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged (upper bound): "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4963
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getHighDischargeAmountSinceCharge()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4964
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged while screen on: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4965
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOnSinceCharge()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4966
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged while screen off: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4967
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenOffSinceCharge()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4968
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    Amount discharged while screen doze: "
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4969
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getDischargeAmountScreenDozeSinceCharge()I
 
     move-result v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 4970
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 4973
     :goto_23
     new-instance v0, Lcom/android/internal/os/BatteryStatsHelper;
 
@@ -28118,22 +21340,16 @@
 
     move-object v4, v0
 
-    .line 4974
-    .local v4, "helper":Lcom/android/internal/os/BatteryStatsHelper;
     invoke-virtual {v4, v7}, Lcom/android/internal/os/BatteryStatsHelper;->create(Landroid/os/BatteryStats;)V
 
-    .line 4975
     const/4 v2, -0x1
 
     invoke-virtual {v4, v13, v2}, Lcom/android/internal/os/BatteryStatsHelper;->refreshStats(II)V
 
-    .line 4976
     invoke-virtual {v4}, Lcom/android/internal/os/BatteryStatsHelper;->getUsageList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 4977
-    .local v0, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     if-eqz v0, :cond_41
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -28142,21 +21358,18 @@
 
     if-lez v1, :cond_41
 
-    .line 4978
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "  Estimated power use (mAh):"
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4979
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, "    Capacity: "
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4980
     invoke-virtual {v4}, Lcom/android/internal/os/BatteryStatsHelper;->getPowerProfile()Lcom/android/internal/os/PowerProfile;
 
     move-result-object v1
@@ -28167,7 +21380,6 @@
 
     invoke-direct {v7, v15, v2, v3}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 4981
     const-string v1, ", Computed drain: "
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -28178,7 +21390,6 @@
 
     invoke-direct {v7, v15, v1, v2}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 4982
     const-string v1, ", actual drain: "
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -28189,7 +21400,6 @@
 
     invoke-direct {v7, v15, v1, v2}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 4983
     invoke-virtual {v4}, Lcom/android/internal/os/BatteryStatsHelper;->getMinDrainedPower()D
 
     move-result-wide v1
@@ -28202,7 +21412,6 @@
 
     if-eqz v1, :cond_30
 
-    .line 4984
     const-string v1, "-"
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -28213,15 +21422,11 @@
 
     invoke-direct {v7, v15, v1, v2}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 4986
     :cond_30
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 4987
     const/4 v1, 0x0
 
-    .line 4987
-    .local v1, "i":I
     :goto_24
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -28229,18 +21434,14 @@
 
     if-ge v1, v2, :cond_40
 
-    .line 4988
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/internal/os/BatterySipper;
 
-    .line 4989
-    .local v2, "bs":Lcom/android/internal/os/BatterySipper;
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4990
     sget-object v3, Landroid/os/BatteryStats$2;->$SwitchMap$com$android$internal$os$BatterySipper$DrainType:[I
 
     iget-object v11, v2, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
@@ -28253,41 +21454,33 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 5034
     const-string v3, "    ???: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_25
 
-    .line 5031
     :pswitch_0
     const-string v3, "    Camera: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5032
     goto :goto_25
 
-    .line 5028
     :pswitch_1
     const-string v3, "    Over-counted: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5029
     goto :goto_25
 
-    .line 5025
     :pswitch_2
     const-string v3, "    Unaccounted: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5026
     goto :goto_25
 
-    .line 5021
     :pswitch_3
     const-string v3, "    User "
 
@@ -28297,21 +21490,17 @@
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 5022
     const-string v3, ": "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5023
     goto :goto_25
 
-    .line 5016
     :pswitch_4
     const-string v3, "    Uid "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5017
     iget-object v3, v2, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
     invoke-virtual {v3}, Landroid/os/BatteryStats$Uid;->getUid()I
@@ -28320,131 +21509,103 @@
 
     invoke-static {v15, v3}, Landroid/os/UserHandle;->formatUid(Ljava/io/PrintWriter;I)V
 
-    .line 5018
     const-string v3, ": "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5019
     goto :goto_25
 
-    .line 5013
     :pswitch_5
     const-string v3, "    Flashlight: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5014
     goto :goto_25
 
-    .line 5010
     :pswitch_6
     const-string v3, "    Screen: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5011
     goto :goto_25
 
-    .line 5007
     :pswitch_7
     const-string v3, "    Bluetooth: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5008
     goto :goto_25
 
-    .line 5004
     :pswitch_8
     const-string v3, "    Wifi: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5005
     goto :goto_25
 
-    .line 5001
     :pswitch_9
     const-string v3, "    Phone calls: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5002
     goto :goto_25
 
-    .line 4998
     :pswitch_a
     const-string v3, "    Cell standby: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4999
     goto :goto_25
 
-    .line 4995
     :pswitch_b
     const-string v3, "    Idle: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4996
     goto :goto_25
 
-    .line 4992
     :pswitch_c
     const-string v3, "    Ambient display: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4993
     nop
 
-    .line 5037
     :goto_25
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
     invoke-direct {v7, v15, v5, v6}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5039
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
     move-object/from16 v207, v12
 
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .line 5039
-    .end local v12    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .local v207, "gpsSignalQualityDescription":[Ljava/lang/String;
     cmpl-double v3, v5, v11
 
     const-wide/16 v5, 0x0
 
     if-eqz v3, :cond_3b
 
-    .line 5043
     const-string v3, " ("
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5044
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
     cmpl-double v3, v11, v5
 
     if-eqz v3, :cond_31
 
-    .line 5045
     const-string v3, " usage="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5046
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5048
     :cond_31
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->cpuPowerMah:D
 
@@ -28452,17 +21613,14 @@
 
     if-eqz v3, :cond_32
 
-    .line 5049
     const-string v3, " cpu="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5050
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->cpuPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5052
     :cond_32
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
 
@@ -28470,17 +21628,14 @@
 
     if-eqz v3, :cond_33
 
-    .line 5053
     const-string v3, " wake="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5054
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5056
     :cond_33
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
@@ -28488,17 +21643,14 @@
 
     if-eqz v3, :cond_34
 
-    .line 5057
     const-string v3, " radio="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5058
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5060
     :cond_34
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
@@ -28506,17 +21658,14 @@
 
     if-eqz v3, :cond_35
 
-    .line 5061
     const-string v3, " wifi="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5062
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5064
     :cond_35
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
 
@@ -28524,17 +21673,14 @@
 
     if-eqz v3, :cond_36
 
-    .line 5065
     const-string v3, " bt="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5066
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5068
     :cond_36
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->gpsPowerMah:D
 
@@ -28542,17 +21688,14 @@
 
     if-eqz v3, :cond_37
 
-    .line 5069
     const-string v3, " gps="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5070
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->gpsPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5072
     :cond_37
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
 
@@ -28560,17 +21703,14 @@
 
     if-eqz v3, :cond_38
 
-    .line 5073
     const-string v3, " sensor="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5074
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5076
     :cond_38
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
@@ -28578,17 +21718,14 @@
 
     if-eqz v3, :cond_39
 
-    .line 5077
     const-string v3, " camera="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5078
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5080
     :cond_39
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
 
@@ -28596,23 +21733,19 @@
 
     if-eqz v3, :cond_3a
 
-    .line 5081
     const-string v3, " flash="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5082
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
 
     invoke-direct {v7, v15, v11, v12}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5084
     :cond_3a
     const-string v3, " )"
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5088
     :cond_3b
     iget-wide v11, v2, Lcom/android/internal/os/BatterySipper;->totalSmearedPowerMah:D
 
@@ -28622,22 +21755,18 @@
 
     if-eqz v3, :cond_3e
 
-    .line 5089
     const-string v3, " Including smearing: "
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5090
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->totalSmearedPowerMah:D
 
     invoke-direct {v7, v15, v5, v6}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5091
     const-string v3, " ("
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5092
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->screenPowerMah:D
 
     const-wide/16 v11, 0x0
@@ -28646,17 +21775,14 @@
 
     if-eqz v3, :cond_3c
 
-    .line 5093
     const-string v3, " screen="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5094
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->screenPowerMah:D
 
     invoke-direct {v7, v15, v5, v6}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5096
     :cond_3c
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->proportionalSmearMah:D
 
@@ -28666,39 +21792,31 @@
 
     if-eqz v3, :cond_3d
 
-    .line 5097
     const-string v3, " proportional="
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5098
     iget-wide v5, v2, Lcom/android/internal/os/BatterySipper;->proportionalSmearMah:D
 
     invoke-direct {v7, v15, v5, v6}, Landroid/os/BatteryStats;->printmAh(Ljava/io/PrintWriter;D)V
 
-    .line 5100
     :cond_3d
     const-string v3, " )"
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5102
     :cond_3e
     iget-boolean v3, v2, Lcom/android/internal/os/BatterySipper;->shouldHide:Z
 
     if-eqz v3, :cond_3f
 
-    .line 5103
     const-string v3, " Excluded from smearing"
 
     invoke-virtual {v15, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5106
     :cond_3f
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 4987
-    .end local v2    # "bs":Lcom/android/internal/os/BatterySipper;
     add-int/lit8 v1, v1, 0x1
 
     move-object/from16 v12, v207
@@ -28711,37 +21829,21 @@
 
     goto/16 :goto_24
 
-    .line 5108
-    .end local v1    # "i":I
-    .end local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v12    # "gpsSignalQualityDescription":[Ljava/lang/String;
     :cond_40
     move-object/from16 v207, v12
 
-    .line 5108
-    .end local v12    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_26
 
-    .line 5111
-    .end local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v12    # "gpsSignalQualityDescription":[Ljava/lang/String;
     :cond_41
     move-object/from16 v207, v12
 
-    .line 5111
-    .end local v12    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
     :goto_26
     invoke-virtual {v4}, Lcom/android/internal/os/BatteryStatsHelper;->getMobilemsppList()Ljava/util/List;
 
     move-result-object v11
 
-    .line 5112
-    .end local v0    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v11, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     if-eqz v11, :cond_43
 
     invoke-interface {v11}, Ljava/util/List;->size()I
@@ -28750,25 +21852,18 @@
 
     if-lez v0, :cond_43
 
-    .line 5113
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  Per-app mobile ms per packet:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5114
     const-wide/16 v0, 0x0
 
-    .line 5115
-    .local v0, "totalTime":J
     move-wide v1, v0
 
     const/4 v0, 0x0
 
-    .line 5115
-    .local v0, "i":I
-    .local v1, "totalTime":J
     :goto_27
     invoke-interface {v11}, Ljava/util/List;->size()I
 
@@ -28776,27 +21871,22 @@
 
     if-ge v0, v3, :cond_42
 
-    .line 5116
     invoke-interface {v11, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/internal/os/BatterySipper;
 
-    .line 5117
-    .local v3, "bs":Lcom/android/internal/os/BatterySipper;
     const/4 v5, 0x0
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5118
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v5, "    Uid "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5119
     iget-object v5, v3, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
     invoke-virtual {v5}, Landroid/os/BatteryStats$Uid;->getUid()I
@@ -28805,7 +21895,6 @@
 
     invoke-static {v8, v5}, Landroid/os/UserHandle;->formatUid(Ljava/lang/StringBuilder;I)V
 
-    .line 5120
     const-string v5, ": "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -28818,7 +21907,6 @@
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5121
     const-string v5, " ("
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -28829,14 +21917,10 @@
 
     iget-wide v11, v3, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
 
-    .line 5121
-    .end local v11    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v208, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     add-long/2addr v5, v11
 
     invoke-virtual {v8, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 5122
     const-string v5, " packets over "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -28845,7 +21929,6 @@
 
     invoke-static {v8, v5, v6}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 5123
     const-string v5, ") "
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -28858,52 +21941,37 @@
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5124
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v15, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5125
     iget-wide v5, v3, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
     add-long/2addr v1, v5
 
-    .line 5115
-    .end local v3    # "bs":Lcom/android/internal/os/BatterySipper;
     add-int/lit8 v0, v0, 0x1
 
     move-object/from16 v11, v208
 
     goto :goto_27
 
-    .line 5127
-    .end local v0    # "i":I
-    .end local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v11    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_42
     move-object/from16 v208, v11
 
-    .line 5127
-    .end local v11    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5128
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5129
     const-string v0, "    TOTAL TIME: "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5130
     invoke-static {v8, v1, v2}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5131
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -28914,34 +21982,23 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5132
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5133
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5134
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 5134
-    .end local v1    # "totalTime":J
     goto :goto_28
 
-    .line 5137
-    .end local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v11    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_43
     move-object/from16 v208, v11
 
-    .line 5137
-    .end local v11    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :goto_28
     new-instance v0, Landroid/os/BatteryStats$1;
 
@@ -28949,35 +22006,26 @@
 
     move-object v11, v0
 
-    .line 5152
-    .local v11, "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
     if-gez v24, :cond_4e
 
-    .line 5153
     nop
 
-    .line 5154
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getKernelWakelockStats()Ljava/util/Map;
 
     move-result-object v12
 
-    .line 5155
-    .local v12, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v12}, Ljava/util/Map;->size()I
 
     move-result v0
 
     if-lez v0, :cond_49
 
-    .line 5156
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     move-object v6, v0
 
-    .line 5158
-    .local v6, "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     invoke-interface {v12}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -28999,16 +22047,12 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 5159
-    .local v1, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Timer;
 
-    .line 5160
-    .local v2, "timer":Landroid/os/BatteryStats$Timer;
     move-object/from16 v209, v4
 
     move-wide/from16 v4, v203
@@ -29017,16 +22061,10 @@
 
     move-result-wide v106
 
-    .line 5161
-    .end local v203    # "rawRealtime":J
-    .local v4, "rawRealtime":J
-    .local v106, "totalTimeMillis":J
-    .local v209, "helper":Lcom/android/internal/os/BatteryStatsHelper;
     cmp-long v3, v106, v27
 
     if-lez v3, :cond_44
 
-    .line 5162
     new-instance v3, Landroid/os/BatteryStats$TimerEntry;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -29049,67 +22087,45 @@
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5164
-    .end local v1    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v2    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v106    # "totalTimeMillis":J
     :cond_44
     nop
 
-    .line 5158
     move-wide/from16 v203, v4
 
     move-object/from16 v4, v209
 
     goto :goto_29
 
-    .line 5165
-    .end local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .local v4, "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v203    # "rawRealtime":J
     :cond_45
     move-object/from16 v209, v4
 
     move-wide/from16 v4, v203
 
-    .line 5165
-    .end local v203    # "rawRealtime":J
-    .local v4, "rawRealtime":J
-    .restart local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-lez v0, :cond_48
 
-    .line 5166
     invoke-static {v6, v11}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 5167
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  All kernel wake locks:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5168
     const/4 v0, 0x0
 
-    .line 5168
-    .restart local v0    # "i":I
     :goto_2a
     move v2, v0
 
-    .line 5168
-    .end local v0    # "i":I
-    .local v2, "i":I
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-ge v2, v0, :cond_47
 
-    .line 5169
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -29118,30 +22134,22 @@
 
     check-cast v3, Landroid/os/BatteryStats$TimerEntry;
 
-    .line 5170
-    .local v3, "timer":Landroid/os/BatteryStats$TimerEntry;
     const-string v97, ": "
 
-    .line 5171
-    .local v97, "linePrefix":Ljava/lang/String;
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5172
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5173
     const-string v0, "  Kernel Wake lock "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5174
     iget-object v0, v3, Landroid/os/BatteryStats$TimerEntry;->mName:Ljava/lang/String;
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5175
     iget-object v1, v3, Landroid/os/BatteryStats$TimerEntry;->mTimer:Landroid/os/BatteryStats$Timer;
 
     const/16 v98, 0x0
@@ -29156,38 +22164,22 @@
 
     move-wide v2, v4
 
-    .line 5175
-    .end local v2    # "i":I
-    .end local v3    # "timer":Landroid/os/BatteryStats$TimerEntry;
-    .local v99, "i":I
-    .local v100, "timer":Landroid/os/BatteryStats$TimerEntry;
     move-wide/from16 v210, v4
 
     move-object/from16 v102, v209
 
     move-object/from16 v4, v98
 
-    .line 5175
-    .end local v4    # "rawRealtime":J
-    .end local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .local v102, "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .local v210, "rawRealtime":J
     move v5, v13
 
     move-object/from16 v98, v6
 
     move-object/from16 v6, v97
 
-    .line 5175
-    .end local v6    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v98, "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5177
-    .end local v97    # "linePrefix":Ljava/lang/String;
-    .local v0, "linePrefix":Ljava/lang/String;
     const-string v1, ": "
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -29196,27 +22188,19 @@
 
     if-nez v1, :cond_46
 
-    .line 5178
     const-string v1, " realtime"
 
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5180
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5168
-    .end local v0    # "linePrefix":Ljava/lang/String;
-    .end local v100    # "timer":Landroid/os/BatteryStats$TimerEntry;
     :cond_46
     add-int/lit8 v0, v99, 0x1
 
-    .line 5168
-    .end local v99    # "i":I
-    .local v0, "i":I
     move-object/from16 v6, v98
 
     move-object/from16 v209, v102
@@ -29225,14 +22209,6 @@
 
     goto :goto_2a
 
-    .line 5183
-    .end local v0    # "i":I
-    .end local v98    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v210    # "rawRealtime":J
-    .restart local v4    # "rawRealtime":J
-    .restart local v6    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :cond_47
     move-wide/from16 v210, v4
 
@@ -29242,24 +22218,10 @@
 
     const/16 v101, -0x1
 
-    .line 5183
-    .end local v4    # "rawRealtime":J
-    .end local v6    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v98    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v210    # "rawRealtime":J
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 5183
-    .end local v98    # "ktimers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     goto :goto_2b
 
-    .line 5187
-    .end local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v210    # "rawRealtime":J
-    .restart local v4    # "rawRealtime":J
-    .restart local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :cond_48
     move-wide/from16 v210, v4
 
@@ -29267,18 +22229,8 @@
 
     const/16 v101, -0x1
 
-    .line 5187
-    .end local v4    # "rawRealtime":J
-    .end local v209    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v210    # "rawRealtime":J
     goto :goto_2b
 
-    .line 5187
-    .end local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v210    # "rawRealtime":J
-    .local v4, "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v203    # "rawRealtime":J
     :cond_49
     move-object/from16 v102, v4
 
@@ -29286,11 +22238,6 @@
 
     const/16 v101, -0x1
 
-    .line 5187
-    .end local v4    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v203    # "rawRealtime":J
-    .restart local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v210    # "rawRealtime":J
     :goto_2b
     move-object/from16 v6, v169
 
@@ -29298,39 +22245,27 @@
 
     move-result v0
 
-    .line 5187
-    .end local v169    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v6, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     if-lez v0, :cond_4b
 
-    .line 5188
     invoke-static {v6, v11}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 5189
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  All partial wake locks:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5190
     const/4 v0, 0x0
 
-    .line 5190
-    .restart local v0    # "i":I
     :goto_2c
     move v5, v0
 
-    .line 5190
-    .end local v0    # "i":I
-    .local v5, "i":I
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-ge v5, v0, :cond_4a
 
-    .line 5191
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -29339,33 +22274,26 @@
 
     check-cast v4, Landroid/os/BatteryStats$TimerEntry;
 
-    .line 5192
-    .local v4, "timer":Landroid/os/BatteryStats$TimerEntry;
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5193
     const-string v0, "  Wake lock "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5194
     iget v0, v4, Landroid/os/BatteryStats$TimerEntry;->mId:I
 
     invoke-static {v8, v0}, Landroid/os/UserHandle;->formatUid(Ljava/lang/StringBuilder;I)V
 
-    .line 5195
     const-string v0, " "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5196
     iget-object v0, v4, Landroid/os/BatteryStats$TimerEntry;->mName:Ljava/lang/String;
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5197
     iget-object v1, v4, Landroid/os/BatteryStats$TimerEntry;->mTimer:Landroid/os/BatteryStats$Timer;
 
     const/16 v97, 0x0
@@ -29380,116 +22308,75 @@
 
     move-object/from16 v4, v97
 
-    .line 5197
-    .end local v4    # "timer":Landroid/os/BatteryStats$TimerEntry;
-    .local v99, "timer":Landroid/os/BatteryStats$TimerEntry;
     move/from16 v97, v5
 
     move v5, v13
 
-    .line 5197
-    .end local v5    # "i":I
-    .local v97, "i":I
     move-object/from16 v212, v12
 
     move-object v12, v6
 
     move-object/from16 v6, v98
 
-    .line 5197
-    .end local v6    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v12, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v212, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    .line 5198
     const-string v0, " realtime"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5199
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5190
-    .end local v99    # "timer":Landroid/os/BatteryStats$TimerEntry;
     add-int/lit8 v0, v97, 0x1
 
-    .line 5190
-    .end local v97    # "i":I
-    .restart local v0    # "i":I
     move-object v6, v12
 
     move-object/from16 v12, v212
 
     goto :goto_2c
 
-    .line 5201
-    .end local v0    # "i":I
-    .end local v212    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v6    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v12, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_4a
     move-object/from16 v212, v12
 
     move-object v12, v6
 
-    .line 5201
-    .end local v6    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v12, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v212    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v12}, Ljava/util/ArrayList;->clear()V
 
-    .line 5202
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_2d
 
-    .line 5205
-    .end local v212    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v6    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v12, "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_4b
     move-object/from16 v212, v12
 
     move-object v12, v6
 
-    .line 5205
-    .end local v6    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v12, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v212    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :goto_2d
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getWakeupReasonStats()Ljava/util/Map;
 
     move-result-object v6
 
-    .line 5206
-    .local v6, "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v6}, Ljava/util/Map;->size()I
 
     move-result v0
 
     if-lez v0, :cond_4f
 
-    .line 5207
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  All wakeup reasons:"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5208
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     move-object v5, v0
 
-    .line 5209
-    .local v5, "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -29511,16 +22398,12 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 5210
-    .restart local v1    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/BatteryStats$Timer;
 
-    .line 5211
-    .local v2, "timer":Landroid/os/BatteryStats$Timer;
     new-instance v3, Landroid/os/BatteryStats$TimerEntry;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -29533,7 +22416,6 @@
 
     const/16 v108, 0x0
 
-    .line 5212
     invoke-virtual {v2, v13}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v4
@@ -29544,9 +22426,6 @@
 
     int-to-long v0, v4
 
-    .line 5212
-    .end local v1    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v214, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move-object/from16 v106, v3
 
     move-object/from16 v109, v2
@@ -29555,41 +22434,28 @@
 
     invoke-direct/range {v106 .. v111}, Landroid/os/BatteryStats$TimerEntry;-><init>(Ljava/lang/String;ILandroid/os/BatteryStats$Timer;J)V
 
-    .line 5211
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5213
-    .end local v2    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v214    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     nop
 
-    .line 5209
     move-object/from16 v0, v213
 
     goto :goto_2e
 
-    .line 5214
     :cond_4c
     invoke-static {v5, v11}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 5215
     const/4 v0, 0x0
 
-    .line 5215
-    .restart local v0    # "i":I
     :goto_2f
     move v4, v0
 
-    .line 5215
-    .end local v0    # "i":I
-    .local v4, "i":I
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-ge v4, v0, :cond_4d
 
-    .line 5216
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -29598,30 +22464,22 @@
 
     check-cast v2, Landroid/os/BatteryStats$TimerEntry;
 
-    .line 5217
-    .local v2, "timer":Landroid/os/BatteryStats$TimerEntry;
     const-string v97, ": "
 
-    .line 5218
-    .local v97, "linePrefix":Ljava/lang/String;
     const/4 v0, 0x0
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5219
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5220
     const-string v0, "  Wakeup reason "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5221
     iget-object v0, v2, Landroid/os/BatteryStats$TimerEntry;->mName:Ljava/lang/String;
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5222
     iget-object v1, v2, Landroid/os/BatteryStats$TimerEntry;->mTimer:Landroid/os/BatteryStats$Timer;
 
     const/16 v98, 0x0
@@ -29634,89 +22492,47 @@
 
     move-wide/from16 v2, v210
 
-    .line 5222
-    .end local v2    # "timer":Landroid/os/BatteryStats$TimerEntry;
-    .restart local v100    # "timer":Landroid/os/BatteryStats$TimerEntry;
     move/from16 v103, v4
 
     move-object/from16 v4, v98
 
-    .line 5222
-    .end local v4    # "i":I
-    .local v103, "i":I
     move-object/from16 v98, v5
 
     move v5, v13
 
-    .line 5222
-    .end local v5    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v98, "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
     move-object/from16 v106, v6
 
     move-object/from16 v6, v99
 
-    .line 5222
-    .end local v6    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v106, "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    .line 5223
     const-string v0, " realtime"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5224
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5215
-    .end local v97    # "linePrefix":Ljava/lang/String;
-    .end local v100    # "timer":Landroid/os/BatteryStats$TimerEntry;
     add-int/lit8 v0, v103, 0x1
 
-    .line 5215
-    .end local v103    # "i":I
-    .restart local v0    # "i":I
     move-object/from16 v5, v98
 
     move-object/from16 v6, v106
 
     goto :goto_2f
 
-    .line 5226
-    .end local v0    # "i":I
-    .end local v98    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v106    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v5    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v6    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_4d
     move-object/from16 v98, v5
 
     move-object/from16 v106, v6
 
-    .line 5226
-    .end local v5    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v6    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v98    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v106    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 5226
-    .end local v98    # "reasons":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v106    # "wakeupReasons":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v212    # "kernelWakelocks":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     goto :goto_30
 
-    .line 5230
-    .end local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v210    # "rawRealtime":J
-    .local v4, "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v169    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v203    # "rawRealtime":J
     :cond_4e
     move-object/from16 v102, v4
 
@@ -29726,37 +22542,24 @@
 
     const/16 v101, -0x1
 
-    .line 5230
-    .end local v4    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .end local v169    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v203    # "rawRealtime":J
-    .restart local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v102    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
-    .restart local v210    # "rawRealtime":J
     :cond_4f
     :goto_30
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getKernelMemoryStats()Landroid/util/LongSparseArray;
 
     move-result-object v6
 
-    .line 5231
-    .local v6, "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v6}, Landroid/util/LongSparseArray;->size()I
 
     move-result v0
 
     if-lez v0, :cond_51
 
-    .line 5232
     const-string v0, "  Memory Stats"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5233
     const/4 v0, 0x0
 
-    .line 5233
-    .restart local v0    # "i":I
     :goto_31
     invoke-virtual {v6}, Landroid/util/LongSparseArray;->size()I
 
@@ -29764,29 +22567,24 @@
 
     if-ge v0, v1, :cond_50
 
-    .line 5234
     const/4 v1, 0x0
 
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5235
     const-string v2, "  Bandwidth "
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5236
     invoke-virtual {v6, v0}, Landroid/util/LongSparseArray;->keyAt(I)J
 
     move-result-wide v2
 
     invoke-virtual {v8, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 5237
     const-string v2, " Time "
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5238
     invoke-virtual {v6, v0}, Landroid/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -29799,74 +22597,51 @@
 
     move-result-wide v1
 
-    .line 5238
-    .end local v210    # "rawRealtime":J
-    .local v3, "rawRealtime":J
     invoke-virtual {v8, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 5239
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v15, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5233
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_31
 
-    .line 5241
-    .end local v0    # "i":I
-    .end local v3    # "rawRealtime":J
-    .restart local v210    # "rawRealtime":J
     :cond_50
     move-wide/from16 v3, v210
 
-    .line 5241
-    .end local v210    # "rawRealtime":J
-    .restart local v3    # "rawRealtime":J
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_32
 
-    .line 5244
-    .end local v3    # "rawRealtime":J
-    .restart local v210    # "rawRealtime":J
     :cond_51
     move-wide/from16 v3, v210
 
-    .line 5244
-    .end local v210    # "rawRealtime":J
-    .restart local v3    # "rawRealtime":J
     :goto_32
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getRpmStats()Ljava/util/Map;
 
     move-result-object v5
 
-    .line 5245
-    .local v5, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v5}, Ljava/util/Map;->size()I
 
     move-result v0
 
     if-lez v0, :cond_53
 
-    .line 5246
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "  Resource Power Manager Stats"
 
     invoke-virtual {v15, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5247
     invoke-interface {v5}, Ljava/util/Map;->size()I
 
     move-result v0
 
     if-lez v0, :cond_52
 
-    .line 5248
     invoke-interface {v5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -29888,31 +22663,22 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 5249
-    .restart local v1    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 5250
-    .local v2, "timerName":Ljava/lang/String;
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v97
 
     check-cast v97, Landroid/os/BatteryStats$Timer;
 
-    .line 5251
-    .local v97, "timer":Landroid/os/BatteryStats$Timer;
     move-object/from16 v215, v8
 
     move-object v8, v15
 
-    .line 5251
-    .end local v8    # "sb":Ljava/lang/StringBuilder;
-    .local v215, "sb":Ljava/lang/StringBuilder;
     move-object/from16 v216, v6
 
     move-wide/from16 v98, v83
@@ -29941,25 +22707,6 @@
 
     move-object/from16 v9, v215
 
-    .end local v6    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v9    # "whichBatteryRealtime":J
-    .end local v142    # "mobileTxTotalBytes":J
-    .end local v152    # "numCellularRxBins":I
-    .end local v182    # "wifiRxTotalBytes":J
-    .end local v184    # "wifiTxTotalBytes":J
-    .end local v188    # "wifiTxTotalPackets":J
-    .end local v205    # "bluetoothScanTimeMs":J
-    .local v51, "whichBatteryRealtime":J
-    .local v65, "whichBatteryScreenOffRealtime":J
-    .local v83, "dischargeScreenOffCount":J
-    .local v98, "interactiveTime":J
-    .local v100, "numCellularRxBins":I
-    .local v106, "mobileTxTotalBytes":J
-    .local v108, "wifiRxTotalBytes":J
-    .local v110, "wifiTxTotalBytes":J
-    .local v112, "wifiTxTotalPackets":J
-    .local v114, "bluetoothScanTimeMs":J
-    .local v216, "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
     move v6, v10
 
     move-object/from16 v103, v151
@@ -29968,11 +22715,6 @@
 
     move-object/from16 v10, v97
 
-    .line 5251
-    .end local v151    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .local v103, "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .local v116, "wifiRxSignalStrengthDescription":[Ljava/lang/String;
     move-object/from16 v121, v11
 
     move-object/from16 v24, v12
@@ -29993,21 +22735,6 @@
 
     move-wide v11, v3
 
-    .end local v11    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v149    # "mobileRxTotalBytes":J
-    .end local v196    # "wifiRxTotalPackets":J
-    .end local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .end local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v24, "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v51, "dischargeScreenDozeCount":J
-    .local v63, "screenOnTime":J
-    .local v104, "mobileRxTotalBytes":J
-    .local v117, "wifiRxTotalPackets":J
-    .local v119, "gpsSignalQualityDescription":[Ljava/lang/String;
-    .local v120, "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .local v121, "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v217, "whichBatteryRealtime":J
     move/from16 v13, p4
 
     move-object/from16 v14, p3
@@ -30016,13 +22743,8 @@
 
     invoke-static/range {v8 .. v15}, Landroid/os/BatteryStats;->printTimer(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JILjava/lang/String;Ljava/lang/String;)Z
 
-    .line 5252
-    .end local v1    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v2    # "timerName":Ljava/lang/String;
-    .end local v97    # "timer":Landroid/os/BatteryStats$Timer;
     nop
 
-    .line 5248
     move-object/from16 v15, p2
 
     move-object/from16 v12, v24
@@ -30049,46 +22771,6 @@
 
     goto :goto_33
 
-    .line 5254
-    .end local v24    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v98    # "interactiveTime":J
-    .end local v100    # "numCellularRxBins":I
-    .end local v103    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v106    # "mobileTxTotalBytes":J
-    .end local v108    # "wifiRxTotalBytes":J
-    .end local v110    # "wifiTxTotalBytes":J
-    .end local v112    # "wifiTxTotalPackets":J
-    .end local v114    # "bluetoothScanTimeMs":J
-    .end local v116    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v117    # "wifiRxTotalPackets":J
-    .end local v119    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .end local v120    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v121    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v215    # "sb":Ljava/lang/StringBuilder;
-    .end local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v217    # "whichBatteryRealtime":J
-    .restart local v6    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v8    # "sb":Ljava/lang/StringBuilder;
-    .restart local v9    # "whichBatteryRealtime":J
-    .restart local v11    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v51, "whichBatteryScreenOffRealtime":J
-    .local v63, "dischargeScreenDozeCount":J
-    .local v65, "dischargeScreenOffCount":J
-    .local v83, "interactiveTime":J
-    .local v104, "screenOnTime":J
-    .restart local v142    # "mobileTxTotalBytes":J
-    .restart local v149    # "mobileRxTotalBytes":J
-    .restart local v151    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v152    # "numCellularRxBins":I
-    .restart local v182    # "wifiRxTotalBytes":J
-    .restart local v184    # "wifiTxTotalBytes":J
-    .restart local v188    # "wifiTxTotalPackets":J
-    .restart local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v196    # "wifiRxTotalPackets":J
-    .restart local v205    # "bluetoothScanTimeMs":J
-    .restart local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_52
     move-object/from16 v216, v6
 
@@ -30136,89 +22818,10 @@
 
     move-wide/from16 v104, v149
 
-    .end local v6    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v8    # "sb":Ljava/lang/StringBuilder;
-    .end local v9    # "whichBatteryRealtime":J
-    .end local v11    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v142    # "mobileTxTotalBytes":J
-    .end local v149    # "mobileRxTotalBytes":J
-    .end local v151    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v152    # "numCellularRxBins":I
-    .end local v182    # "wifiRxTotalBytes":J
-    .end local v184    # "wifiTxTotalBytes":J
-    .end local v188    # "wifiTxTotalPackets":J
-    .end local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v196    # "wifiRxTotalPackets":J
-    .end local v205    # "bluetoothScanTimeMs":J
-    .end local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .end local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v24    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v51, "dischargeScreenDozeCount":J
-    .local v63, "screenOnTime":J
-    .local v65, "whichBatteryScreenOffRealtime":J
-    .local v83, "dischargeScreenOffCount":J
-    .restart local v98    # "interactiveTime":J
-    .restart local v100    # "numCellularRxBins":I
-    .restart local v103    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .local v104, "mobileRxTotalBytes":J
-    .restart local v106    # "mobileTxTotalBytes":J
-    .restart local v108    # "wifiRxTotalBytes":J
-    .restart local v110    # "wifiTxTotalBytes":J
-    .restart local v112    # "wifiTxTotalPackets":J
-    .restart local v114    # "bluetoothScanTimeMs":J
-    .restart local v116    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v117    # "wifiRxTotalPackets":J
-    .restart local v119    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v120    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v121    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v215    # "sb":Ljava/lang/StringBuilder;
-    .restart local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v217    # "whichBatteryRealtime":J
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_34
 
-    .line 5272
-    .end local v24    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v98    # "interactiveTime":J
-    .end local v100    # "numCellularRxBins":I
-    .end local v103    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v106    # "mobileTxTotalBytes":J
-    .end local v108    # "wifiRxTotalBytes":J
-    .end local v110    # "wifiTxTotalBytes":J
-    .end local v112    # "wifiTxTotalPackets":J
-    .end local v114    # "bluetoothScanTimeMs":J
-    .end local v116    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v117    # "wifiRxTotalPackets":J
-    .end local v119    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .end local v120    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .end local v121    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v215    # "sb":Ljava/lang/StringBuilder;
-    .end local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v217    # "whichBatteryRealtime":J
-    .restart local v6    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v8    # "sb":Ljava/lang/StringBuilder;
-    .restart local v9    # "whichBatteryRealtime":J
-    .restart local v11    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v51, "whichBatteryScreenOffRealtime":J
-    .local v63, "dischargeScreenDozeCount":J
-    .local v65, "dischargeScreenOffCount":J
-    .local v83, "interactiveTime":J
-    .local v104, "screenOnTime":J
-    .restart local v142    # "mobileTxTotalBytes":J
-    .restart local v149    # "mobileRxTotalBytes":J
-    .restart local v151    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v152    # "numCellularRxBins":I
-    .restart local v182    # "wifiRxTotalBytes":J
-    .restart local v184    # "wifiTxTotalBytes":J
-    .restart local v188    # "wifiTxTotalPackets":J
-    .restart local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v196    # "wifiRxTotalPackets":J
-    .restart local v205    # "bluetoothScanTimeMs":J
-    .restart local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
     :cond_53
     move-object/from16 v216, v6
 
@@ -30266,77 +22869,28 @@
 
     move-wide/from16 v104, v149
 
-    .end local v6    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v8    # "sb":Ljava/lang/StringBuilder;
-    .end local v9    # "whichBatteryRealtime":J
-    .end local v11    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v12    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .end local v142    # "mobileTxTotalBytes":J
-    .end local v149    # "mobileRxTotalBytes":J
-    .end local v151    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v152    # "numCellularRxBins":I
-    .end local v182    # "wifiRxTotalBytes":J
-    .end local v184    # "wifiTxTotalBytes":J
-    .end local v188    # "wifiTxTotalPackets":J
-    .end local v193    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .end local v196    # "wifiRxTotalPackets":J
-    .end local v205    # "bluetoothScanTimeMs":J
-    .end local v207    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .end local v208    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v24    # "timers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/os/BatteryStats$TimerEntry;>;"
-    .local v51, "dischargeScreenDozeCount":J
-    .local v63, "screenOnTime":J
-    .local v65, "whichBatteryScreenOffRealtime":J
-    .local v83, "dischargeScreenOffCount":J
-    .restart local v98    # "interactiveTime":J
-    .restart local v100    # "numCellularRxBins":I
-    .restart local v103    # "cellularRxSignalStrengthDescription":[Ljava/lang/String;
-    .local v104, "mobileRxTotalBytes":J
-    .restart local v106    # "mobileTxTotalBytes":J
-    .restart local v108    # "wifiRxTotalBytes":J
-    .restart local v110    # "wifiTxTotalBytes":J
-    .restart local v112    # "wifiTxTotalPackets":J
-    .restart local v114    # "bluetoothScanTimeMs":J
-    .restart local v116    # "wifiRxSignalStrengthDescription":[Ljava/lang/String;
-    .restart local v117    # "wifiRxTotalPackets":J
-    .restart local v119    # "gpsSignalQualityDescription":[Ljava/lang/String;
-    .restart local v120    # "sippers":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/os/BatterySipper;>;"
-    .restart local v121    # "timerComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Landroid/os/BatteryStats$TimerEntry;>;"
-    .restart local v215    # "sb":Ljava/lang/StringBuilder;
-    .restart local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v217    # "whichBatteryRealtime":J
     :goto_34
     invoke-virtual/range {p0 .. p0}, Landroid/os/BatteryStats;->getCpuFreqs()[J
 
     move-result-object v15
 
-    .line 5273
-    .local v15, "cpuFreqs":[J
     if-eqz v15, :cond_55
 
-    .line 5274
     move-object/from16 v14, v215
 
     invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5275
-    .end local v215    # "sb":Ljava/lang/StringBuilder;
-    .local v14, "sb":Ljava/lang/StringBuilder;
     const-string v0, "  CPU freqs:"
 
     invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5276
     move v0, v6
 
-    .line 5276
-    .restart local v0    # "i":I
     :goto_35
     array-length v1, v15
 
     if-ge v0, v1, :cond_54
 
-    .line 5277
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -30355,13 +22909,10 @@
 
     invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5276
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_35
 
-    .line 5279
-    .end local v0    # "i":I
     :cond_54
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -30371,50 +22922,31 @@
 
     invoke-virtual {v13, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5280
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_36
 
-    .line 5283
-    .end local v14    # "sb":Ljava/lang/StringBuilder;
-    .restart local v215    # "sb":Ljava/lang/StringBuilder;
     :cond_55
     move-object/from16 v13, p2
 
     move-object/from16 v14, v215
 
-    .line 5283
-    .end local v215    # "sb":Ljava/lang/StringBuilder;
-    .restart local v14    # "sb":Ljava/lang/StringBuilder;
     :goto_36
     move v0, v6
 
-    .line 5283
-    .local v0, "iu":I
     :goto_37
     move v11, v0
 
-    .line 5283
-    .end local v0    # "iu":I
-    .local v11, "iu":I
     move/from16 v12, v176
 
     if-ge v11, v12, :cond_d4
 
-    .line 5284
-    .end local v176    # "NU":I
-    .local v12, "NU":I
     move-object/from16 v10, v177
 
     invoke-virtual {v10, v11}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v9
 
-    .line 5285
-    .end local v177    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v9, "uid":I
-    .local v10, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
     move/from16 v8, p5
 
     if-ltz v8, :cond_56
@@ -30425,10 +22957,8 @@
 
     if-eq v9, v0, :cond_56
 
-    .line 5286
     nop
 
-    .line 5283
     move-wide/16 v392, v3
 
     move-object/from16 v127, v5
@@ -30469,7 +22999,6 @@
 
     goto/16 :goto_89
 
-    .line 5289
     :cond_56
     invoke-virtual {v10, v11}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -30479,28 +23008,20 @@
 
     check-cast v2, Landroid/os/BatteryStats$Uid;
 
-    .line 5291
-    .local v2, "u":Landroid/os/BatteryStats$Uid;
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5292
     const-string v0, "  "
 
     invoke-virtual {v13, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5293
     invoke-static {v13, v9}, Landroid/os/UserHandle;->formatUid(Ljava/io/PrintWriter;I)V
 
-    .line 5294
     const-string v0, ":"
 
     invoke-virtual {v13, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5295
     const/16 v97, 0x0
 
-    .line 5297
-    .local v97, "uidActivity":Z
     move/from16 v1, p4
 
     move/from16 v219, v11
@@ -30511,19 +23032,12 @@
 
     move-result-wide v11
 
-    .line 5298
-    .end local v12    # "NU":I
-    .local v11, "mobileRxBytes":J
-    .local v219, "iu":I
-    .local v220, "NU":I
     const/4 v0, 0x1
 
     invoke-virtual {v2, v0, v1}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v6
 
-    .line 5299
-    .local v6, "mobileTxBytes":J
     move/from16 v222, v9
 
     move-object/from16 v221, v10
@@ -30534,11 +23048,6 @@
 
     move-result-wide v9
 
-    .line 5300
-    .end local v10    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v9, "wifiRxBytes":J
-    .local v221, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v222, "uid":I
     move-wide/from16 v223, v9
 
     const/4 v0, 0x3
@@ -30547,10 +23056,6 @@
 
     move-result-wide v8
 
-    .line 5301
-    .end local v9    # "wifiRxBytes":J
-    .local v8, "wifiTxBytes":J
-    .local v223, "wifiRxBytes":J
     move-wide/from16 v225, v8
 
     const/4 v10, 0x4
@@ -30559,9 +23064,6 @@
 
     move-result-wide v8
 
-    .line 5302
-    .local v8, "btRxBytes":J
-    .local v225, "wifiTxBytes":J
     move-wide/from16 v227, v8
 
     const/4 v10, 0x5
@@ -30570,9 +23072,6 @@
 
     move-result-wide v8
 
-    .line 5304
-    .local v8, "btTxBytes":J
-    .local v227, "btRxBytes":J
     move-wide/from16 v229, v8
 
     const/4 v10, 0x0
@@ -30581,9 +23080,6 @@
 
     move-result-wide v8
 
-    .line 5305
-    .local v8, "mobileRxPackets":J
-    .local v229, "btTxBytes":J
     move-object/from16 v232, v14
 
     move-object/from16 v231, v15
@@ -30594,11 +23090,6 @@
 
     move-result-wide v14
 
-    .line 5306
-    .end local v15    # "cpuFreqs":[J
-    .local v14, "mobileTxPackets":J
-    .local v231, "cpuFreqs":[J
-    .local v232, "sb":Ljava/lang/StringBuilder;
     move-wide/from16 v233, v14
 
     const/4 v10, 0x2
@@ -30607,105 +23098,68 @@
 
     move-result-wide v13
 
-    .line 5307
-    .end local v14    # "mobileTxPackets":J
-    .local v13, "wifiRxPackets":J
-    .local v233, "mobileTxPackets":J
     move-wide/from16 v235, v13
 
     invoke-virtual {v2, v0, v1}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
 
     move-result-wide v14
 
-    .line 5309
-    .end local v13    # "wifiRxPackets":J
-    .local v14, "wifiTxPackets":J
-    .local v235, "wifiRxPackets":J
     move-wide/from16 v237, v14
 
     invoke-virtual {v2, v1}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveTime(I)J
 
     move-result-wide v13
 
-    .line 5310
-    .end local v14    # "wifiTxPackets":J
-    .local v13, "uidMobileActiveTime":J
-    .local v237, "wifiTxPackets":J
     invoke-virtual {v2, v1}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveCount(I)I
 
     move-result v15
 
-    .line 5312
-    .local v15, "uidMobileActiveCount":I
     move-wide/from16 v239, v13
 
     invoke-virtual {v2, v3, v4, v1}, Landroid/os/BatteryStats$Uid;->getFullWifiLockTime(JI)J
 
     move-result-wide v13
 
-    .line 5313
-    .local v13, "fullWifiLockOnTime":J
-    .local v239, "uidMobileActiveTime":J
     move-wide/from16 v241, v13
 
     invoke-virtual {v2, v3, v4, v1}, Landroid/os/BatteryStats$Uid;->getWifiScanTime(JI)J
 
     move-result-wide v13
 
-    .line 5314
-    .local v13, "wifiScanTime":J
-    .local v241, "fullWifiLockOnTime":J
     invoke-virtual {v2, v1}, Landroid/os/BatteryStats$Uid;->getWifiScanCount(I)I
 
     move-result v10
 
-    .line 5315
-    .local v10, "wifiScanCount":I
     move/from16 v243, v10
 
     invoke-virtual {v2, v1}, Landroid/os/BatteryStats$Uid;->getWifiScanBackgroundCount(I)I
 
     move-result v10
 
-    .line 5317
-    .local v10, "wifiScanCountBg":I
-    .local v243, "wifiScanCount":I
     move-wide/from16 v244, v13
 
     invoke-virtual {v2, v3, v4}, Landroid/os/BatteryStats$Uid;->getWifiScanActualTime(J)J
 
     move-result-wide v13
 
-    .line 5318
-    .local v13, "wifiScanActualTime":J
-    .local v244, "wifiScanTime":J
     move-wide/from16 v246, v13
 
     invoke-virtual {v2, v3, v4}, Landroid/os/BatteryStats$Uid;->getWifiScanBackgroundTime(J)J
 
     move-result-wide v13
 
-    .line 5319
-    .local v13, "wifiScanActualTimeBg":J
-    .local v246, "wifiScanActualTime":J
     move-wide/from16 v248, v13
 
     invoke-virtual {v2, v3, v4, v1}, Landroid/os/BatteryStats$Uid;->getWifiRunningTime(JI)J
 
     move-result-wide v13
 
-    .line 5321
-    .local v13, "uidWifiRunningTime":J
-    .local v248, "wifiScanActualTimeBg":J
     move-wide/from16 v250, v13
 
     invoke-virtual {v2, v1}, Landroid/os/BatteryStats$Uid;->getMobileRadioApWakeupCount(I)J
 
     move-result-wide v13
 
-    .line 5322
-    .local v13, "mobileWakeup":J
-    .local v250, "uidWifiRunningTime":J
     move-wide/from16 v253, v3
 
     move-object/from16 v252, v5
@@ -30714,12 +23168,6 @@
 
     move-result-wide v4
 
-    .line 5324
-    .end local v3    # "rawRealtime":J
-    .end local v5    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v4, "wifiWakeup":J
-    .local v252, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v253, "rawRealtime":J
     cmp-long v3, v11, v27
 
     if-gtz v3, :cond_58
@@ -30738,14 +23186,10 @@
 
     cmp-long v3, v6, v27
 
-    .end local v233    # "mobileTxPackets":J
-    .local v6, "mobileTxPackets":J
-    .local v255, "mobileTxBytes":J
     if-lez v3, :cond_57
 
     goto :goto_38
 
-    .line 5332
     :cond_57
     move-wide/16 v259, v4
 
@@ -30759,19 +23203,11 @@
 
     goto :goto_39
 
-    .line 5326
-    .end local v255    # "mobileTxBytes":J
-    .local v6, "mobileTxBytes":J
-    .restart local v233    # "mobileTxPackets":J
     :cond_58
     move-wide/from16 v255, v6
 
     move-wide/from16 v6, v233
 
-    .line 5326
-    .end local v233    # "mobileTxPackets":J
-    .local v6, "mobileTxPackets":J
-    .restart local v255    # "mobileTxBytes":J
     :goto_38
     move-wide/16 v257, v235
 
@@ -30779,14 +23215,10 @@
 
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5326
-    .end local v235    # "wifiRxPackets":J
-    .local v257, "wifiRxPackets":J
     const-string v0, "    Mobile network: "
 
     invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5327
     move-wide/16 v259, v4
 
     move-wide/from16 v4, v255
@@ -30797,31 +23229,24 @@
 
     move-result-object v1
 
-    .line 5327
-    .end local v255    # "mobileTxBytes":J
-    .local v4, "mobileTxBytes":J
-    .local v259, "wifiWakeup":J
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v1, " received, "
 
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5328
     invoke-virtual {v0, v4, v5}, Landroid/os/BatteryStats;->formatBytesLocked(J)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5329
     const-string v1, " sent (packets "
 
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v3, v8, v9}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 5330
     const-string v1, " received, "
 
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -30832,7 +23257,6 @@
 
     invoke-virtual {v3, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5332
     :goto_39
     move-wide/16 v261, v11
 
@@ -30840,17 +23264,12 @@
 
     cmp-long v1, v11, v27
 
-    .line 5332
-    .end local v239    # "uidMobileActiveTime":J
-    .local v11, "uidMobileActiveTime":J
-    .local v261, "mobileRxBytes":J
     if-gtz v1, :cond_5a
 
     if-lez v15, :cond_59
 
     goto :goto_3a
 
-    .line 5349
     :cond_59
     move-wide/16 v263, v4
 
@@ -30866,7 +23285,6 @@
 
     goto :goto_3b
 
-    .line 5333
     :cond_5a
     :goto_3a
     move-wide/16 v263, v4
@@ -30877,11 +23295,6 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5334
-    .end local v4    # "mobileTxBytes":J
-    .end local v232    # "sb":Ljava/lang/StringBuilder;
-    .local v1, "sb":Ljava/lang/StringBuilder;
-    .local v263, "mobileTxBytes":J
     move-object/from16 v5, p3
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -30890,17 +23303,14 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5335
     div-long v4, v11, v16
 
     invoke-static {v1, v4, v5}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5336
     const-string v4, "("
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5337
     move/16 v265, v10
 
     move-wide/from16 v4, v172
@@ -30909,14 +23319,8 @@
 
     move-result-object v10
 
-    .line 5337
-    .end local v10    # "wifiScanCountBg":I
-    .end local v172    # "mobileActiveTime":J
-    .local v4, "mobileActiveTime":J
-    .local v265, "wifiScanCountBg":I
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5338
     const-string v10, ") "
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -30927,22 +23331,14 @@
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5339
     add-long v122, v8, v6
 
-    .line 5340
-    .local v122, "packets":J
     cmp-long v10, v122, v27
 
     if-nez v10, :cond_5b
 
-    .line 5341
     const-wide/16 v122, 0x1
 
-    .line 5343
-    .end local v122    # "packets":J
-    .local v4, "packets":J
-    .local v266, "mobileActiveTime":J
     :cond_5b
     move-wide/16 v266, v4
 
@@ -30952,23 +23348,16 @@
 
     invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5344
     move-wide/16 v268, v6
 
     div-long v6, v11, v16
 
-    .line 5344
-    .end local v6    # "mobileTxPackets":J
-    .local v268, "mobileTxPackets":J
     long-to-double v6, v6
 
     move-wide/16 v270, v8
 
     long-to-double v8, v4
 
-    .line 5344
-    .end local v8    # "mobileRxPackets":J
-    .local v270, "mobileRxPackets":J
     div-double/2addr v6, v8
 
     invoke-static {v6, v7}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
@@ -30977,44 +23366,35 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5345
     const-string v6, " mspp"
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5346
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v3, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5349
-    .end local v4    # "packets":J
     :goto_3b
     cmp-long v4, v13, v27
 
     if-lez v4, :cond_5c
 
-    .line 5350
     const/4 v6, 0x0
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5351
     move-object/from16 v5, p3
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5352
     const-string v4, "    Mobile radio AP wakeups: "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5353
     invoke-virtual {v1, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 5354
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -31023,7 +23403,6 @@
 
     goto :goto_3c
 
-    .line 5357
     :cond_5c
     move-object/from16 v5, p3
 
@@ -31046,12 +23425,10 @@
 
     const-string v7, "Cellular"
 
-    .line 5358
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid;->getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v8
 
-    .line 5357
     move-object v10, v0
 
     const/4 v9, 0x1
@@ -31062,16 +23439,10 @@
 
     move-object v1, v3
 
-    .line 5357
-    .end local v1    # "sb":Ljava/lang/StringBuilder;
-    .local v272, "sb":Ljava/lang/StringBuilder;
     move-object v9, v2
 
     move-object/from16 v2, v272
 
-    .line 5357
-    .end local v2    # "u":Landroid/os/BatteryStats$Uid;
-    .local v9, "u":Landroid/os/BatteryStats$Uid;
     move-wide/16 v274, v13
 
     move/16 v273, v15
@@ -31080,13 +23451,6 @@
 
     move-object v3, v4
 
-    .line 5357
-    .end local v13    # "mobileWakeup":J
-    .end local v15    # "uidMobileActiveCount":I
-    .end local v253    # "rawRealtime":J
-    .local v14, "rawRealtime":J
-    .local v273, "uidMobileActiveCount":I
-    .local v274, "mobileWakeup":J
     move-wide/16 v276, v11
 
     move-wide/from16 v11, v259
@@ -31097,23 +23461,12 @@
 
     move-object v4, v7
 
-    .line 5357
-    .end local v259    # "wifiWakeup":J
-    .end local v263    # "mobileTxBytes":J
-    .end local v266    # "mobileActiveTime":J
-    .local v11, "wifiWakeup":J
-    .local v123, "mobileActiveTime":J
-    .local v125, "mobileTxBytes":J
-    .local v276, "uidMobileActiveTime":J
     move-object v7, v5
 
     move-object/from16 v127, v252
 
     move-object v5, v8
 
-    .line 5357
-    .end local v252    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v127, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     move v13, v6
 
     move-object/from16 v128, v216
@@ -31124,14 +23477,8 @@
 
     move/from16 v6, p4
 
-    .line 5357
-    .end local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v268    # "mobileTxPackets":J
-    .local v128, "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .local v129, "mobileTxPackets":J
     invoke-direct/range {v0 .. v6}, Landroid/os/BatteryStats;->printControllerActivityIfInteresting(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 5360
     cmp-long v0, v223, v27
 
     if-gtz v0, :cond_5f
@@ -31144,23 +23491,16 @@
 
     cmp-long v0, v5, v27
 
-    .line 5360
-    .end local v257    # "wifiRxPackets":J
-    .local v5, "wifiRxPackets":J
     if-gtz v0, :cond_5e
 
     move-wide/from16 v3, v237
 
     cmp-long v0, v3, v27
 
-    .line 5360
-    .end local v237    # "wifiTxPackets":J
-    .local v3, "wifiTxPackets":J
     if-lez v0, :cond_5d
 
     goto :goto_3d
 
-    .line 5368
     :cond_5d
     move-object/from16 v2, p2
 
@@ -31172,32 +23512,16 @@
 
     goto :goto_3e
 
-    .line 5361
-    .end local v3    # "wifiTxPackets":J
-    .restart local v237    # "wifiTxPackets":J
     :cond_5e
     move-wide/from16 v3, v237
 
-    .line 5361
-    .end local v237    # "wifiTxPackets":J
-    .restart local v3    # "wifiTxPackets":J
     goto :goto_3d
 
-    .line 5361
-    .end local v3    # "wifiTxPackets":J
-    .end local v5    # "wifiRxPackets":J
-    .restart local v237    # "wifiTxPackets":J
-    .restart local v257    # "wifiRxPackets":J
     :cond_5f
     move-wide/from16 v3, v237
 
     move-wide/from16 v5, v257
 
-    .line 5361
-    .end local v237    # "wifiTxPackets":J
-    .end local v257    # "wifiRxPackets":J
-    .restart local v3    # "wifiTxPackets":J
-    .restart local v5    # "wifiRxPackets":J
     :goto_3d
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -31207,23 +23531,18 @@
 
     invoke-virtual {v2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5362
     move-wide/from16 v0, v223
 
     invoke-virtual {v10, v0, v1}, Landroid/os/BatteryStats;->formatBytesLocked(J)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 5362
-    .end local v223    # "wifiRxBytes":J
-    .local v0, "wifiRxBytes":J
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v8, " received, "
 
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5363
     move-wide/16 v278, v14
 
     move-wide/from16 v13, v225
@@ -31232,21 +23551,14 @@
 
     move-result-object v8
 
-    .line 5363
-    .end local v14    # "rawRealtime":J
-    .end local v225    # "wifiTxBytes":J
-    .local v13, "wifiTxBytes":J
-    .local v278, "rawRealtime":J
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5364
     const-string v8, " sent (packets "
 
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {v2, v5, v6}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 5365
     const-string v8, " received, "
 
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -31257,7 +23569,6 @@
 
     invoke-virtual {v2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5368
     :goto_3e
     move-wide/16 v280, v13
 
@@ -31265,10 +23576,6 @@
 
     cmp-long v8, v13, v27
 
-    .line 5368
-    .end local v241    # "fullWifiLockOnTime":J
-    .local v13, "fullWifiLockOnTime":J
-    .local v280, "wifiTxBytes":J
     if-nez v8, :cond_66
 
     move-wide/16 v282, v5
@@ -31277,36 +23584,22 @@
 
     cmp-long v8, v5, v27
 
-    .line 5368
-    .end local v244    # "wifiScanTime":J
-    .local v5, "wifiScanTime":J
-    .local v282, "wifiRxPackets":J
     if-nez v8, :cond_65
 
     move/from16 v15, v243
 
     if-nez v15, :cond_64
 
-    .line 5368
-    .end local v243    # "wifiScanCount":I
-    .local v15, "wifiScanCount":I
     move/from16 v8, v265
 
     if-nez v8, :cond_63
 
-    .line 5368
-    .end local v265    # "wifiScanCountBg":I
-    .local v8, "wifiScanCountBg":I
     move-wide/16 v284, v3
 
     move-wide/from16 v3, v246
 
     cmp-long v131, v3, v27
 
-    .line 5368
-    .end local v246    # "wifiScanActualTime":J
-    .local v3, "wifiScanActualTime":J
-    .local v284, "wifiTxPackets":J
     if-nez v131, :cond_62
 
     move-wide/16 v286, v0
@@ -31315,10 +23608,6 @@
 
     cmp-long v131, v0, v27
 
-    .line 5368
-    .end local v248    # "wifiScanActualTimeBg":J
-    .local v0, "wifiScanActualTimeBg":J
-    .local v286, "wifiRxBytes":J
     if-nez v131, :cond_61
 
     move-wide/16 v288, v11
@@ -31327,15 +23616,10 @@
 
     cmp-long v131, v11, v27
 
-    .line 5368
-    .end local v250    # "uidWifiRunningTime":J
-    .local v11, "uidWifiRunningTime":J
-    .local v288, "wifiWakeup":J
     if-eqz v131, :cond_60
 
     goto/16 :goto_3f
 
-    .line 5404
     :cond_60
     move-wide/16 v297, v3
 
@@ -31353,28 +23637,13 @@
 
     goto/16 :goto_40
 
-    .line 5371
-    .end local v288    # "wifiWakeup":J
-    .local v11, "wifiWakeup":J
-    .restart local v250    # "uidWifiRunningTime":J
     :cond_61
     move-wide/16 v288, v11
 
     move-wide/from16 v11, v250
 
-    .line 5371
-    .end local v250    # "uidWifiRunningTime":J
-    .local v11, "uidWifiRunningTime":J
-    .restart local v288    # "wifiWakeup":J
     goto :goto_3f
 
-    .line 5371
-    .end local v286    # "wifiRxBytes":J
-    .end local v288    # "wifiWakeup":J
-    .local v0, "wifiRxBytes":J
-    .local v11, "wifiWakeup":J
-    .restart local v248    # "wifiScanActualTimeBg":J
-    .restart local v250    # "uidWifiRunningTime":J
     :cond_62
     move-wide/16 v286, v0
 
@@ -31384,25 +23653,8 @@
 
     move-wide/from16 v11, v250
 
-    .line 5371
-    .end local v248    # "wifiScanActualTimeBg":J
-    .end local v250    # "uidWifiRunningTime":J
-    .local v0, "wifiScanActualTimeBg":J
-    .local v11, "uidWifiRunningTime":J
-    .restart local v286    # "wifiRxBytes":J
-    .restart local v288    # "wifiWakeup":J
     goto :goto_3f
 
-    .line 5371
-    .end local v284    # "wifiTxPackets":J
-    .end local v286    # "wifiRxBytes":J
-    .end local v288    # "wifiWakeup":J
-    .local v0, "wifiRxBytes":J
-    .local v3, "wifiTxPackets":J
-    .local v11, "wifiWakeup":J
-    .restart local v246    # "wifiScanActualTime":J
-    .restart local v248    # "wifiScanActualTimeBg":J
-    .restart local v250    # "uidWifiRunningTime":J
     :cond_63
     move-wide/16 v286, v0
 
@@ -31416,30 +23668,8 @@
 
     move-wide/from16 v11, v250
 
-    .line 5371
-    .end local v246    # "wifiScanActualTime":J
-    .end local v248    # "wifiScanActualTimeBg":J
-    .end local v250    # "uidWifiRunningTime":J
-    .local v0, "wifiScanActualTimeBg":J
-    .local v3, "wifiScanActualTime":J
-    .local v11, "uidWifiRunningTime":J
-    .restart local v284    # "wifiTxPackets":J
-    .restart local v286    # "wifiRxBytes":J
-    .restart local v288    # "wifiWakeup":J
     goto :goto_3f
 
-    .line 5371
-    .end local v8    # "wifiScanCountBg":I
-    .end local v284    # "wifiTxPackets":J
-    .end local v286    # "wifiRxBytes":J
-    .end local v288    # "wifiWakeup":J
-    .local v0, "wifiRxBytes":J
-    .local v3, "wifiTxPackets":J
-    .local v11, "wifiWakeup":J
-    .restart local v246    # "wifiScanActualTime":J
-    .restart local v248    # "wifiScanActualTimeBg":J
-    .restart local v250    # "uidWifiRunningTime":J
-    .restart local v265    # "wifiScanCountBg":I
     :cond_64
     move-wide/16 v286, v0
 
@@ -31455,33 +23685,8 @@
 
     move/from16 v8, v265
 
-    .end local v246    # "wifiScanActualTime":J
-    .end local v248    # "wifiScanActualTimeBg":J
-    .end local v250    # "uidWifiRunningTime":J
-    .end local v265    # "wifiScanCountBg":I
-    .local v0, "wifiScanActualTimeBg":J
-    .local v3, "wifiScanActualTime":J
-    .restart local v8    # "wifiScanCountBg":I
-    .local v11, "uidWifiRunningTime":J
-    .restart local v284    # "wifiTxPackets":J
-    .restart local v286    # "wifiRxBytes":J
-    .restart local v288    # "wifiWakeup":J
     goto :goto_3f
 
-    .line 5371
-    .end local v8    # "wifiScanCountBg":I
-    .end local v15    # "wifiScanCount":I
-    .end local v284    # "wifiTxPackets":J
-    .end local v286    # "wifiRxBytes":J
-    .end local v288    # "wifiWakeup":J
-    .local v0, "wifiRxBytes":J
-    .local v3, "wifiTxPackets":J
-    .local v11, "wifiWakeup":J
-    .restart local v243    # "wifiScanCount":I
-    .restart local v246    # "wifiScanActualTime":J
-    .restart local v248    # "wifiScanActualTimeBg":J
-    .restart local v250    # "uidWifiRunningTime":J
-    .restart local v265    # "wifiScanCountBg":I
     :cond_65
     move-wide/16 v286, v0
 
@@ -31499,38 +23704,8 @@
 
     move/from16 v8, v265
 
-    .end local v243    # "wifiScanCount":I
-    .end local v246    # "wifiScanActualTime":J
-    .end local v248    # "wifiScanActualTimeBg":J
-    .end local v250    # "uidWifiRunningTime":J
-    .end local v265    # "wifiScanCountBg":I
-    .local v0, "wifiScanActualTimeBg":J
-    .local v3, "wifiScanActualTime":J
-    .restart local v8    # "wifiScanCountBg":I
-    .local v11, "uidWifiRunningTime":J
-    .restart local v15    # "wifiScanCount":I
-    .restart local v284    # "wifiTxPackets":J
-    .restart local v286    # "wifiRxBytes":J
-    .restart local v288    # "wifiWakeup":J
     goto :goto_3f
 
-    .line 5371
-    .end local v8    # "wifiScanCountBg":I
-    .end local v15    # "wifiScanCount":I
-    .end local v282    # "wifiRxPackets":J
-    .end local v284    # "wifiTxPackets":J
-    .end local v286    # "wifiRxBytes":J
-    .end local v288    # "wifiWakeup":J
-    .local v0, "wifiRxBytes":J
-    .local v3, "wifiTxPackets":J
-    .local v5, "wifiRxPackets":J
-    .local v11, "wifiWakeup":J
-    .restart local v243    # "wifiScanCount":I
-    .restart local v244    # "wifiScanTime":J
-    .restart local v246    # "wifiScanActualTime":J
-    .restart local v248    # "wifiScanActualTimeBg":J
-    .restart local v250    # "uidWifiRunningTime":J
-    .restart local v265    # "wifiScanCountBg":I
     :cond_66
     move-wide/16 v286, v0
 
@@ -31552,22 +23727,6 @@
 
     move/from16 v8, v265
 
-    .end local v243    # "wifiScanCount":I
-    .end local v244    # "wifiScanTime":J
-    .end local v246    # "wifiScanActualTime":J
-    .end local v248    # "wifiScanActualTimeBg":J
-    .end local v250    # "uidWifiRunningTime":J
-    .end local v265    # "wifiScanCountBg":I
-    .local v0, "wifiScanActualTimeBg":J
-    .local v3, "wifiScanActualTime":J
-    .local v5, "wifiScanTime":J
-    .restart local v8    # "wifiScanCountBg":I
-    .local v11, "uidWifiRunningTime":J
-    .restart local v15    # "wifiScanCount":I
-    .restart local v282    # "wifiRxPackets":J
-    .restart local v284    # "wifiTxPackets":J
-    .restart local v286    # "wifiRxBytes":J
-    .restart local v288    # "wifiWakeup":J
     :goto_3f
     move-object/16 v290, v9
 
@@ -31577,27 +23736,18 @@
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5372
-    .end local v272    # "sb":Ljava/lang/StringBuilder;
-    .local v9, "sb":Ljava/lang/StringBuilder;
-    .local v290, "u":Landroid/os/BatteryStats$Uid;
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, "    Wifi Running: "
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5373
     move-wide/16 v291, v0
 
     div-long v0, v11, v16
 
-    .line 5373
-    .end local v0    # "wifiScanActualTimeBg":J
-    .local v291, "wifiScanActualTimeBg":J
     invoke-static {v9, v0, v1}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5374
     const-string v0, "("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -31608,34 +23758,24 @@
 
     move-result-object v0
 
-    .line 5374
-    .end local v217    # "whichBatteryRealtime":J
-    .local v1, "whichBatteryRealtime":J
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5375
     const-string v0, ")\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5376
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "    Full Wifi Lock: "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5377
     move-wide/16 v293, v11
 
     div-long v11, v13, v16
 
-    .line 5377
-    .end local v11    # "uidWifiRunningTime":J
-    .local v293, "uidWifiRunningTime":J
     invoke-static {v9, v11, v12}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5378
     const-string v0, "("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -31646,24 +23786,20 @@
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5379
     const-string v0, ")\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5380
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "    Wifi Scan (blamed): "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5381
     div-long v11, v5, v16
 
     invoke-static {v9, v11, v12}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5382
     const-string v0, "("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -31674,37 +23810,30 @@
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5383
     const-string v0, ") "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5384
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5385
     const-string/jumbo v0, "x\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5387
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "    Wifi Scan (actual): "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5388
     div-long v11, v3, v16
 
     invoke-static {v9, v11, v12}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5389
     const-string v0, "("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5390
     move-wide/16 v295, v1
 
     move-wide/from16 v11, v278
@@ -31715,84 +23844,62 @@
 
     move-result-wide v1
 
-    .line 5389
-    .end local v1    # "whichBatteryRealtime":J
-    .end local v278    # "rawRealtime":J
-    .local v11, "rawRealtime":J
-    .local v295, "whichBatteryRealtime":J
     invoke-virtual {v10, v3, v4, v1, v2}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5391
     const-string v0, ") "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5392
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5393
     const-string/jumbo v0, "x\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5394
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "    Background Wifi Scan: "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5395
     move-wide/16 v297, v3
 
     move-wide/from16 v0, v291
 
     div-long v2, v0, v16
 
-    .line 5395
-    .end local v3    # "wifiScanActualTime":J
-    .end local v291    # "wifiScanActualTimeBg":J
-    .restart local v0    # "wifiScanActualTimeBg":J
-    .local v297, "wifiScanActualTime":J
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5396
     const-string v2, "("
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5397
     const/4 v2, 0x0
 
     invoke-virtual {v10, v11, v12, v2}, Landroid/os/BatteryStats;->computeBatteryRealtime(JI)J
 
     move-result-wide v3
 
-    .line 5396
     invoke-virtual {v10, v0, v1, v3, v4}, Landroid/os/BatteryStats;->formatRatioLocked(JJ)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5398
     const-string v2, ") "
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5399
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5400
     const-string/jumbo v2, "x"
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5401
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -31801,7 +23908,6 @@
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5404
     :goto_40
     move-wide/16 v299, v13
 
@@ -31809,36 +23915,26 @@
 
     cmp-long v2, v13, v27
 
-    .line 5404
-    .end local v288    # "wifiWakeup":J
-    .local v13, "wifiWakeup":J
-    .local v299, "fullWifiLockOnTime":J
     if-lez v2, :cond_67
 
-    .line 5405
     const/4 v2, 0x0
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5406
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5407
     const-string v2, "    WiFi AP wakeups: "
 
     invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5408
     invoke-virtual {v9, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 5409
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5412
     :cond_67
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -31856,44 +23952,28 @@
 
     const-string v131, "WiFi"
 
-    .line 5413
     move-object/from16 v2, v290
 
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid;->getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 
     move-result-object v132
 
-    .line 5412
-    .end local v290    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v2    # "u":Landroid/os/BatteryStats$Uid;
     move-wide/from16 v135, v0
 
     move-wide/from16 v133, v286
 
     move-object v0, v10
 
-    .line 5412
-    .end local v0    # "wifiScanActualTimeBg":J
-    .end local v286    # "wifiRxBytes":J
-    .local v133, "wifiRxBytes":J
-    .local v135, "wifiScanActualTimeBg":J
     move-wide/from16 v137, v295
 
     move-object v1, v3
 
-    .line 5412
-    .end local v295    # "whichBatteryRealtime":J
-    .local v137, "whichBatteryRealtime":J
     move-wide/16 v301, v13
 
     move-object v13, v2
 
     move-object v2, v9
 
-    .line 5412
-    .end local v2    # "u":Landroid/os/BatteryStats$Uid;
-    .local v13, "u":Landroid/os/BatteryStats$Uid;
-    .local v301, "wifiWakeup":J
     move-object v14, v3
 
     move-wide/from16 v139, v284
@@ -31902,11 +23982,6 @@
 
     move-object v3, v4
 
-    .line 5412
-    .end local v284    # "wifiTxPackets":J
-    .end local v297    # "wifiScanActualTime":J
-    .local v139, "wifiTxPackets":J
-    .local v141, "wifiScanActualTime":J
     move-object/from16 v4, v131
 
     move-wide/from16 v145, v5
@@ -31915,16 +23990,10 @@
 
     move-object/from16 v5, v132
 
-    .line 5412
-    .end local v5    # "wifiScanTime":J
-    .end local v282    # "wifiRxPackets":J
-    .local v143, "wifiRxPackets":J
-    .local v145, "wifiScanTime":J
     move/from16 v6, p4
 
     invoke-direct/range {v0 .. v6}, Landroid/os/BatteryStats;->printControllerActivityIfInteresting(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Landroid/os/BatteryStats$ControllerActivityCounter;I)V
 
-    .line 5415
     cmp-long v0, v227, v27
 
     if-gtz v0, :cond_69
@@ -31933,28 +24002,18 @@
 
     cmp-long v0, v5, v27
 
-    .line 5415
-    .end local v229    # "btTxBytes":J
-    .local v5, "btTxBytes":J
     if-lez v0, :cond_68
 
     goto :goto_41
 
-    .line 5422
     :cond_68
     move-wide/from16 v2, v227
 
     goto :goto_42
 
-    .line 5416
-    .end local v5    # "btTxBytes":J
-    .restart local v229    # "btTxBytes":J
     :cond_69
     move-wide/from16 v5, v229
 
-    .line 5416
-    .end local v229    # "btTxBytes":J
-    .restart local v5    # "btTxBytes":J
     :goto_41
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -31962,45 +24021,35 @@
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5417
     move-wide/from16 v2, v227
 
     invoke-virtual {v10, v2, v3}, Landroid/os/BatteryStats;->formatBytesLocked(J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5417
-    .end local v227    # "btRxBytes":J
-    .local v2, "btRxBytes":J
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, " received, "
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5418
     invoke-virtual {v10, v5, v6}, Landroid/os/BatteryStats;->formatBytesLocked(J)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5419
     const-string v0, " sent"
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5422
     :goto_42
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v4
 
-    .line 5423
-    .local v4, "bleTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v4, :cond_7e
 
-    .line 5425
     move/from16 v1, p4
 
     invoke-virtual {v4, v11, v12, v1}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
@@ -32013,29 +24062,20 @@
 
     div-long v2, v131, v16
 
-    .line 5427
-    .local v2, "totalTimeMs":J
-    .local v303, "btRxBytes":J
     cmp-long v0, v2, v27
 
     if-eqz v0, :cond_7d
 
-    .line 5428
     invoke-virtual {v4, v1}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v0
 
-    .line 5429
-    .local v0, "count":I
     move-wide/16 v305, v5
 
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v5
 
-    .line 5430
-    .local v5, "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .local v305, "btTxBytes":J
     if-eqz v5, :cond_6a
 
     invoke-virtual {v5, v1}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -32047,8 +24087,6 @@
     :cond_6a
     const/4 v6, 0x0
 
-    .line 5432
-    .local v6, "countBg":I
     :goto_43
     move-wide/16 v307, v11
 
@@ -32060,17 +24098,8 @@
 
     move-result-wide v14
 
-    .line 5433
-    .end local v11    # "rawRealtime":J
-    .end local v15    # "wifiScanCount":I
-    .end local v167    # "rawRealtimeMs":J
-    .local v10, "rawRealtimeMs":J
-    .local v14, "actualTimeMs":J
-    .local v307, "rawRealtime":J
-    .local v309, "wifiScanCount":I
     if-eqz v5, :cond_6b
 
-    .line 5434
     invoke-virtual {v5, v10, v11}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v131
@@ -32083,15 +24112,12 @@
     :goto_44
     move-wide/16 v310, v131
 
-    .line 5436
-    .local v310, "actualTimeMsBg":J
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v12
 
     if-eqz v12, :cond_6c
 
-    .line 5437
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v12
@@ -32105,8 +24131,6 @@
     :cond_6c
     const/4 v12, 0x0
 
-    .line 5438
-    .local v12, "resultCount":I
     :goto_45
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
@@ -32114,45 +24138,30 @@
 
     if-eqz v131, :cond_6d
 
-    .line 5439
     move/16 v312, v8
 
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothScanResultBgCounter()Landroid/os/BatteryStats$Counter;
 
     move-result-object v8
 
-    .line 5439
-    .end local v8    # "wifiScanCountBg":I
-    .local v312, "wifiScanCountBg":I
     invoke-virtual {v8, v1}, Landroid/os/BatteryStats$Counter;->getCountLocked(I)I
 
     move-result v8
 
     goto :goto_46
 
-    .line 5439
-    .end local v312    # "wifiScanCountBg":I
-    .restart local v8    # "wifiScanCountBg":I
     :cond_6d
     move/16 v312, v8
 
-    .line 5439
-    .end local v8    # "wifiScanCountBg":I
-    .restart local v312    # "wifiScanCountBg":I
     const/4 v8, 0x0
 
-    .line 5441
-    .local v8, "resultCountBg":I
     :goto_46
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothUnoptimizedScanTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v1
 
-    .line 5442
-    .local v1, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v1, :cond_6e
 
-    .line 5443
     invoke-virtual {v1, v10, v11}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v131
@@ -32165,11 +24174,8 @@
     :goto_47
     move-wide/16 v313, v131
 
-    .line 5444
-    .local v313, "unoptimizedScanTotalTime":J
     if-eqz v1, :cond_6f
 
-    .line 5445
     invoke-virtual {v1, v10, v11}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v131
@@ -32182,23 +24188,16 @@
     :goto_48
     move-wide/16 v315, v131
 
-    .line 5447
-    .local v315, "unoptimizedScanMaxTime":J
     nop
 
-    .line 5448
     move-object/16 v317, v1
 
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getBluetoothUnoptimizedScanBackgroundTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v1
 
-    .line 5449
-    .local v1, "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
-    .local v317, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v1, :cond_70
 
-    .line 5450
     invoke-virtual {v1, v10, v11}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v131
@@ -32211,11 +24210,8 @@
     :goto_49
     move-wide/16 v318, v131
 
-    .line 5451
-    .local v318, "unoptimizedScanTotalTimeBg":J
     if-eqz v1, :cond_71
 
-    .line 5452
     invoke-virtual {v1, v10, v11}, Landroid/os/BatteryStats$Timer;->getMaxDurationMsLocked(J)J
 
     move-result-wide v131
@@ -32228,158 +24224,120 @@
     :goto_4a
     move-wide/16 v320, v131
 
-    .line 5454
-    .local v320, "unoptimizedScanMaxTimeBg":J
     move-wide/16 v322, v10
 
     const/4 v10, 0x0
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5455
-    .end local v10    # "rawRealtimeMs":J
-    .local v322, "rawRealtimeMs":J
     cmp-long v10, v14, v2
 
     if-eqz v10, :cond_73
 
-    .line 5456
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5457
     const-string v10, "    Bluetooth Scan (total blamed realtime): "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5458
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5459
     const-string v10, " ("
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5460
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5461
     const-string v10, " times)"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5462
     invoke-virtual {v4}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
     move-result v10
 
     if-eqz v10, :cond_72
 
-    .line 5463
     const-string v10, " (currently running)"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5465
     :cond_72
     const-string v10, "\n"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5468
     :cond_73
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5469
     const-string v10, "    Bluetooth Scan (total actual realtime): "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5470
     invoke-static {v9, v14, v15}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5471
     const-string v10, " ("
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5472
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5473
     const-string v10, " times)"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5474
     invoke-virtual {v4}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
     move-result v10
 
     if-eqz v10, :cond_74
 
-    .line 5475
     const-string v10, " (currently running)"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5477
     :cond_74
     const-string v10, "\n"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5478
     move-wide/from16 v10, v310
 
     cmp-long v131, v10, v27
 
-    .line 5478
-    .end local v310    # "actualTimeMsBg":J
-    .local v10, "actualTimeMsBg":J
     if-gtz v131, :cond_76
 
     if-lez v6, :cond_75
 
     goto :goto_4b
 
-    .line 5491
     :cond_75
     move/16 v324, v0
 
     goto :goto_4c
 
-    .line 5479
     :cond_76
     :goto_4b
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5480
     move/16 v324, v0
 
     const-string v0, "    Bluetooth Scan (background realtime): "
 
-    .line 5480
-    .end local v0    # "count":I
-    .local v324, "count":I
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5481
     invoke-static {v9, v10, v11}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5482
     const-string v0, " ("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5483
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5484
     const-string v0, " times)"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5485
     if-eqz v5, :cond_77
 
     invoke-virtual {v5}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
@@ -32388,53 +24346,40 @@
 
     if-eqz v0, :cond_77
 
-    .line 5486
     const-string v0, " (currently running in background)"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5488
     :cond_77
     const-string v0, "\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5491
     :goto_4c
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5492
     const-string v0, "    Bluetooth Scan Results: "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5493
     invoke-virtual {v9, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5494
     const-string v0, " ("
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5495
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5496
     const-string v0, " in background)"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5498
     move-wide/16 v325, v2
 
     move-wide/from16 v2, v313
 
     cmp-long v0, v2, v27
 
-    .line 5498
-    .end local v313    # "unoptimizedScanTotalTime":J
-    .local v2, "unoptimizedScanTotalTime":J
-    .local v325, "totalTimeMs":J
     if-gtz v0, :cond_79
 
     move-object/16 v327, v4
@@ -32445,17 +24390,10 @@
 
     cmp-long v0, v4, v27
 
-    .line 5498
-    .end local v5    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v318    # "unoptimizedScanTotalTimeBg":J
-    .local v4, "unoptimizedScanTotalTimeBg":J
-    .local v327, "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v328, "bleTimerBg":Landroid/os/BatteryStats$Timer;
     if-lez v0, :cond_78
 
     goto :goto_4d
 
-    .line 5523
     :cond_78
     move-wide/16 v329, v2
 
@@ -32467,12 +24405,6 @@
 
     goto/16 :goto_4f
 
-    .line 5499
-    .end local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v328    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .local v4, "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v5    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .restart local v318    # "unoptimizedScanTotalTimeBg":J
     :cond_79
     move-object/16 v327, v4
 
@@ -32480,83 +24412,54 @@
 
     move-wide/from16 v4, v318
 
-    .line 5499
-    .end local v5    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v318    # "unoptimizedScanTotalTimeBg":J
-    .local v4, "unoptimizedScanTotalTimeBg":J
-    .restart local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v328    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
     :goto_4d
     const-string v0, "\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5500
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5501
     const-string v0, "    Unoptimized Bluetooth Scan (realtime): "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5502
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5503
     const-string v0, " (max "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5504
     move-wide/16 v329, v2
 
     move-wide/from16 v2, v315
 
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5505
-    .end local v315    # "unoptimizedScanMaxTime":J
-    .local v2, "unoptimizedScanMaxTime":J
-    .local v329, "unoptimizedScanTotalTime":J
     const-string v0, ")"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5506
     move-object/from16 v0, v317
 
     if-eqz v0, :cond_7a
 
-    .line 5507
-    .end local v317    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .local v0, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v0}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
     move-result v131
 
     if-eqz v131, :cond_7a
 
-    .line 5508
     move-object/16 v331, v0
 
     const-string v0, " (currently running unoptimized)"
 
-    .line 5508
-    .end local v0    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .local v331, "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4e
 
-    .line 5510
-    .end local v331    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v0    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     :cond_7a
     move-object/16 v331, v0
 
-    .line 5510
-    .end local v0    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v331    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
     :goto_4e
     if-eqz v1, :cond_7b
 
@@ -32564,69 +24467,49 @@
 
     if-lez v0, :cond_7b
 
-    .line 5511
     const-string v0, "\n"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5512
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5513
     const-string v0, "    Unoptimized Bluetooth Scan (background realtime): "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5514
     invoke-static {v9, v4, v5}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5515
     const-string v0, " (max "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5516
     move-wide/16 v332, v2
 
     move-wide/from16 v2, v320
 
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5517
-    .end local v320    # "unoptimizedScanMaxTimeBg":J
-    .local v2, "unoptimizedScanMaxTimeBg":J
-    .local v332, "unoptimizedScanMaxTime":J
     const-string v0, ")"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5518
     invoke-virtual {v1}, Landroid/os/BatteryStats$Timer;->isRunningLocked()Z
 
     move-result v0
 
     if-eqz v0, :cond_7c
 
-    .line 5519
     const-string v0, " (currently running unoptimized in background)"
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4f
 
-    .line 5523
-    .end local v332    # "unoptimizedScanMaxTime":J
-    .local v2, "unoptimizedScanMaxTime":J
-    .restart local v320    # "unoptimizedScanMaxTimeBg":J
     :cond_7b
     move-wide/16 v332, v2
 
     move-wide/from16 v2, v320
 
-    .line 5523
-    .end local v320    # "unoptimizedScanMaxTimeBg":J
-    .local v2, "unoptimizedScanMaxTimeBg":J
-    .restart local v332    # "unoptimizedScanMaxTime":J
     :cond_7c
     :goto_4f
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -32639,41 +24522,10 @@
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5524
-    .end local v14    # "actualTimeMs":J
-    .local v131, "actualTimeMs":J
     const/16 v97, 0x1
 
-    .line 5524
-    .end local v1    # "unoptimizedScanTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v2    # "unoptimizedScanMaxTimeBg":J
-    .end local v4    # "unoptimizedScanTotalTimeBg":J
-    .end local v6    # "countBg":I
-    .end local v8    # "resultCountBg":I
-    .end local v10    # "actualTimeMsBg":J
-    .end local v12    # "resultCount":I
-    .end local v131    # "actualTimeMs":J
-    .end local v324    # "count":I
-    .end local v325    # "totalTimeMs":J
-    .end local v328    # "bleTimerBg":Landroid/os/BatteryStats$Timer;
-    .end local v329    # "unoptimizedScanTotalTime":J
-    .end local v331    # "unoptimizedScanTimer":Landroid/os/BatteryStats$Timer;
-    .end local v332    # "unoptimizedScanMaxTime":J
     goto :goto_50
 
-    .line 5530
-    .end local v305    # "btTxBytes":J
-    .end local v307    # "rawRealtime":J
-    .end local v309    # "wifiScanCount":I
-    .end local v312    # "wifiScanCountBg":I
-    .end local v322    # "rawRealtimeMs":J
-    .end local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v4, "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v5, "btTxBytes":J
-    .local v8, "wifiScanCountBg":I
-    .restart local v11    # "rawRealtime":J
-    .restart local v15    # "wifiScanCount":I
-    .restart local v167    # "rawRealtimeMs":J
     :cond_7d
     move-object/16 v327, v4
 
@@ -32687,35 +24539,8 @@
 
     move-wide/16 v322, v167
 
-    .end local v4    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v5    # "btTxBytes":J
-    .end local v8    # "wifiScanCountBg":I
-    .end local v11    # "rawRealtime":J
-    .end local v15    # "wifiScanCount":I
-    .end local v167    # "rawRealtimeMs":J
-    .restart local v305    # "btTxBytes":J
-    .restart local v307    # "rawRealtime":J
-    .restart local v309    # "wifiScanCount":I
-    .restart local v312    # "wifiScanCountBg":I
-    .restart local v322    # "rawRealtimeMs":J
-    .restart local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
     goto :goto_50
 
-    .line 5530
-    .end local v303    # "btRxBytes":J
-    .end local v305    # "btTxBytes":J
-    .end local v307    # "rawRealtime":J
-    .end local v309    # "wifiScanCount":I
-    .end local v312    # "wifiScanCountBg":I
-    .end local v322    # "rawRealtimeMs":J
-    .end local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v2, "btRxBytes":J
-    .restart local v4    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v5    # "btTxBytes":J
-    .restart local v8    # "wifiScanCountBg":I
-    .restart local v11    # "rawRealtime":J
-    .restart local v15    # "wifiScanCount":I
-    .restart local v167    # "rawRealtimeMs":J
     :cond_7e
     move-wide/16 v303, v2
 
@@ -32731,20 +24556,6 @@
 
     move-wide/16 v322, v167
 
-    .end local v2    # "btRxBytes":J
-    .end local v4    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v5    # "btTxBytes":J
-    .end local v8    # "wifiScanCountBg":I
-    .end local v11    # "rawRealtime":J
-    .end local v15    # "wifiScanCount":I
-    .end local v167    # "rawRealtimeMs":J
-    .restart local v303    # "btRxBytes":J
-    .restart local v305    # "btTxBytes":J
-    .restart local v307    # "rawRealtime":J
-    .restart local v309    # "wifiScanCount":I
-    .restart local v312    # "wifiScanCountBg":I
-    .restart local v322    # "rawRealtimeMs":J
-    .restart local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
     :goto_50
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->hasUserActivity()Z
 
@@ -32752,134 +24563,96 @@
 
     if-eqz v0, :cond_82
 
-    .line 5531
     const/4 v0, 0x0
 
-    .line 5532
-    .local v0, "hasData":Z
     move v1, v0
 
     const/4 v0, 0x0
 
-    .line 5532
-    .local v0, "i":I
-    .local v1, "hasData":Z
     :goto_51
     const/4 v10, 0x4
 
     if-ge v0, v10, :cond_81
 
-    .line 5533
     move/from16 v2, p4
 
     invoke-virtual {v13, v0, v2}, Landroid/os/BatteryStats$Uid;->getUserActivityCount(II)I
 
     move-result v3
 
-    .line 5534
-    .local v3, "val":I
     if-eqz v3, :cond_80
 
-    .line 5535
     if-nez v1, :cond_7f
 
-    .line 5536
     const/4 v4, 0x0
 
     invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5537
     const-string v4, "    User activity: "
 
     invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5538
     const/4 v1, 0x1
 
     goto :goto_52
 
-    .line 5540
     :cond_7f
     const-string v4, ", "
 
     invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5542
     :goto_52
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5543
     const-string v4, " "
 
     invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5544
     sget-object v4, Landroid/os/BatteryStats$Uid;->USER_ACTIVITY_TYPES:[Ljava/lang/String;
 
     aget-object v4, v4, v0
 
     invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5532
-    .end local v3    # "val":I
     :cond_80
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_51
 
-    .line 5547
-    .end local v0    # "i":I
     :cond_81
     move/from16 v2, p4
 
     if-eqz v1, :cond_83
 
-    .line 5548
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v14, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5548
-    .end local v1    # "hasData":Z
     goto :goto_53
 
-    .line 5552
     :cond_82
     move/from16 v2, p4
 
     const/4 v10, 0x4
 
-    .line 5553
     :cond_83
     :goto_53
     invoke-virtual {v13}, Landroid/os/BatteryStats$Uid;->getWakelockStats()Landroid/util/ArrayMap;
 
     move-result-object v15
 
-    .line 5554
-    .local v15, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     const-wide/16 v0, 0x0
 
-    .line 5554
-    .local v0, "totalFullWakelock":J
     const-wide/16 v3, 0x0
 
-    .line 5554
-    .local v3, "totalPartialWakelock":J
     const-wide/16 v5, 0x0
 
-    .line 5555
-    .local v5, "totalWindowWakelock":J
     const-wide/16 v11, 0x0
 
-    .line 5556
-    .local v11, "totalDrawWakelock":J
     const/4 v8, 0x0
 
-    .line 5557
-    .local v8, "countWakelock":I
     invoke-virtual {v15}, Landroid/util/ArrayMap;->size()I
 
     move-result v131
@@ -32900,23 +24673,11 @@
 
     move-wide/from16 v5, v417
 
-    .end local v8    # "countWakelock":I
-    .end local v13    # "u":Landroid/os/BatteryStats$Uid;
-    .local v0, "totalWindowWakelock":J
-    .local v5, "totalFullWakelock":J
-    .local v11, "countWakelock":I
-    .local v12, "totalDrawWakelock":J
-    .local v131, "iw":I
-    .local v334, "u":Landroid/os/BatteryStats$Uid;
     :goto_54
     move/from16 v8, v131
 
-    .line 5557
-    .end local v131    # "iw":I
-    .local v8, "iw":I
     if-ltz v8, :cond_85
 
-    .line 5558
     invoke-virtual {v15, v8}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v131
@@ -32925,29 +24686,20 @@
 
     check-cast v10, Landroid/os/BatteryStats$Uid$Wakelock;
 
-    .line 5559
-    .local v10, "wl":Landroid/os/BatteryStats$Uid$Wakelock;
     const-string v131, ": "
 
-    .line 5560
-    .local v131, "linePrefix":Ljava/lang/String;
     move-wide/16 v335, v0
 
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5561
-    .end local v0    # "totalWindowWakelock":J
-    .local v335, "totalWindowWakelock":J
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5562
     const-string v0, "    Wake lock "
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5563
     invoke-virtual {v15, v8}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -32956,7 +24708,6 @@
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5564
     const/4 v0, 0x1
 
     invoke-virtual {v10, v0}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -32971,11 +24722,6 @@
 
     move-object v0, v9
 
-    .line 5564
-    .end local v8    # "iw":I
-    .end local v335    # "totalWindowWakelock":J
-    .local v7, "totalWindowWakelock":J
-    .local v337, "iw":I
     move-wide/16 v338, v12
 
     move-wide/from16 v147, v303
@@ -32986,19 +24732,10 @@
 
     move-wide/from16 v2, v307
 
-    .line 5564
-    .end local v3    # "totalPartialWakelock":J
-    .end local v303    # "btRxBytes":J
-    .local v12, "totalPartialWakelock":J
-    .local v147, "btRxBytes":J
-    .local v338, "totalDrawWakelock":J
     move-object/from16 v149, v327
 
     move-object/from16 v4, v132
 
-    .line 5564
-    .end local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .local v149, "bleTimer":Landroid/os/BatteryStats$Timer;
     move-wide/16 v340, v7
 
     move-wide/from16 v150, v305
@@ -33007,27 +24744,18 @@
 
     move/from16 v5, p4
 
-    .line 5564
-    .end local v5    # "totalFullWakelock":J
-    .end local v305    # "btTxBytes":J
-    .local v7, "totalFullWakelock":J
-    .local v150, "btTxBytes":J
-    .local v340, "totalWindowWakelock":J
     move-object/from16 v6, v131
 
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v131
 
-    .line 5566
     const/4 v0, 0x0
 
     invoke-virtual {v10, v0}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 5567
-    .local v6, "pTimer":Landroid/os/BatteryStats$Timer;
     const-string/jumbo v4, "partial"
 
     move-object v0, v9
@@ -33040,15 +24768,10 @@
 
     move-object/from16 v6, v131
 
-    .line 5567
-    .end local v6    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v15, "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v342, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v131
 
-    .line 5569
     if-eqz v15, :cond_84
 
     invoke-virtual {v15}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
@@ -33080,7 +24803,6 @@
 
     move-result-object v131
 
-    .line 5571
     const/4 v0, 0x2
 
     invoke-virtual {v10, v0}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -33097,7 +24819,6 @@
 
     move-result-object v131
 
-    .line 5573
     const/16 v6, 0x12
 
     invoke-virtual {v10, v6}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -33112,34 +24833,24 @@
 
     move-object/from16 v6, v131
 
-    .line 5573
-    .end local v15    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v343, "pTimer":Landroid/os/BatteryStats$Timer;
     invoke-static/range {v0 .. v6}, Landroid/os/BatteryStats;->printWakeLock(Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5575
-    .end local v131    # "linePrefix":Ljava/lang/String;
-    .local v0, "linePrefix":Ljava/lang/String;
     const-string v1, " realtime"
 
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5576
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v14, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5577
     const/16 v97, 0x1
 
-    .line 5578
     add-int/lit8 v11, v11, 0x1
 
-    .line 5580
     const/4 v1, 0x1
 
     invoke-virtual {v10, v1}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -33154,14 +24865,8 @@
 
     move-result-wide v5
 
-    .line 5580
-    .end local v307    # "rawRealtime":J
-    .local v3, "rawRealtime":J
     add-long/2addr v5, v7
 
-    .line 5582
-    .end local v7    # "totalFullWakelock":J
-    .restart local v5    # "totalFullWakelock":J
     const/4 v2, 0x0
 
     invoke-virtual {v10, v2}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -33174,9 +24879,6 @@
 
     add-long/2addr v7, v12
 
-    .line 5584
-    .end local v12    # "totalPartialWakelock":J
-    .local v7, "totalPartialWakelock":J
     const/4 v2, 0x2
 
     invoke-virtual {v10, v2}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
@@ -33191,9 +24893,6 @@
 
     add-long v12, v131, v12
 
-    .line 5586
-    .end local v340    # "totalWindowWakelock":J
-    .local v12, "totalWindowWakelock":J
     invoke-virtual {v10, v15}, Landroid/os/BatteryStats$Uid$Wakelock;->getWakeTime(I)Landroid/os/BatteryStats$Timer;
 
     move-result-object v15
@@ -33208,21 +24907,10 @@
 
     add-long v2, v2, v131
 
-    .line 5557
-    .end local v0    # "linePrefix":Ljava/lang/String;
-    .end local v3    # "rawRealtime":J
-    .end local v10    # "wl":Landroid/os/BatteryStats$Uid$Wakelock;
-    .end local v338    # "totalDrawWakelock":J
-    .end local v343    # "pTimer":Landroid/os/BatteryStats$Timer;
-    .local v2, "totalDrawWakelock":J
-    .local v344, "rawRealtime":J
     move/from16 v0, v337
 
     add-int/lit8 v131, v0, -0x1
 
-    .line 5557
-    .end local v337    # "iw":I
-    .local v131, "iw":I
     move-wide/16 v303, v147
 
     move-object/16 v327, v149
@@ -33249,23 +24937,6 @@
 
     goto/16 :goto_54
 
-    .line 5589
-    .end local v2    # "totalDrawWakelock":J
-    .end local v7    # "totalPartialWakelock":J
-    .end local v131    # "iw":I
-    .end local v147    # "btRxBytes":J
-    .end local v149    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v150    # "btTxBytes":J
-    .end local v342    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v344    # "rawRealtime":J
-    .local v0, "totalWindowWakelock":J
-    .local v3, "totalPartialWakelock":J
-    .local v12, "totalDrawWakelock":J
-    .local v15, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v303    # "btRxBytes":J
-    .restart local v305    # "btTxBytes":J
-    .restart local v307    # "rawRealtime":J
-    .restart local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
     :cond_85
     move-wide/from16 v131, v0
 
@@ -33289,57 +24960,28 @@
 
     move-wide/from16 v12, v417
 
-    .end local v0    # "totalWindowWakelock":J
-    .end local v3    # "totalPartialWakelock":J
-    .end local v5    # "totalFullWakelock":J
-    .end local v15    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v303    # "btRxBytes":J
-    .end local v305    # "btTxBytes":J
-    .end local v307    # "rawRealtime":J
-    .end local v327    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v2    # "totalDrawWakelock":J
-    .local v7, "totalFullWakelock":J
-    .local v12, "totalPartialWakelock":J
-    .local v131, "totalWindowWakelock":J
-    .restart local v147    # "btRxBytes":J
-    .restart local v149    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v150    # "btTxBytes":J
-    .restart local v342    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .restart local v344    # "rawRealtime":J
     const/4 v0, 0x1
 
     if-le v11, v0, :cond_95
 
-    .line 5592
     const-wide/16 v4, 0x0
 
-    .line 5593
-    .local v4, "actualTotalPartialWakelock":J
     const-wide/16 v152, 0x0
 
-    .line 5594
-    .local v152, "actualBgPartialWakelock":J
     move-object/from16 v0, v334
 
     invoke-virtual {v0}, Landroid/os/BatteryStats$Uid;->getAggregatedPartialWakelockTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 5594
-    .end local v334    # "u":Landroid/os/BatteryStats$Uid;
-    .local v0, "u":Landroid/os/BatteryStats$Uid;
     if-eqz v6, :cond_87
 
-    .line 5595
     invoke-virtual {v0}, Landroid/os/BatteryStats$Uid;->getAggregatedPartialWakelockTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v6
 
-    .line 5597
-    .local v6, "aggTimer":Landroid/os/BatteryStats$Timer;
     nop
 
-    .line 5598
     move-wide/16 v346, v4
 
     move-wide/from16 v4, v322
@@ -33348,19 +24990,12 @@
 
     move-result-wide v154
 
-    .line 5599
-    .end local v322    # "rawRealtimeMs":J
-    .local v4, "rawRealtimeMs":J
-    .local v154, "actualTotalPartialWakelock":J
     invoke-virtual {v6}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
 
-    .line 5600
-    .local v10, "bgAggTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v10, :cond_86
 
-    .line 5601
     invoke-virtual {v10, v4, v5}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v156
@@ -33373,9 +25008,6 @@
     :goto_57
     move-wide/from16 v152, v156
 
-    .line 5604
-    .end local v6    # "aggTimer":Landroid/os/BatteryStats$Timer;
-    .end local v10    # "bgAggTimer":Landroid/os/BatteryStats$Timer;
     move-wide/16 v349, v4
 
     move/16 v348, v11
@@ -33386,10 +25018,6 @@
 
     goto :goto_58
 
-    .line 5604
-    .end local v154    # "actualTotalPartialWakelock":J
-    .local v4, "actualTotalPartialWakelock":J
-    .restart local v322    # "rawRealtimeMs":J
     :cond_87
     move-wide/16 v346, v4
 
@@ -33401,14 +25029,6 @@
 
     move-wide/from16 v10, v346
 
-    .line 5604
-    .end local v11    # "countWakelock":I
-    .end local v152    # "actualBgPartialWakelock":J
-    .end local v322    # "rawRealtimeMs":J
-    .local v4, "actualBgPartialWakelock":J
-    .local v10, "actualTotalPartialWakelock":J
-    .local v348, "countWakelock":I
-    .local v349, "rawRealtimeMs":J
     :goto_58
     cmp-long v6, v10, v27
 
@@ -33432,9 +25052,6 @@
 
     goto :goto_59
 
-    .line 5662
-    .end local v4    # "actualBgPartialWakelock":J
-    .end local v10    # "actualTotalPartialWakelock":J
     :cond_88
     move-object/16 v351, v0
 
@@ -33446,16 +25063,12 @@
 
     goto/16 :goto_5b
 
-    .line 5607
-    .restart local v4    # "actualBgPartialWakelock":J
-    .restart local v10    # "actualTotalPartialWakelock":J
     :cond_89
     :goto_59
     const/4 v6, 0x0
 
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5608
     move-object/16 v351, v0
 
     move-wide/from16 v0, v131
@@ -33464,209 +25077,144 @@
 
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5609
-    .end local v131    # "totalWindowWakelock":J
-    .local v0, "totalWindowWakelock":J
-    .local v351, "u":Landroid/os/BatteryStats$Uid;
     const-string v15, "    TOTAL wake: "
 
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5610
     const/4 v15, 0x0
 
-    .line 5611
-    .local v15, "needComma":Z
     cmp-long v131, v7, v27
 
     if-eqz v131, :cond_8a
 
-    .line 5612
     const/4 v15, 0x1
 
-    .line 5613
     invoke-static {v9, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5614
     move-wide/16 v352, v7
 
     const-string v7, "full"
 
-    .line 5614
-    .end local v7    # "totalFullWakelock":J
-    .local v352, "totalFullWakelock":J
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_5a
 
-    .line 5616
-    .end local v352    # "totalFullWakelock":J
-    .restart local v7    # "totalFullWakelock":J
     :cond_8a
     move-wide/16 v352, v7
 
-    .line 5616
-    .end local v7    # "totalFullWakelock":J
-    .restart local v352    # "totalFullWakelock":J
     :goto_5a
     cmp-long v7, v12, v27
 
     if-eqz v7, :cond_8c
 
-    .line 5617
     if-eqz v15, :cond_8b
 
-    .line 5618
     const-string v7, ", "
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5620
     :cond_8b
     const/4 v15, 0x1
 
-    .line 5621
     invoke-static {v9, v12, v13}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5622
     const-string v7, "blamed partial"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5624
     :cond_8c
     cmp-long v7, v10, v27
 
     if-eqz v7, :cond_8e
 
-    .line 5625
     if-eqz v15, :cond_8d
 
-    .line 5626
     const-string v7, ", "
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5628
     :cond_8d
     const/4 v15, 0x1
 
-    .line 5629
     invoke-static {v9, v10, v11}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5630
     const-string v7, "actual partial"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5632
     :cond_8e
     cmp-long v7, v4, v27
 
     if-eqz v7, :cond_90
 
-    .line 5633
     if-eqz v15, :cond_8f
 
-    .line 5634
     const-string v7, ", "
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5636
     :cond_8f
     const/4 v15, 0x1
 
-    .line 5637
     invoke-static {v9, v4, v5}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5638
     const-string v7, "actual background partial"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5640
     :cond_90
     cmp-long v7, v0, v27
 
     if-eqz v7, :cond_92
 
-    .line 5641
     if-eqz v15, :cond_91
 
-    .line 5642
     const-string v7, ", "
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5644
     :cond_91
     const/4 v15, 0x1
 
-    .line 5645
     invoke-static {v9, v0, v1}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5646
     const-string/jumbo v7, "window"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5648
     :cond_92
     cmp-long v7, v2, v27
 
     if-eqz v7, :cond_94
 
-    .line 5649
     if-eqz v15, :cond_93
 
-    .line 5650
     const-string v7, ","
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5652
     :cond_93
     const/4 v15, 0x1
 
-    .line 5653
     invoke-static {v9, v2, v3}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5654
     const-string v7, "draw"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5656
     :cond_94
     const-string v7, " realtime"
 
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5657
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v14, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5657
-    .end local v4    # "actualBgPartialWakelock":J
-    .end local v10    # "actualTotalPartialWakelock":J
-    .end local v15    # "needComma":Z
     goto :goto_5b
 
-    .line 5662
-    .end local v0    # "totalWindowWakelock":J
-    .end local v348    # "countWakelock":I
-    .end local v349    # "rawRealtimeMs":J
-    .end local v351    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v352    # "totalFullWakelock":J
-    .restart local v7    # "totalFullWakelock":J
-    .restart local v11    # "countWakelock":I
-    .restart local v131    # "totalWindowWakelock":J
-    .restart local v322    # "rawRealtimeMs":J
-    .restart local v334    # "u":Landroid/os/BatteryStats$Uid;
     :cond_95
     move-wide/16 v352, v7
 
@@ -33680,16 +25228,6 @@
 
     move-object/from16 v6, p3
 
-    .end local v7    # "totalFullWakelock":J
-    .end local v11    # "countWakelock":I
-    .end local v131    # "totalWindowWakelock":J
-    .end local v322    # "rawRealtimeMs":J
-    .end local v334    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v0    # "totalWindowWakelock":J
-    .restart local v348    # "countWakelock":I
-    .restart local v349    # "rawRealtimeMs":J
-    .restart local v351    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v352    # "totalFullWakelock":J
     :goto_5b
     move-object/from16 v4, v351
 
@@ -33697,13 +25235,8 @@
 
     move-result-object v5
 
-    .line 5663
-    .end local v351    # "u":Landroid/os/BatteryStats$Uid;
-    .local v4, "u":Landroid/os/BatteryStats$Uid;
-    .local v5, "mcTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v5, :cond_97
 
-    .line 5664
     move-wide/from16 v131, v0
 
     move-wide/from16 v10, v344
@@ -33714,49 +25247,34 @@
 
     move-result-wide v7
 
-    .line 5665
-    .end local v0    # "totalWindowWakelock":J
-    .end local v344    # "rawRealtime":J
-    .local v7, "multicastWakeLockTimeMicros":J
-    .local v10, "rawRealtime":J
-    .restart local v131    # "totalWindowWakelock":J
     invoke-virtual {v5, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v1
 
-    .line 5667
-    .local v1, "multicastWakeLockCount":I
     cmp-long v15, v7, v27
 
     if-lez v15, :cond_96
 
-    .line 5668
     const/4 v15, 0x0
 
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5669
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5670
     const-string v15, "    WiFi Multicast Wakelock"
 
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5671
     const-string v15, " count = "
 
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5672
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5673
     const-string v15, " time = "
 
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5674
     add-long v152, v7, v18
 
     move/16 v356, v1
@@ -33765,43 +25283,21 @@
 
     div-long v1, v152, v16
 
-    .line 5674
-    .end local v1    # "multicastWakeLockCount":I
-    .end local v2    # "totalDrawWakelock":J
-    .local v354, "totalDrawWakelock":J
-    .local v356, "multicastWakeLockCount":I
     invoke-static {v9, v1, v2}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 5675
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v14, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5675
-    .end local v7    # "multicastWakeLockTimeMicros":J
-    .end local v356    # "multicastWakeLockCount":I
     goto :goto_5c
 
-    .line 5679
-    .end local v354    # "totalDrawWakelock":J
-    .restart local v2    # "totalDrawWakelock":J
     :cond_96
     move-wide/16 v354, v2
 
-    .line 5679
-    .end local v2    # "totalDrawWakelock":J
-    .restart local v354    # "totalDrawWakelock":J
     goto :goto_5c
 
-    .line 5679
-    .end local v10    # "rawRealtime":J
-    .end local v131    # "totalWindowWakelock":J
-    .end local v354    # "totalDrawWakelock":J
-    .restart local v0    # "totalWindowWakelock":J
-    .restart local v2    # "totalDrawWakelock":J
-    .restart local v344    # "rawRealtime":J
     :cond_97
     move-wide/from16 v131, v0
 
@@ -33811,20 +25307,11 @@
 
     move/from16 v0, p4
 
-    .line 5679
-    .end local v0    # "totalWindowWakelock":J
-    .end local v2    # "totalDrawWakelock":J
-    .end local v344    # "rawRealtime":J
-    .restart local v10    # "rawRealtime":J
-    .restart local v131    # "totalWindowWakelock":J
-    .restart local v354    # "totalDrawWakelock":J
     :goto_5c
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid;->getSyncStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 5680
-    .local v1, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
@@ -33833,20 +25320,15 @@
 
     sub-int/2addr v2, v3
 
-    .line 5680
-    .local v2, "isy":I
     :goto_5d
     if-ltz v2, :cond_9c
 
-    .line 5681
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/BatteryStats$Timer;
 
-    .line 5683
-    .local v3, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v3, v10, v11, v0}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v152
@@ -33855,26 +25337,18 @@
 
     div-long v7, v152, v16
 
-    .line 5684
-    .local v7, "totalTime":J
     invoke-virtual {v3, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v15
 
-    .line 5685
-    .local v15, "count":I
     move-object/16 v357, v5
 
     invoke-virtual {v3}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v5
 
-    .line 5686
-    .local v5, "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v357, "mcTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v5, :cond_98
 
-    .line 5687
     move-wide/16 v358, v12
 
     move-wide/from16 v12, v349
@@ -33883,32 +25357,18 @@
 
     move-result-wide v152
 
-    .line 5687
-    .end local v349    # "rawRealtimeMs":J
-    .local v12, "rawRealtimeMs":J
-    .local v358, "totalPartialWakelock":J
     goto :goto_5e
 
-    .line 5687
-    .end local v358    # "totalPartialWakelock":J
-    .local v12, "totalPartialWakelock":J
-    .restart local v349    # "rawRealtimeMs":J
     :cond_98
     move-wide/16 v358, v12
 
     move-wide/from16 v12, v349
 
-    .line 5687
-    .end local v349    # "rawRealtimeMs":J
-    .local v12, "rawRealtimeMs":J
-    .restart local v358    # "totalPartialWakelock":J
     const-wide/16 v152, -0x1
 
     :goto_5e
     move-wide/16 v360, v152
 
-    .line 5688
-    .local v360, "bgTime":J
     if-eqz v5, :cond_99
 
     invoke-virtual {v5, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -33923,25 +25383,18 @@
     :goto_5f
     move/16 v362, v152
 
-    .line 5689
-    .local v362, "bgCount":I
     move-object/16 v363, v3
 
     const/4 v3, 0x0
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5690
-    .end local v3    # "timer":Landroid/os/BatteryStats$Timer;
-    .local v363, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5691
     const-string v3, "    Sync "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5692
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -33950,102 +25403,63 @@
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5693
     const-string v3, ": "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5694
     cmp-long v3, v7, v27
 
     if-eqz v3, :cond_9b
 
-    .line 5695
     invoke-static {v9, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5696
     const-string/jumbo v3, "realtime ("
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5697
     invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5698
     const-string v3, " times)"
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5699
     move-wide/16 v364, v7
 
     move-wide/from16 v7, v360
 
     cmp-long v3, v7, v27
 
-    .line 5699
-    .end local v360    # "bgTime":J
-    .local v7, "bgTime":J
-    .local v364, "totalTime":J
     if-lez v3, :cond_9a
 
-    .line 5700
     const-string v3, ", "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5701
     invoke-static {v9, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5702
     const-string v3, "background ("
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5703
     move/from16 v3, v362
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5704
-    .end local v362    # "bgCount":I
-    .local v3, "bgCount":I
     move-object/16 v366, v1
 
     const-string v1, " times)"
 
-    .line 5704
-    .end local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v366, "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_60
 
-    .line 5709
-    .end local v3    # "bgCount":I
-    .end local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v362    # "bgCount":I
     :cond_9a
     move-object/16 v366, v1
 
     move/from16 v3, v362
 
-    .line 5709
-    .end local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v362    # "bgCount":I
-    .restart local v3    # "bgCount":I
-    .restart local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     goto :goto_60
 
-    .line 5707
-    .end local v3    # "bgCount":I
-    .end local v364    # "totalTime":J
-    .end local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v7, "totalTime":J
-    .restart local v360    # "bgTime":J
-    .restart local v362    # "bgCount":I
     :cond_9b
     move-object/16 v366, v1
 
@@ -34055,19 +25469,10 @@
 
     move/from16 v3, v362
 
-    .line 5707
-    .end local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v360    # "bgTime":J
-    .end local v362    # "bgCount":I
-    .restart local v3    # "bgCount":I
-    .local v7, "bgTime":J
-    .restart local v364    # "totalTime":J
-    .restart local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-string v1, "(not used)"
 
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5709
     :goto_60
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -34075,16 +25480,8 @@
 
     invoke-virtual {v14, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5710
     const/16 v97, 0x1
 
-    .line 5680
-    .end local v3    # "bgCount":I
-    .end local v5    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v7    # "bgTime":J
-    .end local v15    # "count":I
-    .end local v363    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v364    # "totalTime":J
     add-int/lit8 v2, v2, -0x1
 
     move-wide/16 v349, v12
@@ -34097,15 +25494,6 @@
 
     goto/16 :goto_5d
 
-    .line 5713
-    .end local v2    # "isy":I
-    .end local v357    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v358    # "totalPartialWakelock":J
-    .end local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v5, "mcTimer":Landroid/os/BatteryStats$Timer;
-    .local v12, "totalPartialWakelock":J
-    .restart local v349    # "rawRealtimeMs":J
     :cond_9c
     move-object/16 v366, v1
 
@@ -34115,20 +25503,10 @@
 
     move-wide/from16 v12, v349
 
-    .line 5713
-    .end local v1    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v5    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v349    # "rawRealtimeMs":J
-    .local v12, "rawRealtimeMs":J
-    .restart local v357    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .restart local v358    # "totalPartialWakelock":J
-    .restart local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid;->getJobStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 5714
-    .local v1, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
@@ -34137,20 +25515,15 @@
 
     sub-int/2addr v2, v3
 
-    .line 5714
-    .local v2, "ij":I
     :goto_61
     if-ltz v2, :cond_a1
 
-    .line 5715
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/BatteryStats$Timer;
 
-    .line 5717
-    .local v3, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v3, v10, v11, v0}, Landroid/os/BatteryStats$Timer;->getTotalTimeLocked(JI)J
 
     move-result-wide v7
@@ -34159,23 +25532,16 @@
 
     div-long v7, v7, v16
 
-    .line 5718
-    .local v7, "totalTime":J
     invoke-virtual {v3, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v5
 
-    .line 5719
-    .local v5, "count":I
     invoke-virtual {v3}, Landroid/os/BatteryStats$Timer;->getSubTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v15
 
-    .line 5720
-    .local v15, "bgTimer":Landroid/os/BatteryStats$Timer;
     if-eqz v15, :cond_9d
 
-    .line 5721
     invoke-virtual {v15, v12, v13}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v152
@@ -34188,8 +25554,6 @@
     :goto_62
     move-wide/16 v367, v152
 
-    .line 5722
-    .local v367, "bgTime":J
     if-eqz v15, :cond_9e
 
     invoke-virtual {v15, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -34204,25 +25568,18 @@
     :goto_63
     move/16 v369, v152
 
-    .line 5723
-    .local v369, "bgCount":I
     move-object/16 v370, v3
 
     const/4 v3, 0x0
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5724
-    .end local v3    # "timer":Landroid/os/BatteryStats$Timer;
-    .local v370, "timer":Landroid/os/BatteryStats$Timer;
     invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5725
     const-string v3, "    Job "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5726
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -34231,102 +25588,63 @@
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5727
     const-string v3, ": "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5728
     cmp-long v3, v7, v27
 
     if-eqz v3, :cond_a0
 
-    .line 5729
     invoke-static {v9, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5730
     const-string/jumbo v3, "realtime ("
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5731
     invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5732
     const-string v3, " times)"
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5733
     move-wide/16 v371, v7
 
     move-wide/from16 v7, v367
 
     cmp-long v3, v7, v27
 
-    .line 5733
-    .end local v367    # "bgTime":J
-    .local v7, "bgTime":J
-    .local v371, "totalTime":J
     if-lez v3, :cond_9f
 
-    .line 5734
     const-string v3, ", "
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5735
     invoke-static {v9, v7, v8}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5736
     const-string v3, "background ("
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5737
     move/from16 v3, v369
 
     invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5738
-    .end local v369    # "bgCount":I
-    .local v3, "bgCount":I
     move-object/16 v373, v1
 
     const-string v1, " times)"
 
-    .line 5738
-    .end local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v373, "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_64
 
-    .line 5743
-    .end local v3    # "bgCount":I
-    .end local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v369    # "bgCount":I
     :cond_9f
     move-object/16 v373, v1
 
     move/from16 v3, v369
 
-    .line 5743
-    .end local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v369    # "bgCount":I
-    .restart local v3    # "bgCount":I
-    .restart local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     goto :goto_64
 
-    .line 5741
-    .end local v3    # "bgCount":I
-    .end local v371    # "totalTime":J
-    .end local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v7, "totalTime":J
-    .restart local v367    # "bgTime":J
-    .restart local v369    # "bgCount":I
     :cond_a0
     move-object/16 v373, v1
 
@@ -34336,19 +25654,10 @@
 
     move/from16 v3, v369
 
-    .line 5741
-    .end local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v367    # "bgTime":J
-    .end local v369    # "bgCount":I
-    .restart local v3    # "bgCount":I
-    .local v7, "bgTime":J
-    .restart local v371    # "totalTime":J
-    .restart local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     const-string v1, "(not used)"
 
     invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5743
     :goto_64
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -34356,38 +25665,21 @@
 
     invoke-virtual {v14, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5744
     const/16 v97, 0x1
 
-    .line 5714
-    .end local v3    # "bgCount":I
-    .end local v5    # "count":I
-    .end local v7    # "bgTime":J
-    .end local v15    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v370    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v371    # "totalTime":J
     add-int/lit8 v2, v2, -0x1
 
     move-object/from16 v1, v373
 
     goto/16 :goto_61
 
-    .line 5747
-    .end local v2    # "ij":I
-    .end local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     :cond_a1
     move-object/16 v373, v1
 
-    .line 5747
-    .end local v1    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid;->getJobCompletionStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 5748
-    .local v1, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
@@ -34396,31 +25688,23 @@
 
     sub-int/2addr v2, v3
 
-    .line 5748
-    .local v2, "ic":I
     :goto_65
     if-ltz v2, :cond_a4
 
-    .line 5749
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/util/SparseIntArray;
 
-    .line 5750
-    .local v5, "types":Landroid/util/SparseIntArray;
     if-eqz v5, :cond_a3
 
-    .line 5751
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5752
     const-string v7, "    Job Completions "
 
     invoke-virtual {v14, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5753
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -34429,16 +25713,12 @@
 
     invoke-virtual {v14, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5754
     const-string v7, ":"
 
     invoke-virtual {v14, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5755
     const/4 v7, 0x0
 
-    .line 5755
-    .local v7, "it":I
     :goto_66
     invoke-virtual {v5}, Landroid/util/SparseIntArray;->size()I
 
@@ -34446,12 +25726,10 @@
 
     if-ge v7, v8, :cond_a2
 
-    .line 5756
     const-string v8, " "
 
     invoke-virtual {v14, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5757
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v8
@@ -34462,53 +25740,41 @@
 
     invoke-virtual {v14, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5758
     const-string v8, "("
 
     invoke-virtual {v14, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5759
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v8
 
     invoke-virtual {v14, v8}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 5760
     const-string/jumbo v8, "x)"
 
     invoke-virtual {v14, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5755
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_66
 
-    .line 5762
-    .end local v7    # "it":I
     :cond_a2
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 5748
-    .end local v5    # "types":Landroid/util/SparseIntArray;
     :cond_a3
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_65
 
-    .line 5766
-    .end local v2    # "ic":I
     :cond_a4
     invoke-virtual {v4, v9, v0}, Landroid/os/BatteryStats$Uid;->getDeferredJobsLineLocked(Ljava/lang/StringBuilder;I)V
 
-    .line 5767
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
     if-lez v2, :cond_a5
 
-    .line 5768
     const-string v2, "    Jobs deferred on launch "
 
     invoke-virtual {v14, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -34519,7 +25785,6 @@
 
     invoke-virtual {v14, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5771
     :cond_a5
     invoke-virtual {v4}, Landroid/os/BatteryStats$Uid;->getFlashlightTurnedOnTimer()Landroid/os/BatteryStats$Timer;
 
@@ -34543,16 +25808,6 @@
 
     move-object v8, v14
 
-    .end local v270    # "mobileRxPackets":J
-    .end local v280    # "wifiTxBytes":J
-    .end local v312    # "wifiScanCountBg":I
-    .end local v352    # "totalFullWakelock":J
-    .local v5, "wifiScanCountBg":I
-    .local v147, "wifiTxBytes":J
-    .local v150, "btRxBytes":J
-    .local v152, "btTxBytes":J
-    .local v154, "mobileRxPackets":J
-    .local v156, "totalFullWakelock":J
     move/from16 v158, v3
 
     move-object v7, v4
@@ -34561,12 +25816,6 @@
 
     move/from16 v4, v222
 
-    .line 5771
-    .end local v9    # "sb":Ljava/lang/StringBuilder;
-    .end local v222    # "uid":I
-    .local v3, "sb":Ljava/lang/StringBuilder;
-    .local v4, "uid":I
-    .local v7, "u":Landroid/os/BatteryStats$Uid;
     move-object/16 v374, v3
 
     move/16 v375, v4
@@ -34589,19 +25838,6 @@
 
     move-object v10, v2
 
-    .end local v4    # "uid":I
-    .end local v5    # "wifiScanCountBg":I
-    .end local v10    # "rawRealtime":J
-    .end local v12    # "rawRealtimeMs":J
-    .end local v221    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v309    # "wifiScanCount":I
-    .local v3, "rawRealtimeMs":J
-    .local v11, "rawRealtime":J
-    .local v159, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .local v162, "wifiScanCount":I
-    .local v163, "wifiScanCountBg":I
-    .local v374, "sb":Ljava/lang/StringBuilder;
-    .local v375, "uid":I
     move-wide/from16 v166, v11
 
     move/from16 v168, v219
@@ -34622,26 +25858,6 @@
 
     move-wide/from16 v178, v358
 
-    .end local v11    # "rawRealtime":J
-    .end local v219    # "iu":I
-    .end local v220    # "NU":I
-    .end local v261    # "mobileRxBytes":J
-    .end local v276    # "uidMobileActiveTime":J
-    .end local v293    # "uidWifiRunningTime":J
-    .end local v301    # "wifiWakeup":J
-    .end local v348    # "countWakelock":I
-    .end local v354    # "totalDrawWakelock":J
-    .end local v358    # "totalPartialWakelock":J
-    .local v2, "NU":I
-    .local v166, "rawRealtime":J
-    .local v168, "iu":I
-    .local v169, "mobileRxBytes":J
-    .local v171, "uidMobileActiveTime":J
-    .local v173, "uidWifiRunningTime":J
-    .local v175, "wifiWakeup":J
-    .local v177, "countWakelock":I
-    .local v178, "totalPartialWakelock":J
-    .local v180, "totalDrawWakelock":J
     move-object/16 v376, v1
 
     move-wide/from16 v182, v173
@@ -34660,47 +25876,24 @@
 
     move v13, v0
 
-    .end local v1    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v274    # "mobileWakeup":J
-    .end local v299    # "fullWifiLockOnTime":J
-    .local v135, "uidMobileActiveTime":J
-    .local v141, "fullWifiLockOnTime":J
-    .local v171, "wifiScanActualTime":J
-    .local v173, "wifiScanActualTimeBg":J
-    .local v182, "uidWifiRunningTime":J
-    .local v184, "mobileWakeup":J
-    .local v376, "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
     move-wide/16 v377, v166
 
     move-object/16 v379, v374
 
     move-object v14, v6
 
-    .line 5771
-    .end local v166    # "rawRealtime":J
-    .end local v374    # "sb":Ljava/lang/StringBuilder;
-    .local v377, "rawRealtime":J
-    .local v379, "sb":Ljava/lang/StringBuilder;
     move-object/from16 v166, v231
 
     move/from16 v167, v273
 
     move-object/from16 v186, v342
 
-    .line 5771
-    .end local v231    # "cpuFreqs":[J
-    .end local v273    # "uidMobileActiveCount":I
-    .end local v342    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .local v166, "cpuFreqs":[J
-    .local v167, "uidMobileActiveCount":I
-    .local v186, "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
     invoke-static/range {v8 .. v15}, Landroid/os/BatteryStats;->printTimer(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v8
 
     or-int v97, v97, v8
 
-    .line 5773
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getCameraTurnedOnTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -34719,7 +25912,6 @@
 
     or-int v97, v97, v8
 
-    .line 5775
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getVideoTurnedOnTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -34734,7 +25926,6 @@
 
     or-int v97, v97, v8
 
-    .line 5777
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getAudioTurnedOnTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -34749,98 +25940,69 @@
 
     or-int v8, v97, v8
 
-    .line 5780
-    .end local v97    # "uidActivity":Z
-    .local v8, "uidActivity":Z
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getSensorStats()Landroid/util/SparseArray;
 
     move-result-object v15
 
-    .line 5781
-    .local v15, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-virtual {v15}, Landroid/util/SparseArray;->size()I
 
     move-result v14
 
-    .line 5782
-    .local v14, "NSE":I
     move/from16 v97, v8
 
     move v8, v1
 
-    .line 5782
-    .local v8, "ise":I
-    .restart local v97    # "uidActivity":Z
     :goto_67
     if-ge v8, v14, :cond_ae
 
-    .line 5783
     invoke-virtual {v15, v8}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/os/BatteryStats$Uid$Sensor;
 
-    .line 5784
-    .local v9, "se":Landroid/os/BatteryStats$Uid$Sensor;
     invoke-virtual {v15, v8}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v10
 
-    .line 5785
-    .local v10, "sensorNumber":I
     move-object/from16 v13, v379
 
     invoke-virtual {v13, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5786
-    .end local v379    # "sb":Ljava/lang/StringBuilder;
-    .local v13, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5787
     const-string v11, "    Sensor "
 
     invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5788
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid$Sensor;->getHandle()I
 
     move-result v11
 
-    .line 5789
-    .local v11, "handle":I
     const/16 v12, -0x2710
 
     if-ne v11, v12, :cond_a6
 
-    .line 5790
     const-string v12, "GPS"
 
     invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_68
 
-    .line 5792
     :cond_a6
     invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5794
     :goto_68
     const-string v12, ": "
 
     invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5796
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v12
 
-    .line 5797
-    .local v12, "timer":Landroid/os/BatteryStats$Timer;
     if-eqz v12, :cond_ad
 
-    .line 5799
     move/16 v380, v2
 
     move-wide/from16 v1, v377
@@ -34849,11 +26011,6 @@
 
     move-result-wide v187
 
-    .line 5799
-    .end local v2    # "NU":I
-    .end local v377    # "rawRealtime":J
-    .local v1, "rawRealtime":J
-    .local v380, "NU":I
     add-long v187, v187, v18
 
     move/16 v381, v10
@@ -34862,29 +26019,18 @@
 
     div-long v10, v187, v16
 
-    .line 5801
-    .end local v11    # "handle":I
-    .local v10, "totalTime":J
-    .local v381, "sensorNumber":I
-    .local v382, "handle":I
     move/16 v383, v14
 
     invoke-virtual {v12, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
 
     move-result v14
 
-    .line 5802
-    .local v14, "count":I
-    .local v383, "NSE":I
     move-object/16 v384, v15
 
     invoke-virtual {v9}, Landroid/os/BatteryStats$Uid$Sensor;->getSensorBackgroundTime()Landroid/os/BatteryStats$Timer;
 
     move-result-object v15
 
-    .line 5803
-    .local v15, "bgTimer":Landroid/os/BatteryStats$Timer;
-    .local v384, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     if-eqz v15, :cond_a7
 
     invoke-virtual {v15, v0}, Landroid/os/BatteryStats$Timer;->getCountLocked(I)I
@@ -34899,17 +26045,12 @@
     :goto_69
     move/16 v385, v187
 
-    .line 5805
-    .local v385, "bgCount":I
     invoke-virtual {v12, v3, v4}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v5
 
-    .line 5806
-    .local v5, "actualTime":J
     if-eqz v15, :cond_a8
 
-    .line 5807
     invoke-virtual {v15, v3, v4}, Landroid/os/BatteryStats$Timer;->getTotalDurationMsLocked(J)J
 
     move-result-wide v187
@@ -34922,65 +26063,44 @@
     :goto_6a
     move-wide/16 v386, v187
 
-    .line 5810
-    .local v386, "bgActualTime":J
     cmp-long v187, v10, v27
 
     if-eqz v187, :cond_ab
 
-    .line 5811
     cmp-long v187, v5, v10
 
     if-eqz v187, :cond_a9
 
-    .line 5812
     invoke-static {v13, v10, v11}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5813
     move-wide/16 v388, v3
 
     const-string v3, "blamed realtime, "
 
-    .line 5813
-    .end local v3    # "rawRealtimeMs":J
-    .local v388, "rawRealtimeMs":J
     invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_6b
 
-    .line 5816
-    .end local v388    # "rawRealtimeMs":J
-    .restart local v3    # "rawRealtimeMs":J
     :cond_a9
     move-wide/16 v388, v3
 
-    .line 5816
-    .end local v3    # "rawRealtimeMs":J
-    .restart local v388    # "rawRealtimeMs":J
     :goto_6b
     invoke-static {v13, v5, v6}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5817
     const-string/jumbo v3, "realtime ("
 
     invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5818
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5819
     const-string v3, " times)"
 
     invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5821
     move-wide/from16 v3, v386
 
     cmp-long v187, v3, v27
 
-    .line 5821
-    .end local v386    # "bgActualTime":J
-    .local v3, "bgActualTime":J
     if-nez v187, :cond_aa
 
     move-wide/16 v390, v5
@@ -34989,55 +26109,32 @@
 
     if-lez v5, :cond_ac
 
-    .line 5821
-    .end local v385    # "bgCount":I
-    .local v5, "bgCount":I
-    .local v390, "actualTime":J
     goto :goto_6c
 
-    .line 5822
-    .end local v390    # "actualTime":J
-    .local v5, "actualTime":J
-    .restart local v385    # "bgCount":I
     :cond_aa
     move-wide/16 v390, v5
 
     move/from16 v5, v385
 
-    .line 5822
-    .end local v385    # "bgCount":I
-    .local v5, "bgCount":I
-    .restart local v390    # "actualTime":J
     :goto_6c
     const-string v6, ", "
 
     invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5823
     invoke-static {v13, v3, v4}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5824
     const-string v6, "background ("
 
     invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5825
     invoke-virtual {v13, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 5826
     const-string v6, " times)"
 
     invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_6d
 
-    .line 5829
-    .end local v388    # "rawRealtimeMs":J
-    .end local v390    # "actualTime":J
-    .local v3, "rawRealtimeMs":J
-    .local v5, "actualTime":J
-    .restart local v385    # "bgCount":I
-    .restart local v386    # "bgActualTime":J
     :cond_ab
     move-wide/16 v388, v3
 
@@ -35047,43 +26144,14 @@
 
     move-wide/from16 v3, v386
 
-    .line 5829
-    .end local v385    # "bgCount":I
-    .end local v386    # "bgActualTime":J
-    .local v3, "bgActualTime":J
-    .local v5, "bgCount":I
-    .restart local v388    # "rawRealtimeMs":J
-    .restart local v390    # "actualTime":J
     const-string v6, "(not used)"
 
     invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5831
-    .end local v3    # "bgActualTime":J
-    .end local v5    # "bgCount":I
-    .end local v10    # "totalTime":J
-    .end local v14    # "count":I
-    .end local v15    # "bgTimer":Landroid/os/BatteryStats$Timer;
-    .end local v390    # "actualTime":J
     :cond_ac
     :goto_6d
     goto :goto_6e
 
-    .line 5832
-    .end local v1    # "rawRealtime":J
-    .end local v380    # "NU":I
-    .end local v381    # "sensorNumber":I
-    .end local v382    # "handle":I
-    .end local v383    # "NSE":I
-    .end local v384    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v388    # "rawRealtimeMs":J
-    .restart local v2    # "NU":I
-    .local v3, "rawRealtimeMs":J
-    .local v10, "sensorNumber":I
-    .restart local v11    # "handle":I
-    .local v14, "NSE":I
-    .local v15, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v377    # "rawRealtime":J
     :cond_ad
     move/16 v380, v2
 
@@ -35099,25 +26167,10 @@
 
     move-wide/from16 v1, v377
 
-    .end local v2    # "NU":I
-    .end local v3    # "rawRealtimeMs":J
-    .end local v10    # "sensorNumber":I
-    .end local v11    # "handle":I
-    .end local v14    # "NSE":I
-    .end local v15    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v377    # "rawRealtime":J
-    .restart local v1    # "rawRealtime":J
-    .restart local v380    # "NU":I
-    .restart local v381    # "sensorNumber":I
-    .restart local v382    # "handle":I
-    .restart local v383    # "NSE":I
-    .restart local v384    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v388    # "rawRealtimeMs":J
     const-string v3, "(not used)"
 
     invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5835
     :goto_6e
     invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -35127,14 +26180,8 @@
 
     invoke-virtual {v4, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5836
     const/16 v97, 0x1
 
-    .line 5782
-    .end local v9    # "se":Landroid/os/BatteryStats$Uid$Sensor;
-    .end local v12    # "timer":Landroid/os/BatteryStats$Timer;
-    .end local v381    # "sensorNumber":I
-    .end local v382    # "handle":I
     add-int/lit8 v8, v8, 0x1
 
     move-wide/16 v377, v1
@@ -35157,20 +26204,6 @@
 
     goto/16 :goto_67
 
-    .line 5839
-    .end local v1    # "rawRealtime":J
-    .end local v8    # "ise":I
-    .end local v13    # "sb":Ljava/lang/StringBuilder;
-    .end local v380    # "NU":I
-    .end local v383    # "NSE":I
-    .end local v384    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v388    # "rawRealtimeMs":J
-    .restart local v2    # "NU":I
-    .restart local v3    # "rawRealtimeMs":J
-    .restart local v14    # "NSE":I
-    .restart local v15    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v377    # "rawRealtime":J
-    .restart local v379    # "sb":Ljava/lang/StringBuilder;
     :cond_ae
     move/16 v380, v2
 
@@ -35186,18 +26219,6 @@
 
     move-object/from16 v4, p2
 
-    .end local v2    # "NU":I
-    .end local v3    # "rawRealtimeMs":J
-    .end local v14    # "NSE":I
-    .end local v15    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v377    # "rawRealtime":J
-    .end local v379    # "sb":Ljava/lang/StringBuilder;
-    .restart local v1    # "rawRealtime":J
-    .restart local v13    # "sb":Ljava/lang/StringBuilder;
-    .restart local v380    # "NU":I
-    .restart local v383    # "NSE":I
-    .restart local v384    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .restart local v388    # "rawRealtimeMs":J
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getVibratorOnTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -35214,30 +26235,20 @@
 
     move v13, v0
 
-    .line 5839
-    .end local v13    # "sb":Ljava/lang/StringBuilder;
-    .local v3, "sb":Ljava/lang/StringBuilder;
     move/from16 v6, v383
 
     move-object/from16 v5, p3
 
     move-object v14, v5
 
-    .line 5839
-    .end local v383    # "NSE":I
-    .local v6, "NSE":I
     move-object/from16 v187, v384
 
-    .line 5839
-    .end local v384    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .local v187, "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
     invoke-static/range {v8 .. v15}, Landroid/os/BatteryStats;->printTimer(Ljava/io/PrintWriter;Ljava/lang/StringBuilder;Landroid/os/BatteryStats$Timer;JILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v8
 
     or-int v97, v97, v8
 
-    .line 5841
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getForegroundActivityTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -35254,7 +26265,6 @@
 
     or-int v97, v97, v8
 
-    .line 5843
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getForegroundServiceTimer()Landroid/os/BatteryStats$Timer;
 
     move-result-object v10
@@ -35269,136 +26279,102 @@
 
     or-int v8, v97, v8
 
-    .line 5846
-    .end local v97    # "uidActivity":Z
-    .local v8, "uidActivity":Z
     const-wide/16 v9, 0x0
 
-    .line 5847
-    .local v9, "totalStateTime":J
     move v11, v8
 
     const/4 v8, 0x0
 
-    .line 5847
-    .local v8, "ips":I
-    .local v11, "uidActivity":Z
     :goto_6f
     const/4 v12, 0x7
 
     if-ge v8, v12, :cond_b0
 
-    .line 5848
     invoke-virtual {v7, v8, v1, v2, v0}, Landroid/os/BatteryStats$Uid;->getProcessStateTime(IJI)J
 
     move-result-wide v12
 
-    .line 5849
-    .local v12, "time":J
     cmp-long v14, v12, v27
 
     if-lez v14, :cond_af
 
-    .line 5850
     add-long/2addr v9, v12
 
-    .line 5851
     const/4 v14, 0x0
 
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5852
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5853
     const-string v14, "    "
 
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5854
     sget-object v14, Landroid/os/BatteryStats$Uid;->PROCESS_STATE_NAMES:[Ljava/lang/String;
 
     aget-object v14, v14, v8
 
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5855
     const-string v14, " for: "
 
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5856
     add-long v14, v12, v18
 
     div-long v14, v14, v16
 
     invoke-static {v3, v14, v15}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5857
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v14
 
     invoke-virtual {v4, v14}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5858
     const/4 v11, 0x1
 
-    .line 5847
-    .end local v12    # "time":J
     :cond_af
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_6f
 
-    .line 5861
-    .end local v8    # "ips":I
     :cond_b0
     cmp-long v8, v9, v27
 
     if-lez v8, :cond_b1
 
-    .line 5862
     const/4 v8, 0x0
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5863
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5864
     const-string v8, "    Total running: "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5865
     add-long v12, v9, v18
 
     div-long v12, v12, v16
 
     invoke-static {v3, v12, v13}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5866
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v4, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5869
     :cond_b1
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats$Uid;->getUserCpuTimeUs(I)J
 
     move-result-wide v12
 
-    .line 5870
-    .local v12, "userCpuTimeUs":J
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats$Uid;->getSystemCpuTimeUs(I)J
 
     move-result-wide v14
 
-    .line 5871
-    .local v14, "systemCpuTimeUs":J
     cmp-long v8, v12, v27
 
     if-gtz v8, :cond_b3
@@ -35409,85 +26385,65 @@
 
     goto :goto_70
 
-    .line 5881
     :cond_b2
     move-wide/16 v392, v1
 
     goto :goto_71
 
-    .line 5872
     :cond_b3
     :goto_70
     const/4 v8, 0x0
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5873
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5874
     const-string v8, "    Total cpu time: u="
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5875
     move-wide/16 v392, v1
 
     div-long v1, v12, v16
 
-    .line 5875
-    .end local v1    # "rawRealtime":J
-    .local v392, "rawRealtime":J
     invoke-static {v3, v1, v2}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5876
     const-string/jumbo v1, "s="
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5877
     div-long v1, v14, v16
 
     invoke-static {v3, v1, v2}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 5878
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v4, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5881
     :goto_71
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(I)[J
 
     move-result-object v1
 
-    .line 5882
-    .local v1, "cpuFreqTimes":[J
     if-eqz v1, :cond_b5
 
-    .line 5883
     const/4 v2, 0x0
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5884
     const-string v2, "    Total cpu time per freq:"
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5885
     const/4 v2, 0x0
 
-    .line 5885
-    .local v2, "i":I
     :goto_72
     array-length v8, v1
 
     if-ge v2, v8, :cond_b4
 
-    .line 5886
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -35496,18 +26452,12 @@
 
     const-string v6, " "
 
-    .line 5886
-    .end local v6    # "NSE":I
-    .local v394, "NSE":I
     invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-wide/16 v395, v9
 
     aget-wide v9, v1, v2
 
-    .line 5886
-    .end local v9    # "totalStateTime":J
-    .local v395, "totalStateTime":J
     invoke-virtual {v8, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -35516,7 +26466,6 @@
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5885
     add-int/lit8 v2, v2, 0x1
 
     move/from16 v6, v394
@@ -35525,22 +26474,11 @@
 
     goto :goto_72
 
-    .line 5888
-    .end local v2    # "i":I
-    .end local v394    # "NSE":I
-    .end local v395    # "totalStateTime":J
-    .restart local v6    # "NSE":I
-    .restart local v9    # "totalStateTime":J
     :cond_b4
     move/16 v394, v6
 
     move-wide/16 v395, v9
 
-    .line 5888
-    .end local v6    # "NSE":I
-    .end local v9    # "totalStateTime":J
-    .restart local v394    # "NSE":I
-    .restart local v395    # "totalStateTime":J
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -35549,51 +26487,33 @@
 
     goto :goto_73
 
-    .line 5890
-    .end local v394    # "NSE":I
-    .end local v395    # "totalStateTime":J
-    .restart local v6    # "NSE":I
-    .restart local v9    # "totalStateTime":J
     :cond_b5
     move/16 v394, v6
 
     move-wide/16 v395, v9
 
-    .line 5890
-    .end local v6    # "NSE":I
-    .end local v9    # "totalStateTime":J
-    .restart local v394    # "NSE":I
-    .restart local v395    # "totalStateTime":J
     :goto_73
     invoke-virtual {v7, v0}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(I)[J
 
     move-result-object v2
 
-    .line 5891
-    .local v2, "screenOffCpuFreqTimes":[J
     if-eqz v2, :cond_b7
 
-    .line 5892
     const/4 v6, 0x0
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5893
     const-string v6, "    Total screen-off cpu time per freq:"
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5894
     const/4 v6, 0x0
 
-    .line 5894
-    .local v6, "i":I
     :goto_74
     array-length v8, v2
 
     if-ge v6, v8, :cond_b6
 
-    .line 5895
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -35612,13 +26532,10 @@
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5894
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_74
 
-    .line 5897
-    .end local v6    # "i":I
     :cond_b6
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -35626,32 +26543,24 @@
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5900
     :cond_b7
     const/4 v6, 0x0
 
-    .line 5900
-    .local v6, "procState":I
     :goto_75
     const/4 v8, 0x7
 
     if-ge v6, v8, :cond_bc
 
-    .line 5901
     invoke-virtual {v7, v0, v6}, Landroid/os/BatteryStats$Uid;->getCpuFreqTimes(II)[J
 
     move-result-object v8
 
-    .line 5902
-    .local v8, "cpuTimes":[J
     if-eqz v8, :cond_b9
 
-    .line 5903
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5904
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -35676,17 +26585,13 @@
 
     invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5906
     const/4 v9, 0x0
 
-    .line 5906
-    .local v9, "i":I
     :goto_76
     array-length v10, v8
 
     if-ge v9, v10, :cond_b8
 
-    .line 5907
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -35695,18 +26600,12 @@
 
     const-string v1, " "
 
-    .line 5907
-    .end local v1    # "cpuFreqTimes":[J
-    .local v397, "cpuFreqTimes":[J
     invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-object/16 v398, v2
 
     aget-wide v1, v8, v9
 
-    .line 5907
-    .end local v2    # "screenOffCpuFreqTimes":[J
-    .local v398, "screenOffCpuFreqTimes":[J
     invoke-virtual {v10, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -35715,7 +26614,6 @@
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5906
     add-int/lit8 v9, v9, 0x1
 
     move-object/from16 v1, v397
@@ -35724,22 +26622,11 @@
 
     goto :goto_76
 
-    .line 5909
-    .end local v9    # "i":I
-    .end local v397    # "cpuFreqTimes":[J
-    .end local v398    # "screenOffCpuFreqTimes":[J
-    .restart local v1    # "cpuFreqTimes":[J
-    .restart local v2    # "screenOffCpuFreqTimes":[J
     :cond_b8
     move-object/16 v397, v1
 
     move-object/16 v398, v2
 
-    .line 5909
-    .end local v1    # "cpuFreqTimes":[J
-    .end local v2    # "screenOffCpuFreqTimes":[J
-    .restart local v397    # "cpuFreqTimes":[J
-    .restart local v398    # "screenOffCpuFreqTimes":[J
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -35748,36 +26635,22 @@
 
     goto :goto_77
 
-    .line 5912
-    .end local v397    # "cpuFreqTimes":[J
-    .end local v398    # "screenOffCpuFreqTimes":[J
-    .restart local v1    # "cpuFreqTimes":[J
-    .restart local v2    # "screenOffCpuFreqTimes":[J
     :cond_b9
     move-object/16 v397, v1
 
     move-object/16 v398, v2
 
-    .line 5912
-    .end local v1    # "cpuFreqTimes":[J
-    .end local v2    # "screenOffCpuFreqTimes":[J
-    .restart local v397    # "cpuFreqTimes":[J
-    .restart local v398    # "screenOffCpuFreqTimes":[J
     :goto_77
     invoke-virtual {v7, v0, v6}, Landroid/os/BatteryStats$Uid;->getScreenOffCpuFreqTimes(II)[J
 
     move-result-object v1
 
-    .line 5913
-    .local v1, "screenOffCpuTimes":[J
     if-eqz v1, :cond_bb
 
-    .line 5914
     const/4 v2, 0x0
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5915
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -35802,17 +26675,13 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5917
     const/4 v2, 0x0
 
-    .line 5917
-    .local v2, "i":I
     :goto_78
     array-length v9, v1
 
     if-ge v2, v9, :cond_ba
 
-    .line 5918
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -35825,9 +26694,6 @@
 
     aget-wide v10, v1, v2
 
-    .line 5918
-    .end local v11    # "uidActivity":Z
-    .local v399, "uidActivity":Z
     invoke-virtual {v9, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -35836,43 +26702,26 @@
 
     invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5917
     add-int/lit8 v2, v2, 0x1
 
     move/from16 v11, v399
 
     goto :goto_78
 
-    .line 5920
-    .end local v2    # "i":I
-    .end local v399    # "uidActivity":Z
-    .restart local v11    # "uidActivity":Z
     :cond_ba
     move/16 v399, v11
 
-    .line 5920
-    .end local v11    # "uidActivity":Z
-    .restart local v399    # "uidActivity":Z
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5920
-    .end local v1    # "screenOffCpuTimes":[J
-    .end local v8    # "cpuTimes":[J
     goto :goto_79
 
-    .line 5900
-    .end local v399    # "uidActivity":Z
-    .restart local v11    # "uidActivity":Z
     :cond_bb
     move/16 v399, v11
 
-    .line 5900
-    .end local v11    # "uidActivity":Z
-    .restart local v399    # "uidActivity":Z
     :goto_79
     add-int/lit8 v6, v6, 0x1
 
@@ -35884,14 +26733,6 @@
 
     goto/16 :goto_75
 
-    .line 5924
-    .end local v6    # "procState":I
-    .end local v397    # "cpuFreqTimes":[J
-    .end local v398    # "screenOffCpuFreqTimes":[J
-    .end local v399    # "uidActivity":Z
-    .local v1, "cpuFreqTimes":[J
-    .local v2, "screenOffCpuFreqTimes":[J
-    .restart local v11    # "uidActivity":Z
     :cond_bc
     move-object/16 v397, v1
 
@@ -35899,87 +26740,57 @@
 
     move/16 v399, v11
 
-    .line 5925
-    .end local v1    # "cpuFreqTimes":[J
-    .end local v2    # "screenOffCpuFreqTimes":[J
-    .end local v11    # "uidActivity":Z
-    .restart local v397    # "cpuFreqTimes":[J
-    .restart local v398    # "screenOffCpuFreqTimes":[J
-    .restart local v399    # "uidActivity":Z
     invoke-virtual {v7}, Landroid/os/BatteryStats$Uid;->getProcessStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 5926
-    .local v1, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
 
     add-int/lit8 v2, v2, -0x1
 
-    .line 5926
-    .local v2, "ipr":I
     :goto_7a
     if-ltz v2, :cond_cc
 
-    .line 5927
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/os/BatteryStats$Uid$Proc;
 
-    .line 5934
-    .local v6, "ps":Landroid/os/BatteryStats$Uid$Proc;
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getUserTime(I)J
 
     move-result-wide v8
 
-    .line 5935
-    .local v8, "userTime":J
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getSystemTime(I)J
 
     move-result-wide v10
 
-    .line 5936
-    .local v10, "systemTime":J
     move-wide/16 v400, v12
 
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getForegroundTime(I)J
 
     move-result-wide v12
 
-    .line 5937
-    .local v12, "foregroundTime":J
-    .local v400, "userCpuTimeUs":J
     move-wide/16 v402, v14
 
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getStarts(I)I
 
     move-result v14
 
-    .line 5938
-    .local v14, "starts":I
-    .local v402, "systemCpuTimeUs":J
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getNumCrashes(I)I
 
     move-result v15
 
-    .line 5939
-    .local v15, "numCrashes":I
     move-object/16 v404, v7
 
     invoke-virtual {v6, v0}, Landroid/os/BatteryStats$Uid$Proc;->getNumAnrs(I)I
 
     move-result v7
 
-    .line 5940
-    .local v7, "numAnrs":I
-    .local v404, "u":Landroid/os/BatteryStats$Uid;
     if-nez v0, :cond_bd
 
-    .line 5941
     invoke-virtual {v6}, Landroid/os/BatteryStats$Uid$Proc;->countExcessivePowers()I
 
     move-result v97
@@ -35992,8 +26803,6 @@
     :goto_7b
     move/16 v405, v97
 
-    .line 5943
-    .local v405, "numExcessive":I
     cmp-long v97, v8, v27
 
     if-nez v97, :cond_bf
@@ -36012,43 +26821,20 @@
 
     if-nez v0, :cond_c0
 
-    .end local v405    # "numExcessive":I
-    .local v0, "numExcessive":I
     if-nez v15, :cond_c0
 
     if-eqz v7, :cond_be
 
     goto :goto_7c
 
-    .line 5926
-    .end local v0    # "numExcessive":I
-    .end local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v7    # "numAnrs":I
-    .end local v8    # "userTime":J
-    .end local v10    # "systemTime":J
-    .end local v12    # "foregroundTime":J
-    .end local v14    # "starts":I
-    .end local v15    # "numCrashes":I
     :cond_be
     move-object/16 v407, v1
 
     goto/16 :goto_83
 
-    .line 5945
-    .restart local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v7    # "numAnrs":I
-    .restart local v8    # "userTime":J
-    .restart local v10    # "systemTime":J
-    .restart local v12    # "foregroundTime":J
-    .restart local v14    # "starts":I
-    .restart local v15    # "numCrashes":I
-    .restart local v405    # "numExcessive":I
     :cond_bf
     move/from16 v0, v405
 
-    .line 5945
-    .end local v405    # "numExcessive":I
-    .restart local v0    # "numExcessive":I
     :cond_c0
     :goto_7c
     move-object/16 v406, v6
@@ -36057,16 +26843,12 @@
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 5946
-    .end local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .local v406, "ps":Landroid/os/BatteryStats$Uid$Proc;
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v6, "    Proc "
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5947
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -36079,35 +26861,30 @@
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5948
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v6, "      CPU: "
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5949
     invoke-static {v3, v8, v9}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
     const-string/jumbo v6, "usr + "
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5950
     invoke-static {v3, v10, v11}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
     const-string v6, "krn ; "
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5951
     invoke-static {v3, v12, v13}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
     const-string v6, "fg"
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5952
     if-nez v14, :cond_c2
 
     if-nez v15, :cond_c2
@@ -36116,13 +26893,11 @@
 
     goto :goto_7d
 
-    .line 5973
     :cond_c1
     move-object/16 v407, v1
 
     goto :goto_7f
 
-    .line 5953
     :cond_c2
     :goto_7d
     const-string v6, "\n"
@@ -36135,74 +26910,52 @@
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5954
     const/4 v6, 0x0
 
-    .line 5955
-    .local v6, "hasOne":Z
     if-eqz v14, :cond_c3
 
-    .line 5956
     const/4 v6, 0x1
 
-    .line 5957
     invoke-virtual {v3, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-object/16 v407, v1
 
     const-string v1, " starts"
 
-    .line 5957
-    .end local v1    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .local v407, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_7e
 
-    .line 5959
-    .end local v407    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v1    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     :cond_c3
     move-object/16 v407, v1
 
-    .line 5959
-    .end local v1    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .restart local v407    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     :goto_7e
     if-eqz v15, :cond_c5
 
-    .line 5960
     if-eqz v6, :cond_c4
 
-    .line 5961
     const-string v1, ", "
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5963
     :cond_c4
     const/4 v6, 0x1
 
-    .line 5964
     invoke-virtual {v3, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, " crashes"
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5966
     :cond_c5
     if-eqz v7, :cond_c7
 
-    .line 5967
     if-eqz v6, :cond_c6
 
-    .line 5968
     const-string v1, ", "
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5970
     :cond_c6
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -36210,8 +26963,6 @@
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5973
-    .end local v6    # "hasOne":Z
     :cond_c7
     :goto_7f
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -36220,15 +26971,11 @@
 
     invoke-virtual {v4, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5974
     const/4 v1, 0x0
 
-    .line 5974
-    .local v1, "e":I
     :goto_80
     if-ge v1, v0, :cond_cb
 
-    .line 5975
     move/16 v408, v0
 
     move-object/from16 v6, v406
@@ -36237,26 +26984,16 @@
 
     move-result-object v0
 
-    .line 5976
-    .end local v406    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .local v0, "ew":Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;
-    .local v6, "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .local v408, "numExcessive":I
     if-eqz v0, :cond_c9
 
-    .line 5977
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     move-object/16 v409, v6
 
     const-string v6, "      * Killed for "
 
-    .line 5977
-    .end local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .local v409, "ps":Landroid/os/BatteryStats$Uid$Proc;
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5978
     iget v6, v0, Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;->type:I
 
     move/16 v410, v7
@@ -36265,60 +27002,46 @@
 
     if-ne v6, v7, :cond_c8
 
-    .line 5979
-    .end local v7    # "numAnrs":I
-    .local v410, "numAnrs":I
     const-string v6, "cpu"
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto :goto_81
 
-    .line 5981
     :cond_c8
     const-string/jumbo v6, "unknown"
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5983
     :goto_81
     const-string v6, " use: "
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5984
     move-wide/16 v411, v8
 
     iget-wide v7, v0, Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;->usedTime:J
 
-    .line 5984
-    .end local v8    # "userTime":J
-    .local v411, "userTime":J
     invoke-static {v7, v8, v4}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 5985
     const-string v6, " over "
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5986
     iget-wide v6, v0, Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;->overTime:J
 
     invoke-static {v6, v7, v4}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;)V
 
-    .line 5987
     iget-wide v6, v0, Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;->overTime:J
 
     cmp-long v6, v6, v27
 
     if-eqz v6, :cond_ca
 
-    .line 5988
     const-string v6, " ("
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5989
     iget-wide v6, v0, Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;->usedTime:J
 
     const-wide/16 v8, 0x64
@@ -36331,22 +27054,12 @@
 
     invoke-virtual {v4, v6, v7}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 5990
     const-string v6, "%)"
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5990
-    .end local v0    # "ew":Landroid/os/BatteryStats$Uid$Proc$ExcessivePower;
     goto :goto_82
 
-    .line 5974
-    .end local v409    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v410    # "numAnrs":I
-    .end local v411    # "userTime":J
-    .restart local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v7    # "numAnrs":I
-    .restart local v8    # "userTime":J
     :cond_c9
     move-object/16 v409, v6
 
@@ -36354,13 +27067,6 @@
 
     move-wide/16 v411, v8
 
-    .line 5974
-    .end local v6    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v7    # "numAnrs":I
-    .end local v8    # "userTime":J
-    .restart local v409    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v410    # "numAnrs":I
-    .restart local v411    # "userTime":J
     :cond_ca
     :goto_82
     add-int/lit8 v1, v1, 0x1
@@ -36375,16 +27081,6 @@
 
     goto :goto_80
 
-    .line 5994
-    .end local v1    # "e":I
-    .end local v408    # "numExcessive":I
-    .end local v409    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v410    # "numAnrs":I
-    .end local v411    # "userTime":J
-    .local v0, "numExcessive":I
-    .restart local v7    # "numAnrs":I
-    .restart local v8    # "userTime":J
-    .restart local v406    # "ps":Landroid/os/BatteryStats$Uid$Proc;
     :cond_cb
     move/16 v408, v0
 
@@ -36394,33 +27090,10 @@
 
     move-object/16 v409, v406
 
-    .line 5994
-    .end local v0    # "numExcessive":I
-    .end local v7    # "numAnrs":I
-    .end local v8    # "userTime":J
-    .end local v406    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v408    # "numExcessive":I
-    .restart local v409    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .restart local v410    # "numAnrs":I
-    .restart local v411    # "userTime":J
     const/4 v0, 0x1
 
-    .line 5926
-    .end local v10    # "systemTime":J
-    .end local v12    # "foregroundTime":J
-    .end local v14    # "starts":I
-    .end local v15    # "numCrashes":I
-    .end local v399    # "uidActivity":Z
-    .end local v408    # "numExcessive":I
-    .end local v409    # "ps":Landroid/os/BatteryStats$Uid$Proc;
-    .end local v410    # "numAnrs":I
-    .end local v411    # "userTime":J
-    .local v0, "uidActivity":Z
     move/16 v399, v0
 
-    .line 5926
-    .end local v0    # "uidActivity":Z
-    .restart local v399    # "uidActivity":Z
     :goto_83
     add-int/lit8 v2, v2, -0x1
 
@@ -36436,16 +27109,6 @@
 
     goto/16 :goto_7a
 
-    .line 5998
-    .end local v2    # "ipr":I
-    .end local v400    # "userCpuTimeUs":J
-    .end local v402    # "systemCpuTimeUs":J
-    .end local v404    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v407    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .local v1, "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .local v7, "u":Landroid/os/BatteryStats$Uid;
-    .local v12, "userCpuTimeUs":J
-    .local v14, "systemCpuTimeUs":J
     :cond_cc
     move-object/16 v407, v1
 
@@ -36455,25 +27118,12 @@
 
     move-wide/16 v402, v14
 
-    .line 5999
-    .end local v1    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v7    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v12    # "userCpuTimeUs":J
-    .end local v14    # "systemCpuTimeUs":J
-    .restart local v400    # "userCpuTimeUs":J
-    .restart local v402    # "systemCpuTimeUs":J
-    .restart local v404    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v407    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
     move-object/from16 v0, v404
 
     invoke-virtual {v0}, Landroid/os/BatteryStats$Uid;->getPackageStats()Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    .line 6000
-    .end local v404    # "u":Landroid/os/BatteryStats$Uid;
-    .local v0, "u":Landroid/os/BatteryStats$Uid;
-    .local v1, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
@@ -36482,14 +27132,9 @@
 
     move/from16 v6, v399
 
-    .line 6000
-    .end local v399    # "uidActivity":Z
-    .local v2, "ipkg":I
-    .local v6, "uidActivity":Z
     :goto_84
     if-ltz v2, :cond_d2
 
-    .line 6001
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v7, "    Apk "
@@ -36504,49 +27149,37 @@
 
     invoke-virtual {v4, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6002
     const-string v7, ":"
 
     invoke-virtual {v4, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6003
     const/4 v7, 0x0
 
-    .line 6004
-    .local v7, "apkActivity":Z
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/os/BatteryStats$Uid$Pkg;
 
-    .line 6005
-    .local v8, "ps":Landroid/os/BatteryStats$Uid$Pkg;
     invoke-virtual {v8}, Landroid/os/BatteryStats$Uid$Pkg;->getWakeupAlarmStats()Landroid/util/ArrayMap;
 
     move-result-object v9
 
-    .line 6006
-    .local v9, "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     invoke-virtual {v9}, Landroid/util/ArrayMap;->size()I
 
     move-result v10
 
     add-int/lit8 v10, v10, -0x1
 
-    .line 6006
-    .local v10, "iwa":I
     :goto_85
     if-ltz v10, :cond_cd
 
-    .line 6007
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v11, "      Wakeup alarm "
 
     invoke-virtual {v4, v11}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6008
     invoke-virtual {v9, v10}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -36559,7 +27192,6 @@
 
     invoke-virtual {v4, v11}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 6009
     invoke-virtual {v9, v10}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -36574,21 +27206,16 @@
 
     invoke-virtual {v4, v11}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 6010
     const-string v11, " times"
 
     invoke-virtual {v4, v11}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6011
     const/4 v7, 0x1
 
-    .line 6006
     add-int/lit8 v10, v10, -0x1
 
     goto :goto_85
 
-    .line 6013
-    .end local v10    # "iwa":I
     :cond_cd
     move/from16 v12, p4
 
@@ -36596,55 +27223,39 @@
 
     move-result-object v10
 
-    .line 6014
-    .local v10, "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
     invoke-virtual {v10}, Landroid/util/ArrayMap;->size()I
 
     move-result v11
 
     add-int/lit8 v11, v11, -0x1
 
-    .line 6014
-    .local v11, "isvc":I
     :goto_86
     if-ltz v11, :cond_d0
 
-    .line 6015
     invoke-virtual {v10, v11}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Landroid/os/BatteryStats$Uid$Pkg$Serv;
 
-    .line 6016
-    .local v13, "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
     move-wide/from16 v14, v160
 
     invoke-virtual {v13, v14, v15, v12}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getStartTime(JI)J
 
     move-result-wide v160
 
-    .line 6017
-    .local v14, "batteryUptime":J
-    .local v160, "startTime":J
     move-object/16 v413, v0
 
     invoke-virtual {v13, v12}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getStarts(I)I
 
     move-result v0
 
-    .line 6018
-    .local v0, "starts":I
-    .local v413, "u":Landroid/os/BatteryStats$Uid;
     move-object/16 v414, v1
 
     invoke-virtual {v13, v12}, Landroid/os/BatteryStats$Uid$Pkg$Serv;->getLaunches(I)I
 
     move-result v1
 
-    .line 6019
-    .local v1, "launches":I
-    .local v414, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     cmp-long v97, v160, v27
 
     if-nez v97, :cond_cf
@@ -36655,11 +27266,6 @@
 
     goto :goto_87
 
-    .line 6014
-    .end local v0    # "starts":I
-    .end local v1    # "launches":I
-    .end local v13    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .end local v160    # "startTime":J
     :cond_ce
     move-object/16 v415, v8
 
@@ -36667,11 +27273,6 @@
 
     goto :goto_88
 
-    .line 6020
-    .restart local v0    # "starts":I
-    .restart local v1    # "launches":I
-    .restart local v13    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .restart local v160    # "startTime":J
     :cond_cf
     :goto_87
     move-object/16 v415, v8
@@ -36680,16 +27281,12 @@
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 6021
-    .end local v8    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .local v415, "ps":Landroid/os/BatteryStats$Uid$Pkg;
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, "      Service "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6022
     invoke-virtual {v10, v11}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -36702,66 +27299,46 @@
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6023
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, "        Created for: "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6024
     move-object/16 v416, v9
 
     div-long v8, v160, v16
 
-    .line 6024
-    .end local v9    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .local v416, "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     invoke-static {v3, v8, v9}, Landroid/os/BatteryStats;->formatTimeMs(Ljava/lang/StringBuilder;J)V
 
-    .line 6025
     const-string/jumbo v8, "uptime\n"
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6026
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, "        Starts: "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6027
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 6028
     const-string v8, ", launches: "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 6029
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v4, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6030
     const/4 v0, 0x1
 
-    .line 6014
-    .end local v1    # "launches":I
-    .end local v7    # "apkActivity":Z
-    .end local v13    # "ss":Landroid/os/BatteryStats$Uid$Pkg$Serv;
-    .end local v160    # "startTime":J
-    .local v0, "apkActivity":Z
     move v7, v0
 
-    .line 6014
-    .end local v0    # "apkActivity":Z
-    .restart local v7    # "apkActivity":Z
     :goto_88
     add-int/lit8 v11, v11, -0x1
 
@@ -36777,18 +27354,6 @@
 
     goto/16 :goto_86
 
-    .line 6033
-    .end local v11    # "isvc":I
-    .end local v14    # "batteryUptime":J
-    .end local v413    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v414    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v415    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .end local v416    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .local v0, "u":Landroid/os/BatteryStats$Uid;
-    .local v1, "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v8    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .restart local v9    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .local v160, "batteryUptime":J
     :cond_d0
     move-object/16 v413, v0
 
@@ -36800,35 +27365,17 @@
 
     move-wide/from16 v14, v160
 
-    .line 6033
-    .end local v0    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v1    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v8    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .end local v9    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
-    .end local v160    # "batteryUptime":J
-    .restart local v14    # "batteryUptime":J
-    .restart local v413    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v414    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v415    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .restart local v416    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     if-nez v7, :cond_d1
 
-    .line 6034
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "      (nothing executed)"
 
     invoke-virtual {v4, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6036
     :cond_d1
     const/4 v6, 0x1
 
-    .line 6000
-    .end local v7    # "apkActivity":Z
-    .end local v10    # "serviceStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg$Serv;>;"
-    .end local v415    # "ps":Landroid/os/BatteryStats$Uid$Pkg;
-    .end local v416    # "alarms":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Counter;>;"
     add-int/lit8 v2, v2, -0x1
 
     move-wide/from16 v160, v14
@@ -36839,14 +27386,6 @@
 
     goto/16 :goto_84
 
-    .line 6038
-    .end local v2    # "ipkg":I
-    .end local v14    # "batteryUptime":J
-    .end local v413    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v414    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v0    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v1    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .restart local v160    # "batteryUptime":J
     :cond_d2
     move-object/16 v413, v0
 
@@ -36856,74 +27395,18 @@
 
     move/from16 v12, p4
 
-    .line 6038
-    .end local v0    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v1    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
-    .end local v160    # "batteryUptime":J
-    .restart local v14    # "batteryUptime":J
-    .restart local v413    # "u":Landroid/os/BatteryStats$Uid;
-    .restart local v414    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     if-nez v6, :cond_d3
 
-    .line 6039
     invoke-virtual/range {p2 .. p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "    (nothing executed)"
 
     invoke-virtual {v4, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5283
-    .end local v6    # "uidActivity":Z
-    .end local v125    # "mobileTxBytes":J
-    .end local v129    # "mobileTxPackets":J
-    .end local v131    # "totalWindowWakelock":J
-    .end local v133    # "wifiRxBytes":J
-    .end local v135    # "uidMobileActiveTime":J
-    .end local v139    # "wifiTxPackets":J
-    .end local v141    # "fullWifiLockOnTime":J
-    .end local v143    # "wifiRxPackets":J
-    .end local v145    # "wifiScanTime":J
-    .end local v147    # "wifiTxBytes":J
-    .end local v149    # "bleTimer":Landroid/os/BatteryStats$Timer;
-    .end local v150    # "btRxBytes":J
-    .end local v152    # "btTxBytes":J
-    .end local v154    # "mobileRxPackets":J
-    .end local v156    # "totalFullWakelock":J
-    .end local v162    # "wifiScanCount":I
-    .end local v163    # "wifiScanCountBg":I
-    .end local v167    # "uidMobileActiveCount":I
-    .end local v169    # "mobileRxBytes":J
-    .end local v171    # "wifiScanActualTime":J
-    .end local v173    # "wifiScanActualTimeBg":J
-    .end local v175    # "wifiWakeup":J
-    .end local v177    # "countWakelock":I
-    .end local v178    # "totalPartialWakelock":J
-    .end local v180    # "totalDrawWakelock":J
-    .end local v182    # "uidWifiRunningTime":J
-    .end local v184    # "mobileWakeup":J
-    .end local v186    # "wakelocks":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Wakelock;>;"
-    .end local v187    # "sensors":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid$Sensor;>;"
-    .end local v357    # "mcTimer":Landroid/os/BatteryStats$Timer;
-    .end local v366    # "syncs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v373    # "jobs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v375    # "uid":I
-    .end local v376    # "completions":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/SparseIntArray;>;"
-    .end local v394    # "NSE":I
-    .end local v395    # "totalStateTime":J
-    .end local v397    # "cpuFreqTimes":[J
-    .end local v398    # "screenOffCpuFreqTimes":[J
-    .end local v400    # "userCpuTimeUs":J
-    .end local v402    # "systemCpuTimeUs":J
-    .end local v407    # "processStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Proc;>;"
-    .end local v413    # "u":Landroid/os/BatteryStats$Uid;
-    .end local v414    # "packageStats":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;+Landroid/os/BatteryStats$Uid$Pkg;>;"
     :cond_d3
     :goto_89
     add-int/lit8 v0, v168, 0x1
 
-    .line 5283
-    .end local v168    # "iu":I
-    .local v0, "iu":I
     move-object v13, v4
 
     move-wide/from16 v160, v14
@@ -36954,28 +27437,6 @@
 
     goto/16 :goto_37
 
-    .line 6046
-    .end local v0    # "iu":I
-    .end local v123    # "mobileActiveTime":J
-    .end local v127    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v128    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v137    # "whichBatteryRealtime":J
-    .end local v159    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v166    # "cpuFreqs":[J
-    .end local v380    # "NU":I
-    .end local v388    # "rawRealtimeMs":J
-    .end local v392    # "rawRealtime":J
-    .local v3, "rawRealtime":J
-    .local v5, "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .local v12, "NU":I
-    .local v14, "sb":Ljava/lang/StringBuilder;
-    .local v15, "cpuFreqs":[J
-    .restart local v160    # "batteryUptime":J
-    .local v167, "rawRealtimeMs":J
-    .restart local v172    # "mobileActiveTime":J
-    .local v177, "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v217    # "whichBatteryRealtime":J
     :cond_d4
     move-wide/16 v392, v3
 
@@ -37005,38 +27466,14 @@
 
     move/from16 v12, p4
 
-    .end local v5    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .end local v12    # "NU":I
-    .end local v15    # "cpuFreqs":[J
-    .end local v160    # "batteryUptime":J
-    .end local v167    # "rawRealtimeMs":J
-    .end local v172    # "mobileActiveTime":J
-    .end local v177    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .end local v216    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .end local v217    # "whichBatteryRealtime":J
-    .local v3, "sb":Ljava/lang/StringBuilder;
-    .local v14, "batteryUptime":J
-    .restart local v123    # "mobileActiveTime":J
-    .restart local v127    # "rpmStats":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v128    # "mMemoryStats":Landroid/util/LongSparseArray;, "Landroid/util/LongSparseArray<+Landroid/os/BatteryStats$Timer;>;"
-    .restart local v137    # "whichBatteryRealtime":J
-    .restart local v159    # "uidStats":Landroid/util/SparseArray;, "Landroid/util/SparseArray<+Landroid/os/BatteryStats$Uid;>;"
-    .restart local v166    # "cpuFreqs":[J
-    .restart local v380    # "NU":I
-    .restart local v388    # "rawRealtimeMs":J
-    .restart local v392    # "rawRealtime":J
     const/4 v0, 0x0
 
-    .line 6048
-    .local v0, "iSSDM845":Z
     const-string/jumbo v1, "ro.board.platform"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6049
-    .local v1, "platformStr":Ljava/lang/String;
     const-string/jumbo v2, "sdm845"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -37053,17 +27490,14 @@
 
     if-eqz v2, :cond_d6
 
-    .line 6050
     :cond_d5
     const/4 v0, 0x1
 
-    .line 6052
     :cond_d6
     const-string v2, "\n**** RPM_STATS ****\n"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6053
     if-eqz v0, :cond_d7
 
     const-string v2, "/d/rpmh/stats"
@@ -37078,17 +27512,14 @@
 
     invoke-direct {v6, v4, v2}, Landroid/os/BatteryStats;->dumpRPMStatsLocked(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 6054
     const-string v2, "**** RPM_STATS ****"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6056
     const-string v2, "\n**** RPM_MASTER_STATS ****\n"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6057
     if-eqz v0, :cond_d8
 
     const-string v2, "/d/rpmh/master_stats"
@@ -37101,17 +27532,14 @@
     :goto_8b
     invoke-direct {v6, v4, v2}, Landroid/os/BatteryStats;->dumpRPMStatsLocked(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 6058
     const-string v2, "**** RPM_MASTER_STATS ****"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6063
     const-string v2, "\n**** CLK_ENABLED_LIST ****\n"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6064
     if-eqz v0, :cond_d9
 
     const-string v2, "/d/clk/clk_enabled_list"
@@ -37124,12 +27552,10 @@
     :goto_8c
     invoke-direct {v6, v4, v2}, Landroid/os/BatteryStats;->dumpRPMStatsLocked(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 6065
     const-string v2, "**** CLK_ENABLED_LIST ****"
 
     invoke-virtual {v4, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 6066
     return-void
 
     nop
@@ -37156,10 +27582,6 @@
 
 .method public dumpProtoLocked(Landroid/content/Context;Ljava/io/FileDescriptor;Ljava/util/List;IJ)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "fd"    # Ljava/io/FileDescriptor;
-    .param p4, "flags"    # I
-    .param p5, "histStart"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -37171,31 +27593,22 @@
         }
     .end annotation
 
-    .line 7154
-    .local p3, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     new-instance v0, Landroid/util/proto/ProtoOutputStream;
 
     invoke-direct {v0, p2}, Landroid/util/proto/ProtoOutputStream;-><init>(Ljava/io/FileDescriptor;)V
 
-    .line 7155
-    .local v0, "proto":Landroid/util/proto/ProtoOutputStream;
     invoke-virtual {p0}, Landroid/os/BatteryStats;->prepareForDumpLocked()V
 
-    .line 7157
     and-int/lit8 v1, p4, 0x18
 
     if-eqz v1, :cond_0
 
-    .line 7158
     invoke-direct {p0, v0, p4, p5, p6}, Landroid/os/BatteryStats;->dumpProtoHistoryLocked(Landroid/util/proto/ProtoOutputStream;IJ)V
 
-    .line 7159
     invoke-virtual {v0}, Landroid/util/proto/ProtoOutputStream;->flush()V
 
-    .line 7160
     return-void
 
-    .line 7163
     :cond_0
     const-wide v1, 0x10b00000001L
 
@@ -37203,15 +27616,12 @@
 
     move-result-wide v1
 
-    .line 7165
-    .local v1, "bToken":J
     const-wide v3, 0x10500000001L
 
     const/16 v5, 0x20
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7166
     const-wide v3, 0x10300000002L
 
     invoke-virtual {p0}, Landroid/os/BatteryStats;->getParcelVersion()I
@@ -37220,7 +27630,6 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 7167
     const-wide v3, 0x10900000003L
 
     invoke-virtual {p0}, Landroid/os/BatteryStats;->getStartPlatformVersion()Ljava/lang/String;
@@ -37229,7 +27638,6 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7168
     const-wide v3, 0x10900000004L
 
     invoke-virtual {p0}, Landroid/os/BatteryStats;->getEndPlatformVersion()Ljava/lang/String;
@@ -37238,12 +27646,10 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 7170
     and-int/lit8 v3, p4, 0x4
 
     if-nez v3, :cond_2
 
-    .line 7171
     new-instance v3, Lcom/android/internal/os/BatteryStatsHelper;
 
     and-int/lit8 v4, p4, 0x40
@@ -37262,30 +27668,21 @@
     :goto_0
     invoke-direct {v3, p1, v5, v4}, Lcom/android/internal/os/BatteryStatsHelper;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 7173
-    .local v3, "helper":Lcom/android/internal/os/BatteryStatsHelper;
     invoke-virtual {v3, p0}, Lcom/android/internal/os/BatteryStatsHelper;->create(Landroid/os/BatteryStats;)V
 
-    .line 7174
     const/4 v4, -0x1
 
     invoke-virtual {v3, v5, v4}, Lcom/android/internal/os/BatteryStatsHelper;->refreshStats(II)V
 
-    .line 7176
     invoke-direct {p0, v0, v3, p3}, Landroid/os/BatteryStats;->dumpProtoAppsLocked(Landroid/util/proto/ProtoOutputStream;Lcom/android/internal/os/BatteryStatsHelper;Ljava/util/List;)V
 
-    .line 7177
     invoke-direct {p0, v0, v3}, Landroid/os/BatteryStats;->dumpProtoSystemLocked(Landroid/util/proto/ProtoOutputStream;Lcom/android/internal/os/BatteryStatsHelper;)V
 
-    .line 7180
-    .end local v3    # "helper":Lcom/android/internal/os/BatteryStatsHelper;
     :cond_2
     invoke-virtual {v0, v1, v2}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 7181
     invoke-virtual {v0}, Landroid/util/proto/ProtoOutputStream;->flush()V
 
-    .line 7182
     return-void
 .end method
 
@@ -37297,23 +27694,19 @@
 
 .method final formatBytesLocked(J)Ljava/lang/String;
     .locals 8
-    .param p1, "bytes"    # J
 
-    .line 3034
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3036
     const-wide/16 v2, 0x400
 
     cmp-long v0, p1, v2
 
     if-gez v0, :cond_0
 
-    .line 3037
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -37330,7 +27723,6 @@
 
     return-object v0
 
-    .line 3038
     :cond_0
     const-wide/32 v2, 0x100000
 
@@ -37340,7 +27732,6 @@
 
     if-gez v0, :cond_1
 
-    .line 3039
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatter:Ljava/util/Formatter;
 
     const-string v3, "%.2fKB"
@@ -37361,7 +27752,6 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 3040
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -37370,7 +27760,6 @@
 
     return-object v0
 
-    .line 3041
     :cond_1
     const-wide/32 v3, 0x40000000
 
@@ -37378,7 +27767,6 @@
 
     if-gez v0, :cond_2
 
-    .line 3042
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatter:Ljava/util/Formatter;
 
     const-string v3, "%.2fMB"
@@ -37399,7 +27787,6 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 3043
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -37408,7 +27795,6 @@
 
     return-object v0
 
-    .line 3045
     :cond_2
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatter:Ljava/util/Formatter;
 
@@ -37430,7 +27816,6 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 3046
     iget-object v0, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -37442,22 +27827,17 @@
 
 .method public final formatRatioLocked(JJ)Ljava/lang/String;
     .locals 6
-    .param p1, "num"    # J
-    .param p3, "den"    # J
 
-    .line 3024
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
 
     if-nez v0, :cond_0
 
-    .line 3025
     const-string v0, "--%"
 
     return-object v0
 
-    .line 3027
     :cond_0
     long-to-float v0, p1
 
@@ -37469,15 +27849,12 @@
 
     mul-float/2addr v0, v1
 
-    .line 3028
-    .local v0, "perc":F
     iget-object v1, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 3029
     iget-object v1, p0, Landroid/os/BatteryStats;->mFormatter:Ljava/util/Formatter;
 
     const-string v3, "%.1f%%"
@@ -37494,7 +27871,6 @@
 
     invoke-virtual {v1, v3, v4}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 3030
     iget-object v1, p0, Landroid/os/BatteryStats;->mFormatBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -37903,7 +28279,6 @@
 .method public prepareForDumpLocked()V
     .locals 0
 
-    .line 6161
     return-void
 .end method
 

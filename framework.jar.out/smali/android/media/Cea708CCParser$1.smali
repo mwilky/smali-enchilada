@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/Cea708CCParser;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/Cea708CCParser;
 
-    .line 198
     iput-object p1, p0, Landroid/media/Cea708CCParser$1;->this$0:Landroid/media/Cea708CCParser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,8 +36,6 @@
 # virtual methods
 .method public emitEvent(Landroid/media/Cea708CCParser$CaptionEvent;)V
     .locals 0
-    .param p1, "event"    # Landroid/media/Cea708CCParser$CaptionEvent;
 
-    .line 202
     return-void
 .end method

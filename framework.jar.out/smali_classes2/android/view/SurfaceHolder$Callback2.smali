@@ -23,15 +23,10 @@
 
 .method public surfaceRedrawNeededAsync(Landroid/view/SurfaceHolder;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "holder"    # Landroid/view/SurfaceHolder;
-    .param p2, "drawingFinished"    # Ljava/lang/Runnable;
 
-    .line 144
     invoke-interface {p0, p1}, Landroid/view/SurfaceHolder$Callback2;->surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
 
-    .line 145
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 146
     return-void
 .end method

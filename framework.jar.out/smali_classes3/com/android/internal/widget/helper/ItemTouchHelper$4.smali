@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/helper/ItemTouchHelper;Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/helper/ItemTouchHelper;
 
-    .line 668
     iput-object p1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iput-object p2, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->val$anim:Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 671
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper;->mRecyclerView:Lcom/android/internal/widget/RecyclerView;
@@ -74,7 +71,6 @@
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;->mViewHolder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
-    .line 673
     invoke-virtual {v0}, Lcom/android/internal/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
@@ -83,7 +79,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 674
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper;->mRecyclerView:Lcom/android/internal/widget/RecyclerView;
@@ -92,8 +87,6 @@
 
     move-result-object v0
 
-    .line 678
-    .local v0, "animator":Lcom/android/internal/widget/RecyclerView$ItemAnimator;
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
@@ -107,14 +100,12 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
-    .line 679
     invoke-virtual {v1}, Lcom/android/internal/widget/helper/ItemTouchHelper;->hasRunningRecoverAnim()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 680
     iget-object v1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v1, v1, Lcom/android/internal/widget/helper/ItemTouchHelper;->mCallback:Lcom/android/internal/widget/helper/ItemTouchHelper$Callback;
@@ -129,7 +120,6 @@
 
     goto :goto_0
 
-    .line 682
     :cond_1
     iget-object v1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$4;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
@@ -137,8 +127,6 @@
 
     invoke-virtual {v1, p0}, Lcom/android/internal/widget/RecyclerView;->post(Ljava/lang/Runnable;)Z
 
-    .line 685
-    .end local v0    # "animator":Lcom/android/internal/widget/RecyclerView$ItemAnimator;
     :cond_2
     :goto_0
     return-void

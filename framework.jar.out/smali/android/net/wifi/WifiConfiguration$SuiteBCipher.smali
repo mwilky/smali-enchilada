@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 362
     const-string v0, "ECDHE_ECDSA"
 
     const-string v1, "ECDHE_RSA"
@@ -45,7 +44,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

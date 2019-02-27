@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/UserControllerProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/UserControllerProto;
 
-    .line 11
     iput-object p1, p0, Lcom/android/server/am/UserControllerProto$User;->this$0:Lcom/android/server/am/UserControllerProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

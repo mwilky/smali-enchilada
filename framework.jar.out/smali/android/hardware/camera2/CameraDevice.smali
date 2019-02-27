@@ -49,7 +49,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +69,6 @@
 
 .method public createCaptureRequest(ILjava/util/Set;)Landroid/hardware/camera2/CaptureRequest$Builder;
     .locals 2
-    .param p1, "templateType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -87,8 +85,6 @@
         }
     .end annotation
 
-    .line 907
-    .local p2, "physicalCameraIdSet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"
@@ -100,14 +96,12 @@
 
 .method public createCaptureSession(Landroid/hardware/camera2/params/SessionConfiguration;)V
     .locals 2
-    .param p1, "config"    # Landroid/hardware/camera2/params/SessionConfiguration;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
         }
     .end annotation
 
-    .line 837
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "No default implementation"

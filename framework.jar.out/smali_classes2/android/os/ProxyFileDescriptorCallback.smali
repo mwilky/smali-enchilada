@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
         }
     .end annotation
 
-    .line 89
     new-instance v0, Landroid/system/ErrnoException;
 
     sget v1, Landroid/system/OsConstants;->EINVAL:I
@@ -43,7 +41,6 @@
         }
     .end annotation
 
-    .line 50
     new-instance v0, Landroid/system/ErrnoException;
 
     sget v1, Landroid/system/OsConstants;->EBADF:I
@@ -57,16 +54,12 @@
 
 .method public onRead(JI[B)I
     .locals 3
-    .param p1, "offset"    # J
-    .param p3, "size"    # I
-    .param p4, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
         }
     .end annotation
 
-    .line 65
     new-instance v0, Landroid/system/ErrnoException;
 
     sget v1, Landroid/system/OsConstants;->EBADF:I
@@ -83,16 +76,12 @@
 
 .method public onWrite(JI[B)I
     .locals 3
-    .param p1, "offset"    # J
-    .param p3, "size"    # I
-    .param p4, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
         }
     .end annotation
 
-    .line 79
     new-instance v0, Landroid/system/ErrnoException;
 
     sget v1, Landroid/system/OsConstants;->EBADF:I

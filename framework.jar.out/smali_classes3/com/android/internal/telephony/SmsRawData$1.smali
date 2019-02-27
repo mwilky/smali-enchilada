@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,22 +39,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/SmsRawData;
     .locals 3
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 34
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 35
-    .local v0, "size":I
     new-array v1, v0, [B
 
-    .line 36
-    .local v1, "data":[B
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readByteArray([B)V
 
-    .line 37
     new-instance v2, Lcom/android/internal/telephony/SmsRawData;
 
     invoke-direct {v2, v1}, Lcom/android/internal/telephony/SmsRawData;-><init>([B)V
@@ -66,7 +58,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 31
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SmsRawData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/SmsRawData;
 
     move-result-object p1
@@ -76,9 +67,7 @@
 
 .method public newArray(I)[Lcom/android/internal/telephony/SmsRawData;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 41
     new-array v0, p1, [Lcom/android/internal/telephony/SmsRawData;
 
     return-object v0
@@ -87,7 +76,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 31
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SmsRawData$1;->newArray(I)[Lcom/android/internal/telephony/SmsRawData;
 
     move-result-object p1

@@ -96,9 +96,7 @@
 
 .method public setGroupDividerEnabled(Z)V
     .locals 0
-    .param p1, "groupDividerEnabled"    # Z
 
-    .line 459
     return-void
 .end method
 

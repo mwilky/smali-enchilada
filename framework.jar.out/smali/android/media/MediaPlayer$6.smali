@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/media/MediaPlayer;)V
     .locals 0
 
-    .line 3739
     iput-object p1, p0, Landroid/media/MediaPlayer$6;->val$mp:Landroid/media/MediaPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 3743
     iget-object v0, p0, Landroid/media/MediaPlayer$6;->val$mp:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
 
-    .line 3744
     return-void
 .end method

@@ -29,26 +29,15 @@
 # direct methods
 .method public constructor <init>(FZIZIZIZ)V
     .locals 19
-    .param p1, "inputGain"    # F
-    .param p2, "preEqInUse"    # Z
-    .param p3, "preEqBandCount"    # I
-    .param p4, "mbcInUse"    # Z
-    .param p5, "mbcBandCount"    # I
-    .param p6, "postEqInUse"    # Z
-    .param p7, "postEqBandCount"    # I
-    .param p8, "limiterInUse"    # Z
 
     move-object/from16 v0, p0
 
-    .line 1055
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1056
     move/from16 v1, p1
 
     iput v1, v0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mInputGain:F
 
-    .line 1057
     new-instance v2, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     const/4 v3, 0x1
@@ -61,7 +50,6 @@
 
     iput-object v2, v0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1058
     new-instance v2, Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     move/from16 v6, p4
@@ -72,7 +60,6 @@
 
     iput-object v2, v0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
-    .line 1059
     new-instance v2, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     move/from16 v8, p6
@@ -83,7 +70,6 @@
 
     iput-object v2, v0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1061
     new-instance v2, Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
     const/4 v12, 0x1
@@ -108,23 +94,18 @@
 
     iput-object v2, v0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
-    .line 1065
     return-void
 .end method
 
 .method public constructor <init>(Landroid/media/audiofx/DynamicsProcessing$Channel;)V
     .locals 2
-    .param p1, "cfg"    # Landroid/media/audiofx/DynamicsProcessing$Channel;
 
-    .line 1071
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1072
     iget v0, p1, Landroid/media/audiofx/DynamicsProcessing$Channel;->mInputGain:F
 
     iput v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mInputGain:F
 
-    .line 1073
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     iget-object v1, p1, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
@@ -133,7 +114,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1074
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     iget-object v1, p1, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
@@ -142,7 +122,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
-    .line 1075
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     iget-object v1, p1, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
@@ -151,7 +130,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1076
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
     iget-object v1, p1, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
@@ -160,7 +138,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
-    .line 1077
     return-void
 .end method
 
@@ -169,7 +146,6 @@
 .method public getInputGain()F
     .locals 1
 
-    .line 1098
     iget v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mInputGain:F
 
     return v0
@@ -178,7 +154,6 @@
 .method public getLimiter()Landroid/media/audiofx/DynamicsProcessing$Limiter;
     .locals 1
 
-    .line 1221
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
     return-object v0
@@ -187,7 +162,6 @@
 .method public getMbc()Landroid/media/audiofx/DynamicsProcessing$Mbc;
     .locals 1
 
-    .line 1149
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     return-object v0
@@ -195,9 +169,7 @@
 
 .method public getMbcBand(I)Landroid/media/audiofx/DynamicsProcessing$MbcBand;
     .locals 1
-    .param p1, "band"    # I
 
-    .line 1169
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     invoke-virtual {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Mbc;->getBand(I)Landroid/media/audiofx/DynamicsProcessing$MbcBand;
@@ -210,7 +182,6 @@
 .method public getPostEq()Landroid/media/audiofx/DynamicsProcessing$Eq;
     .locals 1
 
-    .line 1185
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     return-object v0
@@ -218,9 +189,7 @@
 
 .method public getPostEqBand(I)Landroid/media/audiofx/DynamicsProcessing$EqBand;
     .locals 1
-    .param p1, "band"    # I
 
-    .line 1205
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBand(I)Landroid/media/audiofx/DynamicsProcessing$EqBand;
@@ -233,7 +202,6 @@
 .method public getPreEq()Landroid/media/audiofx/DynamicsProcessing$Eq;
     .locals 1
 
-    .line 1113
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     return-object v0
@@ -241,9 +209,7 @@
 
 .method public getPreEqBand(I)Landroid/media/audiofx/DynamicsProcessing$EqBand;
     .locals 1
-    .param p1, "band"    # I
 
-    .line 1133
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBand(I)Landroid/media/audiofx/DynamicsProcessing$EqBand;
@@ -255,35 +221,27 @@
 
 .method public setInputGain(F)V
     .locals 0
-    .param p1, "inputGain"    # F
 
-    .line 1105
     iput p1, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mInputGain:F
 
-    .line 1106
     return-void
 .end method
 
 .method public setLimiter(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V
     .locals 1
-    .param p1, "limiter"    # Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
-    .line 1228
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
     invoke-direct {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Limiter;-><init>(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
-    .line 1229
     return-void
 .end method
 
 .method public setMbc(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V
     .locals 3
-    .param p1, "mbc"    # Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
-    .line 1157
     invoke-virtual {p1}, Landroid/media/audiofx/DynamicsProcessing$Mbc;->getBandCount()I
 
     move-result v0
@@ -296,17 +254,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1161
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     invoke-direct {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Mbc;-><init>(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
-    .line 1162
     return-void
 
-    .line 1158
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -320,7 +275,6 @@
 
     iget-object v2, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
-    .line 1159
     invoke-virtual {v2}, Landroid/media/audiofx/DynamicsProcessing$Mbc;->getBandCount()I
 
     move-result v2
@@ -348,23 +302,17 @@
 
 .method public setMbcBand(ILandroid/media/audiofx/DynamicsProcessing$MbcBand;)V
     .locals 1
-    .param p1, "band"    # I
-    .param p2, "mbcBand"    # Landroid/media/audiofx/DynamicsProcessing$MbcBand;
 
-    .line 1177
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/audiofx/DynamicsProcessing$Mbc;->setBand(ILandroid/media/audiofx/DynamicsProcessing$MbcBand;)V
 
-    .line 1178
     return-void
 .end method
 
 .method public setPostEq(Landroid/media/audiofx/DynamicsProcessing$Eq;)V
     .locals 3
-    .param p1, "postEq"    # Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1193
     invoke-virtual {p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBandCount()I
 
     move-result v0
@@ -377,17 +325,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1197
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-direct {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;-><init>(Landroid/media/audiofx/DynamicsProcessing$Eq;)V
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1198
     return-void
 
-    .line 1194
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -401,7 +346,6 @@
 
     iget-object v2, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1195
     invoke-virtual {v2}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBandCount()I
 
     move-result v2
@@ -429,23 +373,17 @@
 
 .method public setPostEqBand(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V
     .locals 1
-    .param p1, "band"    # I
-    .param p2, "postEqBand"    # Landroid/media/audiofx/DynamicsProcessing$EqBand;
 
-    .line 1213
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/audiofx/DynamicsProcessing$Eq;->setBand(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V
 
-    .line 1214
     return-void
 .end method
 
 .method public setPreEq(Landroid/media/audiofx/DynamicsProcessing$Eq;)V
     .locals 3
-    .param p1, "preEq"    # Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1121
     invoke-virtual {p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBandCount()I
 
     move-result v0
@@ -458,17 +396,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1125
     new-instance v0, Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-direct {v0, p1}, Landroid/media/audiofx/DynamicsProcessing$Eq;-><init>(Landroid/media/audiofx/DynamicsProcessing$Eq;)V
 
     iput-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1126
     return-void
 
-    .line 1122
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -482,7 +417,6 @@
 
     iget-object v2, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
-    .line 1123
     invoke-virtual {v2}, Landroid/media/audiofx/DynamicsProcessing$Eq;->getBandCount()I
 
     move-result v2
@@ -510,28 +444,21 @@
 
 .method public setPreEqBand(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V
     .locals 1
-    .param p1, "band"    # I
-    .param p2, "preEqBand"    # Landroid/media/audiofx/DynamicsProcessing$EqBand;
 
-    .line 1141
     iget-object v0, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/audiofx/DynamicsProcessing$Eq;->setBand(ILandroid/media/audiofx/DynamicsProcessing$EqBand;)V
 
-    .line 1142
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 1081
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1082
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, " InputGain: %f\n"
 
     const/4 v2, 0x1
@@ -554,12 +481,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1083
     const-string v1, "-->PreEq\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1084
     iget-object v1, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPreEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->toString()Ljava/lang/String;
@@ -568,12 +493,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1085
     const-string v1, "-->MBC\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1086
     iget-object v1, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mMbc:Landroid/media/audiofx/DynamicsProcessing$Mbc;
 
     invoke-virtual {v1}, Landroid/media/audiofx/DynamicsProcessing$Mbc;->toString()Ljava/lang/String;
@@ -582,12 +505,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1087
     const-string v1, "-->PostEq\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1088
     iget-object v1, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mPostEq:Landroid/media/audiofx/DynamicsProcessing$Eq;
 
     invoke-virtual {v1}, Landroid/media/audiofx/DynamicsProcessing$Eq;->toString()Ljava/lang/String;
@@ -596,12 +517,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1089
     const-string v1, "-->Limiter\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1090
     iget-object v1, p0, Landroid/media/audiofx/DynamicsProcessing$Channel;->mLimiter:Landroid/media/audiofx/DynamicsProcessing$Limiter;
 
     invoke-virtual {v1}, Landroid/media/audiofx/DynamicsProcessing$Limiter;->toString()Ljava/lang/String;
@@ -610,7 +529,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1091
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 134
     new-instance v0, Landroid/hardware/location/NanoAppMessage$1;
 
     invoke-direct {v0}, Landroid/hardware/location/NanoAppMessage$1;-><init>()V
@@ -51,45 +50,31 @@
 
 .method private constructor <init>(JI[BZ)V
     .locals 0
-    .param p1, "nanoAppId"    # J
-    .param p3, "messageType"    # I
-    .param p4, "messageBody"    # [B
-    .param p5, "broadcasted"    # Z
 
-    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     iput-wide p1, p0, Landroid/hardware/location/NanoAppMessage;->mNanoAppId:J
 
-    .line 40
     iput p3, p0, Landroid/hardware/location/NanoAppMessage;->mMessageType:I
 
-    .line 41
     iput-object p4, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
-    .line 42
     iput-boolean p5, p0, Landroid/hardware/location/NanoAppMessage;->mIsBroadcasted:Z
 
-    .line 43
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/hardware/location/NanoAppMessage;->mNanoAppId:J
 
-    .line 111
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -106,39 +91,30 @@
     :goto_0
     iput-boolean v1, p0, Landroid/hardware/location/NanoAppMessage;->mIsBroadcasted:Z
 
-    .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageType:I
 
-    .line 114
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 115
-    .local v0, "msgSize":I
     new-array v1, v0, [B
 
     iput-object v1, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
-    .line 116
     iget-object v1, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readByteArray([B)V
 
-    .line 117
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/location/NanoAppMessage$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/hardware/location/NanoAppMessage$1;
 
-    .line 30
     invoke-direct {p0, p1}, Landroid/hardware/location/NanoAppMessage;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -146,12 +122,7 @@
 
 .method public static createMessageFromNanoApp(JI[BZ)Landroid/hardware/location/NanoAppMessage;
     .locals 7
-    .param p0, "sourceNanoAppId"    # J
-    .param p2, "messageType"    # I
-    .param p3, "messageBody"    # [B
-    .param p4, "broadcasted"    # Z
 
-    .line 78
     new-instance v6, Landroid/hardware/location/NanoAppMessage;
 
     move-object v0, v6
@@ -171,11 +142,7 @@
 
 .method public static createMessageToNanoApp(JI[B)Landroid/hardware/location/NanoAppMessage;
     .locals 7
-    .param p0, "targetNanoAppId"    # J
-    .param p2, "messageType"    # I
-    .param p3, "messageBody"    # [B
 
-    .line 59
     new-instance v6, Landroid/hardware/location/NanoAppMessage;
 
     const/4 v5, 0x0
@@ -198,7 +165,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 121
     const/4 v0, 0x0
 
     return v0
@@ -207,7 +173,6 @@
 .method public getMessageBody()[B
     .locals 1
 
-    .line 99
     iget-object v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
     return-object v0
@@ -216,7 +181,6 @@
 .method public getMessageType()I
     .locals 1
 
-    .line 92
     iget v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageType:I
 
     return v0
@@ -225,7 +189,6 @@
 .method public getNanoAppId()J
     .locals 2
 
-    .line 85
     iget-wide v0, p0, Landroid/hardware/location/NanoAppMessage;->mNanoAppId:J
 
     return-wide v0
@@ -234,7 +197,6 @@
 .method public isBroadcastMessage()Z
     .locals 1
 
-    .line 106
     iget-boolean v0, p0, Landroid/hardware/location/NanoAppMessage;->mIsBroadcasted:Z
 
     return v0
@@ -243,13 +205,10 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .line 149
     iget-object v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
     array-length v0, v0
 
-    .line 151
-    .local v0, "length":I
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -276,7 +235,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 152
     iget-boolean v2, p0, Landroid/hardware/location/NanoAppMessage;->mIsBroadcasted:Z
 
     if-eqz v2, :cond_0
@@ -297,7 +255,6 @@
 
     iget-wide v2, p0, Landroid/hardware/location/NanoAppMessage;->mNanoAppId:J
 
-    .line 153
     invoke-static {v2, v3}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v2
@@ -312,11 +269,8 @@
 
     move-result-object v1
 
-    .line 154
-    .local v1, "ret":Ljava/lang/String;
     if-lez v0, :cond_1
 
-    .line 155
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -331,12 +285,9 @@
 
     move-result-object v1
 
-    .line 157
     :cond_1
     const/4 v2, 0x0
 
-    .line 157
-    .local v2, "i":I
     :goto_1
     const/16 v3, 0x10
 
@@ -346,7 +297,6 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 158
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -369,14 +319,12 @@
 
     move-result-object v1
 
-    .line 160
     add-int/lit8 v3, v2, 0x1
 
     rem-int/lit8 v3, v3, 0x4
 
     if-nez v3, :cond_2
 
-    .line 161
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -391,18 +339,14 @@
 
     move-result-object v1
 
-    .line 157
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 164
-    .end local v2    # "i":I
     :cond_3
     if-le v0, v3, :cond_4
 
-    .line 165
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -417,7 +361,6 @@
 
     move-result-object v1
 
-    .line 167
     :cond_4
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -433,42 +376,33 @@
 
     move-result-object v1
 
-    .line 169
     return-object v1
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 126
     iget-wide v0, p0, Landroid/hardware/location/NanoAppMessage;->mNanoAppId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 127
     iget-boolean v0, p0, Landroid/hardware/location/NanoAppMessage;->mIsBroadcasted:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 128
     iget v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 130
     iget-object v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
     array-length v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 131
     iget-object v0, p0, Landroid/hardware/location/NanoAppMessage;->mMessageBody:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 132
     return-void
 .end method

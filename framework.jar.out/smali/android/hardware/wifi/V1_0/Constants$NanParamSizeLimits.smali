@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/wifi/V1_0/Constants;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/wifi/V1_0/Constants;
 
-    .line 8
     iput-object p1, p0, Landroid/hardware/wifi/V1_0/Constants$NanParamSizeLimits;->this$0:Landroid/hardware/wifi/V1_0/Constants;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

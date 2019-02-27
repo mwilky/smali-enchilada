@@ -45,10 +45,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 161
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 277
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/printservice/PrintService;->mLastSessionId:I
@@ -58,9 +56,7 @@
 
 .method static synthetic access$000(Landroid/printservice/PrintService;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Landroid/printservice/PrintService;
 
-    .line 161
     iget-object v0, p0, Landroid/printservice/PrintService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -68,9 +64,7 @@
 
 .method static synthetic access$100(Landroid/printservice/PrintService;)I
     .locals 1
-    .param p0, "x0"    # Landroid/printservice/PrintService;
 
-    .line 161
     iget v0, p0, Landroid/printservice/PrintService;->mLastSessionId:I
 
     return v0
@@ -78,10 +72,7 @@
 
 .method static synthetic access$102(Landroid/printservice/PrintService;I)I
     .locals 0
-    .param p0, "x0"    # Landroid/printservice/PrintService;
-    .param p1, "x1"    # I
 
-    .line 161
     iput p1, p0, Landroid/printservice/PrintService;->mLastSessionId:I
 
     return p1
@@ -89,9 +80,7 @@
 
 .method static synthetic access$200(Landroid/printservice/PrintService;)Landroid/printservice/PrinterDiscoverySession;
     .locals 1
-    .param p0, "x0"    # Landroid/printservice/PrintService;
 
-    .line 161
     iget-object v0, p0, Landroid/printservice/PrintService;->mDiscoverySession:Landroid/printservice/PrinterDiscoverySession;
 
     return-object v0
@@ -99,10 +88,7 @@
 
 .method static synthetic access$202(Landroid/printservice/PrintService;Landroid/printservice/PrinterDiscoverySession;)Landroid/printservice/PrinterDiscoverySession;
     .locals 0
-    .param p0, "x0"    # Landroid/printservice/PrintService;
-    .param p1, "x1"    # Landroid/printservice/PrinterDiscoverySession;
 
-    .line 161
     iput-object p1, p0, Landroid/printservice/PrintService;->mDiscoverySession:Landroid/printservice/PrinterDiscoverySession;
 
     return-object p1
@@ -110,9 +96,7 @@
 
 .method static synthetic access$300(Landroid/printservice/PrintService;)Landroid/printservice/IPrintServiceClient;
     .locals 1
-    .param p0, "x0"    # Landroid/printservice/PrintService;
 
-    .line 161
     iget-object v0, p0, Landroid/printservice/PrintService;->mClient:Landroid/printservice/IPrintServiceClient;
 
     return-object v0
@@ -120,10 +104,7 @@
 
 .method static synthetic access$302(Landroid/printservice/PrintService;Landroid/printservice/IPrintServiceClient;)Landroid/printservice/IPrintServiceClient;
     .locals 0
-    .param p0, "x0"    # Landroid/printservice/PrintService;
-    .param p1, "x1"    # Landroid/printservice/IPrintServiceClient;
 
-    .line 161
     iput-object p1, p0, Landroid/printservice/PrintService;->mClient:Landroid/printservice/IPrintServiceClient;
 
     return-object p1
@@ -132,7 +113,6 @@
 .method static throwIfNotCalledOnMainThread()V
     .locals 2
 
-    .line 381
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -143,10 +123,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 384
     return-void
 
-    .line 382
     :cond_0
     new-instance v0, Ljava/lang/IllegalAccessError;
 
@@ -161,12 +139,9 @@
 # virtual methods
 .method protected final attachBaseContext(Landroid/content/Context;)V
     .locals 2
-    .param p1, "base"    # Landroid/content/Context;
 
-    .line 283
     invoke-super {p0, p1}, Landroid/app/Service;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 284
     new-instance v0, Landroid/printservice/PrintService$ServiceHandler;
 
     invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -177,18 +152,14 @@
 
     iput-object v0, p0, Landroid/printservice/PrintService;->mHandler:Landroid/os/Handler;
 
-    .line 285
     return-void
 .end method
 
 .method public final generatePrinterId(Ljava/lang/String;)Landroid/print/PrinterId;
     .locals 4
-    .param p1, "localId"    # Ljava/lang/String;
 
-    .line 374
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 375
     const-string/jumbo v0, "localId cannot be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -199,7 +170,6 @@
 
     check-cast p1, Ljava/lang/String;
 
-    .line 376
     new-instance v0, Landroid/print/PrinterId;
 
     new-instance v1, Landroid/content/ComponentName;
@@ -208,7 +178,6 @@
 
     move-result-object v2
 
-    .line 377
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -221,7 +190,6 @@
 
     invoke-direct {v0, v1, p1}, Landroid/print/PrinterId;-><init>(Landroid/content/ComponentName;Ljava/lang/String;)V
 
-    .line 376
     return-object v0
 .end method
 
@@ -236,27 +204,21 @@
         }
     .end annotation
 
-    .line 344
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 345
     iget-object v0, p0, Landroid/printservice/PrintService;->mClient:Landroid/printservice/IPrintServiceClient;
 
     if-nez v0, :cond_0
 
-    .line 346
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 349
     :cond_0
     const/4 v0, 0x0
 
-    .line 350
-    .local v0, "printJobs":Ljava/util/List;, "Ljava/util/List<Landroid/printservice/PrintJob;>;"
     :try_start_0
     iget-object v1, p0, Landroid/printservice/PrintService;->mClient:Landroid/printservice/IPrintServiceClient;
 
@@ -264,31 +226,23 @@
 
     move-result-object v1
 
-    .line 351
-    .local v1, "printJobInfos":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrintJobInfo;>;"
     if-eqz v1, :cond_1
 
-    .line 352
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 353
-    .local v2, "printJobInfoCount":I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     move-object v0, v3
 
-    .line 354
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_1
 
-    .line 355
     new-instance v4, Landroid/printservice/PrintJob;
 
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -305,40 +259,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 354
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 358
-    .end local v2    # "printJobInfoCount":I
-    .end local v3    # "i":I
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 359
     return-object v0
 
-    .line 363
-    .end local v0    # "printJobs":Ljava/util/List;, "Ljava/util/List<Landroid/printservice/PrintJob;>;"
-    .end local v1    # "printJobInfos":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrintJobInfo;>;"
     :cond_2
     goto :goto_1
 
-    .line 361
     :catch_0
     move-exception v0
 
-    .line 362
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "PrintService"
 
     const-string v2, "Error calling getPrintJobs()"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 364
-    .end local v0    # "re":Landroid/os/RemoteException;
     :goto_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
@@ -349,9 +290,7 @@
 
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 388
     new-instance v0, Landroid/printservice/PrintService$1;
 
     invoke-direct {v0, p0}, Landroid/printservice/PrintService$1;-><init>(Landroid/printservice/PrintService;)V
@@ -362,7 +301,6 @@
 .method protected onConnected()V
     .locals 0
 
-    .line 292
     return-void
 .end method
 
@@ -372,7 +310,6 @@
 .method protected onDisconnected()V
     .locals 0
 
-    .line 299
     return-void
 .end method
 

@@ -23,20 +23,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILjava/security/cert/X509Certificate;)V
     .locals 0
-    .param p1, "privateKeyAlias"    # Ljava/lang/String;
-    .param p2, "privateKeyUid"    # I
-    .param p3, "delegate"    # Ljava/security/cert/X509Certificate;
 
-    .line 1083
     invoke-direct {p0, p3}, Landroid/security/keystore/DelegatingX509Certificate;-><init>(Ljava/security/cert/X509Certificate;)V
 
-    .line 1084
     iput-object p1, p0, Landroid/security/keystore/AndroidKeyStoreSpi$KeyStoreX509Certificate;->mPrivateKeyAlias:Ljava/lang/String;
 
-    .line 1085
     iput p2, p0, Landroid/security/keystore/AndroidKeyStoreSpi$KeyStoreX509Certificate;->mPrivateKeyUid:I
 
-    .line 1086
     return-void
 .end method
 
@@ -45,18 +38,14 @@
 .method public getPublicKey()Ljava/security/PublicKey;
     .locals 5
 
-    .line 1090
     invoke-super {p0}, Landroid/security/keystore/DelegatingX509Certificate;->getPublicKey()Ljava/security/PublicKey;
 
     move-result-object v0
 
-    .line 1091
-    .local v0, "original":Ljava/security/PublicKey;
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreSpi$KeyStoreX509Certificate;->mPrivateKeyAlias:Ljava/lang/String;
 
     iget v2, p0, Landroid/security/keystore/AndroidKeyStoreSpi$KeyStoreX509Certificate;->mPrivateKeyUid:I
 
-    .line 1093
     invoke-interface {v0}, Ljava/security/PublicKey;->getAlgorithm()Ljava/lang/String;
 
     move-result-object v3
@@ -65,7 +54,6 @@
 
     move-result-object v4
 
-    .line 1091
     invoke-static {v1, v2, v3, v4}, Landroid/security/keystore/AndroidKeyStoreProvider;->getAndroidKeyStorePublicKey(Ljava/lang/String;ILjava/lang/String;[B)Landroid/security/keystore/AndroidKeyStorePublicKey;
 
     move-result-object v1

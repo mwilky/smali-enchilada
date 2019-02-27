@@ -69,7 +69,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 248
     new-instance v0, Landroid/companion/BluetoothLeDeviceFilter$1;
 
     invoke-direct {v0}, Landroid/companion/BluetoothLeDeviceFilter$1;-><init>()V
@@ -81,25 +80,11 @@
 
 .method private constructor <init>(Ljava/util/regex/Pattern;Landroid/bluetooth/le/ScanFilter;[B[BLjava/lang/String;Ljava/lang/String;IIIIZ)V
     .locals 1
-    .param p1, "namePattern"    # Ljava/util/regex/Pattern;
-    .param p2, "scanFilter"    # Landroid/bluetooth/le/ScanFilter;
-    .param p3, "rawDataFilter"    # [B
-    .param p4, "rawDataFilterMask"    # [B
-    .param p5, "renamePrefix"    # Ljava/lang/String;
-    .param p6, "renameSuffix"    # Ljava/lang/String;
-    .param p7, "renameBytesFrom"    # I
-    .param p8, "renameBytesLength"    # I
-    .param p9, "renameNameFrom"    # I
-    .param p10, "renameNameLength"    # I
-    .param p11, "renameBytesReverseOrder"    # Z
 
-    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     iput-object p1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mNamePattern:Ljava/util/regex/Pattern;
 
-    .line 75
     sget-object v0, Landroid/bluetooth/le/ScanFilter;->EMPTY:Landroid/bluetooth/le/ScanFilter;
 
     invoke-static {p2, v0}, Lcom/android/internal/util/ObjectUtils;->firstNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -110,53 +95,30 @@
 
     iput-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mScanFilter:Landroid/bluetooth/le/ScanFilter;
 
-    .line 76
     iput-object p3, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilter:[B
 
-    .line 77
     iput-object p4, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilterMask:[B
 
-    .line 78
     iput-object p5, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenamePrefix:Ljava/lang/String;
 
-    .line 79
     iput-object p6, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameSuffix:Ljava/lang/String;
 
-    .line 80
     iput p7, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
-    .line 81
     iput p8, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesLength:I
 
-    .line 82
     iput p9, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameNameFrom:I
 
-    .line 83
     iput p10, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameNameLength:I
 
-    .line 84
     iput-boolean p11, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesReverseOrder:Z
 
-    .line 85
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/regex/Pattern;Landroid/bluetooth/le/ScanFilter;[B[BLjava/lang/String;Ljava/lang/String;IIIIZLandroid/companion/BluetoothLeDeviceFilter$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/regex/Pattern;
-    .param p2, "x1"    # Landroid/bluetooth/le/ScanFilter;
-    .param p3, "x2"    # [B
-    .param p4, "x3"    # [B
-    .param p5, "x4"    # Ljava/lang/String;
-    .param p6, "x5"    # Ljava/lang/String;
-    .param p7, "x6"    # I
-    .param p8, "x7"    # I
-    .param p9, "x8"    # I
-    .param p10, "x9"    # I
-    .param p11, "x10"    # Z
-    .param p12, "x11"    # Landroid/companion/BluetoothLeDeviceFilter$1;
 
-    .line 51
     invoke-direct/range {p0 .. p11}, Landroid/companion/BluetoothLeDeviceFilter;-><init>(Ljava/util/regex/Pattern;Landroid/bluetooth/le/ScanFilter;[B[BLjava/lang/String;Ljava/lang/String;IIIIZ)V
 
     return-void
@@ -165,7 +127,6 @@
 .method public static getRenamePrefixLengthLimit()I
     .locals 1
 
-    .line 285
     const/16 v0, 0xa
 
     return v0
@@ -173,9 +134,7 @@
 
 .method private matches(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 176
     invoke-virtual {p0}, Landroid/companion/BluetoothLeDeviceFilter;->getScanFilter()Landroid/bluetooth/le/ScanFilter;
 
     move-result-object v0
@@ -186,7 +145,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 177
     invoke-virtual {p0}, Landroid/companion/BluetoothLeDeviceFilter;->getNamePattern()Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -204,7 +162,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 176
     :goto_0
     return v0
 .end method
@@ -214,7 +171,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 228
     const/4 v0, 0x0
 
     return v0
@@ -222,16 +178,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 188
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 189
     :cond_0
     const/4 v1, 0x0
 
@@ -249,14 +202,11 @@
 
     goto :goto_1
 
-    .line 190
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/companion/BluetoothLeDeviceFilter;
 
-    .line 191
-    .local v2, "that":Landroid/companion/BluetoothLeDeviceFilter;
     iget v3, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     iget v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
@@ -291,7 +241,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mNamePattern:Ljava/util/regex/Pattern;
 
-    .line 196
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -302,7 +251,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mScanFilter:Landroid/bluetooth/le/ScanFilter;
 
-    .line 197
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -313,7 +261,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilter:[B
 
-    .line 198
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v3
@@ -324,7 +271,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilterMask:[B
 
-    .line 199
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v3
@@ -335,7 +281,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mRenamePrefix:Ljava/lang/String;
 
-    .line 200
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -346,7 +291,6 @@
 
     iget-object v4, v2, Landroid/companion/BluetoothLeDeviceFilter;->mRenameSuffix:Ljava/lang/String;
 
-    .line 201
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -355,15 +299,12 @@
 
     goto :goto_0
 
-    .line 191
     :cond_2
     move v0, v1
 
     :goto_0
     return v0
 
-    .line 189
-    .end local v2    # "that":Landroid/companion/BluetoothLeDeviceFilter;
     :cond_3
     :goto_1
     return v1
@@ -371,9 +312,7 @@
 
 .method public getDeviceDisplayName(Landroid/bluetooth/le/ScanResult;)Ljava/lang/String;
     .locals 9
-    .param p1, "sr"    # Landroid/bluetooth/le/ScanResult;
 
-    .line 142
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     if-gez v0, :cond_0
@@ -382,7 +321,6 @@
 
     if-gez v0, :cond_0
 
-    .line 143
     invoke-virtual {p1}, Landroid/bluetooth/le/ScanResult;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v0
@@ -393,7 +331,6 @@
 
     return-object v0
 
-    .line 145
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -405,13 +342,10 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 146
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     if-ltz v1, :cond_4
 
-    .line 147
     invoke-virtual {p1}, Landroid/bluetooth/le/ScanResult;->getScanRecord()Landroid/bluetooth/le/ScanRecord;
 
     move-result-object v1
@@ -420,12 +354,8 @@
 
     move-result-object v1
 
-    .line 148
-    .local v1, "bytes":[B
     iget v2, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
-    .line 149
-    .local v2, "startInclusive":I
     iget v3, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     iget v4, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesLength:I
@@ -436,8 +366,6 @@
 
     sub-int/2addr v3, v4
 
-    .line 150
-    .local v3, "endInclusive":I
     iget-boolean v5, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesReverseOrder:Z
 
     if-eqz v5, :cond_1
@@ -449,8 +377,6 @@
     :cond_1
     move v5, v2
 
-    .line 151
-    .local v5, "initial":I
     :goto_0
     iget-boolean v6, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesReverseOrder:Z
 
@@ -463,18 +389,14 @@
     :cond_2
     move v6, v4
 
-    .line 152
-    .local v6, "step":I
     :goto_1
     move v7, v5
 
-    .local v7, "i":I
     :goto_2
     if-gt v2, v7, :cond_3
 
     if-gt v7, v3, :cond_3
 
-    .line 153
     aget-byte v8, v1, v7
 
     invoke-static {v8, v4}, Ljava/lang/Byte;->toHexString(BZ)Ljava/lang/String;
@@ -483,26 +405,16 @@
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 152
     add-int/2addr v7, v6
 
     goto :goto_2
 
-    .line 155
-    .end local v1    # "bytes":[B
-    .end local v2    # "startInclusive":I
-    .end local v3    # "endInclusive":I
-    .end local v5    # "initial":I
-    .end local v6    # "step":I
-    .end local v7    # "i":I
     :cond_3
     goto :goto_3
 
-    .line 156
     :cond_4
     nop
 
-    .line 157
     invoke-virtual {p1}, Landroid/bluetooth/le/ScanResult;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v1
@@ -519,15 +431,12 @@
 
     add-int/2addr v3, v4
 
-    .line 158
     invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 156
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 160
     :goto_3
     iget-object v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameSuffix:Ljava/lang/String;
 
@@ -547,7 +456,6 @@
 .method public bridge synthetic getDeviceDisplayName(Landroid/os/Parcelable;)Ljava/lang/String;
     .locals 0
 
-    .line 51
     check-cast p1, Landroid/bluetooth/le/ScanResult;
 
     invoke-virtual {p0, p1}, Landroid/companion/BluetoothLeDeviceFilter;->getDeviceDisplayName(Landroid/bluetooth/le/ScanResult;)Ljava/lang/String;
@@ -560,7 +468,6 @@
 .method public getMediumType()I
     .locals 1
 
-    .line 183
     const/4 v0, 0x1
 
     return v0
@@ -569,7 +476,6 @@
 .method public getNamePattern()Ljava/util/regex/Pattern;
     .locals 1
 
-    .line 90
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mNamePattern:Ljava/util/regex/Pattern;
 
     return-object v0
@@ -578,7 +484,6 @@
 .method public getRawDataFilter()[B
     .locals 1
 
-    .line 102
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilter:[B
 
     return-object v0
@@ -587,7 +492,6 @@
 .method public getRawDataFilterMask()[B
     .locals 1
 
-    .line 108
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilterMask:[B
 
     return-object v0
@@ -596,7 +500,6 @@
 .method public getRenameBytesFrom()I
     .locals 1
 
-    .line 125
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     return v0
@@ -605,7 +508,6 @@
 .method public getRenameBytesLength()I
     .locals 1
 
-    .line 130
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesLength:I
 
     return v0
@@ -614,7 +516,6 @@
 .method public getRenamePrefix()Ljava/lang/String;
     .locals 1
 
-    .line 114
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenamePrefix:Ljava/lang/String;
 
     return-object v0
@@ -623,7 +524,6 @@
 .method public getRenameSuffix()Ljava/lang/String;
     .locals 1
 
-    .line 120
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameSuffix:Ljava/lang/String;
 
     return-object v0
@@ -632,7 +532,6 @@
 .method public getScanFilter()Landroid/bluetooth/le/ScanFilter;
     .locals 1
 
-    .line 96
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mScanFilter:Landroid/bluetooth/le/ScanFilter;
 
     return-object v0
@@ -641,7 +540,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 206
     const/16 v0, 0xb
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -684,7 +582,6 @@
 
     iget v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
-    .line 207
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -705,7 +602,6 @@
 
     iget v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameNameFrom:I
 
-    .line 208
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -734,7 +630,6 @@
 
     aput-object v1, v0, v2
 
-    .line 206
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -745,7 +640,6 @@
 .method public isRenameBytesReverseOrder()Z
     .locals 1
 
-    .line 135
     iget-boolean v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesReverseOrder:Z
 
     return v0
@@ -753,9 +647,7 @@
 
 .method public matches(Landroid/bluetooth/le/ScanResult;)Z
     .locals 3
-    .param p1, "device"    # Landroid/bluetooth/le/ScanResult;
 
-    .line 166
     invoke-virtual {p1}, Landroid/bluetooth/le/ScanResult;->getDevice()Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v0
@@ -770,7 +662,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 168
     invoke-virtual {p1}, Landroid/bluetooth/le/ScanResult;->getScanRecord()Landroid/bluetooth/le/ScanRecord;
 
     move-result-object v0
@@ -797,8 +688,6 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 172
-    .local v0, "result":Z
     :goto_0
     return v0
 .end method
@@ -806,7 +695,6 @@
 .method public bridge synthetic matches(Landroid/os/Parcelable;)Z
     .locals 0
 
-    .line 51
     check-cast p1, Landroid/bluetooth/le/ScanResult;
 
     invoke-virtual {p0, p1}, Landroid/companion/BluetoothLeDeviceFilter;->matches(Landroid/bluetooth/le/ScanResult;)Z
@@ -819,7 +707,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 233
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -846,7 +733,6 @@
 
     iget-object v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilter:[B
 
-    .line 236
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
@@ -859,7 +745,6 @@
 
     iget-object v1, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilterMask:[B
 
-    .line 237
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
@@ -936,16 +821,12 @@
 
     move-result-object v0
 
-    .line 233
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 213
     invoke-virtual {p0}, Landroid/companion/BluetoothLeDeviceFilter;->getNamePattern()Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -956,56 +837,45 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 214
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mScanFilter:Landroid/bluetooth/le/ScanFilter;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 215
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilter:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 216
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRawDataFilterMask:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 217
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenamePrefix:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 218
     iget-object v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameSuffix:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 219
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesFrom:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 220
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesLength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 221
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameNameFrom:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 222
     iget v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameNameLength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 223
     iget-boolean v0, p0, Landroid/companion/BluetoothLeDeviceFilter;->mRenameBytesReverseOrder:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBoolean(Z)V
 
-    .line 224
     return-void
 .end method

@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 288
     const-string v0, "PEAP"
 
     const-string v1, "TLS"
@@ -69,7 +68,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 292
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

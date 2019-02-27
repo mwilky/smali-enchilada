@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/KeyguardManager;Landroid/app/KeyguardManager$KeyguardDismissCallback;Landroid/app/Activity;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/KeyguardManager;
 
-    .line 517
     iput-object p1, p0, Landroid/app/KeyguardManager$1;->this$0:Landroid/app/KeyguardManager;
 
     iput-object p2, p0, Landroid/app/KeyguardManager$1;->val$callback:Landroid/app/KeyguardManager$KeyguardDismissCallback;
@@ -49,7 +47,6 @@
         }
     .end annotation
 
-    .line 534
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$callback:Landroid/app/KeyguardManager$KeyguardDismissCallback;
 
     if-eqz v0, :cond_0
@@ -62,7 +59,6 @@
 
     if-nez v0, :cond_0
 
-    .line 535
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$activity:Landroid/app/Activity;
 
     iget-object v0, v0, Landroid/app/Activity;->mHandler:Landroid/os/Handler;
@@ -77,7 +73,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 537
     :cond_0
     return-void
 .end method
@@ -90,7 +85,6 @@
         }
     .end annotation
 
-    .line 520
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$callback:Landroid/app/KeyguardManager$KeyguardDismissCallback;
 
     if-eqz v0, :cond_0
@@ -103,7 +97,6 @@
 
     if-nez v0, :cond_0
 
-    .line 521
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$activity:Landroid/app/Activity;
 
     iget-object v0, v0, Landroid/app/Activity;->mHandler:Landroid/os/Handler;
@@ -118,7 +111,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 523
     :cond_0
     return-void
 .end method
@@ -131,7 +123,6 @@
         }
     .end annotation
 
-    .line 527
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$callback:Landroid/app/KeyguardManager$KeyguardDismissCallback;
 
     if-eqz v0, :cond_0
@@ -144,7 +135,6 @@
 
     if-nez v0, :cond_0
 
-    .line 528
     iget-object v0, p0, Landroid/app/KeyguardManager$1;->val$activity:Landroid/app/Activity;
 
     iget-object v0, v0, Landroid/app/Activity;->mHandler:Landroid/os/Handler;
@@ -159,7 +149,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 530
     :cond_0
     return-void
 .end method

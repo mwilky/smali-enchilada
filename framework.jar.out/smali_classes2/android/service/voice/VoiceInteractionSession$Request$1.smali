@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/voice/VoiceInteractionSession$Request;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/voice/VoiceInteractionSession$Request;
 
-    .line 300
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionSession$Request$1;->this$0:Landroid/service/voice/VoiceInteractionSession$Request;
 
     invoke-direct {p0}, Lcom/android/internal/app/IVoiceInteractorRequest$Stub;-><init>()V
@@ -41,7 +39,6 @@
         }
     .end annotation
 
-    .line 303
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionSession$Request$1;->this$0:Landroid/service/voice/VoiceInteractionSession$Request;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionSession$Request;->mSession:Ljava/lang/ref/WeakReference;
@@ -52,11 +49,8 @@
 
     check-cast v0, Landroid/service/voice/VoiceInteractionSession;
 
-    .line 304
-    .local v0, "session":Landroid/service/voice/VoiceInteractionSession;
     if-eqz v0, :cond_0
 
-    .line 305
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
 
     iget-object v2, v0, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -65,15 +59,12 @@
 
     iget-object v4, p0, Landroid/service/voice/VoiceInteractionSession$Request$1;->this$0:Landroid/service/voice/VoiceInteractionSession$Request;
 
-    .line 306
     invoke-virtual {v2, v3, v4}, Lcom/android/internal/os/HandlerCaller;->obtainMessageO(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 305
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 308
     :cond_0
     return-void
 .end method

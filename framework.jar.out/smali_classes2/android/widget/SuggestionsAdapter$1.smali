@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/widget/SuggestionsAdapter;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/widget/SuggestionsAdapter;
 
-    .line 128
     iput-object p1, p0, Landroid/widget/SuggestionsAdapter$1;->this$0:Landroid/widget/SuggestionsAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/SuggestionsAdapter$1;->mPreviousLength:I
@@ -45,16 +42,13 @@
 # virtual methods
 .method public getPostingDelay(Ljava/lang/CharSequence;)J
     .locals 4
-    .param p1, "constraint"    # Ljava/lang/CharSequence;
 
-    .line 133
     const-wide/16 v0, 0x0
 
     if-nez p1, :cond_0
 
     return-wide v0
 
-    .line 135
     :cond_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -68,8 +62,6 @@
 
     nop
 
-    .line 136
-    .local v0, "delay":J
     :cond_1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -77,6 +69,5 @@
 
     iput v2, p0, Landroid/widget/SuggestionsAdapter$1;->mPreviousLength:I
 
-    .line 137
     return-wide v0
 .end method

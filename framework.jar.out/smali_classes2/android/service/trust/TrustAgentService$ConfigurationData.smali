@@ -31,7 +31,6 @@
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroid/os/IBinder;)V
     .locals 0
-    .param p2, "t"    # Landroid/os/IBinder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,16 +42,11 @@
         }
     .end annotation
 
-    .line 169
-    .local p1, "opts":Ljava/util/List;, "Ljava/util/List<Landroid/os/PersistableBundle;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     iput-object p1, p0, Landroid/service/trust/TrustAgentService$ConfigurationData;->options:Ljava/util/List;
 
-    .line 171
     iput-object p2, p0, Landroid/service/trust/TrustAgentService$ConfigurationData;->token:Landroid/os/IBinder;
 
-    .line 172
     return-void
 .end method

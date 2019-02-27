@@ -28,7 +28,6 @@
 .method private constructor <init>(Lcom/android/internal/util/StateMachine$SmHandler;)V
     .locals 0
 
-    .line 726
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->this$0:Lcom/android/internal/util/StateMachine$SmHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/StateMachine$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/util/StateMachine$SmHandler;
-    .param p2, "x1"    # Lcom/android/internal/util/StateMachine$1;
 
-    .line 726
     invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;-><init>(Lcom/android/internal/util/StateMachine$SmHandler;)V
 
     return-void
@@ -52,7 +48,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 741
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -81,7 +76,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 742
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     if-nez v1, :cond_0
@@ -106,6 +100,5 @@
 
     move-result-object v0
 
-    .line 741
     return-object v0
 .end method

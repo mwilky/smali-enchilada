@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/filterpacks/videosrc/MediaSource;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/filterpacks/videosrc/MediaSource;
 
-    .line 548
     iput-object p1, p0, Landroid/filterpacks/videosrc/MediaSource$3;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onCompletion(Landroid/media/MediaPlayer;)V
     .locals 3
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 550
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$3;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-static {v0}, Landroid/filterpacks/videosrc/MediaSource;->access$000(Landroid/filterpacks/videosrc/MediaSource;)Z
@@ -55,13 +51,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 551
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$3;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     monitor-enter v0
 
-    .line 552
     :try_start_0
     iget-object v1, p0, Landroid/filterpacks/videosrc/MediaSource$3;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
@@ -69,13 +63,10 @@
 
     invoke-static {v1, v2}, Landroid/filterpacks/videosrc/MediaSource;->access$702(Landroid/filterpacks/videosrc/MediaSource;Z)Z
 
-    .line 553
     monitor-exit v0
 
-    .line 554
     return-void
 
-    .line 553
     :catchall_0
     move-exception v1
 

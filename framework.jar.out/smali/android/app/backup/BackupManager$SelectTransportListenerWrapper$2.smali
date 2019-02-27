@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;
 
-    .line 892
     iput-object p1, p0, Landroid/app/backup/BackupManager$SelectTransportListenerWrapper$2;->this$1:Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;
 
     iput p2, p0, Landroid/app/backup/BackupManager$SelectTransportListenerWrapper$2;->val$reason:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 895
     iget-object v0, p0, Landroid/app/backup/BackupManager$SelectTransportListenerWrapper$2;->this$1:Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;
 
     invoke-static {v0}, Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;->access$000(Landroid/app/backup/BackupManager$SelectTransportListenerWrapper;)Landroid/app/backup/SelectBackupTransportCallback;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/app/backup/SelectBackupTransportCallback;->onFailure(I)V
 
-    .line 896
     return-void
 .end method

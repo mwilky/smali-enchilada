@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 448
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "LEFT"
@@ -51,7 +50,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
-    .line 452
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "CENTER"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
-    .line 456
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "RIGHT"
@@ -73,7 +70,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
 
-    .line 444
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Align;
@@ -97,28 +93,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "nativeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 458
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 459
     iput p3, p0, Landroid/graphics/Paint$Align;->nativeInt:I
 
-    .line 460
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Paint$Align;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 444
     const-class v0, Landroid/graphics/Paint$Align;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -133,7 +123,6 @@
 .method public static values()[Landroid/graphics/Paint$Align;
     .locals 1
 
-    .line 444
     sget-object v0, Landroid/graphics/Paint$Align;->$VALUES:[Landroid/graphics/Paint$Align;
 
     invoke-virtual {v0}, [Landroid/graphics/Paint$Align;->clone()Ljava/lang/Object;

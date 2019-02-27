@@ -17,14 +17,9 @@
 # direct methods
 .method constructor <init>(Landroid/graphics/drawable/TransitionDrawable$TransitionState;Landroid/graphics/drawable/TransitionDrawable;Landroid/content/res/Resources;)V
     .locals 0
-    .param p1, "orig"    # Landroid/graphics/drawable/TransitionDrawable$TransitionState;
-    .param p2, "owner"    # Landroid/graphics/drawable/TransitionDrawable;
-    .param p3, "res"    # Landroid/content/res/Resources;
 
-    .line 261
     invoke-direct {p0, p1, p2, p3}, Landroid/graphics/drawable/LayerDrawable$LayerState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/LayerDrawable;Landroid/content/res/Resources;)V
 
-    .line 262
     return-void
 .end method
 
@@ -33,7 +28,6 @@
 .method public getChangingConfigurations()I
     .locals 1
 
-    .line 276
     iget v0, p0, Landroid/graphics/drawable/TransitionDrawable$TransitionState;->mChangingConfigurations:I
 
     return v0
@@ -42,7 +36,6 @@
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 3
 
-    .line 266
     new-instance v0, Landroid/graphics/drawable/TransitionDrawable;
 
     const/4 v1, 0x0
@@ -58,9 +51,7 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1, "res"    # Landroid/content/res/Resources;
 
-    .line 271
     new-instance v0, Landroid/graphics/drawable/TransitionDrawable;
 
     const/4 v1, 0x0

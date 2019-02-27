@@ -45,7 +45,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 360
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "NEW_VIEW"
@@ -56,7 +55,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->NEW_VIEW:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 361
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "BIND_VIEW"
@@ -67,7 +65,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->BIND_VIEW:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 362
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "RECYCLE_FROM_ACTIVE_HEAP"
@@ -78,7 +75,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->RECYCLE_FROM_ACTIVE_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 363
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "RECYCLE_FROM_SCRAP_HEAP"
@@ -89,7 +85,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->RECYCLE_FROM_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 364
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "MOVE_TO_SCRAP_HEAP"
@@ -100,7 +95,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->MOVE_TO_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 365
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "MOVE_FROM_ACTIVE_TO_SCRAP_HEAP"
@@ -111,7 +105,6 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->MOVE_FROM_ACTIVE_TO_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
-    .line 358
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/view/ViewDebug$RecyclerTraceType;
@@ -153,7 +146,6 @@
         }
     .end annotation
 
-    .line 359
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -161,9 +153,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/view/ViewDebug$RecyclerTraceType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 358
     const-class v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -178,7 +168,6 @@
 .method public static values()[Landroid/view/ViewDebug$RecyclerTraceType;
     .locals 1
 
-    .line 358
     sget-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->$VALUES:[Landroid/view/ViewDebug$RecyclerTraceType;
 
     invoke-virtual {v0}, [Landroid/view/ViewDebug$RecyclerTraceType;->clone()Ljava/lang/Object;

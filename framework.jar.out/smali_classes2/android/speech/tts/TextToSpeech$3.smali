@@ -41,9 +41,7 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeech;Ljava/lang/String;ILandroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/speech/tts/TextToSpeech;
 
-    .line 1178
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$3;->val$earcon:Ljava/lang/String;
@@ -63,14 +61,12 @@
 # virtual methods
 .method public run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
     .locals 7
-    .param p1, "service"    # Landroid/speech/tts/ITextToSpeechService;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1181
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeech;->access$600(Landroid/speech/tts/TextToSpeech;)Ljava/util/Map;
@@ -85,11 +81,8 @@
 
     check-cast v0, Landroid/net/Uri;
 
-    .line 1182
-    .local v0, "earconUri":Landroid/net/Uri;
     if-nez v0, :cond_0
 
-    .line 1183
     const/4 v1, -0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -98,7 +91,6 @@
 
     return-object v1
 
-    .line 1185
     :cond_0
     iget-object v1, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
@@ -112,14 +104,12 @@
 
     iget-object v3, p0, Landroid/speech/tts/TextToSpeech$3;->val$params:Landroid/os/Bundle;
 
-    .line 1186
     invoke-static {v1, v3}, Landroid/speech/tts/TextToSpeech;->access$500(Landroid/speech/tts/TextToSpeech;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object v5
 
     iget-object v6, p0, Landroid/speech/tts/TextToSpeech$3;->val$utteranceId:Ljava/lang/String;
 
-    .line 1185
     move-object v1, p1
 
     move-object v3, v0
@@ -143,7 +133,6 @@
         }
     .end annotation
 
-    .line 1178
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$3;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object p1

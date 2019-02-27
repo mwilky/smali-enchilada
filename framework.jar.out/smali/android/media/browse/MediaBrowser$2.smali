@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/browse/MediaBrowser;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/browse/MediaBrowser;
 
-    .line 216
     iput-object p1, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 220
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
 
     invoke-static {v0}, Landroid/media/browse/MediaBrowser;->access$200(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserServiceCallbacks;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 222
     :try_start_0
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
 
@@ -66,15 +62,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 227
     goto :goto_0
 
-    .line 223
     :catch_0
     move-exception v0
 
-    .line 226
-    .local v0, "ex":Landroid/os/RemoteException;
     const-string v1, "MediaBrowser"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -99,8 +91,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
-    .end local v0    # "ex":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
@@ -109,21 +99,16 @@
 
     move-result v0
 
-    .line 230
-    .local v0, "state":I
     iget-object v1, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
 
     invoke-static {v1}, Landroid/media/browse/MediaBrowser;->access$700(Landroid/media/browse/MediaBrowser;)V
 
-    .line 233
     if-eqz v0, :cond_1
 
-    .line 234
     iget-object v1, p0, Landroid/media/browse/MediaBrowser$2;->this$0:Landroid/media/browse/MediaBrowser;
 
     invoke-static {v1, v0}, Landroid/media/browse/MediaBrowser;->access$002(Landroid/media/browse/MediaBrowser;I)I
 
-    .line 240
     :cond_1
     return-void
 .end method

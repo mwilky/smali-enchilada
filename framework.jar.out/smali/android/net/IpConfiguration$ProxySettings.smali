@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 50
     new-instance v0, Landroid/net/IpConfiguration$ProxySettings;
 
     const-string v1, "NONE"
@@ -49,7 +48,6 @@
 
     sput-object v0, Landroid/net/IpConfiguration$ProxySettings;->NONE:Landroid/net/IpConfiguration$ProxySettings;
 
-    .line 53
     new-instance v0, Landroid/net/IpConfiguration$ProxySettings;
 
     const-string v1, "STATIC"
@@ -60,7 +58,6 @@
 
     sput-object v0, Landroid/net/IpConfiguration$ProxySettings;->STATIC:Landroid/net/IpConfiguration$ProxySettings;
 
-    .line 56
     new-instance v0, Landroid/net/IpConfiguration$ProxySettings;
 
     const-string v1, "UNASSIGNED"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/net/IpConfiguration$ProxySettings;->UNASSIGNED:Landroid/net/IpConfiguration$ProxySettings;
 
-    .line 59
     new-instance v0, Landroid/net/IpConfiguration$ProxySettings;
 
     const-string v1, "PAC"
@@ -82,7 +78,6 @@
 
     sput-object v0, Landroid/net/IpConfiguration$ProxySettings;->PAC:Landroid/net/IpConfiguration$ProxySettings;
 
-    .line 47
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/net/IpConfiguration$ProxySettings;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 47
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/IpConfiguration$ProxySettings;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 47
     const-class v0, Landroid/net/IpConfiguration$ProxySettings;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Landroid/net/IpConfiguration$ProxySettings;
     .locals 1
 
-    .line 47
     sget-object v0, Landroid/net/IpConfiguration$ProxySettings;->$VALUES:[Landroid/net/IpConfiguration$ProxySettings;
 
     invoke-virtual {v0}, [Landroid/net/IpConfiguration$ProxySettings;->clone()Ljava/lang/Object;

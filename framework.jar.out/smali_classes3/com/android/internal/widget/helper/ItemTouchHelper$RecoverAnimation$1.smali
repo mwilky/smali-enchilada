@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;Lcom/android/internal/widget/helper/ItemTouchHelper;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;
 
-    .line 2323
     iput-object p1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation$1;->this$1:Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     iput-object p2, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation$1;->val$this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 2326
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation$1;->this$1:Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/helper/ItemTouchHelper$RecoverAnimation;->setFraction(F)V
 
-    .line 2327
     return-void
 .end method

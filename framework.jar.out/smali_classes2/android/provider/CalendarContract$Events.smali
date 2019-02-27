@@ -36,27 +36,22 @@
 .method static constructor <clinit>()V
     .locals 25
 
-    .line 1640
     const-string v0, "content://com.android.calendar/events"
 
-    .line 1641
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/CalendarContract$Events;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 1648
     const-string v0, "content://com.android.calendar/exception"
 
-    .line 1649
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/CalendarContract$Events;->CONTENT_EXCEPTION_URI:Landroid/net/Uri;
 
-    .line 1668
     const-string v1, "account_name"
 
     const-string v2, "account_type"
@@ -111,7 +106,6 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Events;->PROVIDER_WRITABLE_COLUMNS:[Ljava/lang/String;
 
-    .line 1702
     const-string v1, "_sync_id"
 
     const-string v2, "dirty"
@@ -150,7 +144,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1654
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

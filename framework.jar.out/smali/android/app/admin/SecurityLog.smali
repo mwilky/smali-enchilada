@@ -93,7 +93,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -102,7 +101,6 @@
 .method public static getLoggingEnabledProperty()Z
     .locals 2
 
-    .line 465
     const-string/jumbo v0, "persist.logd.security"
 
     const/4 v1, 0x0
@@ -187,9 +185,7 @@
 
 .method public static setLoggingEnabledProperty(Z)V
     .locals 2
-    .param p0, "enabled"    # Z
 
-    .line 458
     const-string/jumbo v0, "persist.logd.security"
 
     if-eqz p0, :cond_0
@@ -204,7 +200,6 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 459
     return-void
 .end method
 

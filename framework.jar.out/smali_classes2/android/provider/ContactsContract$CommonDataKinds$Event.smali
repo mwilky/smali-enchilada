@@ -35,7 +35,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 7142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,11 +42,7 @@
 
 .method public static final getTypeLabel(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 2
-    .param p0, "res"    # Landroid/content/res/Resources;
-    .param p1, "type"    # I
-    .param p2, "label"    # Ljava/lang/CharSequence;
 
-    .line 7181
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -56,10 +51,8 @@
 
     if-nez v0, :cond_0
 
-    .line 7182
     return-object p2
 
-    .line 7184
     :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -69,8 +62,6 @@
 
     move-result v0
 
-    .line 7185
-    .local v0, "labelRes":I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -80,17 +71,13 @@
 
 .method public static getTypeResource(Ljava/lang/Integer;)I
     .locals 2
-    .param p0, "type"    # Ljava/lang/Integer;
 
-    .line 7162
     const v0, 0x10401f7
 
     if-nez p0, :cond_0
 
-    .line 7163
     return v0
 
-    .line 7165
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -98,22 +85,18 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 7170
     const v0, 0x10401f6
 
     return v0
 
-    .line 7168
     :pswitch_0
     const v0, 0x10401f5
 
     return v0
 
-    .line 7169
     :pswitch_1
     return v0
 
-    .line 7167
     :pswitch_2
     const v0, 0x10401f4
 

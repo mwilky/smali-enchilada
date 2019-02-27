@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 55
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method protected initialValue()Landroid/view/animation/AnimationUtils$AnimationState;
     .locals 2
 
-    .line 58
     new-instance v0, Landroid/view/animation/AnimationUtils$AnimationState;
 
     const/4 v1, 0x0
@@ -50,7 +48,6 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
-    .line 55
     invoke-virtual {p0}, Landroid/view/animation/AnimationUtils$1;->initialValue()Landroid/view/animation/AnimationUtils$AnimationState;
 
     move-result-object v0

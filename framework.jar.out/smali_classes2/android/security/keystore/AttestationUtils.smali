@@ -20,37 +20,27 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     return-void
 .end method
 
 .method public static attestDeviceIds(Landroid/content/Context;[I[B)[Ljava/security/cert/X509Certificate;
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "idTypes"    # [I
-    .param p2, "attestationChallenge"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/DeviceIdAttestationException;
         }
     .end annotation
 
-    .line 217
     invoke-static {p0, p1, p2}, Landroid/security/keystore/AttestationUtils;->prepareAttestationArgumentsForDeviceId(Landroid/content/Context;[I[B)Landroid/security/keymaster/KeymasterArguments;
 
     move-result-object v0
 
-    .line 221
-    .local v0, "attestArgs":Landroid/security/keymaster/KeymasterArguments;
     new-instance v1, Landroid/security/keymaster/KeymasterCertificateChain;
 
     invoke-direct {v1}, Landroid/security/keymaster/KeymasterCertificateChain;-><init>()V
 
-    .line 222
-    .local v1, "outChain":Landroid/security/keymaster/KeymasterCertificateChain;
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
 
     move-result-object v2
@@ -59,13 +49,10 @@
 
     move-result v2
 
-    .line 223
-    .local v2, "errorCode":I
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    .line 229
     :try_start_0
     invoke-static {v1}, Landroid/security/keystore/AttestationUtils;->parseCertificateChain(Landroid/security/keymaster/KeymasterCertificateChain;)[Ljava/security/cert/X509Certificate;
 
@@ -75,12 +62,9 @@
 
     return-object v3
 
-    .line 230
     :catch_0
     move-exception v3
 
-    .line 231
-    .local v3, "e":Landroid/security/keystore/KeyAttestationException;
     new-instance v4, Landroid/security/keystore/DeviceIdAttestationException;
 
     invoke-virtual {v3}, Landroid/security/keystore/KeyAttestationException;->getMessage()Ljava/lang/String;
@@ -91,12 +75,9 @@
 
     throw v4
 
-    .line 224
-    .end local v3    # "e":Landroid/security/keystore/KeyAttestationException;
     :cond_0
     new-instance v3, Landroid/security/keystore/DeviceIdAttestationException;
 
-    .line 225
     invoke-static {v2}, Landroid/security/KeyStore;->getKeyStoreException(I)Landroid/security/KeyStoreException;
 
     move-result-object v4
@@ -110,9 +91,7 @@
 
 .method public static isChainValid(Landroid/security/keymaster/KeymasterCertificateChain;)Z
     .locals 2
-    .param p0, "chain"    # Landroid/security/keymaster/KeymasterCertificateChain;
 
-    .line 240
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/security/keymaster/KeymasterCertificateChain;->getCertificates()Ljava/util/List;
@@ -140,20 +119,16 @@
 
 .method public static parseCertificateChain(Landroid/security/keymaster/KeymasterCertificateChain;)[Ljava/security/cert/X509Certificate;
     .locals 5
-    .param p0, "kmChain"    # Landroid/security/keymaster/KeymasterCertificateChain;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/KeyAttestationException;
         }
     .end annotation
 
-    .line 84
     invoke-virtual {p0}, Landroid/security/keymaster/KeymasterCertificateChain;->getCertificates()Ljava/util/List;
 
     move-result-object v0
 
-    .line 85
-    .local v0, "rawChain":Ljava/util/Collection;, "Ljava/util/Collection<[B>;"
     invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v1
@@ -162,13 +137,10 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 89
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 91
-    .local v1, "concatenatedRawChain":Ljava/io/ByteArrayOutputStream;
     :try_start_0
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -187,15 +159,10 @@
 
     check-cast v3, [B
 
-    .line 92
-    .local v3, "cert":[B
     invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    .line 93
-    .end local v3    # "cert":[B
     goto :goto_0
 
-    .line 94
     :cond_0
     const-string v2, "X.509"
 
@@ -205,14 +172,12 @@
 
     new-instance v3, Ljava/io/ByteArrayInputStream;
 
-    .line 95
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v4
 
     invoke-direct {v3, v4}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 94
     invoke-virtual {v2, v3}, Ljava/security/cert/CertificateFactory;->generateCertificates(Ljava/io/InputStream;)Ljava/util/Collection;
 
     move-result-object v2
@@ -221,7 +186,6 @@
 
     new-array v3, v3, [Ljava/security/cert/X509Certificate;
 
-    .line 96
     invoke-interface {v2, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v2
@@ -230,15 +194,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 94
     return-object v2
 
-    .line 97
     :catch_0
     move-exception v2
 
-    .line 98
-    .local v2, "e":Ljava/lang/Exception;
     new-instance v3, Landroid/security/keystore/KeyAttestationException;
 
     const-string v4, "Unable to construct certificate chain"
@@ -247,9 +207,6 @@
 
     throw v3
 
-    .line 86
-    .end local v1    # "concatenatedRawChain":Ljava/io/ByteArrayOutputStream;
-    .end local v2    # "e":Ljava/lang/Exception;
     :cond_1
     new-instance v1, Landroid/security/keystore/KeyAttestationException;
 
@@ -261,7 +218,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 87
     invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v3
@@ -283,36 +239,26 @@
 
 .method public static prepareAttestationArguments(Landroid/content/Context;[I[B)Landroid/security/keymaster/KeymasterArguments;
     .locals 9
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "idTypes"    # [I
-    .param p2, "attestationChallenge"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/DeviceIdAttestationException;
         }
     .end annotation
 
-    .line 121
     if-eqz p2, :cond_8
 
-    .line 124
     new-instance v0, Landroid/security/keymaster/KeymasterArguments;
 
     invoke-direct {v0}, Landroid/security/keymaster/KeymasterArguments;-><init>()V
 
-    .line 125
-    .local v0, "attestArgs":Landroid/security/keymaster/KeymasterArguments;
     const v1, -0x6ffffd3c
 
     invoke-virtual {v0, v1, p2}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 128
     if-nez p1, :cond_0
 
-    .line 129
     return-object v0
 
-    .line 131
     :cond_0
     new-instance v1, Landroid/util/ArraySet;
 
@@ -320,8 +266,6 @@
 
     invoke-direct {v1, v2}, Landroid/util/ArraySet;-><init>(I)V
 
-    .line 132
-    .local v1, "idTypesSet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     array-length v2, p1
 
     const/4 v3, 0x0
@@ -333,26 +277,19 @@
 
     aget v5, p1, v4
 
-    .line 133
-    .local v5, "idType":I
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-interface {v1, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 132
-    .end local v5    # "idType":I
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 135
     :cond_1
     const/4 v2, 0x0
 
-    .line 136
-    .local v2, "telephonyService":Landroid/telephony/TelephonyManager;
     const/4 v4, 0x2
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -377,7 +314,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 137
     :cond_2
     const-string/jumbo v4, "phone"
 
@@ -389,10 +325,8 @@
 
     check-cast v2, Landroid/telephony/TelephonyManager;
 
-    .line 139
     if-eqz v2, :cond_7
 
-    .line 143
     :cond_3
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -411,15 +345,12 @@
 
     check-cast v5, Ljava/lang/Integer;
 
-    .line 144
-    .local v5, "idType":Ljava/lang/Integer;
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
 
     packed-switch v6, :pswitch_data_0
 
-    .line 168
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -440,33 +371,25 @@
 
     throw v3
 
-    .line 159
     :pswitch_0
     invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->getMeid(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 160
-    .local v6, "meid":Ljava/lang/String;
     if-eqz v6, :cond_4
 
-    .line 163
     const v7, -0x6ffffd35
 
     sget-object v8, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 164
     invoke-virtual {v6, v8}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v8
 
-    .line 163
     invoke-virtual {v0, v7, v8}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 165
     goto :goto_2
 
-    .line 161
     :cond_4
     new-instance v3, Landroid/security/keystore/DeviceIdAttestationException;
 
@@ -476,34 +399,25 @@
 
     throw v3
 
-    .line 150
-    .end local v6    # "meid":Ljava/lang/String;
     :pswitch_1
     invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->getImei(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 151
-    .local v6, "imei":Ljava/lang/String;
     if-eqz v6, :cond_5
 
-    .line 154
     const v7, -0x6ffffd36
 
     sget-object v8, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 155
     invoke-virtual {v6, v8}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v8
 
-    .line 154
     invoke-virtual {v0, v7, v8}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 156
     goto :goto_2
 
-    .line 152
     :cond_5
     new-instance v3, Landroid/security/keystore/DeviceIdAttestationException;
 
@@ -513,12 +427,9 @@
 
     throw v3
 
-    .line 146
-    .end local v6    # "imei":Ljava/lang/String;
     :pswitch_2
     const v6, -0x6ffffd37
 
-    .line 147
     invoke-static {}, Landroid/os/Build;->getSerial()Ljava/lang/String;
 
     move-result-object v7
@@ -529,18 +440,13 @@
 
     move-result-object v7
 
-    .line 146
     invoke-virtual {v0, v6, v7}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 148
     nop
 
-    .line 170
-    .end local v5    # "idType":Ljava/lang/Integer;
     :goto_2
     goto :goto_1
 
-    .line 171
     :cond_6
     const v3, -0x6ffffd3a
 
@@ -548,78 +454,62 @@
 
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 172
     invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v4
 
-    .line 171
     invoke-virtual {v0, v3, v4}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 173
     const v3, -0x6ffffd39
 
     sget-object v4, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 174
     invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v4
 
-    .line 173
     invoke-virtual {v0, v3, v4}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 175
     const v3, -0x6ffffd38
 
     sget-object v4, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 176
     invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v4
 
-    .line 175
     invoke-virtual {v0, v3, v4}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 177
     const v3, -0x6ffffd34
 
     sget-object v4, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 178
     invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v4
 
-    .line 177
     invoke-virtual {v0, v3, v4}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 179
     const v3, -0x6ffffd33
 
     sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 180
     invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object v4
 
-    .line 179
     invoke-virtual {v0, v3, v4}, Landroid/security/keymaster/KeymasterArguments;->addBytes(I[B)V
 
-    .line 181
     return-object v0
 
-    .line 140
     :cond_7
     new-instance v3, Landroid/security/keystore/DeviceIdAttestationException;
 
@@ -629,10 +519,6 @@
 
     throw v3
 
-    .line 122
-    .end local v0    # "attestArgs":Landroid/security/keymaster/KeymasterArguments;
-    .end local v1    # "idTypesSet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
-    .end local v2    # "telephonyService":Landroid/telephony/TelephonyManager;
     :cond_8
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -654,26 +540,20 @@
 
 .method private static prepareAttestationArgumentsForDeviceId(Landroid/content/Context;[I[B)Landroid/security/keymaster/KeymasterArguments;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "idTypes"    # [I
-    .param p2, "attestationChallenge"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/keystore/DeviceIdAttestationException;
         }
     .end annotation
 
-    .line 106
     if-eqz p1, :cond_0
 
-    .line 110
     invoke-static {p0, p1, p2}, Landroid/security/keystore/AttestationUtils;->prepareAttestationArguments(Landroid/content/Context;[I[B)Landroid/security/keymaster/KeymasterArguments;
 
     move-result-object v0
 
     return-object v0
 
-    .line 107
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 

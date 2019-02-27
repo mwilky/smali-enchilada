@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,19 +27,12 @@
 # virtual methods
 .method public onRemovalError(Landroid/hardware/fingerprint/Fingerprint;ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "fp"    # Landroid/hardware/fingerprint/Fingerprint;
-    .param p2, "errMsgId"    # I
-    .param p3, "errString"    # Ljava/lang/CharSequence;
 
-    .line 340
     return-void
 .end method
 
 .method public onRemovalSucceeded(Landroid/hardware/fingerprint/Fingerprint;I)V
     .locals 0
-    .param p1, "fp"    # Landroid/hardware/fingerprint/Fingerprint;
-    .param p2, "remaining"    # I
 
-    .line 350
     return-void
 .end method

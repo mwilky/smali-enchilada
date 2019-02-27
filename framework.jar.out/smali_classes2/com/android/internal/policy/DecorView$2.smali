@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/DecorView;Lcom/android/internal/policy/DecorView$ColorViewState;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/policy/DecorView;
 
-    .line 1286
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$2;->this$0:Lcom/android/internal/policy/DecorView;
 
     iput-object p2, p0, Lcom/android/internal/policy/DecorView$2;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1289
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ColorViewState;->view:Landroid/view/View;
@@ -52,7 +49,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1290
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$2;->val$state:Lcom/android/internal/policy/DecorView$ColorViewState;
 
     iget-object v0, v0, Lcom/android/internal/policy/DecorView$ColorViewState;->view:Landroid/view/View;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1291
     return-void
 .end method

@@ -23,19 +23,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .param p1, "authority"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 350
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 351
     iput-object p1, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
-    .line 352
     iput p2, p0, Landroid/app/ActivityThread$ProviderKey;->userId:I
 
-    .line 353
     return-void
 .end method
 
@@ -43,22 +37,17 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 357
     instance-of v0, p1, Landroid/app/ActivityThread$ProviderKey;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 358
     move-object v0, p1
 
     check-cast v0, Landroid/app/ActivityThread$ProviderKey;
 
-    .line 359
-    .local v0, "other":Landroid/app/ActivityThread$ProviderKey;
     iget-object v2, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
     iget-object v3, v0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
@@ -82,8 +71,6 @@
     :cond_0
     return v1
 
-    .line 361
-    .end local v0    # "other":Landroid/app/ActivityThread$ProviderKey;
     :cond_1
     return v1
 .end method
@@ -91,7 +78,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 366
     iget-object v0, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
     if-eqz v0, :cond_0

@@ -55,7 +55,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 52
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -64,7 +63,6 @@
 
     sput-object v0, Lcom/android/internal/midi/MidiConstants;->CHANNEL_BYTE_LENGTHS:[I
 
-    .line 55
     const/16 v0, 0x10
 
     new-array v0, v0, [I
@@ -110,7 +108,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -118,9 +115,7 @@
 
 .method public static allowRunningStatus(B)Z
     .locals 1
-    .param p0, "command"    # B
 
-    .line 104
     const/16 v0, -0x80
 
     if-lt p0, v0, :cond_0
@@ -142,9 +137,7 @@
 
 .method public static cancelsRunningStatus(B)Z
     .locals 1
-    .param p0, "command"    # B
 
-    .line 110
     const/16 v0, -0x10
 
     if-lt p0, v0, :cond_0
@@ -166,18 +159,13 @@
 
 .method public static getBytesPerMessage(B)I
     .locals 3
-    .param p0, "statusByte"    # B
 
-    .line 69
     and-int/lit16 v0, p0, 0xff
 
-    .line 70
-    .local v0, "statusInt":I
     const/16 v1, 0xf0
 
     if-lt v0, v1, :cond_0
 
-    .line 72
     sget-object v1, Lcom/android/internal/midi/MidiConstants;->SYSTEM_BYTE_LENGTHS:[I
 
     and-int/lit8 v2, v0, 0xf
@@ -186,13 +174,11 @@
 
     return v1
 
-    .line 73
     :cond_0
     const/16 v1, 0x80
 
     if-lt v0, v1, :cond_1
 
-    .line 75
     sget-object v1, Lcom/android/internal/midi/MidiConstants;->CHANNEL_BYTE_LENGTHS:[I
 
     shr-int/lit8 v2, v0, 0x4
@@ -203,7 +189,6 @@
 
     return v1
 
-    .line 77
     :cond_1
     const/4 v1, 0x0
 
@@ -212,49 +197,33 @@
 
 .method public static isAllActiveSensing([BII)Z
     .locals 5
-    .param p0, "msg"    # [B
-    .param p1, "offset"    # I
-    .param p2, "count"    # I
 
-    .line 91
     const/4 v0, 0x0
 
-    .line 92
-    .local v0, "goodBytes":I
     const/4 v1, 0x0
 
     move v2, v0
 
     move v0, v1
 
-    .local v0, "i":I
-    .local v2, "goodBytes":I
     :goto_0
     if-ge v0, p2, :cond_1
 
-    .line 93
     add-int v3, p1, v0
 
     aget-byte v3, p0, v3
 
-    .line 94
-    .local v3, "b":B
     const/4 v4, -0x2
 
     if-eq v3, v4, :cond_0
 
-    .line 95
     add-int/lit8 v2, v2, 0x1
 
-    .line 92
-    .end local v3    # "b":B
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 98
-    .end local v0    # "i":I
     :cond_1
     if-nez v2, :cond_2
 

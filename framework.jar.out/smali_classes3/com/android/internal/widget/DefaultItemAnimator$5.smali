@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/DefaultItemAnimator;Lcom/android/internal/widget/RecyclerView$ViewHolder;Landroid/view/View;Landroid/view/ViewPropertyAnimator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/DefaultItemAnimator;
 
-    .line 234
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->val$holder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
@@ -47,38 +45,31 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 242
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->val$view:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 243
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 247
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->val$animation:Landroid/view/ViewPropertyAnimator;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 248
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v1, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->val$holder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/DefaultItemAnimator;->dispatchAddFinished(Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
 
-    .line 249
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v0, v0, Lcom/android/internal/widget/DefaultItemAnimator;->mAddAnimations:Ljava/util/ArrayList;
@@ -87,26 +78,21 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 250
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/DefaultItemAnimator;->dispatchFinishedWhenDone()V
 
-    .line 251
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 237
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v1, p0, Lcom/android/internal/widget/DefaultItemAnimator$5;->val$holder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/DefaultItemAnimator;->dispatchAddStarting(Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
 
-    .line 238
     return-void
 .end method

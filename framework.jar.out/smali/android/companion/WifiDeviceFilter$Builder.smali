@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 117
     invoke-direct {p0}, Landroid/provider/OneTimeUseBuilder;-><init>()V
 
     return-void
@@ -41,10 +40,8 @@
 .method public build()Landroid/companion/WifiDeviceFilter;
     .locals 3
 
-    .line 135
     invoke-virtual {p0}, Landroid/companion/WifiDeviceFilter$Builder;->markUsed()V
 
-    .line 136
     new-instance v0, Landroid/companion/WifiDeviceFilter;
 
     iget-object v1, p0, Landroid/companion/WifiDeviceFilter$Builder;->mNamePattern:Ljava/util/regex/Pattern;
@@ -59,7 +56,6 @@
 .method public bridge synthetic build()Ljava/lang/Object;
     .locals 1
 
-    .line 117
     invoke-virtual {p0}, Landroid/companion/WifiDeviceFilter$Builder;->build()Landroid/companion/WifiDeviceFilter;
 
     move-result-object v0
@@ -69,14 +65,10 @@
 
 .method public setNamePattern(Ljava/util/regex/Pattern;)Landroid/companion/WifiDeviceFilter$Builder;
     .locals 0
-    .param p1, "regex"    # Ljava/util/regex/Pattern;
 
-    .line 126
     invoke-virtual {p0}, Landroid/companion/WifiDeviceFilter$Builder;->checkNotUsed()V
 
-    .line 127
     iput-object p1, p0, Landroid/companion/WifiDeviceFilter$Builder;->mNamePattern:Ljava/util/regex/Pattern;
 
-    .line 128
     return-object p0
 .end method

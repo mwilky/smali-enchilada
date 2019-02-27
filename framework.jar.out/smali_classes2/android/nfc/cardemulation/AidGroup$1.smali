@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,33 +39,23 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/nfc/cardemulation/AidGroup;
     .locals 4
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 136
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 137
-    .local v0, "category":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 138
-    .local v1, "listSize":I
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 139
-    .local v2, "aidList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-lez v1, :cond_0
 
-    .line 140
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
-    .line 142
     :cond_0
     new-instance v3, Landroid/nfc/cardemulation/AidGroup;
 
@@ -78,7 +67,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 132
     invoke-virtual {p0, p1}, Landroid/nfc/cardemulation/AidGroup$1;->createFromParcel(Landroid/os/Parcel;)Landroid/nfc/cardemulation/AidGroup;
 
     move-result-object p1
@@ -88,9 +76,7 @@
 
 .method public newArray(I)[Landroid/nfc/cardemulation/AidGroup;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 147
     new-array v0, p1, [Landroid/nfc/cardemulation/AidGroup;
 
     return-object v0
@@ -99,7 +85,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 132
     invoke-virtual {p0, p1}, Landroid/nfc/cardemulation/AidGroup$1;->newArray(I)[Landroid/nfc/cardemulation/AidGroup;
 
     move-result-object p1

@@ -31,35 +31,27 @@
 # direct methods
 .method private constructor <init>(Landroid/widget/AutoCompleteTextView;)V
     .locals 1
-    .param p1, "view"    # Landroid/widget/AutoCompleteTextView;
 
-    .line 1384
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
-    .line 1400
     new-instance v0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver$1;
 
     invoke-direct {v0, p0}, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver$1;-><init>(Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;)V
 
     iput-object v0, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->updateRunnable:Ljava/lang/Runnable;
 
-    .line 1385
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->mViewReference:Ljava/lang/ref/WeakReference;
 
-    .line 1386
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/widget/AutoCompleteTextView;Landroid/widget/AutoCompleteTextView$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/AutoCompleteTextView;
-    .param p2, "x1"    # Landroid/widget/AutoCompleteTextView$1;
 
-    .line 1381
     invoke-direct {p0, p1}, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;-><init>(Landroid/widget/AutoCompleteTextView;)V
 
     return-void
@@ -67,9 +59,7 @@
 
 .method static synthetic access$800(Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;)Ljava/lang/ref/WeakReference;
     .locals 1
-    .param p0, "x0"    # Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
-    .line 1381
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->mViewReference:Ljava/lang/ref/WeakReference;
 
     return-object v0
@@ -80,7 +70,6 @@
 .method public onChanged()V
     .locals 2
 
-    .line 1390
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->mViewReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -89,8 +78,6 @@
 
     check-cast v0, Landroid/widget/AutoCompleteTextView;
 
-    .line 1391
-    .local v0, "textView":Landroid/widget/AutoCompleteTextView;
     if-eqz v0, :cond_0
 
     invoke-static {v0}, Landroid/widget/AutoCompleteTextView;->access$700(Landroid/widget/AutoCompleteTextView;)Landroid/widget/ListAdapter;
@@ -99,12 +86,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1396
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->updateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/widget/AutoCompleteTextView;->post(Ljava/lang/Runnable;)Z
 
-    .line 1398
     :cond_0
     return-void
 .end method

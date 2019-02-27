@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/printservice/recommendation/RecommendationService;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/printservice/recommendation/RecommendationService;
 
-    .line 73
     iput-object p1, p0, Landroid/printservice/recommendation/RecommendationService$1;->this$0:Landroid/printservice/recommendation/RecommendationService;
 
     invoke-direct {p0}, Landroid/printservice/recommendation/IRecommendationService$Stub;-><init>()V
@@ -35,12 +33,9 @@
 # virtual methods
 .method public registerCallbacks(Landroid/printservice/recommendation/IRecommendationServiceCallbacks;)V
     .locals 2
-    .param p1, "callbacks"    # Landroid/printservice/recommendation/IRecommendationServiceCallbacks;
 
-    .line 82
     if-eqz p1, :cond_0
 
-    .line 83
     iget-object v0, p0, Landroid/printservice/recommendation/RecommendationService$1;->this$0:Landroid/printservice/recommendation/RecommendationService;
 
     invoke-static {v0}, Landroid/printservice/recommendation/RecommendationService;->access$000(Landroid/printservice/recommendation/RecommendationService;)Landroid/os/Handler;
@@ -57,7 +52,6 @@
 
     goto :goto_0
 
-    .line 85
     :cond_0
     iget-object v0, p0, Landroid/printservice/recommendation/RecommendationService$1;->this$0:Landroid/printservice/recommendation/RecommendationService;
 
@@ -73,7 +67,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 87
     :goto_0
     return-void
 .end method

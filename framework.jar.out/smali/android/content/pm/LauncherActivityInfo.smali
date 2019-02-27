@@ -20,35 +20,25 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 58
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/content/pm/ActivityInfo;Landroid/os/UserHandle;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "info"    # Landroid/content/pm/ActivityInfo;
-    .param p3, "user"    # Landroid/os/UserHandle;
 
-    .line 50
     invoke-direct {p0, p1}, Landroid/content/pm/LauncherActivityInfo;-><init>(Landroid/content/Context;)V
 
-    .line 51
     iput-object p2, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 52
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -59,10 +49,8 @@
 
     iput-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mComponentName:Landroid/content/ComponentName;
 
-    .line 53
     iput-object p3, p0, Landroid/content/pm/LauncherActivityInfo;->mUser:Landroid/os/UserHandle;
 
-    .line 54
     return-void
 .end method
 
@@ -71,7 +59,6 @@
 .method public getApplicationFlags()I
     .locals 1
 
-    .line 129
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -84,7 +71,6 @@
 .method public getApplicationInfo()Landroid/content/pm/ApplicationInfo;
     .locals 1
 
-    .line 137
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -94,15 +80,11 @@
 
 .method public getBadgedIcon(I)Landroid/graphics/drawable/Drawable;
     .locals 3
-    .param p1, "density"    # I
 
-    .line 172
     invoke-virtual {p0, p1}, Landroid/content/pm/LauncherActivityInfo;->getIcon(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 174
-    .local v0, "originalIcon":Landroid/graphics/drawable/Drawable;
     iget-object v1, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
 
     iget-object v2, p0, Landroid/content/pm/LauncherActivityInfo;->mUser:Landroid/os/UserHandle;
@@ -117,7 +99,6 @@
 .method public getComponentName()Landroid/content/ComponentName;
     .locals 1
 
-    .line 66
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mComponentName:Landroid/content/ComponentName;
 
     return-object v0
@@ -126,7 +107,6 @@
 .method public getFirstInstallTime()J
     .locals 3
 
-    .line 148
     :try_start_0
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
 
@@ -146,12 +126,9 @@
 
     return-wide v0
 
-    .line 150
     :catch_0
     move-exception v0
 
-    .line 152
-    .local v0, "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-wide/16 v1, 0x0
 
     return-wide v1
@@ -159,26 +136,19 @@
 
 .method public getIcon(I)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1, "density"    # I
 
-    .line 104
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ActivityInfo;->getIconResource()I
 
     move-result v0
 
-    .line 105
-    .local v0, "iconRes":I
     const/4 v1, 0x0
 
-    .line 107
-    .local v1, "icon":Landroid/graphics/drawable/Drawable;
     if-eqz p1, :cond_0
 
     if-eqz v0, :cond_0
 
-    .line 109
     :try_start_0
     iget-object v2, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
 
@@ -186,13 +156,10 @@
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 110
     invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 111
-    .local v2, "resources":Landroid/content/res/Resources;
     invoke-virtual {v2, v0, p1}, Landroid/content/res/Resources;->getDrawableForDensity(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -202,20 +169,15 @@
 
     move-object v1, v3
 
-    .line 113
-    .end local v2    # "resources":Landroid/content/res/Resources;
     goto :goto_0
 
-    .line 112
     :catch_0
     move-exception v2
 
-    .line 116
     :cond_0
     :goto_0
     if-nez v1, :cond_1
 
-    .line 117
     iget-object v2, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
@@ -224,7 +186,6 @@
 
     move-result-object v1
 
-    .line 119
     :cond_1
     return-object v1
 .end method
@@ -232,7 +193,6 @@
 .method public getLabel()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 91
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, p0, Landroid/content/pm/LauncherActivityInfo;->mPm:Landroid/content/pm/PackageManager;
@@ -247,7 +207,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 161
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
@@ -258,7 +217,6 @@
 .method public getUser()Landroid/os/UserHandle;
     .locals 1
 
-    .line 81
     iget-object v0, p0, Landroid/content/pm/LauncherActivityInfo;->mUser:Landroid/os/UserHandle;
 
     return-object v0

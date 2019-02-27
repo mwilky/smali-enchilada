@@ -10,15 +10,11 @@
 # direct methods
 .method constructor <init>(Landroid/filterfw/core/FilterGraph;)V
     .locals 0
-    .param p1, "graph"    # Landroid/filterfw/core/FilterGraph;
 
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
     iput-object p1, p0, Landroid/filterfw/core/Scheduler;->mGraph:Landroid/filterfw/core/FilterGraph;
 
-    .line 33
     return-void
 .end method
 
@@ -27,7 +23,6 @@
 .method finished()Z
     .locals 1
 
-    .line 45
     const/4 v0, 0x1
 
     return v0
@@ -36,7 +31,6 @@
 .method getGraph()Landroid/filterfw/core/FilterGraph;
     .locals 1
 
-    .line 36
     iget-object v0, p0, Landroid/filterfw/core/Scheduler;->mGraph:Landroid/filterfw/core/FilterGraph;
 
     return-object v0

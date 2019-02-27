@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 39
     new-instance v0, Landroid/hardware/display/WifiDisplaySessionInfo$1;
 
     invoke-direct {v0}, Landroid/hardware/display/WifiDisplaySessionInfo$1;-><init>()V
@@ -47,7 +46,6 @@
 .method public constructor <init>()V
     .locals 6
 
-    .line 59
     const-string v3, ""
 
     const-string v4, ""
@@ -62,37 +60,24 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/hardware/display/WifiDisplaySessionInfo;-><init>(ZILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 60
     return-void
 .end method
 
 .method public constructor <init>(ZILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "client"    # Z
-    .param p2, "session"    # I
-    .param p3, "group"    # Ljava/lang/String;
-    .param p4, "pp"    # Ljava/lang/String;
-    .param p5, "ip"    # Ljava/lang/String;
 
-    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     iput-boolean p1, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mClient:Z
 
-    .line 65
     iput p2, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mSessionId:I
 
-    .line 66
     iput-object p3, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mGroupId:Ljava/lang/String;
 
-    .line 67
     iput-object p4, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mPassphrase:Ljava/lang/String;
 
-    .line 68
     iput-object p5, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mIP:Ljava/lang/String;
 
-    .line 69
     return-void
 .end method
 
@@ -101,7 +86,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 102
     const/4 v0, 0x0
 
     return v0
@@ -110,7 +94,6 @@
 .method public getGroupId()Ljava/lang/String;
     .locals 1
 
-    .line 80
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mGroupId:Ljava/lang/String;
 
     return-object v0
@@ -119,7 +102,6 @@
 .method public getIP()Ljava/lang/String;
     .locals 1
 
-    .line 88
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mIP:Ljava/lang/String;
 
     return-object v0
@@ -128,7 +110,6 @@
 .method public getPassphrase()Ljava/lang/String;
     .locals 1
 
-    .line 84
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mPassphrase:Ljava/lang/String;
 
     return-object v0
@@ -137,7 +118,6 @@
 .method public getSessionId()I
     .locals 1
 
-    .line 76
     iget v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mSessionId:I
 
     return v0
@@ -146,7 +126,6 @@
 .method public isClient()Z
     .locals 1
 
-    .line 72
     iget-boolean v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mClient:Z
 
     return v0
@@ -155,7 +134,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 108
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -164,7 +142,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 109
     iget-boolean v1, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mClient:Z
 
     if-eqz v1, :cond_0
@@ -215,40 +192,31 @@
 
     move-result-object v0
 
-    .line 108
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 93
     iget-boolean v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mClient:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 94
     iget v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mSessionId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 95
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mGroupId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 96
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mPassphrase:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 97
     iget-object v0, p0, Landroid/hardware/display/WifiDisplaySessionInfo;->mIP:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 98
     return-void
 .end method

@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 872
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothManagerCallback$Stub;-><init>()V
 
     return-void
@@ -34,24 +33,19 @@
         }
     .end annotation
 
-    .line 886
     const-class v0, Landroid/bluetooth/BluetoothDevice;
 
     monitor-enter v0
 
-    .line 887
     const/4 v1, 0x0
 
     :try_start_0
     invoke-static {v1}, Landroid/bluetooth/BluetoothDevice;->access$002(Landroid/bluetooth/IBluetooth;)Landroid/bluetooth/IBluetooth;
 
-    .line 888
     monitor-exit v0
 
-    .line 889
     return-void
 
-    .line 888
     :catchall_0
     move-exception v1
 
@@ -64,19 +58,16 @@
 
 .method public onBluetoothServiceUp(Landroid/bluetooth/IBluetooth;)V
     .locals 3
-    .param p1, "bluetoothService"    # Landroid/bluetooth/IBluetooth;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 876
     const-class v0, Landroid/bluetooth/BluetoothDevice;
 
     monitor-enter v0
 
-    .line 877
     :try_start_0
     invoke-static {}, Landroid/bluetooth/BluetoothDevice;->access$000()Landroid/bluetooth/IBluetooth;
 
@@ -84,24 +75,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 878
     const-string v1, "BluetoothDevice"
 
     const-string/jumbo v2, "sService is not NULL"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 880
     :cond_0
     invoke-static {p1}, Landroid/bluetooth/BluetoothDevice;->access$002(Landroid/bluetooth/IBluetooth;)Landroid/bluetooth/IBluetooth;
 
-    .line 881
     monitor-exit v0
 
-    .line 882
     return-void
 
-    .line 881
     :catchall_0
     move-exception v1
 
@@ -115,6 +101,5 @@
 .method public onBrEdrDown()V
     .locals 0
 
-    .line 893
     return-void
 .end method

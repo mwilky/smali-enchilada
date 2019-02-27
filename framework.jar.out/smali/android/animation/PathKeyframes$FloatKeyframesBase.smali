@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 239
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/animation/PathKeyframes$SimpleKeyframes;-><init>(Landroid/animation/PathKeyframes$1;)V
@@ -34,7 +33,6 @@
 .method public getType()Ljava/lang/Class;
     .locals 1
 
-    .line 243
     const-class v0, Ljava/lang/Float;
 
     return-object v0
@@ -42,9 +40,7 @@
 
 .method public getValue(F)Ljava/lang/Object;
     .locals 1
-    .param p1, "fraction"    # F
 
-    .line 248
     invoke-virtual {p0, p1}, Landroid/animation/PathKeyframes$FloatKeyframesBase;->getFloatValue(F)F
 
     move-result v0

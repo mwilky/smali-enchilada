@@ -47,10 +47,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 45
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 112
     new-instance v0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;
 
     const/4 v1, 0x0
@@ -66,9 +64,7 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 318
     const-string v0, "android.service.carrier.CarrierMessagingService"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -81,12 +77,10 @@
 
     if-nez v0, :cond_0
 
-    .line 319
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 321
     :cond_0
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService;->mWrapper:Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;
 
@@ -95,9 +89,6 @@
 
 .method public onDownloadMms(Landroid/net/Uri;ILandroid/net/Uri;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 1
-    .param p1, "contentUri"    # Landroid/net/Uri;
-    .param p2, "subId"    # I
-    .param p3, "location"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,8 +101,6 @@
         }
     .end annotation
 
-    .line 311
-    .local p4, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Ljava/lang/Integer;>;"
     const/4 v0, 0x1
 
     :try_start_0
@@ -123,24 +112,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 313
     goto :goto_0
 
-    .line 312
     :catch_0
     move-exception v0
 
-    .line 314
     :goto_0
     return-void
 .end method
 
 .method public onFilterSms(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 1
-    .param p1, "pdu"    # Landroid/service/carrier/MessagePdu;
-    .param p2, "format"    # Ljava/lang/String;
-    .param p3, "destPort"    # I
-    .param p4, "subId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,8 +138,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 130
-    .local p5, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Ljava/lang/Boolean;>;"
     const/4 v0, 0x1
 
     :try_start_0
@@ -169,24 +149,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 132
     goto :goto_0
 
-    .line 131
     :catch_0
     move-exception v0
 
-    .line 133
     :goto_0
     return-void
 .end method
 
 .method public onReceiveTextSms(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 6
-    .param p1, "pdu"    # Landroid/service/carrier/MessagePdu;
-    .param p2, "format"    # Ljava/lang/String;
-    .param p3, "destPort"    # I
-    .param p4, "subId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -199,8 +172,6 @@
         }
     .end annotation
 
-    .line 156
-    .local p5, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Ljava/lang/Integer;>;"
     new-instance v5, Landroid/service/carrier/CarrierMessagingService$1;
 
     invoke-direct {v5, p0, p5}, Landroid/service/carrier/CarrierMessagingService$1;-><init>(Landroid/service/carrier/CarrierMessagingService;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
@@ -217,17 +188,11 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onFilterSms(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 163
     return-void
 .end method
 
 .method public onSendDataSms([BILjava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 6
-    .param p1, "data"    # [B
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
-    .param p4, "destPort"    # I
-    .param p5, "sendSmsFlag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -239,8 +204,6 @@
         }
     .end annotation
 
-    .line 238
-    .local p6, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendSmsResult;>;"
     move-object v0, p0
 
     move-object v1, p1
@@ -255,16 +218,11 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onSendDataSms([BILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 239
     return-void
 .end method
 
 .method public onSendDataSms([BILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 3
-    .param p1, "data"    # [B
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
-    .param p4, "destPort"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -279,8 +237,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 218
-    .local p5, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendSmsResult;>;"
     :try_start_0
     new-instance v0, Landroid/service/carrier/CarrierMessagingService$SendSmsResult;
 
@@ -294,23 +250,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 220
     goto :goto_0
 
-    .line 219
     :catch_0
     move-exception v0
 
-    .line 221
     :goto_0
     return-void
 .end method
 
 .method public onSendMms(Landroid/net/Uri;ILandroid/net/Uri;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 3
-    .param p1, "pduUri"    # Landroid/net/Uri;
-    .param p2, "subId"    # I
-    .param p3, "location"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -323,8 +273,6 @@
         }
     .end annotation
 
-    .line 292
-    .local p4, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendMmsResult;>;"
     :try_start_0
     new-instance v0, Landroid/service/carrier/CarrierMessagingService$SendMmsResult;
 
@@ -338,23 +286,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 294
     goto :goto_0
 
-    .line 293
     :catch_0
     move-exception v0
 
-    .line 295
     :goto_0
     return-void
 .end method
 
 .method public onSendMultipartTextSms(Ljava/util/List;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 0
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
-    .param p4, "sendSmsFlag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -369,19 +311,13 @@
         }
     .end annotation
 
-    .line 276
-    .local p1, "parts":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .local p5, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;>;"
     invoke-virtual {p0, p1, p2, p3, p5}, Landroid/service/carrier/CarrierMessagingService;->onSendMultipartTextSms(Ljava/util/List;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 277
     return-void
 .end method
 
 .method public onSendMultipartTextSms(Ljava/util/List;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 3
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -398,9 +334,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 256
-    .local p1, "parts":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .local p4, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;>;"
     :try_start_0
     new-instance v0, Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;
 
@@ -414,24 +347,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 259
     goto :goto_0
 
-    .line 258
     :catch_0
     move-exception v0
 
-    .line 260
     :goto_0
     return-void
 .end method
 
 .method public onSendTextSms(Ljava/lang/String;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
-    .param p4, "sendSmsFlag"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -445,19 +371,13 @@
         }
     .end annotation
 
-    .line 199
-    .local p5, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendSmsResult;>;"
     invoke-virtual {p0, p1, p2, p3, p5}, Landroid/service/carrier/CarrierMessagingService;->onSendTextSms(Ljava/lang/String;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 200
     return-void
 .end method
 
 .method public onSendTextSms(Ljava/lang/String;ILjava/lang/String;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 3
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "subId"    # I
-    .param p3, "destAddress"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -473,8 +393,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 180
-    .local p4, "callback":Landroid/service/carrier/CarrierMessagingService$ResultCallback;, "Landroid/service/carrier/CarrierMessagingService$ResultCallback<Landroid/service/carrier/CarrierMessagingService$SendSmsResult;>;"
     :try_start_0
     new-instance v0, Landroid/service/carrier/CarrierMessagingService$SendSmsResult;
 
@@ -488,14 +406,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 182
     goto :goto_0
 
-    .line 181
     :catch_0
     move-exception v0
 
-    .line 183
     :goto_0
     return-void
 .end method

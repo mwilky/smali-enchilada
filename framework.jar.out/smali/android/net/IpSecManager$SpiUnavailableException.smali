@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "spi"    # I
 
-    .line 121
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -47,10 +44,8 @@
 
     invoke-direct {p0, v0}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
 
-    .line 122
     iput p2, p0, Landroid/net/IpSecManager$SpiUnavailableException;->mSpi:I
 
-    .line 123
     return-void
 .end method
 
@@ -59,7 +54,6 @@
 .method public getSpi()I
     .locals 1
 
-    .line 127
     iget v0, p0, Landroid/net/IpSecManager$SpiUnavailableException;->mSpi:I
 
     return v0

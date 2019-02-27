@@ -31,7 +31,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 33
     sget-boolean v0, Landroid/os/Build;->IS_USER:Z
 
     xor-int/lit8 v0, v0, 0x1
@@ -43,16 +42,11 @@
 
 .method public constructor <init>(Ljava/lang/String;J)V
     .locals 2
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "traceTag"    # J
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     nop
 
-    .line 35
     sget-boolean v0, Landroid/util/TimingsTraceLog;->DEBUG_BOOT_TIME:Z
 
     if-eqz v0, :cond_0
@@ -69,13 +63,10 @@
     :goto_0
     iput-object v0, p0, Landroid/util/TimingsTraceLog;->mStartTimes:Ljava/util/Deque;
 
-    .line 41
     iput-object p1, p0, Landroid/util/TimingsTraceLog;->mTag:Ljava/lang/String;
 
-    .line 42
     iput-wide p2, p0, Landroid/util/TimingsTraceLog;->mTraceTag:J
 
-    .line 43
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -86,20 +77,16 @@
 
     iput-wide v0, p0, Landroid/util/TimingsTraceLog;->mThreadId:J
 
-    .line 44
     return-void
 .end method
 
 .method private assertSameThread()V
     .locals 5
 
-    .line 77
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    .line 78
-    .local v0, "currentThread":Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
 
     move-result-wide v1
@@ -110,10 +97,8 @@
 
     if-nez v1, :cond_0
 
-    .line 83
     return-void
 
-    .line 79
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -133,7 +118,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 81
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -167,10 +151,7 @@
 # virtual methods
 .method public logDuration(Ljava/lang/String;J)V
     .locals 3
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "timeMs"    # J
 
-    .line 89
     iget-object v0, p0, Landroid/util/TimingsTraceLog;->mTag:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -195,28 +176,22 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
     return-void
 .end method
 
 .method public traceBegin(Ljava/lang/String;)V
     .locals 3
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 51
     invoke-direct {p0}, Landroid/util/TimingsTraceLog;->assertSameThread()V
 
-    .line 52
     iget-wide v0, p0, Landroid/util/TimingsTraceLog;->mTraceTag:J
 
     invoke-static {v0, v1, p1}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 53
     sget-boolean v0, Landroid/util/TimingsTraceLog;->DEBUG_BOOT_TIME:Z
 
     if-eqz v0, :cond_0
 
-    .line 54
     iget-object v0, p0, Landroid/util/TimingsTraceLog;->mStartTimes:Ljava/util/Deque;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -233,7 +208,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
 
-    .line 56
     :cond_0
     return-void
 .end method
@@ -241,23 +215,18 @@
 .method public traceEnd()V
     .locals 6
 
-    .line 63
     invoke-direct {p0}, Landroid/util/TimingsTraceLog;->assertSameThread()V
 
-    .line 64
     iget-wide v0, p0, Landroid/util/TimingsTraceLog;->mTraceTag:J
 
     invoke-static {v0, v1}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 65
     sget-boolean v0, Landroid/util/TimingsTraceLog;->DEBUG_BOOT_TIME:Z
 
     if-nez v0, :cond_0
 
-    .line 66
     return-void
 
-    .line 68
     :cond_0
     iget-object v0, p0, Landroid/util/TimingsTraceLog;->mStartTimes:Ljava/util/Deque;
 
@@ -267,17 +236,14 @@
 
     if-nez v0, :cond_1
 
-    .line 69
     iget-object v0, p0, Landroid/util/TimingsTraceLog;->mTag:Ljava/lang/String;
 
     const-string/jumbo v1, "traceEnd called more times than traceBegin"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     return-void
 
-    .line 72
     :cond_1
     iget-object v0, p0, Landroid/util/TimingsTraceLog;->mStartTimes:Ljava/util/Deque;
 
@@ -287,8 +253,6 @@
 
     check-cast v0, Landroid/util/Pair;
 
-    .line 73
-    .local v0, "event":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/lang/Long;>;"
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/String;
@@ -309,6 +273,5 @@
 
     invoke-virtual {p0, v1, v2, v3}, Landroid/util/TimingsTraceLog;->logDuration(Ljava/lang/String;J)V
 
-    .line 74
     return-void
 .end method

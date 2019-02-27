@@ -25,25 +25,17 @@
 # direct methods
 .method constructor <init>([BII)V
     .locals 1
-    .param p1, "data"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
 
-    .line 217
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/graphics/ImageDecoder$Source;-><init>(Landroid/graphics/ImageDecoder$1;)V
 
-    .line 218
     iput-object p1, p0, Landroid/graphics/ImageDecoder$ByteArraySource;->mData:[B
 
-    .line 219
     iput p2, p0, Landroid/graphics/ImageDecoder$ByteArraySource;->mOffset:I
 
-    .line 220
     iput p3, p0, Landroid/graphics/ImageDecoder$ByteArraySource;->mLength:I
 
-    .line 221
     return-void
 .end method
 
@@ -57,7 +49,6 @@
         }
     .end annotation
 
-    .line 228
     iget-object v0, p0, Landroid/graphics/ImageDecoder$ByteArraySource;->mData:[B
 
     iget v1, p0, Landroid/graphics/ImageDecoder$ByteArraySource;->mOffset:I

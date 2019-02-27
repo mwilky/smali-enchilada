@@ -28,7 +28,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 2381
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,20 +38,15 @@
 .method resetInternal()V
     .locals 1
 
-    .line 2388
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 2389
     iput-boolean v0, p0, Lcom/android/internal/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 2390
     iput-boolean v0, p0, Lcom/android/internal/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 2391
     iput-boolean v0, p0, Lcom/android/internal/widget/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
 
-    .line 2392
     return-void
 .end method

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 738
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,28 +35,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/content/RestrictionsManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 741
     const-string/jumbo v0, "restrictions"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 742
-    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/content/IRestrictionsManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/IRestrictionsManager;
 
     move-result-object v1
 
-    .line 743
-    .local v1, "service":Landroid/content/IRestrictionsManager;
     new-instance v2, Landroid/content/RestrictionsManager;
 
     invoke-direct {v2, p1, v1}, Landroid/content/RestrictionsManager;-><init>(Landroid/content/Context;Landroid/content/IRestrictionsManager;)V
@@ -73,7 +66,6 @@
         }
     .end annotation
 
-    .line 738
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$64;->createService(Landroid/app/ContextImpl;)Landroid/content/RestrictionsManager;
 
     move-result-object p1

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 379
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method public createService()Landroid/view/textservice/TextServicesManager;
     .locals 1
 
-    .line 382
     invoke-static {}, Landroid/view/textservice/TextServicesManager;->getInstance()Landroid/view/textservice/TextServicesManager;
 
     move-result-object v0
@@ -53,7 +51,6 @@
         }
     .end annotation
 
-    .line 379
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$23;->createService()Landroid/view/textservice/TextServicesManager;
 
     move-result-object v0

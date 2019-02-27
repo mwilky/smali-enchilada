@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 127
     new-instance v0, Landroid/app/AppComponentFactory;
 
     invoke-direct {v0}, Landroid/app/AppComponentFactory;-><init>()V
@@ -24,7 +23,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,9 +32,6 @@
 # virtual methods
 .method public instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -45,7 +40,6 @@
         }
     .end annotation
 
-    .line 69
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -61,8 +55,6 @@
 
 .method public instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -71,7 +63,6 @@
         }
     .end annotation
 
-    .line 50
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -87,8 +78,6 @@
 
 .method public instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -97,7 +86,6 @@
         }
     .end annotation
 
-    .line 121
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -113,9 +101,6 @@
 
 .method public instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -124,7 +109,6 @@
         }
     .end annotation
 
-    .line 84
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -140,9 +124,6 @@
 
 .method public instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
     .locals 1
-    .param p1, "cl"    # Ljava/lang/ClassLoader;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "intent"    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -151,7 +132,6 @@
         }
     .end annotation
 
-    .line 103
     invoke-virtual {p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

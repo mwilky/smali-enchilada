@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/UidProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/os/UidProto;
 
-    .line 353
     iput-object p1, p0, Landroid/os/UidProto$WakeupAlarm;->this$0:Landroid/os/UidProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

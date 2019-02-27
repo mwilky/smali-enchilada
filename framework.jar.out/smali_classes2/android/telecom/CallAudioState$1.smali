@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 243
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telecom/CallAudioState;
     .locals 11
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 247
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -61,29 +58,21 @@
 
     goto :goto_0
 
-    .line 248
-    .local v2, "isMuted":Z
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 249
-    .local v0, "route":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 250
-    .local v7, "supportedRouteMask":I
     nop
 
-    .line 251
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
-    .line 250
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v1
@@ -92,27 +81,20 @@
 
     check-cast v8, Landroid/bluetooth/BluetoothDevice;
 
-    .line 252
-    .local v8, "activeBluetoothDevice":Landroid/bluetooth/BluetoothDevice;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v9, v1
 
-    .line 253
-    .local v9, "supportedBluetoothDevices":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/BluetoothDevice;>;"
     nop
 
-    .line 254
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
-    .line 253
     invoke-virtual {p1, v9, v1}, Landroid/os/Parcel;->readParcelableList(Ljava/util/List;Ljava/lang/ClassLoader;)Ljava/util/List;
 
-    .line 255
     new-instance v10, Landroid/telecom/CallAudioState;
 
     move-object v1, v10
@@ -133,7 +115,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 243
     invoke-virtual {p0, p1}, Landroid/telecom/CallAudioState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/CallAudioState;
 
     move-result-object p1
@@ -143,9 +124,7 @@
 
 .method public newArray(I)[Landroid/telecom/CallAudioState;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 261
     new-array v0, p1, [Landroid/telecom/CallAudioState;
 
     return-object v0
@@ -154,7 +133,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 243
     invoke-virtual {p0, p1}, Landroid/telecom/CallAudioState$1;->newArray(I)[Landroid/telecom/CallAudioState;
 
     move-result-object p1

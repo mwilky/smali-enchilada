@@ -62,7 +62,6 @@
 # direct methods
 .method private constructor <init>(JLjava/util/List;Ljava/util/Set;Ljava/util/Map;)V
     .locals 2
-    .param p1, "memoryStateGeneration"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -79,13 +78,8 @@
         }
     .end annotation
 
-    .line 369
-    .local p3, "keysModified":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .local p4, "listeners":Ljava/util/Set;, "Ljava/util/Set<Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;>;"
-    .local p5, "mapToWriteToDisk":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 361
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -94,39 +88,26 @@
 
     iput-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 363
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
 
-    .line 365
     iput-boolean v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->wasWritten:Z
 
-    .line 370
     iput-wide p1, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->memoryStateGeneration:J
 
-    .line 371
     iput-object p3, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->keysModified:Ljava/util/List;
 
-    .line 372
     iput-object p4, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->listeners:Ljava/util/Set;
 
-    .line 373
     iput-object p5, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->mapToWriteToDisk:Ljava/util/Map;
 
-    .line 374
     return-void
 .end method
 
 .method synthetic constructor <init>(JLjava/util/List;Ljava/util/Set;Ljava/util/Map;Landroid/app/SharedPreferencesImpl$1;)V
     .locals 0
-    .param p1, "x0"    # J
-    .param p3, "x1"    # Ljava/util/List;
-    .param p4, "x2"    # Ljava/util/Set;
-    .param p5, "x3"    # Ljava/util/Map;
-    .param p6, "x4"    # Landroid/app/SharedPreferencesImpl$1;
 
-    .line 356
     invoke-direct/range {p0 .. p5}, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;-><init>(JLjava/util/List;Ljava/util/Set;Ljava/util/Map;)V
 
     return-void
@@ -136,20 +117,14 @@
 # virtual methods
 .method setDiskWriteResult(ZZ)V
     .locals 1
-    .param p1, "wasWritten"    # Z
-    .param p2, "result"    # Z
 
-    .line 377
     iput-boolean p1, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->wasWritten:Z
 
-    .line 378
     iput-boolean p2, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
 
-    .line 379
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 380
     return-void
 .end method

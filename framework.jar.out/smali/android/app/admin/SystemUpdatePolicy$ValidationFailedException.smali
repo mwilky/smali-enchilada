@@ -57,7 +57,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 285
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException$1;
 
     invoke-direct {v0}, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException$1;-><init>()V
@@ -69,26 +68,17 @@
 
 .method private constructor <init>(ILjava/lang/String;)V
     .locals 0
-    .param p1, "errorCode"    # I
-    .param p2, "message"    # Ljava/lang/String;
 
-    .line 237
     invoke-direct {p0, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 238
     iput p1, p0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->mErrorCode:I
 
-    .line 239
     return-void
 .end method
 
 .method synthetic constructor <init>(ILjava/lang/String;Landroid/app/admin/SystemUpdatePolicy$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Ljava/lang/String;
-    .param p3, "x2"    # Landroid/app/admin/SystemUpdatePolicy$1;
 
-    .line 180
     invoke-direct {p0, p1, p2}, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;-><init>(ILjava/lang/String;)V
 
     return-void
@@ -96,9 +86,7 @@
 
 .method public static combinedPeriodTooClose(Ljava/lang/String;)Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
     .locals 2
-    .param p0, "message"    # Ljava/lang/String;
 
-    .line 271
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     const/4 v1, 0x6
@@ -110,9 +98,7 @@
 
 .method public static combinedPeriodTooLong(Ljava/lang/String;)Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
     .locals 2
-    .param p0, "message"    # Ljava/lang/String;
 
-    .line 266
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     const/4 v1, 0x5
@@ -125,7 +111,6 @@
 .method public static duplicateOrOverlapPeriods()Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
     .locals 3
 
-    .line 250
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     const-string v1, "Found duplicate or overlapping periods"
@@ -139,9 +124,7 @@
 
 .method public static freezePeriodTooClose(Ljava/lang/String;)Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
     .locals 2
-    .param p0, "message"    # Ljava/lang/String;
 
-    .line 261
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     const/4 v1, 0x4
@@ -153,9 +136,7 @@
 
 .method public static freezePeriodTooLong(Ljava/lang/String;)Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
     .locals 2
-    .param p0, "message"    # Ljava/lang/String;
 
-    .line 256
     new-instance v0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     const/4 v1, 0x3
@@ -170,7 +151,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 276
     const/4 v0, 0x0
 
     return v0
@@ -179,7 +159,6 @@
 .method public getErrorCode()I
     .locals 1
 
-    .line 245
     iget v0, p0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->mErrorCode:I
 
     return v0
@@ -187,21 +166,16 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 281
     iget v0, p0, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->mErrorCode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 282
     invoke-virtual {p0}, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 283
     return-void
 .end method

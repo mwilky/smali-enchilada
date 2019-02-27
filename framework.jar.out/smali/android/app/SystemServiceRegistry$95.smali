@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1028
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,36 +35,30 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/content/pm/CrossProfileApps;
     .locals 4
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 1032
     const-string v0, "crossprofileapps"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1034
-    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/content/pm/CrossProfileApps;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v2
 
-    .line 1035
     invoke-static {v0}, Landroid/content/pm/ICrossProfileApps$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/ICrossProfileApps;
 
     move-result-object v3
 
     invoke-direct {v1, v2, v3}, Landroid/content/pm/CrossProfileApps;-><init>(Landroid/content/Context;Landroid/content/pm/ICrossProfileApps;)V
 
-    .line 1034
     return-object v1
 .end method
 
@@ -77,7 +70,6 @@
         }
     .end annotation
 
-    .line 1028
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$95;->createService(Landroid/app/ContextImpl;)Landroid/content/pm/CrossProfileApps;
 
     move-result-object p1

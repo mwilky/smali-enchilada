@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/TimePickerDialog;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/TimePickerDialog;
 
-    .line 150
     iput-object p1, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 153
     iget-object v0, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
 
     invoke-static {v0}, Landroid/app/TimePickerDialog;->access$000(Landroid/app/TimePickerDialog;)Landroid/widget/TimePicker;
@@ -53,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 154
     iget-object v0, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
 
     iget-object v1, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
@@ -62,7 +57,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/TimePickerDialog;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 157
     iget-object v0, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
 
     invoke-static {v0}, Landroid/app/TimePickerDialog;->access$000(Landroid/app/TimePickerDialog;)Landroid/widget/TimePicker;
@@ -71,12 +65,10 @@
 
     invoke-virtual {v0}, Landroid/widget/TimePicker;->clearFocus()V
 
-    .line 158
     iget-object v0, p0, Landroid/app/TimePickerDialog$1;->this$0:Landroid/app/TimePickerDialog;
 
     invoke-virtual {v0}, Landroid/app/TimePickerDialog;->dismiss()V
 
-    .line 160
     :cond_0
     return-void
 .end method

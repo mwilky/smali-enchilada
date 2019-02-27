@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;
 
-    .line 520
     iput-object p1, p0, Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection$1;->this$1:Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;
 
     invoke-direct {p0}, Landroid/service/resolver/IResolverRankerResult$Stub;-><init>()V
@@ -50,8 +48,6 @@
         }
     .end annotation
 
-    .line 526
-    .local p1, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/resolver/ResolverTarget;>;"
     iget-object v0, p0, Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection$1;->this$1:Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;
 
     iget-object v0, v0, Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;->this$0:Lcom/android/internal/app/ResolverComparator;
@@ -62,22 +58,17 @@
 
     monitor-enter v0
 
-    .line 527
     :try_start_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 528
-    .local v1, "msg":Landroid/os/Message;
     const/4 v2, 0x0
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 529
     iput-object p1, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 530
     iget-object v2, p0, Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection$1;->this$1:Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;
 
     iget-object v2, v2, Lcom/android/internal/app/ResolverComparator$ResolverRankerServiceConnection;->this$0:Lcom/android/internal/app/ResolverComparator;
@@ -88,14 +79,10 @@
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 531
-    .end local v1    # "msg":Landroid/os/Message;
     monitor-exit v0
 
-    .line 532
     return-void
 
-    .line 531
     :catchall_0
     move-exception v1
 

@@ -61,35 +61,21 @@
 # direct methods
 .method constructor <init>(I[I[F[F[F[F)V
     .locals 0
-    .param p1, "svCount"    # I
-    .param p2, "svidWithFlags"    # [I
-    .param p3, "cn0s"    # [F
-    .param p4, "elevations"    # [F
-    .param p5, "azimuths"    # [F
-    .param p6, "carrierFrequencies"    # [F
 
-    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
     iput p1, p0, Landroid/location/GnssStatus;->mSvCount:I
 
-    .line 110
     iput-object p2, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
-    .line 111
     iput-object p3, p0, Landroid/location/GnssStatus;->mCn0DbHz:[F
 
-    .line 112
     iput-object p4, p0, Landroid/location/GnssStatus;->mElevations:[F
 
-    .line 113
     iput-object p5, p0, Landroid/location/GnssStatus;->mAzimuths:[F
 
-    .line 114
     iput-object p6, p0, Landroid/location/GnssStatus;->mCarrierFrequencies:[F
 
-    .line 115
     return-void
 .end method
 
@@ -97,9 +83,7 @@
 # virtual methods
 .method public getAzimuthDegrees(I)F
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 189
     iget-object v0, p0, Landroid/location/GnssStatus;->mAzimuths:[F
 
     aget v0, v0, p1
@@ -109,9 +93,7 @@
 
 .method public getCarrierFrequencyHz(I)F
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 247
     iget-object v0, p0, Landroid/location/GnssStatus;->mCarrierFrequencies:[F
 
     aget v0, v0, p1
@@ -121,9 +103,7 @@
 
 .method public getCn0DbHz(I)F
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 171
     iget-object v0, p0, Landroid/location/GnssStatus;->mCn0DbHz:[F
 
     aget v0, v0, p1
@@ -133,9 +113,7 @@
 
 .method public getConstellationType(I)I
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 131
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1
@@ -149,9 +127,7 @@
 
 .method public getElevationDegrees(I)F
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 180
     iget-object v0, p0, Landroid/location/GnssStatus;->mElevations:[F
 
     aget v0, v0, p1
@@ -162,7 +138,6 @@
 .method public getSatelliteCount()I
     .locals 1
 
-    .line 121
     iget v0, p0, Landroid/location/GnssStatus;->mSvCount:I
 
     return v0
@@ -170,9 +145,7 @@
 
 .method public getSvid(I)I
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 161
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1
@@ -184,9 +157,7 @@
 
 .method public hasAlmanacData(I)Z
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 207
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1
@@ -208,9 +179,7 @@
 
 .method public hasCarrierFrequencyHz(I)Z
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 226
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1
@@ -232,9 +201,7 @@
 
 .method public hasEphemerisData(I)Z
     .locals 2
-    .param p1, "satIndex"    # I
 
-    .line 198
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1
@@ -256,9 +223,7 @@
 
 .method public usedInFix(I)Z
     .locals 1
-    .param p1, "satIndex"    # I
 
-    .line 217
     iget-object v0, p0, Landroid/location/GnssStatus;->mSvidWithFlags:[I
 
     aget v0, v0, p1

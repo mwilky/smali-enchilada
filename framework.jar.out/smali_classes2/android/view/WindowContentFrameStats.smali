@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 140
     new-instance v0, Landroid/view/WindowContentFrameStats$1;
 
     invoke-direct {v0}, Landroid/view/WindowContentFrameStats$1;-><init>()V
@@ -41,58 +40,46 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 49
     invoke-direct {p0}, Landroid/view/FrameStats;-><init>()V
 
-    .line 51
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 71
     invoke-direct {p0}, Landroid/view/FrameStats;-><init>()V
 
-    .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/view/WindowContentFrameStats;->mRefreshPeriodNano:J
 
-    .line 73
     invoke-virtual {p1}, Landroid/os/Parcel;->createLongArray()[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPostedTimeNano:[J
 
-    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->createLongArray()[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPresentedTimeNano:[J
 
-    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->createLongArray()[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesReadyTimeNano:[J
 
-    .line 76
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/view/WindowContentFrameStats$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/view/WindowContentFrameStats$1;
 
-    .line 42
     invoke-direct {p0, p1}, Landroid/view/WindowContentFrameStats;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -103,7 +90,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 118
     const/4 v0, 0x0
 
     return v0
@@ -111,21 +97,17 @@
 
 .method public getFramePostedTimeNano(I)J
     .locals 2
-    .param p1, "index"    # I
 
-    .line 91
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPostedTimeNano:[J
 
     if-eqz v0, :cond_0
 
-    .line 94
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPostedTimeNano:[J
 
     aget-wide v0, v0, p1
 
     return-wide v0
 
-    .line 92
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -136,21 +118,17 @@
 
 .method public getFrameReadyTimeNano(I)J
     .locals 2
-    .param p1, "index"    # I
 
-    .line 110
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesReadyTimeNano:[J
 
     if-eqz v0, :cond_0
 
-    .line 113
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesReadyTimeNano:[J
 
     aget-wide v0, v0, p1
 
     return-wide v0
 
-    .line 111
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -161,42 +139,29 @@
 
 .method public init(J[J[J[J)V
     .locals 0
-    .param p1, "refreshPeriodNano"    # J
-    .param p3, "framesPostedTimeNano"    # [J
-    .param p4, "framesPresentedTimeNano"    # [J
-    .param p5, "framesReadyTimeNano"    # [J
 
-    .line 65
     iput-wide p1, p0, Landroid/view/WindowContentFrameStats;->mRefreshPeriodNano:J
 
-    .line 66
     iput-object p3, p0, Landroid/view/WindowContentFrameStats;->mFramesPostedTimeNano:[J
 
-    .line 67
     iput-object p4, p0, Landroid/view/WindowContentFrameStats;->mFramesPresentedTimeNano:[J
 
-    .line 68
     iput-object p5, p0, Landroid/view/WindowContentFrameStats;->mFramesReadyTimeNano:[J
 
-    .line 69
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 132
-    .local v0, "builder":Ljava/lang/StringBuilder;
     const-string v1, "WindowContentFrameStats["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 133
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -217,7 +182,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 134
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -238,7 +202,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 135
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -259,12 +222,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 136
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 137
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -274,29 +235,22 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 123
     iget-wide v0, p0, Landroid/view/WindowContentFrameStats;->mRefreshPeriodNano:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 124
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPostedTimeNano:[J
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
 
-    .line 125
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesPresentedTimeNano:[J
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
 
-    .line 126
     iget-object v0, p0, Landroid/view/WindowContentFrameStats;->mFramesReadyTimeNano:[J
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
 
-    .line 127
     return-void
 .end method

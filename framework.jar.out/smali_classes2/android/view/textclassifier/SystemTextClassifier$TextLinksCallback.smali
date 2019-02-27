@@ -30,10 +30,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 212
     invoke-direct {p0}, Landroid/service/textclassifier/ITextLinksCallback$Stub;-><init>()V
 
-    .line 214
     new-instance v0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;
 
     const/4 v1, 0x0
@@ -47,9 +45,7 @@
 
 .method synthetic constructor <init>(Landroid/view/textclassifier/SystemTextClassifier$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/view/textclassifier/SystemTextClassifier$1;
 
-    .line 212
     invoke-direct {p0}, Landroid/view/textclassifier/SystemTextClassifier$TextLinksCallback;-><init>()V
 
     return-void
@@ -60,24 +56,19 @@
 .method public onFailure()V
     .locals 1
 
-    .line 223
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$TextLinksCallback;->mReceiver:Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;
 
     invoke-virtual {v0}, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->onFailure()V
 
-    .line 224
     return-void
 .end method
 
 .method public onSuccess(Landroid/view/textclassifier/TextLinks;)V
     .locals 1
-    .param p1, "links"    # Landroid/view/textclassifier/TextLinks;
 
-    .line 218
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$TextLinksCallback;->mReceiver:Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;
 
     invoke-virtual {v0, p1}, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->onSuccess(Ljava/lang/Object;)V
 
-    .line 219
     return-void
 .end method

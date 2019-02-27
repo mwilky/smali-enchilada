@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/TabHost;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/TabHost;
 
-    .line 170
     iput-object p1, p0, Landroid/widget/TabHost$2;->this$0:Landroid/widget/TabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +36,13 @@
 # virtual methods
 .method public onTabSelectionChanged(IZ)V
     .locals 2
-    .param p1, "tabIndex"    # I
-    .param p2, "clicked"    # Z
 
-    .line 172
     iget-object v0, p0, Landroid/widget/TabHost$2;->this$0:Landroid/widget/TabHost;
 
     invoke-virtual {v0, p1}, Landroid/widget/TabHost;->setCurrentTab(I)V
 
-    .line 173
     if-eqz p2, :cond_0
 
-    .line 174
     iget-object v0, p0, Landroid/widget/TabHost$2;->this$0:Landroid/widget/TabHost;
 
     invoke-static {v0}, Landroid/widget/TabHost;->access$100(Landroid/widget/TabHost;)Landroid/widget/FrameLayout;
@@ -60,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
 
-    .line 176
     :cond_0
     return-void
 .end method

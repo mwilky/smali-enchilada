@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;JI)V
     .locals 0
-    .param p1, "this$1"    # Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
-    .line 270
     iput-object p1, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$6;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
     iput-wide p2, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$6;->val$lastFrameNumber:J
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 277
     :try_start_0
     iget-object v0, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$6;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
@@ -65,18 +62,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 283
     nop
 
-    .line 284
     return-void
 
-    .line 279
     :catch_0
     move-exception v0
 
-    .line 280
-    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Received remote exception during onRepeatingRequestError callback: "

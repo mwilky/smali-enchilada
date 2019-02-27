@@ -33,22 +33,15 @@
 # direct methods
 .method public constructor <init>(Landroid/telecom/Logging/EventManager$EventRecord;Ljava/lang/String;J)V
     .locals 0
-    .param p1, "this$1"    # Landroid/telecom/Logging/EventManager$EventRecord;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "time"    # J
 
-    .line 154
     iput-object p1, p0, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->this$1:Landroid/telecom/Logging/EventManager$EventRecord;
 
     invoke-direct {p0}, Landroid/telecom/Logging/TimedEvent;-><init>()V
 
-    .line 155
     iput-object p2, p0, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->name:Ljava/lang/String;
 
-    .line 156
     iput-wide p3, p0, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->time:J
 
-    .line 157
     return-void
 .end method
 
@@ -57,7 +50,6 @@
 .method public bridge synthetic getKey()Ljava/lang/Object;
     .locals 1
 
-    .line 150
     invoke-virtual {p0}, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -68,7 +60,6 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 160
     iget-object v0, p0, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->name:Ljava/lang/String;
 
     return-object v0
@@ -77,7 +68,6 @@
 .method public getTime()J
     .locals 2
 
-    .line 164
     iget-wide v0, p0, Landroid/telecom/Logging/EventManager$EventRecord$EventTiming;->time:J
 
     return-wide v0

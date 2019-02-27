@@ -20,13 +20,8 @@
 
 .method public onColorsChanged(Landroid/app/WallpaperColors;II)V
     .locals 0
-    .param p1, "colors"    # Landroid/app/WallpaperColors;
-    .param p2, "which"    # I
-    .param p3, "userId"    # I
 
-    .line 2071
     invoke-interface {p0, p1, p2}, Landroid/app/WallpaperManager$OnColorsChangedListener;->onColorsChanged(Landroid/app/WallpaperColors;I)V
 
-    .line 2072
     return-void
 .end method

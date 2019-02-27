@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/location/GpsMeasurementsEvent;
     .locals 5
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 110
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -51,31 +48,22 @@
 
     move-result-object v0
 
-    .line 112
-    .local v0, "classLoader":Ljava/lang/ClassLoader;
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v1
 
     check-cast v1, Landroid/location/GpsClock;
 
-    .line 114
-    .local v1, "clock":Landroid/location/GpsClock;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 115
-    .local v2, "measurementsLength":I
     new-array v3, v2, [Landroid/location/GpsMeasurement;
 
-    .line 116
-    .local v3, "measurementsArray":[Landroid/location/GpsMeasurement;
     sget-object v4, Landroid/location/GpsMeasurement;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->readTypedArray([Ljava/lang/Object;Landroid/os/Parcelable$Creator;)V
 
-    .line 118
     new-instance v4, Landroid/location/GpsMeasurementsEvent;
 
     invoke-direct {v4, v1, v3}, Landroid/location/GpsMeasurementsEvent;-><init>(Landroid/location/GpsClock;[Landroid/location/GpsMeasurement;)V
@@ -86,7 +74,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 107
     invoke-virtual {p0, p1}, Landroid/location/GpsMeasurementsEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/location/GpsMeasurementsEvent;
 
     move-result-object p1
@@ -96,9 +83,7 @@
 
 .method public newArray(I)[Landroid/location/GpsMeasurementsEvent;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 123
     new-array v0, p1, [Landroid/location/GpsMeasurementsEvent;
 
     return-object v0
@@ -107,7 +92,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 107
     invoke-virtual {p0, p1}, Landroid/location/GpsMeasurementsEvent$1;->newArray(I)[Landroid/location/GpsMeasurementsEvent;
 
     move-result-object p1

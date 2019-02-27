@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 49
     new-instance v0, Landroid/hardware/location/ActivityChangedEvent$1;
 
     invoke-direct {v0}, Landroid/hardware/location/ActivityChangedEvent$1;-><init>()V
@@ -46,25 +45,19 @@
 
 .method public constructor <init>([Landroid/hardware/location/ActivityRecognitionEvent;)V
     .locals 2
-    .param p1, "activityRecognitionEvents"    # [Landroid/hardware/location/ActivityRecognitionEvent;
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     if-eqz p1, :cond_0
 
-    .line 41
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/location/ActivityChangedEvent;->mActivityRecognitionEvents:Ljava/util/List;
 
-    .line 42
     return-void
 
-    .line 37
     :cond_0
     new-instance v0, Ljava/security/InvalidParameterException;
 
@@ -80,7 +73,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 69
     const/4 v0, 0x0
 
     return v0
@@ -97,7 +89,6 @@
         }
     .end annotation
 
-    .line 46
     iget-object v0, p0, Landroid/hardware/location/ActivityChangedEvent;->mActivityRecognitionEvents:Ljava/util/List;
 
     return-object v0
@@ -106,15 +97,12 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[ ActivityChangedEvent:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 84
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/hardware/location/ActivityChangedEvent;->mActivityRecognitionEvents:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -134,30 +122,23 @@
 
     check-cast v2, Landroid/hardware/location/ActivityRecognitionEvent;
 
-    .line 85
-    .local v2, "event":Landroid/hardware/location/ActivityRecognitionEvent;
     const-string v3, "\n    "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 86
     invoke-virtual {v2}, Landroid/hardware/location/ActivityRecognitionEvent;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 87
-    .end local v2    # "event":Landroid/hardware/location/ActivityRecognitionEvent;
     goto :goto_0
 
-    .line 88
     :cond_0
     const-string v1, "\n]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 90
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -167,32 +148,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 74
     iget-object v0, p0, Landroid/hardware/location/ActivityChangedEvent;->mActivityRecognitionEvents:Ljava/util/List;
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Landroid/hardware/location/ActivityRecognitionEvent;
 
-    .line 75
     invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Landroid/hardware/location/ActivityRecognitionEvent;
 
-    .line 76
-    .local v0, "activityRecognitionEventArray":[Landroid/hardware/location/ActivityRecognitionEvent;
     array-length v1, v0
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 77
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 78
     return-void
 .end method

@@ -17,24 +17,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ApplicationInfo;I)V
     .locals 0
-    .param p1, "appInfo"    # Landroid/content/pm/ApplicationInfo;
-    .param p2, "layoutId"    # I
 
-    .line 9945
     invoke-direct {p0, p1, p2}, Landroid/widget/RemoteViews;-><init>(Landroid/content/pm/ApplicationInfo;I)V
 
-    .line 9946
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 9941
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;-><init>(Landroid/os/Parcel;)V
 
-    .line 9942
     return-void
 .end method
 
@@ -43,37 +36,28 @@
 .method public clone()Landroid/app/Notification$BuilderRemoteViews;
     .locals 2
 
-    .line 9950
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 9951
-    .local v0, "p":Landroid/os/Parcel;
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Landroid/app/Notification$BuilderRemoteViews;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 9952
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 9953
     new-instance v1, Landroid/app/Notification$BuilderRemoteViews;
 
     invoke-direct {v1, v0}, Landroid/app/Notification$BuilderRemoteViews;-><init>(Landroid/os/Parcel;)V
 
-    .line 9954
-    .local v1, "brv":Landroid/app/Notification$BuilderRemoteViews;
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 9955
     return-object v1
 .end method
 
 .method public bridge synthetic clone()Landroid/widget/RemoteViews;
     .locals 1
 
-    .line 9939
     invoke-virtual {p0}, Landroid/app/Notification$BuilderRemoteViews;->clone()Landroid/app/Notification$BuilderRemoteViews;
 
     move-result-object v0
@@ -89,7 +73,6 @@
         }
     .end annotation
 
-    .line 9939
     invoke-virtual {p0}, Landroid/app/Notification$BuilderRemoteViews;->clone()Landroid/app/Notification$BuilderRemoteViews;
 
     move-result-object v0

@@ -67,45 +67,38 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 147
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     sput-object v0, Landroid/service/euicc/EuiccService;->RESOLUTION_ACTIONS:Landroid/util/ArraySet;
 
-    .line 148
     sget-object v0, Landroid/service/euicc/EuiccService;->RESOLUTION_ACTIONS:Landroid/util/ArraySet;
 
     const-string v1, "android.service.euicc.action.RESOLVE_DEACTIVATE_SIM"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 149
     sget-object v0, Landroid/service/euicc/EuiccService;->RESOLUTION_ACTIONS:Landroid/util/ArraySet;
 
     const-string v1, "android.service.euicc.action.RESOLVE_NO_PRIVILEGES"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 150
     sget-object v0, Landroid/service/euicc/EuiccService;->RESOLUTION_ACTIONS:Landroid/util/ArraySet;
 
     const-string v1, "android.service.euicc.action.RESOLVE_CONFIRMATION_CODE"
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 151
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 2
 
-    .line 170
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 171
     new-instance v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     const/4 v1, 0x0
@@ -114,15 +107,12 @@
 
     iput-object v0, p0, Landroid/service/euicc/EuiccService;->mStubWrapper:Landroid/service/euicc/IEuiccService$Stub;
 
-    .line 172
     return-void
 .end method
 
 .method static synthetic access$100(Landroid/service/euicc/EuiccService;)Ljava/util/concurrent/ThreadPoolExecutor;
     .locals 1
-    .param p0, "x0"    # Landroid/service/euicc/EuiccService;
 
-    .line 75
     iget-object v0, p0, Landroid/service/euicc/EuiccService;->mExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     return-object v0
@@ -132,9 +122,7 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 214
     iget-object v0, p0, Landroid/service/euicc/EuiccService;->mStubWrapper:Landroid/service/euicc/IEuiccService$Stub;
 
     return-object v0
@@ -143,10 +131,8 @@
 .method public onCreate()V
     .locals 9
 
-    .line 177
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 183
     new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor;
 
     sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
@@ -171,14 +157,12 @@
 
     iput-object v8, p0, Landroid/service/euicc/EuiccService;->mExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    .line 197
     iget-object v0, p0, Landroid/service/euicc/EuiccService;->mExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
 
-    .line 198
     return-void
 .end method
 
@@ -188,15 +172,12 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 203
     iget-object v0, p0, Landroid/service/euicc/EuiccService;->mExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdownNow()Ljava/util/List;
 
-    .line 204
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 205
     return-void
 .end method
 

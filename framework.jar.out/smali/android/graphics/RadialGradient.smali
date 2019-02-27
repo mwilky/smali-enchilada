@@ -32,50 +32,33 @@
 # direct methods
 .method public constructor <init>(FFFIILandroid/graphics/Shader$TileMode;)V
     .locals 2
-    .param p1, "centerX"    # F
-    .param p2, "centerY"    # F
-    .param p3, "radius"    # F
-    .param p4, "centerColor"    # I
-    .param p5, "edgeColor"    # I
-    .param p6, "tileMode"    # Landroid/graphics/Shader$TileMode;
 
-    .line 89
     invoke-direct {p0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 90
     const/4 v0, 0x0
 
     cmpg-float v0, p3, v0
 
     if-lez v0, :cond_0
 
-    .line 93
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/graphics/RadialGradient;->mType:I
 
-    .line 94
     iput p1, p0, Landroid/graphics/RadialGradient;->mX:F
 
-    .line 95
     iput p2, p0, Landroid/graphics/RadialGradient;->mY:F
 
-    .line 96
     iput p3, p0, Landroid/graphics/RadialGradient;->mRadius:F
 
-    .line 97
     iput p4, p0, Landroid/graphics/RadialGradient;->mCenterColor:I
 
-    .line 98
     iput p5, p0, Landroid/graphics/RadialGradient;->mEdgeColor:I
 
-    .line 99
     iput-object p6, p0, Landroid/graphics/RadialGradient;->mTileMode:Landroid/graphics/Shader$TileMode;
 
-    .line 100
     return-void
 
-    .line 91
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -88,31 +71,21 @@
 
 .method public constructor <init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
     .locals 2
-    .param p1, "centerX"    # F
-    .param p2, "centerY"    # F
-    .param p3, "radius"    # F
-    .param p4, "colors"    # [I
-    .param p5, "stops"    # [F
-    .param p6, "tileMode"    # Landroid/graphics/Shader$TileMode;
 
-    .line 59
     invoke-direct {p0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 60
     const/4 v0, 0x0
 
     cmpg-float v0, p3, v0
 
     if-lez v0, :cond_4
 
-    .line 63
     array-length v0, p4
 
     const/4 v1, 0x2
 
     if-lt v0, v1, :cond_3
 
-    .line 66
     if-eqz p5, :cond_1
 
     array-length v0, p4
@@ -123,7 +96,6 @@
 
     goto :goto_0
 
-    .line 67
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -133,23 +105,18 @@
 
     throw v0
 
-    .line 69
     :cond_1
     :goto_0
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/graphics/RadialGradient;->mType:I
 
-    .line 70
     iput p1, p0, Landroid/graphics/RadialGradient;->mX:F
 
-    .line 71
     iput p2, p0, Landroid/graphics/RadialGradient;->mY:F
 
-    .line 72
     iput p3, p0, Landroid/graphics/RadialGradient;->mRadius:F
 
-    .line 73
     invoke-virtual {p4}, [I->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -158,7 +125,6 @@
 
     iput-object v0, p0, Landroid/graphics/RadialGradient;->mColors:[I
 
-    .line 74
     if-eqz p5, :cond_2
 
     invoke-virtual {p5}, [F->clone()Ljava/lang/Object;
@@ -175,13 +141,10 @@
     :goto_1
     iput-object v0, p0, Landroid/graphics/RadialGradient;->mPositions:[F
 
-    .line 75
     iput-object p6, p0, Landroid/graphics/RadialGradient;->mTileMode:Landroid/graphics/Shader$TileMode;
 
-    .line 76
     return-void
 
-    .line 64
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -191,7 +154,6 @@
 
     throw v0
 
-    .line 61
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -213,14 +175,12 @@
 .method protected copy()Landroid/graphics/Shader;
     .locals 9
 
-    .line 119
     iget v0, p0, Landroid/graphics/RadialGradient;->mType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 120
     new-instance v0, Landroid/graphics/RadialGradient;
 
     iget v3, p0, Landroid/graphics/RadialGradient;->mX:F
@@ -239,7 +199,6 @@
 
     check-cast v6, [I
 
-    .line 121
     iget-object v1, p0, Landroid/graphics/RadialGradient;->mPositions:[F
 
     if-eqz v1, :cond_0
@@ -269,11 +228,8 @@
 
     invoke-direct/range {v2 .. v8}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .local v0, "copy":Landroid/graphics/RadialGradient;
     goto :goto_2
 
-    .line 123
-    .end local v0    # "copy":Landroid/graphics/RadialGradient;
     :cond_1
     new-instance v0, Landroid/graphics/RadialGradient;
 
@@ -293,27 +249,21 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/graphics/RadialGradient;-><init>(FFFIILandroid/graphics/Shader$TileMode;)V
 
-    .line 125
-    .restart local v0    # "copy":Landroid/graphics/RadialGradient;
     :goto_2
     invoke-virtual {p0, v0}, Landroid/graphics/RadialGradient;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
-    .line 126
     return-object v0
 .end method
 
 .method createNativeInstance(J)J
     .locals 10
-    .param p1, "nativeMatrix"    # J
 
-    .line 104
     iget v0, p0, Landroid/graphics/RadialGradient;->mType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 105
     iget v4, p0, Landroid/graphics/RadialGradient;->mX:F
 
     iget v5, p0, Landroid/graphics/RadialGradient;->mY:F
@@ -336,7 +286,6 @@
 
     return-wide v0
 
-    .line 108
     :cond_0
     iget v4, p0, Landroid/graphics/RadialGradient;->mX:F
 

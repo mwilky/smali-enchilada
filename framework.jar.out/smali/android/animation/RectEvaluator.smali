@@ -25,24 +25,18 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     return-void
 .end method
 
 .method public constructor <init>(Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "reuseRect"    # Landroid/graphics/Rect;
 
-    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     iput-object p1, p0, Landroid/animation/RectEvaluator;->mRect:Landroid/graphics/Rect;
 
-    .line 52
     return-void
 .end method
 
@@ -50,11 +44,7 @@
 # virtual methods
 .method public evaluate(FLandroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .locals 6
-    .param p1, "fraction"    # F
-    .param p2, "startValue"    # Landroid/graphics/Rect;
-    .param p3, "endValue"    # Landroid/graphics/Rect;
 
-    .line 73
     iget v0, p2, Landroid/graphics/Rect;->left:I
 
     iget v1, p3, Landroid/graphics/Rect;->left:I
@@ -71,8 +61,6 @@
 
     add-int/2addr v0, v1
 
-    .line 74
-    .local v0, "left":I
     iget v1, p2, Landroid/graphics/Rect;->top:I
 
     iget v2, p3, Landroid/graphics/Rect;->top:I
@@ -89,8 +77,6 @@
 
     add-int/2addr v1, v2
 
-    .line 75
-    .local v1, "top":I
     iget v2, p2, Landroid/graphics/Rect;->right:I
 
     iget v3, p3, Landroid/graphics/Rect;->right:I
@@ -107,8 +93,6 @@
 
     add-int/2addr v2, v3
 
-    .line 76
-    .local v2, "right":I
     iget v3, p2, Landroid/graphics/Rect;->bottom:I
 
     iget v4, p3, Landroid/graphics/Rect;->bottom:I
@@ -125,26 +109,21 @@
 
     add-int/2addr v3, v4
 
-    .line 77
-    .local v3, "bottom":I
     iget-object v4, p0, Landroid/animation/RectEvaluator;->mRect:Landroid/graphics/Rect;
 
     if-nez v4, :cond_0
 
-    .line 78
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
     return-object v4
 
-    .line 80
     :cond_0
     iget-object v4, p0, Landroid/animation/RectEvaluator;->mRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 81
     iget-object v4, p0, Landroid/animation/RectEvaluator;->mRect:Landroid/graphics/Rect;
 
     return-object v4
@@ -153,7 +132,6 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 23
     check-cast p2, Landroid/graphics/Rect;
 
     check-cast p3, Landroid/graphics/Rect;

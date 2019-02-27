@@ -25,24 +25,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZLandroid/os/IBinder;I)V
     .locals 10
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "resultCode"    # I
-    .param p3, "resultData"    # Ljava/lang/String;
-    .param p4, "resultExtras"    # Landroid/os/Bundle;
-    .param p5, "ordered"    # Z
-    .param p6, "sticky"    # Z
-    .param p7, "token"    # Landroid/os/IBinder;
-    .param p8, "sendingUser"    # I
 
-    .line 596
     nop
 
-    .line 597
     invoke-virtual {p1}, Landroid/content/Intent;->getFlags()I
 
     move-result v9
 
-    .line 596
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -63,12 +52,10 @@
 
     invoke-direct/range {v0 .. v9}, Landroid/content/BroadcastReceiver$PendingResult;-><init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;II)V
 
-    .line 598
     move-object v1, p1
 
     iput-object v1, v0, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
-    .line 599
     return-void
 .end method
 
@@ -77,7 +64,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 605
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -104,7 +90,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 606
     invoke-virtual {p0}, Landroid/app/ActivityThread$ReceiverData;->getResultCode()I
 
     move-result v1
@@ -115,7 +100,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 607
     invoke-virtual {p0}, Landroid/app/ActivityThread$ReceiverData;->getResultData()Ljava/lang/String;
 
     move-result-object v1
@@ -126,7 +110,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 608
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Landroid/app/ActivityThread$ReceiverData;->getResultExtras(Z)Landroid/os/Bundle;
@@ -143,6 +126,5 @@
 
     move-result-object v0
 
-    .line 605
     return-object v0
 .end method

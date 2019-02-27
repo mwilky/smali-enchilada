@@ -34,7 +34,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,16 +43,12 @@
 # virtual methods
 .method public onGnssMeasurementsReceived(Landroid/location/GnssMeasurementsEvent;)V
     .locals 0
-    .param p1, "eventArgs"    # Landroid/location/GnssMeasurementsEvent;
 
-    .line 90
     return-void
 .end method
 
 .method public onStatusChanged(I)V
     .locals 0
-    .param p1, "status"    # I
 
-    .line 95
     return-void
 .end method

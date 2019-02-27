@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,27 +39,19 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/WifiDisplay;
     .locals 11
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 44
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 45
-    .local v7, "deviceAddress":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 46
-    .local v8, "deviceName":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 47
-    .local v9, "deviceAlias":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -78,8 +69,6 @@
     :cond_0
     move v4, v1
 
-    .line 48
-    .local v4, "isAvailable":Z
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -94,8 +83,6 @@
     :cond_1
     move v5, v1
 
-    .line 49
-    .local v5, "canConnect":Z
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -110,8 +97,6 @@
     :cond_2
     move v6, v1
 
-    .line 50
-    .local v6, "isRemembered":Z
     :goto_2
     new-instance v10, Landroid/hardware/display/WifiDisplay;
 
@@ -131,7 +116,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
     invoke-virtual {p0, p1}, Landroid/hardware/display/WifiDisplay$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/WifiDisplay;
 
     move-result-object p1
@@ -141,9 +125,7 @@
 
 .method public newArray(I)[Landroid/hardware/display/WifiDisplay;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 55
     if-nez p1, :cond_0
 
     sget-object v0, Landroid/hardware/display/WifiDisplay;->EMPTY_ARRAY:[Landroid/hardware/display/WifiDisplay;
@@ -160,7 +142,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 42
     invoke-virtual {p0, p1}, Landroid/hardware/display/WifiDisplay$1;->newArray(I)[Landroid/hardware/display/WifiDisplay;
 
     move-result-object p1

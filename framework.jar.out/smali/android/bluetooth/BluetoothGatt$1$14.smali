@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothGatt$1;IIII)V
     .locals 0
-    .param p1, "this$1"    # Landroid/bluetooth/BluetoothGatt$1;
 
-    .line 670
     iput-object p1, p0, Landroid/bluetooth/BluetoothGatt$1$14;->this$1:Landroid/bluetooth/BluetoothGatt$1;
 
     iput p2, p0, Landroid/bluetooth/BluetoothGatt$1$14;->val$interval:I
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 7
 
-    .line 673
     iget-object v0, p0, Landroid/bluetooth/BluetoothGatt$1$14;->this$1:Landroid/bluetooth/BluetoothGatt$1;
 
     iget-object v0, v0, Landroid/bluetooth/BluetoothGatt$1;->this$0:Landroid/bluetooth/BluetoothGatt;
@@ -64,11 +61,8 @@
 
     move-result-object v0
 
-    .line 674
-    .local v0, "callback":Landroid/bluetooth/BluetoothGattCallback;
     if-eqz v0, :cond_0
 
-    .line 675
     iget-object v1, p0, Landroid/bluetooth/BluetoothGatt$1$14;->this$1:Landroid/bluetooth/BluetoothGatt$1;
 
     iget-object v2, v1, Landroid/bluetooth/BluetoothGatt$1;->this$0:Landroid/bluetooth/BluetoothGatt;
@@ -85,7 +79,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/bluetooth/BluetoothGattCallback;->onConnectionUpdated(Landroid/bluetooth/BluetoothGatt;IIII)V
 
-    .line 678
     :cond_0
     return-void
 .end method

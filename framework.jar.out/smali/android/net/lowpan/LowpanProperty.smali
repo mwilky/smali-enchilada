@@ -18,8 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 22
-    .local p0, "this":Landroid/net/lowpan/LowpanProperty;, "Landroid/net/lowpan/LowpanProperty<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +27,6 @@
 # virtual methods
 .method public getFromMap(Ljava/util/Map;)Ljava/lang/Object;
     .locals 1
-    .param p1, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -38,8 +35,6 @@
         }
     .end annotation
 
-    .line 32
-    .local p0, "this":Landroid/net/lowpan/LowpanProperty;, "Landroid/net/lowpan/LowpanProperty<TT;>;"
     invoke-virtual {p0}, Landroid/net/lowpan/LowpanProperty;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -66,7 +61,6 @@
 
 .method public putInMap(Ljava/util/Map;Ljava/lang/Object;)V
     .locals 1
-    .param p1, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,15 +69,11 @@
         }
     .end annotation
 
-    .line 28
-    .local p0, "this":Landroid/net/lowpan/LowpanProperty;, "Landroid/net/lowpan/LowpanProperty<TT;>;"
-    .local p2, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p0}, Landroid/net/lowpan/LowpanProperty;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {p1, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 29
     return-void
 .end method

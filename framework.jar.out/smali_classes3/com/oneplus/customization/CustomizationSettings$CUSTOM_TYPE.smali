@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 98
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     const-string v1, "NONE"
@@ -51,7 +50,6 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
-    .line 104
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     const-string v1, "JCC"
@@ -62,7 +60,6 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->JCC:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
-    .line 110
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     const-string v1, "SW"
@@ -73,7 +70,6 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->SW:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
-    .line 116
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     const-string v1, "AVG"
@@ -84,7 +80,6 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->AVG:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
-    .line 122
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     const-string v1, "MCL"
@@ -95,7 +90,6 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
-    .line 92
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
@@ -133,7 +127,6 @@
         }
     .end annotation
 
-    .line 92
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -141,9 +134,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 92
     const-class v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -158,7 +149,6 @@
 .method public static values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
     .locals 1
 
-    .line 92
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->$VALUES:[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     invoke-virtual {v0}, [Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->clone()Ljava/lang/Object;

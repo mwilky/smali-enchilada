@@ -42,26 +42,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mKeySize:I
 
-    .line 304
     if-eqz p1, :cond_0
 
-    .line 307
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mContext:Landroid/content/Context;
 
-    .line 308
     return-void
 
-    .line 305
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -77,7 +70,6 @@
 .method public build()Landroid/security/KeyPairGeneratorSpec;
     .locals 12
 
-    .line 449
     new-instance v11, Landroid/security/KeyPairGeneratorSpec;
 
     iget-object v1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mContext:Landroid/content/Context;
@@ -109,18 +101,13 @@
 
 .method public setAlgorithmParameterSpec(Ljava/security/spec/AlgorithmParameterSpec;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "spec"    # Ljava/security/spec/AlgorithmParameterSpec;
 
-    .line 364
     if-eqz p1, :cond_0
 
-    .line 367
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mSpec:Ljava/security/spec/AlgorithmParameterSpec;
 
-    .line 368
     return-object p0
 
-    .line 365
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -133,18 +120,13 @@
 
 .method public setAlias(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "alias"    # Ljava/lang/String;
 
-    .line 317
     if-eqz p1, :cond_0
 
-    .line 320
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mKeystoreAlias:Ljava/lang/String;
 
-    .line 321
     return-object p0
 
-    .line 318
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -158,31 +140,24 @@
 .method public setEncryptionRequired()Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 1
 
-    .line 437
     iget v0, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mFlags:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mFlags:I
 
-    .line 438
     return-object p0
 .end method
 
 .method public setEndDate(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "endDate"    # Ljava/util/Date;
 
-    .line 416
     if-eqz p1, :cond_0
 
-    .line 419
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mEndDate:Ljava/util/Date;
 
-    .line 420
     return-object p0
 
-    .line 417
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -195,18 +170,13 @@
 
 .method public setKeySize(I)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "keySize"    # I
 
-    .line 352
     if-ltz p1, :cond_0
 
-    .line 355
     iput p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mKeySize:I
 
-    .line 356
     return-object p0
 
-    .line 353
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -219,37 +189,28 @@
 
 .method public setKeyType(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 4
-    .param p1, "keyType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/NoSuchAlgorithmException;
         }
     .end annotation
 
-    .line 332
     if-eqz p1, :cond_0
 
-    .line 336
     :try_start_0
     invoke-static {p1}, Landroid/security/keystore/KeyProperties$KeyAlgorithm;->toKeymasterAsymmetricKeyAlgorithm(Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 339
     nop
 
-    .line 341
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mKeyType:Ljava/lang/String;
 
-    .line 342
     return-object p0
 
-    .line 337
     :catch_0
     move-exception v0
 
-    .line 338
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/security/NoSuchAlgorithmException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -270,8 +231,6 @@
 
     throw v1
 
-    .line 333
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -284,18 +243,13 @@
 
 .method public setSerialNumber(Ljava/math/BigInteger;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "serialNumber"    # Ljava/math/BigInteger;
 
-    .line 390
     if-eqz p1, :cond_0
 
-    .line 393
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mSerialNumber:Ljava/math/BigInteger;
 
-    .line 394
     return-object p0
 
-    .line 391
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -308,18 +262,13 @@
 
 .method public setStartDate(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "startDate"    # Ljava/util/Date;
 
-    .line 403
     if-eqz p1, :cond_0
 
-    .line 406
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mStartDate:Ljava/util/Date;
 
-    .line 407
     return-object p0
 
-    .line 404
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -332,18 +281,13 @@
 
 .method public setSubject(Ljavax/security/auth/x500/X500Principal;)Landroid/security/KeyPairGeneratorSpec$Builder;
     .locals 2
-    .param p1, "subject"    # Ljavax/security/auth/x500/X500Principal;
 
-    .line 377
     if-eqz p1, :cond_0
 
-    .line 380
     iput-object p1, p0, Landroid/security/KeyPairGeneratorSpec$Builder;->mSubjectDN:Ljavax/security/auth/x500/X500Principal;
 
-    .line 381
     return-object p0
 
-    .line 378
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 

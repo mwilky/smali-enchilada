@@ -59,7 +59,6 @@
 # direct methods
 .method protected constructor <init>(Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange;Landroid/hardware/camera2/utils/TypeReference;I)V
     .locals 6
-    .param p3, "nativeType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,22 +68,16 @@
         }
     .end annotation
 
-    .line 45
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
-    .local p2, "typeReference":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<Landroid/util/Range<TT;>;>;"
     iput-object p1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->this$0:Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange;
 
-    .line 46
     invoke-direct {p0, p1, p2, p3}, Landroid/hardware/camera2/marshal/Marshaler;-><init>(Landroid/hardware/camera2/marshal/MarshalQueryable;Landroid/hardware/camera2/utils/TypeReference;I)V
 
-    .line 48
     invoke-virtual {p2}, Landroid/hardware/camera2/utils/TypeReference;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
     iput-object p1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mClass:Ljava/lang/Class;
 
-    .line 56
     :try_start_0
     invoke-virtual {p2}, Landroid/hardware/camera2/utils/TypeReference;->getType()Ljava/lang/reflect/Type;
 
@@ -94,14 +87,10 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 59
-    .local p1, "paramType":Ljava/lang/reflect/ParameterizedType;
     nop
 
-    .line 58
     nop
 
-    .line 60
     invoke-interface {p1}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -110,17 +99,12 @@
 
     aget-object v0, v0, v1
 
-    .line 62
-    .local v0, "actualTypeArgument":Ljava/lang/reflect/Type;
     nop
 
-    .line 63
     invoke-static {v0}, Landroid/hardware/camera2/utils/TypeReference;->createSpecializedTypeReference(Ljava/lang/reflect/Type;)Landroid/hardware/camera2/utils/TypeReference;
 
     move-result-object v2
 
-    .line 65
-    .local v2, "actualTypeArgToken":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<*>;"
     iget v3, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNativeType:I
 
     invoke-static {v2, v3}, Landroid/hardware/camera2/marshal/MarshalRegistry;->getMarshaler(Landroid/hardware/camera2/utils/TypeReference;I)Landroid/hardware/camera2/marshal/Marshaler;
@@ -129,7 +113,6 @@
 
     iput-object v3, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
-    .line 68
     :try_start_1
     iget-object v3, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mClass:Ljava/lang/Class;
 
@@ -155,34 +138,22 @@
     :try_end_1
     .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 72
     nop
 
-    .line 73
     return-void
 
-    .line 70
     :catch_0
     move-exception v1
 
-    .line 71
-    .local v1, "e":Ljava/lang/NoSuchMethodException;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v3
 
-    .line 57
-    .end local v0    # "actualTypeArgument":Ljava/lang/reflect/Type;
-    .end local v1    # "e":Ljava/lang/NoSuchMethodException;
-    .end local v2    # "actualTypeArgToken":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<*>;"
-    .end local p1    # "paramType":Ljava/lang/reflect/ParameterizedType;
     :catch_1
     move-exception p1
 
-    .line 58
-    .local p1, "e":Ljava/lang/ClassCastException;
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Raw use of Range is not supported"
@@ -204,23 +175,16 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
-    .local p1, "value":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     invoke-virtual {p0}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->getNativeSize()I
 
     move-result v0
 
-    .line 114
-    .local v0, "nativeSize":I
     sget v1, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->NATIVE_SIZE_DYNAMIC:I
 
     if-eq v0, v1, :cond_0
 
-    .line 115
     return v0
 
-    .line 117
     :cond_0
     iget-object v1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
@@ -232,8 +196,6 @@
 
     move-result v1
 
-    .line 118
-    .local v1, "lowerSize":I
     iget-object v2, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {p1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -244,8 +206,6 @@
 
     move-result v2
 
-    .line 120
-    .local v2, "upperSize":I
     add-int v3, v1, v2
 
     return v3
@@ -254,8 +214,6 @@
 .method public bridge synthetic calculateMarshalSize(Ljava/lang/Object;)I
     .locals 0
 
-    .line 37
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     check-cast p1, Landroid/util/Range;
 
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->calculateMarshalSize(Landroid/util/Range;)I
@@ -268,26 +226,20 @@
 .method public getNativeSize()I
     .locals 2
 
-    .line 101
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     iget-object v0, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/marshal/Marshaler;->getNativeSize()I
 
     move-result v0
 
-    .line 103
-    .local v0, "nestedSize":I
     sget v1, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->NATIVE_SIZE_DYNAMIC:I
 
     if-eq v0, v1, :cond_0
 
-    .line 104
     mul-int/lit8 v1, v0, 0x2
 
     return v1
 
-    .line 106
     :cond_0
     sget v1, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->NATIVE_SIZE_DYNAMIC:I
 
@@ -296,7 +248,6 @@
 
 .method public marshal(Landroid/util/Range;Ljava/nio/ByteBuffer;)V
     .locals 2
-    .param p2, "buffer"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -307,9 +258,6 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
-    .local p1, "value":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     iget-object v0, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -318,7 +266,6 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/hardware/camera2/marshal/Marshaler;->marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;)V
 
-    .line 78
     iget-object v0, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {p1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -327,15 +274,12 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/hardware/camera2/marshal/Marshaler;->marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;)V
 
-    .line 79
     return-void
 .end method
 
 .method public bridge synthetic marshal(Ljava/lang/Object;Ljava/nio/ByteBuffer;)V
     .locals 0
 
-    .line 37
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     check-cast p1, Landroid/util/Range;
 
     invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->marshal(Landroid/util/Range;Ljava/nio/ByteBuffer;)V
@@ -345,7 +289,6 @@
 
 .method public unmarshal(Ljava/nio/ByteBuffer;)Landroid/util/Range;
     .locals 5
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -356,8 +299,6 @@
         }
     .end annotation
 
-    .line 83
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     iget-object v0, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/marshal/Marshaler;->unmarshal(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
@@ -366,8 +307,6 @@
 
     check-cast v0, Ljava/lang/Comparable;
 
-    .line 84
-    .local v0, "lower":Ljava/lang/Comparable;, "TT;"
     iget-object v1, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mNestedTypeMarshaler:Landroid/hardware/camera2/marshal/Marshaler;
 
     invoke-virtual {v1, p1}, Landroid/hardware/camera2/marshal/Marshaler;->unmarshal(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
@@ -376,8 +315,6 @@
 
     check-cast v1, Ljava/lang/Comparable;
 
-    .line 87
-    .local v1, "upper":Ljava/lang/Comparable;, "TT;"
     :try_start_0
     iget-object v2, p0, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->mConstructor:Ljava/lang/reflect/Constructor;
 
@@ -406,51 +343,36 @@
 
     return-object v2
 
-    .line 94
     :catch_0
     move-exception v2
 
-    .line 95
-    .local v2, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v3
 
-    .line 92
-    .end local v2    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v2
 
-    .line 93
-    .local v2, "e":Ljava/lang/IllegalArgumentException;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v3
 
-    .line 90
-    .end local v2    # "e":Ljava/lang/IllegalArgumentException;
     :catch_2
     move-exception v2
 
-    .line 91
-    .local v2, "e":Ljava/lang/IllegalAccessException;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v3
 
-    .line 88
-    .end local v2    # "e":Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v2
 
-    .line 89
-    .local v2, "e":Ljava/lang/InstantiationException;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -461,8 +383,6 @@
 .method public bridge synthetic unmarshal(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
     .locals 0
 
-    .line 37
-    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange<TT;>.MarshalerRange;"
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/marshal/impl/MarshalQueryableRange$MarshalerRange;->unmarshal(Ljava/nio/ByteBuffer;)Landroid/util/Range;
 
     move-result-object p1

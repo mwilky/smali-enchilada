@@ -84,12 +84,9 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 2
-    .param p1, "commandCode"    # I
 
-    .line 276
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 277
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -102,22 +99,16 @@
 
     iput-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
-    .line 279
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "action"    # Ljava/lang/String;
-    .param p2, "extras"    # Landroid/os/Bundle;
 
-    .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 282
     if-eqz p1, :cond_0
 
-    .line 285
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -130,10 +121,8 @@
 
     iput-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
-    .line 287
     return-void
 
-    .line 283
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -146,9 +135,7 @@
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/media/SessionCommand2;
     .locals 1
-    .param p0, "command"    # Landroid/os/Bundle;
 
-    .line 334
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -164,19 +151,15 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 318
     instance-of v0, p1, Landroid/media/SessionCommand2;
 
     if-nez v0, :cond_0
 
-    .line 319
     const/4 v0, 0x0
 
     return v0
 
-    .line 321
     :cond_0
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
@@ -196,7 +179,6 @@
 .method public getCommandCode()I
     .locals 1
 
-    .line 297
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$CommandProvider;->getCommandCode_impl()I
@@ -209,7 +191,6 @@
 .method public getCustomCommand()Ljava/lang/String;
     .locals 1
 
-    .line 301
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$CommandProvider;->getCustomCommand_impl()Ljava/lang/String;
@@ -222,7 +203,6 @@
 .method public getExtras()Landroid/os/Bundle;
     .locals 1
 
-    .line 305
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$CommandProvider;->getExtras_impl()Landroid/os/Bundle;
@@ -235,7 +215,6 @@
 .method public getProvider()Landroid/media/update/MediaSession2Provider$CommandProvider;
     .locals 1
 
-    .line 293
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     return-object v0
@@ -244,7 +223,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 326
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$CommandProvider;->hashCode_impl()I
@@ -257,7 +235,6 @@
 .method public toBundle()Landroid/os/Bundle;
     .locals 1
 
-    .line 313
     iget-object v0, p0, Landroid/media/SessionCommand2;->mProvider:Landroid/media/update/MediaSession2Provider$CommandProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$CommandProvider;->toBundle_impl()Landroid/os/Bundle;

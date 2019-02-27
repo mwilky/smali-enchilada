@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;)V
     .locals 0
-    .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
-    .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 634
     iput-object p1, p0, Landroid/content/pm/PackageParser$CallbackImpl;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 635
     return-void
 .end method
 
@@ -40,9 +36,7 @@
 # virtual methods
 .method public getOverlayApks(Ljava/lang/String;)[Ljava/lang/String;
     .locals 1
-    .param p1, "targetPackageName"    # Ljava/lang/String;
 
-    .line 646
     const/4 v0, 0x0
 
     return-object v0
@@ -50,10 +44,7 @@
 
 .method public getOverlayPaths(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
     .locals 1
-    .param p1, "targetPackageName"    # Ljava/lang/String;
-    .param p2, "targetPath"    # Ljava/lang/String;
 
-    .line 642
     const/4 v0, 0x0
 
     return-object v0
@@ -61,9 +52,7 @@
 
 .method public hasFeature(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "feature"    # Ljava/lang/String;
 
-    .line 638
     iget-object v0, p0, Landroid/content/pm/PackageParser$CallbackImpl;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z

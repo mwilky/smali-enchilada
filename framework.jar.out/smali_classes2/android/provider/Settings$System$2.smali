@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2938
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 4
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 2942
     const/4 v0, 0x0
 
     :try_start_0
@@ -43,8 +40,6 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2943
-    .local v1, "val":I
     const/4 v2, 0x1
 
     if-eqz v1, :cond_1
@@ -87,12 +82,8 @@
     :goto_1
     return v0
 
-    .line 2956
-    .end local v1    # "val":I
     :catch_0
     move-exception v1
 
-    .line 2957
-    .local v1, "e":Ljava/lang/NumberFormatException;
     return v0
 .end method

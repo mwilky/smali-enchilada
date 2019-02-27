@@ -30,21 +30,18 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 1683
     const-class v0, Landroid/graphics/PointF;
 
     const-class v1, [I
 
     invoke-direct {p0, v0, v1}, Landroid/animation/TypeConverter;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
 
-    .line 1680
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/animation/PropertyValuesHolder$PointFToIntArray;->mCoordinates:[I
 
-    .line 1684
     return-void
 .end method
 
@@ -53,7 +50,6 @@
 .method public bridge synthetic convert(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1679
     check-cast p1, Landroid/graphics/PointF;
 
     invoke-virtual {p0, p1}, Landroid/animation/PropertyValuesHolder$PointFToIntArray;->convert(Landroid/graphics/PointF;)[I
@@ -65,9 +61,7 @@
 
 .method public convert(Landroid/graphics/PointF;)[I
     .locals 3
-    .param p1, "value"    # Landroid/graphics/PointF;
 
-    .line 1688
     iget-object v0, p0, Landroid/animation/PropertyValuesHolder$PointFToIntArray;->mCoordinates:[I
 
     iget v1, p1, Landroid/graphics/PointF;->x:F
@@ -80,7 +74,6 @@
 
     aput v1, v0, v2
 
-    .line 1689
     iget-object v0, p0, Landroid/animation/PropertyValuesHolder$PointFToIntArray;->mCoordinates:[I
 
     iget v1, p1, Landroid/graphics/PointF;->y:F
@@ -93,7 +86,6 @@
 
     aput v1, v0, v2
 
-    .line 1690
     iget-object v0, p0, Landroid/animation/PropertyValuesHolder$PointFToIntArray;->mCoordinates:[I
 
     return-object v0

@@ -23,10 +23,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 48
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 57
     new-instance v0, Landroid/media/midi/MidiDeviceService$1;
 
     invoke-direct {v0, p0}, Landroid/media/midi/MidiDeviceService$1;-><init>(Landroid/media/midi/MidiDeviceService;)V
@@ -41,7 +39,6 @@
 .method public final getDeviceInfo()Landroid/media/midi/MidiDeviceInfo;
     .locals 1
 
-    .line 121
     iget-object v0, p0, Landroid/media/midi/MidiDeviceService;->mDeviceInfo:Landroid/media/midi/MidiDeviceInfo;
 
     return-object v0
@@ -50,17 +47,14 @@
 .method public final getOutputPortReceivers()[Landroid/media/midi/MidiReceiver;
     .locals 1
 
-    .line 109
     iget-object v0, p0, Landroid/media/midi/MidiDeviceService;->mServer:Landroid/media/midi/MidiDeviceServer;
 
     if-nez v0, :cond_0
 
-    .line 110
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 112
     :cond_0
     iget-object v0, p0, Landroid/media/midi/MidiDeviceService;->mServer:Landroid/media/midi/MidiDeviceServer;
 
@@ -73,9 +67,7 @@
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 139
     const-string v0, "android.media.midi.MidiDeviceService"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -92,7 +84,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 140
     iget-object v0, p0, Landroid/media/midi/MidiDeviceService;->mServer:Landroid/media/midi/MidiDeviceServer;
 
     invoke-virtual {v0}, Landroid/media/midi/MidiDeviceServer;->getBinderInterface()Landroid/media/midi/IMidiDeviceServer;
@@ -105,7 +96,6 @@
 
     return-object v0
 
-    .line 142
     :cond_0
     const/4 v0, 0x0
 
@@ -115,29 +105,24 @@
 .method public onClose()V
     .locals 0
 
-    .line 135
     return-void
 .end method
 
 .method public onCreate()V
     .locals 5
 
-    .line 71
     const-string/jumbo v0, "midi"
 
-    .line 72
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 71
     invoke-static {v0}, Landroid/media/midi/IMidiManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/midi/IMidiManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/midi/MidiDeviceService;->mMidiManager:Landroid/media/midi/IMidiManager;
 
-    .line 75
     :try_start_0
     iget-object v0, p0, Landroid/media/midi/MidiDeviceService;->mMidiManager:Landroid/media/midi/IMidiManager;
 
@@ -145,7 +130,6 @@
 
     move-result-object v1
 
-    .line 76
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -154,16 +138,12 @@
 
     move-result-object v2
 
-    .line 75
     invoke-interface {v0, v1, v2}, Landroid/media/midi/IMidiManager;->getServiceDeviceInfo(Ljava/lang/String;Ljava/lang/String;)Landroid/media/midi/MidiDeviceInfo;
 
     move-result-object v0
 
-    .line 77
-    .local v0, "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
     if-nez v0, :cond_0
 
-    .line 78
     const-string v1, "MidiDeviceService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -182,30 +162,23 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
     return-void
 
-    .line 81
     :cond_0
     iput-object v0, p0, Landroid/media/midi/MidiDeviceService;->mDeviceInfo:Landroid/media/midi/MidiDeviceInfo;
 
-    .line 82
     invoke-virtual {p0}, Landroid/media/midi/MidiDeviceService;->onGetInputPortReceivers()[Landroid/media/midi/MidiReceiver;
 
     move-result-object v1
 
-    .line 83
-    .local v1, "inputPortReceivers":[Landroid/media/midi/MidiReceiver;
     if-nez v1, :cond_1
 
-    .line 84
     const/4 v2, 0x0
 
     new-array v2, v2, [Landroid/media/midi/MidiReceiver;
 
     move-object v1, v2
 
-    .line 86
     :cond_1
     new-instance v2, Landroid/media/midi/MidiDeviceServer;
 
@@ -217,45 +190,30 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 86
-    .end local v0    # "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
-    .end local v1    # "inputPortReceivers":[Landroid/media/midi/MidiReceiver;
     move-object v0, v2
 
-    .line 90
-    .local v0, "server":Landroid/media/midi/MidiDeviceServer;
     goto :goto_0
 
-    .line 87
-    .end local v0    # "server":Landroid/media/midi/MidiDeviceServer;
     :catch_0
     move-exception v0
 
-    .line 88
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MidiDeviceService"
 
     const-string v2, "RemoteException in IMidiManager.getServiceDeviceInfo"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
     const/4 v0, 0x0
 
-    .line 91
-    .local v0, "server":Landroid/media/midi/MidiDeviceServer;
     :goto_0
     iput-object v0, p0, Landroid/media/midi/MidiDeviceService;->mServer:Landroid/media/midi/MidiDeviceServer;
 
-    .line 92
     return-void
 .end method
 
 .method public onDeviceStatusChanged(Landroid/media/midi/MidiDeviceStatus;)V
     .locals 0
-    .param p1, "status"    # Landroid/media/midi/MidiDeviceStatus;
 
-    .line 129
     return-void
 .end method
 

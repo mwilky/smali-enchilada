@@ -5313,7 +5313,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 27533
     const/16 v0, 0xc
 
     new-array v1, v0, [I
@@ -5322,7 +5321,6 @@
 
     sput-object v1, Lcom/android/internal/R$styleable;->AbsListView:[I
 
-    .line 27734
     const/4 v1, 0x1
 
     new-array v2, v1, [I
@@ -5335,7 +5333,6 @@
 
     sput-object v2, Lcom/android/internal/R$styleable;->AbsSpinner:[I
 
-    .line 27764
     const/4 v2, 0x2
 
     new-array v4, v2, [I
@@ -5344,7 +5341,6 @@
 
     sput-object v4, Lcom/android/internal/R$styleable;->AbsoluteLayout_Layout:[I
 
-    .line 27804
     new-array v4, v1, [I
 
     const v5, 0x10101d3
@@ -5353,7 +5349,6 @@
 
     sput-object v4, Lcom/android/internal/R$styleable;->AccelerateInterpolator:[I
 
-    .line 27872
     const/16 v4, 0xf
 
     new-array v4, v4, [I
@@ -5362,7 +5357,6 @@
 
     sput-object v4, Lcom/android/internal/R$styleable;->AccessibilityService:[I
 
-    .line 28164
     const/4 v4, 0x6
 
     new-array v5, v4, [I
@@ -5371,7 +5365,6 @@
 
     sput-object v5, Lcom/android/internal/R$styleable;->AccountAuthenticator:[I
 
-    .line 28318
     const/16 v5, 0x1d
 
     new-array v5, v5, [I
@@ -5380,7 +5373,6 @@
 
     sput-object v5, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    .line 28756
     new-array v5, v1, [I
 
     const v6, 0x10100b3
@@ -5389,7 +5381,6 @@
 
     sput-object v5, Lcom/android/internal/R$styleable;->ActionBar_LayoutParams:[I
 
-    .line 28807
     new-array v5, v1, [I
 
     const v6, 0x101013f
@@ -5398,21 +5389,18 @@
 
     sput-object v5, Lcom/android/internal/R$styleable;->ActionMenuItemView:[I
 
-    .line 28844
     new-array v5, v4, [I
 
     fill-array-data v5, :array_5
 
     sput-object v5, Lcom/android/internal/R$styleable;->ActionMode:[I
 
-    .line 28946
     new-array v5, v2, [I
 
     fill-array-data v5, :array_6
 
     sput-object v5, Lcom/android/internal/R$styleable;->ActivityChooserView:[I
 
-    .line 28995
     const/4 v5, 0x4
 
     new-array v6, v5, [I
@@ -5421,21 +5409,18 @@
 
     sput-object v6, Lcom/android/internal/R$styleable;->ActivityTaskDescription:[I
 
-    .line 29068
     new-array v6, v5, [I
 
     fill-array-data v6, :array_8
 
     sput-object v6, Lcom/android/internal/R$styleable;->AdapterViewAnimator:[I
 
-    .line 29134
     new-array v6, v2, [I
 
     fill-array-data v6, :array_9
 
     sput-object v6, Lcom/android/internal/R$styleable;->AdapterViewFlipper:[I
 
-    .line 29168
     new-array v6, v1, [I
 
     const v7, 0x1010199
@@ -5444,7 +5429,6 @@
 
     sput-object v6, Lcom/android/internal/R$styleable;->AdaptiveIconDrawableLayer:[I
 
-    .line 29197
     new-array v6, v1, [I
 
     const v8, 0x1010003
@@ -5453,21 +5437,18 @@
 
     sput-object v6, Lcom/android/internal/R$styleable;->AidFilter:[I
 
-    .line 29227
     new-array v6, v2, [I
 
     fill-array-data v6, :array_a
 
     sput-object v6, Lcom/android/internal/R$styleable;->AidGroup:[I
 
-    .line 29272
     new-array v6, v1, [I
 
     aput v8, v6, v3
 
     sput-object v6, Lcom/android/internal/R$styleable;->AidPrefixFilter:[I
 
-    .line 29340
     const/16 v6, 0x16
 
     new-array v6, v6, [I
@@ -5476,14 +5457,12 @@
 
     sput-object v6, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    .line 29664
     new-array v6, v2, [I
 
     fill-array-data v6, :array_c
 
     sput-object v6, Lcom/android/internal/R$styleable;->AlphaAnimation:[I
 
-    .line 29700
     const/4 v6, 0x3
 
     new-array v9, v6, [I
@@ -5492,21 +5471,18 @@
 
     sput-object v9, Lcom/android/internal/R$styleable;->AnalogClock:[I
 
-    .line 29793
     new-array v9, v0, [I
 
     fill-array-data v9, :array_e
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifest:[I
 
-    .line 30003
     new-array v9, v1, [I
 
     aput v8, v9, v3
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestAction:[I
 
-    .line 30190
     const/16 v9, 0x37
 
     new-array v9, v9, [I
@@ -5515,14 +5491,12 @@
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestActivity:[I
 
-    .line 31571
     new-array v9, v0, [I
 
     fill-array-data v9, :array_10
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestActivityAlias:[I
 
-    .line 31816
     new-array v9, v1, [I
 
     const v10, 0x1010548
@@ -5531,7 +5505,6 @@
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestAdditionalCertificate:[I
 
-    .line 31986
     const/16 v9, 0x31
 
     new-array v9, v9, [I
@@ -5540,21 +5513,18 @@
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestApplication:[I
 
-    .line 32841
     new-array v9, v1, [I
 
     aput v8, v9, v3
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestCategory:[I
 
-    .line 32878
     new-array v9, v2, [I
 
     fill-array-data v9, :array_12
 
     sput-object v9, Lcom/android/internal/R$styleable;->AndroidManifestCompatibleScreensScreen:[I
 
-    .line 32992
     const/16 v9, 0xb
 
     new-array v10, v9, [I
@@ -5563,7 +5533,6 @@
 
     sput-object v10, Lcom/android/internal/R$styleable;->AndroidManifestData:[I
 
-    .line 33212
     new-array v10, v1, [I
 
     const v11, 0x1010001
@@ -5572,14 +5541,12 @@
 
     sput-object v10, Lcom/android/internal/R$styleable;->AndroidManifestFeatureGroup:[I
 
-    .line 33255
     new-array v10, v6, [I
 
     fill-array-data v10, :array_14
 
     sput-object v10, Lcom/android/internal/R$styleable;->AndroidManifestGrantUriPermission:[I
 
-    .line 33343
     const/16 v10, 0xa
 
     new-array v11, v10, [I
@@ -5588,7 +5555,6 @@
 
     sput-object v11, Lcom/android/internal/R$styleable;->AndroidManifestInstrumentation:[I
 
-    .line 33583
     const/16 v11, 0x8
 
     new-array v12, v11, [I
@@ -5597,14 +5563,12 @@
 
     sput-object v12, Lcom/android/internal/R$styleable;->AndroidManifestIntentFilter:[I
 
-    .line 33776
     new-array v12, v1, [I
 
     aput v8, v12, v3
 
     sput-object v12, Lcom/android/internal/R$styleable;->AndroidManifestKeySet:[I
 
-    .line 33813
     const/4 v12, 0x5
 
     new-array v13, v12, [I
@@ -5613,35 +5577,30 @@
 
     sput-object v13, Lcom/android/internal/R$styleable;->AndroidManifestLayout:[I
 
-    .line 33944
     new-array v13, v1, [I
 
     aput v8, v13, v3
 
     sput-object v13, Lcom/android/internal/R$styleable;->AndroidManifestLibrary:[I
 
-    .line 33988
     new-array v13, v6, [I
 
     fill-array-data v13, :array_18
 
     sput-object v13, Lcom/android/internal/R$styleable;->AndroidManifestMetaData:[I
 
-    .line 34061
     new-array v13, v1, [I
 
     aput v8, v13, v3
 
     sput-object v13, Lcom/android/internal/R$styleable;->AndroidManifestOriginalPackage:[I
 
-    .line 34090
     new-array v13, v2, [I
 
     fill-array-data v13, :array_19
 
     sput-object v13, Lcom/android/internal/R$styleable;->AndroidManifestPackageVerifier:[I
 
-    .line 34156
     const/4 v13, 0x7
 
     new-array v14, v13, [I
@@ -5650,35 +5609,30 @@
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestPathPermission:[I
 
-    .line 34332
     new-array v14, v9, [I
 
     fill-array-data v14, :array_1b
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestPermission:[I
 
-    .line 34690
     new-array v14, v10, [I
 
     fill-array-data v14, :array_1c
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestPermissionGroup:[I
 
-    .line 34951
     new-array v14, v4, [I
 
     fill-array-data v14, :array_1d
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestPermissionTree:[I
 
-    .line 35106
     new-array v14, v1, [I
 
     aput v8, v14, v3
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestProtectedBroadcast:[I
 
-    .line 35200
     const/16 v14, 0x16
 
     new-array v14, v14, [I
@@ -5687,14 +5641,12 @@
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestProvider:[I
 
-    .line 35608
     new-array v14, v2, [I
 
     fill-array-data v14, :array_1f
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestPublicKey:[I
 
-    .line 35702
     const/16 v14, 0xd
 
     new-array v14, v14, [I
@@ -5703,14 +5655,12 @@
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestReceiver:[I
 
-    .line 35987
     new-array v14, v4, [I
 
     fill-array-data v14, :array_21
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestResourceOverlay:[I
 
-    .line 36069
     new-array v14, v1, [I
 
     const v15, 0x1010526
@@ -5719,7 +5669,6 @@
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestRestrictUpdate:[I
 
-    .line 36154
     const/16 v14, 0x12
 
     new-array v14, v14, [I
@@ -5728,21 +5677,18 @@
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestService:[I
 
-    .line 36501
     new-array v14, v6, [I
 
     fill-array-data v14, :array_23
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestStaticLibrary:[I
 
-    .line 36555
     new-array v14, v1, [I
 
     aput v8, v14, v3
 
     sput-object v14, Lcom/android/internal/R$styleable;->AndroidManifestSupportsInputInputType:[I
 
-    .line 36613
     const/16 v14, 0x9
 
     new-array v15, v14, [I
@@ -5751,159 +5697,136 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestSupportsScreens:[I
 
-    .line 36779
     new-array v15, v1, [I
 
     aput v8, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUpgradeKeySet:[I
 
-    .line 36823
     new-array v15, v12, [I
 
     fill-array-data v15, :array_25
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesConfiguration:[I
 
-    .line 36933
     new-array v15, v5, [I
 
     fill-array-data v15, :array_26
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesFeature:[I
 
-    .line 37003
     new-array v15, v2, [I
 
     fill-array-data v15, :array_27
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesLibrary:[I
 
-    .line 37067
     new-array v15, v5, [I
 
     fill-array-data v15, :array_28
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesPermission:[I
 
-    .line 37144
     new-array v15, v6, [I
 
     fill-array-data v15, :array_29
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesSdk:[I
 
-    .line 37209
     new-array v15, v1, [I
 
     aput v8, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesSplit:[I
 
-    .line 37251
     new-array v15, v6, [I
 
     fill-array-data v15, :array_2a
 
     sput-object v15, Lcom/android/internal/R$styleable;->AndroidManifestUsesStaticLibrary:[I
 
-    .line 37304
     new-array v15, v5, [I
 
     fill-array-data v15, :array_2b
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedImageDrawable:[I
 
-    .line 37391
     new-array v15, v4, [I
 
     fill-array-data v15, :array_2c
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedRotateDrawable:[I
 
-    .line 37497
     new-array v15, v13, [I
 
     fill-array-data v15, :array_2d
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedStateListDrawable:[I
 
-    .line 37602
     new-array v15, v2, [I
 
     fill-array-data v15, :array_2e
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedStateListDrawableItem:[I
 
-    .line 37649
     new-array v15, v5, [I
 
     fill-array-data v15, :array_2f
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedStateListDrawableTransition:[I
 
-    .line 37714
     new-array v15, v1, [I
 
     aput v7, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedVectorDrawable:[I
 
-    .line 37743
     new-array v15, v2, [I
 
     fill-array-data v15, :array_30
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatedVectorDrawableTarget:[I
 
-    .line 37809
     new-array v15, v0, [I
 
     fill-array-data v15, :array_31
 
     sput-object v15, Lcom/android/internal/R$styleable;->Animation:[I
 
-    .line 38002
     new-array v15, v6, [I
 
     fill-array-data v15, :array_32
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimationDrawable:[I
 
-    .line 38060
     new-array v15, v2, [I
 
     fill-array-data v15, :array_33
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimationDrawableItem:[I
 
-    .line 38087
     new-array v15, v3, [I
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimationScaleListDrawable:[I
 
-    .line 38101
     new-array v15, v1, [I
 
     aput v7, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimationScaleListDrawableItem:[I
 
-    .line 38142
     new-array v15, v4, [I
 
     fill-array-data v15, :array_34
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimationSet:[I
 
-    .line 38248
     new-array v15, v14, [I
 
     fill-array-data v15, :array_35
 
     sput-object v15, Lcom/android/internal/R$styleable;->Animator:[I
 
-    .line 38410
     new-array v15, v1, [I
 
     const v16, 0x10102e2
@@ -5912,7 +5835,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnimatorSet:[I
 
-    .line 38442
     new-array v15, v1, [I
 
     const v16, 0x101026a
@@ -5921,21 +5843,18 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnticipateInterpolator:[I
 
-    .line 38468
     new-array v15, v2, [I
 
     fill-array-data v15, :array_36
 
     sput-object v15, Lcom/android/internal/R$styleable;->AnticipateOvershootInterpolator:[I
 
-    .line 38508
     new-array v15, v6, [I
 
     fill-array-data v15, :array_37
 
     sput-object v15, Lcom/android/internal/R$styleable;->ApduPatternFilter:[I
 
-    .line 38559
     new-array v15, v1, [I
 
     const v16, 0x1010020
@@ -5944,7 +5863,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->ApduPatternGroup:[I
 
-    .line 38614
     const/16 v15, 0xd
 
     new-array v15, v15, [I
@@ -5953,21 +5871,18 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->AppWidgetProviderInfo:[I
 
-    .line 38835
     new-array v15, v6, [I
 
     fill-array-data v15, :array_39
 
     sput-object v15, Lcom/android/internal/R$styleable;->ArcMotion:[I
 
-    .line 38900
     new-array v15, v14, [I
 
     fill-array-data v15, :array_3a
 
     sput-object v15, Lcom/android/internal/R$styleable;->AutoCompleteTextView:[I
 
-    .line 39181
     new-array v15, v1, [I
 
     const v16, 0x1010225
@@ -5976,14 +5891,12 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->AutofillService:[I
 
-    .line 39215
     new-array v15, v2, [I
 
     fill-array-data v15, :array_3b
 
     sput-object v15, Lcom/android/internal/R$styleable;->AutofillService_CompatibilityPackage:[I
 
-    .line 39282
     const/16 v15, 0xd
 
     new-array v15, v15, [I
@@ -5992,12 +5905,10 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->BitmapDrawable:[I
 
-    .line 39520
     new-array v15, v3, [I
 
     sput-object v15, Lcom/android/internal/R$styleable;->Button:[I
 
-    .line 39534
     new-array v15, v1, [I
 
     const v16, 0x111000c
@@ -6006,7 +5917,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->ButtonBarLayout:[I
 
-    .line 39593
     const/16 v15, 0x11
 
     new-array v15, v15, [I
@@ -6015,7 +5925,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->CalendarView:[I
 
-    .line 39851
     new-array v15, v1, [I
 
     const v16, 0x10104cf
@@ -6024,49 +5933,42 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->ChangeBounds:[I
 
-    .line 39881
     new-array v15, v2, [I
 
     fill-array-data v15, :array_3e
 
     sput-object v15, Lcom/android/internal/R$styleable;->ChangeTransform:[I
 
-    .line 39926
     new-array v15, v6, [I
 
     fill-array-data v15, :array_3f
 
     sput-object v15, Lcom/android/internal/R$styleable;->CheckBoxPreference:[I
 
-    .line 39986
     new-array v15, v12, [I
 
     fill-array-data v15, :array_40
 
     sput-object v15, Lcom/android/internal/R$styleable;->CheckedTextView:[I
 
-    .line 40088
     new-array v15, v2, [I
 
     fill-array-data v15, :array_41
 
     sput-object v15, Lcom/android/internal/R$styleable;->Chronometer:[I
 
-    .line 40134
     new-array v15, v6, [I
 
     fill-array-data v15, :array_42
 
     sput-object v15, Lcom/android/internal/R$styleable;->ClipDrawable:[I
 
-    .line 40230
     new-array v15, v11, [I
 
     fill-array-data v15, :array_43
 
     sput-object v15, Lcom/android/internal/R$styleable;->ClipRectAnimation:[I
 
-    .line 40341
     new-array v15, v1, [I
 
     const v16, 0x10101a5
@@ -6075,28 +5977,24 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->ColorDrawable:[I
 
-    .line 40370
     new-array v15, v2, [I
 
     fill-array-data v15, :array_44
 
     sput-object v15, Lcom/android/internal/R$styleable;->ColorStateListItem:[I
 
-    .line 40412
     new-array v15, v5, [I
 
     fill-array-data v15, :array_45
 
     sput-object v15, Lcom/android/internal/R$styleable;->CompoundButton:[I
 
-    .line 40503
     new-array v15, v4, [I
 
     fill-array-data v15, :array_46
 
     sput-object v15, Lcom/android/internal/R$styleable;->ContactsDataKind:[I
 
-    .line 40587
     new-array v15, v1, [I
 
     const v16, 0x10101d4
@@ -6105,7 +6003,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->CycleInterpolator:[I
 
-    .line 40654
     const/16 v15, 0x16
 
     new-array v15, v15, [I
@@ -6114,7 +6011,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->DatePicker:[I
 
-    .line 40969
     new-array v15, v1, [I
 
     const v16, 0x11100c3
@@ -6123,7 +6019,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->DateTimeView:[I
 
-    .line 40993
     new-array v15, v1, [I
 
     const v16, 0x10101d3
@@ -6132,7 +6027,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->DecelerateInterpolator:[I
 
-    .line 41024
     new-array v15, v1, [I
 
     const v16, 0x1010194
@@ -6141,28 +6035,24 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->DeviceAdmin:[I
 
-    .line 41062
     new-array v15, v4, [I
 
     fill-array-data v15, :array_48
 
     sput-object v15, Lcom/android/internal/R$styleable;->DialogPreference:[I
 
-    .line 41154
     new-array v15, v2, [I
 
     fill-array-data v15, :array_49
 
     sput-object v15, Lcom/android/internal/R$styleable;->Drawable:[I
 
-    .line 41203
     new-array v15, v12, [I
 
     fill-array-data v15, :array_4a
 
     sput-object v15, Lcom/android/internal/R$styleable;->DrawableCorners:[I
 
-    .line 41343
     const/16 v15, 0x12
 
     new-array v15, v15, [I
@@ -6171,14 +6061,12 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->DrawableStates:[I
 
-    .line 41594
     new-array v15, v1, [I
 
     aput v7, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->DrawableWrapper:[I
 
-    .line 41628
     new-array v15, v1, [I
 
     const v16, 0x1010225
@@ -6187,7 +6075,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->Dream:[I
 
-    .line 41654
     new-array v15, v1, [I
 
     const v16, 0x10104ce
@@ -6196,19 +6083,16 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->EdgeEffect:[I
 
-    .line 41669
     new-array v15, v3, [I
 
     sput-object v15, Lcom/android/internal/R$styleable;->EditText:[I
 
-    .line 41686
     new-array v15, v6, [I
 
     fill-array-data v15, :array_4c
 
     sput-object v15, Lcom/android/internal/R$styleable;->EpicenterTranslateClipReveal:[I
 
-    .line 41737
     new-array v15, v1, [I
 
     const v16, 0x10100a6
@@ -6217,28 +6101,24 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->ExpandableListChildIndicatorState:[I
 
-    .line 41764
     new-array v15, v2, [I
 
     fill-array-data v15, :array_4d
 
     sput-object v15, Lcom/android/internal/R$styleable;->ExpandableListGroupIndicatorState:[I
 
-    .line 41820
     new-array v15, v9, [I
 
     fill-array-data v15, :array_4e
 
     sput-object v15, Lcom/android/internal/R$styleable;->ExpandableListView:[I
 
-    .line 41999
     new-array v15, v2, [I
 
     fill-array-data v15, :array_4f
 
     sput-object v15, Lcom/android/internal/R$styleable;->Extra:[I
 
-    .line 42047
     new-array v15, v1, [I
 
     const v16, 0x10103e1
@@ -6247,7 +6127,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->Fade:[I
 
-    .line 42107
     const/16 v15, 0xe
 
     new-array v15, v15, [I
@@ -6256,42 +6135,36 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->FastScroll:[I
 
-    .line 42342
     new-array v15, v5, [I
 
     fill-array-data v15, :array_51
 
     sput-object v15, Lcom/android/internal/R$styleable;->FontFamily:[I
 
-    .line 42417
     new-array v15, v12, [I
 
     fill-array-data v15, :array_52
 
     sput-object v15, Lcom/android/internal/R$styleable;->FontFamilyFont:[I
 
-    .line 42543
     new-array v15, v9, [I
 
     fill-array-data v15, :array_53
 
     sput-object v15, Lcom/android/internal/R$styleable;->Fragment:[I
 
-    .line 42744
     new-array v15, v4, [I
 
     fill-array-data v15, :array_54
 
     sput-object v15, Lcom/android/internal/R$styleable;->FragmentAnimation:[I
 
-    .line 42837
     new-array v15, v6, [I
 
     fill-array-data v15, :array_55
 
     sput-object v15, Lcom/android/internal/R$styleable;->FragmentBreadCrumbs:[I
 
-    .line 42916
     new-array v15, v1, [I
 
     const v16, 0x101010a
@@ -6300,7 +6173,6 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->FrameLayout:[I
 
-    .line 42942
     new-array v15, v1, [I
 
     const v16, 0x10100b3
@@ -6309,42 +6181,36 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->FrameLayout_Layout:[I
 
-    .line 43001
     new-array v15, v5, [I
 
     fill-array-data v15, :array_56
 
     sput-object v15, Lcom/android/internal/R$styleable;->Gallery:[I
 
-    .line 43112
     new-array v15, v0, [I
 
     fill-array-data v15, :array_57
 
     sput-object v15, Lcom/android/internal/R$styleable;->GestureOverlayView:[I
 
-    .line 43276
     new-array v15, v2, [I
 
     fill-array-data v15, :array_58
 
     sput-object v15, Lcom/android/internal/R$styleable;->GlowPadView:[I
 
-    .line 43344
     new-array v15, v0, [I
 
     fill-array-data v15, :array_59
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientColor:[I
 
-    .line 43531
     new-array v15, v2, [I
 
     fill-array-data v15, :array_5a
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientColorItem:[I
 
-    .line 43598
     const/16 v15, 0xe
 
     new-array v15, v15, [I
@@ -6353,28 +6219,24 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawable:[I
 
-    .line 43843
     new-array v15, v14, [I
 
     fill-array-data v15, :array_5c
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawableGradient:[I
 
-    .line 43997
     new-array v15, v5, [I
 
     fill-array-data v15, :array_5d
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawablePadding:[I
 
-    .line 44069
     new-array v15, v2, [I
 
     fill-array-data v15, :array_5e
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawableSize:[I
 
-    .line 44111
     new-array v15, v1, [I
 
     const v16, 0x10101a5
@@ -6383,42 +6245,36 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawableSolid:[I
 
-    .line 44143
     new-array v15, v5, [I
 
     fill-array-data v15, :array_5f
 
     sput-object v15, Lcom/android/internal/R$styleable;->GradientDrawableStroke:[I
 
-    .line 44226
     new-array v15, v13, [I
 
     fill-array-data v15, :array_60
 
     sput-object v15, Lcom/android/internal/R$styleable;->GridLayout:[I
 
-    .line 44360
     new-array v15, v5, [I
 
     fill-array-data v15, :array_61
 
     sput-object v15, Lcom/android/internal/R$styleable;->GridLayoutAnimation:[I
 
-    .line 44463
     new-array v15, v13, [I
 
     fill-array-data v15, :array_62
 
     sput-object v15, Lcom/android/internal/R$styleable;->GridLayout_Layout:[I
 
-    .line 44597
     new-array v15, v4, [I
 
     fill-array-data v15, :array_63
 
     sput-object v15, Lcom/android/internal/R$styleable;->GridView:[I
 
-    .line 44728
     new-array v15, v1, [I
 
     const v16, 0x101017a
@@ -6427,14 +6283,12 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->HorizontalScrollView:[I
 
-    .line 44764
     new-array v15, v5, [I
 
     fill-array-data v15, :array_64
 
     sput-object v15, Lcom/android/internal/R$styleable;->HostApduService:[I
 
-    .line 44833
     new-array v15, v1, [I
 
     const v16, 0x1010020
@@ -6443,14 +6297,12 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->HostNfcFService:[I
 
-    .line 44866
     new-array v15, v2, [I
 
     fill-array-data v15, :array_65
 
     sput-object v15, Lcom/android/internal/R$styleable;->Icon:[I
 
-    .line 44920
     new-array v15, v1, [I
 
     const v16, 0x1010002
@@ -6459,101 +6311,86 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->IconDefault:[I
 
-    .line 44965
     new-array v15, v12, [I
 
     fill-array-data v15, :array_66
 
     sput-object v15, Lcom/android/internal/R$styleable;->IconMenuView:[I
 
-    .line 45026
     new-array v15, v3, [I
 
     sput-object v15, Lcom/android/internal/R$styleable;->ImageSwitcher:[I
 
-    .line 45062
     new-array v15, v9, [I
 
     fill-array-data v15, :array_67
 
     sput-object v15, Lcom/android/internal/R$styleable;->ImageView:[I
 
-    .line 45263
     new-array v15, v2, [I
 
     fill-array-data v15, :array_68
 
     sput-object v15, Lcom/android/internal/R$styleable;->Include:[I
 
-    .line 45306
     new-array v15, v3, [I
 
     sput-object v15, Lcom/android/internal/R$styleable;->InputExtras:[I
 
-    .line 45337
     new-array v15, v12, [I
 
     fill-array-data v15, :array_69
 
     sput-object v15, Lcom/android/internal/R$styleable;->InputMethod:[I
 
-    .line 45424
     new-array v15, v6, [I
 
     fill-array-data v15, :array_6a
 
     sput-object v15, Lcom/android/internal/R$styleable;->InputMethodService:[I
 
-    .line 45509
     new-array v15, v10, [I
 
     fill-array-data v15, :array_6b
 
     sput-object v15, Lcom/android/internal/R$styleable;->InputMethod_Subtype:[I
 
-    .line 45673
     new-array v15, v13, [I
 
     fill-array-data v15, :array_6c
 
     sput-object v15, Lcom/android/internal/R$styleable;->InsetDrawable:[I
 
-    .line 45816
     new-array v15, v12, [I
 
     fill-array-data v15, :array_6d
 
     sput-object v15, Lcom/android/internal/R$styleable;->Intent:[I
 
-    .line 45899
     new-array v15, v1, [I
 
     aput v8, v15, v3
 
     sput-object v15, Lcom/android/internal/R$styleable;->IntentCategory:[I
 
-    .line 45930
     new-array v15, v5, [I
 
     fill-array-data v15, :array_6e
 
     sput-object v15, Lcom/android/internal/R$styleable;->Keyboard:[I
 
-    .line 46033
     new-array v15, v4, [I
 
     fill-array-data v15, :array_6f
 
     sput-object v15, Lcom/android/internal/R$styleable;->KeyboardLayout:[I
 
-    .line 46141
     new-array v15, v0, [I
 
     fill-array-data v15, :array_70
 
     sput-object v15, Lcom/android/internal/R$styleable;->KeyboardView:[I
 
-    .line 46320
     new-array v15, v1, [I
 
     const v16, 0x101023c
@@ -6562,112 +6399,96 @@
 
     sput-object v15, Lcom/android/internal/R$styleable;->KeyboardViewPreviewState:[I
 
-    .line 46368
     new-array v0, v0, [I
 
     fill-array-data v0, :array_71
 
     sput-object v0, Lcom/android/internal/R$styleable;->Keyboard_Key:[I
 
-    .line 46535
     new-array v0, v2, [I
 
     fill-array-data v0, :array_72
 
     sput-object v0, Lcom/android/internal/R$styleable;->Keyboard_Row:[I
 
-    .line 46587
     new-array v0, v5, [I
 
     fill-array-data v0, :array_73
 
     sput-object v0, Lcom/android/internal/R$styleable;->Keyframe:[I
 
-    .line 46678
     new-array v0, v5, [I
 
     fill-array-data v0, :array_74
 
     sput-object v0, Lcom/android/internal/R$styleable;->KeyguardGlowStripView:[I
 
-    .line 46754
     new-array v0, v14, [I
 
     fill-array-data v0, :array_75
 
     sput-object v0, Lcom/android/internal/R$styleable;->LayerDrawable:[I
 
-    .line 46932
     new-array v0, v9, [I
 
     fill-array-data v0, :array_76
 
     sput-object v0, Lcom/android/internal/R$styleable;->LayerDrawableItem:[I
 
-    .line 47137
     new-array v0, v5, [I
 
     fill-array-data v0, :array_77
 
     sput-object v0, Lcom/android/internal/R$styleable;->LayoutAnimation:[I
 
-    .line 47216
     new-array v0, v6, [I
 
     fill-array-data v0, :array_78
 
     sput-object v0, Lcom/android/internal/R$styleable;->LevelListDrawableItem:[I
 
-    .line 47272
     new-array v0, v12, [I
 
     fill-array-data v0, :array_79
 
     sput-object v0, Lcom/android/internal/R$styleable;->Lighting:[I
 
-    .line 47370
     new-array v0, v14, [I
 
     fill-array-data v0, :array_7a
 
     sput-object v0, Lcom/android/internal/R$styleable;->LinearLayout:[I
 
-    .line 47552
     new-array v0, v5, [I
 
     fill-array-data v0, :array_7b
 
     sput-object v0, Lcom/android/internal/R$styleable;->LinearLayout_Layout:[I
 
-    .line 47679
     new-array v0, v2, [I
 
     fill-array-data v0, :array_7c
 
     sput-object v0, Lcom/android/internal/R$styleable;->ListPopupWindow:[I
 
-    .line 47724
     new-array v0, v2, [I
 
     fill-array-data v0, :array_7d
 
     sput-object v0, Lcom/android/internal/R$styleable;->ListPreference:[I
 
-    .line 47779
     new-array v0, v13, [I
 
     fill-array-data v0, :array_7e
 
     sput-object v0, Lcom/android/internal/R$styleable;->ListView:[I
 
-    .line 47903
     new-array v0, v12, [I
 
     fill-array-data v0, :array_7f
 
     sput-object v0, Lcom/android/internal/R$styleable;->LockPatternView:[I
 
-    .line 47994
     new-array v0, v1, [I
 
     const v15, 0x1010211
@@ -6676,33 +6497,28 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->MapView:[I
 
-    .line 48030
     new-array v0, v4, [I
 
     fill-array-data v0, :array_80
 
     sput-object v0, Lcom/android/internal/R$styleable;->MaterialProgressDrawable:[I
 
-    .line 48138
     new-array v0, v5, [I
 
     fill-array-data v0, :array_81
 
     sput-object v0, Lcom/android/internal/R$styleable;->MediaRouteButton:[I
 
-    .line 48203
     new-array v0, v3, [I
 
     sput-object v0, Lcom/android/internal/R$styleable;->Menu:[I
 
-    .line 48229
     new-array v0, v4, [I
 
     fill-array-data v0, :array_82
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuGroup:[I
 
-    .line 48382
     const/16 v0, 0x17
 
     new-array v0, v0, [I
@@ -6711,28 +6527,24 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuItem:[I
 
-    .line 48748
     new-array v0, v6, [I
 
     fill-array-data v0, :array_84
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuItemCheckedFocusedState:[I
 
-    .line 48803
     new-array v0, v2, [I
 
     fill-array-data v0, :array_85
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuItemCheckedState:[I
 
-    .line 48847
     new-array v0, v2, [I
 
     fill-array-data v0, :array_86
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuItemUncheckedFocusedState:[I
 
-    .line 48886
     new-array v0, v1, [I
 
     const v15, 0x101009f
@@ -6741,14 +6553,12 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuItemUncheckedState:[I
 
-    .line 48932
     new-array v0, v14, [I
 
     fill-array-data v0, :array_87
 
     sput-object v0, Lcom/android/internal/R$styleable;->MenuView:[I
 
-    .line 49066
     new-array v0, v1, [I
 
     const v15, 0x1010113
@@ -6757,49 +6567,42 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->MessagingLinearLayout:[I
 
-    .line 49096
     new-array v0, v2, [I
 
     fill-array-data v0, :array_88
 
     sput-object v0, Lcom/android/internal/R$styleable;->MultiSelectListPreference:[I
 
-    .line 49141
     new-array v0, v1, [I
 
     aput v8, v0, v3
 
     sput-object v0, Lcom/android/internal/R$styleable;->Nfcid2Filter:[I
 
-    .line 49180
     new-array v0, v4, [I
 
     fill-array-data v0, :array_89
 
     sput-object v0, Lcom/android/internal/R$styleable;->NinePatchDrawable:[I
 
-    .line 49293
     new-array v0, v5, [I
 
     fill-array-data v0, :array_8a
 
     sput-object v0, Lcom/android/internal/R$styleable;->NotificationTheme:[I
 
-    .line 49382
     new-array v0, v9, [I
 
     fill-array-data v0, :array_8b
 
     sput-object v0, Lcom/android/internal/R$styleable;->NumberPicker:[I
 
-    .line 49557
     new-array v0, v6, [I
 
     fill-array-data v0, :array_8c
 
     sput-object v0, Lcom/android/internal/R$styleable;->OffHostApduService:[I
 
-    .line 49611
     new-array v0, v1, [I
 
     const v15, 0x101026a
@@ -6808,21 +6611,18 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->OvershootInterpolator:[I
 
-    .line 49640
     new-array v0, v6, [I
 
     fill-array-data v0, :array_8d
 
     sput-object v0, Lcom/android/internal/R$styleable;->PagedView:[I
 
-    .line 49703
     new-array v0, v12, [I
 
     fill-array-data v0, :array_8e
 
     sput-object v0, Lcom/android/internal/R$styleable;->PathInterpolator:[I
 
-    .line 49773
     new-array v0, v1, [I
 
     const v15, 0x10104ca
@@ -6831,7 +6631,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->PatternPathMotion:[I
 
-    .line 49844
     const/16 v0, 0x18
 
     new-array v0, v0, [I
@@ -6840,21 +6639,18 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Pointer:[I
 
-    .line 50179
     new-array v0, v6, [I
 
     fill-array-data v0, :array_90
 
     sput-object v0, Lcom/android/internal/R$styleable;->PointerIcon:[I
 
-    .line 50244
     new-array v0, v4, [I
 
     fill-array-data v0, :array_91
 
     sput-object v0, Lcom/android/internal/R$styleable;->PopupWindow:[I
 
-    .line 50339
     new-array v0, v1, [I
 
     const v15, 0x10100aa
@@ -6863,7 +6659,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 50402
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -6872,28 +6667,24 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
-    .line 50642
     new-array v0, v6, [I
 
     fill-array-data v0, :array_93
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceActivity:[I
 
-    .line 50697
     new-array v0, v2, [I
 
     fill-array-data v0, :array_94
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceFragment:[I
 
-    .line 50746
     new-array v0, v5, [I
 
     fill-array-data v0, :array_95
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceFrameLayout:[I
 
-    .line 50816
     new-array v0, v1, [I
 
     const v15, 0x111005e
@@ -6902,7 +6693,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceFrameLayout_Layout:[I
 
-    .line 50841
     new-array v0, v1, [I
 
     const v15, 0x10101e7
@@ -6911,28 +6701,24 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceGroup:[I
 
-    .line 50884
     new-array v0, v13, [I
 
     fill-array-data v0, :array_96
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceHeader:[I
 
-    .line 50982
     new-array v0, v2, [I
 
     fill-array-data v0, :array_97
 
     sput-object v0, Lcom/android/internal/R$styleable;->PreferenceScreen:[I
 
-    .line 51037
     new-array v0, v5, [I
 
     fill-array-data v0, :array_98
 
     sput-object v0, Lcom/android/internal/R$styleable;->PrintService:[I
 
-    .line 51151
     const/16 v0, 0x1b
 
     new-array v0, v0, [I
@@ -6941,21 +6727,18 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->ProgressBar:[I
 
-    .line 51584
     new-array v0, v5, [I
 
     fill-array-data v0, :array_9a
 
     sput-object v0, Lcom/android/internal/R$styleable;->PropertyAnimator:[I
 
-    .line 51648
     new-array v0, v5, [I
 
     fill-array-data v0, :array_9b
 
     sput-object v0, Lcom/android/internal/R$styleable;->PropertyValuesHolder:[I
 
-    .line 51739
     new-array v0, v1, [I
 
     const v15, 0x11100ae
@@ -6964,35 +6747,30 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->QuickContactBadge:[I
 
-    .line 51774
     new-array v0, v2, [I
 
     fill-array-data v0, :array_9c
 
     sput-object v0, Lcom/android/internal/R$styleable;->RadioGroup:[I
 
-    .line 51825
     new-array v0, v5, [I
 
     fill-array-data v0, :array_9d
 
     sput-object v0, Lcom/android/internal/R$styleable;->RatingBar:[I
 
-    .line 51889
     new-array v0, v5, [I
 
     fill-array-data v0, :array_9e
 
     sput-object v0, Lcom/android/internal/R$styleable;->RatingDefinition:[I
 
-    .line 51959
     new-array v0, v5, [I
 
     fill-array-data v0, :array_9f
 
     sput-object v0, Lcom/android/internal/R$styleable;->RatingSystemDefinition:[I
 
-    .line 52024
     new-array v0, v1, [I
 
     const v15, 0x1010225
@@ -7001,28 +6779,24 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->RecognitionService:[I
 
-    .line 52052
     new-array v0, v2, [I
 
     fill-array-data v0, :array_a0
 
     sput-object v0, Lcom/android/internal/R$styleable;->RecycleListView:[I
 
-    .line 52105
     new-array v0, v4, [I
 
     fill-array-data v0, :array_a1
 
     sput-object v0, Lcom/android/internal/R$styleable;->RecyclerView:[I
 
-    .line 52200
     new-array v0, v2, [I
 
     fill-array-data v0, :array_a2
 
     sput-object v0, Lcom/android/internal/R$styleable;->RelativeLayout:[I
 
-    .line 52309
     const/16 v0, 0x17
 
     new-array v0, v0, [I
@@ -7031,70 +6805,60 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->RelativeLayout_Layout:[I
 
-    .line 52632
     new-array v0, v5, [I
 
     fill-array-data v0, :array_a4
 
     sput-object v0, Lcom/android/internal/R$styleable;->ResolverDrawerLayout:[I
 
-    .line 52704
     new-array v0, v5, [I
 
     fill-array-data v0, :array_a5
 
     sput-object v0, Lcom/android/internal/R$styleable;->ResolverDrawerLayout_LayoutParams:[I
 
-    .line 52800
     new-array v0, v13, [I
 
     fill-array-data v0, :array_a6
 
     sput-object v0, Lcom/android/internal/R$styleable;->RestrictionEntry:[I
 
-    .line 52926
     new-array v0, v6, [I
 
     fill-array-data v0, :array_a7
 
     sput-object v0, Lcom/android/internal/R$styleable;->RingtonePreference:[I
 
-    .line 52984
     new-array v0, v2, [I
 
     fill-array-data v0, :array_a8
 
     sput-object v0, Lcom/android/internal/R$styleable;->RippleDrawable:[I
 
-    .line 53031
     new-array v0, v5, [I
 
     fill-array-data v0, :array_a9
 
     sput-object v0, Lcom/android/internal/R$styleable;->RotateAnimation:[I
 
-    .line 53100
     new-array v0, v4, [I
 
     fill-array-data v0, :array_aa
 
     sput-object v0, Lcom/android/internal/R$styleable;->RotateDrawable:[I
 
-    .line 53196
     new-array v0, v4, [I
 
     fill-array-data v0, :array_ab
 
     sput-object v0, Lcom/android/internal/R$styleable;->ScaleAnimation:[I
 
-    .line 53319
     new-array v0, v4, [I
 
     fill-array-data v0, :array_ac
 
     sput-object v0, Lcom/android/internal/R$styleable;->ScaleDrawable:[I
 
-    .line 53431
     new-array v0, v1, [I
 
     const v15, 0x101017a
@@ -7103,7 +6867,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->ScrollView:[I
 
-    .line 53490
     const/16 v0, 0x10
 
     new-array v0, v0, [I
@@ -7112,7 +6875,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->SearchView:[I
 
-    .line 54003
     const/16 v0, 0x16
 
     new-array v0, v0, [I
@@ -7121,70 +6883,60 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Searchable:[I
 
-    .line 54600
     new-array v0, v5, [I
 
     fill-array-data v0, :array_af
 
     sput-object v0, Lcom/android/internal/R$styleable;->SearchableActionKey:[I
 
-    .line 54998
     new-array v0, v14, [I
 
     fill-array-data v0, :array_b0
 
     sput-object v0, Lcom/android/internal/R$styleable;->SeekBar:[I
 
-    .line 55165
     new-array v0, v6, [I
 
     fill-array-data v0, :array_b1
 
     sput-object v0, Lcom/android/internal/R$styleable;->SeekBarPreference:[I
 
-    .line 55226
     new-array v0, v5, [I
 
     fill-array-data v0, :array_b2
 
     sput-object v0, Lcom/android/internal/R$styleable;->SelectionModeDrawables:[I
 
-    .line 55302
     new-array v0, v5, [I
 
     fill-array-data v0, :array_b3
 
     sput-object v0, Lcom/android/internal/R$styleable;->SettingInjectorService:[I
 
-    .line 55395
     new-array v0, v4, [I
 
     fill-array-data v0, :array_b4
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShapeDrawable:[I
 
-    .line 55508
     new-array v0, v5, [I
 
     fill-array-data v0, :array_b5
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShapeDrawablePadding:[I
 
-    .line 55589
     new-array v0, v4, [I
 
     fill-array-data v0, :array_b6
 
     sput-object v0, Lcom/android/internal/R$styleable;->Shortcut:[I
 
-    .line 55688
     new-array v0, v1, [I
 
     aput v8, v0, v3
 
     sput-object v0, Lcom/android/internal/R$styleable;->ShortcutCategories:[I
 
-    .line 55719
     new-array v0, v1, [I
 
     const v14, 0x1010430
@@ -7193,14 +6945,12 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Slide:[I
 
-    .line 55769
     new-array v0, v13, [I
 
     fill-array-data v0, :array_b7
 
     sput-object v0, Lcom/android/internal/R$styleable;->SlidingDrawer:[I
 
-    .line 55881
     new-array v0, v1, [I
 
     const v14, 0x10100c4
@@ -7209,35 +6959,30 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->SlidingTab:[I
 
-    .line 55922
     new-array v0, v2, [I
 
     fill-array-data v0, :array_b8
 
     sput-object v0, Lcom/android/internal/R$styleable;->SpellChecker:[I
 
-    .line 55972
     new-array v0, v12, [I
 
     fill-array-data v0, :array_b9
 
     sput-object v0, Lcom/android/internal/R$styleable;->SpellChecker_Subtype:[I
 
-    .line 56076
     new-array v0, v10, [I
 
     fill-array-data v0, :array_ba
 
     sput-object v0, Lcom/android/internal/R$styleable;->Spinner:[I
 
-    .line 56275
     new-array v0, v2, [I
 
     fill-array-data v0, :array_bb
 
     sput-object v0, Lcom/android/internal/R$styleable;->StackView:[I
 
-    .line 56313
     new-array v0, v1, [I
 
     const v14, 0x10101cd
@@ -7246,35 +6991,30 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->StateListAnimatorItem:[I
 
-    .line 56360
     new-array v0, v13, [I
 
     fill-array-data v0, :array_bc
 
     sput-object v0, Lcom/android/internal/R$styleable;->StateListDrawable:[I
 
-    .line 56461
     new-array v0, v1, [I
 
     aput v7, v0, v3
 
     sput-object v0, Lcom/android/internal/R$styleable;->StateListDrawableItem:[I
 
-    .line 56504
     new-array v0, v11, [I
 
     fill-array-data v0, :array_bd
 
     sput-object v0, Lcom/android/internal/R$styleable;->Storage:[I
 
-    .line 56608
     new-array v0, v2, [I
 
     fill-array-data v0, :array_be
 
     sput-object v0, Lcom/android/internal/R$styleable;->SuggestionSpan:[I
 
-    .line 56682
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -7283,61 +7023,52 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Switch:[I
 
-    .line 56912
     new-array v0, v12, [I
 
     fill-array-data v0, :array_c0
 
     sput-object v0, Lcom/android/internal/R$styleable;->SwitchPreference:[I
 
-    .line 57005
     new-array v0, v13, [I
 
     fill-array-data v0, :array_c1
 
     sput-object v0, Lcom/android/internal/R$styleable;->SyncAdapter:[I
 
-    .line 57104
     new-array v0, v1, [I
 
     aput v8, v0, v3
 
     sput-object v0, Lcom/android/internal/R$styleable;->SystemCodeFilter:[I
 
-    .line 57130
     new-array v0, v1, [I
 
     aput v8, v0, v3
 
     sput-object v0, Lcom/android/internal/R$styleable;->T3tPmmFilter:[I
 
-    .line 57165
     new-array v0, v12, [I
 
     fill-array-data v0, :array_c2
 
     sput-object v0, Lcom/android/internal/R$styleable;->TabWidget:[I
 
-    .line 57250
     new-array v0, v6, [I
 
     fill-array-data v0, :array_c3
 
     sput-object v0, Lcom/android/internal/R$styleable;->TableLayout:[I
 
-    .line 57296
     new-array v0, v3, [I
 
     sput-object v0, Lcom/android/internal/R$styleable;->TableRow:[I
 
-    .line 57311
     new-array v0, v2, [I
 
     fill-array-data v0, :array_c4
 
     sput-object v0, Lcom/android/internal/R$styleable;->TableRow_Cell:[I
 
-    .line 57381
     const/16 v0, 0x12
 
     new-array v0, v0, [I
@@ -7346,19 +7077,16 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextAppearance:[I
 
-    .line 57666
     new-array v0, v6, [I
 
     fill-array-data v0, :array_c6
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextClock:[I
 
-    .line 57712
     new-array v0, v3, [I
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextSwitcher:[I
 
-    .line 57731
     new-array v0, v1, [I
 
     const v7, 0x1010225
@@ -7367,7 +7095,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextToSpeechEngine:[I
 
-    .line 57990
     const/16 v0, 0x61
 
     new-array v0, v0, [I
@@ -7376,7 +7103,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextView:[I
 
-    .line 59739
     new-array v0, v1, [I
 
     const v7, 0x1010034
@@ -7385,7 +7111,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextViewAppearance:[I
 
-    .line 59766
     new-array v0, v1, [I
 
     const v7, 0x101034d
@@ -7394,7 +7119,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TextViewMultiLineBackgroundState:[I
 
-    .line 60525
     const/16 v0, 0x155
 
     new-array v0, v0, [I
@@ -7403,7 +7127,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->Theme:[I
 
-    .line 65313
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -7412,7 +7135,6 @@
 
     sput-object v0, Lcom/android/internal/R$styleable;->TimePicker:[I
 
-    .line 65533
     new-array v0, v6, [I
 
     fill-array-data v0, :array_ca
@@ -10782,7 +10504,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27496
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

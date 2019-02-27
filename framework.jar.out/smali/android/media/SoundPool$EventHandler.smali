@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/media/SoundPool;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 538
     iput-object p1, p0, Landroid/media/SoundPool$EventHandler;->this$0:Landroid/media/SoundPool;
 
-    .line 539
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 540
     return-void
 .end method
 
@@ -37,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 544
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 554
     const-string v0, "SoundPool"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -67,10 +60,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 555
     return-void
 
-    .line 546
     :cond_0
     invoke-static {}, Landroid/media/SoundPool;->access$000()Z
 
@@ -102,7 +93,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 547
     :cond_1
     iget-object v0, p0, Landroid/media/SoundPool$EventHandler;->this$0:Landroid/media/SoundPool;
 
@@ -112,7 +102,6 @@
 
     monitor-enter v0
 
-    .line 548
     :try_start_0
     iget-object v1, p0, Landroid/media/SoundPool$EventHandler;->this$0:Landroid/media/SoundPool;
 
@@ -122,7 +111,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 549
     iget-object v1, p0, Landroid/media/SoundPool$EventHandler;->this$0:Landroid/media/SoundPool;
 
     invoke-static {v1}, Landroid/media/SoundPool;->access$200(Landroid/media/SoundPool;)Landroid/media/SoundPool$OnLoadCompleteListener;
@@ -137,17 +125,13 @@
 
     invoke-interface {v1, v2, v3, v4}, Landroid/media/SoundPool$OnLoadCompleteListener;->onLoadComplete(Landroid/media/SoundPool;II)V
 
-    .line 551
     :cond_2
     monitor-exit v0
 
-    .line 552
     nop
 
-    .line 557
     return-void
 
-    .line 551
     :catchall_0
     move-exception v1
 

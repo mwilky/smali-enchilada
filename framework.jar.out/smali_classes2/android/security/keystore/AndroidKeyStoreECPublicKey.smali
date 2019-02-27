@@ -15,11 +15,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/security/interfaces/ECPublicKey;)V
     .locals 6
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "info"    # Ljava/security/interfaces/ECPublicKey;
 
-    .line 41
     invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getEncoded()[B
 
     move-result-object v3
@@ -40,7 +36,6 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;-><init>(Ljava/lang/String;I[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
 
-    .line 42
     const-string v0, "X.509"
 
     invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
@@ -53,10 +48,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 46
     return-void
 
-    .line 43
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -68,7 +61,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 44
     invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
 
     move-result-object v2
@@ -86,24 +78,15 @@
 
 .method public constructor <init>(Ljava/lang/String;I[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
     .locals 1
-    .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "x509EncodedForm"    # [B
-    .param p4, "params"    # Ljava/security/spec/ECParameterSpec;
-    .param p5, "w"    # Ljava/security/spec/ECPoint;
 
-    .line 35
     const-string v0, "EC"
 
     invoke-direct {p0, p1, p2, v0, p3}, Landroid/security/keystore/AndroidKeyStorePublicKey;-><init>(Ljava/lang/String;ILjava/lang/String;[B)V
 
-    .line 36
     iput-object p4, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mParams:Ljava/security/spec/ECParameterSpec;
 
-    .line 37
     iput-object p5, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mW:Ljava/security/spec/ECPoint;
 
-    .line 38
     return-void
 .end method
 
@@ -112,7 +95,6 @@
 .method public getParams()Ljava/security/spec/ECParameterSpec;
     .locals 1
 
-    .line 50
     iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mParams:Ljava/security/spec/ECParameterSpec;
 
     return-object v0
@@ -121,7 +103,6 @@
 .method public getW()Ljava/security/spec/ECPoint;
     .locals 1
 
-    .line 55
     iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mW:Ljava/security/spec/ECPoint;
 
     return-object v0

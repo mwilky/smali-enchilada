@@ -38,7 +38,6 @@
 .method constructor <init>(JIJLjava/io/RandomAccessFile;Landroid/os/RecoverySystem$ProgressListener;)V
     .locals 0
 
-    .line 292
     iput-wide p1, p0, Landroid/os/RecoverySystem$1;->val$fileLen:J
 
     iput p3, p0, Landroid/os/RecoverySystem$1;->val$commentSize:I
@@ -51,7 +50,6 @@
 
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 295
     iget-wide p1, p0, Landroid/os/RecoverySystem$1;->val$fileLen:J
 
     iget p3, p0, Landroid/os/RecoverySystem$1;->val$commentSize:I
@@ -66,17 +64,14 @@
 
     iput-wide p1, p0, Landroid/os/RecoverySystem$1;->toRead:J
 
-    .line 296
     const-wide/16 p1, 0x0
 
     iput-wide p1, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
-    .line 298
     const/4 p1, 0x0
 
     iput p1, p0, Landroid/os/RecoverySystem$1;->lastPercent:I
 
-    .line 299
     iget-wide p1, p0, Landroid/os/RecoverySystem$1;->val$startTimeMillis:J
 
     iput-wide p1, p0, Landroid/os/RecoverySystem$1;->lastPublishTime:J
@@ -94,7 +89,6 @@
         }
     .end annotation
 
-    .line 303
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -104,16 +98,12 @@
 
 .method public read([BII)I
     .locals 9
-    .param p1, "b"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 308
     iget-wide v0, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
     iget-wide v2, p0, Landroid/os/RecoverySystem$1;->toRead:J
@@ -124,10 +114,8 @@
 
     if-ltz v0, :cond_0
 
-    .line 309
     return v1
 
-    .line 311
     :cond_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -139,15 +127,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 312
     return v1
 
-    .line 315
     :cond_1
     move v0, p3
 
-    .line 316
-    .local v0, "size":I
     iget-wide v1, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
     int-to-long v3, v0
@@ -160,7 +144,6 @@
 
     if-lez v1, :cond_2
 
-    .line 317
     iget-wide v1, p0, Landroid/os/RecoverySystem$1;->toRead:J
 
     iget-wide v3, p0, Landroid/os/RecoverySystem$1;->soFar:J
@@ -169,7 +152,6 @@
 
     long-to-int v0, v1
 
-    .line 319
     :cond_2
     iget-object v1, p0, Landroid/os/RecoverySystem$1;->val$raf:Ljava/io/RandomAccessFile;
 
@@ -177,8 +159,6 @@
 
     move-result v1
 
-    .line 320
-    .local v1, "read":I
     iget-wide v2, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
     int-to-long v4, v1
@@ -187,18 +167,14 @@
 
     iput-wide v2, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
-    .line 322
     iget-object v2, p0, Landroid/os/RecoverySystem$1;->val$listenerForInner:Landroid/os/RecoverySystem$ProgressListener;
 
     if-eqz v2, :cond_3
 
-    .line 323
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 324
-    .local v2, "now":J
     iget-wide v4, p0, Landroid/os/RecoverySystem$1;->soFar:J
 
     const-wide/16 v6, 0x64
@@ -211,8 +187,6 @@
 
     long-to-int v4, v4
 
-    .line 325
-    .local v4, "p":I
     iget v5, p0, Landroid/os/RecoverySystem$1;->lastPercent:I
 
     if-le v4, v5, :cond_3
@@ -227,22 +201,16 @@
 
     if-lez v5, :cond_3
 
-    .line 327
     iput v4, p0, Landroid/os/RecoverySystem$1;->lastPercent:I
 
-    .line 328
     iput-wide v2, p0, Landroid/os/RecoverySystem$1;->lastPublishTime:J
 
-    .line 329
     iget-object v5, p0, Landroid/os/RecoverySystem$1;->val$listenerForInner:Landroid/os/RecoverySystem$ProgressListener;
 
     iget v6, p0, Landroid/os/RecoverySystem$1;->lastPercent:I
 
     invoke-interface {v5, v6}, Landroid/os/RecoverySystem$ProgressListener;->onProgress(I)V
 
-    .line 333
-    .end local v2    # "now":J
-    .end local v4    # "p":I
     :cond_3
     return v1
 .end method

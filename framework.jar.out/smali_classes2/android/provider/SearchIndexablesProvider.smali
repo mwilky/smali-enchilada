@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 66
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
     return-void
@@ -40,15 +39,11 @@
 # virtual methods
 .method public attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "info"    # Landroid/content/pm/ProviderInfo;
 
-    .line 82
     iget-object v0, p2, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
 
-    .line 84
     new-instance v0, Landroid/content/UriMatcher;
 
     const/4 v1, -0x1
@@ -57,7 +52,6 @@
 
     iput-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
-    .line 85
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -68,7 +62,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 87
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -79,7 +72,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 89
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -90,7 +82,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 91
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     iget-object v1, p0, Landroid/provider/SearchIndexablesProvider;->mAuthority:Ljava/lang/String;
@@ -101,17 +92,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 95
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
 
     if-eqz v0, :cond_2
 
-    .line 98
     iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->grantUriPermissions:Z
 
     if-eqz v0, :cond_1
 
-    .line 101
     const-string v0, "android.permission.READ_SEARCH_INDEXABLES"
 
     iget-object v1, p2, Landroid/content/pm/ProviderInfo;->readPermission:Ljava/lang/String;
@@ -122,13 +110,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 105
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
 
-    .line 106
     return-void
 
-    .line 102
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -138,7 +123,6 @@
 
     throw v0
 
-    .line 99
     :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -148,7 +132,6 @@
 
     throw v0
 
-    .line 96
     :cond_2
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -161,11 +144,7 @@
 
 .method public final delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "selection"    # Ljava/lang/String;
-    .param p3, "selectionArgs"    # [Ljava/lang/String;
 
-    .line 196
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Delete not supported"
@@ -177,9 +156,7 @@
 
 .method public getType(Landroid/net/Uri;)Ljava/lang/String;
     .locals 3
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 171
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
@@ -188,7 +165,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 179
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -209,19 +185,16 @@
 
     throw v0
 
-    .line 177
     :pswitch_0
     const-string/jumbo v0, "vnd.android.cursor.dir/non_indexables_key"
 
     return-object v0
 
-    .line 175
     :pswitch_1
     const-string/jumbo v0, "vnd.android.cursor.dir/indexables_raw"
 
     return-object v0
 
-    .line 173
     :pswitch_2
     const-string/jumbo v0, "vnd.android.cursor.dir/indexables_xml_res"
 
@@ -241,10 +214,7 @@
 
 .method public final insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "values"    # Landroid/content/ContentValues;
 
-    .line 188
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Insert not supported"
@@ -256,13 +226,7 @@
 
 .method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .locals 3
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "projection"    # [Ljava/lang/String;
-    .param p3, "selection"    # Ljava/lang/String;
-    .param p4, "selectionArgs"    # [Ljava/lang/String;
-    .param p5, "sortOrder"    # Ljava/lang/String;
 
-    .line 111
     iget-object v0, p0, Landroid/provider/SearchIndexablesProvider;->mMatcher:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
@@ -273,7 +237,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 121
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -294,7 +257,6 @@
 
     throw v0
 
-    .line 119
     :pswitch_0
     invoke-virtual {p0}, Landroid/provider/SearchIndexablesProvider;->querySiteMapPairs()Landroid/database/Cursor;
 
@@ -302,7 +264,6 @@
 
     return-object v0
 
-    .line 117
     :pswitch_1
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryNonIndexableKeys([Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -310,7 +271,6 @@
 
     return-object v0
 
-    .line 115
     :pswitch_2
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryRawData([Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -318,7 +278,6 @@
 
     return-object v0
 
-    .line 113
     :pswitch_3
     invoke-virtual {p0, v1}, Landroid/provider/SearchIndexablesProvider;->queryXmlResources([Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -346,7 +305,6 @@
 .method public querySiteMapPairs()Landroid/database/Cursor;
     .locals 1
 
-    .line 166
     const/4 v0, 0x0
 
     return-object v0
@@ -357,12 +315,7 @@
 
 .method public final update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "values"    # Landroid/content/ContentValues;
-    .param p3, "selection"    # Ljava/lang/String;
-    .param p4, "selectionArgs"    # [Ljava/lang/String;
 
-    .line 205
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Update not supported"

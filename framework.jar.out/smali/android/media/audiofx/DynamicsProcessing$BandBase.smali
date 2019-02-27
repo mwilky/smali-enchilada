@@ -23,19 +23,13 @@
 # direct methods
 .method public constructor <init>(ZF)V
     .locals 0
-    .param p1, "enabled"    # Z
-    .param p2, "cutoffFrequency"    # F
 
-    .line 412
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 413
     iput-boolean p1, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mEnabled:Z
 
-    .line 414
     iput p2, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mCutoffFrequency:F
 
-    .line 415
     return-void
 .end method
 
@@ -44,7 +38,6 @@
 .method public getCutoffFrequency()F
     .locals 1
 
-    .line 445
     iget v0, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mCutoffFrequency:F
 
     return v0
@@ -53,7 +46,6 @@
 .method public isEnabled()Z
     .locals 1
 
-    .line 430
     iget-boolean v0, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mEnabled:Z
 
     return v0
@@ -61,36 +53,27 @@
 
 .method public setCutoffFrequency(F)V
     .locals 0
-    .param p1, "frequency"    # F
 
-    .line 456
     iput p1, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mCutoffFrequency:F
 
-    .line 457
     return-void
 .end method
 
 .method public setEnabled(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 437
     iput-boolean p1, p0, Landroid/media/audiofx/DynamicsProcessing$BandBase;->mEnabled:Z
 
-    .line 438
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .line 419
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 420
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, " Enabled: %b\n"
 
     const/4 v2, 0x1
@@ -113,7 +96,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 421
     const-string v1, " CutoffFrequency: %f\n"
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -132,7 +114,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 422
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

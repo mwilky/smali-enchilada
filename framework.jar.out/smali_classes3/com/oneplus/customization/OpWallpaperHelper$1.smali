@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 67
     invoke-static {}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     move-result-object v0
@@ -160,7 +159,6 @@
     :catch_5
     move-exception v4
 
-    .line 42
     :goto_5
     invoke-static {}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 

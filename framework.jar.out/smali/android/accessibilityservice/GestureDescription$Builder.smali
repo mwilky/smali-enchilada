@@ -30,10 +30,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 162
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,9 +45,7 @@
 # virtual methods
 .method public addStroke(Landroid/accessibilityservice/GestureDescription$StrokeDescription;)Landroid/accessibilityservice/GestureDescription$Builder;
     .locals 4
-    .param p1, "strokeDescription"    # Landroid/accessibilityservice/GestureDescription$StrokeDescription;
 
-    .line 175
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -60,12 +56,10 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 180
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 182
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
 
     invoke-static {v0}, Landroid/accessibilityservice/GestureDescription;->access$000(Ljava/util/List;)J
@@ -78,16 +72,13 @@
 
     if-gtz v0, :cond_0
 
-    .line 187
     return-object p0
 
-    .line 183
     :cond_0
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 184
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Gesture would exceed maximum duration with new stroke"
@@ -96,7 +87,6 @@
 
     throw v0
 
-    .line 176
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -110,7 +100,6 @@
 .method public build()Landroid/accessibilityservice/GestureDescription;
     .locals 3
 
-    .line 191
     iget-object v0, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -119,7 +108,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 194
     new-instance v0, Landroid/accessibilityservice/GestureDescription;
 
     iget-object v1, p0, Landroid/accessibilityservice/GestureDescription$Builder;->mStrokes:Ljava/util/List;
@@ -130,7 +118,6 @@
 
     return-object v0
 
-    .line 192
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

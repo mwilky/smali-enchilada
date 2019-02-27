@@ -33,8 +33,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;Ljava/util/List;Lcom/android/internal/app/ChooserActivity$ChooserTargetServiceConnection;)V
     .locals 0
-    .param p1, "ot"    # Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;
-    .param p3, "c"    # Lcom/android/internal/app/ChooserActivity$ChooserTargetServiceConnection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,19 +45,13 @@
         }
     .end annotation
 
-    .line 1603
-    .local p2, "rt":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1604
     iput-object p1, p0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;->originalTarget:Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;
 
-    .line 1605
     iput-object p2, p0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;->resultTargets:Ljava/util/List;
 
-    .line 1606
     iput-object p3, p0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;->connection:Lcom/android/internal/app/ChooserActivity$ChooserTargetServiceConnection;
 
-    .line 1607
     return-void
 .end method

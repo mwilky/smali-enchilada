@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/midi/MidiManager;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/midi/MidiManager;
 
-    .line 287
     iput-object p1, p0, Landroid/media/midi/MidiManager$3;->this$0:Landroid/media/midi/MidiManager;
 
     iput-object p2, p0, Landroid/media/midi/MidiManager$3;->val$listenerF:Landroid/media/midi/MidiManager$OnDeviceOpenedListener;
@@ -43,24 +41,16 @@
 # virtual methods
 .method public onDeviceOpened(Landroid/media/midi/IMidiDeviceServer;Landroid/os/IBinder;)V
     .locals 8
-    .param p1, "server"    # Landroid/media/midi/IMidiDeviceServer;
-    .param p2, "deviceToken"    # Landroid/os/IBinder;
 
-    .line 290
     const/4 v0, 0x0
 
-    .line 291
-    .local v0, "device":Landroid/media/midi/MidiDevice;
     if-eqz p1, :cond_0
 
-    .line 294
     :try_start_0
     invoke-interface {p1}, Landroid/media/midi/IMidiDeviceServer;->getDeviceInfo()Landroid/media/midi/MidiDeviceInfo;
 
     move-result-object v2
 
-    .line 295
-    .local v2, "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
     new-instance v7, Landroid/media/midi/MidiDevice;
 
     iget-object v1, p0, Landroid/media/midi/MidiManager$3;->this$0:Landroid/media/midi/MidiManager;
@@ -87,24 +77,17 @@
 
     move-object v0, v7
 
-    .line 298
-    .end local v2    # "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
     goto :goto_0
 
-    .line 296
     :catch_0
     move-exception v1
 
-    .line 297
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "MidiManager"
 
     const-string/jumbo v3, "remote exception in getDeviceInfo()"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 300
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/media/midi/MidiManager$3;->this$0:Landroid/media/midi/MidiManager;
@@ -115,6 +98,5 @@
 
     invoke-static {v1, v0, v2, v3}, Landroid/media/midi/MidiManager;->access$300(Landroid/media/midi/MidiManager;Landroid/media/midi/MidiDevice;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V
 
-    .line 301
     return-void
 .end method

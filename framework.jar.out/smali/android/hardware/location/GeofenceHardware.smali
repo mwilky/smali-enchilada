@@ -88,38 +88,29 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/location/IGeofenceHardware;)V
     .locals 1
-    .param p1, "service"    # Landroid/hardware/location/IGeofenceHardware;
 
-    .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 164
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
-    .line 166
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
-    .line 172
     iput-object p1, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
-    .line 173
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/hardware/location/GeofenceHardware;Landroid/hardware/location/GeofenceHardwareCallback;)V
     .locals 0
-    .param p0, "x0"    # Landroid/hardware/location/GeofenceHardware;
-    .param p1, "x1"    # Landroid/hardware/location/GeofenceHardwareCallback;
 
-    .line 51
     invoke-direct {p0, p1}, Landroid/hardware/location/GeofenceHardware;->removeCallback(Landroid/hardware/location/GeofenceHardwareCallback;)V
 
     return-void
@@ -127,14 +118,11 @@
 
 .method private getCallbackWrapper(Landroid/hardware/location/GeofenceHardwareCallback;)Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
     .locals 3
-    .param p1, "callback"    # Landroid/hardware/location/GeofenceHardwareCallback;
 
-    .line 447
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 448
     :try_start_0
     iget-object v1, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
@@ -144,30 +132,23 @@
 
     check-cast v1, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
 
-    .line 449
-    .local v1, "wrapper":Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
     if-nez v1, :cond_0
 
-    .line 450
     new-instance v2, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
 
     invoke-direct {v2, p0, p1}, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;-><init>(Landroid/hardware/location/GeofenceHardware;Landroid/hardware/location/GeofenceHardwareCallback;)V
 
     move-object v1, v2
 
-    .line 451
     iget-object v2, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 453
     :cond_0
     monitor-exit v0
 
     return-object v1
 
-    .line 454
-    .end local v1    # "wrapper":Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
     :catchall_0
     move-exception v1
 
@@ -180,14 +161,11 @@
 
 .method private getMonitorCallbackWrapper(Landroid/hardware/location/GeofenceHardwareMonitorCallback;)Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
     .locals 3
-    .param p1, "callback"    # Landroid/hardware/location/GeofenceHardwareMonitorCallback;
 
-    .line 465
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 466
     :try_start_0
     iget-object v1, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
@@ -197,30 +175,23 @@
 
     check-cast v1, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
 
-    .line 467
-    .local v1, "wrapper":Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
     if-nez v1, :cond_0
 
-    .line 468
     new-instance v2, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
 
     invoke-direct {v2, p0, p1}, Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;-><init>(Landroid/hardware/location/GeofenceHardware;Landroid/hardware/location/GeofenceHardwareMonitorCallback;)V
 
     move-object v1, v2
 
-    .line 469
     iget-object v2, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 471
     :cond_0
     monitor-exit v0
 
     return-object v1
 
-    .line 472
-    .end local v1    # "wrapper":Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
     :catchall_0
     move-exception v1
 
@@ -233,26 +204,20 @@
 
 .method private removeCallback(Landroid/hardware/location/GeofenceHardwareCallback;)V
     .locals 2
-    .param p1, "callback"    # Landroid/hardware/location/GeofenceHardwareCallback;
 
-    .line 441
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 442
     :try_start_0
     iget-object v1, p0, Landroid/hardware/location/GeofenceHardware;->mCallbacks:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 443
     monitor-exit v0
 
-    .line 444
     return-void
 
-    .line 443
     :catchall_0
     move-exception v1
 
@@ -265,26 +230,20 @@
 
 .method private removeMonitorCallback(Landroid/hardware/location/GeofenceHardwareMonitorCallback;)V
     .locals 2
-    .param p1, "callback"    # Landroid/hardware/location/GeofenceHardwareMonitorCallback;
 
-    .line 458
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 459
     :try_start_0
     iget-object v1, p0, Landroid/hardware/location/GeofenceHardware;->mMonitorCallbacks:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 460
     monitor-exit v0
 
-    .line 461
     return-void
 
-    .line 460
     :catchall_0
     move-exception v1
 
@@ -299,12 +258,7 @@
 # virtual methods
 .method public addGeofence(IILandroid/hardware/location/GeofenceHardwareRequest;Landroid/hardware/location/GeofenceHardwareCallback;)Z
     .locals 3
-    .param p1, "geofenceId"    # I
-    .param p2, "monitoringType"    # I
-    .param p3, "geofenceRequest"    # Landroid/hardware/location/GeofenceHardwareRequest;
-    .param p4, "callback"    # Landroid/hardware/location/GeofenceHardwareCallback;
 
-    .line 271
     :try_start_0
     invoke-virtual {p3}, Landroid/hardware/location/GeofenceHardwareRequest;->getType()I
 
@@ -312,26 +266,22 @@
 
     if-nez v0, :cond_0
 
-    .line 272
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
     new-instance v1, Landroid/hardware/location/GeofenceHardwareRequestParcelable;
 
     invoke-direct {v1, p1, p3}, Landroid/hardware/location/GeofenceHardwareRequestParcelable;-><init>(ILandroid/hardware/location/GeofenceHardwareRequest;)V
 
-    .line 275
     invoke-direct {p0, p4}, Landroid/hardware/location/GeofenceHardware;->getCallbackWrapper(Landroid/hardware/location/GeofenceHardwareCallback;)Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
 
     move-result-object v2
 
-    .line 272
     invoke-interface {v0, p2, v1, v2}, Landroid/hardware/location/IGeofenceHardware;->addCircularFence(ILandroid/hardware/location/GeofenceHardwareRequestParcelable;Landroid/hardware/location/IGeofenceHardwareCallback;)Z
 
     move-result v0
 
     return v0
 
-    .line 277
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -343,11 +293,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 279
     :catch_0
     move-exception v0
 
-    .line 281
     const/4 v0, 0x0
 
     return v0
@@ -356,7 +304,6 @@
 .method public getMonitoringTypes()[I
     .locals 1
 
-    .line 189
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
@@ -368,11 +315,9 @@
 
     return-object v0
 
-    .line 190
     :catch_0
     move-exception v0
 
-    .line 192
     const/4 v0, 0x0
 
     new-array v0, v0, [I
@@ -382,9 +327,7 @@
 
 .method public getStatusOfMonitoringType(I)I
     .locals 2
-    .param p1, "monitoringType"    # I
 
-    .line 212
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
@@ -396,12 +339,9 @@
 
     return v0
 
-    .line 213
     :catch_0
     move-exception v0
 
-    .line 214
-    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x2
 
     return v1
@@ -409,10 +349,7 @@
 
 .method public pauseGeofence(II)Z
     .locals 1
-    .param p1, "geofenceId"    # I
-    .param p2, "monitoringType"    # I
 
-    .line 338
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
@@ -424,11 +361,9 @@
 
     return v0
 
-    .line 339
     :catch_0
     move-exception v0
 
-    .line 341
     const/4 v0, 0x0
 
     return v0
@@ -436,19 +371,14 @@
 
 .method public registerForMonitorStateChangeCallback(ILandroid/hardware/location/GeofenceHardwareMonitorCallback;)Z
     .locals 2
-    .param p1, "monitoringType"    # I
-    .param p2, "callback"    # Landroid/hardware/location/GeofenceHardwareMonitorCallback;
 
-    .line 401
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
-    .line 402
     invoke-direct {p0, p2}, Landroid/hardware/location/GeofenceHardware;->getMonitorCallbackWrapper(Landroid/hardware/location/GeofenceHardwareMonitorCallback;)Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
 
     move-result-object v1
 
-    .line 401
     invoke-interface {v0, p1, v1}, Landroid/hardware/location/IGeofenceHardware;->registerForMonitorStateChangeCallback(ILandroid/hardware/location/IGeofenceHardwareMonitorCallback;)Z
 
     move-result v0
@@ -457,11 +387,9 @@
 
     return v0
 
-    .line 403
     :catch_0
     move-exception v0
 
-    .line 405
     const/4 v0, 0x0
 
     return v0
@@ -469,10 +397,7 @@
 
 .method public removeGeofence(II)Z
     .locals 1
-    .param p1, "geofenceId"    # I
-    .param p2, "monitoringType"    # I
 
-    .line 308
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
@@ -484,11 +409,9 @@
 
     return v0
 
-    .line 309
     :catch_0
     move-exception v0
 
-    .line 311
     const/4 v0, 0x0
 
     return v0
@@ -496,11 +419,7 @@
 
 .method public resumeGeofence(III)Z
     .locals 1
-    .param p1, "geofenceId"    # I
-    .param p2, "monitoringType"    # I
-    .param p3, "monitorTransition"    # I
 
-    .line 370
     :try_start_0
     iget-object v0, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
@@ -512,11 +431,9 @@
 
     return v0
 
-    .line 371
     :catch_0
     move-exception v0
 
-    .line 373
     const/4 v0, 0x0
 
     return v0
@@ -524,45 +441,34 @@
 
 .method public unregisterForMonitorStateChangeCallback(ILandroid/hardware/location/GeofenceHardwareMonitorCallback;)Z
     .locals 3
-    .param p1, "monitoringType"    # I
-    .param p2, "callback"    # Landroid/hardware/location/GeofenceHardwareMonitorCallback;
 
-    .line 428
     const/4 v0, 0x0
 
-    .line 430
-    .local v0, "result":Z
     :try_start_0
     iget-object v1, p0, Landroid/hardware/location/GeofenceHardware;->mService:Landroid/hardware/location/IGeofenceHardware;
 
-    .line 431
     invoke-direct {p0, p2}, Landroid/hardware/location/GeofenceHardware;->getMonitorCallbackWrapper(Landroid/hardware/location/GeofenceHardwareMonitorCallback;)Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
 
     move-result-object v2
 
-    .line 430
     invoke-interface {v1, p1, v2}, Landroid/hardware/location/IGeofenceHardware;->unregisterForMonitorStateChangeCallback(ILandroid/hardware/location/IGeofenceHardwareMonitorCallback;)Z
 
     move-result v1
 
     move v0, v1
 
-    .line 432
     if-eqz v0, :cond_0
 
     invoke-direct {p0, p2}, Landroid/hardware/location/GeofenceHardware;->removeMonitorCallback(Landroid/hardware/location/GeofenceHardwareMonitorCallback;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 435
     :cond_0
     goto :goto_0
 
-    .line 434
     :catch_0
     move-exception v1
 
-    .line 436
     :goto_0
     return v0
 .end method

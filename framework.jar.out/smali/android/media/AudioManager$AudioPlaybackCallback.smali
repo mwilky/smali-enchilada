@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 3352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +36,5 @@
         }
     .end annotation
 
-    .line 3358
-    .local p1, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/media/AudioPlaybackConfiguration;>;"
     return-void
 .end method

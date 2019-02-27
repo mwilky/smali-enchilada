@@ -30,85 +30,69 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 3
-    .param p1, "parent"    # Landroid/view/View;
 
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
-    .line 38
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
-    .line 39
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mRect:Landroid/graphics/RectF;
 
-    .line 45
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 46
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 47
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 50
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 51
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 52
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 54
     iput-object p1, p0, Landroid/view/RoundScrollbarRenderer;->mParent:Landroid/view/View;
 
-    .line 55
     return-void
 .end method
 
 .method private static applyAlpha(IF)I
     .locals 4
-    .param p0, "color"    # I
-    .param p1, "alpha"    # F
 
-    .line 108
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
@@ -119,8 +103,6 @@
 
     float-to-int v0, v0
 
-    .line 109
-    .local v0, "alphaByte":I
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v1
@@ -142,37 +124,27 @@
 
 .method private static clamp(FFF)F
     .locals 1
-    .param p0, "val"    # F
-    .param p1, "min"    # F
-    .param p2, "max"    # F
 
-    .line 98
     cmpg-float v0, p0, p1
 
     if-gez v0, :cond_0
 
-    .line 99
     return p1
 
-    .line 100
     :cond_0
     cmpl-float v0, p0, p2
 
     if-lez v0, :cond_1
 
-    .line 101
     return p2
 
-    .line 103
     :cond_1
     return p0
 .end method
 
 .method private setThumbColor(I)V
     .locals 1
-    .param p1, "thumbColor"    # I
 
-    .line 113
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getColor()I
@@ -181,21 +153,17 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 114
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 116
     :cond_0
     return-void
 .end method
 
 .method private setTrackColor(I)V
     .locals 1
-    .param p1, "trackColor"    # I
 
-    .line 119
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getColor()I
@@ -204,12 +172,10 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 120
     iget-object v0, p0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 122
     :cond_0
     return-void
 .end method
@@ -218,15 +184,11 @@
 # virtual methods
 .method public drawRoundScrollbars(Landroid/graphics/Canvas;FLandroid/graphics/Rect;)V
     .locals 21
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-    .param p2, "alpha"    # F
-    .param p3, "bounds"    # Landroid/graphics/Rect;
 
     move-object/from16 v0, p0
 
     move/from16 v1, p2
 
-    .line 58
     move-object/from16 v2, p3
 
     const/4 v3, 0x0
@@ -235,10 +197,8 @@
 
     if-nez v4, :cond_0
 
-    .line 59
     return-void
 
-    .line 62
     :cond_0
     iget-object v4, v0, Landroid/view/RoundScrollbarRenderer;->mParent:Landroid/view/View;
 
@@ -248,8 +208,6 @@
 
     int-to-float v4, v4
 
-    .line 63
-    .local v4, "maxScroll":F
     iget-object v5, v0, Landroid/view/RoundScrollbarRenderer;->mParent:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->computeVerticalScrollExtent()I
@@ -258,8 +216,6 @@
 
     int-to-float v5, v5
 
-    .line 64
-    .local v5, "scrollExtent":F
     cmpg-float v3, v5, v3
 
     if-lez v3, :cond_2
@@ -270,7 +226,6 @@
 
     goto/16 :goto_0
 
-    .line 67
     :cond_1
     const/4 v3, 0x0
 
@@ -286,8 +241,6 @@
 
     int-to-float v3, v3
 
-    .line 68
-    .local v3, "currentScroll":F
     iget-object v6, v0, Landroid/view/RoundScrollbarRenderer;->mParent:Landroid/view/View;
 
     invoke-virtual {v6}, Landroid/view/View;->computeVerticalScrollExtent()I
@@ -296,8 +249,6 @@
 
     int-to-float v6, v6
 
-    .line 69
-    .local v6, "linearThumbLength":F
     iget-object v7, v0, Landroid/view/RoundScrollbarRenderer;->mParent:Landroid/view/View;
 
     invoke-virtual {v7}, Landroid/view/View;->getWidth()I
@@ -310,18 +261,14 @@
 
     mul-float/2addr v7, v8
 
-    .line 70
-    .local v7, "thumbWidth":F
     iget-object v8, v0, Landroid/view/RoundScrollbarRenderer;->mThumbPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v7}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 71
     iget-object v8, v0, Landroid/view/RoundScrollbarRenderer;->mTrackPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v7}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 73
     const v8, 0x4cffffff    # 1.3421772E8f
 
     invoke-static {v8, v1}, Landroid/view/RoundScrollbarRenderer;->applyAlpha(IF)I
@@ -330,7 +277,6 @@
 
     invoke-direct {v0, v8}, Landroid/view/RoundScrollbarRenderer;->setThumbColor(I)V
 
-    .line 74
     const v8, 0x26ffffff
 
     invoke-static {v8, v1}, Landroid/view/RoundScrollbarRenderer;->applyAlpha(IF)I
@@ -339,15 +285,12 @@
 
     invoke-direct {v0, v8}, Landroid/view/RoundScrollbarRenderer;->setTrackColor(I)V
 
-    .line 77
     div-float v8, v6, v4
 
     const/high16 v9, 0x42b40000    # 90.0f
 
     mul-float/2addr v8, v9
 
-    .line 78
-    .local v8, "sweepAngle":F
     const/high16 v10, 0x40c00000    # 6.0f
 
     const/high16 v11, 0x41800000    # 16.0f
@@ -356,7 +299,6 @@
 
     move-result v8
 
-    .line 80
     sub-float/2addr v9, v8
 
     mul-float/2addr v9, v3
@@ -369,8 +311,6 @@
 
     sub-float/2addr v9, v10
 
-    .line 82
-    .local v9, "startAngle":F
     const/high16 v11, -0x3dcc0000    # -45.0f
 
     sub-float/2addr v10, v8
@@ -379,7 +319,6 @@
 
     move-result v9
 
-    .line 86
     iget-object v10, v0, Landroid/view/RoundScrollbarRenderer;->mRect:Landroid/graphics/RectF;
 
     iget v11, v2, Landroid/graphics/Rect;->left:I
@@ -410,7 +349,6 @@
 
     invoke-virtual {v10, v11, v13, v14, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 92
     iget-object v10, v0, Landroid/view/RoundScrollbarRenderer;->mRect:Landroid/graphics/RectF;
 
     const/high16 v17, -0x3dcc0000    # -45.0f
@@ -429,7 +367,6 @@
 
     invoke-virtual/range {v15 .. v20}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    .line 94
     iget-object v13, v0, Landroid/view/RoundScrollbarRenderer;->mRect:Landroid/graphics/RectF;
 
     const/16 v16, 0x0
@@ -446,15 +383,8 @@
 
     invoke-virtual/range {v12 .. v17}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    .line 95
     return-void
 
-    .line 65
-    .end local v3    # "currentScroll":F
-    .end local v6    # "linearThumbLength":F
-    .end local v7    # "thumbWidth":F
-    .end local v8    # "sweepAngle":F
-    .end local v9    # "startAngle":F
     :cond_2
     :goto_0
     return-void

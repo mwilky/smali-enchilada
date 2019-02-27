@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,16 +27,12 @@
 # virtual methods
 .method public onInterfaceAdded(Landroid/net/lowpan/LowpanInterface;)V
     .locals 0
-    .param p1, "lowpanInterface"    # Landroid/net/lowpan/LowpanInterface;
 
-    .line 44
     return-void
 .end method
 
 .method public onInterfaceRemoved(Landroid/net/lowpan/LowpanInterface;)V
     .locals 0
-    .param p1, "lowpanInterface"    # Landroid/net/lowpan/LowpanInterface;
 
-    .line 46
     return-void
 .end method

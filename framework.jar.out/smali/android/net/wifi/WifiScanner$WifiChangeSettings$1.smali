@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 979
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiScanner$WifiChangeSettings;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 981
     new-instance v0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiScanner$WifiChangeSettings;-><init>()V
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 979
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Landroid/net/wifi/WifiScanner$WifiChangeSettings;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 985
     new-array v0, p1, [Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 979
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;->newArray(I)[Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     move-result-object p1

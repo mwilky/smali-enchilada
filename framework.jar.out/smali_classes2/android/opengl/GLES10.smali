@@ -491,17 +491,14 @@
 .method static constructor <clinit>()V
     .locals 0
 
-    .line 265
     invoke-static {}, Landroid/opengl/GLES10;->_nativeClassInit()V
 
-    .line 266
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -557,23 +554,15 @@
 
 .method public static glColorPointer(IIILjava/nio/Buffer;)V
     .locals 1
-    .param p0, "size"    # I
-    .param p1, "type"    # I
-    .param p2, "stride"    # I
-    .param p3, "pointer"    # Ljava/nio/Buffer;
 
-    .line 398
     nop
 
-    .line 403
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
-    .line 398
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES10;->glColorPointerBounds(IIILjava/nio/Buffer;I)V
 
-    .line 405
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_1
@@ -593,10 +582,8 @@
     :cond_0
     if-ltz p2, :cond_1
 
-    .line 410
     sput-object p3, Landroid/opengl/GLES10;->_colorPointer:Ljava/nio/Buffer;
 
-    .line 412
     :cond_1
     return-void
 .end method
@@ -816,22 +803,15 @@
 
 .method public static glNormalPointer(IILjava/nio/Buffer;)V
     .locals 1
-    .param p0, "type"    # I
-    .param p1, "stride"    # I
-    .param p2, "pointer"    # Ljava/nio/Buffer;
 
-    .line 959
     nop
 
-    .line 963
     invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
-    .line 959
     invoke-static {p0, p1, p2, v0}, Landroid/opengl/GLES10;->glNormalPointerBounds(IILjava/nio/Buffer;I)V
 
-    .line 965
     const/16 v0, 0x1406
 
     if-eq p0, v0, :cond_0
@@ -851,10 +831,8 @@
     :cond_0
     if-ltz p1, :cond_1
 
-    .line 970
     sput-object p2, Landroid/opengl/GLES10;->_normalPointer:Ljava/nio/Buffer;
 
-    .line 972
     :cond_1
     return-void
 .end method
@@ -927,23 +905,15 @@
 
 .method public static glTexCoordPointer(IIILjava/nio/Buffer;)V
     .locals 1
-    .param p0, "size"    # I
-    .param p1, "type"    # I
-    .param p2, "stride"    # I
-    .param p3, "pointer"    # Ljava/nio/Buffer;
 
-    .line 1152
     nop
 
-    .line 1157
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
-    .line 1152
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES10;->glTexCoordPointerBounds(IIILjava/nio/Buffer;I)V
 
-    .line 1159
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_0
@@ -976,10 +946,8 @@
     :cond_1
     if-ltz p2, :cond_2
 
-    .line 1167
     sput-object p3, Landroid/opengl/GLES10;->_texCoordPointer:Ljava/nio/Buffer;
 
-    .line 1169
     :cond_2
     return-void
 .end method
@@ -1025,23 +993,15 @@
 
 .method public static glVertexPointer(IIILjava/nio/Buffer;)V
     .locals 1
-    .param p0, "size"    # I
-    .param p1, "type"    # I
-    .param p2, "stride"    # I
-    .param p3, "pointer"    # Ljava/nio/Buffer;
 
-    .line 1297
     nop
 
-    .line 1302
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
-    .line 1297
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES10;->glVertexPointerBounds(IIILjava/nio/Buffer;I)V
 
-    .line 1304
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_0
@@ -1074,10 +1034,8 @@
     :cond_1
     if-ltz p2, :cond_2
 
-    .line 1312
     sput-object p3, Landroid/opengl/GLES10;->_vertexPointer:Ljava/nio/Buffer;
 
-    .line 1314
     :cond_2
     return-void
 .end method

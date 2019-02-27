@@ -46,31 +46,23 @@
 # direct methods
 .method public constructor <init>(Landroid/view/NotificationHeaderView;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/view/NotificationHeaderView;
 
-    .line 390
     iput-object p1, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 382
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
-    .line 391
     return-void
 .end method
 
 .method static synthetic access$700(Landroid/view/NotificationHeaderView$HeaderTouchListener;FF)Z
     .locals 1
-    .param p0, "x0"    # Landroid/view/NotificationHeaderView$HeaderTouchListener;
-    .param p1, "x1"    # F
-    .param p2, "x2"    # F
 
-    .line 380
     invoke-direct {p0, p1, p2}, Landroid/view/NotificationHeaderView$HeaderTouchListener;->isInside(FF)Z
 
     move-result v0
@@ -80,38 +72,29 @@
 
 .method private addRectAroundView(Landroid/view/View;)Landroid/graphics/Rect;
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 412
     invoke-direct {p0, p1}, Landroid/view/NotificationHeaderView$HeaderTouchListener;->getRectAroundView(Landroid/view/View;)Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 413
-    .local v0, "r":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 414
     return-object v0
 .end method
 
 .method private addWidthRect()V
     .locals 4
 
-    .line 403
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 404
-    .local v0, "r":Landroid/graphics/Rect;
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 405
     iget-object v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-virtual {v2}, Landroid/view/NotificationHeaderView;->getResources()Landroid/content/res/Resources;
@@ -132,10 +115,8 @@
 
     iput v2, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 406
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 407
     iget-object v1, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-virtual {v1}, Landroid/view/NotificationHeaderView;->getWidth()I
@@ -144,20 +125,16 @@
 
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    .line 408
     iget-object v1, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 409
     return-void
 .end method
 
 .method private getRectAroundView(Landroid/view/View;)Landroid/graphics/Rect;
     .locals 7
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 418
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-virtual {v0}, Landroid/view/NotificationHeaderView;->getResources()Landroid/content/res/Resources;
@@ -174,8 +151,6 @@
 
     mul-float/2addr v1, v0
 
-    .line 419
-    .local v1, "size":F
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -186,8 +161,6 @@
 
     move-result v0
 
-    .line 420
-    .local v0, "width":F
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v2
@@ -198,14 +171,10 @@
 
     move-result v2
 
-    .line 421
-    .local v2, "height":F
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 422
-    .local v3, "r":Landroid/graphics/Rect;
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -216,14 +185,12 @@
 
     if-ne v4, v6, :cond_0
 
-    .line 423
     iget-object v4, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v4}, Landroid/view/NotificationHeaderView;->access$400(Landroid/view/NotificationHeaderView;)Landroid/view/View;
 
     move-result-object p1
 
-    .line 424
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result v4
@@ -240,7 +207,6 @@
 
     goto :goto_0
 
-    .line 426
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
@@ -264,7 +230,6 @@
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
-    .line 428
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
@@ -288,7 +253,6 @@
 
     iput v4, v3, Landroid/graphics/Rect;->top:I
 
-    .line 429
     iget v4, v3, Landroid/graphics/Rect;->top:I
 
     int-to-float v4, v4
@@ -299,7 +263,6 @@
 
     iput v4, v3, Landroid/graphics/Rect;->bottom:I
 
-    .line 430
     iget v4, v3, Landroid/graphics/Rect;->left:I
 
     int-to-float v4, v4
@@ -310,16 +273,12 @@
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
-    .line 431
     return-object v3
 .end method
 
 .method private isInside(FF)Z
     .locals 6
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
-    .line 471
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v0}, Landroid/view/NotificationHeaderView;->access$500(Landroid/view/NotificationHeaderView;)Z
@@ -330,10 +289,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 472
     return v1
 
-    .line 474
     :cond_0
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
@@ -343,7 +300,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 475
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mExpandButtonRect:Landroid/graphics/Rect;
 
     float-to-int v1, p1
@@ -356,13 +312,11 @@
 
     return v0
 
-    .line 477
     :cond_1
     const/4 v0, 0x0
 
     move v2, v0
 
-    .local v2, "i":I
     :goto_0
     iget-object v3, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
@@ -372,7 +326,6 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 478
     iget-object v3, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -381,8 +334,6 @@
 
     check-cast v3, Landroid/graphics/Rect;
 
-    .line 479
-    .local v3, "r":Landroid/graphics/Rect;
     float-to-int v4, p1
 
     float-to-int v5, p2
@@ -393,18 +344,13 @@
 
     if-eqz v4, :cond_2
 
-    .line 480
     return v1
 
-    .line 477
-    .end local v3    # "r":Landroid/graphics/Rect;
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 483
-    .end local v2    # "i":I
     :cond_3
     return v0
 .end method
@@ -414,12 +360,10 @@
 .method public bindTouchRects()V
     .locals 1
 
-    .line 394
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchRects:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 395
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v0}, Landroid/view/NotificationHeaderView;->access$100(Landroid/view/NotificationHeaderView;)Lcom/android/internal/widget/CachingIconView;
@@ -428,7 +372,6 @@
 
     invoke-direct {p0, v0}, Landroid/view/NotificationHeaderView$HeaderTouchListener;->addRectAroundView(Landroid/view/View;)Landroid/graphics/Rect;
 
-    .line 396
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v0}, Landroid/view/NotificationHeaderView;->access$200(Landroid/view/NotificationHeaderView;)Landroid/widget/ImageView;
@@ -441,7 +384,6 @@
 
     iput-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mExpandButtonRect:Landroid/graphics/Rect;
 
-    .line 397
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v0}, Landroid/view/NotificationHeaderView;->access$300(Landroid/view/NotificationHeaderView;)Landroid/view/View;
@@ -454,10 +396,8 @@
 
     iput-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mAppOpsRect:Landroid/graphics/Rect;
 
-    .line 398
     invoke-direct {p0}, Landroid/view/NotificationHeaderView$HeaderTouchListener;->addWidthRect()V
 
-    .line 399
     iget-object v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-virtual {v0}, Landroid/view/NotificationHeaderView;->getContext()Landroid/content/Context;
@@ -474,28 +414,20 @@
 
     iput v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTouchSlop:I
 
-    .line 400
     return-void
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 6
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .line 436
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 437
-    .local v0, "x":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
 
-    .line 438
-    .local v1, "y":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v2
@@ -510,13 +442,11 @@
 
     goto :goto_0
 
-    .line 449
     :pswitch_0
     iget-boolean v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z
 
     if-eqz v2, :cond_3
 
-    .line 450
     iget v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mDownX:F
 
     sub-float/2addr v2, v0
@@ -537,7 +467,6 @@
 
     sub-float/2addr v2, v1
 
-    .line 451
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -550,19 +479,16 @@
 
     if-lez v2, :cond_3
 
-    .line 452
     :cond_0
     iput-boolean v3, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z
 
     goto :goto_0
 
-    .line 457
     :pswitch_1
     iget-boolean v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z
 
     if-eqz v2, :cond_3
 
-    .line 458
     iget-object v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
     invoke-static {v2}, Landroid/view/NotificationHeaderView;->access$300(Landroid/view/NotificationHeaderView;)Landroid/view/View;
@@ -597,14 +523,12 @@
 
     float-to-int v5, v5
 
-    .line 459
     invoke-virtual {v2, v3, v5}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 460
     :cond_1
     iget-object v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
@@ -614,10 +538,8 @@
 
     invoke-virtual {v2}, Landroid/view/View;->performClick()Z
 
-    .line 461
     return v4
 
-    .line 463
     :cond_2
     iget-object v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->this$0:Landroid/view/NotificationHeaderView;
 
@@ -629,30 +551,23 @@
 
     goto :goto_0
 
-    .line 440
     :pswitch_2
     iput-boolean v3, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z
 
-    .line 441
     invoke-direct {p0, v0, v1}, Landroid/view/NotificationHeaderView$HeaderTouchListener;->isInside(FF)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 442
     iput v0, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mDownX:F
 
-    .line 443
     iput v1, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mDownY:F
 
-    .line 444
     iput-boolean v4, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z
 
-    .line 445
     return v4
 
-    .line 467
     :cond_3
     :goto_0
     iget-boolean v2, p0, Landroid/view/NotificationHeaderView$HeaderTouchListener;->mTrackGesture:Z

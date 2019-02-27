@@ -75,7 +75,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -83,21 +82,17 @@
 
 .method public static writeSecurityAdbShellCommand(Ljava/lang/String;)V
     .locals 1
-    .param p0, "command"    # Ljava/lang/String;
 
-    .line 117
     const v0, 0x33452
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 118
     return-void
 .end method
 
 .method public static writeSecurityAdbShellInteractive()V
     .locals 2
 
-    .line 113
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -106,46 +101,32 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 114
     return-void
 .end method
 
 .method public static writeSecurityAdbSyncRecv(Ljava/lang/String;)V
     .locals 1
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 121
     const v0, 0x33453
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 122
     return-void
 .end method
 
 .method public static writeSecurityAdbSyncSend(Ljava/lang/String;)V
     .locals 1
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 125
     const v0, 0x33454
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 126
     return-void
 .end method
 
 .method public static writeSecurityAppProcessStart(Ljava/lang/String;JIILjava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p0, "process"    # Ljava/lang/String;
-    .param p1, "startTime"    # J
-    .param p3, "uid"    # I
-    .param p4, "pid"    # I
-    .param p5, "seinfo"    # Ljava/lang/String;
-    .param p6, "sha256"    # Ljava/lang/String;
 
-    .line 129
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -190,16 +171,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 130
     return-void
 .end method
 
 .method public static writeSecurityCertAuthorityInstalled(ILjava/lang/String;)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "subject"    # Ljava/lang/String;
 
-    .line 225
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -220,16 +197,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 226
     return-void
 .end method
 
 .method public static writeSecurityCertAuthorityRemoved(ILjava/lang/String;)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "subject"    # Ljava/lang/String;
 
-    .line 229
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -250,43 +223,32 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 230
     return-void
 .end method
 
 .method public static writeSecurityCertValidationFailure(Ljava/lang/String;)V
     .locals 1
-    .param p0, "reason"    # Ljava/lang/String;
 
-    .line 241
     const v0, 0x33471
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 242
     return-void
 .end method
 
 .method public static writeSecurityCryptoSelfTestCompleted(I)V
     .locals 1
-    .param p0, "success"    # I
 
-    .line 233
     const v0, 0x3346f
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 234
     return-void
 .end method
 
 .method public static writeSecurityKeyDestroyed(ILjava/lang/String;I)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "keyId"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 213
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -315,17 +277,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 214
     return-void
 .end method
 
 .method public static writeSecurityKeyGenerated(ILjava/lang/String;I)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "keyId"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 205
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -354,17 +311,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 206
     return-void
 .end method
 
 .method public static writeSecurityKeyImported(ILjava/lang/String;I)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "keyId"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 209
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -393,16 +345,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 210
     return-void
 .end method
 
 .method public static writeSecurityKeyIntegrityViolation(Ljava/lang/String;I)V
     .locals 3
-    .param p0, "keyId"    # Ljava/lang/String;
-    .param p1, "uid"    # I
 
-    .line 237
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -423,18 +371,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 238
     return-void
 .end method
 
 .method public static writeSecurityKeyguardDisabledFeaturesSet(Ljava/lang/String;III)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "features"    # I
 
-    .line 193
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -471,16 +413,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 194
     return-void
 .end method
 
 .method public static writeSecurityKeyguardDismissAuthAttempt(II)V
     .locals 3
-    .param p0, "success"    # I
-    .param p1, "methodStrength"    # I
 
-    .line 137
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -505,14 +443,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 138
     return-void
 .end method
 
 .method public static writeSecurityKeyguardDismissed()V
     .locals 2
 
-    .line 133
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -521,14 +457,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 134
     return-void
 .end method
 
 .method public static writeSecurityKeyguardSecured()V
     .locals 2
 
-    .line 141
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -537,14 +471,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 142
     return-void
 .end method
 
 .method public static writeSecurityLogBufferSizeCritical()V
     .locals 2
 
-    .line 169
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -553,14 +485,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 170
     return-void
 .end method
 
 .method public static writeSecurityLoggingStarted()V
     .locals 2
 
-    .line 153
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -569,14 +499,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 154
     return-void
 .end method
 
 .method public static writeSecurityLoggingStopped()V
     .locals 2
 
-    .line 157
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -585,18 +513,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 158
     return-void
 .end method
 
 .method public static writeSecurityMaxPasswordAttemptsSet(Ljava/lang/String;III)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "numFailures"    # I
 
-    .line 189
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -633,18 +555,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 190
     return-void
 .end method
 
 .method public static writeSecurityMaxScreenLockTimeoutSet(Ljava/lang/String;IIJ)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "timeout"    # J
 
-    .line 185
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -681,16 +597,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 186
     return-void
 .end method
 
 .method public static writeSecurityMediaMounted(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "path"    # Ljava/lang/String;
-    .param p1, "label"    # Ljava/lang/String;
 
-    .line 161
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -707,16 +619,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 162
     return-void
 .end method
 
 .method public static writeSecurityMediaUnmounted(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "path"    # Ljava/lang/String;
-    .param p1, "label"    # Ljava/lang/String;
 
-    .line 165
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -733,14 +641,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 166
     return-void
 .end method
 
 .method public static writeSecurityOsShutdown()V
     .locals 2
 
-    .line 149
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -749,16 +655,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 150
     return-void
 .end method
 
 .method public static writeSecurityOsStartup(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "bootState"    # Ljava/lang/String;
-    .param p1, "verityMode"    # Ljava/lang/String;
 
-    .line 145
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -775,25 +677,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 146
     return-void
 .end method
 
 .method public static writeSecurityPasswordComplexitySet(Ljava/lang/String;IIIIIIIIII)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "length"    # I
-    .param p4, "quality"    # I
-    .param p5, "numLetters"    # I
-    .param p6, "numNonLetters"    # I
-    .param p7, "numNumeric"    # I
-    .param p8, "numUppercase"    # I
-    .param p9, "numLowercase"    # I
-    .param p10, "numSymbols"    # I
 
-    .line 177
     const/16 v0, 0xb
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -886,18 +775,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 178
     return-void
 .end method
 
 .method public static writeSecurityPasswordExpirationSet(Ljava/lang/String;IIJ)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "timeout"    # J
 
-    .line 173
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -934,18 +817,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 174
     return-void
 .end method
 
 .method public static writeSecurityPasswordHistoryLengthSet(Ljava/lang/String;III)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
-    .param p3, "length"    # I
 
-    .line 181
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -982,17 +859,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 182
     return-void
 .end method
 
 .method public static writeSecurityRemoteLock(Ljava/lang/String;II)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "targetUser"    # I
 
-    .line 197
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1021,17 +893,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 198
     return-void
 .end method
 
 .method public static writeSecurityUserRestrictionAdded(Ljava/lang/String;ILjava/lang/String;)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "restriction"    # Ljava/lang/String;
 
-    .line 217
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1056,17 +923,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 218
     return-void
 .end method
 
 .method public static writeSecurityUserRestrictionRemoved(Ljava/lang/String;ILjava/lang/String;)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
-    .param p2, "restriction"    # Ljava/lang/String;
 
-    .line 221
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1091,16 +953,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 222
     return-void
 .end method
 
 .method public static writeSecurityWipeFailed(Ljava/lang/String;I)V
     .locals 3
-    .param p0, "package_"    # Ljava/lang/String;
-    .param p1, "adminUser"    # I
 
-    .line 201
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1121,6 +979,5 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 202
     return-void
 .end method

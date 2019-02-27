@@ -67,7 +67,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 111
     new-instance v0, Landroid/hardware/radio/Announcement$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/Announcement$1;-><init>()V
@@ -79,8 +78,6 @@
 
 .method public constructor <init>(Landroid/hardware/radio/ProgramSelector;ILjava/util/Map;)V
     .locals 1
-    .param p1, "selector"    # Landroid/hardware/radio/ProgramSelector;
-    .param p2, "type"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,11 +90,8 @@
         }
     .end annotation
 
-    .line 87
-    .local p3, "vendorInfo":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -106,7 +100,6 @@
 
     iput-object v0, p0, Landroid/hardware/radio/Announcement;->mSelector:Landroid/hardware/radio/ProgramSelector;
 
-    .line 89
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -123,7 +116,6 @@
 
     iput v0, p0, Landroid/hardware/radio/Announcement;->mType:I
 
-    .line 90
     invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -132,18 +124,14 @@
 
     iput-object v0, p0, Landroid/hardware/radio/Announcement;->mVendorInfo:Ljava/util/Map;
 
-    .line 91
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
     sget-object v0, Landroid/hardware/radio/ProgramSelector;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -154,30 +142,24 @@
 
     iput-object v0, p0, Landroid/hardware/radio/Announcement;->mSelector:Landroid/hardware/radio/ProgramSelector;
 
-    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/radio/Announcement;->mType:I
 
-    .line 96
     invoke-static {p1}, Landroid/hardware/radio/Utils;->readStringMap(Landroid/os/Parcel;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/radio/Announcement;->mVendorInfo:Ljava/util/Map;
 
-    .line 97
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/radio/Announcement$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/hardware/radio/Announcement$1;
 
-    .line 35
     invoke-direct {p0, p1}, Landroid/hardware/radio/Announcement;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -188,7 +170,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 108
     const/4 v0, 0x0
 
     return v0
@@ -197,7 +178,6 @@
 .method public getSelector()Landroid/hardware/radio/ProgramSelector;
     .locals 1
 
-    .line 123
     iget-object v0, p0, Landroid/hardware/radio/Announcement;->mSelector:Landroid/hardware/radio/ProgramSelector;
 
     return-object v0
@@ -206,7 +186,6 @@
 .method public getType()I
     .locals 1
 
-    .line 127
     iget v0, p0, Landroid/hardware/radio/Announcement;->mType:I
 
     return v0
@@ -224,7 +203,6 @@
         }
     .end annotation
 
-    .line 131
     iget-object v0, p0, Landroid/hardware/radio/Announcement;->mVendorInfo:Ljava/util/Map;
 
     return-object v0
@@ -232,26 +210,20 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 101
     iget-object v0, p0, Landroid/hardware/radio/Announcement;->mSelector:Landroid/hardware/radio/ProgramSelector;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 102
     iget v0, p0, Landroid/hardware/radio/Announcement;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 103
     iget-object v0, p0, Landroid/hardware/radio/Announcement;->mVendorInfo:Ljava/util/Map;
 
     invoke-static {p1, v0}, Landroid/hardware/radio/Utils;->writeStringMap(Landroid/os/Parcel;Ljava/util/Map;)V
 
-    .line 104
     return-void
 .end method

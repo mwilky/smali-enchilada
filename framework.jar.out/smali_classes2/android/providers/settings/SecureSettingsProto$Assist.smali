@@ -41,9 +41,7 @@
 # direct methods
 .method public constructor <init>(Landroid/providers/settings/SecureSettingsProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/providers/settings/SecureSettingsProto;
 
-    .line 120
     iput-object p1, p0, Landroid/providers/settings/SecureSettingsProto$Assist;->this$0:Landroid/providers/settings/SecureSettingsProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 182
     invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->values()[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     move-result-object v0
@@ -97,7 +96,6 @@
     :catch_2
     move-exception v3
 
-    .line 184
     :goto_2
     invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->values()[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 

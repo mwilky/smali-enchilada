@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeechService$SynthHandler;Landroid/speech/tts/TextToSpeechService$SpeechItem;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
-    .line 579
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->this$1:Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->val$speechItem:Landroid/speech/tts/TextToSpeechService$SpeechItem;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 582
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->this$1:Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->val$speechItem:Landroid/speech/tts/TextToSpeechService$SpeechItem;
@@ -54,25 +51,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 583
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->val$speechItem:Landroid/speech/tts/TextToSpeechService$SpeechItem;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->play()V
 
-    .line 584
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->this$1:Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeechService$SynthHandler;->access$200(Landroid/speech/tts/TextToSpeechService$SynthHandler;)Landroid/speech/tts/TextToSpeechService$SpeechItem;
 
     goto :goto_0
 
-    .line 587
     :cond_0
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$1;->val$speechItem:Landroid/speech/tts/TextToSpeechService$SpeechItem;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->stop()V
 
-    .line 589
     :goto_0
     return-void
 .end method

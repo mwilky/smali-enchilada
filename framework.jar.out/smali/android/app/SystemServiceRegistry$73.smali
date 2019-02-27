@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 834
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,14 +35,12 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 837
     new-instance v0, Landroid/net/NetworkScoreManager;
 
     invoke-direct {v0, p1}, Landroid/net/NetworkScoreManager;-><init>(Landroid/content/Context;)V
@@ -59,7 +56,6 @@
         }
     .end annotation
 
-    .line 834
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$73;->createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
 
     move-result-object p1

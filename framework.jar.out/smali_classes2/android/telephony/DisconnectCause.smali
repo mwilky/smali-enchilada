@@ -247,21 +247,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 396
     return-void
 .end method
 
 .method public static toString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "cause"    # I
 
-    .line 400
     packed-switch p0, :pswitch_data_0
 
-    .line 632
     :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -279,691 +274,576 @@
 
     return-object v0
 
-    .line 566
     :pswitch_1
     const-string v0, "IMS_SIP_ALTERNATE_EMERGENCY_CALL"
 
     return-object v0
 
-    .line 630
     :pswitch_2
     const-string v0, "NON_SELECTED_USER_CLEARING"
 
     return-object v0
 
-    .line 628
     :pswitch_3
     const-string v0, "HO_NOT_FEASIBLE"
 
     return-object v0
 
-    .line 578
     :pswitch_4
     const-string v0, "RESOURCES_UNAVAILABLE_OR_UNSPECIFIED"
 
     return-object v0
 
-    .line 576
     :pswitch_5
     const-string v0, "REQUESTED_CIRCUIT_OR_CHANNEL_NOT_AVAILABLE"
 
     return-object v0
 
-    .line 574
     :pswitch_6
     const-string v0, "ACCESS_INFORMATION_DISCARDED"
 
     return-object v0
 
-    .line 572
     :pswitch_7
     const-string v0, "SWITCHING_EQUIPMENT_CONGESTION"
 
     return-object v0
 
-    .line 570
     :pswitch_8
     const-string v0, "TEMPORARY_FAILURE"
 
     return-object v0
 
-    .line 568
     :pswitch_9
     const-string v0, "NETWORK_OUT_OF_ORDER"
 
     return-object v0
 
-    .line 562
     :pswitch_a
     const-string v0, "RESP_TO_STATUS_ENQUIRY"
 
     return-object v0
 
-    .line 560
     :pswitch_b
     const-string v0, "FACILITY_REJECTED"
 
     return-object v0
 
-    .line 558
     :pswitch_c
     const-string v0, "PREEMPTION"
 
     return-object v0
 
-    .line 556
     :pswitch_d
     const-string v0, "NUMBER_CHANGED"
 
     return-object v0
 
-    .line 554
     :pswitch_e
     const-string v0, "CALL_REJECTED"
 
     return-object v0
 
-    .line 552
     :pswitch_f
     const-string v0, "CHANNEL_UNACCEPTABLE"
 
     return-object v0
 
-    .line 550
     :pswitch_10
     const-string v0, "BEARER_CAPABILITY_NOT_AUTHORIZED"
 
     return-object v0
 
-    .line 548
     :pswitch_11
     const-string v0, "CALL_FAIL_DESTINATION_OUT_OF_ORDER"
 
     return-object v0
 
-    .line 546
     :pswitch_12
     const-string v0, "CALL_FAIL_NO_ANSWER_FROM_USER"
 
     return-object v0
 
-    .line 544
     :pswitch_13
     const-string v0, "CALL_FAIL_NO_USER_RESPONDING"
 
     return-object v0
 
-    .line 542
     :pswitch_14
     const-string v0, "OPERATOR_DETERMINED_BARRING"
 
     return-object v0
 
-    .line 540
     :pswitch_15
     const-string v0, "NO_ROUTE_TO_DESTINATION"
 
     return-object v0
 
-    .line 538
     :pswitch_16
     const-string v0, "NO_CIRCUIT_AVAIL"
 
     return-object v0
 
-    .line 626
     :pswitch_17
     const-string v0, "LOCAL_LOW_BATTERY"
 
     return-object v0
 
-    .line 624
     :pswitch_18
     const-string v0, "INTERWORKING_UNSPECIFIED"
 
     return-object v0
 
-    .line 622
     :pswitch_19
     const-string v0, "PROTOCOL_ERROR_UNSPECIFIED"
 
     return-object v0
 
-    .line 620
     :pswitch_1a
     const-string v0, "RECOVERY_ON_TIMER_EXPIRED"
 
     return-object v0
 
-    .line 618
     :pswitch_1b
     const-string v0, "MESSAGE_NOT_COMPATIBLE_WITH_PROTOCOL_STATE"
 
     return-object v0
 
-    .line 616
     :pswitch_1c
     const-string v0, "CONDITIONAL_IE_ERROR"
 
     return-object v0
 
-    .line 614
     :pswitch_1d
     const-string v0, "INFORMATION_ELEMENT_NON_EXISTENT"
 
     return-object v0
 
-    .line 612
     :pswitch_1e
     const-string v0, "MESSAGE_TYPE_NOT_COMPATIBLE_WITH_PROTOCOL_STATE"
 
     return-object v0
 
-    .line 610
     :pswitch_1f
     const-string v0, "MESSAGE_TYPE_NON_IMPLEMENTED"
 
     return-object v0
 
-    .line 608
     :pswitch_20
     const-string v0, "INVALID_MANDATORY_INFORMATION"
 
     return-object v0
 
-    .line 606
     :pswitch_21
     const-string v0, "SEMANTICALLY_INCORRECT_MESSAGE"
 
     return-object v0
 
-    .line 604
     :pswitch_22
     const-string v0, "INVALID_TRANSIT_NW_SELECTION"
 
     return-object v0
 
-    .line 602
     :pswitch_23
     const-string v0, "INCOMPATIBLE_DESTINATION"
 
     return-object v0
 
-    .line 600
     :pswitch_24
     const-string v0, "USER_NOT_MEMBER_OF_CUG"
 
     return-object v0
 
-    .line 598
     :pswitch_25
     const-string v0, "INVALID_TRANSACTION_IDENTIFIER"
 
     return-object v0
 
-    .line 596
     :pswitch_26
     const-string v0, "SERVICE_OR_OPTION_NOT_IMPLEMENTED"
 
     return-object v0
 
-    .line 594
     :pswitch_27
     const-string v0, "ONLY_DIGITAL_INFORMATION_BEARER_AVAILABLE"
 
     return-object v0
 
-    .line 592
     :pswitch_28
     const-string v0, "REQUESTED_FACILITY_NOT_IMPLEMENTED"
 
     return-object v0
 
-    .line 590
     :pswitch_29
     const-string v0, "BEARER_SERVICE_NOT_IMPLEMENTED"
 
     return-object v0
 
-    .line 588
     :pswitch_2a
     const-string v0, "SERVICE_OPTION_NOT_AVAILABLE"
 
     return-object v0
 
-    .line 586
     :pswitch_2b
     const-string v0, "BEARER_CAPABILITY_UNAVAILABLE"
 
     return-object v0
 
-    .line 584
     :pswitch_2c
     const-string v0, "INCOMING_CALLS_BARRED_WITHIN_CUG"
 
     return-object v0
 
-    .line 582
     :pswitch_2d
     const-string v0, "REQUESTED_FACILITY_NOT_SUBSCRIBED"
 
     return-object v0
 
-    .line 580
     :pswitch_2e
     const-string v0, "QOS_UNAVAILABLE"
 
     return-object v0
 
-    .line 498
     :pswitch_2f
     const-string v0, "DIAL_VIDEO_MODIFIED_TO_DIAL_VIDEO"
 
     return-object v0
 
-    .line 496
     :pswitch_30
     const-string v0, "DIAL_VIDEO_MODIFIED_TO_DIAL"
 
     return-object v0
 
-    .line 494
     :pswitch_31
     const-string v0, "DIAL_VIDEO_MODIFIED_TO_USSD"
 
     return-object v0
 
-    .line 492
     :pswitch_32
     const-string v0, "DIAL_VIDEO_MODIFIED_TO_SS"
 
     return-object v0
 
-    .line 490
     :pswitch_33
     const-string v0, "DIAL_MODIFIED_TO_DIAL_VIDEO"
 
     return-object v0
 
-    .line 564
     :pswitch_34
     const-string v0, "NORMAL_UNSPECIFIED"
 
     return-object v0
 
-    .line 536
     :pswitch_35
     const-string v0, "EMERGENCY_PERM_FAILURE"
 
     return-object v0
 
-    .line 534
     :pswitch_36
     const-string v0, "EMERGENCY_TEMP_FAILURE"
 
     return-object v0
 
-    .line 532
     :pswitch_37
     const-string v0, "DIAL_LOW_BATTERY"
 
     return-object v0
 
-    .line 530
     :pswitch_38
     const-string v0, "LOW_BATTERY"
 
     return-object v0
 
-    .line 528
     :pswitch_39
     const-string v0, "IMS_ACCESS_BLOCKED"
 
     return-object v0
 
-    .line 526
     :pswitch_3a
     const-string v0, "WIFI_LOST"
 
     return-object v0
 
-    .line 524
     :pswitch_3b
     const-string v0, "IMEI_NOT_ACCEPTED"
 
     return-object v0
 
-    .line 522
     :pswitch_3c
     const-string v0, "DIALED_CALL_FORWARDING_WHILE_ROAMING"
 
     return-object v0
 
-    .line 520
     :pswitch_3d
     const-string v0, "DATA_LIMIT_REACHED"
 
     return-object v0
 
-    .line 518
     :pswitch_3e
     const-string v0, "DATA_DISABLED"
 
     return-object v0
 
-    .line 516
     :pswitch_3f
     const-string v0, "MAXIMUM_NUMER_OF_CALLS_REACHED"
 
     return-object v0
 
-    .line 514
     :pswitch_40
     const-string v0, "ANSWERED_ELSEWHERE"
 
     return-object v0
 
-    .line 512
     :pswitch_41
     const-string v0, "CALL_PULLED"
 
     return-object v0
 
-    .line 510
     :pswitch_42
     const-string v0, "VIDEO_CALL_NOT_ALLOWED_WHILE_TTY_ENABLED"
 
     return-object v0
 
-    .line 508
     :pswitch_43
     const-string v0, "CDMA_ALREADY_ACTIVATED"
 
     return-object v0
 
-    .line 488
     :pswitch_44
     const-string v0, "DIAL_MODIFIED_TO_DIAL"
 
     return-object v0
 
-    .line 486
     :pswitch_45
     const-string v0, "DIAL_MODIFIED_TO_SS"
 
     return-object v0
 
-    .line 484
     :pswitch_46
     const-string v0, "DIAL_MODIFIED_TO_USSD"
 
     return-object v0
 
-    .line 506
     :pswitch_47
     const-string v0, "IMS_MERGED_SUCCESSFULLY"
 
     return-object v0
 
-    .line 504
     :pswitch_48
     const-string v0, "OUTGOING_CANCELED"
 
     return-object v0
 
-    .line 502
     :pswitch_49
     const-string v0, "OUTGOING_FAILURE"
 
     return-object v0
 
-    .line 482
     :pswitch_4a
     const-string v0, "EXITED_ECM"
 
     return-object v0
 
-    .line 480
     :pswitch_4b
     const-string v0, "CDMA_CALL_LOST"
 
     return-object v0
 
-    .line 478
     :pswitch_4c
     const-string v0, "VOICEMAIL_NUMBER_MISSING"
 
     return-object v0
 
-    .line 476
     :pswitch_4d
     const-string v0, "DIALED_MMI"
 
     return-object v0
 
-    .line 474
     :pswitch_4e
     const-string v0, "NO_PHONE_NUMBER_SUPPLIED"
 
     return-object v0
 
-    .line 472
     :pswitch_4f
     const-string v0, "EMERGENCY_ONLY"
 
     return-object v0
 
-    .line 500
     :pswitch_50
     const-string v0, "ERROR_UNSPECIFIED"
 
     return-object v0
 
-    .line 470
     :pswitch_51
     const-string v0, "CDMA_ACCESS_BLOCKED"
 
     return-object v0
 
-    .line 468
     :pswitch_52
     const-string v0, "CDMA_NOT_EMERGENCY"
 
     return-object v0
 
-    .line 466
     :pswitch_53
     const-string v0, "CDMA_PREEMPTED"
 
     return-object v0
 
-    .line 464
     :pswitch_54
     const-string v0, "CDMA_ACCESS_FAILURE"
 
     return-object v0
 
-    .line 462
     :pswitch_55
     const-string v0, "CDMA_RETRY_ORDER"
 
     return-object v0
 
-    .line 460
     :pswitch_56
     const-string v0, "CDMA_SO_REJECT"
 
     return-object v0
 
-    .line 458
     :pswitch_57
     const-string v0, "CDMA_REORDER"
 
     return-object v0
 
-    .line 456
     :pswitch_58
     const-string v0, "CDMA_INTERCEPT"
 
     return-object v0
 
-    .line 454
     :pswitch_59
     const-string v0, "CDMA_DROP"
 
     return-object v0
 
-    .line 452
     :pswitch_5a
     const-string v0, "CDMA_LOCKED_UNTIL_POWER_CYCLE"
 
     return-object v0
 
-    .line 450
     :pswitch_5b
     const-string v0, "UNOBTAINABLE_NUMBER"
 
     return-object v0
 
-    .line 448
     :pswitch_5c
     const-string v0, "CS_RESTRICTED_EMERGENCY"
 
     return-object v0
 
-    .line 446
     :pswitch_5d
     const-string v0, "CS_RESTRICTED_NORMAL"
 
     return-object v0
 
-    .line 444
     :pswitch_5e
     const-string v0, "CS_RESTRICTED"
 
     return-object v0
 
-    .line 442
     :pswitch_5f
     const-string v0, "FDN_BLOCKED"
 
     return-object v0
 
-    .line 440
     :pswitch_60
     const-string v0, "CALL_BARRED"
 
     return-object v0
 
-    .line 438
     :pswitch_61
     const-string v0, "ICC_ERROR"
 
     return-object v0
 
-    .line 436
     :pswitch_62
     const-string v0, "OUT_OF_SERVICE"
 
     return-object v0
 
-    .line 434
     :pswitch_63
     const-string v0, "POWER_OFF"
 
     return-object v0
 
-    .line 432
     :pswitch_64
     const-string v0, "INCOMING_REJECTED"
 
     return-object v0
 
-    .line 430
     :pswitch_65
     const-string v0, "LIMIT_EXCEEDED"
 
     return-object v0
 
-    .line 428
     :pswitch_66
     const-string v0, "LOST_SIGNAL"
 
     return-object v0
 
-    .line 426
     :pswitch_67
     const-string v0, "TIMED_OUT"
 
     return-object v0
 
-    .line 424
     :pswitch_68
     const-string v0, "SERVER_ERROR"
 
     return-object v0
 
-    .line 422
     :pswitch_69
     const-string v0, "OUT_OF_NETWORK"
 
     return-object v0
 
-    .line 420
     :pswitch_6a
     const-string v0, "INVALID_CREDENTIALS"
 
     return-object v0
 
-    .line 418
     :pswitch_6b
     const-string v0, "SERVER_UNREACHABLE"
 
     return-object v0
 
-    .line 416
     :pswitch_6c
     const-string v0, "NUMBER_UNREACHABLE"
 
     return-object v0
 
-    .line 414
     :pswitch_6d
     const-string v0, "INVALID_NUMBER"
 
     return-object v0
 
-    .line 412
     :pswitch_6e
     const-string v0, "CONGESTION"
 
     return-object v0
 
-    .line 410
     :pswitch_6f
     const-string v0, "BUSY"
 
     return-object v0
 
-    .line 408
     :pswitch_70
     const-string v0, "LOCAL"
 
     return-object v0
 
-    .line 406
     :pswitch_71
     const-string v0, "NORMAL"
 
     return-object v0
 
-    .line 404
     :pswitch_72
     const-string v0, "INCOMING_MISSED"
 
     return-object v0
 
-    .line 402
     :pswitch_73
     const-string v0, "NOT_DISCONNECTED"
 

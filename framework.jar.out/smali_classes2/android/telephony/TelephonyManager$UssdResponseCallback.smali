@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,20 +27,12 @@
 # virtual methods
 .method public onReceiveUssdResponse(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "telephonyManager"    # Landroid/telephony/TelephonyManager;
-    .param p2, "request"    # Ljava/lang/String;
-    .param p3, "response"    # Ljava/lang/CharSequence;
 
-    .line 6271
     return-void
 .end method
 
 .method public onReceiveUssdResponseFailed(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "telephonyManager"    # Landroid/telephony/TelephonyManager;
-    .param p2, "request"    # Ljava/lang/String;
-    .param p3, "failureCode"    # I
 
-    .line 6283
     return-void
 .end method

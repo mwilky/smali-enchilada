@@ -39,9 +39,7 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/usb/V1_1/Constants;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/usb/V1_1/Constants;
 
-    .line 8
     iput-object p1, p0, Landroid/hardware/usb/V1_1/Constants$PortMode_1_1;->this$0:Landroid/hardware/usb/V1_1/Constants;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

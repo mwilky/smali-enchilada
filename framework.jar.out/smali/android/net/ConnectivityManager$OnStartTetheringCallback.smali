@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2271
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,13 +31,11 @@
 .method public onTetheringFailed()V
     .locals 0
 
-    .line 2280
     return-void
 .end method
 
 .method public onTetheringStarted()V
     .locals 0
 
-    .line 2275
     return-void
 .end method

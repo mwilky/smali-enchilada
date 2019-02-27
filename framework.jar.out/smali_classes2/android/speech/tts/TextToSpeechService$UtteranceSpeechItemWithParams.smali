@@ -25,25 +25,15 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILandroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
-    .param p2, "callerIdentity"    # Ljava/lang/Object;
-    .param p3, "callerUid"    # I
-    .param p4, "callerPid"    # I
-    .param p5, "params"    # Landroid/os/Bundle;
-    .param p6, "utteranceId"    # Ljava/lang/String;
 
-    .line 947
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 948
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;II)V
 
-    .line 949
     iput-object p5, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mParams:Landroid/os/Bundle;
 
-    .line 950
     iput-object p6, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mUtteranceId:Ljava/lang/String;
 
-    .line 951
     return-void
 .end method
 
@@ -52,7 +42,6 @@
 .method getAudioParams()Landroid/speech/tts/TextToSpeechService$AudioOutputParams;
     .locals 2
 
-    .line 971
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mParams:Landroid/os/Bundle;
 
     const/4 v1, 0x1
@@ -67,7 +56,6 @@
 .method getPitch()I
     .locals 3
 
-    .line 962
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mParams:Landroid/os/Bundle;
 
     const-string/jumbo v1, "pitch"
@@ -88,7 +76,6 @@
 .method getSpeechRate()I
     .locals 3
 
-    .line 958
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mParams:Landroid/os/Bundle;
 
     const-string/jumbo v1, "rate"
@@ -109,7 +96,6 @@
 .method public getUtteranceId()Ljava/lang/String;
     .locals 1
 
-    .line 967
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mUtteranceId:Ljava/lang/String;
 
     return-object v0
@@ -118,7 +104,6 @@
 .method hasLanguage()Z
     .locals 3
 
-    .line 954
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;->mParams:Landroid/os/Bundle;
 
     const-string v1, "language"

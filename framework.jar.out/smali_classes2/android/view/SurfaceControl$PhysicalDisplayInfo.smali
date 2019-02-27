@@ -38,24 +38,18 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1008
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1009
     return-void
 .end method
 
 .method public constructor <init>(Landroid/view/SurfaceControl$PhysicalDisplayInfo;)V
     .locals 0
-    .param p1, "other"    # Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
-    .line 1011
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1012
     invoke-virtual {p0, p1}, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->copyFrom(Landroid/view/SurfaceControl$PhysicalDisplayInfo;)V
 
-    .line 1013
     return-void
 .end method
 
@@ -63,62 +57,49 @@
 # virtual methods
 .method public copyFrom(Landroid/view/SurfaceControl$PhysicalDisplayInfo;)V
     .locals 2
-    .param p1, "other"    # Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
-    .line 1039
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->width:I
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->width:I
 
-    .line 1040
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->height:I
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->height:I
 
-    .line 1041
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->refreshRate:F
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->refreshRate:F
 
-    .line 1042
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->density:F
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->density:F
 
-    .line 1043
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->xDpi:F
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->xDpi:F
 
-    .line 1044
     iget v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->yDpi:F
 
     iput v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->yDpi:F
 
-    .line 1045
     iget-boolean v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->secure:Z
 
     iput-boolean v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->secure:Z
 
-    .line 1046
     iget-wide v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->appVsyncOffsetNanos:J
 
     iput-wide v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->appVsyncOffsetNanos:J
 
-    .line 1047
     iget-wide v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->presentationDeadlineNanos:J
 
     iput-wide v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->presentationDeadlineNanos:J
 
-    .line 1048
     return-void
 .end method
 
 .method public equals(Landroid/view/SurfaceControl$PhysicalDisplayInfo;)Z
     .locals 4
-    .param p1, "other"    # Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
-    .line 1021
     if-eqz p1, :cond_0
 
     iget v0, p0, Landroid/view/SurfaceControl$PhysicalDisplayInfo;->width:I
@@ -200,9 +181,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 1017
     instance-of v0, p1, Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
     if-eqz v0, :cond_0
@@ -231,7 +210,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1035
     const/4 v0, 0x0
 
     return v0
@@ -240,7 +218,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1053
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

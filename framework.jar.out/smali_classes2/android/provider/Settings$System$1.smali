@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,25 +30,19 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 2387
     :try_start_0
     invoke-static {p1}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2388
     const/4 v0, 0x1
 
     return v0
 
-    .line 2389
     :catch_0
     move-exception v0
 
-    .line 2390
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const/4 v1, 0x0
 
     return v1

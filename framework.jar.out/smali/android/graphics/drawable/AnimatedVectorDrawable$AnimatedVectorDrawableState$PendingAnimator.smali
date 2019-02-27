@@ -25,23 +25,15 @@
 # direct methods
 .method public constructor <init>(IFLjava/lang/String;)V
     .locals 0
-    .param p1, "animResId"    # I
-    .param p2, "pathErrorScale"    # F
-    .param p3, "target"    # Ljava/lang/String;
 
-    .line 885
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 886
     iput p1, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->animResId:I
 
-    .line 887
     iput p2, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->pathErrorScale:F
 
-    .line 888
     iput-object p3, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->target:Ljava/lang/String;
 
-    .line 889
     return-void
 .end method
 
@@ -49,10 +41,7 @@
 # virtual methods
 .method public newInstance(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/animation/Animator;
     .locals 2
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 892
     iget v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->animResId:I
 
     iget v1, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->pathErrorScale:F

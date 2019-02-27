@@ -17,7 +17,6 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

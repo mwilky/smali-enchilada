@@ -29,7 +29,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2102
     const-string v0, "content://com.android.calendar/reminders"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -44,7 +43,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,16 +50,11 @@
 
 .method public static final query(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;
     .locals 7
-    .param p0, "cr"    # Landroid/content/ContentResolver;
-    .param p1, "eventId"    # J
-    .param p3, "projection"    # [Ljava/lang/String;
 
-    .line 2119
     const/16 v0, 0x36
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 2120
     const/4 v0, 0x1
 
     new-array v5, v0, [Ljava/lang/String;
@@ -74,8 +67,6 @@
 
     aput-object v0, v5, v1
 
-    .line 2121
-    .local v5, "remArgs":[Ljava/lang/String;
     sget-object v2, Landroid/provider/CalendarContract$Reminders;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v4, "event_id=?"

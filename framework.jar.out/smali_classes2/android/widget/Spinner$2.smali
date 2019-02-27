@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Spinner;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/Spinner;
 
-    .line 891
     iput-object p1, p0, Landroid/widget/Spinner$2;->this$0:Landroid/widget/Spinner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onGlobalLayout()V
     .locals 3
 
-    .line 894
     iget-object v0, p0, Landroid/widget/Spinner$2;->this$0:Landroid/widget/Spinner;
 
     invoke-static {v0}, Landroid/widget/Spinner;->access$100(Landroid/widget/Spinner;)Landroid/widget/Spinner$SpinnerPopup;
@@ -52,7 +49,6 @@
 
     if-nez v0, :cond_0
 
-    .line 895
     iget-object v0, p0, Landroid/widget/Spinner$2;->this$0:Landroid/widget/Spinner;
 
     invoke-static {v0}, Landroid/widget/Spinner;->access$100(Landroid/widget/Spinner;)Landroid/widget/Spinner$SpinnerPopup;
@@ -73,7 +69,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/widget/Spinner$SpinnerPopup;->show(II)V
 
-    .line 897
     :cond_0
     iget-object v0, p0, Landroid/widget/Spinner$2;->this$0:Landroid/widget/Spinner;
 
@@ -81,14 +76,10 @@
 
     move-result-object v0
 
-    .line 898
-    .local v0, "vto":Landroid/view/ViewTreeObserver;
     if-eqz v0, :cond_1
 
-    .line 899
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 901
     :cond_1
     return-void
 .end method

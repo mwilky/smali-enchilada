@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 50
     new-instance v0, Landroid/app/admin/DevicePolicyCache$EmptyDevicePolicyCache;
 
     invoke-direct {v0}, Landroid/app/admin/DevicePolicyCache$EmptyDevicePolicyCache;-><init>()V
@@ -35,7 +34,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 49
     invoke-direct {p0}, Landroid/app/admin/DevicePolicyCache;-><init>()V
 
     return-void
@@ -44,7 +42,6 @@
 .method static synthetic access$000()Landroid/app/admin/DevicePolicyCache$EmptyDevicePolicyCache;
     .locals 1
 
-    .line 49
     sget-object v0, Landroid/app/admin/DevicePolicyCache$EmptyDevicePolicyCache;->INSTANCE:Landroid/app/admin/DevicePolicyCache$EmptyDevicePolicyCache;
 
     return-object v0
@@ -54,9 +51,7 @@
 # virtual methods
 .method public getScreenCaptureDisabled(I)Z
     .locals 1
-    .param p1, "userHandle"    # I
 
-    .line 54
     const/4 v0, 0x0
 
     return v0

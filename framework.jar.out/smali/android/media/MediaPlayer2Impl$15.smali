@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;Landroid/os/Message;J)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
 
-    .line 1022
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$15;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/media/MediaPlayer2Impl$15;->val$msg2:Landroid/os/Message;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 1025
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$15;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$2500(Landroid/media/MediaPlayer2Impl;)Landroid/media/MediaPlayer2Impl$EventHandler;
@@ -60,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/MediaPlayer2Impl$EventHandler;->handleMessage(Landroid/os/Message;J)V
 
-    .line 1026
     return-void
 .end method

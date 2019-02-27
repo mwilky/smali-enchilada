@@ -27,7 +27,6 @@
 .method constructor <init>(Landroid/content/ContentProviderClient;Landroid/net/Uri;)V
     .locals 0
 
-    .line 193
     iput-object p1, p0, Lcom/oneplus/util/RingtoneManagerUtils$1;->val$client:Landroid/content/ContentProviderClient;
 
     iput-object p2, p0, Lcom/oneplus/util/RingtoneManagerUtils$1;->val$ringtone_uri:Landroid/net/Uri;
@@ -42,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 196
     :try_start_0
     invoke-static {}, Lcom/oneplus/util/RingtoneManagerUtils;->access$000()Z
 
@@ -56,7 +54,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 197
     :cond_0
     iget-object v0, p0, Lcom/oneplus/util/RingtoneManagerUtils$1;->val$client:Landroid/content/ContentProviderClient;
 
@@ -68,21 +65,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 200
     goto :goto_0
 
-    .line 198
     :catch_0
     move-exception v0
 
-    .line 199
-    .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "Thread fail"
 
     invoke-static {v1, v0}, Lcom/oneplus/util/RingtoneManagerUtils;->access$100(Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 201
-    .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

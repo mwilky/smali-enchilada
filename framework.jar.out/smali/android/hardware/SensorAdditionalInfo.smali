@@ -56,41 +56,25 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/Sensor;II[I[F)V
     .locals 0
-    .param p1, "aSensor"    # Landroid/hardware/Sensor;
-    .param p2, "aType"    # I
-    .param p3, "aSerial"    # I
-    .param p4, "aIntValues"    # [I
-    .param p5, "aFloatValues"    # [F
 
-    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 211
     iput-object p1, p0, Landroid/hardware/SensorAdditionalInfo;->sensor:Landroid/hardware/Sensor;
 
-    .line 212
     iput p2, p0, Landroid/hardware/SensorAdditionalInfo;->type:I
 
-    .line 213
     iput p3, p0, Landroid/hardware/SensorAdditionalInfo;->serial:I
 
-    .line 214
     iput-object p4, p0, Landroid/hardware/SensorAdditionalInfo;->intValues:[I
 
-    .line 215
     iput-object p5, p0, Landroid/hardware/SensorAdditionalInfo;->floatValues:[F
 
-    .line 216
     return-void
 .end method
 
 .method public static createCustomInfo(Landroid/hardware/Sensor;I[F)Landroid/hardware/SensorAdditionalInfo;
     .locals 7
-    .param p0, "aSensor"    # Landroid/hardware/Sensor;
-    .param p1, "type"    # I
-    .param p2, "data"    # [F
 
-    .line 233
     const/high16 v0, 0x10000000
 
     if-lt p1, v0, :cond_0
@@ -101,7 +85,6 @@
 
     if-eqz p0, :cond_0
 
-    .line 238
     new-instance v0, Landroid/hardware/SensorAdditionalInfo;
 
     const/4 v4, 0x0
@@ -120,7 +103,6 @@
 
     return-object v0
 
-    .line 234
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -151,11 +133,7 @@
 
 .method public static createLocalGeomagneticField(FFF)Landroid/hardware/SensorAdditionalInfo;
     .locals 7
-    .param p0, "strength"    # F
-    .param p1, "declination"    # F
-    .param p2, "inclination"    # F
 
-    .line 221
     const/high16 v0, 0x41200000    # 10.0f
 
     cmpg-float v0, p0, v0
@@ -198,7 +176,6 @@
 
     if-gtz v0, :cond_0
 
-    .line 227
     new-instance v0, Landroid/hardware/SensorAdditionalInfo;
 
     const/4 v2, 0x0
@@ -231,7 +208,6 @@
 
     return-object v0
 
-    .line 224
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

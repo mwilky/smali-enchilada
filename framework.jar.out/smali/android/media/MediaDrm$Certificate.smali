@@ -24,7 +24,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1515
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,17 +34,14 @@
 .method public getContent()[B
     .locals 2
 
-    .line 1536
     iget-object v0, p0, Landroid/media/MediaDrm$Certificate;->mCertificateData:[B
 
     if-eqz v0, :cond_0
 
-    .line 1542
     iget-object v0, p0, Landroid/media/MediaDrm$Certificate;->mCertificateData:[B
 
     return-object v0
 
-    .line 1540
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -59,17 +55,14 @@
 .method public getWrappedPrivateKey()[B
     .locals 2
 
-    .line 1522
     iget-object v0, p0, Landroid/media/MediaDrm$Certificate;->mWrappedKey:[B
 
     if-eqz v0, :cond_0
 
-    .line 1528
     iget-object v0, p0, Landroid/media/MediaDrm$Certificate;->mWrappedKey:[B
 
     return-object v0
 
-    .line 1526
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 

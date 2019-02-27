@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/TimePickerSpinnerDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/TimePickerSpinnerDelegate;
 
-    .line 154
     iput-object p1, p0, Landroid/widget/TimePickerSpinnerDelegate$3;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "button"    # Landroid/view/View;
 
-    .line 156
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
-    .line 157
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$3;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     iget-object v1, p0, Landroid/widget/TimePickerSpinnerDelegate$3;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
@@ -56,16 +51,13 @@
 
     invoke-static {v0, v1}, Landroid/widget/TimePickerSpinnerDelegate;->access$102(Landroid/widget/TimePickerSpinnerDelegate;Z)Z
 
-    .line 158
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$3;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Landroid/widget/TimePickerSpinnerDelegate;->access$200(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 159
     iget-object v0, p0, Landroid/widget/TimePickerSpinnerDelegate$3;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Landroid/widget/TimePickerSpinnerDelegate;->access$300(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 160
     return-void
 .end method

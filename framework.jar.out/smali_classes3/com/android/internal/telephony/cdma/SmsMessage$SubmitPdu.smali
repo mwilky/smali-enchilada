@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 123
     invoke-direct {p0}, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;-><init>()V
 
     return-void

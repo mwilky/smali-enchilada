@@ -23,39 +23,27 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioTrack;Landroid/media/AudioTrack;Landroid/media/AudioTrack$OnPlaybackPositionUpdateListener;Landroid/os/Handler;)V
     .locals 8
-    .param p2, "track"    # Landroid/media/AudioTrack;
-    .param p3, "listener"    # Landroid/media/AudioTrack$OnPlaybackPositionUpdateListener;
-    .param p4, "handler"    # Landroid/os/Handler;
 
-    .line 3213
     iput-object p1, p0, Landroid/media/AudioTrack$NativePositionEventHandlerDelegate;->this$0:Landroid/media/AudioTrack;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3216
     if-eqz p4, :cond_0
 
-    .line 3217
     invoke-virtual {p4}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .local v0, "looper":Landroid/os/Looper;
     goto :goto_0
 
-    .line 3220
-    .end local v0    # "looper":Landroid/os/Looper;
     :cond_0
     invoke-static {p1}, Landroid/media/AudioTrack;->access$300(Landroid/media/AudioTrack;)Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 3224
-    .restart local v0    # "looper":Landroid/os/Looper;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 3226
     new-instance v7, Landroid/media/AudioTrack$NativePositionEventHandlerDelegate$1;
 
     move-object v1, v7
@@ -76,13 +64,11 @@
 
     goto :goto_1
 
-    .line 3250
     :cond_1
     const/4 p1, 0x0
 
     iput-object p1, p0, Landroid/media/AudioTrack$NativePositionEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 3252
     :goto_1
     return-void
 .end method
@@ -92,7 +78,6 @@
 .method getHandler()Landroid/os/Handler;
     .locals 1
 
-    .line 3255
     iget-object v0, p0, Landroid/media/AudioTrack$NativePositionEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
     return-object v0

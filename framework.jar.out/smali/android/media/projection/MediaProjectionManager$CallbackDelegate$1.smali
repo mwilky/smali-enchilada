@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/projection/MediaProjectionManager$CallbackDelegate;Landroid/media/projection/MediaProjectionInfo;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/projection/MediaProjectionManager$CallbackDelegate;
 
-    .line 187
     iput-object p1, p0, Landroid/media/projection/MediaProjectionManager$CallbackDelegate$1;->this$0:Landroid/media/projection/MediaProjectionManager$CallbackDelegate;
 
     iput-object p2, p0, Landroid/media/projection/MediaProjectionManager$CallbackDelegate$1;->val$info:Landroid/media/projection/MediaProjectionInfo;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 190
     iget-object v0, p0, Landroid/media/projection/MediaProjectionManager$CallbackDelegate$1;->this$0:Landroid/media/projection/MediaProjectionManager$CallbackDelegate;
 
     invoke-static {v0}, Landroid/media/projection/MediaProjectionManager$CallbackDelegate;->access$000(Landroid/media/projection/MediaProjectionManager$CallbackDelegate;)Landroid/media/projection/MediaProjectionManager$Callback;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/media/projection/MediaProjectionManager$Callback;->onStart(Landroid/media/projection/MediaProjectionInfo;)V
 
-    .line 191
     return-void
 .end method

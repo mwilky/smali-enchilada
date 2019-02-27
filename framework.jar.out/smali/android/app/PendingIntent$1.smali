@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/PendingIntent;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/PendingIntent;
 
-    .line 982
     iput-object p1, p0, Landroid/app/PendingIntent$1;->this$0:Landroid/app/PendingIntent;
 
     invoke-direct {p0}, Lcom/android/internal/os/IResultReceiver$Stub;-><init>()V
@@ -35,19 +33,15 @@
 # virtual methods
 .method public send(ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 985
     iget-object v0, p0, Landroid/app/PendingIntent$1;->this$0:Landroid/app/PendingIntent;
 
     invoke-static {v0}, Landroid/app/PendingIntent;->access$000(Landroid/app/PendingIntent;)V
 
-    .line 986
     return-void
 .end method

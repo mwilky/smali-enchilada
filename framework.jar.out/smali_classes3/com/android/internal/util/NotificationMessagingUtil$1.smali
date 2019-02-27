@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/util/NotificationMessagingUtil;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/util/NotificationMessagingUtil;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 78
     iput-object p1, p0, Lcom/android/internal/util/NotificationMessagingUtil$1;->this$0:Lcom/android/internal/util/NotificationMessagingUtil;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,11 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 81
     const-string v0, "sms_default_application"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -53,12 +46,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 82
     iget-object v0, p0, Lcom/android/internal/util/NotificationMessagingUtil$1;->this$0:Lcom/android/internal/util/NotificationMessagingUtil;
 
     invoke-static {v0, p3}, Lcom/android/internal/util/NotificationMessagingUtil;->access$000(Lcom/android/internal/util/NotificationMessagingUtil;I)V
 
-    .line 84
     :cond_0
     return-void
 .end method

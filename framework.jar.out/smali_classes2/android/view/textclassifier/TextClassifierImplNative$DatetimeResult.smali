@@ -39,19 +39,13 @@
 # direct methods
 .method constructor <init>(JI)V
     .locals 0
-    .param p1, "timeMsUtc"    # J
-    .param p3, "granularity"    # I
 
-    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
     iput p3, p0, Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;->mGranularity:I
 
-    .line 133
     iput-wide p1, p0, Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;->mTimeMsUtc:J
 
-    .line 134
     return-void
 .end method
 
@@ -60,7 +54,6 @@
 .method public getGranularity()I
     .locals 1
 
-    .line 141
     iget v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;->mGranularity:I
 
     return v0
@@ -69,7 +62,6 @@
 .method public getTimeMsUtc()J
     .locals 2
 
-    .line 137
     iget-wide v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;->mTimeMsUtc:J
 
     return-wide v0

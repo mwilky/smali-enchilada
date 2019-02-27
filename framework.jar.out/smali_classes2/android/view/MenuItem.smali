@@ -40,7 +40,6 @@
 .method public getAlphabeticModifiers()I
     .locals 1
 
-    .line 480
     const/16 v0, 0x1000
 
     return v0
@@ -52,7 +51,6 @@
 .method public getContentDescription()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 782
     const/4 v0, 0x0
 
     return-object v0
@@ -67,7 +65,6 @@
 .method public getIconTintList()Landroid/content/res/ColorStateList;
     .locals 1
 
-    .line 259
     const/4 v0, 0x0
 
     return-object v0
@@ -76,7 +73,6 @@
 .method public getIconTintMode()Landroid/graphics/PorterDuff$Mode;
     .locals 1
 
-    .line 282
     const/4 v0, 0x0
 
     return-object v0
@@ -94,7 +90,6 @@
 .method public getNumericModifiers()I
     .locals 1
 
-    .line 416
     const/16 v0, 0x1000
 
     return v0
@@ -118,7 +113,6 @@
 .method public getTooltipText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 800
     const/4 v0, 0x0
 
     return-object v0
@@ -145,7 +139,6 @@
 .method public requiresActionButton()Z
     .locals 1
 
-    .line 810
     const/4 v0, 0x0
 
     return v0
@@ -154,7 +147,6 @@
 .method public requiresOverflow()Z
     .locals 1
 
-    .line 820
     const/4 v0, 0x1
 
     return v0
@@ -174,10 +166,7 @@
 
 .method public setAlphabeticShortcut(CI)Landroid/view/MenuItem;
     .locals 2
-    .param p1, "alphaChar"    # C
-    .param p2, "alphaModifiers"    # I
 
-    .line 455
     const v0, 0x1100f
 
     and-int/2addr v0, p2
@@ -186,14 +175,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 456
     invoke-interface {p0, p1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     return-object v0
 
-    .line 458
     :cond_0
     return-object p0
 .end method
@@ -206,9 +193,7 @@
 
 .method public setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
     .locals 0
-    .param p1, "contentDescription"    # Ljava/lang/CharSequence;
 
-    .line 773
     return-object p0
 .end method
 
@@ -223,17 +208,13 @@
 
 .method public setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
     .locals 0
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
-    .line 251
     return-object p0
 .end method
 
 .method public setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
     .locals 0
-    .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
-    .line 272
     return-object p0
 .end method
 
@@ -245,10 +226,7 @@
 
 .method public setNumericShortcut(CI)Landroid/view/MenuItem;
     .locals 2
-    .param p1, "numericChar"    # C
-    .param p2, "numericModifiers"    # I
 
-    .line 391
     const v0, 0x1100f
 
     and-int/2addr v0, p2
@@ -257,14 +235,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 392
     invoke-interface {p0, p1}, Landroid/view/MenuItem;->setNumericShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     return-object v0
 
-    .line 394
     :cond_0
     return-object p0
 .end method
@@ -280,12 +256,7 @@
 
 .method public setShortcut(CCII)Landroid/view/MenuItem;
     .locals 3
-    .param p1, "numericChar"    # C
-    .param p2, "alphaChar"    # C
-    .param p3, "numericModifiers"    # I
-    .param p4, "alphaModifiers"    # I
 
-    .line 358
     const v0, 0x1100f
 
     and-int v1, p4, v0
@@ -298,14 +269,12 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 360
     invoke-interface {p0, p1, p2}, Landroid/view/MenuItem;->setShortcut(CC)Landroid/view/MenuItem;
 
     move-result-object v0
 
     return-object v0
 
-    .line 362
     :cond_0
     return-object p0
 .end method
@@ -327,9 +296,7 @@
 
 .method public setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
     .locals 0
-    .param p1, "tooltipText"    # Ljava/lang/CharSequence;
 
-    .line 791
     return-object p0
 .end method
 

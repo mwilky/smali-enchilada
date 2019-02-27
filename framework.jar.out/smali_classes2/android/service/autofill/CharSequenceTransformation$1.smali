@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/CharSequenceTransformation;
     .locals 9
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 212
     const-class v0, Landroid/view/autofill/AutofillId;
 
     const/4 v1, 0x0
@@ -53,22 +50,16 @@
 
     check-cast v0, [Landroid/view/autofill/AutofillId;
 
-    .line 213
-    .local v0, "ids":[Landroid/view/autofill/AutofillId;
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
     move-result-object v1
 
     check-cast v1, [Ljava/util/regex/Pattern;
 
-    .line 214
-    .local v1, "regexs":[Ljava/util/regex/Pattern;
     invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 219
-    .local v2, "substs":[Ljava/lang/String;
     new-instance v3, Landroid/service/autofill/CharSequenceTransformation$Builder;
 
     const/4 v4, 0x0
@@ -81,19 +72,13 @@
 
     invoke-direct {v3, v5, v6, v4}, Landroid/service/autofill/CharSequenceTransformation$Builder;-><init>(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)V
 
-    .line 222
-    .local v3, "builder":Landroid/service/autofill/CharSequenceTransformation$Builder;
     array-length v4, v0
 
-    .line 223
-    .local v4, "size":I
     const/4 v5, 0x1
 
-    .local v5, "i":I
     :goto_0
     if-ge v5, v4, :cond_0
 
-    .line 224
     aget-object v6, v0, v5
 
     aget-object v7, v1, v5
@@ -102,13 +87,10 @@
 
     invoke-virtual {v3, v6, v7, v8}, Landroid/service/autofill/CharSequenceTransformation$Builder;->addField(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)Landroid/service/autofill/CharSequenceTransformation$Builder;
 
-    .line 223
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 226
-    .end local v5    # "i":I
     :cond_0
     invoke-virtual {v3}, Landroid/service/autofill/CharSequenceTransformation$Builder;->build()Landroid/service/autofill/CharSequenceTransformation;
 
@@ -120,7 +102,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 209
     invoke-virtual {p0, p1}, Landroid/service/autofill/CharSequenceTransformation$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/CharSequenceTransformation;
 
     move-result-object p1
@@ -130,9 +111,7 @@
 
 .method public newArray(I)[Landroid/service/autofill/CharSequenceTransformation;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 231
     new-array v0, p1, [Landroid/service/autofill/CharSequenceTransformation;
 
     return-object v0
@@ -141,7 +120,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 209
     invoke-virtual {p0, p1}, Landroid/service/autofill/CharSequenceTransformation$1;->newArray(I)[Landroid/service/autofill/CharSequenceTransformation;
 
     move-result-object p1

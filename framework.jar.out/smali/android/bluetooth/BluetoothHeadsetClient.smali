@@ -201,51 +201,39 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "l"    # Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 373
     new-instance v0, Landroid/bluetooth/BluetoothHeadsetClient$1;
 
     invoke-direct {v0, p0}, Landroid/bluetooth/BluetoothHeadsetClient$1;-><init>(Landroid/bluetooth/BluetoothHeadsetClient;)V
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
-    .line 1077
     new-instance v0, Landroid/bluetooth/BluetoothHeadsetClient$2;
 
     invoke-direct {v0, p0}, Landroid/bluetooth/BluetoothHeadsetClient$2;-><init>(Landroid/bluetooth/BluetoothHeadsetClient;)V
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 409
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
 
-    .line 410
     iput-object p2, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 411
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
-    .line 413
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v0
 
-    .line 414
-    .local v0, "mgr":Landroid/bluetooth/IBluetoothManager;
     if-eqz v0, :cond_0
 
-    .line 416
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
@@ -253,36 +241,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 419
     goto :goto_0
 
-    .line 417
     :catch_0
     move-exception v1
 
-    .line 418
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     const-string v3, ""
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 422
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->doBind()Z
 
-    .line 423
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/content/ServiceConnection;
     .locals 1
-    .param p0, "x0"    # Landroid/bluetooth/BluetoothHeadsetClient;
 
-    .line 41
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mConnection:Landroid/content/ServiceConnection;
 
     return-object v0
@@ -290,9 +269,7 @@
 
 .method static synthetic access$100(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/IBluetoothHeadsetClient;
     .locals 1
-    .param p0, "x0"    # Landroid/bluetooth/BluetoothHeadsetClient;
 
-    .line 41
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
     return-object v0
@@ -300,10 +277,7 @@
 
 .method static synthetic access$102(Landroid/bluetooth/BluetoothHeadsetClient;Landroid/bluetooth/IBluetoothHeadsetClient;)Landroid/bluetooth/IBluetoothHeadsetClient;
     .locals 0
-    .param p0, "x0"    # Landroid/bluetooth/BluetoothHeadsetClient;
-    .param p1, "x1"    # Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 41
     iput-object p1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
     return-object p1
@@ -311,9 +285,7 @@
 
 .method static synthetic access$200(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Landroid/bluetooth/BluetoothHeadsetClient;
 
-    .line 41
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -321,9 +293,7 @@
 
 .method static synthetic access$300(Landroid/bluetooth/BluetoothHeadsetClient;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
     .locals 1
-    .param p0, "x0"    # Landroid/bluetooth/BluetoothHeadsetClient;
 
-    .line 41
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     return-object v0
@@ -332,7 +302,6 @@
 .method private isEnabled()Z
     .locals 2
 
-    .line 1100
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getState()I
@@ -356,9 +325,7 @@
 
 .method private static isValidDevice(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
-    .param p0, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 1104
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
@@ -384,14 +351,11 @@
 
 .method private static log(Ljava/lang/String;)V
     .locals 1
-    .param p0, "msg"    # Ljava/lang/String;
 
-    .line 1108
     const-string v0, "BluetoothHeadsetClient"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1109
     return-void
 .end method
 
@@ -399,19 +363,13 @@
 # virtual methods
 .method public acceptCall(Landroid/bluetooth/BluetoothDevice;I)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "flag"    # I
 
-    .line 724
     const-string v0, "acceptCall()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 725
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 726
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -426,7 +384,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 728
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->acceptCall(Landroid/bluetooth/BluetoothDevice;I)Z
 
@@ -436,12 +393,9 @@
 
     return v1
 
-    .line 729
     :catch_0
     move-exception v1
 
-    .line 730
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -454,8 +408,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 733
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -465,7 +417,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 734
     :cond_1
     const/4 v1, 0x0
 
@@ -475,18 +426,14 @@
 .method close()V
     .locals 6
 
-    .line 446
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v0
 
-    .line 447
-    .local v0, "mgr":Landroid/bluetooth/IBluetoothManager;
     if-eqz v0, :cond_0
 
-    .line 449
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
@@ -494,30 +441,23 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 452
     goto :goto_0
 
-    .line 450
     :catch_0
     move-exception v1
 
-    .line 451
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "BluetoothHeadsetClient"
 
     const-string v3, ""
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 455
-    .end local v1    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mConnection:Landroid/content/ServiceConnection;
 
     monitor-enter v1
 
-    .line 456
     :try_start_1
     iget-object v2, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
     :try_end_1
@@ -527,11 +467,9 @@
 
     if-eqz v2, :cond_1
 
-    .line 458
     :try_start_2
     iput-object v3, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 459
     iget-object v2, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mConnection:Landroid/content/ServiceConnection;
@@ -541,15 +479,11 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 462
     goto :goto_1
 
-    .line 460
     :catch_1
     move-exception v2
 
-    .line 461
-    .local v2, "re":Ljava/lang/Exception;
     :try_start_3
     const-string v4, "BluetoothHeadsetClient"
 
@@ -557,21 +491,16 @@
 
     invoke-static {v4, v5, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 464
-    .end local v2    # "re":Ljava/lang/Exception;
     :cond_1
     :goto_1
     monitor-exit v1
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 465
     iput-object v3, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 466
     return-void
 
-    .line 464
     :catchall_0
     move-exception v2
 
@@ -585,9 +514,7 @@
 
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 5
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 480
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -608,11 +535,8 @@
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 481
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 482
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
@@ -629,7 +553,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 484
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->connect(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -639,12 +562,9 @@
 
     return v2
 
-    .line 485
     :catch_0
     move-exception v2
 
-    .line 486
-    .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "BluetoothHeadsetClient"
 
     new-instance v4, Ljava/lang/Throwable;
@@ -657,11 +577,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 487
     return v1
 
-    .line 490
-    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -671,20 +588,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 491
     :cond_1
     return v1
 .end method
 
 .method public connectAudio(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 1017
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 1018
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -693,7 +605,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1020
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->connectAudio(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -703,12 +614,9 @@
 
     return v1
 
-    .line 1021
     :catch_0
     move-exception v1
 
-    .line 1022
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -717,11 +625,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1023
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1025
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -729,7 +634,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1026
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -742,7 +646,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1028
     :goto_0
     const/4 v1, 0x0
 
@@ -751,19 +654,13 @@
 
 .method public dial(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Landroid/bluetooth/BluetoothHeadsetClientCall;
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "number"    # Ljava/lang/String;
 
-    .line 878
     const-string v0, "dial()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 879
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 880
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -778,7 +675,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 882
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->dial(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Landroid/bluetooth/BluetoothHeadsetClientCall;
 
@@ -788,12 +684,9 @@
 
     return-object v1
 
-    .line 883
     :catch_0
     move-exception v1
 
-    .line 884
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -806,8 +699,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 887
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -817,7 +708,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 888
     :cond_1
     const/4 v1, 0x0
 
@@ -826,9 +716,7 @@
 
 .method public disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 5
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 502
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -849,11 +737,8 @@
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 503
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 504
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
@@ -870,7 +755,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 506
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -880,12 +764,9 @@
 
     return v2
 
-    .line 507
     :catch_0
     move-exception v2
 
-    .line 508
-    .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "BluetoothHeadsetClient"
 
     new-instance v4, Ljava/lang/Throwable;
@@ -898,11 +779,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 509
     return v1
 
-    .line 512
-    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -912,20 +790,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 513
     :cond_1
     return v1
 .end method
 
 .method public disconnectAudio(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 1041
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 1042
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -934,7 +807,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1044
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->disconnectAudio(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -944,12 +816,9 @@
 
     return v1
 
-    .line 1045
     :catch_0
     move-exception v1
 
-    .line 1046
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -958,11 +827,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1047
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1049
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -970,7 +836,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1050
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -983,7 +848,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1052
     :goto_0
     const/4 v1, 0x0
 
@@ -993,7 +857,6 @@
 .method doBind()Z
     .locals 6
 
-    .line 426
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Landroid/bluetooth/IBluetoothHeadsetClient;
@@ -1004,8 +867,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 427
-    .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1018,11 +879,8 @@
 
     move-result-object v1
 
-    .line 428
-    .local v1, "comp":Landroid/content/ComponentName;
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 429
     if-eqz v1, :cond_1
 
     iget-object v3, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
@@ -1031,12 +889,10 @@
 
     iget-object v5, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mContext:Landroid/content/Context;
 
-    .line 430
     invoke-virtual {v5}, Landroid/content/Context;->getUser()Landroid/os/UserHandle;
 
     move-result-object v5
 
-    .line 429
     invoke-virtual {v3, v0, v4, v2, v5}, Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
 
     move-result v3
@@ -1045,13 +901,11 @@
 
     goto :goto_0
 
-    .line 434
     :cond_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 431
     :cond_1
     :goto_0
     const-string v3, "BluetoothHeadsetClient"
@@ -1072,25 +926,18 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
     return v2
 .end method
 
 .method public enterPrivateMode(Landroid/bluetooth/BluetoothDevice;I)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "index"    # I
 
-    .line 828
     const-string v0, "enterPrivateMode()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 829
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 830
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1105,7 +952,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 832
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->enterPrivateMode(Landroid/bluetooth/BluetoothDevice;I)Z
 
@@ -1115,12 +961,9 @@
 
     return v1
 
-    .line 833
     :catch_0
     move-exception v1
 
-    .line 834
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1133,8 +976,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 837
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1144,7 +985,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 838
     :cond_1
     const/4 v1, 0x0
 
@@ -1153,18 +993,13 @@
 
 .method public explicitCallTransfer(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 855
     const-string v0, "explicitCallTransfer()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 856
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 857
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1179,7 +1014,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 859
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->explicitCallTransfer(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -1189,12 +1023,9 @@
 
     return v1
 
-    .line 860
     :catch_0
     move-exception v1
 
-    .line 861
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1207,8 +1038,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 864
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1218,7 +1047,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 865
     :cond_1
     const/4 v1, 0x0
 
@@ -1227,13 +1055,9 @@
 
 .method public getAudioRouteAllowed(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 993
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 994
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1242,7 +1066,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 996
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getAudioRouteAllowed(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -1252,12 +1075,9 @@
 
     return v1
 
-    .line 997
     :catch_0
     move-exception v1
 
-    .line 998
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -1266,11 +1086,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 999
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1001
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -1278,7 +1095,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1002
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -1291,7 +1107,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1004
     :goto_0
     const/4 v1, 0x0
 
@@ -1300,13 +1115,9 @@
 
 .method public getAudioState(Landroid/bluetooth/BluetoothDevice;)I
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 948
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 949
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1315,7 +1126,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 951
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getAudioState(Landroid/bluetooth/BluetoothDevice;)I
 
@@ -1325,12 +1135,9 @@
 
     return v1
 
-    .line 952
     :catch_0
     move-exception v1
 
-    .line 953
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -1339,11 +1146,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 954
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 956
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -1351,7 +1155,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 957
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -1364,7 +1167,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 959
     :goto_0
     const/4 v1, 0x0
 
@@ -1382,11 +1184,8 @@
         }
     .end annotation
 
-    .line 524
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 525
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1395,7 +1194,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 527
     :try_start_0
     invoke-interface {v0}, Landroid/bluetooth/IBluetoothHeadsetClient;->getConnectedDevices()Ljava/util/List;
 
@@ -1405,12 +1203,9 @@
 
     return-object v1
 
-    .line 528
     :catch_0
     move-exception v1
 
-    .line 529
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1423,15 +1218,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     return-object v2
 
-    .line 533
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1441,7 +1233,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 534
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1452,13 +1243,9 @@
 
 .method public getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
     .locals 5
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 569
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 570
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
@@ -1475,7 +1262,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 572
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
 
@@ -1485,12 +1271,9 @@
 
     return v2
 
-    .line 573
     :catch_0
     move-exception v2
 
-    .line 574
-    .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "BluetoothHeadsetClient"
 
     new-instance v4, Ljava/lang/Throwable;
@@ -1503,11 +1286,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 575
     return v1
 
-    .line 578
-    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1517,25 +1297,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 579
     :cond_1
     return v1
 .end method
 
 .method public getCurrentAgEvents(Landroid/bluetooth/BluetoothDevice;)Landroid/os/Bundle;
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 701
     const-string v0, "getCurrentCalls()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 702
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 703
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1550,7 +1324,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 705
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getCurrentAgEvents(Landroid/bluetooth/BluetoothDevice;)Landroid/os/Bundle;
 
@@ -1560,12 +1333,9 @@
 
     return-object v1
 
-    .line 706
     :catch_0
     move-exception v1
 
-    .line 707
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1578,8 +1348,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 710
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1589,7 +1357,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 711
     :cond_1
     const/4 v1, 0x0
 
@@ -1598,13 +1365,9 @@
 
 .method public getCurrentAgFeatures(Landroid/bluetooth/BluetoothDevice;)Landroid/os/Bundle;
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 1062
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 1063
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1613,7 +1376,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1065
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getCurrentAgFeatures(Landroid/bluetooth/BluetoothDevice;)Landroid/os/Bundle;
 
@@ -1623,12 +1385,9 @@
 
     return-object v1
 
-    .line 1066
     :catch_0
     move-exception v1
 
-    .line 1067
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -1637,11 +1396,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1068
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1070
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -1649,7 +1405,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1071
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -1662,7 +1417,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1073
     :goto_0
     const/4 v1, 0x0
 
@@ -1671,7 +1425,6 @@
 
 .method public getCurrentCalls(Landroid/bluetooth/BluetoothDevice;)Ljava/util/List;
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1683,16 +1436,12 @@
         }
     .end annotation
 
-    .line 681
     const-string v0, "getCurrentCalls()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 682
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 683
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1707,7 +1456,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 685
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getCurrentCalls(Landroid/bluetooth/BluetoothDevice;)Ljava/util/List;
 
@@ -1717,12 +1465,9 @@
 
     return-object v1
 
-    .line 686
     :catch_0
     move-exception v1
 
-    .line 687
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1735,8 +1480,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 690
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1746,7 +1489,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 691
     :cond_1
     const/4 v1, 0x0
 
@@ -1755,7 +1497,6 @@
 
 .method public getDevicesMatchingConnectionStates([I)Ljava/util/List;
     .locals 4
-    .param p1, "states"    # [I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([I)",
@@ -1765,11 +1506,8 @@
         }
     .end annotation
 
-    .line 547
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 548
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1778,7 +1516,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 550
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getDevicesMatchingConnectionStates([I)Ljava/util/List;
 
@@ -1788,12 +1525,9 @@
 
     return-object v1
 
-    .line 551
     :catch_0
     move-exception v1
 
-    .line 552
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1806,15 +1540,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 553
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     return-object v2
 
-    .line 556
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1824,7 +1555,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1835,18 +1565,13 @@
 
 .method public getLastVoiceTagNumber(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 928
     const-string v0, "getLastVoiceTagNumber()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 929
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 930
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -1861,7 +1586,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 932
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getLastVoiceTagNumber(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -1871,12 +1595,9 @@
 
     return v1
 
-    .line 933
     :catch_0
     move-exception v1
 
-    .line 934
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -1889,8 +1610,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 937
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1900,7 +1619,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 938
     :cond_1
     const/4 v1, 0x0
 
@@ -1909,13 +1627,9 @@
 
 .method public getPriority(Landroid/bluetooth/BluetoothDevice;)I
     .locals 5
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 611
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 612
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
@@ -1932,7 +1646,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 614
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->getPriority(Landroid/bluetooth/BluetoothDevice;)I
 
@@ -1942,12 +1655,9 @@
 
     return v2
 
-    .line 615
     :catch_0
     move-exception v2
 
-    .line 616
-    .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "BluetoothHeadsetClient"
 
     new-instance v4, Ljava/lang/Throwable;
@@ -1960,11 +1670,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 617
     return v1
 
-    .line 620
-    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -1974,25 +1681,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 621
     :cond_1
     return v1
 .end method
 
 .method public holdCall(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 745
     const-string v0, "holdCall()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 746
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 747
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2007,7 +1708,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 749
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->holdCall(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -2017,12 +1717,9 @@
 
     return v1
 
-    .line 750
     :catch_0
     move-exception v1
 
-    .line 751
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2035,8 +1732,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 754
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2046,7 +1741,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 755
     :cond_1
     const/4 v1, 0x0
 
@@ -2055,18 +1749,13 @@
 
 .method public rejectCall(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 770
     const-string/jumbo v0, "rejectCall()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 771
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 772
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2081,7 +1770,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 774
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->rejectCall(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -2091,12 +1779,9 @@
 
     return v1
 
-    .line 775
     :catch_0
     move-exception v1
 
-    .line 776
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2109,8 +1794,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 779
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2120,7 +1803,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 780
     :cond_1
     const/4 v1, 0x0
 
@@ -2129,19 +1811,13 @@
 
 .method public sendDTMF(Landroid/bluetooth/BluetoothDevice;B)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "code"    # B
 
-    .line 902
     const-string/jumbo v0, "sendDTMF()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 903
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 904
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2156,7 +1832,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 906
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->sendDTMF(Landroid/bluetooth/BluetoothDevice;B)Z
 
@@ -2166,12 +1841,9 @@
 
     return v1
 
-    .line 907
     :catch_0
     move-exception v1
 
-    .line 908
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2184,8 +1856,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 911
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2195,7 +1865,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 912
     :cond_1
     const/4 v1, 0x0
 
@@ -2204,14 +1873,9 @@
 
 .method public setAudioRouteAllowed(Landroid/bluetooth/BluetoothDevice;Z)V
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "allowed"    # Z
 
-    .line 971
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 972
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2220,22 +1884,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 974
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->setAudioRouteAllowed(Landroid/bluetooth/BluetoothDevice;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 977
     :goto_0
     goto :goto_1
 
-    .line 975
     :catch_0
     move-exception v1
 
-    .line 976
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     invoke-virtual {v1}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -2244,10 +1903,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 979
     :cond_0
     const-string v1, "BluetoothHeadsetClient"
 
@@ -2255,7 +1912,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 980
     const-string v1, "BluetoothHeadsetClient"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -2268,17 +1924,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 982
     :goto_1
     return-void
 .end method
 
 .method public setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
     .locals 5
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "priority"    # I
 
-    .line 588
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2305,11 +1957,8 @@
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 589
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 590
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
@@ -2326,17 +1975,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 591
     if-eqz p2, :cond_0
 
     const/16 v2, 0x64
 
     if-eq p2, v2, :cond_0
 
-    .line 593
     return v1
 
-    .line 596
     :cond_0
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
@@ -2347,12 +1993,9 @@
 
     return v2
 
-    .line 597
     :catch_0
     move-exception v2
 
-    .line 598
-    .local v2, "e":Landroid/os/RemoteException;
     const-string v3, "BluetoothHeadsetClient"
 
     new-instance v4, Ljava/lang/Throwable;
@@ -2365,11 +2008,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 599
     return v1
 
-    .line 602
-    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_1
     if-nez v0, :cond_2
 
@@ -2379,25 +2019,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 603
     :cond_2
     return v1
 .end method
 
 .method public startVoiceRecognition(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 636
     const-string/jumbo v0, "startVoiceRecognition()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 637
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 638
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2412,7 +2046,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 640
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->startVoiceRecognition(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -2422,12 +2055,9 @@
 
     return v1
 
-    .line 641
     :catch_0
     move-exception v1
 
-    .line 642
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2440,8 +2070,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 645
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2451,7 +2079,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 646
     :cond_1
     const/4 v1, 0x0
 
@@ -2460,18 +2087,13 @@
 
 .method public stopVoiceRecognition(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .line 661
     const-string/jumbo v0, "stopVoiceRecognition()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 662
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 663
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2486,7 +2108,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 665
     :try_start_0
     invoke-interface {v0, p1}, Landroid/bluetooth/IBluetoothHeadsetClient;->stopVoiceRecognition(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -2496,12 +2117,9 @@
 
     return v1
 
-    .line 666
     :catch_0
     move-exception v1
 
-    .line 667
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2514,8 +2132,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 670
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2525,7 +2141,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 671
     :cond_1
     const/4 v1, 0x0
 
@@ -2534,19 +2149,13 @@
 
 .method public terminateCall(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHeadsetClientCall;)Z
     .locals 4
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
-    .param p2, "call"    # Landroid/bluetooth/BluetoothHeadsetClientCall;
 
-    .line 800
     const-string/jumbo v0, "terminateCall()"
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothHeadsetClient;->log(Ljava/lang/String;)V
 
-    .line 801
     iget-object v0, p0, Landroid/bluetooth/BluetoothHeadsetClient;->mService:Landroid/bluetooth/IBluetoothHeadsetClient;
 
-    .line 802
-    .local v0, "service":Landroid/bluetooth/IBluetoothHeadsetClient;
     if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroid/bluetooth/BluetoothHeadsetClient;->isEnabled()Z
@@ -2561,7 +2170,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 804
     :try_start_0
     invoke-interface {v0, p1, p2}, Landroid/bluetooth/IBluetoothHeadsetClient;->terminateCall(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHeadsetClientCall;)Z
 
@@ -2571,12 +2179,9 @@
 
     return v1
 
-    .line 805
     :catch_0
     move-exception v1
 
-    .line 806
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "BluetoothHeadsetClient"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -2589,8 +2194,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 809
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     if-nez v0, :cond_1
 
@@ -2600,7 +2203,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 810
     :cond_1
     const/4 v1, 0x0
 

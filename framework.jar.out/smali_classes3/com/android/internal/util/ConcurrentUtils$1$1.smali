@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/util/ConcurrentUtils$1;Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/util/ConcurrentUtils$1;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 58
     iput-object p1, p0, Lcom/android/internal/util/ConcurrentUtils$1$1;->this$0:Lcom/android/internal/util/ConcurrentUtils$1;
 
     iput-object p3, p0, Lcom/android/internal/util/ConcurrentUtils$1$1;->val$r:Ljava/lang/Runnable;
@@ -41,18 +38,15 @@
 .method public run()V
     .locals 1
 
-    .line 61
     iget-object v0, p0, Lcom/android/internal/util/ConcurrentUtils$1$1;->this$0:Lcom/android/internal/util/ConcurrentUtils$1;
 
     iget v0, v0, Lcom/android/internal/util/ConcurrentUtils$1;->val$linuxThreadPriority:I
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 62
     iget-object v0, p0, Lcom/android/internal/util/ConcurrentUtils$1$1;->val$r:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 63
     return-void
 .end method

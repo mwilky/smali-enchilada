@@ -24,48 +24,35 @@
 # direct methods
 .method private constructor <init>(II)V
     .locals 1
-    .param p1, "startDay"    # I
-    .param p2, "endDay"    # I
 
-    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
     iput p1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
-    .line 87
     invoke-static {p1}, Landroid/app/admin/FreezePeriod;->dayOfYearToMonthDay(I)Ljava/time/MonthDay;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/admin/FreezePeriod;->mStart:Ljava/time/MonthDay;
 
-    .line 88
     iput p2, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
-    .line 89
     invoke-static {p2}, Landroid/app/admin/FreezePeriod;->dayOfYearToMonthDay(I)Ljava/time/MonthDay;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/admin/FreezePeriod;->mEnd:Ljava/time/MonthDay;
 
-    .line 90
     return-void
 .end method
 
 .method public constructor <init>(Ljava/time/MonthDay;Ljava/time/MonthDay;)V
     .locals 2
-    .param p1, "start"    # Ljava/time/MonthDay;
-    .param p2, "end"    # Ljava/time/MonthDay;
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput-object p1, p0, Landroid/app/admin/FreezePeriod;->mStart:Ljava/time/MonthDay;
 
-    .line 63
     iget-object v0, p0, Landroid/app/admin/FreezePeriod;->mStart:Ljava/time/MonthDay;
 
     const/16 v1, 0x7d1
@@ -80,10 +67,8 @@
 
     iput v0, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
-    .line 64
     iput-object p2, p0, Landroid/app/admin/FreezePeriod;->mEnd:Ljava/time/MonthDay;
 
-    .line 65
     iget-object v0, p0, Landroid/app/admin/FreezePeriod;->mEnd:Ljava/time/MonthDay;
 
     invoke-virtual {v0, v1}, Ljava/time/MonthDay;->atYear(I)Ljava/time/LocalDate;
@@ -96,7 +81,6 @@
 
     iput v0, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
-    .line 66
     return-void
 .end method
 
@@ -114,14 +98,10 @@
         }
     .end annotation
 
-    .line 221
-    .local p0, "intervals":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     const/16 v0, 0x16d
 
     new-array v1, v0, [Z
 
-    .line 223
-    .local v1, "taken":[Z
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -141,11 +121,8 @@
 
     check-cast v3, Landroid/app/admin/FreezePeriod;
 
-    .line 224
-    .local v3, "interval":Landroid/app/admin/FreezePeriod;
     iget v5, v3, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
-    .local v5, "i":I
     :goto_1
     invoke-virtual {v3}, Landroid/app/admin/FreezePeriod;->getEffectiveEndDay()I
 
@@ -153,58 +130,42 @@
 
     if-gt v5, v6, :cond_0
 
-    .line 225
     add-int/lit8 v6, v5, -0x1
 
     rem-int/2addr v6, v0
 
     aput-boolean v4, v1, v6
 
-    .line 224
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 227
-    .end local v3    # "interval":Landroid/app/admin/FreezePeriod;
-    .end local v5    # "i":I
     :cond_0
     goto :goto_0
 
-    .line 229
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 230
-    .local v2, "result":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     const/4 v3, 0x0
 
     move v5, v3
 
-    .line 231
-    .restart local v5    # "i":I
     :goto_2
     if-ge v5, v0, :cond_4
 
-    .line 232
     aget-boolean v6, v1, v5
 
     if-nez v6, :cond_2
 
-    .line 233
     add-int/lit8 v5, v5, 0x1
 
-    .line 234
     goto :goto_2
 
-    .line 236
     :cond_2
     add-int/lit8 v6, v5, 0x1
 
-    .line 237
-    .local v6, "intervalStart":I
     :goto_3
     if-ge v5, v0, :cond_3
 
@@ -216,7 +177,6 @@
 
     goto :goto_3
 
-    .line 238
     :cond_3
     new-instance v7, Landroid/app/admin/FreezePeriod;
 
@@ -224,11 +184,8 @@
 
     invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 239
-    .end local v6    # "intervalStart":I
     goto :goto_2
 
-    .line 242
     :cond_4
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -236,8 +193,6 @@
 
     sub-int/2addr v6, v4
 
-    .line 243
-    .local v6, "lastIndex":I
     if-lez v6, :cond_5
 
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -250,7 +205,6 @@
 
     if-ne v7, v0, :cond_5
 
-    .line 244
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -261,7 +215,6 @@
 
     if-ne v0, v4, :cond_5
 
-    .line 245
     new-instance v0, Landroid/app/admin/FreezePeriod;
 
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -272,7 +225,6 @@
 
     iget v4, v4, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
-    .line 246
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -283,24 +235,17 @@
 
     invoke-direct {v0, v4, v7}, Landroid/app/admin/FreezePeriod;-><init>(II)V
 
-    .line 247
-    .local v0, "wrappedInterval":Landroid/app/admin/FreezePeriod;
     invoke-interface {v2, v6, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 248
     invoke-interface {v2, v3}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 250
-    .end local v0    # "wrappedInterval":Landroid/app/admin/FreezePeriod;
     :cond_5
     return-object v2
 .end method
 
 .method private static dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
     .locals 1
-    .param p0, "date"    # Ljava/time/LocalDate;
 
-    .line 194
     const/16 v0, 0x7d1
 
     invoke-virtual {p0, v0}, Ljava/time/LocalDate;->withYear(I)Ljava/time/LocalDate;
@@ -316,17 +261,13 @@
 
 .method private static dayOfYearToMonthDay(I)Ljava/time/MonthDay;
     .locals 3
-    .param p0, "dayOfYear"    # I
 
-    .line 185
     const/16 v0, 0x7d1
 
     invoke-static {v0, p0}, Ljava/time/LocalDate;->ofYearDay(II)Ljava/time/LocalDate;
 
     move-result-object v0
 
-    .line 186
-    .local v0, "date":Ljava/time/LocalDate;
     invoke-virtual {v0}, Ljava/time/LocalDate;->getMonth()Ljava/time/Month;
 
     move-result-object v1
@@ -344,10 +285,7 @@
 
 .method public static distanceWithoutLeapYear(Ljava/time/LocalDate;Ljava/time/LocalDate;)I
     .locals 3
-    .param p0, "first"    # Ljava/time/LocalDate;
-    .param p1, "second"    # Ljava/time/LocalDate;
 
-    .line 203
     invoke-static {p0}, Landroid/app/admin/FreezePeriod;->dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
 
     move-result v0
@@ -358,7 +296,6 @@
 
     sub-int/2addr v0, v1
 
-    .line 204
     invoke-virtual {p0}, Ljava/time/LocalDate;->getYear()I
 
     move-result v1
@@ -375,15 +312,11 @@
 
     add-int/2addr v0, v2
 
-    .line 203
     return v0
 .end method
 
 .method static validateAgainstPreviousFreezePeriod(Ljava/util/List;Ljava/time/LocalDate;Ljava/time/LocalDate;Ljava/time/LocalDate;)V
     .locals 10
-    .param p1, "prevPeriodStart"    # Ljava/time/LocalDate;
-    .param p2, "prevPeriodEnd"    # Ljava/time/LocalDate;
-    .param p3, "now"    # Ljava/time/LocalDate;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -397,8 +330,6 @@
         }
     .end annotation
 
-    .line 304
-    .local p0, "periods":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -411,7 +342,6 @@
 
     goto/16 :goto_3
 
-    .line 307
     :cond_0
     invoke-virtual {p1, p3}, Ljava/time/LocalDate;->isAfter(Ljava/time/chrono/ChronoLocalDate;)Z
 
@@ -425,7 +355,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 308
     :cond_1
     const-string v0, "FreezePeriod"
 
@@ -457,14 +386,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 313
     :cond_2
     invoke-static {p0}, Landroid/app/admin/FreezePeriod;->canonicalizePeriods(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 317
-    .local v0, "allPeriods":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -473,8 +399,6 @@
 
     check-cast v1, Landroid/app/admin/FreezePeriod;
 
-    .line 318
-    .local v1, "curOrNextFreezePeriod":Landroid/app/admin/FreezePeriod;
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -492,8 +416,6 @@
 
     check-cast v3, Landroid/app/admin/FreezePeriod;
 
-    .line 319
-    .local v3, "interval":Landroid/app/admin/FreezePeriod;
     invoke-virtual {v3, p3}, Landroid/app/admin/FreezePeriod;->contains(Ljava/time/LocalDate;)Z
 
     move-result v4
@@ -502,7 +424,6 @@
 
     iget v4, v3, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
-    .line 320
     invoke-static {p3}, Landroid/app/admin/FreezePeriod;->dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
 
     move-result v5
@@ -511,32 +432,22 @@
 
     goto :goto_1
 
-    .line 324
-    .end local v3    # "interval":Landroid/app/admin/FreezePeriod;
     :cond_3
     goto :goto_0
 
-    .line 321
-    .restart local v3    # "interval":Landroid/app/admin/FreezePeriod;
     :cond_4
     :goto_1
     move-object v1, v3
 
-    .line 322
     nop
 
-    .line 325
-    .end local v3    # "interval":Landroid/app/admin/FreezePeriod;
     :cond_5
     nop
 
-    .line 326
     invoke-virtual {v1, p3}, Landroid/app/admin/FreezePeriod;->toCurrentOrFutureRealDates(Ljava/time/LocalDate;)Landroid/util/Pair;
 
     move-result-object v2
 
-    .line 327
-    .local v2, "curOrNextFreezeDates":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/time/LocalDate;Ljava/time/LocalDate;>;"
     iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v3, Ljava/time/chrono/ChronoLocalDate;
@@ -547,7 +458,6 @@
 
     if-eqz v3, :cond_6
 
-    .line 328
     new-instance v3, Landroid/util/Pair;
 
     iget-object v4, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -558,7 +468,6 @@
 
     move-object v2, v3
 
-    .line 330
     :cond_6
     iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -574,7 +483,6 @@
 
     if-nez v3, :cond_a
 
-    .line 335
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -611,8 +519,6 @@
 
     move-result-object v3
 
-    .line 337
-    .local v3, "periodsDescription":Ljava/lang/String;
     iget-object v4, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/time/LocalDate;
@@ -625,15 +531,12 @@
 
     int-to-long v4, v4
 
-    .line 339
-    .local v4, "separation":J
     const-wide/16 v6, 0x0
 
     cmp-long v6, v4, v6
 
     if-lez v6, :cond_8
 
-    .line 341
     const-wide/16 v6, 0x3c
 
     cmp-long v6, v4, v6
@@ -642,7 +545,6 @@
 
     goto :goto_2
 
-    .line 342
     :cond_7
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -670,7 +572,6 @@
 
     throw v6
 
-    .line 347
     :cond_8
     iget-object v6, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -684,21 +585,15 @@
 
     int-to-long v6, v6
 
-    .line 349
-    .local v6, "length":J
     const-wide/16 v8, 0x5a
 
     cmp-long v8, v6, v8
 
     if-gtz v8, :cond_9
 
-    .line 354
-    .end local v6    # "length":J
     :goto_2
     return-void
 
-    .line 350
-    .restart local v6    # "length":J
     :cond_9
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -726,10 +621,6 @@
 
     throw v8
 
-    .line 331
-    .end local v3    # "periodsDescription":Ljava/lang/String;
-    .end local v4    # "separation":J
-    .end local v6    # "length":J
     :cond_a
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -761,10 +652,6 @@
 
     throw v3
 
-    .line 305
-    .end local v0    # "allPeriods":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
-    .end local v1    # "curOrNextFreezePeriod":Landroid/app/admin/FreezePeriod;
-    .end local v2    # "curOrNextFreezeDates":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/time/LocalDate;Ljava/time/LocalDate;>;"
     :cond_b
     :goto_3
     return-void
@@ -781,14 +668,10 @@
         }
     .end annotation
 
-    .line 263
-    .local p0, "periods":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     invoke-static {p0}, Landroid/app/admin/FreezePeriod;->canonicalizePeriods(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 264
-    .local v0, "allPeriods":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/FreezePeriod;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -799,10 +682,8 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 267
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -810,15 +691,12 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 268
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/app/admin/FreezePeriod;
 
-    .line 269
-    .local v2, "current":Landroid/app/admin/FreezePeriod;
     invoke-virtual {v2}, Landroid/app/admin/FreezePeriod;->getLength()I
 
     move-result v3
@@ -827,7 +705,6 @@
 
     if-gt v3, v4, :cond_4
 
-    .line 273
     if-lez v1, :cond_0
 
     add-int/lit8 v3, v1, -0x1
@@ -840,7 +717,6 @@
 
     goto :goto_1
 
-    .line 274
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -854,12 +730,9 @@
 
     check-cast v3, Landroid/app/admin/FreezePeriod;
 
-    .line 275
-    .local v3, "previous":Landroid/app/admin/FreezePeriod;
     :goto_1
     if-eq v3, v2, :cond_3
 
-    .line 277
     if-nez v1, :cond_1
 
     invoke-virtual {v3}, Landroid/app/admin/FreezePeriod;->isWrapped()Z
@@ -868,7 +741,6 @@
 
     if-nez v4, :cond_1
 
-    .line 279
     iget v4, v2, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
     iget v5, v3, Landroid/app/admin/FreezePeriod;->mEndDay:I
@@ -879,11 +751,8 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    .local v4, "separation":I
     goto :goto_2
 
-    .line 284
-    .end local v4    # "separation":I
     :cond_1
     iget v4, v2, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
@@ -893,22 +762,13 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    .line 286
-    .restart local v4    # "separation":I
     :goto_2
     const/16 v5, 0x3c
 
     if-lt v4, v5, :cond_2
 
-    .end local v2    # "current":Landroid/app/admin/FreezePeriod;
-    .end local v3    # "previous":Landroid/app/admin/FreezePeriod;
-    .end local v4    # "separation":I
     goto :goto_3
 
-    .line 287
-    .restart local v2    # "current":Landroid/app/admin/FreezePeriod;
-    .restart local v3    # "previous":Landroid/app/admin/FreezePeriod;
-    .restart local v4    # "separation":I
     :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -946,18 +806,12 @@
 
     throw v5
 
-    .line 267
-    .end local v2    # "current":Landroid/app/admin/FreezePeriod;
-    .end local v3    # "previous":Landroid/app/admin/FreezePeriod;
-    .end local v4    # "separation":I
     :cond_3
     :goto_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 270
-    .restart local v2    # "current":Landroid/app/admin/FreezePeriod;
     :cond_4
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -973,7 +827,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 271
     invoke-virtual {v2}, Landroid/app/admin/FreezePeriod;->getLength()I
 
     move-result v4
@@ -988,20 +841,15 @@
 
     move-result-object v3
 
-    .line 270
     invoke-static {v3}, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->freezePeriodTooLong(Ljava/lang/String;)Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
     move-result-object v3
 
     throw v3
 
-    .line 293
-    .end local v1    # "i":I
-    .end local v2    # "current":Landroid/app/admin/FreezePeriod;
     :cond_5
     return-void
 
-    .line 265
     :cond_6
     invoke-static {}, Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;->duplicateOrOverlapPeriods()Landroid/app/admin/SystemUpdatePolicy$ValidationFailedException;
 
@@ -1014,9 +862,7 @@
 # virtual methods
 .method after(Ljava/time/LocalDate;)Z
     .locals 2
-    .param p1, "localDate"    # Ljava/time/LocalDate;
 
-    .line 129
     iget v0, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
     invoke-static {p1}, Landroid/app/admin/FreezePeriod;->dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
@@ -1038,15 +884,11 @@
 
 .method contains(Ljava/time/LocalDate;)Z
     .locals 4
-    .param p1, "localDate"    # Ljava/time/LocalDate;
 
-    .line 116
     invoke-static {p1}, Landroid/app/admin/FreezePeriod;->dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
 
     move-result v0
 
-    .line 117
-    .local v0, "daysOfYear":I
     invoke-virtual {p0}, Landroid/app/admin/FreezePeriod;->isWrapped()Z
 
     move-result v1
@@ -1057,7 +899,6 @@
 
     if-nez v1, :cond_1
 
-    .line 119
     iget v1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
     if-gt v1, v0, :cond_0
@@ -1073,7 +914,6 @@
     :cond_0
     return v2
 
-    .line 123
     :cond_1
     iget v1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
@@ -1099,19 +939,16 @@
 .method getEffectiveEndDay()I
     .locals 1
 
-    .line 107
     invoke-virtual {p0}, Landroid/app/admin/FreezePeriod;->isWrapped()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 108
     iget v0, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
     return v0
 
-    .line 110
     :cond_0
     iget v0, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
@@ -1123,7 +960,6 @@
 .method public getEnd()Ljava/time/MonthDay;
     .locals 1
 
-    .line 79
     iget-object v0, p0, Landroid/app/admin/FreezePeriod;->mEnd:Ljava/time/MonthDay;
 
     return-object v0
@@ -1132,7 +968,6 @@
 .method getLength()I
     .locals 2
 
-    .line 94
     invoke-virtual {p0}, Landroid/app/admin/FreezePeriod;->getEffectiveEndDay()I
 
     move-result v0
@@ -1149,7 +984,6 @@
 .method public getStart()Ljava/time/MonthDay;
     .locals 1
 
-    .line 72
     iget-object v0, p0, Landroid/app/admin/FreezePeriod;->mStart:Ljava/time/MonthDay;
 
     return-object v0
@@ -1158,7 +992,6 @@
 .method isWrapped()Z
     .locals 2
 
-    .line 99
     iget v0, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
     iget v1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
@@ -1178,7 +1011,6 @@
 
 .method toCurrentOrFutureRealDates(Ljava/time/LocalDate;)Landroid/util/Pair;
     .locals 6
-    .param p1, "now"    # Ljava/time/LocalDate;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1191,78 +1023,54 @@
         }
     .end annotation
 
-    .line 142
     invoke-static {p1}, Landroid/app/admin/FreezePeriod;->dayOfYearDisregardLeapYear(Ljava/time/LocalDate;)I
 
     move-result v0
 
-    .line 144
-    .local v0, "nowDays":I
     invoke-virtual {p0, p1}, Landroid/app/admin/FreezePeriod;->contains(Ljava/time/LocalDate;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 146
     iget v1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
     if-gt v1, v0, :cond_0
 
-    .line 149
     const/4 v1, 0x0
 
-    .line 150
-    .local v1, "startYearAdjustment":I
     invoke-virtual {p0}, Landroid/app/admin/FreezePeriod;->isWrapped()Z
 
     move-result v2
 
     goto :goto_0
 
-    .line 153
-    .end local v1    # "startYearAdjustment":I
     :cond_0
     const/4 v1, -0x1
 
-    .line 154
-    .restart local v1    # "startYearAdjustment":I
     const/4 v2, 0x0
 
-    .local v2, "endYearAdjustment":I
     :goto_0
     goto :goto_1
 
-    .line 158
-    .end local v1    # "startYearAdjustment":I
-    .end local v2    # "endYearAdjustment":I
     :cond_1
     iget v1, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
     if-le v1, v0, :cond_2
 
-    .line 161
     const/4 v1, 0x0
 
-    .line 162
-    .restart local v1    # "startYearAdjustment":I
     invoke-virtual {p0}, Landroid/app/admin/FreezePeriod;->isWrapped()Z
 
     move-result v2
 
     goto :goto_0
 
-    .line 165
-    .end local v1    # "startYearAdjustment":I
     :cond_2
     const/4 v1, 0x1
 
-    .line 166
-    .restart local v1    # "startYearAdjustment":I
     const/4 v2, 0x1
 
-    .line 169
-    .restart local v2    # "endYearAdjustment":I
     :goto_1
     iget v3, p0, Landroid/app/admin/FreezePeriod;->mStartDay:I
 
@@ -1272,40 +1080,32 @@
 
     move-result-object v3
 
-    .line 170
     invoke-virtual {p1}, Ljava/time/LocalDate;->getYear()I
 
     move-result v5
 
     add-int/2addr v5, v1
 
-    .line 169
     invoke-virtual {v3, v5}, Ljava/time/LocalDate;->withYear(I)Ljava/time/LocalDate;
 
     move-result-object v3
 
-    .line 171
-    .local v3, "startDate":Ljava/time/LocalDate;
     iget v5, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
     invoke-static {v4, v5}, Ljava/time/LocalDate;->ofYearDay(II)Ljava/time/LocalDate;
 
     move-result-object v4
 
-    .line 172
     invoke-virtual {p1}, Ljava/time/LocalDate;->getYear()I
 
     move-result v5
 
     add-int/2addr v5, v2
 
-    .line 171
     invoke-virtual {v4, v5}, Ljava/time/LocalDate;->withYear(I)Ljava/time/LocalDate;
 
     move-result-object v4
 
-    .line 173
-    .local v4, "endDate":Ljava/time/LocalDate;
     new-instance v5, Landroid/util/Pair;
 
     invoke-direct {v5, v3, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -1316,15 +1116,12 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 178
     const-string v0, "MMM dd"
 
     invoke-static {v0}, Ljava/time/format/DateTimeFormatter;->ofPattern(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;
 
     move-result-object v0
 
-    .line 179
-    .local v0, "formatter":Ljava/time/format/DateTimeFormatter;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1349,7 +1146,6 @@
 
     iget v2, p0, Landroid/app/admin/FreezePeriod;->mEndDay:I
 
-    .line 180
     invoke-static {v3, v2}, Ljava/time/LocalDate;->ofYearDay(II)Ljava/time/LocalDate;
 
     move-result-object v2
@@ -1364,6 +1160,5 @@
 
     move-result-object v1
 
-    .line 179
     return-object v1
 .end method

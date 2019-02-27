@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ViewPager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/ViewPager;
 
-    .line 223
     iput-object p1, p0, Lcom/android/internal/widget/ViewPager$3;->this$0:Lcom/android/internal/widget/ViewPager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,18 +37,15 @@
 .method public run()V
     .locals 2
 
-    .line 225
     iget-object v0, p0, Lcom/android/internal/widget/ViewPager$3;->this$0:Lcom/android/internal/widget/ViewPager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/internal/widget/ViewPager;->access$000(Lcom/android/internal/widget/ViewPager;I)V
 
-    .line 226
     iget-object v0, p0, Lcom/android/internal/widget/ViewPager$3;->this$0:Lcom/android/internal/widget/ViewPager;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ViewPager;->populate()V
 
-    .line 227
     return-void
 .end method

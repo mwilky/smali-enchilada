@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 222
     new-instance v0, Landroid/graphics/Path$FillType;
 
     const-string v1, "WINDING"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
 
-    .line 227
     new-instance v0, Landroid/graphics/Path$FillType;
 
     const-string v1, "EVEN_ODD"
@@ -64,7 +62,6 @@
 
     sput-object v0, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    .line 231
     new-instance v0, Landroid/graphics/Path$FillType;
 
     const-string v1, "INVERSE_WINDING"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
 
-    .line 235
     new-instance v0, Landroid/graphics/Path$FillType;
 
     const-string v1, "INVERSE_EVEN_ODD"
@@ -86,7 +82,6 @@
 
     sput-object v0, Landroid/graphics/Path$FillType;->INVERSE_EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    .line 216
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/Path$FillType;
@@ -114,28 +109,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "ni"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 237
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 238
     iput p3, p0, Landroid/graphics/Path$FillType;->nativeInt:I
 
-    .line 239
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Path$FillType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 216
     const-class v0, Landroid/graphics/Path$FillType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -150,7 +139,6 @@
 .method public static values()[Landroid/graphics/Path$FillType;
     .locals 1
 
-    .line 216
     sget-object v0, Landroid/graphics/Path$FillType;->$VALUES:[Landroid/graphics/Path$FillType;
 
     invoke-virtual {v0}, [Landroid/graphics/Path$FillType;->clone()Ljava/lang/Object;

@@ -22,27 +22,21 @@
 # direct methods
 .method public constructor <init>([B)V
     .locals 1
-    .param p1, "buf"    # [B
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     iput-object p1, p0, Lcom/android/internal/util/BitwiseInputStream;->mBuf:[B
 
-    .line 54
     array-length v0, p1
 
     shl-int/lit8 v0, v0, 0x3
 
     iput v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mEnd:I
 
-    .line 55
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
-    .line 56
     return-void
 .end method
 
@@ -51,7 +45,6 @@
 .method public available()I
     .locals 2
 
-    .line 62
     iget v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mEnd:I
 
     iget v1, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
@@ -63,20 +56,16 @@
 
 .method public read(I)I
     .locals 5
-    .param p1, "bits"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/internal/util/BitwiseInputStream$AccessException;
         }
     .end annotation
 
-    .line 75
     iget v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
     ushr-int/lit8 v0, v0, 0x3
 
-    .line 76
-    .local v0, "index":I
     iget v1, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
     and-int/lit8 v1, v1, 0x7
@@ -85,8 +74,6 @@
 
     sub-int/2addr v1, p1
 
-    .line 77
-    .local v1, "offset":I
     if-ltz p1, :cond_1
 
     const/16 v2, 0x8
@@ -101,7 +88,6 @@
 
     if-gt v3, v4, :cond_1
 
-    .line 81
     iget-object v3, p0, Lcom/android/internal/util/BitwiseInputStream;->mBuf:[B
 
     aget-byte v3, v3, v0
@@ -110,8 +96,6 @@
 
     shl-int/2addr v3, v2
 
-    .line 82
-    .local v3, "data":I
     if-ge v1, v2, :cond_0
 
     iget-object v2, p0, Lcom/android/internal/util/BitwiseInputStream;->mBuf:[B
@@ -124,13 +108,9 @@
 
     or-int/2addr v3, v2
 
-    .line 83
     :cond_0
     ushr-int v2, v3, v1
 
-    .line 84
-    .end local v3    # "data":I
-    .local v2, "data":I
     const/4 v3, -0x1
 
     rsub-int/lit8 v4, p1, 0x20
@@ -139,18 +119,14 @@
 
     and-int/2addr v2, v3
 
-    .line 85
     iget v3, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
     add-int/2addr v3, p1
 
     iput v3, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
-    .line 86
     return v2
 
-    .line 78
-    .end local v2    # "data":I
     :cond_1
     new-instance v2, Lcom/android/internal/util/BitwiseInputStream$AccessException;
 
@@ -195,14 +171,12 @@
 
 .method public readByteArray(I)[B
     .locals 6
-    .param p1, "bits"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/internal/util/BitwiseInputStream$AccessException;
         }
     .end annotation
 
-    .line 96
     ushr-int/lit8 v0, p1, 0x3
 
     and-int/lit8 v1, p1, 0x7
@@ -221,19 +195,13 @@
     :goto_0
     add-int/2addr v0, v1
 
-    .line 97
-    .local v0, "bytes":I
     new-array v1, v0, [B
 
-    .line 98
-    .local v1, "arr":[B
     nop
 
-    .local v2, "i":I
     :goto_1
     if-ge v2, v0, :cond_1
 
-    .line 99
     shl-int/lit8 v3, v2, 0x3
 
     sub-int v3, p1, v3
@@ -244,8 +212,6 @@
 
     move-result v3
 
-    .line 100
-    .local v3, "increment":I
     invoke-virtual {p0, v3}, Lcom/android/internal/util/BitwiseInputStream;->read(I)I
 
     move-result v5
@@ -258,28 +224,22 @@
 
     aput-byte v4, v1, v2
 
-    .line 98
-    .end local v3    # "increment":I
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 102
-    .end local v2    # "i":I
     :cond_1
     return-object v1
 .end method
 
 .method public skip(I)V
     .locals 3
-    .param p1, "bits"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/internal/util/BitwiseInputStream$AccessException;
         }
     .end annotation
 
-    .line 111
     iget v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
     add-int/2addr v0, p1
@@ -288,17 +248,14 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 115
     iget v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/internal/util/BitwiseInputStream;->mPos:I
 
-    .line 116
     return-void
 
-    .line 112
     :cond_0
     new-instance v0, Lcom/android/internal/util/BitwiseInputStream$AccessException;
 

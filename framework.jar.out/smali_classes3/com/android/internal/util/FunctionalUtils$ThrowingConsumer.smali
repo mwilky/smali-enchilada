@@ -40,26 +40,18 @@
         }
     .end annotation
 
-    .line 106
-    .local p0, "this":Lcom/android/internal/util/FunctionalUtils$ThrowingConsumer;, "Lcom/android/internal/util/FunctionalUtils$ThrowingConsumer<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
     :try_start_0
     invoke-interface {p0, p1}, Lcom/android/internal/util/FunctionalUtils$ThrowingConsumer;->acceptOrThrow(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 109
     nop
 
-    .line 110
     return-void
 
-    .line 107
     :catch_0
     move-exception v0
 
-    .line 108
-    .local v0, "ex":Ljava/lang/Exception;
     invoke-static {v0}, Landroid/util/ExceptionUtils;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v1

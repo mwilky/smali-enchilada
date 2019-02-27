@@ -36,39 +36,27 @@
 # direct methods
 .method constructor <init>(Landroid/content/res/XmlBlock;JLandroid/content/res/XmlBlock;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/content/res/XmlBlock;
-    .param p2, "parseState"    # J
-    .param p4, "block"    # Landroid/content/res/XmlBlock;
 
-    .line 82
     iput-object p1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 467
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/res/XmlBlock$Parser;->mStarted:Z
 
-    .line 468
     iput-boolean v0, p0, Landroid/content/res/XmlBlock$Parser;->mDecNextDepth:Z
 
-    .line 469
     iput v0, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
-    .line 470
     iput v0, p0, Landroid/content/res/XmlBlock$Parser;->mEventType:I
 
-    .line 83
     iput-wide p2, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
-    .line 84
     iput-object p4, p0, Landroid/content/res/XmlBlock$Parser;->mBlock:Landroid/content/res/XmlBlock;
 
-    .line 85
     invoke-static {p4}, Landroid/content/res/XmlBlock;->access$008(Landroid/content/res/XmlBlock;)I
 
-    .line 86
     return-void
 .end method
 
@@ -77,12 +65,10 @@
 .method public close()V
     .locals 5
 
-    .line 448
     iget-object v0, p0, Landroid/content/res/XmlBlock$Parser;->mBlock:Landroid/content/res/XmlBlock;
 
     monitor-enter v0
 
-    .line 449
     :try_start_0
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
@@ -92,27 +78,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 450
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2}, Landroid/content/res/XmlBlock;->access$1500(J)V
 
-    .line 451
     iput-wide v3, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
-    .line 452
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->mBlock:Landroid/content/res/XmlBlock;
 
     invoke-static {v1}, Landroid/content/res/XmlBlock;->access$1600(Landroid/content/res/XmlBlock;)V
 
-    .line 454
     :cond_0
     monitor-exit v0
 
-    .line 455
     return-void
 
-    .line 454
     :catchall_0
     move-exception v1
 
@@ -125,15 +105,12 @@
 
 .method public defineEntityReplacementText(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "entityName"    # Ljava/lang/String;
-    .param p2, "replacementText"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 119
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v1, "defineEntityReplacementText() not supported"
@@ -151,27 +128,20 @@
         }
     .end annotation
 
-    .line 458
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->close()V
 
-    .line 459
     return-void
 .end method
 
 .method public getAttributeBooleanValue(IZ)Z
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "defaultValue"    # Z
 
-    .line 380
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 383
-    .local v0, "t":I
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_1
@@ -180,7 +150,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 385
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
@@ -199,36 +168,27 @@
     :goto_0
     return v1
 
-    .line 387
     :cond_1
     return p2
 .end method
 
 .method public getAttributeBooleanValue(Ljava/lang/String;Ljava/lang/String;Z)Z
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # Z
 
-    .line 328
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 329
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 330
     invoke-virtual {p0, v0, p3}, Landroid/content/res/XmlBlock$Parser;->getAttributeBooleanValue(IZ)Z
 
     move-result v1
 
     return v1
 
-    .line 332
     :cond_0
     return p3
 .end method
@@ -236,7 +196,6 @@
 .method public getAttributeCount()I
     .locals 2
 
-    .line 202
     iget v0, p0, Landroid/content/res/XmlBlock$Parser;->mEventType:I
 
     const/4 v1, 0x2
@@ -260,38 +219,29 @@
 
 .method public getAttributeFloatValue(IF)F
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "defaultValue"    # F
 
-    .line 419
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 422
-    .local v0, "t":I
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
 
-    .line 423
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
-    .line 424
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
 
     move-result v1
 
-    .line 423
     invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     move-result v1
 
     return v1
 
-    .line 426
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -304,47 +254,34 @@
 
 .method public getAttributeFloatValue(Ljava/lang/String;Ljava/lang/String;F)F
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # F
 
-    .line 361
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 362
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 363
     invoke-virtual {p0, v0, p3}, Landroid/content/res/XmlBlock$Parser;->getAttributeFloatValue(IF)F
 
     move-result v1
 
     return v1
 
-    .line 365
     :cond_0
     return p3
 .end method
 
 .method public getAttributeIntValue(II)I
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "defaultValue"    # I
 
-    .line 399
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 402
-    .local v0, "t":I
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_0
@@ -353,7 +290,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 404
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
@@ -362,132 +298,98 @@
 
     return v1
 
-    .line 406
     :cond_0
     return p2
 .end method
 
 .method public getAttributeIntValue(Ljava/lang/String;Ljava/lang/String;I)I
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 344
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 345
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 346
     invoke-virtual {p0, v0, p3}, Landroid/content/res/XmlBlock$Parser;->getAttributeIntValue(II)I
 
     move-result v1
 
     return v1
 
-    .line 348
     :cond_0
     return p3
 .end method
 
 .method public getAttributeListValue(I[Ljava/lang/String;I)I
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "options"    # [Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 370
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 371
-    .local v0, "t":I
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
 
     move-result v1
 
-    .line 372
-    .local v1, "v":I
     const/4 v2, 0x3
 
     if-ne v0, v2, :cond_0
 
-    .line 373
     iget-object v2, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
 
     iget-object v2, v2, Landroid/content/res/XmlBlock;->mStrings:Landroid/content/res/StringBlock;
 
-    .line 374
     invoke-virtual {v2, v1}, Landroid/content/res/StringBlock;->get(I)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 373
     invoke-static {v2, p2, p3}, Lcom/android/internal/util/XmlUtils;->convertValueToList(Ljava/lang/CharSequence;[Ljava/lang/String;I)I
 
     move-result v2
 
     return v2
 
-    .line 376
     :cond_0
     return v1
 .end method
 
 .method public getAttributeListValue(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;I)I
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "options"    # [Ljava/lang/String;
-    .param p4, "defaultValue"    # I
 
-    .line 320
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 321
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 322
     invoke-virtual {p0, v0, p3, p4}, Landroid/content/res/XmlBlock$Parser;->getAttributeListValue(I[Ljava/lang/String;I)I
 
     move-result v1
 
     return v1
 
-    .line 324
     :cond_0
     return p4
 .end method
 
 .method public getAttributeName(I)Ljava/lang/String;
     .locals 3
-    .param p1, "index"    # I
 
-    .line 189
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$500(JI)I
 
     move-result v0
 
-    .line 191
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -504,7 +406,6 @@
 
     return-object v1
 
-    .line 192
     :cond_0
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -519,9 +420,7 @@
 
 .method public getAttributeNameResource(I)I
     .locals 2
-    .param p1, "index"    # I
 
-    .line 315
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$1100(JI)I
@@ -533,17 +432,13 @@
 
 .method public getAttributeNamespace(I)Ljava/lang/String;
     .locals 3
-    .param p1, "index"    # I
 
-    .line 182
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$400(JI)I
 
     move-result v0
 
-    .line 184
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -560,7 +455,6 @@
 
     return-object v1
 
-    .line 185
     :cond_0
     const/4 v1, -0x1
 
@@ -570,7 +464,6 @@
 
     return-object v1
 
-    .line 186
     :cond_1
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -585,9 +478,7 @@
 
 .method public getAttributePrefix(I)Ljava/lang/String;
     .locals 2
-    .param p1, "index"    # I
 
-    .line 195
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "getAttributePrefix not supported"
@@ -599,23 +490,17 @@
 
 .method public getAttributeResourceValue(II)I
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "defaultValue"    # I
 
-    .line 390
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 393
-    .local v0, "t":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 394
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
@@ -624,45 +509,34 @@
 
     return v1
 
-    .line 396
     :cond_0
     return p2
 .end method
 
 .method public getAttributeResourceValue(Ljava/lang/String;Ljava/lang/String;I)I
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 336
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 337
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 338
     invoke-virtual {p0, v0, p3}, Landroid/content/res/XmlBlock$Parser;->getAttributeResourceValue(II)I
 
     move-result v1
 
     return v1
 
-    .line 340
     :cond_0
     return p3
 .end method
 
 .method public getAttributeType(I)Ljava/lang/String;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 219
     const-string v0, "CDATA"
 
     return-object v0
@@ -670,18 +544,13 @@
 
 .method public getAttributeUnsignedIntValue(II)I
     .locals 3
-    .param p1, "idx"    # I
-    .param p2, "defaultValue"    # I
 
-    .line 409
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$800(JI)I
 
     move-result v0
 
-    .line 412
-    .local v0, "t":I
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_0
@@ -690,7 +559,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 414
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v1, v2, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
@@ -699,53 +567,40 @@
 
     return v1
 
-    .line 416
     :cond_0
     return p2
 .end method
 
 .method public getAttributeUnsignedIntValue(Ljava/lang/String;Ljava/lang/String;I)I
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "attribute"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 353
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 354
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 355
     invoke-virtual {p0, v0, p3}, Landroid/content/res/XmlBlock$Parser;->getAttributeUnsignedIntValue(II)I
 
     move-result v1
 
     return v1
 
-    .line 357
     :cond_0
     return p3
 .end method
 
 .method public getAttributeValue(I)Ljava/lang/String;
     .locals 4
-    .param p1, "index"    # I
 
-    .line 205
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1}, Landroid/content/res/XmlBlock;->access$700(JI)I
 
     move-result v0
 
-    .line 207
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -762,7 +617,6 @@
 
     return-object v1
 
-    .line 210
     :cond_0
     iget-wide v1, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
@@ -770,27 +624,20 @@
 
     move-result v1
 
-    .line 211
-    .local v1, "t":I
     if-eqz v1, :cond_1
 
-    .line 215
     iget-wide v2, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v2, v3, p1}, Landroid/content/res/XmlBlock;->access$900(JI)I
 
     move-result v2
 
-    .line 216
-    .local v2, "v":I
     invoke-static {v1, v2}, Landroid/util/TypedValue;->coerceToString(II)Ljava/lang/String;
 
     move-result-object v3
 
     return-object v3
 
-    .line 212
-    .end local v2    # "v":I
     :cond_1
     new-instance v2, Ljava/lang/IndexOutOfBoundsException;
 
@@ -805,28 +652,21 @@
 
 .method public getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "namespace"    # Ljava/lang/String;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 228
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/content/res/XmlBlock;->access$1000(JLjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 229
-    .local v0, "idx":I
     if-ltz v0, :cond_0
 
-    .line 236
     invoke-virtual {p0, v0}, Landroid/content/res/XmlBlock$Parser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 238
     :cond_0
     const/4 v1, 0x0
 
@@ -836,15 +676,12 @@
 .method public getClassAttribute()Ljava/lang/String;
     .locals 2
 
-    .line 434
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$1300(J)I
 
     move-result v0
 
-    .line 435
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -871,7 +708,6 @@
 .method public getColumnNumber()I
     .locals 1
 
-    .line 140
     const/4 v0, -0x1
 
     return v0
@@ -880,7 +716,6 @@
 .method public getDepth()I
     .locals 1
 
-    .line 143
     iget v0, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
     return v0
@@ -894,7 +729,6 @@
         }
     .end annotation
 
-    .line 153
     iget v0, p0, Landroid/content/res/XmlBlock$Parser;->mEventType:I
 
     return v0
@@ -902,9 +736,7 @@
 
 .method public getFeature(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 98
     const-string v0, "http://xmlpull.org/v1/doc/features.html#process-namespaces"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -915,10 +747,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 99
     return v1
 
-    .line 101
     :cond_0
     const-string v0, "http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes"
 
@@ -928,10 +758,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 102
     return v1
 
-    .line 104
     :cond_1
     const/4 v0, 0x0
 
@@ -941,15 +769,12 @@
 .method public getIdAttribute()Ljava/lang/String;
     .locals 2
 
-    .line 430
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$1200(J)I
 
     move-result v0
 
-    .line 431
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -975,9 +800,7 @@
 
 .method public getIdAttributeResourceValue(I)I
     .locals 2
-    .param p1, "defaultValue"    # I
 
-    .line 440
     const-string v0, "id"
 
     const/4 v1, 0x0
@@ -992,7 +815,6 @@
 .method public getInputEncoding()Ljava/lang/String;
     .locals 1
 
-    .line 125
     const/4 v0, 0x0
 
     return-object v0
@@ -1001,7 +823,6 @@
 .method public getLineNumber()I
     .locals 2
 
-    .line 150
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$200(J)I
@@ -1014,15 +835,12 @@
 .method public getName()Ljava/lang/String;
     .locals 2
 
-    .line 178
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->nativeGetName(J)I
 
     move-result v0
 
-    .line 179
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -1049,15 +867,12 @@
 .method public getNamespace()Ljava/lang/String;
     .locals 2
 
-    .line 174
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$300(J)I
 
     move-result v0
 
-    .line 175
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -1083,9 +898,7 @@
 
 .method public getNamespace(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "prefix"    # Ljava/lang/String;
 
-    .line 128
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "getNamespace() not supported"
@@ -1097,14 +910,12 @@
 
 .method public getNamespaceCount(I)I
     .locals 2
-    .param p1, "depth"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 131
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v1, "getNamespaceCount() not supported"
@@ -1116,14 +927,12 @@
 
 .method public getNamespacePrefix(I)Ljava/lang/String;
     .locals 2
-    .param p1, "pos"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 122
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v1, "getNamespacePrefix() not supported"
@@ -1135,14 +944,12 @@
 
 .method public getNamespaceUri(I)Ljava/lang/String;
     .locals 2
-    .param p1, "pos"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 137
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v1, "getNamespaceUri() not supported"
@@ -1154,9 +961,7 @@
 
 .method final getPooledString(I)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "id"    # I
 
-    .line 462
     iget-object v0, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
 
     iget-object v0, v0, Landroid/content/res/XmlBlock;->mStrings:Landroid/content/res/StringBlock;
@@ -1171,7 +976,6 @@
 .method public getPositionDescription()Ljava/lang/String;
     .locals 2
 
-    .line 134
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1196,7 +1000,6 @@
 .method public getPrefix()Ljava/lang/String;
     .locals 2
 
-    .line 160
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "getPrefix not supported"
@@ -1208,9 +1011,7 @@
 
 .method public getProperty(Ljava/lang/String;)Ljava/lang/Object;
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 110
     const/4 v0, 0x0
 
     return-object v0
@@ -1219,7 +1020,6 @@
 .method public getStyleAttribute()I
     .locals 2
 
-    .line 444
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$1400(J)I
@@ -1232,15 +1032,12 @@
 .method public getText()Ljava/lang/String;
     .locals 2
 
-    .line 146
     iget-wide v0, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
     invoke-static {v0, v1}, Landroid/content/res/XmlBlock;->access$100(J)I
 
     move-result v0
 
-    .line 147
-    .local v0, "id":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/content/res/XmlBlock$Parser;->this$0:Landroid/content/res/XmlBlock;
@@ -1266,27 +1063,19 @@
 
 .method public getTextCharacters([I)[C
     .locals 5
-    .param p1, "holderForStartAndLength"    # [I
 
-    .line 163
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getText()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 164
-    .local v0, "txt":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 165
-    .local v1, "chars":[C
     if-eqz v0, :cond_0
 
-    .line 166
     const/4 v2, 0x0
 
     aput v2, p1, v2
 
-    .line 167
     const/4 v3, 0x1
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1295,30 +1084,25 @@
 
     aput v4, p1, v3
 
-    .line 168
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v3
 
     new-array v1, v3, [C
 
-    .line 169
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v3
 
     invoke-virtual {v0, v2, v3, v1, v2}, Ljava/lang/String;->getChars(II[CI)V
 
-    .line 171
     :cond_0
     return-object v1
 .end method
 
 .method public isAttributeDefault(I)Z
     .locals 1
-    .param p1, "index"    # I
 
-    .line 222
     const/4 v0, 0x0
 
     return v0
@@ -1332,7 +1116,6 @@
         }
     .end annotation
 
-    .line 199
     const/4 v0, 0x0
 
     return v0
@@ -1346,7 +1129,6 @@
         }
     .end annotation
 
-    .line 157
     const/4 v0, 0x0
 
     return v0
@@ -1361,7 +1143,6 @@
         }
     .end annotation
 
-    .line 241
     iget-boolean v0, p0, Landroid/content/res/XmlBlock$Parser;->mStarted:Z
 
     const/4 v1, 0x0
@@ -1370,13 +1151,10 @@
 
     if-nez v0, :cond_0
 
-    .line 242
     iput-boolean v2, p0, Landroid/content/res/XmlBlock$Parser;->mStarted:Z
 
-    .line 243
     return v1
 
-    .line 245
     :cond_0
     iget-wide v3, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
@@ -1386,10 +1164,8 @@
 
     if-nez v0, :cond_1
 
-    .line 246
     return v2
 
-    .line 248
     :cond_1
     iget-wide v3, p0, Landroid/content/res/XmlBlock$Parser;->mParseState:J
 
@@ -1397,35 +1173,28 @@
 
     move-result v0
 
-    .line 249
-    .local v0, "ev":I
     iget-boolean v3, p0, Landroid/content/res/XmlBlock$Parser;->mDecNextDepth:Z
 
     if-eqz v3, :cond_2
 
-    .line 250
     iget v3, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
     sub-int/2addr v3, v2
 
     iput v3, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
-    .line 251
     iput-boolean v1, p0, Landroid/content/res/XmlBlock$Parser;->mDecNextDepth:Z
 
-    .line 253
     :cond_2
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 258
     :pswitch_0
     iput-boolean v2, p0, Landroid/content/res/XmlBlock$Parser;->mDecNextDepth:Z
 
     goto :goto_0
 
-    .line 255
     :pswitch_1
     iget v1, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
@@ -1433,20 +1202,15 @@
 
     iput v1, p0, Landroid/content/res/XmlBlock$Parser;->mDepth:I
 
-    .line 256
     nop
 
-    .line 261
     :goto_0
     iput v0, p0, Landroid/content/res/XmlBlock$Parser;->mEventType:I
 
-    .line 262
     if-ne v0, v2, :cond_3
 
-    .line 267
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->close()V
 
-    .line 269
     :cond_3
     return v0
 
@@ -1466,13 +1230,10 @@
         }
     .end annotation
 
-    .line 302
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->next()I
 
     move-result v0
 
-    .line 303
-    .local v0, "eventType":I
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
@@ -1483,12 +1244,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 304
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->next()I
 
     move-result v0
 
-    .line 306
     :cond_0
     const/4 v1, 0x2
 
@@ -1500,7 +1259,6 @@
 
     goto :goto_0
 
-    .line 307
     :cond_1
     new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1508,7 +1266,6 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 308
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getPositionDescription()Ljava/lang/String;
 
     move-result-object v3
@@ -1529,7 +1286,6 @@
 
     throw v1
 
-    .line 311
     :cond_2
     :goto_0
     return v0
@@ -1544,7 +1300,6 @@
         }
     .end annotation
 
-    .line 278
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getEventType()I
 
     move-result v0
@@ -1555,37 +1310,28 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 283
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->next()I
 
     move-result v0
 
-    .line 284
-    .local v0, "eventType":I
     const/4 v2, 0x4
 
     const/4 v3, 0x3
 
     if-ne v0, v2, :cond_1
 
-    .line 285
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getText()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 286
-    .local v2, "result":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->next()I
 
     move-result v0
 
-    .line 287
     if-ne v0, v3, :cond_0
 
-    .line 292
     return-object v2
 
-    .line 288
     :cond_0
     new-instance v3, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1593,7 +1339,6 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 289
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getPositionDescription()Ljava/lang/String;
 
     move-result-object v5
@@ -1612,17 +1357,13 @@
 
     throw v3
 
-    .line 293
-    .end local v2    # "result":Ljava/lang/String;
     :cond_1
     if-ne v0, v3, :cond_2
 
-    .line 294
     const-string v1, ""
 
     return-object v1
 
-    .line 296
     :cond_2
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1630,7 +1371,6 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 297
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getPositionDescription()Ljava/lang/String;
 
     move-result-object v4
@@ -1649,8 +1389,6 @@
 
     throw v2
 
-    .line 279
-    .end local v0    # "eventType":I
     :cond_3
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1658,7 +1396,6 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 280
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getPositionDescription()Ljava/lang/String;
 
     move-result-object v3
@@ -1687,7 +1424,6 @@
         }
     .end annotation
 
-    .line 225
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->next()I
 
     move-result v0
@@ -1697,9 +1433,6 @@
 
 .method public require(ILjava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p1, "type"    # I
-    .param p2, "namespace"    # Ljava/lang/String;
-    .param p3, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -1707,7 +1440,6 @@
         }
     .end annotation
 
-    .line 272
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getEventType()I
 
     move-result v0
@@ -1716,7 +1448,6 @@
 
     if-eqz p2, :cond_0
 
-    .line 273
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getNamespace()Ljava/lang/String;
 
     move-result-object v0
@@ -1730,7 +1461,6 @@
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 274
     invoke-virtual {p0}, Landroid/content/res/XmlBlock$Parser;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -1741,11 +1471,9 @@
 
     if-eqz v0, :cond_2
 
-    .line 276
     :cond_1
     return-void
 
-    .line 275
     :cond_2
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1780,15 +1508,12 @@
 
 .method public setFeature(Ljava/lang/String;Z)V
     .locals 3
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "state"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 89
     const-string v0, "http://xmlpull.org/v1/doc/features.html#process-namespaces"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1799,10 +1524,8 @@
 
     if-eqz p2, :cond_0
 
-    .line 90
     return-void
 
-    .line 92
     :cond_0
     const-string v0, "http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes"
 
@@ -1814,10 +1537,8 @@
 
     if-eqz p2, :cond_1
 
-    .line 93
     return-void
 
-    .line 95
     :cond_1
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -1842,15 +1563,12 @@
 
 .method public setInput(Ljava/io/InputStream;Ljava/lang/String;)V
     .locals 2
-    .param p1, "inputStream"    # Ljava/io/InputStream;
-    .param p2, "inputEncoding"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 116
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v1, "setInput() not supported"
@@ -1862,14 +1580,12 @@
 
 .method public setInput(Ljava/io/Reader;)V
     .locals 2
-    .param p1, "in"    # Ljava/io/Reader;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 113
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v1, "setInput() not supported"
@@ -1881,15 +1597,12 @@
 
 .method public setProperty(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 2
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 107
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v1, "setProperty() not supported"

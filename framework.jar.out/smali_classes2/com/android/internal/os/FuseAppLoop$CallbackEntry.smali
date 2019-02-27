@@ -25,13 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/os/ProxyFileDescriptorCallback;Landroid/os/Handler;)V
     .locals 1
-    .param p1, "callback"    # Landroid/os/ProxyFileDescriptorCallback;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 333
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -40,7 +36,6 @@
 
     iput-object v0, p0, Lcom/android/internal/os/FuseAppLoop$CallbackEntry;->callback:Landroid/os/ProxyFileDescriptorCallback;
 
-    .line 334
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -49,7 +44,6 @@
 
     iput-object v0, p0, Lcom/android/internal/os/FuseAppLoop$CallbackEntry;->handler:Landroid/os/Handler;
 
-    .line 335
     return-void
 .end method
 
@@ -58,7 +52,6 @@
 .method getThreadId()J
     .locals 2
 
-    .line 338
     iget-object v0, p0, Lcom/android/internal/os/FuseAppLoop$CallbackEntry;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;

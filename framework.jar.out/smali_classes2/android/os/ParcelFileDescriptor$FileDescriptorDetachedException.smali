@@ -22,11 +22,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1083
     const-string v0, "Remote side is detached"
 
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 1084
     return-void
 .end method

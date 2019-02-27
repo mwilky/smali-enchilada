@@ -37,22 +37,16 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
-    .param p1, "_featureId"    # I
 
-    .line 3393
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3411
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/policy/PhoneWindow$DrawableFeatureState;->alpha:I
 
-    .line 3413
     iput v0, p0, Lcom/android/internal/policy/PhoneWindow$DrawableFeatureState;->curAlpha:I
 
-    .line 3394
     iput p1, p0, Lcom/android/internal/policy/PhoneWindow$DrawableFeatureState;->featureId:I
 
-    .line 3395
     return-void
 .end method

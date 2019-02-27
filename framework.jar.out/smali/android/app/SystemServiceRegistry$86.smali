@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 953
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,22 +35,18 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/media/soundtrigger/SoundTriggerManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 956
     const-string/jumbo v0, "soundtrigger"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 957
-    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/media/soundtrigger/SoundTriggerManager;
 
     invoke-static {v0}, Lcom/android/internal/app/ISoundTriggerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/ISoundTriggerService;
@@ -71,7 +66,6 @@
         }
     .end annotation
 
-    .line 953
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$86;->createService(Landroid/app/ContextImpl;)Landroid/media/soundtrigger/SoundTriggerManager;
 
     move-result-object p1

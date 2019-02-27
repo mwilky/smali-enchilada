@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 485
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,15 +39,11 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/Network;
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 487
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 489
-    .local v0, "netId":I
     new-instance v1, Landroid/net/Network;
 
     invoke-direct {v1, v0}, Landroid/net/Network;-><init>(I)V
@@ -59,7 +54,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 485
     invoke-virtual {p0, p1}, Landroid/net/Network$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/Network;
 
     move-result-object p1
@@ -69,9 +63,7 @@
 
 .method public newArray(I)[Landroid/net/Network;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 493
     new-array v0, p1, [Landroid/net/Network;
 
     return-object v0
@@ -80,7 +72,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 485
     invoke-virtual {p0, p1}, Landroid/net/Network$1;->newArray(I)[Landroid/net/Network;
 
     move-result-object p1

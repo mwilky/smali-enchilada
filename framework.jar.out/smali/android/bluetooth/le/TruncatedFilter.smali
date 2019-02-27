@@ -25,7 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/bluetooth/le/ScanFilter;Ljava/util/List;)V
     .locals 0
-    .param p1, "filter"    # Landroid/bluetooth/le/ScanFilter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,17 +35,12 @@
         }
     .end annotation
 
-    .line 39
-    .local p2, "storageDescriptors":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/le/ResultStorageDescriptor;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
     iput-object p1, p0, Landroid/bluetooth/le/TruncatedFilter;->mFilter:Landroid/bluetooth/le/ScanFilter;
 
-    .line 41
     iput-object p2, p0, Landroid/bluetooth/le/TruncatedFilter;->mStorageDescriptors:Ljava/util/List;
 
-    .line 42
     return-void
 .end method
 
@@ -55,7 +49,6 @@
 .method public getFilter()Landroid/bluetooth/le/ScanFilter;
     .locals 1
 
-    .line 48
     iget-object v0, p0, Landroid/bluetooth/le/TruncatedFilter;->mFilter:Landroid/bluetooth/le/ScanFilter;
 
     return-object v0
@@ -72,7 +65,6 @@
         }
     .end annotation
 
-    .line 55
     iget-object v0, p0, Landroid/bluetooth/le/TruncatedFilter;->mStorageDescriptors:Ljava/util/List;
 
     return-object v0

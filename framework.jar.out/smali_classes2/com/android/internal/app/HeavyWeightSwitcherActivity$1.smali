@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/HeavyWeightSwitcherActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
-    .line 126
     iput-object p1, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity$1;->this$0:Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 129
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -58,19 +54,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
     goto :goto_0
 
-    .line 130
     :catch_0
     move-exception v0
 
-    .line 132
     :goto_0
     iget-object v0, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity$1;->this$0:Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->finish()V
 
-    .line 133
     return-void
 .end method

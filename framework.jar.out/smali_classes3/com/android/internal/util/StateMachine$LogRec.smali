@@ -33,20 +33,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/util/StateMachine;Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;)V
     .locals 0
-    .param p1, "sm"    # Lcom/android/internal/util/StateMachine;
-    .param p2, "msg"    # Landroid/os/Message;
-    .param p3, "info"    # Ljava/lang/String;
-    .param p4, "state"    # Lcom/android/internal/util/IState;
-    .param p5, "orgState"    # Lcom/android/internal/util/IState;
-    .param p6, "transToState"    # Lcom/android/internal/util/IState;
 
-    .line 471
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 472
     invoke-virtual/range {p0 .. p6}, Lcom/android/internal/util/StateMachine$LogRec;->update(Lcom/android/internal/util/StateMachine;Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;)V
 
-    .line 473
     return-void
 .end method
 
@@ -55,7 +46,6 @@
 .method public getDestState()Lcom/android/internal/util/IState;
     .locals 1
 
-    .line 524
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mDstState:Lcom/android/internal/util/IState;
 
     return-object v0
@@ -64,7 +54,6 @@
 .method public getInfo()Ljava/lang/String;
     .locals 1
 
-    .line 510
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mInfo:Ljava/lang/String;
 
     return-object v0
@@ -73,7 +62,6 @@
 .method public getOriginalState()Lcom/android/internal/util/IState;
     .locals 1
 
-    .line 531
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mOrgState:Lcom/android/internal/util/IState;
 
     return-object v0
@@ -82,7 +70,6 @@
 .method public getState()Lcom/android/internal/util/IState;
     .locals 1
 
-    .line 517
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mState:Lcom/android/internal/util/IState;
 
     return-object v0
@@ -91,7 +78,6 @@
 .method public getTime()J
     .locals 2
 
-    .line 496
     iget-wide v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mTime:J
 
     return-wide v0
@@ -100,7 +86,6 @@
 .method public getWhat()J
     .locals 2
 
-    .line 503
     iget v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mWhat:I
 
     int-to-long v0, v0
@@ -111,29 +96,22 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 536
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 537
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "time="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 538
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 539
-    .local v1, "c":Ljava/util/Calendar;
     iget-wide v2, p0, Lcom/android/internal/util/StateMachine$LogRec;->mTime:J
 
     invoke-virtual {v1, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 540
     const-string v2, "%tm-%td %tH:%tM:%tS.%tL"
 
     const/4 v3, 0x6
@@ -170,12 +148,10 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 541
     const-string v2, " processed="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 542
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$LogRec;->mState:Lcom/android/internal/util/IState;
 
     if-nez v2, :cond_0
@@ -194,12 +170,10 @@
     :goto_0
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 543
     const-string v2, " org="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 544
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$LogRec;->mOrgState:Lcom/android/internal/util/IState;
 
     if-nez v2, :cond_1
@@ -218,12 +192,10 @@
     :goto_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 545
     const-string v2, " dest="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 546
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$LogRec;->mDstState:Lcom/android/internal/util/IState;
 
     if-nez v2, :cond_2
@@ -242,12 +214,10 @@
     :goto_2
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 547
     const-string v2, " what="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 548
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$LogRec;->mSm:Lcom/android/internal/util/StateMachine;
 
     if-eqz v2, :cond_3
@@ -265,8 +235,6 @@
     :cond_3
     const-string v2, ""
 
-    .line 549
-    .local v2, "what":Ljava/lang/String;
     :goto_3
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -274,17 +242,14 @@
 
     if-eqz v3, :cond_4
 
-    .line 550
     iget v3, p0, Lcom/android/internal/util/StateMachine$LogRec;->mWhat:I
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 551
     const-string v3, "(0x"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 552
     iget v3, p0, Lcom/android/internal/util/StateMachine$LogRec;->mWhat:I
 
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -293,18 +258,15 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 553
     const-string v3, ")"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4
 
-    .line 555
     :cond_4
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 557
     :goto_4
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$LogRec;->mInfo:Ljava/lang/String;
 
@@ -314,17 +276,14 @@
 
     if-nez v3, :cond_5
 
-    .line 558
     const-string v3, " "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 559
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$LogRec;->mInfo:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 561
     :cond_5
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -335,24 +294,15 @@
 
 .method public update(Lcom/android/internal/util/StateMachine;Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;Lcom/android/internal/util/IState;)V
     .locals 2
-    .param p1, "sm"    # Lcom/android/internal/util/StateMachine;
-    .param p2, "msg"    # Landroid/os/Message;
-    .param p3, "info"    # Ljava/lang/String;
-    .param p4, "state"    # Lcom/android/internal/util/IState;
-    .param p5, "orgState"    # Lcom/android/internal/util/IState;
-    .param p6, "dstState"    # Lcom/android/internal/util/IState;
 
-    .line 483
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$LogRec;->mSm:Lcom/android/internal/util/StateMachine;
 
-    .line 484
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mTime:J
 
-    .line 485
     if-eqz p2, :cond_0
 
     iget v0, p2, Landroid/os/Message;->what:I
@@ -365,18 +315,13 @@
     :goto_0
     iput v0, p0, Lcom/android/internal/util/StateMachine$LogRec;->mWhat:I
 
-    .line 486
     iput-object p3, p0, Lcom/android/internal/util/StateMachine$LogRec;->mInfo:Ljava/lang/String;
 
-    .line 487
     iput-object p4, p0, Lcom/android/internal/util/StateMachine$LogRec;->mState:Lcom/android/internal/util/IState;
 
-    .line 488
     iput-object p5, p0, Lcom/android/internal/util/StateMachine$LogRec;->mOrgState:Lcom/android/internal/util/IState;
 
-    .line 489
     iput-object p6, p0, Lcom/android/internal/util/StateMachine$LogRec;->mDstState:Lcom/android/internal/util/IState;
 
-    .line 490
     return-void
 .end method

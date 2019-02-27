@@ -23,23 +23,15 @@
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Ljava/util/zip/Inflater;ILjava/util/zip/ZipEntry;)V
     .locals 2
-    .param p1, "is"    # Ljava/io/InputStream;
-    .param p2, "inf"    # Ljava/util/zip/Inflater;
-    .param p3, "bsize"    # I
-    .param p4, "entry"    # Ljava/util/zip/ZipEntry;
 
-    .line 395
     invoke-direct {p0, p1, p2, p3}, Ljava/util/zip/InflaterInputStream;-><init>(Ljava/io/InputStream;Ljava/util/zip/Inflater;I)V
 
-    .line 392
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->bytesRead:J
 
-    .line 396
     iput-object p4, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->entry:Ljava/util/zip/ZipEntry;
 
-    .line 397
     return-void
 .end method
 
@@ -53,17 +45,14 @@
         }
     .end annotation
 
-    .line 419
     iget-boolean v0, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->closed:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 423
     return v1
 
-    .line 425
     :cond_0
     invoke-super {p0}, Ljava/util/zip/InflaterInputStream;->available()I
 
@@ -92,16 +81,12 @@
 
 .method public read([BII)I
     .locals 5
-    .param p1, "buffer"    # [B
-    .param p2, "byteOffset"    # I
-    .param p3, "byteCount"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 402
     :try_start_0
     invoke-super {p0, p1, p2, p3}, Ljava/util/zip/InflaterInputStream;->read([BII)I
 
@@ -109,19 +94,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 406
-    .local v0, "i":I
     nop
 
-    .line 404
     nop
 
-    .line 407
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 408
     iget-object v1, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->entry:Ljava/util/zip/ZipEntry;
 
     invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getSize()J
@@ -136,7 +116,6 @@
 
     goto :goto_0
 
-    .line 409
     :cond_0
     new-instance v1, Ljava/io/IOException;
 
@@ -158,7 +137,6 @@
 
     iget-object v3, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->entry:Ljava/util/zip/ZipEntry;
 
-    .line 410
     invoke-virtual {v3}, Ljava/util/zip/ZipEntry;->getSize()J
 
     move-result-wide v3
@@ -173,7 +151,6 @@
 
     throw v1
 
-    .line 413
     :cond_1
     iget-wide v1, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->bytesRead:J
 
@@ -183,17 +160,12 @@
 
     iput-wide v1, p0, Landroid/util/jar/StrictJarFile$ZipInflaterInputStream;->bytesRead:J
 
-    .line 415
     :goto_0
     return v0
 
-    .line 403
-    .end local v0    # "i":I
     :catch_0
     move-exception v0
 
-    .line 404
-    .local v0, "e":Ljava/io/IOException;
     new-instance v1, Ljava/io/IOException;
 
     new-instance v2, Ljava/lang/StringBuilder;

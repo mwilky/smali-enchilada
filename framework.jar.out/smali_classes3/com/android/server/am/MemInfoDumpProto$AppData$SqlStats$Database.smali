@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/MemInfoDumpProto$AppData$SqlStats;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/android/server/am/MemInfoDumpProto$AppData$SqlStats;
 
-    .line 174
     iput-object p1, p0, Lcom/android/server/am/MemInfoDumpProto$AppData$SqlStats$Database;->this$2:Lcom/android/server/am/MemInfoDumpProto$AppData$SqlStats;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

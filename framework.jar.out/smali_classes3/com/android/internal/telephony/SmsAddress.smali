@@ -31,7 +31,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +41,6 @@
 .method public couldBeEmailGateway()Z
     .locals 2
 
-    .line 62
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -67,7 +65,6 @@
 .method public getAddressString()Ljava/lang/String;
     .locals 1
 
-    .line 38
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     return-object v0
@@ -76,7 +73,6 @@
 .method public isAlphanumeric()Z
     .locals 2
 
-    .line 45
     iget v0, p0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     const/4 v1, 0x5
@@ -97,7 +93,6 @@
 .method public isNetworkSpecific()Z
     .locals 2
 
-    .line 52
     iget v0, p0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     const/4 v1, 0x3

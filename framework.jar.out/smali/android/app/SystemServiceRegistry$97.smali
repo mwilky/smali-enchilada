@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1050
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,28 +35,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/os/DeviceIdleManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 1054
     const-string v0, "deviceidle"
 
-    .line 1055
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 1054
     invoke-static {v0}, Landroid/os/IDeviceIdleController$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IDeviceIdleController;
 
     move-result-object v0
 
-    .line 1057
-    .local v0, "service":Landroid/os/IDeviceIdleController;
     new-instance v1, Landroid/os/DeviceIdleManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -77,7 +70,6 @@
         }
     .end annotation
 
-    .line 1050
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$97;->createService(Landroid/app/ContextImpl;)Landroid/os/DeviceIdleManager;
 
     move-result-object p1

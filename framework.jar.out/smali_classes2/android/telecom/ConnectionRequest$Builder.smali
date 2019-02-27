@@ -36,18 +36,14 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telecom/ConnectionRequest$Builder;->mVideoState:I
 
-    .line 41
     iput-boolean v0, p0, Landroid/telecom/ConnectionRequest$Builder;->mShouldShowIncomingCallUi:Z
 
-    .line 45
     return-void
 .end method
 
@@ -56,7 +52,6 @@
 .method public build()Landroid/telecom/ConnectionRequest;
     .locals 11
 
-    .line 126
     new-instance v10, Landroid/telecom/ConnectionRequest;
 
     iget-object v1, p0, Landroid/telecom/ConnectionRequest$Builder;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
@@ -86,88 +81,64 @@
 
 .method public setAccountHandle(Landroid/telecom/PhoneAccountHandle;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "accountHandle"    # Landroid/telecom/PhoneAccountHandle;
 
-    .line 52
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mAccountHandle:Landroid/telecom/PhoneAccountHandle;
 
-    .line 53
     return-object p0
 .end method
 
 .method public setAddress(Landroid/net/Uri;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "address"    # Landroid/net/Uri;
 
-    .line 62
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mAddress:Landroid/net/Uri;
 
-    .line 63
     return-object p0
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 71
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 72
     return-object p0
 .end method
 
 .method public setRttPipeFromInCall(Landroid/os/ParcelFileDescriptor;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "rttPipeFromInCall"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 111
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mRttPipeFromInCall:Landroid/os/ParcelFileDescriptor;
 
-    .line 112
     return-object p0
 .end method
 
 .method public setRttPipeToInCall(Landroid/os/ParcelFileDescriptor;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "rttPipeToInCall"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 121
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mRttPipeToInCall:Landroid/os/ParcelFileDescriptor;
 
-    .line 122
     return-object p0
 .end method
 
 .method public setShouldShowIncomingCallUi(Z)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "shouldShowIncomingCallUi"    # Z
 
-    .line 101
     iput-boolean p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mShouldShowIncomingCallUi:Z
 
-    .line 102
     return-object p0
 .end method
 
 .method public setTelecomCallId(Ljava/lang/String;)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "telecomCallId"    # Ljava/lang/String;
 
-    .line 89
     iput-object p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mTelecomCallId:Ljava/lang/String;
 
-    .line 90
     return-object p0
 .end method
 
 .method public setVideoState(I)Landroid/telecom/ConnectionRequest$Builder;
     .locals 0
-    .param p1, "videoState"    # I
 
-    .line 80
     iput p1, p0, Landroid/telecom/ConnectionRequest$Builder;->mVideoState:I
 
-    .line 81
     return-object p0
 .end method

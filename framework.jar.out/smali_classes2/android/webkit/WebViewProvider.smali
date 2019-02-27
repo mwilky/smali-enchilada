@@ -145,7 +145,6 @@
 .method public getTextClassifier()Landroid/view/textclassifier/TextClassifier;
     .locals 1
 
-    .line 288
     sget-object v0, Landroid/view/textclassifier/TextClassifier;->NO_OP:Landroid/view/textclassifier/TextClassifier;
 
     return-object v0
@@ -338,9 +337,7 @@
 
 .method public setTextClassifier(Landroid/view/textclassifier/TextClassifier;)V
     .locals 0
-    .param p1, "textClassifier"    # Landroid/view/textclassifier/TextClassifier;
 
-    .line 285
     return-void
 .end method
 

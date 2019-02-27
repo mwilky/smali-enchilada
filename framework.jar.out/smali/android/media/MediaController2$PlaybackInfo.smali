@@ -27,15 +27,11 @@
 # direct methods
 .method public constructor <init>(Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;)V
     .locals 0
-    .param p1, "provider"    # Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
-    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
     iput-object p1, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
-    .line 270
     return-void
 .end method
 
@@ -44,7 +40,6 @@
 .method public getAudioAttributes()Landroid/media/AudioAttributes;
     .locals 1
 
-    .line 301
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;->getAudioAttributes_impl()Landroid/media/AudioAttributes;
@@ -57,7 +52,6 @@
 .method public getControlType()I
     .locals 1
 
-    .line 315
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;->getControlType_impl()I
@@ -70,7 +64,6 @@
 .method public getCurrentVolume()I
     .locals 1
 
-    .line 333
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;->getCurrentVolume_impl()I
@@ -83,7 +76,6 @@
 .method public getMaxVolume()I
     .locals 1
 
-    .line 324
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;->getMaxVolume_impl()I
@@ -96,7 +88,6 @@
 .method public getPlaybackType()I
     .locals 1
 
-    .line 289
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;->getPlaybackType_impl()I
@@ -109,7 +100,6 @@
 .method public getProvider()Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
     .locals 1
 
-    .line 276
     iget-object v0, p0, Landroid/media/MediaController2$PlaybackInfo;->mProvider:Landroid/media/update/MediaController2Provider$PlaybackInfoProvider;
 
     return-object v0

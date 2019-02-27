@@ -94,7 +94,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -102,9 +101,7 @@
 
 .method public static formatHasAlpha(I)Z
     .locals 2
-    .param p0, "format"    # I
 
-    .line 147
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
@@ -125,12 +122,10 @@
 
     packed-switch p0, :pswitch_data_1
 
-    .line 159
     const/4 v0, 0x0
 
     return v0
 
-    .line 157
     :cond_0
     :pswitch_0
     return v0
@@ -151,9 +146,7 @@
 
 .method public static formatToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "format"    # I
 
-    .line 193
     const/16 v0, 0x14
 
     if-eq p0, v0, :cond_3
@@ -178,122 +171,102 @@
 
     packed-switch p0, :pswitch_data_3
 
-    .line 233
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 223
     :pswitch_0
     const-string v0, "YCbCr_420_SP"
 
     return-object v0
 
-    .line 221
     :pswitch_1
     const-string v0, "YCbCr_422_SP"
 
     return-object v0
 
-    .line 219
     :pswitch_2
     const-string v0, "RGB_332"
 
     return-object v0
 
-    .line 217
     :pswitch_3
     const-string v0, "LA_88"
 
     return-object v0
 
-    .line 215
     :pswitch_4
     const-string v0, "L_8"
 
     return-object v0
 
-    .line 213
     :pswitch_5
     const-string v0, "A_8"
 
     return-object v0
 
-    .line 211
     :pswitch_6
     const-string v0, "RGBA_4444"
 
     return-object v0
 
-    .line 209
     :pswitch_7
     const-string v0, "RGBA_5551"
 
     return-object v0
 
-    .line 207
     :pswitch_8
     const-string v0, "RGB_565"
 
     return-object v0
 
-    .line 205
     :pswitch_9
     const-string v0, "RGB_888"
 
     return-object v0
 
-    .line 203
     :pswitch_a
     const-string v0, "RGBX_8888"
 
     return-object v0
 
-    .line 201
     :pswitch_b
     const-string v0, "RGBA_8888"
 
     return-object v0
 
-    .line 195
     :pswitch_c
     const-string v0, "UNKNOWN"
 
     return-object v0
 
-    .line 199
     :pswitch_d
     const-string v0, "TRANSPARENT"
 
     return-object v0
 
-    .line 197
     :pswitch_e
     const-string v0, "TRANSLUCENT"
 
     return-object v0
 
-    .line 231
     :cond_0
     const-string v0, "JPEG"
 
     return-object v0
 
-    .line 229
     :cond_1
     const-string v0, "RGBA_1010102"
 
     return-object v0
 
-    .line 227
     :cond_2
     const-string v0, "RGBA_F16"
 
     return-object v0
 
-    .line 225
     :cond_3
     const-string v0, "YCbCr_422_I"
 
@@ -333,10 +306,7 @@
 
 .method public static getPixelFormatInfo(ILandroid/graphics/PixelFormat;)V
     .locals 4
-    .param p0, "format"    # I
-    .param p1, "info"    # Landroid/graphics/PixelFormat;
 
-    .line 104
     const/16 v0, 0x14
 
     const/16 v1, 0x10
@@ -361,7 +331,6 @@
 
     packed-switch p0, :pswitch_data_2
 
-    .line 142
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -382,93 +351,71 @@
 
     throw v0
 
-    .line 134
     :pswitch_0
     const/16 v0, 0xc
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 135
     iput v2, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 136
     goto :goto_0
 
-    .line 125
     :pswitch_1
     iput v3, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 126
     iput v2, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 127
     goto :goto_0
 
-    .line 119
     :pswitch_2
     iput v1, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 120
     const/4 v0, 0x2
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 121
     goto :goto_0
 
-    .line 112
     :pswitch_3
     const/16 v0, 0x18
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 113
     const/4 v0, 0x3
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 114
     goto :goto_0
 
-    .line 108
     :cond_0
     :pswitch_4
     const/16 v0, 0x20
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 109
     const/4 v0, 0x4
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 110
     goto :goto_0
 
-    .line 138
     :cond_1
     const/16 v0, 0x40
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 139
     iput v3, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 140
     goto :goto_0
 
-    .line 130
     :cond_2
     :pswitch_5
     iput v1, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 131
     iput v2, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 132
     nop
 
-    .line 144
     :goto_0
     return-void
 
@@ -501,9 +448,7 @@
 
 .method public static isPublicFormat(I)Z
     .locals 1
-    .param p0, "format"    # I
 
-    .line 176
     const/16 v0, 0x16
 
     if-eq p0, v0, :cond_0
@@ -514,12 +459,10 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 186
     const/4 v0, 0x0
 
     return v0
 
-    .line 183
     :cond_0
     :pswitch_0
     const/4 v0, 0x1

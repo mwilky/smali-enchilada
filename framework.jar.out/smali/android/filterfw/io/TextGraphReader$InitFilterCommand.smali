@@ -26,17 +26,13 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/io/TextGraphReader;Landroid/filterfw/core/KeyValueMap;)V
     .locals 0
-    .param p2, "params"    # Landroid/filterfw/core/KeyValueMap;
 
-    .line 108
     iput-object p1, p0, Landroid/filterfw/io/TextGraphReader$InitFilterCommand;->this$0:Landroid/filterfw/io/TextGraphReader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
     iput-object p2, p0, Landroid/filterfw/io/TextGraphReader$InitFilterCommand;->mParams:Landroid/filterfw/core/KeyValueMap;
 
-    .line 110
     return-void
 .end method
 
@@ -44,20 +40,16 @@
 # virtual methods
 .method public execute(Landroid/filterfw/io/TextGraphReader;)V
     .locals 4
-    .param p1, "reader"    # Landroid/filterfw/io/TextGraphReader;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/filterfw/io/GraphIOException;
         }
     .end annotation
 
-    .line 114
     invoke-static {p1}, Landroid/filterfw/io/TextGraphReader;->access$100(Landroid/filterfw/io/TextGraphReader;)Landroid/filterfw/core/Filter;
 
     move-result-object v0
 
-    .line 116
-    .local v0, "filter":Landroid/filterfw/core/Filter;
     :try_start_0
     iget-object v1, p0, Landroid/filterfw/io/TextGraphReader$InitFilterCommand;->mParams:Landroid/filterfw/core/KeyValueMap;
 
@@ -65,10 +57,8 @@
     :try_end_0
     .catch Landroid/filterfw/core/ProtocolException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 119
     nop
 
-    .line 120
     invoke-static {p1}, Landroid/filterfw/io/TextGraphReader;->access$200(Landroid/filterfw/io/TextGraphReader;)Landroid/filterfw/core/FilterGraph;
 
     move-result-object v1
@@ -81,15 +71,11 @@
 
     invoke-virtual {v1, v2}, Landroid/filterfw/core/FilterGraph;->addFilter(Landroid/filterfw/core/Filter;)Z
 
-    .line 121
     return-void
 
-    .line 117
     :catch_0
     move-exception v1
 
-    .line 118
-    .local v1, "e":Landroid/filterfw/core/ProtocolException;
     new-instance v2, Landroid/filterfw/io/GraphIOException;
 
     invoke-virtual {v1}, Landroid/filterfw/core/ProtocolException;->getMessage()Ljava/lang/String;

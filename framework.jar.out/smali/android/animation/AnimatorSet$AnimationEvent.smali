@@ -31,19 +31,13 @@
 # direct methods
 .method constructor <init>(Landroid/animation/AnimatorSet$Node;I)V
     .locals 0
-    .param p1, "node"    # Landroid/animation/AnimatorSet$Node;
-    .param p2, "event"    # I
 
-    .line 1886
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1887
     iput-object p1, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mNode:Landroid/animation/AnimatorSet$Node;
 
-    .line 1888
     iput p2, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mEvent:I
 
-    .line 1889
     return-void
 .end method
 
@@ -52,19 +46,16 @@
 .method getTime()J
     .locals 4
 
-    .line 1892
     iget v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mEvent:I
 
     if-nez v0, :cond_0
 
-    .line 1893
     iget-object v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mNode:Landroid/animation/AnimatorSet$Node;
 
     iget-wide v0, v0, Landroid/animation/AnimatorSet$Node;->mStartTime:J
 
     return-wide v0
 
-    .line 1894
     :cond_0
     iget v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mEvent:I
 
@@ -72,7 +63,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1895
     iget-object v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mNode:Landroid/animation/AnimatorSet$Node;
 
     iget-wide v0, v0, Landroid/animation/AnimatorSet$Node;->mStartTime:J
@@ -83,7 +73,6 @@
 
     if-nez v0, :cond_1
 
-    .line 1896
     goto :goto_0
 
     :cond_1
@@ -101,11 +90,9 @@
 
     add-long/2addr v2, v0
 
-    .line 1895
     :goto_0
     return-wide v2
 
-    .line 1898
     :cond_2
     iget-object v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mNode:Landroid/animation/AnimatorSet$Node;
 
@@ -117,7 +104,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1903
     iget v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mEvent:I
 
     if-nez v0, :cond_0
@@ -126,7 +112,6 @@
 
     goto :goto_0
 
-    .line 1904
     :cond_0
     iget v0, p0, Landroid/animation/AnimatorSet$AnimationEvent;->mEvent:I
 
@@ -141,8 +126,6 @@
     :cond_1
     const-string v0, "end"
 
-    .line 1905
-    .local v0, "eventStr":Ljava/lang/String;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 

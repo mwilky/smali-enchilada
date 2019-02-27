@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 537
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,15 +30,12 @@
 # virtual methods
 .method public onMixStateUpdate(Landroid/media/audiopolicy/AudioMix;)V
     .locals 0
-    .param p1, "mix"    # Landroid/media/audiopolicy/AudioMix;
 
-    .line 539
     return-void
 .end method
 
 .method public onStatusChange()V
     .locals 0
 
-    .line 538
     return-void
 .end method

@@ -70,7 +70,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 177
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "SCROLL"
@@ -85,7 +84,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->SCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 189
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "QQSCROLL"
@@ -100,7 +98,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->QQSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 206
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMAWAKEN12"
@@ -115,7 +112,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMAWAKEN12:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 225
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMAWAKEN14"
@@ -130,7 +126,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMAWAKEN14:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 245
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMAWAKEN15"
@@ -145,7 +140,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMAWAKEN15:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 257
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "OVERSCROLL"
@@ -156,7 +150,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->OVERSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 269
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "CONTENTSCROLL"
@@ -169,7 +162,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->CONTENTSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 283
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMCHANGE9"
@@ -182,7 +174,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMCHANGE9:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 300
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMCHANGE12"
@@ -195,7 +186,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMCHANGE12:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 319
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMCHANGE14"
@@ -206,7 +196,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMCHANGE14:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 339
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "MMCHANGE15"
@@ -219,7 +208,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->MMCHANGE15:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 358
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "BROWSERSCROLL"
@@ -232,7 +220,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->BROWSERSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 371
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "QZONESCROLL"
@@ -243,7 +230,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->QZONESCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 392
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "WEBSCROLL"
@@ -258,7 +244,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->WEBSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 406
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "LISTOVERSCROLL"
@@ -269,7 +254,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->LISTOVERSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 416
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "WEBOVERSCROLL"
@@ -280,7 +264,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->WEBOVERSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 432
     new-instance v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     const-string v1, "BROWSEROVERSCROLL"
@@ -291,7 +274,6 @@
 
     sput-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->BROWSEROVERSCROLL:Lcom/oneplus/injector/ViewInjector$View$Element;
 
-    .line 164
     const/16 v0, 0x11
 
     new-array v0, v0, [Lcom/oneplus/injector/ViewInjector$View$Element;
@@ -381,8 +363,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
     .locals 0
-    .param p3, "position"    # I
-    .param p4, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -391,34 +371,26 @@
         }
     .end annotation
 
-    .line 439
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 436
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mName:Ljava/lang/String;
 
-    .line 437
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mPosition:I
 
-    .line 440
     iput p3, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mPosition:I
 
-    .line 441
     iput-object p4, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mName:Ljava/lang/String;
 
-    .line 442
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/oneplus/injector/ViewInjector$View$Element;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 164
     const-class v0, Lcom/oneplus/injector/ViewInjector$View$Element;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -433,7 +405,6 @@
 .method public static values()[Lcom/oneplus/injector/ViewInjector$View$Element;
     .locals 1
 
-    .line 164
     sget-object v0, Lcom/oneplus/injector/ViewInjector$View$Element;->$VALUES:[Lcom/oneplus/injector/ViewInjector$View$Element;
 
     invoke-virtual {v0}, [Lcom/oneplus/injector/ViewInjector$View$Element;->clone()Ljava/lang/Object;
@@ -450,7 +421,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 449
     iget-object v0, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mName:Ljava/lang/String;
 
     return-object v0
@@ -459,7 +429,6 @@
 .method public getNameString()Ljava/lang/String;
     .locals 2
 
-    .line 453
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -488,7 +457,6 @@
 .method public getPosition()I
     .locals 1
 
-    .line 445
     iget v0, p0, Lcom/oneplus/injector/ViewInjector$View$Element;->mPosition:I
 
     return v0

@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,9 +16,7 @@
 # virtual methods
 .method public assertValidFromUid(I)V
     .locals 0
-    .param p1, "requestorUid"    # I
 
-    .line 51
     return-void
 .end method
 

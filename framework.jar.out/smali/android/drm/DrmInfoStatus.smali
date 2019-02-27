@@ -22,51 +22,37 @@
 # direct methods
 .method public constructor <init>(IILandroid/drm/ProcessedData;Ljava/lang/String;)V
     .locals 3
-    .param p1, "statusCode"    # I
-    .param p2, "infoType"    # I
-    .param p3, "data"    # Landroid/drm/ProcessedData;
-    .param p4, "mimeType"    # Ljava/lang/String;
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     invoke-static {p2}, Landroid/drm/DrmInfoRequest;->isValidType(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 79
     invoke-direct {p0, p1}, Landroid/drm/DrmInfoStatus;->isValidStatusCode(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 83
     if-eqz p4, :cond_0
 
     const-string v0, ""
 
     if-eq p4, v0, :cond_0
 
-    .line 87
     iput p1, p0, Landroid/drm/DrmInfoStatus;->statusCode:I
 
-    .line 88
     iput p2, p0, Landroid/drm/DrmInfoStatus;->infoType:I
 
-    .line 89
     iput-object p3, p0, Landroid/drm/DrmInfoStatus;->data:Landroid/drm/ProcessedData;
 
-    .line 90
     iput-object p4, p0, Landroid/drm/DrmInfoStatus;->mimeType:Ljava/lang/String;
 
-    .line 91
     return-void
 
-    .line 84
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -76,7 +62,6 @@
 
     throw v0
 
-    .line 80
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -98,7 +83,6 @@
 
     throw v0
 
-    .line 76
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -123,9 +107,7 @@
 
 .method private isValidStatusCode(I)Z
     .locals 2
-    .param p1, "statusCode"    # I
 
-    .line 94
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1

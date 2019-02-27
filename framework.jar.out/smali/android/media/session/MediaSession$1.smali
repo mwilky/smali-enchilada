@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSession;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/session/MediaSession;
 
-    .line 313
     iput-object p1, p0, Landroid/media/session/MediaSession$1;->this$0:Landroid/media/session/MediaSession;
 
     invoke-direct {p0}, Landroid/media/VolumeProvider$Callback;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public onVolumeChanged(Landroid/media/VolumeProvider;)V
     .locals 1
-    .param p1, "volumeProvider"    # Landroid/media/VolumeProvider;
 
-    .line 316
     iget-object v0, p0, Landroid/media/session/MediaSession$1;->this$0:Landroid/media/session/MediaSession;
 
     invoke-virtual {v0, p1}, Landroid/media/session/MediaSession;->notifyRemoteVolumeChanged(Landroid/media/VolumeProvider;)V
 
-    .line 317
     return-void
 .end method

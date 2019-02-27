@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2948
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,12 +39,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/view/KeyEvent;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 2951
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 2952
     invoke-static {p1}, Landroid/view/KeyEvent;->createFromParcelBody(Landroid/os/Parcel;)Landroid/view/KeyEvent;
 
     move-result-object v0
@@ -56,7 +52,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2948
     invoke-virtual {p0, p1}, Landroid/view/KeyEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/KeyEvent;
 
     move-result-object p1
@@ -66,9 +61,7 @@
 
 .method public newArray(I)[Landroid/view/KeyEvent;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 2957
     new-array v0, p1, [Landroid/view/KeyEvent;
 
     return-object v0
@@ -77,7 +70,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 2948
     invoke-virtual {p0, p1}, Landroid/view/KeyEvent$1;->newArray(I)[Landroid/view/KeyEvent;
 
     move-result-object p1

@@ -36,7 +36,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1946
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
 .method public static final builder()Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;
     .locals 1
 
-    .line 2030
     new-instance v0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;
 
     invoke-direct {v0}, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;-><init>()V

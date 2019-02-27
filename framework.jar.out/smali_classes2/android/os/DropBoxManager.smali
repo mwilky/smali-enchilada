@@ -39,36 +39,26 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/os/DropBoxManager;->mContext:Landroid/content/Context;
 
-    .line 270
     iput-object v0, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
-    .line 271
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/os/IDropBoxManagerService;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "service"    # Lcom/android/internal/os/IDropBoxManagerService;
 
-    .line 258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 259
     iput-object p1, p0, Landroid/os/DropBoxManager;->mContext:Landroid/content/Context;
 
-    .line 260
     iput-object p2, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
-    .line 261
     return-void
 .end method
 
@@ -76,14 +66,9 @@
 # virtual methods
 .method public addData(Ljava/lang/String;[BI)V
     .locals 8
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "data"    # [B
-    .param p3, "flags"    # I
 
-    .line 302
     if-eqz p2, :cond_1
 
-    .line 304
     :try_start_0
     iget-object v0, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
@@ -105,25 +90,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 312
     nop
 
-    .line 313
     return-void
 
-    .line 305
     :catch_0
     move-exception v0
 
-    .line 306
-    .local v0, "e":Landroid/os/RemoteException;
     instance-of v1, v0, Landroid/os/TransactionTooLargeException;
 
     if-eqz v1, :cond_0
 
     iget-object v1, p0, Landroid/os/DropBoxManager;->mContext:Landroid/content/Context;
 
-    .line 307
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
@@ -134,17 +113,14 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 308
     const-string v1, "DropBoxManager"
 
     const-string v2, "App sent too much data, so it was ignored"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 309
     return-void
 
-    .line 311
     :cond_0
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -152,8 +128,6 @@
 
     throw v1
 
-    .line 302
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -166,19 +140,14 @@
 
 .method public addFile(Ljava/lang/String;Ljava/io/File;I)V
     .locals 7
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "file"    # Ljava/io/File;
-    .param p3, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 325
     if-eqz p2, :cond_0
 
-    .line 326
     new-instance v6, Landroid/os/DropBoxManager$Entry;
 
     const-wide/16 v2, 0x0
@@ -195,8 +164,6 @@
 
     move-object v0, v6
 
-    .line 328
-    .local v0, "entry":Landroid/os/DropBoxManager$Entry;
     :try_start_0
     iget-object v1, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
@@ -205,27 +172,20 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 332
     invoke-virtual {v0}, Landroid/os/DropBoxManager$Entry;->close()V
 
-    .line 333
     nop
 
-    .line 334
     return-void
 
-    .line 332
     :catchall_0
     move-exception v1
 
     goto :goto_0
 
-    .line 329
     :catch_0
     move-exception v1
 
-    .line 330
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_1
     invoke-virtual {v1}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -235,15 +195,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 332
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     invoke-virtual {v0}, Landroid/os/DropBoxManager$Entry;->close()V
 
     throw v1
 
-    .line 325
-    .end local v0    # "entry":Landroid/os/DropBoxManager$Entry;
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -256,10 +212,7 @@
 
 .method public addText(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "data"    # Ljava/lang/String;
 
-    .line 283
     :try_start_0
     iget-object v0, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
@@ -273,25 +226,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 291
     nop
 
-    .line 292
     return-void
 
-    .line 284
     :catch_0
     move-exception v0
 
-    .line 285
-    .local v0, "e":Landroid/os/RemoteException;
     instance-of v1, v0, Landroid/os/TransactionTooLargeException;
 
     if-eqz v1, :cond_0
 
     iget-object v1, p0, Landroid/os/DropBoxManager;->mContext:Landroid/content/Context;
 
-    .line 286
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
@@ -302,17 +249,14 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 287
     const-string v1, "DropBoxManager"
 
     const-string v2, "App sent too much data, so it was ignored"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 288
     return-void
 
-    .line 290
     :cond_0
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -323,10 +267,7 @@
 
 .method public getNextEntry(Ljava/lang/String;J)Landroid/os/DropBoxManager$Entry;
     .locals 2
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msec"    # J
 
-    .line 363
     :try_start_0
     iget-object v0, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
@@ -338,12 +279,9 @@
 
     return-object v0
 
-    .line 364
     :catch_0
     move-exception v0
 
-    .line 365
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -353,9 +291,7 @@
 
 .method public isTagEnabled(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 346
     :try_start_0
     iget-object v0, p0, Landroid/os/DropBoxManager;->mService:Lcom/android/internal/os/IDropBoxManagerService;
 
@@ -367,12 +303,9 @@
 
     return v0
 
-    .line 347
     :catch_0
     move-exception v0
 
-    .line 348
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1

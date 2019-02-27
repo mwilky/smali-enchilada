@@ -29,14 +29,12 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 53
     iput-object p1, p0, Lcom/android/internal/util/ConcurrentUtils$1;->val$poolName:Ljava/lang/String;
 
     iput p2, p0, Lcom/android/internal/util/ConcurrentUtils$1;->val$linuxThreadPriority:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
     new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 p2, 0x0
@@ -52,9 +50,7 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
-    .param p1, "r"    # Ljava/lang/Runnable;
 
-    .line 58
     new-instance v0, Lcom/android/internal/util/ConcurrentUtils$1$1;
 
     new-instance v1, Ljava/lang/StringBuilder;

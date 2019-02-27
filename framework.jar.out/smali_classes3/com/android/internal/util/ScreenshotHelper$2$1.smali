@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/util/ScreenshotHelper$2;Landroid/os/Looper;Landroid/content/ServiceConnection;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/internal/util/ScreenshotHelper$2;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 81
     iput-object p1, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
     iput-object p3, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->val$myConn:Landroid/content/ServiceConnection;
@@ -40,9 +37,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 84
     iget-object v0, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
     iget-object v0, v0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
@@ -53,7 +48,6 @@
 
     monitor-enter v0
 
-    .line 85
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
@@ -67,7 +61,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 86
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
     iget-object v1, v1, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
@@ -86,7 +79,6 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 87
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
     iget-object v1, v1, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
@@ -95,7 +87,6 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/util/ScreenshotHelper;->access$102(Lcom/android/internal/util/ScreenshotHelper;Landroid/content/ServiceConnection;)Landroid/content/ServiceConnection;
 
-    .line 88
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2$1;->this$1:Lcom/android/internal/util/ScreenshotHelper$2;
 
     iget-object v1, v1, Lcom/android/internal/util/ScreenshotHelper$2;->val$handler:Landroid/os/Handler;
@@ -106,14 +97,11 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 90
     :cond_0
     monitor-exit v0
 
-    .line 91
     return-void
 
-    .line 90
     :catchall_0
     move-exception v1
 

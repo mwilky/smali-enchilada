@@ -37,35 +37,25 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Landroid/net/Uri$Part;Landroid/net/Uri$PathPart;Landroid/net/Uri$Part;Landroid/net/Uri$Part;)V
     .locals 1
-    .param p1, "scheme"    # Ljava/lang/String;
-    .param p2, "authority"    # Landroid/net/Uri$Part;
-    .param p3, "path"    # Landroid/net/Uri$PathPart;
-    .param p4, "query"    # Landroid/net/Uri$Part;
-    .param p5, "fragment"    # Landroid/net/Uri$Part;
 
-    .line 1173
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/net/Uri$AbstractHierarchicalUri;-><init>(Landroid/net/Uri$1;)V
 
-    .line 1293
     invoke-static {}, Landroid/net/Uri;->access$300()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/Uri$HierarchicalUri;->uriString:Ljava/lang/String;
 
-    .line 1174
     iput-object p1, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
-    .line 1175
     invoke-static {p2}, Landroid/net/Uri$Part;->nonNull(Landroid/net/Uri$Part;)Landroid/net/Uri$Part;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
-    .line 1176
     if-nez p3, :cond_0
 
     sget-object v0, Landroid/net/Uri$PathPart;->NULL:Landroid/net/Uri$PathPart;
@@ -78,34 +68,24 @@
     :goto_0
     iput-object v0, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
-    .line 1177
     invoke-static {p4}, Landroid/net/Uri$Part;->nonNull(Landroid/net/Uri$Part;)Landroid/net/Uri$Part;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
-    .line 1178
     invoke-static {p5}, Landroid/net/Uri$Part;->nonNull(Landroid/net/Uri$Part;)Landroid/net/Uri$Part;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
-    .line 1179
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroid/net/Uri$Part;Landroid/net/Uri$PathPart;Landroid/net/Uri$Part;Landroid/net/Uri$Part;Landroid/net/Uri$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # Landroid/net/Uri$Part;
-    .param p3, "x2"    # Landroid/net/Uri$PathPart;
-    .param p4, "x3"    # Landroid/net/Uri$Part;
-    .param p5, "x4"    # Landroid/net/Uri$Part;
-    .param p6, "x5"    # Landroid/net/Uri$1;
 
-    .line 1161
     invoke-direct/range {p0 .. p5}, Landroid/net/Uri$HierarchicalUri;-><init>(Ljava/lang/String;Landroid/net/Uri$Part;Landroid/net/Uri$PathPart;Landroid/net/Uri$Part;Landroid/net/Uri$Part;)V
 
     return-void
@@ -113,27 +93,21 @@
 
 .method private appendSspTo(Ljava/lang/StringBuilder;)V
     .locals 3
-    .param p1, "builder"    # Ljava/lang/StringBuilder;
 
-    .line 1241
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getEncoded()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1242
-    .local v0, "encodedAuthority":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 1244
     const-string v1, "//"
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1247
     :cond_0
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
@@ -141,14 +115,10 @@
 
     move-result-object v1
 
-    .line 1248
-    .local v1, "encodedPath":Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 1249
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1252
     :cond_1
     iget-object v2, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
@@ -158,7 +128,6 @@
 
     if-nez v2, :cond_2
 
-    .line 1253
     const/16 v2, 0x3f
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -171,7 +140,6 @@
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1255
     :cond_2
     return-void
 .end method
@@ -179,12 +147,10 @@
 .method private getSsp()Landroid/net/Uri$Part;
     .locals 1
 
-    .line 1219
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->ssp:Landroid/net/Uri$Part;
 
     if-nez v0, :cond_0
 
-    .line 1220
     invoke-direct {p0}, Landroid/net/Uri$HierarchicalUri;->makeSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v0
@@ -200,7 +166,6 @@
     :cond_0
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->ssp:Landroid/net/Uri$Part;
 
-    .line 1219
     :goto_0
     return-object v0
 .end method
@@ -208,16 +173,12 @@
 .method private makeSchemeSpecificPart()Ljava/lang/String;
     .locals 2
 
-    .line 1235
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1236
-    .local v0, "builder":Ljava/lang/StringBuilder;
     invoke-direct {p0, v0}, Landroid/net/Uri$HierarchicalUri;->appendSspTo(Ljava/lang/StringBuilder;)V
 
-    .line 1237
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -228,18 +189,14 @@
 .method private makeUriString()Ljava/lang/String;
     .locals 2
 
-    .line 1304
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1306
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 1307
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -248,11 +205,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1310
     :cond_0
     invoke-direct {p0, v0}, Landroid/net/Uri$HierarchicalUri;->appendSspTo(Ljava/lang/StringBuilder;)V
 
-    .line 1312
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
     invoke-virtual {v1}, Landroid/net/Uri$Part;->isEmpty()Z
@@ -261,7 +216,6 @@
 
     if-nez v1, :cond_1
 
-    .line 1313
     const/16 v1, 0x23
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -274,7 +228,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1316
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -285,32 +238,25 @@
 
 .method static readFrom(Landroid/os/Parcel;)Landroid/net/Uri;
     .locals 7
-    .param p0, "parcel"    # Landroid/os/Parcel;
 
-    .line 1182
     new-instance v6, Landroid/net/Uri$HierarchicalUri;
 
-    .line 1183
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1184
     invoke-static {p0}, Landroid/net/Uri$Part;->readFrom(Landroid/os/Parcel;)Landroid/net/Uri$Part;
 
     move-result-object v2
 
-    .line 1185
     invoke-static {p0}, Landroid/net/Uri$PathPart;->readFrom(Landroid/os/Parcel;)Landroid/net/Uri$PathPart;
 
     move-result-object v3
 
-    .line 1186
     invoke-static {p0}, Landroid/net/Uri$Part;->readFrom(Landroid/os/Parcel;)Landroid/net/Uri$Part;
 
     move-result-object v4
 
-    .line 1187
     invoke-static {p0}, Landroid/net/Uri$Part;->readFrom(Landroid/os/Parcel;)Landroid/net/Uri$Part;
 
     move-result-object v5
@@ -319,7 +265,6 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/net/Uri$HierarchicalUri;-><init>(Ljava/lang/String;Landroid/net/Uri$Part;Landroid/net/Uri$PathPart;Landroid/net/Uri$Part;Landroid/net/Uri$Part;)V
 
-    .line 1182
     return-object v6
 .end method
 
@@ -328,54 +273,46 @@
 .method public buildUpon()Landroid/net/Uri$Builder;
     .locals 2
 
-    .line 1320
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
 
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
-    .line 1321
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
-    .line 1322
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->authority(Landroid/net/Uri$Part;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
-    .line 1323
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Landroid/net/Uri$PathPart;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
-    .line 1324
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->query(Landroid/net/Uri$Part;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
-    .line 1325
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->fragment(Landroid/net/Uri$Part;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 1320
     return-object v0
 .end method
 
 .method public describeContents()I
     .locals 1
 
-    .line 1192
     const/4 v0, 0x0
 
     return v0
@@ -384,7 +321,6 @@
 .method public getAuthority()Ljava/lang/String;
     .locals 1
 
-    .line 1258
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getDecoded()Ljava/lang/String;
@@ -397,7 +333,6 @@
 .method public getEncodedAuthority()Ljava/lang/String;
     .locals 1
 
-    .line 1262
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getEncoded()Ljava/lang/String;
@@ -410,7 +345,6 @@
 .method public getEncodedFragment()Ljava/lang/String;
     .locals 1
 
-    .line 1286
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getEncoded()Ljava/lang/String;
@@ -423,7 +357,6 @@
 .method public getEncodedPath()Ljava/lang/String;
     .locals 1
 
-    .line 1266
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
     invoke-virtual {v0}, Landroid/net/Uri$PathPart;->getEncoded()Ljava/lang/String;
@@ -436,7 +369,6 @@
 .method public getEncodedQuery()Ljava/lang/String;
     .locals 1
 
-    .line 1278
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getEncoded()Ljava/lang/String;
@@ -449,7 +381,6 @@
 .method public getEncodedSchemeSpecificPart()Ljava/lang/String;
     .locals 1
 
-    .line 1224
     invoke-direct {p0}, Landroid/net/Uri$HierarchicalUri;->getSsp()Landroid/net/Uri$Part;
 
     move-result-object v0
@@ -464,7 +395,6 @@
 .method public getFragment()Ljava/lang/String;
     .locals 1
 
-    .line 1282
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getDecoded()Ljava/lang/String;
@@ -477,7 +407,6 @@
 .method public getPath()Ljava/lang/String;
     .locals 1
 
-    .line 1270
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
     invoke-virtual {v0}, Landroid/net/Uri$PathPart;->getDecoded()Ljava/lang/String;
@@ -498,7 +427,6 @@
         }
     .end annotation
 
-    .line 1290
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
     invoke-virtual {v0}, Landroid/net/Uri$PathPart;->getPathSegments()Landroid/net/Uri$PathSegments;
@@ -511,7 +439,6 @@
 .method public getQuery()Ljava/lang/String;
     .locals 1
 
-    .line 1274
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
     invoke-virtual {v0}, Landroid/net/Uri$Part;->getDecoded()Ljava/lang/String;
@@ -524,7 +451,6 @@
 .method public getScheme()Ljava/lang/String;
     .locals 1
 
-    .line 1213
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
     return-object v0
@@ -533,7 +459,6 @@
 .method public getSchemeSpecificPart()Ljava/lang/String;
     .locals 1
 
-    .line 1228
     invoke-direct {p0}, Landroid/net/Uri$HierarchicalUri;->getSsp()Landroid/net/Uri$Part;
 
     move-result-object v0
@@ -548,7 +473,6 @@
 .method public isHierarchical()Z
     .locals 1
 
-    .line 1205
     const/4 v0, 0x1
 
     return v0
@@ -557,7 +481,6 @@
 .method public isRelative()Z
     .locals 1
 
-    .line 1209
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -576,7 +499,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1298
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->uriString:Ljava/lang/String;
 
     invoke-static {}, Landroid/net/Uri;->access$300()Ljava/lang/String;
@@ -592,8 +514,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1299
-    .local v0, "cached":Z
     :goto_0
     if-eqz v0, :cond_1
 
@@ -601,7 +521,6 @@
 
     goto :goto_1
 
-    .line 1300
     :cond_1
     invoke-direct {p0}, Landroid/net/Uri$HierarchicalUri;->makeUriString()Ljava/lang/String;
 
@@ -609,46 +528,36 @@
 
     iput-object v1, p0, Landroid/net/Uri$HierarchicalUri;->uriString:Ljava/lang/String;
 
-    .line 1299
     :goto_1
     return-object v1
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 1196
     const/4 v0, 0x3
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1197
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->scheme:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1198
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->authority:Landroid/net/Uri$Part;
 
     invoke-virtual {v0, p1}, Landroid/net/Uri$Part;->writeTo(Landroid/os/Parcel;)V
 
-    .line 1199
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->path:Landroid/net/Uri$PathPart;
 
     invoke-virtual {v0, p1}, Landroid/net/Uri$PathPart;->writeTo(Landroid/os/Parcel;)V
 
-    .line 1200
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->query:Landroid/net/Uri$Part;
 
     invoke-virtual {v0, p1}, Landroid/net/Uri$Part;->writeTo(Landroid/os/Parcel;)V
 
-    .line 1201
     iget-object v0, p0, Landroid/net/Uri$HierarchicalUri;->fragment:Landroid/net/Uri$Part;
 
     invoke-virtual {v0, p1}, Landroid/net/Uri$Part;->writeTo(Landroid/os/Parcel;)V
 
-    .line 1202
     return-void
 .end method

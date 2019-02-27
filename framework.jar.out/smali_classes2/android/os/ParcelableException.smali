@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 79
     new-instance v0, Landroid/os/ParcelableException$1;
 
     invoke-direct {v0}, Landroid/os/ParcelableException$1;-><init>()V
@@ -34,32 +33,23 @@
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 39
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 40
     return-void
 .end method
 
 .method public static readFromParcel(Landroid/os/Parcel;)Ljava/lang/Throwable;
     .locals 7
-    .param p0, "in"    # Landroid/os/Parcel;
 
-    .line 51
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 52
-    .local v0, "name":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 54
-    .local v1, "msg":Ljava/lang/String;
     :try_start_0
     const-class v2, Landroid/os/Parcelable;
 
@@ -73,8 +63,6 @@
 
     move-result-object v2
 
-    .line 55
-    .local v2, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v4, Ljava/lang/Throwable;
 
     invoke-virtual {v4, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -83,7 +71,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 56
     new-array v4, v3, [Ljava/lang/Class;
 
     const-class v5, Ljava/lang/String;
@@ -110,16 +97,12 @@
 
     return-object v3
 
-    .line 59
-    .end local v2    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_0
     goto :goto_0
 
-    .line 58
     :catch_0
     move-exception v2
 
-    .line 60
     :goto_0
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -146,10 +129,7 @@
 
 .method public static writeToParcel(Landroid/os/Parcel;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "out"    # Landroid/os/Parcel;
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 65
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -160,14 +140,12 @@
 
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 66
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 67
     return-void
 .end method
 
@@ -176,7 +154,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 71
     const/4 v0, 0x0
 
     return v0
@@ -200,8 +177,6 @@
         }
     .end annotation
 
-    .line 44
-    .local p1, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p0}, Landroid/os/ParcelableException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -216,10 +191,8 @@
 
     if-nez v0, :cond_0
 
-    .line 47
     return-void
 
-    .line 45
     :cond_0
     invoke-virtual {p0}, Landroid/os/ParcelableException;->getCause()Ljava/lang/Throwable;
 
@@ -230,16 +203,12 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 76
     invoke-virtual {p0}, Landroid/os/ParcelableException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
     invoke-static {p1, v0}, Landroid/os/ParcelableException;->writeToParcel(Landroid/os/Parcel;Ljava/lang/Throwable;)V
 
-    .line 77
     return-void
 .end method

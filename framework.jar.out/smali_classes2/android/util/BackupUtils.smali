@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,14 +28,12 @@
 
 .method public static readString(Ljava/io/DataInputStream;)Ljava/lang/String;
     .locals 2
-    .param p0, "in"    # Ljava/io/DataInputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 43
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readByte()B
 
     move-result v0
@@ -60,34 +57,27 @@
 
 .method public static writeString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
     .locals 1
-    .param p0, "out"    # Ljava/io/DataOutputStream;
-    .param p1, "val"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 47
     if-eqz p1, :cond_0
 
-    .line 48
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    .line 49
     invoke-virtual {p0, p1}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 51
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    .line 53
     :goto_0
     return-void
 .end method

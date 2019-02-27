@@ -17,10 +17,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "propertyName"    # Ljava/lang/String;
-    .param p2, "eventCode"    # I
 
-    .line 208
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -47,6 +44,5 @@
 
     invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    .line 209
     return-void
 .end method

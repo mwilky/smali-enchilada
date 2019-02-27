@@ -25,7 +25,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 3221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,9 +34,7 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 3227
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I

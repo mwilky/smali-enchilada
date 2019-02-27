@@ -34,51 +34,37 @@
 # direct methods
 .method private constructor <init>([BII)V
     .locals 1
-    .param p1, "buffer"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
 
-    .line 417
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 405
     const v0, 0x7fffffff
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
-    .line 409
     const/16 v0, 0x40
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionLimit:I
 
-    .line 412
     const/high16 v0, 0x4000000
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->sizeLimit:I
 
-    .line 418
     iput-object p1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
-    .line 419
     iput p2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferStart:I
 
-    .line 420
     add-int v0, p2, p3
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
-    .line 421
     iput p2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 422
     return-void
 .end method
 
 .method public static decodeZigZag32(I)I
     .locals 2
-    .param p0, "n"    # I
 
-    .line 378
     ushr-int/lit8 v0, p0, 0x1
 
     and-int/lit8 v1, p0, 0x1
@@ -92,9 +78,7 @@
 
 .method public static decodeZigZag64(J)J
     .locals 4
-    .param p0, "n"    # J
 
-    .line 392
     const/4 v0, 0x1
 
     ushr-long v0, p0, v0
@@ -112,9 +96,7 @@
 
 .method public static newInstance([B)Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;
     .locals 2
-    .param p0, "buf"    # [B
 
-    .line 52
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -128,11 +110,7 @@
 
 .method public static newInstance([BII)Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;
     .locals 1
-    .param p0, "buf"    # [B
-    .param p1, "off"    # I
-    .param p2, "len"    # I
 
-    .line 60
     new-instance v0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;-><init>([BII)V
@@ -143,7 +121,6 @@
 .method private recomputeBufferSizeAfterLimit()V
     .locals 3
 
-    .line 495
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSizeAfterLimit:I
@@ -152,23 +129,18 @@
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
-    .line 496
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
-    .line 497
-    .local v0, "bufferEnd":I
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
     if-le v0, v1, :cond_0
 
-    .line 499
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
     sub-int v1, v0, v1
 
     iput v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSizeAfterLimit:I
 
-    .line 500
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSizeAfterLimit:I
@@ -179,13 +151,11 @@
 
     goto :goto_0
 
-    .line 502
     :cond_0
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSizeAfterLimit:I
 
-    .line 504
     :goto_0
     return-void
 .end method
@@ -194,22 +164,18 @@
 # virtual methods
 .method public checkLastTagWas(I)V
     .locals 1
-    .param p1, "value"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
         }
     .end annotation
 
-    .line 94
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->lastTag:I
 
     if-ne v0, p1, :cond_0
 
-    .line 97
     return-void
 
-    .line 95
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->invalidEndTag()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -221,7 +187,6 @@
 .method public getAbsolutePosition()I
     .locals 1
 
-    .line 549
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     return v0
@@ -230,7 +195,6 @@
 .method public getBuffer()[B
     .locals 1
 
-    .line 556
     iget-object v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
     return-object v0
@@ -239,24 +203,19 @@
 .method public getBytesUntilLimit()I
     .locals 2
 
-    .line 521
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
     const v1, 0x7fffffff
 
     if-ne v0, v1, :cond_0
 
-    .line 522
     const/4 v0, -0x1
 
     return v0
 
-    .line 525
     :cond_0
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 526
-    .local v0, "currentAbsolutePosition":I
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
     sub-int/2addr v1, v0
@@ -266,43 +225,32 @@
 
 .method public getData(II)[B
     .locals 4
-    .param p1, "offset"    # I
-    .param p2, "length"    # I
 
-    .line 567
     if-nez p2, :cond_0
 
-    .line 568
     sget-object v0, Lcom/android/framework/protobuf/nano/WireFormatNano;->EMPTY_BYTES:[B
 
     return-object v0
 
-    .line 570
     :cond_0
     new-array v0, p2, [B
 
-    .line 571
-    .local v0, "copy":[B
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferStart:I
 
     add-int/2addr v1, p1
 
-    .line 572
-    .local v1, "start":I
     iget-object v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
     const/4 v3, 0x0
 
     invoke-static {v2, v1, v0, v3, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 573
     return-object v0
 .end method
 
 .method public getPosition()I
     .locals 2
 
-    .line 542
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferStart:I
@@ -315,7 +263,6 @@
 .method public isAtEnd()Z
     .locals 2
 
-    .line 535
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
@@ -335,52 +282,38 @@
 
 .method public popLimit(I)V
     .locals 0
-    .param p1, "oldLimit"    # I
 
-    .line 512
     iput p1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
-    .line 513
     invoke-direct {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recomputeBufferSizeAfterLimit()V
 
-    .line 514
     return-void
 .end method
 
 .method public pushLimit(I)I
     .locals 2
-    .param p1, "byteLimit"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
         }
     .end annotation
 
-    .line 479
     if-ltz p1, :cond_1
 
-    .line 482
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr p1, v0
 
-    .line 483
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
-    .line 484
-    .local v0, "oldLimit":I
     if-gt p1, v0, :cond_0
 
-    .line 487
     iput p1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
-    .line 489
     invoke-direct {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recomputeBufferSizeAfterLimit()V
 
-    .line 491
     return v0
 
-    .line 485
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -388,8 +321,6 @@
 
     throw v1
 
-    .line 480
-    .end local v0    # "oldLimit":I
     :cond_1
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->negativeSize()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -406,7 +337,6 @@
         }
     .end annotation
 
-    .line 184
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
@@ -432,13 +362,10 @@
         }
     .end annotation
 
-    .line 231
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
 
-    .line 232
-    .local v0, "size":I
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -449,11 +376,8 @@
 
     if-lez v0, :cond_0
 
-    .line 235
     new-array v1, v0, [B
 
-    .line 236
-    .local v1, "result":[B
     iget-object v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
     iget v3, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -462,27 +386,21 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 237
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v2, v0
 
     iput v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 238
     return-object v1
 
-    .line 239
-    .end local v1    # "result":[B
     :cond_0
     if-nez v0, :cond_1
 
-    .line 240
     sget-object v1, Lcom/android/framework/protobuf/nano/WireFormatNano;->EMPTY_BYTES:[B
 
     return-object v1
 
-    .line 243
     :cond_1
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawBytes(I)[B
 
@@ -499,7 +417,6 @@
         }
     .end annotation
 
-    .line 149
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -519,7 +436,6 @@
         }
     .end annotation
 
-    .line 257
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
@@ -535,7 +451,6 @@
         }
     .end annotation
 
-    .line 179
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian32()I
 
     move-result v0
@@ -551,7 +466,6 @@
         }
     .end annotation
 
-    .line 174
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -567,7 +481,6 @@
         }
     .end annotation
 
-    .line 154
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian32()I
 
     move-result v0
@@ -581,53 +494,42 @@
 
 .method public readGroup(Lcom/android/framework/protobuf/nano/MessageNano;I)V
     .locals 2
-    .param p1, "msg"    # Lcom/android/framework/protobuf/nano/MessageNano;
-    .param p2, "fieldNumber"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 205
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionLimit:I
 
     if-ge v0, v1, :cond_0
 
-    .line 208
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
-    .line 209
     invoke-virtual {p1, p0}, Lcom/android/framework/protobuf/nano/MessageNano;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/framework/protobuf/nano/MessageNano;
 
-    .line 210
     const/4 v0, 0x4
 
-    .line 211
     invoke-static {p2, v0}, Lcom/android/framework/protobuf/nano/WireFormatNano;->makeTag(II)I
 
     move-result v0
 
-    .line 210
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->checkLastTagWas(I)V
 
-    .line 212
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
-    .line 213
     return-void
 
-    .line 206
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->recursionLimitExceeded()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -644,7 +546,6 @@
         }
     .end annotation
 
-    .line 169
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
@@ -660,7 +561,6 @@
         }
     .end annotation
 
-    .line 164
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint64()J
 
     move-result-wide v0
@@ -670,62 +570,48 @@
 
 .method public readMessage(Lcom/android/framework/protobuf/nano/MessageNano;)V
     .locals 3
-    .param p1, "msg"    # Lcom/android/framework/protobuf/nano/MessageNano;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 217
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
 
-    .line 218
-    .local v0, "length":I
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionLimit:I
 
     if-ge v1, v2, :cond_0
 
-    .line 221
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->pushLimit(I)I
 
     move-result v1
 
-    .line 222
-    .local v1, "oldLimit":I
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
-    .line 223
     invoke-virtual {p1, p0}, Lcom/android/framework/protobuf/nano/MessageNano;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/framework/protobuf/nano/MessageNano;
 
-    .line 224
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->checkLastTagWas(I)V
 
-    .line 225
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionDepth:I
 
-    .line 226
     invoke-virtual {p0, v1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->popLimit(I)V
 
-    .line 227
     return-void
 
-    .line 219
-    .end local v1    # "oldLimit":I
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->recursionLimitExceeded()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -736,17 +622,14 @@
 
 .method readPrimitiveField(I)Ljava/lang/Object;
     .locals 3
-    .param p1, "type"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 660
     packed-switch p1, :pswitch_data_0
 
-    .line 694
     :pswitch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -768,7 +651,6 @@
 
     throw v0
 
-    .line 692
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readSInt64()J
 
@@ -780,7 +662,6 @@
 
     return-object v0
 
-    .line 690
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readSInt32()I
 
@@ -792,7 +673,6 @@
 
     return-object v0
 
-    .line 688
     :pswitch_3
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readSFixed64()J
 
@@ -804,7 +684,6 @@
 
     return-object v0
 
-    .line 686
     :pswitch_4
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readSFixed32()I
 
@@ -816,7 +695,6 @@
 
     return-object v0
 
-    .line 684
     :pswitch_5
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readEnum()I
 
@@ -828,7 +706,6 @@
 
     return-object v0
 
-    .line 682
     :pswitch_6
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readUInt32()I
 
@@ -840,7 +717,6 @@
 
     return-object v0
 
-    .line 680
     :pswitch_7
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readBytes()[B
 
@@ -848,7 +724,6 @@
 
     return-object v0
 
-    .line 678
     :pswitch_8
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readString()Ljava/lang/String;
 
@@ -856,7 +731,6 @@
 
     return-object v0
 
-    .line 676
     :pswitch_9
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readBool()Z
 
@@ -868,7 +742,6 @@
 
     return-object v0
 
-    .line 674
     :pswitch_a
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readFixed32()I
 
@@ -880,7 +753,6 @@
 
     return-object v0
 
-    .line 672
     :pswitch_b
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readFixed64()J
 
@@ -892,7 +764,6 @@
 
     return-object v0
 
-    .line 670
     :pswitch_c
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -904,7 +775,6 @@
 
     return-object v0
 
-    .line 668
     :pswitch_d
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readUInt64()J
 
@@ -916,7 +786,6 @@
 
     return-object v0
 
-    .line 666
     :pswitch_e
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt64()J
 
@@ -928,7 +797,6 @@
 
     return-object v0
 
-    .line 664
     :pswitch_f
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readFloat()F
 
@@ -940,7 +808,6 @@
 
     return-object v0
 
-    .line 662
     :pswitch_10
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readDouble()D
 
@@ -983,14 +850,12 @@
         }
     .end annotation
 
-    .line 597
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     if-eq v0, v1, :cond_0
 
-    .line 600
     iget-object v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -1003,7 +868,6 @@
 
     return v0
 
-    .line 598
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1014,17 +878,14 @@
 
 .method public readRawBytes(I)[B
     .locals 4
-    .param p1, "size"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 610
     if-ltz p1, :cond_2
 
-    .line 614
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v0, p1
@@ -1033,7 +894,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 621
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -1042,11 +902,8 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 623
     new-array v0, p1, [B
 
-    .line 624
-    .local v0, "bytes":[B
     iget-object v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
 
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -1055,18 +912,14 @@
 
     invoke-static {v1, v2, v0, v3, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 625
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v1, p1
 
     iput v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 626
     return-object v0
 
-    .line 628
-    .end local v0    # "bytes":[B
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1074,7 +927,6 @@
 
     throw v0
 
-    .line 616
     :cond_1
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
@@ -1084,14 +936,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->skipRawBytes(I)V
 
-    .line 618
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 
-    .line 611
     :cond_2
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->negativeSize()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1108,31 +958,22 @@
         }
     .end annotation
 
-    .line 337
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v0
 
-    .line 338
-    .local v0, "b1":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v1
 
-    .line 339
-    .local v1, "b2":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
 
-    .line 340
-    .local v2, "b3":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v3
 
-    .line 341
-    .local v3, "b4":B
     and-int/lit16 v4, v0, 0xff
 
     and-int/lit16 v5, v1, 0xff
@@ -1164,55 +1005,38 @@
         }
     .end annotation
 
-    .line 349
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v0
 
-    .line 350
-    .local v0, "b1":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v1
 
-    .line 351
-    .local v1, "b2":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
 
-    .line 352
-    .local v2, "b3":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v3
 
-    .line 353
-    .local v3, "b4":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v4
 
-    .line 354
-    .local v4, "b5":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v5
 
-    .line 355
-    .local v5, "b6":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v6
 
-    .line 356
-    .local v6, "b7":B
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v7
 
-    .line 357
-    .local v7, "b8":B
     int-to-long v8, v0
 
     const-wide/16 v10, 0xff
@@ -1300,24 +1124,17 @@
         }
     .end annotation
 
-    .line 287
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v0
 
-    .line 288
-    .local v0, "tmp":B
     if-ltz v0, :cond_0
 
-    .line 289
     return v0
 
-    .line 291
     :cond_0
     and-int/lit8 v1, v0, 0x7f
 
-    .line 292
-    .local v1, "result":I
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
@@ -1326,14 +1143,12 @@
 
     if-ltz v2, :cond_1
 
-    .line 293
     shl-int/lit8 v2, v0, 0x7
 
     or-int/2addr v1, v2
 
     goto :goto_1
 
-    .line 295
     :cond_1
     and-int/lit8 v2, v0, 0x7f
 
@@ -1341,7 +1156,6 @@
 
     or-int/2addr v1, v2
 
-    .line 296
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
@@ -1350,14 +1164,12 @@
 
     if-ltz v2, :cond_2
 
-    .line 297
     shl-int/lit8 v2, v0, 0xe
 
     or-int/2addr v1, v2
 
     goto :goto_1
 
-    .line 299
     :cond_2
     and-int/lit8 v2, v0, 0x7f
 
@@ -1365,7 +1177,6 @@
 
     or-int/2addr v1, v2
 
-    .line 300
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
@@ -1374,14 +1185,12 @@
 
     if-ltz v2, :cond_3
 
-    .line 301
     shl-int/lit8 v2, v0, 0x15
 
     or-int/2addr v1, v2
 
     goto :goto_1
 
-    .line 303
     :cond_3
     and-int/lit8 v2, v0, 0x7f
 
@@ -1389,7 +1198,6 @@
 
     or-int/2addr v1, v2
 
-    .line 304
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v2
@@ -1400,36 +1208,28 @@
 
     or-int/2addr v1, v2
 
-    .line 305
     if-gez v0, :cond_6
 
-    .line 307
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     const/4 v3, 0x5
 
     if-ge v2, v3, :cond_5
 
-    .line 308
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v3
 
     if-ltz v3, :cond_4
 
-    .line 309
     return v1
 
-    .line 307
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 312
-    .end local v2    # "i":I
     :cond_5
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->malformedVarint()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1437,7 +1237,6 @@
 
     throw v2
 
-    .line 317
     :cond_6
     :goto_1
     return v1
@@ -1451,27 +1250,19 @@
         }
     .end annotation
 
-    .line 322
     const/4 v0, 0x0
 
-    .line 323
-    .local v0, "shift":I
     const-wide/16 v1, 0x0
 
-    .line 324
-    .local v1, "result":J
     :goto_0
     const/16 v3, 0x40
 
     if-ge v0, v3, :cond_1
 
-    .line 325
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawByte()B
 
     move-result v3
 
-    .line 326
-    .local v3, "b":B
     and-int/lit8 v4, v3, 0x7f
 
     int-to-long v4, v4
@@ -1480,23 +1271,17 @@
 
     or-long/2addr v1, v4
 
-    .line 327
     and-int/lit16 v4, v3, 0x80
 
     if-nez v4, :cond_0
 
-    .line 328
     return-wide v1
 
-    .line 330
     :cond_0
     add-int/lit8 v0, v0, 0x7
 
-    .line 331
-    .end local v3    # "b":B
     goto :goto_0
 
-    .line 332
     :cond_1
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->malformedVarint()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1513,7 +1298,6 @@
         }
     .end annotation
 
-    .line 262
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian32()I
 
     move-result v0
@@ -1529,7 +1313,6 @@
         }
     .end annotation
 
-    .line 267
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -1545,7 +1328,6 @@
         }
     .end annotation
 
-    .line 272
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
@@ -1565,7 +1347,6 @@
         }
     .end annotation
 
-    .line 277
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint64()J
 
     move-result-wide v0
@@ -1585,13 +1366,10 @@
         }
     .end annotation
 
-    .line 189
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
 
-    .line 190
-    .local v0, "size":I
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -1602,7 +1380,6 @@
 
     if-lez v0, :cond_0
 
-    .line 193
     new-instance v1, Ljava/lang/String;
 
     iget-object v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->buffer:[B
@@ -1613,19 +1390,14 @@
 
     invoke-direct {v1, v2, v3, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 194
-    .local v1, "result":Ljava/lang/String;
     iget v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v2, v0
 
     iput v2, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 195
     return-object v1
 
-    .line 198
-    .end local v1    # "result":Ljava/lang/String;
     :cond_0
     new-instance v1, Ljava/lang/String;
 
@@ -1648,22 +1420,18 @@
         }
     .end annotation
 
-    .line 71
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->isAtEnd()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 72
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->lastTag:I
 
-    .line 73
     return v0
 
-    .line 76
     :cond_0
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
@@ -1671,17 +1439,14 @@
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->lastTag:I
 
-    .line 77
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->lastTag:I
 
     if-eqz v0, :cond_1
 
-    .line 81
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->lastTag:I
 
     return v0
 
-    .line 79
     :cond_1
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->invalidTag()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -1698,7 +1463,6 @@
         }
     .end annotation
 
-    .line 249
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
     move-result v0
@@ -1714,7 +1478,6 @@
         }
     .end annotation
 
-    .line 159
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint64()J
 
     move-result-wide v0
@@ -1725,15 +1488,12 @@
 .method public resetSizeCounter()V
     .locals 0
 
-    .line 470
     return-void
 .end method
 
 .method public rewindToPosition(I)V
     .locals 4
-    .param p1, "position"    # I
 
-    .line 580
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferStart:I
@@ -1742,20 +1502,16 @@
 
     if-gt p1, v0, :cond_1
 
-    .line 584
     if-ltz p1, :cond_0
 
-    .line 587
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferStart:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 588
     return-void
 
-    .line 585
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1777,7 +1533,6 @@
 
     throw v0
 
-    .line 581
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1814,23 +1569,15 @@
 
 .method public setRecursionLimit(I)I
     .locals 3
-    .param p1, "limit"    # I
 
-    .line 432
     if-ltz p1, :cond_0
 
-    .line 436
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionLimit:I
 
-    .line 437
-    .local v0, "oldLimit":I
     iput p1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->recursionLimit:I
 
-    .line 438
     return v0
 
-    .line 433
-    .end local v0    # "oldLimit":I
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1855,23 +1602,15 @@
 
 .method public setSizeLimit(I)I
     .locals 3
-    .param p1, "limit"    # I
 
-    .line 457
     if-ltz p1, :cond_0
 
-    .line 461
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->sizeLimit:I
 
-    .line 462
-    .local v0, "oldLimit":I
     iput p1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->sizeLimit:I
 
-    .line 463
     return v0
 
-    .line 458
-    .end local v0    # "oldLimit":I
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1896,14 +1635,12 @@
 
 .method public skipField(I)Z
     .locals 3
-    .param p1, "tag"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 106
     invoke-static {p1}, Lcom/android/framework/protobuf/nano/WireFormatNano;->getTagWireType(I)I
 
     move-result v0
@@ -1912,34 +1649,27 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 128
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->invalidWireType()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 
-    .line 125
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian32()I
 
-    .line 126
     return v1
 
-    .line 123
     :pswitch_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 117
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->skipMessage()V
 
-    .line 118
     nop
 
-    .line 119
     invoke-static {p1}, Lcom/android/framework/protobuf/nano/WireFormatNano;->getTagFieldNumber(I)I
 
     move-result v0
@@ -1950,13 +1680,10 @@
 
     move-result v0
 
-    .line 118
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->checkLastTagWas(I)V
 
-    .line 121
     return v1
 
-    .line 114
     :pswitch_3
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawVarint32()I
 
@@ -1964,21 +1691,16 @@
 
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->skipRawBytes(I)V
 
-    .line 115
     return v1
 
-    .line 111
     :pswitch_4
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readRawLittleEndian64()J
 
-    .line 112
     return v1
 
-    .line 108
     :pswitch_5
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
-    .line 109
     return v1
 
     :pswitch_data_0
@@ -2000,14 +1722,11 @@
         }
     .end annotation
 
-    .line 138
     :goto_0
     invoke-virtual {p0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readTag()I
 
     move-result v0
 
-    .line 139
-    .local v0, "tag":I
     if-eqz v0, :cond_1
 
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->skipField(I)Z
@@ -2018,13 +1737,9 @@
 
     goto :goto_1
 
-    .line 142
-    .end local v0    # "tag":I
     :cond_0
     goto :goto_0
 
-    .line 140
-    .restart local v0    # "tag":I
     :cond_1
     :goto_1
     return-void
@@ -2032,17 +1747,14 @@
 
 .method public skipRawBytes(I)V
     .locals 2
-    .param p1, "size"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 639
     if-ltz p1, :cond_2
 
-    .line 643
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v0, p1
@@ -2051,7 +1763,6 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 650
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferSize:I
 
     iget v1, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
@@ -2060,17 +1771,14 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 652
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->bufferPos:I
 
-    .line 656
     return-void
 
-    .line 654
     :cond_0
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
@@ -2078,7 +1786,6 @@
 
     throw v0
 
-    .line 645
     :cond_1
     iget v0, p0, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->currentLimit:I
 
@@ -2088,14 +1795,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->skipRawBytes(I)V
 
-    .line 647
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 
-    .line 640
     :cond_2
     invoke-static {}, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;->negativeSize()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 

@@ -26,30 +26,22 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1102
     const-string v0, "android.type.time"
 
     invoke-direct {p0, v0}, Landroid/text/style/TtsSpan$SemioticClassBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1103
     return-void
 .end method
 
 .method public constructor <init>(II)V
     .locals 0
-    .param p1, "hours"    # I
-    .param p2, "minutes"    # I
 
-    .line 1110
     invoke-direct {p0}, Landroid/text/style/TtsSpan$TimeBuilder;-><init>()V
 
-    .line 1111
     invoke-virtual {p0, p1}, Landroid/text/style/TtsSpan$TimeBuilder;->setHours(I)Landroid/text/style/TtsSpan$TimeBuilder;
 
-    .line 1112
     invoke-virtual {p0, p2}, Landroid/text/style/TtsSpan$TimeBuilder;->setMinutes(I)Landroid/text/style/TtsSpan$TimeBuilder;
 
-    .line 1113
     return-void
 .end method
 
@@ -57,9 +49,7 @@
 # virtual methods
 .method public setHours(I)Landroid/text/style/TtsSpan$TimeBuilder;
     .locals 1
-    .param p1, "hours"    # I
 
-    .line 1122
     const-string v0, "android.arg.hours"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$TimeBuilder;->setIntArgument(Ljava/lang/String;I)Landroid/text/style/TtsSpan$Builder;
@@ -73,9 +63,7 @@
 
 .method public setMinutes(I)Landroid/text/style/TtsSpan$TimeBuilder;
     .locals 1
-    .param p1, "minutes"    # I
 
-    .line 1133
     const-string v0, "android.arg.minutes"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$TimeBuilder;->setIntArgument(Ljava/lang/String;I)Landroid/text/style/TtsSpan$Builder;

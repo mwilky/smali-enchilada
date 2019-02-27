@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/radio/RadioManager;Ljava/util/concurrent/Executor;Landroid/hardware/radio/Announcement$OnListUpdatedListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/radio/RadioManager;
 
-    .line 1805
     iput-object p1, p0, Landroid/hardware/radio/RadioManager$1;->this$0:Landroid/hardware/radio/RadioManager;
 
     iput-object p2, p0, Landroid/hardware/radio/RadioManager$1;->val$executor:Ljava/util/concurrent/Executor;
@@ -41,10 +39,7 @@
 
 .method static synthetic lambda$onListUpdated$0(Landroid/hardware/radio/Announcement$OnListUpdatedListener;Ljava/util/List;)V
     .locals 0
-    .param p0, "listener"    # Landroid/hardware/radio/Announcement$OnListUpdatedListener;
-    .param p1, "activeAnnouncements"    # Ljava/util/List;
 
-    .line 1807
     invoke-interface {p0, p1}, Landroid/hardware/radio/Announcement$OnListUpdatedListener;->onListUpdated(Ljava/util/Collection;)V
 
     return-void
@@ -63,8 +58,6 @@
         }
     .end annotation
 
-    .line 1807
-    .local p1, "activeAnnouncements":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/radio/Announcement;>;"
     iget-object v0, p0, Landroid/hardware/radio/RadioManager$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/radio/RadioManager$1;->val$listener:Landroid/hardware/radio/Announcement$OnListUpdatedListener;
@@ -75,6 +68,5 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 1808
     return-void
 .end method

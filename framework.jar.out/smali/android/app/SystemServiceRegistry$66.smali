@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 762
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,18 +35,14 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/companion/CompanionDeviceManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 766
     const/4 v0, 0x0
 
-    .line 768
-    .local v0, "service":Landroid/companion/ICompanionDeviceManager;
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -60,20 +55,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 770
     const-string v1, "companiondevice"
 
-    .line 771
     invoke-static {v1}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
 
-    .line 770
     invoke-static {v1}, Landroid/companion/ICompanionDeviceManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/companion/ICompanionDeviceManager;
 
     move-result-object v0
 
-    .line 773
     :cond_0
     new-instance v1, Landroid/companion/CompanionDeviceManager;
 
@@ -94,7 +85,6 @@
         }
     .end annotation
 
-    .line 762
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$66;->createService(Landroid/app/ContextImpl;)Landroid/companion/CompanionDeviceManager;
 
     move-result-object p1

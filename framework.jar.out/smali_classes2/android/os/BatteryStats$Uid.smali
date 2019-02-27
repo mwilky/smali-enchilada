@@ -61,7 +61,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 805
     const-string v0, "Top"
 
     const-string v1, "Fg Service"
@@ -82,7 +81,6 @@
 
     sput-object v0, Landroid/os/BatteryStats$Uid;->PROCESS_STATE_NAMES:[Ljava/lang/String;
 
-    .line 812
     const-string v1, "T"
 
     const-string v2, "FS"
@@ -103,7 +101,6 @@
 
     sput-object v0, Landroid/os/BatteryStats$Uid;->UID_PROCESS_TYPES:[Ljava/lang/String;
 
-    .line 826
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -112,7 +109,6 @@
 
     sput-object v0, Landroid/os/BatteryStats$Uid;->CRITICAL_PROC_STATES:[I
 
-    .line 842
     const-string/jumbo v0, "other"
 
     const-string v1, "button"
@@ -142,7 +138,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 607
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/pm/RegisteredServicesCache;Landroid/content/pm/RegisteredServicesCacheListener;Ljava/lang/Object;IZ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/pm/RegisteredServicesCache;
 
-    .line 290
-    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$4;, "Landroid/content/pm/RegisteredServicesCache$4;"
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$4;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     iput-object p2, p0, Landroid/content/pm/RegisteredServicesCache$4;->val$listener2:Landroid/content/pm/RegisteredServicesCacheListener;
@@ -56,8 +53,6 @@
 .method public run()V
     .locals 4
 
-    .line 292
-    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$4;, "Landroid/content/pm/RegisteredServicesCache$4;"
     iget-object v0, p0, Landroid/content/pm/RegisteredServicesCache$4;->val$listener2:Landroid/content/pm/RegisteredServicesCacheListener;
 
     iget-object v1, p0, Landroid/content/pm/RegisteredServicesCache$4;->val$type:Ljava/lang/Object;
@@ -68,6 +63,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/pm/RegisteredServicesCacheListener;->onServiceChanged(Ljava/lang/Object;IZ)V
 
-    .line 293
     return-void
 .end method

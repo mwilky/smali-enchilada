@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/dreams/DreamService$DreamServiceWrapper;Landroid/os/IBinder;ZLandroid/os/IRemoteCallback;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
-    .line 1171
     iput-object p1, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$1;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iput-object p2, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$1;->val$windowToken:Landroid/os/IBinder;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 1174
     iget-object v0, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$1;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iget-object v0, v0, Landroid/service/dreams/DreamService$DreamServiceWrapper;->this$0:Landroid/service/dreams/DreamService;
@@ -64,6 +61,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/service/dreams/DreamService;->access$600(Landroid/service/dreams/DreamService;Landroid/os/IBinder;ZLandroid/os/IRemoteCallback;)V
 
-    .line 1175
     return-void
 .end method

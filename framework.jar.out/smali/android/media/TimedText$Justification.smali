@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
-    .param p1, "horizontal"    # I
-    .param p2, "vertical"    # I
 
-    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
     iput p1, p0, Landroid/media/TimedText$Justification;->horizontalJustification:I
 
-    .line 162
     iput p2, p0, Landroid/media/TimedText$Justification;->verticalJustification:I
 
-    .line 163
     return-void
 .end method

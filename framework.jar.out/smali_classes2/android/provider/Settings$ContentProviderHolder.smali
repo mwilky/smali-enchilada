@@ -33,22 +33,17 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 1965
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1958
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/provider/Settings$ContentProviderHolder;->mLock:Ljava/lang/Object;
 
-    .line 1966
     iput-object p1, p0, Landroid/provider/Settings$ContentProviderHolder;->mUri:Landroid/net/Uri;
 
-    .line 1967
     return-void
 .end method
 
@@ -57,24 +52,19 @@
 .method public clearProviderForTest()V
     .locals 2
 
-    .line 1980
     iget-object v0, p0, Landroid/provider/Settings$ContentProviderHolder;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1981
     const/4 v1, 0x0
 
     :try_start_0
     iput-object v1, p0, Landroid/provider/Settings$ContentProviderHolder;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1982
     monitor-exit v0
 
-    .line 1983
     return-void
 
-    .line 1982
     :catchall_0
     move-exception v1
 
@@ -87,23 +77,18 @@
 
 .method public getProvider(Landroid/content/ContentResolver;)Landroid/content/IContentProvider;
     .locals 2
-    .param p1, "contentResolver"    # Landroid/content/ContentResolver;
 
-    .line 1970
     iget-object v0, p0, Landroid/provider/Settings$ContentProviderHolder;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1971
     :try_start_0
     iget-object v1, p0, Landroid/provider/Settings$ContentProviderHolder;->mContentProvider:Landroid/content/IContentProvider;
 
     if-nez v1, :cond_0
 
-    .line 1972
     iget-object v1, p0, Landroid/provider/Settings$ContentProviderHolder;->mUri:Landroid/net/Uri;
 
-    .line 1973
     invoke-virtual {v1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object v1
@@ -114,7 +99,6 @@
 
     iput-object v1, p0, Landroid/provider/Settings$ContentProviderHolder;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1975
     :cond_0
     iget-object v1, p0, Landroid/provider/Settings$ContentProviderHolder;->mContentProvider:Landroid/content/IContentProvider;
 
@@ -122,7 +106,6 @@
 
     return-object v1
 
-    .line 1976
     :catchall_0
     move-exception v1
 

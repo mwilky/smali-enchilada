@@ -53,17 +53,14 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 354
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/textclassifier/TextClassification$Builder;->mActions:Ljava/util/List;
 
-    .line 355
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
@@ -77,9 +74,7 @@
 # virtual methods
 .method public addAction(Landroid/app/RemoteAction;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 1
-    .param p1, "action"    # Landroid/app/RemoteAction;
 
-    .line 396
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
@@ -92,19 +87,16 @@
     :goto_0
     invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 397
     iget-object v0, p0, Landroid/view/textclassifier/TextClassification$Builder;->mActions:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 398
     return-object p0
 .end method
 
 .method public build()Landroid/view/textclassifier/TextClassification;
     .locals 11
 
-    .line 478
     new-instance v10, Landroid/view/textclassifier/TextClassification;
 
     iget-object v1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mText:Ljava/lang/String;
@@ -134,10 +126,7 @@
 
 .method public setEntityType(Ljava/lang/String;F)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 2
-    .param p1, "type"    # Ljava/lang/String;
-    .param p2, "confidenceScore"    # F
 
-    .line 385
     iget-object v0, p0, Landroid/view/textclassifier/TextClassification$Builder;->mEntityConfidence:Ljava/util/Map;
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -146,80 +135,61 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 386
     return-object p0
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 413
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mLegacyIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 414
     return-object p0
 .end method
 
 .method public setId(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "id"    # Ljava/lang/String;
 
-    .line 469
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mId:Ljava/lang/String;
 
-    .line 470
     return-object p0
 .end method
 
 .method public setIntent(Landroid/content/Intent;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "intent"    # Landroid/content/Intent;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 444
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mLegacyIntent:Landroid/content/Intent;
 
-    .line 445
     return-object p0
 .end method
 
 .method public setLabel(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "label"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 429
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mLegacyLabel:Ljava/lang/String;
 
-    .line 430
     return-object p0
 .end method
 
 .method public setOnClickListener(Landroid/view/View$OnClickListener;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "onClickListener"    # Landroid/view/View$OnClickListener;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 460
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mLegacyOnClickListener:Landroid/view/View$OnClickListener;
 
-    .line 461
     return-object p0
 .end method
 
 .method public setText(Ljava/lang/String;)Landroid/view/textclassifier/TextClassification$Builder;
     .locals 0
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 368
     iput-object p1, p0, Landroid/view/textclassifier/TextClassification$Builder;->mText:Ljava/lang/String;
 
-    .line 369
     return-object p0
 .end method

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 811
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,14 +35,12 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/hardware/fingerprint/FingerprintManager;
     .locals 4
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 815
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
@@ -54,18 +51,14 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 816
     const-string v0, "fingerprint"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .local v0, "binder":Landroid/os/IBinder;
     goto :goto_0
 
-    .line 818
-    .end local v0    # "binder":Landroid/os/IBinder;
     :cond_0
     const-string v0, "fingerprint"
 
@@ -73,15 +66,11 @@
 
     move-result-object v0
 
-    .line 820
-    .restart local v0    # "binder":Landroid/os/IBinder;
     :goto_0
     invoke-static {v0}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/fingerprint/IFingerprintService;
 
     move-result-object v1
 
-    .line 821
-    .local v1, "service":Landroid/hardware/fingerprint/IFingerprintService;
     new-instance v2, Landroid/hardware/fingerprint/FingerprintManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -101,7 +90,6 @@
         }
     .end annotation
 
-    .line 811
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$71;->createService(Landroid/app/ContextImpl;)Landroid/hardware/fingerprint/FingerprintManager;
 
     move-result-object p1

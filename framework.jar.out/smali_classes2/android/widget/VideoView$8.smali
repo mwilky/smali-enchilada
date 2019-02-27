@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/VideoView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/VideoView;
 
-    .line 948
     iput-object p1, p0, Landroid/widget/VideoView$8;->this$0:Landroid/widget/VideoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onChanged(Landroid/media/SubtitleTrack$RenderingWidget;)V
     .locals 1
-    .param p1, "renderingWidget"    # Landroid/media/SubtitleTrack$RenderingWidget;
 
-    .line 951
     iget-object v0, p0, Landroid/widget/VideoView$8;->this$0:Landroid/widget/VideoView;
 
     invoke-virtual {v0}, Landroid/widget/VideoView;->invalidate()V
 
-    .line 952
     return-void
 .end method

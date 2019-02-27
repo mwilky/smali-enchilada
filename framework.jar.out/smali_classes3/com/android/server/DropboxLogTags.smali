@@ -11,7 +11,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,11 +18,7 @@
 
 .method public static writeDropboxFileCopy(Ljava/lang/String;ILjava/lang/String;)V
     .locals 3
-    .param p0, "filename"    # Ljava/lang/String;
-    .param p1, "size"    # I
-    .param p2, "tag"    # Ljava/lang/String;
 
-    .line 17
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -48,6 +43,5 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 18
     return-void
 .end method

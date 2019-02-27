@@ -63,11 +63,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/util/function/Supplier;Ljava/lang/CharSequence;IILandroid/os/LocaleList;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p3, "text"    # Ljava/lang/CharSequence;
-    .param p4, "selectionStart"    # I
-    .param p5, "selectionEnd"    # I
-    .param p6, "locales"    # Landroid/os/LocaleList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,11 +77,8 @@
         }
     .end annotation
 
-    .line 962
-    .local p2, "textClassifier":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<Landroid/view/textclassifier/TextClassifier;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 963
     move-object v0, p0
 
     move-object v1, p2
@@ -101,7 +93,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->init(Ljava/util/function/Supplier;Ljava/lang/CharSequence;IILandroid/os/LocaleList;)V
 
-    .line 964
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -110,14 +101,12 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mContext:Landroid/content/Context;
 
-    .line 965
     return-void
 .end method
 
 .method private isDarkLaunchEnabled()Z
     .locals 1
 
-    .line 1032
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/textclassifier/TextClassificationManager;->getSettings(Landroid/content/Context;)Landroid/view/textclassifier/TextClassificationConstants;
@@ -133,9 +122,7 @@
 
 .method private performClassification(Landroid/view/textclassifier/TextSelection;)Landroid/widget/SelectionActionModeHelper$SelectionResult;
     .locals 5
-    .param p1, "selection"    # Landroid/view/textclassifier/TextSelection;
 
-    .line 1036
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationText:Ljava/lang/CharSequence;
@@ -162,38 +149,31 @@
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationLocales:Landroid/os/LocaleList;
 
-    .line 1039
     invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1041
     :cond_0
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationText:Ljava/lang/CharSequence;
 
-    .line 1042
     iget v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
 
     iput v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationSelectionStart:I
 
-    .line 1043
     iget v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionEnd:I
 
     iput v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationSelectionEnd:I
 
-    .line 1044
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mDefaultLocales:Landroid/os/LocaleList;
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationLocales:Landroid/os/LocaleList;
 
-    .line 1046
     invoke-direct {p0}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->trimText()V
 
-    .line 1048
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -206,7 +186,6 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1049
     new-instance v0, Landroid/view/textclassifier/TextClassification$Request$Builder;
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimmedText:Ljava/lang/CharSequence;
@@ -219,18 +198,14 @@
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 1052
     invoke-virtual {v0, v1}, Landroid/view/textclassifier/TextClassification$Request$Builder;->setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextClassification$Request$Builder;
 
     move-result-object v0
 
-    .line 1053
     invoke-virtual {v0}, Landroid/view/textclassifier/TextClassification$Request$Builder;->build()Landroid/view/textclassifier/TextClassification$Request;
 
     move-result-object v0
 
-    .line 1054
-    .local v0, "request":Landroid/view/textclassifier/TextClassification$Request;
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTextClassifier:Ljava/util/function/Supplier;
 
     invoke-interface {v1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
@@ -243,12 +218,8 @@
 
     move-result-object v0
 
-    .line 1055
-    .local v0, "classification":Landroid/view/textclassifier/TextClassification;
     goto :goto_0
 
-    .line 1057
-    .end local v0    # "classification":Landroid/view/textclassifier/TextClassification;
     :cond_1
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTextClassifier:Ljava/util/function/Supplier;
 
@@ -270,8 +241,6 @@
 
     move-result-object v0
 
-    .line 1060
-    .restart local v0    # "classification":Landroid/view/textclassifier/TextClassification;
     :goto_0
     new-instance v1, Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
@@ -283,8 +252,6 @@
 
     iput-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationResult:Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
-    .line 1064
-    .end local v0    # "classification":Landroid/view/textclassifier/TextClassification;
     :cond_2
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationResult:Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
@@ -294,7 +261,6 @@
 .method private trimText()V
     .locals 3
 
-    .line 1068
     iget v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
 
     add-int/lit8 v0, v0, -0x78
@@ -307,7 +273,6 @@
 
     iput v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimStart:I
 
-    .line 1069
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -322,8 +287,6 @@
 
     move-result v0
 
-    .line 1070
-    .local v0, "referenceEnd":I
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
     iget v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimStart:I
@@ -334,7 +297,6 @@
 
     iput-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimmedText:Ljava/lang/CharSequence;
 
-    .line 1071
     iget v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
 
     iget v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimStart:I
@@ -343,7 +305,6 @@
 
     iput v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mRelativeStart:I
 
-    .line 1072
     iget v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionEnd:I
 
     iget v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimStart:I
@@ -352,7 +313,6 @@
 
     iput v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mRelativeEnd:I
 
-    .line 1073
     return-void
 .end method
 
@@ -361,12 +321,10 @@
 .method public classifyText()Landroid/widget/SelectionActionModeHelper$SelectionResult;
     .locals 1
 
-    .line 981
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mHot:Z
 
-    .line 982
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->performClassification(Landroid/view/textclassifier/TextSelection;)Landroid/widget/SelectionActionModeHelper$SelectionResult;
@@ -379,7 +337,6 @@
 .method public getOriginalSelection()Landroid/widget/SelectionActionModeHelper$SelectionResult;
     .locals 4
 
-    .line 1012
     new-instance v0, Landroid/widget/SelectionActionModeHelper$SelectionResult;
 
     iget v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
@@ -396,17 +353,14 @@
 .method public getTimeoutDuration()I
     .locals 1
 
-    .line 1020
     iget-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mHot:Z
 
     if-eqz v0, :cond_0
 
-    .line 1021
     const/16 v0, 0xc8
 
     return v0
 
-    .line 1027
     :cond_0
     const/16 v0, 0x1f4
 
@@ -415,10 +369,6 @@
 
 .method public init(Ljava/util/function/Supplier;Ljava/lang/CharSequence;IILandroid/os/LocaleList;)V
     .locals 1
-    .param p2, "text"    # Ljava/lang/CharSequence;
-    .param p3, "selectionStart"    # I
-    .param p4, "selectionEnd"    # I
-    .param p5, "locales"    # Landroid/os/LocaleList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -432,8 +382,6 @@
         }
     .end annotation
 
-    .line 970
-    .local p1, "textClassifier":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<Landroid/view/textclassifier/TextClassifier;>;"
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -442,7 +390,6 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTextClassifier:Ljava/util/function/Supplier;
 
-    .line 971
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -455,12 +402,10 @@
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
-    .line 972
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mLastClassificationText:Ljava/lang/CharSequence;
 
-    .line 973
     if-le p4, p3, :cond_0
 
     const/4 v0, 0x1
@@ -473,31 +418,24 @@
     :goto_0
     invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 974
     iput p3, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
 
-    .line 975
     iput p4, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionEnd:I
 
-    .line 976
     iput-object p5, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 977
     return-void
 .end method
 
 .method public suggestSelection()Landroid/widget/SelectionActionModeHelper$SelectionResult;
     .locals 5
 
-    .line 987
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mHot:Z
 
-    .line 988
     invoke-direct {p0}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->trimText()V
 
-    .line 990
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -510,7 +448,6 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 991
     new-instance v1, Landroid/view/textclassifier/TextSelection$Request$Builder;
 
     iget-object v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTrimmedText:Ljava/lang/CharSequence;
@@ -523,23 +460,18 @@
 
     iget-object v2, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 993
     invoke-virtual {v1, v2}, Landroid/view/textclassifier/TextSelection$Request$Builder;->setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextSelection$Request$Builder;
 
     move-result-object v1
 
-    .line 994
     invoke-virtual {v1, v0}, Landroid/view/textclassifier/TextSelection$Request$Builder;->setDarkLaunchAllowed(Z)Landroid/view/textclassifier/TextSelection$Request$Builder;
 
     move-result-object v0
 
-    .line 995
     invoke-virtual {v0}, Landroid/view/textclassifier/TextSelection$Request$Builder;->build()Landroid/view/textclassifier/TextSelection$Request;
 
     move-result-object v0
 
-    .line 996
-    .local v0, "request":Landroid/view/textclassifier/TextSelection$Request;
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTextClassifier:Ljava/util/function/Supplier;
 
     invoke-interface {v1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
@@ -552,12 +484,8 @@
 
     move-result-object v0
 
-    .line 997
-    .local v0, "selection":Landroid/view/textclassifier/TextSelection;
     goto :goto_0
 
-    .line 999
-    .end local v0    # "selection":Landroid/view/textclassifier/TextSelection;
     :cond_0
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mTextClassifier:Ljava/util/function/Supplier;
 
@@ -579,8 +507,6 @@
 
     move-result-object v0
 
-    .line 1003
-    .restart local v0    # "selection":Landroid/view/textclassifier/TextSelection;
     :goto_0
     invoke-direct {p0}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->isDarkLaunchEnabled()Z
 
@@ -588,7 +514,6 @@
 
     if-nez v1, :cond_1
 
-    .line 1004
     const/4 v1, 0x0
 
     invoke-virtual {v0}, Landroid/view/textclassifier/TextSelection;->getSelectionStartIndex()I
@@ -605,10 +530,8 @@
 
     iput v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionStart:I
 
-    .line 1005
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mText:Ljava/lang/String;
 
-    .line 1006
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -621,14 +544,12 @@
 
     add-int/2addr v2, v3
 
-    .line 1005
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->mSelectionEnd:I
 
-    .line 1008
     :cond_1
     invoke-direct {p0, v0}, Landroid/widget/SelectionActionModeHelper$TextClassificationHelper;->performClassification(Landroid/view/textclassifier/TextSelection;)Landroid/widget/SelectionActionModeHelper$SelectionResult;
 

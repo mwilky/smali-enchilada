@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -145,9 +144,7 @@
 
 .method public setImportantForAutofill(I)V
     .locals 0
-    .param p1, "mode"    # I
 
-    .line 355
     return-void
 .end method
 
@@ -162,25 +159,19 @@
 
 .method public setMaxTextEms(I)V
     .locals 0
-    .param p1, "maxEms"    # I
 
-    .line 401
     return-void
 .end method
 
 .method public setMaxTextLength(I)V
     .locals 0
-    .param p1, "maxLength"    # I
 
-    .line 409
     return-void
 .end method
 
 .method public setMinTextEms(I)V
     .locals 0
-    .param p1, "minEms"    # I
 
-    .line 393
     return-void
 .end method
 
@@ -198,12 +189,9 @@
 
 .method public setTextIdEntry(Ljava/lang/String;)V
     .locals 0
-    .param p1, "entryName"    # Ljava/lang/String;
 
-    .line 217
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 218
     return-void
 .end method
 

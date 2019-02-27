@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 776
     const-string v0, "content://sms/conversations"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -47,9 +46,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 770
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 771
     return-void
 .end method

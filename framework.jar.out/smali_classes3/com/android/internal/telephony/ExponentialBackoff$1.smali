@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/ExponentialBackoff;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/telephony/ExponentialBackoff;
 
-    .line 38
     iput-object p1, p0, Lcom/android/internal/telephony/ExponentialBackoff$1;->this$0:Lcom/android/internal/telephony/ExponentialBackoff;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public postDelayed(Ljava/lang/Runnable;J)Z
     .locals 1
-    .param p1, "runnable"    # Ljava/lang/Runnable;
-    .param p2, "delayMillis"    # J
 
-    .line 41
     iget-object v0, p0, Lcom/android/internal/telephony/ExponentialBackoff$1;->this$0:Lcom/android/internal/telephony/ExponentialBackoff;
 
     invoke-static {v0}, Lcom/android/internal/telephony/ExponentialBackoff;->access$000(Lcom/android/internal/telephony/ExponentialBackoff;)Landroid/os/Handler;
@@ -57,9 +52,7 @@
 
 .method public removeCallbacks(Ljava/lang/Runnable;)V
     .locals 1
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 46
     iget-object v0, p0, Lcom/android/internal/telephony/ExponentialBackoff$1;->this$0:Lcom/android/internal/telephony/ExponentialBackoff;
 
     invoke-static {v0}, Lcom/android/internal/telephony/ExponentialBackoff;->access$000(Lcom/android/internal/telephony/ExponentialBackoff;)Landroid/os/Handler;
@@ -68,6 +61,5 @@
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 47
     return-void
 .end method

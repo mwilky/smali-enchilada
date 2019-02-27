@@ -31,19 +31,15 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Service;)V
     .locals 2
-    .param p1, "service"    # Landroid/app/Service;
 
-    .line 182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
     new-instance v0, Landroid/app/job/JobServiceEngine$JobInterface;
 
     invoke-direct {v0, p0}, Landroid/app/job/JobServiceEngine$JobInterface;-><init>(Landroid/app/job/JobServiceEngine;)V
 
     iput-object v0, p0, Landroid/app/job/JobServiceEngine;->mBinder:Landroid/app/job/IJobService;
 
-    .line 184
     new-instance v0, Landroid/app/job/JobServiceEngine$JobHandler;
 
     invoke-virtual {p1}, Landroid/app/Service;->getMainLooper()Landroid/os/Looper;
@@ -54,7 +50,6 @@
 
     iput-object v0, p0, Landroid/app/job/JobServiceEngine;->mHandler:Landroid/app/job/JobServiceEngine$JobHandler;
 
-    .line 185
     return-void
 .end method
 
@@ -63,7 +58,6 @@
 .method public final getBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 192
     iget-object v0, p0, Landroid/app/job/JobServiceEngine;->mBinder:Landroid/app/job/IJobService;
 
     invoke-interface {v0}, Landroid/app/job/IJobService;->asBinder()Landroid/os/IBinder;
@@ -75,13 +69,9 @@
 
 .method public jobFinished(Landroid/app/job/JobParameters;Z)V
     .locals 2
-    .param p1, "params"    # Landroid/app/job/JobParameters;
-    .param p2, "needsReschedule"    # Z
 
-    .line 213
     if-eqz p1, :cond_0
 
-    .line 216
     iget-object v0, p0, Landroid/app/job/JobServiceEngine;->mHandler:Landroid/app/job/JobServiceEngine$JobHandler;
 
     const/4 v1, 0x2
@@ -90,18 +80,12 @@
 
     move-result-object v0
 
-    .line 217
-    .local v0, "m":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->arg2:I
 
-    .line 218
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 219
     return-void
 
-    .line 214
-    .end local v0    # "m":Landroid/os/Message;
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 

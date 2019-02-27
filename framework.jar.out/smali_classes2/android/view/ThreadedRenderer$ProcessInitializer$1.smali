@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/view/ThreadedRenderer$ProcessInitializer;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/view/ThreadedRenderer$ProcessInitializer;
 
-    .line 1098
     iput-object p1, p0, Landroid/view/ThreadedRenderer$ProcessInitializer$1;->this$0:Landroid/view/ThreadedRenderer$ProcessInitializer;
 
     invoke-direct {p0}, Landroid/view/IGraphicsStatsCallback$Stub;-><init>()V
@@ -41,11 +39,9 @@
         }
     .end annotation
 
-    .line 1101
     iget-object v0, p0, Landroid/view/ThreadedRenderer$ProcessInitializer$1;->this$0:Landroid/view/ThreadedRenderer$ProcessInitializer;
 
     invoke-static {v0}, Landroid/view/ThreadedRenderer$ProcessInitializer;->access$1100(Landroid/view/ThreadedRenderer$ProcessInitializer;)V
 
-    .line 1102
     return-void
 .end method

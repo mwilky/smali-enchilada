@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/StatusBarNotification;
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 194
     new-instance v0, Landroid/service/notification/StatusBarNotification;
 
     invoke-direct {v0, p1}, Landroid/service/notification/StatusBarNotification;-><init>(Landroid/os/Parcel;)V
@@ -53,7 +50,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 191
     invoke-virtual {p0, p1}, Landroid/service/notification/StatusBarNotification$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/StatusBarNotification;
 
     move-result-object p1
@@ -63,9 +59,7 @@
 
 .method public newArray(I)[Landroid/service/notification/StatusBarNotification;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 199
     new-array v0, p1, [Landroid/service/notification/StatusBarNotification;
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 191
     invoke-virtual {p0, p1}, Landroid/service/notification/StatusBarNotification$1;->newArray(I)[Landroid/service/notification/StatusBarNotification;
 
     move-result-object p1

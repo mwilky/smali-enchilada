@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 653
     invoke-static {}, Landroid/mtp/MtpStorageManager$MtpObjectState;->values()[Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     move-result-object v0

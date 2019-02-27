@@ -33,7 +33,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 248
     const-string v0, "OPEN"
 
     const-string v1, "SHARED"
@@ -52,7 +51,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

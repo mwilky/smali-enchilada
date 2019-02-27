@@ -29,26 +29,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;II)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "startIndex"    # I
-    .param p3, "endIndex"    # I
 
-    .line 261
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 262
     invoke-static {p1, p2, p3}, Landroid/view/textclassifier/TextClassifier$Utils;->checkArgument(Ljava/lang/CharSequence;II)V
 
-    .line 263
     iput-object p1, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mText:Ljava/lang/CharSequence;
 
-    .line 264
     iput p2, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mStartIndex:I
 
-    .line 265
     iput p3, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mEndIndex:I
 
-    .line 266
     return-void
 .end method
 
@@ -57,7 +48,6 @@
 .method public build()Landroid/view/textclassifier/TextSelection$Request;
     .locals 8
 
-    .line 303
     new-instance v7, Landroid/view/textclassifier/TextSelection$Request;
 
     iget-object v1, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mText:Ljava/lang/CharSequence;
@@ -81,22 +71,16 @@
 
 .method public setDarkLaunchAllowed(Z)Landroid/view/textclassifier/TextSelection$Request$Builder;
     .locals 0
-    .param p1, "allowed"    # Z
 
-    .line 294
     iput-boolean p1, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mDarkLaunchAllowed:Z
 
-    .line 295
     return-object p0
 .end method
 
 .method public setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextSelection$Request$Builder;
     .locals 0
-    .param p1, "defaultLocales"    # Landroid/os/LocaleList;
 
-    .line 277
     iput-object p1, p0, Landroid/view/textclassifier/TextSelection$Request$Builder;->mDefaultLocales:Landroid/os/LocaleList;
 
-    .line 278
     return-object p0
 .end method

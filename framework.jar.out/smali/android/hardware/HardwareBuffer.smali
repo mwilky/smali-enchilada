@@ -92,7 +92,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 327
     new-instance v0, Landroid/hardware/HardwareBuffer$1;
 
     invoke-direct {v0}, Landroid/hardware/HardwareBuffer$1;-><init>()V
@@ -104,33 +103,25 @@
 
 .method private constructor <init>(J)V
     .locals 8
-    .param p1, "nativeObject"    # J
 
-    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/HardwareBuffer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 186
     iput-wide p1, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
-    .line 188
     const-class v0, Landroid/hardware/HardwareBuffer;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
-    .line 189
-    .local v0, "loader":Ljava/lang/ClassLoader;
     new-instance v7, Llibcore/util/NativeAllocationRegistry;
 
-    .line 190
     invoke-static {}, Landroid/hardware/HardwareBuffer;->nGetNativeFinalizer()J
 
     move-result-wide v3
@@ -143,8 +134,6 @@
 
     invoke-direct/range {v1 .. v6}, Llibcore/util/NativeAllocationRegistry;-><init>(Ljava/lang/ClassLoader;JJ)V
 
-    .line 191
-    .local v1, "registry":Llibcore/util/NativeAllocationRegistry;
     iget-wide v2, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-virtual {v1, p0, v2, v3}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
@@ -153,23 +142,18 @@
 
     iput-object v2, p0, Landroid/hardware/HardwareBuffer;->mCleaner:Ljava/lang/Runnable;
 
-    .line 192
     iget-object v2, p0, Landroid/hardware/HardwareBuffer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v3, "close"
 
     invoke-virtual {v2, v3}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 193
     return-void
 .end method
 
 .method synthetic constructor <init>(JLandroid/hardware/HardwareBuffer$1;)V
     .locals 0
-    .param p1, "x0"    # J
-    .param p3, "x1"    # Landroid/hardware/HardwareBuffer$1;
 
-    .line 42
     invoke-direct {p0, p1, p2}, Landroid/hardware/HardwareBuffer;-><init>(J)V
 
     return-void
@@ -177,9 +161,7 @@
 
 .method static synthetic access$000(Landroid/os/Parcel;)J
     .locals 2
-    .param p0, "x0"    # Landroid/os/Parcel;
 
-    .line 42
     invoke-static {p0}, Landroid/hardware/HardwareBuffer;->nReadHardwareBufferFromParcel(Landroid/os/Parcel;)J
 
     move-result-wide v0
@@ -189,29 +171,19 @@
 
 .method public static create(IIIIJ)Landroid/hardware/HardwareBuffer;
     .locals 4
-    .param p0, "width"    # I
-    .param p1, "height"    # I
-    .param p2, "format"    # I
-    .param p3, "layers"    # I
-    .param p4, "usage"    # J
 
-    .line 157
     invoke-static {p2}, Landroid/hardware/HardwareBuffer;->isSupportedFormat(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 160
     if-lez p0, :cond_5
 
-    .line 163
     if-lez p1, :cond_4
 
-    .line 166
     if-lez p3, :cond_3
 
-    .line 169
     const/16 v0, 0x21
 
     if-ne p2, v0, :cond_1
@@ -222,7 +194,6 @@
 
     goto :goto_0
 
-    .line 170
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -232,29 +203,24 @@
 
     throw v0
 
-    .line 172
     :cond_1
     :goto_0
     invoke-static/range {p0 .. p5}, Landroid/hardware/HardwareBuffer;->nCreateHardwareBuffer(IIIIJ)J
 
     move-result-wide v0
 
-    .line 173
-    .local v0, "nativeObject":J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
     if-eqz v2, :cond_2
 
-    .line 178
     new-instance v2, Landroid/hardware/HardwareBuffer;
 
     invoke-direct {v2, v0, v1}, Landroid/hardware/HardwareBuffer;-><init>(J)V
 
     return-object v2
 
-    .line 174
     :cond_2
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -264,8 +230,6 @@
 
     throw v2
 
-    .line 167
-    .end local v0    # "nativeObject":J
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -287,7 +251,6 @@
 
     throw v0
 
-    .line 164
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -309,7 +272,6 @@
 
     throw v0
 
-    .line 161
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -331,7 +293,6 @@
 
     throw v0
 
-    .line 158
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -356,9 +317,7 @@
 
 .method private static isSupportedFormat(I)Z
     .locals 1
-    .param p0, "format"    # I
 
-    .line 351
     const/16 v0, 0x16
 
     if-eq p0, v0, :cond_0
@@ -375,12 +334,10 @@
 
     packed-switch p0, :pswitch_data_1
 
-    .line 367
     const/4 v0, 0x0
 
     return v0
 
-    .line 365
     :cond_0
     :pswitch_0
     const/4 v0, 0x1
@@ -448,34 +405,28 @@
 .method public close()V
     .locals 2
 
-    .line 282
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 283
     iget-object v0, p0, Landroid/hardware/HardwareBuffer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 284
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
-    .line 285
     iget-object v0, p0, Landroid/hardware/HardwareBuffer;->mCleaner:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 286
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/hardware/HardwareBuffer;->mCleaner:Ljava/lang/Runnable;
 
-    .line 288
     :cond_0
     return-void
 .end method
@@ -483,7 +434,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 305
     const/4 v0, 0x1
 
     return v0
@@ -494,10 +444,8 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 264
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->close()V
 
-    .line 265
     return-void
 .end method
 
@@ -509,27 +457,21 @@
         }
     .end annotation
 
-    .line 198
     :try_start_0
     iget-object v0, p0, Landroid/hardware/HardwareBuffer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 199
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 201
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 202
     nop
 
-    .line 203
     return-void
 
-    .line 201
     :catchall_0
     move-exception v0
 
@@ -541,14 +483,12 @@
 .method public getFormat()I
     .locals 2
 
-    .line 232
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 236
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/hardware/HardwareBuffer;->nGetFormat(J)I
@@ -557,7 +497,6 @@
 
     return v0
 
-    .line 233
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -571,14 +510,12 @@
 .method public getHeight()I
     .locals 2
 
-    .line 220
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 224
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/hardware/HardwareBuffer;->nGetHeight(J)I
@@ -587,7 +524,6 @@
 
     return v0
 
-    .line 221
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -601,14 +537,12 @@
 .method public getLayers()I
     .locals 2
 
-    .line 243
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 247
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/hardware/HardwareBuffer;->nGetLayers(J)I
@@ -617,7 +551,6 @@
 
     return v0
 
-    .line 244
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -631,14 +564,12 @@
 .method public getUsage()J
     .locals 2
 
-    .line 254
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 258
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/hardware/HardwareBuffer;->nGetUsage(J)J
@@ -647,7 +578,6 @@
 
     return-wide v0
 
-    .line 255
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -661,14 +591,12 @@
 .method public getWidth()I
     .locals 2
 
-    .line 209
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 213
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1}, Landroid/hardware/HardwareBuffer;->nGetWidth(J)I
@@ -677,7 +605,6 @@
 
     return v0
 
-    .line 210
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -691,7 +618,6 @@
 .method public isClosed()Z
     .locals 4
 
-    .line 300
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     const-wide/16 v2, 0x0
@@ -716,7 +642,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 270
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
@@ -726,25 +651,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 320
     invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 324
     iget-wide v0, p0, Landroid/hardware/HardwareBuffer;->mNativeObject:J
 
     invoke-static {v0, v1, p1}, Landroid/hardware/HardwareBuffer;->nWriteHardwareBufferToParcel(JLandroid/os/Parcel;)V
 
-    .line 325
     return-void
 
-    .line 321
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public create(I)Ljava/nio/ByteBuffer;
     .locals 1
-    .param p1, "capacity"    # I
 
-    .line 339
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0

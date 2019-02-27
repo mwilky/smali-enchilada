@@ -16,7 +16,6 @@
         }
     .end annotation
 
-    .line 105
     sget-object v0, Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;->INSTANCE:Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;
 
     return-object v0
@@ -36,8 +35,6 @@
         }
     .end annotation
 
-    .line 113
-    .local p0, "typeHint":Ljava/lang/Class;, "Ljava/lang/Class<TR;>;"
     invoke-static {}, Lcom/android/internal/util/function/pooled/PooledLambda;->__()Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;
 
     move-result-object v0
@@ -67,12 +64,6 @@
         }
     .end annotation
 
-    .line 661
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -126,12 +117,6 @@
         }
     .end annotation
 
-    .line 699
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -185,12 +170,6 @@
         }
     .end annotation
 
-    .line 737
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TC;>;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -244,12 +223,6 @@
         }
     .end annotation
 
-    .line 775
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TD;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -301,11 +274,6 @@
         }
     .end annotation
 
-    .line 480
-    .local p0, "function":Lcom/android/internal/util/function/TriConsumer;, "Lcom/android/internal/util/function/TriConsumer<-TA;-TB;-TC;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -357,11 +325,6 @@
         }
     .end annotation
 
-    .line 516
-    .local p0, "function":Lcom/android/internal/util/function/TriConsumer;, "Lcom/android/internal/util/function/TriConsumer<-TA;-TB;-TC;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -413,11 +376,6 @@
         }
     .end annotation
 
-    .line 552
-    .local p0, "function":Lcom/android/internal/util/function/TriConsumer;, "Lcom/android/internal/util/function/TriConsumer<-TA;-TB;-TC;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TC;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -467,10 +425,6 @@
         }
     .end annotation
 
-    .line 308
-    .local p0, "function":Ljava/util/function/BiConsumer;, "Ljava/util/function/BiConsumer<-TA;-TB;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -520,10 +474,6 @@
         }
     .end annotation
 
-    .line 359
-    .local p0, "function":Ljava/util/function/BiConsumer;, "Ljava/util/function/BiConsumer<-TA;-TB;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -579,12 +529,6 @@
         }
     .end annotation
 
-    .line 680
-    .local p0, "function":Lcom/android/internal/util/function/QuadFunction;, "Lcom/android/internal/util/function/QuadFunction<-TA;-TB;-TC;-TD;+TR;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -640,12 +584,6 @@
         }
     .end annotation
 
-    .line 718
-    .local p0, "function":Lcom/android/internal/util/function/QuadFunction;, "Lcom/android/internal/util/function/QuadFunction<-TA;-TB;-TC;-TD;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -701,12 +639,6 @@
         }
     .end annotation
 
-    .line 756
-    .local p0, "function":Lcom/android/internal/util/function/QuadFunction;, "Lcom/android/internal/util/function/QuadFunction<-TA;-TB;-TC;-TD;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TC;>;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -762,12 +694,6 @@
         }
     .end annotation
 
-    .line 794
-    .local p0, "function":Lcom/android/internal/util/function/QuadFunction;, "Lcom/android/internal/util/function/QuadFunction<-TA;-TB;-TC;-TD;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TD;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -821,11 +747,6 @@
         }
     .end annotation
 
-    .line 498
-    .local p0, "function":Lcom/android/internal/util/function/TriFunction;, "Lcom/android/internal/util/function/TriFunction<-TA;-TB;-TC;+TR;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -879,11 +800,6 @@
         }
     .end annotation
 
-    .line 534
-    .local p0, "function":Lcom/android/internal/util/function/TriFunction;, "Lcom/android/internal/util/function/TriFunction<-TA;-TB;-TC;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -937,11 +853,6 @@
         }
     .end annotation
 
-    .line 570
-    .local p0, "function":Lcom/android/internal/util/function/TriFunction;, "Lcom/android/internal/util/function/TriFunction<-TA;-TB;-TC;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TC;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -993,10 +904,6 @@
         }
     .end annotation
 
-    .line 342
-    .local p0, "function":Ljava/util/function/BiFunction;, "Ljava/util/function/BiFunction<-TA;-TB;+TR;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -1048,10 +955,6 @@
         }
     .end annotation
 
-    .line 393
-    .local p0, "function":Ljava/util/function/BiFunction;, "Ljava/util/function/BiFunction<-TA;-TB;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -1106,19 +1009,10 @@
         }
     .end annotation
 
-    .line 983
-    .local p0, "function":Lcom/android/internal/util/function/HexConsumer;, "Lcom/android/internal/util/function/HexConsumer<-TA;-TB;-TC;-TD;-TE;-TF;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
-    .local p6, "arg6":Ljava/lang/Object;, "TF;"
     sget-object v1, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 984
     :try_start_0
     sget-object v2, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1148,8 +1042,6 @@
 
     check-cast v0, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 986
-    .local v0, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1166,8 +1058,6 @@
 
     return-object v2
 
-    .line 987
-    .end local v0    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v0
 
@@ -1197,17 +1087,10 @@
         }
     .end annotation
 
-    .line 826
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v1, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 827
     :try_start_0
     sget-object v2, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1237,8 +1120,6 @@
 
     check-cast v0, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 829
-    .local v0, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1255,8 +1136,6 @@
 
     return-object v2
 
-    .line 830
-    .end local v0    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v0
 
@@ -1288,18 +1167,10 @@
         }
     .end annotation
 
-    .line 903
-    .local p0, "function":Lcom/android/internal/util/function/QuintConsumer;, "Lcom/android/internal/util/function/QuintConsumer<-TA;-TB;-TC;-TD;-TE;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
     sget-object v1, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 904
     :try_start_0
     sget-object v2, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1329,8 +1200,6 @@
 
     check-cast v0, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 906
-    .local v0, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1347,8 +1216,6 @@
 
     return-object v2
 
-    .line 907
-    .end local v0    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v0
 
@@ -1376,16 +1243,10 @@
         }
     .end annotation
 
-    .line 601
-    .local p0, "function":Lcom/android/internal/util/function/TriConsumer;, "Lcom/android/internal/util/function/TriConsumer<-TA;-TB;-TC;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 602
     :try_start_0
     sget-object v1, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1415,8 +1276,6 @@
 
     check-cast v1, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 604
-    .local v1, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1433,8 +1292,6 @@
 
     return-object v2
 
-    .line 605
-    .end local v1    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v1
 
@@ -1460,15 +1317,10 @@
         }
     .end annotation
 
-    .line 423
-    .local p0, "function":Ljava/util/function/BiConsumer;, "Ljava/util/function/BiConsumer<-TA;-TB;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 424
     :try_start_0
     sget-object v1, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1498,8 +1350,6 @@
 
     check-cast v1, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 426
-    .local v1, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1516,8 +1366,6 @@
 
     return-object v2
 
-    .line 427
-    .end local v1    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v1
 
@@ -1541,14 +1389,10 @@
         }
     .end annotation
 
-    .line 237
-    .local p0, "function":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<-TA;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
     sget-object v0, Landroid/os/Message;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 238
     :try_start_0
     sget-object v1, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sMessageCallbacksPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
@@ -1578,8 +1422,6 @@
 
     check-cast v1, Lcom/android/internal/util/function/pooled/PooledRunnable;
 
-    .line 240
-    .local v1, "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
@@ -1596,8 +1438,6 @@
 
     return-object v2
 
-    .line 241
-    .end local v1    # "callback":Lcom/android/internal/util/function/pooled/PooledRunnable;
     :catchall_0
     move-exception v1
 
@@ -1626,10 +1466,6 @@
         }
     .end annotation
 
-    .line 325
-    .local p0, "function":Ljava/util/function/BiPredicate;, "Ljava/util/function/BiPredicate<-TA;-TB;>;"
-    .local p1, "arg1":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TA;>;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -1679,10 +1515,6 @@
         }
     .end annotation
 
-    .line 376
-    .local p0, "function":Ljava/util/function/BiPredicate;, "Ljava/util/function/BiPredicate<-TA;-TB;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Lcom/android/internal/util/function/pooled/ArgumentPlaceholder;, "Lcom/android/internal/util/function/pooled/ArgumentPlaceholder<TB;>;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -1737,14 +1569,6 @@
         }
     .end annotation
 
-    .line 927
-    .local p0, "function":Lcom/android/internal/util/function/HexConsumer;, "Lcom/android/internal/util/function/HexConsumer<-TA;-TB;-TC;-TD;-TE;-TF;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
-    .local p6, "arg6":Ljava/lang/Object;, "TF;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x6
@@ -1795,12 +1619,6 @@
         }
     .end annotation
 
-    .line 623
-    .local p0, "function":Lcom/android/internal/util/function/QuadConsumer;, "Lcom/android/internal/util/function/QuadConsumer<-TA;-TB;-TC;-TD;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -1853,13 +1671,6 @@
         }
     .end annotation
 
-    .line 849
-    .local p0, "function":Lcom/android/internal/util/function/QuintConsumer;, "Lcom/android/internal/util/function/QuintConsumer<-TA;-TB;-TC;-TD;-TE;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x5
@@ -1908,11 +1719,6 @@
         }
     .end annotation
 
-    .line 444
-    .local p0, "function":Lcom/android/internal/util/function/TriConsumer;, "Lcom/android/internal/util/function/TriConsumer<-TA;-TB;-TC;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -1959,10 +1765,6 @@
         }
     .end annotation
 
-    .line 257
-    .local p0, "function":Ljava/util/function/BiConsumer;, "Ljava/util/function/BiConsumer<-TA;-TB;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -2007,9 +1809,6 @@
         }
     .end annotation
 
-    .line 176
-    .local p0, "function":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<-TA;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x1
@@ -2043,64 +1842,49 @@
 
 .method public static obtainSupplier(D)Lcom/android/internal/util/function/pooled/PooledSupplier$OfDouble;
     .locals 3
-    .param p0, "value"    # D
 
-    .line 159
     const/4 v0, 0x6
 
     invoke-static {v0}, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->acquireConstSupplier(I)Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
 
     move-result-object v0
 
-    .line 160
-    .local v0, "r":Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
     invoke-static {p0, p1}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->mConstValue:J
 
-    .line 161
     return-object v0
 .end method
 
 .method public static obtainSupplier(I)Lcom/android/internal/util/function/pooled/PooledSupplier$OfInt;
     .locals 3
-    .param p0, "value"    # I
 
-    .line 135
     const/4 v0, 0x4
 
     invoke-static {v0}, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->acquireConstSupplier(I)Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
 
     move-result-object v0
 
-    .line 136
-    .local v0, "r":Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
     int-to-long v1, p0
 
     iput-wide v1, v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->mConstValue:J
 
-    .line 137
     return-object v0
 .end method
 
 .method public static obtainSupplier(J)Lcom/android/internal/util/function/pooled/PooledSupplier$OfLong;
     .locals 1
-    .param p0, "value"    # J
 
-    .line 147
     const/4 v0, 0x5
 
     invoke-static {v0}, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->acquireConstSupplier(I)Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
 
     move-result-object v0
 
-    .line 148
-    .local v0, "r":Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
     iput-wide p0, v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->mConstValue:J
 
-    .line 149
     return-object v0
 .end method
 
@@ -2130,14 +1914,6 @@
         }
     .end annotation
 
-    .line 948
-    .local p0, "function":Lcom/android/internal/util/function/HexFunction;, "Lcom/android/internal/util/function/HexFunction<-TA;-TB;-TC;-TD;-TE;-TF;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
-    .local p6, "arg6":Ljava/lang/Object;, "TF;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x6
@@ -2191,12 +1967,6 @@
         }
     .end annotation
 
-    .line 642
-    .local p0, "function":Lcom/android/internal/util/function/QuadFunction;, "Lcom/android/internal/util/function/QuadFunction<-TA;-TB;-TC;-TD;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x4
@@ -2252,13 +2022,6 @@
         }
     .end annotation
 
-    .line 869
-    .local p0, "function":Lcom/android/internal/util/function/QuintFunction;, "Lcom/android/internal/util/function/QuintFunction<-TA;-TB;-TC;-TD;-TE;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
-    .local p4, "arg4":Ljava/lang/Object;, "TD;"
-    .local p5, "arg5":Ljava/lang/Object;, "TE;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x5
@@ -2310,11 +2073,6 @@
         }
     .end annotation
 
-    .line 462
-    .local p0, "function":Lcom/android/internal/util/function/TriFunction;, "Lcom/android/internal/util/function/TriFunction<-TA;-TB;-TC;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
-    .local p3, "arg3":Ljava/lang/Object;, "TC;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x3
@@ -2358,19 +2116,14 @@
         }
     .end annotation
 
-    .line 123
-    .local p0, "value":Ljava/lang/Object;, "TR;"
     const/4 v0, 0x3
 
     invoke-static {v0}, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->acquireConstSupplier(I)Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
 
     move-result-object v0
 
-    .line 124
-    .local v0, "r":Lcom/android/internal/util/function/pooled/PooledLambdaImpl;
     iput-object p0, v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->mFunc:Ljava/lang/Object;
 
-    .line 125
     return-object v0
 .end method
 
@@ -2392,10 +2145,6 @@
         }
     .end annotation
 
-    .line 291
-    .local p0, "function":Ljava/util/function/BiFunction;, "Ljava/util/function/BiFunction<-TA;-TB;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -2444,10 +2193,6 @@
         }
     .end annotation
 
-    .line 274
-    .local p0, "function":Ljava/util/function/BiPredicate;, "Ljava/util/function/BiPredicate<-TA;-TB;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
-    .local p2, "arg2":Ljava/lang/Object;, "TB;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x2
@@ -2495,9 +2240,6 @@
         }
     .end annotation
 
-    .line 208
-    .local p0, "function":Ljava/util/function/Function;, "Ljava/util/function/Function<-TA;+TR;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x1
@@ -2544,9 +2286,6 @@
         }
     .end annotation
 
-    .line 192
-    .local p0, "function":Ljava/util/function/Predicate;, "Ljava/util/function/Predicate<-TA;>;"
-    .local p1, "arg1":Ljava/lang/Object;, "TA;"
     sget-object v0, Lcom/android/internal/util/function/pooled/PooledLambdaImpl;->sPool:Lcom/android/internal/util/function/pooled/PooledLambdaImpl$Pool;
 
     const/4 v2, 0x1

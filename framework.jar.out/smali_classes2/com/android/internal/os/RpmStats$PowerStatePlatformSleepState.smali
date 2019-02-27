@@ -35,10 +35,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
@@ -52,11 +50,7 @@
 # virtual methods
 .method public putVoter(Ljava/lang/String;JI)V
     .locals 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "timeMs"    # J
-    .param p4, "count"    # I
 
-    .line 83
     iget-object v0, p0, Lcom/android/internal/os/RpmStats$PowerStatePlatformSleepState;->mVoters:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -65,11 +59,8 @@
 
     check-cast v0, Lcom/android/internal/os/RpmStats$PowerStateElement;
 
-    .line 84
-    .local v0, "e":Lcom/android/internal/os/RpmStats$PowerStateElement;
     if-nez v0, :cond_0
 
-    .line 85
     iget-object v1, p0, Lcom/android/internal/os/RpmStats$PowerStatePlatformSleepState;->mVoters:Ljava/util/Map;
 
     new-instance v2, Lcom/android/internal/os/RpmStats$PowerStateElement;
@@ -82,14 +73,11 @@
 
     goto :goto_0
 
-    .line 87
     :cond_0
     iput-wide p2, v0, Lcom/android/internal/os/RpmStats$PowerStateElement;->mTimeMs:J
 
-    .line 88
     iput p4, v0, Lcom/android/internal/os/RpmStats$PowerStateElement;->mCount:I
 
-    .line 90
     :goto_0
     return-void
 .end method

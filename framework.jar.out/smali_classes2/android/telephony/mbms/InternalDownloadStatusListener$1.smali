@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/InternalDownloadStatusListener;Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/FileInfo;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/mbms/InternalDownloadStatusListener;
 
-    .line 45
     iput-object p1, p0, Landroid/telephony/mbms/InternalDownloadStatusListener$1;->this$0:Landroid/telephony/mbms/InternalDownloadStatusListener;
 
     iput-object p2, p0, Landroid/telephony/mbms/InternalDownloadStatusListener$1;->val$request:Landroid/telephony/mbms/DownloadRequest;
@@ -51,13 +49,10 @@
 .method public run()V
     .locals 6
 
-    .line 48
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 50
-    .local v0, "token":J
     :try_start_0
     iget-object v2, p0, Landroid/telephony/mbms/InternalDownloadStatusListener$1;->this$0:Landroid/telephony/mbms/InternalDownloadStatusListener;
 
@@ -75,16 +70,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 52
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 53
     nop
 
-    .line 54
     return-void
 
-    .line 52
     :catchall_0
     move-exception v2
 

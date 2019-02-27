@@ -37,10 +37,6 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Z)V
     .locals 0
-    .param p1, "path"    # Ljava/lang/String;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "version"    # I
-    .param p5, "languageIndependent"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,40 +49,28 @@
         }
     .end annotation
 
-    .line 558
-    .local p4, "supportedLocales":Ljava/util/List;, "Ljava/util/List<Ljava/util/Locale;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 559
     iput-object p1, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mPath:Ljava/lang/String;
 
-    .line 560
     iput-object p2, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mName:Ljava/lang/String;
 
-    .line 561
     iput p3, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mVersion:I
 
-    .line 562
     iput-object p4, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mSupportedLocales:Ljava/util/List;
 
-    .line 563
     iput-boolean p5, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mLanguageIndependent:Z
 
-    .line 564
     return-void
 .end method
 
 .method static fromPath(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
     .locals 12
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 466
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 468
-    .local v0, "file":Ljava/io/File;
     const/high16 v1, 0x10000000
 
     const/4 v2, 0x0
@@ -96,8 +80,6 @@
 
     move-result-object v1
 
-    .line 470
-    .local v1, "modelFd":Landroid/os/ParcelFileDescriptor;
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->getFd()I
 
     move-result v3
@@ -106,11 +88,8 @@
 
     move-result v7
 
-    .line 471
-    .local v7, "version":I
     nop
 
-    .line 472
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->getFd()I
 
     move-result v3
@@ -119,15 +98,12 @@
 
     move-result-object v3
 
-    .line 473
-    .local v3, "supportedLocalesStr":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 474
     const-string v4, "androidtc"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -150,10 +126,8 @@
 
     invoke-static {v4, v5}, Landroid/view/textclassifier/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 475
     return-object v2
 
-    .line 477
     :cond_0
     const-string v4, "*"
 
@@ -161,16 +135,12 @@
 
     move-result v9
 
-    .line 478
-    .local v9, "languageIndependent":Z
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     move-object v10, v4
 
-    .line 479
-    .local v10, "supportedLocales":Ljava/util/List;, "Ljava/util/List<Ljava/util/Locale;>;"
     const-string v4, ","
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -186,25 +156,19 @@
 
     aget-object v8, v4, v6
 
-    .line 480
-    .local v8, "langTag":Ljava/lang/String;
     invoke-static {v8}, Ljava/util/Locale;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object v11
 
     invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 479
-    .end local v8    # "langTag":Ljava/lang/String;
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 482
     :cond_1
     invoke-static {v1}, Landroid/view/textclassifier/TextClassifierImpl;->access$000(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 483
     new-instance v11, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
 
     invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -223,17 +187,9 @@
 
     return-object v11
 
-    .line 485
-    .end local v1    # "modelFd":Landroid/os/ParcelFileDescriptor;
-    .end local v3    # "supportedLocalesStr":Ljava/lang/String;
-    .end local v7    # "version":I
-    .end local v9    # "languageIndependent":Z
-    .end local v10    # "supportedLocales":Ljava/util/List;, "Ljava/util/List<Ljava/util/Locale;>;"
     :catch_0
     move-exception v1
 
-    .line 486
-    .local v1, "e":Ljava/io/FileNotFoundException;
     const-string v3, "androidtc"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -256,7 +212,6 @@
 
     invoke-static {v3, v4, v1}, Landroid/view/textclassifier/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 487
     return-object v2
 .end method
 
@@ -264,17 +219,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .line 537
     if-ne p0, p1, :cond_0
 
-    .line 538
     const/4 v0, 0x1
 
     return v0
 
-    .line 539
     :cond_0
     if-eqz p1, :cond_2
 
@@ -292,14 +243,11 @@
 
     goto :goto_0
 
-    .line 542
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
 
-    .line 543
-    .local v0, "otherModel":Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
     iget-object v1, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mPath:Ljava/lang/String;
 
     iget-object v2, v0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mPath:Ljava/lang/String;
@@ -310,8 +258,6 @@
 
     return v1
 
-    .line 540
-    .end local v0    # "otherModel":Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
     :cond_2
     :goto_0
     const/4 v0, 0x0
@@ -322,7 +268,6 @@
 .method getName()Ljava/lang/String;
     .locals 1
 
-    .line 498
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mName:Ljava/lang/String;
 
     return-object v0
@@ -331,7 +276,6 @@
 .method getPath()Ljava/lang/String;
     .locals 1
 
-    .line 493
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mPath:Ljava/lang/String;
 
     return-object v0
@@ -348,7 +292,6 @@
         }
     .end annotation
 
-    .line 513
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mSupportedLocales:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -361,7 +304,6 @@
 .method getVersion()I
     .locals 1
 
-    .line 503
     iget v0, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mVersion:I
 
     return v0
@@ -378,8 +320,6 @@
         }
     .end annotation
 
-    .line 508
-    .local p1, "languageRanges":Ljava/util/List;, "Ljava/util/List<Ljava/util/Locale$LanguageRange;>;"
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mLanguageIndependent:Z
 
     if-nez v0, :cond_1
@@ -409,17 +349,13 @@
 
 .method public isPreferredTo(Landroid/view/textclassifier/TextClassifierImpl$ModelFile;)Z
     .locals 3
-    .param p1, "model"    # Landroid/view/textclassifier/TextClassifierImpl$ModelFile;
 
-    .line 518
     const/4 v0, 0x1
 
     if-nez p1, :cond_0
 
-    .line 519
     return v0
 
-    .line 524
     :cond_0
     iget-boolean v1, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mLanguageIndependent:Z
 
@@ -429,10 +365,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 525
     return v0
 
-    .line 529
     :cond_1
     invoke-virtual {p0}, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->getVersion()I
 
@@ -444,10 +378,8 @@
 
     if-le v1, v2, :cond_2
 
-    .line 530
     return v0
 
-    .line 532
     :cond_2
     const/4 v0, 0x0
 
@@ -457,15 +389,12 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .line 549
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ","
 
     invoke-direct {v0, v1}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 550
-    .local v0, "localesJoiner":Ljava/util/StringJoiner;
     iget-object v1, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mSupportedLocales:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -485,19 +414,14 @@
 
     check-cast v2, Ljava/util/Locale;
 
-    .line 551
-    .local v2, "locale":Ljava/util/Locale;
     invoke-virtual {v2}, Ljava/util/Locale;->toLanguageTag()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 552
-    .end local v2    # "locale":Ljava/util/Locale;
     goto :goto_0
 
-    .line 553
     :cond_0
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -523,7 +447,6 @@
 
     iget v5, p0, Landroid/view/textclassifier/TextClassifierImpl$ModelFile;->mVersion:I
 
-    .line 554
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -538,7 +461,6 @@
 
     aput-object v5, v3, v4
 
-    .line 553
     invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1

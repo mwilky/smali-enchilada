@@ -22,7 +22,6 @@
 .method private constructor <init>(Landroid/accounts/AccountManager$AmsTask;)V
     .locals 0
 
-    .line 2351
     iput-object p1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     invoke-direct {p0}, Landroid/accounts/IAccountManagerResponse$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Landroid/accounts/AccountManager$AmsTask;Landroid/accounts/AccountManager$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/accounts/AccountManager$AmsTask;
-    .param p2, "x1"    # Landroid/accounts/AccountManager$1;
 
-    .line 2351
     invoke-direct {p0, p1}, Landroid/accounts/AccountManager$AmsTask$Response;-><init>(Landroid/accounts/AccountManager$AmsTask;)V
 
     return-void
@@ -45,10 +41,7 @@
 # virtual methods
 .method public onError(ILjava/lang/String;)V
     .locals 2
-    .param p1, "code"    # I
-    .param p2, "message"    # Ljava/lang/String;
 
-    .line 2377
     const/4 v0, 0x4
 
     if-eq p1, v0, :cond_1
@@ -63,7 +56,6 @@
 
     goto :goto_0
 
-    .line 2384
     :cond_0
     iget-object v0, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
@@ -77,10 +69,8 @@
 
     invoke-static {v0, v1}, Landroid/accounts/AccountManager$AmsTask;->access$800(Landroid/accounts/AccountManager$AmsTask;Ljava/lang/Throwable;)V
 
-    .line 2385
     return-void
 
-    .line 2381
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
@@ -89,28 +79,22 @@
 
     invoke-virtual {v0, v1}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
 
-    .line 2382
     return-void
 .end method
 
 .method public onResult(Landroid/os/Bundle;)V
     .locals 3
-    .param p1, "bundle"    # Landroid/os/Bundle;
 
-    .line 2354
     if-nez p1, :cond_0
 
-    .line 2355
     const/4 v0, 0x5
 
     const-string/jumbo v1, "null bundle returned"
 
     invoke-virtual {p0, v0, v1}, Landroid/accounts/AccountManager$AmsTask$Response;->onError(ILjava/lang/String;)V
 
-    .line 2356
     return-void
 
-    .line 2358
     :cond_0
     const-string v0, "intent"
 
@@ -120,8 +104,6 @@
 
     check-cast v0, Landroid/content/Intent;
 
-    .line 2359
-    .local v0, "intent":Landroid/content/Intent;
     if-eqz v0, :cond_1
 
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
@@ -130,7 +112,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 2362
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     iget-object v1, v1, Landroid/accounts/AccountManager$AmsTask;->mActivity:Landroid/app/Activity;
@@ -139,7 +120,6 @@
 
     goto :goto_0
 
-    .line 2364
     :cond_1
     const-string/jumbo v1, "retry"
 
@@ -149,7 +129,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 2366
     :try_start_0
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
@@ -157,29 +136,22 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2369
     goto :goto_0
 
-    .line 2367
     :catch_0
     move-exception v1
 
-    .line 2368
-    .local v1, "e":Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v2
 
     throw v2
 
-    .line 2371
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_2
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     invoke-virtual {v1, p1}, Landroid/accounts/AccountManager$AmsTask;->set(Landroid/os/Bundle;)V
 
-    .line 2373
     :goto_0
     return-void
 .end method

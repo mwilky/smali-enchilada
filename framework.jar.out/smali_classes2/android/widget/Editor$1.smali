@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/Editor;
 
-    .line 210
     iput-object p1, p0, Landroid/widget/Editor$1;->this$0:Landroid/widget/Editor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 1
 
-    .line 213
     iget-object v0, p0, Landroid/widget/Editor$1;->this$0:Landroid/widget/Editor;
 
     invoke-static {v0}, Landroid/widget/Editor;->access$000(Landroid/widget/Editor;)Landroid/widget/Editor$MagnifierMotionAnimator;
@@ -48,6 +45,5 @@
 
     invoke-static {v0}, Landroid/widget/Editor$MagnifierMotionAnimator;->access$100(Landroid/widget/Editor$MagnifierMotionAnimator;)V
 
-    .line 214
     return-void
 .end method

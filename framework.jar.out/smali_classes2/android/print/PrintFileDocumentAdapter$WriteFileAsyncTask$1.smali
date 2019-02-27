@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask;Landroid/print/PrintFileDocumentAdapter;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask;
 
-    .line 109
     iput-object p1, p0, Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask$1;->this$1:Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask;
 
     iput-object p2, p0, Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask$1;->val$this$0:Landroid/print/PrintFileDocumentAdapter;
@@ -43,13 +41,11 @@
 .method public onCancel()V
     .locals 2
 
-    .line 112
     iget-object v0, p0, Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask$1;->this$1:Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/print/PrintFileDocumentAdapter$WriteFileAsyncTask;->cancel(Z)Z
 
-    .line 113
     return-void
 .end method

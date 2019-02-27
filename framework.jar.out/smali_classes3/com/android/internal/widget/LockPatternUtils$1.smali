@@ -37,9 +37,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/LockPatternUtils;Landroid/os/IBinder;ILjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 825
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternUtils$1;->this$0:Lcom/android/internal/widget/LockPatternUtils;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$service:Landroid/os/IBinder;
@@ -58,7 +56,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 825
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternUtils$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -70,17 +67,13 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 4
-    .param p1, "dummy"    # [Ljava/lang/Void;
 
-    .line 828
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$service:Landroid/os/IBinder;
 
     invoke-static {v0}, Landroid/os/storage/IStorageManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/storage/IStorageManager;
 
     move-result-object v0
 
-    .line 830
-    .local v0, "storageManager":Landroid/os/storage/IStorageManager;
     :try_start_0
     iget v1, p0, Lcom/android/internal/widget/LockPatternUtils$1;->val$type:I
 
@@ -90,23 +83,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 833
     goto :goto_0
 
-    .line 831
     :catch_0
     move-exception v1
 
-    .line 832
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "LockPatternUtils"
 
     const-string v3, "Error changing encryption password"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 834
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     const/4 v1, 0x0
 

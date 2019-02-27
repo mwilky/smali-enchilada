@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1600
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/LauncherApps$PinItemRequest;
     .locals 2
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 1602
     new-instance v0, Landroid/content/pm/LauncherApps$PinItemRequest;
 
     const/4 v1, 0x0
@@ -55,7 +52,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 1600
     invoke-virtual {p0, p1}, Landroid/content/pm/LauncherApps$PinItemRequest$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/LauncherApps$PinItemRequest;
 
     move-result-object p1
@@ -65,9 +61,7 @@
 
 .method public newArray(I)[Landroid/content/pm/LauncherApps$PinItemRequest;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 1605
     new-array v0, p1, [Landroid/content/pm/LauncherApps$PinItemRequest;
 
     return-object v0
@@ -76,7 +70,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 1600
     invoke-virtual {p0, p1}, Landroid/content/pm/LauncherApps$PinItemRequest$1;->newArray(I)[Landroid/content/pm/LauncherApps$PinItemRequest;
 
     move-result-object p1

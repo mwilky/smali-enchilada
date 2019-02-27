@@ -45,23 +45,17 @@
 # direct methods
 .method private constructor <init>(Landroid/media/FaceDetector;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/FaceDetector;
 
-    .line 89
     iput-object p1, p0, Landroid/media/FaceDetector$Face;->this$0:Landroid/media/FaceDetector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/media/FaceDetector;Landroid/media/FaceDetector$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/media/FaceDetector;
-    .param p2, "x1"    # Landroid/media/FaceDetector$1;
 
-    .line 35
     invoke-direct {p0, p1}, Landroid/media/FaceDetector$Face;-><init>(Landroid/media/FaceDetector;)V
 
     return-void
@@ -72,7 +66,6 @@
 .method public confidence()F
     .locals 1
 
-    .line 51
     iget v0, p0, Landroid/media/FaceDetector$Face;->mConfidence:F
 
     return v0
@@ -81,7 +74,6 @@
 .method public eyesDistance()F
     .locals 1
 
-    .line 66
     iget v0, p0, Landroid/media/FaceDetector$Face;->mEyesDist:F
 
     return v0
@@ -89,54 +81,43 @@
 
 .method public getMidPoint(Landroid/graphics/PointF;)V
     .locals 2
-    .param p1, "point"    # Landroid/graphics/PointF;
 
-    .line 60
     iget v0, p0, Landroid/media/FaceDetector$Face;->mMidPointX:F
 
     iget v1, p0, Landroid/media/FaceDetector$Face;->mMidPointY:F
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/PointF;->set(FF)V
 
-    .line 61
     return-void
 .end method
 
 .method public pose(I)F
     .locals 1
-    .param p1, "euler"    # I
 
-    .line 79
     if-nez p1, :cond_0
 
-    .line 80
     iget v0, p0, Landroid/media/FaceDetector$Face;->mPoseEulerX:F
 
     return v0
 
-    .line 81
     :cond_0
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 82
     iget v0, p0, Landroid/media/FaceDetector$Face;->mPoseEulerY:F
 
     return v0
 
-    .line 83
     :cond_1
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_2
 
-    .line 84
     iget v0, p0, Landroid/media/FaceDetector$Face;->mPoseEulerZ:F
 
     return v0
 
-    .line 85
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

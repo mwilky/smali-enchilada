@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,15 +39,11 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telecom/DisconnectCause;
     .locals 12
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 207
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 208
-    .local v6, "code":I
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -59,8 +54,6 @@
 
     check-cast v7, Ljava/lang/CharSequence;
 
-    .line 209
-    .local v7, "label":Ljava/lang/CharSequence;
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -71,20 +64,14 @@
 
     check-cast v8, Ljava/lang/CharSequence;
 
-    .line 210
-    .local v8, "description":Ljava/lang/CharSequence;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 211
-    .local v9, "reason":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 212
-    .local v10, "tone":I
     new-instance v11, Landroid/telecom/DisconnectCause;
 
     move-object v0, v11
@@ -107,7 +94,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 204
     invoke-virtual {p0, p1}, Landroid/telecom/DisconnectCause$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/DisconnectCause;
 
     move-result-object p1
@@ -117,9 +103,7 @@
 
 .method public newArray(I)[Landroid/telecom/DisconnectCause;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 217
     new-array v0, p1, [Landroid/telecom/DisconnectCause;
 
     return-object v0
@@ -128,7 +112,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 204
     invoke-virtual {p0, p1}, Landroid/telecom/DisconnectCause$1;->newArray(I)[Landroid/telecom/DisconnectCause;
 
     move-result-object p1

@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/AppErrorsProto$BadProcess;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/am/AppErrorsProto$BadProcess;
 
-    .line 36
     iput-object p1, p0, Lcom/android/server/am/AppErrorsProto$BadProcess$Entry;->this$1:Lcom/android/server/am/AppErrorsProto$BadProcess;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

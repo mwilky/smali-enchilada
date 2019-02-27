@@ -41,7 +41,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 576
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "images"
@@ -58,7 +57,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 571
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

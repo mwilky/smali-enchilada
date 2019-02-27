@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 282
     new-instance v0, Landroid/net/IpPrefix$2;
 
     invoke-direct {v0}, Landroid/net/IpPrefix$2;-><init>()V
@@ -40,18 +39,13 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "prefix"    # Ljava/lang/String;
 
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
     invoke-static {p1}, Landroid/net/NetworkUtils;->parseIpAndMask(Ljava/lang/String;)Landroid/util/Pair;
 
     move-result-object v0
 
-    .line 109
-    .local v0, "ipAndMask":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/net/InetAddress;Ljava/lang/Integer;>;"
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Ljava/net/InetAddress;
@@ -62,7 +56,6 @@
 
     iput-object v1, p0, Landroid/net/IpPrefix;->address:[B
 
-    .line 110
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/Integer;
@@ -73,47 +66,34 @@
 
     iput v1, p0, Landroid/net/IpPrefix;->prefixLength:I
 
-    .line 111
     invoke-direct {p0}, Landroid/net/IpPrefix;->checkAndMaskAddressAndPrefixLength()V
 
-    .line 112
     return-void
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;I)V
     .locals 1
-    .param p1, "address"    # Ljava/net/InetAddress;
-    .param p2, "prefixLength"    # I
 
-    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     invoke-virtual {p1}, Ljava/net/InetAddress;->getAddress()[B
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
-    .line 90
     iput p2, p0, Landroid/net/IpPrefix;->prefixLength:I
 
-    .line 91
     invoke-direct {p0}, Landroid/net/IpPrefix;->checkAndMaskAddressAndPrefixLength()V
 
-    .line 92
     return-void
 .end method
 
 .method public constructor <init>([BI)V
     .locals 1
-    .param p1, "address"    # [B
-    .param p2, "prefixLength"    # I
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -122,21 +102,16 @@
 
     iput-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
-    .line 73
     iput p2, p0, Landroid/net/IpPrefix;->prefixLength:I
 
-    .line 74
     invoke-direct {p0}, Landroid/net/IpPrefix;->checkAndMaskAddressAndPrefixLength()V
 
-    .line 75
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/net/IpPrefix;)[B
     .locals 1
-    .param p0, "x0"    # Landroid/net/IpPrefix;
 
-    .line 49
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
     return-object v0
@@ -145,7 +120,6 @@
 .method private checkAndMaskAddressAndPrefixLength()V
     .locals 3
 
-    .line 54
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
     array-length v0, v0
@@ -164,7 +138,6 @@
 
     goto :goto_0
 
-    .line 55
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -194,7 +167,6 @@
 
     throw v0
 
-    .line 58
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
@@ -203,7 +175,6 @@
 
     invoke-static {v0, v1}, Landroid/net/NetworkUtils;->maskRawAddress([BI)V
 
-    .line 59
     return-void
 .end method
 
@@ -218,7 +189,6 @@
         }
     .end annotation
 
-    .line 253
     new-instance v0, Landroid/net/IpPrefix$1;
 
     invoke-direct {v0}, Landroid/net/IpPrefix$1;-><init>()V
@@ -230,9 +200,7 @@
 # virtual methods
 .method public contains(Ljava/net/InetAddress;)Z
     .locals 3
-    .param p1, "address"    # Ljava/net/InetAddress;
 
-    .line 182
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -244,8 +212,6 @@
 
     move-result-object v0
 
-    .line 183
-    .local v0, "addrBytes":[B
     :goto_0
     if-eqz v0, :cond_2
 
@@ -259,13 +225,11 @@
 
     goto :goto_1
 
-    .line 186
     :cond_1
     iget v1, p0, Landroid/net/IpPrefix;->prefixLength:I
 
     invoke-static {v0, v1}, Landroid/net/NetworkUtils;->maskRawAddress([BI)V
 
-    .line 187
     iget-object v1, p0, Landroid/net/IpPrefix;->address:[B
 
     invoke-static {v1, v0}, Ljava/util/Arrays;->equals([B[B)Z
@@ -274,7 +238,6 @@
 
     return v1
 
-    .line 184
     :cond_2
     :goto_1
     const/4 v1, 0x0
@@ -284,9 +247,7 @@
 
 .method public containsPrefix(Landroid/net/IpPrefix;)Z
     .locals 2
-    .param p1, "otherPrefix"    # Landroid/net/IpPrefix;
 
-    .line 198
     invoke-virtual {p1}, Landroid/net/IpPrefix;->getPrefixLength()I
 
     move-result v0
@@ -299,19 +260,15 @@
 
     return v0
 
-    .line 199
     :cond_0
     invoke-virtual {p1}, Landroid/net/IpPrefix;->getRawAddress()[B
 
     move-result-object v0
 
-    .line 200
-    .local v0, "otherAddress":[B
     iget v1, p0, Landroid/net/IpPrefix;->prefixLength:I
 
     invoke-static {v0, v1}, Landroid/net/NetworkUtils;->maskRawAddress([BI)V
 
-    .line 201
     iget-object v1, p0, Landroid/net/IpPrefix;->address:[B
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -324,7 +281,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 236
     const/4 v0, 0x0
 
     return v0
@@ -332,26 +288,20 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 123
     instance-of v0, p1, Landroid/net/IpPrefix;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 124
     return v1
 
-    .line 126
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/net/IpPrefix;
 
-    .line 127
-    .local v0, "that":Landroid/net/IpPrefix;
     iget-object v2, p0, Landroid/net/IpPrefix;->address:[B
 
     iget-object v3, v0, Landroid/net/IpPrefix;->address:[B
@@ -379,7 +329,6 @@
 .method public getAddress()Ljava/net/InetAddress;
     .locals 2
 
-    .line 148
     :try_start_0
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
@@ -391,12 +340,9 @@
 
     return-object v0
 
-    .line 149
     :catch_0
     move-exception v0
 
-    .line 152
-    .local v0, "e":Ljava/net/UnknownHostException;
     const/4 v1, 0x0
 
     return-object v1
@@ -405,7 +351,6 @@
 .method public getPrefixLength()I
     .locals 1
 
-    .line 172
     iget v0, p0, Landroid/net/IpPrefix;->prefixLength:I
 
     return v0
@@ -414,7 +359,6 @@
 .method public getRawAddress()[B
     .locals 1
 
-    .line 163
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
@@ -429,7 +373,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 137
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
@@ -450,7 +393,6 @@
 .method public isIPv4()Z
     .locals 1
 
-    .line 215
     invoke-virtual {p0}, Landroid/net/IpPrefix;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v0
@@ -463,7 +405,6 @@
 .method public isIPv6()Z
     .locals 1
 
-    .line 208
     invoke-virtual {p0}, Landroid/net/IpPrefix;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v0
@@ -476,7 +417,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 225
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -510,12 +450,9 @@
 
     return-object v0
 
-    .line 226
     :catch_0
     move-exception v0
 
-    .line 228
-    .local v0, "e":Ljava/net/UnknownHostException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "IpPrefix with invalid address! Shouldn\'t happen."
@@ -527,19 +464,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 243
     iget-object v0, p0, Landroid/net/IpPrefix;->address:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 244
     iget v0, p0, Landroid/net/IpPrefix;->prefixLength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 245
     return-void
 .end method

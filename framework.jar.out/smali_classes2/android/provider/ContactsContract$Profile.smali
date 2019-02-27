@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 2255
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "profile"
@@ -46,7 +45,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2263
     sget-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "as_vcard"
@@ -57,7 +55,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_VCARD_URI:Landroid/net/Uri;
 
-    .line 2273
     sget-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "raw_contacts"
@@ -74,9 +71,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2249
     return-void
 .end method

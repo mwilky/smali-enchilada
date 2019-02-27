@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/RemoteControlClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/RemoteControlClient;
 
-    .line 936
     iput-object p1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     invoke-direct {p0}, Landroid/media/session/MediaSession$Callback;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onSeekTo(J)V
     .locals 2
-    .param p1, "pos"    # J
 
-    .line 940
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     iget-object v1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
@@ -48,15 +44,12 @@
 
     invoke-static {v0, v1, p1, p2}, Landroid/media/RemoteControlClient;->access$700(Landroid/media/RemoteControlClient;IJ)V
 
-    .line 941
     return-void
 .end method
 
 .method public onSetRating(Landroid/media/Rating;)V
     .locals 3
-    .param p1, "rating"    # Landroid/media/Rating;
 
-    .line 945
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     invoke-static {v0}, Landroid/media/RemoteControlClient;->access$800(Landroid/media/RemoteControlClient;)I
@@ -67,7 +60,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 946
     iget-object v0, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
 
     iget-object v1, p0, Landroid/media/RemoteControlClient$1;->this$0:Landroid/media/RemoteControlClient;
@@ -80,7 +72,6 @@
 
     invoke-static {v0, v1, v2, p1}, Landroid/media/RemoteControlClient;->access$900(Landroid/media/RemoteControlClient;IILjava/lang/Object;)V
 
-    .line 948
     :cond_0
     return-void
 .end method

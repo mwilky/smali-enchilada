@@ -27,7 +27,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2193
     const-string v0, "content://mms/drafts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -42,9 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2187
     return-void
 .end method

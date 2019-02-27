@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 628
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,42 +35,34 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/net/wifi/WifiManager;
     .locals 5
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 631
     const-string/jumbo v0, "wifi"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 632
-    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/net/wifi/IWifiManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/wifi/IWifiManager;
 
     move-result-object v1
 
-    .line 633
-    .local v1, "service":Landroid/net/wifi/IWifiManager;
     new-instance v2, Landroid/net/wifi/WifiManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 634
     invoke-static {}, Landroid/net/ConnectivityThread;->getInstanceLooper()Landroid/os/Looper;
 
     move-result-object v4
 
     invoke-direct {v2, v3, v1, v4}, Landroid/net/wifi/WifiManager;-><init>(Landroid/content/Context;Landroid/net/wifi/IWifiManager;Landroid/os/Looper;)V
 
-    .line 633
     return-object v2
 .end method
 
@@ -83,7 +74,6 @@
         }
     .end annotation
 
-    .line 628
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$52;->createService(Landroid/app/ContextImpl;)Landroid/net/wifi/WifiManager;
 
     move-result-object p1

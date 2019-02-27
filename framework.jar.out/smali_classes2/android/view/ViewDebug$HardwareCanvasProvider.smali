@@ -25,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1784
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,12 +35,10 @@
 .method public createBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 1795
     iget-object v0, p0, Landroid/view/ViewDebug$HardwareCanvasProvider;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v0}, Landroid/graphics/Picture;->endRecording()V
 
-    .line 1796
     iget-object v0, p0, Landroid/view/ViewDebug$HardwareCanvasProvider;->mPicture:Landroid/graphics/Picture;
 
     invoke-static {v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Picture;)Landroid/graphics/Bitmap;
@@ -53,18 +50,13 @@
 
 .method public getCanvas(Landroid/view/View;II)Landroid/graphics/Canvas;
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
 
-    .line 1789
     new-instance v0, Landroid/graphics/Picture;
 
     invoke-direct {v0}, Landroid/graphics/Picture;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewDebug$HardwareCanvasProvider;->mPicture:Landroid/graphics/Picture;
 
-    .line 1790
     iget-object v0, p0, Landroid/view/ViewDebug$HardwareCanvasProvider;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v0, p2, p3}, Landroid/graphics/Picture;->beginRecording(II)Landroid/graphics/Canvas;

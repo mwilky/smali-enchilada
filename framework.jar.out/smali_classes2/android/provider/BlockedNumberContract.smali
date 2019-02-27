@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 153
     const-string v0, "content://com.android.blockednumber"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -61,18 +60,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 147
     return-void
 .end method
 
 .method public static canCurrentUserBlockNumbers(Landroid/content/Context;)Z
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 309
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -90,8 +85,6 @@
 
     move-result-object v2
 
-    .line 311
-    .local v2, "res":Landroid/os/Bundle;
     if-eqz v2, :cond_0
 
     const-string v3, "can_block"
@@ -112,29 +105,21 @@
     :cond_0
     return v1
 
-    .line 312
-    .end local v2    # "res":Landroid/os/Bundle;
     :catch_0
     move-exception v2
 
-    .line 315
-    .local v2, "ex":Ljava/lang/RuntimeException;
     const-string v3, "canCurrentUserBlockNumbers: provider not ready."
 
     new-array v4, v1, [Ljava/lang/Object;
 
     invoke-static {v0, v3, v4}, Landroid/telecom/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 316
     return v1
 .end method
 
 .method public static isBlocked(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "phoneNumber"    # Ljava/lang/String;
 
-    .line 266
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -152,8 +137,6 @@
 
     move-result-object v2
 
-    .line 268
-    .local v2, "res":Landroid/os/Bundle;
     if-eqz v2, :cond_0
 
     const-string v3, "blocked"
@@ -174,29 +157,21 @@
     :cond_0
     return v1
 
-    .line 269
-    .end local v2    # "res":Landroid/os/Bundle;
     :catch_0
     move-exception v2
 
-    .line 272
-    .local v2, "ex":Ljava/lang/RuntimeException;
     const-string v3, "isBlocked: provider not ready."
 
     new-array v4, v1, [Ljava/lang/Object;
 
     invoke-static {v0, v3, v4}, Landroid/telecom/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 273
     return v1
 .end method
 
 .method public static unblock(Landroid/content/Context;Ljava/lang/String;)I
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "phoneNumber"    # Ljava/lang/String;
 
-    .line 296
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -211,8 +186,6 @@
 
     move-result-object v0
 
-    .line 298
-    .local v0, "res":Landroid/os/Bundle;
     const-string/jumbo v1, "num_deleted"
 
     const/4 v2, 0x0

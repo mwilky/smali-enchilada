@@ -83,19 +83,16 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 415
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "directories"
 
-    .line 416
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$Directory;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 430
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "directories_enterprise"
@@ -106,7 +103,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Directory;->ENTERPRISE_CONTENT_URI:Landroid/net/Uri;
 
-    .line 443
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "directory_file_enterprise"
@@ -123,18 +119,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 409
     return-void
 .end method
 
 .method public static isEnterpriseDirectoryId(J)Z
     .locals 2
-    .param p0, "directoryId"    # J
 
-    .line 657
     const-wide/32 v0, 0x3b9aca00
 
     cmp-long v0, p0, v0
@@ -154,9 +146,7 @@
 
 .method public static isRemoteDirectory(J)Z
     .locals 1
-    .param p0, "directoryId"    # J
 
-    .line 649
     invoke-static {p0, p1}, Landroid/provider/ContactsContract$Directory;->isRemoteDirectoryId(J)Z
 
     move-result v0
@@ -166,9 +156,7 @@
 
 .method public static isRemoteDirectoryId(J)Z
     .locals 2
-    .param p0, "directoryId"    # J
 
-    .line 636
     const-wide/16 v0, 0x0
 
     cmp-long v0, p0, v0
@@ -206,21 +194,16 @@
 
 .method public static notifyDirectoryChange(Landroid/content/ContentResolver;)V
     .locals 3
-    .param p0, "resolver"    # Landroid/content/ContentResolver;
 
-    .line 670
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 671
-    .local v0, "contentValues":Landroid/content/ContentValues;
     sget-object v1, Landroid/provider/ContactsContract$Directory;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v0, v2, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 672
     return-void
 .end method

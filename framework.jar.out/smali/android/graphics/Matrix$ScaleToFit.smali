@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 531
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "FILL"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->FILL:Landroid/graphics/Matrix$ScaleToFit;
 
-    .line 537
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "START"
@@ -64,7 +62,6 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->START:Landroid/graphics/Matrix$ScaleToFit;
 
-    .line 543
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "CENTER"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->CENTER:Landroid/graphics/Matrix$ScaleToFit;
 
-    .line 549
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "END"
@@ -86,7 +82,6 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->END:Landroid/graphics/Matrix$ScaleToFit;
 
-    .line 526
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/Matrix$ScaleToFit;
@@ -114,28 +109,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "nativeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 552
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 553
     iput p3, p0, Landroid/graphics/Matrix$ScaleToFit;->nativeInt:I
 
-    .line 554
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 526
     const-class v0, Landroid/graphics/Matrix$ScaleToFit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -150,7 +139,6 @@
 .method public static values()[Landroid/graphics/Matrix$ScaleToFit;
     .locals 1
 
-    .line 526
     sget-object v0, Landroid/graphics/Matrix$ScaleToFit;->$VALUES:[Landroid/graphics/Matrix$ScaleToFit;
 
     invoke-virtual {v0}, [Landroid/graphics/Matrix$ScaleToFit;->clone()Ljava/lang/Object;

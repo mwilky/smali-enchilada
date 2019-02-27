@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/preference/PreferenceGroupAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/preference/PreferenceGroupAdapter;
 
-    .line 90
     iput-object p1, p0, Landroid/preference/PreferenceGroupAdapter$1;->this$0:Landroid/preference/PreferenceGroupAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 92
     iget-object v0, p0, Landroid/preference/PreferenceGroupAdapter$1;->this$0:Landroid/preference/PreferenceGroupAdapter;
 
     invoke-static {v0}, Landroid/preference/PreferenceGroupAdapter;->access$100(Landroid/preference/PreferenceGroupAdapter;)V
 
-    .line 93
     return-void
 .end method

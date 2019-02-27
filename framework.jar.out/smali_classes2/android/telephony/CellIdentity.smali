@@ -58,7 +58,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 211
     new-instance v0, Landroid/telephony/CellIdentity$1;
 
     invoke-direct {v0}, Landroid/telephony/CellIdentity$1;-><init>()V
@@ -70,11 +69,7 @@
 
 .method protected constructor <init>(Ljava/lang/String;ILandroid/os/Parcel;)V
     .locals 7
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "type"    # I
-    .param p3, "source"    # Landroid/os/Parcel;
 
-    .line 206
     invoke-virtual {p3}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
@@ -83,7 +78,6 @@
 
     move-result-object v4
 
-    .line 207
     invoke-virtual {p3}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
@@ -92,7 +86,6 @@
 
     move-result-object v6
 
-    .line 206
     move-object v0, p0
 
     move-object v1, p1
@@ -101,29 +94,18 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/telephony/CellIdentity;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 208
     return-void
 .end method
 
 .method protected constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "type"    # I
-    .param p3, "mcc"    # Ljava/lang/String;
-    .param p4, "mnc"    # Ljava/lang/String;
-    .param p5, "alphal"    # Ljava/lang/String;
-    .param p6, "alphas"    # Ljava/lang/String;
 
-    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 100
     iput-object p1, p0, Landroid/telephony/CellIdentity;->mTag:Ljava/lang/String;
 
-    .line 101
     iput p2, p0, Landroid/telephony/CellIdentity;->mType:I
 
-    .line 104
     const v0, 0x7fffffff
 
     const/4 v1, 0x0
@@ -140,7 +122,6 @@
 
     goto :goto_1
 
-    .line 106
     :cond_0
     invoke-virtual {p3}, Ljava/lang/String;->isEmpty()Z
 
@@ -160,11 +141,9 @@
 
     goto :goto_0
 
-    .line 112
     :cond_1
     iput-object v1, p0, Landroid/telephony/CellIdentity;->mMccStr:Ljava/lang/String;
 
-    .line 113
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -183,19 +162,16 @@
 
     goto :goto_2
 
-    .line 108
     :cond_2
     :goto_0
     iput-object v1, p0, Landroid/telephony/CellIdentity;->mMccStr:Ljava/lang/String;
 
     goto :goto_2
 
-    .line 105
     :cond_3
     :goto_1
     iput-object p3, p0, Landroid/telephony/CellIdentity;->mMccStr:Ljava/lang/String;
 
-    .line 116
     :goto_2
     if-eqz p4, :cond_7
 
@@ -209,7 +185,6 @@
 
     goto :goto_4
 
-    .line 118
     :cond_4
     invoke-virtual {p4}, Ljava/lang/String;->isEmpty()Z
 
@@ -229,11 +204,9 @@
 
     goto :goto_3
 
-    .line 124
     :cond_5
     iput-object v1, p0, Landroid/telephony/CellIdentity;->mMncStr:Ljava/lang/String;
 
-    .line 125
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -252,26 +225,21 @@
 
     goto :goto_5
 
-    .line 120
     :cond_6
     :goto_3
     iput-object v1, p0, Landroid/telephony/CellIdentity;->mMncStr:Ljava/lang/String;
 
     goto :goto_5
 
-    .line 117
     :cond_7
     :goto_4
     iput-object p4, p0, Landroid/telephony/CellIdentity;->mMncStr:Ljava/lang/String;
 
-    .line 127
     :goto_5
     iput-object p5, p0, Landroid/telephony/CellIdentity;->mAlphaLong:Ljava/lang/String;
 
-    .line 128
     iput-object p6, p0, Landroid/telephony/CellIdentity;->mAlphaShort:Ljava/lang/String;
 
-    .line 129
     return-void
 .end method
 
@@ -280,7 +248,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 134
     const/4 v0, 0x0
 
     return v0
@@ -288,26 +255,20 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .line 173
     instance-of v0, p1, Landroid/telephony/CellIdentity;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 174
     return v1
 
-    .line 177
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/telephony/CellIdentity;
 
-    .line 178
-    .local v0, "o":Landroid/telephony/CellIdentity;
     iget-object v2, p0, Landroid/telephony/CellIdentity;->mAlphaLong:Ljava/lang/String;
 
     iget-object v3, v0, Landroid/telephony/CellIdentity;->mAlphaLong:Ljava/lang/String;
@@ -322,7 +283,6 @@
 
     iget-object v3, v0, Landroid/telephony/CellIdentity;->mAlphaShort:Ljava/lang/String;
 
-    .line 179
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -333,7 +293,6 @@
 
     nop
 
-    .line 178
     :cond_1
     return v1
 .end method
@@ -341,7 +300,6 @@
 .method public getChannelNumber()I
     .locals 1
 
-    .line 150
     const/4 v0, -0x1
 
     return v0
@@ -350,7 +308,6 @@
 .method public getOperatorAlphaLong()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 159
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mAlphaLong:Ljava/lang/String;
 
     return-object v0
@@ -359,7 +316,6 @@
 .method public getOperatorAlphaShort()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 168
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mAlphaShort:Ljava/lang/String;
 
     return-object v0
@@ -368,7 +324,6 @@
 .method public getType()I
     .locals 1
 
-    .line 141
     iget v0, p0, Landroid/telephony/CellIdentity;->mType:I
 
     return v0
@@ -377,7 +332,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 184
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -425,45 +379,34 @@
 
 .method protected log(Ljava/lang/String;)V
     .locals 1
-    .param p1, "s"    # Ljava/lang/String;
 
-    .line 234
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mTag:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 235
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "type"    # I
 
-    .line 194
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 195
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mMccStr:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 196
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mMncStr:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 197
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mAlphaLong:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 198
     iget-object v0, p0, Landroid/telephony/CellIdentity;->mAlphaShort:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 199
     return-void
 .end method

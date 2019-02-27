@@ -18,12 +18,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 343
     const/4 v0, 0x6
 
     invoke-direct {p0, v0}, Landroid/security/keystore/AndroidKeyStoreRSACipherSpi$OAEPWithMGF1Padding;-><init>(I)V
 
-    .line 344
     return-void
 .end method
 
@@ -37,7 +35,6 @@
         }
     .end annotation
 
-    .line 341
     invoke-super {p0}, Landroid/security/keystore/AndroidKeyStoreRSACipherSpi$OAEPWithMGF1Padding;->finalize()V
 
     return-void

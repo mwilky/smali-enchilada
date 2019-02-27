@@ -29,29 +29,18 @@
 # direct methods
 .method constructor <init>(Landroid/app/ActivityThread;[Ljava/lang/String;Landroid/content/IContentProvider;Landroid/content/ContentProvider;Landroid/app/ContentProviderHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/ActivityThread;
-    .param p2, "names"    # [Ljava/lang/String;
-    .param p3, "provider"    # Landroid/content/IContentProvider;
-    .param p4, "localProvider"    # Landroid/content/ContentProvider;
-    .param p5, "holder"    # Landroid/app/ContentProviderHolder;
 
-    .line 585
     iput-object p1, p0, Landroid/app/ActivityThread$ProviderClientRecord;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 586
     iput-object p2, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mNames:[Ljava/lang/String;
 
-    .line 587
     iput-object p3, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
 
-    .line 588
     iput-object p4, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mLocalProvider:Landroid/content/ContentProvider;
 
-    .line 589
     iput-object p5, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mHolder:Landroid/app/ContentProviderHolder;
 
-    .line 590
     return-void
 .end method

@@ -79,10 +79,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 80
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -99,7 +97,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 83
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -120,14 +117,12 @@
 
     iput-object v0, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
-    .line 182
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
-    .line 184
     new-instance v0, Landroid/service/trust/TrustAgentService$1;
 
     invoke-direct {v0, p0}, Landroid/service/trust/TrustAgentService$1;-><init>(Landroid/service/trust/TrustAgentService;)V
@@ -139,9 +134,7 @@
 
 .method static synthetic access$000(Landroid/service/trust/TrustAgentService;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -149,9 +142,7 @@
 
 .method static synthetic access$100(Landroid/service/trust/TrustAgentService;)Landroid/service/trust/ITrustAgentServiceCallback;
     .locals 1
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
     return-object v0
@@ -159,10 +150,7 @@
 
 .method static synthetic access$102(Landroid/service/trust/TrustAgentService;Landroid/service/trust/ITrustAgentServiceCallback;)Landroid/service/trust/ITrustAgentServiceCallback;
     .locals 0
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
-    .param p1, "x1"    # Landroid/service/trust/ITrustAgentServiceCallback;
 
-    .line 80
     iput-object p1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
     return-object p1
@@ -170,10 +158,7 @@
 
 .method static synthetic access$200(Landroid/service/trust/TrustAgentService;Ljava/lang/String;)V
     .locals 0
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 80
     invoke-direct {p0, p1}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
     return-void
@@ -181,9 +166,7 @@
 
 .method static synthetic access$400(Landroid/service/trust/TrustAgentService;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -191,9 +174,7 @@
 
 .method static synthetic access$500(Landroid/service/trust/TrustAgentService;)Z
     .locals 1
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
 
-    .line 80
     iget-boolean v0, p0, Landroid/service/trust/TrustAgentService;->mManagingTrust:Z
 
     return v0
@@ -201,9 +182,7 @@
 
 .method static synthetic access$600(Landroid/service/trust/TrustAgentService;)Ljava/lang/Runnable;
     .locals 1
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
 
-    .line 80
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mPendingGrantTrustTask:Ljava/lang/Runnable;
 
     return-object v0
@@ -211,10 +190,7 @@
 
 .method static synthetic access$602(Landroid/service/trust/TrustAgentService;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
-    .param p0, "x0"    # Landroid/service/trust/TrustAgentService;
-    .param p1, "x1"    # Ljava/lang/Runnable;
 
-    .line 80
     iput-object p1, p0, Landroid/service/trust/TrustAgentService;->mPendingGrantTrustTask:Ljava/lang/Runnable;
 
     return-object p1
@@ -222,9 +198,7 @@
 
 .method private onError(Ljava/lang/String;)V
     .locals 3
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 339
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -243,7 +217,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
     return-void
 .end method
 
@@ -251,15 +224,11 @@
 # virtual methods
 .method public final addEscrowToken([BLandroid/os/UserHandle;)V
     .locals 3
-    .param p1, "token"    # [B
-    .param p2, "user"    # Landroid/os/UserHandle;
 
-    .line 479
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 480
     :try_start_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -267,7 +236,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 485
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -280,29 +248,21 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 488
     goto :goto_0
 
-    .line 486
     :catch_0
     move-exception v1
 
-    .line 487
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling addEscrowToken"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 489
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 490
     return-void
 
-    .line 481
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
@@ -310,7 +270,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Trust agent is not connected"
@@ -319,7 +278,6 @@
 
     throw v1
 
-    .line 489
     :catchall_0
     move-exception v1
 
@@ -332,29 +290,22 @@
 
 .method public final grantTrust(Ljava/lang/CharSequence;JI)V
     .locals 8
-    .param p1, "message"    # Ljava/lang/CharSequence;
-    .param p2, "durationMs"    # J
-    .param p4, "flags"    # I
 
-    .line 401
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 402
     :try_start_0
     iget-boolean v1, p0, Landroid/service/trust/TrustAgentService;->mManagingTrust:Z
 
     if-eqz v1, :cond_1
 
-    .line 406
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v1, :cond_0
 
-    .line 408
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -367,25 +318,19 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 411
     :goto_0
     goto :goto_1
 
-    .line 409
     :catch_0
     move-exception v1
 
-    .line 410
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling enableTrust()"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .end local v1    # "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 415
     :cond_0
     new-instance v1, Landroid/service/trust/TrustAgentService$2;
 
@@ -403,14 +348,11 @@
 
     iput-object v1, p0, Landroid/service/trust/TrustAgentService;->mPendingGrantTrustTask:Ljava/lang/Runnable;
 
-    .line 422
     :goto_1
     monitor-exit v0
 
-    .line 423
     return-void
 
-    .line 403
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -420,7 +362,6 @@
 
     throw v1
 
-    .line 422
     :catchall_0
     move-exception v1
 
@@ -433,30 +374,21 @@
 
 .method public final grantTrust(Ljava/lang/CharSequence;JZ)V
     .locals 0
-    .param p1, "message"    # Ljava/lang/CharSequence;
-    .param p2, "durationMs"    # J
-    .param p4, "initiatedByUser"    # Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 381
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/service/trust/TrustAgentService;->grantTrust(Ljava/lang/CharSequence;JI)V
 
-    .line 382
     return-void
 .end method
 
 .method public final isEscrowTokenActive(JLandroid/os/UserHandle;)V
     .locals 3
-    .param p1, "handle"    # J
-    .param p3, "user"    # Landroid/os/UserHandle;
 
-    .line 502
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 503
     :try_start_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -464,7 +396,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 508
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -477,29 +408,21 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 511
     goto :goto_0
 
-    .line 509
     :catch_0
     move-exception v1
 
-    .line 510
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling isEscrowTokenActive"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 512
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 513
     return-void
 
-    .line 504
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
@@ -507,7 +430,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 505
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Trust agent is not connected"
@@ -516,7 +438,6 @@
 
     throw v1
 
-    .line 512
     :catchall_0
     move-exception v1
 
@@ -529,9 +450,7 @@
 
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 594
     new-instance v0, Landroid/service/trust/TrustAgentService$TrustAgentServiceWrapper;
 
     const/4 v1, 0x0
@@ -552,8 +471,6 @@
         }
     .end annotation
 
-    .line 353
-    .local p1, "options":Ljava/util/List;, "Ljava/util/List<Landroid/os/PersistableBundle;>;"
     const/4 v0, 0x0
 
     return v0
@@ -562,10 +479,8 @@
 .method public onCreate()V
     .locals 5
 
-    .line 244
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 245
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -574,8 +489,6 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 247
-    .local v0, "component":Landroid/content/ComponentName;
     :try_start_0
     invoke-virtual {p0}, Landroid/service/trust/TrustAgentService;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -587,8 +500,6 @@
 
     move-result-object v1
 
-    .line 248
-    .local v1, "serviceInfo":Landroid/content/pm/ServiceInfo;
     const-string v2, "android.permission.BIND_TRUST_AGENT"
 
     iget-object v3, v1, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
@@ -599,12 +510,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 255
-    .end local v1    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     goto :goto_0
 
-    .line 249
-    .restart local v1    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -640,13 +547,9 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 253
-    .end local v1    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :catch_0
     move-exception v1
 
-    .line 254
-    .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     iget-object v2, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -669,8 +572,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
-    .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_0
     return-void
 .end method
@@ -678,79 +579,58 @@
 .method public onDeviceLocked()V
     .locals 0
 
-    .line 282
     return-void
 .end method
 
 .method public onDeviceUnlockLockout(J)V
     .locals 0
-    .param p1, "timeoutMs"    # J
 
-    .line 304
     return-void
 .end method
 
 .method public onDeviceUnlocked()V
     .locals 0
 
-    .line 289
     return-void
 .end method
 
 .method public onEscrowTokenAdded([BJLandroid/os/UserHandle;)V
     .locals 0
-    .param p1, "token"    # [B
-    .param p2, "handle"    # J
-    .param p4, "user"    # Landroid/os/UserHandle;
 
-    .line 316
     return-void
 .end method
 
 .method public onEscrowTokenRemoved(JZ)V
     .locals 0
-    .param p1, "handle"    # J
-    .param p3, "successful"    # Z
 
-    .line 336
     return-void
 .end method
 
 .method public onEscrowTokenStateReceived(JI)V
     .locals 0
-    .param p1, "handle"    # J
-    .param p3, "tokenState"    # I
 
-    .line 326
     return-void
 .end method
 
 .method public onTrustTimeout()V
     .locals 0
 
-    .line 275
     return-void
 .end method
 
 .method public onUnlockAttempt(Z)V
     .locals 0
-    .param p1, "successful"    # Z
 
-    .line 265
     return-void
 .end method
 
 .method public final removeEscrowToken(JLandroid/os/UserHandle;)V
     .locals 3
-    .param p1, "handle"    # J
-    .param p3, "user"    # Landroid/os/UserHandle;
 
-    .line 525
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 526
     :try_start_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -758,7 +638,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 531
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -771,29 +650,21 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 534
     goto :goto_0
 
-    .line 532
     :catch_0
     move-exception v1
 
-    .line 533
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "callling removeEscrowToken"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 535
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 536
     return-void
 
-    .line 527
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
@@ -801,7 +672,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 528
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Trust agent is not connected"
@@ -810,7 +680,6 @@
 
     throw v1
 
-    .line 535
     :catchall_0
     move-exception v1
 
@@ -824,23 +693,19 @@
 .method public final revokeTrust()V
     .locals 3
 
-    .line 429
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 430
     :try_start_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mPendingGrantTrustTask:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
 
-    .line 431
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/service/trust/TrustAgentService;->mPendingGrantTrustTask:Ljava/lang/Runnable;
 
-    .line 433
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -848,7 +713,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 435
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -857,30 +721,22 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 438
     goto :goto_0
 
-    .line 436
     :catch_0
     move-exception v1
 
-    .line 437
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling revokeTrust()"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 440
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_1
     :goto_0
     monitor-exit v0
 
-    .line 441
     return-void
 
-    .line 440
     :catchall_0
     move-exception v1
 
@@ -893,30 +749,24 @@
 
 .method public final setManagingTrust(Z)V
     .locals 3
-    .param p1, "managingTrust"    # Z
 
-    .line 452
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 453
     :try_start_0
     iget-boolean v1, p0, Landroid/service/trust/TrustAgentService;->mManagingTrust:Z
 
     if-eq v1, p1, :cond_0
 
-    .line 454
     iput-boolean p1, p0, Landroid/service/trust/TrustAgentService;->mManagingTrust:Z
 
-    .line 455
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v1, :cond_0
 
-    .line 457
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -925,30 +775,22 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 460
     goto :goto_0
 
-    .line 458
     :catch_0
     move-exception v1
 
-    .line 459
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling setManagingTrust()"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 463
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     monitor-exit v0
 
-    .line 464
     return-void
 
-    .line 463
     :catchall_0
     move-exception v1
 
@@ -961,17 +803,13 @@
 
 .method public final showKeyguardErrorMessage(Ljava/lang/CharSequence;)V
     .locals 3
-    .param p1, "message"    # Ljava/lang/CharSequence;
 
-    .line 575
     if-eqz p1, :cond_1
 
-    .line 578
     iget-object v0, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 579
     :try_start_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -979,7 +817,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 584
     :try_start_1
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -988,29 +825,21 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 587
     goto :goto_0
 
-    .line 585
     :catch_0
     move-exception v1
 
-    .line 586
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "calling showKeyguardErrorMessage"
 
     invoke-direct {p0, v2}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 588
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 589
     return-void
 
-    .line 580
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
@@ -1018,7 +847,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 581
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Trust agent is not connected"
@@ -1027,7 +855,6 @@
 
     throw v1
 
-    .line 588
     :catchall_0
     move-exception v1
 
@@ -1037,7 +864,6 @@
 
     throw v1
 
-    .line 576
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1050,11 +876,7 @@
 
 .method public final unlockUserWithToken(J[BLandroid/os/UserHandle;)V
     .locals 4
-    .param p1, "handle"    # J
-    .param p3, "token"    # [B
-    .param p4, "user"    # Landroid/os/UserHandle;
 
-    .line 547
     const-string/jumbo v0, "user"
 
     invoke-virtual {p0, v0}, Landroid/service/trust/TrustAgentService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1063,31 +885,25 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 548
-    .local v0, "um":Landroid/os/UserManager;
     invoke-virtual {v0, p4}, Landroid/os/UserManager;->isUserUnlocked(Landroid/os/UserHandle;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 549
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
     const-string v2, "User already unlocked"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 550
     return-void
 
-    .line 553
     :cond_0
     iget-object v1, p0, Landroid/service/trust/TrustAgentService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 554
     :try_start_0
     iget-object v2, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
     :try_end_0
@@ -1095,7 +911,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 559
     :try_start_1
     iget-object v2, p0, Landroid/service/trust/TrustAgentService;->mCallback:Landroid/service/trust/ITrustAgentServiceCallback;
 
@@ -1108,29 +923,21 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 562
     goto :goto_0
 
-    .line 560
     :catch_0
     move-exception v2
 
-    .line 561
-    .local v2, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v3, "calling unlockUserWithToken"
 
     invoke-direct {p0, v3}, Landroid/service/trust/TrustAgentService;->onError(Ljava/lang/String;)V
 
-    .line 563
-    .end local v2    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v1
 
-    .line 564
     return-void
 
-    .line 555
     :cond_1
     iget-object v2, p0, Landroid/service/trust/TrustAgentService;->TAG:Ljava/lang/String;
 
@@ -1138,7 +945,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 556
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "Trust agent is not connected"
@@ -1147,7 +953,6 @@
 
     throw v2
 
-    .line 563
     :catchall_0
     move-exception v2
 

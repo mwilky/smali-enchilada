@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,25 +39,19 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/view/MagnificationSpec;
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 157
     invoke-static {}, Landroid/view/MagnificationSpec;->obtain()Landroid/view/MagnificationSpec;
 
     move-result-object v0
 
-    .line 158
-    .local v0, "spec":Landroid/view/MagnificationSpec;
     invoke-static {v0, p1}, Landroid/view/MagnificationSpec;->access$000(Landroid/view/MagnificationSpec;Landroid/os/Parcel;)V
 
-    .line 159
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 149
     invoke-virtual {p0, p1}, Landroid/view/MagnificationSpec$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/MagnificationSpec;
 
     move-result-object p1
@@ -68,9 +61,7 @@
 
 .method public newArray(I)[Landroid/view/MagnificationSpec;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 152
     new-array v0, p1, [Landroid/view/MagnificationSpec;
 
     return-object v0
@@ -79,7 +70,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 149
     invoke-virtual {p0, p1}, Landroid/view/MagnificationSpec$1;->newArray(I)[Landroid/view/MagnificationSpec;
 
     move-result-object p1

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/ExitTransitionCoordinator;Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/ExitTransitionCoordinator;
 
-    .line 153
     iput-object p1, p0, Landroid/app/ExitTransitionCoordinator$1;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     iput-object p2, p0, Landroid/app/ExitTransitionCoordinator$1;->val$decorView:Landroid/view/ViewGroup;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 155
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$1;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator$1;->val$decorView:Landroid/view/ViewGroup;
 
     invoke-static {v0, v1}, Landroid/app/ExitTransitionCoordinator;->access$000(Landroid/app/ExitTransitionCoordinator;Landroid/view/ViewGroup;)V
 
-    .line 156
     return-void
 .end method

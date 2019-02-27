@@ -37,16 +37,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 104
-    .local p0, "this":Landroid/os/HidlSupport$Mutable;, "Landroid/os/HidlSupport$Mutable<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/os/HidlSupport$Mutable;->value:Ljava/lang/Object;
 
-    .line 106
     return-void
 .end method
 
@@ -58,14 +54,9 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "this":Landroid/os/HidlSupport$Mutable;, "Landroid/os/HidlSupport$Mutable<TE;>;"
-    .local p1, "value":Ljava/lang/Object;, "TE;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
     iput-object p1, p0, Landroid/os/HidlSupport$Mutable;->value:Ljava/lang/Object;
 
-    .line 110
     return-void
 .end method

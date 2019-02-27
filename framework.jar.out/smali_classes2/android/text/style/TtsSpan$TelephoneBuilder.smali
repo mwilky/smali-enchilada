@@ -26,26 +26,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1288
     const-string v0, "android.type.telephone"
 
     invoke-direct {p0, v0}, Landroid/text/style/TtsSpan$SemioticClassBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1289
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "numberParts"    # Ljava/lang/String;
 
-    .line 1296
     invoke-direct {p0}, Landroid/text/style/TtsSpan$TelephoneBuilder;-><init>()V
 
-    .line 1297
     invoke-virtual {p0, p1}, Landroid/text/style/TtsSpan$TelephoneBuilder;->setNumberParts(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;
 
-    .line 1298
     return-void
 .end method
 
@@ -53,9 +47,7 @@
 # virtual methods
 .method public setCountryCode(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;
     .locals 1
-    .param p1, "countryCode"    # Ljava/lang/String;
 
-    .line 1307
     const-string v0, "android.arg.country_code"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$TelephoneBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -69,9 +61,7 @@
 
 .method public setExtension(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;
     .locals 1
-    .param p1, "extension"    # Ljava/lang/String;
 
-    .line 1326
     const-string v0, "android.arg.extension"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$TelephoneBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -85,9 +75,7 @@
 
 .method public setNumberParts(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;
     .locals 1
-    .param p1, "numberParts"    # Ljava/lang/String;
 
-    .line 1317
     const-string v0, "android.arg.number_parts"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$TelephoneBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;

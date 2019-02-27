@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/ims/compat/feature/RcsFeature;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/ims/compat/feature/RcsFeature;
 
-    .line 30
     iput-object p1, p0, Landroid/telephony/ims/compat/feature/RcsFeature$1;->this$0:Landroid/telephony/ims/compat/feature/RcsFeature;
 
     invoke-direct {p0}, Lcom/android/ims/internal/IImsRcsFeature$Stub;-><init>()V

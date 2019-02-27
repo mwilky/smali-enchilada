@@ -25,10 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/TelephonyManager;Landroid/os/Handler;Landroid/telephony/TelephonyManager$UssdResponseCallback;Landroid/telephony/TelephonyManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/telephony/TelephonyManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 6304
     iput-object p1, p0, Landroid/telephony/TelephonyManager$1;->this$0:Landroid/telephony/TelephonyManager;
 
     iput-object p3, p0, Landroid/telephony/TelephonyManager$1;->val$callback:Landroid/telephony/TelephonyManager$UssdResponseCallback;
@@ -44,10 +41,7 @@
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 5
-    .param p1, "resultCode"    # I
-    .param p2, "ussdResponse"    # Landroid/os/Bundle;
 
-    .line 6307
     const-string v0, "TelephonyManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,12 +60,10 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6308
     const-string/jumbo v0, "ussdResponse cannot be null."
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 6309
     const-string v0, "USSD_RESPONSE"
 
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -80,13 +72,10 @@
 
     check-cast v0, Landroid/telephony/UssdResponse;
 
-    .line 6311
-    .local v0, "response":Landroid/telephony/UssdResponse;
     const/16 v1, 0x64
 
     if-ne p1, v1, :cond_0
 
-    .line 6312
     iget-object v1, p0, Landroid/telephony/TelephonyManager$1;->val$callback:Landroid/telephony/TelephonyManager$UssdResponseCallback;
 
     iget-object v2, p0, Landroid/telephony/TelephonyManager$1;->val$telephonyManager:Landroid/telephony/TelephonyManager;
@@ -95,31 +84,25 @@
 
     move-result-object v3
 
-    .line 6313
     invoke-virtual {v0}, Landroid/telephony/UssdResponse;->getReturnMessage()Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    .line 6312
     invoke-virtual {v1, v2, v3, v4}, Landroid/telephony/TelephonyManager$UssdResponseCallback;->onReceiveUssdResponse(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
-    .line 6315
     :cond_0
     iget-object v1, p0, Landroid/telephony/TelephonyManager$1;->val$callback:Landroid/telephony/TelephonyManager$UssdResponseCallback;
 
     iget-object v2, p0, Landroid/telephony/TelephonyManager$1;->val$telephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 6316
     invoke-virtual {v0}, Landroid/telephony/UssdResponse;->getUssdRequest()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 6315
     invoke-virtual {v1, v2, v3, p1}, Landroid/telephony/TelephonyManager$UssdResponseCallback;->onReceiveUssdResponseFailed(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V
 
-    .line 6318
     :goto_0
     return-void
 .end method

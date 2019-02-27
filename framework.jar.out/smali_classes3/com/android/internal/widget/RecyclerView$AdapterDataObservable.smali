@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 11030
     invoke-direct {p0}, Landroid/database/Observable;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method public hasObservers()Z
     .locals 1
 
-    .line 11032
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -52,7 +50,6 @@
 .method public notifyChanged()V
     .locals 2
 
-    .line 11040
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -61,11 +58,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 11041
     iget-object v1, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -76,23 +71,17 @@
 
     invoke-virtual {v1}, Lcom/android/internal/widget/RecyclerView$AdapterDataObserver;->onChanged()V
 
-    .line 11040
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 11043
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public notifyItemMoved(II)V
     .locals 3
-    .param p1, "fromPosition"    # I
-    .param p2, "toPosition"    # I
 
-    .line 11080
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -103,11 +92,9 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 11081
     iget-object v2, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -118,38 +105,27 @@
 
     invoke-virtual {v2, p1, p2, v1}, Lcom/android/internal/widget/RecyclerView$AdapterDataObserver;->onItemRangeMoved(III)V
 
-    .line 11080
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 11083
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public notifyItemRangeChanged(II)V
     .locals 1
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11046
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeChanged(IILjava/lang/Object;)V
 
-    .line 11047
     return-void
 .end method
 
 .method public notifyItemRangeChanged(IILjava/lang/Object;)V
     .locals 2
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
-    .param p3, "payload"    # Ljava/lang/Object;
 
-    .line 11054
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -158,11 +134,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 11055
     iget-object v1, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -173,23 +147,17 @@
 
     invoke-virtual {v1, p1, p2, p3}, Lcom/android/internal/widget/RecyclerView$AdapterDataObserver;->onItemRangeChanged(IILjava/lang/Object;)V
 
-    .line 11054
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 11057
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public notifyItemRangeInserted(II)V
     .locals 2
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11064
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -198,11 +166,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 11065
     iget-object v1, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -213,23 +179,17 @@
 
     invoke-virtual {v1, p1, p2}, Lcom/android/internal/widget/RecyclerView$AdapterDataObserver;->onItemRangeInserted(II)V
 
-    .line 11064
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 11067
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public notifyItemRangeRemoved(II)V
     .locals 2
-    .param p1, "positionStart"    # I
-    .param p2, "itemCount"    # I
 
-    .line 11074
     iget-object v0, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -238,11 +198,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 11075
     iget-object v1, p0, Lcom/android/internal/widget/RecyclerView$AdapterDataObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -253,13 +211,10 @@
 
     invoke-virtual {v1, p1, p2}, Lcom/android/internal/widget/RecyclerView$AdapterDataObserver;->onItemRangeRemoved(II)V
 
-    .line 11074
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 11077
-    .end local v0    # "i":I
     :cond_0
     return-void
 .end method

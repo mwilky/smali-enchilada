@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,9 +27,6 @@
 # virtual methods
 .method public onMessage(Landroid/webkit/WebMessagePort;Landroid/webkit/WebMessage;)V
     .locals 0
-    .param p1, "port"    # Landroid/webkit/WebMessagePort;
-    .param p2, "message"    # Landroid/webkit/WebMessage;
 
-    .line 68
     return-void
 .end method

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;
 
-    .line 1278
     iput-object p1, p0, Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$1;->this$0:Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;
 
     iput-object p2, p0, Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$1;->val$listener:Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 1281
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$1;->val$listener:Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;
 
     iget-object v1, p0, Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$1;->this$0:Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;
@@ -56,6 +53,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;->onShowModeChanged(Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;I)V
 
-    .line 1282
     return-void
 .end method

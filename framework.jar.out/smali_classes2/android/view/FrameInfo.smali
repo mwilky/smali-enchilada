@@ -41,10 +41,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     const/16 v0, 0x9
 
     new-array v0, v0, [J
@@ -58,9 +56,7 @@
 # virtual methods
 .method public addFlags(J)V
     .locals 4
-    .param p1, "flags"    # J
 
-    .line 115
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v1, 0x0
@@ -71,14 +67,12 @@
 
     aput-wide v2, v0, v1
 
-    .line 116
     return-void
 .end method
 
 .method public markAnimationsStart()V
     .locals 4
 
-    .line 103
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -89,14 +83,12 @@
 
     aput-wide v1, v0, v3
 
-    .line 104
     return-void
 .end method
 
 .method public markDrawStart()V
     .locals 4
 
-    .line 111
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -107,14 +99,12 @@
 
     aput-wide v1, v0, v3
 
-    .line 112
     return-void
 .end method
 
 .method public markInputHandlingStart()V
     .locals 4
 
-    .line 99
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -125,14 +115,12 @@
 
     aput-wide v1, v0, v3
 
-    .line 100
     return-void
 .end method
 
 .method public markPerformTraversalsStart()V
     .locals 4
 
-    .line 107
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -143,30 +131,24 @@
 
     aput-wide v1, v0, v3
 
-    .line 108
     return-void
 .end method
 
 .method public setVsync(JJ)V
     .locals 4
-    .param p1, "intendedVsync"    # J
-    .param p3, "usedVsync"    # J
 
-    .line 82
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v1, 0x1
 
     aput-wide p1, v0, v1
 
-    .line 83
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v1, 0x2
 
     aput-wide p3, v0, v1
 
-    .line 84
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v1, 0x3
@@ -175,7 +157,6 @@
 
     aput-wide v2, v0, v1
 
-    .line 85
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const-wide/16 v1, 0x0
@@ -184,23 +165,18 @@
 
     aput-wide v1, v0, v3
 
-    .line 86
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v3, 0x0
 
     aput-wide v1, v0, v3
 
-    .line 87
     return-void
 .end method
 
 .method public updateInputEventTime(JJ)V
     .locals 4
-    .param p1, "inputEventTime"    # J
-    .param p3, "inputEventOldestTime"    # J
 
-    .line 90
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     const/4 v1, 0x3
@@ -211,12 +187,10 @@
 
     if-gez v0, :cond_0
 
-    .line 91
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     aput-wide p3, v0, v1
 
-    .line 93
     :cond_0
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
@@ -228,12 +202,10 @@
 
     if-lez v0, :cond_1
 
-    .line 94
     iget-object v0, p0, Landroid/view/FrameInfo;->mFrameInfo:[J
 
     aput-wide p1, v0, v1
 
-    .line 96
     :cond_1
     return-void
 .end method

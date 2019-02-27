@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/pm/RegisteredServicesCache;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/pm/RegisteredServicesCache;
 
-    .line 208
-    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$1;, "Landroid/content/pm/RegisteredServicesCache$1;"
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$1;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -36,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 211
-    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$1;, "Landroid/content/pm/RegisteredServicesCache$1;"
     const-string v0, "android.intent.extra.UID"
 
     const/4 v1, -0x1
@@ -49,11 +42,8 @@
 
     move-result v0
 
-    .line 212
-    .local v0, "uid":I
     if-eq v0, v1, :cond_0
 
-    .line 213
     iget-object v1, p0, Landroid/content/pm/RegisteredServicesCache$1;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     invoke-static {v0}, Landroid/os/UserHandle;->getUserId(I)I
@@ -62,7 +52,6 @@
 
     invoke-static {v1, p2, v2}, Landroid/content/pm/RegisteredServicesCache;->access$100(Landroid/content/pm/RegisteredServicesCache;Landroid/content/Intent;I)V
 
-    .line 215
     :cond_0
     return-void
 .end method

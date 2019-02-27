@@ -36,7 +36,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,9 +43,7 @@
 
 .method static synthetic access$000(Landroid/service/autofill/BatchUpdates$Builder;)Ljava/util/ArrayList;
     .locals 1
-    .param p0, "x0"    # Landroid/service/autofill/BatchUpdates$Builder;
 
-    .line 72
     iget-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mTransformations:Ljava/util/ArrayList;
 
     return-object v0
@@ -54,9 +51,7 @@
 
 .method static synthetic access$100(Landroid/service/autofill/BatchUpdates$Builder;)Landroid/widget/RemoteViews;
     .locals 1
-    .param p0, "x0"    # Landroid/service/autofill/BatchUpdates$Builder;
 
-    .line 72
     iget-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mUpdates:Landroid/widget/RemoteViews;
 
     return-object v0
@@ -65,15 +60,12 @@
 .method private throwIfDestroyed()V
     .locals 2
 
-    .line 144
     iget-boolean v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mDestroyed:Z
 
     if-nez v0, :cond_0
 
-    .line 147
     return-void
 
-    .line 145
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -89,10 +81,8 @@
 .method public build()Landroid/service/autofill/BatchUpdates;
     .locals 3
 
-    .line 136
     invoke-direct {p0}, Landroid/service/autofill/BatchUpdates$Builder;->throwIfDestroyed()V
 
-    .line 137
     iget-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mUpdates:Landroid/widget/RemoteViews;
 
     const/4 v1, 0x1
@@ -119,10 +109,8 @@
 
     invoke-static {v0, v2}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
-    .line 139
     iput-boolean v1, p0, Landroid/service/autofill/BatchUpdates$Builder;->mDestroyed:Z
 
-    .line 140
     new-instance v0, Landroid/service/autofill/BatchUpdates;
 
     const/4 v1, 0x0
@@ -134,13 +122,9 @@
 
 .method public transformChild(ILandroid/service/autofill/Transformation;)Landroid/service/autofill/BatchUpdates$Builder;
     .locals 4
-    .param p1, "id"    # I
-    .param p2, "transformation"    # Landroid/service/autofill/Transformation;
 
-    .line 118
     invoke-direct {p0}, Landroid/service/autofill/BatchUpdates$Builder;->throwIfDestroyed()V
 
-    .line 119
     instance-of v0, p2, Landroid/service/autofill/InternalTransformation;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -159,19 +143,16 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 121
     iget-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mTransformations:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 122
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mTransformations:Ljava/util/ArrayList;
 
-    .line 124
     :cond_0
     iget-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mTransformations:Ljava/util/ArrayList;
 
@@ -189,18 +170,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 125
     return-object p0
 .end method
 
 .method public updateTemplate(Landroid/widget/RemoteViews;)Landroid/service/autofill/BatchUpdates$Builder;
     .locals 1
-    .param p1, "updates"    # Landroid/widget/RemoteViews;
 
-    .line 96
     invoke-direct {p0}, Landroid/service/autofill/BatchUpdates$Builder;->throwIfDestroyed()V
 
-    .line 97
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -209,6 +186,5 @@
 
     iput-object v0, p0, Landroid/service/autofill/BatchUpdates$Builder;->mUpdates:Landroid/widget/RemoteViews;
 
-    .line 98
     return-object p0
 .end method

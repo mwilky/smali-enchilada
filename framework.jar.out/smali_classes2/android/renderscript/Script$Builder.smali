@@ -21,14 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/renderscript/RenderScript;)V
     .locals 0
-    .param p1, "rs"    # Landroid/renderscript/RenderScript;
 
-    .line 480
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 481
     iput-object p1, p0, Landroid/renderscript/Script$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 482
     return-void
 .end method

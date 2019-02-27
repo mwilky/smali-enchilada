@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 81
     new-instance v0, Landroid/media/projection/MediaProjectionInfo$1;
 
     invoke-direct {v0}, Landroid/media/projection/MediaProjectionInfo$1;-><init>()V
@@ -40,44 +39,33 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
 
-    .line 37
     invoke-static {p1}, Landroid/os/UserHandle;->readFromParcel(Landroid/os/Parcel;)Landroid/os/UserHandle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 38
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/os/UserHandle;)V
     .locals 0
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "handle"    # Landroid/os/UserHandle;
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     iput-object p1, p0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
 
-    .line 32
     iput-object p2, p0, Landroid/media/projection/MediaProjectionInfo;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 33
     return-void
 .end method
 
@@ -86,7 +74,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 72
     const/4 v0, 0x0
 
     return v0
@@ -94,22 +81,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 50
     instance-of v0, p1, Landroid/media/projection/MediaProjectionInfo;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 51
     move-object v0, p1
 
     check-cast v0, Landroid/media/projection/MediaProjectionInfo;
 
-    .line 52
-    .local v0, "other":Landroid/media/projection/MediaProjectionInfo;
     iget-object v2, v0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
 
     iget-object v3, p0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
@@ -124,7 +106,6 @@
 
     iget-object v3, p0, Landroid/media/projection/MediaProjectionInfo;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 53
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -135,12 +116,9 @@
 
     nop
 
-    .line 52
     :cond_0
     return v1
 
-    .line 55
-    .end local v0    # "other":Landroid/media/projection/MediaProjectionInfo;
     :cond_1
     return v1
 .end method
@@ -148,7 +126,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 41
     iget-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -157,7 +134,6 @@
 .method public getUserHandle()Landroid/os/UserHandle;
     .locals 1
 
-    .line 45
     iget-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mUserHandle:Landroid/os/UserHandle;
 
     return-object v0
@@ -166,7 +142,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 60
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -193,7 +168,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 65
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -227,19 +201,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 77
     iget-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mPackageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 78
     iget-object v0, p0, Landroid/media/projection/MediaProjectionInfo;->mUserHandle:Landroid/os/UserHandle;
 
     invoke-static {v0, p1}, Landroid/os/UserHandle;->writeToParcel(Landroid/os/UserHandle;Landroid/os/Parcel;)V
 
-    .line 79
     return-void
 .end method

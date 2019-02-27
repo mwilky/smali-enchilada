@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/LockPatternView;Lcom/android/internal/widget/LockPatternView$CellState;FFFF)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/LockPatternView;
 
-    .line 785
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternView$5;->this$0:Lcom/android/internal/widget/LockPatternView;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternView$5;->val$state:Lcom/android/internal/widget/LockPatternView$CellState;
@@ -58,9 +56,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 5
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 788
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -71,8 +67,6 @@
 
     move-result v0
 
-    .line 789
-    .local v0, "t":F
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$5;->val$state:Lcom/android/internal/widget/LockPatternView$CellState;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -91,7 +85,6 @@
 
     iput v3, v1, Lcom/android/internal/widget/LockPatternView$CellState;->lineEndX:F
 
-    .line 790
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$5;->val$state:Lcom/android/internal/widget/LockPatternView$CellState;
 
     sub-float/2addr v2, v0
@@ -108,11 +101,9 @@
 
     iput v2, v1, Lcom/android/internal/widget/LockPatternView$CellState;->lineEndY:F
 
-    .line 791
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$5;->this$0:Lcom/android/internal/widget/LockPatternView;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
 
-    .line 792
     return-void
 .end method

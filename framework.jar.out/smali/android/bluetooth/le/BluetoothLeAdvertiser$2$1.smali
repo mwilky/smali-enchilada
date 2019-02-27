@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/BluetoothLeAdvertiser$2;III)V
     .locals 0
-    .param p1, "this$1"    # Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
-    .line 544
     iput-object p1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iput p2, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->val$status:I
@@ -51,12 +49,10 @@
 .method public run()V
     .locals 4
 
-    .line 547
     iget v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->val$status:I
 
     if-eqz v0, :cond_0
 
-    .line 548
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v0, v0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$callback:Landroid/bluetooth/le/AdvertisingSetCallback;
@@ -69,7 +65,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/bluetooth/le/AdvertisingSetCallback;->onAdvertisingSetStarted(Landroid/bluetooth/le/AdvertisingSet;II)V
 
-    .line 549
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v0, v0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -84,10 +79,8 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 550
     return-void
 
-    .line 553
     :cond_0
     new-instance v0, Landroid/bluetooth/le/AdvertisingSet;
 
@@ -97,15 +90,12 @@
 
     iget-object v2, v2, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
 
-    .line 554
     invoke-static {v2}, Landroid/bluetooth/le/BluetoothLeAdvertiser;->access$300(Landroid/bluetooth/le/BluetoothLeAdvertiser;)Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v2
 
     invoke-direct {v0, v1, v2}, Landroid/bluetooth/le/AdvertisingSet;-><init>(ILandroid/bluetooth/IBluetoothManager;)V
 
-    .line 555
-    .local v0, "advertisingSet":Landroid/bluetooth/le/AdvertisingSet;
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -122,7 +112,6 @@
 
     invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 556
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$callback:Landroid/bluetooth/le/AdvertisingSetCallback;
@@ -133,6 +122,5 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/bluetooth/le/AdvertisingSetCallback;->onAdvertisingSetStarted(Landroid/bluetooth/le/AdvertisingSet;II)V
 
-    .line 557
     return-void
 .end method

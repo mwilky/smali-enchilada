@@ -27,9 +27,7 @@
 # direct methods
 .method public constructor <init>(Landroid/service/pm/PackageServiceDumpProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/pm/PackageServiceDumpProto;
 
-    .line 39
     iput-object p1, p0, Landroid/service/pm/PackageServiceDumpProto$SharedUserProto;->this$0:Landroid/service/pm/PackageServiceDumpProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

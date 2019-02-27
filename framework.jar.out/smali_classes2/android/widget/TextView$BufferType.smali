@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 10339
     new-instance v0, Landroid/widget/TextView$BufferType;
 
     const-string v1, "NORMAL"
@@ -67,7 +66,6 @@
 
     sput-object v0, Landroid/widget/TextView$BufferType;->EDITABLE:Landroid/widget/TextView$BufferType;
 
-    .line 10338
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/widget/TextView$BufferType;
@@ -97,7 +95,6 @@
         }
     .end annotation
 
-    .line 10338
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -105,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/widget/TextView$BufferType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 10338
     const-class v0, Landroid/widget/TextView$BufferType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -122,7 +117,6 @@
 .method public static values()[Landroid/widget/TextView$BufferType;
     .locals 1
 
-    .line 10338
     sget-object v0, Landroid/widget/TextView$BufferType;->$VALUES:[Landroid/widget/TextView$BufferType;
 
     invoke-virtual {v0}, [Landroid/widget/TextView$BufferType;->clone()Ljava/lang/Object;

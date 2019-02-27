@@ -26,8 +26,6 @@
         }
     .end annotation
 
-    .line 338
-    .local p1, "values":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/view/autofill/AutofillValue;>;"
     return-void
 .end method
 
@@ -45,9 +43,7 @@
 
 .method public isVisibleToUserForAutofill(I)Z
     .locals 1
-    .param p1, "virtualId"    # I
 
-    .line 341
     const/4 v0, 0x1
 
     return v0
@@ -62,7 +58,6 @@
 .method public onCheckIsTextEditor()Z
     .locals 1
 
-    .line 433
     const/4 v0, 0x0
 
     return v0
@@ -118,10 +113,7 @@
 
 .method public onMovedToDisplay(ILandroid/content/res/Configuration;)V
     .locals 0
-    .param p1, "displayId"    # I
-    .param p2, "config"    # Landroid/content/res/Configuration;
 
-    .line 385
     return-void
 .end method
 
@@ -130,10 +122,7 @@
 
 .method public onProvideAutofillVirtualStructure(Landroid/view/ViewStructure;I)V
     .locals 0
-    .param p1, "structure"    # Landroid/view/ViewStructure;
-    .param p2, "flags"    # I
 
-    .line 335
     return-void
 .end method
 

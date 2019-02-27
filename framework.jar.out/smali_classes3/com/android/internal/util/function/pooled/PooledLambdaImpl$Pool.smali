@@ -25,13 +25,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "lock"    # Ljava/lang/Object;
 
-    .line 66
     const/16 v0, 0x32
 
     invoke-direct {p0, v0, p1}, Landroid/util/Pools$SynchronizedPool;-><init>(ILjava/lang/Object;)V
 
-    .line 67
     return-void
 .end method

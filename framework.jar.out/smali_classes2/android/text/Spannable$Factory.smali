@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 68
     new-instance v0, Landroid/text/Spannable$Factory;
 
     invoke-direct {v0}, Landroid/text/Spannable$Factory;-><init>()V
@@ -35,7 +34,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +42,6 @@
 .method public static getInstance()Landroid/text/Spannable$Factory;
     .locals 1
 
-    .line 74
     sget-object v0, Landroid/text/Spannable$Factory;->sInstance:Landroid/text/Spannable$Factory;
 
     return-object v0
@@ -54,9 +51,7 @@
 # virtual methods
 .method public newSpannable(Ljava/lang/CharSequence;)Landroid/text/Spannable;
     .locals 1
-    .param p1, "source"    # Ljava/lang/CharSequence;
 
-    .line 82
     new-instance v0, Landroid/text/SpannableString;
 
     invoke-direct {v0, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V

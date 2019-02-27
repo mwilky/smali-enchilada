@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;
 
-    .line 1826
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker$1;->this$0:Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;
 
     invoke-direct {p0}, Landroid/app/trust/IStrongAuthTracker$Stub;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onStrongAuthRequiredChanged(II)V
     .locals 2
-    .param p1, "strongAuthFlags"    # I
-    .param p2, "userId"    # I
 
-    .line 1830
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker$1;->this$0:Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;
 
     invoke-static {v0}, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;->access$100(Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;)Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker$H;
@@ -51,9 +46,7 @@
 
     move-result-object v0
 
-    .line 1831
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1832
     return-void
 .end method

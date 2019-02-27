@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,9 +18,7 @@
 
 .method public static getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 39
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0

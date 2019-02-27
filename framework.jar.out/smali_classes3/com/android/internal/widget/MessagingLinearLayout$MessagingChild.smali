@@ -29,7 +29,6 @@
 .method public getExtraSpacing()I
     .locals 1
 
-    .line 274
     const/4 v0, 0x0
 
     return v0

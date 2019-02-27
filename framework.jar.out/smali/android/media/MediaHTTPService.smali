@@ -33,11 +33,8 @@
         }
     .end annotation
 
-    .line 34
-    .local p1, "cookies":Ljava/util/List;, "Ljava/util/List<Ljava/net/HttpCookie;>;"
     invoke-direct {p0}, Landroid/media/IMediaHTTPService$Stub;-><init>()V
 
-    .line 32
     new-instance v0, Ljava/lang/Boolean;
 
     const/4 v1, 0x0
@@ -46,10 +43,8 @@
 
     iput-object v0, p0, Landroid/media/MediaHTTPService;->mCookieStoreInitialized:Ljava/lang/Boolean;
 
-    .line 35
     iput-object p1, p0, Landroid/media/MediaHTTPService;->mCookies:Ljava/util/List;
 
-    .line 36
     const-string v0, "MediaHTTPService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,15 +69,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 37
     return-void
 .end method
 
 .method static createHttpServiceBinderIfNecessary(Ljava/lang/String;)Landroid/os/IBinder;
     .locals 1
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 87
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/media/MediaHTTPService;->createHttpServiceBinderIfNecessary(Ljava/lang/String;Ljava/util/List;)Landroid/os/IBinder;
@@ -94,7 +86,6 @@
 
 .method static createHttpServiceBinderIfNecessary(Ljava/lang/String;Ljava/util/List;)Landroid/os/IBinder;
     .locals 2
-    .param p0, "path"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,8 +97,6 @@
         }
     .end annotation
 
-    .line 93
-    .local p1, "cookies":Ljava/util/List;, "Ljava/util/List<Ljava/net/HttpCookie;>;"
     const-string v0, "http://"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -126,7 +115,6 @@
 
     goto :goto_0
 
-    .line 95
     :cond_0
     const-string/jumbo v0, "widevine://"
 
@@ -136,20 +124,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 96
     const-string v0, "MediaHTTPService"
 
     const-string v1, "Widevine classic is no longer supported"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     :cond_1
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 94
     :cond_2
     :goto_0
     new-instance v0, Landroid/media/MediaHTTPService;
@@ -168,12 +153,10 @@
 .method public makeHTTPConnection()Landroid/media/IMediaHTTPConnection;
     .locals 10
 
-    .line 41
     iget-object v0, p0, Landroid/media/MediaHTTPService;->mCookieStoreInitialized:Ljava/lang/Boolean;
 
     monitor-enter v0
 
-    .line 43
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaHTTPService;->mCookieStoreInitialized:Ljava/lang/Boolean;
 
@@ -183,26 +166,20 @@
 
     if-nez v1, :cond_4
 
-    .line 44
     invoke-static {}, Ljava/net/CookieHandler;->getDefault()Ljava/net/CookieHandler;
 
     move-result-object v1
 
-    .line 45
-    .local v1, "cookieHandler":Ljava/net/CookieHandler;
     if-nez v1, :cond_0
 
-    .line 46
     new-instance v2, Ljava/net/CookieManager;
 
     invoke-direct {v2}, Ljava/net/CookieManager;-><init>()V
 
     move-object v1, v2
 
-    .line 47
     invoke-static {v1}, Ljava/net/CookieHandler;->setDefault(Ljava/net/CookieHandler;)V
 
-    .line 48
     const-string v2, "MediaHTTPService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -223,7 +200,6 @@
 
     goto :goto_0
 
-    .line 50
     :cond_0
     const-string v2, "MediaHTTPService"
 
@@ -247,30 +223,23 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     :goto_0
     iget-object v2, p0, Landroid/media/MediaHTTPService;->mCookies:Ljava/util/List;
 
     if-eqz v2, :cond_3
 
-    .line 55
     instance-of v2, v1, Ljava/net/CookieManager;
 
     if-eqz v2, :cond_2
 
-    .line 56
     move-object v2, v1
 
     check-cast v2, Ljava/net/CookieManager;
 
-    .line 57
-    .local v2, "cookieManager":Ljava/net/CookieManager;
     invoke-virtual {v2}, Ljava/net/CookieManager;->getCookieStore()Ljava/net/CookieStore;
 
     move-result-object v3
 
-    .line 58
-    .local v3, "store":Ljava/net/CookieStore;
     iget-object v4, p0, Landroid/media/MediaHTTPService;->mCookies:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -292,8 +261,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 60
-    .local v5, "cookie":Ljava/net/HttpCookie;
     const/4 v6, 0x0
 
     :try_start_1
@@ -302,15 +269,11 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 63
     goto :goto_2
 
-    .line 61
     :catch_0
     move-exception v6
 
-    .line 62
-    .local v6, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v7, "MediaHTTPService"
 
@@ -330,19 +293,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
-    .end local v5    # "cookie":Ljava/net/HttpCookie;
-    .end local v6    # "e":Ljava/lang/Exception;
     :goto_2
     goto :goto_1
 
-    .line 68
-    .end local v2    # "cookieManager":Ljava/net/CookieManager;
-    .end local v3    # "store":Ljava/net/CookieStore;
     :cond_1
     goto :goto_3
 
-    .line 69
     :cond_2
     const-string v2, "MediaHTTPService"
 
@@ -350,7 +306,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     :cond_3
     :goto_3
     const/4 v2, 0x1
@@ -361,7 +316,6 @@
 
     iput-object v2, p0, Landroid/media/MediaHTTPService;->mCookieStoreInitialized:Ljava/lang/Boolean;
 
-    .line 77
     const-string v2, "MediaHTTPService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -394,21 +348,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
-    .end local v1    # "cookieHandler":Ljava/net/CookieHandler;
     :cond_4
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 82
     new-instance v0, Landroid/media/MediaHTTPConnection;
 
     invoke-direct {v0}, Landroid/media/MediaHTTPConnection;-><init>()V
 
     return-object v0
 
-    .line 80
     :catchall_0
     move-exception v1
 

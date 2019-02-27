@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 331
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,31 +35,24 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/os/BatteryManager;
     .locals 3
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 334
     const-string v0, "batterystats"
 
-    .line 335
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 334
     invoke-static {v0}, Lcom/android/internal/app/IBatteryStats$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
-    .line 336
-    .local v0, "stats":Lcom/android/internal/app/IBatteryStats;
     const-string v1, "batteryproperties"
 
-    .line 337
     invoke-static {v1}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
@@ -69,8 +61,6 @@
 
     move-result-object v1
 
-    .line 338
-    .local v1, "registrar":Landroid/os/IBatteryPropertiesRegistrar;
     new-instance v2, Landroid/os/BatteryManager;
 
     invoke-direct {v2, p1, v0, v1}, Landroid/os/BatteryManager;-><init>(Landroid/content/Context;Lcom/android/internal/app/IBatteryStats;Landroid/os/IBatteryPropertiesRegistrar;)V
@@ -86,7 +76,6 @@
         }
     .end annotation
 
-    .line 331
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$17;->createService(Landroid/app/ContextImpl;)Landroid/os/BatteryManager;
 
     move-result-object p1

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/Editor;
 
-    .line 2909
     iput-object p1, p0, Landroid/widget/Editor$5;->this$0:Landroid/widget/Editor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 2912
     iget-object v0, p0, Landroid/widget/Editor$5;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mProcessTextIntentActionsHandler:Landroid/widget/Editor$ProcessTextIntentActionsHandler;
@@ -51,12 +47,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2913
     const/4 v0, 0x1
 
     return v0
 
-    .line 2915
     :cond_0
     iget-object v0, p0, Landroid/widget/Editor$5;->this$0:Landroid/widget/Editor;
 

@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,20 +28,17 @@
 .method public onPaused()V
     .locals 0
 
-    .line 123
     return-void
 .end method
 
 .method public onResumed()V
     .locals 0
 
-    .line 129
     return-void
 .end method
 
 .method public onStopped()V
     .locals 0
 
-    .line 137
     return-void
 .end method

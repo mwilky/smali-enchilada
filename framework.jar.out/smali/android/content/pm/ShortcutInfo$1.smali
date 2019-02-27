@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1943
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/ShortcutInfo;
     .locals 2
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 1945
     new-instance v0, Landroid/content/pm/ShortcutInfo;
 
     const/4 v1, 0x0
@@ -55,7 +52,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 1943
     invoke-virtual {p0, p1}, Landroid/content/pm/ShortcutInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/ShortcutInfo;
 
     move-result-object p1
@@ -65,9 +61,7 @@
 
 .method public newArray(I)[Landroid/content/pm/ShortcutInfo;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 1948
     new-array v0, p1, [Landroid/content/pm/ShortcutInfo;
 
     return-object v0
@@ -76,7 +70,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 1943
     invoke-virtual {p0, p1}, Landroid/content/pm/ShortcutInfo$1;->newArray(I)[Landroid/content/pm/ShortcutInfo;
 
     move-result-object p1

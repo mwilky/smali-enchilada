@@ -23,16 +23,11 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/RemoteViews;J)V
     .locals 0
-    .param p1, "v"    # Landroid/widget/RemoteViews;
-    .param p2, "itemId"    # J
 
-    .line 532
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 533
     invoke-virtual {p0, p1, p2, p3}, Landroid/widget/RemoteViewsAdapter$RemoteViewsIndexMetaData;->set(Landroid/widget/RemoteViews;J)V
 
-    .line 534
     return-void
 .end method
 
@@ -40,16 +35,11 @@
 # virtual methods
 .method public set(Landroid/widget/RemoteViews;J)V
     .locals 1
-    .param p1, "v"    # Landroid/widget/RemoteViews;
-    .param p2, "id"    # J
 
-    .line 537
     iput-wide p2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsIndexMetaData;->itemId:J
 
-    .line 538
     if-eqz p1, :cond_0
 
-    .line 539
     invoke-virtual {p1}, Landroid/widget/RemoteViews;->getLayoutId()I
 
     move-result v0
@@ -58,13 +48,11 @@
 
     goto :goto_0
 
-    .line 541
     :cond_0
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsIndexMetaData;->typeId:I
 
-    .line 543
     :goto_0
     return-void
 .end method

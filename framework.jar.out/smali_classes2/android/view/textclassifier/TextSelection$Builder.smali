@@ -36,20 +36,15 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 3
-    .param p1, "startIndex"    # I
-    .param p2, "endIndex"    # I
 
-    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 121
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/view/textclassifier/TextSelection$Builder;->mEntityConfidence:Ljava/util/Map;
 
-    .line 131
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -66,7 +61,6 @@
     :goto_0
     invoke-static {v2}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 132
     if-le p2, p1, :cond_1
 
     move v0, v1
@@ -76,13 +70,10 @@
     :cond_1
     invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 133
     iput p1, p0, Landroid/view/textclassifier/TextSelection$Builder;->mStartIndex:I
 
-    .line 134
     iput p2, p0, Landroid/view/textclassifier/TextSelection$Builder;->mEndIndex:I
 
-    .line 135
     return-void
 .end method
 
@@ -91,7 +82,6 @@
 .method public build()Landroid/view/textclassifier/TextSelection;
     .locals 7
 
-    .line 167
     new-instance v6, Landroid/view/textclassifier/TextSelection;
 
     iget v1, p0, Landroid/view/textclassifier/TextSelection$Builder;->mStartIndex:I
@@ -113,13 +103,9 @@
 
 .method public setEntityType(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;
     .locals 2
-    .param p1, "type"    # Ljava/lang/String;
-    .param p2, "confidenceScore"    # F
 
-    .line 148
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 149
     iget-object v0, p0, Landroid/view/textclassifier/TextSelection$Builder;->mEntityConfidence:Ljava/util/Map;
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -128,17 +114,13 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 150
     return-object p0
 .end method
 
 .method public setId(Ljava/lang/String;)Landroid/view/textclassifier/TextSelection$Builder;
     .locals 0
-    .param p1, "id"    # Ljava/lang/String;
 
-    .line 158
     iput-object p1, p0, Landroid/view/textclassifier/TextSelection$Builder;->mId:Ljava/lang/String;
 
-    .line 159
     return-object p0
 .end method

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 308
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -42,15 +41,12 @@
         }
     .end annotation
 
-    .line 311
     const-string v0, "country_detector"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 312
-    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/location/CountryDetector;
 
     invoke-static {v0}, Landroid/location/ICountryDetector$Stub;->asInterface(Landroid/os/IBinder;)Landroid/location/ICountryDetector;
@@ -70,7 +66,6 @@
         }
     .end annotation
 
-    .line 308
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$14;->createService()Landroid/location/CountryDetector;
 
     move-result-object v0

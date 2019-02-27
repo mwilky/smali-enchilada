@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer$EventHandler;Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;Landroid/media/MediaTimestamp;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/media/MediaPlayer$EventHandler;
 
-    .line 3704
     iput-object p1, p0, Landroid/media/MediaPlayer$EventHandler$2;->this$1:Landroid/media/MediaPlayer$EventHandler;
 
     iput-object p2, p0, Landroid/media/MediaPlayer$EventHandler$2;->val$mediaTimeListener:Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 3707
     iget-object v0, p0, Landroid/media/MediaPlayer$EventHandler$2;->val$mediaTimeListener:Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;
 
     iget-object v1, p0, Landroid/media/MediaPlayer$EventHandler$2;->this$1:Landroid/media/MediaPlayer$EventHandler;
@@ -60,6 +57,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/media/MediaPlayer$OnMediaTimeDiscontinuityListener;->onMediaTimeDiscontinuity(Landroid/media/MediaPlayer;Landroid/media/MediaTimestamp;)V
 
-    .line 3708
     return-void
 .end method

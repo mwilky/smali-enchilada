@@ -85,9 +85,7 @@
 # direct methods
 .method public constructor <init>(Landroid/service/procstats/ProcessStatsProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/procstats/ProcessStatsProto;
 
-    .line 25
     iput-object p1, p0, Landroid/service/procstats/ProcessStatsProto$State;->this$0:Landroid/service/procstats/ProcessStatsProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

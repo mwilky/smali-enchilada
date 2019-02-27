@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 41
     const-string v0, "FNumber"
 
     const-string v1, "Copyright"
@@ -73,14 +72,12 @@
 
     sput-object v0, Landroid/provider/MetadataReader;->DEFAULT_EXIF_TAGS:[Ljava/lang/String;
 
-    .line 65
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
-    .line 71
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Artist"
@@ -93,7 +90,6 @@
 
     invoke-interface {v0, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 72
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "BitsPerSample"
@@ -106,7 +102,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Compression"
@@ -117,7 +112,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Copyright"
@@ -128,7 +122,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DateTime"
@@ -139,7 +132,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 76
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ImageDescription"
@@ -150,7 +142,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 77
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ImageLength"
@@ -161,7 +152,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ImageWidth"
@@ -172,7 +162,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 79
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "JPEGInterchangeFormat"
@@ -183,7 +172,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 80
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "JPEGInterchangeFormatLength"
@@ -194,7 +182,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Make"
@@ -205,7 +192,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Model"
@@ -216,7 +202,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 83
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Orientation"
@@ -227,7 +212,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 84
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PhotometricInterpretation"
@@ -238,7 +222,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PlanarConfiguration"
@@ -249,7 +232,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PrimaryChromaticities"
@@ -262,7 +244,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ReferenceBlackWhite"
@@ -273,7 +254,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 88
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ResolutionUnit"
@@ -284,7 +264,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "RowsPerStrip"
@@ -295,7 +274,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SamplesPerPixel"
@@ -306,7 +284,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 91
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Software"
@@ -317,7 +294,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "StripByteCounts"
@@ -328,7 +304,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 93
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "StripOffsets"
@@ -339,7 +314,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "TransferFunction"
@@ -350,7 +324,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "WhitePoint"
@@ -361,7 +334,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "XResolution"
@@ -372,7 +344,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "YCbCrCoefficients"
@@ -383,7 +354,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "YCbCrPositioning"
@@ -394,7 +364,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "YCbCrSubSampling"
@@ -405,7 +374,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 100
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "YResolution"
@@ -416,7 +384,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ApertureValue"
@@ -427,7 +394,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 102
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "BrightnessValue"
@@ -438,7 +404,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "CFAPattern"
@@ -449,7 +414,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 104
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ColorSpace"
@@ -460,7 +424,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 105
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ComponentsConfiguration"
@@ -471,7 +434,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 106
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "CompressedBitsPerPixel"
@@ -482,7 +444,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Contrast"
@@ -493,7 +454,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 108
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "CustomRendered"
@@ -504,7 +464,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DateTimeDigitized"
@@ -515,7 +474,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 110
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DateTimeOriginal"
@@ -526,7 +484,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 111
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DeviceSettingDescription"
@@ -537,7 +494,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DigitalZoomRatio"
@@ -548,7 +504,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 113
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExifVersion"
@@ -559,7 +514,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExposureBiasValue"
@@ -570,7 +524,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExposureIndex"
@@ -581,7 +534,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 116
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExposureMode"
@@ -592,7 +544,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExposureProgram"
@@ -603,7 +554,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ExposureTime"
@@ -614,7 +564,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 119
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FNumber"
@@ -625,7 +574,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FileSource"
@@ -636,7 +584,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 121
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Flash"
@@ -647,7 +594,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 122
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FlashEnergy"
@@ -658,7 +604,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 123
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FlashpixVersion"
@@ -669,7 +614,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 124
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FocalLength"
@@ -680,7 +624,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 125
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FocalLengthIn35mmFilm"
@@ -691,7 +634,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FocalPlaneResolutionUnit"
@@ -702,7 +644,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 127
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FocalPlaneXResolution"
@@ -713,7 +654,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "FocalPlaneYResolution"
@@ -724,7 +664,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 129
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GainControl"
@@ -735,7 +674,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 130
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ISOSpeedRatings"
@@ -746,7 +684,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 131
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ImageUniqueID"
@@ -757,7 +694,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "LightSource"
@@ -768,7 +704,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 133
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "MakerNote"
@@ -779,7 +714,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 134
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "MaxApertureValue"
@@ -790,7 +724,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 135
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "MeteringMode"
@@ -801,7 +734,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 136
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "NewSubfileType"
@@ -812,7 +744,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 137
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "OECF"
@@ -823,7 +754,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 138
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PixelXDimension"
@@ -834,7 +764,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 139
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PixelYDimension"
@@ -845,7 +774,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 140
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "RelatedSoundFile"
@@ -856,7 +784,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 141
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Saturation"
@@ -867,7 +794,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SceneCaptureType"
@@ -878,7 +804,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SceneType"
@@ -889,7 +814,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 144
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SensingMethod"
@@ -900,7 +824,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 145
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "Sharpness"
@@ -911,7 +834,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 146
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ShutterSpeedValue"
@@ -922,7 +844,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 147
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SpatialFrequencyResponse"
@@ -933,7 +854,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 148
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SpectralSensitivity"
@@ -944,7 +864,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 149
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubfileType"
@@ -955,7 +874,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 150
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubSecTime"
@@ -966,7 +884,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 151
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubSecTimeDigitized"
@@ -977,7 +894,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 152
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubSecTimeOriginal"
@@ -988,7 +904,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 153
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubjectArea"
@@ -999,7 +914,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 154
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubjectDistance"
@@ -1010,7 +924,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 155
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubjectDistanceRange"
@@ -1021,7 +934,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SubjectLocation"
@@ -1032,7 +944,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "UserComment"
@@ -1043,7 +954,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 158
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "WhiteBalance"
@@ -1054,7 +964,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 159
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSAltitude"
@@ -1065,7 +974,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 160
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSAltitudeRef"
@@ -1076,7 +984,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 161
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSAreaInformation"
@@ -1087,7 +994,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 162
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDOP"
@@ -1098,7 +1004,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 163
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDateStamp"
@@ -1109,7 +1014,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 164
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestBearing"
@@ -1120,7 +1024,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 165
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestBearingRef"
@@ -1131,7 +1034,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 166
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestDistance"
@@ -1142,7 +1044,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 167
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestDistanceRef"
@@ -1153,7 +1054,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 168
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestLatitude"
@@ -1164,7 +1064,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 169
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestLatitudeRef"
@@ -1175,7 +1074,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 170
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestLongitude"
@@ -1186,7 +1084,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 171
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDestLongitudeRef"
@@ -1197,7 +1094,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 172
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSDifferential"
@@ -1208,7 +1104,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 173
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSImgDirection"
@@ -1219,7 +1114,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 174
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSImgDirectionRef"
@@ -1230,7 +1124,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 175
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSLatitude"
@@ -1241,7 +1134,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 176
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSLatitudeRef"
@@ -1252,7 +1144,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 177
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSLongitude"
@@ -1263,7 +1154,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 178
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSLongitudeRef"
@@ -1274,7 +1164,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 179
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSMapDatum"
@@ -1285,7 +1174,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 180
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSMeasureMode"
@@ -1296,7 +1184,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 181
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSProcessingMethod"
@@ -1307,7 +1194,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 182
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSSatellites"
@@ -1318,7 +1204,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 183
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSSpeed"
@@ -1329,7 +1214,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 184
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSSpeedRef"
@@ -1340,7 +1224,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 185
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSStatus"
@@ -1351,7 +1234,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSTimeStamp"
@@ -1362,7 +1244,6 @@
 
     invoke-interface {v0, v1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 187
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSTrack"
@@ -1373,7 +1254,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 188
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSTrackRef"
@@ -1384,7 +1264,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 189
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "GPSVersionID"
@@ -1395,7 +1274,6 @@
 
     invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 190
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "InteroperabilityIndex"
@@ -1406,7 +1284,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 191
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ThumbnailImageLength"
@@ -1417,7 +1294,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ThumbnailImageWidth"
@@ -1428,7 +1304,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 193
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DNGVersion"
@@ -1439,7 +1314,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 194
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "DefaultCropSize"
@@ -1450,7 +1324,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 197
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PreviewImageStart"
@@ -1461,7 +1334,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 198
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "PreviewImageLength"
@@ -1472,7 +1344,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 199
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "AspectFrame"
@@ -1483,7 +1354,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 200
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SensorBottomBorder"
@@ -1494,7 +1364,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 201
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SensorLeftBorder"
@@ -1505,7 +1374,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 202
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SensorRightBorder"
@@ -1516,7 +1384,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 203
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "SensorTopBorder"
@@ -1527,7 +1394,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
     sget-object v0, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     const-string v1, "ISO"
@@ -1538,14 +1404,12 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 205
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1553,34 +1417,25 @@
 
 .method private static getExifData(Ljava/io/InputStream;[Ljava/lang/String;)Landroid/os/Bundle;
     .locals 10
-    .param p0, "stream"    # Ljava/io/InputStream;
-    .param p1, "tags"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 254
     if-nez p1, :cond_0
 
-    .line 255
     sget-object p1, Landroid/provider/MetadataReader;->DEFAULT_EXIF_TAGS:[Ljava/lang/String;
 
-    .line 258
     :cond_0
     new-instance v0, Landroid/media/ExifInterface;
 
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/io/InputStream;)V
 
-    .line 259
-    .local v0, "exifInterface":Landroid/media/ExifInterface;
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 260
-    .local v1, "exif":Landroid/os/Bundle;
     array-length v2, p1
 
     const/4 v3, 0x0
@@ -1592,8 +1447,6 @@
 
     aget-object v5, p1, v4
 
-    .line 261
-    .local v5, "tag":Ljava/lang/String;
     sget-object v6, Landroid/provider/MetadataReader;->TYPE_MAPPING:Ljava/util/Map;
 
     invoke-interface {v6, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1612,22 +1465,16 @@
 
     if-eqz v6, :cond_2
 
-    .line 262
     const/high16 v6, -0x80000000
 
     invoke-virtual {v0, v5, v6}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 263
-    .local v7, "data":I
     if-eq v7, v6, :cond_1
 
-    .line 264
     invoke-virtual {v1, v5, v7}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 266
-    .end local v7    # "data":I
     :cond_1
     goto :goto_1
 
@@ -1652,24 +1499,18 @@
 
     if-eqz v6, :cond_4
 
-    .line 267
     const-wide/16 v6, 0x1
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/media/ExifInterface;->getAttributeDouble(Ljava/lang/String;D)D
 
     move-result-wide v8
 
-    .line 268
-    .local v8, "data":D
     cmpl-double v6, v8, v6
 
     if-eqz v6, :cond_3
 
-    .line 269
     invoke-virtual {v1, v5, v8, v9}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 271
-    .end local v8    # "data":D
     :cond_3
     goto :goto_1
 
@@ -1694,86 +1535,63 @@
 
     if-eqz v6, :cond_5
 
-    .line 272
     invoke-virtual {v0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 273
-    .local v6, "data":Ljava/lang/String;
     if-eqz v6, :cond_5
 
-    .line 274
     invoke-virtual {v1, v5, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 260
-    .end local v5    # "tag":Ljava/lang/String;
-    .end local v6    # "data":Ljava/lang/String;
     :cond_5
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 278
     :cond_6
     return-object v1
 .end method
 
 .method public static getMetadata(Landroid/os/Bundle;Ljava/io/InputStream;Ljava/lang/String;[Ljava/lang/String;)V
     .locals 3
-    .param p0, "metadata"    # Landroid/os/Bundle;
-    .param p1, "stream"    # Ljava/io/InputStream;
-    .param p2, "mimeType"    # Ljava/lang/String;
-    .param p3, "tags"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 231
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 232
-    .local v0, "metadataTypes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p2}, Landroid/provider/MetadataReader;->isSupportedMimeType(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 233
     invoke-static {p1, p3}, Landroid/provider/MetadataReader;->getExifData(Ljava/io/InputStream;[Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 234
-    .local v1, "exifData":Landroid/os/Bundle;
     invoke-virtual {v1}, Landroid/os/Bundle;->size()I
 
     move-result v2
 
     if-lez v2, :cond_0
 
-    .line 235
     const-string v2, "android:documentExif"
 
     invoke-virtual {p0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 236
     const-string v2, "android:documentExif"
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 239
-    .end local v1    # "exifData":Landroid/os/Bundle;
     :cond_0
     const-string v1, "android:documentMetadataType"
 
-    .line 240
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -1786,18 +1604,14 @@
 
     check-cast v2, [Ljava/lang/String;
 
-    .line 239
     invoke-virtual {p0, v1, v2}, Landroid/os/Bundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 243
     return-void
 .end method
 
 .method public static isSupportedMimeType(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "mimeType"    # Ljava/lang/String;
 
-    .line 215
     const-string v0, "image/jpg"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

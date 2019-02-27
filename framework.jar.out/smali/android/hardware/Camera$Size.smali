@@ -28,22 +28,15 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/Camera;II)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/Camera;
-    .param p2, "w"    # I
-    .param p3, "h"    # I
 
-    .line 2681
     iput-object p1, p0, Landroid/hardware/Camera$Size;->this$0:Landroid/hardware/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2682
     iput p2, p0, Landroid/hardware/Camera$Size;->width:I
 
-    .line 2683
     iput p3, p0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 2684
     return-void
 .end method
 
@@ -51,26 +44,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 2694
     instance-of v0, p1, Landroid/hardware/Camera$Size;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 2695
     return v1
 
-    .line 2697
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/hardware/Camera$Size;
 
-    .line 2698
-    .local v0, "s":Landroid/hardware/Camera$Size;
     iget v2, p0, Landroid/hardware/Camera$Size;->width:I
 
     iget v3, v0, Landroid/hardware/Camera$Size;->width:I
@@ -94,7 +81,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 2702
     iget v0, p0, Landroid/hardware/Camera$Size;->width:I
 
     mul-int/lit16 v0, v0, 0x7fc9

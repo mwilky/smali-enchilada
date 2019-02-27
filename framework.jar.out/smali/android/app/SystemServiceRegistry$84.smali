@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 935
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Lcom/oem/os/OnePlusNfcManager;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
-    .line 938
     new-instance v0, Lcom/oem/os/OnePlusNfcManager;
 
     invoke-direct {v0, p1}, Lcom/oem/os/OnePlusNfcManager;-><init>(Landroid/content/Context;)V
@@ -54,7 +51,6 @@
         }
     .end annotation
 
-    .line 935
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$84;->createService(Landroid/app/ContextImpl;)Lcom/oem/os/OnePlusNfcManager;
 
     move-result-object p1

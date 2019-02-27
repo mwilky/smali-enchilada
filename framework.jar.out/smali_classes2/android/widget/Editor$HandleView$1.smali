@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor$HandleView;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/widget/Editor$HandleView;
 
-    .line 4891
     iput-object p1, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onOperationComplete()V
     .locals 7
 
-    .line 4894
     iget-object v0, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     iget-object v0, v0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
@@ -56,14 +53,10 @@
 
     move-result-object v0
 
-    .line 4895
-    .local v0, "magnifierTopLeft":Landroid/graphics/Point;
     if-nez v0, :cond_0
 
-    .line 4896
     return-void
 
-    .line 4898
     :cond_0
     new-instance v1, Landroid/graphics/Rect;
 
@@ -77,7 +70,6 @@
 
     iget-object v5, v5, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
 
-    .line 4899
     invoke-static {v5}, Landroid/widget/Editor;->access$000(Landroid/widget/Editor;)Landroid/widget/Editor$MagnifierMotionAnimator;
 
     move-result-object v5
@@ -98,7 +90,6 @@
 
     iget-object v6, v6, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
 
-    .line 4900
     invoke-static {v6}, Landroid/widget/Editor;->access$000(Landroid/widget/Editor;)Landroid/widget/Editor$MagnifierMotionAnimator;
 
     move-result-object v6
@@ -115,8 +106,6 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 4901
-    .local v1, "magnifierRect":Landroid/graphics/Rect;
     iget-object v2, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     iget-object v3, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
@@ -131,18 +120,14 @@
 
     invoke-static {v2, v3}, Landroid/widget/Editor$HandleView;->access$5700(Landroid/widget/Editor$HandleView;Z)V
 
-    .line 4902
     iget-object v2, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     invoke-static {v2}, Landroid/widget/Editor$HandleView;->access$5800(Landroid/widget/Editor$HandleView;)Landroid/widget/Editor$HandleView;
 
     move-result-object v2
 
-    .line 4903
-    .local v2, "otherHandle":Landroid/widget/Editor$HandleView;
     if-eqz v2, :cond_1
 
-    .line 4904
     iget-object v3, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     invoke-static {v3, v2, v1}, Landroid/widget/Editor$HandleView;->access$5600(Landroid/widget/Editor$HandleView;Landroid/widget/Editor$HandleView;Landroid/graphics/Rect;)Z
@@ -153,7 +138,6 @@
 
     invoke-static {v2, v3}, Landroid/widget/Editor$HandleView;->access$5700(Landroid/widget/Editor$HandleView;Z)V
 
-    .line 4906
     :cond_1
     return-void
 .end method

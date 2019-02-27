@@ -29,9 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$MemWatchProcess$Process;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$MemWatchProcess$Process;
 
-    .line 138
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$MemWatchProcess$Process$MemStats;->this$2:Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$MemWatchProcess$Process;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

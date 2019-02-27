@@ -24,14 +24,12 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 39
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
-    .line 40
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_battery_display_app_list"
@@ -40,7 +38,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 41
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_zone_picker_v2"
@@ -49,7 +46,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 42
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_about_phone_v2"
@@ -58,7 +54,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 43
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_bluetooth_while_driving"
@@ -67,7 +62,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 44
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_data_usage_v2"
@@ -76,7 +70,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 45
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_audio_switcher"
@@ -85,7 +78,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 46
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_systemui_theme"
@@ -94,14 +86,12 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 47
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -119,7 +109,6 @@
         }
     .end annotation
 
-    .line 89
     sget-object v0, Landroid/util/FeatureFlagUtils;->DEFAULT_FLAGS:Ljava/util/Map;
 
     return-object v0
@@ -127,13 +116,9 @@
 
 .method public static isEnabled(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "feature"    # Ljava/lang/String;
 
-    .line 61
     if-eqz p0, :cond_0
 
-    .line 62
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -142,23 +127,18 @@
 
     move-result-object v0
 
-    .line 63
-    .local v0, "value":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 64
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v1
 
     return v1
 
-    .line 69
-    .end local v0    # "value":Ljava/lang/String;
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -178,22 +158,18 @@
 
     move-result-object v0
 
-    .line 70
-    .restart local v0    # "value":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 71
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v1
 
     return v1
 
-    .line 74
     :cond_1
     invoke-static {}, Landroid/util/FeatureFlagUtils;->getAllFeatureFlags()Ljava/util/Map;
 
@@ -207,7 +183,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 75
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v1
@@ -217,11 +192,7 @@
 
 .method public static setEnabled(Landroid/content/Context;Ljava/lang/String;Z)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "feature"    # Ljava/lang/String;
-    .param p2, "enabled"    # Z
 
-    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -248,6 +219,5 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 83
     return-void
 .end method

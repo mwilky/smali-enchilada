@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
-    .line 538
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$3;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 541
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$3;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$500(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/ImageView;
@@ -59,7 +55,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 542
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$3;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$600(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/TextView;
@@ -78,7 +73,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 543
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$3;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$700(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/ImageView;
@@ -97,7 +91,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 544
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$3;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$800(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/TextView;
@@ -120,6 +113,5 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 545
     return-void
 .end method

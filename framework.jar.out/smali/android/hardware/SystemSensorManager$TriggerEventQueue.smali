@@ -31,27 +31,19 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/TriggerEventListener;Landroid/os/Looper;Landroid/hardware/SystemSensorManager;Ljava/lang/String;)V
     .locals 1
-    .param p1, "listener"    # Landroid/hardware/TriggerEventListener;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "manager"    # Landroid/hardware/SystemSensorManager;
-    .param p4, "packageName"    # Ljava/lang/String;
 
-    .line 968
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, p3, v0, p4}, Landroid/hardware/SystemSensorManager$BaseEventQueue;-><init>(Landroid/os/Looper;Landroid/hardware/SystemSensorManager;ILjava/lang/String;)V
 
-    .line 964
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
-    .line 969
     iput-object p1, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mListener:Landroid/hardware/TriggerEventListener;
 
-    .line 970
     return-void
 .end method
 
@@ -59,32 +51,25 @@
 # virtual methods
 .method public addSensorEvent(Landroid/hardware/Sensor;)V
     .locals 4
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 974
     new-instance v0, Landroid/hardware/TriggerEvent;
 
     iget-object v1, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
-    .line 975
     invoke-static {v1}, Landroid/hardware/SystemSensorManager;->access$500(Landroid/hardware/SystemSensorManager;)I
 
     move-result v1
 
-    .line 974
     invoke-static {p1, v1}, Landroid/hardware/Sensor;->getMaxLengthValuesArray(Landroid/hardware/Sensor;I)I
 
     move-result v1
 
     invoke-direct {v0, v1}, Landroid/hardware/TriggerEvent;-><init>(I)V
 
-    .line 976
-    .local v0, "t":Landroid/hardware/TriggerEvent;
     iget-object v1, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
     monitor-enter v1
 
-    .line 977
     :try_start_0
     iget-object v2, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
@@ -94,13 +79,10 @@
 
     invoke-virtual {v2, v3, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 978
     monitor-exit v1
 
-    .line 979
     return-void
 
-    .line 978
     :catchall_0
     move-exception v2
 
@@ -113,20 +95,13 @@
 
 .method protected dispatchFlushCompleteEvent(I)V
     .locals 0
-    .param p1, "handle"    # I
 
-    .line 1021
     return-void
 .end method
 
 .method protected dispatchSensorEvent(I[FIJ)V
     .locals 5
-    .param p1, "handle"    # I
-    .param p2, "values"    # [F
-    .param p3, "accuracy"    # I
-    .param p4, "timestamp"    # J
 
-    .line 993
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
     invoke-static {v0}, Landroid/hardware/SystemSensorManager;->access$400(Landroid/hardware/SystemSensorManager;)Ljava/util/HashMap;
@@ -143,24 +118,17 @@
 
     check-cast v0, Landroid/hardware/Sensor;
 
-    .line 994
-    .local v0, "sensor":Landroid/hardware/Sensor;
     if-nez v0, :cond_0
 
-    .line 996
     return-void
 
-    .line 998
     :cond_0
     const/4 v1, 0x0
 
-    .line 999
-    .local v1, "t":Landroid/hardware/TriggerEvent;
     iget-object v2, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
     monitor-enter v2
 
-    .line 1000
     :try_start_0
     iget-object v3, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
@@ -172,15 +140,12 @@
 
     move-object v1, v3
 
-    .line 1001
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1002
     if-nez v1, :cond_1
 
-    .line 1003
     const-string v2, "SensorManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -199,10 +164,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1004
     return-void
 
-    .line 1008
     :cond_1
     iget-object v2, v1, Landroid/hardware/TriggerEvent;->values:[F
 
@@ -214,28 +177,22 @@
 
     invoke-static {p2, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1009
     iput-wide p4, v1, Landroid/hardware/TriggerEvent;->timestamp:J
 
-    .line 1010
     iput-object v0, v1, Landroid/hardware/TriggerEvent;->sensor:Landroid/hardware/Sensor;
 
-    .line 1014
     iget-object v2, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mManager:Landroid/hardware/SystemSensorManager;
 
     iget-object v3, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mListener:Landroid/hardware/TriggerEventListener;
 
     invoke-virtual {v2, v3, v0, v4}, Landroid/hardware/SystemSensorManager;->cancelTriggerSensorImpl(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;Z)Z
 
-    .line 1016
     iget-object v2, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mListener:Landroid/hardware/TriggerEventListener;
 
     invoke-virtual {v2, v1}, Landroid/hardware/TriggerEventListener;->onTrigger(Landroid/hardware/TriggerEvent;)V
 
-    .line 1017
     return-void
 
-    .line 1001
     :catchall_0
     move-exception v3
 
@@ -249,14 +206,11 @@
 
 .method public removeSensorEvent(Landroid/hardware/Sensor;)V
     .locals 3
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 983
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
     monitor-enter v0
 
-    .line 984
     :try_start_0
     iget-object v1, p0, Landroid/hardware/SystemSensorManager$TriggerEventQueue;->mTriggerEvents:Landroid/util/SparseArray;
 
@@ -266,13 +220,10 @@
 
     invoke-virtual {v1, v2}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 985
     monitor-exit v0
 
-    .line 986
     return-void
 
-    .line 985
     :catchall_0
     move-exception v1
 

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/AppOpsManager;Landroid/app/AppOpsManager$OnOpActiveChangedListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/app/AppOpsManager;
 
-    .line 2298
     iput-object p1, p0, Landroid/app/AppOpsManager$3;->this$0:Landroid/app/AppOpsManager;
 
     iput-object p2, p0, Landroid/app/AppOpsManager$3;->val$callback:Landroid/app/AppOpsManager$OnOpActiveChangedListener;
@@ -39,16 +37,10 @@
 # virtual methods
 .method public opActiveChanged(IILjava/lang/String;Z)V
     .locals 1
-    .param p1, "op"    # I
-    .param p2, "uid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "active"    # Z
 
-    .line 2301
     iget-object v0, p0, Landroid/app/AppOpsManager$3;->val$callback:Landroid/app/AppOpsManager$OnOpActiveChangedListener;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/app/AppOpsManager$OnOpActiveChangedListener;->onOpActiveChanged(IILjava/lang/String;Z)V
 
-    .line 2302
     return-void
 .end method

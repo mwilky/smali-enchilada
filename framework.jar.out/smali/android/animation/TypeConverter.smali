@@ -49,19 +49,12 @@
         }
     .end annotation
 
-    .line 29
-    .local p0, "this":Landroid/animation/TypeConverter;, "Landroid/animation/TypeConverter<TT;TV;>;"
-    .local p1, "fromClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "toClass":Ljava/lang/Class;, "Ljava/lang/Class<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     iput-object p1, p0, Landroid/animation/TypeConverter;->mFromClass:Ljava/lang/Class;
 
-    .line 31
     iput-object p2, p0, Landroid/animation/TypeConverter;->mToClass:Ljava/lang/Class;
 
-    .line 32
     return-void
 .end method
 
@@ -85,8 +78,6 @@
         }
     .end annotation
 
-    .line 47
-    .local p0, "this":Landroid/animation/TypeConverter;, "Landroid/animation/TypeConverter<TT;TV;>;"
     iget-object v0, p0, Landroid/animation/TypeConverter;->mFromClass:Ljava/lang/Class;
 
     return-object v0
@@ -102,8 +93,6 @@
         }
     .end annotation
 
-    .line 40
-    .local p0, "this":Landroid/animation/TypeConverter;, "Landroid/animation/TypeConverter<TT;TV;>;"
     iget-object v0, p0, Landroid/animation/TypeConverter;->mToClass:Ljava/lang/Class;
 
     return-object v0

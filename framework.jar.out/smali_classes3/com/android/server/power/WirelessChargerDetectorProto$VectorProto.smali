@@ -29,9 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/power/WirelessChargerDetectorProto;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/WirelessChargerDetectorProto;
 
-    .line 11
     iput-object p1, p0, Lcom/android/server/power/WirelessChargerDetectorProto$VectorProto;->this$0:Lcom/android/server/power/WirelessChargerDetectorProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

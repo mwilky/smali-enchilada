@@ -52,9 +52,7 @@
 # direct methods
 .method public constructor <init>(Lnet/oneplus/odm/insight/tracker/TrackData;)V
     .locals 0
-    .param p1, "this$0"    # Lnet/oneplus/odm/insight/tracker/TrackData;
 
-    .line 62
     iput-object p1, p0, Lnet/oneplus/odm/insight/tracker/TrackData$Builder;->this$0:Lnet/oneplus/odm/insight/tracker/TrackData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +65,6 @@
 .method public build()Lnet/oneplus/odm/insight/tracker/TrackData;
     .locals 1
 
-    .line 88
     new-instance v0, Lnet/oneplus/odm/insight/tracker/TrackData;
 
     invoke-direct {v0, p0}, Lnet/oneplus/odm/insight/tracker/TrackData;-><init>(Lnet/oneplus/odm/insight/tracker/TrackData$Builder;)V
@@ -88,25 +85,18 @@
         }
     .end annotation
 
-    .line 81
-    .local p1, "data":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz p1, :cond_0
 
-    .line 82
     iput-object p1, p0, Lnet/oneplus/odm/insight/tracker/TrackData$Builder;->dataList:Ljava/util/Map;
 
-    .line 84
     :cond_0
     return-object p0
 .end method
 
 .method public tag(Ljava/lang/String;)Lnet/oneplus/odm/insight/tracker/TrackData$Builder;
     .locals 0
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 76
     iput-object p1, p0, Lnet/oneplus/odm/insight/tracker/TrackData$Builder;->tag:Ljava/lang/String;
 
-    .line 77
     return-object p0
 .end method

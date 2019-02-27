@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 466
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
@@ -28,9 +27,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/RemoteViews$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/RemoteViews$1;
 
-    .line 466
     invoke-direct {p0}, Landroid/widget/RemoteViews$RuntimeAction;-><init>()V
 
     return-void
@@ -41,7 +38,6 @@
 .method public final getActionTag()I
     .locals 1
 
-    .line 469
     const/4 v0, 0x0
 
     return v0
@@ -49,10 +45,7 @@
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 474
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

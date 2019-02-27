@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;Landroid/media/MediaPlayer$DrmInfo;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;
 
-    .line 4590
     iput-object p1, p0, Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate$1;->this$1:Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;
 
     iput-object p2, p0, Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate$1;->val$drmInfo:Landroid/media/MediaPlayer$DrmInfo;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 4593
     iget-object v0, p0, Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate$1;->this$1:Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;
 
     invoke-static {v0}, Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;->access$3400(Landroid/media/MediaPlayer$OnDrmInfoHandlerDelegate;)Landroid/media/MediaPlayer$OnDrmInfoListener;
@@ -60,6 +57,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/media/MediaPlayer$OnDrmInfoListener;->onDrmInfo(Landroid/media/MediaPlayer;Landroid/media/MediaPlayer$DrmInfo;)V
 
-    .line 4594
     return-void
 .end method

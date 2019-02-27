@@ -35,11 +35,7 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Landroid/os/UserHandle;Landroid/os/UserHandle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/accounts/AccountManager;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 1919
-    .local p3, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/Boolean;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$13;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p4, p0, Landroid/accounts/AccountManager$13;->val$account:Landroid/accounts/Account;
@@ -57,14 +53,12 @@
 # virtual methods
 .method public bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
     .locals 2
-    .param p1, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/AuthenticatorException;
         }
     .end annotation
 
-    .line 1928
     const-string v0, "booleanResult"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -73,7 +67,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1931
     const-string v0, "booleanResult"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -86,7 +79,6 @@
 
     return-object v0
 
-    .line 1929
     :cond_0
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
@@ -105,7 +97,6 @@
         }
     .end annotation
 
-    .line 1919
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$13;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -121,12 +112,10 @@
         }
     .end annotation
 
-    .line 1922
     const/16 v0, 0x22
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 1923
     iget-object v0, p0, Landroid/accounts/AccountManager$13;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -139,7 +128,6 @@
 
     iget-object v3, p0, Landroid/accounts/AccountManager$13;->val$fromUser:Landroid/os/UserHandle;
 
-    .line 1924
     invoke-virtual {v3}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v3
@@ -150,9 +138,7 @@
 
     move-result v4
 
-    .line 1923
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/accounts/IAccountManager;->copyAccountToUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;II)V
 
-    .line 1925
     return-void
 .end method

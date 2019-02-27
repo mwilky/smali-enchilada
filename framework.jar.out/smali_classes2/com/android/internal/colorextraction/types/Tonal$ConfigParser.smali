@@ -42,26 +42,21 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 489
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 490
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mTonalPalettes:Ljava/util/ArrayList;
 
-    .line 491
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mBlacklistedColors:Ljava/util/ArrayList;
 
-    .line 495
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -73,20 +68,15 @@
 
     move-result-object v0
 
-    .line 496
-    .local v0, "parser":Lorg/xmlpull/v1/XmlPullParser;
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v1
 
-    .line 497
-    .local v1, "eventType":I
     :goto_0
     const/4 v2, 0x1
 
     if-eq v1, v2, :cond_5
 
-    .line 498
     if-eqz v1, :cond_4
 
     const/4 v2, 0x3
@@ -95,19 +85,15 @@
 
     goto :goto_2
 
-    .line 501
     :cond_0
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_3
 
-    .line 502
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 503
-    .local v2, "tagName":Ljava/lang/String;
     const-string/jumbo v3, "palettes"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -116,12 +102,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 504
     invoke-direct {p0, v0}, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->parsePalettes(Lorg/xmlpull/v1/XmlPullParser;)V
 
     goto :goto_1
 
-    .line 505
     :cond_1
     const-string v3, "blacklist"
 
@@ -131,16 +115,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 506
     invoke-direct {p0, v0}, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->parseBlacklist(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 508
-    .end local v2    # "tagName":Ljava/lang/String;
     :cond_2
     :goto_1
     goto :goto_2
 
-    .line 509
     :cond_3
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -158,7 +138,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 510
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -175,7 +154,6 @@
 
     throw v2
 
-    .line 512
     :cond_4
     :goto_2
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -189,21 +167,14 @@
 
     goto :goto_0
 
-    .line 516
-    .end local v0    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v1    # "eventType":I
     :cond_5
     nop
 
-    .line 517
     return-void
 
-    .line 514
     :catch_0
     move-exception v0
 
-    .line 515
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -213,7 +184,6 @@
 
 .method private parseBlacklist(Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 5
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -221,7 +191,6 @@
         }
     .end annotation
 
-    .line 529
     const-string v0, "blacklist"
 
     const/4 v1, 0x0
@@ -230,7 +199,6 @@
 
     invoke-interface {p1, v2, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 530
     :goto_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -240,24 +208,19 @@
 
     if-eq v0, v3, :cond_2
 
-    .line 531
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
     if-eq v0, v2, :cond_0
 
-    .line 532
     goto :goto_0
 
-    .line 534
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 536
-    .local v0, "name":Ljava/lang/String;
     const-string/jumbo v3, "range"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -266,7 +229,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 537
     iget-object v3, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mBlacklistedColors:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->readRange(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/internal/colorextraction/types/Tonal$ColorRange;
@@ -275,15 +237,10 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 538
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
-    .line 542
-    .end local v0    # "name":Ljava/lang/String;
     goto :goto_0
 
-    .line 540
-    .restart local v0    # "name":Ljava/lang/String;
     :cond_1
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -305,15 +262,12 @@
 
     throw v2
 
-    .line 543
-    .end local v0    # "name":Ljava/lang/String;
     :cond_2
     return-void
 .end method
 
 .method private parsePalettes(Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 4
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -321,7 +275,6 @@
         }
     .end annotation
 
-    .line 562
     const-string/jumbo v0, "palettes"
 
     const/4 v1, 0x2
@@ -330,7 +283,6 @@
 
     invoke-interface {p1, v1, v2, v0}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 563
     :goto_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -340,24 +292,19 @@
 
     if-eq v0, v2, :cond_2
 
-    .line 564
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
     if-eq v0, v1, :cond_0
 
-    .line 565
     goto :goto_0
 
-    .line 567
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 569
-    .local v0, "name":Ljava/lang/String;
     const-string/jumbo v2, "palette"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -366,7 +313,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 570
     iget-object v2, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mTonalPalettes:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->readPalette(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/internal/colorextraction/types/Tonal$TonalPalette;
@@ -375,15 +321,10 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 571
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
-    .line 575
-    .end local v0    # "name":Ljava/lang/String;
     goto :goto_0
 
-    .line 573
-    .restart local v0    # "name":Ljava/lang/String;
     :cond_1
     new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -405,15 +346,12 @@
 
     throw v1
 
-    .line 576
-    .end local v0    # "name":Ljava/lang/String;
     :cond_2
     return-void
 .end method
 
 .method private readFloatArray(Ljava/lang/String;)[F
     .locals 4
-    .param p1, "attributeValue"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -421,7 +359,6 @@
         }
     .end annotation
 
-    .line 595
     const-string v0, " "
 
     const-string v1, ""
@@ -444,23 +381,17 @@
 
     move-result-object v0
 
-    .line 596
-    .local v0, "tokens":[Ljava/lang/String;
     array-length v1, v0
 
     new-array v1, v1, [F
 
-    .line 597
-    .local v1, "numbers":[F
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_0
 
-    .line 598
     aget-object v3, v0, v2
 
     invoke-static {v3}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -469,20 +400,16 @@
 
     aput v3, v1, v2
 
-    .line 597
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 600
-    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
 
 .method private readPalette(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/internal/colorextraction/types/Tonal$TonalPalette;
     .locals 6
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -490,7 +417,6 @@
         }
     .end annotation
 
-    .line 580
     const-string/jumbo v0, "palette"
 
     const/4 v1, 0x0
@@ -499,7 +425,6 @@
 
     invoke-interface {p1, v2, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 582
     const-string v0, "h"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -510,8 +435,6 @@
 
     move-result-object v0
 
-    .line 583
-    .local v0, "h":[F
     const-string/jumbo v2, "s"
 
     invoke-interface {p1, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -522,8 +445,6 @@
 
     move-result-object v2
 
-    .line 584
-    .local v2, "s":[F
     const-string v3, "l"
 
     invoke-interface {p1, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -534,22 +455,18 @@
 
     move-result-object v3
 
-    .line 586
-    .local v3, "l":[F
     if-eqz v0, :cond_0
 
     if-eqz v2, :cond_0
 
     if-eqz v3, :cond_0
 
-    .line 590
     new-instance v1, Lcom/android/internal/colorextraction/types/Tonal$TonalPalette;
 
     invoke-direct {v1, v0, v2, v3}, Lcom/android/internal/colorextraction/types/Tonal$TonalPalette;-><init>([F[F[F)V
 
     return-object v1
 
-    .line 587
     :cond_0
     new-instance v4, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -562,7 +479,6 @@
 
 .method private readRange(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/internal/colorextraction/types/Tonal$ColorRange;
     .locals 10
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -570,7 +486,6 @@
         }
     .end annotation
 
-    .line 547
     const-string/jumbo v0, "range"
 
     const/4 v1, 0x0
@@ -579,7 +494,6 @@
 
     invoke-interface {p1, v2, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 548
     const-string v0, "h"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -590,8 +504,6 @@
 
     move-result-object v0
 
-    .line 549
-    .local v0, "h":[F
     const-string/jumbo v2, "s"
 
     invoke-interface {p1, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -602,8 +514,6 @@
 
     move-result-object v2
 
-    .line 550
-    .local v2, "s":[F
     const-string v3, "l"
 
     invoke-interface {p1, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -614,15 +524,12 @@
 
     move-result-object v3
 
-    .line 552
-    .local v3, "l":[F
     if-eqz v0, :cond_0
 
     if-eqz v2, :cond_0
 
     if-eqz v3, :cond_0
 
-    .line 556
     new-instance v1, Lcom/android/internal/colorextraction/types/Tonal$ColorRange;
 
     new-instance v4, Landroid/util/Range;
@@ -665,7 +572,6 @@
 
     aget v5, v3, v5
 
-    .line 557
     invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v5
@@ -680,10 +586,8 @@
 
     invoke-direct {v1, v4, v6, v8}, Lcom/android/internal/colorextraction/types/Tonal$ColorRange;-><init>(Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;)V
 
-    .line 556
     return-object v1
 
-    .line 553
     :cond_0
     new-instance v4, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -707,7 +611,6 @@
         }
     .end annotation
 
-    .line 524
     iget-object v0, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mBlacklistedColors:Ljava/util/ArrayList;
 
     return-object v0
@@ -724,7 +627,6 @@
         }
     .end annotation
 
-    .line 520
     iget-object v0, p0, Lcom/android/internal/colorextraction/types/Tonal$ConfigParser;->mTonalPalettes:Ljava/util/ArrayList;
 
     return-object v0

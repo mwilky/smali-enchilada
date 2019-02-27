@@ -43,22 +43,18 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 39
     const/4 v0, 0x0
 
     sput v0, Landroid/location/GpsNavigationMessageEvent;->STATUS_NOT_SUPPORTED:I
 
-    .line 45
     const/4 v0, 0x1
 
     sput v0, Landroid/location/GpsNavigationMessageEvent;->STATUS_READY:I
 
-    .line 50
     const/4 v0, 0x2
 
     sput v0, Landroid/location/GpsNavigationMessageEvent;->STATUS_GPS_LOCATION_DISABLED:I
 
-    .line 87
     new-instance v0, Landroid/location/GpsNavigationMessageEvent$1;
 
     invoke-direct {v0}, Landroid/location/GpsNavigationMessageEvent$1;-><init>()V
@@ -70,21 +66,15 @@
 
 .method public constructor <init>(Landroid/location/GpsNavigationMessage;)V
     .locals 2
-    .param p1, "message"    # Landroid/location/GpsNavigationMessage;
 
-    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
     if-eqz p1, :cond_0
 
-    .line 79
     iput-object p1, p0, Landroid/location/GpsNavigationMessageEvent;->mNavigationMessage:Landroid/location/GpsNavigationMessage;
 
-    .line 80
     return-void
 
-    .line 77
     :cond_0
     new-instance v0, Ljava/security/InvalidParameterException;
 
@@ -100,7 +90,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 104
     const/4 v0, 0x0
 
     return v0
@@ -109,7 +98,6 @@
 .method public getNavigationMessage()Landroid/location/GpsNavigationMessage;
     .locals 1
 
-    .line 84
     iget-object v0, p0, Landroid/location/GpsNavigationMessageEvent;->mNavigationMessage:Landroid/location/GpsNavigationMessage;
 
     return-object v0
@@ -118,15 +106,12 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 114
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[ GpsNavigationMessageEvent:\n\n"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 115
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/location/GpsNavigationMessageEvent;->mNavigationMessage:Landroid/location/GpsNavigationMessage;
 
     invoke-virtual {v1}, Landroid/location/GpsNavigationMessage;->toString()Ljava/lang/String;
@@ -135,12 +120,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 116
     const-string v1, "\n]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 117
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -150,14 +133,10 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 109
     iget-object v0, p0, Landroid/location/GpsNavigationMessageEvent;->mNavigationMessage:Landroid/location/GpsNavigationMessage;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 110
     return-void
 .end method

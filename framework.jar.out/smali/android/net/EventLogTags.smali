@@ -13,7 +13,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,10 +20,7 @@
 
 .method public static writeNtpFailure(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "server"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 24
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -41,17 +37,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 25
     return-void
 .end method
 
 .method public static writeNtpSuccess(Ljava/lang/String;JJ)V
     .locals 3
-    .param p0, "server"    # Ljava/lang/String;
-    .param p1, "rtt"    # J
-    .param p3, "offset"    # J
 
-    .line 20
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -80,6 +71,5 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 21
     return-void
 .end method

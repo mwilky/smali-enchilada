@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,39 +39,27 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/aware/PublishConfig;
     .locals 14
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 140
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v8
 
-    .line 141
-    .local v8, "serviceName":[B
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v9
 
-    .line 142
-    .local v9, "ssi":[B
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v10
 
-    .line 143
-    .local v10, "matchFilter":[B
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v11
 
-    .line 144
-    .local v11, "publishType":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v12
 
-    .line 145
-    .local v12, "ttlSec":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -90,8 +77,6 @@
     :cond_0
     move v6, v1
 
-    .line 146
-    .local v6, "enableTerminateNotification":Z
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -106,8 +91,6 @@
     :cond_1
     move v7, v1
 
-    .line 148
-    .local v7, "enableRanging":Z
     :goto_1
     new-instance v13, Landroid/net/wifi/aware/PublishConfig;
 
@@ -131,7 +114,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 132
     invoke-virtual {p0, p1}, Landroid/net/wifi/aware/PublishConfig$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/aware/PublishConfig;
 
     move-result-object p1
@@ -141,9 +123,7 @@
 
 .method public newArray(I)[Landroid/net/wifi/aware/PublishConfig;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 135
     new-array v0, p1, [Landroid/net/wifi/aware/PublishConfig;
 
     return-object v0
@@ -152,7 +132,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 132
     invoke-virtual {p0, p1}, Landroid/net/wifi/aware/PublishConfig$1;->newArray(I)[Landroid/net/wifi/aware/PublishConfig;
 
     move-result-object p1

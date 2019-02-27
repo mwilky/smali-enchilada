@@ -39,14 +39,11 @@
 # direct methods
 .method public constructor <init>(Landroid/media/RingtoneManager;Ljava/io/File;)V
     .locals 2
-    .param p2, "file"    # Ljava/io/File;
 
-    .line 1320
     iput-object p1, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->this$0:Landroid/media/RingtoneManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1318
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     const/4 v1, 0x1
@@ -55,10 +52,8 @@
 
     iput-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mQueue:Ljava/util/concurrent/LinkedBlockingQueue;
 
-    .line 1321
     iput-object p2, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mFile:Ljava/io/File;
 
-    .line 1322
     new-instance v0, Landroid/media/MediaScannerConnection;
 
     invoke-static {p1}, Landroid/media/RingtoneManager;->access$000(Landroid/media/RingtoneManager;)Landroid/content/Context;
@@ -69,12 +64,10 @@
 
     iput-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mMediaScannerConnection:Landroid/media/MediaScannerConnection;
 
-    .line 1323
     iget-object p1, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mMediaScannerConnection:Landroid/media/MediaScannerConnection;
 
     invoke-virtual {p1}, Landroid/media/MediaScannerConnection;->connect()V
 
-    .line 1324
     return-void
 .end method
 
@@ -83,19 +76,16 @@
 .method public close()V
     .locals 1
 
-    .line 1328
     iget-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mMediaScannerConnection:Landroid/media/MediaScannerConnection;
 
     invoke-virtual {v0}, Landroid/media/MediaScannerConnection;->disconnect()V
 
-    .line 1329
     return-void
 .end method
 
 .method public onMediaScannerConnected()V
     .locals 3
 
-    .line 1333
     iget-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mMediaScannerConnection:Landroid/media/MediaScannerConnection;
 
     iget-object v1, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mFile:Ljava/io/File;
@@ -108,27 +98,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaScannerConnection;->scanFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1334
     return-void
 .end method
 
 .method public onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 3
-    .param p1, "path"    # Ljava/lang/String;
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 1338
     if-nez p2, :cond_0
 
-    .line 1340
     iget-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 1341
     return-void
 
-    .line 1344
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mQueue:Ljava/util/concurrent/LinkedBlockingQueue;
@@ -137,23 +120,17 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1347
     goto :goto_0
 
-    .line 1345
     :catch_0
     move-exception v0
 
-    .line 1346
-    .local v0, "e":Ljava/lang/InterruptedException;
     const-string v1, "RingtoneManager"
 
     const-string v2, "Unable to put new ringtone Uri in queue"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1348
-    .end local v0    # "e":Ljava/lang/InterruptedException;
     :goto_0
     return-void
 .end method
@@ -166,7 +143,6 @@
         }
     .end annotation
 
-    .line 1351
     iget-object v0, p0, Landroid/media/RingtoneManager$NewRingtoneScanner;->mQueue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingQueue;->take()Ljava/lang/Object;

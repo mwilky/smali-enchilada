@@ -366,7 +366,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2872
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -376,29 +375,22 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 3107
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 3108
     return v0
 
-    .line 3110
     :cond_0
     instance-of v1, p1, Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
     if-eqz v1, :cond_2
 
-    .line 3111
     move-object v1, p1
 
     check-cast v1, Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
-    .line 3112
-    .local v1, "other":Landroid/media/MediaCodecInfo$CodecProfileLevel;
     iget v2, v1, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
 
     iget v3, p0, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
@@ -418,8 +410,6 @@
     :cond_1
     return v0
 
-    .line 3114
-    .end local v1    # "other":Landroid/media/MediaCodecInfo$CodecProfileLevel;
     :cond_2
     return v0
 .end method
@@ -427,7 +417,6 @@
 .method public hashCode()I
     .locals 4
 
-    .line 3119
     iget v0, p0, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
 
     int-to-long v0, v0

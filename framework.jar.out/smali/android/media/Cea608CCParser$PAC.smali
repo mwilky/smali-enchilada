@@ -23,38 +23,25 @@
 # direct methods
 .method constructor <init>(IIII)V
     .locals 0
-    .param p1, "row"    # I
-    .param p2, "col"    # I
-    .param p3, "style"    # I
-    .param p4, "color"    # I
 
-    .line 603
     invoke-direct {p0, p3, p4}, Landroid/media/Cea608CCParser$StyleCode;-><init>(II)V
 
-    .line 604
     iput p1, p0, Landroid/media/Cea608CCParser$PAC;->mRow:I
 
-    .line 605
     iput p2, p0, Landroid/media/Cea608CCParser$PAC;->mCol:I
 
-    .line 606
     return-void
 .end method
 
 .method static fromBytes(BB)Landroid/media/Cea608CCParser$PAC;
     .locals 7
-    .param p0, "data1"    # B
-    .param p1, "data2"    # B
 
-    .line 579
     const/16 v0, 0x8
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_0
 
-    .line 580
-    .local v0, "rowTable":[I
     and-int/lit8 v1, p0, 0x7
 
     aget v1, v0, v1
@@ -65,20 +52,14 @@
 
     add-int/2addr v1, v2
 
-    .line 581
-    .local v1, "row":I
     const/4 v2, 0x0
 
-    .line 582
-    .local v2, "style":I
     and-int/lit8 v3, p1, 0x1
 
     if-eqz v3, :cond_0
 
-    .line 583
     or-int/lit8 v2, v2, 0x2
 
-    .line 585
     :cond_0
     and-int/lit8 v3, p1, 0x10
 
@@ -86,13 +67,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 587
     shr-int/lit8 v3, p1, 0x1
 
     and-int/2addr v3, v4
 
-    .line 588
-    .local v3, "indent":I
     new-instance v4, Landroid/media/Cea608CCParser$PAC;
 
     mul-int/lit8 v5, v3, 0x4
@@ -103,24 +81,17 @@
 
     return-object v4
 
-    .line 591
-    .end local v3    # "indent":I
     :cond_1
     shr-int/lit8 v3, p1, 0x1
 
     and-int/2addr v3, v4
 
-    .line 593
-    .local v3, "color":I
     if-ne v3, v4, :cond_2
 
-    .line 595
     const/4 v3, 0x0
 
-    .line 596
     or-int/lit8 v2, v2, 0x1
 
-    .line 598
     :cond_2
     new-instance v4, Landroid/media/Cea608CCParser$PAC;
 
@@ -150,7 +121,6 @@
 .method getCol()I
     .locals 1
 
-    .line 617
     iget v0, p0, Landroid/media/Cea608CCParser$PAC;->mCol:I
 
     return v0
@@ -159,7 +129,6 @@
 .method getRow()I
     .locals 1
 
-    .line 613
     iget v0, p0, Landroid/media/Cea608CCParser$PAC;->mRow:I
 
     return v0
@@ -168,7 +137,6 @@
 .method isIndentPAC()Z
     .locals 1
 
-    .line 609
     iget v0, p0, Landroid/media/Cea608CCParser$PAC;->mCol:I
 
     if-ltz v0, :cond_0
@@ -187,7 +155,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 622
     const-string/jumbo v0, "{%d, %d}, %s"
 
     const/4 v1, 0x3
@@ -196,7 +163,6 @@
 
     iget v2, p0, Landroid/media/Cea608CCParser$PAC;->mRow:I
 
-    .line 623
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -223,7 +189,6 @@
 
     aput-object v2, v1, v3
 
-    .line 622
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

@@ -44,57 +44,46 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
-    .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 332
     iput-object p1, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
-    .line 333
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/KeyguardManager;->mWM:Landroid/view/IWindowManager;
 
-    .line 334
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/KeyguardManager;->mAm:Landroid/app/IActivityManager;
 
-    .line 335
     const-string/jumbo v0, "trust"
 
-    .line 336
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 335
     invoke-static {v0}, Landroid/app/trust/ITrustManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/KeyguardManager;->mTrustManager:Landroid/app/trust/ITrustManager;
 
-    .line 337
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/app/KeyguardManager;)Landroid/view/IWindowManager;
     .locals 1
-    .param p0, "x0"    # Landroid/app/KeyguardManager;
 
-    .line 56
     iget-object v0, p0, Landroid/app/KeyguardManager;->mWM:Landroid/view/IWindowManager;
 
     return-object v0
@@ -102,34 +91,27 @@
 
 .method private getSettingsPackageForIntent(Landroid/content/Intent;)Ljava/lang/String;
     .locals 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 222
     iget-object v0, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 223
     const/high16 v1, 0x100000
 
     invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 224
-    .local v0, "resolveInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/4 v1, 0x0
 
-    .local v1, "i":I
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
 
     if-ge v1, v2, :cond_0
 
-    .line 225
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -142,8 +124,6 @@
 
     return-object v2
 
-    .line 228
-    .end local v1    # "i":I
     :cond_0
     const-string v1, "com.android.settings"
 
@@ -154,10 +134,7 @@
 # virtual methods
 .method public createConfirmDeviceCredentialIntent(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/Intent;
     .locals 2
-    .param p1, "title"    # Ljava/lang/CharSequence;
-    .param p2, "description"    # Ljava/lang/CharSequence;
 
-    .line 126
     invoke-virtual {p0}, Landroid/app/KeyguardManager;->isDeviceSecure()Z
 
     move-result v0
@@ -168,7 +145,6 @@
 
     return-object v0
 
-    .line 127
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -176,35 +152,26 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 128
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.app.extra.TITLE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 129
     const-string v1, "android.app.extra.DESCRIPTION"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 132
     invoke-direct {p0, v0}, Landroid/app/KeyguardManager;->getSettingsPackageForIntent(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 133
     return-object v0
 .end method
 
 .method public createConfirmDeviceCredentialIntent(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)Landroid/content/Intent;
     .locals 2
-    .param p1, "title"    # Ljava/lang/CharSequence;
-    .param p2, "description"    # Ljava/lang/CharSequence;
-    .param p3, "userId"    # I
 
-    .line 148
     invoke-virtual {p0, p3}, Landroid/app/KeyguardManager;->isDeviceSecure(I)Z
 
     move-result v0
@@ -215,7 +182,6 @@
 
     return-object v0
 
-    .line 149
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -223,42 +189,32 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 150
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.app.extra.TITLE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 151
     const-string v1, "android.app.extra.DESCRIPTION"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 152
     const-string v1, "android.intent.extra.USER_ID"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 155
     invoke-direct {p0, v0}, Landroid/app/KeyguardManager;->getSettingsPackageForIntent(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 157
     return-object v0
 .end method
 
 .method public createConfirmFactoryResetCredentialIntent(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/Intent;
     .locals 3
-    .param p1, "title"    # Ljava/lang/CharSequence;
-    .param p2, "description"    # Ljava/lang/CharSequence;
-    .param p3, "alternateButtonLabel"    # Ljava/lang/CharSequence;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 180
     iget-object v0, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/widget/LockPatternUtils;->frpCredentialEnabled(Landroid/content/Context;)Z
@@ -267,7 +223,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 186
     iget-object v0, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -284,32 +239,25 @@
 
     if-nez v0, :cond_2
 
-    .line 194
     :try_start_0
     const-string/jumbo v0, "persistent_data_block"
 
-    .line 195
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 194
     invoke-static {v0}, Landroid/service/persistentdata/IPersistentDataBlockService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/persistentdata/IPersistentDataBlockService;
 
     move-result-object v0
 
-    .line 196
-    .local v0, "pdb":Landroid/service/persistentdata/IPersistentDataBlockService;
     if-eqz v0, :cond_1
 
-    .line 202
     invoke-interface {v0}, Landroid/service/persistentdata/IPersistentDataBlockService;->hasFrpCredentialHandle()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 203
     const-string v1, "KeyguardManager"
 
     const-string v2, "The persistent data block does not have a factory reset credential."
@@ -318,51 +266,39 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 204
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 208
-    .end local v0    # "pdb":Landroid/service/persistentdata/IPersistentDataBlockService;
     :cond_0
     nop
 
-    .line 210
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.app.action.CONFIRM_FRP_CREDENTIAL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 211
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.app.extra.TITLE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 212
     const-string v1, "android.app.extra.DESCRIPTION"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 213
     const-string v1, "android.app.extra.ALTERNATE_BUTTON_LABEL"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    .line 216
     invoke-direct {p0, v0}, Landroid/app/KeyguardManager;->getSettingsPackageForIntent(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 218
     return-object v0
 
-    .line 197
-    .local v0, "pdb":Landroid/service/persistentdata/IPersistentDataBlockService;
     :cond_1
     :try_start_1
     const-string v1, "KeyguardManager"
@@ -371,7 +307,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v2, "not supported on this device"
@@ -382,21 +317,15 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 206
-    .end local v0    # "pdb":Landroid/service/persistentdata/IPersistentDataBlockService;
     :catch_0
     move-exception v0
 
-    .line 207
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
     throw v1
 
-    .line 188
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_2
     const-string v0, "KeyguardManager"
 
@@ -404,7 +333,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "must not be provisioned yet"
@@ -413,7 +341,6 @@
 
     throw v0
 
-    .line 181
     :cond_3
     const-string v0, "KeyguardManager"
 
@@ -421,7 +348,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 182
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "not supported on this device"
@@ -433,26 +359,19 @@
 
 .method public dismissKeyguard(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "callback"    # Landroid/app/KeyguardManager$KeyguardDismissCallback;
-    .param p3, "handler"    # Landroid/os/Handler;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 455
     invoke-virtual {p0, p1, p2}, Landroid/app/KeyguardManager;->requestDismissKeyguard(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V
 
-    .line 456
     return-void
 .end method
 
 .method public exitKeyguardSecurely(Landroid/app/KeyguardManager$OnKeyguardExitResult;)V
     .locals 2
-    .param p1, "callback"    # Landroid/app/KeyguardManager$OnKeyguardExitResult;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 568
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mWM:Landroid/view/IWindowManager;
 
@@ -464,14 +383,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 577
     goto :goto_0
 
-    .line 575
     :catch_0
     move-exception v0
 
-    .line 578
     :goto_0
     return-void
 .end method
@@ -479,7 +395,6 @@
 .method public inKeyguardRestrictedInputMode()Z
     .locals 1
 
-    .line 399
     invoke-virtual {p0}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
 
     move-result v0
@@ -490,7 +405,6 @@
 .method public isDeviceLocked()Z
     .locals 1
 
-    .line 410
     iget-object v0, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getUserId()I
@@ -506,9 +420,7 @@
 
 .method public isDeviceLocked(I)Z
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 420
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mTrustManager:Landroid/app/trust/ITrustManager;
 
@@ -520,12 +432,9 @@
 
     return v0
 
-    .line 421
     :catch_0
     move-exception v0
 
-    .line 422
-    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
@@ -534,7 +443,6 @@
 .method public isDeviceSecure()Z
     .locals 1
 
-    .line 435
     iget-object v0, p0, Landroid/app/KeyguardManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getUserId()I
@@ -550,9 +458,7 @@
 
 .method public isDeviceSecure(I)Z
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 445
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mTrustManager:Landroid/app/trust/ITrustManager;
 
@@ -564,12 +470,9 @@
 
     return v0
 
-    .line 446
     :catch_0
     move-exception v0
 
-    .line 447
-    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
@@ -578,7 +481,6 @@
 .method public isKeyguardLocked()Z
     .locals 2
 
-    .line 367
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mWM:Landroid/view/IWindowManager;
 
@@ -590,12 +492,9 @@
 
     return v0
 
-    .line 368
     :catch_0
     move-exception v0
 
-    .line 369
-    .local v0, "ex":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
@@ -604,7 +503,6 @@
 .method public isKeyguardSecure()Z
     .locals 2
 
-    .line 383
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mWM:Landroid/view/IWindowManager;
 
@@ -616,12 +514,9 @@
 
     return v0
 
-    .line 384
     :catch_0
     move-exception v0
 
-    .line 385
-    .local v0, "ex":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
@@ -629,11 +524,9 @@
 
 .method public newKeyguardLock(Ljava/lang/String;)Landroid/app/KeyguardManager$KeyguardLock;
     .locals 1
-    .param p1, "tag"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 357
     new-instance v0, Landroid/app/KeyguardManager$KeyguardLock;
 
     invoke-direct {v0, p0, p1}, Landroid/app/KeyguardManager$KeyguardLock;-><init>(Landroid/app/KeyguardManager;Ljava/lang/String;)V
@@ -643,27 +536,19 @@
 
 .method public requestDismissKeyguard(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "callback"    # Landroid/app/KeyguardManager$KeyguardDismissCallback;
 
-    .line 483
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/app/KeyguardManager;->requestDismissKeyguard(Landroid/app/Activity;Ljava/lang/CharSequence;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V
 
-    .line 484
     return-void
 .end method
 
 .method public requestDismissKeyguard(Landroid/app/Activity;Ljava/lang/CharSequence;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V
     .locals 3
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "message"    # Ljava/lang/CharSequence;
-    .param p3, "callback"    # Landroid/app/KeyguardManager$KeyguardDismissCallback;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
-    .line 517
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager;->mAm:Landroid/app/IActivityManager;
 
@@ -679,18 +564,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 541
     nop
 
-    .line 542
     return-void
 
-    .line 539
     :catch_0
     move-exception v0
 
-    .line 540
-    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1

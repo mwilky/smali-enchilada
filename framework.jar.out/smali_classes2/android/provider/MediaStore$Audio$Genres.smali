@@ -40,34 +40,28 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1568
     const-string v0, "internal"
 
-    .line 1569
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Genres;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/MediaStore$Audio$Genres;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1575
     const-string v0, "external"
 
-    .line 1576
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Genres;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/MediaStore$Audio$Genres;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1575
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 1539
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -75,9 +69,7 @@
 
 .method public static getContentUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
 
-    .line 1548
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -105,10 +97,7 @@
 
 .method public static getContentUriForAudioId(Ljava/lang/String;I)Landroid/net/Uri;
     .locals 2
-    .param p0, "volumeName"    # Ljava/lang/String;
-    .param p1, "audioId"    # I
 
-    .line 1561
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

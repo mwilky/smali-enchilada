@@ -23,27 +23,17 @@
 # direct methods
 .method public constructor <init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILandroid/os/Bundle;Ljava/lang/String;Landroid/net/Uri;)V
     .locals 7
-    .param p2, "callerIdentity"    # Ljava/lang/Object;
-    .param p3, "callerUid"    # I
-    .param p4, "callerPid"    # I
-    .param p5, "params"    # Landroid/os/Bundle;
-    .param p6, "utteranceId"    # Ljava/lang/String;
-    .param p7, "uri"    # Landroid/net/Uri;
 
-    .line 1134
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 1135
     invoke-direct/range {p0 .. p6}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItemWithParams;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILandroid/os/Bundle;Ljava/lang/String;)V
 
-    .line 1136
     new-instance v6, Landroid/speech/tts/AudioPlaybackQueueItem;
 
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getCallerIdentity()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1137
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getAudioParams()Landroid/speech/tts/TextToSpeechService$AudioOutputParams;
 
     move-result-object v5
@@ -60,7 +50,6 @@
 
     iput-object v6, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mItem:Landroid/speech/tts/AudioPlaybackQueueItem;
 
-    .line 1138
     return-void
 .end method
 
@@ -69,7 +58,6 @@
 .method getAudioParams()Landroid/speech/tts/TextToSpeechService$AudioOutputParams;
     .locals 2
 
-    .line 1162
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mParams:Landroid/os/Bundle;
 
     const/4 v1, 0x0
@@ -84,7 +72,6 @@
 .method public getUtteranceId()Ljava/lang/String;
     .locals 3
 
-    .line 1157
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mParams:Landroid/os/Bundle;
 
     const-string/jumbo v1, "utteranceId"
@@ -101,7 +88,6 @@
 .method public isValid()Z
     .locals 1
 
-    .line 1142
     const/4 v0, 0x1
 
     return v0
@@ -110,7 +96,6 @@
 .method protected playImpl()V
     .locals 2
 
-    .line 1147
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeechService;->access$300(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/AudioPlaybackHandler;
@@ -121,13 +106,11 @@
 
     invoke-virtual {v0, v1}, Landroid/speech/tts/AudioPlaybackHandler;->enqueue(Landroid/speech/tts/PlaybackQueueItem;)V
 
-    .line 1148
     return-void
 .end method
 
 .method protected stopImpl()V
     .locals 0
 
-    .line 1153
     return-void
 .end method

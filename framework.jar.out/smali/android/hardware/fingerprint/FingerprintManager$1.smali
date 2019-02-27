@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/fingerprint/FingerprintManager;Landroid/os/PowerManager;Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/fingerprint/FingerprintManager;
 
-    .line 935
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$1;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     iput-object p2, p0, Landroid/hardware/fingerprint/FingerprintManager$1;->val$powerManager:Landroid/os/PowerManager;
@@ -41,25 +39,18 @@
 
 .method static synthetic lambda$onLockoutReset$0(Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;Landroid/os/PowerManager$WakeLock;)V
     .locals 1
-    .param p0, "callback"    # Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;
-    .param p1, "wakeLock"    # Landroid/os/PowerManager$WakeLock;
 
-    .line 946
     :try_start_0
     invoke-virtual {p0}, Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;->onLockoutReset()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 948
     invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 949
     nop
 
-    .line 950
     return-void
 
-    .line 948
     :catchall_0
     move-exception v0
 
@@ -72,15 +63,12 @@
 # virtual methods
 .method public onLockoutReset(JLandroid/os/IRemoteCallback;)V
     .locals 5
-    .param p1, "deviceId"    # J
-    .param p3, "serverCallback"    # Landroid/os/IRemoteCallback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 941
     const/4 v0, 0x0
 
     :try_start_0
@@ -94,11 +82,8 @@
 
     move-result-object v1
 
-    .line 943
-    .local v1, "wakeLock":Landroid/os/PowerManager$WakeLock;
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 944
     iget-object v2, p0, Landroid/hardware/fingerprint/FingerprintManager$1;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     invoke-static {v2}, Landroid/hardware/fingerprint/FingerprintManager;->access$400(Landroid/hardware/fingerprint/FingerprintManager;)Landroid/os/Handler;
@@ -115,17 +100,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 952
-    .end local v1    # "wakeLock":Landroid/os/PowerManager$WakeLock;
     invoke-interface {p3, v0}, Landroid/os/IRemoteCallback;->sendResult(Landroid/os/Bundle;)V
 
-    .line 953
     nop
 
-    .line 954
     return-void
 
-    .line 952
     :catchall_0
     move-exception v1
 

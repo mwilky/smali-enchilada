@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/cas/V1_0/ICas$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/cas/V1_0/ICas$Stub;
 
-    .line 680
     iput-object p1, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->this$0:Landroid/hardware/cas/V1_0/ICas$Stub;
 
     iput-object p2, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,7 +40,6 @@
 # virtual methods
 .method public onValues(ILjava/util/ArrayList;)V
     .locals 2
-    .param p1, "status"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -52,29 +49,23 @@
         }
     .end annotation
 
-    .line 683
-    .local p2, "sessionId":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     iget-object v0, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 684
     iget-object v0, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 685
     iget-object v0, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p2}, Landroid/os/HwParcel;->writeInt8Vector(Ljava/util/ArrayList;)V
 
-    .line 686
     iget-object v0, p0, Landroid/hardware/cas/V1_0/ICas$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 687
     return-void
 .end method

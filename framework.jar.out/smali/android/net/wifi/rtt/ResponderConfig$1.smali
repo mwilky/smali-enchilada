@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,22 +39,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/rtt/ResponderConfig;
     .locals 24
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 417
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readBoolean()Z
 
     move-result v0
 
-    .line 418
-    .local v0, "macAddressPresent":Z
     const/4 v1, 0x0
 
-    .line 419
-    .local v1, "macAddress":Landroid/net/MacAddress;
     if-eqz v0, :cond_0
 
-    .line 420
     sget-object v2, Landroid/net/MacAddress;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v3, p1
@@ -70,7 +62,6 @@
 
     goto :goto_0
 
-    .line 422
     :cond_0
     move-object/from16 v3, p1
 
@@ -79,15 +70,10 @@
 
     move-result v2
 
-    .line 423
-    .local v2, "peerHandlePresent":Z
     const/4 v4, 0x0
 
-    .line 424
-    .local v4, "peerHandle":Landroid/net/wifi/aware/PeerHandle;
     if-eqz v2, :cond_1
 
-    .line 425
     new-instance v5, Landroid/net/wifi/aware/PeerHandle;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
@@ -98,9 +84,6 @@
 
     move-object v4, v5
 
-    .line 427
-    .end local v4    # "peerHandle":Landroid/net/wifi/aware/PeerHandle;
-    .local v17, "peerHandle":Landroid/net/wifi/aware/PeerHandle;
     :cond_1
     move-object/from16 v17, v4
 
@@ -108,8 +91,6 @@
 
     move-result v18
 
-    .line 428
-    .local v18, "responderType":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -127,42 +108,29 @@
 
     move v7, v4
 
-    .line 429
-    .local v7, "supports80211mc":Z
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v19
 
-    .line 430
-    .local v19, "channelWidth":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v20
 
-    .line 431
-    .local v20, "frequency":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v21
 
-    .line 432
-    .local v21, "centerFreq0":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v22
 
-    .line 433
-    .local v22, "centerFreq1":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v23
 
-    .line 435
-    .local v23, "preamble":I
     if-nez v17, :cond_3
 
-    .line 436
     new-instance v13, Landroid/net/wifi/rtt/ResponderConfig;
 
     move-object v4, v13
@@ -185,7 +153,6 @@
 
     return-object v13
 
-    .line 439
     :cond_3
     new-instance v4, Landroid/net/wifi/rtt/ResponderConfig;
 
@@ -215,7 +182,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 409
     invoke-virtual {p0, p1}, Landroid/net/wifi/rtt/ResponderConfig$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/rtt/ResponderConfig;
 
     move-result-object p1
@@ -225,9 +191,7 @@
 
 .method public newArray(I)[Landroid/net/wifi/rtt/ResponderConfig;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 412
     new-array v0, p1, [Landroid/net/wifi/rtt/ResponderConfig;
 
     return-object v0
@@ -236,7 +200,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 409
     invoke-virtual {p0, p1}, Landroid/net/wifi/rtt/ResponderConfig$1;->newArray(I)[Landroid/net/wifi/rtt/ResponderConfig;
 
     move-result-object p1

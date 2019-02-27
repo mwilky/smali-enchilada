@@ -31,11 +31,7 @@
 # direct methods
 .method public constructor <init>(Ljava/io/File;Landroid/content/ContentResolver;Landroid/net/Uri;)V
     .locals 2
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "resolver"    # Landroid/content/ContentResolver;
-    .param p3, "notifyUri"    # Landroid/net/Uri;
 
-    .line 637
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -44,29 +40,22 @@
 
     invoke-direct {p0, v0, v1}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
-    .line 634
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mRefCount:I
 
-    .line 638
     iput-object p1, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mFile:Ljava/io/File;
 
-    .line 639
     iput-object p2, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 640
     iput-object p3, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mNotifyUri:Landroid/net/Uri;
 
-    .line 641
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;
 
-    .line 626
     iget v0, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mRefCount:I
 
     return v0
@@ -74,9 +63,7 @@
 
 .method static synthetic access$008(Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;)I
     .locals 2
-    .param p0, "x0"    # Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;
 
-    .line 626
     iget v0, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mRefCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -88,9 +75,7 @@
 
 .method static synthetic access$010(Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;)I
     .locals 2
-    .param p0, "x0"    # Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;
 
-    .line 626
     iget v0, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mRefCount:I
 
     add-int/lit8 v1, v0, -0x1
@@ -104,15 +89,11 @@
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
     .locals 4
-    .param p1, "event"    # I
-    .param p2, "path"    # Ljava/lang/String;
 
-    .line 645
     and-int/lit16 v0, p1, 0xfcc
 
     if-eqz v0, :cond_0
 
-    .line 647
     iget-object v0, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/internal/content/FileSystemProvider$DirectoryObserver;->mNotifyUri:Landroid/net/Uri;
@@ -123,7 +104,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;Z)V
 
-    .line 649
     :cond_0
     return-void
 .end method
@@ -131,7 +111,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 653
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

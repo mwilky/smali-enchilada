@@ -41,7 +41,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 43
     new-instance v0, Landroid/app/backup/RestoreDescription;
 
     const-string v1, "NO_MORE_PACKAGES"
@@ -52,7 +51,6 @@
 
     sput-object v0, Landroid/app/backup/RestoreDescription;->NO_MORE_PACKAGES:Landroid/app/backup/RestoreDescription;
 
-    .line 92
     new-instance v0, Landroid/app/backup/RestoreDescription$1;
 
     invoke-direct {v0}, Landroid/app/backup/RestoreDescription$1;-><init>()V
@@ -64,35 +62,27 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 107
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/backup/RestoreDescription;->mPackageName:Ljava/lang/String;
 
-    .line 108
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/backup/RestoreDescription;->mDataType:I
 
-    .line 109
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/app/backup/RestoreDescription$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Landroid/app/backup/RestoreDescription$1;
 
-    .line 33
     invoke-direct {p0, p1}, Landroid/app/backup/RestoreDescription;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -100,27 +90,19 @@
 
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "dataType"    # I
 
-    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     iput-object p1, p0, Landroid/app/backup/RestoreDescription;->mPackageName:Ljava/lang/String;
 
-    .line 67
     iput p2, p0, Landroid/app/backup/RestoreDescription;->mDataType:I
 
-    .line 68
     return-void
 .end method
 
 .method static synthetic access$100(Landroid/app/backup/RestoreDescription;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Landroid/app/backup/RestoreDescription;
 
-    .line 33
     iget-object v0, p0, Landroid/app/backup/RestoreDescription;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -131,7 +113,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -140,7 +121,6 @@
 .method public getDataType()I
     .locals 1
 
-    .line 75
     iget v0, p0, Landroid/app/backup/RestoreDescription;->mDataType:I
 
     return v0
@@ -149,7 +129,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 71
     iget-object v0, p0, Landroid/app/backup/RestoreDescription;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -158,7 +137,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 57
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,7 +153,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 58
     iget v1, p0, Landroid/app/backup/RestoreDescription;->mDataType:I
 
     const/4 v2, 0x1
@@ -200,25 +177,19 @@
 
     move-result-object v0
 
-    .line 57
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 88
     iget-object v0, p0, Landroid/app/backup/RestoreDescription;->mPackageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 89
     iget v0, p0, Landroid/app/backup/RestoreDescription;->mDataType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 90
     return-void
 .end method

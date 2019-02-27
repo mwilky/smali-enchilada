@@ -11,7 +11,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,23 +18,15 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 35
     invoke-static {p0, p1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 36
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 4
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "tr"    # Ljava/lang/Throwable;
 
-    .line 46
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -51,8 +42,6 @@
     :cond_0
     const-string v0, "??"
 
-    .line 47
-    .local v0, "trString":Ljava/lang/String;
     :goto_0
     const-string v1, "%s (%s)"
 
@@ -74,19 +63,13 @@
 
     invoke-static {p0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 49
-    .end local v0    # "trString":Ljava/lang/String;
     return-void
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 39
     invoke-static {p0, p1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 40
     return-void
 .end method

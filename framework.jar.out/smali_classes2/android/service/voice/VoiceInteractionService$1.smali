@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/service/voice/VoiceInteractionService;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/voice/VoiceInteractionService;
 
-    .line 72
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionService$1;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-direct {p0}, Landroid/service/voice/IVoiceInteractionService$Stub;-><init>()V
@@ -41,7 +39,6 @@
         }
     .end annotation
 
-    .line 84
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$1;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionService;->mHandler:Landroid/service/voice/VoiceInteractionService$MyHandler;
@@ -50,14 +47,12 @@
 
     invoke-virtual {v0, v1}, Landroid/service/voice/VoiceInteractionService$MyHandler;->sendEmptyMessage(I)Z
 
-    .line 85
     return-void
 .end method
 
 .method public ready()V
     .locals 2
 
-    .line 74
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$1;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionService;->mHandler:Landroid/service/voice/VoiceInteractionService$MyHandler;
@@ -66,14 +61,12 @@
 
     invoke-virtual {v0, v1}, Landroid/service/voice/VoiceInteractionService$MyHandler;->sendEmptyMessage(I)Z
 
-    .line 75
     return-void
 .end method
 
 .method public shutdown()V
     .locals 2
 
-    .line 77
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$1;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionService;->mHandler:Landroid/service/voice/VoiceInteractionService$MyHandler;
@@ -82,14 +75,12 @@
 
     invoke-virtual {v0, v1}, Landroid/service/voice/VoiceInteractionService$MyHandler;->sendEmptyMessage(I)Z
 
-    .line 78
     return-void
 .end method
 
 .method public soundModelsChanged()V
     .locals 2
 
-    .line 80
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$1;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionService;->mHandler:Landroid/service/voice/VoiceInteractionService$MyHandler;
@@ -98,6 +89,5 @@
 
     invoke-virtual {v0, v1}, Landroid/service/voice/VoiceInteractionService$MyHandler;->sendEmptyMessage(I)Z
 
-    .line 81
     return-void
 .end method

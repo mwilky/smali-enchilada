@@ -13,15 +13,11 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "uid"    # I
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     iput p1, p0, Landroid/security/keystore/AndroidKeyStoreLoadStoreParameter;->mUid:I
 
-    .line 28
     return-void
 .end method
 
@@ -30,7 +26,6 @@
 .method public getProtectionParameter()Ljava/security/KeyStore$ProtectionParameter;
     .locals 1
 
-    .line 32
     const/4 v0, 0x0
 
     return-object v0
@@ -39,7 +34,6 @@
 .method getUid()I
     .locals 1
 
-    .line 36
     iget v0, p0, Landroid/security/keystore/AndroidKeyStoreLoadStoreParameter;->mUid:I
 
     return v0

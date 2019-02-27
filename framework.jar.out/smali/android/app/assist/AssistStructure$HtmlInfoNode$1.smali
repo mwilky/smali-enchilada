@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1978
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,45 +39,33 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/assist/AssistStructure$HtmlInfoNode;
     .locals 7
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
-    .line 1984
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1985
-    .local v0, "tag":Ljava/lang/String;
     new-instance v1, Landroid/app/assist/AssistStructure$HtmlInfoNodeBuilder;
 
     invoke-direct {v1, v0}, Landroid/app/assist/AssistStructure$HtmlInfoNodeBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1986
-    .local v1, "builder":Landroid/app/assist/AssistStructure$HtmlInfoNodeBuilder;
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1987
-    .local v2, "names":[Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1988
-    .local v3, "values":[Ljava/lang/String;
     if-eqz v2, :cond_1
 
     if-eqz v3, :cond_1
 
-    .line 1989
     array-length v4, v2
 
     array-length v5, v3
 
     if-eq v4, v5, :cond_0
 
-    .line 1990
     const-string v4, "AssistStructure"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -109,30 +96,24 @@
 
     goto :goto_1
 
-    .line 1993
     :cond_0
     const/4 v4, 0x0
 
-    .local v4, "i":I
     :goto_0
     array-length v5, v2
 
     if-ge v4, v5, :cond_1
 
-    .line 1994
     aget-object v5, v2, v4
 
     aget-object v6, v3, v4
 
     invoke-virtual {v1, v5, v6}, Landroid/app/assist/AssistStructure$HtmlInfoNodeBuilder;->addAttribute(Ljava/lang/String;Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;
 
-    .line 1993
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1998
-    .end local v4    # "i":I
     :cond_1
     :goto_1
     invoke-virtual {v1}, Landroid/app/assist/AssistStructure$HtmlInfoNodeBuilder;->build()Landroid/app/assist/AssistStructure$HtmlInfoNode;
@@ -145,7 +126,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 1978
     invoke-virtual {p0, p1}, Landroid/app/assist/AssistStructure$HtmlInfoNode$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/assist/AssistStructure$HtmlInfoNode;
 
     move-result-object p1
@@ -155,9 +135,7 @@
 
 .method public newArray(I)[Landroid/app/assist/AssistStructure$HtmlInfoNode;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 2003
     new-array v0, p1, [Landroid/app/assist/AssistStructure$HtmlInfoNode;
 
     return-object v0
@@ -166,7 +144,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 1978
     invoke-virtual {p0, p1}, Landroid/app/assist/AssistStructure$HtmlInfoNode$1;->newArray(I)[Landroid/app/assist/AssistStructure$HtmlInfoNode;
 
     move-result-object p1

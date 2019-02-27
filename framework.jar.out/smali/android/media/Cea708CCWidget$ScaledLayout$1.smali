@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1076
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,17 +39,13 @@
 # virtual methods
 .method public compare(Landroid/graphics/Rect;Landroid/graphics/Rect;)I
     .locals 2
-    .param p1, "lhs"    # Landroid/graphics/Rect;
-    .param p2, "rhs"    # Landroid/graphics/Rect;
 
-    .line 1079
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
     iget v1, p2, Landroid/graphics/Rect;->top:I
 
     if-eq v0, v1, :cond_0
 
-    .line 1080
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
     iget v1, p2, Landroid/graphics/Rect;->top:I
@@ -59,7 +54,6 @@
 
     return v0
 
-    .line 1082
     :cond_0
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
@@ -73,7 +67,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1076
     check-cast p1, Landroid/graphics/Rect;
 
     check-cast p2, Landroid/graphics/Rect;

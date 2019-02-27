@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5077
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,13 +31,11 @@
 .method public onAudioServerDown()V
     .locals 0
 
-    .line 5078
     return-void
 .end method
 
 .method public onAudioServerUp()V
     .locals 0
 
-    .line 5079
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/MacAddress;
     .locals 4
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 166
     new-instance v0, Landroid/net/MacAddress;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
@@ -59,7 +56,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 164
     invoke-virtual {p0, p1}, Landroid/net/MacAddress$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/MacAddress;
 
     move-result-object p1
@@ -69,9 +65,7 @@
 
 .method public newArray(I)[Landroid/net/MacAddress;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 170
     new-array v0, p1, [Landroid/net/MacAddress;
 
     return-object v0
@@ -80,7 +74,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 164
     invoke-virtual {p0, p1}, Landroid/net/MacAddress$1;->newArray(I)[Landroid/net/MacAddress;
 
     move-result-object p1

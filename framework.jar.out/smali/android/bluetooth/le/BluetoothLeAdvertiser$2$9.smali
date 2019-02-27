@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/BluetoothLeAdvertiser$2;II)V
     .locals 0
-    .param p1, "this$1"    # Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
-    .line 642
     iput-object p1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$9;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iput p2, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$9;->val$advertiserId:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 645
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$9;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v0, v0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -68,8 +65,6 @@
 
     check-cast v0, Landroid/bluetooth/le/AdvertisingSet;
 
-    .line 646
-    .local v0, "advertisingSet":Landroid/bluetooth/le/AdvertisingSet;
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$9;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$callback:Landroid/bluetooth/le/AdvertisingSetCallback;
@@ -78,6 +73,5 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/bluetooth/le/AdvertisingSetCallback;->onPeriodicAdvertisingDataSet(Landroid/bluetooth/le/AdvertisingSet;I)V
 
-    .line 647
     return-void
 .end method

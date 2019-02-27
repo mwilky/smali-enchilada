@@ -13,7 +13,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
 .method public static getLooper()Landroid/os/Looper;
     .locals 1
 
-    .line 39
     sget-object v0, Lcom/android/internal/view/WindowManagerPolicyThread;->mLooper:Landroid/os/Looper;
 
     return-object v0
@@ -31,7 +29,6 @@
 .method public static getThread()Ljava/lang/Thread;
     .locals 1
 
-    .line 35
     sget-object v0, Lcom/android/internal/view/WindowManagerPolicyThread;->mThread:Ljava/lang/Thread;
 
     return-object v0
@@ -39,15 +36,10 @@
 
 .method public static set(Ljava/lang/Thread;Landroid/os/Looper;)V
     .locals 0
-    .param p0, "thread"    # Ljava/lang/Thread;
-    .param p1, "looper"    # Landroid/os/Looper;
 
-    .line 30
     sput-object p0, Lcom/android/internal/view/WindowManagerPolicyThread;->mThread:Ljava/lang/Thread;
 
-    .line 31
     sput-object p1, Lcom/android/internal/view/WindowManagerPolicyThread;->mLooper:Landroid/os/Looper;
 
-    .line 32
     return-void
 .end method

@@ -19,10 +19,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 52
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 53
     new-instance v0, Landroid/app/admin/DeviceAdminService$IDeviceAdminServiceImpl;
 
     const/4 v1, 0x0
@@ -31,7 +29,6 @@
 
     iput-object v0, p0, Landroid/app/admin/DeviceAdminService;->mImpl:Landroid/app/admin/DeviceAdminService$IDeviceAdminServiceImpl;
 
-    .line 54
     return-void
 .end method
 
@@ -39,9 +36,7 @@
 # virtual methods
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 58
     iget-object v0, p0, Landroid/app/admin/DeviceAdminService;->mImpl:Landroid/app/admin/DeviceAdminService$IDeviceAdminServiceImpl;
 
     invoke-virtual {v0}, Landroid/app/admin/DeviceAdminService$IDeviceAdminServiceImpl;->asBinder()Landroid/os/IBinder;

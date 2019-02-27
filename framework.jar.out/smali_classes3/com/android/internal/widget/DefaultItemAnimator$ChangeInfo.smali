@@ -31,47 +31,29 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/widget/RecyclerView$ViewHolder;Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
     .locals 0
-    .param p1, "oldHolder"    # Lcom/android/internal/widget/RecyclerView$ViewHolder;
-    .param p2, "newHolder"    # Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->oldHolder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
-    .line 76
     iput-object p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->newHolder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
-    .line 77
     return-void
 .end method
 
 .method constructor <init>(Lcom/android/internal/widget/RecyclerView$ViewHolder;Lcom/android/internal/widget/RecyclerView$ViewHolder;IIII)V
     .locals 0
-    .param p1, "oldHolder"    # Lcom/android/internal/widget/RecyclerView$ViewHolder;
-    .param p2, "newHolder"    # Lcom/android/internal/widget/RecyclerView$ViewHolder;
-    .param p3, "fromX"    # I
-    .param p4, "fromY"    # I
-    .param p5, "toX"    # I
-    .param p6, "toY"    # I
 
-    .line 81
     invoke-direct {p0, p1, p2}, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;-><init>(Lcom/android/internal/widget/RecyclerView$ViewHolder;Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
 
-    .line 82
     iput p3, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->fromX:I
 
-    .line 83
     iput p4, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->fromY:I
 
-    .line 84
     iput p5, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->toX:I
 
-    .line 85
     iput p6, p0, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;->toY:I
 
-    .line 86
     return-void
 .end method
 
@@ -80,7 +62,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 90
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

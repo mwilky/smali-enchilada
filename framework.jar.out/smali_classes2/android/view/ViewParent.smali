@@ -82,24 +82,19 @@
 
 .method public onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V
     .locals 1
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "target"    # Landroid/view/View;
 
-    .line 72
     invoke-interface {p0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 74
     invoke-interface {p0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2}, Landroid/view/ViewParent;->onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V
 
-    .line 76
     :cond_0
     return-void
 .end method

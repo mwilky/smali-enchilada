@@ -25,7 +25,6 @@
 .method private constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    .line 26142
     iput-object p1, p0, Landroid/view/View$PerformClick;->this$0:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Landroid/view/View;Landroid/view/View$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/view/View;
-    .param p2, "x1"    # Landroid/view/View$1;
 
-    .line 26142
     invoke-direct {p0, p1}, Landroid/view/View$PerformClick;-><init>(Landroid/view/View;)V
 
     return-void
@@ -49,11 +45,9 @@
 .method public run()V
     .locals 1
 
-    .line 26145
     iget-object v0, p0, Landroid/view/View$PerformClick;->this$0:Landroid/view/View;
 
     invoke-static {v0}, Landroid/view/View;->access$3100(Landroid/view/View;)Z
 
-    .line 26146
     return-void
 .end method

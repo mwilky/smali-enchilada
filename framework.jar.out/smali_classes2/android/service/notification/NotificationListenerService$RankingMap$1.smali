@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2059
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/NotificationListenerService$RankingMap;
     .locals 3
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 2062
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -51,8 +48,6 @@
 
     check-cast v1, Landroid/service/notification/NotificationRankingUpdate;
 
-    .line 2063
-    .local v1, "rankingUpdate":Landroid/service/notification/NotificationRankingUpdate;
     new-instance v2, Landroid/service/notification/NotificationListenerService$RankingMap;
 
     invoke-direct {v2, v1, v0}, Landroid/service/notification/NotificationListenerService$RankingMap;-><init>(Landroid/service/notification/NotificationRankingUpdate;Landroid/service/notification/NotificationListenerService$1;)V
@@ -63,7 +58,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2059
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationListenerService$RankingMap$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object p1
@@ -73,9 +67,7 @@
 
 .method public newArray(I)[Landroid/service/notification/NotificationListenerService$RankingMap;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 2068
     new-array v0, p1, [Landroid/service/notification/NotificationListenerService$RankingMap;
 
     return-object v0
@@ -84,7 +76,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 2059
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationListenerService$RankingMap$1;->newArray(I)[Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object p1

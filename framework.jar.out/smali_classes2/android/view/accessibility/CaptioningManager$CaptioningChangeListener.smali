@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 523
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,32 +27,24 @@
 # virtual methods
 .method public onEnabledChanged(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 529
     return-void
 .end method
 
 .method public onFontScaleChanged(F)V
     .locals 0
-    .param p1, "fontScale"    # F
 
-    .line 553
     return-void
 .end method
 
 .method public onLocaleChanged(Ljava/util/Locale;)V
     .locals 0
-    .param p1, "locale"    # Ljava/util/Locale;
 
-    .line 545
     return-void
 .end method
 
 .method public onUserStyleChanged(Landroid/view/accessibility/CaptioningManager$CaptionStyle;)V
     .locals 0
-    .param p1, "userStyle"    # Landroid/view/accessibility/CaptioningManager$CaptionStyle;
 
-    .line 537
     return-void
 .end method

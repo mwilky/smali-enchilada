@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/hdmi/HdmiControlManager;Landroid/hardware/hdmi/HdmiControlManager$HotplugEventListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/hdmi/HdmiControlManager;
 
-    .line 462
     iput-object p1, p0, Landroid/hardware/hdmi/HdmiControlManager$1;->this$0:Landroid/hardware/hdmi/HdmiControlManager;
 
     iput-object p2, p0, Landroid/hardware/hdmi/HdmiControlManager$1;->val$listener:Landroid/hardware/hdmi/HdmiControlManager$HotplugEventListener;
@@ -39,13 +37,10 @@
 # virtual methods
 .method public onReceived(Landroid/hardware/hdmi/HdmiHotplugEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/hardware/hdmi/HdmiHotplugEvent;
 
-    .line 465
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiControlManager$1;->val$listener:Landroid/hardware/hdmi/HdmiControlManager$HotplugEventListener;
 
     invoke-interface {v0, p1}, Landroid/hardware/hdmi/HdmiControlManager$HotplugEventListener;->onReceived(Landroid/hardware/hdmi/HdmiHotplugEvent;)V
 
-    .line 466
     return-void
 .end method

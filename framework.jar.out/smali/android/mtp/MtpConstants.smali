@@ -589,7 +589,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -597,9 +596,7 @@
 
 .method public static isAbstractObject(I)Z
     .locals 1
-    .param p0, "format"    # I
 
-    .line 291
     const v0, 0xba81
 
     if-eq p0, v0, :cond_0
@@ -608,12 +605,10 @@
 
     packed-switch p0, :pswitch_data_1
 
-    .line 303
     const/4 v0, 0x0
 
     return v0
 
-    .line 301
     :cond_0
     :pswitch_0
     const/4 v0, 0x1

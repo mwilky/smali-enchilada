@@ -30,18 +30,14 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 535
     invoke-static {}, Landroid/os/HwParcel;->native_init()J
 
     move-result-wide v6
 
-    .line 537
-    .local v6, "freeFunction":J
     new-instance v8, Llibcore/util/NativeAllocationRegistry;
 
     const-class v0, Landroid/os/HwParcel;
 
-    .line 538
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
@@ -56,51 +52,40 @@
 
     sput-object v8, Landroid/os/HwParcel;->sNativeRegistry:Llibcore/util/NativeAllocationRegistry;
 
-    .line 541
-    .end local v6    # "freeFunction":J
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 3
 
-    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/os/HwParcel;->native_setup(Z)V
 
-    .line 62
     sget-object v0, Landroid/os/HwParcel;->sNativeRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v1, p0, Landroid/os/HwParcel;->mNativeContext:J
 
     invoke-virtual {v0, p0, v1, v2}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
 
-    .line 65
     return-void
 .end method
 
 .method private constructor <init>(Z)V
     .locals 3
-    .param p1, "allocate"    # Z
 
-    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     invoke-direct {p0, p1}, Landroid/os/HwParcel;->native_setup(Z)V
 
-    .line 51
     sget-object v0, Landroid/os/HwParcel;->sNativeRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v1, p0, Landroid/os/HwParcel;->mNativeContext:J
 
     invoke-virtual {v0, p0, v1, v2}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
 
-    .line 54
     return-void
 .end method
 
@@ -177,7 +162,6 @@
         }
     .end annotation
 
-    .line 387
     invoke-direct {p0}, Landroid/os/HwParcel;->readBoolVectorAsArray()[Z
 
     move-result-object v0
@@ -186,8 +170,6 @@
 
     move-result-object v0
 
-    .line 389
-    .local v0, "array":[Ljava/lang/Boolean;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -216,7 +198,6 @@
         }
     .end annotation
 
-    .line 453
     invoke-direct {p0}, Landroid/os/HwParcel;->readDoubleVectorAsArray()[D
 
     move-result-object v0
@@ -225,8 +206,6 @@
 
     move-result-object v0
 
-    .line 455
-    .local v0, "array":[Ljava/lang/Double;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -255,7 +234,6 @@
         }
     .end annotation
 
-    .line 442
     invoke-direct {p0}, Landroid/os/HwParcel;->readFloatVectorAsArray()[F
 
     move-result-object v0
@@ -264,8 +242,6 @@
 
     move-result-object v0
 
-    .line 444
-    .local v0, "array":[Ljava/lang/Float;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -291,7 +267,6 @@
         }
     .end annotation
 
-    .line 409
     invoke-direct {p0}, Landroid/os/HwParcel;->readInt16VectorAsArray()[S
 
     move-result-object v0
@@ -300,8 +275,6 @@
 
     move-result-object v0
 
-    .line 411
-    .local v0, "array":[Ljava/lang/Short;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -327,7 +300,6 @@
         }
     .end annotation
 
-    .line 420
     invoke-direct {p0}, Landroid/os/HwParcel;->readInt32VectorAsArray()[I
 
     move-result-object v0
@@ -336,8 +308,6 @@
 
     move-result-object v0
 
-    .line 422
-    .local v0, "array":[Ljava/lang/Integer;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -363,7 +333,6 @@
         }
     .end annotation
 
-    .line 431
     invoke-direct {p0}, Landroid/os/HwParcel;->readInt64VectorAsArray()[J
 
     move-result-object v0
@@ -372,8 +341,6 @@
 
     move-result-object v0
 
-    .line 433
-    .local v0, "array":[Ljava/lang/Long;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -399,7 +366,6 @@
         }
     .end annotation
 
-    .line 398
     invoke-direct {p0}, Landroid/os/HwParcel;->readInt8VectorAsArray()[B
 
     move-result-object v0
@@ -408,8 +374,6 @@
 
     move-result-object v0
 
-    .line 400
-    .local v0, "array":[Ljava/lang/Byte;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -435,7 +399,6 @@
         }
     .end annotation
 
-    .line 464
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Landroid/os/HwParcel;->readStringVectorAsArray()[Ljava/lang/String;
@@ -480,25 +443,17 @@
         }
     .end annotation
 
-    .line 168
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Boolean;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 169
-    .local v0, "n":I
     new-array v1, v0, [Z
 
-    .line 170
-    .local v1, "array":[Z
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 171
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -511,17 +466,13 @@
 
     aput-boolean v3, v1, v2
 
-    .line 170
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 174
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeBoolVector([Z)V
 
-    .line 175
     return-void
 .end method
 
@@ -542,25 +493,17 @@
         }
     .end annotation
 
-    .line 252
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Double;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 253
-    .local v0, "n":I
     new-array v1, v0, [D
 
-    .line 254
-    .local v1, "array":[D
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 255
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -573,17 +516,13 @@
 
     aput-wide v3, v1, v2
 
-    .line 254
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 258
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeDoubleVector([D)V
 
-    .line 259
     return-void
 .end method
 
@@ -601,25 +540,17 @@
         }
     .end annotation
 
-    .line 238
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Float;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 239
-    .local v0, "n":I
     new-array v1, v0, [F
 
-    .line 240
-    .local v1, "array":[F
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 241
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -632,17 +563,13 @@
 
     aput v3, v1, v2
 
-    .line 240
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 244
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeFloatVector([F)V
 
-    .line 245
     return-void
 .end method
 
@@ -660,25 +587,17 @@
         }
     .end annotation
 
-    .line 196
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Short;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 197
-    .local v0, "n":I
     new-array v1, v0, [S
 
-    .line 198
-    .local v1, "array":[S
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 199
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -691,17 +610,13 @@
 
     aput-short v3, v1, v2
 
-    .line 198
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 202
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeInt16Vector([S)V
 
-    .line 203
     return-void
 .end method
 
@@ -719,25 +634,17 @@
         }
     .end annotation
 
-    .line 210
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 211
-    .local v0, "n":I
     new-array v1, v0, [I
 
-    .line 212
-    .local v1, "array":[I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 213
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -750,17 +657,13 @@
 
     aput v3, v1, v2
 
-    .line 212
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 216
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeInt32Vector([I)V
 
-    .line 217
     return-void
 .end method
 
@@ -778,25 +681,17 @@
         }
     .end annotation
 
-    .line 224
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Long;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 225
-    .local v0, "n":I
     new-array v1, v0, [J
 
-    .line 226
-    .local v1, "array":[J
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 227
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -809,17 +704,13 @@
 
     aput-wide v3, v1, v2
 
-    .line 226
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 230
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeInt64Vector([J)V
 
-    .line 231
     return-void
 .end method
 
@@ -837,25 +728,17 @@
         }
     .end annotation
 
-    .line 182
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 183
-    .local v0, "n":I
     new-array v1, v0, [B
 
-    .line 184
-    .local v1, "array":[B
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 185
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -868,17 +751,13 @@
 
     aput-byte v3, v1, v2
 
-    .line 184
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 188
-    .end local v2    # "i":I
     :cond_0
     invoke-direct {p0, v1}, Landroid/os/HwParcel;->writeInt8Vector([B)V
 
-    .line 189
     return-void
 .end method
 
@@ -902,8 +781,6 @@
         }
     .end annotation
 
-    .line 266
-    .local p1, "val":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -918,7 +795,6 @@
 
     invoke-direct {p0, v0}, Landroid/os/HwParcel;->writeStringVector([Ljava/lang/String;)V
 
-    .line 267
     return-void
 .end method
 

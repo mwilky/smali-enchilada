@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,45 +39,31 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/usb/UsbAccessory;
     .locals 14
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 194
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 195
-    .local v7, "manufacturer":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 196
-    .local v8, "model":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 197
-    .local v9, "description":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 198
-    .local v10, "version":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 199
-    .local v11, "uri":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 200
-    .local v12, "serial":Ljava/lang/String;
     new-instance v13, Landroid/hardware/usb/UsbAccessory;
 
     move-object v0, v13
@@ -103,7 +88,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 192
     invoke-virtual {p0, p1}, Landroid/hardware/usb/UsbAccessory$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/usb/UsbAccessory;
 
     move-result-object p1
@@ -113,9 +97,7 @@
 
 .method public newArray(I)[Landroid/hardware/usb/UsbAccessory;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 204
     new-array v0, p1, [Landroid/hardware/usb/UsbAccessory;
 
     return-object v0
@@ -124,7 +106,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 192
     invoke-virtual {p0, p1}, Landroid/hardware/usb/UsbAccessory$1;->newArray(I)[Landroid/hardware/usb/UsbAccessory;
 
     move-result-object p1

@@ -29,7 +29,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 79
     new-instance v0, Landroid/os/health/HealthKeys$Constants;
 
     const-class v1, Landroid/os/health/PidHealthStats;
@@ -44,9 +43,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     return-void
 .end method

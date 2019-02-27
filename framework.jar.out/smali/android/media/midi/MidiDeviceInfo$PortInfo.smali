@@ -31,20 +31,13 @@
 # direct methods
 .method constructor <init>(IILjava/lang/String;)V
     .locals 1
-    .param p1, "type"    # I
-    .param p2, "portNumber"    # I
-    .param p3, "name"    # Ljava/lang/String;
 
-    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 162
     iput p1, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mPortType:I
 
-    .line 163
     iput p2, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mPortNumber:I
 
-    .line 164
     if-nez p3, :cond_0
 
     const-string v0, ""
@@ -57,7 +50,6 @@
     :goto_0
     iput-object v0, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mName:Ljava/lang/String;
 
-    .line 165
     return-void
 .end method
 
@@ -66,7 +58,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 188
     iget-object v0, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mName:Ljava/lang/String;
 
     return-object v0
@@ -75,7 +66,6 @@
 .method public getPortNumber()I
     .locals 1
 
-    .line 180
     iget v0, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mPortNumber:I
 
     return v0
@@ -84,7 +74,6 @@
 .method public getType()I
     .locals 1
 
-    .line 172
     iget v0, p0, Landroid/media/midi/MidiDeviceInfo$PortInfo;->mPortType:I
 
     return v0

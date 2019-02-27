@@ -34,7 +34,6 @@
 .method constructor <init>(Ljava/util/Queue;)V
     .locals 0
 
-    .line 155
     iput-object p1, p0, Landroid/app/slice/SliceQuery$1;->val$items:Ljava/util/Queue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +46,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 158
     iget-object v0, p0, Landroid/app/slice/SliceQuery$1;->val$items:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->size()I
@@ -70,7 +68,6 @@
 .method public next()Landroid/app/slice/SliceItem;
     .locals 3
 
-    .line 163
     iget-object v0, p0, Landroid/app/slice/SliceQuery$1;->val$items:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
@@ -79,8 +76,6 @@
 
     check-cast v0, Landroid/app/slice/SliceItem;
 
-    .line 164
-    .local v0, "item":Landroid/app/slice/SliceItem;
     const-string/jumbo v1, "slice"
 
     invoke-static {v0, v1}, Landroid/app/slice/SliceQuery;->compareTypes(Landroid/app/slice/SliceItem;Ljava/lang/String;)Z
@@ -91,14 +86,12 @@
 
     const-string v1, "action"
 
-    .line 165
     invoke-static {v0, v1}, Landroid/app/slice/SliceQuery;->compareTypes(Landroid/app/slice/SliceItem;Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 166
     :cond_0
     iget-object v1, p0, Landroid/app/slice/SliceQuery$1;->val$items:Ljava/util/Queue;
 
@@ -112,7 +105,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/Queue;->addAll(Ljava/util/Collection;)Z
 
-    .line 168
     :cond_1
     return-object v0
 .end method
@@ -120,7 +112,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 155
     invoke-virtual {p0}, Landroid/app/slice/SliceQuery$1;->next()Landroid/app/slice/SliceItem;
 
     move-result-object v0

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/accounts/AccountManagerCallback;Landroid/accounts/AccountManagerFuture;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/accounts/AccountManager;
 
-    .line 2206
     iput-object p1, p0, Landroid/accounts/AccountManager$17;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p2, p0, Landroid/accounts/AccountManager$17;->val$callback:Landroid/accounts/AccountManagerCallback;
@@ -47,13 +45,11 @@
 .method public run()V
     .locals 2
 
-    .line 2209
     iget-object v0, p0, Landroid/accounts/AccountManager$17;->val$callback:Landroid/accounts/AccountManagerCallback;
 
     iget-object v1, p0, Landroid/accounts/AccountManager$17;->val$future:Landroid/accounts/AccountManagerFuture;
 
     invoke-interface {v0, v1}, Landroid/accounts/AccountManagerCallback;->run(Landroid/accounts/AccountManagerFuture;)V
 
-    .line 2210
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 274
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,15 +39,11 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/os/SharedMemory;
     .locals 3
-    .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 277
     invoke-virtual {p1}, Landroid/os/Parcel;->readRawFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 278
-    .local v0, "descriptor":Ljava/io/FileDescriptor;
     new-instance v1, Landroid/os/SharedMemory;
 
     const/4 v2, 0x0
@@ -61,7 +56,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 274
     invoke-virtual {p0, p1}, Landroid/os/SharedMemory$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/SharedMemory;
 
     move-result-object p1
@@ -71,9 +65,7 @@
 
 .method public newArray(I)[Landroid/os/SharedMemory;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 283
     new-array v0, p1, [Landroid/os/SharedMemory;
 
     return-object v0
@@ -82,7 +74,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 274
     invoke-virtual {p0, p1}, Landroid/os/SharedMemory$1;->newArray(I)[Landroid/os/SharedMemory;
 
     move-result-object p1

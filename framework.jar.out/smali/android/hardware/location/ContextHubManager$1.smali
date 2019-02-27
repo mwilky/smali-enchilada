@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/location/ContextHubManager;Landroid/hardware/location/ContextHubTransaction;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/location/ContextHubManager;
 
-    .line 328
     iput-object p1, p0, Landroid/hardware/location/ContextHubManager$1;->this$0:Landroid/hardware/location/ContextHubManager;
 
     iput-object p2, p0, Landroid/hardware/location/ContextHubManager$1;->val$transaction:Landroid/hardware/location/ContextHubTransaction;
@@ -39,7 +37,6 @@
 # virtual methods
 .method public onQueryResponse(ILjava/util/List;)V
     .locals 4
-    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -49,15 +46,12 @@
         }
     .end annotation
 
-    .line 331
-    .local p2, "nanoappList":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/location/NanoAppState;>;"
     const-string v0, "ContextHubManager"
 
     const-string v1, "Received a query callback on a non-query request"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 332
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$1;->val$transaction:Landroid/hardware/location/ContextHubTransaction;
 
     new-instance v1, Landroid/hardware/location/ContextHubTransaction$Response;
@@ -70,15 +64,12 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/location/ContextHubTransaction;->setResponse(Landroid/hardware/location/ContextHubTransaction$Response;)V
 
-    .line 334
     return-void
 .end method
 
 .method public onTransactionComplete(I)V
     .locals 3
-    .param p1, "result"    # I
 
-    .line 338
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$1;->val$transaction:Landroid/hardware/location/ContextHubTransaction;
 
     new-instance v1, Landroid/hardware/location/ContextHubTransaction$Response;
@@ -89,6 +80,5 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/location/ContextHubTransaction;->setResponse(Landroid/hardware/location/ContextHubTransaction$Response;)V
 
-    .line 339
     return-void
 .end method

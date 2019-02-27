@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 8348
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -51,64 +50,48 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 8363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8364
     return-void
 .end method
 
 .method public static obtain(Landroid/view/View;I)Landroid/view/ViewGroup$TouchTarget;
     .locals 3
-    .param p0, "child"    # Landroid/view/View;
-    .param p1, "pointerIdBits"    # I
 
-    .line 8367
     if-eqz p0, :cond_1
 
-    .line 8372
     sget-object v0, Landroid/view/ViewGroup$TouchTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 8373
     :try_start_0
     sget-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
     if-nez v1, :cond_0
 
-    .line 8374
     new-instance v1, Landroid/view/ViewGroup$TouchTarget;
 
     invoke-direct {v1}, Landroid/view/ViewGroup$TouchTarget;-><init>()V
 
-    .local v1, "target":Landroid/view/ViewGroup$TouchTarget;
     goto :goto_0
 
-    .line 8376
-    .end local v1    # "target":Landroid/view/ViewGroup$TouchTarget;
     :cond_0
     sget-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8377
-    .restart local v1    # "target":Landroid/view/ViewGroup$TouchTarget;
     iget-object v2, v1, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
     sput-object v2, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8378
     sget v2, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
     add-int/lit8 v2, v2, -0x1
 
     sput v2, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
-    .line 8379
     const/4 v2, 0x0
 
     iput-object v2, v1, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8381
     :goto_0
     monitor-exit v0
     :try_end_0
@@ -116,19 +99,12 @@
 
     move-object v0, v1
 
-    .line 8382
-    .end local v1    # "target":Landroid/view/ViewGroup$TouchTarget;
-    .local v0, "target":Landroid/view/ViewGroup$TouchTarget;
     iput-object p0, v0, Landroid/view/ViewGroup$TouchTarget;->child:Landroid/view/View;
 
-    .line 8383
     iput p1, v0, Landroid/view/ViewGroup$TouchTarget;->pointerIdBits:I
 
-    .line 8384
     return-object v0
 
-    .line 8381
-    .end local v0    # "target":Landroid/view/ViewGroup$TouchTarget;
     :catchall_0
     move-exception v1
 
@@ -139,7 +115,6 @@
 
     throw v1
 
-    .line 8368
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -155,17 +130,14 @@
 .method public recycle()V
     .locals 4
 
-    .line 8388
     iget-object v0, p0, Landroid/view/ViewGroup$TouchTarget;->child:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 8392
     sget-object v0, Landroid/view/ViewGroup$TouchTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 8393
     :try_start_0
     sget v1, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
@@ -175,15 +147,12 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 8394
     sget-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
     iput-object v1, p0, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8395
     sput-object p0, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8396
     sget v1, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
     add-int/lit8 v1, v1, 0x1
@@ -192,21 +161,16 @@
 
     goto :goto_0
 
-    .line 8398
     :cond_0
     iput-object v3, p0, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 8400
     :goto_0
     iput-object v3, p0, Landroid/view/ViewGroup$TouchTarget;->child:Landroid/view/View;
 
-    .line 8401
     monitor-exit v0
 
-    .line 8402
     return-void
 
-    .line 8401
     :catchall_0
     move-exception v1
 
@@ -216,7 +180,6 @@
 
     throw v1
 
-    .line 8389
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 

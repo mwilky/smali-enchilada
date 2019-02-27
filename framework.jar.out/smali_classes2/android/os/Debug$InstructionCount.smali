@@ -21,10 +21,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1986
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1987
     return-void
 .end method
 
@@ -33,7 +31,6 @@
 .method public collect()Z
     .locals 1
 
-    .line 2004
     const/4 v0, 0x0
 
     return v0
@@ -42,7 +39,6 @@
 .method public globalMethodInvocations()I
     .locals 1
 
-    .line 2020
     const/4 v0, 0x0
 
     return v0
@@ -51,7 +47,6 @@
 .method public globalTotal()I
     .locals 1
 
-    .line 2012
     const/4 v0, 0x0
 
     return v0
@@ -60,7 +55,6 @@
 .method public resetAndStart()Z
     .locals 1
 
-    .line 1996
     const/4 v0, 0x0
 
     return v0

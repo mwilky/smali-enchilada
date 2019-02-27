@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,16 +27,12 @@
 # virtual methods
 .method public onCancelled(Landroid/accessibilityservice/GestureDescription;)V
     .locals 0
-    .param p1, "gestureDescription"    # Landroid/accessibilityservice/GestureDescription;
 
-    .line 1867
     return-void
 .end method
 
 .method public onCompleted(Landroid/accessibilityservice/GestureDescription;)V
     .locals 0
-    .param p1, "gestureDescription"    # Landroid/accessibilityservice/GestureDescription;
 
-    .line 1860
     return-void
 .end method

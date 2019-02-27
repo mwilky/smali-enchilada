@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ClipDataProto;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/content/ClipDataProto;
 
-    .line 22
     iput-object p1, p0, Landroid/content/ClipDataProto$Item;->this$0:Landroid/content/ClipDataProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/view/ViewRootImpl;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
-    .line 7374
     iput-object p1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 5
 
-    .line 7378
     iget-object v0, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     const-string/jumbo v1, "viewroot.profile_rendering"
@@ -52,7 +49,6 @@
 
     invoke-static {v0, v1}, Landroid/view/ViewRootImpl;->access$5302(Landroid/view/ViewRootImpl;Z)Z
 
-    .line 7379
     iget-object v0, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
@@ -63,7 +59,6 @@
 
     invoke-static {v0, v1}, Landroid/view/ViewRootImpl;->access$5400(Landroid/view/ViewRootImpl;Z)V
 
-    .line 7382
     iget-object v0, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -72,7 +67,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 7383
     iget-object v0, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -85,12 +79,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 7384
     iget-object v0, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->invalidate()V
 
-    .line 7389
     :cond_0
     const-string v0, "debug.layout"
 
@@ -98,8 +90,6 @@
 
     move-result v0
 
-    .line 7390
-    .local v0, "layout":Z
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -108,14 +98,12 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 7391
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iput-boolean v0, v1, Landroid/view/View$AttachInfo;->mDebugLayout:Z
 
-    .line 7392
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mHandler:Landroid/view/ViewRootImpl$ViewRootHandler;
@@ -128,7 +116,6 @@
 
     if-nez v1, :cond_1
 
-    .line 7393
     iget-object v1, p0, Landroid/view/ViewRootImpl$4;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mHandler:Landroid/view/ViewRootImpl$ViewRootHandler;
@@ -137,7 +124,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/view/ViewRootImpl$ViewRootHandler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 7396
     :cond_1
     return-void
 .end method

@@ -57,73 +57,52 @@
         }
     .end annotation
 
-    .line 7273
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
-    .local p1, "clone":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7274
     iget-object v0, p1, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 7275
     iget-object v0, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
-    .line 7276
     iget-object v0, p1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
-    .line 7277
     iget-object v0, p1, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
-    .line 7278
     iget-object v0, p1, Landroid/content/pm/PackageParser$Component;->componentShortName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentShortName:Ljava/lang/String;
 
-    .line 7279
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/pm/PackageParser$Package;)V
     .locals 1
-    .param p1, "_owner"    # Landroid/content/pm/PackageParser$Package;
 
-    .line 7226
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7227
     iput-object p1, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 7228
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
-    .line 7229
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
-    .line 7230
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/pm/PackageParser$ParseComponentArgs;Landroid/content/pm/ComponentInfo;)V
     .locals 8
-    .param p1, "args"    # Landroid/content/pm/PackageParser$ParseComponentArgs;
-    .param p2, "outInfo"    # Landroid/content/pm/ComponentInfo;
 
-    .line 7245
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParsePackageItemArgs;Landroid/content/pm/PackageItemInfo;)V
 
-    .line 7246
     iget-object v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->outError:[Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -132,16 +111,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 7247
     return-void
 
-    .line 7250
     :cond_0
     iget v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->processRes:I
 
     if-eqz v0, :cond_2
 
-    .line 7252
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -152,7 +128,6 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 7253
     iget-object v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->sa:Landroid/content/res/TypedArray;
 
     iget v2, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->processRes:I
@@ -163,14 +138,11 @@
 
     move-result-object v0
 
-    .line 7259
-    .local v4, "pname":Ljava/lang/CharSequence;
     :goto_0
     move-object v4, v0
 
     goto :goto_1
 
-    .end local v4    # "pname":Ljava/lang/CharSequence;
     :cond_1
     iget-object v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->sa:Landroid/content/res/TypedArray;
 
@@ -182,8 +154,6 @@
 
     goto :goto_0
 
-    .line 7261
-    .restart local v4    # "pname":Ljava/lang/CharSequence;
     :goto_1
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
@@ -209,14 +179,11 @@
 
     iput-object v0, p2, Landroid/content/pm/ComponentInfo;->processName:Ljava/lang/String;
 
-    .line 7266
-    .end local v4    # "pname":Ljava/lang/CharSequence;
     :cond_2
     iget v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->descriptionRes:I
 
     if-eqz v0, :cond_3
 
-    .line 7267
     iget-object v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->sa:Landroid/content/res/TypedArray;
 
     iget v2, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->descriptionRes:I
@@ -227,7 +194,6 @@
 
     iput v0, p2, Landroid/content/pm/ComponentInfo;->descriptionRes:I
 
-    .line 7270
     :cond_3
     iget-object v0, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->sa:Landroid/content/res/TypedArray;
 
@@ -241,29 +207,22 @@
 
     iput-boolean v0, p2, Landroid/content/pm/ComponentInfo;->enabled:Z
 
-    .line 7271
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/pm/PackageParser$ParsePackageItemArgs;Landroid/content/pm/PackageItemInfo;)V
     .locals 16
-    .param p1, "args"    # Landroid/content/pm/PackageParser$ParsePackageItemArgs;
-    .param p2, "outInfo"    # Landroid/content/pm/PackageItemInfo;
 
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    .line 7232
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7233
     iget-object v2, v1, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->owner:Landroid/content/pm/PackageParser$Package;
 
     iput-object v2, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 7234
     new-instance v2, Ljava/util/ArrayList;
 
     const/4 v3, 0x0
@@ -272,7 +231,6 @@
 
     iput-object v2, v0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
-    .line 7235
     iget-object v4, v1, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v6, v1, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->outError:[Ljava/lang/String;
@@ -303,7 +261,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 7238
     move-object/from16 v2, p2
 
     iget-object v3, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
@@ -312,7 +269,6 @@
 
     goto :goto_0
 
-    .line 7240
     :cond_0
     move-object/from16 v2, p2
 
@@ -320,52 +276,42 @@
 
     iput-object v3, v0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
-    .line 7242
     :goto_0
     return-void
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 7292
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7293
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
-    .line 7294
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->metaData:Landroid/os/Bundle;
 
-    .line 7295
     invoke-static {p1}, Landroid/content/pm/PackageParser$Component;->createIntentsList(Landroid/os/Parcel;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
-    .line 7297
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 7298
     return-void
 .end method
 
 .method private static createIntentsList(Landroid/os/Parcel;)Ljava/util/ArrayList;
     .locals 9
-    .param p0, "in"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -378,50 +324,39 @@
         }
     .end annotation
 
-    .line 7343
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 7344
-    .local v0, "N":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 7345
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 7348
     :cond_0
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 7349
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     return-object v2
 
-    .line 7352
     :cond_1
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 7355
-    .local v2, "componentName":Ljava/lang/String;
     :try_start_0
     invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 7356
-    .local v3, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const/4 v4, 0x1
 
     new-array v5, v4, [Ljava/lang/Class;
@@ -434,21 +369,15 @@
 
     move-result-object v5
 
-    .line 7358
-    .local v5, "cons":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 7359
-    .local v6, "intentsList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
     move v7, v1
 
-    .local v7, "i":I
     :goto_0
     if-ge v7, v0, :cond_2
 
-    .line 7360
     new-array v8, v4, [Ljava/lang/Object;
 
     aput-object p0, v8, v1
@@ -463,33 +392,20 @@
     :try_end_0
     .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7359
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 7364
-    .end local v3    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .end local v5    # "cons":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
-    .end local v7    # "i":I
     :cond_2
     nop
 
-    .line 7363
     move-object v1, v6
 
-    .line 7366
-    .end local v6    # "intentsList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
-    .local v1, "intentsList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
     return-object v1
 
-    .line 7362
-    .end local v1    # "intentsList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
     :catch_0
     move-exception v1
 
-    .line 7363
-    .local v1, "ree":Ljava/lang/ReflectiveOperationException;
     new-instance v3, Ljava/lang/AssertionError;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -513,8 +429,6 @@
 
 .method private static writeIntentsList(Ljava/util/ArrayList;Landroid/os/Parcel;I)V
     .locals 4
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -527,32 +441,23 @@
         }
     .end annotation
 
-    .line 7323
-    .local p0, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<+Landroid/content/pm/PackageParser$IntentInfo;>;"
     if-nez p0, :cond_0
 
-    .line 7324
     const/4 v0, -0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7325
     return-void
 
-    .line 7328
     :cond_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 7329
-    .local v0, "N":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7332
     if-lez v0, :cond_1
 
-    .line 7333
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -561,8 +466,6 @@
 
     check-cast v2, Landroid/content/pm/PackageParser$IntentInfo;
 
-    .line 7334
-    .local v2, "info":Landroid/content/pm/PackageParser$IntentInfo;
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -573,14 +476,11 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7336
     nop
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 7337
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -589,14 +489,10 @@
 
     invoke-virtual {v3, p1, p2}, Landroid/content/pm/PackageParser$IntentInfo;->writeIntentInfoToParcel(Landroid/os/Parcel;I)V
 
-    .line 7336
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 7340
-    .end local v1    # "i":I
-    .end local v2    # "info":Landroid/content/pm/PackageParser$IntentInfo;
     :cond_1
     return-void
 .end method
@@ -605,10 +501,7 @@
 # virtual methods
 .method public appendComponentShortName(Ljava/lang/StringBuilder;)V
     .locals 2
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
 
-    .line 7370
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -619,31 +512,25 @@
 
     invoke-static {p1, v0, v1}, Landroid/content/ComponentName;->appendShortString(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7371
     return-void
 .end method
 
 .method public getComponentName()Landroid/content/ComponentName;
     .locals 3
 
-    .line 7282
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
     if-eqz v0, :cond_0
 
-    .line 7283
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
     return-object v0
 
-    .line 7285
     :cond_0
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 7286
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
@@ -658,7 +545,6 @@
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
-    .line 7289
     :cond_1
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
@@ -667,10 +553,7 @@
 
 .method public printComponentShortName(Ljava/io/PrintWriter;)V
     .locals 2
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 7374
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -681,48 +564,35 @@
 
     invoke-static {p1, v0, v1}, Landroid/content/ComponentName;->printShortString(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7375
     return-void
 .end method
 
 .method public setPackageName(Ljava/lang/String;)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 7378
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentName:Landroid/content/ComponentName;
 
-    .line 7379
     iput-object v0, p0, Landroid/content/pm/PackageParser$Component;->componentShortName:Ljava/lang/String;
 
-    .line 7380
     return-void
 .end method
 
 .method protected writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 7301
-    .local p0, "this":Landroid/content/pm/PackageParser$Component;, "Landroid/content/pm/PackageParser$Component<TII;>;"
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 7302
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->metaData:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 7304
     iget-object v0, p0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-static {v0, p1, p2}, Landroid/content/pm/PackageParser$Component;->writeIntentsList(Ljava/util/ArrayList;Landroid/os/Parcel;I)V
 
-    .line 7305
     return-void
 .end method

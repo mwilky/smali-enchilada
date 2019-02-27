@@ -38,9 +38,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/LockPatternView;Lcom/android/internal/widget/LockPatternView$CellState;FFFFFF)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/internal/widget/LockPatternView;
 
-    .line 481
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
@@ -66,9 +64,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 5
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 484
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -79,8 +75,6 @@
 
     move-result v0
 
-    .line 485
-    .local v0, "t":F
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -99,7 +93,6 @@
 
     iput v3, v1, Lcom/android/internal/widget/LockPatternView$CellState;->alpha:F
 
-    .line 486
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
     sub-float v3, v2, v0
@@ -116,7 +109,6 @@
 
     iput v3, v1, Lcom/android/internal/widget/LockPatternView$CellState;->translationY:F
 
-    .line 487
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->val$cellState:Lcom/android/internal/widget/LockPatternView$CellState;
 
     iget-object v3, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
@@ -145,11 +137,9 @@
 
     iput v3, v1, Lcom/android/internal/widget/LockPatternView$CellState;->radius:F
 
-    .line 488
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternView$1;->this$0:Lcom/android/internal/widget/LockPatternView;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternView;->invalidate()V
 
-    .line 489
     return-void
 .end method

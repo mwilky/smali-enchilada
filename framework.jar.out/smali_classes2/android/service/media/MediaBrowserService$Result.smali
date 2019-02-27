@@ -38,19 +38,13 @@
 # direct methods
 .method constructor <init>(Landroid/service/media/MediaBrowserService;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/service/media/MediaBrowserService;
-    .param p2, "debug"    # Ljava/lang/Object;
 
-    .line 154
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$Result;->this$0:Landroid/service/media/MediaBrowserService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 155
     iput-object p2, p0, Landroid/service/media/MediaBrowserService$Result;->mDebug:Ljava/lang/Object;
 
-    .line 156
     return-void
 .end method
 
@@ -59,26 +53,20 @@
 .method public detach()V
     .locals 3
 
-    .line 174
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
     iget-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mDetachCalled:Z
 
     if-nez v0, :cond_1
 
-    .line 178
     iget-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mSendResultCalled:Z
 
     if-nez v0, :cond_0
 
-    .line 182
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mDetachCalled:Z
 
-    .line 183
     return-void
 
-    .line 179
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -102,7 +90,6 @@
 
     throw v0
 
-    .line 175
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -130,8 +117,6 @@
 .method isDone()Z
     .locals 1
 
-    .line 186
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
     iget-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mDetachCalled:Z
 
     if-nez v0, :cond_1
@@ -157,16 +142,12 @@
 
 .method onResultSent(Ljava/lang/Object;I)V
     .locals 0
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)V"
         }
     .end annotation
 
-    .line 198
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
-    .local p1, "result":Ljava/lang/Object;, "TT;"
     return-void
 .end method
 
@@ -178,27 +159,20 @@
         }
     .end annotation
 
-    .line 162
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
-    .local p1, "result":Ljava/lang/Object;, "TT;"
     iget-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mSendResultCalled:Z
 
     if-nez v0, :cond_0
 
-    .line 165
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/service/media/MediaBrowserService$Result;->mSendResultCalled:Z
 
-    .line 166
     iget v0, p0, Landroid/service/media/MediaBrowserService$Result;->mFlags:I
 
     invoke-virtual {p0, p1, v0}, Landroid/service/media/MediaBrowserService$Result;->onResultSent(Ljava/lang/Object;I)V
 
-    .line 167
     return-void
 
-    .line 163
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -225,12 +199,8 @@
 
 .method setFlags(I)V
     .locals 0
-    .param p1, "flags"    # I
 
-    .line 190
-    .local p0, "this":Landroid/service/media/MediaBrowserService$Result;, "Landroid/service/media/MediaBrowserService$Result<TT;>;"
     iput p1, p0, Landroid/service/media/MediaBrowserService$Result;->mFlags:I
 
-    .line 191
     return-void
 .end method

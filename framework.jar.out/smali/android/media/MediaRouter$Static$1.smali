@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaRouter$Static;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/media/MediaRouter$Static;
 
-    .line 103
     iput-object p1, p0, Landroid/media/MediaRouter$Static$1;->this$0:Landroid/media/MediaRouter$Static;
 
     invoke-direct {p0}, Landroid/media/IAudioRoutesObserver$Stub;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public dispatchAudioRoutesChanged(Landroid/media/AudioRoutesInfo;)V
     .locals 2
-    .param p1, "newRoutes"    # Landroid/media/AudioRoutesInfo;
 
-    .line 106
     iget-object v0, p0, Landroid/media/MediaRouter$Static$1;->this$0:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -48,6 +44,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 111
     return-void
 .end method

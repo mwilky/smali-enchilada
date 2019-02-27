@@ -6,10 +6,7 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "location"    # Ljava/lang/String;
 
-    .line 23
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -32,6 +29,5 @@
 
     invoke-direct {p0, v0}, Landroid/os/strictmode/Violation;-><init>(Ljava/lang/String;)V
 
-    .line 29
     return-void
 .end method

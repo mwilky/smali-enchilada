@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/NumberPicker;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/NumberPicker;
 
-    .line 731
     iput-object p1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,9 @@
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "hasFocus"    # Z
 
-    .line 733
     if-eqz p2, :cond_0
 
-    .line 734
     iget-object v0, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     invoke-static {v0}, Landroid/widget/NumberPicker;->access$100(Landroid/widget/NumberPicker;)Landroid/widget/EditText;
@@ -55,7 +49,6 @@
 
     goto :goto_0
 
-    .line 736
     :cond_0
     iget-object v0, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
@@ -67,12 +60,10 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/widget/EditText;->setSelection(II)V
 
-    .line 737
     iget-object v0, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
     invoke-static {v0, p1}, Landroid/widget/NumberPicker;->access$400(Landroid/widget/NumberPicker;Landroid/view/View;)V
 
-    .line 739
     :goto_0
     return-void
 .end method

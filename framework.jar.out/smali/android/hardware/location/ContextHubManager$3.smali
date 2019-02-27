@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/location/ContextHubManager;Ljava/util/concurrent/Executor;Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/location/ContextHubManager;
 
-    .line 587
     iput-object p1, p0, Landroid/hardware/location/ContextHubManager$3;->this$0:Landroid/hardware/location/ContextHubManager;
 
     iput-object p2, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
@@ -45,10 +43,7 @@
 
 .method static synthetic lambda$onHubReset$1(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
 
-    .line 595
     invoke-virtual {p0, p1}, Landroid/hardware/location/ContextHubClientCallback;->onHubReset(Landroid/hardware/location/ContextHubClient;)V
 
     return-void
@@ -56,11 +51,7 @@
 
 .method static synthetic lambda$onMessageFromNanoApp$0(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;Landroid/hardware/location/NanoAppMessage;)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "message"    # Landroid/hardware/location/NanoAppMessage;
 
-    .line 590
     invoke-virtual {p0, p1, p2}, Landroid/hardware/location/ContextHubClientCallback;->onMessageFromNanoApp(Landroid/hardware/location/ContextHubClient;Landroid/hardware/location/NanoAppMessage;)V
 
     return-void
@@ -68,12 +59,7 @@
 
 .method static synthetic lambda$onNanoAppAborted$2(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;JI)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "nanoAppId"    # J
-    .param p4, "abortCode"    # I
 
-    .line 600
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/location/ContextHubClientCallback;->onNanoAppAborted(Landroid/hardware/location/ContextHubClient;JI)V
 
     return-void
@@ -81,11 +67,7 @@
 
 .method static synthetic lambda$onNanoAppDisabled$6(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;J)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "nanoAppId"    # J
 
-    .line 620
     invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/location/ContextHubClientCallback;->onNanoAppDisabled(Landroid/hardware/location/ContextHubClient;J)V
 
     return-void
@@ -93,11 +75,7 @@
 
 .method static synthetic lambda$onNanoAppEnabled$5(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;J)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "nanoAppId"    # J
 
-    .line 615
     invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/location/ContextHubClientCallback;->onNanoAppEnabled(Landroid/hardware/location/ContextHubClient;J)V
 
     return-void
@@ -105,11 +83,7 @@
 
 .method static synthetic lambda$onNanoAppLoaded$3(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;J)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "nanoAppId"    # J
 
-    .line 605
     invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/location/ContextHubClientCallback;->onNanoAppLoaded(Landroid/hardware/location/ContextHubClient;J)V
 
     return-void
@@ -117,11 +91,7 @@
 
 .method static synthetic lambda$onNanoAppUnloaded$4(Landroid/hardware/location/ContextHubClientCallback;Landroid/hardware/location/ContextHubClient;J)V
     .locals 0
-    .param p0, "callback"    # Landroid/hardware/location/ContextHubClientCallback;
-    .param p1, "client"    # Landroid/hardware/location/ContextHubClient;
-    .param p2, "nanoAppId"    # J
 
-    .line 610
     invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/location/ContextHubClientCallback;->onNanoAppUnloaded(Landroid/hardware/location/ContextHubClient;J)V
 
     return-void
@@ -132,7 +102,6 @@
 .method public onHubReset()V
     .locals 4
 
-    .line 595
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -145,15 +114,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 596
     return-void
 .end method
 
 .method public onMessageFromNanoApp(Landroid/hardware/location/NanoAppMessage;)V
     .locals 4
-    .param p1, "message"    # Landroid/hardware/location/NanoAppMessage;
 
-    .line 590
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -166,16 +132,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 591
     return-void
 .end method
 
 .method public onNanoAppAborted(JI)V
     .locals 8
-    .param p1, "nanoAppId"    # J
-    .param p3, "abortCode"    # I
 
-    .line 600
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v2, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -194,15 +156,12 @@
 
     invoke-interface {v0, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 601
     return-void
 .end method
 
 .method public onNanoAppDisabled(J)V
     .locals 4
-    .param p1, "nanoAppId"    # J
 
-    .line 620
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -215,15 +174,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 621
     return-void
 .end method
 
 .method public onNanoAppEnabled(J)V
     .locals 4
-    .param p1, "nanoAppId"    # J
 
-    .line 615
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -236,15 +192,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 616
     return-void
 .end method
 
 .method public onNanoAppLoaded(J)V
     .locals 4
-    .param p1, "nanoAppId"    # J
 
-    .line 605
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -257,15 +210,12 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 606
     return-void
 .end method
 
 .method public onNanoAppUnloaded(J)V
     .locals 4
-    .param p1, "nanoAppId"    # J
 
-    .line 610
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$3;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/location/ContextHubManager$3;->val$callback:Landroid/hardware/location/ContextHubClientCallback;
@@ -278,6 +228,5 @@
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 611
     return-void
 .end method

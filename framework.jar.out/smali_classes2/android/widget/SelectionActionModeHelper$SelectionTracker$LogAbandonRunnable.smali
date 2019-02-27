@@ -27,7 +27,6 @@
 .method private constructor <init>(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)V
     .locals 0
 
-    .line 622
     iput-object p1, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +36,7 @@
 
 .method synthetic constructor <init>(Landroid/widget/SelectionActionModeHelper$SelectionTracker;Landroid/widget/SelectionActionModeHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/widget/SelectionActionModeHelper$SelectionTracker;
-    .param p2, "x1"    # Landroid/widget/SelectionActionModeHelper$1;
 
-    .line 622
     invoke-direct {p0, p1}, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;-><init>(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)V
 
     return-void
@@ -51,7 +47,6 @@
 .method flush()V
     .locals 1
 
-    .line 637
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     invoke-static {v0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$600(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)Landroid/widget/TextView;
@@ -60,22 +55,18 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 638
     invoke-virtual {p0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->run()V
 
-    .line 639
     return-void
 .end method
 
 .method public run()V
     .locals 5
 
-    .line 643
     iget-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->mIsPending:Z
 
     if-eqz v0, :cond_0
 
-    .line 644
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     invoke-static {v0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$900(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)Landroid/widget/SelectionActionModeHelper$SelectionMetricsLogger;
@@ -84,7 +75,6 @@
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
-    .line 645
     invoke-static {v1}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$700(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)I
 
     move-result v1
@@ -99,10 +89,8 @@
 
     const/4 v4, 0x0
 
-    .line 644
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/SelectionActionModeHelper$SelectionMetricsLogger;->logSelectionAction(IIILandroid/view/textclassifier/TextClassification;)V
 
-    .line 647
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     iget-object v1, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
@@ -115,7 +103,6 @@
 
     invoke-static {v0, v1}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$702(Landroid/widget/SelectionActionModeHelper$SelectionTracker;I)I
 
-    .line 648
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     invoke-static {v0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$900(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)Landroid/widget/SelectionActionModeHelper$SelectionMetricsLogger;
@@ -124,42 +111,34 @@
 
     invoke-virtual {v0}, Landroid/widget/SelectionActionModeHelper$SelectionMetricsLogger;->endTextClassificationSession()V
 
-    .line 649
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->mIsPending:Z
 
-    .line 651
     :cond_0
     return-void
 .end method
 
 .method schedule(I)V
     .locals 3
-    .param p1, "delayMillis"    # I
 
-    .line 627
     iget-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->mIsPending:Z
 
     if-eqz v0, :cond_0
 
-    .line 628
     const-string v0, "SelectActionModeHelper"
 
     const-string v1, "Force flushing abandon due to new scheduling request"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 629
     invoke-virtual {p0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->flush()V
 
-    .line 631
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->mIsPending:Z
 
-    .line 632
     iget-object v0, p0, Landroid/widget/SelectionActionModeHelper$SelectionTracker$LogAbandonRunnable;->this$0:Landroid/widget/SelectionActionModeHelper$SelectionTracker;
 
     invoke-static {v0}, Landroid/widget/SelectionActionModeHelper$SelectionTracker;->access$600(Landroid/widget/SelectionActionModeHelper$SelectionTracker;)Landroid/widget/TextView;
@@ -170,6 +149,5 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 633
     return-void
 .end method

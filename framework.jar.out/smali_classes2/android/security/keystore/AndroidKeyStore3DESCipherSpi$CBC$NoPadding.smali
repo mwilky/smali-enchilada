@@ -18,12 +18,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 88
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/security/keystore/AndroidKeyStore3DESCipherSpi$CBC;-><init>(I)V
 
-    .line 89
     return-void
 .end method
 
@@ -37,7 +35,6 @@
         }
     .end annotation
 
-    .line 86
     invoke-super {p0}, Landroid/security/keystore/AndroidKeyStore3DESCipherSpi$CBC;->finalize()V
 
     return-void

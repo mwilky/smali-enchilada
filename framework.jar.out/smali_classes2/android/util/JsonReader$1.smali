@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 331
     invoke-static {}, Landroid/util/JsonScope;->values()[Landroid/util/JsonScope;
 
     move-result-object v0

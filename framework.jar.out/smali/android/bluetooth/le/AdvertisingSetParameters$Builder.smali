@@ -38,40 +38,30 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 247
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mConnectable:Z
 
-    .line 248
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mScannable:Z
 
-    .line 249
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsLegacy:Z
 
-    .line 250
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsAnonymous:Z
 
-    .line 251
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIncludeTxPower:Z
 
-    .line 252
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mPrimaryPhy:I
 
-    .line 253
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mSecondaryPhy:I
 
-    .line 254
     const/16 v0, 0xa0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mInterval:I
 
-    .line 255
     const/4 v0, -0x7
 
     iput v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mTxPowerLevel:I
@@ -84,17 +74,14 @@
 .method public build()Landroid/bluetooth/le/AdvertisingSetParameters;
     .locals 13
 
-    .line 407
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsLegacy:Z
 
     if-eqz v0, :cond_4
 
-    .line 408
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsAnonymous:Z
 
     if-nez v0, :cond_3
 
-    .line 412
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mConnectable:Z
 
     if-eqz v0, :cond_1
@@ -105,7 +92,6 @@
 
     goto :goto_0
 
-    .line 413
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -115,7 +101,6 @@
 
     throw v0
 
-    .line 417
     :cond_1
     :goto_0
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIncludeTxPower:Z
@@ -124,7 +109,6 @@
 
     goto :goto_2
 
-    .line 418
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -134,7 +118,6 @@
 
     throw v0
 
-    .line 409
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -144,7 +127,6 @@
 
     throw v0
 
-    .line 422
     :cond_4
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mConnectable:Z
 
@@ -156,7 +138,6 @@
 
     goto :goto_1
 
-    .line 423
     :cond_5
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -166,7 +147,6 @@
 
     throw v0
 
-    .line 427
     :cond_6
     :goto_1
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsAnonymous:Z
@@ -179,7 +159,6 @@
 
     goto :goto_2
 
-    .line 428
     :cond_7
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -189,7 +168,6 @@
 
     throw v0
 
-    .line 433
     :cond_8
     :goto_2
     new-instance v0, Landroid/bluetooth/le/AdvertisingSetParameters;
@@ -223,42 +201,31 @@
 
 .method public setAnonymous(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 0
-    .param p1, "isAnonymous"    # Z
 
-    .line 304
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsAnonymous:Z
 
-    .line 305
     return-object p0
 .end method
 
 .method public setConnectable(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 0
-    .param p1, "connectable"    # Z
 
-    .line 267
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mConnectable:Z
 
-    .line 268
     return-object p0
 .end method
 
 .method public setIncludeTxPower(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 0
-    .param p1, "includeTxPower"    # Z
 
-    .line 316
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIncludeTxPower:Z
 
-    .line 317
     return-object p0
 .end method
 
 .method public setInterval(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 3
-    .param p1, "interval"    # I
 
-    .line 375
     const/16 v0, 0xa0
 
     if-lt p1, v0, :cond_0
@@ -267,13 +234,10 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 378
     iput p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mInterval:I
 
-    .line 379
     return-object p0
 
-    .line 376
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -298,20 +262,15 @@
 
 .method public setLegacyMode(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 0
-    .param p1, "isLegacy"    # Z
 
-    .line 291
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mIsLegacy:Z
 
-    .line 292
     return-object p0
 .end method
 
 .method public setPrimaryPhy(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 3
-    .param p1, "primaryPhy"    # I
 
-    .line 333
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1
@@ -322,7 +281,6 @@
 
     goto :goto_0
 
-    .line 335
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -344,31 +302,24 @@
 
     throw v0
 
-    .line 337
     :cond_1
     :goto_0
     iput p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mPrimaryPhy:I
 
-    .line 338
     return-object p0
 .end method
 
 .method public setScannable(Z)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 0
-    .param p1, "scannable"    # Z
 
-    .line 280
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mScannable:Z
 
-    .line 281
     return-object p0
 .end method
 
 .method public setSecondaryPhy(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 3
-    .param p1, "secondaryPhy"    # I
 
-    .line 356
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1
@@ -383,7 +334,6 @@
 
     goto :goto_0
 
-    .line 359
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -405,20 +355,16 @@
 
     throw v0
 
-    .line 361
     :cond_1
     :goto_0
     iput p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mSecondaryPhy:I
 
-    .line 362
     return-object p0
 .end method
 
 .method public setTxPowerLevel(I)Landroid/bluetooth/le/AdvertisingSetParameters$Builder;
     .locals 3
-    .param p1, "txPowerLevel"    # I
 
-    .line 394
     const/16 v0, -0x7f
 
     if-lt p1, v0, :cond_0
@@ -427,13 +373,10 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 397
     iput p1, p0, Landroid/bluetooth/le/AdvertisingSetParameters$Builder;->mTxPowerLevel:I
 
-    .line 398
     return-object p0
 
-    .line 395
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

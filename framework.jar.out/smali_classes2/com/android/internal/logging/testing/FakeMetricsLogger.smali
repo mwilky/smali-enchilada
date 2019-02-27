@@ -19,10 +19,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 15
     invoke-direct {p0}, Lcom/android/internal/logging/MetricsLogger;-><init>()V
 
-    .line 16
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
@@ -45,7 +43,6 @@
         }
     .end annotation
 
-    .line 24
     iget-object v0, p0, Lcom/android/internal/logging/testing/FakeMetricsLogger;->logs:Ljava/util/Queue;
 
     return-object v0
@@ -54,20 +51,16 @@
 .method public reset()V
     .locals 1
 
-    .line 28
     iget-object v0, p0, Lcom/android/internal/logging/testing/FakeMetricsLogger;->logs:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->clear()V
 
-    .line 29
     return-void
 .end method
 
 .method protected saveLog([Ljava/lang/Object;)V
     .locals 2
-    .param p1, "rep"    # [Ljava/lang/Object;
 
-    .line 20
     iget-object v0, p0, Lcom/android/internal/logging/testing/FakeMetricsLogger;->logs:Ljava/util/Queue;
 
     new-instance v1, Landroid/metrics/LogMaker;
@@ -76,6 +69,5 @@
 
     invoke-interface {v0, v1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    .line 21
     return-void
 .end method

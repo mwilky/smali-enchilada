@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/security/ConfirmationPrompt$1;I[BLandroid/security/ConfirmationCallback;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/security/ConfirmationPrompt$1;
 
-    .line 136
     iput-object p1, p0, Landroid/security/ConfirmationPrompt$1$1;->this$1:Landroid/security/ConfirmationPrompt$1;
 
     iput p2, p0, Landroid/security/ConfirmationPrompt$1$1;->val$responseCode:I
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 139
     iget-object v0, p0, Landroid/security/ConfirmationPrompt$1$1;->this$1:Landroid/security/ConfirmationPrompt$1;
 
     iget-object v0, v0, Landroid/security/ConfirmationPrompt$1;->this$0:Landroid/security/ConfirmationPrompt;
@@ -64,6 +61,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/security/ConfirmationPrompt;->access$200(Landroid/security/ConfirmationPrompt;I[BLandroid/security/ConfirmationCallback;)V
 
-    .line 140
     return-void
 .end method

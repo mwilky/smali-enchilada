@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/widget/RemoteViews$ViewGroupActionAdd;Landroid/widget/RemoteViews$AsyncApplyTask;Landroid/widget/RemoteViews$ViewTree;Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/widget/RemoteViews$ViewGroupActionAdd;
 
-    .line 1640
     iput-object p1, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->this$1:Landroid/widget/RemoteViews$ViewGroupActionAdd;
 
     iput-object p2, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->val$task:Landroid/widget/RemoteViews$AsyncApplyTask;
@@ -49,23 +47,18 @@
 # virtual methods
 .method public apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
     .locals 3
-    .param p1, "root"    # Landroid/view/View;
-    .param p2, "rootParent"    # Landroid/view/ViewGroup;
-    .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/widget/RemoteViews$ActionException;
         }
     .end annotation
 
-    .line 1644
     iget-object v0, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->val$task:Landroid/widget/RemoteViews$AsyncApplyTask;
 
     iget-object v1, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->val$tree:Landroid/widget/RemoteViews$ViewTree;
 
     invoke-virtual {v0, v1}, Landroid/widget/RemoteViews$AsyncApplyTask;->onPostExecute(Landroid/widget/RemoteViews$ViewTree;)V
 
-    .line 1645
     iget-object v0, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->val$targetVg:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Landroid/widget/RemoteViews$ViewGroupActionAdd$1;->val$task:Landroid/widget/RemoteViews$AsyncApplyTask;
@@ -82,6 +75,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 1646
     return-void
 .end method

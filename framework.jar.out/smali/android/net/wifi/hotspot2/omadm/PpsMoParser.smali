@@ -182,7 +182,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -190,34 +189,24 @@
 
 .method private static buildPpsNode(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .locals 10
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/XMLNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 534
     const/4 v0, 0x0
 
-    .line 535
-    .local v0, "nodeName":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 536
-    .local v1, "nodeValue":Ljava/lang/String;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 538
-    .local v2, "childNodes":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;>;"
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 540
-    .local v3, "parsedNodes":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v4
@@ -239,14 +228,10 @@
 
     check-cast v5, Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
-    .line 541
-    .local v5, "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     invoke-virtual {v5}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 542
-    .local v6, "tag":Ljava/lang/String;
     const-string v7, "NodeName"
 
     invoke-static {v6, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -255,17 +240,14 @@
 
     if-eqz v7, :cond_1
 
-    .line 543
     if-nez v0, :cond_0
 
-    .line 546
     invoke-virtual {v5}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getText()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 544
     :cond_0
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -275,7 +257,6 @@
 
     throw v4
 
-    .line 547
     :cond_1
     const-string v7, "Node"
 
@@ -285,13 +266,10 @@
 
     if-eqz v7, :cond_3
 
-    .line 548
     invoke-static {v5}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->buildPpsNode(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
     move-result-object v7
 
-    .line 549
-    .local v7, "ppsNode":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v7}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v8
@@ -302,22 +280,16 @@
 
     if-nez v8, :cond_2
 
-    .line 552
     invoke-virtual {v7}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v8
 
     invoke-interface {v3, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 553
     invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 554
-    .end local v7    # "ppsNode":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_1
 
-    .line 550
-    .restart local v7    # "ppsNode":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_2
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -343,8 +315,6 @@
 
     throw v4
 
-    .line 554
-    .end local v7    # "ppsNode":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_3
     const-string v7, "Value"
 
@@ -354,23 +324,15 @@
 
     if-eqz v7, :cond_5
 
-    .line 555
     if-nez v1, :cond_4
 
-    .line 558
     invoke-virtual {v5}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getText()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 562
-    .end local v5    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
-    .end local v6    # "tag":Ljava/lang/String;
     :goto_1
     goto :goto_0
 
-    .line 556
-    .restart local v5    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
-    .restart local v6    # "tag":Ljava/lang/String;
     :cond_4
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -380,7 +342,6 @@
 
     throw v4
 
-    .line 560
     :cond_5
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -402,13 +363,9 @@
 
     throw v4
 
-    .line 564
-    .end local v5    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
-    .end local v6    # "tag":Ljava/lang/String;
     :cond_6
     if-eqz v0, :cond_c
 
-    .line 567
     if-nez v1, :cond_8
 
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -419,7 +376,6 @@
 
     goto :goto_2
 
-    .line 568
     :cond_7
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -445,7 +401,6 @@
 
     throw v4
 
-    .line 571
     :cond_8
     :goto_2
     if-eqz v1, :cond_a
@@ -458,7 +413,6 @@
 
     goto :goto_3
 
-    .line 572
     :cond_9
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -484,19 +438,16 @@
 
     throw v4
 
-    .line 576
     :cond_a
     :goto_3
     if-eqz v1, :cond_b
 
-    .line 577
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$LeafNode;
 
     invoke-direct {v4, v0, v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$LeafNode;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v4
 
-    .line 579
     :cond_b
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$InternalNode;
 
@@ -504,7 +455,6 @@
 
     return-object v4
 
-    .line 565
     :cond_c
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -526,8 +476,6 @@
         }
     .end annotation
 
-    .line 1651
-    .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Long;>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -540,23 +488,17 @@
 
     check-cast v0, [Ljava/lang/Long;
 
-    .line 1652
-    .local v0, "objectArray":[Ljava/lang/Long;
     array-length v1, v0
 
     new-array v1, v1, [J
 
-    .line 1653
-    .local v1, "primitiveArray":[J
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_0
 
-    .line 1654
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
@@ -565,41 +507,34 @@
 
     aput-wide v3, v1, v2
 
-    .line 1653
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1656
-    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
 
 .method private static getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
     .locals 3
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 591
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 594
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 592
     :cond_0
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -628,7 +563,6 @@
 
 .method private static parseAAAServerTrustRootList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -646,20 +580,16 @@
         }
     .end annotation
 
-    .line 1493
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1496
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 1497
-    .local v0, "certList":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;[B>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -681,14 +611,10 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1498
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseTrustRoot(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 1499
-    .local v3, "certTuple":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;[B>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
@@ -699,17 +625,11 @@
 
     invoke-interface {v0, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1500
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "certTuple":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;[B>;"
     goto :goto_0
 
-    .line 1501
     :cond_0
     return-object v0
 
-    .line 1494
-    .end local v0    # "certList":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;[B>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -722,27 +642,22 @@
 
 .method private static parseCertificateCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     .locals 7
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1026
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 1030
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;-><init>()V
 
-    .line 1031
-    .local v0, "certCred":Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -764,8 +679,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1032
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -814,7 +727,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 1040
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -825,7 +737,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1041
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -840,7 +751,6 @@
 
     throw v1
 
-    .line 1037
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -852,10 +762,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;->setCertSha256Fingerprint([B)V
 
-    .line 1038
     goto :goto_2
 
-    .line 1034
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -863,20 +771,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;->setCertType(Ljava/lang/String;)V
 
-    .line 1035
     nop
 
-    .line 1043
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1044
     :cond_3
     return-object v0
 
-    .line 1027
-    .end local v0    # "certCred":Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -895,27 +797,22 @@
 
 .method private static parseCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 898
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 902
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Credential;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Credential;-><init>()V
 
-    .line 903
-    .local v0, "credential":Landroid/net/wifi/hotspot2/pps/Credential;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -937,8 +834,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 904
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -1046,7 +941,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 928
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1057,7 +951,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 929
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -1072,7 +965,6 @@
 
     throw v1
 
-    .line 925
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseSimCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;
 
@@ -1080,14 +972,11 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential;->setSimCredential(Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;)V
 
-    .line 926
     goto :goto_2
 
-    .line 921
     :pswitch_1
     nop
 
-    .line 922
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
@@ -1096,13 +985,10 @@
 
     move-result v3
 
-    .line 921
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential;->setCheckAaaServerCertStatus(Z)V
 
-    .line 923
     goto :goto_2
 
-    .line 918
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1110,10 +996,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential;->setRealm(Ljava/lang/String;)V
 
-    .line 919
     goto :goto_2
 
-    .line 915
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseCertificateCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
@@ -1121,10 +1005,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential;->setCertCredential(Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;)V
 
-    .line 916
     goto :goto_2
 
-    .line 912
     :pswitch_4
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUserCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
 
@@ -1132,10 +1014,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential;->setUserCredential(Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V
 
-    .line 913
     goto :goto_2
 
-    .line 909
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1147,10 +1027,8 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/net/wifi/hotspot2/pps/Credential;->setExpirationTimeInMillis(J)V
 
-    .line 910
     goto :goto_2
 
-    .line 906
     :pswitch_6
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1162,20 +1040,14 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/net/wifi/hotspot2/pps/Credential;->setCreationTimeInMillis(J)V
 
-    .line 907
     nop
 
-    .line 931
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 932
     :cond_1
     return-object v0
 
-    .line 899
-    .end local v0    # "credential":Landroid/net/wifi/hotspot2/pps/Credential;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1212,14 +1084,12 @@
 
 .method private static parseDate(Ljava/lang/String;)J
     .locals 4
-    .param p0, "dateStr"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1607
     :try_start_0
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -1227,8 +1097,6 @@
 
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1608
-    .local v0, "format":Ljava/text/DateFormat;
     invoke-virtual {v0, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v1
@@ -1241,13 +1109,9 @@
 
     return-wide v1
 
-    .line 1609
-    .end local v0    # "format":Ljava/text/DateFormat;
     :catch_0
     move-exception v0
 
-    .line 1610
-    .local v0, "pe":Ljava/text/ParseException;
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1271,22 +1135,18 @@
 
 .method private static parseEAPMethod(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V
     .locals 5
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .param p1, "userCred"    # Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 989
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 993
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -1308,8 +1168,6 @@
 
     check-cast v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 994
-    .local v1, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -1417,7 +1275,6 @@
     :goto_1
     packed-switch v3, :pswitch_data_0
 
-    .line 1011
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1442,7 +1299,6 @@
 
     throw v0
 
-    .line 1008
     :pswitch_0
     const-string v2, "PpsMoParser"
 
@@ -1466,10 +1322,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1009
     goto :goto_2
 
-    .line 999
     :pswitch_1
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1477,10 +1331,8 @@
 
     invoke-virtual {p1, v2}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setNonEapInnerMethod(Ljava/lang/String;)V
 
-    .line 1000
     goto :goto_2
 
-    .line 996
     :pswitch_2
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1492,19 +1344,14 @@
 
     invoke-virtual {p1, v2}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setEapType(I)V
 
-    .line 997
     nop
 
-    .line 1013
-    .end local v1    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 1014
     :cond_1
     return-void
 
-    .line 990
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1539,14 +1386,12 @@
 
 .method private static parseHexString(Ljava/lang/String;)[B
     .locals 7
-    .param p0, "str"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1582
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -1557,7 +1402,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1586
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -1566,21 +1410,15 @@
 
     new-array v0, v0, [B
 
-    .line 1587
-    .local v0, "result":[B
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_0
 
-    .line 1588
     mul-int/lit8 v2, v1, 0x2
 
-    .line 1590
-    .local v2, "index":I
     add-int/lit8 v3, v2, 0x2
 
     :try_start_0
@@ -1600,22 +1438,15 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1593
     nop
 
-    .line 1587
-    .end local v2    # "index":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1591
-    .restart local v2    # "index":I
     :catch_0
     move-exception v3
 
-    .line 1592
-    .local v3, "e":Ljava/lang/NumberFormatException;
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1636,15 +1467,9 @@
 
     throw v4
 
-    .line 1595
-    .end local v1    # "i":I
-    .end local v2    # "index":I
-    .end local v3    # "e":Ljava/lang/NumberFormatException;
     :cond_0
     return-object v0
 
-    .line 1583
-    .end local v0    # "result":[B
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1673,7 +1498,6 @@
 
 .method private static parseHomeOIInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 8
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1692,22 +1516,16 @@
         }
     .end annotation
 
-    .line 805
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 809
     const/4 v0, 0x0
 
-    .line 810
-    .local v0, "oi":Ljava/lang/Long;
     const/4 v1, 0x0
 
-    .line 811
-    .local v1, "required":Ljava/lang/Boolean;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -1729,8 +1547,6 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 812
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -1779,7 +1595,6 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .line 824
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1790,7 +1605,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 825
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -1805,7 +1619,6 @@
 
     throw v2
 
-    .line 821
     :pswitch_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -1815,10 +1628,8 @@
 
     move-result-object v1
 
-    .line 822
     goto :goto_2
 
-    .line 815
     :pswitch_1
     :try_start_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
@@ -1835,21 +1646,14 @@
 
     move-object v0, v4
 
-    .line 818
     nop
 
-    .line 827
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 816
-    .restart local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :catch_0
     move-exception v2
 
-    .line 817
-    .local v2, "e":Ljava/lang/NumberFormatException;
     new-instance v4, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1874,23 +1678,17 @@
 
     throw v4
 
-    .line 828
-    .end local v2    # "e":Ljava/lang/NumberFormatException;
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_3
     if-eqz v0, :cond_5
 
-    .line 831
     if-eqz v1, :cond_4
 
-    .line 834
     new-instance v2, Landroid/util/Pair;
 
     invoke-direct {v2, v0, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v2
 
-    .line 832
     :cond_4
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1900,7 +1698,6 @@
 
     throw v2
 
-    .line 829
     :cond_5
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1910,9 +1707,6 @@
 
     throw v2
 
-    .line 806
-    .end local v0    # "oi":Ljava/lang/Long;
-    .end local v1    # "required":Ljava/lang/Boolean;
     :cond_6
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -1933,7 +1727,6 @@
 
 .method private static parseHomeOIList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1955,26 +1748,20 @@
         }
     .end annotation
 
-    .line 777
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 781
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 782
-    .local v0, "matchAllOIs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Long;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 783
-    .local v1, "matchAnyOIs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Long;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -1996,14 +1783,10 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 784
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseHomeOIInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v4
 
-    .line 785
-    .local v4, "homeOI":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Long;Ljava/lang/Boolean;>;"
     iget-object v5, v4, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Boolean;
@@ -2014,7 +1797,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 786
     iget-object v5, v4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Long;
@@ -2023,7 +1805,6 @@
 
     goto :goto_1
 
-    .line 788
     :cond_0
     iget-object v5, v4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -2031,13 +1812,9 @@
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 790
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v4    # "homeOI":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Long;Ljava/lang/Boolean;>;"
     :goto_1
     goto :goto_0
 
-    .line 791
     :cond_1
     new-instance v2, Landroid/util/Pair;
 
@@ -2045,9 +1822,6 @@
 
     return-object v2
 
-    .line 778
-    .end local v0    # "matchAllOIs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Long;>;"
-    .end local v1    # "matchAnyOIs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Long;>;"
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2060,27 +1834,22 @@
 
 .method private static parseHomeSP(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/HomeSp;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 653
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 657
     new-instance v0, Landroid/net/wifi/hotspot2/pps/HomeSp;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/HomeSp;-><init>()V
 
-    .line 658
-    .local v0, "homeSp":Landroid/net/wifi/hotspot2/pps/HomeSp;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -2102,8 +1871,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 659
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -2211,7 +1978,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 685
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2236,7 +2002,6 @@
 
     throw v1
 
-    .line 682
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseOtherHomePartners(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)[Ljava/lang/String;
 
@@ -2244,17 +2009,13 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setOtherHomePartners([Ljava/lang/String;)V
 
-    .line 683
     goto :goto_2
 
-    .line 677
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseHomeOIList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 678
-    .local v3, "homeOIs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/List<Ljava/lang/Long;>;Ljava/util/List<Ljava/lang/Long;>;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/util/List;
@@ -2265,7 +2026,6 @@
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setMatchAllOis([J)V
 
-    .line 679
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Ljava/util/List;
@@ -2276,11 +2036,8 @@
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setMatchAnyOis([J)V
 
-    .line 680
     goto :goto_2
 
-    .line 674
-    .end local v3    # "homeOIs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/List<Ljava/lang/Long;>;Ljava/util/List<Ljava/lang/Long;>;>;"
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseNetworkIds(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
 
@@ -2288,10 +2045,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setHomeNetworkIds(Ljava/util/Map;)V
 
-    .line 675
     goto :goto_2
 
-    .line 671
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -2299,14 +2054,11 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setIconUrl(Ljava/lang/String;)V
 
-    .line 672
     goto :goto_2
 
-    .line 667
     :pswitch_4
     nop
 
-    .line 668
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
@@ -2315,13 +2067,10 @@
 
     move-result-object v3
 
-    .line 667
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setRoamingConsortiumOis([J)V
 
-    .line 669
     goto :goto_2
 
-    .line 664
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -2329,10 +2078,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setFriendlyName(Ljava/lang/String;)V
 
-    .line 665
     goto :goto_2
 
-    .line 661
     :pswitch_6
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -2340,20 +2087,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/HomeSp;->setFqdn(Ljava/lang/String;)V
 
-    .line 662
     nop
 
-    .line 687
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 688
     :cond_1
     return-object v0
 
-    .line 654
-    .end local v0    # "homeSp":Landroid/net/wifi/hotspot2/pps/HomeSp;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2388,14 +2129,12 @@
 
 .method private static parseInteger(Ljava/lang/String;)I
     .locals 4
-    .param p0, "value"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1623
     :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -2405,12 +2144,9 @@
 
     return v0
 
-    .line 1624
     :catch_0
     move-exception v0
 
-    .line 1625
-    .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2434,15 +2170,12 @@
 
 .method private static parseLong(Ljava/lang/String;I)J
     .locals 4
-    .param p0, "value"    # Ljava/lang/String;
-    .param p1, "radix"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1638
     :try_start_0
     invoke-static {p0, p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
 
@@ -2452,12 +2185,9 @@
 
     return-wide v0
 
-    .line 1639
     :catch_0
     move-exception v0
 
-    .line 1640
-    .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2481,22 +2211,18 @@
 
 .method private static parseMinBackhaulThreshold(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Policy;)V
     .locals 2
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .param p1, "policy"    # Landroid/net/wifi/hotspot2/pps/Policy;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1200
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1203
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -2518,19 +2244,13 @@
 
     check-cast v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1204
-    .local v1, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v1, p1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseMinBackhaulThresholdInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Policy;)V
 
-    .line 1205
-    .end local v1    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_0
 
-    .line 1206
     :cond_0
     return-void
 
-    .line 1201
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2543,34 +2263,24 @@
 
 .method private static parseMinBackhaulThresholdInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Policy;)V
     .locals 11
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .param p1, "policy"    # Landroid/net/wifi/hotspot2/pps/Policy;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1219
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 1222
     const/4 v0, 0x0
 
-    .line 1223
-    .local v0, "networkType":Ljava/lang/String;
     const-wide/high16 v1, -0x8000000000000000L
 
-    .line 1224
-    .local v1, "downlinkBandwidth":J
     const-wide/high16 v3, -0x8000000000000000L
 
-    .line 1225
-    .local v3, "uplinkBandwidth":J
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v5
@@ -2592,8 +2302,6 @@
 
     check-cast v6, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1226
-    .local v6, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v7
@@ -2661,7 +2369,6 @@
 
     packed-switch v8, :pswitch_data_0
 
-    .line 1237
     new-instance v5, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2672,7 +2379,6 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1238
     invoke-virtual {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v8
@@ -2687,7 +2393,6 @@
 
     throw v5
 
-    .line 1234
     :pswitch_0
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -2697,10 +2402,8 @@
 
     move-result-wide v3
 
-    .line 1235
     goto :goto_2
 
-    .line 1231
     :pswitch_1
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -2710,28 +2413,21 @@
 
     move-result-wide v1
 
-    .line 1232
     goto :goto_2
 
-    .line 1228
     :pswitch_2
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1229
     nop
 
-    .line 1240
-    .end local v6    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1241
     :cond_4
     if-eqz v0, :cond_7
 
-    .line 1245
     const-string v5, "home"
 
     invoke-static {v0, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2740,15 +2436,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 1246
     invoke-virtual {p1, v1, v2}, Landroid/net/wifi/hotspot2/pps/Policy;->setMinHomeDownlinkBandwidth(J)V
 
-    .line 1247
     invoke-virtual {p1, v3, v4}, Landroid/net/wifi/hotspot2/pps/Policy;->setMinHomeUplinkBandwidth(J)V
 
     goto :goto_3
 
-    .line 1248
     :cond_5
     const-string/jumbo v5, "roaming"
 
@@ -2758,17 +2451,13 @@
 
     if-eqz v5, :cond_6
 
-    .line 1249
     invoke-virtual {p1, v1, v2}, Landroid/net/wifi/hotspot2/pps/Policy;->setMinRoamingDownlinkBandwidth(J)V
 
-    .line 1250
     invoke-virtual {p1, v3, v4}, Landroid/net/wifi/hotspot2/pps/Policy;->setMinRoamingUplinkBandwidth(J)V
 
-    .line 1254
     :goto_3
     return-void
 
-    .line 1252
     :cond_6
     new-instance v5, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2790,7 +2479,6 @@
 
     throw v5
 
-    .line 1242
     :cond_7
     new-instance v5, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2800,10 +2488,6 @@
 
     throw v5
 
-    .line 1220
-    .end local v0    # "networkType":Ljava/lang/String;
-    .end local v1    # "downlinkBandwidth":J
-    .end local v3    # "uplinkBandwidth":J
     :cond_8
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -2825,21 +2509,15 @@
 
 .method public static parseMoText(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;
     .locals 11
-    .param p0, "xmlString"    # Ljava/lang/String;
 
-    .line 342
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/XMLParser;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/omadm/XMLParser;-><init>()V
 
-    .line 343
-    .local v0, "xmlParser":Landroid/net/wifi/hotspot2/omadm/XMLParser;
     const/4 v1, 0x0
 
     move-object v2, v1
 
-    .line 345
-    .local v2, "root":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :try_start_0
     invoke-virtual {v0, p0}, Landroid/net/wifi/hotspot2/omadm/XMLParser;->parse(Ljava/lang/String;)Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
@@ -2850,16 +2528,12 @@
 
     move-object v2, v3
 
-    .line 348
     nop
 
-    .line 349
     if-nez v2, :cond_0
 
-    .line 350
     return-object v1
 
-    .line 354
     :cond_0
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
@@ -2869,26 +2543,19 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 355
     const-string v3, "PpsMoParser"
 
     const-string v4, "Root is not a MgmtTree"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
     return-object v1
 
-    .line 359
     :cond_1
     const/4 v3, 0x0
 
-    .line 360
-    .local v3, "verDtd":Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 361
-    .local v4, "config":Landroid/net/wifi/hotspot2/PasspointConfiguration;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v5
@@ -2910,8 +2577,6 @@
 
     check-cast v6, Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
-    .line 362
-    .local v6, "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     invoke-virtual {v6}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
     move-result-object v7
@@ -2960,7 +2625,6 @@
     :goto_1
     packed-switch v8, :pswitch_data_0
 
-    .line 383
     const-string v5, "PpsMoParser"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2983,24 +2647,19 @@
 
     invoke-static {v5, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
     return-object v1
 
-    .line 371
     :pswitch_0
     if-eqz v4, :cond_5
 
-    .line 372
     const-string v5, "PpsMoParser"
 
     const-string v7, "Unexpected multiple Node element under MgmtTree"
 
     invoke-static {v5, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 373
     return-object v1
 
-    .line 376
     :cond_5
     :try_start_1
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parsePpsNode(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Landroid/net/wifi/hotspot2/PasspointConfiguration;
@@ -3011,15 +2670,11 @@
 
     move-object v4, v7
 
-    .line 380
     goto :goto_2
 
-    .line 377
     :catch_0
     move-exception v5
 
-    .line 378
-    .local v5, "e":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
     const-string v7, "PpsMoParser"
 
     invoke-virtual {v5}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;->getMessage()Ljava/lang/String;
@@ -3028,50 +2683,35 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
     return-object v1
 
-    .line 364
-    .end local v5    # "e":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
     :pswitch_1
     if-eqz v3, :cond_6
 
-    .line 365
     const-string v5, "PpsMoParser"
 
     const-string v7, "Duplicate VerDTD element"
 
     invoke-static {v5, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 366
     return-object v1
 
-    .line 368
     :cond_6
     invoke-virtual {v6}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getText()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 369
     nop
 
-    .line 386
-    .end local v6    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :goto_2
     goto :goto_0
 
-    .line 387
     :cond_7
     return-object v4
 
-    .line 346
-    .end local v3    # "verDtd":Ljava/lang/String;
-    .end local v4    # "config":Landroid/net/wifi/hotspot2/PasspointConfiguration;
     :catch_1
     move-exception v3
 
-    .line 347
-    .local v3, "e":Ljava/lang/Exception;
     return-object v1
 
     nop
@@ -3085,7 +2725,6 @@
 
 .method private static parseNetworkIdInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 8
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3104,22 +2743,16 @@
         }
     .end annotation
 
-    .line 742
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 746
     const/4 v0, 0x0
 
-    .line 747
-    .local v0, "ssid":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 748
-    .local v1, "hessid":Ljava/lang/Long;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -3141,8 +2774,6 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 749
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -3191,7 +2822,6 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .line 757
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3202,7 +2832,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 758
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -3217,7 +2846,6 @@
 
     throw v2
 
-    .line 754
     :pswitch_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -3233,35 +2861,27 @@
 
     move-result-object v1
 
-    .line 755
     goto :goto_2
 
-    .line 751
     :pswitch_1
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 752
     nop
 
-    .line 760
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 761
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 764
     new-instance v2, Landroid/util/Pair;
 
     invoke-direct {v2, v0, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v2
 
-    .line 762
     :cond_4
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3271,9 +2891,6 @@
 
     throw v2
 
-    .line 743
-    .end local v0    # "ssid":Ljava/lang/String;
-    .end local v1    # "hessid":Ljava/lang/Long;
     :cond_5
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3292,7 +2909,6 @@
 
 .method private static parseNetworkIds(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3311,20 +2927,16 @@
         }
     .end annotation
 
-    .line 718
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 722
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 723
-    .local v0, "networkIds":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Long;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -3346,14 +2958,10 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 724
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseNetworkIdInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 725
-    .local v3, "networkId":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/lang/Long;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
@@ -3364,17 +2972,11 @@
 
     invoke-interface {v0, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 726
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "networkId":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/lang/Long;>;"
     goto :goto_0
 
-    .line 727
     :cond_0
     return-object v0
 
-    .line 719
-    .end local v0    # "networkIds":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Long;>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3387,25 +2989,20 @@
 
 .method private static parseOtherHomePartnerInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
     .locals 7
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 870
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 873
     const/4 v0, 0x0
 
-    .line 874
-    .local v0, "fqdn":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -3427,8 +3024,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 875
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -3460,20 +3055,14 @@
     :goto_1
     if-nez v4, :cond_2
 
-    .line 877
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 878
     nop
 
-    .line 883
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_0
 
-    .line 880
-    .restart local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_2
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3485,7 +3074,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 881
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -3500,15 +3088,11 @@
 
     throw v1
 
-    .line 884
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 887
     return-object v0
 
-    .line 885
     :cond_4
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3518,8 +3102,6 @@
 
     throw v1
 
-    .line 871
-    .end local v0    # "fqdn":Ljava/lang/String;
     :cond_5
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3532,27 +3114,22 @@
 
 .method private static parseOtherHomePartners(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)[Ljava/lang/String;
     .locals 4
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 848
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 851
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 852
-    .local v0, "otherHomePartners":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -3574,22 +3151,14 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 853
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseOtherHomePartnerInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 854
-    .local v3, "fqdn":Ljava/lang/String;
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 855
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "fqdn":Ljava/lang/String;
     goto :goto_0
 
-    .line 856
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3605,8 +3174,6 @@
 
     return-object v1
 
-    .line 849
-    .end local v0    # "otherHomePartners":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3619,27 +3186,22 @@
 
 .method private static parsePolicy(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Policy;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1085
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1089
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Policy;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Policy;-><init>()V
 
-    .line 1090
-    .local v0, "policy":Landroid/net/wifi/hotspot2/pps/Policy;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -3661,8 +3223,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1091
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -3757,7 +3317,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 1111
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3782,7 +3341,6 @@
 
     throw v1
 
-    .line 1108
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -3794,10 +3352,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy;->setMaximumBssLoadValue(I)V
 
-    .line 1109
     goto :goto_2
 
-    .line 1105
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseRequiredProtoPortTuple(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
 
@@ -3805,10 +3361,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy;->setRequiredProtoPortMap(Ljava/util/Map;)V
 
-    .line 1106
     goto :goto_2
 
-    .line 1102
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseSpExclusionList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)[Ljava/lang/String;
 
@@ -3816,10 +3370,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy;->setExcludedSsidList([Ljava/lang/String;)V
 
-    .line 1103
     goto :goto_2
 
-    .line 1099
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUpdateParameter(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/UpdateParameter;
 
@@ -3827,17 +3379,13 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy;->setPolicyUpdate(Landroid/net/wifi/hotspot2/pps/UpdateParameter;)V
 
-    .line 1100
     goto :goto_2
 
-    .line 1096
     :pswitch_4
     invoke-static {v2, v0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseMinBackhaulThreshold(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Policy;)V
 
-    .line 1097
     goto :goto_2
 
-    .line 1093
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parsePreferredRoamingPartnerList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/List;
 
@@ -3845,20 +3393,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy;->setPreferredRoamingPartnerList(Ljava/util/List;)V
 
-    .line 1094
     nop
 
-    .line 1113
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 1114
     :cond_1
     return-object v0
 
-    .line 1086
-    .end local v0    # "policy":Landroid/net/wifi/hotspot2/pps/Policy;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -3891,27 +3433,22 @@
 
 .method private static parsePpsInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/PasspointConfiguration;
     .locals 6
-    .param p0, "root"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 606
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 610
     new-instance v0, Landroid/net/wifi/hotspot2/PasspointConfiguration;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/PasspointConfiguration;-><init>()V
 
-    .line 611
-    .local v0, "config":Landroid/net/wifi/hotspot2/PasspointConfiguration;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -3933,8 +3470,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 612
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -4055,7 +3590,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 639
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4080,7 +3614,6 @@
 
     throw v1
 
-    .line 636
     :pswitch_0
     const-string v3, "PpsMoParser"
 
@@ -4088,10 +3621,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 637
     goto :goto_2
 
-    .line 632
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -4103,17 +3634,13 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setCredentialPriority(I)V
 
-    .line 633
     goto :goto_2
 
-    .line 629
     :pswitch_2
     invoke-static {v2, v0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseSubscriptionParameter(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/PasspointConfiguration;)V
 
-    .line 630
     goto :goto_2
 
-    .line 626
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUpdateParameter(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/UpdateParameter;
 
@@ -4121,10 +3648,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setSubscriptionUpdate(Landroid/net/wifi/hotspot2/pps/UpdateParameter;)V
 
-    .line 627
     goto :goto_2
 
-    .line 623
     :pswitch_4
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseAAAServerTrustRootList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
 
@@ -4132,10 +3657,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setTrustRootCertList(Ljava/util/Map;)V
 
-    .line 624
     goto :goto_2
 
-    .line 620
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parsePolicy(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Policy;
 
@@ -4143,10 +3666,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setPolicy(Landroid/net/wifi/hotspot2/pps/Policy;)V
 
-    .line 621
     goto :goto_2
 
-    .line 617
     :pswitch_6
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential;
 
@@ -4154,10 +3675,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setCredential(Landroid/net/wifi/hotspot2/pps/Credential;)V
 
-    .line 618
     goto :goto_2
 
-    .line 614
     :pswitch_7
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseHomeSP(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/HomeSp;
 
@@ -4165,20 +3684,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setHomeSp(Landroid/net/wifi/hotspot2/pps/HomeSp;)V
 
-    .line 615
     nop
 
-    .line 641
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 642
     :cond_1
     return-object v0
 
-    .line 607
-    .end local v0    # "config":Landroid/net/wifi/hotspot2/PasspointConfiguration;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4215,26 +3728,18 @@
 
 .method private static parsePpsNode(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Landroid/net/wifi/hotspot2/PasspointConfiguration;
     .locals 10
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/XMLNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 414
     const/4 v0, 0x0
 
-    .line 415
-    .local v0, "config":Landroid/net/wifi/hotspot2/PasspointConfiguration;
     const/4 v1, 0x0
 
-    .line 416
-    .local v1, "nodeName":Ljava/lang/String;
     const/high16 v2, -0x80000000
 
-    .line 417
-    .local v2, "updateIdentifier":I
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v3
@@ -4258,8 +3763,6 @@
 
     check-cast v4, Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
-    .line 418
-    .local v4, "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     invoke-virtual {v4}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
     move-result-object v6
@@ -4325,7 +3828,6 @@
     :goto_1
     packed-switch v7, :pswitch_data_0
 
-    .line 454
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -4350,14 +3852,11 @@
 
     throw v3
 
-    .line 448
     :pswitch_0
     invoke-static {v4}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUrn(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 449
-    .local v5, "urn":Ljava/lang/String;
     const-string/jumbo v6, "urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0"
 
     invoke-static {v5, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4366,14 +3865,8 @@
 
     if-eqz v6, :cond_4
 
-    .line 449
-    .end local v4    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
-    .end local v5    # "urn":Ljava/lang/String;
     goto :goto_2
 
-    .line 450
-    .restart local v4    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
-    .restart local v5    # "urn":Ljava/lang/String;
     :cond_4
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4395,15 +3888,11 @@
 
     throw v3
 
-    .line 432
-    .end local v5    # "urn":Ljava/lang/String;
     :pswitch_1
     invoke-static {v4}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->buildPpsNode(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
     move-result-object v6
 
-    .line 433
-    .local v6, "ppsNodeRoot":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v7
@@ -4416,10 +3905,8 @@
 
     if-eqz v7, :cond_6
 
-    .line 434
     if-ne v2, v5, :cond_5
 
-    .line 437
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v5
@@ -4430,7 +3917,6 @@
 
     goto :goto_2
 
-    .line 435
     :cond_5
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4440,19 +3926,15 @@
 
     throw v3
 
-    .line 440
     :cond_6
     if-nez v0, :cond_7
 
-    .line 443
     invoke-static {v6}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parsePpsInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/PasspointConfiguration;
 
     move-result-object v0
 
-    .line 445
     goto :goto_2
 
-    .line 441
     :cond_7
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4462,17 +3944,13 @@
 
     throw v3
 
-    .line 420
-    .end local v6    # "ppsNodeRoot":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :pswitch_2
     if-nez v1, :cond_9
 
-    .line 423
     invoke-virtual {v4}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getText()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 424
     const-string v5, "PerProviderSubscription"
 
     invoke-static {v1, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4481,13 +3959,9 @@
 
     if-eqz v5, :cond_8
 
-    .line 456
-    .end local v4    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 425
-    .restart local v4    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :cond_8
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4509,7 +3983,6 @@
 
     throw v3
 
-    .line 421
     :cond_9
     new-instance v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4535,17 +4008,13 @@
 
     throw v3
 
-    .line 457
-    .end local v4    # "child":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :cond_a
     if-eqz v0, :cond_b
 
     if-eq v2, v5, :cond_b
 
-    .line 458
     invoke-virtual {v0, v2}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setUpdateIdentifier(I)V
 
-    .line 460
     :cond_b
     return-object v0
 
@@ -4561,27 +4030,22 @@
 
 .method private static parsePreferredRoamingPartner(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;
     .locals 10
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1149
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 1154
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;-><init>()V
 
-    .line 1155
-    .local v0, "roamingPartner":Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -4603,8 +4067,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1156
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -4676,7 +4138,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 1182
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4687,7 +4148,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1183
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -4702,7 +4162,6 @@
 
     throw v1
 
-    .line 1179
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -4710,10 +4169,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;->setCountries(Ljava/lang/String;)V
 
-    .line 1180
     goto :goto_2
 
-    .line 1176
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -4725,35 +4182,27 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;->setPriority(I)V
 
-    .line 1177
     goto :goto_2
 
-    .line 1161
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1162
-    .local v3, "fqdnMatch":Ljava/lang/String;
     const-string v4, ","
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1163
-    .local v4, "fqdnMatchArray":[Ljava/lang/String;
     array-length v5, v4
 
     if-ne v5, v7, :cond_6
 
-    .line 1166
     aget-object v5, v4, v8
 
     invoke-virtual {v0, v5}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;->setFqdn(Ljava/lang/String;)V
 
-    .line 1167
     aget-object v5, v4, v9
 
     const-string v6, "exactMatch"
@@ -4764,12 +4213,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 1168
     invoke-virtual {v0, v9}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;->setFqdnExactMatch(Z)V
 
     goto :goto_2
 
-    .line 1169
     :cond_4
     aget-object v5, v4, v9
 
@@ -4781,20 +4228,11 @@
 
     if-eqz v5, :cond_5
 
-    .line 1170
     invoke-virtual {v0, v8}, Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;->setFqdnExactMatch(Z)V
 
-    .line 1185
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "fqdnMatch":Ljava/lang/String;
-    .end local v4    # "fqdnMatchArray":[Ljava/lang/String;
     :goto_2
     goto/16 :goto_0
 
-    .line 1172
-    .restart local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .restart local v3    # "fqdnMatch":Ljava/lang/String;
-    .restart local v4    # "fqdnMatchArray":[Ljava/lang/String;
     :cond_5
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4816,7 +4254,6 @@
 
     throw v1
 
-    .line 1164
     :cond_6
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4838,15 +4275,9 @@
 
     throw v1
 
-    .line 1186
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "fqdnMatch":Ljava/lang/String;
-    .end local v4    # "fqdnMatchArray":[Ljava/lang/String;
     :cond_7
     return-object v0
 
-    .line 1150
-    .end local v0    # "roamingPartner":Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;
     :cond_8
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4866,7 +4297,6 @@
 
 .method private static parsePreferredRoamingPartnerList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/List;
     .locals 4
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4884,20 +4314,16 @@
         }
     .end annotation
 
-    .line 1128
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1131
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1132
-    .local v0, "partnerList":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -4919,24 +4345,17 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1133
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parsePreferredRoamingPartner(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1134
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_0
 
-    .line 1135
     :cond_0
     return-object v0
 
-    .line 1129
-    .end local v0    # "partnerList":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/hotspot2/pps/Policy$RoamingPartner;>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -4949,7 +4368,6 @@
 
 .method private static parseProtoPortTuple(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 8
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4968,22 +4386,16 @@
         }
     .end annotation
 
-    .line 1455
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 1459
     const/high16 v0, -0x80000000
 
-    .line 1460
-    .local v0, "proto":I
     const/4 v1, 0x0
 
-    .line 1461
-    .local v1, "ports":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -5005,8 +4417,6 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1462
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -5055,7 +4465,6 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .line 1470
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -5066,7 +4475,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1471
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -5081,16 +4489,13 @@
 
     throw v2
 
-    .line 1467
     :pswitch_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1468
     goto :goto_2
 
-    .line 1464
     :pswitch_1
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5100,24 +4505,18 @@
 
     move-result v0
 
-    .line 1465
     nop
 
-    .line 1473
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1474
     :cond_3
     const/high16 v2, -0x80000000
 
     if-eq v0, v2, :cond_5
 
-    .line 1477
     if-eqz v1, :cond_4
 
-    .line 1480
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -5128,7 +4527,6 @@
 
     return-object v2
 
-    .line 1478
     :cond_4
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5138,7 +4536,6 @@
 
     throw v2
 
-    .line 1475
     :cond_5
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5148,9 +4545,6 @@
 
     throw v2
 
-    .line 1456
-    .end local v0    # "proto":I
-    .end local v1    # "ports":Ljava/lang/String;
     :cond_6
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5169,7 +4563,6 @@
 
 .method private static parseRequiredProtoPortTuple(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/util/Map;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5188,20 +4581,16 @@
         }
     .end annotation
 
-    .line 1433
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1436
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 1437
-    .local v0, "protoPortTupleMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -5223,14 +4612,10 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1438
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseProtoPortTuple(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 1439
-    .local v3, "protoPortTuple":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/String;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/Integer;
@@ -5241,17 +4626,11 @@
 
     invoke-interface {v0, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1440
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .end local v3    # "protoPortTuple":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 1441
     :cond_0
     return-object v0
 
-    .line 1434
-    .end local v0    # "protoPortTupleMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/String;>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5264,37 +4643,29 @@
 
 .method private static parseRoamingConsortiumOI(Ljava/lang/String;)[J
     .locals 5
-    .param p0, "oiStr"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 700
     const-string v0, ","
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 701
-    .local v0, "oiStrArray":[Ljava/lang/String;
     array-length v1, v0
 
     new-array v1, v1, [J
 
-    .line 702
-    .local v1, "oiArray":[J
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_0
 
-    .line 703
     aget-object v3, v0, v2
 
     const/16 v4, 0x10
@@ -5305,40 +4676,32 @@
 
     aput-wide v3, v1, v2
 
-    .line 702
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 705
-    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
 
 .method private static parseSimCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;
     .locals 7
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1057
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 1061
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;-><init>()V
 
-    .line 1062
-    .local v0, "simCred":Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -5360,8 +4723,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1063
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -5410,7 +4771,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 1071
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5435,7 +4795,6 @@
 
     throw v1
 
-    .line 1068
     :pswitch_0
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5447,10 +4806,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;->setEapType(I)V
 
-    .line 1069
     goto :goto_2
 
-    .line 1065
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5458,20 +4815,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;->setImsi(Ljava/lang/String;)V
 
-    .line 1066
     nop
 
-    .line 1073
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1074
     :cond_3
     return-object v0
 
-    .line 1058
-    .end local v0    # "simCred":Landroid/net/wifi/hotspot2/pps/Credential$SimCredential;
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5490,25 +4841,20 @@
 
 .method private static parseSpExclusionInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
     .locals 7
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1407
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 1410
     const/4 v0, 0x0
 
-    .line 1411
-    .local v0, "ssid":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -5530,8 +4876,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1412
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -5563,20 +4907,14 @@
     :goto_1
     if-nez v4, :cond_2
 
-    .line 1414
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1415
     nop
 
-    .line 1419
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_0
 
-    .line 1417
-    .restart local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_2
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5586,13 +4924,9 @@
 
     throw v1
 
-    .line 1420
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :cond_3
     return-object v0
 
-    .line 1408
-    .end local v0    # "ssid":Ljava/lang/String;
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5605,27 +4939,22 @@
 
 .method private static parseSpExclusionList(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)[Ljava/lang/String;
     .locals 4
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1388
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1391
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1392
-    .local v0, "ssidList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -5647,19 +4976,14 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1393
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseSpExclusionInstance(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1394
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     goto :goto_0
 
-    .line 1395
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -5675,8 +4999,6 @@
 
     return-object v1
 
-    .line 1389
-    .end local v0    # "ssidList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_1
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5689,22 +5011,18 @@
 
 .method private static parseSubscriptionParameter(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/PasspointConfiguration;)V
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .param p1, "config"    # Landroid/net/wifi/hotspot2/PasspointConfiguration;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1514
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 1517
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -5726,8 +5044,6 @@
 
     check-cast v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1518
-    .local v1, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -5810,7 +5126,6 @@
     :goto_1
     packed-switch v3, :pswitch_data_0
 
-    .line 1532
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5821,7 +5136,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1533
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -5836,14 +5150,11 @@
 
     throw v0
 
-    .line 1529
     :pswitch_0
     invoke-static {v1, p1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUsageLimits(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/PasspointConfiguration;)V
 
-    .line 1530
     goto :goto_2
 
-    .line 1526
     :pswitch_1
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5851,10 +5162,8 @@
 
     invoke-virtual {p1, v2}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setSubscriptionType(Ljava/lang/String;)V
 
-    .line 1527
     goto :goto_2
 
-    .line 1523
     :pswitch_2
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5866,10 +5175,8 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setSubscriptionExpirationTimeInMillis(J)V
 
-    .line 1524
     goto :goto_2
 
-    .line 1520
     :pswitch_3
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -5881,19 +5188,14 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setSubscriptionCreationTimeInMillis(J)V
 
-    .line 1521
     nop
 
-    .line 1535
-    .end local v1    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 1536
     :cond_5
     return-void
 
-    .line 1515
     :cond_6
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -5914,7 +5216,6 @@
 
 .method private static parseTrustRoot(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 8
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5932,22 +5233,16 @@
         }
     .end annotation
 
-    .line 1357
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 1361
     const/4 v0, 0x0
 
-    .line 1362
-    .local v0, "certUrl":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1363
-    .local v1, "certFingerprint":[B
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -5969,8 +5264,6 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1364
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -6019,7 +5312,6 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .line 1372
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -6030,7 +5322,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1373
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -6045,7 +5336,6 @@
 
     throw v2
 
-    .line 1369
     :pswitch_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -6055,24 +5345,18 @@
 
     move-result-object v1
 
-    .line 1370
     goto :goto_2
 
-    .line 1366
     :pswitch_1
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1367
     nop
 
-    .line 1375
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1376
     :cond_3
     invoke-static {v0, v1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
@@ -6080,9 +5364,6 @@
 
     return-object v2
 
-    .line 1358
-    .end local v0    # "certUrl":Ljava/lang/String;
-    .end local v1    # "certFingerprint":[B
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6103,27 +5384,22 @@
 
 .method private static parseUpdateParameter(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/UpdateParameter;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1268
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1272
     new-instance v0, Landroid/net/wifi/hotspot2/pps/UpdateParameter;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;-><init>()V
 
-    .line 1273
-    .local v0, "updateParam":Landroid/net/wifi/hotspot2/pps/UpdateParameter;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -6145,8 +5421,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1274
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -6254,7 +5528,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 1301
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6265,7 +5538,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1302
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -6280,7 +5552,6 @@
 
     throw v1
 
-    .line 1298
     :pswitch_0
     const-string v3, "PpsMoParser"
 
@@ -6304,60 +5575,46 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1299
     goto :goto_2
 
-    .line 1293
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseTrustRoot(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 1294
-    .local v3, "trustRoot":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;[B>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setTrustRootCertUrl(Ljava/lang/String;)V
 
-    .line 1295
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, [B
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setTrustRootCertSha256Fingerprint([B)V
 
-    .line 1296
     goto :goto_2
 
-    .line 1288
-    .end local v3    # "trustRoot":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;[B>;"
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseUpdateUserCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
 
     move-result-object v3
 
-    .line 1289
-    .local v3, "usernamePassword":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setUsername(Ljava/lang/String;)V
 
-    .line 1290
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
 
     invoke-virtual {v0, v4}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setBase64EncodedPassword(Ljava/lang/String;)V
 
-    .line 1291
     goto :goto_2
 
-    .line 1285
-    .end local v3    # "usernamePassword":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -6365,10 +5622,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setServerUri(Ljava/lang/String;)V
 
-    .line 1286
     goto :goto_2
 
-    .line 1282
     :pswitch_4
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -6376,10 +5631,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setRestriction(Ljava/lang/String;)V
 
-    .line 1283
     goto :goto_2
 
-    .line 1279
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -6387,10 +5640,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setUpdateMethod(Ljava/lang/String;)V
 
-    .line 1280
     goto :goto_2
 
-    .line 1276
     :pswitch_6
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -6404,20 +5655,14 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/net/wifi/hotspot2/pps/UpdateParameter;->setUpdateIntervalInMinutes(J)V
 
-    .line 1277
     nop
 
-    .line 1304
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 1305
     :cond_1
     return-object v0
 
-    .line 1269
-    .end local v0    # "updateParam":Landroid/net/wifi/hotspot2/pps/UpdateParameter;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6454,7 +5699,6 @@
 
 .method private static parseUpdateUserCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/util/Pair;
     .locals 8
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -6473,22 +5717,16 @@
         }
     .end annotation
 
-    .line 1320
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 1324
     const/4 v0, 0x0
 
-    .line 1325
-    .local v0, "username":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1326
-    .local v1, "password":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -6510,8 +5748,6 @@
 
     check-cast v3, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1327
-    .local v3, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -6560,7 +5796,6 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .line 1335
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -6571,7 +5806,6 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1336
     invoke-virtual {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -6586,30 +5820,23 @@
 
     throw v2
 
-    .line 1332
     :pswitch_0
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1333
     goto :goto_2
 
-    .line 1329
     :pswitch_1
     invoke-static {v3}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1330
     nop
 
-    .line 1338
-    .end local v3    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto :goto_0
 
-    .line 1339
     :cond_3
     invoke-static {v0, v1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
@@ -6617,9 +5844,6 @@
 
     return-object v2
 
-    .line 1321
-    .end local v0    # "username":Ljava/lang/String;
-    .end local v1    # "password":Ljava/lang/String;
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6640,14 +5864,12 @@
 
 .method private static parseUrn(Landroid/net/wifi/hotspot2/omadm/XMLNode;)Ljava/lang/String;
     .locals 5
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/XMLNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 477
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -6660,7 +5882,6 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 480
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -6673,8 +5894,6 @@
 
     check-cast v0, Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
-    .line 481
-    .local v0, "typeNode":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     invoke-virtual {v0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v3
@@ -6685,7 +5904,6 @@
 
     if-ne v3, v1, :cond_3
 
-    .line 484
     invoke-virtual {v0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -6698,7 +5916,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 488
     invoke-virtual {v0}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -6709,8 +5926,6 @@
 
     check-cast v1, Landroid/net/wifi/hotspot2/omadm/XMLNode;
 
-    .line 489
-    .local v1, "ddfNameNode":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getChildren()Ljava/util/List;
 
     move-result-object v2
@@ -6721,7 +5936,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 492
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -6734,14 +5948,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 496
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/XMLNode;->getText()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 493
     :cond_0
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6767,7 +5979,6 @@
 
     throw v2
 
-    .line 490
     :cond_1
     new-instance v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6777,8 +5988,6 @@
 
     throw v2
 
-    .line 485
-    .end local v1    # "ddfNameNode":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :cond_2
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6804,7 +6013,6 @@
 
     throw v1
 
-    .line 482
     :cond_3
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6814,8 +6022,6 @@
 
     throw v1
 
-    .line 478
-    .end local v0    # "typeNode":Landroid/net/wifi/hotspot2/omadm/XMLNode;
     :cond_4
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -6828,22 +6034,18 @@
 
 .method private static parseUsageLimits(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/PasspointConfiguration;)V
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
-    .param p1, "config"    # Landroid/net/wifi/hotspot2/PasspointConfiguration;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 1549
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 1552
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v0
@@ -6865,8 +6067,6 @@
 
     check-cast v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 1553
-    .local v1, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -6951,7 +6151,6 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 1568
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6962,7 +6161,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1569
     invoke-virtual {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -6977,11 +6175,9 @@
 
     throw v0
 
-    .line 1564
     :pswitch_0
     nop
 
-    .line 1565
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
     move-result-object v3
@@ -6990,13 +6186,10 @@
 
     move-result-wide v2
 
-    .line 1564
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setUsageLimitUsageTimePeriodInMinutes(J)V
 
-    .line 1566
     goto :goto_2
 
-    .line 1561
     :pswitch_1
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7008,10 +6201,8 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setUsageLimitTimeLimitInMinutes(J)V
 
-    .line 1562
     goto :goto_2
 
-    .line 1558
     :pswitch_2
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7023,10 +6214,8 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setUsageLimitStartTimeInMillis(J)V
 
-    .line 1559
     goto :goto_2
 
-    .line 1555
     :pswitch_3
     invoke-static {v1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7038,19 +6227,14 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/net/wifi/hotspot2/PasspointConfiguration;->setUsageLimitDataLimit(J)V
 
-    .line 1556
     nop
 
-    .line 1571
-    .end local v1    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 1572
     :cond_5
     return-void
 
-    .line 1550
     :cond_6
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
@@ -7073,27 +6257,22 @@
 
 .method private static parseUserCredential(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
     .locals 6
-    .param p0, "node"    # Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
         }
     .end annotation
 
-    .line 945
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->isLeaf()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 949
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;-><init>()V
 
-    .line 950
-    .local v0, "userCred":Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
     invoke-virtual {p0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getChildren()Ljava/util/List;
 
     move-result-object v1
@@ -7115,8 +6294,6 @@
 
     check-cast v2, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
 
-    .line 951
-    .local v2, "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -7211,7 +6388,6 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .line 971
     new-instance v1, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -7222,7 +6398,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 972
     invoke-virtual {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -7237,14 +6412,11 @@
 
     throw v1
 
-    .line 968
     :pswitch_0
     invoke-static {v2, v0}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->parseEAPMethod(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V
 
-    .line 969
     goto :goto_2
 
-    .line 965
     :pswitch_1
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7256,10 +6428,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setAbleToShare(Z)V
 
-    .line 966
     goto :goto_2
 
-    .line 962
     :pswitch_2
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7267,10 +6437,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setSoftTokenApp(Ljava/lang/String;)V
 
-    .line 963
     goto :goto_2
 
-    .line 959
     :pswitch_3
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7282,10 +6450,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setMachineManaged(Z)V
 
-    .line 960
     goto :goto_2
 
-    .line 956
     :pswitch_4
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7293,10 +6459,8 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setPassword(Ljava/lang/String;)V
 
-    .line 957
     goto :goto_2
 
-    .line 953
     :pswitch_5
     invoke-static {v2}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser;->getPpsNodeValue(Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;)Ljava/lang/String;
 
@@ -7304,20 +6468,14 @@
 
     invoke-virtual {v0, v3}, Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;->setUsername(Ljava/lang/String;)V
 
-    .line 954
     nop
 
-    .line 974
-    .end local v2    # "child":Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;
     :goto_2
     goto/16 :goto_0
 
-    .line 975
     :cond_1
     return-object v0
 
-    .line 946
-    .end local v0    # "userCred":Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;
     :cond_2
     new-instance v0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$ParsingException;
 

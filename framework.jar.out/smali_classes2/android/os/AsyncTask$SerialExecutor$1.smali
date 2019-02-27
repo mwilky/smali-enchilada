@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/os/AsyncTask$SerialExecutor;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/os/AsyncTask$SerialExecutor;
 
-    .line 242
     iput-object p1, p0, Landroid/os/AsyncTask$SerialExecutor$1;->this$0:Landroid/os/AsyncTask$SerialExecutor;
 
     iput-object p2, p0, Landroid/os/AsyncTask$SerialExecutor$1;->val$r:Ljava/lang/Runnable;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 245
     :try_start_0
     iget-object v0, p0, Landroid/os/AsyncTask$SerialExecutor$1;->val$r:Ljava/lang/Runnable;
 
@@ -51,18 +48,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 247
     iget-object v0, p0, Landroid/os/AsyncTask$SerialExecutor$1;->this$0:Landroid/os/AsyncTask$SerialExecutor;
 
     invoke-virtual {v0}, Landroid/os/AsyncTask$SerialExecutor;->scheduleNext()V
 
-    .line 248
     nop
 
-    .line 249
     return-void
 
-    .line 247
     :catchall_0
     move-exception v0
 

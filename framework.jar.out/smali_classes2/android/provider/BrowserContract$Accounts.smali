@@ -28,10 +28,8 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 410
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 411
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
@@ -48,14 +46,12 @@
 
     sput-object v0, Landroid/provider/BrowserContract$Accounts;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 410
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 406
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

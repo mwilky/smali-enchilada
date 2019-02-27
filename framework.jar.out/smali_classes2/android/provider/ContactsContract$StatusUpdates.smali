@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 5547
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "status_updates"
@@ -43,26 +42,22 @@
 
     sput-object v0, Landroid/provider/ContactsContract$StatusUpdates;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5552
     sget-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "status_updates"
 
-    .line 5553
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$StatusUpdates;->PROFILE_CONTENT_URI:Landroid/net/Uri;
 
-    .line 5552
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 5542
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,9 +65,7 @@
 
 .method synthetic constructor <init>(Landroid/provider/ContactsContract$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/provider/ContactsContract$1;
 
-    .line 5537
     invoke-direct {p0}, Landroid/provider/ContactsContract$StatusUpdates;-><init>()V
 
     return-void
@@ -80,35 +73,28 @@
 
 .method public static final getPresenceIconResourceId(I)I
     .locals 1
-    .param p0, "status"    # I
 
-    .line 5562
     packed-switch p0, :pswitch_data_0
 
-    .line 5574
     const v0, 0x108006a
 
     return v0
 
-    .line 5564
     :pswitch_0
     const v0, 0x108006b
 
     return v0
 
-    .line 5569
     :pswitch_1
     const v0, 0x1080068
 
     return v0
 
-    .line 5567
     :pswitch_2
     const v0, 0x1080067
 
     return v0
 
-    .line 5571
     :pswitch_3
     const v0, 0x1080069
 
@@ -128,8 +114,6 @@
 
 .method public static final getPresencePrecedence(I)I
     .locals 0
-    .param p0, "status"    # I
 
-    .line 5587
     return p0
 .end method
