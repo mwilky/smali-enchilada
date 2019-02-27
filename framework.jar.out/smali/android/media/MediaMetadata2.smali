@@ -109,17 +109,23 @@
 # direct methods
 .method public constructor <init>(Landroid/media/update/MediaMetadata2Provider;)V
     .locals 0
+    .param p1, "provider"    # Landroid/media/update/MediaMetadata2Provider;
 
+    .line 521
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 522
     iput-object p1, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
+    .line 523
     return-void
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroid/media/MediaMetadata2;
     .locals 1
+    .param p0, "bundle"    # Landroid/os/Bundle;
 
+    .line 663
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -135,7 +141,9 @@
 # virtual methods
 .method public containsKey(Ljava/lang/String;)Z
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 532
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->containsKey_impl(Ljava/lang/String;)Z
@@ -147,7 +155,9 @@
 
 .method public getBitmap(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 604
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getBitmap_impl(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -160,6 +170,7 @@
 .method public getExtras()Landroid/os/Bundle;
     .locals 1
 
+    .line 624
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0}, Landroid/media/update/MediaMetadata2Provider;->getExtras_impl()Landroid/os/Bundle;
@@ -171,7 +182,9 @@
 
 .method public getFloat(Ljava/lang/String;)F
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 615
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getFloat_impl(Ljava/lang/String;)F
@@ -183,7 +196,9 @@
 
 .method public getLong(Ljava/lang/String;)J
     .locals 2
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 579
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getLong_impl(Ljava/lang/String;)J
@@ -196,6 +211,7 @@
 .method public getMediaId()Ljava/lang/String;
     .locals 1
 
+    .line 556
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0}, Landroid/media/update/MediaMetadata2Provider;->getMediaId_impl()Ljava/lang/String;
@@ -207,7 +223,9 @@
 
 .method public getRating(Ljava/lang/String;)Landroid/media/Rating2;
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 593
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getRating_impl(Ljava/lang/String;)Landroid/media/Rating2;
@@ -219,7 +237,9 @@
 
 .method public getString(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 568
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getString_impl(Ljava/lang/String;)Ljava/lang/String;
@@ -231,7 +251,9 @@
 
 .method public getText(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 1
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 544
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaMetadata2Provider;->getText_impl(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -252,6 +274,7 @@
         }
     .end annotation
 
+    .line 642
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0}, Landroid/media/update/MediaMetadata2Provider;->keySet_impl()Ljava/util/Set;
@@ -264,6 +287,7 @@
 .method public size()I
     .locals 1
 
+    .line 633
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0}, Landroid/media/update/MediaMetadata2Provider;->size_impl()I
@@ -276,6 +300,7 @@
 .method public toBundle()Landroid/os/Bundle;
     .locals 1
 
+    .line 652
     iget-object v0, p0, Landroid/media/MediaMetadata2;->mProvider:Landroid/media/update/MediaMetadata2Provider;
 
     invoke-interface {v0}, Landroid/media/update/MediaMetadata2Provider;->toBundle_impl()Landroid/os/Bundle;

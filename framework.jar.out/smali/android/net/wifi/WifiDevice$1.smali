@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,41 +40,50 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiDevice;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 120
     new-instance v0, Landroid/net/wifi/WifiDevice;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiDevice;-><init>()V
 
+    .line 121
+    .local v0, "device":Landroid/net/wifi/WifiDevice;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/net/wifi/WifiDevice;->deviceAddress:Ljava/lang/String;
 
+    .line 122
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/net/wifi/WifiDevice;->deviceName:Ljava/lang/String;
 
+    .line 123
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/net/wifi/WifiDevice;->deviceState:I
 
+    .line 125
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/net/wifi/WifiDevice;->connectedTime:J
 
+    .line 127
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 118
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiDevice$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiDevice;
 
     move-result-object p1
@@ -83,7 +93,9 @@
 
 .method public newArray(I)[Landroid/net/wifi/WifiDevice;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 131
     new-array v0, p1, [Landroid/net/wifi/WifiDevice;
 
     return-object v0
@@ -92,6 +104,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 118
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiDevice$1;->newArray(I)[Landroid/net/wifi/WifiDevice;
 
     move-result-object p1

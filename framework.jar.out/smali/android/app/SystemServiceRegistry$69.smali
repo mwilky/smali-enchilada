@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 791
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -41,12 +42,15 @@
         }
     .end annotation
 
+    .line 794
     const-string/jumbo v0, "trust"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 795
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/app/trust/TrustManager;
 
     invoke-direct {v1, v0}, Landroid/app/trust/TrustManager;-><init>(Landroid/os/IBinder;)V
@@ -62,6 +66,7 @@
         }
     .end annotation
 
+    .line 791
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$69;->createService()Landroid/app/trust/TrustManager;
 
     move-result-object v0

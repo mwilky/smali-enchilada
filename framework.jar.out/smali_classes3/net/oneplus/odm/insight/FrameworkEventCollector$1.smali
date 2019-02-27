@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lnet/oneplus/odm/insight/FrameworkEventCollector;Landroid/os/Looper;)V
     .locals 0
+    .param p1, "this$0"    # Lnet/oneplus/odm/insight/FrameworkEventCollector;
+    .param p2, "x0"    # Landroid/os/Looper;
 
+    .line 264
     iput-object p1, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -33,21 +36,31 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 267
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
+    .line 268
     const/4 v0, 0x0
 
+    .line 269
+    .local v0, "data":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/String;
 
+    .line 270
+    .local v1, "event":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Message;->peekData()Landroid/os/Bundle;
 
     move-result-object v2
 
+    .line 271
+    .local v2, "bundle":Landroid/os/Bundle;
     if-eqz v2, :cond_0
 
+    .line 272
     const-string v3, "hashmap"
 
     invoke-virtual {v2, v3}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
@@ -58,6 +71,7 @@
 
     check-cast v0, Ljava/util/HashMap;
 
+    .line 274
     :cond_0
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -65,6 +79,7 @@
 
     goto :goto_0
 
+    .line 284
     :pswitch_0
     const-string v3, "appId"
 
@@ -74,6 +89,8 @@
 
     move-result-object v3
 
+    .line 285
+    .local v3, "appId":Ljava/lang/String;
     iget-object v4, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
     invoke-static {v4}, Lnet/oneplus/odm/insight/FrameworkEventCollector;->access$000(Lnet/oneplus/odm/insight/FrameworkEventCollector;)Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -82,6 +99,7 @@
 
     if-nez v4, :cond_1
 
+    .line 286
     iget-object v4, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
     new-instance v5, Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -96,6 +114,7 @@
 
     invoke-static {v4, v5}, Lnet/oneplus/odm/insight/FrameworkEventCollector;->access$002(Lnet/oneplus/odm/insight/FrameworkEventCollector;Lnet/oneplus/odm/insight/tracker/OSTracker;)Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+    .line 288
     :cond_1
     iget-object v4, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
@@ -105,8 +124,10 @@
 
     invoke-virtual {v4, v1, v0}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
+    .end local v3    # "appId":Ljava/lang/String;
     goto :goto_0
 
+    .line 276
     :pswitch_1
     iget-object v3, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
@@ -116,6 +137,7 @@
 
     if-nez v3, :cond_2
 
+    .line 277
     iget-object v3, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
     new-instance v4, Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -130,6 +152,7 @@
 
     invoke-static {v3, v4}, Lnet/oneplus/odm/insight/FrameworkEventCollector;->access$002(Lnet/oneplus/odm/insight/FrameworkEventCollector;Lnet/oneplus/odm/insight/tracker/OSTracker;)Lnet/oneplus/odm/insight/tracker/OSTracker;
 
+    .line 279
     :cond_2
     iget-object v3, p0, Lnet/oneplus/odm/insight/FrameworkEventCollector$1;->this$0:Lnet/oneplus/odm/insight/FrameworkEventCollector;
 
@@ -139,8 +162,10 @@
 
     invoke-virtual {v3, v1, v0}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
+    .line 280
     nop
 
+    .line 292
     :goto_0
     return-void
 

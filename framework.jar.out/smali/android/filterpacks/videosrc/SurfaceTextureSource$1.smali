@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/filterpacks/videosrc/SurfaceTextureSource;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/filterpacks/videosrc/SurfaceTextureSource;
 
+    .line 248
     iput-object p1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;->this$0:Landroid/filterpacks/videosrc/SurfaceTextureSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,9 @@
 # virtual methods
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 2
+    .param p1, "surfaceTexture"    # Landroid/graphics/SurfaceTexture;
 
+    .line 250
     invoke-static {}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->access$000()Z
 
     move-result v0
@@ -49,6 +53,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 251
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;->this$0:Landroid/filterpacks/videosrc/SurfaceTextureSource;
 
@@ -58,5 +63,6 @@
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
+    .line 252
     return-void
 .end method

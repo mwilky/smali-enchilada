@@ -29,18 +29,30 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/RecyclerView$ViewHolder;IIII)V
     .locals 0
+    .param p1, "holder"    # Lcom/android/internal/widget/RecyclerView$ViewHolder;
+    .param p2, "fromX"    # I
+    .param p3, "fromY"    # I
+    .param p4, "toX"    # I
+    .param p5, "toY"    # I
 
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 63
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->holder:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
+    .line 64
     iput p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->fromX:I
 
+    .line 65
     iput p3, p0, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->fromY:I
 
+    .line 66
     iput p4, p0, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->toX:I
 
+    .line 67
     iput p5, p0, Lcom/android/internal/widget/DefaultItemAnimator$MoveInfo;->toY:I
 
+    .line 68
     return-void
 .end method

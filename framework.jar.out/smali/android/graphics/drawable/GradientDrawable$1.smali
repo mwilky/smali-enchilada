@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 1124
     invoke-static {}, Landroid/graphics/drawable/GradientDrawable$Orientation;->values()[Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     move-result-object v0

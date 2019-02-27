@@ -89,24 +89,31 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 289
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/PerformanceCollector$PerformanceResultsWriter;)V
     .locals 0
+    .param p1, "writer"    # Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
+    .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 292
     invoke-virtual {p0, p1}, Landroid/os/PerformanceCollector;->setPerformanceResultsWriter(Landroid/os/PerformanceCollector$PerformanceResultsWriter;)V
 
+    .line 293
     return-void
 .end method
 
 .method private endPerformanceSnapshot()V
     .locals 29
 
+    .line 483
     move-object/from16 v0, p0
 
     invoke-static {}, Landroid/os/Process;->getElapsedCpuTime()J
@@ -119,6 +126,7 @@
 
     iput-wide v1, v0, Landroid/os/PerformanceCollector;->mSnapshotCpuTime:J
 
+    .line 484
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -129,8 +137,10 @@
 
     iput-wide v1, v0, Landroid/os/PerformanceCollector;->mSnapshotExecTime:J
 
+    .line 486
     invoke-static {}, Landroid/os/PerformanceCollector;->stopAllocCounting()V
 
+    .line 488
     invoke-static {}, Landroid/os/Debug;->getNativeHeapSize()J
 
     move-result-wide v1
@@ -139,52 +149,74 @@
 
     div-long/2addr v1, v3
 
+    .line 489
+    .local v1, "nativeMax":J
     invoke-static {}, Landroid/os/Debug;->getNativeHeapAllocatedSize()J
 
     move-result-wide v5
 
     div-long/2addr v5, v3
 
+    .line 490
+    .local v5, "nativeAllocated":J
     invoke-static {}, Landroid/os/Debug;->getNativeHeapFreeSize()J
 
     move-result-wide v7
 
     div-long/2addr v7, v3
 
+    .line 492
+    .local v7, "nativeFree":J
     new-instance v9, Landroid/os/Debug$MemoryInfo;
 
     invoke-direct {v9}, Landroid/os/Debug$MemoryInfo;-><init>()V
 
+    .line 493
+    .local v9, "memInfo":Landroid/os/Debug$MemoryInfo;
     invoke-static {v9}, Landroid/os/Debug;->getMemoryInfo(Landroid/os/Debug$MemoryInfo;)V
 
+    .line 495
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v10
 
+    .line 497
+    .local v10, "runtime":Ljava/lang/Runtime;
     invoke-virtual {v10}, Ljava/lang/Runtime;->totalMemory()J
 
     move-result-wide v11
 
     div-long/2addr v11, v3
 
+    .line 498
+    .local v11, "dalvikMax":J
     invoke-virtual {v10}, Ljava/lang/Runtime;->freeMemory()J
 
     move-result-wide v13
 
     div-long/2addr v13, v3
 
+    .line 499
+    .local v13, "dalvikFree":J
     sub-long v3, v11, v13
 
+    .line 502
+    .local v3, "dalvikAllocated":J
     invoke-static {}, Landroid/os/PerformanceCollector;->getBinderCounts()Landroid/os/Bundle;
 
     move-result-object v15
 
+    .line 503
+    .local v15, "binderCounts":Landroid/os/Bundle;
     move-object/from16 v16, v10
 
     invoke-virtual {v15}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v10
 
+    .line 503
+    .end local v10    # "runtime":Ljava/lang/Runtime;
+    .local v16, "runtime":Ljava/lang/Runtime;
     invoke-interface {v10}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
@@ -206,20 +238,31 @@
 
     check-cast v10, Ljava/lang/String;
 
+    .line 504
+    .local v10, "key":Ljava/lang/String;
     move-wide/from16 v19, v13
 
     iget-object v13, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
+    .line 504
+    .end local v13    # "dalvikFree":J
+    .local v19, "dalvikFree":J
     move-wide/from16 v21, v3
 
     invoke-virtual {v15, v10}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v3
 
+    .line 504
+    .end local v3    # "dalvikAllocated":J
+    .local v21, "dalvikAllocated":J
     invoke-virtual {v13, v10, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 505
+    .end local v10    # "key":Ljava/lang/String;
     nop
 
+    .line 503
     move-object/from16 v10, v18
 
     move-wide/from16 v13, v19
@@ -228,15 +271,27 @@
 
     goto :goto_0
 
+    .line 508
+    .end local v19    # "dalvikFree":J
+    .end local v21    # "dalvikAllocated":J
+    .restart local v3    # "dalvikAllocated":J
+    .restart local v13    # "dalvikFree":J
     :cond_0
     move-wide/from16 v21, v3
 
     move-wide/from16 v19, v13
 
+    .line 508
+    .end local v3    # "dalvikAllocated":J
+    .end local v13    # "dalvikFree":J
+    .restart local v19    # "dalvikFree":J
+    .restart local v21    # "dalvikAllocated":J
     invoke-static {}, Landroid/os/PerformanceCollector;->getAllocCounts()Landroid/os/Bundle;
 
     move-result-object v3
 
+    .line 509
+    .local v3, "allocCounts":Landroid/os/Bundle;
     invoke-virtual {v3}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v4
@@ -258,6 +313,8 @@
 
     check-cast v10, Ljava/lang/String;
 
+    .line 510
+    .restart local v10    # "key":Ljava/lang/String;
     iget-object v13, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     move-object/from16 v23, v15
@@ -266,17 +323,29 @@
 
     move-result-wide v14
 
+    .line 510
+    .end local v15    # "binderCounts":Landroid/os/Bundle;
+    .local v23, "binderCounts":Landroid/os/Bundle;
     invoke-virtual {v13, v10, v14, v15}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 511
+    .end local v10    # "key":Ljava/lang/String;
     nop
 
+    .line 509
     move-object/from16 v15, v23
 
     goto :goto_1
 
+    .line 513
+    .end local v23    # "binderCounts":Landroid/os/Bundle;
+    .restart local v15    # "binderCounts":Landroid/os/Bundle;
     :cond_1
     move-object/from16 v23, v15
 
+    .line 513
+    .end local v15    # "binderCounts":Landroid/os/Bundle;
+    .restart local v23    # "binderCounts":Landroid/os/Bundle;
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "execution_time"
@@ -285,6 +354,7 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 514
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "cpu_time"
@@ -293,24 +363,28 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 516
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_size"
 
     invoke-virtual {v4, v10, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 517
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_allocated"
 
     invoke-virtual {v4, v10, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 518
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_free"
 
     invoke-virtual {v4, v10, v7, v8}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 519
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_pss"
@@ -321,6 +395,7 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 520
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_private_dirty"
@@ -331,6 +406,7 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 521
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v10, "native_shared_dirty"
@@ -341,12 +417,14 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 523
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "java_size"
 
     invoke-virtual {v4, v10, v11, v12}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 524
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "java_allocated"
@@ -355,6 +433,9 @@
 
     invoke-virtual {v4, v10, v13, v14}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 525
+    .end local v21    # "dalvikAllocated":J
+    .local v13, "dalvikAllocated":J
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "java_free"
@@ -365,6 +446,10 @@
 
     invoke-virtual {v4, v10, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 526
+    .end local v19    # "dalvikFree":J
+    .local v1, "dalvikFree":J
+    .local v24, "nativeMax":J
     iget-object v4, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v10, "java_pss"
@@ -375,8 +460,12 @@
 
     int-to-long v1, v15
 
+    .line 526
+    .end local v1    # "dalvikFree":J
+    .local v26, "dalvikFree":J
     invoke-virtual {v4, v10, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 527
     iget-object v1, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v2, "java_private_dirty"
@@ -387,8 +476,12 @@
 
     int-to-long v3, v4
 
+    .line 527
+    .end local v3    # "allocCounts":Landroid/os/Bundle;
+    .local v28, "allocCounts":Landroid/os/Bundle;
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 528
     iget-object v1, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string v2, "java_shared_dirty"
@@ -399,6 +492,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 530
     iget-object v1, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v2, "other_pss"
@@ -409,6 +503,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 531
     iget-object v1, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v2, "other_private_dirty"
@@ -419,6 +514,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 532
     iget-object v1, v0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     const-string/jumbo v2, "other_shared_dirty"
@@ -429,16 +525,20 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 533
     return-void
 .end method
 
 .method private static getAllocCounts()Landroid/os/Bundle;
     .locals 4
 
+    .line 567
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 568
+    .local v0, "results":Landroid/os/Bundle;
     const-string v1, "global_alloc_count"
 
     invoke-static {}, Landroid/os/Debug;->getGlobalAllocCount()I
@@ -449,6 +549,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 569
     const-string v1, "global_alloc_size"
 
     invoke-static {}, Landroid/os/Debug;->getGlobalAllocSize()I
@@ -459,6 +560,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 570
     const-string v1, "global_freed_count"
 
     invoke-static {}, Landroid/os/Debug;->getGlobalFreedCount()I
@@ -469,6 +571,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 571
     const-string v1, "global_freed_size"
 
     invoke-static {}, Landroid/os/Debug;->getGlobalFreedSize()I
@@ -479,6 +582,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 572
     const-string v1, "gc_invocation_count"
 
     invoke-static {}, Landroid/os/Debug;->getGlobalGcInvocationCount()I
@@ -489,16 +593,20 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 573
     return-object v0
 .end method
 
 .method private static getBinderCounts()Landroid/os/Bundle;
     .locals 4
 
+    .line 582
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 583
+    .local v0, "results":Landroid/os/Bundle;
     const-string/jumbo v1, "sent_transactions"
 
     invoke-static {}, Landroid/os/Debug;->getBinderSentTransactions()I
@@ -509,6 +617,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 584
     const-string/jumbo v1, "received_transactions"
 
     invoke-static {}, Landroid/os/Debug;->getBinderReceivedTransactions()I
@@ -519,50 +628,61 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 585
     return-object v0
 .end method
 
 .method private static startAllocCounting()V
     .locals 1
 
+    .line 543
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->gc()V
 
+    .line 544
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->runFinalization()V
 
+    .line 545
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->gc()V
 
+    .line 547
     invoke-static {}, Landroid/os/Debug;->resetAllCounts()V
 
+    .line 550
     invoke-static {}, Landroid/os/Debug;->startAllocCounting()V
 
+    .line 551
     return-void
 .end method
 
 .method private startPerformanceSnapshot()V
     .locals 7
 
+    .line 456
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
+    .line 459
     invoke-static {}, Landroid/os/PerformanceCollector;->getBinderCounts()Landroid/os/Bundle;
 
     move-result-object v0
 
+    .line 460
+    .local v0, "binderCounts":Landroid/os/Bundle;
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -584,6 +704,8 @@
 
     check-cast v2, Ljava/lang/String;
 
+    .line 461
+    .local v2, "key":Ljava/lang/String;
     iget-object v3, p0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -606,49 +728,60 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 462
+    .end local v2    # "key":Ljava/lang/String;
     goto :goto_0
 
+    .line 467
     :cond_0
     invoke-static {}, Landroid/os/PerformanceCollector;->startAllocCounting()V
 
+    .line 472
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Landroid/os/PerformanceCollector;->mSnapshotExecTime:J
 
+    .line 473
     invoke-static {}, Landroid/os/Process;->getElapsedCpuTime()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Landroid/os/PerformanceCollector;->mSnapshotCpuTime:J
 
+    .line 474
     return-void
 .end method
 
 .method private static stopAllocCounting()V
     .locals 1
 
+    .line 557
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->gc()V
 
+    .line 558
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->runFinalization()V
 
+    .line 559
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->gc()V
 
+    .line 560
     invoke-static {}, Landroid/os/Debug;->stopAllocCounting()V
 
+    .line 561
     return-void
 .end method
 
@@ -656,7 +789,9 @@
 # virtual methods
 .method public addIteration(Ljava/lang/String;)Landroid/os/Bundle;
     .locals 4
+    .param p1, "label"    # Ljava/lang/String;
 
+    .line 388
     invoke-static {}, Landroid/os/Process;->getElapsedCpuTime()J
 
     move-result-wide v0
@@ -667,6 +802,7 @@
 
     iput-wide v0, p0, Landroid/os/PerformanceCollector;->mCpuTime:J
 
+    .line 389
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -677,26 +813,32 @@
 
     iput-wide v0, p0, Landroid/os/PerformanceCollector;->mExecTime:J
 
+    .line 391
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 392
+    .local v0, "iteration":Landroid/os/Bundle;
     const-string v1, "label"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 393
     const-string v1, "execution_time"
 
     iget-wide v2, p0, Landroid/os/PerformanceCollector;->mExecTime:J
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 394
     const-string v1, "cpu_time"
 
     iget-wide v2, p0, Landroid/os/PerformanceCollector;->mCpuTime:J
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
+    .line 395
     iget-object v1, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
     const-string v2, "iterations"
@@ -707,98 +849,125 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 397
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Landroid/os/PerformanceCollector;->mExecTime:J
 
+    .line 398
     invoke-static {}, Landroid/os/Process;->getElapsedCpuTime()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Landroid/os/PerformanceCollector;->mCpuTime:J
 
+    .line 399
     return-object v0
 .end method
 
 .method public addMeasurement(Ljava/lang/String;F)V
     .locals 1
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "value"    # F
 
+    .line 436
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 437
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     invoke-interface {v0, p1, p2}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeMeasurement(Ljava/lang/String;F)V
 
+    .line 438
     :cond_0
     return-void
 .end method
 
 .method public addMeasurement(Ljava/lang/String;J)V
     .locals 1
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "value"    # J
 
+    .line 425
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 426
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeMeasurement(Ljava/lang/String;J)V
 
+    .line 427
     :cond_0
     return-void
 .end method
 
 .method public addMeasurement(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "value"    # Ljava/lang/String;
 
+    .line 447
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 448
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     invoke-interface {v0, p1, p2}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeMeasurement(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 449
     :cond_0
     return-void
 .end method
 
 .method public beginSnapshot(Ljava/lang/String;)V
     .locals 1
+    .param p1, "label"    # Ljava/lang/String;
 
+    .line 306
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 307
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     invoke-interface {v0, p1}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeBeginSnapshot(Ljava/lang/String;)V
 
+    .line 308
     :cond_0
     invoke-direct {p0}, Landroid/os/PerformanceCollector;->startPerformanceSnapshot()V
 
+    .line 309
     return-void
 .end method
 
 .method public endSnapshot()Landroid/os/Bundle;
     .locals 2
 
+    .line 350
     invoke-direct {p0}, Landroid/os/PerformanceCollector;->endPerformanceSnapshot()V
 
+    .line 351
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 352
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     iget-object v1, p0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
     invoke-interface {v0, v1}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeEndSnapshot(Landroid/os/Bundle;)V
 
+    .line 353
     :cond_0
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfSnapshot:Landroid/os/Bundle;
 
@@ -807,23 +976,30 @@
 
 .method public setPerformanceResultsWriter(Landroid/os/PerformanceCollector$PerformanceResultsWriter;)V
     .locals 0
+    .param p1, "writer"    # Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
+    .line 296
     iput-object p1, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
+    .line 297
     return-void
 .end method
 
 .method public startTiming(Ljava/lang/String;)V
     .locals 3
+    .param p1, "label"    # Ljava/lang/String;
 
+    .line 363
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 364
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     invoke-interface {v0, p1}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeStartTiming(Ljava/lang/String;)V
 
+    .line 365
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
@@ -831,6 +1007,7 @@
 
     iput-object v0, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
+    .line 366
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
     const-string v1, "iterations"
@@ -841,36 +1018,44 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
+    .line 368
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/PerformanceCollector;->mExecTime:J
 
+    .line 369
     invoke-static {}, Landroid/os/Process;->getElapsedCpuTime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/PerformanceCollector;->mCpuTime:J
 
+    .line 370
     return-void
 .end method
 
 .method public stopTiming(Ljava/lang/String;)Landroid/os/Bundle;
     .locals 2
+    .param p1, "label"    # Ljava/lang/String;
 
+    .line 412
     invoke-virtual {p0, p1}, Landroid/os/PerformanceCollector;->addIteration(Ljava/lang/String;)Landroid/os/Bundle;
 
+    .line 413
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     if-eqz v0, :cond_0
 
+    .line 414
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfWriter:Landroid/os/PerformanceCollector$PerformanceResultsWriter;
 
     iget-object v1, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
     invoke-interface {v0, v1}, Landroid/os/PerformanceCollector$PerformanceResultsWriter;->writeStopTiming(Landroid/os/Bundle;)V
 
+    .line 415
     :cond_0
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 

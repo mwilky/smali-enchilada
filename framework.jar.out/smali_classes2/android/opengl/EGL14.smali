@@ -237,22 +237,28 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 33
     const/4 v0, 0x0
 
     sput-object v0, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
+    .line 34
     sput-object v0, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
+    .line 35
     sput-object v0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
+    .line 150
     invoke-static {}, Landroid/opengl/EGL14;->_nativeClassInit()V
 
+    .line 151
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -298,17 +304,28 @@
 
 .method public static eglCreateWindowSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;
     .locals 3
+    .param p0, "dpy"    # Landroid/opengl/EGLDisplay;
+    .param p1, "config"    # Landroid/opengl/EGLConfig;
+    .param p2, "win"    # Ljava/lang/Object;
+    .param p3, "attrib_list"    # [I
+    .param p4, "offset"    # I
 
+    .line 250
     const/4 v0, 0x0
 
+    .line 251
+    .local v0, "sur":Landroid/view/Surface;
     instance-of v1, p2, Landroid/view/SurfaceView;
 
     if-eqz v1, :cond_0
 
+    .line 252
     move-object v1, p2
 
     check-cast v1, Landroid/view/SurfaceView;
 
+    .line 253
+    .local v1, "surfaceView":Landroid/view/SurfaceView;
     invoke-virtual {v1}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v2
@@ -317,6 +334,8 @@
 
     move-result-object v0
 
+    .line 254
+    .end local v1    # "surfaceView":Landroid/view/SurfaceView;
     goto :goto_0
 
     :cond_0
@@ -324,14 +343,19 @@
 
     if-eqz v1, :cond_1
 
+    .line 255
     move-object v1, p2
 
     check-cast v1, Landroid/view/SurfaceHolder;
 
+    .line 256
+    .local v1, "holder":Landroid/view/SurfaceHolder;
     invoke-interface {v1}, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
 
     move-result-object v0
 
+    .line 257
+    .end local v1    # "holder":Landroid/view/SurfaceHolder;
     goto :goto_0
 
     :cond_1
@@ -339,37 +363,49 @@
 
     if-eqz v1, :cond_2
 
+    .line 258
     move-object v0, p2
 
     check-cast v0, Landroid/view/Surface;
 
+    .line 262
     :cond_2
     :goto_0
     if-eqz v0, :cond_3
 
+    .line 263
     invoke-static {p0, p1, v0, p3, p4}, Landroid/opengl/EGL14;->_eglCreateWindowSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;
 
     move-result-object v1
 
+    .local v1, "surface":Landroid/opengl/EGLSurface;
     :goto_1
     goto :goto_2
 
+    .line 264
+    .end local v1    # "surface":Landroid/opengl/EGLSurface;
     :cond_3
     instance-of v1, p2, Landroid/graphics/SurfaceTexture;
 
     if-eqz v1, :cond_4
 
+    .line 265
     invoke-static {p0, p1, p2, p3, p4}, Landroid/opengl/EGL14;->_eglCreateWindowSurfaceTexture(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;
 
     move-result-object v1
 
     goto :goto_1
 
+    .line 268
+    .restart local v1    # "surface":Landroid/opengl/EGLSurface;
     :goto_2
     nop
 
+    .line 274
     return-object v1
 
+    .line 268
+    .end local v1    # "surface":Landroid/opengl/EGLSurface;
     :cond_4
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 

@@ -110,6 +110,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 646
     new-instance v0, Landroid/view/textclassifier/SelectionEvent$1;
 
     invoke-direct {v0}, Landroid/view/textclassifier/SelectionEvent$1;-><init>()V
@@ -121,17 +122,27 @@
 
 .method constructor <init>(IIILjava/lang/String;ILjava/lang/String;)V
     .locals 2
+    .param p1, "start"    # I
+    .param p2, "end"    # I
+    .param p3, "eventType"    # I
+    .param p4, "entityType"    # Ljava/lang/String;
+    .param p5, "invocationMethod"    # I
+    .param p6, "resultId"    # Ljava/lang/String;
 
+    .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 125
     const-string v0, ""
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
+    .line 126
     const-string/jumbo v0, "unknown"
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
+    .line 144
     if-lt p2, p1, :cond_0
 
     const/4 v0, 0x1
@@ -146,12 +157,16 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 145
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
+    .line 146
     iput p2, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteEnd:I
 
+    .line 147
     iput p3, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
+    .line 148
     invoke-static {p4}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -160,50 +175,62 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEntityType:Ljava/lang/String;
 
+    .line 149
     iput-object p6, p0, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
+    .line 150
     iput p5, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
+    .line 151
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 125
     const-string v0, ""
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
+    .line 126
     const-string/jumbo v0, "unknown"
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
+    .line 154
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
+    .line 155
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteEnd:I
 
+    .line 156
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
+    .line 157
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEntityType:Ljava/lang/String;
 
+    .line 158
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -224,60 +251,70 @@
     :goto_0
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
+    .line 159
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
+    .line 160
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
+    .line 161
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
+    .line 162
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
+    .line 163
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
+    .line 164
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSinceSessionStart:J
 
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSincePreviousEvent:J
 
+    .line 166
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventIndex:I
 
+    .line 167
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-lez v0, :cond_1
 
+    .line 168
     sget-object v0, Landroid/view/textclassifier/TextClassificationSessionId;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -293,36 +330,44 @@
     :cond_1
     iput-object v1, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
+    .line 169
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mStart:I
 
+    .line 170
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEnd:I
 
+    .line 171
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartStart:I
 
+    .line 172
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartEnd:I
 
+    .line 173
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/view/textclassifier/SelectionEvent$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/view/textclassifier/SelectionEvent$1;
 
+    .line 38
     invoke-direct {p0, p1}, Landroid/view/textclassifier/SelectionEvent;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -330,16 +375,19 @@
 
 .method private static checkActionType(I)V
     .locals 5
+    .param p0, "eventType"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
+    .line 340
     packed-switch p0, :pswitch_data_0
 
     packed-switch p0, :pswitch_data_1
 
+    .line 354
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -350,6 +398,7 @@
 
     const/4 v3, 0x0
 
+    .line 355
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -366,6 +415,7 @@
 
     throw v0
 
+    .line 352
     :pswitch_0
     return-void
 
@@ -393,7 +443,11 @@
 
 .method public static createSelectionActionEvent(III)Landroid/view/textclassifier/SelectionEvent;
     .locals 9
+    .param p0, "start"    # I
+    .param p1, "end"    # I
+    .param p2, "actionType"    # I
 
+    .line 300
     if-lt p1, p0, :cond_0
 
     const/4 v0, 0x1
@@ -408,8 +462,10 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 301
     invoke-static {p2}, Landroid/view/textclassifier/SelectionEvent;->checkActionType(I)V
 
+    .line 302
     new-instance v0, Landroid/view/textclassifier/SelectionEvent;
 
     const-string v6, ""
@@ -433,7 +489,12 @@
 
 .method public static createSelectionActionEvent(IIILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;
     .locals 8
+    .param p0, "start"    # I
+    .param p1, "end"    # I
+    .param p2, "actionType"    # I
+    .param p3, "classification"    # Landroid/view/textclassifier/TextClassification;
 
+    .line 325
     const/4 v0, 0x0
 
     if-lt p1, p0, :cond_0
@@ -450,20 +511,25 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 326
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 327
     invoke-static {p2}, Landroid/view/textclassifier/SelectionEvent;->checkActionType(I)V
 
+    .line 328
     invoke-virtual {p3}, Landroid/view/textclassifier/TextClassification;->getEntityCount()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
+    .line 329
     invoke-virtual {p3, v0}, Landroid/view/textclassifier/TextClassification;->getEntity(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 330
     :goto_1
     move-object v5, v0
 
@@ -474,11 +540,14 @@
 
     goto :goto_1
 
+    .line 331
+    .local v5, "entityType":Ljava/lang/String;
     :goto_2
     new-instance v0, Landroid/view/textclassifier/SelectionEvent;
 
     const/4 v6, 0x0
 
+    .line 332
     invoke-virtual {p3}, Landroid/view/textclassifier/TextClassification;->getId()Ljava/lang/String;
 
     move-result-object v7
@@ -493,12 +562,16 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/view/textclassifier/SelectionEvent;-><init>(IIILjava/lang/String;ILjava/lang/String;)V
 
+    .line 331
     return-object v0
 .end method
 
 .method public static createSelectionModifiedEvent(II)Landroid/view/textclassifier/SelectionEvent;
     .locals 9
+    .param p0, "start"    # I
+    .param p1, "end"    # I
 
+    .line 233
     if-lt p1, p0, :cond_0
 
     const/4 v0, 0x1
@@ -513,6 +586,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 234
     new-instance v0, Landroid/view/textclassifier/SelectionEvent;
 
     const/4 v5, 0x2
@@ -536,7 +610,11 @@
 
 .method public static createSelectionModifiedEvent(IILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;
     .locals 8
+    .param p0, "start"    # I
+    .param p1, "end"    # I
+    .param p2, "classification"    # Landroid/view/textclassifier/TextClassification;
 
+    .line 253
     const/4 v0, 0x0
 
     if-lt p1, p0, :cond_0
@@ -553,18 +631,22 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 254
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 255
     invoke-virtual {p2}, Landroid/view/textclassifier/TextClassification;->getEntityCount()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
+    .line 256
     invoke-virtual {p2, v0}, Landroid/view/textclassifier/TextClassification;->getEntity(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 257
     :goto_1
     move-object v5, v0
 
@@ -575,6 +657,8 @@
 
     goto :goto_1
 
+    .line 258
+    .local v5, "entityType":Ljava/lang/String;
     :goto_2
     new-instance v0, Landroid/view/textclassifier/SelectionEvent;
 
@@ -582,6 +666,7 @@
 
     const/4 v6, 0x0
 
+    .line 260
     invoke-virtual {p2}, Landroid/view/textclassifier/TextClassification;->getId()Ljava/lang/String;
 
     move-result-object v7
@@ -594,12 +679,17 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/view/textclassifier/SelectionEvent;-><init>(IIILjava/lang/String;ILjava/lang/String;)V
 
+    .line 258
     return-object v0
 .end method
 
 .method public static createSelectionModifiedEvent(IILandroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/SelectionEvent;
     .locals 8
+    .param p0, "start"    # I
+    .param p1, "end"    # I
+    .param p2, "selection"    # Landroid/view/textclassifier/TextSelection;
 
+    .line 277
     const/4 v0, 0x0
 
     if-lt p1, p0, :cond_0
@@ -616,18 +706,22 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 278
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 279
     invoke-virtual {p2}, Landroid/view/textclassifier/TextSelection;->getEntityCount()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
+    .line 280
     invoke-virtual {p2, v0}, Landroid/view/textclassifier/TextSelection;->getEntity(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 281
     :goto_1
     move-object v5, v0
 
@@ -638,6 +732,8 @@
 
     goto :goto_1
 
+    .line 282
+    .local v5, "entityType":Ljava/lang/String;
     :goto_2
     new-instance v0, Landroid/view/textclassifier/SelectionEvent;
 
@@ -645,6 +741,7 @@
 
     const/4 v6, 0x0
 
+    .line 284
     invoke-virtual {p2}, Landroid/view/textclassifier/TextSelection;->getId()Ljava/lang/String;
 
     move-result-object v7
@@ -657,12 +754,16 @@
 
     invoke-direct/range {v1 .. v7}, Landroid/view/textclassifier/SelectionEvent;-><init>(IIILjava/lang/String;ILjava/lang/String;)V
 
+    .line 282
     return-object v0
 .end method
 
 .method public static createSelectionStartedEvent(II)Landroid/view/textclassifier/SelectionEvent;
     .locals 8
+    .param p0, "invocationMethod"    # I
+    .param p1, "start"    # I
 
+    .line 217
     new-instance v7, Landroid/view/textclassifier/SelectionEvent;
 
     add-int/lit8 v2, p1, 0x1
@@ -686,13 +787,17 @@
 
 .method public static isTerminal(I)Z
     .locals 1
+    .param p0, "eventType"    # I
 
+    .line 577
     packed-switch p0, :pswitch_data_0
 
+    .line 589
     const/4 v0, 0x0
 
     return v0
 
+    .line 587
     :pswitch_0
     const/4 v0, 0x1
 
@@ -719,6 +824,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 205
     const/4 v0, 0x0
 
     return v0
@@ -726,13 +832,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 603
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 604
     return v0
 
+    .line 606
     :cond_0
     instance-of v1, p1, Landroid/view/textclassifier/SelectionEvent;
 
@@ -740,13 +850,17 @@
 
     if-nez v1, :cond_1
 
+    .line 607
     return v2
 
+    .line 610
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/view/textclassifier/SelectionEvent;
 
+    .line 611
+    .local v1, "other":Landroid/view/textclassifier/SelectionEvent;
     iget v3, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
     iget v4, v1, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
@@ -769,6 +883,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mEntityType:Ljava/lang/String;
 
+    .line 614
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -779,6 +894,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
+    .line 615
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -789,6 +905,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
+    .line 616
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -799,6 +916,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
+    .line 617
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -815,6 +933,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
+    .line 619
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -855,6 +974,7 @@
 
     iget-object v4, v1, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
+    .line 624
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -887,6 +1007,7 @@
 
     goto :goto_0
 
+    .line 611
     :cond_2
     move v0, v2
 
@@ -897,6 +1018,7 @@
 .method getAbsoluteEnd()I
     .locals 1
 
+    .line 364
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteEnd:I
 
     return v0
@@ -905,6 +1027,7 @@
 .method getAbsoluteStart()I
     .locals 1
 
+    .line 360
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
     return v0
@@ -913,6 +1036,7 @@
 .method public getDurationSincePreviousEvent()J
     .locals 2
 
+    .line 483
     iget-wide v0, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSincePreviousEvent:J
 
     return-wide v0
@@ -921,6 +1045,7 @@
 .method public getDurationSinceSessionStart()J
     .locals 2
 
+    .line 470
     iget-wide v0, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSinceSessionStart:J
 
     return-wide v0
@@ -929,6 +1054,7 @@
 .method public getEnd()I
     .locals 1
 
+    .line 534
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEnd:I
 
     return v0
@@ -937,6 +1063,7 @@
 .method public getEntityType()Ljava/lang/String;
     .locals 1
 
+    .line 389
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEntityType:Ljava/lang/String;
 
     return-object v0
@@ -945,6 +1072,7 @@
 .method public getEventIndex()I
     .locals 1
 
+    .line 495
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventIndex:I
 
     return v0
@@ -953,6 +1081,7 @@
 .method public getEventTime()J
     .locals 2
 
+    .line 457
     iget-wide v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
     return-wide v0
@@ -961,6 +1090,7 @@
 .method public getEventType()I
     .locals 1
 
+    .line 372
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
     return v0
@@ -969,6 +1099,7 @@
 .method public getInvocationMethod()I
     .locals 1
 
+    .line 430
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
     return v0
@@ -977,6 +1108,7 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
+    .line 397
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -985,6 +1117,7 @@
 .method public getResultId()Ljava/lang/String;
     .locals 1
 
+    .line 445
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
     return-object v0
@@ -993,6 +1126,7 @@
 .method public getSessionId()Landroid/view/textclassifier/TextClassificationSessionId;
     .locals 1
 
+    .line 508
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
     return-object v0
@@ -1001,6 +1135,7 @@
 .method public getSmartEnd()I
     .locals 1
 
+    .line 560
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartEnd:I
 
     return v0
@@ -1009,6 +1144,7 @@
 .method public getSmartStart()I
     .locals 1
 
+    .line 547
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartStart:I
 
     return v0
@@ -1017,6 +1153,7 @@
 .method public getStart()I
     .locals 1
 
+    .line 521
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mStart:I
 
     return v0
@@ -1025,6 +1162,7 @@
 .method public getWidgetType()Ljava/lang/String;
     .locals 1
 
+    .line 406
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
     return-object v0
@@ -1033,6 +1171,7 @@
 .method public getWidgetVersion()Ljava/lang/String;
     .locals 1
 
+    .line 414
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
     return-object v0
@@ -1041,6 +1180,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 595
     const/16 v0, 0x12
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1101,6 +1241,7 @@
 
     iget v1, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
+    .line 596
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1117,6 +1258,7 @@
 
     iget-wide v1, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
+    .line 597
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -1147,6 +1289,7 @@
 
     iget v1, p0, Landroid/view/textclassifier/SelectionEvent;->mEventIndex:I
 
+    .line 598
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1201,6 +1344,7 @@
 
     aput-object v1, v0, v2
 
+    .line 595
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -1211,6 +1355,7 @@
 .method isTerminal()Z
     .locals 1
 
+    .line 569
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
     invoke-static {v0}, Landroid/view/textclassifier/SelectionEvent;->isTerminal(I)Z
@@ -1222,127 +1367,169 @@
 
 .method setDurationSincePreviousEvent(J)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "durationMs"    # J
 
+    .line 487
     iput-wide p1, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSincePreviousEvent:J
 
+    .line 488
     return-object p0
 .end method
 
 .method setDurationSinceSessionStart(J)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "durationMs"    # J
 
+    .line 474
     iput-wide p1, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSinceSessionStart:J
 
+    .line 475
     return-object p0
 .end method
 
 .method setEnd(I)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "end"    # I
 
+    .line 538
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mEnd:I
 
+    .line 539
     return-object p0
 .end method
 
 .method setEventIndex(I)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "index"    # I
 
+    .line 499
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mEventIndex:I
 
+    .line 500
     return-object p0
 .end method
 
 .method setEventTime(J)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "timeMs"    # J
 
+    .line 461
     iput-wide p1, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
+    .line 462
     return-object p0
 .end method
 
 .method setEventType(I)V
     .locals 0
+    .param p1, "eventType"    # I
 
+    .line 379
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
+    .line 380
     return-void
 .end method
 
 .method setInvocationMethod(I)V
     .locals 0
+    .param p1, "invocationMethod"    # I
 
+    .line 437
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
+    .line 438
     return-void
 .end method
 
 .method setResultId(Ljava/lang/String;)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "resultId"    # Ljava/lang/String;
 
+    .line 449
     iput-object p1, p0, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
+    .line 450
     return-object p0
 .end method
 
 .method setSessionId(Landroid/view/textclassifier/TextClassificationSessionId;)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "id"    # Landroid/view/textclassifier/TextClassificationSessionId;
 
+    .line 512
     iput-object p1, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
+    .line 513
     return-object p0
 .end method
 
 .method setSmartEnd(I)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "end"    # I
 
+    .line 564
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartEnd:I
 
+    .line 565
     return-object p0
 .end method
 
 .method setSmartStart(I)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "start"    # I
 
+    .line 551
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartStart:I
 
+    .line 552
     return-object p0
 .end method
 
 .method setStart(I)Landroid/view/textclassifier/SelectionEvent;
     .locals 0
+    .param p1, "start"    # I
 
+    .line 525
     iput p1, p0, Landroid/view/textclassifier/SelectionEvent;->mStart:I
 
+    .line 526
     return-object p0
 .end method
 
 .method setTextClassificationSessionContext(Landroid/view/textclassifier/TextClassificationContext;)V
     .locals 1
+    .param p1, "context"    # Landroid/view/textclassifier/TextClassificationContext;
 
+    .line 421
     invoke-virtual {p1}, Landroid/view/textclassifier/TextClassificationContext;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
+    .line 422
     invoke-virtual {p1}, Landroid/view/textclassifier/TextClassificationContext;->getWidgetType()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
+    .line 423
     invoke-virtual {p1}, Landroid/view/textclassifier/TextClassificationContext;->getWidgetVersion()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
+    .line 424
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 5
 
+    .line 633
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v1, "SelectionEvent {absoluteStart=%d, absoluteEnd=%d, eventType=%d, entityType=%s, widgetVersion=%s, packageName=%s, widgetType=%s, invocationMethod=%s, resultId=%s, eventTime=%d, durationSinceSessionStart=%d, durationSincePreviousEvent=%d, eventIndex=%d,sessionId=%s, start=%d, end=%d, smartStart=%d, smartEnd=%d}"
@@ -1353,6 +1540,7 @@
 
     iget v3, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
+    .line 639
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1407,6 +1595,7 @@
 
     iget v3, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
+    .line 640
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1423,6 +1612,7 @@
 
     iget-wide v3, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
+    .line 641
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -1443,6 +1633,7 @@
 
     iget-wide v3, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSincePreviousEvent:J
 
+    .line 642
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -1469,6 +1660,7 @@
 
     iget v3, p0, Landroid/view/textclassifier/SelectionEvent;->mStart:I
 
+    .line 643
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1507,6 +1699,7 @@
 
     aput-object v3, v2, v4
 
+    .line 633
     invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -1516,23 +1709,30 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 5
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 177
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 178
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mAbsoluteEnd:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 179
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 180
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEntityType:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 181
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -1551,47 +1751,58 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 182
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
+    .line 183
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetVersion:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 185
     :cond_1
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mPackageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 186
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mWidgetType:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 187
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mInvocationMethod:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 188
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mResultId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 189
     iget-wide v3, p0, Landroid/view/textclassifier/SelectionEvent;->mEventTime:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 190
     iget-wide v3, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSinceSessionStart:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 191
     iget-wide v3, p0, Landroid/view/textclassifier/SelectionEvent;->mDurationSincePreviousEvent:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 192
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEventIndex:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 193
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
     if-eqz v0, :cond_2
@@ -1603,30 +1814,37 @@
     :cond_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 194
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
     if-eqz v0, :cond_3
 
+    .line 195
     iget-object v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSessionId:Landroid/view/textclassifier/TextClassificationSessionId;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/textclassifier/TextClassificationSessionId;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 197
     :cond_3
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 198
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mEnd:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 199
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 200
     iget v0, p0, Landroid/view/textclassifier/SelectionEvent;->mSmartEnd:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 201
     return-void
 .end method

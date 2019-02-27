@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 59
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -51,13 +52,19 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/util/Locale;)V
     .locals 0
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "locale"    # Ljava/util/Locale;
 
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 65
     iput-object p1, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->label:Ljava/lang/String;
 
+    .line 66
     iput-object p2, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->locale:Ljava/util/Locale;
 
+    .line 67
     return-void
 .end method
 
@@ -65,7 +72,9 @@
 # virtual methods
 .method public compareTo(Lcom/android/internal/app/LocalePicker$LocaleInfo;)I
     .locals 3
+    .param p1, "another"    # Lcom/android/internal/app/LocalePicker$LocaleInfo;
 
+    .line 84
     sget-object v0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->sCollator:Ljava/text/Collator;
 
     iget-object v1, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->label:Ljava/lang/String;
@@ -82,6 +91,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
+    .line 58
     check-cast p1, Lcom/android/internal/app/LocalePicker$LocaleInfo;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/app/LocalePicker$LocaleInfo;->compareTo(Lcom/android/internal/app/LocalePicker$LocaleInfo;)I
@@ -94,6 +104,7 @@
 .method public getLabel()Ljava/lang/String;
     .locals 1
 
+    .line 70
     iget-object v0, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->label:Ljava/lang/String;
 
     return-object v0
@@ -102,6 +113,7 @@
 .method public getLocale()Ljava/util/Locale;
     .locals 1
 
+    .line 74
     iget-object v0, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->locale:Ljava/util/Locale;
 
     return-object v0
@@ -110,6 +122,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
+    .line 79
     iget-object v0, p0, Lcom/android/internal/app/LocalePicker$LocaleInfo;->label:Ljava/lang/String;
 
     return-object v0

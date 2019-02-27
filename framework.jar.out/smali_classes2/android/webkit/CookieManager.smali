@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,6 +16,7 @@
 .method public static allowFileSchemeCookies()Z
     .locals 1
 
+    .line 243
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v0
@@ -29,6 +31,7 @@
 .method public static getInstance()Landroid/webkit/CookieManager;
     .locals 1
 
+    .line 40
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -42,13 +45,16 @@
 
 .method public static setAcceptFileSchemeCookies(Z)V
     .locals 1
+    .param p0, "accept"    # Z
 
+    .line 267
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/webkit/CookieManager;->setAcceptFileSchemeCookiesImpl(Z)V
 
+    .line 268
     return-void
 .end method
 
@@ -73,6 +79,7 @@
         }
     .end annotation
 
+    .line 31
     new-instance v0, Ljava/lang/CloneNotSupportedException;
 
     const-string v1, "doesn\'t implement Cloneable"
@@ -87,11 +94,13 @@
 
 .method public declared-synchronized getCookie(Landroid/net/WebAddress;)Ljava/lang/String;
     .locals 1
+    .param p1, "uri"    # Landroid/net/WebAddress;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
     monitor-enter p0
 
+    .line 155
     :try_start_0
     invoke-virtual {p1}, Landroid/net/WebAddress;->toString()Ljava/lang/String;
 
@@ -107,11 +116,13 @@
 
     return-object v0
 
+    .end local p1    # "uri":Landroid/net/WebAddress;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
+    .end local p0    # "this":Landroid/webkit/CookieManager;
     throw p1
 .end method
 

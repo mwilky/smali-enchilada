@@ -259,209 +259,216 @@
 
 .field public static final config_num_physical_slots:I = 0x10e0080
 
-.field public static final config_overrideHasPermanentMenuKey:I = 0x10e0081
+.field public static final config_overheat_protector_orange:I = 0x10e0081
 
-.field public static final config_pictureInPictureSnapMode:I = 0x10e0082
+.field public static final config_overheat_protector_purple:I = 0x10e0082
 
-.field public static final config_previousVibrationsDumpLimit:I = 0x10e0083
+.field public static final config_overheat_protector_red:I = 0x10e0083
 
-.field public static final config_radioScanningTimeout:I = 0x10e0084
+.field public static final config_overrideHasPermanentMenuKey:I = 0x10e0084
 
-.field public static final config_safe_media_volume_index:I = 0x10e0085
+.field public static final config_pictureInPictureSnapMode:I = 0x10e0085
 
-.field public static final config_safe_media_volume_usb_mB:I = 0x10e0086
+.field public static final config_previousVibrationsDumpLimit:I = 0x10e0086
 
-.field public static final config_screenBrightnessDark:I = 0x10e0087
+.field public static final config_radioScanningTimeout:I = 0x10e0087
 
-.field public static final config_screenBrightnessDim:I = 0x10e0088
+.field public static final config_safe_media_volume_index:I = 0x10e0088
 
-.field public static final config_screenBrightnessDoze:I = 0x10e0089
+.field public static final config_safe_media_volume_usb_mB:I = 0x10e0089
 
-.field public static final config_screenBrightnessForVrSettingDefault:I = 0x10e008a
+.field public static final config_screenBrightnessDark:I = 0x10e008a
 
-.field public static final config_screenBrightnessForVrSettingMaximum:I = 0x10e008b
+.field public static final config_screenBrightnessDim:I = 0x10e008b
 
-.field public static final config_screenBrightnessForVrSettingMinimum:I = 0x10e008c
+.field public static final config_screenBrightnessDoze:I = 0x10e008c
 
-.field public static final config_screenBrightnessSettingDefault:I = 0x10e008d
+.field public static final config_screenBrightnessForVrSettingDefault:I = 0x10e008d
 
-.field public static final config_screenBrightnessSettingDefault_1023:I = 0x10e008e
+.field public static final config_screenBrightnessForVrSettingMaximum:I = 0x10e008e
 
-.field public static final config_screenBrightnessSettingDefault_255:I = 0x10e008f
+.field public static final config_screenBrightnessForVrSettingMinimum:I = 0x10e008f
 
-.field public static final config_screenBrightnessSettingMaximum:I = 0x10e0090
+.field public static final config_screenBrightnessSettingDefault:I = 0x10e0090
 
-.field public static final config_screenBrightnessSettingMaximum_1023:I = 0x10e0091
+.field public static final config_screenBrightnessSettingDefault_1023:I = 0x10e0091
 
-.field public static final config_screenBrightnessSettingMaximum_255:I = 0x10e0092
+.field public static final config_screenBrightnessSettingDefault_255:I = 0x10e0092
 
-.field public static final config_screenBrightnessSettingMinimum:I = 0x10e0093
+.field public static final config_screenBrightnessSettingMaximum:I = 0x10e0093
 
-.field public static final config_screen_magnification_multi_tap_adjustment:I = 0x10e0094
+.field public static final config_screenBrightnessSettingMaximum_1023:I = 0x10e0094
+
+.field public static final config_screenBrightnessSettingMaximum_255:I = 0x10e0095
+
+.field public static final config_screenBrightnessSettingMinimum:I = 0x10e0096
+
+.field public static final config_screen_magnification_multi_tap_adjustment:I = 0x10e0097
 
 .field public static final config_shortAnimTime:I = 0x10e0000
 
-.field public static final config_shortPressOnPowerBehavior:I = 0x10e0095
+.field public static final config_shortPressOnPowerBehavior:I = 0x10e0098
 
-.field public static final config_shortPressOnSleepBehavior:I = 0x10e0096
+.field public static final config_shortPressOnSleepBehavior:I = 0x10e0099
 
-.field public static final config_shutdownBatteryTemperature:I = 0x10e0097
+.field public static final config_shutdownBatteryTemperature:I = 0x10e009a
 
-.field public static final config_sms_authorization_timeout_ms:I = 0x10e0098
+.field public static final config_sms_authorization_timeout_ms:I = 0x10e009b
 
-.field public static final config_soundEffectVolumeDb:I = 0x10e0099
+.field public static final config_soundEffectVolumeDb:I = 0x10e009c
 
-.field public static final config_stableDeviceDisplayHeight:I = 0x10e009a
+.field public static final config_stableDeviceDisplayHeight:I = 0x10e009d
 
-.field public static final config_stableDeviceDisplayWidth:I = 0x10e009b
+.field public static final config_stableDeviceDisplayWidth:I = 0x10e009e
 
-.field public static final config_storageManagerDaystoRetainDefault:I = 0x10e009c
+.field public static final config_storageManagerDaystoRetainDefault:I = 0x10e009f
 
-.field public static final config_timeZoneRulesCheckRetryCount:I = 0x10e009d
+.field public static final config_timeZoneRulesCheckRetryCount:I = 0x10e00a0
 
-.field public static final config_timeZoneRulesCheckTimeMillisAllowed:I = 0x10e009e
+.field public static final config_timeZoneRulesCheckTimeMillisAllowed:I = 0x10e00a1
 
-.field public static final config_toastDefaultGravity:I = 0x10e009f
+.field public static final config_toastDefaultGravity:I = 0x10e00a2
 
-.field public static final config_triplePressOnPowerBehavior:I = 0x10e00a1
+.field public static final config_triplePressOnPowerBehavior:I = 0x10e00a4
 
-.field public static final config_undockedHdmiRotation:I = 0x10e00a2
+.field public static final config_undockedHdmiRotation:I = 0x10e00a5
 
-.field public static final config_valid_wappush_index:I = 0x10e00a3
+.field public static final config_valid_wappush_index:I = 0x10e00a6
 
-.field public static final config_veryLongPressOnPowerBehavior:I = 0x10e00a4
+.field public static final config_veryLongPressOnPowerBehavior:I = 0x10e00a7
 
-.field public static final config_veryLongPressTimeout:I = 0x10e00a5
+.field public static final config_veryLongPressTimeout:I = 0x10e00a8
 
-.field public static final config_virtualKeyQuietTimeMillis:I = 0x10e00a6
+.field public static final config_virtualKeyQuietTimeMillis:I = 0x10e00a9
 
-.field public static final config_volte_replacement_rat:I = 0x10e00a7
+.field public static final config_volte_replacement_rat:I = 0x10e00aa
 
-.field public static final config_wifi_associated_short_scan_interval:I = 0x10e00a8
+.field public static final config_wifi_associated_short_scan_interval:I = 0x10e00ab
 
-.field public static final config_wifi_disconnected_short_scan_interval:I = 0x10e00a9
+.field public static final config_wifi_disconnected_short_scan_interval:I = 0x10e00ac
 
-.field public static final config_wifi_framework_5GHz_preference_boost_factor:I = 0x10e00aa
+.field public static final config_wifi_framework_5GHz_preference_boost_factor:I = 0x10e00ad
 
-.field public static final config_wifi_framework_5GHz_preference_boost_threshold:I = 0x10e00ab
+.field public static final config_wifi_framework_5GHz_preference_boost_threshold:I = 0x10e00ae
 
-.field public static final config_wifi_framework_5GHz_preference_penalty_threshold:I = 0x10e00ac
+.field public static final config_wifi_framework_5GHz_preference_penalty_threshold:I = 0x10e00af
 
-.field public static final config_wifi_framework_LAST_SELECTION_AWARD:I = 0x10e00ad
+.field public static final config_wifi_framework_LAST_SELECTION_AWARD:I = 0x10e00b0
 
-.field public static final config_wifi_framework_PASSPOINT_SECURITY_AWARD:I = 0x10e00ae
+.field public static final config_wifi_framework_PASSPOINT_SECURITY_AWARD:I = 0x10e00b1
 
-.field public static final config_wifi_framework_RSSI_SCORE_OFFSET:I = 0x10e00af
+.field public static final config_wifi_framework_RSSI_SCORE_OFFSET:I = 0x10e00b2
 
-.field public static final config_wifi_framework_RSSI_SCORE_SLOPE:I = 0x10e00b0
+.field public static final config_wifi_framework_RSSI_SCORE_SLOPE:I = 0x10e00b3
 
-.field public static final config_wifi_framework_SAME_BSSID_AWARD:I = 0x10e00b1
+.field public static final config_wifi_framework_SAME_BSSID_AWARD:I = 0x10e00b4
 
-.field public static final config_wifi_framework_SECURITY_AWARD:I = 0x10e00b2
+.field public static final config_wifi_framework_SECURITY_AWARD:I = 0x10e00b5
 
-.field public static final config_wifi_framework_associated_full_scan_backoff:I = 0x10e00b3
+.field public static final config_wifi_framework_associated_full_scan_backoff:I = 0x10e00b6
 
-.field public static final config_wifi_framework_associated_full_scan_max_interval:I = 0x10e00b4
+.field public static final config_wifi_framework_associated_full_scan_max_interval:I = 0x10e00b7
 
-.field public static final config_wifi_framework_associated_full_scan_max_total_dwell_time:I = 0x10e00b5
+.field public static final config_wifi_framework_associated_full_scan_max_total_dwell_time:I = 0x10e00b8
 
-.field public static final config_wifi_framework_associated_full_scan_rx_packet_threshold:I = 0x10e00b6
+.field public static final config_wifi_framework_associated_full_scan_rx_packet_threshold:I = 0x10e00b9
 
-.field public static final config_wifi_framework_associated_full_scan_tx_packet_threshold:I = 0x10e00b7
+.field public static final config_wifi_framework_associated_full_scan_tx_packet_threshold:I = 0x10e00ba
 
-.field public static final config_wifi_framework_associated_partial_scan_max_num_active_channels:I = 0x10e00b8
+.field public static final config_wifi_framework_associated_partial_scan_max_num_active_channels:I = 0x10e00bb
 
-.field public static final config_wifi_framework_associated_partial_scan_rx_packet_threshold:I = 0x10e00b9
+.field public static final config_wifi_framework_associated_partial_scan_rx_packet_threshold:I = 0x10e00bc
 
-.field public static final config_wifi_framework_associated_partial_scan_tx_packet_threshold:I = 0x10e00ba
+.field public static final config_wifi_framework_associated_partial_scan_tx_packet_threshold:I = 0x10e00bd
 
-.field public static final config_wifi_framework_current_network_boost:I = 0x10e00bb
+.field public static final config_wifi_framework_current_network_boost:I = 0x10e00be
 
-.field public static final config_wifi_framework_max_rx_rate_for_full_scan:I = 0x10e00bd
+.field public static final config_wifi_framework_max_rx_rate_for_full_scan:I = 0x10e00c0
 
-.field public static final config_wifi_framework_max_tx_rate_for_full_scan:I = 0x10e00be
+.field public static final config_wifi_framework_max_tx_rate_for_full_scan:I = 0x10e00c1
 
-.field public static final config_wifi_framework_min_rx_rate_for_staying_on_network:I = 0x10e00bf
+.field public static final config_wifi_framework_min_rx_rate_for_staying_on_network:I = 0x10e00c2
 
-.field public static final config_wifi_framework_min_tx_rate_for_staying_on_network:I = 0x10e00c0
+.field public static final config_wifi_framework_min_tx_rate_for_staying_on_network:I = 0x10e00c3
 
-.field public static final config_wifi_framework_network_switch_rx_packet_threshold:I = 0x10e00c1
+.field public static final config_wifi_framework_network_switch_rx_packet_threshold:I = 0x10e00c4
 
-.field public static final config_wifi_framework_network_switch_tx_packet_threshold:I = 0x10e00c2
+.field public static final config_wifi_framework_network_switch_tx_packet_threshold:I = 0x10e00c5
 
-.field public static final config_wifi_framework_scan_interval:I = 0x10e00c3
+.field public static final config_wifi_framework_scan_interval:I = 0x10e00c6
 
-.field public static final config_wifi_framework_scan_result_rssi_level_patchup_value:I = 0x10e00c4
+.field public static final config_wifi_framework_scan_result_rssi_level_patchup_value:I = 0x10e00c7
 
-.field public static final config_wifi_framework_soft_ap_timeout_delay:I = 0x10e00c5
+.field public static final config_wifi_framework_soft_ap_timeout_delay:I = 0x10e00c8
 
-.field public static final config_wifi_framework_wifi_score_bad_link_speed_24:I = 0x10e00c6
+.field public static final config_wifi_framework_wifi_score_bad_link_speed_24:I = 0x10e00c9
 
-.field public static final config_wifi_framework_wifi_score_bad_link_speed_5:I = 0x10e00c7
+.field public static final config_wifi_framework_wifi_score_bad_link_speed_5:I = 0x10e00ca
 
-.field public static final config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz:I = 0x10e00c8
+.field public static final config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz:I = 0x10e00cb
 
-.field public static final config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz:I = 0x10e00c9
+.field public static final config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz:I = 0x10e00cc
 
-.field public static final config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz:I = 0x10e00ca
+.field public static final config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz:I = 0x10e00cd
 
-.field public static final config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz:I = 0x10e00cb
+.field public static final config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz:I = 0x10e00ce
 
-.field public static final config_wifi_framework_wifi_score_good_link_speed_24:I = 0x10e00cc
+.field public static final config_wifi_framework_wifi_score_good_link_speed_24:I = 0x10e00cf
 
-.field public static final config_wifi_framework_wifi_score_good_link_speed_5:I = 0x10e00cd
+.field public static final config_wifi_framework_wifi_score_good_link_speed_5:I = 0x10e00d0
 
-.field public static final config_wifi_framework_wifi_score_good_rssi_threshold_24GHz:I = 0x10e00ce
+.field public static final config_wifi_framework_wifi_score_good_rssi_threshold_24GHz:I = 0x10e00d1
 
-.field public static final config_wifi_framework_wifi_score_good_rssi_threshold_5GHz:I = 0x10e00cf
+.field public static final config_wifi_framework_wifi_score_good_rssi_threshold_5GHz:I = 0x10e00d2
 
-.field public static final config_wifi_framework_wifi_score_low_rssi_threshold_24GHz:I = 0x10e00d0
+.field public static final config_wifi_framework_wifi_score_low_rssi_threshold_24GHz:I = 0x10e00d3
 
-.field public static final config_wifi_framework_wifi_score_low_rssi_threshold_5GHz:I = 0x10e00d1
+.field public static final config_wifi_framework_wifi_score_low_rssi_threshold_5GHz:I = 0x10e00d4
 
-.field public static final config_wifi_logger_ring_buffer_default_size_limit_kb:I = 0x10e00d2
+.field public static final config_wifi_logger_ring_buffer_default_size_limit_kb:I = 0x10e00d5
 
-.field public static final config_wifi_logger_ring_buffer_verbose_size_limit_kb:I = 0x10e00d3
+.field public static final config_wifi_logger_ring_buffer_verbose_size_limit_kb:I = 0x10e00d6
 
-.field public static final config_wifi_network_switching_blacklist_time:I = 0x10e00d4
+.field public static final config_wifi_network_switching_blacklist_time:I = 0x10e00d7
 
-.field public static final config_wifi_no_network_periodic_scan_interval:I = 0x10e00d5
+.field public static final config_wifi_no_network_periodic_scan_interval:I = 0x10e00d8
 
-.field public static final config_wifi_scan_interval_p2p_connected:I = 0x10e00d6
+.field public static final config_wifi_scan_interval_p2p_connected:I = 0x10e00d9
 
-.field public static final config_wifi_supplicant_scan_interval:I = 0x10e00d7
+.field public static final config_wifi_supplicant_scan_interval:I = 0x10e00da
 
-.field public static final config_wifi_wakeup_available:I = 0x10e00d8
+.field public static final config_wifi_wakeup_available:I = 0x10e00db
 
-.field public static final config_windowOutsetBottom:I = 0x10e00d9
+.field public static final config_windowOutsetBottom:I = 0x10e00dc
 
-.field public static final config_zen_repeat_callers_threshold:I = 0x10e00da
+.field public static final config_zen_repeat_callers_threshold:I = 0x10e00dd
 
-.field public static final date_picker_mode:I = 0x10e00dc
+.field public static final date_picker_mode:I = 0x10e00df
 
-.field public static final db_connection_pool_size:I = 0x10e00de
+.field public static final db_connection_pool_size:I = 0x10e00e1
 
-.field public static final db_default_idle_connection_timeout:I = 0x10e00df
+.field public static final db_default_idle_connection_timeout:I = 0x10e00e2
 
-.field public static final db_journal_size_limit:I = 0x10e00e0
+.field public static final db_journal_size_limit:I = 0x10e00e3
 
-.field public static final db_wal_autocheckpoint:I = 0x10e00e1
+.field public static final db_wal_autocheckpoint:I = 0x10e00e4
 
-.field public static final default_data_warning_level_mb:I = 0x10e00e2
+.field public static final default_data_warning_level_mb:I = 0x10e00e5
 
-.field public static final dock_enter_exit_duration:I = 0x10e00e4
+.field public static final dock_enter_exit_duration:I = 0x10e00e7
 
 .field public static final status_bar_notification_info_maxnum:I = 0x10e0003
 
-.field public static final thumbnail_width_tv:I = 0x10e0101
+.field public static final thumbnail_width_tv:I = 0x10e0104
 
-.field public static final time_picker_mode:I = 0x10e0102
+.field public static final time_picker_mode:I = 0x10e0105
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
+    .line 19085
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

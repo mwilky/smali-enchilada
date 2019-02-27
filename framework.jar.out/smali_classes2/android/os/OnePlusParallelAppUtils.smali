@@ -25,6 +25,7 @@
 .method static constructor <clinit>()V
     .locals 27
 
+    .line 51
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -41,6 +42,7 @@
 
     sput-boolean v0, Landroid/os/OnePlusParallelAppUtils;->IS_PARALLEL_APP_FEATURE:Z
 
+    .line 53
     const-string v2, "android"
 
     const-string v3, "com.google.android.webview"
@@ -97,6 +99,7 @@
 
     sput-object v0, Landroid/os/OnePlusParallelAppUtils;->BASIC_PARALLEL_APPS:[Ljava/lang/String;
 
+    .line 83
     const-string/jumbo v2, "media"
 
     const-string v3, "com.android.contacts"
@@ -117,12 +120,15 @@
 
     const-string v11, "com.oneplus.security.database.SafeProvider"
 
-    filled-new-array/range {v2 .. v11}, [Ljava/lang/String;
+    const-string/jumbo v12, "mms"
+
+    filled-new-array/range {v2 .. v12}, [Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Landroid/os/OnePlusParallelAppUtils;->WHITE_AUTH_LIST:[Ljava/lang/String;
 
+    .line 165
     const-string/jumbo v0, "persist.debug.onepluspa.all"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -131,6 +137,7 @@
 
     sput-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
+    .line 167
     const-string/jumbo v0, "persist.debug.onepluspa.stackd"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -139,6 +146,7 @@
 
     sput-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_DUMPDSATCK:Z
 
+    .line 169
     const-string/jumbo v0, "persist.debug.onepluspa.stackv"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -147,6 +155,7 @@
 
     sput-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_DUMPVSATCK:Z
 
+    .line 172
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sget-boolean v1, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
@@ -161,6 +170,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -168,7 +178,9 @@
 
 .method public static isBasicParallelApp(Ljava/lang/String;)Z
     .locals 1
+    .param p0, "pkgname"    # Ljava/lang/String;
 
+    .line 161
     sget-object v0, Landroid/os/OnePlusParallelAppUtils;->BASIC_PARALLEL_APPS:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -184,7 +196,11 @@
 
 .method public static isParallelAuth(Ljava/lang/String;ILjava/lang/String;)Z
     .locals 6
+    .param p0, "FUNC_TAG"    # Ljava/lang/String;
+    .param p1, "userId"    # I
+    .param p2, "auth"    # Ljava/lang/String;
 
+    .line 119
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->IS_PARALLEL_APP_FEATURE:Z
 
     const/4 v1, 0x0
@@ -199,6 +215,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 121
     sget-object v0, Landroid/os/OnePlusParallelAppUtils;->WHITE_AUTH_LIST:[Ljava/lang/String;
 
     array-length v2, v0
@@ -210,16 +227,20 @@
 
     aget-object v4, v0, v3
 
+    .line 122
+    .local v4, "authority":Ljava/lang/String;
     invoke-virtual {v4, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
+    .line 123
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
     if-eqz v0, :cond_0
 
+    .line 124
     const-string v0, "OnePlusParallelAppUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -240,23 +261,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 125
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 121
+    .end local v4    # "authority":Ljava/lang/String;
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 129
     :cond_2
     return v1
 .end method
 
 .method public static isParallelAuth(Ljava/lang/String;ILjava/lang/String;Z)Z
     .locals 6
+    .param p0, "FUNC_TAG"    # Ljava/lang/String;
+    .param p1, "userId"    # I
+    .param p2, "auth"    # Ljava/lang/String;
+    .param p3, "isSystemApp"    # Z
 
+    .line 134
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->IS_PARALLEL_APP_FEATURE:Z
 
     const/4 v1, 0x0
@@ -271,6 +301,7 @@
 
     if-eqz v0, :cond_3
 
+    .line 136
     const-string v0, "com.android.contacts"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -281,8 +312,10 @@
 
     if-eqz p3, :cond_0
 
+    .line 137
     return v1
 
+    .line 140
     :cond_0
     sget-object v0, Landroid/os/OnePlusParallelAppUtils;->WHITE_AUTH_LIST:[Ljava/lang/String;
 
@@ -295,16 +328,20 @@
 
     aget-object v4, v0, v3
 
+    .line 141
+    .local v4, "authority":Ljava/lang/String;
     invoke-virtual {v4, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
+    .line 142
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
     if-eqz v0, :cond_1
 
+    .line 143
     const-string v0, "OnePlusParallelAppUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -325,23 +362,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 144
     :cond_1
     const/4 v0, 0x1
 
     return v0
 
+    .line 140
+    .end local v4    # "authority":Ljava/lang/String;
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 148
     :cond_3
     return v1
 .end method
 
 .method public static isParallelAuth(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 6
+    .param p0, "FUNC_TAG"    # Ljava/lang/String;
+    .param p1, "auth"    # Ljava/lang/String;
 
+    .line 103
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->IS_PARALLEL_APP_FEATURE:Z
 
     const/4 v1, 0x0
@@ -350,6 +394,7 @@
 
     if-eqz p1, :cond_2
 
+    .line 106
     sget-object v0, Landroid/os/OnePlusParallelAppUtils;->WHITE_AUTH_LIST:[Ljava/lang/String;
 
     array-length v2, v0
@@ -361,16 +406,20 @@
 
     aget-object v4, v0, v3
 
+    .line 107
+    .local v4, "authority":Ljava/lang/String;
     invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
+    .line 108
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
     if-eqz v0, :cond_0
 
+    .line 109
     const-string v0, "OnePlusParallelAppUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -391,23 +440,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 111
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 106
+    .end local v4    # "authority":Ljava/lang/String;
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 115
     :cond_2
     return v1
 .end method
 
 .method public static isParallelUser(I)Z
     .locals 3
+    .param p0, "userId"    # I
 
+    .line 152
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->IS_PARALLEL_APP_FEATURE:Z
 
     if-eqz v0, :cond_1
@@ -416,6 +471,7 @@
 
     if-ne p0, v0, :cond_1
 
+    .line 153
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
     if-eqz v0, :cond_0
@@ -438,11 +494,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 154
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 156
     :cond_1
     const/4 v0, 0x0
 
@@ -451,7 +509,10 @@
 
 .method public static pLogd(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
+    .param p0, "FUNC_TAG"    # Ljava/lang/String;
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .line 99
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG:Z
 
     if-eqz v0, :cond_1
@@ -490,13 +551,17 @@
     :goto_0
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 100
     :cond_1
     return-void
 .end method
 
 .method public static pLogv(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
+    .param p0, "FUNC_TAG"    # Ljava/lang/String;
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .line 95
     sget-boolean v0, Landroid/os/OnePlusParallelAppUtils;->DBG_ALL:Z
 
     if-eqz v0, :cond_1
@@ -535,6 +600,7 @@
     :goto_0
     invoke-static {v0, v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 96
     :cond_1
     return-void
 .end method

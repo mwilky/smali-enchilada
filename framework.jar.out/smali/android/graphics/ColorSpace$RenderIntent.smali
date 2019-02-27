@@ -38,6 +38,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .line 717
     new-instance v0, Landroid/graphics/ColorSpace$RenderIntent;
 
     const-string v1, "PERCEPTUAL"
@@ -48,6 +49,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$RenderIntent;->PERCEPTUAL:Landroid/graphics/ColorSpace$RenderIntent;
 
+    .line 723
     new-instance v0, Landroid/graphics/ColorSpace$RenderIntent;
 
     const-string v1, "RELATIVE"
@@ -58,6 +60,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$RenderIntent;->RELATIVE:Landroid/graphics/ColorSpace$RenderIntent;
 
+    .line 732
     new-instance v0, Landroid/graphics/ColorSpace$RenderIntent;
 
     const-string v1, "SATURATION"
@@ -68,6 +71,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$RenderIntent;->SATURATION:Landroid/graphics/ColorSpace$RenderIntent;
 
+    .line 739
     new-instance v0, Landroid/graphics/ColorSpace$RenderIntent;
 
     const-string v1, "ABSOLUTE"
@@ -78,6 +82,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$RenderIntent;->ABSOLUTE:Landroid/graphics/ColorSpace$RenderIntent;
 
+    .line 707
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/ColorSpace$RenderIntent;
@@ -111,6 +116,7 @@
         }
     .end annotation
 
+    .line 707
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -118,7 +124,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 707
     const-class v0, Landroid/graphics/ColorSpace$RenderIntent;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -133,6 +141,7 @@
 .method public static values()[Landroid/graphics/ColorSpace$RenderIntent;
     .locals 1
 
+    .line 707
     sget-object v0, Landroid/graphics/ColorSpace$RenderIntent;->$VALUES:[Landroid/graphics/ColorSpace$RenderIntent;
 
     invoke-virtual {v0}, [Landroid/graphics/ColorSpace$RenderIntent;->clone()Ljava/lang/Object;

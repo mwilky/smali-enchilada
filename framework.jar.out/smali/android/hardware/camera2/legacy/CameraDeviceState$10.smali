@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/CameraDeviceState;J)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/legacy/CameraDeviceState;
 
+    .line 346
     iput-object p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$10;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
     iput-wide p2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$10;->val$timestamp:J
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 4
 
+    .line 349
     iget-object v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$10;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->access$000(Landroid/hardware/camera2/legacy/CameraDeviceState;)Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
@@ -57,5 +60,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;->onCaptureStarted(Landroid/hardware/camera2/legacy/RequestHolder;J)V
 
+    .line 350
     return-void
 .end method

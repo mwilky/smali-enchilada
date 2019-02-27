@@ -33,7 +33,11 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/AccountManager;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 732
+    .local p3, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$1;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p4, p0, Landroid/accounts/AccountManager$1;->val$accountType:Ljava/lang/String;
@@ -55,6 +59,7 @@
         }
     .end annotation
 
+    .line 732
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$1;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object p1
@@ -64,12 +69,14 @@
 
 .method public bundleToResult(Landroid/os/Bundle;)Ljava/lang/String;
     .locals 2
+    .param p1, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/AuthenticatorException;
         }
     .end annotation
 
+    .line 741
     const-string v0, "authTokenLabelKey"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -78,6 +85,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 744
     const-string v0, "authTokenLabelKey"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -86,6 +94,7 @@
 
     return-object v0
 
+    .line 742
     :cond_0
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
@@ -104,10 +113,12 @@
         }
     .end annotation
 
+    .line 735
     const/16 v0, 0x1f
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
+    .line 736
     iget-object v0, p0, Landroid/accounts/AccountManager$1;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -122,5 +133,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->getAuthTokenLabel(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 737
     return-void
 .end method

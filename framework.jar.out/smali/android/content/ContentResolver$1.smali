@@ -22,6 +22,7 @@
 .method constructor <init>(Landroid/content/SyncStatusObserver;)V
     .locals 0
 
+    .line 2982
     iput-object p1, p0, Landroid/content/ContentResolver$1;->val$callback:Landroid/content/SyncStatusObserver;
 
     invoke-direct {p0}, Landroid/content/ISyncStatusObserver$Stub;-><init>()V
@@ -33,15 +34,18 @@
 # virtual methods
 .method public onStatusChanged(I)V
     .locals 1
+    .param p1, "which"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2985
     iget-object v0, p0, Landroid/content/ContentResolver$1;->val$callback:Landroid/content/SyncStatusObserver;
 
     invoke-interface {v0, p1}, Landroid/content/SyncStatusObserver;->onStatusChanged(I)V
 
+    .line 2986
     return-void
 .end method

@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,15 +40,21 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telecom/Logging/Session$Info;
     .locals 4
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 77
+    .local v0, "id":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 78
+    .local v1, "methodName":Ljava/lang/String;
     new-instance v2, Landroid/telecom/Logging/Session$Info;
 
     const/4 v3, 0x0
@@ -60,6 +67,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 73
     invoke-virtual {p0, p1}, Landroid/telecom/Logging/Session$Info$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/Logging/Session$Info;
 
     move-result-object p1
@@ -69,7 +77,9 @@
 
 .method public newArray(I)[Landroid/telecom/Logging/Session$Info;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 83
     new-array v0, p1, [Landroid/telecom/Logging/Session$Info;
 
     return-object v0
@@ -78,6 +88,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 73
     invoke-virtual {p0, p1}, Landroid/telecom/Logging/Session$Info$1;->newArray(I)[Landroid/telecom/Logging/Session$Info;
 
     move-result-object p1

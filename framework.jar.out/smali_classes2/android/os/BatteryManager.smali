@@ -109,56 +109,75 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 263
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 264
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/os/BatteryManager;->mContext:Landroid/content/Context;
 
+    .line 265
     const-string v0, "batterystats"
 
+    .line 266
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 265
     invoke-static {v0}, Lcom/android/internal/app/IBatteryStats$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/BatteryManager;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
+    .line 267
     const-string v0, "batteryproperties"
 
+    .line 268
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 267
     invoke-static {v0}, Landroid/os/IBatteryPropertiesRegistrar$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IBatteryPropertiesRegistrar;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/BatteryManager;->mBatteryPropertiesRegistrar:Landroid/os/IBatteryPropertiesRegistrar;
 
+    .line 269
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/app/IBatteryStats;Landroid/os/IBatteryPropertiesRegistrar;)V
     .locals 0
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "batteryStats"    # Lcom/android/internal/app/IBatteryStats;
+    .param p3, "batteryPropertiesRegistrar"    # Landroid/os/IBatteryPropertiesRegistrar;
 
+    .line 274
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 275
     iput-object p1, p0, Landroid/os/BatteryManager;->mContext:Landroid/content/Context;
 
+    .line 276
     iput-object p2, p0, Landroid/os/BatteryManager;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
+    .line 277
     iput-object p3, p0, Landroid/os/BatteryManager;->mBatteryPropertiesRegistrar:Landroid/os/IBatteryPropertiesRegistrar;
 
+    .line 278
     return-void
 .end method
 
 .method public static isPlugWired(I)Z
     .locals 2
+    .param p0, "plugType"    # I
 
+    .line 363
     const/4 v0, 0x1
 
     const/4 v1, 0x2
@@ -181,21 +200,27 @@
 
 .method private queryProperty(I)J
     .locals 4
+    .param p1, "id"    # I
 
+    .line 303
     iget-object v0, p0, Landroid/os/BatteryManager;->mBatteryPropertiesRegistrar:Landroid/os/IBatteryPropertiesRegistrar;
 
     const-wide/high16 v1, -0x8000000000000000L
 
     if-nez v0, :cond_0
 
+    .line 304
     return-wide v1
 
+    .line 308
     :cond_0
     :try_start_0
     new-instance v0, Landroid/os/BatteryProperty;
 
     invoke-direct {v0}, Landroid/os/BatteryProperty;-><init>()V
 
+    .line 310
+    .local v0, "prop":Landroid/os/BatteryProperty;
     iget-object v3, p0, Landroid/os/BatteryManager;->mBatteryPropertiesRegistrar:Landroid/os/IBatteryPropertiesRegistrar;
 
     invoke-interface {v3, p1, v0}, Landroid/os/IBatteryPropertiesRegistrar;->getProperty(ILandroid/os/BatteryProperty;)I
@@ -204,29 +229,44 @@
 
     if-nez v3, :cond_1
 
+    .line 311
     invoke-virtual {v0}, Landroid/os/BatteryProperty;->getLong()J
 
     move-result-wide v1
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .local v1, "ret":J
     goto :goto_0
 
+    .line 313
+    .end local v1    # "ret":J
     :cond_1
     nop
 
+    .end local v0    # "prop":Landroid/os/BatteryProperty;
+    .restart local v1    # "ret":J
     :goto_0
     move-wide v0, v1
 
+    .line 316
+    .end local v1    # "ret":J
+    .local v0, "ret":J
     nop
 
+    .line 315
     nop
 
+    .line 318
     return-wide v0
 
+    .line 314
+    .end local v0    # "ret":J
     :catch_0
     move-exception v0
 
+    .line 315
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -239,6 +279,7 @@
 .method public computeChargeTimeRemaining()J
     .locals 2
 
+    .line 376
     :try_start_0
     iget-object v0, p0, Landroid/os/BatteryManager;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -250,9 +291,12 @@
 
     return-wide v0
 
+    .line 377
     :catch_0
     move-exception v0
 
+    .line 378
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -262,11 +306,15 @@
 
 .method public getIntProperty(I)I
     .locals 4
+    .param p1, "id"    # I
 
+    .line 331
     invoke-direct {p0, p1}, Landroid/os/BatteryManager;->queryProperty(I)J
 
     move-result-wide v0
 
+    .line 332
+    .local v0, "value":J
     const-wide/high16 v2, -0x8000000000000000L
 
     cmp-long v2, v0, v2
@@ -279,6 +327,7 @@
 
     iget-object v2, p0, Landroid/os/BatteryManager;->mContext:Landroid/content/Context;
 
+    .line 333
     invoke-virtual {v2}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v2
@@ -289,10 +338,12 @@
 
     if-lt v2, v3, :cond_0
 
+    .line 335
     const/high16 v2, -0x80000000
 
     return v2
 
+    .line 338
     :cond_0
     long-to-int v2, v0
 
@@ -301,7 +352,9 @@
 
 .method public getLongProperty(I)J
     .locals 2
+    .param p1, "id"    # I
 
+    .line 351
     invoke-direct {p0, p1}, Landroid/os/BatteryManager;->queryProperty(I)J
 
     move-result-wide v0
@@ -312,6 +365,7 @@
 .method public isCharging()Z
     .locals 2
 
+    .line 288
     :try_start_0
     iget-object v0, p0, Landroid/os/BatteryManager;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
@@ -323,9 +377,12 @@
 
     return v0
 
+    .line 289
     :catch_0
     move-exception v0
 
+    .line 290
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1

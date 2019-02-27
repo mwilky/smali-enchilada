@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ActionMenuPresenter;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/ActionMenuPresenter;
 
+    .line 111
     iput-object p1, p0, Landroid/widget/ActionMenuPresenter$2;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +38,17 @@
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 0
+    .param p1, "v"    # Landroid/view/View;
 
+    .line 114
     return-void
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .line 118
     iget-object v0, p0, Landroid/widget/ActionMenuPresenter$2;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-static {v0}, Landroid/widget/ActionMenuPresenter;->access$500(Landroid/widget/ActionMenuPresenter;)Lcom/android/internal/view/menu/MenuView;
@@ -57,12 +63,15 @@
 
     iget-object v1, p0, Landroid/widget/ActionMenuPresenter$2;->this$0:Landroid/widget/ActionMenuPresenter;
 
+    .line 119
     invoke-static {v1}, Landroid/widget/ActionMenuPresenter;->access$400(Landroid/widget/ActionMenuPresenter;)Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
     move-result-object v1
 
+    .line 118
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
+    .line 120
     iget-object v0, p0, Landroid/widget/ActionMenuPresenter$2;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-static {v0}, Landroid/widget/ActionMenuPresenter;->access$600(Landroid/widget/ActionMenuPresenter;)Landroid/util/SparseArray;
@@ -71,6 +80,7 @@
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
+    .line 121
     iget-object v0, p0, Landroid/widget/ActionMenuPresenter$2;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-static {v0}, Landroid/widget/ActionMenuPresenter;->access$700(Landroid/widget/ActionMenuPresenter;)Landroid/util/SparseArray;
@@ -79,5 +89,6 @@
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
+    .line 122
     return-void
 .end method

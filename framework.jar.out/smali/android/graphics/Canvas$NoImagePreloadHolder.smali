@@ -22,10 +22,12 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 80
     new-instance v6, Llibcore/util/NativeAllocationRegistry;
 
     const-class v0, Landroid/graphics/Canvas;
 
+    .line 81
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
@@ -42,12 +44,14 @@
 
     sput-object v6, Landroid/graphics/Canvas$NoImagePreloadHolder;->sRegistry:Llibcore/util/NativeAllocationRegistry;
 
+    .line 80
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

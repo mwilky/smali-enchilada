@@ -29,7 +29,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;Landroid/hardware/camera2/CameraCaptureSession;Ljava/lang/Object;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
+    .line 739
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     iput-object p2, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->val$session:Landroid/hardware/camera2/CameraCaptureSession;
@@ -38,10 +40,12 @@
 
     invoke-direct {p0}, Landroid/hardware/camera2/impl/CameraDeviceImpl$StateCallbackKK;-><init>()V
 
+    .line 740
     const/4 p2, 0x0
 
     iput-boolean p2, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mBusy:Z
 
+    .line 741
     iput-boolean p2, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mActive:Z
 
     return-void
@@ -51,7 +55,9 @@
 # virtual methods
 .method public onActive(Landroid/hardware/camera2/CameraDevice;)V
     .locals 2
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 762
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$500(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/utils/TaskSingleDrainer;
@@ -60,10 +66,12 @@
 
     invoke-virtual {v0}, Landroid/hardware/camera2/utils/TaskSingleDrainer;->taskStarted()V
 
+    .line 763
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mActive:Z
 
+    .line 766
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$600(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -74,32 +82,42 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
 
+    .line 767
     return-void
 .end method
 
 .method public onBusy(Landroid/hardware/camera2/CameraDevice;)V
     .locals 1
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 809
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mBusy:Z
 
+    .line 815
     return-void
 .end method
 
 .method public onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
     .locals 1
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 751
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->close()V
 
+    .line 752
     return-void
 .end method
 
 .method public onError(Landroid/hardware/camera2/CameraDevice;I)V
     .locals 3
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
+    .param p2, "error"    # I
 
+    .line 757
     const-string v0, "CameraCaptureSession"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -126,16 +144,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 758
     return-void
 .end method
 
 .method public onIdle(Landroid/hardware/camera2/CameraDevice;)V
     .locals 4
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 774
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->val$interfaceLock:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 775
     :try_start_0
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
@@ -143,10 +165,13 @@
 
     move-result v1
 
+    .line 776
+    .local v1, "isAborting":Z
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
+    .line 789
     iget-boolean v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mBusy:Z
 
     const/4 v2, 0x0
@@ -155,6 +180,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 790
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$800(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/utils/TaskSingleDrainer;
@@ -163,15 +189,18 @@
 
     invoke-virtual {v0}, Landroid/hardware/camera2/utils/TaskSingleDrainer;->taskFinished()V
 
+    .line 792
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->val$interfaceLock:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 793
     :try_start_1
     iget-object v3, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v3, v2}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$702(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;Z)Z
 
+    .line 794
     monitor-exit v0
 
     goto :goto_0
@@ -185,12 +214,14 @@
 
     throw v2
 
+    .line 797
     :cond_0
     :goto_0
     iget-boolean v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mActive:Z
 
     if-eqz v0, :cond_1
 
+    .line 798
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$500(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/utils/TaskSingleDrainer;
@@ -199,11 +230,14 @@
 
     invoke-virtual {v0}, Landroid/hardware/camera2/utils/TaskSingleDrainer;->taskFinished()V
 
+    .line 801
     :cond_1
     iput-boolean v2, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mBusy:Z
 
+    .line 802
     iput-boolean v2, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->mActive:Z
 
+    .line 804
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$600(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -214,8 +248,11 @@
 
     invoke-virtual {v0, v2}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
 
+    .line 805
     return-void
 
+    .line 776
+    .end local v1    # "isAborting":Z
     :catchall_1
     move-exception v1
 
@@ -229,7 +266,9 @@
 
 .method public onOpened(Landroid/hardware/camera2/CameraDevice;)V
     .locals 2
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 745
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Camera must already be open before creating a session"
@@ -242,6 +281,7 @@
 .method public onRequestQueueEmpty()V
     .locals 2
 
+    .line 825
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$600(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -252,12 +292,15 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
 
+    .line 826
     return-void
 .end method
 
 .method public onSurfacePrepared(Landroid/view/Surface;)V
     .locals 2
+    .param p1, "surface"    # Landroid/view/Surface;
 
+    .line 831
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$600(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -268,11 +311,14 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
 
+    .line 832
     return-void
 .end method
 
 .method public onUnconfigured(Landroid/hardware/camera2/CameraDevice;)V
     .locals 0
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
+    .line 820
     return-void
 .end method

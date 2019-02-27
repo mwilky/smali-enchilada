@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 884
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,19 +28,25 @@
 # virtual methods
 .method public onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
 
+    .line 950
     return-void
 .end method
 
 .method public onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
 
+    .line 980
     return-void
 .end method
 
 .method public onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
 
+    .line 998
     return-void
 .end method
 
@@ -51,12 +58,17 @@
 
 .method public onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
 
+    .line 934
     return-void
 .end method
 
 .method public onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
     .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
+    .param p2, "surface"    # Landroid/view/Surface;
 
+    .line 1018
     return-void
 .end method

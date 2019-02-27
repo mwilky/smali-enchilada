@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/euicc/EuiccCardManager;Ljava/util/concurrent/Executor;Landroid/telephony/euicc/EuiccCardManager$ResultCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telephony/euicc/EuiccCardManager;
 
+    .line 237
     iput-object p1, p0, Landroid/telephony/euicc/EuiccCardManager$4;->this$0:Landroid/telephony/euicc/EuiccCardManager;
 
     iput-object p2, p0, Landroid/telephony/euicc/EuiccCardManager$4;->val$executor:Ljava/util/concurrent/Executor;
@@ -39,7 +41,11 @@
 
 .method static synthetic lambda$onComplete$0(Landroid/telephony/euicc/EuiccCardManager$ResultCallback;ILandroid/service/euicc/EuiccProfileInfo;)V
     .locals 0
+    .param p0, "callback"    # Landroid/telephony/euicc/EuiccCardManager$ResultCallback;
+    .param p1, "resultCode"    # I
+    .param p2, "profile"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 240
     invoke-interface {p0, p1, p2}, Landroid/telephony/euicc/EuiccCardManager$ResultCallback;->onComplete(ILjava/lang/Object;)V
 
     return-void
@@ -49,7 +55,10 @@
 # virtual methods
 .method public onComplete(ILandroid/service/euicc/EuiccProfileInfo;)V
     .locals 3
+    .param p1, "resultCode"    # I
+    .param p2, "profile"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 240
     iget-object v0, p0, Landroid/telephony/euicc/EuiccCardManager$4;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/telephony/euicc/EuiccCardManager$4;->val$callback:Landroid/telephony/euicc/EuiccCardManager$ResultCallback;
@@ -60,5 +69,6 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 241
     return-void
 .end method

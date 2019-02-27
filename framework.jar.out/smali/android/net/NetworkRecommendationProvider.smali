@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 53
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
@@ -57,19 +58,26 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/Executor;)V
     .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
 
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 62
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 63
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 64
     new-instance v0, Landroid/net/NetworkRecommendationProvider$ServiceWrapper;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/net/NetworkRecommendationProvider$ServiceWrapper;-><init>(Landroid/net/NetworkRecommendationProvider;Landroid/content/Context;Ljava/util/concurrent/Executor;)V
 
     iput-object v0, p0, Landroid/net/NetworkRecommendationProvider;->mService:Landroid/os/IBinder;
 
+    .line 65
     return-void
 .end method
 
@@ -78,6 +86,7 @@
 .method public final getBinder()Landroid/os/IBinder;
     .locals 1
 
+    .line 81
     iget-object v0, p0, Landroid/net/NetworkRecommendationProvider;->mService:Landroid/os/IBinder;
 
     return-object v0

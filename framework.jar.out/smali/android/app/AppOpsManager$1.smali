@@ -26,35 +26,44 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 955
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 956
     const-string v0, "android:oneplus_lock_app"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 957
     const-string v0, "android:change_wifi_state"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 958
     const-string v0, "android:bluetooth_admin"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 959
     const-string v0, "android:oneplus_read_mode_app"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 960
     const-string v0, "android:oneplus_game_mode_app"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 961
     const-string v0, "android:oneplus_parallel_app"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 962
     const-string v0, "android:oneplus_screen_compact"
 
     invoke-virtual {p0, v0}, Landroid/app/AppOpsManager$1;->add(Ljava/lang/Object;)Z
 
+    .line 963
     return-void
 .end method

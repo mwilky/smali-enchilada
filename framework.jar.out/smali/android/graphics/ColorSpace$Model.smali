@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 827
     new-instance v0, Landroid/graphics/ColorSpace$Model;
 
     const-string v1, "RGB"
@@ -54,6 +55,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Model;->RGB:Landroid/graphics/ColorSpace$Model;
 
+    .line 833
     new-instance v0, Landroid/graphics/ColorSpace$Model;
 
     const-string v1, "XYZ"
@@ -64,6 +66,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Model;->XYZ:Landroid/graphics/ColorSpace$Model;
 
+    .line 839
     new-instance v0, Landroid/graphics/ColorSpace$Model;
 
     const-string v1, "LAB"
@@ -74,6 +77,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Model;->LAB:Landroid/graphics/ColorSpace$Model;
 
+    .line 846
     new-instance v0, Landroid/graphics/ColorSpace$Model;
 
     const-string v1, "CMYK"
@@ -84,6 +88,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Model;->CMYK:Landroid/graphics/ColorSpace$Model;
 
+    .line 821
     new-array v0, v6, [Landroid/graphics/ColorSpace$Model;
 
     sget-object v1, Landroid/graphics/ColorSpace$Model;->RGB:Landroid/graphics/ColorSpace$Model;
@@ -109,22 +114,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "componentCount"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 850
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 851
     iput p3, p0, Landroid/graphics/ColorSpace$Model;->mComponentCount:I
 
+    .line 852
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 821
     const-class v0, Landroid/graphics/ColorSpace$Model;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -139,6 +150,7 @@
 .method public static values()[Landroid/graphics/ColorSpace$Model;
     .locals 1
 
+    .line 821
     sget-object v0, Landroid/graphics/ColorSpace$Model;->$VALUES:[Landroid/graphics/ColorSpace$Model;
 
     invoke-virtual {v0}, [Landroid/graphics/ColorSpace$Model;->clone()Ljava/lang/Object;
@@ -155,6 +167,7 @@
 .method public getComponentCount()I
     .locals 1
 
+    .line 861
     iget v0, p0, Landroid/graphics/ColorSpace$Model;->mComponentCount:I
 
     return v0

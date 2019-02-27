@@ -38,6 +38,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 8013
     new-instance v0, Landroid/content/pm/PackageParser$Instrumentation$1;
 
     invoke-direct {v0}, Landroid/content/pm/PackageParser$Instrumentation$1;-><init>()V
@@ -49,19 +50,27 @@
 
 .method public constructor <init>(Landroid/content/pm/PackageParser$ParsePackageItemArgs;Landroid/content/pm/InstrumentationInfo;)V
     .locals 0
+    .param p1, "args"    # Landroid/content/pm/PackageParser$ParsePackageItemArgs;
+    .param p2, "_info"    # Landroid/content/pm/InstrumentationInfo;
 
+    .line 7970
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParsePackageItemArgs;Landroid/content/pm/PackageItemInfo;)V
 
+    .line 7971
     iput-object p2, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
+    .line 7972
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 8001
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/os/Parcel;)V
 
+    .line 8002
     const-class v0, Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -76,12 +85,14 @@
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
+    .line 8004
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iget-object v0, v0, Landroid/content/pm/InstrumentationInfo;->targetPackage:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
+    .line 8005
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
@@ -94,6 +105,7 @@
 
     iput-object v1, v0, Landroid/content/pm/InstrumentationInfo;->targetPackage:Ljava/lang/String;
 
+    .line 8008
     :cond_0
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
@@ -101,6 +113,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 8009
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iget-object v1, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
@@ -113,13 +126,17 @@
 
     iput-object v1, v0, Landroid/content/pm/InstrumentationInfo;->targetProcesses:Ljava/lang/String;
 
+    .line 8011
     :cond_1
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/content/pm/PackageParser$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/content/pm/PackageParser$1;
 
+    .line 7965
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Instrumentation;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -130,6 +147,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 7991
     const/4 v0, 0x0
 
     return v0
@@ -137,29 +155,37 @@
 
 .method public setPackageName(Ljava/lang/String;)V
     .locals 1
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 7975
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
+    .line 7976
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iput-object p1, v0, Landroid/content/pm/InstrumentationInfo;->packageName:Ljava/lang/String;
 
+    .line 7977
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 7980
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 7981
+    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "Instrumentation{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 7982
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -170,16 +196,20 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 7983
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 7984
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageParser$Instrumentation;->appendComponentShortName(Ljava/lang/StringBuilder;)V
 
+    .line 7985
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 7986
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -189,12 +219,17 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 7996
     invoke-super {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 7997
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 7998
     return-void
 .end method

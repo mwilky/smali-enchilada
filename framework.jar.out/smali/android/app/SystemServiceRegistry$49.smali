@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 595
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,7 +36,9 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/os/Vibrator;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
+    .line 598
     new-instance v0, Landroid/os/SystemVibrator;
 
     invoke-direct {v0, p1}, Landroid/os/SystemVibrator;-><init>(Landroid/content/Context;)V
@@ -51,6 +54,7 @@
         }
     .end annotation
 
+    .line 595
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$49;->createService(Landroid/app/ContextImpl;)Landroid/os/Vibrator;
 
     move-result-object p1

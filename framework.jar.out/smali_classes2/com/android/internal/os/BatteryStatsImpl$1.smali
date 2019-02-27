@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/BatteryStatsImpl;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl;
 
+    .line 5289
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$1;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 5292
     const-string v0, "connected"
 
     const/4 v1, 0x0
@@ -42,19 +47,25 @@
 
     move-result v0
 
+    .line 5293
+    .local v0, "state":Z
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl$1;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     monitor-enter v1
 
+    .line 5294
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/os/BatteryStatsImpl$1;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-static {v2, v0}, Lcom/android/internal/os/BatteryStatsImpl;->access$600(Lcom/android/internal/os/BatteryStatsImpl;Z)V
 
+    .line 5295
     monitor-exit v1
 
+    .line 5296
     return-void
 
+    .line 5295
     :catchall_0
     move-exception v2
 

@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 731
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,7 +36,9 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/content/pm/LauncherApps;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
+    .line 734
     new-instance v0, Landroid/content/pm/LauncherApps;
 
     invoke-direct {v0, p1}, Landroid/content/pm/LauncherApps;-><init>(Landroid/content/Context;)V
@@ -51,6 +54,7 @@
         }
     .end annotation
 
+    .line 731
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$63;->createService(Landroid/app/ContextImpl;)Landroid/content/pm/LauncherApps;
 
     move-result-object p1

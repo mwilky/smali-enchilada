@@ -37,6 +37,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 9517
     const-string v0, "content://com.android.contacts.metadata"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,6 +46,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$MetadataSync;->METADATA_AUTHORITY_URI:Landroid/net/Uri;
 
+    .line 9529
     sget-object v0, Landroid/provider/ContactsContract$MetadataSync;->METADATA_AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "metadata_sync"
@@ -61,7 +63,9 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 9523
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 9524
     return-void
 .end method

@@ -20,15 +20,23 @@
 # direct methods
 .method private constructor <init>(II)V
     .locals 0
+    .param p1, "hour"    # I
+    .param p2, "minute"    # I
 
+    .line 230
     invoke-direct {p0, p1, p2}, Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;-><init>(II)V
 
+    .line 231
     return-void
 .end method
 
 .method synthetic constructor <init>(IILandroid/hardware/hdmi/HdmiTimerRecordSources$1;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Landroid/hardware/hdmi/HdmiTimerRecordSources$1;
 
+    .line 228
     invoke-direct {p0, p1, p2}, Landroid/hardware/hdmi/HdmiTimerRecordSources$Duration;-><init>(II)V
 
     return-void

@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 79
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
@@ -34,6 +35,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -100,6 +100,7 @@
 .method static constructor <clinit>()V
     .locals 17
 
+    .line 86
     const-string/jumbo v0, "rank"
 
     const-string/jumbo v1, "xmlResId"
@@ -120,6 +121,7 @@
 
     sput-object v0, Landroid/provider/SearchIndexablesContract;->INDEXABLES_XML_RES_COLUMNS:[Ljava/lang/String;
 
+    .line 110
     const-string/jumbo v1, "rank"
 
     const-string/jumbo v2, "title"
@@ -158,6 +160,7 @@
 
     sput-object v0, Landroid/provider/SearchIndexablesContract;->INDEXABLES_RAW_COLUMNS:[Ljava/lang/String;
 
+    .line 134
     const-string/jumbo v0, "parent_class"
 
     const-string/jumbo v1, "parent_title"
@@ -186,6 +189,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

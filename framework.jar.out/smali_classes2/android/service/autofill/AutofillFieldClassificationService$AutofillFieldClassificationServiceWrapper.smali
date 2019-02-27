@@ -22,6 +22,7 @@
 .method private constructor <init>(Landroid/service/autofill/AutofillFieldClassificationService;)V
     .locals 0
 
+    .line 182
     iput-object p1, p0, Landroid/service/autofill/AutofillFieldClassificationService$AutofillFieldClassificationServiceWrapper;->this$0:Landroid/service/autofill/AutofillFieldClassificationService;
 
     invoke-direct {p0}, Landroid/service/autofill/IAutofillFieldClassificationService$Stub;-><init>()V
@@ -31,7 +32,10 @@
 
 .method synthetic constructor <init>(Landroid/service/autofill/AutofillFieldClassificationService;Landroid/service/autofill/AutofillFieldClassificationService$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/service/autofill/AutofillFieldClassificationService;
+    .param p2, "x1"    # Landroid/service/autofill/AutofillFieldClassificationService$1;
 
+    .line 182
     invoke-direct {p0, p1}, Landroid/service/autofill/AutofillFieldClassificationService$AutofillFieldClassificationServiceWrapper;-><init>(Landroid/service/autofill/AutofillFieldClassificationService;)V
 
     return-void
@@ -39,7 +43,14 @@
 
 .method static synthetic lambda$getScores$0(Ljava/lang/Object;Landroid/os/RemoteCallback;Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;[Ljava/lang/String;)V
     .locals 6
+    .param p0, "rec$"    # Ljava/lang/Object;
+    .param p1, "x$0"    # Landroid/os/RemoteCallback;
+    .param p2, "x$1"    # Ljava/lang/String;
+    .param p3, "x$2"    # Landroid/os/Bundle;
+    .param p4, "x$3"    # Ljava/util/List;
+    .param p5, "x$4"    # [Ljava/lang/String;
 
+    .line 189
     move-object v0, p0
 
     check-cast v0, Landroid/service/autofill/AutofillFieldClassificationService;
@@ -63,6 +74,10 @@
 # virtual methods
 .method public getScores(Landroid/os/RemoteCallback;Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;[Ljava/lang/String;)V
     .locals 8
+    .param p1, "callback"    # Landroid/os/RemoteCallback;
+    .param p2, "algorithmName"    # Ljava/lang/String;
+    .param p3, "algorithmArgs"    # Landroid/os/Bundle;
+    .param p5, "userDataValues"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,6 +98,8 @@
         }
     .end annotation
 
+    .line 188
+    .local p4, "actualValues":Ljava/util/List;, "Ljava/util/List<Landroid/view/autofill/AutofillValue;>;"
     iget-object v0, p0, Landroid/service/autofill/AutofillFieldClassificationService$AutofillFieldClassificationServiceWrapper;->this$0:Landroid/service/autofill/AutofillFieldClassificationService;
 
     invoke-static {v0}, Landroid/service/autofill/AutofillFieldClassificationService;->access$200(Landroid/service/autofill/AutofillFieldClassificationService;)Landroid/os/Handler;
@@ -109,5 +126,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 192
     return-void
 .end method

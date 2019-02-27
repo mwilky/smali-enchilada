@@ -66,30 +66,36 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 1056
     new-instance v0, Landroid/media/VolumeShaper$Operation$Builder;
 
     invoke-direct {v0}, Landroid/media/VolumeShaper$Operation$Builder;-><init>()V
 
+    .line 1058
     invoke-virtual {v0}, Landroid/media/VolumeShaper$Operation$Builder;->build()Landroid/media/VolumeShaper$Operation;
 
     move-result-object v0
 
     sput-object v0, Landroid/media/VolumeShaper$Operation;->PLAY:Landroid/media/VolumeShaper$Operation;
 
+    .line 1065
     new-instance v0, Landroid/media/VolumeShaper$Operation$Builder;
 
     invoke-direct {v0}, Landroid/media/VolumeShaper$Operation$Builder;-><init>()V
 
+    .line 1067
     invoke-virtual {v0}, Landroid/media/VolumeShaper$Operation$Builder;->reverse()Landroid/media/VolumeShaper$Operation$Builder;
 
     move-result-object v0
 
+    .line 1068
     invoke-virtual {v0}, Landroid/media/VolumeShaper$Operation$Builder;->build()Landroid/media/VolumeShaper$Operation;
 
     move-result-object v0
 
     sput-object v0, Landroid/media/VolumeShaper$Operation;->REVERSE:Landroid/media/VolumeShaper$Operation;
 
+    .line 1169
     new-instance v0, Landroid/media/VolumeShaper$Operation$1;
 
     invoke-direct {v0}, Landroid/media/VolumeShaper$Operation$1;-><init>()V
@@ -101,21 +107,34 @@
 
 .method private constructor <init>(IIF)V
     .locals 0
+    .param p1, "flags"    # I
+    .param p2, "replaceId"    # I
+    .param p3, "xOffset"    # F
 
+    .line 1190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1191
     iput p1, p0, Landroid/media/VolumeShaper$Operation;->mFlags:I
 
+    .line 1192
     iput p2, p0, Landroid/media/VolumeShaper$Operation;->mReplaceId:I
 
+    .line 1193
     iput p3, p0, Landroid/media/VolumeShaper$Operation;->mXOffset:F
 
+    .line 1194
     return-void
 .end method
 
 .method synthetic constructor <init>(IIFLandroid/media/VolumeShaper$1;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # I
+    .param p3, "x2"    # F
+    .param p4, "x3"    # Landroid/media/VolumeShaper$1;
 
+    .line 1050
     invoke-direct {p0, p1, p2, p3}, Landroid/media/VolumeShaper$Operation;-><init>(IIF)V
 
     return-void
@@ -123,7 +142,9 @@
 
 .method static synthetic access$500(Landroid/media/VolumeShaper$Operation;)I
     .locals 1
+    .param p0, "x0"    # Landroid/media/VolumeShaper$Operation;
 
+    .line 1050
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mReplaceId:I
 
     return v0
@@ -131,7 +152,9 @@
 
 .method static synthetic access$600(Landroid/media/VolumeShaper$Operation;)I
     .locals 1
+    .param p0, "x0"    # Landroid/media/VolumeShaper$Operation;
 
+    .line 1050
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mFlags:I
 
     return v0
@@ -139,7 +162,9 @@
 
 .method static synthetic access$700(Landroid/media/VolumeShaper$Operation;)F
     .locals 1
+    .param p0, "x0"    # Landroid/media/VolumeShaper$Operation;
 
+    .line 1050
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mXOffset:F
 
     return v0
@@ -150,6 +175,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 1158
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +183,9 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 1147
     instance-of v0, p1, Landroid/media/VolumeShaper$Operation;
 
     const/4 v1, 0x0
@@ -166,6 +194,7 @@
 
     return v1
 
+    .line 1148
     :cond_0
     const/4 v0, 0x1
 
@@ -173,11 +202,14 @@
 
     return v0
 
+    .line 1149
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/media/VolumeShaper$Operation;
 
+    .line 1151
+    .local v2, "other":Landroid/media/VolumeShaper$Operation;
     iget v3, p0, Landroid/media/VolumeShaper$Operation;->mFlags:I
 
     iget v4, v2, Landroid/media/VolumeShaper$Operation;->mFlags:I
@@ -194,6 +226,7 @@
 
     iget v4, v2, Landroid/media/VolumeShaper$Operation;->mXOffset:F
 
+    .line 1153
     invoke-static {v3, v4}, Ljava/lang/Float;->compare(FF)I
 
     move-result v3
@@ -202,6 +235,7 @@
 
     goto :goto_0
 
+    .line 1151
     :cond_2
     move v0, v1
 
@@ -212,6 +246,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 1142
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -256,6 +291,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 1133
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -266,6 +302,7 @@
 
     iget v1, p0, Landroid/media/VolumeShaper$Operation;->mFlags:I
 
+    .line 1134
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -300,23 +337,30 @@
 
     move-result-object v0
 
+    .line 1133
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 1164
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1165
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mReplaceId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1166
     iget v0, p0, Landroid/media/VolumeShaper$Operation;->mXOffset:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 1167
     return-void
 .end method

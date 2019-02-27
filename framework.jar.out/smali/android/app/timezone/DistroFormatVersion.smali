@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 48
     new-instance v0, Landroid/app/timezone/DistroFormatVersion$1;
 
     invoke-direct {v0}, Landroid/app/timezone/DistroFormatVersion$1;-><init>()V
@@ -39,9 +40,13 @@
 
 .method public constructor <init>(II)V
     .locals 1
+    .param p1, "majorVersion"    # I
+    .param p2, "minorVersion"    # I
 
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 44
     const-string/jumbo v0, "major"
 
     invoke-static {v0, p1}, Landroid/app/timezone/Utils;->validateVersion(Ljava/lang/String;I)I
@@ -50,6 +55,7 @@
 
     iput v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
+    .line 45
     const-string/jumbo v0, "minor"
 
     invoke-static {v0, p2}, Landroid/app/timezone/Utils;->validateVersion(Ljava/lang/String;I)I
@@ -58,6 +64,7 @@
 
     iput v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMinorVersion:I
 
+    .line 46
     return-void
 .end method
 
@@ -66,6 +73,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 70
     const/4 v0, 0x0
 
     return v0
@@ -73,13 +81,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 90
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 91
     return v0
 
+    .line 93
     :cond_0
     const/4 v1, 0x0
 
@@ -97,19 +109,24 @@
 
     goto :goto_1
 
+    .line 97
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/app/timezone/DistroFormatVersion;
 
+    .line 99
+    .local v2, "that":Landroid/app/timezone/DistroFormatVersion;
     iget v3, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
     iget v4, v2, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
     if-eq v3, v4, :cond_2
 
+    .line 100
     return v1
 
+    .line 102
     :cond_2
     iget v3, p0, Landroid/app/timezone/DistroFormatVersion;->mMinorVersion:I
 
@@ -125,6 +142,8 @@
     :goto_0
     return v0
 
+    .line 94
+    .end local v2    # "that":Landroid/app/timezone/DistroFormatVersion;
     :cond_4
     :goto_1
     return v1
@@ -133,6 +152,7 @@
 .method public getMajorVersion()I
     .locals 1
 
+    .line 61
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
     return v0
@@ -141,6 +161,7 @@
 .method public getMinorVersion()I
     .locals 1
 
+    .line 65
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMinorVersion:I
 
     return v0
@@ -149,8 +170,11 @@
 .method public hashCode()I
     .locals 3
 
+    .line 107
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
+    .line 108
+    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int/2addr v1, v0
@@ -159,12 +183,17 @@
 
     add-int/2addr v1, v2
 
+    .line 109
+    .end local v0    # "result":I
+    .local v1, "result":I
     return v1
 .end method
 
 .method public supports(Landroid/app/timezone/DistroFormatVersion;)Z
     .locals 2
+    .param p1, "distroFormatVersion"    # Landroid/app/timezone/DistroFormatVersion;
 
+    .line 84
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
     iget v1, p1, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
@@ -191,6 +220,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 114
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,14 +254,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 75
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMajorVersion:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 76
     iget v0, p0, Landroid/app/timezone/DistroFormatVersion;->mMinorVersion:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 77
     return-void
 .end method

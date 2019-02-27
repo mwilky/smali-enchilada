@@ -76,6 +76,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 128
     new-instance v0, Landroid/service/euicc/EuiccProfileInfo$1;
 
     invoke-direct {v0}, Landroid/service/euicc/EuiccProfileInfo$1;-><init>()V
@@ -87,53 +88,65 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 164
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
+    .line 166
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
+    .line 167
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
+    .line 168
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
+    .line 169
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
+    .line 170
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
 
+    .line 171
+    .local v0, "exist":B
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
+    .line 172
     sget-object v1, Landroid/service/carrier/CarrierIdentifier;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -146,11 +159,13 @@
 
     goto :goto_0
 
+    .line 174
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
+    .line 176
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -158,6 +173,7 @@
 
     iput v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
+    .line 177
     sget-object v1, Landroid/telephony/UiccAccessRule;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -168,12 +184,16 @@
 
     iput-object v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
+    .line 178
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/service/euicc/EuiccProfileInfo$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/service/euicc/EuiccProfileInfo$1;
 
+    .line 39
     invoke-direct {p0, p1}, Landroid/service/euicc/EuiccProfileInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -181,6 +201,14 @@
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILandroid/service/carrier/CarrierIdentifier;ILjava/util/List;)V
     .locals 1
+    .param p1, "iccid"    # Ljava/lang/String;
+    .param p2, "nickname"    # Ljava/lang/String;
+    .param p3, "serviceProviderName"    # Ljava/lang/String;
+    .param p4, "profileName"    # Ljava/lang/String;
+    .param p5, "profileClass"    # I
+    .param p6, "state"    # I
+    .param p7, "carrierIdentifier"    # Landroid/service/carrier/CarrierIdentifier;
+    .param p8, "policyRules"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -197,24 +225,35 @@
         }
     .end annotation
 
+    .line 318
+    .local p9, "accessRules":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/UiccAccessRule;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 319
     iput-object p1, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
+    .line 320
     iput-object p2, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
+    .line 321
     iput-object p3, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
+    .line 322
     iput-object p4, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
+    .line 323
     iput p5, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
+    .line 324
     iput p6, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
+    .line 325
     iput-object p7, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
+    .line 326
     iput p8, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
+    .line 327
     if-eqz p9, :cond_0
 
     invoke-interface {p9}, Ljava/util/List;->size()I
@@ -223,6 +262,7 @@
 
     if-lez v0, :cond_0
 
+    .line 328
     invoke-interface {p9}, Ljava/util/List;->size()I
 
     move-result v0
@@ -239,18 +279,31 @@
 
     goto :goto_0
 
+    .line 330
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
+    .line 332
     :goto_0
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILandroid/service/carrier/CarrierIdentifier;ILjava/util/List;Landroid/service/euicc/EuiccProfileInfo$1;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # Ljava/lang/String;
+    .param p3, "x2"    # Ljava/lang/String;
+    .param p4, "x3"    # Ljava/lang/String;
+    .param p5, "x4"    # I
+    .param p6, "x5"    # I
+    .param p7, "x6"    # Landroid/service/carrier/CarrierIdentifier;
+    .param p8, "x7"    # I
+    .param p9, "x8"    # Ljava/util/List;
+    .param p10, "x9"    # Landroid/service/euicc/EuiccProfileInfo$1;
 
+    .line 39
     invoke-direct/range {p0 .. p9}, Landroid/service/euicc/EuiccProfileInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILandroid/service/carrier/CarrierIdentifier;ILjava/util/List;)V
 
     return-void
@@ -258,43 +311,59 @@
 
 .method public constructor <init>(Ljava/lang/String;[Landroid/telephony/UiccAccessRule;Ljava/lang/String;)V
     .locals 3
+    .param p1, "iccid"    # Ljava/lang/String;
+    .param p2, "accessRules"    # [Landroid/telephony/UiccAccessRule;
+    .param p3, "nickname"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 148
     invoke-static {p1}, Landroid/text/TextUtils;->isDigitsOnly(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 151
     iput-object p1, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
+    .line 152
     iput-object p2, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
+    .line 153
     iput-object p3, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
+    .line 155
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
+    .line 156
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
+    .line 157
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
+    .line 158
     iput v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
+    .line 159
     iput-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
+    .line 160
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
+    .line 161
     return-void
 
+    .line 149
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -319,7 +388,9 @@
 
 .method static synthetic access$100(Landroid/service/euicc/EuiccProfileInfo;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
     return-object v0
@@ -327,7 +398,9 @@
 
 .method static synthetic access$200(Landroid/service/euicc/EuiccProfileInfo;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
     return-object v0
@@ -335,7 +408,9 @@
 
 .method static synthetic access$300(Landroid/service/euicc/EuiccProfileInfo;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
     return-object v0
@@ -343,7 +418,9 @@
 
 .method static synthetic access$400(Landroid/service/euicc/EuiccProfileInfo;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
     return-object v0
@@ -351,7 +428,9 @@
 
 .method static synthetic access$500(Landroid/service/euicc/EuiccProfileInfo;)I
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
     return v0
@@ -359,7 +438,9 @@
 
 .method static synthetic access$600(Landroid/service/euicc/EuiccProfileInfo;)I
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
     return v0
@@ -367,7 +448,9 @@
 
 .method static synthetic access$700(Landroid/service/euicc/EuiccProfileInfo;)Landroid/service/carrier/CarrierIdentifier;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
     return-object v0
@@ -375,7 +458,9 @@
 
 .method static synthetic access$800(Landroid/service/euicc/EuiccProfileInfo;)I
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     return v0
@@ -383,7 +468,9 @@
 
 .method static synthetic access$900(Landroid/service/euicc/EuiccProfileInfo;)[Landroid/telephony/UiccAccessRule;
     .locals 1
+    .param p0, "x0"    # Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 39
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
     return-object v0
@@ -394,6 +481,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 200
     const/4 v0, 0x0
 
     return v0
@@ -401,13 +489,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 397
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 398
     return v0
 
+    .line 400
     :cond_0
     const/4 v1, 0x0
 
@@ -425,11 +517,14 @@
 
     goto :goto_1
 
+    .line 404
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/service/euicc/EuiccProfileInfo;
 
+    .line 405
+    .local v2, "that":Landroid/service/euicc/EuiccProfileInfo;
     iget-object v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
@@ -444,6 +539,7 @@
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
+    .line 406
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -454,6 +550,7 @@
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
+    .line 407
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -464,6 +561,7 @@
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
+    .line 408
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -486,6 +584,7 @@
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
+    .line 411
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -502,6 +601,7 @@
 
     iget-object v4, v2, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
+    .line 413
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
     move-result v3
@@ -510,12 +610,15 @@
 
     goto :goto_0
 
+    .line 405
     :cond_2
     move v0, v1
 
     :goto_0
     return v0
 
+    .line 401
+    .end local v2    # "that":Landroid/service/euicc/EuiccProfileInfo;
     :cond_3
     :goto_1
     return v1
@@ -524,6 +627,7 @@
 .method public getCarrierIdentifier()Landroid/service/carrier/CarrierIdentifier;
     .locals 1
 
+    .line 376
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
     return-object v0
@@ -532,6 +636,7 @@
 .method public getIccid()Ljava/lang/String;
     .locals 1
 
+    .line 336
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
     return-object v0
@@ -540,6 +645,7 @@
 .method public getNickname()Ljava/lang/String;
     .locals 1
 
+    .line 349
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
     return-object v0
@@ -548,6 +654,7 @@
 .method public getPolicyRules()I
     .locals 1
 
+    .line 382
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     return v0
@@ -556,6 +663,7 @@
 .method public getProfileClass()I
     .locals 1
 
+    .line 365
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
     return v0
@@ -564,6 +672,7 @@
 .method public getProfileName()Ljava/lang/String;
     .locals 1
 
+    .line 359
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
     return-object v0
@@ -572,6 +681,7 @@
 .method public getServiceProviderName()Ljava/lang/String;
     .locals 1
 
+    .line 354
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
     return-object v0
@@ -580,6 +690,7 @@
 .method public getState()I
     .locals 1
 
+    .line 371
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
     return v0
@@ -596,6 +707,7 @@
         }
     .end annotation
 
+    .line 342
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
     if-nez v0, :cond_0
@@ -604,6 +716,7 @@
 
     return-object v0
 
+    .line 343
     :cond_0
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
@@ -616,7 +729,9 @@
 
 .method public hasPolicyRule(I)Z
     .locals 1
+    .param p1, "policy"    # I
 
+    .line 392
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     and-int/2addr v0, p1
@@ -637,6 +752,7 @@
 .method public hasPolicyRules()Z
     .locals 1
 
+    .line 387
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     if-eqz v0, :cond_0
@@ -655,8 +771,11 @@
 .method public hashCode()I
     .locals 4
 
+    .line 418
     const/4 v0, 0x1
 
+    .line 419
+    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -669,6 +788,9 @@
 
     add-int/2addr v2, v3
 
+    .line 420
+    .end local v0    # "result":I
+    .local v2, "result":I
     mul-int v0, v1, v2
 
     iget-object v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
@@ -679,6 +801,9 @@
 
     add-int/2addr v0, v3
 
+    .line 421
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget-object v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
@@ -689,6 +814,9 @@
 
     add-int/2addr v2, v3
 
+    .line 422
+    .end local v0    # "result":I
+    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget-object v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
@@ -699,18 +827,27 @@
 
     add-int/2addr v0, v3
 
+    .line 423
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
     add-int/2addr v2, v3
 
+    .line 424
+    .end local v0    # "result":I
+    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
     add-int/2addr v0, v3
 
+    .line 425
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget-object v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
@@ -721,12 +858,18 @@
 
     add-int/2addr v2, v3
 
+    .line 426
+    .end local v0    # "result":I
+    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     add-int/2addr v0, v3
 
+    .line 427
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int/2addr v1, v0
 
     iget-object v2, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
@@ -737,12 +880,16 @@
 
     add-int/2addr v1, v2
 
+    .line 428
+    .end local v0    # "result":I
+    .local v1, "result":I
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 433
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -809,6 +956,7 @@
 
     iget-object v1, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
+    .line 448
     invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -823,63 +971,79 @@
 
     move-result-object v0
 
+    .line 433
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 182
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mIccid:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 183
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mNickname:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 184
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mServiceProviderName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 185
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 186
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mProfileClass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 187
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 188
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
     if-eqz v0, :cond_0
 
+    .line 189
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 190
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mCarrierIdentifier:Landroid/service/carrier/CarrierIdentifier;
 
     invoke-virtual {v0, p1, p2}, Landroid/service/carrier/CarrierIdentifier;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 192
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 194
     :goto_0
     iget v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mPolicyRules:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 195
     iget-object v0, p0, Landroid/service/euicc/EuiccProfileInfo;->mAccessRules:[Landroid/telephony/UiccAccessRule;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
+    .line 196
     return-void
 .end method

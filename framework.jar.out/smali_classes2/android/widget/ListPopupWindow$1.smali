@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ListPopupWindow;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/ListPopupWindow;
+    .param p2, "src"    # Landroid/view/View;
 
+    .line 1082
     iput-object p1, p0, Landroid/widget/ListPopupWindow$1;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-direct {p0, p2}, Landroid/widget/ForwardingListener;-><init>(Landroid/view/View;)V
@@ -34,6 +37,7 @@
 .method public getPopup()Lcom/android/internal/view/menu/ShowableListMenu;
     .locals 1
 
+    .line 1085
     iget-object v0, p0, Landroid/widget/ListPopupWindow$1;->this$0:Landroid/widget/ListPopupWindow;
 
     return-object v0

@@ -43,7 +43,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/KernelWakeSourcesProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/KernelWakeSourcesProto;
 
+    .line 11
     iput-object p1, p0, Landroid/os/KernelWakeSourcesProto$WakeupSource;->this$0:Landroid/os/KernelWakeSourcesProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

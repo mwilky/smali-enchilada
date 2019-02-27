@@ -70,6 +70,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 3176
     const-string v0, "content://service-state/"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -84,6 +85,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 3166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -91,11 +93,15 @@
 
 .method public static getContentValuesForServiceState(Landroid/telephony/ServiceState;)Landroid/content/ContentValues;
     .locals 3
+    .param p0, "state"    # Landroid/telephony/ServiceState;
 
+    .line 3222
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
+    .line 3223
+    .local v0, "values":Landroid/content/ContentValues;
     const-string/jumbo v1, "voice_reg_state"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getVoiceRegState()I
@@ -108,6 +114,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3224
     const-string v1, "data_reg_state"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataRegState()I
@@ -120,6 +127,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3225
     const-string/jumbo v1, "voice_roaming_type"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getVoiceRoamingType()I
@@ -132,6 +140,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3226
     const-string v1, "data_roaming_type"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataRoamingType()I
@@ -144,6 +153,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3227
     const-string/jumbo v1, "voice_operator_alpha_long"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getVoiceOperatorAlphaLong()Ljava/lang/String;
@@ -152,6 +162,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3228
     const-string/jumbo v1, "voice_operator_alpha_short"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getVoiceOperatorAlphaShort()Ljava/lang/String;
@@ -160,6 +171,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3229
     const-string/jumbo v1, "voice_operator_numeric"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getVoiceOperatorNumeric()Ljava/lang/String;
@@ -168,6 +180,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3230
     const-string v1, "data_operator_alpha_long"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataOperatorAlphaLong()Ljava/lang/String;
@@ -176,6 +189,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3231
     const-string v1, "data_operator_alpha_short"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataOperatorAlphaShort()Ljava/lang/String;
@@ -184,6 +198,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3232
     const-string v1, "data_operator_numeric"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataOperatorNumeric()Ljava/lang/String;
@@ -192,6 +207,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3233
     const-string v1, "is_manual_network_selection"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getIsManualSelection()Z
@@ -204,6 +220,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    .line 3234
     const-string/jumbo v1, "ril_voice_radio_technology"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getRilVoiceRadioTechnology()I
@@ -216,6 +233,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3235
     const-string/jumbo v1, "ril_data_radio_technology"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getRilDataRadioTechnology()I
@@ -228,6 +246,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3236
     const-string v1, "css_indicator"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCssIndicator()I
@@ -240,6 +259,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3237
     const-string/jumbo v1, "network_id"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaNetworkId()I
@@ -252,6 +272,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3238
     const-string/jumbo v1, "system_id"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaSystemId()I
@@ -264,6 +285,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3239
     const-string v1, "cdma_roaming_indicator"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaRoamingIndicator()I
@@ -276,6 +298,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3240
     const-string v1, "cdma_default_roaming_indicator"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaDefaultRoamingIndicator()I
@@ -288,6 +311,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3241
     const-string v1, "cdma_eri_icon_index"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaEriIconIndex()I
@@ -300,6 +324,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3242
     const-string v1, "cdma_eri_icon_mode"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getCdmaEriIconMode()I
@@ -312,6 +337,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3243
     const-string v1, "is_emergency_only"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->isEmergencyOnly()Z
@@ -324,6 +350,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    .line 3244
     const-string v1, "is_data_roaming_from_registration"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->getDataRoamingFromRegistration()Z
@@ -336,6 +363,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    .line 3245
     const-string v1, "is_using_carrier_aggregation"
 
     invoke-virtual {p0}, Landroid/telephony/ServiceState;->isUsingCarrierAggregation()Z
@@ -348,12 +376,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
+    .line 3246
     return-object v0
 .end method
 
 .method public static getUriForSubscriptionId(I)Landroid/net/Uri;
     .locals 2
+    .param p0, "subscriptionId"    # I
 
+    .line 3211
     sget-object v0, Landroid/provider/Telephony$ServiceStateTable;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -377,7 +408,10 @@
 
 .method public static getUriForSubscriptionIdAndField(ILjava/lang/String;)Landroid/net/Uri;
     .locals 2
+    .param p0, "subscriptionId"    # I
+    .param p1, "field"    # Ljava/lang/String;
 
+    .line 3193
     sget-object v0, Landroid/provider/Telephony$ServiceStateTable;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -392,6 +426,7 @@
 
     move-result-object v0
 
+    .line 3194
     invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
@@ -400,5 +435,6 @@
 
     move-result-object v0
 
+    .line 3193
     return-object v0
 .end method

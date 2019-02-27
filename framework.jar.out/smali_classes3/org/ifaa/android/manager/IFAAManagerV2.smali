@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 5
     invoke-direct {p0}, Lorg/ifaa/android/manager/IFAAManager;-><init>()V
 
     return-void

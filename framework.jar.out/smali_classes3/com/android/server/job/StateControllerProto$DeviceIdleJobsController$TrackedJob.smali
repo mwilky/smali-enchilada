@@ -35,7 +35,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/job/StateControllerProto$DeviceIdleJobsController;)V
     .locals 0
+    .param p1, "this$1"    # Lcom/android/server/job/StateControllerProto$DeviceIdleJobsController;
 
+    .line 177
     iput-object p1, p0, Lcom/android/server/job/StateControllerProto$DeviceIdleJobsController$TrackedJob;->this$1:Lcom/android/server/job/StateControllerProto$DeviceIdleJobsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

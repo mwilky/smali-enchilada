@@ -45,31 +45,39 @@
 # direct methods
 .method public constructor <init>(Landroid/view/ViewRootImpl;)V
     .locals 1
+    .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
+    .line 6179
     iput-object p1, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->this$0:Landroid/view/ViewRootImpl;
 
+    .line 6180
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Z)V
 
+    .line 6176
     new-instance v0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     invoke-direct {v0, p0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;-><init>(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;)V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
+    .line 6177
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mDeviceKeyEvents:Landroid/util/SparseArray;
 
+    .line 6181
     return-void
 .end method
 
 .method static synthetic access$4400(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;)V
     .locals 0
+    .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticJoystickHandler;
 
+    .line 6172
     invoke-direct {p0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->cancel()V
 
     return-void
@@ -77,7 +85,9 @@
 
 .method static synthetic access$4500(Landroid/view/ViewRootImpl$SyntheticJoystickHandler;)Landroid/util/SparseArray;
     .locals 1
+    .param p0, "x0"    # Landroid/view/ViewRootImpl$SyntheticJoystickHandler;
 
+    .line 6172
     iget-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mDeviceKeyEvents:Landroid/util/SparseArray;
 
     return-object v0
@@ -86,18 +96,22 @@
 .method private cancel()V
     .locals 6
 
+    .line 6215
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->removeMessages(I)V
 
+    .line 6216
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->removeMessages(I)V
 
+    .line 6217
     const/4 v0, 0x0
 
     move v1, v0
 
+    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mDeviceKeyEvents:Landroid/util/SparseArray;
 
@@ -107,6 +121,7 @@
 
     if-ge v1, v2, :cond_1
 
+    .line 6218
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mDeviceKeyEvents:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -115,48 +130,64 @@
 
     check-cast v2, Landroid/view/KeyEvent;
 
+    .line 6219
+    .local v2, "keyEvent":Landroid/view/KeyEvent;
     if-eqz v2, :cond_0
 
+    .line 6220
     iget-object v3, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->this$0:Landroid/view/ViewRootImpl;
 
+    .line 6221
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
+    .line 6220
     invoke-static {v2, v4, v5, v0}, Landroid/view/KeyEvent;->changeTimeRepeat(Landroid/view/KeyEvent;JI)Landroid/view/KeyEvent;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/view/ViewRootImpl;->enqueueInputEvent(Landroid/view/InputEvent;)V
 
+    .line 6217
+    .end local v2    # "keyEvent":Landroid/view/KeyEvent;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 6224
+    .end local v1    # "i":I
     :cond_1
     iget-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mDeviceKeyEvents:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
+    .line 6225
     iget-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     invoke-virtual {v0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->resetState()V
 
+    .line 6226
     return-void
 .end method
 
 .method private update(Landroid/view/MotionEvent;)V
     .locals 14
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
+    .line 6229
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v0
 
+    .line 6230
+    .local v0, "historySize":I
     const/4 v1, 0x0
 
     move v2, v1
 
+    .local v2, "h":I
     :goto_0
     const/16 v3, 0x10
 
@@ -166,85 +197,110 @@
 
     if-ge v2, v0, :cond_0
 
+    .line 6231
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getHistoricalEventTime(I)J
 
     move-result-wide v12
 
+    .line 6232
+    .local v12, "time":J
     iget-object v6, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/4 v10, 0x0
 
+    .line 6233
     invoke-virtual {p1, v1, v1, v2}, Landroid/view/MotionEvent;->getHistoricalAxisValue(III)F
 
     move-result v11
 
+    .line 6232
     move-object v7, p1
 
     move-wide v8, v12
 
     invoke-virtual/range {v6 .. v11}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6234
     iget-object v6, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/4 v10, 0x1
 
+    .line 6235
     invoke-virtual {p1, v5, v1, v2}, Landroid/view/MotionEvent;->getHistoricalAxisValue(III)F
 
     move-result v11
 
+    .line 6234
     invoke-virtual/range {v6 .. v11}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6236
     iget-object v6, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/16 v10, 0xf
 
+    .line 6237
     invoke-virtual {p1, v4, v1, v2}, Landroid/view/MotionEvent;->getHistoricalAxisValue(III)F
 
     move-result v11
 
+    .line 6236
     invoke-virtual/range {v6 .. v11}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6238
     iget-object v6, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/16 v10, 0x10
 
+    .line 6239
     invoke-virtual {p1, v3, v1, v2}, Landroid/view/MotionEvent;->getHistoricalAxisValue(III)F
 
     move-result v11
 
+    .line 6238
     invoke-virtual/range {v6 .. v11}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6230
+    .end local v12    # "time":J
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 6241
+    .end local v2    # "h":I
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v12
 
+    .line 6242
+    .restart local v12    # "time":J
     iget-object v6, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/4 v10, 0x0
 
+    .line 6243
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v11
 
+    .line 6242
     move-object v7, p1
 
     move-wide v8, v12
 
     invoke-virtual/range {v6 .. v11}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6244
     iget-object v1, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/4 v9, 0x1
 
+    .line 6245
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v10
 
+    .line 6244
     move-object v5, v1
 
     move-object v6, p1
@@ -253,14 +309,17 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6246
     iget-object v1, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/16 v8, 0xf
 
+    .line 6247
     invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v9
 
+    .line 6246
     move-object v4, v1
 
     move-object v5, p1
@@ -269,14 +328,17 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6248
     iget-object v1, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->mJoystickAxesState:Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;
 
     const/16 v7, 0x10
 
+    .line 6249
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v8
 
+    .line 6248
     move-object v3, v1
 
     move-object v4, p1
@@ -285,6 +347,7 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler$JoystickAxesState;->updateStateForAxis(Landroid/view/MotionEvent;JIF)V
 
+    .line 6250
     return-void
 .end method
 
@@ -292,13 +355,16 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 6185
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
+    .line 6188
     :pswitch_0
     iget-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->this$0:Landroid/view/ViewRootImpl;
 
@@ -308,12 +374,16 @@
 
     if-eqz v0, :cond_0
 
+    .line 6189
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/KeyEvent;
 
+    .line 6190
+    .local v0, "oldEvent":Landroid/view/KeyEvent;
     nop
 
+    .line 6191
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -326,22 +396,29 @@
 
     add-int/2addr v3, v4
 
+    .line 6190
     invoke-static {v0, v1, v2, v3}, Landroid/view/KeyEvent;->changeTimeRepeat(Landroid/view/KeyEvent;JI)Landroid/view/KeyEvent;
 
     move-result-object v1
 
+    .line 6192
+    .local v1, "e":Landroid/view/KeyEvent;
     iget-object v2, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewRootImpl;->enqueueInputEvent(Landroid/view/InputEvent;)V
 
+    .line 6193
     iget v2, p1, Landroid/os/Message;->what:I
 
     invoke-virtual {p0, v2, v1}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
+    .line 6194
+    .local v2, "m":Landroid/os/Message;
     invoke-virtual {v2, v4}, Landroid/os/Message;->setAsynchronous(Z)V
 
+    .line 6195
     invoke-static {}, Landroid/view/ViewConfiguration;->getKeyRepeatDelay()I
 
     move-result v3
@@ -350,6 +427,10 @@
 
     invoke-virtual {p0, v2, v3, v4}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
+    .line 6199
+    .end local v0    # "oldEvent":Landroid/view/KeyEvent;
+    .end local v1    # "e":Landroid/view/KeyEvent;
+    .end local v2    # "m":Landroid/os/Message;
     :cond_0
     :goto_0
     return-void
@@ -363,13 +444,16 @@
 
 .method public process(Landroid/view/MotionEvent;)V
     .locals 3
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
+    .line 6202
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
+    .line 6210
     iget-object v0, p0, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-static {v0}, Landroid/view/ViewRootImpl;->access$2000(Landroid/view/ViewRootImpl;)Ljava/lang/String;
@@ -398,16 +482,21 @@
 
     goto :goto_0
 
+    .line 6204
     :pswitch_0
     invoke-direct {p0}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->cancel()V
 
+    .line 6205
     goto :goto_0
 
+    .line 6207
     :pswitch_1
     invoke-direct {p0, p1}, Landroid/view/ViewRootImpl$SyntheticJoystickHandler;->update(Landroid/view/MotionEvent;)V
 
+    .line 6208
     nop
 
+    .line 6212
     :goto_0
     return-void
 

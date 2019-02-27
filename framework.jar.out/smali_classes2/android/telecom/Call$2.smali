@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/Call;Landroid/telecom/Call$Callback;Landroid/telecom/Call;Landroid/telecom/Call;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/Call;
 
+    .line 2139
     iput-object p1, p0, Landroid/telecom/Call$2;->this$0:Landroid/telecom/Call;
 
     iput-object p2, p0, Landroid/telecom/Call$2;->val$callback:Landroid/telecom/Call$Callback;
@@ -49,6 +51,7 @@
 .method public run()V
     .locals 3
 
+    .line 2142
     iget-object v0, p0, Landroid/telecom/Call$2;->val$callback:Landroid/telecom/Call$Callback;
 
     iget-object v1, p0, Landroid/telecom/Call$2;->val$call:Landroid/telecom/Call;
@@ -57,5 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/Call$Callback;->onParentChanged(Landroid/telecom/Call;Landroid/telecom/Call;)V
 
+    .line 2143
     return-void
 .end method

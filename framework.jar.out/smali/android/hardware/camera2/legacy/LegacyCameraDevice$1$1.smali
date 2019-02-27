@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;Landroid/hardware/camera2/legacy/RequestHolder;ILandroid/hardware/camera2/impl/CaptureResultExtras;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
+    .line 147
     iput-object p1, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$1;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
     iput-object p2, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$1;->val$holder:Landroid/hardware/camera2/legacy/RequestHolder;
@@ -49,6 +51,7 @@
 .method public run()V
     .locals 3
 
+    .line 155
     :try_start_0
     iget-object v0, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$1;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
@@ -66,13 +69,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 159
     nop
 
+    .line 160
     return-void
 
+    .line 156
     :catch_0
     move-exception v0
 
+    .line 157
+    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Received remote exception during onCameraError callback: "

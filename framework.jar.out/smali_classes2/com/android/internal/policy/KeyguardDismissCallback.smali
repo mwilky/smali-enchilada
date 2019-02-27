@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardDismissCallback$Stub;-><init>()V
 
     return-void
@@ -22,6 +23,7 @@
         }
     .end annotation
 
+    .line 40
     return-void
 .end method
 
@@ -33,6 +35,7 @@
         }
     .end annotation
 
+    .line 30
     return-void
 .end method
 
@@ -44,5 +47,6 @@
         }
     .end annotation
 
+    .line 35
     return-void
 .end method

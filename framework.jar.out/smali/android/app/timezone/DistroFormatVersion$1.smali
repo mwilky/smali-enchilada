@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,15 +40,21 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/timezone/DistroFormatVersion;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 50
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 51
+    .local v0, "majorVersion":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 52
+    .local v1, "minorVersion":I
     new-instance v2, Landroid/app/timezone/DistroFormatVersion;
 
     invoke-direct {v2, v0, v1}, Landroid/app/timezone/DistroFormatVersion;-><init>(II)V
@@ -58,6 +65,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 48
     invoke-virtual {p0, p1}, Landroid/app/timezone/DistroFormatVersion$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/timezone/DistroFormatVersion;
 
     move-result-object p1
@@ -67,7 +75,9 @@
 
 .method public newArray(I)[Landroid/app/timezone/DistroFormatVersion;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 56
     new-array v0, p1, [Landroid/app/timezone/DistroFormatVersion;
 
     return-object v0
@@ -76,6 +86,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 48
     invoke-virtual {p0, p1}, Landroid/app/timezone/DistroFormatVersion$1;->newArray(I)[Landroid/app/timezone/DistroFormatVersion;
 
     move-result-object p1

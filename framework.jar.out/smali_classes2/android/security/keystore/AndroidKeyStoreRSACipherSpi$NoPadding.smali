@@ -18,10 +18,12 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 54
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/security/keystore/AndroidKeyStoreRSACipherSpi;-><init>(I)V
 
+    .line 55
     return-void
 .end method
 
@@ -30,10 +32,12 @@
 .method protected adjustConfigForEncryptingWithPrivateKey()Z
     .locals 1
 
+    .line 61
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Landroid/security/keystore/AndroidKeyStoreRSACipherSpi$NoPadding;->setKeymasterPurposeOverride(I)V
 
+    .line 62
     const/4 v0, 0x1
 
     return v0
@@ -42,6 +46,7 @@
 .method protected engineGetParameters()Ljava/security/AlgorithmParameters;
     .locals 1
 
+    .line 89
     const/4 v0, 0x0
 
     return-object v0
@@ -55,6 +60,7 @@
         }
     .end annotation
 
+    .line 52
     invoke-super {p0}, Landroid/security/keystore/AndroidKeyStoreRSACipherSpi;->finalize()V
 
     return-void
@@ -63,6 +69,7 @@
 .method protected final getAdditionalEntropyAmountForBegin()I
     .locals 1
 
+    .line 94
     const/4 v0, 0x0
 
     return v0
@@ -71,6 +78,7 @@
 .method protected final getAdditionalEntropyAmountForFinish()I
     .locals 1
 
+    .line 99
     const/4 v0, 0x0
 
     return v0
@@ -84,21 +92,26 @@
         }
     .end annotation
 
+    .line 66
     return-void
 .end method
 
 .method protected initAlgorithmSpecificParameters(Ljava/security/AlgorithmParameters;)V
     .locals 3
+    .param p1, "params"    # Ljava/security/AlgorithmParameters;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidAlgorithmParameterException;
         }
     .end annotation
 
+    .line 81
     if-nez p1, :cond_0
 
+    .line 85
     return-void
 
+    .line 82
     :cond_0
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
@@ -127,16 +140,20 @@
 
 .method protected initAlgorithmSpecificParameters(Ljava/security/spec/AlgorithmParameterSpec;)V
     .locals 3
+    .param p1, "params"    # Ljava/security/spec/AlgorithmParameterSpec;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidAlgorithmParameterException;
         }
     .end annotation
 
+    .line 71
     if-nez p1, :cond_0
 
+    .line 75
     return-void
 
+    .line 72
     :cond_0
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 

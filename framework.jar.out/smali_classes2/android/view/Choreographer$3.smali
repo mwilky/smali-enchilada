@@ -18,6 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,6 +29,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
+    .line 195
     const-string v0, "FRAME_CALLBACK_TOKEN"
 
     return-object v0

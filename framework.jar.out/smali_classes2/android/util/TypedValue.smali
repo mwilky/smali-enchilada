@@ -113,6 +113,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 229
     const/4 v0, 0x4
 
     new-array v0, v0, [F
@@ -121,6 +122,7 @@
 
     sput-object v0, Landroid/util/TypedValue;->RADIX_MULTS:[F
 
+    .line 463
     const-string/jumbo v1, "px"
 
     const-string v2, "dip"
@@ -139,6 +141,7 @@
 
     sput-object v0, Landroid/util/TypedValue;->DIMENSION_UNIT_STRS:[Ljava/lang/String;
 
+    .line 466
     const-string v0, "%"
 
     const-string v1, "%p"
@@ -165,8 +168,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 212
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/util/TypedValue;->changingConfigurations:I
@@ -176,13 +181,19 @@
 
 .method public static applyDimension(IFLandroid/util/DisplayMetrics;)F
     .locals 2
+    .param p0, "unit"    # I
+    .param p1, "value"    # F
+    .param p2, "metrics"    # Landroid/util/DisplayMetrics;
 
+    .line 369
     packed-switch p0, :pswitch_data_0
 
+    .line 383
     const/4 v0, 0x0
 
     return v0
 
+    .line 381
     :pswitch_0
     iget v0, p2, Landroid/util/DisplayMetrics;->xdpi:F
 
@@ -194,6 +205,7 @@
 
     return v0
 
+    .line 379
     :pswitch_1
     iget v0, p2, Landroid/util/DisplayMetrics;->xdpi:F
 
@@ -201,6 +213,7 @@
 
     return v0
 
+    .line 377
     :pswitch_2
     iget v0, p2, Landroid/util/DisplayMetrics;->xdpi:F
 
@@ -212,6 +225,7 @@
 
     return v0
 
+    .line 375
     :pswitch_3
     iget v0, p2, Landroid/util/DisplayMetrics;->scaledDensity:F
 
@@ -219,6 +233,7 @@
 
     return v0
 
+    .line 373
     :pswitch_4
     iget v0, p2, Landroid/util/DisplayMetrics;->density:F
 
@@ -226,6 +241,7 @@
 
     return v0
 
+    .line 371
     :pswitch_5
     return p1
 
@@ -242,11 +258,15 @@
 
 .method public static final coerceToString(II)Ljava/lang/String;
     .locals 3
+    .param p0, "type"    # I
+    .param p1, "data"    # I
 
+    .line 482
     const/4 v0, 0x0
 
     sparse-switch p0, :sswitch_data_0
 
+    .line 503
     const/16 v1, 0x1c
 
     const/16 v2, 0x1f
@@ -255,6 +275,7 @@
 
     if-gt p0, v2, :cond_1
 
+    .line 504
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -275,6 +296,7 @@
 
     return-object v0
 
+    .line 500
     :sswitch_0
     if-eqz p1, :cond_0
 
@@ -288,6 +310,7 @@
     :goto_0
     return-object v0
 
+    .line 498
     :sswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -309,6 +332,7 @@
 
     return-object v0
 
+    .line 495
     :sswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -344,6 +368,7 @@
 
     return-object v0
 
+    .line 492
     :sswitch_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -375,6 +400,7 @@
 
     return-object v0
 
+    .line 490
     :sswitch_4
     invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
@@ -386,6 +412,7 @@
 
     return-object v0
 
+    .line 488
     :sswitch_5
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -403,6 +430,7 @@
 
     return-object v0
 
+    .line 486
     :sswitch_6
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -420,9 +448,11 @@
 
     return-object v0
 
+    .line 484
     :sswitch_7
     return-object v0
 
+    .line 505
     :cond_1
     const/16 v1, 0x10
 
@@ -430,12 +460,14 @@
 
     if-gt p0, v2, :cond_2
 
+    .line 506
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 509
     :cond_2
     return-object v0
 
@@ -458,15 +490,20 @@
 
 .method public static complexToDimension(ILandroid/util/DisplayMetrics;)F
     .locals 2
+    .param p0, "data"    # I
+    .param p1, "metrics"    # Landroid/util/DisplayMetrics;
 
+    .line 267
     shr-int/lit8 v0, p0, 0x0
 
     and-int/lit8 v0, v0, 0xf
 
+    .line 269
     invoke-static {p0}, Landroid/util/TypedValue;->complexToFloat(I)F
 
     move-result v1
 
+    .line 267
     invoke-static {v0, v1, p1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
     move-result v0
@@ -476,9 +513,12 @@
 
 .method public static complexToDimensionNoisy(ILandroid/util/DisplayMetrics;)F
     .locals 1
+    .param p0, "data"    # I
+    .param p1, "metrics"    # Landroid/util/DisplayMetrics;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 338
     invoke-static {p0, p1}, Landroid/util/TypedValue;->complexToDimension(ILandroid/util/DisplayMetrics;)F
 
     move-result v0
@@ -488,15 +528,20 @@
 
 .method public static complexToDimensionPixelOffset(ILandroid/util/DisplayMetrics;)I
     .locals 2
+    .param p0, "data"    # I
+    .param p1, "metrics"    # Landroid/util/DisplayMetrics;
 
+    .line 292
     shr-int/lit8 v0, p0, 0x0
 
     and-int/lit8 v0, v0, 0xf
 
+    .line 294
     invoke-static {p0}, Landroid/util/TypedValue;->complexToFloat(I)F
 
     move-result v1
 
+    .line 292
     invoke-static {v0, v1, p1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
     move-result v0
@@ -508,11 +553,16 @@
 
 .method public static complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
     .locals 5
+    .param p0, "data"    # I
+    .param p1, "metrics"    # Landroid/util/DisplayMetrics;
 
+    .line 319
     invoke-static {p0}, Landroid/util/TypedValue;->complexToFloat(I)F
 
     move-result v0
 
+    .line 320
+    .local v0, "value":F
     shr-int/lit8 v1, p0, 0x0
 
     and-int/lit8 v1, v1, 0xf
@@ -521,6 +571,8 @@
 
     move-result v1
 
+    .line 324
+    .local v1, "f":F
     const/4 v2, 0x0
 
     cmpl-float v3, v1, v2
@@ -539,10 +591,13 @@
     :goto_0
     float-to-int v3, v4
 
+    .line 325
+    .local v3, "res":I
     if-eqz v3, :cond_1
 
     return v3
 
+    .line 326
     :cond_1
     cmpl-float v4, v0, v2
 
@@ -552,6 +607,7 @@
 
     return v2
 
+    .line 327
     :cond_2
     cmpl-float v2, v0, v2
 
@@ -561,6 +617,7 @@
 
     return v2
 
+    .line 328
     :cond_3
     const/4 v2, -0x1
 
@@ -569,7 +626,9 @@
 
 .method public static complexToFloat(I)F
     .locals 3
+    .param p0, "complex"    # I
 
+    .line 246
     and-int/lit16 v0, p0, -0x100
 
     int-to-float v0, v0
@@ -589,17 +648,23 @@
 
 .method public static complexToFraction(IFF)F
     .locals 1
+    .param p0, "data"    # I
+    .param p1, "base"    # F
+    .param p2, "pbase"    # F
 
+    .line 419
     shr-int/lit8 v0, p0, 0x0
 
     and-int/lit8 v0, v0, 0xf
 
     packed-switch v0, :pswitch_data_0
 
+    .line 425
     const/4 v0, 0x0
 
     return v0
 
+    .line 423
     :pswitch_0
     invoke-static {p0}, Landroid/util/TypedValue;->complexToFloat(I)F
 
@@ -609,6 +674,7 @@
 
     return v0
 
+    .line 421
     :pswitch_1
     invoke-static {p0}, Landroid/util/TypedValue;->complexToFloat(I)F
 
@@ -632,16 +698,21 @@
 .method public final coerceToString()Ljava/lang/CharSequence;
     .locals 2
 
+    .line 456
     iget v0, p0, Landroid/util/TypedValue;->type:I
 
+    .line 457
+    .local v0, "t":I
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 
+    .line 458
     iget-object v1, p0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
     return-object v1
 
+    .line 460
     :cond_0
     iget v1, p0, Landroid/util/TypedValue;->data:I
 
@@ -655,6 +726,7 @@
 .method public getComplexUnit()I
     .locals 2
 
+    .line 350
     iget v0, p0, Landroid/util/TypedValue;->data:I
 
     shr-int/lit8 v0, v0, 0x0
@@ -668,7 +740,9 @@
 
 .method public getDimension(Landroid/util/DisplayMetrics;)F
     .locals 1
+    .param p1, "metrics"    # Landroid/util/DisplayMetrics;
 
+    .line 398
     iget v0, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v0, p1}, Landroid/util/TypedValue;->complexToDimension(ILandroid/util/DisplayMetrics;)F
@@ -681,6 +755,7 @@
 .method public final getFloat()F
     .locals 1
 
+    .line 224
     iget v0, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
@@ -692,7 +767,10 @@
 
 .method public getFraction(FF)F
     .locals 1
+    .param p1, "base"    # F
+    .param p2, "pbase"    # F
 
+    .line 443
     iget v0, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v0, p1, p2}, Landroid/util/TypedValue;->complexToFraction(IFF)F
@@ -704,41 +782,52 @@
 
 .method public setTo(Landroid/util/TypedValue;)V
     .locals 1
+    .param p1, "other"    # Landroid/util/TypedValue;
 
+    .line 514
     iget v0, p1, Landroid/util/TypedValue;->type:I
 
     iput v0, p0, Landroid/util/TypedValue;->type:I
 
+    .line 515
     iget-object v0, p1, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
+    .line 516
     iget v0, p1, Landroid/util/TypedValue;->data:I
 
     iput v0, p0, Landroid/util/TypedValue;->data:I
 
+    .line 517
     iget v0, p1, Landroid/util/TypedValue;->assetCookie:I
 
     iput v0, p0, Landroid/util/TypedValue;->assetCookie:I
 
+    .line 518
     iget v0, p1, Landroid/util/TypedValue;->resourceId:I
 
     iput v0, p0, Landroid/util/TypedValue;->resourceId:I
 
+    .line 519
     iget v0, p1, Landroid/util/TypedValue;->density:I
 
     iput v0, p0, Landroid/util/TypedValue;->density:I
 
+    .line 520
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 524
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 525
+    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "TypedValue{t=0x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -751,6 +840,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 526
     const-string v1, "/d=0x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -763,12 +853,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 527
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
     const/4 v2, 0x3
 
     if-ne v1, v2, :cond_1
 
+    .line 528
     const-string v1, " \""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -791,11 +883,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 530
     :cond_1
     iget v1, p0, Landroid/util/TypedValue;->assetCookie:I
 
     if-eqz v1, :cond_2
 
+    .line 531
     const-string v1, " a="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -804,11 +898,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 533
     :cond_2
     iget v1, p0, Landroid/util/TypedValue;->resourceId:I
 
     if-eqz v1, :cond_3
 
+    .line 534
     const-string v1, " r=0x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -821,11 +917,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 536
     :cond_3
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 537
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

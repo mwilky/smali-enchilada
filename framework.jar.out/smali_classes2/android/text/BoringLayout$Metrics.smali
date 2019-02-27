@@ -22,6 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 464
     invoke-direct {p0}, Landroid/graphics/Paint$FontMetricsInt;-><init>()V
 
     return-void
@@ -29,7 +30,9 @@
 
 .method static synthetic access$000(Landroid/text/BoringLayout$Metrics;)V
     .locals 0
+    .param p0, "x0"    # Landroid/text/BoringLayout$Metrics;
 
+    .line 464
     invoke-direct {p0}, Landroid/text/BoringLayout$Metrics;->reset()V
 
     return-void
@@ -38,20 +41,27 @@
 .method private reset()V
     .locals 1
 
+    .line 472
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->top:I
 
+    .line 473
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->bottom:I
 
+    .line 474
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->ascent:I
 
+    .line 475
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->descent:I
 
+    .line 476
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->width:I
 
+    .line 477
     iput v0, p0, Landroid/text/BoringLayout$Metrics;->leading:I
 
+    .line 478
     return-void
 .end method
 
@@ -60,6 +70,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 468
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

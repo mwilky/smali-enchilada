@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/BluetoothLeAdvertiser;Landroid/os/Handler;Landroid/bluetooth/le/AdvertisingSetCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/bluetooth/le/BluetoothLeAdvertiser;
 
+    .line 541
     iput-object p1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
 
     iput-object p2, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
@@ -41,7 +43,10 @@
 # virtual methods
 .method public onAdvertisingDataSet(II)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "status"    # I
 
+    .line 598
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$5;
@@ -50,12 +55,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 605
     return-void
 .end method
 
 .method public onAdvertisingEnabled(IZI)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "enabled"    # Z
+    .param p3, "status"    # I
 
+    .line 587
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$4;
@@ -64,12 +74,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 594
     return-void
 .end method
 
 .method public onAdvertisingParametersUpdated(III)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "txPower"    # I
+    .param p3, "status"    # I
 
+    .line 620
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$7;
@@ -78,12 +93,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 627
     return-void
 .end method
 
 .method public onAdvertisingSetStarted(III)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "txPower"    # I
+    .param p3, "status"    # I
 
+    .line 544
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$1;
@@ -92,12 +112,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 559
     return-void
 .end method
 
 .method public onAdvertisingSetStopped(I)V
     .locals 2
+    .param p1, "advertiserId"    # I
 
+    .line 574
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;
@@ -106,12 +129,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 583
     return-void
 .end method
 
 .method public onOwnAddressRead(IILjava/lang/String;)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "addressType"    # I
+    .param p3, "address"    # Ljava/lang/String;
 
+    .line 563
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$2;
@@ -120,12 +148,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 570
     return-void
 .end method
 
 .method public onPeriodicAdvertisingDataSet(II)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "status"    # I
 
+    .line 642
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$9;
@@ -134,12 +166,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 649
     return-void
 .end method
 
 .method public onPeriodicAdvertisingEnabled(IZI)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "enable"    # Z
+    .param p3, "status"    # I
 
+    .line 653
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$10;
@@ -148,12 +185,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 660
     return-void
 .end method
 
 .method public onPeriodicAdvertisingParametersUpdated(II)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "status"    # I
 
+    .line 631
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$8;
@@ -162,12 +203,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 638
     return-void
 .end method
 
 .method public onScanResponseDataSet(II)V
     .locals 2
+    .param p1, "advertiserId"    # I
+    .param p2, "status"    # I
 
+    .line 609
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$6;
@@ -176,5 +221,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 616
     return-void
 .end method

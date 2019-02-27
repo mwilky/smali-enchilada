@@ -35,6 +35,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 227
     const-string v0, "WPA"
 
     const-string v1, "RSN"
@@ -55,6 +56,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

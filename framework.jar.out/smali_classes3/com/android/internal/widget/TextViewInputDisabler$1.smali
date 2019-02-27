@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/TextViewInputDisabler;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/TextViewInputDisabler;
 
+    .line 32
     iput-object p1, p0, Lcom/android/internal/widget/TextViewInputDisabler$1;->this$0:Lcom/android/internal/widget/TextViewInputDisabler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,14 @@
 # virtual methods
 .method public filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
     .locals 1
+    .param p1, "source"    # Ljava/lang/CharSequence;
+    .param p2, "start"    # I
+    .param p3, "end"    # I
+    .param p4, "dest"    # Landroid/text/Spanned;
+    .param p5, "dstart"    # I
+    .param p6, "dend"    # I
 
+    .line 36
     const-string v0, ""
 
     return-object v0

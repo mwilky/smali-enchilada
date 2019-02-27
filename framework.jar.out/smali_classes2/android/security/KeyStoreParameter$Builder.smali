@@ -24,13 +24,18 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 112
     if-eqz p1, :cond_0
 
+    .line 115
     return-void
 
+    .line 113
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -46,6 +51,7 @@
 .method public build()Landroid/security/KeyStoreParameter;
     .locals 3
 
+    .line 148
     new-instance v0, Landroid/security/KeyStoreParameter;
 
     iget v1, p0, Landroid/security/KeyStoreParameter$Builder;->mFlags:I
@@ -59,9 +65,12 @@
 
 .method public setEncryptionRequired(Z)Landroid/security/KeyStoreParameter$Builder;
     .locals 1
+    .param p1, "required"    # Z
 
+    .line 132
     if-eqz p1, :cond_0
 
+    .line 133
     iget v0, p0, Landroid/security/KeyStoreParameter$Builder;->mFlags:I
 
     or-int/lit8 v0, v0, 0x1
@@ -70,6 +79,7 @@
 
     goto :goto_0
 
+    .line 135
     :cond_0
     iget v0, p0, Landroid/security/KeyStoreParameter$Builder;->mFlags:I
 
@@ -77,6 +87,7 @@
 
     iput v0, p0, Landroid/security/KeyStoreParameter$Builder;->mFlags:I
 
+    .line 137
     :goto_0
     return-object p0
 .end method

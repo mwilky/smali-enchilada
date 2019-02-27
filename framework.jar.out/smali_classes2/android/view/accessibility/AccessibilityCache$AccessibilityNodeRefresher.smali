@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 559
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +28,10 @@
 # virtual methods
 .method public refreshNode(Landroid/view/accessibility/AccessibilityNodeInfo;Z)Z
     .locals 1
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
+    .param p2, "bypassCache"    # Z
 
+    .line 561
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, p2}, Landroid/view/accessibility/AccessibilityNodeInfo;->refresh(Landroid/os/Bundle;Z)Z

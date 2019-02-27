@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,19 +40,25 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/view/accessibility/AccessibilityEvent;
     .locals 1
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 1425
     invoke-static {}, Landroid/view/accessibility/AccessibilityEvent;->obtain()Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v0
 
+    .line 1426
+    .local v0, "event":Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityEvent;->initFromParcel(Landroid/os/Parcel;)V
 
+    .line 1427
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 1423
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object p1
@@ -61,7 +68,9 @@
 
 .method public newArray(I)[Landroid/view/accessibility/AccessibilityEvent;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 1431
     new-array v0, p1, [Landroid/view/accessibility/AccessibilityEvent;
 
     return-object v0
@@ -70,6 +79,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 1423
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent$1;->newArray(I)[Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object p1

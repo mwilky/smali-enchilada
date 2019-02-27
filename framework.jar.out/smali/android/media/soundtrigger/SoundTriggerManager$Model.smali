@@ -21,17 +21,25 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;)V
     .locals 0
+    .param p1, "soundTriggerModel"    # Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 161
     iput-object p1, p0, Landroid/media/soundtrigger/SoundTriggerManager$Model;->mGenericSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
+    .line 162
     return-void
 .end method
 
 .method public static create(Ljava/util/UUID;Ljava/util/UUID;[B)Landroid/media/soundtrigger/SoundTriggerManager$Model;
     .locals 2
+    .param p0, "modelUuid"    # Ljava/util/UUID;
+    .param p1, "vendorUuid"    # Ljava/util/UUID;
+    .param p2, "data"    # [B
 
+    .line 169
     new-instance v0, Landroid/media/soundtrigger/SoundTriggerManager$Model;
 
     new-instance v1, Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
@@ -48,6 +56,7 @@
 .method getGenericSoundModel()Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
     .locals 1
 
+    .line 189
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerManager$Model;->mGenericSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
     return-object v0
@@ -56,6 +65,7 @@
 .method public getModelData()[B
     .locals 1
 
+    .line 182
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerManager$Model;->mGenericSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
     iget-object v0, v0, Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;->data:[B
@@ -66,6 +76,7 @@
 .method public getModelUuid()Ljava/util/UUID;
     .locals 1
 
+    .line 174
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerManager$Model;->mGenericSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
     iget-object v0, v0, Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;->uuid:Ljava/util/UUID;
@@ -76,6 +87,7 @@
 .method public getVendorUuid()Ljava/util/UUID;
     .locals 1
 
+    .line 178
     iget-object v0, p0, Landroid/media/soundtrigger/SoundTriggerManager$Model;->mGenericSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;
 
     iget-object v0, v0, Landroid/hardware/soundtrigger/SoundTrigger$GenericSoundModel;->vendorUuid:Ljava/util/UUID;

@@ -45,24 +45,32 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 1
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
 
+    .line 1867
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1860
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/procstats/ProcessStats$PackageState;->mProcesses:Landroid/util/ArrayMap;
 
+    .line 1862
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/procstats/ProcessStats$PackageState;->mServices:Landroid/util/ArrayMap;
 
+    .line 1868
     iput p2, p0, Lcom/android/internal/app/procstats/ProcessStats$PackageState;->mUid:I
 
+    .line 1869
     iput-object p1, p0, Lcom/android/internal/app/procstats/ProcessStats$PackageState;->mPackageName:Ljava/lang/String;
 
+    .line 1870
     return-void
 .end method

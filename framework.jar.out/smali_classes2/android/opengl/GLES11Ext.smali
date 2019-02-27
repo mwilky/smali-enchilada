@@ -233,14 +233,17 @@
 .method static constructor <clinit>()V
     .locals 0
 
+    .line 135
     invoke-static {}, Landroid/opengl/GLES11Ext;->_nativeClassInit()V
 
+    .line 136
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -512,15 +515,23 @@
 
 .method public static glMatrixIndexPointerOES(IIILjava/nio/Buffer;)V
     .locals 1
+    .param p0, "size"    # I
+    .param p1, "type"    # I
+    .param p2, "stride"    # I
+    .param p3, "pointer"    # Ljava/nio/Buffer;
 
+    .line 895
     nop
 
+    .line 900
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
+    .line 895
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES11Ext;->glMatrixIndexPointerOESBounds(IIILjava/nio/Buffer;I)V
 
+    .line 902
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_0
@@ -553,8 +564,10 @@
     :cond_1
     if-ltz p2, :cond_2
 
+    .line 910
     sput-object p3, Landroid/opengl/GLES11Ext;->_matrixIndexPointerOES:Ljava/nio/Buffer;
 
+    .line 912
     :cond_2
     return-void
 .end method
@@ -657,15 +670,23 @@
 
 .method public static glWeightPointerOES(IIILjava/nio/Buffer;)V
     .locals 1
+    .param p0, "size"    # I
+    .param p1, "type"    # I
+    .param p2, "stride"    # I
+    .param p3, "pointer"    # Ljava/nio/Buffer;
 
+    .line 930
     nop
 
+    .line 935
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
+    .line 930
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES11Ext;->glWeightPointerOESBounds(IIILjava/nio/Buffer;I)V
 
+    .line 937
     return-void
 .end method
 

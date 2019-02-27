@@ -17,35 +17,47 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 42
     return-void
 .end method
 
 .method public static isValid([BII)Z
     .locals 5
+    .param p0, "array"    # [B
+    .param p1, "typeSize"    # I
+    .param p2, "lengthSize"    # I
 
+    .line 554
     if-ltz p1, :cond_5
 
     const/4 v0, 0x2
 
     if-gt p1, v0, :cond_5
 
+    .line 558
     if-lez p2, :cond_4
 
     if-gt p2, v0, :cond_4
 
+    .line 562
     const/4 v0, 0x1
 
     if-nez p0, :cond_0
 
+    .line 563
     return v0
 
+    .line 566
     :cond_0
     const/4 v1, 0x0
 
     move v2, v1
 
+    .line 567
+    .local v2, "nextTlvIndex":I
     :goto_0
     add-int v3, v2, p1
 
@@ -55,10 +67,13 @@
 
     if-gt v3, v4, :cond_2
 
+    .line 568
     add-int/2addr v2, p1
 
+    .line 569
     if-ne p2, v0, :cond_1
 
+    .line 570
     aget-byte v3, p0, v2
 
     add-int/2addr v3, p2
@@ -67,6 +82,7 @@
 
     goto :goto_0
 
+    .line 572
     :cond_1
     sget-object v3, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
@@ -80,6 +96,7 @@
 
     goto :goto_0
 
+    .line 577
     :cond_2
     array-length v3, p0
 
@@ -93,6 +110,8 @@
     :goto_1
     return v0
 
+    .line 559
+    .end local v2    # "nextTlvIndex":I
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -114,6 +133,7 @@
 
     throw v0
 
+    .line 555
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

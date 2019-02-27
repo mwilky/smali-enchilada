@@ -40,6 +40,14 @@
 
 .field public static final EXTRA_SKIP_NAVBAR:Ljava/lang/String; = "android.intent.extra.SKIP_NAVBAR"
 
+.field public static final OEM_PACKAGE_ADDED:Ljava/lang/String; = "oneplus.intent.action.OEM_PACKAGE_ADDED"
+
+.field public static final OEM_PACKAGE_REMOVED:Ljava/lang/String; = "oneplus.intent.action.OEM_PACKAGE_REMOVED"
+
+.field public static final OEM_PACKAGE_REPLACED:Ljava/lang/String; = "oneplus.intent.action.OEM_PACKAGE_REPLACED"
+
+.field public static final OEM_SHUTDOWN:Ljava/lang/String; = "oneplus.intent.action.OEM_SHUTDOWN"
+
 .field public static final TRI_STATE_KEY_BOOT_INTENT:Ljava/lang/String; = "com.oem.intent.action.THREE_KEY_MODE_BOOT"
 
 .field public static final TRI_STATE_KEY_INTENT:Ljava/lang/String; = "com.oem.intent.action.THREE_KEY_MODE"
@@ -51,6 +59,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

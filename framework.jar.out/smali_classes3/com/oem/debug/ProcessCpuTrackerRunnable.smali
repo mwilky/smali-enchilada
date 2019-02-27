@@ -16,6 +16,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 26
     const-string v0, "persist.sys.assert.panic"
 
     const/4 v1, 0x0
@@ -32,6 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,12 +44,14 @@
 .method public run()V
     .locals 3
 
+    .line 30
     sget-boolean v0, Lcom/oem/debug/ProcessCpuTrackerRunnable;->DEBUG:Z
 
     if-nez v0, :cond_0
 
     return-void
 
+    .line 32
     :cond_0
     new-instance v0, Ljava/lang/Thread;
 
@@ -59,7 +63,9 @@
 
     invoke-direct {v0, v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
+    .line 49
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 50
     return-void
 .end method

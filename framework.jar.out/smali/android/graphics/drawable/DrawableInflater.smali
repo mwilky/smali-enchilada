@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 48
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -39,19 +40,27 @@
 
 .method public constructor <init>(Landroid/content/res/Resources;Ljava/lang/ClassLoader;)V
     .locals 0
+    .param p1, "res"    # Landroid/content/res/Resources;
+    .param p2, "classLoader"    # Ljava/lang/ClassLoader;
 
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 89
     iput-object p1, p0, Landroid/graphics/drawable/DrawableInflater;->mRes:Landroid/content/res/Resources;
 
+    .line 90
     iput-object p2, p0, Landroid/graphics/drawable/DrawableInflater;->mClassLoader:Ljava/lang/ClassLoader;
 
+    .line 91
     return-void
 .end method
 
 .method private inflateFromClass(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 5
+    .param p1, "className"    # Ljava/lang/String;
 
+    .line 199
     :try_start_0
     sget-object v0, Landroid/graphics/drawable/DrawableInflater;->CONSTRUCTOR_MAP:Ljava/util/HashMap;
 
@@ -62,6 +71,7 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 200
     :try_start_1
     sget-object v1, Landroid/graphics/drawable/DrawableInflater;->CONSTRUCTOR_MAP:Ljava/util/HashMap;
 
@@ -71,12 +81,16 @@
 
     check-cast v1, Ljava/lang/reflect/Constructor;
 
+    .line 201
+    .local v1, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+Landroid/graphics/drawable/Drawable;>;"
     const/4 v2, 0x0
 
     if-nez v1, :cond_0
 
+    .line 202
     iget-object v3, p0, Landroid/graphics/drawable/DrawableInflater;->mClassLoader:Ljava/lang/ClassLoader;
 
+    .line 203
     invoke-virtual {v3, p1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
@@ -87,6 +101,8 @@
 
     move-result-object v3
 
+    .line 204
+    .local v3, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/graphics/drawable/Drawable;>;"
     new-array v4, v2, [Ljava/lang/Class;
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
@@ -95,10 +111,13 @@
 
     move-object v1, v4
 
+    .line 205
     sget-object v4, Landroid/graphics/drawable/DrawableInflater;->CONSTRUCTOR_MAP:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 207
+    .end local v3    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/graphics/drawable/Drawable;>;"
     :cond_0
     monitor-exit v0
     :try_end_1
@@ -106,6 +125,9 @@
 
     move-object v0, v1
 
+    .line 208
+    .end local v1    # "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+Landroid/graphics/drawable/Drawable;>;"
+    .local v0, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+Landroid/graphics/drawable/Drawable;>;"
     :try_start_2
     new-array v1, v2, [Ljava/lang/Object;
 
@@ -122,6 +144,8 @@
 
     return-object v1
 
+    .line 207
+    .end local v0    # "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+Landroid/graphics/drawable/Drawable;>;"
     :catchall_0
     move-exception v1
 
@@ -138,9 +162,12 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
+    .line 226
     :catch_0
     move-exception v0
 
+    .line 227
+    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Landroid/view/InflateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -159,13 +186,21 @@
 
     invoke-direct {v1, v2}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
+    .line 229
+    .local v1, "ie":Landroid/view/InflateException;
     invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
+    .line 230
     throw v1
 
+    .line 220
+    .end local v0    # "e":Ljava/lang/Exception;
+    .end local v1    # "ie":Landroid/view/InflateException;
     :catch_1
     move-exception v0
 
+    .line 222
+    .local v0, "e":Ljava/lang/ClassNotFoundException;
     new-instance v1, Landroid/view/InflateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -184,13 +219,21 @@
 
     invoke-direct {v1, v2}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
+    .line 224
+    .restart local v1    # "ie":Landroid/view/InflateException;
     invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
+    .line 225
     throw v1
 
+    .line 214
+    .end local v0    # "e":Ljava/lang/ClassNotFoundException;
+    .end local v1    # "ie":Landroid/view/InflateException;
     :catch_2
     move-exception v0
 
+    .line 216
+    .local v0, "e":Ljava/lang/ClassCastException;
     new-instance v1, Landroid/view/InflateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -209,13 +252,21 @@
 
     invoke-direct {v1, v2}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
+    .line 218
+    .restart local v1    # "ie":Landroid/view/InflateException;
     invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
+    .line 219
     throw v1
 
+    .line 209
+    .end local v0    # "e":Ljava/lang/ClassCastException;
+    .end local v1    # "ie":Landroid/view/InflateException;
     :catch_3
     move-exception v0
 
+    .line 210
+    .local v0, "e":Ljava/lang/NoSuchMethodException;
     new-instance v1, Landroid/view/InflateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -234,14 +285,19 @@
 
     invoke-direct {v1, v2}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
 
+    .line 212
+    .restart local v1    # "ie":Landroid/view/InflateException;
     invoke-virtual {v1, v0}, Landroid/view/InflateException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
+    .line 213
     throw v1
 .end method
 
 .method private inflateFromTag(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 1
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 149
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -517,10 +573,12 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
+    .line 191
     const/4 v0, 0x0
 
     return-object v0
 
+    .line 189
     :pswitch_0
     new-instance v0, Landroid/graphics/drawable/AnimatedImageDrawable;
 
@@ -528,6 +586,7 @@
 
     return-object v0
 
+    .line 187
     :pswitch_1
     new-instance v0, Landroid/graphics/drawable/NinePatchDrawable;
 
@@ -535,6 +594,7 @@
 
     return-object v0
 
+    .line 185
     :pswitch_2
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -542,6 +602,7 @@
 
     return-object v0
 
+    .line 183
     :pswitch_3
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
 
@@ -549,6 +610,7 @@
 
     return-object v0
 
+    .line 181
     :pswitch_4
     new-instance v0, Landroid/graphics/drawable/AnimationDrawable;
 
@@ -556,6 +618,7 @@
 
     return-object v0
 
+    .line 179
     :pswitch_5
     new-instance v0, Landroid/graphics/drawable/AnimatedRotateDrawable;
 
@@ -563,6 +626,7 @@
 
     return-object v0
 
+    .line 177
     :pswitch_6
     new-instance v0, Landroid/graphics/drawable/RotateDrawable;
 
@@ -570,6 +634,7 @@
 
     return-object v0
 
+    .line 175
     :pswitch_7
     new-instance v0, Landroid/graphics/drawable/ClipDrawable;
 
@@ -577,6 +642,7 @@
 
     return-object v0
 
+    .line 173
     :pswitch_8
     new-instance v0, Landroid/graphics/drawable/ScaleDrawable;
 
@@ -584,6 +650,7 @@
 
     return-object v0
 
+    .line 171
     :pswitch_9
     new-instance v0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
@@ -591,6 +658,7 @@
 
     return-object v0
 
+    .line 169
     :pswitch_a
     new-instance v0, Landroid/graphics/drawable/VectorDrawable;
 
@@ -598,6 +666,7 @@
 
     return-object v0
 
+    .line 167
     :pswitch_b
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
@@ -605,6 +674,7 @@
 
     return-object v0
 
+    .line 165
     :pswitch_c
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
@@ -612,6 +682,7 @@
 
     return-object v0
 
+    .line 163
     :pswitch_d
     new-instance v0, Landroid/graphics/drawable/AdaptiveIconDrawable;
 
@@ -619,6 +690,7 @@
 
     return-object v0
 
+    .line 161
     :pswitch_e
     new-instance v0, Landroid/graphics/drawable/RippleDrawable;
 
@@ -626,6 +698,7 @@
 
     return-object v0
 
+    .line 159
     :pswitch_f
     new-instance v0, Landroid/graphics/drawable/TransitionDrawable;
 
@@ -633,6 +706,7 @@
 
     return-object v0
 
+    .line 157
     :pswitch_10
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
 
@@ -640,6 +714,7 @@
 
     return-object v0
 
+    .line 155
     :pswitch_11
     new-instance v0, Landroid/graphics/drawable/LevelListDrawable;
 
@@ -647,6 +722,7 @@
 
     return-object v0
 
+    .line 153
     :pswitch_12
     new-instance v0, Landroid/graphics/drawable/AnimatedStateListDrawable;
 
@@ -654,6 +730,7 @@
 
     return-object v0
 
+    .line 151
     :pswitch_13
     new-instance v0, Landroid/graphics/drawable/StateListDrawable;
 
@@ -714,7 +791,10 @@
 
 .method public static loadDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "id"    # I
 
+    .line 63
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -732,7 +812,11 @@
 
 .method public static loadDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;I)Landroid/graphics/drawable/Drawable;
     .locals 1
+    .param p0, "resources"    # Landroid/content/res/Resources;
+    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
+    .param p2, "id"    # I
 
+    .line 77
     invoke-virtual {p0, p2, p1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -744,6 +828,10 @@
 # virtual methods
 .method public inflateFromXml(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 6
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
+    .param p3, "attrs"    # Landroid/util/AttributeSet;
+    .param p4, "theme"    # Landroid/content/res/Resources$Theme;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -751,6 +839,7 @@
         }
     .end annotation
 
+    .line 115
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -772,6 +861,11 @@
 
 .method inflateFromXmlForDensity(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
+    .param p3, "attrs"    # Landroid/util/AttributeSet;
+    .param p4, "density"    # I
+    .param p5, "theme"    # Landroid/content/res/Resources$Theme;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -779,6 +873,7 @@
         }
     .end annotation
 
+    .line 130
     const-string v0, "drawable"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -787,6 +882,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 131
     const/4 v0, 0x0
 
     const-string v1, "class"
@@ -795,10 +891,12 @@
 
     move-result-object p1
 
+    .line 132
     if-eqz p1, :cond_0
 
     goto :goto_0
 
+    .line 133
     :cond_0
     new-instance v0, Landroid/view/InflateException;
 
@@ -808,24 +906,31 @@
 
     throw v0
 
+    .line 137
     :cond_1
     :goto_0
     invoke-direct {p0, p1}, Landroid/graphics/drawable/DrawableInflater;->inflateFromTag(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
+    .line 138
+    .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_2
 
+    .line 139
     invoke-direct {p0, p1}, Landroid/graphics/drawable/DrawableInflater;->inflateFromClass(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
+    .line 141
     :cond_2
     invoke-virtual {v0, p4}, Landroid/graphics/drawable/Drawable;->setSrcDensityOverride(I)V
 
+    .line 142
     iget-object v1, p0, Landroid/graphics/drawable/DrawableInflater;->mRes:Landroid/content/res/Resources;
 
     invoke-virtual {v0, v1, p2, p3, p5}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
+    .line 143
     return-object v0
 .end method

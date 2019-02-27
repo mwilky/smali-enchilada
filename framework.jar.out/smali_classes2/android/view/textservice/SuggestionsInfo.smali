@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 28
     const-class v0, Ljava/lang/String;
 
     invoke-static {v0}, Lcom/android/internal/util/ArrayUtils;->emptyArray(Ljava/lang/Class;)[Ljava/lang/Object;
@@ -52,6 +53,7 @@
 
     sput-object v0, Landroid/view/textservice/SuggestionsInfo;->EMPTY:[Ljava/lang/String;
 
+    .line 165
     new-instance v0, Landroid/view/textservice/SuggestionsInfo$1;
 
     invoke-direct {v0}, Landroid/view/textservice/SuggestionsInfo$1;-><init>()V
@@ -63,77 +65,102 @@
 
 .method public constructor <init>(I[Ljava/lang/String;)V
     .locals 1
+    .param p1, "suggestionsAttributes"    # I
+    .param p2, "suggestions"    # [Ljava/lang/String;
 
+    .line 60
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0, v0}, Landroid/view/textservice/SuggestionsInfo;-><init>(I[Ljava/lang/String;II)V
 
+    .line 61
     return-void
 .end method
 
 .method public constructor <init>(I[Ljava/lang/String;II)V
     .locals 1
+    .param p1, "suggestionsAttributes"    # I
+    .param p2, "suggestions"    # [Ljava/lang/String;
+    .param p3, "cookie"    # I
+    .param p4, "sequence"    # I
 
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 72
     if-nez p2, :cond_0
 
+    .line 73
     sget-object v0, Landroid/view/textservice/SuggestionsInfo;->EMPTY:[Ljava/lang/String;
 
     iput-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
+    .line 74
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
     goto :goto_0
 
+    .line 76
     :cond_0
     iput-object p2, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
+    .line 77
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
+    .line 79
     :goto_0
     iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
+    .line 80
     iput p3, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
+    .line 81
     iput p4, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
+    .line 82
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
+    .line 86
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
+    .line 87
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
+    .line 88
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
+    .line 89
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -150,6 +177,7 @@
     :goto_0
     iput-boolean v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
+    .line 90
     return-void
 .end method
 
@@ -158,6 +186,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 183
     const/4 v0, 0x0
 
     return v0
@@ -166,6 +195,7 @@
 .method public getCookie()I
     .locals 1
 
+    .line 122
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
     return v0
@@ -174,6 +204,7 @@
 .method public getSequence()I
     .locals 1
 
+    .line 129
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
     return v0
@@ -181,7 +212,9 @@
 
 .method public getSuggestionAt(I)Ljava/lang/String;
     .locals 1
+    .param p1, "i"    # I
 
+    .line 159
     iget-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -192,6 +225,7 @@
 .method public getSuggestionsAttributes()I
     .locals 1
 
+    .line 138
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
     return v0
@@ -200,14 +234,17 @@
 .method public getSuggestionsCount()I
     .locals 1
 
+    .line 148
     iget-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
     if-nez v0, :cond_0
 
+    .line 149
     const/4 v0, -0x1
 
     return v0
 
+    .line 151
     :cond_0
     iget-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
@@ -218,36 +255,49 @@
 
 .method public setCookieAndSequence(II)V
     .locals 0
+    .param p1, "cookie"    # I
+    .param p2, "sequence"    # I
 
+    .line 114
     iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
+    .line 115
     iput p2, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
+    .line 116
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 100
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 101
     iget-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
+    .line 102
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 103
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 104
     iget-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 105
     return-void
 .end method

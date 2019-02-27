@@ -34,26 +34,32 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 1433
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1435
     const/16 v0, 0x10
 
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/text/StaticLayout$LineBreaks;->breaks:[I
 
+    .line 1436
     new-array v1, v0, [F
 
     iput-object v1, p0, Landroid/text/StaticLayout$LineBreaks;->widths:[F
 
+    .line 1437
     new-array v1, v0, [F
 
     iput-object v1, p0, Landroid/text/StaticLayout$LineBreaks;->ascents:[F
 
+    .line 1438
     new-array v1, v0, [F
 
     iput-object v1, p0, Landroid/text/StaticLayout$LineBreaks;->descents:[F
 
+    .line 1439
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/text/StaticLayout$LineBreaks;->flags:[I

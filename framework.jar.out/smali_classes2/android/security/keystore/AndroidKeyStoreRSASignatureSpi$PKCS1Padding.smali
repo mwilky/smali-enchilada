@@ -17,11 +17,14 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
+    .param p1, "keymasterDigest"    # I
 
+    .line 35
     const/4 v0, 0x5
 
     invoke-direct {p0, p1, v0}, Landroid/security/keystore/AndroidKeyStoreRSASignatureSpi;-><init>(II)V
 
+    .line 36
     return-void
 .end method
 
@@ -30,6 +33,7 @@
 .method protected final getAdditionalEntropyAmountForSign()I
     .locals 1
 
+    .line 41
     const/4 v0, 0x0
 
     return v0

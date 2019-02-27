@@ -18,6 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 101
     invoke-direct {p0}, Lcom/android/internal/content/PackageHelper$TestableInterface;-><init>()V
 
     return-void
@@ -27,7 +28,9 @@
 # virtual methods
 .method public getAllow3rdPartyOnInternalConfig(Landroid/content/Context;)Z
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 115
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -44,6 +47,7 @@
 .method public getDataDirectory()Ljava/io/File;
     .locals 1
 
+    .line 132
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v0
@@ -53,9 +57,14 @@
 
 .method public getExistingAppInfo(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/ApplicationInfo;
     .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "packageName"    # Ljava/lang/String;
 
+    .line 121
     const/4 v0, 0x0
 
+    .line 123
+    .local v0, "existingInfo":Landroid/content/pm/ApplicationInfo;
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -71,18 +80,23 @@
 
     move-object v0, v1
 
+    .line 126
     goto :goto_0
 
+    .line 125
     :catch_0
     move-exception v1
 
+    .line 127
     :goto_0
     return-object v0
 .end method
 
 .method public getForceAllowOnExternalSetting(Landroid/content/Context;)Z
     .locals 3
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 109
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -107,7 +121,9 @@
 
 .method public getStorageManager(Landroid/content/Context;)Landroid/os/storage/StorageManager;
     .locals 1
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 104
     const-class v0, Landroid/os/storage/StorageManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;

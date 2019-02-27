@@ -27,7 +27,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/ControllerActivityProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/ControllerActivityProto;
 
+    .line 11
     iput-object p1, p0, Landroid/os/ControllerActivityProto$TxLevel;->this$0:Landroid/os/ControllerActivityProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

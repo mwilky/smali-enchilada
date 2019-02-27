@@ -27,7 +27,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/IntentResolverProto;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/server/IntentResolverProto;
 
+    .line 11
     iput-object p1, p0, Lcom/android/server/IntentResolverProto$ArrayMapEntry;->this$0:Lcom/android/server/IntentResolverProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;Ljava/util/List;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;
 
+    .line 930
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->this$1:Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;
 
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->val$tokens:Ljava/util/List;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 6
 
+    .line 933
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->this$1:Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;
 
     iget-object v0, v0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;->this$0:Landroid/media/session/MediaSessionManager$SessionsChangedWrapper;
@@ -49,23 +52,32 @@
 
     move-result-object v0
 
+    .line 934
+    .local v0, "context":Landroid/content/Context;
     if-eqz v0, :cond_1
 
+    .line 935
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 936
+    .local v1, "controllers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/media/session/MediaController;>;"
     iget-object v2, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->val$tokens:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
+    .line 937
+    .local v2, "size":I
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_0
 
+    .line 938
     new-instance v4, Landroid/media/session/MediaController;
 
     iget-object v5, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->val$tokens:Ljava/util/List;
@@ -80,10 +92,13 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 937
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 940
+    .end local v3    # "i":I
     :cond_0
     iget-object v3, p0, Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1$1;->this$1:Landroid/media/session/MediaSessionManager$SessionsChangedWrapper$1;
 
@@ -93,10 +108,17 @@
 
     move-result-object v3
 
+    .line 941
+    .local v3, "listener":Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;
     if-eqz v3, :cond_1
 
+    .line 942
     invoke-interface {v3, v1}, Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;->onActiveSessionsChanged(Ljava/util/List;)V
 
+    .line 945
+    .end local v1    # "controllers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/media/session/MediaController;>;"
+    .end local v2    # "size":I
+    .end local v3    # "listener":Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;
     :cond_1
     return-void
 .end method

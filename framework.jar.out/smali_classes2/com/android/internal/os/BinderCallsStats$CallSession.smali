@@ -26,8 +26,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 252
     new-instance v0, Lcom/android/internal/os/BinderCallsStats$CallStat;
 
     invoke-direct {v0}, Lcom/android/internal/os/BinderCallsStats$CallStat;-><init>()V

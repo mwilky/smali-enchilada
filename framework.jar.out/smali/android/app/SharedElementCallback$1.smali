@@ -18,6 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 54
     invoke-direct {p0}, Landroid/app/SharedElementCallback;-><init>()V
 
     return-void

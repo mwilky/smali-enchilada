@@ -18,6 +18,7 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 42
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/content/res/CompatibilityInfo;-><init>(Landroid/content/res/CompatibilityInfo$1;)V

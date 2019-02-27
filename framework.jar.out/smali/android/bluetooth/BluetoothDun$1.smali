@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothDun;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/bluetooth/BluetoothDun;
 
+    .line 148
     iput-object p1, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public onBluetoothStateChange(Z)V
     .locals 4
+    .param p1, "on"    # Z
 
+    .line 153
     const-string v0, "BluetoothDun"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -52,8 +56,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 154
     if-eqz p1, :cond_1
 
+    .line 156
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
@@ -63,12 +69,14 @@
 
     if-nez v0, :cond_0
 
+    .line 157
     const-string v0, "BluetoothDun"
 
     const-string/jumbo v1, "onBluetoothStateChange call bindService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 158
     iget-object v0, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothDun;->doBind()Z
@@ -78,30 +86,41 @@
 
     goto :goto_0
 
+    .line 162
     :catch_0
     move-exception v0
 
+    .line 163
+    .local v0, "e":Ljava/lang/SecurityException;
     const-string v1, "BluetoothDun"
 
     const-string/jumbo v2, "onBluetoothStateChange: could not bind to DUN service: "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 163
+    .end local v0    # "e":Ljava/lang/SecurityException;
     goto :goto_0
 
+    .line 160
     :catch_1
     move-exception v0
 
+    .line 161
+    .local v0, "e":Ljava/lang/IllegalStateException;
     const-string v1, "BluetoothDun"
 
     const-string/jumbo v2, "onBluetoothStateChange: could not bind to DUN service: "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 164
+    .end local v0    # "e":Ljava/lang/IllegalStateException;
     :cond_0
     :goto_0
     goto :goto_2
 
+    .line 167
     :cond_1
     iget-object v0, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
@@ -111,6 +130,7 @@
 
     monitor-enter v0
 
+    .line 168
     :try_start_1
     iget-object v1, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
@@ -122,6 +142,7 @@
 
     if-eqz v1, :cond_2
 
+    .line 170
     :try_start_2
     iget-object v1, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
@@ -129,6 +150,7 @@
 
     invoke-static {v1, v2}, Landroid/bluetooth/BluetoothDun;->access$002(Landroid/bluetooth/BluetoothDun;Landroid/bluetooth/IBluetoothDun;)Landroid/bluetooth/IBluetoothDun;
 
+    .line 171
     iget-object v1, p0, Landroid/bluetooth/BluetoothDun$1;->this$0:Landroid/bluetooth/BluetoothDun;
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothDun;->access$200(Landroid/bluetooth/BluetoothDun;)Landroid/content/Context;
@@ -146,11 +168,15 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 174
     goto :goto_1
 
+    .line 172
     :catch_2
     move-exception v1
 
+    .line 173
+    .local v1, "re":Ljava/lang/Exception;
     :try_start_3
     const-string v2, "BluetoothDun"
 
@@ -158,13 +184,17 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 176
+    .end local v1    # "re":Ljava/lang/Exception;
     :cond_2
     :goto_1
     monitor-exit v0
 
+    .line 178
     :goto_2
     return-void
 
+    .line 176
     :catchall_0
     move-exception v1
 

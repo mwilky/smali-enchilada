@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,19 +40,27 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/media/VolumeShaper$Operation;
     .locals 5
+    .param p1, "p"    # Landroid/os/Parcel;
 
+    .line 1174
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1175
+    .local v0, "flags":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1176
+    .local v1, "replaceId":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v2
 
+    .line 1178
+    .local v2, "xOffset":F
     new-instance v3, Landroid/media/VolumeShaper$Operation;
 
     const/4 v4, 0x0
@@ -64,6 +73,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 1170
     invoke-virtual {p0, p1}, Landroid/media/VolumeShaper$Operation$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/VolumeShaper$Operation;
 
     move-result-object p1
@@ -73,7 +83,9 @@
 
 .method public newArray(I)[Landroid/media/VolumeShaper$Operation;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 1186
     new-array v0, p1, [Landroid/media/VolumeShaper$Operation;
 
     return-object v0
@@ -82,6 +94,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 1170
     invoke-virtual {p0, p1}, Landroid/media/VolumeShaper$Operation$1;->newArray(I)[Landroid/media/VolumeShaper$Operation;
 
     move-result-object p1

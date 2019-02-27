@@ -6,13 +6,17 @@
 # virtual methods
 .method public onBindingDied(Landroid/content/ComponentName;)V
     .locals 0
+    .param p1, "name"    # Landroid/content/ComponentName;
 
+    .line 70
     return-void
 .end method
 
 .method public onNullBinding(Landroid/content/ComponentName;)V
     .locals 0
+    .param p1, "name"    # Landroid/content/ComponentName;
 
+    .line 87
     return-void
 .end method
 

@@ -71,24 +71,31 @@
 .method private constructor <init>()V
     .locals 1
 
+    .line 96
+    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$UserServices;, "Landroid/content/pm/RegisteredServicesCache$UserServices<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 97
     nop
 
+    .line 98
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/RegisteredServicesCache$UserServices;->persistentServices:Ljava/util/Map;
 
+    .line 99
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/pm/RegisteredServicesCache$UserServices;->services:Ljava/util/Map;
 
+    .line 101
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/pm/RegisteredServicesCache$UserServices;->mPersistentServicesFileDidNotExist:Z
 
+    .line 103
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/pm/RegisteredServicesCache$UserServices;->mBindInstantServiceAllowed:Z
@@ -98,7 +105,10 @@
 
 .method synthetic constructor <init>(Landroid/content/pm/RegisteredServicesCache$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/content/pm/RegisteredServicesCache$1;
 
+    .line 96
+    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$UserServices;, "Landroid/content/pm/RegisteredServicesCache$UserServices<TV;>;"
     invoke-direct {p0}, Landroid/content/pm/RegisteredServicesCache$UserServices;-><init>()V
 
     return-void

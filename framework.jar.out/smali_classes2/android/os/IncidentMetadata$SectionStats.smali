@@ -39,7 +39,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/IncidentMetadata;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/IncidentMetadata;
 
+    .line 16
     iput-object p1, p0, Landroid/os/IncidentMetadata$SectionStats;->this$0:Landroid/os/IncidentMetadata;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

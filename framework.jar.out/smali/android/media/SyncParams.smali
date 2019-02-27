@@ -52,20 +52,26 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 163
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 166
     iput v0, p0, Landroid/media/SyncParams;->mAudioAdjustMode:I
 
+    .line 167
     iput v0, p0, Landroid/media/SyncParams;->mSyncSource:I
 
+    .line 168
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/SyncParams;->mTolerance:F
 
+    .line 169
     iput v0, p0, Landroid/media/SyncParams;->mFrameRate:F
 
     return-void
@@ -76,28 +82,33 @@
 .method public allowDefaults()Landroid/media/SyncParams;
     .locals 1
 
+    .line 179
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     or-int/lit8 v0, v0, 0x7
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 180
     return-object p0
 .end method
 
 .method public getAudioAdjustMode()I
     .locals 2
 
+    .line 200
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_0
 
+    .line 203
     iget v0, p0, Landroid/media/SyncParams;->mAudioAdjustMode:I
 
     return v0
 
+    .line 201
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -111,16 +122,19 @@
 .method public getFrameRate()F
     .locals 2
 
+    .line 282
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_0
 
+    .line 285
     iget v0, p0, Landroid/media/SyncParams;->mFrameRate:F
 
     return v0
 
+    .line 283
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -134,16 +148,19 @@
 .method public getSyncSource()I
     .locals 2
 
+    .line 223
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
+    .line 226
     iget v0, p0, Landroid/media/SyncParams;->mSyncSource:I
 
     return v0
 
+    .line 224
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -157,16 +174,19 @@
 .method public getTolerance()F
     .locals 2
 
+    .line 254
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_0
 
+    .line 257
     iget v0, p0, Landroid/media/SyncParams;->mTolerance:F
 
     return v0
 
+    .line 255
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -179,49 +199,63 @@
 
 .method public setAudioAdjustMode(I)Landroid/media/SyncParams;
     .locals 1
+    .param p1, "audioAdjustMode"    # I
 
+    .line 189
     iput p1, p0, Landroid/media/SyncParams;->mAudioAdjustMode:I
 
+    .line 190
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 191
     return-object p0
 .end method
 
 .method public setFrameRate(F)Landroid/media/SyncParams;
     .locals 1
+    .param p1, "frameRate"    # F
 
+    .line 268
     iput p1, p0, Landroid/media/SyncParams;->mFrameRate:F
 
+    .line 269
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 270
     return-object p0
 .end method
 
 .method public setSyncSource(I)Landroid/media/SyncParams;
     .locals 1
+    .param p1, "syncSource"    # I
 
+    .line 212
     iput p1, p0, Landroid/media/SyncParams;->mSyncSource:I
 
+    .line 213
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 214
     return-object p0
 .end method
 
 .method public setTolerance(F)Landroid/media/SyncParams;
     .locals 2
+    .param p1, "tolerance"    # F
 
+    .line 238
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
@@ -234,16 +268,20 @@
 
     if-gez v0, :cond_0
 
+    .line 241
     iput p1, p0, Landroid/media/SyncParams;->mTolerance:F
 
+    .line 242
     iget v0, p0, Landroid/media/SyncParams;->mSet:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Landroid/media/SyncParams;->mSet:I
 
+    .line 243
     return-object p0
 
+    .line 239
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

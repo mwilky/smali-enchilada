@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,6 +31,8 @@
 # virtual methods
 .method public readThisUnknownObjectXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/Object;
     .locals 3
+    .param p1, "in"    # Lorg/xmlpull/v1/XmlPullParser;
+    .param p2, "tag"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -37,6 +40,7 @@
         }
     .end annotation
 
+    .line 253
     const-string/jumbo v0, "pbundle_as_map"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -45,12 +49,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 254
     invoke-static {p1}, Landroid/os/PersistableBundle;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/os/PersistableBundle;
 
     move-result-object v0
 
     return-object v0
 
+    .line 256
     :cond_0
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 

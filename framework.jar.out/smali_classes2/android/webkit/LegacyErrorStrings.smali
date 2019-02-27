@@ -11,6 +11,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,11 +19,14 @@
 
 .method private static getResource(I)I
     .locals 4
+    .param p0, "errorCode"    # I
 
-    const v0, 0x104028c
+    .line 45
+    const v0, 0x104028d
 
     packed-switch p0, :pswitch_data_0
 
+    .line 95
     const-string v1, "Http"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -41,83 +45,100 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 96
     return v0
 
+    .line 47
     :pswitch_0
-    const v0, 0x1040294
-
-    return v0
-
-    :pswitch_1
-    return v0
-
-    :pswitch_2
-    const v0, 0x1040293
-
-    return v0
-
-    :pswitch_3
-    const v0, 0x1040299
-
-    return v0
-
-    :pswitch_4
-    const v0, 0x104028d
-
-    return v0
-
-    :pswitch_5
     const v0, 0x1040295
 
     return v0
 
-    :pswitch_6
+    .line 50
+    :pswitch_1
+    return v0
+
+    .line 53
+    :pswitch_2
+    const v0, 0x1040294
+
+    return v0
+
+    .line 56
+    :pswitch_3
+    const v0, 0x104029a
+
+    return v0
+
+    .line 59
+    :pswitch_4
     const v0, 0x104028e
 
     return v0
 
-    :pswitch_7
-    const v0, 0x1040292
-
-    return v0
-
-    :pswitch_8
-    const v0, 0x1040297
-
-    return v0
-
-    :pswitch_9
+    .line 62
+    :pswitch_5
     const v0, 0x1040296
 
     return v0
 
+    .line 65
+    :pswitch_6
+    const v0, 0x104028f
+
+    return v0
+
+    .line 68
+    :pswitch_7
+    const v0, 0x1040293
+
+    return v0
+
+    .line 71
+    :pswitch_8
+    const v0, 0x1040298
+
+    return v0
+
+    .line 74
+    :pswitch_9
+    const v0, 0x1040297
+
+    return v0
+
+    .line 77
     :pswitch_a
     const v0, 0x1040008
 
     return v0
 
+    .line 80
     :pswitch_b
-    const v0, 0x104028f
+    const v0, 0x1040290
 
     return v0
 
+    .line 83
     :pswitch_c
     const v0, 0x1040007
 
     return v0
 
+    .line 86
     :pswitch_d
-    const v0, 0x1040290
-
-    return v0
-
-    :pswitch_e
     const v0, 0x1040291
 
     return v0
 
+    .line 89
+    :pswitch_e
+    const v0, 0x1040292
+
+    return v0
+
+    .line 92
     :pswitch_f
-    const v0, 0x1040298
+    const v0, 0x1040299
 
     return v0
 
@@ -144,7 +165,10 @@
 
 .method static getString(ILandroid/content/Context;)Ljava/lang/String;
     .locals 1
+    .param p0, "errorCode"    # I
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 37
     invoke-static {p0}, Landroid/webkit/LegacyErrorStrings;->getResource(I)I
 
     move-result v0

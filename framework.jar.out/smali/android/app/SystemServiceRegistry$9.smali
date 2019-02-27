@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 262
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -41,12 +42,15 @@
         }
     .end annotation
 
+    .line 265
     const-string v0, "hdmi_control"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 266
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/hardware/hdmi/HdmiControlManager;
 
     invoke-static {v0}, Landroid/hardware/hdmi/IHdmiControlService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/hdmi/IHdmiControlService;
@@ -66,6 +70,7 @@
         }
     .end annotation
 
+    .line 262
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$9;->createService()Landroid/hardware/hdmi/HdmiControlManager;
 
     move-result-object v0

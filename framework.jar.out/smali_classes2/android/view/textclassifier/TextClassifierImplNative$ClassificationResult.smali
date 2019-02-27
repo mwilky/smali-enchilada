@@ -25,15 +25,23 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;FLandroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;)V
     .locals 0
+    .param p1, "collection"    # Ljava/lang/String;
+    .param p2, "score"    # F
+    .param p3, "datetimeResult"    # Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;
 
+    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 153
     iput-object p1, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mCollection:Ljava/lang/String;
 
+    .line 154
     iput p2, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mScore:F
 
+    .line 155
     iput-object p3, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mDatetimeResult:Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;
 
+    .line 156
     return-void
 .end method
 
@@ -42,6 +50,7 @@
 .method public getCollection()Ljava/lang/String;
     .locals 2
 
+    .line 159
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mCollection:Ljava/lang/String;
 
     const-string v1, "date"
@@ -56,6 +65,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 160
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mDatetimeResult:Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;
 
     invoke-virtual {v0}, Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;->getGranularity()I
@@ -64,15 +74,18 @@
 
     packed-switch v0, :pswitch_data_0
 
+    .line 168
     const-string v0, "date"
 
     return-object v0
 
+    .line 166
     :pswitch_0
     const-string v0, "datetime"
 
     return-object v0
 
+    .line 171
     :cond_0
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mCollection:Ljava/lang/String;
 
@@ -89,6 +102,7 @@
 .method public getDatetimeResult()Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;
     .locals 1
 
+    .line 179
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mDatetimeResult:Landroid/view/textclassifier/TextClassifierImplNative$DatetimeResult;
 
     return-object v0
@@ -97,6 +111,7 @@
 .method public getScore()F
     .locals 1
 
+    .line 175
     iget v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;->mScore:F
 
     return v0

@@ -50,12 +50,14 @@
 .method static constructor <clinit>()V
     .locals 9
 
+    .line 1504
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
+    .line 1505
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "black"
@@ -68,6 +70,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1506
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "darkgray"
@@ -80,6 +83,7 @@
 
     invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1507
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "gray"
@@ -92,6 +96,7 @@
 
     invoke-virtual {v0, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1508
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "lightgray"
@@ -104,6 +109,7 @@
 
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1509
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "white"
@@ -116,6 +122,7 @@
 
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1510
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "red"
@@ -128,6 +135,7 @@
 
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1511
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "green"
@@ -140,6 +148,7 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1512
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "blue"
@@ -152,6 +161,7 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1513
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "yellow"
@@ -164,6 +174,7 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1514
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "cyan"
@@ -176,6 +187,7 @@
 
     invoke-virtual {v0, v1, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1515
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "magenta"
@@ -188,6 +200,7 @@
 
     invoke-virtual {v0, v1, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1516
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "aqua"
@@ -198,6 +211,7 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1517
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "fuchsia"
@@ -208,6 +222,7 @@
 
     invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1518
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "darkgrey"
@@ -218,6 +233,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1519
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string v1, "grey"
@@ -228,6 +244,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1520
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "lightgrey"
@@ -238,6 +255,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1521
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "lime"
@@ -248,6 +266,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1522
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "maroon"
@@ -260,6 +279,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1523
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "navy"
@@ -272,6 +292,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1524
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "olive"
@@ -284,6 +305,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1525
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "purple"
@@ -296,6 +318,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1526
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "silver"
@@ -308,6 +331,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1527
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     const-string/jumbo v1, "teal"
@@ -320,14 +344,17 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1529
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 1
 
+    .line 325
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 327
     const/4 v0, 0x4
 
     new-array v0, v0, [F
@@ -336,6 +363,7 @@
 
     iput-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
+    .line 328
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -344,6 +372,7 @@
 
     iput-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
+    .line 329
     return-void
 
     :array_0
@@ -357,7 +386,12 @@
 
 .method private constructor <init>(FFFF)V
     .locals 7
+    .param p1, "r"    # F
+    .param p2, "g"    # F
+    .param p3, "b"    # F
+    .param p4, "a"    # F
 
+    .line 341
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -376,14 +410,22 @@
 
     invoke-direct/range {v1 .. v6}, Landroid/graphics/Color;-><init>(FFFFLandroid/graphics/ColorSpace;)V
 
+    .line 342
     return-void
 .end method
 
 .method private constructor <init>(FFFFLandroid/graphics/ColorSpace;)V
     .locals 2
+    .param p1, "r"    # F
+    .param p2, "g"    # F
+    .param p3, "b"    # F
+    .param p4, "a"    # F
+    .param p5, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 355
     const/4 v0, 0x4
 
     new-array v0, v0, [F
@@ -406,38 +448,51 @@
 
     iput-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
+    .line 356
     iput-object p5, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
+    .line 357
     return-void
 .end method
 
 .method private constructor <init>([FLandroid/graphics/ColorSpace;)V
     .locals 0
+    .param p1, "components"    # [F
+    .param p2, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 365
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 366
     iput-object p1, p0, Landroid/graphics/Color;->mComponents:[F
 
+    .line 367
     iput-object p2, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
+    .line 368
     return-void
 .end method
 
 .method public static HSVToColor(I[F)I
     .locals 2
+    .param p0, "alpha"    # I
+    .param p1, "hsv"    # [F
 
+    .line 1470
     array-length v0, p1
 
     const/4 v1, 0x3
 
     if-lt v0, v1, :cond_0
 
+    .line 1473
     invoke-static {p0, p1}, Landroid/graphics/Color;->nativeHSVToColor(I[F)I
 
     move-result v0
 
     return v0
 
+    .line 1471
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -450,7 +505,9 @@
 
 .method public static HSVToColor([F)I
     .locals 1
+    .param p0, "hsv"    # [F
 
+    .line 1452
     const/16 v0, 0xff
 
     invoke-static {v0, p0}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -462,17 +519,25 @@
 
 .method public static RGBToHSV(III[F)V
     .locals 2
+    .param p0, "red"    # I
+    .param p1, "green"    # I
+    .param p2, "blue"    # I
+    .param p3, "hsv"    # [F
 
+    .line 1419
     array-length v0, p3
 
     const/4 v1, 0x3
 
     if-lt v0, v1, :cond_0
 
+    .line 1422
     invoke-static {p0, p1, p2, p3}, Landroid/graphics/Color;->nativeRGBToHSV(III[F)V
 
+    .line 1423
     return-void
 
+    .line 1420
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -485,7 +550,9 @@
 
 .method public static alpha(J)F
     .locals 4
+    .param p0, "color"    # J
 
+    .line 780
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -512,6 +579,7 @@
 
     return v0
 
+    .line 781
     :cond_0
     const/4 v0, 0x6
 
@@ -532,7 +600,9 @@
 
 .method public static alpha(I)I
     .locals 1
+    .param p0, "color"    # I
 
+    .line 1241
     ushr-int/lit8 v0, p0, 0x18
 
     return v0
@@ -540,7 +610,12 @@
 
 .method public static argb(FFFF)I
     .locals 4
+    .param p0, "alpha"    # F
+    .param p1, "red"    # F
+    .param p2, "green"    # F
+    .param p3, "blue"    # F
 
+    .line 1339
     const/high16 v0, 0x437f0000    # 255.0f
 
     mul-float v1, p0, v0
@@ -586,7 +661,12 @@
 
 .method public static argb(IIII)I
     .locals 2
+    .param p0, "alpha"    # I
+    .param p1, "red"    # I
+    .param p2, "green"    # I
+    .param p3, "blue"    # I
 
+    .line 1324
     shl-int/lit8 v0, p0, 0x18
 
     shl-int/lit8 v1, p1, 0x10
@@ -604,7 +684,9 @@
 
 .method public static blue(J)F
     .locals 4
+    .param p0, "color"    # J
 
+    .line 763
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -631,6 +713,7 @@
 
     return v0
 
+    .line 764
     :cond_0
     const/16 v0, 0x10
 
@@ -653,7 +736,9 @@
 
 .method public static blue(I)I
     .locals 1
+    .param p0, "color"    # I
 
+    .line 1268
     and-int/lit16 v0, p0, 0xff
 
     return v0
@@ -661,7 +746,9 @@
 
 .method public static colorSpace(J)Landroid/graphics/ColorSpace;
     .locals 2
+    .param p0, "color"    # J
 
+    .line 704
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -677,7 +764,10 @@
 
 .method public static colorToHSV(I[F)V
     .locals 3
+    .param p0, "color"    # I
+    .param p1, "hsv"    # [F
 
+    .line 1436
     shr-int/lit8 v0, p0, 0x10
 
     and-int/lit16 v0, v0, 0xff
@@ -690,16 +780,25 @@
 
     invoke-static {v0, v1, v2, p1}, Landroid/graphics/Color;->RGBToHSV(III[F)V
 
+    .line 1437
     return-void
 .end method
 
 .method public static convert(FFFFLandroid/graphics/ColorSpace$Connector;)J
     .locals 5
+    .param p0, "r"    # F
+    .param p1, "g"    # F
+    .param p2, "b"    # F
+    .param p3, "a"    # F
+    .param p4, "connector"    # Landroid/graphics/ColorSpace$Connector;
 
+    .line 1201
     invoke-virtual {p4, p0, p1, p2}, Landroid/graphics/ColorSpace$Connector;->transform(FFF)[F
 
     move-result-object v0
 
+    .line 1202
+    .local v0, "c":[F
     const/4 v1, 0x0
 
     aget v1, v0, v1
@@ -725,7 +824,14 @@
 
 .method public static convert(FFFFLandroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;)J
     .locals 4
+    .param p0, "r"    # F
+    .param p1, "g"    # F
+    .param p2, "b"    # F
+    .param p3, "a"    # F
+    .param p4, "source"    # Landroid/graphics/ColorSpace;
+    .param p5, "destination"    # Landroid/graphics/ColorSpace;
 
+    .line 1145
     invoke-static {p4, p5}, Landroid/graphics/ColorSpace;->connect(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;
 
     move-result-object v0
@@ -734,6 +840,8 @@
 
     move-result-object v0
 
+    .line 1146
+    .local v0, "c":[F
     const/4 v1, 0x0
 
     aget v1, v0, v1
@@ -755,7 +863,10 @@
 
 .method public static convert(ILandroid/graphics/ColorSpace;)J
     .locals 11
+    .param p0, "color"    # I
+    .param p1, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 1087
     shr-int/lit8 v0, p0, 0x10
 
     and-int/lit16 v0, v0, 0xff
@@ -766,6 +877,8 @@
 
     div-float/2addr v0, v1
 
+    .line 1088
+    .local v0, "r":F
     shr-int/lit8 v2, p0, 0x8
 
     and-int/lit16 v2, v2, 0xff
@@ -774,12 +887,16 @@
 
     div-float v8, v2, v1
 
+    .line 1089
+    .local v8, "g":F
     and-int/lit16 v2, p0, 0xff
 
     int-to-float v2, v2
 
     div-float v9, v2, v1
 
+    .line 1090
+    .local v9, "b":F
     shr-int/lit8 v2, p0, 0x18
 
     and-int/lit16 v2, v2, 0xff
@@ -788,12 +905,16 @@
 
     div-float v1, v2, v1
 
+    .line 1091
+    .local v1, "a":F
     sget-object v2, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v2}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
 
     move-result-object v10
 
+    .line 1092
+    .local v10, "source":Landroid/graphics/ColorSpace;
     move v2, v0
 
     move v3, v8
@@ -815,23 +936,34 @@
 
 .method public static convert(JLandroid/graphics/ColorSpace$Connector;)J
     .locals 6
+    .param p0, "color"    # J
+    .param p2, "connector"    # Landroid/graphics/ColorSpace$Connector;
 
+    .line 1168
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
 
     move-result v0
 
+    .line 1169
+    .local v0, "r":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
 
     move-result v1
 
+    .line 1170
+    .local v1, "g":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
 
     move-result v2
 
+    .line 1171
+    .local v2, "b":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->alpha(J)F
 
     move-result v3
 
+    .line 1172
+    .local v3, "a":F
     invoke-static {v0, v1, v2, v3, p2}, Landroid/graphics/Color;->convert(FFFFLandroid/graphics/ColorSpace$Connector;)J
 
     move-result-wide v4
@@ -841,27 +973,40 @@
 
 .method public static convert(JLandroid/graphics/ColorSpace;)J
     .locals 11
+    .param p0, "color"    # J
+    .param p2, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 1111
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
 
     move-result v6
 
+    .line 1112
+    .local v6, "r":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
 
     move-result v7
 
+    .line 1113
+    .local v7, "g":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
 
     move-result v8
 
+    .line 1114
+    .local v8, "b":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->alpha(J)F
 
     move-result v9
 
+    .line 1115
+    .local v9, "a":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
 
     move-result-object v10
 
+    .line 1116
+    .local v10, "source":Landroid/graphics/ColorSpace;
     move v0, v6
 
     move v1, v7
@@ -883,7 +1028,9 @@
 
 .method public static getHtmlColor(Ljava/lang/String;)I
     .locals 3
+    .param p0, "color"    # Ljava/lang/String;
 
+    .line 1490
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
@@ -898,14 +1045,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 1491
+    .local v0, "i":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
+    .line 1492
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     return v1
 
+    .line 1495
     :cond_0
     const/4 v1, -0x1
 
@@ -918,15 +1069,20 @@
 
     return v2
 
+    .line 1496
     :catch_0
     move-exception v2
 
+    .line 1497
+    .local v2, "nfe":Ljava/lang/NumberFormatException;
     return v1
 .end method
 
 .method public static green(J)F
     .locals 4
+    .param p0, "color"    # J
 
+    .line 743
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -953,6 +1109,7 @@
 
     return v0
 
+    .line 744
     :cond_0
     const/16 v0, 0x20
 
@@ -975,7 +1132,9 @@
 
 .method public static green(I)I
     .locals 1
+    .param p0, "color"    # I
 
+    .line 1259
     shr-int/lit8 v0, p0, 0x8
 
     and-int/lit16 v0, v0, 0xff
@@ -985,7 +1144,10 @@
 
 .method public static isInColorSpace(JLandroid/graphics/ColorSpace;)Z
     .locals 2
+    .param p0, "color"    # J
+    .param p2, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 827
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -1011,7 +1173,9 @@
 
 .method public static isSrgb(J)Z
     .locals 1
+    .param p0, "color"    # J
 
+    .line 796
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -1025,7 +1189,9 @@
 
 .method public static isWideGamut(J)Z
     .locals 1
+    .param p0, "color"    # J
 
+    .line 813
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -1039,7 +1205,9 @@
 
 .method public static luminance(I)F
     .locals 12
+    .param p0, "color"    # I
 
+    .line 1354
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -1048,10 +1216,14 @@
 
     check-cast v0, Landroid/graphics/ColorSpace$Rgb;
 
+    .line 1355
+    .local v0, "cs":Landroid/graphics/ColorSpace$Rgb;
     invoke-virtual {v0}, Landroid/graphics/ColorSpace$Rgb;->getEotf()Ljava/util/function/DoubleUnaryOperator;
 
     move-result-object v1
 
+    .line 1357
+    .local v1, "eotf":Ljava/util/function/DoubleUnaryOperator;
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v2
@@ -1066,6 +1238,8 @@
 
     move-result-wide v2
 
+    .line 1358
+    .local v2, "r":D
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v6
@@ -1078,6 +1252,8 @@
 
     move-result-wide v6
 
+    .line 1359
+    .local v6, "g":D
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v8
@@ -1090,6 +1266,8 @@
 
     move-result-wide v4
 
+    .line 1361
+    .local v4, "b":D
     const-wide v8, 0x3fcb367a0f9096bcL    # 0.2126
 
     mul-double/2addr v8, v2
@@ -1113,11 +1291,15 @@
 
 .method public static luminance(J)F
     .locals 12
+    .param p0, "color"    # J
 
+    .line 1217
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
 
     move-result-object v0
 
+    .line 1218
+    .local v0, "colorSpace":Landroid/graphics/ColorSpace;
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v1
@@ -1126,6 +1308,7 @@
 
     if-ne v1, v2, :cond_0
 
+    .line 1223
     move-object v1, v0
 
     check-cast v1, Landroid/graphics/ColorSpace$Rgb;
@@ -1134,6 +1317,8 @@
 
     move-result-object v1
 
+    .line 1224
+    .local v1, "eotf":Ljava/util/function/DoubleUnaryOperator;
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
 
     move-result v2
@@ -1144,6 +1329,8 @@
 
     move-result-wide v2
 
+    .line 1225
+    .local v2, "r":D
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
 
     move-result v4
@@ -1154,6 +1341,8 @@
 
     move-result-wide v4
 
+    .line 1226
+    .local v4, "g":D
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
 
     move-result v6
@@ -1164,6 +1353,8 @@
 
     move-result-wide v6
 
+    .line 1228
+    .local v6, "b":D
     const-wide v8, 0x3fcb367a0f9096bcL    # 0.2126
 
     mul-double/2addr v8, v2
@@ -1188,6 +1379,11 @@
 
     return v8
 
+    .line 1219
+    .end local v1    # "eotf":Ljava/util/function/DoubleUnaryOperator;
+    .end local v2    # "r":D
+    .end local v4    # "g":D
+    .end local v6    # "b":D
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1199,6 +1395,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1220
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v3
@@ -1222,7 +1419,11 @@
 
 .method public static pack(FFF)J
     .locals 2
+    .param p0, "red"    # F
+    .param p1, "green"    # F
+    .param p2, "blue"    # F
 
+    .line 1000
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -1240,7 +1441,12 @@
 
 .method public static pack(FFFF)J
     .locals 2
+    .param p0, "red"    # F
+    .param p1, "green"    # F
+    .param p2, "blue"    # F
+    .param p3, "alpha"    # F
 
+    .line 1017
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -1256,9 +1462,15 @@
 
 .method public static pack(FFFFLandroid/graphics/ColorSpace;)J
     .locals 16
+    .param p0, "red"    # F
+    .param p1, "green"    # F
+    .param p2, "blue"    # F
+    .param p3, "alpha"    # F
+    .param p4, "colorSpace"    # Landroid/graphics/ColorSpace;
 
     move/from16 v0, p3
 
+    .line 1042
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/ColorSpace;->isSrgb()Z
 
     move-result v1
@@ -1271,6 +1483,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 1043
     const/high16 v1, 0x437f0000    # 255.0f
 
     mul-float v5, v0, v1
@@ -1309,6 +1522,8 @@
 
     or-int/2addr v1, v3
 
+    .line 1048
+    .local v1, "argb":I
     int-to-long v3, v1
 
     const-wide v7, 0xffffffffL
@@ -1319,15 +1534,20 @@
 
     return-wide v2
 
+    .line 1051
+    .end local v1    # "argb":I
     :cond_0
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/ColorSpace;->getId()I
 
     move-result v1
 
+    .line 1052
+    .local v1, "id":I
     const/4 v7, -0x1
 
     if-eq v1, v7, :cond_2
 
+    .line 1056
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/ColorSpace;->getComponentCount()I
 
     move-result v7
@@ -1336,18 +1556,25 @@
 
     if-gt v7, v8, :cond_1
 
+    .line 1061
     invoke-static/range {p0 .. p0}, Landroid/util/Half;->toHalf(F)S
 
     move-result v7
 
+    .line 1062
+    .local v7, "r":S
     invoke-static/range {p1 .. p1}, Landroid/util/Half;->toHalf(F)S
 
     move-result v8
 
+    .line 1063
+    .local v8, "g":S
     invoke-static/range {p2 .. p2}, Landroid/util/Half;->toHalf(F)S
 
     move-result v9
 
+    .line 1065
+    .local v9, "b":S
     const/4 v10, 0x0
 
     const/high16 v11, 0x3f800000    # 1.0f
@@ -1368,6 +1595,8 @@
 
     float-to-int v4, v10
 
+    .line 1068
+    .local v4, "a":I
     int-to-long v10, v7
 
     const-wide/32 v12, 0xffff
@@ -1382,6 +1611,8 @@
 
     int-to-long v3, v8
 
+    .end local v4    # "a":I
+    .local v15, "a":I
     and-long/2addr v3, v12
 
     shl-long v2, v3, v2
@@ -1402,6 +1633,8 @@
 
     int-to-long v10, v4
 
+    .end local v15    # "a":I
+    .restart local v4    # "a":I
     const-wide/16 v12, 0x3ff
 
     and-long/2addr v10, v12
@@ -1422,6 +1655,11 @@
 
     return-wide v2
 
+    .line 1057
+    .end local v4    # "a":I
+    .end local v7    # "r":S
+    .end local v8    # "g":S
+    .end local v9    # "b":S
     :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1431,6 +1669,7 @@
 
     throw v2
 
+    .line 1053
     :cond_2
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1443,7 +1682,9 @@
 
 .method public static pack(I)J
     .locals 4
+    .param p0, "color"    # I
 
+    .line 983
     int-to-long v0, p0
 
     const-wide v2, 0xffffffffL
@@ -1459,7 +1700,9 @@
 
 .method public static parseColor(Ljava/lang/String;)I
     .locals 4
+    .param p0, "colorString"    # Ljava/lang/String;
 
+    .line 1384
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
@@ -1470,6 +1713,7 @@
 
     if-ne v0, v1, :cond_2
 
+    .line 1386
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1482,6 +1726,8 @@
 
     move-result-wide v0
 
+    .line 1387
+    .local v0, "color":J
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -1490,12 +1736,14 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 1389
     const-wide/32 v2, -0x1000000
 
     or-long/2addr v0, v2
 
     goto :goto_0
 
+    .line 1390
     :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -1505,11 +1753,13 @@
 
     if-ne v2, v3, :cond_1
 
+    .line 1393
     :goto_0
     long-to-int v2, v0
 
     return v2
 
+    .line 1391
     :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1519,6 +1769,8 @@
 
     throw v2
 
+    .line 1395
+    .end local v0    # "color":J
     :cond_2
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
@@ -1534,14 +1786,19 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 1396
+    .local v0, "color":Ljava/lang/Integer;
     if-eqz v0, :cond_3
 
+    .line 1397
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     return v1
 
+    .line 1400
+    .end local v0    # "color":Ljava/lang/Integer;
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1554,7 +1811,9 @@
 
 .method public static red(J)F
     .locals 4
+    .param p0, "color"    # J
 
+    .line 723
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -1581,6 +1840,7 @@
 
     return v0
 
+    .line 724
     :cond_0
     shr-long v0, p0, v1
 
@@ -1601,7 +1861,9 @@
 
 .method public static red(I)I
     .locals 1
+    .param p0, "color"    # I
 
+    .line 1250
     shr-int/lit8 v0, p0, 0x10
 
     and-int/lit16 v0, v0, 0xff
@@ -1611,7 +1873,11 @@
 
 .method public static rgb(FFF)I
     .locals 4
+    .param p0, "red"    # F
+    .param p1, "green"    # F
+    .param p2, "blue"    # F
 
+    .line 1302
     const/high16 v0, 0x437f0000    # 255.0f
 
     mul-float v1, p0, v0
@@ -1651,7 +1917,11 @@
 
 .method public static rgb(III)I
     .locals 2
+    .param p0, "red"    # I
+    .param p1, "green"    # I
+    .param p2, "blue"    # I
 
+    .line 1287
     shl-int/lit8 v0, p0, 0x10
 
     const/high16 v1, -0x1000000
@@ -1669,7 +1939,9 @@
 
 .method private static saturate(F)F
     .locals 3
+    .param p0, "v"    # F
 
+    .line 1232
     const/4 v0, 0x0
 
     cmpg-float v1, p0, v0
@@ -1698,7 +1970,9 @@
 
 .method public static toArgb(J)I
     .locals 9
+    .param p0, "color"    # J
 
+    .line 840
     const-wide/16 v0, 0x3f
 
     and-long/2addr v0, p0
@@ -1717,23 +1991,32 @@
 
     return v0
 
+    .line 842
     :cond_0
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
 
     move-result v0
 
+    .line 843
+    .local v0, "r":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
 
     move-result v1
 
+    .line 844
+    .local v1, "g":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
 
     move-result v2
 
+    .line 845
+    .local v2, "b":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->alpha(J)F
 
     move-result v3
 
+    .line 848
+    .local v3, "a":F
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
 
     move-result-object v4
@@ -1746,6 +2029,8 @@
 
     move-result-object v4
 
+    .line 850
+    .local v4, "c":[F
     const/high16 v5, 0x437f0000    # 255.0f
 
     mul-float v6, v3, v5
@@ -1803,7 +2088,11 @@
 
 .method public static valueOf(FFF)Landroid/graphics/Color;
     .locals 2
+    .param p0, "r"    # F
+    .param p1, "g"    # F
+    .param p2, "b"    # F
 
+    .line 898
     new-instance v0, Landroid/graphics/Color;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1815,7 +2104,12 @@
 
 .method public static valueOf(FFFF)Landroid/graphics/Color;
     .locals 5
+    .param p0, "r"    # F
+    .param p1, "g"    # F
+    .param p2, "b"    # F
+    .param p3, "a"    # F
 
+    .line 914
     new-instance v0, Landroid/graphics/Color;
 
     invoke-static {p0}, Landroid/graphics/Color;->saturate(F)F
@@ -1841,7 +2135,13 @@
 
 .method public static valueOf(FFFFLandroid/graphics/ColorSpace;)Landroid/graphics/Color;
     .locals 8
+    .param p0, "r"    # F
+    .param p1, "g"    # F
+    .param p2, "b"    # F
+    .param p3, "a"    # F
+    .param p4, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 936
     invoke-virtual {p4}, Landroid/graphics/ColorSpace;->getComponentCount()I
 
     move-result v0
@@ -1850,6 +2150,7 @@
 
     if-gt v0, v1, :cond_0
 
+    .line 940
     new-instance v0, Landroid/graphics/Color;
 
     move-object v2, v0
@@ -1868,6 +2169,7 @@
 
     return-object v0
 
+    .line 937
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1880,7 +2182,9 @@
 
 .method public static valueOf(I)Landroid/graphics/Color;
     .locals 11
+    .param p0, "color"    # I
 
+    .line 866
     shr-int/lit8 v0, p0, 0x10
 
     and-int/lit16 v0, v0, 0xff
@@ -1891,6 +2195,8 @@
 
     div-float/2addr v0, v1
 
+    .line 867
+    .local v0, "r":F
     shr-int/lit8 v2, p0, 0x8
 
     and-int/lit16 v2, v2, 0xff
@@ -1899,12 +2205,16 @@
 
     div-float v8, v2, v1
 
+    .line 868
+    .local v8, "g":F
     and-int/lit16 v2, p0, 0xff
 
     int-to-float v2, v2
 
     div-float v9, v2, v1
 
+    .line 869
+    .local v9, "b":F
     shr-int/lit8 v2, p0, 0x18
 
     and-int/lit16 v2, v2, 0xff
@@ -1913,6 +2223,8 @@
 
     div-float v1, v2, v1
 
+    .line 870
+    .local v1, "a":F
     new-instance v10, Landroid/graphics/Color;
 
     sget-object v2, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
@@ -1938,7 +2250,9 @@
 
 .method public static valueOf(J)Landroid/graphics/Color;
     .locals 7
+    .param p0, "color"    # J
 
+    .line 883
     new-instance v6, Landroid/graphics/Color;
 
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
@@ -1970,7 +2284,10 @@
 
 .method public static valueOf([FLandroid/graphics/ColorSpace;)Landroid/graphics/Color;
     .locals 3
+    .param p0, "components"    # [F
+    .param p1, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 964
     array-length v0, p0
 
     invoke-virtual {p1}, Landroid/graphics/ColorSpace;->getComponentCount()I
@@ -1981,6 +2298,7 @@
 
     if-lt v0, v1, :cond_0
 
+    .line 969
     new-instance v0, Landroid/graphics/Color;
 
     invoke-virtual {p1}, Landroid/graphics/ColorSpace;->getComponentCount()I
@@ -1997,6 +2315,7 @@
 
     return-object v0
 
+    .line 965
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2016,6 +2335,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 967
     invoke-virtual {p1}, Landroid/graphics/ColorSpace;->getComponentCount()I
 
     move-result v2
@@ -2042,6 +2362,7 @@
 .method public alpha()F
     .locals 2
 
+    .line 551
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
@@ -2058,6 +2379,7 @@
 .method public blue()F
     .locals 2
 
+    .line 536
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v1, 0x2
@@ -2069,13 +2391,17 @@
 
 .method public convert(Landroid/graphics/ColorSpace;)Landroid/graphics/Color;
     .locals 4
+    .param p1, "colorSpace"    # Landroid/graphics/ColorSpace;
 
+    .line 452
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-static {v0, p1}, Landroid/graphics/ColorSpace;->connect(Landroid/graphics/ColorSpace;Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;
 
     move-result-object v0
 
+    .line 453
+    .local v0, "connector":Landroid/graphics/ColorSpace$Connector;
     const/4 v1, 0x4
 
     new-array v1, v1, [F
@@ -2112,8 +2438,11 @@
 
     aput v2, v1, v3
 
+    .line 456
+    .local v1, "color":[F
     invoke-virtual {v0, v1}, Landroid/graphics/ColorSpace$Connector;->transform([F)[F
 
+    .line 457
     new-instance v2, Landroid/graphics/Color;
 
     invoke-direct {v2, v1, p1}, Landroid/graphics/Color;-><init>([FLandroid/graphics/ColorSpace;)V
@@ -2123,13 +2452,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 643
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
+    .line 644
     :cond_0
     const/4 v0, 0x0
 
@@ -2147,11 +2479,14 @@
 
     goto :goto_0
 
+    .line 646
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/graphics/Color;
 
+    .line 649
+    .local v1, "color":Landroid/graphics/Color;
     iget-object v2, p0, Landroid/graphics/Color;->mComponents:[F
 
     iget-object v3, v1, Landroid/graphics/Color;->mComponents:[F
@@ -2164,6 +2499,7 @@
 
     return v0
 
+    .line 650
     :cond_2
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
@@ -2175,6 +2511,8 @@
 
     return v0
 
+    .line 644
+    .end local v1    # "color":Landroid/graphics/Color;
     :cond_3
     :goto_0
     return v0
@@ -2183,6 +2521,7 @@
 .method public getColorSpace()Landroid/graphics/ColorSpace;
     .locals 1
 
+    .line 377
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     return-object v0
@@ -2190,7 +2529,9 @@
 
 .method public getComponent(I)F
     .locals 1
+    .param p1, "component"    # I
 
+    .line 613
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     aget v0, v0, p1
@@ -2201,6 +2542,7 @@
 .method public getComponentCount()I
     .locals 1
 
+    .line 424
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->getComponentCount()I
@@ -2215,6 +2557,7 @@
 .method public getComponents()[F
     .locals 2
 
+    .line 565
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
@@ -2230,9 +2573,12 @@
 
 .method public getComponents([F)[F
     .locals 3
+    .param p1, "components"    # [F
 
+    .line 585
     if-nez p1, :cond_0
 
+    .line 586
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
@@ -2245,6 +2591,7 @@
 
     return-object v0
 
+    .line 589
     :cond_0
     array-length v0, p1
 
@@ -2254,6 +2601,7 @@
 
     if-lt v0, v1, :cond_1
 
+    .line 594
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
@@ -2264,8 +2612,10 @@
 
     invoke-static {v0, v2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 595
     return-object p1
 
+    .line 590
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2295,6 +2645,7 @@
 .method public getModel()Landroid/graphics/ColorSpace$Model;
     .locals 1
 
+    .line 386
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
@@ -2307,6 +2658,7 @@
 .method public green()F
     .locals 2
 
+    .line 519
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v1, 0x1
@@ -2319,12 +2671,15 @@
 .method public hashCode()I
     .locals 3
 
+    .line 655
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([F)I
 
     move-result v0
 
+    .line 656
+    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int/2addr v1, v0
@@ -2337,12 +2692,16 @@
 
     add-int/2addr v1, v2
 
+    .line 657
+    .end local v0    # "result":I
+    .local v1, "result":I
     return v1
 .end method
 
 .method public isSrgb()Z
     .locals 1
 
+    .line 412
     invoke-virtual {p0}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -2357,6 +2716,7 @@
 .method public isWideGamut()Z
     .locals 1
 
+    .line 400
     invoke-virtual {p0}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -2371,6 +2731,7 @@
 .method public luminance()F
     .locals 11
 
+    .line 628
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
@@ -2381,6 +2742,7 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 633
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     check-cast v0, Landroid/graphics/ColorSpace$Rgb;
@@ -2389,6 +2751,8 @@
 
     move-result-object v0
 
+    .line 634
+    .local v0, "eotf":Ljava/util/function/DoubleUnaryOperator;
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v2, 0x0
@@ -2401,6 +2765,8 @@
 
     move-result-wide v1
 
+    .line 635
+    .local v1, "r":D
     iget-object v3, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v4, 0x1
@@ -2413,6 +2779,8 @@
 
     move-result-wide v3
 
+    .line 636
+    .local v3, "g":D
     iget-object v5, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v6, 0x2
@@ -2425,6 +2793,8 @@
 
     move-result-wide v5
 
+    .line 638
+    .local v5, "b":D
     const-wide v7, 0x3fcb367a0f9096bcL    # 0.2126
 
     mul-double/2addr v7, v1
@@ -2449,6 +2819,11 @@
 
     return v7
 
+    .line 629
+    .end local v0    # "eotf":Ljava/util/function/DoubleUnaryOperator;
+    .end local v1    # "r":D
+    .end local v3    # "g":D
+    .end local v5    # "b":D
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2462,6 +2837,7 @@
 
     iget-object v2, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
+    .line 630
     invoke-virtual {v2}, Landroid/graphics/ColorSpace;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v2
@@ -2480,6 +2856,7 @@
 .method public pack()J
     .locals 5
 
+    .line 438
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v1, 0x0
@@ -2516,6 +2893,7 @@
 .method public red()F
     .locals 2
 
+    .line 502
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     const/4 v1, 0x0
@@ -2528,6 +2906,7 @@
 .method public toArgb()I
     .locals 8
 
+    .line 469
     iget-object v0, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-virtual {v0}, Landroid/graphics/ColorSpace;->isSrgb()Z
@@ -2548,6 +2927,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 470
     iget-object v0, p0, Landroid/graphics/Color;->mComponents:[F
 
     aget v0, v0, v4
@@ -2602,6 +2982,7 @@
 
     return v0
 
+    .line 476
     :cond_0
     const/4 v0, 0x4
 
@@ -2631,6 +3012,8 @@
 
     aput v7, v0, v4
 
+    .line 480
+    .local v0, "color":[F
     iget-object v7, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
     invoke-static {v7}, Landroid/graphics/ColorSpace;->connect(Landroid/graphics/ColorSpace;)Landroid/graphics/ColorSpace$Connector;
@@ -2639,6 +3022,7 @@
 
     invoke-virtual {v7, v0}, Landroid/graphics/ColorSpace$Connector;->transform([F)[F
 
+    .line 482
     aget v4, v0, v4
 
     mul-float/2addr v4, v6
@@ -2689,12 +3073,15 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
+    .line 681
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Color("
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 682
+    .local v0, "b":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/graphics/Color;->mComponents:[F
 
     array-length v2, v1
@@ -2706,16 +3093,21 @@
 
     aget v4, v1, v3
 
+    .line 683
+    .local v4, "c":F
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     const-string v5, ", "
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 682
+    .end local v4    # "c":F
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 685
     :cond_0
     iget-object v1, p0, Landroid/graphics/Color;->mColorSpace:Landroid/graphics/ColorSpace;
 
@@ -2725,10 +3117,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 686
     const/16 v1, 0x29
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 687
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

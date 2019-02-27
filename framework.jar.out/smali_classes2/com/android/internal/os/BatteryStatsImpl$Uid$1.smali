@@ -29,7 +29,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/BatteryStatsImpl$Uid;Lcom/android/internal/os/BatteryStatsImpl;I)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl$Uid;
+    .param p2, "x0"    # Lcom/android/internal/os/BatteryStatsImpl;
+    .param p3, "uid"    # I
 
+    .line 6890
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$Uid$1;->this$0:Lcom/android/internal/os/BatteryStatsImpl$Uid;
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -44,6 +48,7 @@
 .method public instantiateObject()Lcom/android/internal/os/BatteryStatsImpl$Uid$Wakelock;
     .locals 3
 
+    .line 6892
     new-instance v0, Lcom/android/internal/os/BatteryStatsImpl$Uid$Wakelock;
 
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Uid$1;->this$0:Lcom/android/internal/os/BatteryStatsImpl$Uid;
@@ -60,6 +65,7 @@
 .method public bridge synthetic instantiateObject()Ljava/lang/Object;
     .locals 1
 
+    .line 6890
     invoke-virtual {p0}, Lcom/android/internal/os/BatteryStatsImpl$Uid$1;->instantiateObject()Lcom/android/internal/os/BatteryStatsImpl$Uid$Wakelock;
 
     move-result-object v0

@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,10 @@
 # virtual methods
 .method public compare(Landroid/os/storage/VolumeInfo;Landroid/os/storage/VolumeInfo;)I
     .locals 2
+    .param p1, "lhs"    # Landroid/os/storage/VolumeInfo;
+    .param p2, "rhs"    # Landroid/os/storage/VolumeInfo;
 
+    .line 110
     const-string/jumbo v0, "private"
 
     invoke-virtual {p1}, Landroid/os/storage/VolumeInfo;->getId()Ljava/lang/String;
@@ -54,8 +58,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 111
     return v1
 
+    .line 112
     :cond_0
     invoke-virtual {p1}, Landroid/os/storage/VolumeInfo;->getDescription()Ljava/lang/String;
 
@@ -63,10 +69,12 @@
 
     if-nez v0, :cond_1
 
+    .line 113
     const/4 v0, 0x1
 
     return v0
 
+    .line 114
     :cond_1
     invoke-virtual {p2}, Landroid/os/storage/VolumeInfo;->getDescription()Ljava/lang/String;
 
@@ -74,8 +82,10 @@
 
     if-nez v0, :cond_2
 
+    .line 115
     return v1
 
+    .line 117
     :cond_2
     invoke-virtual {p1}, Landroid/os/storage/VolumeInfo;->getDescription()Ljava/lang/String;
 
@@ -95,6 +105,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 107
     check-cast p1, Landroid/os/storage/VolumeInfo;
 
     check-cast p2, Landroid/os/storage/VolumeInfo;

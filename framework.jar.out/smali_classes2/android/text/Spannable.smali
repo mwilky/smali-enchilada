@@ -20,9 +20,13 @@
 
 .method public removeSpan(Ljava/lang/Object;I)V
     .locals 0
+    .param p1, "what"    # Ljava/lang/Object;
+    .param p2, "flags"    # I
 
+    .line 58
     invoke-interface {p0, p1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
+    .line 59
     return-void
 .end method
 

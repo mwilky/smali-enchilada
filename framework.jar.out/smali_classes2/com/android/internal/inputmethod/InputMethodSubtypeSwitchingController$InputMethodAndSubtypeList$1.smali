@@ -33,7 +33,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
+    .line 186
     iput-object p1, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList$1;->this$0:Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,20 +47,27 @@
 # virtual methods
 .method public compare(Landroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodInfo;)I
     .locals 4
+    .param p1, "imi1"    # Landroid/view/inputmethod/InputMethodInfo;
+    .param p2, "imi2"    # Landroid/view/inputmethod/InputMethodInfo;
 
+    .line 189
     if-nez p2, :cond_0
 
+    .line 190
     const/4 v0, 0x0
 
     return v0
 
+    .line 191
     :cond_0
     if-nez p1, :cond_1
 
+    .line 192
     const/4 v0, 0x1
 
     return v0
 
+    .line 193
     :cond_1
     iget-object v0, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList$1;->this$0:Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
@@ -68,6 +77,7 @@
 
     if-nez v0, :cond_2
 
+    .line 194
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
@@ -82,6 +92,7 @@
 
     return v0
 
+    .line 196
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -113,6 +124,8 @@
 
     move-result-object v0
 
+    .line 197
+    .local v0, "imiId1":Ljava/lang/CharSequence;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -143,6 +156,8 @@
 
     move-result-object v1
 
+    .line 198
+    .local v1, "imiId2":Ljava/lang/CharSequence;
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -161,6 +176,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 186
     check-cast p1, Landroid/view/inputmethod/InputMethodInfo;
 
     check-cast p2, Landroid/view/inputmethod/InputMethodInfo;

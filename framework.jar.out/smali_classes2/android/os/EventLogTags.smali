@@ -13,6 +13,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +21,10 @@
 
 .method public static writeServiceManagerSlow(ILjava/lang/String;)V
     .locals 3
+    .param p0, "time"    # I
+    .param p1, "service"    # Ljava/lang/String;
 
+    .line 24
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -41,12 +45,17 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 25
     return-void
 .end method
 
 .method public static writeServiceManagerStats(III)V
     .locals 3
+    .param p0, "callCount"    # I
+    .param p1, "totalTime"    # I
+    .param p2, "duration"    # I
 
+    .line 20
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -79,5 +88,6 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 21
     return-void
 .end method

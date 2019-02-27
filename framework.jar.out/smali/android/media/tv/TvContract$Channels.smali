@@ -192,6 +192,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 1643
     const-string v0, "content://android.media.tv/channel"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -200,12 +201,14 @@
 
     sput-object v0, Landroid/media/tv/TvContract$Channels;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 1958
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
+    .line 1961
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_480I"
@@ -214,6 +217,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1962
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_480P"
@@ -222,6 +226,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1963
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_576I"
@@ -230,6 +235,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1964
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_576P"
@@ -238,6 +244,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1965
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_720P"
@@ -246,6 +253,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1966
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_1080I"
@@ -254,6 +262,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1967
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_1080P"
@@ -262,6 +271,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1968
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_2160P"
@@ -270,6 +280,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1969
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     const-string v1, "VIDEO_FORMAT_4320P"
@@ -278,12 +289,14 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1970
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 2390
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -291,7 +304,9 @@
 
 .method public static final getVideoResolution(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .param p0, "videoFormat"    # Ljava/lang/String;
 
+    .line 1982
     sget-object v0, Landroid/media/tv/TvContract$Channels;->VIDEO_FORMAT_TO_RESOLUTION_MAP:Ljava/util/Map;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;

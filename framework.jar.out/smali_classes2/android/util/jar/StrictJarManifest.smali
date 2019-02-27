@@ -54,6 +54,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 43
     const/4 v0, 0x2
 
     new-array v1, v0, [B
@@ -62,6 +63,7 @@
 
     sput-object v1, Landroid/util/jar/StrictJarManifest;->LINE_SEPARATOR:[B
 
+    .line 45
     new-array v0, v0, [B
 
     fill-array-data v0, :array_1
@@ -88,28 +90,35 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 72
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
+    .line 73
     new-instance v0, Ljava/util/jar/Attributes;
 
     invoke-direct {v0}, Ljava/util/jar/Attributes;-><init>()V
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
+    .line 74
     return-void
 .end method
 
 .method public constructor <init>(Landroid/util/jar/StrictJarManifest;)V
     .locals 1
+    .param p1, "man"    # Landroid/util/jar/StrictJarManifest;
 
+    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 99
     iget-object v0, p1, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v0}, Ljava/util/jar/Attributes;->clone()Ljava/lang/Object;
@@ -120,8 +129,10 @@
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
+    .line 100
     nop
 
+    .line 101
     invoke-virtual {p1}, Landroid/util/jar/StrictJarManifest;->getEntries()Ljava/util/Map;
 
     move-result-object v0
@@ -136,66 +147,82 @@
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
+    .line 102
     return-void
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;)V
     .locals 1
+    .param p1, "is"    # Ljava/io/InputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 86
     invoke-direct {p0}, Landroid/util/jar/StrictJarManifest;-><init>()V
 
+    .line 87
     invoke-static {p1}, Llibcore/io/Streams;->readFully(Ljava/io/InputStream;)[B
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/util/jar/StrictJarManifest;->read([B)V
 
+    .line 88
     return-void
 .end method
 
 .method constructor <init>([BZ)V
     .locals 1
+    .param p1, "manifestBytes"    # [B
+    .param p2, "readChunks"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 105
     invoke-direct {p0}, Landroid/util/jar/StrictJarManifest;-><init>()V
 
+    .line 106
     if-eqz p2, :cond_0
 
+    .line 107
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->chunks:Ljava/util/HashMap;
 
+    .line 109
     :cond_0
     invoke-direct {p0, p1}, Landroid/util/jar/StrictJarManifest;->read([B)V
 
+    .line 110
     return-void
 .end method
 
 .method private read([B)V
     .locals 3
+    .param p1, "buf"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 190
     array-length v0, p1
 
     if-nez v0, :cond_0
 
+    .line 191
     return-void
 
+    .line 194
     :cond_0
     new-instance v0, Landroid/util/jar/StrictJarManifestReader;
 
@@ -203,64 +230,84 @@
 
     invoke-direct {v0, p1, v1}, Landroid/util/jar/StrictJarManifestReader;-><init>([BLjava/util/jar/Attributes;)V
 
+    .line 195
+    .local v0, "im":Landroid/util/jar/StrictJarManifestReader;
     invoke-virtual {v0}, Landroid/util/jar/StrictJarManifestReader;->getEndOfMainSection()I
 
     move-result v1
 
     iput v1, p0, Landroid/util/jar/StrictJarManifest;->mainEnd:I
 
+    .line 196
     iget-object v1, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
     iget-object v2, p0, Landroid/util/jar/StrictJarManifest;->chunks:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1, v2}, Landroid/util/jar/StrictJarManifestReader;->readEntries(Ljava/util/Map;Ljava/util/Map;)V
 
+    .line 197
     return-void
 .end method
 
 .method static write(Landroid/util/jar/StrictJarManifest;Ljava/io/OutputStream;)V
     .locals 10
+    .param p0, "manifest"    # Landroid/util/jar/StrictJarManifest;
+    .param p1, "out"    # Ljava/io/OutputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 256
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0}, Ljava/nio/charset/Charset;->newEncoder()Ljava/nio/charset/CharsetEncoder;
 
     move-result-object v0
 
+    .line 257
+    .local v0, "encoder":Ljava/nio/charset/CharsetEncoder;
     const/16 v1, 0x48
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
+    .line 259
+    .local v1, "buffer":Ljava/nio/ByteBuffer;
     sget-object v2, Ljava/util/jar/Attributes$Name;->MANIFEST_VERSION:Ljava/util/jar/Attributes$Name;
 
+    .line 260
+    .local v2, "versionName":Ljava/util/jar/Attributes$Name;
     iget-object v3, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v3, v2}, Ljava/util/jar/Attributes;->getValue(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 261
+    .local v3, "version":Ljava/lang/String;
     if-nez v3, :cond_0
 
+    .line 262
     sget-object v2, Ljava/util/jar/Attributes$Name;->SIGNATURE_VERSION:Ljava/util/jar/Attributes$Name;
 
+    .line 263
     iget-object v4, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v4, v2}, Ljava/util/jar/Attributes;->getValue(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 265
     :cond_0
     if-eqz v3, :cond_2
 
+    .line 266
     invoke-static {p1, v2, v3, v0, v1}, Landroid/util/jar/StrictJarManifest;->writeEntry(Ljava/io/OutputStream;Ljava/util/jar/Attributes$Name;Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Ljava/nio/ByteBuffer;)V
 
+    .line 267
     iget-object v4, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v4}, Ljava/util/jar/Attributes;->keySet()Ljava/util/Set;
@@ -271,6 +318,8 @@
 
     move-result-object v4
 
+    .line 268
+    .local v4, "entries":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -278,18 +327,22 @@
 
     if-eqz v5, :cond_2
 
+    .line 269
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/util/jar/Attributes$Name;
 
+    .line 270
+    .local v5, "name":Ljava/util/jar/Attributes$Name;
     invoke-virtual {v5, v2}, Ljava/util/jar/Attributes$Name;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
     if-nez v6, :cond_1
 
+    .line 271
     iget-object v6, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v6, v5}, Ljava/util/jar/Attributes;->getValue(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;
@@ -298,14 +351,19 @@
 
     invoke-static {p1, v5, v6, v0, v1}, Landroid/util/jar/StrictJarManifest;->writeEntry(Ljava/io/OutputStream;Ljava/util/jar/Attributes$Name;Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Ljava/nio/ByteBuffer;)V
 
+    .line 273
+    .end local v5    # "name":Ljava/util/jar/Attributes$Name;
     :cond_1
     goto :goto_0
 
+    .line 275
+    .end local v4    # "entries":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     :cond_2
     sget-object v4, Landroid/util/jar/StrictJarManifest;->LINE_SEPARATOR:[B
 
     invoke-virtual {p1, v4}, Ljava/io/OutputStream;->write([B)V
 
+    .line 276
     invoke-virtual {p0}, Landroid/util/jar/StrictJarManifest;->getEntries()Ljava/util/Map;
 
     move-result-object v4
@@ -318,6 +376,8 @@
 
     move-result-object v4
 
+    .line 277
+    .local v4, "i":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -325,16 +385,20 @@
 
     if-eqz v5, :cond_4
 
+    .line 278
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/lang/String;
 
+    .line 279
+    .local v5, "key":Ljava/lang/String;
     sget-object v6, Ljava/util/jar/Attributes$Name;->NAME:Ljava/util/jar/Attributes$Name;
 
     invoke-static {p1, v6, v5, v0, v1}, Landroid/util/jar/StrictJarManifest;->writeEntry(Ljava/io/OutputStream;Ljava/util/jar/Attributes$Name;Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Ljava/nio/ByteBuffer;)V
 
+    .line 280
     iget-object v6, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
     invoke-virtual {v6, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -343,6 +407,8 @@
 
     check-cast v6, Ljava/util/jar/Attributes;
 
+    .line 281
+    .local v6, "attributes":Ljava/util/jar/Attributes;
     invoke-virtual {v6}, Ljava/util/jar/Attributes;->keySet()Ljava/util/Set;
 
     move-result-object v7
@@ -351,6 +417,8 @@
 
     move-result-object v7
 
+    .line 282
+    .local v7, "entries":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     :goto_2
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
@@ -358,43 +426,62 @@
 
     if-eqz v8, :cond_3
 
+    .line 283
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Ljava/util/jar/Attributes$Name;
 
+    .line 284
+    .local v8, "name":Ljava/util/jar/Attributes$Name;
     invoke-virtual {v6, v8}, Ljava/util/jar/Attributes;->getValue(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-static {p1, v8, v9, v0, v1}, Landroid/util/jar/StrictJarManifest;->writeEntry(Ljava/io/OutputStream;Ljava/util/jar/Attributes$Name;Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Ljava/nio/ByteBuffer;)V
 
+    .line 285
+    .end local v8    # "name":Ljava/util/jar/Attributes$Name;
     goto :goto_2
 
+    .line 286
     :cond_3
     sget-object v8, Landroid/util/jar/StrictJarManifest;->LINE_SEPARATOR:[B
 
     invoke-virtual {p1, v8}, Ljava/io/OutputStream;->write([B)V
 
+    .line 287
+    .end local v5    # "key":Ljava/lang/String;
+    .end local v6    # "attributes":Ljava/util/jar/Attributes;
+    .end local v7    # "entries":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     goto :goto_1
 
+    .line 288
     :cond_4
     return-void
 .end method
 
 .method private static writeEntry(Ljava/io/OutputStream;Ljava/util/jar/Attributes$Name;Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Ljava/nio/ByteBuffer;)V
     .locals 6
+    .param p0, "os"    # Ljava/io/OutputStream;
+    .param p1, "name"    # Ljava/util/jar/Attributes$Name;
+    .param p2, "value"    # Ljava/lang/String;
+    .param p3, "encoder"    # Ljava/nio/charset/CharsetEncoder;
+    .param p4, "bBuf"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 292
     invoke-virtual {p1}, Ljava/util/jar/Attributes$Name;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 293
+    .local v0, "nameString":Ljava/lang/String;
     sget-object v1, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
@@ -403,12 +490,15 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
+    .line 294
     sget-object v1, Landroid/util/jar/StrictJarManifest;->VALUE_SEPARATOR:[B
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
+    .line 296
     invoke-virtual {p3}, Ljava/nio/charset/CharsetEncoder;->reset()Ljava/nio/charset/CharsetEncoder;
 
+    .line 297
     invoke-virtual {p4}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     move-result-object v1
@@ -423,10 +513,13 @@
 
     invoke-virtual {v1, v2}, Ljava/nio/Buffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 299
     invoke-static {p2}, Ljava/nio/CharBuffer;->wrap(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
 
     move-result-object v1
 
+    .line 302
+    .local v1, "cBuf":Ljava/nio/CharBuffer;
     :goto_0
     const/4 v2, 0x1
 
@@ -434,14 +527,18 @@
 
     move-result-object v2
 
+    .line 303
+    .local v2, "r":Ljava/nio/charset/CoderResult;
     sget-object v3, Ljava/nio/charset/CoderResult;->UNDERFLOW:Ljava/nio/charset/CoderResult;
 
     if-ne v3, v2, :cond_0
 
+    .line 304
     invoke-virtual {p3, p4}, Ljava/nio/charset/CharsetEncoder;->flush(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;
 
     move-result-object v2
 
+    .line 306
     :cond_0
     invoke-virtual {p4}, Ljava/nio/ByteBuffer;->array()[B
 
@@ -457,23 +554,31 @@
 
     invoke-virtual {p0, v3, v4, v5}, Ljava/io/OutputStream;->write([BII)V
 
+    .line 307
     sget-object v3, Landroid/util/jar/StrictJarManifest;->LINE_SEPARATOR:[B
 
     invoke-virtual {p0, v3}, Ljava/io/OutputStream;->write([B)V
 
+    .line 308
     sget-object v3, Ljava/nio/charset/CoderResult;->UNDERFLOW:Ljava/nio/charset/CoderResult;
 
     if-ne v3, v2, :cond_1
 
+    .line 309
     nop
 
+    .line 314
+    .end local v2    # "r":Ljava/nio/charset/CoderResult;
     return-void
 
+    .line 311
+    .restart local v2    # "r":Ljava/nio/charset/CoderResult;
     :cond_1
     const/16 v3, 0x20
 
     invoke-virtual {p0, v3}, Ljava/io/OutputStream;->write(I)V
 
+    .line 312
     invoke-virtual {p4}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     move-result-object v3
@@ -482,6 +587,8 @@
 
     invoke-virtual {v3, v4}, Ljava/nio/Buffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 313
+    .end local v2    # "r":Ljava/nio/charset/CoderResult;
     goto :goto_0
 .end method
 
@@ -490,20 +597,24 @@
 .method public clear()V
     .locals 1
 
+    .line 117
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
+    .line 118
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v0}, Ljava/util/jar/Attributes;->clear()V
 
+    .line 119
     return-void
 .end method
 
 .method public clone()Ljava/lang/Object;
     .locals 1
 
+    .line 162
     new-instance v0, Landroid/util/jar/StrictJarManifest;
 
     invoke-direct {v0, p0}, Landroid/util/jar/StrictJarManifest;-><init>(Landroid/util/jar/StrictJarManifest;)V
@@ -513,13 +624,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 220
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
+    .line 221
     return v0
 
+    .line 223
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -531,8 +646,10 @@
 
     if-eq v1, v2, :cond_1
 
+    .line 224
     return v0
 
+    .line 226
     :cond_1
     iget-object v1, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
@@ -548,8 +665,10 @@
 
     if-nez v1, :cond_2
 
+    .line 227
     return v0
 
+    .line 229
     :cond_2
     invoke-virtual {p0}, Landroid/util/jar/StrictJarManifest;->getEntries()Ljava/util/Map;
 
@@ -572,7 +691,9 @@
 
 .method public getAttributes(Ljava/lang/String;)Ljava/util/jar/Attributes;
     .locals 1
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 131
     invoke-virtual {p0}, Landroid/util/jar/StrictJarManifest;->getEntries()Ljava/util/Map;
 
     move-result-object v0
@@ -588,7 +709,9 @@
 
 .method getChunk(Ljava/lang/String;)Landroid/util/jar/StrictJarManifest$Chunk;
     .locals 1
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 233
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->chunks:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -612,6 +735,7 @@
         }
     .end annotation
 
+    .line 141
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->entries:Ljava/util/HashMap;
 
     return-object v0
@@ -620,6 +744,7 @@
 .method public getMainAttributes()Ljava/util/jar/Attributes;
     .locals 1
 
+    .line 151
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     return-object v0
@@ -628,6 +753,7 @@
 .method getMainAttributesEnd()I
     .locals 1
 
+    .line 241
     iget v0, p0, Landroid/util/jar/StrictJarManifest;->mainEnd:I
 
     return v0
@@ -636,6 +762,7 @@
 .method public hashCode()I
     .locals 2
 
+    .line 206
     iget-object v0, p0, Landroid/util/jar/StrictJarManifest;->mainAttributes:Ljava/util/jar/Attributes;
 
     invoke-virtual {v0}, Ljava/util/jar/Attributes;->hashCode()I
@@ -657,40 +784,48 @@
 
 .method public read(Ljava/io/InputStream;)V
     .locals 1
+    .param p1, "is"    # Ljava/io/InputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 186
     invoke-static {p1}, Llibcore/io/Streams;->readFullyNoClose(Ljava/io/InputStream;)[B
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/util/jar/StrictJarManifest;->read([B)V
 
+    .line 187
     return-void
 .end method
 
 .method removeChunks()V
     .locals 1
 
+    .line 237
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/util/jar/StrictJarManifest;->chunks:Ljava/util/HashMap;
 
+    .line 238
     return-void
 .end method
 
 .method public write(Ljava/io/OutputStream;)V
     .locals 0
+    .param p1, "os"    # Ljava/io/OutputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 174
     invoke-static {p0, p1}, Landroid/util/jar/StrictJarManifest;->write(Landroid/util/jar/StrictJarManifest;Ljava/io/OutputStream;)V
 
+    .line 175
     return-void
 .end method

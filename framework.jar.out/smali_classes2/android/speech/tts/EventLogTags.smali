@@ -17,6 +17,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +25,15 @@
 
 .method public static writeTtsSpeakFailure(Ljava/lang/String;IIILjava/lang/String;II)V
     .locals 3
+    .param p0, "engine"    # Ljava/lang/String;
+    .param p1, "callerUid"    # I
+    .param p2, "callerPid"    # I
+    .param p3, "length"    # I
+    .param p4, "locale"    # Ljava/lang/String;
+    .param p5, "rate"    # I
+    .param p6, "pitch"    # I
 
+    .line 30
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -81,12 +90,24 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 31
     return-void
 .end method
 
 .method public static writeTtsSpeakSuccess(Ljava/lang/String;IIILjava/lang/String;IIJJJ)V
     .locals 3
+    .param p0, "engine"    # Ljava/lang/String;
+    .param p1, "callerUid"    # I
+    .param p2, "callerPid"    # I
+    .param p3, "length"    # I
+    .param p4, "locale"    # Ljava/lang/String;
+    .param p5, "rate"    # I
+    .param p6, "pitch"    # I
+    .param p7, "engineLatency"    # J
+    .param p9, "engineTotal"    # J
+    .param p11, "audioLatency"    # J
 
+    .line 26
     const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -167,12 +188,20 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 27
     return-void
 .end method
 
 .method public static writeTtsV2SpeakFailure(Ljava/lang/String;IIILjava/lang/String;I)V
     .locals 3
+    .param p0, "engine"    # Ljava/lang/String;
+    .param p1, "callerUid"    # I
+    .param p2, "callerPid"    # I
+    .param p3, "length"    # I
+    .param p4, "requestConfig"    # Ljava/lang/String;
+    .param p5, "statuscode"    # I
 
+    .line 38
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -221,12 +250,22 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 39
     return-void
 .end method
 
 .method public static writeTtsV2SpeakSuccess(Ljava/lang/String;IIILjava/lang/String;JJJ)V
     .locals 3
+    .param p0, "engine"    # Ljava/lang/String;
+    .param p1, "callerUid"    # I
+    .param p2, "callerPid"    # I
+    .param p3, "length"    # I
+    .param p4, "requestConfig"    # Ljava/lang/String;
+    .param p5, "engineLatency"    # J
+    .param p7, "engineTotal"    # J
+    .param p9, "audioLatency"    # J
 
+    .line 34
     const/16 v0, 0x8
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -291,5 +330,6 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 35
     return-void
 .end method

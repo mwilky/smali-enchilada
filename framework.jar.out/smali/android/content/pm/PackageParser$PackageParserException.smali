@@ -21,20 +21,31 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 0
+    .param p1, "error"    # I
+    .param p2, "detailMessage"    # Ljava/lang/String;
 
+    .line 8148
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
+    .line 8149
     iput p1, p0, Landroid/content/pm/PackageParser$PackageParserException;->error:I
 
+    .line 8150
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
+    .param p1, "error"    # I
+    .param p2, "detailMessage"    # Ljava/lang/String;
+    .param p3, "throwable"    # Ljava/lang/Throwable;
 
+    .line 8153
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 8154
     iput p1, p0, Landroid/content/pm/PackageParser$PackageParserException;->error:I
 
+    .line 8155
     return-void
 .end method

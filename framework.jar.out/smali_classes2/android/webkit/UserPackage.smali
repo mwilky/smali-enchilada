@@ -16,18 +16,25 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/UserInfo;Landroid/content/pm/PackageInfo;)V
     .locals 0
+    .param p1, "user"    # Landroid/content/pm/UserInfo;
+    .param p2, "packageInfo"    # Landroid/content/pm/PackageInfo;
 
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 40
     iput-object p1, p0, Landroid/webkit/UserPackage;->mUserInfo:Landroid/content/pm/UserInfo;
 
+    .line 41
     iput-object p2, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 
+    .line 42
     return-void
 .end method
 
 .method private static getAllUsers(Landroid/content/Context;)Ljava/util/List;
     .locals 2
+    .param p0, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,6 +46,7 @@
         }
     .end annotation
 
+    .line 101
     const-string/jumbo v0, "user"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -47,6 +55,8 @@
 
     check-cast v0, Landroid/os/UserManager;
 
+    .line 102
+    .local v0, "userManager":Landroid/os/UserManager;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/UserManager;->getUsers(Z)Ljava/util/List;
@@ -58,6 +68,9 @@
 
 .method public static getPackageInfosAllUsers(Landroid/content/Context;Ljava/lang/String;I)Ljava/util/List;
     .locals 7
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "packageFlags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -70,10 +83,13 @@
         }
     .end annotation
 
+    .line 50
     invoke-static {p0}, Landroid/webkit/UserPackage;->getAllUsers(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
+    .line 51
+    .local v0, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -82,6 +98,8 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
+    .line 52
+    .local v1, "userPackages":Ljava/util/List;, "Ljava/util/List<Landroid/webkit/UserPackage;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -99,8 +117,12 @@
 
     check-cast v3, Landroid/content/pm/UserInfo;
 
+    .line 53
+    .local v3, "user":Landroid/content/pm/UserInfo;
     const/4 v4, 0x0
 
+    .line 55
+    .local v4, "packageInfo":Landroid/content/pm/PackageInfo;
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -116,11 +138,14 @@
 
     move-object v4, v5
 
+    .line 58
     goto :goto_1
 
+    .line 57
     :catch_0
     move-exception v5
 
+    .line 59
     :goto_1
     new-instance v5, Landroid/webkit/UserPackage;
 
@@ -128,15 +153,21 @@
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 60
+    .end local v3    # "user":Landroid/content/pm/UserInfo;
+    .end local v4    # "packageInfo":Landroid/content/pm/PackageInfo;
     goto :goto_0
 
+    .line 61
     :cond_0
     return-object v1
 .end method
 
 .method public static hasCorrectTargetSdkVersion(Landroid/content/pm/PackageInfo;)Z
     .locals 2
+    .param p0, "packageInfo"    # Landroid/content/pm/PackageInfo;
 
+    .line 88
     iget-object v0, p0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
@@ -161,6 +192,7 @@
 .method public getPackageInfo()Landroid/content/pm/PackageInfo;
     .locals 1
 
+    .line 96
     iget-object v0, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 
     return-object v0
@@ -169,6 +201,7 @@
 .method public getUserInfo()Landroid/content/pm/UserInfo;
     .locals 1
 
+    .line 92
     iget-object v0, p0, Landroid/webkit/UserPackage;->mUserInfo:Landroid/content/pm/UserInfo;
 
     return-object v0
@@ -177,6 +210,7 @@
 .method public isEnabledPackage()Z
     .locals 1
 
+    .line 69
     iget-object v0, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 
     if-nez v0, :cond_0
@@ -185,6 +219,7 @@
 
     return v0
 
+    .line 70
     :cond_0
     iget-object v0, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 
@@ -198,6 +233,7 @@
 .method public isInstalledPackage()Z
     .locals 3
 
+    .line 77
     iget-object v0, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 
     const/4 v1, 0x0
@@ -206,6 +242,7 @@
 
     return v1
 
+    .line 78
     :cond_0
     iget-object v0, p0, Landroid/webkit/UserPackage;->mPackageInfo:Landroid/content/pm/PackageInfo;
 

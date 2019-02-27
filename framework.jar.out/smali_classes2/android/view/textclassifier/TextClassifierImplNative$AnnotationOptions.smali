@@ -25,15 +25,23 @@
 # direct methods
 .method constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "referenceTimeMsUtc"    # J
+    .param p3, "referenceTimezone"    # Ljava/lang/String;
+    .param p4, "locale"    # Ljava/lang/String;
 
+    .line 253
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 254
     iput-wide p1, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mReferenceTimeMsUtc:J
 
+    .line 255
     iput-object p3, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mReferenceTimezone:Ljava/lang/String;
 
+    .line 256
     iput-object p4, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mLocales:Ljava/lang/String;
 
+    .line 257
     return-void
 .end method
 
@@ -42,6 +50,7 @@
 .method public getLocale()Ljava/lang/String;
     .locals 1
 
+    .line 268
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mLocales:Ljava/lang/String;
 
     return-object v0
@@ -50,6 +59,7 @@
 .method public getReferenceTimeMsUtc()J
     .locals 2
 
+    .line 260
     iget-wide v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mReferenceTimeMsUtc:J
 
     return-wide v0
@@ -58,6 +68,7 @@
 .method public getReferenceTimezone()Ljava/lang/String;
     .locals 1
 
+    .line 264
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotationOptions;->mReferenceTimezone:Ljava/lang/String;
 
     return-object v0

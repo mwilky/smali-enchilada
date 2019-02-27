@@ -29,6 +29,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 2333
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "deleted_contacts"
@@ -45,7 +46,9 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 2326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2327
     return-void
 .end method

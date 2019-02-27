@@ -40,60 +40,74 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 103
     return-void
 .end method
 
 .method public static toString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "state"    # I
 
+    .line 75
     packed-switch p0, :pswitch_data_0
 
+    .line 95
     const-string v0, "UNKNOWN"
 
     return-object v0
 
+    .line 93
     :pswitch_0
     const-string v0, "TERMINATED"
 
     return-object v0
 
+    .line 91
     :pswitch_1
     const-string v0, "TERMINATING"
 
     return-object v0
 
+    .line 89
     :pswitch_2
     const-string v0, "REESTABLISHING"
 
     return-object v0
 
+    .line 87
     :pswitch_3
     const-string v0, "RENEGOTIATING"
 
     return-object v0
 
+    .line 85
     :pswitch_4
     const-string v0, "ESTABLISHED"
 
     return-object v0
 
+    .line 83
     :pswitch_5
     const-string v0, "ESTABLISHING"
 
     return-object v0
 
+    .line 81
     :pswitch_6
     const-string v0, "NEGOTIATING"
 
     return-object v0
 
+    .line 79
     :pswitch_7
     const-string v0, "INITIATED"
 
     return-object v0
 
+    .line 77
     :pswitch_8
     const-string v0, "IDLE"
 

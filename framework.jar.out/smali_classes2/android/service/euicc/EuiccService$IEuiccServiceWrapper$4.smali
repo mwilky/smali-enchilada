@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;ILandroid/service/euicc/IGetOtaStatusCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
+    .line 457
     iput-object p1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$4;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iput p2, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$4;->val$slotId:I
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 2
 
+    .line 460
     iget-object v0, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$4;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iget-object v0, v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;->this$0:Landroid/service/euicc/EuiccService;
@@ -55,6 +58,8 @@
 
     move-result v0
 
+    .line 462
+    .local v0, "status":I
     :try_start_0
     iget-object v1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$4;->val$callback:Landroid/service/euicc/IGetOtaStatusCallback;
 
@@ -62,11 +67,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 465
     goto :goto_0
 
+    .line 463
     :catch_0
     move-exception v1
 
+    .line 466
     :goto_0
     return-void
 .end method

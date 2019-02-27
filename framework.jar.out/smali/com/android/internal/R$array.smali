@@ -134,75 +134,77 @@
 
 .field public static final config_screenBrightnessBacklight:I = 0x107003f
 
-.field public static final config_screenBrightnessNits:I = 0x1070040
+.field public static final config_screenBrightnessBacklight_255:I = 0x1070040
 
-.field public static final config_serialPorts:I = 0x1070042
+.field public static final config_screenBrightnessNits:I = 0x1070041
 
-.field public static final config_sms_enabled_locking_shift_tables:I = 0x1070043
+.field public static final config_serialPorts:I = 0x1070043
 
-.field public static final config_sms_enabled_single_shift_tables:I = 0x1070044
+.field public static final config_sms_enabled_locking_shift_tables:I = 0x1070044
 
-.field public static final config_statusBarIcons:I = 0x1070045
+.field public static final config_sms_enabled_single_shift_tables:I = 0x1070045
 
-.field public static final config_system_condition_providers:I = 0x1070046
+.field public static final config_statusBarIcons:I = 0x1070046
 
-.field public static final config_telephonyEuiccDeviceCapabilities:I = 0x1070047
+.field public static final config_system_condition_providers:I = 0x1070047
 
-.field public static final config_telephonyHardware:I = 0x1070048
+.field public static final config_telephonyEuiccDeviceCapabilities:I = 0x1070048
 
-.field public static final config_testLocationProviders:I = 0x1070049
+.field public static final config_telephonyHardware:I = 0x1070049
 
-.field public static final config_tether_apndata:I = 0x107004a
+.field public static final config_testLocationProviders:I = 0x107004a
 
-.field public static final config_tether_bluetooth_regexs:I = 0x107004b
+.field public static final config_tether_apndata:I = 0x107004b
 
-.field public static final config_tether_dhcp_range:I = 0x107004c
+.field public static final config_tether_bluetooth_regexs:I = 0x107004c
 
-.field public static final config_tether_upstream_types:I = 0x107004d
+.field public static final config_tether_dhcp_range:I = 0x107004d
 
-.field public static final config_tether_usb_regexs:I = 0x107004e
+.field public static final config_tether_upstream_types:I = 0x107004e
 
-.field public static final config_tether_wifi_regexs:I = 0x107004f
+.field public static final config_tether_usb_regexs:I = 0x107004f
 
-.field public static final config_twoDigitNumberPattern:I = 0x1070051
+.field public static final config_tether_wifi_regexs:I = 0x1070050
 
-.field public static final config_usbHostBlacklist:I = 0x1070052
+.field public static final config_twoDigitNumberPattern:I = 0x1070052
 
-.field public static final config_virtualKeyVibePattern:I = 0x1070053
+.field public static final config_usbHostBlacklist:I = 0x1070053
 
-.field public static final config_vvmSmsFilterRegexes:I = 0x1070054
+.field public static final config_virtualKeyVibePattern:I = 0x1070054
 
-.field public static final config_wearActivityModeRadios:I = 0x1070055
+.field public static final config_vvmSmsFilterRegexes:I = 0x1070055
 
-.field public static final config_wifi_dual_sap_interfaces:I = 0x1070056
+.field public static final config_wearActivityModeRadios:I = 0x1070056
 
-.field public static final dial_string_replace:I = 0x1070057
+.field public static final config_wifi_dual_sap_interfaces:I = 0x1070057
 
-.field public static final disallowed_apps_managed_device:I = 0x1070058
+.field public static final dial_string_replace:I = 0x1070058
 
-.field public static final disallowed_apps_managed_profile:I = 0x1070059
+.field public static final disallowed_apps_managed_device:I = 0x1070059
 
-.field public static final disallowed_apps_managed_user:I = 0x107005a
+.field public static final disallowed_apps_managed_profile:I = 0x107005a
+
+.field public static final disallowed_apps_managed_user:I = 0x107005b
 
 .field public static final emailAddressTypes:I = 0x1070000
 
-.field public static final fingerprint_acquired_vendor:I = 0x107005b
+.field public static final fingerprint_acquired_vendor:I = 0x107005c
 
-.field public static final fingerprint_error_vendor:I = 0x107005c
+.field public static final fingerprint_error_vendor:I = 0x107005d
 
 .field public static final imProtocols:I = 0x1070001
 
-.field public static final maps_starting_lat_lng:I = 0x107005e
+.field public static final maps_starting_lat_lng:I = 0x107005f
 
-.field public static final maps_starting_zoom:I = 0x107005f
+.field public static final maps_starting_zoom:I = 0x1070060
 
-.field public static final networkAttributes:I = 0x1070060
+.field public static final networkAttributes:I = 0x1070061
 
-.field public static final network_switch_type_name:I = 0x1070061
+.field public static final network_switch_type_name:I = 0x1070062
 
-.field public static final networks_not_clear_data:I = 0x1070062
+.field public static final networks_not_clear_data:I = 0x1070063
 
-.field public static final no_ems_support_sim_operators:I = 0x1070063
+.field public static final no_ems_support_sim_operators:I = 0x1070064
 
 .field public static final organizationTypes:I = 0x1070002
 
@@ -210,55 +212,56 @@
 
 .field public static final postalAddressTypes:I = 0x1070004
 
-.field public static final preloaded_color_state_lists:I = 0x1070064
+.field public static final preloaded_color_state_lists:I = 0x1070065
 
-.field public static final preloaded_drawables:I = 0x1070065
+.field public static final preloaded_drawables:I = 0x1070066
 
-.field public static final preloaded_freeform_multi_window_drawables:I = 0x1070066
+.field public static final preloaded_freeform_multi_window_drawables:I = 0x1070067
 
-.field public static final radioAttributes:I = 0x1070067
+.field public static final radioAttributes:I = 0x1070068
 
-.field public static final required_apps_managed_device:I = 0x1070068
+.field public static final required_apps_managed_device:I = 0x1070069
 
-.field public static final required_apps_managed_profile:I = 0x1070069
+.field public static final required_apps_managed_profile:I = 0x107006a
 
-.field public static final required_apps_managed_user:I = 0x107006a
+.field public static final required_apps_managed_user:I = 0x107006b
 
-.field public static final resolver_target_actions_pin:I = 0x107006b
+.field public static final resolver_target_actions_pin:I = 0x107006c
 
-.field public static final resolver_target_actions_unpin:I = 0x107006c
+.field public static final resolver_target_actions_unpin:I = 0x107006d
 
-.field public static final sim_colors:I = 0x107006d
+.field public static final sim_colors:I = 0x107006e
 
-.field public static final special_locale_codes:I = 0x107006e
+.field public static final special_locale_codes:I = 0x107006f
 
-.field public static final special_locale_names:I = 0x107006f
+.field public static final special_locale_names:I = 0x1070070
 
-.field public static final supported_locales:I = 0x1070070
+.field public static final supported_locales:I = 0x1070071
 
-.field public static final vendor_disallowed_apps_managed_device:I = 0x1070071
+.field public static final vendor_disallowed_apps_managed_device:I = 0x1070072
 
-.field public static final vendor_disallowed_apps_managed_profile:I = 0x1070072
+.field public static final vendor_disallowed_apps_managed_profile:I = 0x1070073
 
-.field public static final vendor_disallowed_apps_managed_user:I = 0x1070073
+.field public static final vendor_disallowed_apps_managed_user:I = 0x1070074
 
-.field public static final vendor_required_apps_managed_device:I = 0x1070074
+.field public static final vendor_required_apps_managed_device:I = 0x1070075
 
-.field public static final vendor_required_apps_managed_profile:I = 0x1070075
+.field public static final vendor_required_apps_managed_profile:I = 0x1070076
 
-.field public static final vendor_required_apps_managed_user:I = 0x1070076
+.field public static final vendor_required_apps_managed_user:I = 0x1070077
 
-.field public static final wfcOperatorErrorAlertMessages:I = 0x1070077
+.field public static final wfcOperatorErrorAlertMessages:I = 0x1070078
 
-.field public static final wfcOperatorErrorNotificationMessages:I = 0x1070078
+.field public static final wfcOperatorErrorNotificationMessages:I = 0x1070079
 
-.field public static final wfcSpnFormats:I = 0x1070079
+.field public static final wfcSpnFormats:I = 0x107007a
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
+    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

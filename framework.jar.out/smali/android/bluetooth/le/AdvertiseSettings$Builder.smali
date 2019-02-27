@@ -28,18 +28,23 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 159
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mMode:I
 
+    .line 160
     const/4 v1, 0x2
 
     iput v1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mTxPowerLevel:I
 
+    .line 161
     iput v0, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mTimeoutMillis:I
 
+    .line 162
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mConnectable:Z
@@ -52,6 +57,7 @@
 .method public build()Landroid/bluetooth/le/AdvertiseSettings;
     .locals 7
 
+    .line 232
     new-instance v6, Landroid/bluetooth/le/AdvertiseSettings;
 
     iget v1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mMode:I
@@ -73,17 +79,22 @@
 
 .method public setAdvertiseMode(I)Landroid/bluetooth/le/AdvertiseSettings$Builder;
     .locals 3
+    .param p1, "advertiseMode"    # I
 
+    .line 174
     if-ltz p1, :cond_0
 
     const/4 v0, 0x2
 
     if-gt p1, v0, :cond_0
 
+    .line 178
     iput p1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mMode:I
 
+    .line 179
     return-object p0
 
+    .line 176
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -108,25 +119,33 @@
 
 .method public setConnectable(Z)Landroid/bluetooth/le/AdvertiseSettings$Builder;
     .locals 0
+    .param p1, "connectable"    # Z
 
+    .line 208
     iput-boolean p1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mConnectable:Z
 
+    .line 209
     return-object p0
 .end method
 
 .method public setTimeout(I)Landroid/bluetooth/le/AdvertiseSettings$Builder;
     .locals 2
+    .param p1, "timeoutMillis"    # I
 
+    .line 220
     if-ltz p1, :cond_0
 
     const v0, 0x2bf20
 
     if-gt p1, v0, :cond_0
 
+    .line 224
     iput p1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mTimeoutMillis:I
 
+    .line 225
     return-object p0
 
+    .line 221
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -139,17 +158,22 @@
 
 .method public setTxPowerLevel(I)Landroid/bluetooth/le/AdvertiseSettings$Builder;
     .locals 3
+    .param p1, "txPowerLevel"    # I
 
+    .line 193
     if-ltz p1, :cond_0
 
     const/4 v0, 0x3
 
     if-gt p1, v0, :cond_0
 
+    .line 197
     iput p1, p0, Landroid/bluetooth/le/AdvertiseSettings$Builder;->mTxPowerLevel:I
 
+    .line 198
     return-object p0
 
+    .line 195
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

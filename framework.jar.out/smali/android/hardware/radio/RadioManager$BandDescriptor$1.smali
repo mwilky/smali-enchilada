@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 629
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,15 +40,20 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/radio/RadioManager$BandDescriptor;
     .locals 4
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 631
     invoke-static {p1}, Landroid/hardware/radio/RadioManager$BandDescriptor;->access$100(Landroid/os/Parcel;)I
 
     move-result v0
 
+    .line 632
+    .local v0, "type":I
     const/4 v1, 0x0
 
     packed-switch v0, :pswitch_data_0
 
+    .line 640
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -68,6 +74,7 @@
 
     throw v1
 
+    .line 635
     :pswitch_0
     new-instance v2, Landroid/hardware/radio/RadioManager$FmBandDescriptor;
 
@@ -75,6 +82,7 @@
 
     return-object v2
 
+    .line 638
     :pswitch_1
     new-instance v2, Landroid/hardware/radio/RadioManager$AmBandDescriptor;
 
@@ -96,6 +104,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 629
     invoke-virtual {p0, p1}, Landroid/hardware/radio/RadioManager$BandDescriptor$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/radio/RadioManager$BandDescriptor;
 
     move-result-object p1
@@ -105,7 +114,9 @@
 
 .method public newArray(I)[Landroid/hardware/radio/RadioManager$BandDescriptor;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 645
     new-array v0, p1, [Landroid/hardware/radio/RadioManager$BandDescriptor;
 
     return-object v0
@@ -114,6 +125,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 629
     invoke-virtual {p0, p1}, Landroid/hardware/radio/RadioManager$BandDescriptor$1;->newArray(I)[Landroid/hardware/radio/RadioManager$BandDescriptor;
 
     move-result-object p1

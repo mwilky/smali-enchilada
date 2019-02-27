@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract onAnomalyStatusChange([I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onCallForwardingIndicatorChanged(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

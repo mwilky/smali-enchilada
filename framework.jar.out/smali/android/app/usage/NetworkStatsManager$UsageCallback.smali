@@ -22,6 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +30,9 @@
 
 .method static synthetic access$000(Landroid/app/usage/NetworkStatsManager$UsageCallback;)Landroid/net/DataUsageRequest;
     .locals 1
+    .param p0, "x0"    # Landroid/app/usage/NetworkStatsManager$UsageCallback;
 
+    .line 486
     iget-object v0, p0, Landroid/app/usage/NetworkStatsManager$UsageCallback;->request:Landroid/net/DataUsageRequest;
 
     return-object v0
@@ -37,7 +40,10 @@
 
 .method static synthetic access$002(Landroid/app/usage/NetworkStatsManager$UsageCallback;Landroid/net/DataUsageRequest;)Landroid/net/DataUsageRequest;
     .locals 0
+    .param p0, "x0"    # Landroid/app/usage/NetworkStatsManager$UsageCallback;
+    .param p1, "x1"    # Landroid/net/DataUsageRequest;
 
+    .line 486
     iput-object p1, p0, Landroid/app/usage/NetworkStatsManager$UsageCallback;->request:Landroid/net/DataUsageRequest;
 
     return-object p1

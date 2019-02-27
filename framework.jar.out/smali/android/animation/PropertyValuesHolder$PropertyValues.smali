@@ -36,8 +36,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 1697
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1702
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/animation/PropertyValuesHolder$PropertyValues;->dataSource:Landroid/animation/PropertyValuesHolder$PropertyValues$DataSource;
@@ -50,6 +52,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 1707
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -76,6 +79,7 @@
 
     iget-object v1, p0, Landroid/animation/PropertyValuesHolder$PropertyValues;->startValue:Ljava/lang/Object;
 
+    .line 1708
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -98,5 +102,6 @@
 
     move-result-object v0
 
+    .line 1707
     return-object v0
 .end method

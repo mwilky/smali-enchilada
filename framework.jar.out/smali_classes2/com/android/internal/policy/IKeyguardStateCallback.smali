@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onFingerprintStateChange(Z)V
+.method public abstract onFingerprintStateChange(ZIII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

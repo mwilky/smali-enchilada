@@ -22,8 +22,10 @@
 .method public constructor <init>(Landroid/print/PrintServicesLoader;)V
     .locals 0
 
+    .line 114
     iput-object p1, p0, Landroid/print/PrintServicesLoader$MyHandler;->this$0:Landroid/print/PrintServicesLoader;
 
+    .line 115
     invoke-virtual {p1}, Landroid/print/PrintServicesLoader;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -34,6 +36,7 @@
 
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
+    .line 116
     return-void
 .end method
 
@@ -41,7 +44,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 120
     iget-object v0, p0, Landroid/print/PrintServicesLoader$MyHandler;->this$0:Landroid/print/PrintServicesLoader;
 
     invoke-virtual {v0}, Landroid/print/PrintServicesLoader;->isStarted()Z
@@ -50,6 +55,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 121
     iget-object v0, p0, Landroid/print/PrintServicesLoader$MyHandler;->this$0:Landroid/print/PrintServicesLoader;
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -58,6 +64,7 @@
 
     invoke-virtual {v0, v1}, Landroid/print/PrintServicesLoader;->deliverResult(Ljava/lang/Object;)V
 
+    .line 123
     :cond_0
     return-void
 .end method

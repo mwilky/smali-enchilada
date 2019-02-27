@@ -27,6 +27,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1402
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -37,6 +38,7 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
+    .line 1402
     invoke-virtual {p0}, Landroid/os/StrictMode$2;->initialValue()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -55,6 +57,7 @@
         }
     .end annotation
 
+    .line 1405
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

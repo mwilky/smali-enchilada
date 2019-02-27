@@ -24,23 +24,30 @@
 # direct methods
 .method constructor <init>(ZLandroid/content/pm/ApplicationInfo;)V
     .locals 1
+    .param p1, "usesCleartextTraffic"    # Z
+    .param p2, "info"    # Landroid/content/pm/ApplicationInfo;
 
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 91
     invoke-static {p2}, Landroid/security/net/config/NetworkSecurityConfig;->getDefaultBuilder(Landroid/content/pm/ApplicationInfo;)Landroid/security/net/config/NetworkSecurityConfig$Builder;
 
     move-result-object v0
 
+    .line 92
     invoke-virtual {v0, p1}, Landroid/security/net/config/NetworkSecurityConfig$Builder;->setCleartextTrafficPermitted(Z)Landroid/security/net/config/NetworkSecurityConfig$Builder;
 
     move-result-object v0
 
+    .line 93
     invoke-virtual {v0}, Landroid/security/net/config/NetworkSecurityConfig$Builder;->build()Landroid/security/net/config/NetworkSecurityConfig;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/security/net/config/ManifestConfigSource$DefaultConfigSource;->mDefaultConfig:Landroid/security/net/config/NetworkSecurityConfig;
 
+    .line 94
     return-void
 .end method
 
@@ -49,6 +56,7 @@
 .method public getDefaultConfig()Landroid/security/net/config/NetworkSecurityConfig;
     .locals 1
 
+    .line 98
     iget-object v0, p0, Landroid/security/net/config/ManifestConfigSource$DefaultConfigSource;->mDefaultConfig:Landroid/security/net/config/NetworkSecurityConfig;
 
     return-object v0
@@ -67,6 +75,7 @@
         }
     .end annotation
 
+    .line 103
     const/4 v0, 0x0
 
     return-object v0

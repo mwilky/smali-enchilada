@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,12 +28,17 @@
 # virtual methods
 .method public onAvailabilityChanged(Landroid/accessibilityservice/AccessibilityButtonController;Z)V
     .locals 0
+    .param p1, "controller"    # Landroid/accessibilityservice/AccessibilityButtonController;
+    .param p2, "available"    # Z
 
+    .line 216
     return-void
 .end method
 
 .method public onClicked(Landroid/accessibilityservice/AccessibilityButtonController;)V
     .locals 0
+    .param p1, "controller"    # Landroid/accessibilityservice/AccessibilityButtonController;
 
+    .line 202
     return-void
 .end method

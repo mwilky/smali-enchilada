@@ -17,7 +17,9 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1, "x0"    # Landroid/content/Context;
 
+    .line 576
     invoke-direct {p0, p1}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -27,9 +29,17 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 3
+    .param p1, "orientation"    # I
 
-    invoke-static {p1}, Landroid/media/MediaRecorder;->access$002(I)I
+    .line 580
+    const/4 v0, 0x1
 
+    invoke-static {v0}, Landroid/media/MediaRecorder;->access$002(Z)Z
+
+    .line 581
+    invoke-static {p1}, Landroid/media/MediaRecorder;->access$102(I)I
+
+    .line 582
     sget-boolean v0, Landroid/media/MediaRecorder;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -44,7 +54,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Landroid/media/MediaRecorder;->access$000()I
+    invoke-static {}, Landroid/media/MediaRecorder;->access$100()I
 
     move-result v2
 
@@ -56,6 +66,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 583
     :cond_0
     return-void
 .end method

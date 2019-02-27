@@ -23,11 +23,16 @@
 # direct methods
 .method constructor <init>(Landroid/widget/RemoteViews;Landroid/content/Context;)V
     .locals 2
+    .param p1, "views"    # Landroid/widget/RemoteViews;
+    .param p2, "context"    # Landroid/content/Context;
 
+    .line 1243
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1244
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$LoadingViewTemplate;->remoteViews:Landroid/widget/RemoteViews;
 
+    .line 1246
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -38,6 +43,8 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
+    .line 1247
+    .local v0, "density":F
     const/high16 v1, 0x42480000    # 50.0f
 
     mul-float/2addr v1, v0
@@ -48,6 +55,7 @@
 
     iput v1, p0, Landroid/widget/RemoteViewsAdapter$LoadingViewTemplate;->defaultHeight:I
 
+    .line 1248
     return-void
 .end method
 
@@ -55,7 +63,11 @@
 # virtual methods
 .method public loadFirstViewHeight(Landroid/widget/RemoteViews;Landroid/content/Context;Ljava/util/concurrent/Executor;)V
     .locals 2
+    .param p1, "firstView"    # Landroid/widget/RemoteViews;
+    .param p2, "context"    # Landroid/content/Context;
+    .param p3, "executor"    # Ljava/util/concurrent/Executor;
 
+    .line 1253
     new-instance v0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
 
     const/4 v1, 0x0
@@ -68,5 +80,6 @@
 
     invoke-virtual {p1, p2, v0, p3, v1}, Landroid/widget/RemoteViews;->applyAsync(Landroid/content/Context;Landroid/view/ViewGroup;Ljava/util/concurrent/Executor;Landroid/widget/RemoteViews$OnViewAppliedListener;)Landroid/os/CancellationSignal;
 
+    .line 1273
     return-void
 .end method

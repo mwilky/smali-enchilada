@@ -23,7 +23,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ShutdownActivity;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/app/ShutdownActivity;
+    .param p2, "x0"    # Ljava/lang/String;
 
+    .line 49
     iput-object p1, p0, Lcom/android/internal/app/ShutdownActivity$1;->this$0:Lcom/android/internal/app/ShutdownActivity;
 
     iput-object p3, p0, Lcom/android/internal/app/ShutdownActivity$1;->val$reason:Ljava/lang/String;
@@ -38,16 +41,21 @@
 .method public run()V
     .locals 4
 
+    .line 52
     const-string/jumbo v0, "power"
 
+    .line 53
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 52
     invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
     move-result-object v0
 
+    .line 55
+    .local v0, "pm":Landroid/os/IPowerManager;
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/app/ShutdownActivity$1;->this$0:Lcom/android/internal/app/ShutdownActivity;
 
@@ -59,6 +67,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 56
     iget-object v1, p0, Lcom/android/internal/app/ShutdownActivity$1;->this$0:Lcom/android/internal/app/ShutdownActivity;
 
     invoke-static {v1}, Lcom/android/internal/app/ShutdownActivity;->access$100(Lcom/android/internal/app/ShutdownActivity;)Z
@@ -71,6 +80,7 @@
 
     goto :goto_0
 
+    .line 58
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/ShutdownActivity$1;->this$0:Lcom/android/internal/app/ShutdownActivity;
 
@@ -84,12 +94,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 61
     :goto_0
     goto :goto_1
 
+    .line 60
     :catch_0
     move-exception v1
 
+    .line 62
     :goto_1
     return-void
 .end method

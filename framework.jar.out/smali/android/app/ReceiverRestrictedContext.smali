@@ -6,9 +6,12 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1, "base"    # Landroid/content/Context;
 
+    .line 104
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
+    .line 105
     return-void
 .end method
 
@@ -16,7 +19,11 @@
 # virtual methods
 .method public bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
     .locals 2
+    .param p1, "service"    # Landroid/content/Intent;
+    .param p2, "conn"    # Landroid/content/ServiceConnection;
+    .param p3, "flags"    # I
 
+    .line 140
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 
     const-string v1, "BroadcastReceiver components are not allowed to bind to services"
@@ -28,7 +35,10 @@
 
 .method public registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
     .locals 1
+    .param p1, "receiver"    # Landroid/content/BroadcastReceiver;
+    .param p2, "filter"    # Landroid/content/IntentFilter;
 
+    .line 109
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v0}, Landroid/app/ReceiverRestrictedContext;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
@@ -40,9 +50,15 @@
 
 .method public registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
     .locals 2
+    .param p1, "receiver"    # Landroid/content/BroadcastReceiver;
+    .param p2, "filter"    # Landroid/content/IntentFilter;
+    .param p3, "broadcastPermission"    # Ljava/lang/String;
+    .param p4, "scheduler"    # Landroid/os/Handler;
 
+    .line 115
     if-nez p1, :cond_0
 
+    .line 118
     const/4 v0, 0x0
 
     invoke-super {p0, v0, p2, p3, p4}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
@@ -51,6 +67,7 @@
 
     return-object v0
 
+    .line 120
     :cond_0
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 
@@ -63,9 +80,16 @@
 
 .method public registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
     .locals 6
+    .param p1, "receiver"    # Landroid/content/BroadcastReceiver;
+    .param p2, "user"    # Landroid/os/UserHandle;
+    .param p3, "filter"    # Landroid/content/IntentFilter;
+    .param p4, "broadcastPermission"    # Ljava/lang/String;
+    .param p5, "scheduler"    # Landroid/os/Handler;
 
+    .line 128
     if-nez p1, :cond_0
 
+    .line 131
     const/4 v1, 0x0
 
     move-object v0, p0
@@ -84,6 +108,7 @@
 
     return-object v0
 
+    .line 133
     :cond_0
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 

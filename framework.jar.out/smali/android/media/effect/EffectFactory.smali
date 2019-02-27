@@ -71,6 +71,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 32
     const-string v0, "android.media.effect.effects."
 
     const-string v1, ""
@@ -86,19 +87,27 @@
 
 .method constructor <init>(Landroid/media/effect/EffectContext;)V
     .locals 0
+    .param p1, "effectContext"    # Landroid/media/effect/EffectContext;
 
+    .line 425
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 426
     iput-object p1, p0, Landroid/media/effect/EffectFactory;->mEffectContext:Landroid/media/effect/EffectContext;
 
+    .line 427
     return-void
 .end method
 
 .method private static getEffectClassByName(Ljava/lang/String;)Ljava/lang/Class;
     .locals 7
+    .param p0, "className"    # Ljava/lang/String;
 
+    .line 467
     const/4 v0, 0x0
 
+    .line 470
+    .local v0, "effectClass":Ljava/lang/Class;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
@@ -107,6 +116,8 @@
 
     move-result-object v1
 
+    .line 473
+    .local v1, "contextClassLoader":Ljava/lang/ClassLoader;
     sget-object v2, Landroid/media/effect/EffectFactory;->EFFECT_PACKAGES:[Ljava/lang/String;
 
     array-length v3, v2
@@ -118,6 +129,8 @@
 
     aget-object v5, v2, v4
 
+    .line 475
+    .local v5, "packageName":Ljava/lang/String;
     :try_start_0
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -139,22 +152,32 @@
 
     move-object v0, v6
 
+    .line 478
     nop
 
+    .line 480
     if-eqz v0, :cond_0
 
+    .line 481
     goto :goto_1
 
+    .line 476
     :catch_0
     move-exception v6
 
+    .line 477
+    .local v6, "e":Ljava/lang/ClassNotFoundException;
     nop
 
+    .line 473
+    .end local v5    # "packageName":Ljava/lang/String;
+    .end local v6    # "e":Ljava/lang/ClassNotFoundException;
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
+    .line 484
     :cond_1
     :goto_1
     return-object v0
@@ -162,7 +185,10 @@
 
 .method private instantiateEffect(Ljava/lang/Class;Ljava/lang/String;)Landroid/media/effect/Effect;
     .locals 7
+    .param p1, "effectClass"    # Ljava/lang/Class;
+    .param p2, "name"    # Ljava/lang/String;
 
+    .line 490
     :try_start_0
     const-class v0, Landroid/media/effect/Effect;
 
@@ -170,12 +196,16 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_2
 
+    .line 494
     nop
 
+    .line 497
     const/4 v0, 0x0
 
     move-object v1, v0
 
+    .line 499
+    .local v1, "effectConstructor":Ljava/lang/reflect/Constructor;
     const/4 v2, 0x2
 
     :try_start_1
@@ -201,10 +231,14 @@
 
     move-object v1, v3
 
+    .line 503
     nop
 
+    .line 506
     nop
 
+    .line 508
+    .local v0, "effect":Landroid/media/effect/Effect;
     :try_start_2
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -224,13 +258,18 @@
 
     move-object v0, v2
 
+    .line 512
     nop
 
+    .line 514
     return-object v0
 
+    .line 509
     :catch_0
     move-exception v2
 
+    .line 510
+    .local v2, "t":Ljava/lang/Throwable;
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -255,9 +294,14 @@
 
     throw v3
 
+    .line 500
+    .end local v0    # "effect":Landroid/media/effect/Effect;
+    .end local v2    # "t":Ljava/lang/Throwable;
     :catch_1
     move-exception v0
 
+    .line 501
+    .local v0, "e":Ljava/lang/NoSuchMethodException;
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -282,9 +326,14 @@
 
     throw v2
 
+    .line 491
+    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
+    .end local v1    # "effectConstructor":Ljava/lang/reflect/Constructor;
     :catch_2
     move-exception v0
 
+    .line 492
+    .local v0, "e":Ljava/lang/ClassCastException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -312,7 +361,9 @@
 
 .method public static isEffectSupported(Ljava/lang/String;)Z
     .locals 1
+    .param p0, "effectName"    # Ljava/lang/String;
 
+    .line 463
     invoke-static {p0}, Landroid/media/effect/EffectFactory;->getEffectClassByName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -334,19 +385,25 @@
 # virtual methods
 .method public createEffect(Ljava/lang/String;)Landroid/media/effect/Effect;
     .locals 4
+    .param p1, "effectName"    # Ljava/lang/String;
 
+    .line 444
     invoke-static {p1}, Landroid/media/effect/EffectFactory;->getEffectClassByName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 445
+    .local v0, "effectClass":Ljava/lang/Class;
     if-eqz v0, :cond_0
 
+    .line 449
     invoke-direct {p0, v0, p1}, Landroid/media/effect/EffectFactory;->instantiateEffect(Ljava/lang/Class;Ljava/lang/String;)Landroid/media/effect/Effect;
 
     move-result-object v1
 
     return-object v1
 
+    .line 446
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 

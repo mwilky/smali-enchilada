@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 298
     new-instance v0, Landroid/speech/tts/TtsEngines$EngineInfoComparator;
 
     invoke-direct {v0}, Landroid/speech/tts/TtsEngines$EngineInfoComparator;-><init>()V
@@ -46,6 +47,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +57,10 @@
 # virtual methods
 .method public compare(Landroid/speech/tts/TextToSpeech$EngineInfo;Landroid/speech/tts/TextToSpeech$EngineInfo;)I
     .locals 2
+    .param p1, "lhs"    # Landroid/speech/tts/TextToSpeech$EngineInfo;
+    .param p2, "rhs"    # Landroid/speech/tts/TextToSpeech$EngineInfo;
 
+    .line 307
     iget-boolean v0, p1, Landroid/speech/tts/TextToSpeech$EngineInfo;->system:Z
 
     if-eqz v0, :cond_0
@@ -64,10 +69,12 @@
 
     if-nez v0, :cond_0
 
+    .line 308
     const/4 v0, -0x1
 
     return v0
 
+    .line 309
     :cond_0
     iget-boolean v0, p2, Landroid/speech/tts/TextToSpeech$EngineInfo;->system:Z
 
@@ -77,10 +84,12 @@
 
     if-nez v0, :cond_1
 
+    .line 310
     const/4 v0, 0x1
 
     return v0
 
+    .line 317
     :cond_1
     iget v0, p2, Landroid/speech/tts/TextToSpeech$EngineInfo;->priority:I
 
@@ -94,6 +103,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 295
     check-cast p1, Landroid/speech/tts/TextToSpeech$EngineInfo;
 
     check-cast p2, Landroid/speech/tts/TextToSpeech$EngineInfo;

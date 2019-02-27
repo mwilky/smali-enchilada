@@ -41,6 +41,7 @@
 .method constructor <init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;JILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)V
     .locals 0
 
+    .line 159
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$password:Ljava/lang/String;
@@ -61,6 +62,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 159
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternChecker$3;->doInBackground([Ljava/lang/Void;)[B
@@ -72,7 +74,9 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)[B
     .locals 5
+    .param p1, "args"    # [Ljava/lang/Void;
 
+    .line 165
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -90,15 +94,19 @@
 
     return-object v0
 
+    .line 166
     :catch_0
     move-exception v0
 
+    .line 167
+    .local v0, "ex":Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;->getTimeoutMs()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->mThrottleTimeout:I
 
+    .line 168
     const/4 v1, 0x0
 
     return-object v1
@@ -107,6 +115,7 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
+    .line 159
     check-cast p1, [B
 
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternChecker$3;->onPostExecute([B)V
@@ -116,12 +125,15 @@
 
 .method protected onPostExecute([B)V
     .locals 2
+    .param p1, "result"    # [B
 
+    .line 174
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$callback:Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;
 
     iget v1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->mThrottleTimeout:I
 
     invoke-interface {v0, p1, v1}, Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;->onVerified([BI)V
 
+    .line 175
     return-void
 .end method

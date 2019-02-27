@@ -447,6 +447,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 335
     new-instance v0, Ljava/util/HashMap;
 
     const/16 v1, 0xc6
@@ -455,2376 +456,2970 @@
 
     sput-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
+    .line 336
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "notification_sound"
 
+    .line 337
     const/16 v3, 0xaa
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 336
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 338
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "dtmf_tone"
 
+    .line 339
     const/16 v3, 0x84
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 338
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 340
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "lock_pattern_autolock"
 
+    .line 341
     const/16 v3, 0x8a
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 340
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 342
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_max_dhcp_retry_count"
 
+    .line 343
     const/16 v3, 0xac
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 342
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 344
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "auto_time"
 
+    .line 345
     const/16 v3, 0x7b
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 344
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 346
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "setup_wizard_has_run"
 
+    .line 347
     const/16 v3, 0x83
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 346
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 348
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_background_check_timeout_ms"
 
+    .line 349
     const/16 v3, 0xc0
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 348
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 350
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
-    const-string v2, "location_providers_allowed"
+    const-string/jumbo v2, "location_providers_allowed"
 
+    .line 351
     const/16 v3, 0x89
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 350
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 352
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "alarm_alert"
 
+    .line 353
     const/16 v3, 0x67
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 352
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 354
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "vibrate_on"
 
+    .line 355
     const/16 v3, 0x9e
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 354
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 356
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "usb_mass_storage_enabled"
 
+    .line 357
     const/16 v3, 0x9d
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 356
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 358
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_ping_delay_ms"
 
+    .line 359
     const/16 v3, 0xc5
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 358
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 360
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "font_scale"
 
+    .line 361
     const/16 v3, 0x6d
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 360
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 362
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_ap_count"
 
+    .line 363
     const/16 v3, 0xbd
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 362
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 364
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "always_finish_activities"
 
+    .line 365
     const/16 v3, 0x69
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 364
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 366
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "accelerometer_rotation"
 
+    .line 367
     const/16 v3, 0x60
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 366
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 368
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_ping_timeout_ms"
 
+    .line 369
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 368
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 370
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_notification"
 
+    .line 371
     const/16 v3, 0xa3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 370
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 372
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "airplane_mode_on"
 
+    .line 373
     const/16 v3, 0x65
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 372
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 374
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_background_check_delay_ms"
 
+    .line 375
     const/16 v3, 0xbe
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 374
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 376
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_static_ip"
 
+    .line 377
     const/16 v3, 0xb9
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 376
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 378
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "bluetooth"
 
+    .line 379
     const/16 v3, 0x93
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 378
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 380
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "bluetooth_discoverability_timeout"
 
+    .line 381
     const/16 v3, 0x80
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 380
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 382
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_ring"
 
+    .line 383
     const/16 v3, 0xa4
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 382
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 384
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "mode_ringer_streams_affected"
 
+    .line 385
     const/16 v3, 0xa8
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 384
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 386
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_system"
 
+    .line 387
     const/16 v3, 0xa5
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 386
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 388
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "screen_off_timeout"
 
+    .line 389
     const/16 v3, 0x72
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 388
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 390
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi"
 
+    .line 391
     const/16 v3, 0x96
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 390
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 392
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "auto_time_zone"
 
+    .line 393
     const/16 v3, 0x7c
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 392
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 394
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "auto_caps"
 
+    .line 395
     const/16 v3, 0x99
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 394
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 396
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wallpaper_activity"
 
+    .line 397
     const/16 v3, 0x76
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 396
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 398
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "animator_duration_scale"
 
+    .line 399
     const/16 v3, 0x6b
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 398
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 400
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_num_open_networks_kept"
 
+    .line 401
     const/16 v3, 0xb0
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 400
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 402
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "lock_pattern_visible_pattern"
 
+    .line 403
     const/16 v3, 0x8c
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 402
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 404
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_voice"
 
+    .line 405
     const/16 v3, 0xa6
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 404
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 406
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "debug_app"
 
+    .line 407
     const/16 v3, 0x63
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 406
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 408
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_on"
 
+    .line 409
     const/16 v3, 0xb1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 408
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 410
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "show_password"
 
+    .line 411
     const/16 v3, 0x9c
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 410
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 412
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_networks_available_repeat_delay"
 
+    .line 413
     const/16 v3, 0xaf
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 412
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 414
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_sleep_policy"
 
+    .line 415
     const/16 v3, 0xb2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 414
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 416
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_music"
 
+    .line 417
     const/16 v3, 0xa2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 416
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 418
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "parental_control_last_update"
 
+    .line 419
     const/16 v3, 0x91
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 418
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 420
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "device_provisioned"
 
+    .line 421
     const/16 v3, 0x82
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 420
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 422
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "http_proxy"
 
+    .line 423
     const/16 v3, 0x8f
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 422
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 424
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "android_id"
 
+    .line 425
     const/4 v3, 0x7
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 424
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 426
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_max_ap_checks"
 
+    .line 427
     const/16 v3, 0xc2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 426
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 428
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "end_button_behavior"
 
+    .line 429
     const/16 v3, 0x85
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 428
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 430
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "next_alarm_formatted"
 
+    .line 431
     const/16 v3, 0x68
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 430
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 432
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "cell"
 
+    .line 433
     const/16 v3, 0x94
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 432
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 434
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "parental_control_enabled"
 
+    .line 435
     const/16 v3, 0x90
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 434
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 436
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "bluetooth_on"
 
+    .line 437
     const/16 v3, 0x81
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 436
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 438
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "window_animation_scale"
 
+    .line 439
     const/16 v3, 0x6c
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 438
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 440
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_background_check_enabled"
 
+    .line 441
     const/16 v3, 0xbf
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 440
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 442
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "bluetooth_discoverability"
 
+    .line 443
     const/16 v3, 0x7f
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 442
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 444
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_static_dns1"
 
+    .line 445
     const/16 v3, 0xb6
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 444
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 446
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_static_dns2"
 
+    .line 447
     const/16 v3, 0xb7
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 446
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 448
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "haptic_feedback_enabled"
 
+    .line 449
     const/16 v3, 0x9f
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 448
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 450
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "show_web_suggestions"
 
+    .line 451
     const/16 v3, 0x78
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 450
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 452
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "parental_control_redirect_url"
 
+    .line 453
     const/16 v3, 0x92
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 452
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 454
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "date_format"
 
+    .line 455
     const/16 v3, 0x7d
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 454
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 456
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "nfc"
 
+    .line 457
     const/16 v3, 0x95
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 456
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 458
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "airplane_mode_radios"
 
+    .line 459
     const/16 v3, 0x66
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 458
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 460
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "lock_pattern_tactile_feedback_enabled"
 
+    .line 461
     const/16 v3, 0x8b
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 460
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 462
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "time_12_24"
 
+    .line 463
     const/16 v3, 0x7e
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 462
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 464
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_initial_ignored_ping_count"
 
+    .line 465
     const/16 v3, 0xc1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 464
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 466
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_bluetooth_sco"
 
+    .line 467
     const/16 v3, 0xa1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 466
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 468
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "user_rotation"
 
+    .line 469
     const/16 v3, 0x61
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 468
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 470
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_static_gateway"
 
+    .line 471
     const/16 v3, 0xb8
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 470
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 472
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "stay_on_while_plugged_in"
 
+    .line 473
     const/16 v3, 0x75
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 472
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 474
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "sound_effects_enabled"
 
+    .line 475
     const/16 v3, 0xa7
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 474
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 476
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_ping_count"
 
+    .line 477
     const/16 v3, 0xc4
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 476
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 478
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "data_roaming"
 
+    .line 479
     const/16 v3, 0x8e
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 478
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 480
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "settings_classname"
 
+    .line 481
     const/16 v3, 0x98
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 480
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 482
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "transition_animation_scale"
 
+    .line 483
     const/16 v3, 0x74
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 482
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 484
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wait_for_debugger"
 
+    .line 485
     const/16 v3, 0x64
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 484
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 486
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "install_non_market_apps"
 
+    .line 487
     const/16 v3, 0x88
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 486
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 488
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "adb_enabled"
 
+    .line 489
     const/16 v3, 0x62
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 488
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 490
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_use_static_ip"
 
+    .line 491
     const/16 v3, 0xbb
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 490
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 492
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "dim_screen"
 
+    .line 493
     const/16 v3, 0x73
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 492
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 494
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "volume_alarm"
 
+    .line 495
     const/16 v3, 0xa0
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 494
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 496
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_on"
 
+    .line 497
     const/16 v3, 0xc3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 496
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 498
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_static_netmask"
 
+    .line 499
     const/16 v3, 0xba
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 498
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 500
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "network_preference"
 
+    .line 501
     const/16 v3, 0x8d
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 500
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 502
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "show_processes"
 
+    .line 503
     const/16 v3, 0x77
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 502
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 504
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "auto_replace"
 
+    .line 505
     const/16 v3, 0x9b
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 504
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 506
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_networks_available_notification_on"
 
+    .line 507
     const/16 v3, 0xae
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 506
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 508
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "_last_audible"
 
+    .line 509
     const/16 v3, 0xab
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 508
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 510
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "SHOW_GTALK_SERVICE_STATUS"
 
+    .line 511
     const/16 v3, 0x79
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 510
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 512
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "screen_brightness"
 
+    .line 513
     const/16 v3, 0x6e
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 512
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 514
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "use_google_mail"
 
+    .line 515
     const/16 v3, 0x7a
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 514
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 516
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "ringtone"
 
+    .line 517
     const/16 v3, 0x86
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 516
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 518
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "logging_id"
 
+    .line 519
     const/16 v3, 0x6a
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 518
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 520
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "mode_ringer"
 
+    .line 521
     const/16 v3, 0x87
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 520
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 522
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "mute_streams_affected"
 
+    .line 523
     const/16 v3, 0xa9
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 522
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 524
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_watchdog_acceptable_packet_loss_percentage"
 
+    .line 525
     const/16 v3, 0xbc
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 524
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 526
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string v2, "auto_punctuate"
 
+    .line 527
     const/16 v3, 0x9a
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 526
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 528
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "wifi_mobile_data_transition_wakelock_timeout_ms"
 
+    .line 529
     const/16 v3, 0xad
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 528
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 530
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     const-string/jumbo v2, "screen_brightness_mode"
 
+    .line 531
     const/16 v3, 0x6f
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 530
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 546
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
     sput-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
+    .line 547
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "notification_sound"
 
+    .line 548
     const/16 v2, 0x112
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 547
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 549
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "dtmf_tone"
 
+    .line 550
     const/16 v2, 0xec
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 549
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 551
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "lock_pattern_autolock"
 
+    .line 552
     const/16 v2, 0xf2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 551
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 553
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_max_dhcp_retry_count"
 
+    .line 554
     const/16 v2, 0x114
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 553
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 555
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "auto_time"
 
+    .line 556
     const/16 v2, 0xe3
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 555
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 557
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "setup_wizard_has_run"
 
+    .line 558
     const/16 v2, 0xeb
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 557
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 559
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_background_check_timeout_ms"
 
+    .line 560
     const/16 v2, 0x128
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 559
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 561
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
-    const-string v1, "location_providers_allowed"
+    const-string/jumbo v1, "location_providers_allowed"
 
+    .line 562
     const/16 v2, 0xf1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 561
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 563
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "alarm_alert"
 
+    .line 564
     const/16 v2, 0xce
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 563
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 565
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "vibrate_on"
 
+    .line 566
     const/16 v2, 0x106
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 565
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 567
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "usb_mass_storage_enabled"
 
+    .line 568
     const/16 v2, 0x105
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 567
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 569
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_ping_delay_ms"
 
+    .line 570
     const/16 v2, 0x12d
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 569
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 571
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "font_scale"
 
+    .line 572
     const/16 v2, 0xd5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 571
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 573
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_ap_count"
 
+    .line 574
     const/16 v2, 0x125
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 573
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 575
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "always_finish_activities"
 
+    .line 576
     const/16 v2, 0xd0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 575
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 577
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "accelerometer_rotation"
 
+    .line 578
     const/16 v2, 0xc7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 577
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 579
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_ping_timeout_ms"
 
+    .line 580
     const/16 v2, 0x12e
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 579
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 581
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_notification"
 
+    .line 582
     const/16 v2, 0x10b
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 581
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 583
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "airplane_mode_on"
 
+    .line 584
     const/16 v2, 0xcc
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 583
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 585
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_background_check_delay_ms"
 
+    .line 586
     const/16 v2, 0x126
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 585
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 587
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_static_ip"
 
+    .line 588
     const/16 v2, 0x121
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 587
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 589
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "bluetooth"
 
+    .line 590
     const/16 v2, 0xfb
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 589
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 591
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "bluetooth_discoverability_timeout"
 
+    .line 592
     const/16 v2, 0xe8
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 591
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 593
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_ring"
 
+    .line 594
     const/16 v2, 0x10c
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 593
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 595
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "mode_ringer_streams_affected"
 
+    .line 596
     const/16 v2, 0x110
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 595
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 597
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_system"
 
+    .line 598
     const/16 v2, 0x10d
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 597
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 599
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "screen_off_timeout"
 
+    .line 600
     const/16 v2, 0xda
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 599
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 601
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi"
 
+    .line 602
     const/16 v2, 0xfe
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 601
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 603
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "auto_time_zone"
 
+    .line 604
     const/16 v2, 0xe4
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 603
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 605
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "auto_caps"
 
+    .line 606
     const/16 v2, 0x101
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 605
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 607
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wallpaper_activity"
 
+    .line 608
     const/16 v2, 0xde
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 607
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 609
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "animator_duration_scale"
 
+    .line 610
     const/16 v2, 0xd3
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 609
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 611
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_num_open_networks_kept"
 
+    .line 612
     const/16 v2, 0x118
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 611
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 613
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "lock_pattern_visible_pattern"
 
+    .line 614
     const/16 v2, 0xf4
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 613
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 615
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_voice"
 
+    .line 616
     const/16 v2, 0x10e
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 615
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 617
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "debug_app"
 
+    .line 618
     const/16 v2, 0xca
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 617
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 619
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_on"
 
+    .line 620
     const/16 v2, 0x119
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 619
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 621
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "show_password"
 
+    .line 622
     const/16 v2, 0x104
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 621
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 623
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_networks_available_repeat_delay"
 
+    .line 624
     const/16 v2, 0x117
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 623
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 625
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_sleep_policy"
 
+    .line 626
     const/16 v2, 0x11a
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 625
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 627
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_music"
 
+    .line 628
     const/16 v2, 0x10a
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 627
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 629
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "parental_control_last_update"
 
+    .line 630
     const/16 v2, 0xf9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 629
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 631
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "device_provisioned"
 
+    .line 632
     const/16 v2, 0xea
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 631
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 633
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "http_proxy"
 
+    .line 634
     const/16 v2, 0xf7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 633
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 635
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "android_id"
 
+    .line 636
     const/16 v2, 0xd1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 635
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 637
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_max_ap_checks"
 
+    .line 638
     const/16 v2, 0x12a
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 637
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 639
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "end_button_behavior"
 
+    .line 640
     const/16 v2, 0xed
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 639
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 641
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "next_alarm_formatted"
 
+    .line 642
     const/16 v2, 0xcf
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 641
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 643
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "cell"
 
+    .line 644
     const/16 v2, 0xfc
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 643
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 645
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "parental_control_enabled"
 
+    .line 646
     const/16 v2, 0xf8
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 645
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 647
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "bluetooth_on"
 
+    .line 648
     const/16 v2, 0xe9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 647
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 649
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "window_animation_scale"
 
+    .line 650
     const/16 v2, 0xd4
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 649
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 651
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_background_check_enabled"
 
+    .line 652
     const/16 v2, 0x127
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 651
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 653
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "bluetooth_discoverability"
 
+    .line 654
     const/16 v2, 0xe7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 653
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 655
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_static_dns1"
 
+    .line 656
     const/16 v2, 0x11e
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 655
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 657
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_static_dns2"
 
+    .line 658
     const/16 v2, 0x11f
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 657
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 659
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "haptic_feedback_enabled"
 
+    .line 660
     const/16 v2, 0x107
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 659
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 661
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "show_web_suggestions"
 
+    .line 662
     const/16 v2, 0xe0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 661
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 663
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "parental_control_redirect_url"
 
+    .line 664
     const/16 v2, 0xfa
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 663
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 665
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "date_format"
 
+    .line 666
     const/16 v2, 0xe5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 665
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 667
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "nfc"
 
+    .line 668
     const/16 v2, 0xfd
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 667
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 669
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "airplane_mode_radios"
 
+    .line 670
     const/16 v2, 0xcd
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 669
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 671
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "lock_pattern_tactile_feedback_enabled"
 
+    .line 672
     const/16 v2, 0xf3
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 671
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 673
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "time_12_24"
 
+    .line 674
     const/16 v2, 0xe6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 673
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 675
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_initial_ignored_ping_count"
 
+    .line 676
     const/16 v2, 0x129
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 675
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 677
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_bluetooth_sco"
 
+    .line 678
     const/16 v2, 0x109
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 677
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 679
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "user_rotation"
 
+    .line 680
     const/16 v2, 0xc8
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 679
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 681
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_static_gateway"
 
+    .line 682
     const/16 v2, 0x120
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 681
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 683
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "stay_on_while_plugged_in"
 
+    .line 684
     const/16 v2, 0xdd
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 683
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 685
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "sound_effects_enabled"
 
+    .line 686
     const/16 v2, 0x10f
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 685
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 687
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_ping_count"
 
+    .line 688
     const/16 v2, 0x12c
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 687
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 689
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "data_roaming"
 
+    .line 690
     const/16 v2, 0xf6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 689
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 691
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "settings_classname"
 
+    .line 692
     const/16 v2, 0x100
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 691
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 693
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "transition_animation_scale"
 
+    .line 694
     const/16 v2, 0xdc
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 693
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 695
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wait_for_debugger"
 
+    .line 696
     const/16 v2, 0xcb
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 695
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 697
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "install_non_market_apps"
 
+    .line 698
     const/16 v2, 0xf0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 697
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 699
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "adb_enabled"
 
+    .line 700
     const/16 v2, 0xc9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 699
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 701
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_use_static_ip"
 
+    .line 702
     const/16 v2, 0x123
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 701
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 703
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "dim_screen"
 
+    .line 704
     const/16 v2, 0xdb
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 703
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 705
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "volume_alarm"
 
+    .line 706
     const/16 v2, 0x108
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 705
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 707
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_on"
 
+    .line 708
     const/16 v2, 0x12b
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 707
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 709
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_static_netmask"
 
+    .line 710
     const/16 v2, 0x122
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 709
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 711
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "network_preference"
 
+    .line 712
     const/16 v2, 0xf5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 711
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 713
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "show_processes"
 
+    .line 714
     const/16 v2, 0xdf
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 713
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 715
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "auto_replace"
 
+    .line 716
     const/16 v2, 0x103
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 715
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 717
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_networks_available_notification_on"
 
+    .line 718
     const/16 v2, 0x116
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 717
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 719
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "_last_audible"
 
+    .line 720
     const/16 v2, 0x113
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 719
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 721
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "SHOW_GTALK_SERVICE_STATUS"
 
+    .line 722
     const/16 v2, 0xe1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 721
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 723
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "screen_brightness"
 
+    .line 724
     const/16 v2, 0xd6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 723
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 725
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "use_google_mail"
 
+    .line 726
     const/16 v2, 0xe2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 725
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 727
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "ringtone"
 
+    .line 728
     const/16 v2, 0xee
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 727
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 729
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "logging_id"
 
+    .line 730
     const/16 v2, 0xd2
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 729
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 731
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "mode_ringer"
 
+    .line 732
     const/16 v2, 0xef
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 731
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 733
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "mute_streams_affected"
 
+    .line 734
     const/16 v2, 0x111
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 733
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 735
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_watchdog_acceptable_packet_loss_percentage"
 
+    .line 736
     const/16 v2, 0x124
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 735
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 737
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string v1, "auto_punctuate"
 
+    .line 738
     const/16 v2, 0x102
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 737
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 739
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "wifi_mobile_data_transition_wakelock_timeout_ms"
 
+    .line 740
     const/16 v2, 0x115
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 739
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 741
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     const-string/jumbo v1, "screen_brightness_mode"
 
+    .line 742
     const/16 v2, 0xd7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
+    .line 741
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 743
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 51
     return-void
 .end method
 
 .method public static getSeempGetApiIdFromValue(Ljava/lang/String;)I
     .locals 2
+    .param p0, "v"    # Ljava/lang/String;
 
+    .line 536
     sget-object v0, Landroid/util/SeempLog;->value_to_get_map:Ljava/util/Map;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2833,14 +3428,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 537
+    .local v0, "result":Ljava/lang/Integer;
     if-nez v0, :cond_0
 
+    .line 539
     const/4 v1, -0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
+    .line 541
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2851,7 +3450,9 @@
 
 .method public static getSeempPutApiIdFromValue(Ljava/lang/String;)I
     .locals 2
+    .param p0, "v"    # Ljava/lang/String;
 
+    .line 747
     sget-object v0, Landroid/util/SeempLog;->value_to_put_map:Ljava/util/Map;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2860,14 +3461,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 748
+    .local v0, "result":Ljava/lang/Integer;
     if-nez v0, :cond_0
 
+    .line 750
     const/4 v1, -0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
+    .line 752
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2878,7 +3483,9 @@
 
 .method public static record(I)I
     .locals 1
+    .param p0, "api"    # I
 
+    .line 58
     const-string v0, ""
 
     invoke-static {p0, v0}, Landroid/util/SeempLog;->seemp_println_native(ILjava/lang/String;)I
@@ -2890,9 +3497,13 @@
 
 .method public static record_sensor(ILandroid/hardware/Sensor;)I
     .locals 2
+    .param p0, "api"    # I
+    .param p1, "sensor"    # Landroid/hardware/Sensor;
 
+    .line 77
     if-eqz p1, :cond_0
 
+    .line 78
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2917,6 +3528,7 @@
 
     return v0
 
+    .line 81
     :cond_0
     const-string/jumbo v0, "sensor=-1"
 
@@ -2929,9 +3541,14 @@
 
 .method public static record_sensor_rate(ILandroid/hardware/Sensor;I)I
     .locals 2
+    .param p0, "api"    # I
+    .param p1, "sensor"    # Landroid/hardware/Sensor;
+    .param p2, "rate"    # I
 
+    .line 87
     if-eqz p1, :cond_0
 
+    .line 88
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2940,6 +3557,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 89
     invoke-virtual {p1}, Landroid/hardware/Sensor;->getType()I
 
     move-result v1
@@ -2956,12 +3574,14 @@
 
     move-result-object v0
 
+    .line 88
     invoke-static {p0, v0}, Landroid/util/SeempLog;->seemp_println_native(ILjava/lang/String;)I
 
     move-result v0
 
     return v0
 
+    .line 92
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2986,15 +3606,20 @@
 
 .method public static record_str(ILjava/lang/String;)I
     .locals 1
+    .param p0, "api"    # I
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .line 67
     if-eqz p1, :cond_0
 
+    .line 68
     invoke-static {p0, p1}, Landroid/util/SeempLog;->seemp_println_native(ILjava/lang/String;)I
 
     move-result v0
 
     return v0
 
+    .line 71
     :cond_0
     const-string v0, ""
 
@@ -3007,9 +3632,13 @@
 
 .method public static record_uri(ILandroid/net/Uri;)I
     .locals 2
+    .param p0, "api"    # I
+    .param p1, "uri"    # Landroid/net/Uri;
 
+    .line 97
     if-eqz p1, :cond_0
 
+    .line 98
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3034,6 +3663,7 @@
 
     return v0
 
+    .line 101
     :cond_0
     const-string/jumbo v0, "uri, null"
 
@@ -3046,14 +3676,20 @@
 
 .method public static record_vg_layout(ILandroid/view/ViewGroup$LayoutParams;)I
     .locals 3
+    .param p0, "api"    # I
+    .param p1, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
+    .line 108
     :try_start_0
     move-object v0, p1
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
+    .line 110
+    .local v0, "p":Landroid/view/WindowManager$LayoutParams;
     if-eqz v0, :cond_0
 
+    .line 111
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3084,6 +3720,7 @@
 
     return v1
 
+    .line 115
     :cond_0
     const-string v1, ""
 
@@ -3095,9 +3732,13 @@
 
     return v1
 
+    .line 117
+    .end local v0    # "p":Landroid/view/WindowManager$LayoutParams;
     :catch_0
     move-exception v0
 
+    .line 118
+    .local v0, "cce":Ljava/lang/ClassCastException;
     const-string v1, ""
 
     invoke-static {p0, v1}, Landroid/util/SeempLog;->seemp_println_native(ILjava/lang/String;)I

@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 266
     invoke-static {}, Landroid/telephony/TelephonyManager$MultiSimVariants;->values()[Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     move-result-object v0

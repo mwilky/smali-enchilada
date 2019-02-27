@@ -64,30 +64,35 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 55
     sget v0, Landroid/system/OsConstants;->EPERM:I
 
     neg-int v0, v0
 
     sput v0, Landroid/hardware/soundtrigger/SoundTrigger;->STATUS_PERMISSION_DENIED:I
 
+    .line 57
     sget v0, Landroid/system/OsConstants;->ENODEV:I
 
     neg-int v0, v0
 
     sput v0, Landroid/hardware/soundtrigger/SoundTrigger;->STATUS_NO_INIT:I
 
+    .line 59
     sget v0, Landroid/system/OsConstants;->EINVAL:I
 
     neg-int v0, v0
 
     sput v0, Landroid/hardware/soundtrigger/SoundTrigger;->STATUS_BAD_VALUE:I
 
+    .line 61
     sget v0, Landroid/system/OsConstants;->EPIPE:I
 
     neg-int v0, v0
 
     sput v0, Landroid/hardware/soundtrigger/SoundTrigger;->STATUS_DEAD_OBJECT:I
 
+    .line 63
     sget v0, Landroid/system/OsConstants;->ENOSYS:I
 
     neg-int v0, v0
@@ -100,25 +105,35 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     return-void
 .end method
 
 .method public static attachModule(ILandroid/hardware/soundtrigger/SoundTrigger$StatusListener;Landroid/os/Handler;)Landroid/hardware/soundtrigger/SoundTriggerModule;
     .locals 1
+    .param p0, "moduleId"    # I
+    .param p1, "listener"    # Landroid/hardware/soundtrigger/SoundTrigger$StatusListener;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 1424
     if-nez p1, :cond_0
 
+    .line 1425
     const/4 v0, 0x0
 
     return-object v0
 
+    .line 1427
     :cond_0
     new-instance v0, Landroid/hardware/soundtrigger/SoundTriggerModule;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/hardware/soundtrigger/SoundTriggerModule;-><init>(ILandroid/hardware/soundtrigger/SoundTrigger$StatusListener;Landroid/os/Handler;)V
 
+    .line 1428
+    .local v0, "module":Landroid/hardware/soundtrigger/SoundTriggerModule;
     return-object v0
 .end method
 

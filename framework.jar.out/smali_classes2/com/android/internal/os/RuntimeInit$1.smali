@@ -18,6 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 248
     invoke-direct {p0}, Lorg/apache/harmony/luni/internal/util/TimezoneGetter;-><init>()V
 
     return-void
@@ -28,6 +29,7 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
+    .line 251
     const-string/jumbo v0, "persist.sys.timezone"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;

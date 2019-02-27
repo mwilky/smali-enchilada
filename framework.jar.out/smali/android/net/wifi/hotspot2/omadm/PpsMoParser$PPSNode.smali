@@ -21,11 +21,15 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 245
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 246
     iput-object p1, p0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->mName:Ljava/lang/String;
 
+    .line 247
     return-void
 .end method
 
@@ -45,6 +49,7 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .line 253
     iget-object v0, p0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;->mName:Ljava/lang/String;
 
     return-object v0

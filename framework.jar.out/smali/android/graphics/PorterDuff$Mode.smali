@@ -70,6 +70,7 @@
 .method static constructor <clinit>()V
     .locals 17
 
+    .line 188
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "CLEAR"
@@ -80,6 +81,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
+    .line 197
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SRC"
@@ -90,6 +92,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SRC:Landroid/graphics/PorterDuff$Mode;
 
+    .line 206
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DST"
@@ -100,6 +103,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DST:Landroid/graphics/PorterDuff$Mode;
 
+    .line 215
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SRC_OVER"
@@ -110,6 +114,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 
+    .line 224
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DST_OVER"
@@ -120,6 +125,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DST_OVER:Landroid/graphics/PorterDuff$Mode;
 
+    .line 234
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SRC_IN"
@@ -130,6 +136,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 244
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DST_IN"
@@ -140,6 +147,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DST_IN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 255
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SRC_OUT"
@@ -150,6 +158,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_OUT:Landroid/graphics/PorterDuff$Mode;
 
+    .line 266
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DST_OUT"
@@ -160,6 +169,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
 
+    .line 276
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SRC_ATOP"
@@ -170,6 +180,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
+    .line 286
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DST_ATOP"
@@ -180,6 +191,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DST_ATOP:Landroid/graphics/PorterDuff$Mode;
 
+    .line 296
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "XOR"
@@ -190,6 +202,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->XOR:Landroid/graphics/PorterDuff$Mode;
 
+    .line 306
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "DARKEN"
@@ -202,6 +215,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->DARKEN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 316
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "LIGHTEN"
@@ -214,6 +228,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->LIGHTEN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 325
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "MULTIPLY"
@@ -224,6 +239,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
+    .line 335
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "SCREEN"
@@ -236,6 +252,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 345
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "ADD"
@@ -244,6 +261,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
 
+    .line 358
     new-instance v0, Landroid/graphics/PorterDuff$Mode;
 
     const-string v1, "OVERLAY"
@@ -256,6 +274,7 @@
 
     sput-object v0, Landroid/graphics/PorterDuff$Mode;->OVERLAY:Landroid/graphics/PorterDuff$Mode;
 
+    .line 178
     const/16 v0, 0x12
 
     new-array v0, v0, [Landroid/graphics/PorterDuff$Mode;
@@ -351,22 +370,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "nativeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 360
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 361
     iput p3, p0, Landroid/graphics/PorterDuff$Mode;->nativeInt:I
 
+    .line 362
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 178
     const-class v0, Landroid/graphics/PorterDuff$Mode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -381,6 +406,7 @@
 .method public static values()[Landroid/graphics/PorterDuff$Mode;
     .locals 1
 
+    .line 178
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->$VALUES:[Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0}, [Landroid/graphics/PorterDuff$Mode;->clone()Ljava/lang/Object;

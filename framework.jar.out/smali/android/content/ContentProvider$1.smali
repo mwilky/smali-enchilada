@@ -43,7 +43,9 @@
 # direct methods
 .method constructor <init>(Landroid/content/ContentProvider;Landroid/content/ContentProvider$PipeDataWriter;[Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/content/ContentProvider;
 
+    .line 1920
     iput-object p1, p0, Landroid/content/ContentProvider$1;->this$0:Landroid/content/ContentProvider;
 
     iput-object p2, p0, Landroid/content/ContentProvider$1;->val$func:Landroid/content/ContentProvider$PipeDataWriter;
@@ -67,7 +69,9 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 7
+    .param p1, "params"    # [Ljava/lang/Object;
 
+    .line 1923
     iget-object v0, p0, Landroid/content/ContentProvider$1;->val$func:Landroid/content/ContentProvider$PipeDataWriter;
 
     iget-object v1, p0, Landroid/content/ContentProvider$1;->val$fds:[Landroid/os/ParcelFileDescriptor;
@@ -86,6 +90,7 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/content/ContentProvider$PipeDataWriter;->writeDataToPipe(Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
 
+    .line 1925
     :try_start_0
     iget-object v0, p0, Landroid/content/ContentProvider$1;->val$fds:[Landroid/os/ParcelFileDescriptor;
 
@@ -95,17 +100,23 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1928
     goto :goto_0
 
+    .line 1926
     :catch_0
     move-exception v0
 
+    .line 1927
+    .local v0, "e":Ljava/io/IOException;
     const-string v1, "ContentProvider"
 
     const-string v2, "Failure closing pipe"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 1929
+    .end local v0    # "e":Ljava/io/IOException;
     :goto_0
     const/4 v0, 0x0
 

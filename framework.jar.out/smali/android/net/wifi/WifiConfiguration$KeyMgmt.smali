@@ -63,6 +63,7 @@
 .method static constructor <clinit>()V
     .locals 14
 
+    .line 197
     const-string v0, "NONE"
 
     const-string v1, "WPA_PSK"
@@ -103,6 +104,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

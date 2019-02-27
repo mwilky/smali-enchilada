@@ -35,7 +35,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/View;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/View;
 
+    .line 11189
     iput-object p1, p0, Landroid/view/View$1;->this$0:Landroid/view/View;
 
     iput p2, p0, Landroid/view/View$1;->val$id:I
@@ -49,7 +51,9 @@
 # virtual methods
 .method public test(Landroid/view/View;)Z
     .locals 2
+    .param p1, "t"    # Landroid/view/View;
 
+    .line 11192
     iget v0, p1, Landroid/view/View;->mNextFocusForwardId:I
 
     iget v1, p0, Landroid/view/View$1;->val$id:I
@@ -70,6 +74,7 @@
 .method public bridge synthetic test(Ljava/lang/Object;)Z
     .locals 0
 
+    .line 11189
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Landroid/view/View$1;->test(Landroid/view/View;)Z

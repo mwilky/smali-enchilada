@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,5 +37,7 @@
         }
     .end annotation
 
+    .line 74
+    .local p1, "permissions":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/permission/RuntimePermissionPresentationInfo;>;"
     return-void
 .end method

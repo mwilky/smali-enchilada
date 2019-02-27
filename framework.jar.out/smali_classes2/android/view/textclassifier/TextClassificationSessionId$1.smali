@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,9 +40,12 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/view/textclassifier/TextClassificationSessionId;
     .locals 2
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 122
     new-instance v0, Landroid/view/textclassifier/TextClassificationSessionId;
 
+    .line 123
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
@@ -54,12 +58,14 @@
 
     invoke-direct {v0, v1}, Landroid/view/textclassifier/TextClassificationSessionId;-><init>(Ljava/lang/String;)V
 
+    .line 122
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 119
     invoke-virtual {p0, p1}, Landroid/view/textclassifier/TextClassificationSessionId$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/textclassifier/TextClassificationSessionId;
 
     move-result-object p1
@@ -69,7 +75,9 @@
 
 .method public newArray(I)[Landroid/view/textclassifier/TextClassificationSessionId;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 128
     new-array v0, p1, [Landroid/view/textclassifier/TextClassificationSessionId;
 
     return-object v0
@@ -78,6 +86,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 119
     invoke-virtual {p0, p1}, Landroid/view/textclassifier/TextClassificationSessionId$1;->newArray(I)[Landroid/view/textclassifier/TextClassificationSessionId;
 
     move-result-object p1

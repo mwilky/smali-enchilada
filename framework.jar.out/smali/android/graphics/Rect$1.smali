@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 653
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,19 +40,25 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/graphics/Rect;
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 658
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
+    .line 659
+    .local v0, "r":Landroid/graphics/Rect;
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 660
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 653
     invoke-virtual {p0, p1}, Landroid/graphics/Rect$1;->createFromParcel(Landroid/os/Parcel;)Landroid/graphics/Rect;
 
     move-result-object p1
@@ -61,7 +68,9 @@
 
 .method public newArray(I)[Landroid/graphics/Rect;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 667
     new-array v0, p1, [Landroid/graphics/Rect;
 
     return-object v0
@@ -70,6 +79,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 653
     invoke-virtual {p0, p1}, Landroid/graphics/Rect$1;->newArray(I)[Landroid/graphics/Rect;
 
     move-result-object p1

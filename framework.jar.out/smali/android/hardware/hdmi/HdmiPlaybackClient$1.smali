@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/hdmi/HdmiPlaybackClient;Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/hdmi/HdmiPlaybackClient;
 
+    .line 121
     iput-object p1, p0, Landroid/hardware/hdmi/HdmiPlaybackClient$1;->this$0:Landroid/hardware/hdmi/HdmiPlaybackClient;
 
     iput-object p2, p0, Landroid/hardware/hdmi/HdmiPlaybackClient$1;->val$callback:Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;
@@ -37,10 +39,13 @@
 # virtual methods
 .method public onComplete(I)V
     .locals 1
+    .param p1, "result"    # I
 
+    .line 124
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiPlaybackClient$1;->val$callback:Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;
 
     invoke-interface {v0, p1}, Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;->onComplete(I)V
 
+    .line 125
     return-void
 .end method

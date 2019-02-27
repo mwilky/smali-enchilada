@@ -39,6 +39,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 635
     new-instance v0, Landroid/hardware/radio/ProgramSelector$Identifier$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/ProgramSelector$Identifier$1;-><init>()V
@@ -50,46 +51,62 @@
 
 .method public constructor <init>(IJ)V
     .locals 1
+    .param p1, "type"    # I
+    .param p2, "value"    # J
 
+    .line 558
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 559
     const/16 v0, 0x2714
 
     if-ne p1, v0, :cond_0
 
+    .line 561
     const/4 p1, 0x4
 
+    .line 563
     :cond_0
     iput p1, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mType:I
 
+    .line 564
     iput-wide p2, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mValue:J
 
+    .line 565
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 620
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mType:I
 
+    .line 621
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mValue:J
 
+    .line 622
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/radio/ProgramSelector$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/hardware/radio/ProgramSelector$1;
 
+    .line 554
     invoke-direct {p0, p1}, Landroid/hardware/radio/ProgramSelector$Identifier;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -100,6 +117,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 632
     const/4 v0, 0x0
 
     return v0
@@ -107,13 +125,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 613
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
+    .line 614
     :cond_0
     instance-of v1, p1, Landroid/hardware/radio/ProgramSelector$Identifier;
 
@@ -123,11 +144,14 @@
 
     return v2
 
+    .line 615
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 616
+    .local v1, "other":Landroid/hardware/radio/ProgramSelector$Identifier;
     invoke-virtual {v1}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
 
     move-result v3
@@ -158,6 +182,7 @@
 .method public getType()I
     .locals 4
 
+    .line 573
     iget v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mType:I
 
     const/4 v1, 0x4
@@ -172,10 +197,12 @@
 
     if-lez v0, :cond_0
 
+    .line 578
     const/16 v0, 0x2714
 
     return v0
 
+    .line 580
     :cond_0
     iget v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mType:I
 
@@ -185,6 +212,7 @@
 .method public getValue()J
     .locals 2
 
+    .line 598
     iget-wide v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mValue:J
 
     return-wide v0
@@ -193,6 +221,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 608
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -227,6 +256,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 603
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -260,14 +290,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 626
     iget v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 627
     iget-wide v0, p0, Landroid/hardware/radio/ProgramSelector$Identifier;->mValue:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 628
     return-void
 .end method

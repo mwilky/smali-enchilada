@@ -39,7 +39,9 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeech;JILjava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/speech/tts/TextToSpeech;
 
+    .line 1242
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$4;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-wide p2, p0, Landroid/speech/tts/TextToSpeech$4;->val$durationInMs:J
@@ -57,12 +59,14 @@
 # virtual methods
 .method public run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
     .locals 7
+    .param p1, "service"    # Landroid/speech/tts/ITextToSpeechService;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 1245
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$4;->this$0:Landroid/speech/tts/TextToSpeech;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Landroid/os/IBinder;
@@ -96,6 +100,7 @@
         }
     .end annotation
 
+    .line 1242
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$4;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object p1

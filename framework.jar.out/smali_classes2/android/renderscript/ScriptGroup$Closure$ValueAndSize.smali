@@ -23,13 +23,18 @@
 # direct methods
 .method public constructor <init>(Landroid/renderscript/RenderScript;Ljava/lang/Object;)V
     .locals 4
+    .param p1, "rs"    # Landroid/renderscript/RenderScript;
+    .param p2, "obj"    # Ljava/lang/Object;
 
+    .line 299
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 300
     instance-of v0, p2, Landroid/renderscript/Allocation;
 
     if-eqz v0, :cond_0
 
+    .line 301
     move-object v0, p2
 
     check-cast v0, Landroid/renderscript/Allocation;
@@ -40,12 +45,14 @@
 
     iput-wide v0, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 304
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
     goto :goto_1
 
+    .line 305
     :cond_0
     instance-of v0, p2, Ljava/lang/Boolean;
 
@@ -53,6 +60,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 306
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -73,15 +81,18 @@
     :goto_0
     iput-wide v2, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 307
     iput v1, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
     goto :goto_1
 
+    .line 308
     :cond_2
     instance-of v0, p2, Ljava/lang/Integer;
 
     if-eqz v0, :cond_3
 
+    .line 309
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Integer;
@@ -92,10 +103,12 @@
 
     iput-wide v2, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 310
     iput v1, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
     goto :goto_1
 
+    .line 311
     :cond_3
     instance-of v0, p2, Ljava/lang/Long;
 
@@ -103,6 +116,7 @@
 
     if-eqz v0, :cond_4
 
+    .line 312
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Long;
@@ -113,15 +127,18 @@
 
     iput-wide v0, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 313
     iput v2, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
     goto :goto_1
 
+    .line 314
     :cond_4
     instance-of v0, p2, Ljava/lang/Float;
 
     if-eqz v0, :cond_5
 
+    .line 315
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Float;
@@ -138,15 +155,18 @@
 
     iput-wide v2, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 316
     iput v1, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
     goto :goto_1
 
+    .line 317
     :cond_5
     instance-of v0, p2, Ljava/lang/Double;
 
     if-eqz v0, :cond_6
 
+    .line 318
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Double;
@@ -161,8 +181,10 @@
 
     iput-wide v0, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->value:J
 
+    .line 319
     iput v2, p0, Landroid/renderscript/ScriptGroup$Closure$ValueAndSize;->size:I
 
+    .line 321
     :cond_6
     :goto_1
     return-void

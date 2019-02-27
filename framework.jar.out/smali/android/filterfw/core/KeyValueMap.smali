@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 27
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
     return-void
@@ -25,13 +26,18 @@
 
 .method public static varargs fromKeyValues([Ljava/lang/Object;)Landroid/filterfw/core/KeyValueMap;
     .locals 1
+    .param p0, "keyValues"    # [Ljava/lang/Object;
 
+    .line 46
     new-instance v0, Landroid/filterfw/core/KeyValueMap;
 
     invoke-direct {v0}, Landroid/filterfw/core/KeyValueMap;-><init>()V
 
+    .line 47
+    .local v0, "result":Landroid/filterfw/core/KeyValueMap;
     invoke-virtual {v0, p0}, Landroid/filterfw/core/KeyValueMap;->setKeyValues([Ljava/lang/Object;)V
 
+    .line 48
     return-object v0
 .end method
 
@@ -39,11 +45,15 @@
 # virtual methods
 .method public getFloat(Ljava/lang/String;)F
     .locals 2
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 62
     invoke-virtual {p0, p1}, Landroid/filterfw/core/KeyValueMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 63
+    .local v0, "result":Ljava/lang/Object;
     if-eqz v0, :cond_0
 
     move-object v1, v0
@@ -65,11 +75,15 @@
 
 .method public getInt(Ljava/lang/String;)I
     .locals 2
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 57
     invoke-virtual {p0, p1}, Landroid/filterfw/core/KeyValueMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 58
+    .local v0, "result":Ljava/lang/Object;
     if-eqz v0, :cond_0
 
     move-object v1, v0
@@ -91,11 +105,15 @@
 
 .method public getString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 52
     invoke-virtual {p0, p1}, Landroid/filterfw/core/KeyValueMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 53
+    .local v0, "result":Ljava/lang/Object;
     if-eqz v0, :cond_0
 
     move-object v1, v0
@@ -113,40 +131,54 @@
 
 .method public varargs setKeyValues([Ljava/lang/Object;)V
     .locals 4
+    .param p1, "keyValues"    # [Ljava/lang/Object;
 
+    .line 30
     array-length v0, p1
 
     rem-int/lit8 v0, v0, 0x2
 
     if-nez v0, :cond_2
 
+    .line 34
     const/4 v0, 0x0
 
+    .local v0, "i":I
     :goto_0
     array-length v1, p1
 
     if-ge v0, v1, :cond_1
 
+    .line 35
     aget-object v1, p1, v0
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
+    .line 39
     aget-object v1, p1, v0
 
     check-cast v1, Ljava/lang/String;
 
+    .line 40
+    .local v1, "key":Ljava/lang/String;
     add-int/lit8 v2, v0, 0x1
 
     aget-object v2, p1, v2
 
+    .line 41
+    .local v2, "value":Ljava/lang/Object;
     invoke-virtual {p0, v1, v2}, Landroid/filterfw/core/KeyValueMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 34
+    .end local v1    # "key":Ljava/lang/String;
+    .end local v2    # "value":Ljava/lang/Object;
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_0
 
+    .line 36
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -166,6 +198,7 @@
 
     aget-object v3, p1, v0
 
+    .line 37
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -184,9 +217,12 @@
 
     throw v1
 
+    .line 43
+    .end local v0    # "i":I
     :cond_1
     return-void
 
+    .line 31
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -200,10 +236,13 @@
 .method public toString()Ljava/lang/String;
     .locals 7
 
+    .line 68
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
+    .line 69
+    .local v0, "writer":Ljava/io/StringWriter;
     invoke-virtual {p0}, Landroid/filterfw/core/KeyValueMap;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -225,14 +264,19 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
+    .line 71
+    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
+    .line 72
+    .local v3, "value":Ljava/lang/Object;
     instance-of v4, v3, Ljava/lang/String;
 
     if-eqz v4, :cond_0
 
+    .line 73
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -251,13 +295,18 @@
 
     move-result-object v4
 
+    .local v4, "valueString":Ljava/lang/String;
     goto :goto_1
 
+    .line 75
+    .end local v4    # "valueString":Ljava/lang/String;
     :cond_0
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 77
+    .restart local v4    # "valueString":Ljava/lang/String;
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -287,8 +336,13 @@
 
     invoke-virtual {v0, v5}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
 
+    .line 78
+    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
+    .end local v3    # "value":Ljava/lang/Object;
+    .end local v4    # "valueString":Ljava/lang/String;
     goto :goto_0
 
+    .line 79
     :cond_1
     invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 

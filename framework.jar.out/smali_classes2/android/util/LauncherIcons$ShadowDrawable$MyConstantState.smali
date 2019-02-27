@@ -25,9 +25,13 @@
 # direct methods
 .method constructor <init>(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable$ConstantState;)V
     .locals 2
+    .param p1, "shadow"    # Landroid/graphics/Bitmap;
+    .param p2, "childState"    # Landroid/graphics/drawable/Drawable$ConstantState;
 
+    .line 168
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
+    .line 164
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -36,10 +40,13 @@
 
     iput-object v0, p0, Landroid/util/LauncherIcons$ShadowDrawable$MyConstantState;->mPaint:Landroid/graphics/Paint;
 
+    .line 169
     iput-object p1, p0, Landroid/util/LauncherIcons$ShadowDrawable$MyConstantState;->mShadow:Landroid/graphics/Bitmap;
 
+    .line 170
     iput-object p2, p0, Landroid/util/LauncherIcons$ShadowDrawable$MyConstantState;->mChildState:Landroid/graphics/drawable/Drawable$ConstantState;
 
+    .line 171
     return-void
 .end method
 
@@ -48,6 +55,7 @@
 .method public getChangingConfigurations()I
     .locals 1
 
+    .line 180
     iget-object v0, p0, Landroid/util/LauncherIcons$ShadowDrawable$MyConstantState;->mChildState:Landroid/graphics/drawable/Drawable$ConstantState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
@@ -60,6 +68,7 @@
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
+    .line 175
     new-instance v0, Landroid/util/LauncherIcons$ShadowDrawable;
 
     invoke-direct {v0, p0}, Landroid/util/LauncherIcons$ShadowDrawable;-><init>(Landroid/util/LauncherIcons$ShadowDrawable$MyConstantState;)V

@@ -24,6 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,6 +35,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 101
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -44,6 +46,7 @@
 
     iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
+    .line 102
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
@@ -56,6 +59,7 @@
 
     iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
+    .line 104
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
@@ -66,5 +70,6 @@
 
     move-result-object v0
 
+    .line 101
     return-object v0
 .end method

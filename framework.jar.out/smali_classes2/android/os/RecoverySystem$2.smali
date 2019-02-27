@@ -28,16 +28,19 @@
 .method constructor <init>(Landroid/os/Handler;Landroid/os/RecoverySystem$ProgressListener;)V
     .locals 0
 
+    .line 455
     iput-object p1, p0, Landroid/os/RecoverySystem$2;->val$progressHandler:Landroid/os/Handler;
 
     iput-object p2, p0, Landroid/os/RecoverySystem$2;->val$listener:Landroid/os/RecoverySystem$ProgressListener;
 
     invoke-direct {p0}, Landroid/os/IRecoverySystemProgressListener$Stub;-><init>()V
 
+    .line 456
     const/4 p1, 0x0
 
     iput p1, p0, Landroid/os/RecoverySystem$2;->lastProgress:I
 
+    .line 457
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
@@ -51,11 +54,15 @@
 # virtual methods
 .method public onProgress(I)V
     .locals 4
+    .param p1, "progress"    # I
 
+    .line 461
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
+    .line 462
+    .local v0, "now":J
     iget-object v2, p0, Landroid/os/RecoverySystem$2;->val$progressHandler:Landroid/os/Handler;
 
     new-instance v3, Landroid/os/RecoverySystem$2$1;
@@ -64,5 +71,6 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 479
     return-void
 .end method

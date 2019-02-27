@@ -27,7 +27,12 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Landroid/app/Activity;Landroid/os/UserHandle;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/AccountManager;
+    .param p2, "activity"    # Landroid/app/Activity;
+    .param p3, "handler"    # Landroid/os/Handler;
 
+    .line 1277
+    .local p4, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$8;->val$account:Landroid/accounts/Account;
@@ -51,10 +56,12 @@
         }
     .end annotation
 
+    .line 1280
     const/16 v0, 0x22
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
+    .line 1281
     iget-object v0, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -79,11 +86,14 @@
     :goto_0
     iget-object v4, p0, Landroid/accounts/AccountManager$8;->val$userHandle:Landroid/os/UserHandle;
 
+    .line 1282
     invoke-virtual {v4}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v4
 
+    .line 1281
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/accounts/IAccountManager;->removeAccountAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;ZI)V
 
+    .line 1283
     return-void
 .end method

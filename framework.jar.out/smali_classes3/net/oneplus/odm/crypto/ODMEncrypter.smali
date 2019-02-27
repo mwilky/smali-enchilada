@@ -11,6 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,18 +19,24 @@
 
 .method public static byteArrayToHexString([B)Ljava/lang/String;
     .locals 5
+    .param p0, "bytes"    # [B
 
+    .line 130
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 131
+    .local v0, "resultString":Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
+    .local v1, "i":I
     :goto_0
     array-length v2, p0
 
     if-ge v1, v2, :cond_1
 
+    .line 132
     const/16 v2, 0xff
 
     aget-byte v3, p0, v1
@@ -40,6 +47,8 @@
 
     move-result-object v2
 
+    .line 133
+    .local v2, "hex":Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -48,17 +57,23 @@
 
     if-ne v3, v4, :cond_0
 
+    .line 134
     const/16 v3, 0x30
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
+    .line 136
     :cond_0
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 131
+    .end local v2    # "hex":Ljava/lang/String;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 138
+    .end local v1    # "i":I
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -69,15 +84,21 @@
 
 .method private static createKey(Landroid/content/Context;)[B
     .locals 7
+    .param p0, "context"    # Landroid/content/Context;
 
+    .line 150
     invoke-static {p0}, Lnet/oneplus/odm/common/Util;->getAESKey(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 151
+    .local v0, "aeskey":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
 
+    .line 152
+    .local v1, "aesKeyBytes":[B
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -86,6 +107,8 @@
 
     move-result-object v2
 
+    .line 153
+    .local v2, "aesKeyCRCResult":[B
     const-string v3, "oneplusatoneplus"
 
     invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
@@ -102,6 +125,8 @@
 
     move-result-object v3
 
+    .line 154
+    .local v3, "saltCRCResult":[B
     array-length v4, v2
 
     array-length v5, v3
@@ -110,13 +135,17 @@
 
     new-array v4, v4, [B
 
+    .line 156
+    .local v4, "combineResult":[B
     const/4 v5, 0x0
 
+    .local v5, "i":I
     :goto_0
     array-length v6, v4
 
     if-ge v5, v6, :cond_1
 
+    .line 158
     array-length v6, v2
 
     if-ge v5, v6, :cond_0
@@ -135,17 +164,22 @@
     :goto_1
     aput-byte v6, v4, v5
 
+    .line 156
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
+    .line 160
+    .end local v5    # "i":I
     :cond_1
     return-object v4
 .end method
 
 .method public static decodeFromBasha64([C)Ljava/lang/String;
     .locals 1
+    .param p0, "charArray"    # [C
 
+    .line 146
     invoke-static {p0}, Lnet/oneplus/odm/crypto/Basha64;->decrypt([C)Ljava/lang/String;
 
     move-result-object v0
@@ -155,11 +189,16 @@
 
 .method public static decryptFromAES(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 7
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "encryptedText"    # Ljava/lang/String;
 
+    .line 92
     invoke-static {p0}, Lnet/oneplus/odm/crypto/ODMEncrypter;->createKey(Landroid/content/Context;)[B
 
     move-result-object v0
 
+    .line 94
+    .local v0, "key":[B
     :try_start_0
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
@@ -167,12 +206,16 @@
 
     invoke-direct {v1, v0, v2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
+    .line 95
+    .local v1, "mSecretKeySpec":Ljavax/crypto/spec/SecretKeySpec;
     const-string v2, "AES/CBC/PKCS5Padding"
 
     invoke-static {v2}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     move-result-object v2
 
+    .line 97
+    .local v2, "mCipher":Ljavax/crypto/Cipher;
     const/4 v3, 0x0
 
     const/16 v4, 0x20
@@ -181,12 +224,15 @@
 
     move-result-object v3
 
+    .line 98
+    .local v3, "iv":Ljava/lang/String;
     invoke-virtual {p1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
     move-object p1, v4
 
+    .line 99
     new-instance v4, Ljavax/crypto/spec/IvParameterSpec;
 
     invoke-static {v3}, Lnet/oneplus/odm/crypto/ODMEncrypter;->hexStringToByteArray(Ljava/lang/String;)[B
@@ -195,10 +241,13 @@
 
     invoke-direct {v4, v5}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
+    .line 100
+    .local v4, "ivParams":Ljavax/crypto/spec/IvParameterSpec;
     const/4 v5, 0x2
 
     invoke-virtual {v2, v5, v1, v4}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
+    .line 101
     invoke-static {p1}, Lnet/oneplus/odm/crypto/ODMEncrypter;->hexStringToByteArray(Ljava/lang/String;)[B
 
     move-result-object v5
@@ -207,6 +256,8 @@
 
     move-result-object v5
 
+    .line 102
+    .local v5, "decryptBytes":[B
     new-instance v6, Ljava/lang/String;
 
     invoke-direct {v6, v5}, Ljava/lang/String;-><init>([B)V
@@ -215,9 +266,17 @@
 
     return-object v6
 
+    .line 103
+    .end local v1    # "mSecretKeySpec":Ljavax/crypto/spec/SecretKeySpec;
+    .end local v2    # "mCipher":Ljavax/crypto/Cipher;
+    .end local v3    # "iv":Ljava/lang/String;
+    .end local v4    # "ivParams":Ljavax/crypto/spec/IvParameterSpec;
+    .end local v5    # "decryptBytes":[B
     :catch_0
     move-exception v1
 
+    .line 104
+    .local v1, "ex":Ljava/lang/Exception;
     sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -240,6 +299,7 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
+    .line 105
     const/4 v2, 0x0
 
     return-object v2
@@ -247,7 +307,9 @@
 
 .method public static encodeToSHA1(Ljava/lang/String;)Ljava/lang/String;
     .locals 7
+    .param p0, "src"    # Ljava/lang/String;
 
+    .line 43
     :try_start_0
     const-string v0, "SHA-1"
 
@@ -255,6 +317,8 @@
 
     move-result-object v0
 
+    .line 44
+    .local v0, "digest":Ljava/security/MessageDigest;
     const-string v1, "UTF-8"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
@@ -265,17 +329,23 @@
 
     move-result-object v1
 
+    .line 45
+    .local v1, "hash":[B
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 47
+    .local v2, "hexString":Ljava/lang/StringBuffer;
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_0
     array-length v4, v1
 
     if-ge v3, v4, :cond_1
 
+    .line 48
     const/16 v4, 0xff
 
     aget-byte v5, v1, v3
@@ -286,6 +356,8 @@
 
     move-result-object v4
 
+    .line 49
+    .local v4, "hex":Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -294,17 +366,23 @@
 
     if-ne v5, v6, :cond_0
 
+    .line 50
     const/16 v5, 0x30
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
+    .line 52
     :cond_0
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 47
+    .end local v4    # "hex":Ljava/lang/String;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 54
+    .end local v3    # "i":I
     :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -314,9 +392,15 @@
 
     return-object v3
 
+    .line 55
+    .end local v0    # "digest":Ljava/security/MessageDigest;
+    .end local v1    # "hash":[B
+    .end local v2    # "hexString":Ljava/lang/StringBuffer;
     :catch_0
     move-exception v0
 
+    .line 56
+    .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -326,7 +410,9 @@
 
 .method public static encodeToSHA256(Ljava/lang/String;)Ljava/lang/String;
     .locals 7
+    .param p0, "src"    # Ljava/lang/String;
 
+    .line 24
     :try_start_0
     const-string v0, "SHA-256"
 
@@ -334,6 +420,8 @@
 
     move-result-object v0
 
+    .line 25
+    .local v0, "digest":Ljava/security/MessageDigest;
     const-string v1, "UTF-8"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
@@ -344,17 +432,23 @@
 
     move-result-object v1
 
+    .line 26
+    .local v1, "hash":[B
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 28
+    .local v2, "hexString":Ljava/lang/StringBuffer;
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_0
     array-length v4, v1
 
     if-ge v3, v4, :cond_1
 
+    .line 29
     const/16 v4, 0xff
 
     aget-byte v5, v1, v3
@@ -365,6 +459,8 @@
 
     move-result-object v4
 
+    .line 30
+    .local v4, "hex":Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -373,17 +469,23 @@
 
     if-ne v5, v6, :cond_0
 
+    .line 31
     const/16 v5, 0x30
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
+    .line 33
     :cond_0
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 28
+    .end local v4    # "hex":Ljava/lang/String;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 35
+    .end local v3    # "i":I
     :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -393,9 +495,15 @@
 
     return-object v3
 
+    .line 36
+    .end local v0    # "digest":Ljava/security/MessageDigest;
+    .end local v1    # "hash":[B
+    .end local v2    # "hexString":Ljava/lang/StringBuffer;
     :catch_0
     move-exception v0
 
+    .line 37
+    .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -405,24 +513,35 @@
 
 .method public static encryptToAES(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 9
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "text"    # Ljava/lang/String;
 
+    .line 67
     invoke-static {p0}, Lnet/oneplus/odm/crypto/ODMEncrypter;->createKey(Landroid/content/Context;)[B
 
     move-result-object v0
 
+    .line 69
+    .local v0, "key":[B
     :try_start_0
     new-instance v1, Ljava/security/SecureRandom;
 
     invoke-direct {v1}, Ljava/security/SecureRandom;-><init>()V
 
+    .line 70
+    .local v1, "random":Ljava/security/SecureRandom;
     new-instance v2, Ljavax/crypto/spec/SecretKeySpec;
 
     const-string v3, "AES"
 
     invoke-direct {v2, v0, v3}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
+    .line 71
+    .local v2, "mSecretKeySpec":Ljavax/crypto/spec/SecretKeySpec;
     const/4 v3, 0x0
 
+    .line 72
+    .local v3, "mCipher":Ljavax/crypto/Cipher;
     const-string v4, "AES/CBC/PKCS5Padding"
 
     invoke-static {v4}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
@@ -431,22 +550,29 @@
 
     move-object v3, v4
 
+    .line 73
     invoke-virtual {v3}, Ljavax/crypto/Cipher;->getBlockSize()I
 
     move-result v4
 
     new-array v4, v4, [B
 
+    .line 74
+    .local v4, "iv":[B
     invoke-virtual {v1, v4}, Ljava/security/SecureRandom;->nextBytes([B)V
 
+    .line 75
     new-instance v5, Ljavax/crypto/spec/IvParameterSpec;
 
     invoke-direct {v5, v4}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
+    .line 76
+    .local v5, "ivParams":Ljavax/crypto/spec/IvParameterSpec;
     const/4 v6, 0x1
 
     invoke-virtual {v3, v6, v2, v5}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
+    .line 78
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v6
@@ -455,6 +581,8 @@
 
     move-result-object v6
 
+    .line 79
+    .local v6, "bytes":[B
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -479,9 +607,18 @@
 
     return-object v7
 
+    .line 80
+    .end local v1    # "random":Ljava/security/SecureRandom;
+    .end local v2    # "mSecretKeySpec":Ljavax/crypto/spec/SecretKeySpec;
+    .end local v3    # "mCipher":Ljavax/crypto/Cipher;
+    .end local v4    # "iv":[B
+    .end local v5    # "ivParams":Ljavax/crypto/spec/IvParameterSpec;
+    .end local v6    # "bytes":[B
     :catch_0
     move-exception v1
 
+    .line 81
+    .local v1, "ex":Ljava/lang/Exception;
     sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -504,6 +641,7 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
+    .line 82
     const/4 v2, 0x0
 
     return-object v2
@@ -511,7 +649,9 @@
 
 .method public static encryptToBasha64([C)Ljava/lang/String;
     .locals 1
+    .param p0, "charArray"    # [C
 
+    .line 142
     invoke-static {p0}, Lnet/oneplus/odm/crypto/Basha64;->encrypt([C)Ljava/lang/String;
 
     move-result-object v0
@@ -521,13 +661,18 @@
 
 .method public static encryptToCRC32([B)Ljava/lang/String;
     .locals 3
+    .param p0, "src"    # [B
 
+    .line 110
     new-instance v0, Ljava/util/zip/CRC32;
 
     invoke-direct {v0}, Ljava/util/zip/CRC32;-><init>()V
 
+    .line 111
+    .local v0, "crc":Ljava/util/zip/CRC32;
     invoke-virtual {v0, p0}, Ljava/util/zip/CRC32;->update([B)V
 
+    .line 112
     invoke-virtual {v0}, Ljava/util/zip/CRC32;->getValue()J
 
     move-result-wide v1
@@ -541,11 +686,16 @@
 
 .method public static encryptToCRC64([BI)[B
     .locals 2
+    .param p0, "src"    # [B
+    .param p1, "textSize"    # I
 
+    .line 116
     new-instance v0, Lnet/oneplus/odm/crypto/CRC64;
 
     invoke-direct {v0, p0, p1}, Lnet/oneplus/odm/crypto/CRC64;-><init>([BI)V
 
+    .line 117
+    .local v0, "crc":Lnet/oneplus/odm/crypto/CRC64;
     invoke-virtual {v0}, Lnet/oneplus/odm/crypto/CRC64;->getBytes()[B
 
     move-result-object v1
@@ -555,20 +705,28 @@
 
 .method public static hexStringToByteArray(Ljava/lang/String;)[B
     .locals 7
+    .param p0, "s"    # Ljava/lang/String;
 
+    .line 121
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
+    .line 122
+    .local v0, "len":I
     div-int/lit8 v1, v0, 0x2
 
     new-array v1, v1, [B
 
+    .line 123
+    .local v1, "data":[B
     const/4 v2, 0x0
 
+    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
+    .line 124
     div-int/lit8 v3, v2, 0x2
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -599,10 +757,13 @@
 
     aput-byte v4, v1, v3
 
+    .line 123
     add-int/lit8 v2, v2, 0x2
 
     goto :goto_0
 
+    .line 126
+    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method

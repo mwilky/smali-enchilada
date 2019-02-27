@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputManager$SessionCallbackRecord;II)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
+    .line 607
     iput-object p1, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$6;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     iput p2, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$6;->val$width:I
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 4
 
+    .line 610
     iget-object v0, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$6;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->access$000(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$SessionCallback;
@@ -63,5 +66,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/tv/TvInputManager$SessionCallback;->onVideoSizeChanged(Landroid/media/tv/TvInputManager$Session;II)V
 
+    .line 611
     return-void
 .end method

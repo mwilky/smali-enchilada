@@ -37,19 +37,26 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/media/projection/IMediaProjection;)V
     .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "impl"    # Landroid/media/projection/IMediaProjection;
 
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 55
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/media/projection/MediaProjection;->mCallbacks:Ljava/util/Map;
 
+    .line 56
     iput-object p1, p0, Landroid/media/projection/MediaProjection;->mContext:Landroid/content/Context;
 
+    .line 57
     iput-object p2, p0, Landroid/media/projection/MediaProjection;->mImpl:Landroid/media/projection/IMediaProjection;
 
+    .line 59
     :try_start_0
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mImpl:Landroid/media/projection/IMediaProjection;
 
@@ -63,13 +70,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 62
     nop
 
+    .line 63
     return-void
 
+    .line 60
     :catch_0
     move-exception v0
 
+    .line 61
+    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Failed to start media projection"
@@ -81,7 +93,9 @@
 
 .method static synthetic access$100(Landroid/media/projection/MediaProjection;)Ljava/util/Map;
     .locals 1
+    .param p0, "x0"    # Landroid/media/projection/MediaProjection;
 
+    .line 46
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mCallbacks:Ljava/util/Map;
 
     return-object v0
@@ -91,7 +105,12 @@
 # virtual methods
 .method public createAudioRecord(IIII)Landroid/media/AudioRecord;
     .locals 1
+    .param p1, "sampleRateInHz"    # I
+    .param p2, "channelConfig"    # I
+    .param p3, "audioFormat"    # I
+    .param p4, "bufferSizeInBytes"    # I
 
+    .line 149
     const/4 v0, 0x0
 
     return-object v0
@@ -99,7 +118,16 @@
 
 .method public createVirtualDisplay(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;
     .locals 13
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+    .param p4, "dpi"    # I
+    .param p5, "flags"    # I
+    .param p6, "surface"    # Landroid/view/Surface;
+    .param p7, "callback"    # Landroid/hardware/display/VirtualDisplay$Callback;
+    .param p8, "handler"    # Landroid/os/Handler;
 
+    .line 137
     move-object v11, p0
 
     iget-object v0, v11, Landroid/media/projection/MediaProjection;->mContext:Landroid/content/Context;
@@ -114,6 +142,8 @@
 
     check-cast v12, Landroid/hardware/display/DisplayManager;
 
+    .line 138
+    .local v12, "dm":Landroid/hardware/display/DisplayManager;
     const/4 v10, 0x0
 
     move-object v0, v12
@@ -145,7 +175,16 @@
 
 .method public createVirtualDisplay(Ljava/lang/String;IIIZLandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;
     .locals 14
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+    .param p4, "dpi"    # I
+    .param p5, "isSecure"    # Z
+    .param p6, "surface"    # Landroid/view/Surface;
+    .param p7, "callback"    # Landroid/hardware/display/VirtualDisplay$Callback;
+    .param p8, "handler"    # Landroid/os/Handler;
 
+    .line 103
     move-object v11, p0
 
     iget-object v0, v11, Landroid/media/projection/MediaProjection;->mContext:Landroid/content/Context;
@@ -160,6 +199,8 @@
 
     check-cast v12, Landroid/hardware/display/DisplayManager;
 
+    .line 104
+    .local v12, "dm":Landroid/hardware/display/DisplayManager;
     if-eqz p5, :cond_0
 
     const/4 v0, 0x4
@@ -172,6 +213,8 @@
     :goto_0
     move v13, v0
 
+    .line 105
+    .local v13, "flags":I
     or-int/lit8 v0, v13, 0x10
 
     or-int/lit8 v7, v0, 0x2
@@ -206,6 +249,7 @@
 .method public getProjection()Landroid/media/projection/IMediaProjection;
     .locals 1
 
+    .line 168
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mImpl:Landroid/media/projection/IMediaProjection;
 
     return-object v0
@@ -213,17 +257,23 @@
 
 .method public registerCallback(Landroid/media/projection/MediaProjection$Callback;Landroid/os/Handler;)V
     .locals 2
+    .param p1, "callback"    # Landroid/media/projection/MediaProjection$Callback;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 75
     if-eqz p1, :cond_1
 
+    .line 78
     if-nez p2, :cond_0
 
+    .line 79
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     move-object p2, v0
 
+    .line 81
     :cond_0
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mCallbacks:Ljava/util/Map;
 
@@ -233,8 +283,10 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 82
     return-void
 
+    .line 76
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -248,6 +300,7 @@
 .method public stop()V
     .locals 3
 
+    .line 157
     :try_start_0
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mImpl:Landroid/media/projection/IMediaProjection;
 
@@ -255,32 +308,43 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 160
     goto :goto_0
 
+    .line 158
     :catch_0
     move-exception v0
 
+    .line 159
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaProjection"
 
     const-string v2, "Unable to stop projection"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 161
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public unregisterCallback(Landroid/media/projection/MediaProjection$Callback;)V
     .locals 2
+    .param p1, "callback"    # Landroid/media/projection/MediaProjection$Callback;
 
+    .line 91
     if-eqz p1, :cond_0
 
+    .line 94
     iget-object v0, p0, Landroid/media/projection/MediaProjection;->mCallbacks:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 95
     return-void
 
+    .line 92
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

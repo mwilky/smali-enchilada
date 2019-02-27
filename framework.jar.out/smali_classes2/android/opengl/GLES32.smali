@@ -429,14 +429,17 @@
 .method static constructor <clinit>()V
     .locals 0
 
+    .line 238
     invoke-static {}, Landroid/opengl/GLES32;->_nativeClassInit()V
 
+    .line 239
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 241
     invoke-direct {p0}, Landroid/opengl/GLES31;-><init>()V
 
     return-void

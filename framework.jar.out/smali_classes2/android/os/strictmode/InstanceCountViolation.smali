@@ -15,6 +15,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .line 21
     const/4 v0, 0x1
 
     new-array v1, v0, [Ljava/lang/StackTraceElement;
@@ -40,7 +41,11 @@
 
 .method public constructor <init>(Ljava/lang/Class;JI)V
     .locals 2
+    .param p1, "klass"    # Ljava/lang/Class;
+    .param p2, "instances"    # J
+    .param p4, "limit"    # I
 
+    .line 28
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,12 +74,15 @@
 
     invoke-direct {p0, v0}, Landroid/os/strictmode/Violation;-><init>(Ljava/lang/String;)V
 
+    .line 29
     sget-object v0, Landroid/os/strictmode/InstanceCountViolation;->FAKE_STACK:[Ljava/lang/StackTraceElement;
 
     invoke-virtual {p0, v0}, Landroid/os/strictmode/InstanceCountViolation;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
+    .line 30
     iput-wide p2, p0, Landroid/os/strictmode/InstanceCountViolation;->mInstances:J
 
+    .line 31
     return-void
 .end method
 
@@ -83,6 +91,7 @@
 .method public getNumberOfInstances()J
     .locals 2
 
+    .line 34
     iget-wide v0, p0, Landroid/os/strictmode/InstanceCountViolation;->mInstances:J
 
     return-wide v0

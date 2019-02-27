@@ -32,14 +32,17 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 231
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 238
     const/4 v0, 0x5
 
     new-array v1, v0, [F
 
     iput-object v1, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
+    .line 243
     new-array v0, v0, [F
 
     iput-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
@@ -49,30 +52,43 @@
 
 .method private estimate(F[F)F
     .locals 4
+    .param p1, "time"    # F
+    .param p2, "c"    # [F
 
+    .line 292
     const/4 v0, 0x0
 
+    .line 293
+    .local v0, "a":F
     const/high16 v1, 0x3f800000    # 1.0f
 
+    .line 294
+    .local v1, "scale":F
     const/4 v2, 0x0
 
+    .local v2, "i":I
     :goto_0
     iget v3, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
 
     if-gt v2, v3, :cond_0
 
+    .line 295
     aget v3, p2, v2
 
     mul-float/2addr v3, v1
 
     add-float/2addr v0, v3
 
+    .line 296
     mul-float/2addr v1, p1
 
+    .line 294
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 298
+    .end local v2    # "i":I
     :cond_0
     return v0
 .end method
@@ -81,7 +97,9 @@
 # virtual methods
 .method public estimateX(F)F
     .locals 1
+    .param p1, "time"    # F
 
+    .line 261
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -93,7 +111,9 @@
 
 .method public estimateY(F)F
     .locals 1
+    .param p1, "time"    # F
 
+    .line 270
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -105,7 +125,9 @@
 
 .method public getXCoeff(I)F
     .locals 1
+    .param p1, "index"    # I
 
+    .line 279
     iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
 
     if-gt p1, v0, :cond_0
@@ -125,7 +147,9 @@
 
 .method public getYCoeff(I)F
     .locals 1
+    .param p1, "index"    # I
 
+    .line 288
     iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
 
     if-gt p1, v0, :cond_0

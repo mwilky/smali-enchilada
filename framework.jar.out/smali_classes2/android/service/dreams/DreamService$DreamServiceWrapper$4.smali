@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/dreams/DreamService$DreamServiceWrapper;Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
+    .line 1204
     iput-object p1, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$4;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iput-object p2, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$4;->val$reason:Ljava/lang/String;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 1207
     iget-object v0, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$4;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iget-object v0, v0, Landroid/service/dreams/DreamService$DreamServiceWrapper;->this$0:Landroid/service/dreams/DreamService;
@@ -49,5 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/service/dreams/DreamService;->onWakingUp(Ljava/lang/String;)V
 
+    .line 1208
     return-void
 .end method

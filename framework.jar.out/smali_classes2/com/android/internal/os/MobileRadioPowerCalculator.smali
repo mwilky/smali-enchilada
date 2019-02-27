@@ -6,6 +6,8 @@
 # static fields
 .field private static final DEBUG:Z = false
 
+.field private static DEBUG_ONEPLUS:Z = false
+
 .field private static final TAG:Ljava/lang/String; = "MobileRadioPowerController"
 
 
@@ -22,29 +24,49 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 30
+    sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
+
+    sput-boolean v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->DEBUG_ONEPLUS:Z
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/internal/os/PowerProfile;Landroid/os/BatteryStats;)V
     .locals 11
+    .param p1, "profile"    # Lcom/android/internal/os/PowerProfile;
+    .param p2, "stats"    # Landroid/os/BatteryStats;
 
+    .line 60
     invoke-direct {p0}, Lcom/android/internal/os/PowerCalculator;-><init>()V
 
+    .line 34
     sget v0, Landroid/telephony/SignalStrength;->NUM_SIGNAL_STRENGTH_BINS:I
 
     new-array v0, v0, [D
 
     iput-object v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
+    .line 37
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mTotalAppMobileActiveMs:J
 
+    .line 61
     const-string/jumbo v0, "radio.active"
 
+    .line 62
     const-wide/high16 v1, -0x4010000000000000L    # -1.0
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/android/internal/os/PowerProfile;->getAveragePowerOrDefault(Ljava/lang/String;D)D
 
     move-result-wide v3
 
+    .line 63
+    .local v3, "temp":D
     cmpl-double v0, v3, v1
 
     const/4 v5, 0x0
@@ -53,13 +75,17 @@
 
     if-eqz v0, :cond_0
 
+    .line 64
     iput-wide v3, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerRadioOn:D
 
     goto :goto_1
 
+    .line 66
     :cond_0
     const-wide/16 v7, 0x0
 
+    .line 67
+    .local v7, "sum":D
     const-string/jumbo v0, "modem.controller.rx"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -68,8 +94,11 @@
 
     add-double/2addr v7, v9
 
+    .line 68
     move v0, v5
 
+    .line 68
+    .local v0, "i":I
     :goto_0
     iget-object v9, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
@@ -77,6 +106,7 @@
 
     if-ge v0, v9, :cond_1
 
+    .line 69
     const-string/jumbo v9, "modem.controller.tx"
 
     invoke-virtual {p1, v9, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;I)D
@@ -85,10 +115,13 @@
 
     add-double/2addr v7, v9
 
+    .line 68
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 71
+    .end local v0    # "i":I
     :cond_1
     iget-object v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
@@ -102,6 +135,8 @@
 
     iput-wide v9, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerRadioOn:D
 
+    .line 74
+    .end local v7    # "sum":D
     :goto_1
     const-string/jumbo v0, "radio.on"
 
@@ -109,21 +144,29 @@
 
     move-result-wide v3
 
+    .line 75
     cmpl-double v0, v3, v1
 
     if-eqz v0, :cond_2
 
+    .line 76
     nop
 
+    .line 76
+    .local v5, "i":I
     :goto_2
     move v0, v5
 
+    .line 76
+    .end local v5    # "i":I
+    .restart local v0    # "i":I
     iget-object v1, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_3
 
+    .line 77
     iget-object v1, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     const-string/jumbo v2, "radio.on"
@@ -134,10 +177,16 @@
 
     aput-wide v5, v1, v0
 
+    .line 76
     add-int/lit8 v5, v0, 0x1
 
+    .line 76
+    .end local v0    # "i":I
+    .restart local v5    # "i":I
     goto :goto_2
 
+    .line 80
+    .end local v5    # "i":I
     :cond_2
     const-string/jumbo v0, "modem.controller.idle"
 
@@ -145,6 +194,8 @@
 
     move-result-wide v0
 
+    .line 81
+    .local v0, "idle":D
     iget-object v2, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     const-wide/high16 v7, 0x4039000000000000L    # 25.0
@@ -157,17 +208,24 @@
 
     aput-wide v7, v2, v5
 
+    .line 82
     nop
 
+    .line 82
+    .local v6, "i":I
     :goto_3
     move v2, v6
 
+    .line 82
+    .end local v6    # "i":I
+    .local v2, "i":I
     iget-object v5, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     array-length v5, v5
 
     if-ge v2, v5, :cond_3
 
+    .line 83
     iget-object v5, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
@@ -182,10 +240,17 @@
 
     aput-wide v6, v5, v2
 
+    .line 82
     add-int/lit8 v6, v2, 0x1
 
+    .line 82
+    .end local v2    # "i":I
+    .restart local v6    # "i":I
     goto :goto_3
 
+    .line 87
+    .end local v0    # "idle":D
+    .end local v6    # "i":I
     :cond_3
     const-string/jumbo v0, "radio.scanning"
 
@@ -197,26 +262,35 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerScan:D
 
+    .line 88
     iput-object p2, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
+    .line 89
     return-void
 .end method
 
 .method private getMobilePowerPerPacket(JI)D
     .locals 23
+    .param p1, "rawRealtimeUs"    # J
+    .param p3, "statsType"    # I
 
     move-object/from16 v0, p0
 
+    .line 43
     move/from16 v1, p3
 
     const-wide/32 v2, 0x30d40
 
+    .line 44
+    .local v2, "MOBILE_BPS":J
     iget-wide v4, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerRadioOn:D
 
     const-wide v6, 0x40ac200000000000L    # 3600.0
 
     div-double/2addr v4, v6
 
+    .line 46
+    .local v4, "MOBILE_POWER":D
     iget-object v8, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
     const/4 v9, 0x0
@@ -225,6 +299,8 @@
 
     move-result-wide v8
 
+    .line 48
+    .local v8, "mobileRx":J
     iget-object v10, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
     const/4 v11, 0x1
@@ -233,10 +309,15 @@
 
     move-result-wide v10
 
+    .line 50
+    .local v10, "mobileTx":J
     add-long v12, v8, v10
 
+    .line 52
+    .local v12, "mobileData":J
     iget-object v14, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
+    .line 53
     move-wide/from16 v6, p1
 
     invoke-virtual {v14, v6, v7, v1}, Landroid/os/BatteryStats;->getMobileRadioActiveTime(JI)J
@@ -247,6 +328,8 @@
 
     div-long v0, v16, v18
 
+    .line 54
+    .local v0, "radioDataUptimeMs":J
     const-wide/16 v16, 0x0
 
     cmp-long v14, v12, v16
@@ -257,21 +340,31 @@
 
     if-eqz v14, :cond_0
 
+    .line 55
     move-wide/from16 v20, v2
 
     long-to-double v2, v12
 
+    .end local v2    # "MOBILE_BPS":J
+    .local v20, "MOBILE_BPS":J
     long-to-double v6, v0
 
     div-double/2addr v2, v6
 
     goto :goto_0
 
+    .line 56
+    .end local v20    # "MOBILE_BPS":J
+    .restart local v2    # "MOBILE_BPS":J
     :cond_0
     move-wide/from16 v20, v2
 
+    .end local v2    # "MOBILE_BPS":J
+    .restart local v20    # "MOBILE_BPS":J
     const-wide v2, 0x40286a0000000000L    # 12.20703125
 
+    .line 57
+    .local v2, "mobilePps":D
     :goto_0
     div-double v6, v4, v2
 
@@ -286,7 +379,13 @@
 # virtual methods
 .method public calculateApp(Lcom/android/internal/os/BatterySipper;Landroid/os/BatteryStats$Uid;JJI)V
     .locals 6
+    .param p1, "app"    # Lcom/android/internal/os/BatterySipper;
+    .param p2, "u"    # Landroid/os/BatteryStats$Uid;
+    .param p3, "rawRealtimeUs"    # J
+    .param p5, "rawUptimeUs"    # J
+    .param p7, "statsType"    # I
 
+    .line 95
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0, p7}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
@@ -295,6 +394,7 @@
 
     iput-wide v1, p1, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
 
+    .line 97
     const/4 v1, 0x1
 
     invoke-virtual {p2, v1, p7}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
@@ -303,6 +403,7 @@
 
     iput-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
 
+    .line 99
     invoke-virtual {p2, p7}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveTime(I)J
 
     move-result-wide v2
@@ -313,24 +414,28 @@
 
     iput-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
+    .line 100
     invoke-virtual {p2, p7}, Landroid/os/BatteryStats$Uid;->getMobileRadioActiveCount(I)I
 
     move-result v2
 
     iput v2, p1, Lcom/android/internal/os/BatterySipper;->mobileActiveCount:I
 
+    .line 101
     invoke-virtual {p2, v0, p7}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v2
 
     iput-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRxBytes:J
 
+    .line 103
     invoke-virtual {p2, v1, p7}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v0
 
     iput-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileTxBytes:J
 
+    .line 106
     iget-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
     const-wide/16 v2, 0x0
@@ -339,6 +444,7 @@
 
     if-lez v0, :cond_0
 
+    .line 109
     iget-wide v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mTotalAppMobileActiveMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
@@ -347,6 +453,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mTotalAppMobileActiveMs:J
 
+    .line 110
     iget-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
     long-to-double v0, v0
@@ -363,6 +470,7 @@
 
     goto :goto_0
 
+    .line 114
     :cond_0
     iget-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
 
@@ -372,6 +480,7 @@
 
     long-to-double v0, v0
 
+    .line 115
     invoke-direct {p0, p3, p4, p7}, Lcom/android/internal/os/MobileRadioPowerCalculator;->getMobilePowerPerPacket(JI)D
 
     move-result-wide v2
@@ -380,12 +489,89 @@
 
     iput-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
+    .line 128
     :goto_0
+    sget-boolean v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->DEBUG_ONEPLUS:Z
+
+    if-eqz v0, :cond_1
+
+    iget-wide v0, p1, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
+
+    const-wide/16 v2, 0x0
+
+    cmpg-double v0, v0, v2
+
+    if-gez v0, :cond_1
+
+    .line 129
+    const-string v0, "MobileRadioPowerController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[BGC] UID "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Landroid/os/BatteryStats$Uid;->getUid()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ": mobile packets "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
+
+    iget-wide v4, p1, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " active time "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " power="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
+
+    .line 132
+    invoke-static {v2, v3}, Lcom/android/internal/os/BatteryStatsHelper;->makemAh(D)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 129
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 136
+    :cond_1
     return-void
 .end method
 
 .method public calculateRemaining(Lcom/android/internal/os/BatterySipper;Landroid/os/BatteryStats;JJI)V
     .locals 28
+    .param p1, "app"    # Lcom/android/internal/os/BatterySipper;
+    .param p2, "stats"    # Landroid/os/BatteryStats;
+    .param p3, "rawRealtimeUs"    # J
+    .param p5, "rawUptimeUs"    # J
+    .param p7, "statsType"    # I
 
     move-object/from16 v0, p0
 
@@ -395,16 +581,24 @@
 
     move-wide/from16 v3, p3
 
+    .line 141
     move/from16 v5, p7
 
     const-wide/16 v6, 0x0
 
+    .line 142
+    .local v6, "power":D
     const-wide/16 v8, 0x0
 
+    .line 143
+    .local v8, "signalTimeMs":J
     const-wide/16 v10, 0x0
 
+    .line 144
+    .local v10, "noCoverageTimeMs":J
     const/4 v12, 0x0
 
+    .local v12, "i":I
     :goto_0
     iget-object v13, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
@@ -414,16 +608,21 @@
 
     if-ge v12, v13, :cond_1
 
+    .line 145
     invoke-virtual {v2, v12, v3, v4, v5}, Landroid/os/BatteryStats;->getPhoneSignalStrengthTime(IJI)J
 
     move-result-wide v18
 
     div-long v14, v18, v16
 
+    .line 147
+    .local v14, "strengthTimeMs":J
     move-wide/from16 v20, v10
 
     long-to-double v10, v14
 
+    .end local v10    # "noCoverageTimeMs":J
+    .local v20, "noCoverageTimeMs":J
     iget-object v13, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerBins:[D
 
     aget-wide v16, v13, v12
@@ -434,33 +633,52 @@
 
     div-double v10, v10, v16
 
+    .line 152
+    .local v10, "p":D
     add-double/2addr v6, v10
 
+    .line 153
     add-long/2addr v8, v14
 
+    .line 154
     if-nez v12, :cond_0
 
+    .line 155
     move-wide v10, v14
 
+    .end local v14    # "strengthTimeMs":J
+    .end local v20    # "noCoverageTimeMs":J
+    .local v10, "noCoverageTimeMs":J
     goto :goto_1
 
+    .line 144
+    .end local v10    # "noCoverageTimeMs":J
+    .restart local v20    # "noCoverageTimeMs":J
     :cond_0
     move-wide/from16 v10, v20
 
+    .end local v20    # "noCoverageTimeMs":J
+    .restart local v10    # "noCoverageTimeMs":J
     :goto_1
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_0
 
+    .line 159
+    .end local v12    # "i":I
     :cond_1
     move-wide/from16 v20, v10
 
+    .end local v10    # "noCoverageTimeMs":J
+    .restart local v20    # "noCoverageTimeMs":J
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/BatteryStats;->getPhoneSignalScanningTime(JI)J
 
     move-result-wide v10
 
     div-long v10, v10, v16
 
+    .line 161
+    .local v10, "scanningTimeMs":J
     long-to-double v12, v10
 
     iget-wide v14, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerScan:D
@@ -471,8 +689,11 @@
 
     div-double/2addr v12, v14
 
+    .line 166
+    .local v12, "p":D
     add-double/2addr v6, v12
 
+    .line 167
     iget-object v14, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
     invoke-virtual {v14, v3, v4, v5}, Landroid/os/BatteryStats;->getMobileRadioActiveTime(JI)J
@@ -481,24 +702,33 @@
 
     div-long v14, v14, v16
 
+    .line 168
+    .local v14, "radioActiveTimeMs":J
     iget-wide v3, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mTotalAppMobileActiveMs:J
 
     sub-long v3, v14, v3
 
+    .line 169
+    .local v3, "remainingActiveTimeMs":J
     const-wide/16 v16, 0x0
 
     cmp-long v18, v3, v16
 
     if-lez v18, :cond_2
 
+    .line 170
     move-wide/from16 v22, v10
 
     iget-wide v10, v0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mPowerRadioOn:D
 
+    .end local v10    # "scanningTimeMs":J
+    .local v22, "scanningTimeMs":J
     move-wide/from16 v24, v12
 
     long-to-double v12, v3
 
+    .end local v12    # "p":D
+    .local v24, "p":D
     mul-double/2addr v10, v12
 
     const-wide v12, 0x414b774000000000L    # 3600000.0
@@ -509,11 +739,20 @@
 
     goto :goto_2
 
+    .line 173
+    .end local v22    # "scanningTimeMs":J
+    .end local v24    # "p":D
+    .restart local v10    # "scanningTimeMs":J
+    .restart local v12    # "p":D
     :cond_2
     move-wide/from16 v22, v10
 
     move-wide/from16 v24, v12
 
+    .end local v10    # "scanningTimeMs":J
+    .end local v12    # "p":D
+    .restart local v22    # "scanningTimeMs":J
+    .restart local v24    # "p":D
     :goto_2
     const-wide/16 v10, 0x0
 
@@ -521,14 +760,18 @@
 
     if-eqz v10, :cond_4
 
+    .line 174
     cmp-long v10, v8, v16
 
     if-eqz v10, :cond_3
 
+    .line 175
     move-wide/from16 v10, v20
 
     long-to-double v12, v10
 
+    .end local v20    # "noCoverageTimeMs":J
+    .local v10, "noCoverageTimeMs":J
     const-wide/high16 v16, 0x4059000000000000L    # 100.0
 
     mul-double v12, v12, v16
@@ -537,31 +780,45 @@
 
     long-to-double v10, v8
 
+    .end local v10    # "noCoverageTimeMs":J
+    .local v26, "noCoverageTimeMs":J
     div-double/2addr v12, v10
 
     iput-wide v12, v1, Lcom/android/internal/os/BatterySipper;->noCoveragePercent:D
 
     goto :goto_3
 
+    .line 177
+    .end local v26    # "noCoverageTimeMs":J
+    .restart local v20    # "noCoverageTimeMs":J
     :cond_3
     move-wide/from16 v26, v20
 
+    .end local v20    # "noCoverageTimeMs":J
+    .restart local v26    # "noCoverageTimeMs":J
     :goto_3
     iput-wide v3, v1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
+    .line 178
     invoke-virtual {v2, v5}, Landroid/os/BatteryStats;->getMobileRadioActiveUnknownCount(I)I
 
     move-result v10
 
     iput v10, v1, Lcom/android/internal/os/BatterySipper;->mobileActiveCount:I
 
+    .line 179
     iput-wide v6, v1, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
     goto :goto_4
 
+    .line 181
+    .end local v26    # "noCoverageTimeMs":J
+    .restart local v20    # "noCoverageTimeMs":J
     :cond_4
     move-wide/from16 v26, v20
 
+    .end local v20    # "noCoverageTimeMs":J
+    .restart local v26    # "noCoverageTimeMs":J
     :goto_4
     return-void
 .end method
@@ -569,19 +826,25 @@
 .method public reset()V
     .locals 2
 
+    .line 185
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mTotalAppMobileActiveMs:J
 
+    .line 186
     return-void
 .end method
 
 .method public reset(Landroid/os/BatteryStats;)V
     .locals 0
+    .param p1, "stats"    # Landroid/os/BatteryStats;
 
+    .line 189
     invoke-virtual {p0}, Lcom/android/internal/os/MobileRadioPowerCalculator;->reset()V
 
+    .line 190
     iput-object p1, p0, Lcom/android/internal/os/MobileRadioPowerCalculator;->mStats:Landroid/os/BatteryStats;
 
+    .line 191
     return-void
 .end method

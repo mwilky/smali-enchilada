@@ -34,7 +34,9 @@
 # direct methods
 .method constructor <init>(Landroid/accessibilityservice/AccessibilityService$MagnificationController;Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;Landroid/graphics/Region;FFF)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accessibilityservice/AccessibilityService$MagnificationController;
 
+    .line 886
     iput-object p1, p0, Landroid/accessibilityservice/AccessibilityService$MagnificationController$1;->this$0:Landroid/accessibilityservice/AccessibilityService$MagnificationController;
 
     iput-object p2, p0, Landroid/accessibilityservice/AccessibilityService$MagnificationController$1;->val$listener:Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;
@@ -57,6 +59,7 @@
 .method public run()V
     .locals 6
 
+    .line 889
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$MagnificationController$1;->val$listener:Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;
 
     iget-object v1, p0, Landroid/accessibilityservice/AccessibilityService$MagnificationController$1;->this$0:Landroid/accessibilityservice/AccessibilityService$MagnificationController;
@@ -71,5 +74,6 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;->onMagnificationChanged(Landroid/accessibilityservice/AccessibilityService$MagnificationController;Landroid/graphics/Region;FFF)V
 
+    .line 891
     return-void
 .end method

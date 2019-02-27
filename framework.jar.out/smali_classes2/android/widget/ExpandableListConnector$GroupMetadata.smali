@@ -56,6 +56,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 930
     new-instance v0, Landroid/widget/ExpandableListConnector$GroupMetadata$1;
 
     invoke-direct {v0}, Landroid/widget/ExpandableListConnector$GroupMetadata$1;-><init>()V
@@ -68,26 +69,39 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 899
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 900
     return-void
 .end method
 
 .method static obtain(IIIJ)Landroid/widget/ExpandableListConnector$GroupMetadata;
     .locals 1
+    .param p0, "flPos"    # I
+    .param p1, "lastChildFlPos"    # I
+    .param p2, "gPos"    # I
+    .param p3, "gId"    # J
 
+    .line 903
     new-instance v0, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     invoke-direct {v0}, Landroid/widget/ExpandableListConnector$GroupMetadata;-><init>()V
 
+    .line 904
+    .local v0, "gm":Landroid/widget/ExpandableListConnector$GroupMetadata;
     iput p0, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->flPos:I
 
+    .line 905
     iput p1, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
+    .line 906
     iput p2, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
+    .line 907
     iput-wide p3, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gId:J
 
+    .line 908
     return-object v0
 .end method
 
@@ -95,9 +109,12 @@
 # virtual methods
 .method public compareTo(Landroid/widget/ExpandableListConnector$GroupMetadata;)I
     .locals 2
+    .param p1, "another"    # Landroid/widget/ExpandableListConnector$GroupMetadata;
 
+    .line 912
     if-eqz p1, :cond_0
 
+    .line 916
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     iget v1, p1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
@@ -106,6 +123,7 @@
 
     return v0
 
+    .line 913
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -117,6 +135,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
+    .line 875
     check-cast p1, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector$GroupMetadata;->compareTo(Landroid/widget/ExpandableListConnector$GroupMetadata;)I
@@ -129,6 +148,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 920
     const/4 v0, 0x0
 
     return v0
@@ -136,22 +156,29 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 924
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->flPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 925
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 926
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 927
     iget-wide v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 928
     return-void
 .end method

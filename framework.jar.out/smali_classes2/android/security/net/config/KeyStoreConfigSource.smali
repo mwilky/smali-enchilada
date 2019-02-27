@@ -13,9 +13,12 @@
 # direct methods
 .method public constructor <init>(Ljava/security/KeyStore;)V
     .locals 4
+    .param p1, "ks"    # Ljava/security/KeyStore;
 
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     new-instance v0, Landroid/security/net/config/NetworkSecurityConfig$Builder;
 
     invoke-direct {v0}, Landroid/security/net/config/NetworkSecurityConfig$Builder;-><init>()V
@@ -30,16 +33,19 @@
 
     invoke-direct {v1, v2, v3}, Landroid/security/net/config/CertificatesEntryRef;-><init>(Landroid/security/net/config/CertificateSource;Z)V
 
+    .line 33
     invoke-virtual {v0, v1}, Landroid/security/net/config/NetworkSecurityConfig$Builder;->addCertificatesEntryRef(Landroid/security/net/config/CertificatesEntryRef;)Landroid/security/net/config/NetworkSecurityConfig$Builder;
 
     move-result-object v0
 
+    .line 36
     invoke-virtual {v0}, Landroid/security/net/config/NetworkSecurityConfig$Builder;->build()Landroid/security/net/config/NetworkSecurityConfig;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/security/net/config/KeyStoreConfigSource;->mConfig:Landroid/security/net/config/NetworkSecurityConfig;
 
+    .line 37
     return-void
 .end method
 
@@ -48,6 +54,7 @@
 .method public getDefaultConfig()Landroid/security/net/config/NetworkSecurityConfig;
     .locals 1
 
+    .line 46
     iget-object v0, p0, Landroid/security/net/config/KeyStoreConfigSource;->mConfig:Landroid/security/net/config/NetworkSecurityConfig;
 
     return-object v0
@@ -66,6 +73,7 @@
         }
     .end annotation
 
+    .line 41
     const/4 v0, 0x0
 
     return-object v0

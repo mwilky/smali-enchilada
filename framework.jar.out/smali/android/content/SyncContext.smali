@@ -16,25 +16,33 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ISyncContext;)V
     .locals 2
+    .param p1, "syncContextInterface"    # Landroid/content/ISyncContext;
 
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     iput-object p1, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
+    .line 34
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
+    .line 35
     return-void
 .end method
 
 .method private updateHeartbeat()V
     .locals 6
 
+    .line 55
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
+    .line 56
+    .local v0, "now":J
     iget-wide v2, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
     const-wide/16 v4, 0x3e8
@@ -47,26 +55,32 @@
 
     return-void
 
+    .line 58
     :cond_0
     :try_start_0
     iput-wide v0, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
+    .line 59
     iget-object v2, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-eqz v2, :cond_1
 
+    .line 60
     iget-object v2, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     invoke-interface {v2}, Landroid/content/ISyncContext;->sendHeartbeat()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 64
     :cond_1
     goto :goto_0
 
+    .line 62
     :catch_0
     move-exception v2
 
+    .line 65
     :goto_0
     return-void
 .end method
@@ -76,6 +90,7 @@
 .method public getSyncContextBinder()Landroid/os/IBinder;
     .locals 1
 
+    .line 78
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-nez v0, :cond_0
@@ -97,32 +112,41 @@
 
 .method public onFinished(Landroid/content/SyncResult;)V
     .locals 1
+    .param p1, "result"    # Landroid/content/SyncResult;
 
+    .line 69
     :try_start_0
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-eqz v0, :cond_0
 
+    .line 70
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     invoke-interface {v0, p1}, Landroid/content/ISyncContext;->onFinished(Landroid/content/SyncResult;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 74
     :cond_0
     goto :goto_0
 
+    .line 72
     :catch_0
     move-exception v0
 
+    .line 75
     :goto_0
     return-void
 .end method
 
 .method public setStatusText(Ljava/lang/String;)V
     .locals 0
+    .param p1, "message"    # Ljava/lang/String;
 
+    .line 46
     invoke-direct {p0}, Landroid/content/SyncContext;->updateHeartbeat()V
 
+    .line 47
     return-void
 .end method

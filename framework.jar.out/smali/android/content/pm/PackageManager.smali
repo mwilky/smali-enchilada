@@ -875,6 +875,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -882,7 +883,9 @@
 
 .method public static deleteStatusToPublicStatus(I)I
     .locals 2
+    .param p0, "status"    # I
 
+    .line 5930
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
@@ -891,30 +894,38 @@
 
     packed-switch p0, :pswitch_data_0
 
+    .line 5938
     return v0
 
+    .line 5932
     :pswitch_0
     return v0
 
+    .line 5933
     :pswitch_1
     return v1
 
+    .line 5934
     :pswitch_2
     return v1
 
+    .line 5935
     :pswitch_3
     return v1
 
+    .line 5936
     :pswitch_4
     const/4 v0, 0x3
 
     return v0
 
+    .line 5937
     :pswitch_5
     const/4 v0, 0x5
 
     return v0
 
+    .line 5931
     :cond_0
     const/4 v0, 0x0
 
@@ -933,49 +944,59 @@
 
 .method public static deleteStatusToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "status"    # I
 
+    .line 5916
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
+    .line 5924
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 5918
     :pswitch_0
     const-string v0, "DELETE_FAILED_INTERNAL_ERROR"
 
     return-object v0
 
+    .line 5919
     :pswitch_1
     const-string v0, "DELETE_FAILED_DEVICE_POLICY_MANAGER"
 
     return-object v0
 
+    .line 5920
     :pswitch_2
     const-string v0, "DELETE_FAILED_USER_RESTRICTED"
 
     return-object v0
 
+    .line 5921
     :pswitch_3
     const-string v0, "DELETE_FAILED_OWNER_BLOCKED"
 
     return-object v0
 
+    .line 5922
     :pswitch_4
     const-string v0, "DELETE_FAILED_ABORTED"
 
     return-object v0
 
+    .line 5923
     :pswitch_5
     const-string v0, "DELETE_FAILED_USED_SHARED_LIBRARY"
 
     return-object v0
 
+    .line 5917
     :cond_0
     const-string v0, "DELETE_SUCCEEDED"
 
@@ -994,13 +1015,19 @@
 
 .method public static deleteStatusToString(ILjava/lang/String;)Ljava/lang/String;
     .locals 3
+    .param p0, "status"    # I
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .line 5906
     invoke-static {p0}, Landroid/content/pm/PackageManager;->deleteStatusToString(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 5907
+    .local v0, "str":Ljava/lang/String;
     if-eqz p1, :cond_0
 
+    .line 5908
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1019,13 +1046,16 @@
 
     return-object v1
 
+    .line 5910
     :cond_0
     return-object v0
 .end method
 
 .method public static installStatusToPublicStatus(I)I
     .locals 6
+    .param p0, "status"    # I
 
+    .line 5856
     const/16 v0, -0x75
 
     const/4 v1, 0x4
@@ -1052,136 +1082,180 @@
 
     packed-switch p0, :pswitch_data_1
 
+    .line 5900
     return v0
 
+    .line 5858
     :pswitch_0
     return v4
 
+    .line 5859
     :pswitch_1
     return v1
 
+    .line 5860
     :pswitch_2
     return v1
 
+    .line 5861
     :pswitch_3
     return v5
 
+    .line 5862
     :pswitch_4
     return v4
 
+    .line 5863
     :pswitch_5
     return v4
 
+    .line 5864
     :pswitch_6
     return v4
 
+    .line 5865
     :pswitch_7
     return v4
 
+    .line 5866
     :pswitch_8
     return v3
 
+    .line 5867
     :pswitch_9
     return v4
 
+    .line 5868
     :pswitch_a
     return v1
 
+    .line 5869
     :pswitch_b
     return v3
 
+    .line 5870
     :pswitch_c
     return v4
 
+    .line 5871
     :pswitch_d
     return v3
 
+    .line 5872
     :pswitch_e
     return v1
 
+    .line 5873
     :pswitch_f
     return v3
 
+    .line 5874
     :pswitch_10
     return v3
 
+    .line 5875
     :pswitch_11
     return v5
 
+    .line 5876
     :pswitch_12
     return v5
 
+    .line 5877
     :pswitch_13
     return v5
 
+    .line 5878
     :pswitch_14
     return v2
 
+    .line 5879
     :pswitch_15
     return v2
 
+    .line 5880
     :pswitch_16
     return v1
 
+    .line 5881
     :pswitch_17
     return v1
 
+    .line 5882
     :pswitch_18
     return v1
 
+    .line 5883
     :pswitch_19
     return v1
 
+    .line 5884
     :pswitch_1a
     return v1
 
+    .line 5885
     :pswitch_1b
     return v1
 
+    .line 5886
     :pswitch_1c
     return v1
 
+    .line 5887
     :pswitch_1d
     return v1
 
+    .line 5888
     :pswitch_1e
     return v1
 
+    .line 5889
     :pswitch_1f
     return v1
 
+    .line 5890
     :pswitch_20
     return v1
 
+    .line 5891
     :pswitch_21
     return v1
 
+    .line 5892
     :pswitch_22
     return v1
 
+    .line 5893
     :pswitch_23
     return v1
 
+    .line 5895
     :pswitch_24
     return v0
 
+    .line 5896
     :pswitch_25
     return v3
 
+    .line 5897
     :pswitch_26
     return v4
 
+    .line 5898
     :pswitch_27
     return v3
 
+    .line 5857
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
+    .line 5899
     :cond_1
     return v2
 
+    .line 5894
     :cond_2
     return v1
 
@@ -1238,7 +1312,9 @@
 
 .method public static installStatusToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "status"    # I
 
+    .line 5806
     const/16 v0, -0x75
 
     if-eq p0, v0, :cond_2
@@ -1255,217 +1331,260 @@
 
     packed-switch p0, :pswitch_data_1
 
+    .line 5850
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 5808
     :pswitch_0
     const-string v0, "INSTALL_FAILED_ALREADY_EXISTS"
 
     return-object v0
 
+    .line 5809
     :pswitch_1
     const-string v0, "INSTALL_FAILED_INVALID_APK"
 
     return-object v0
 
+    .line 5810
     :pswitch_2
     const-string v0, "INSTALL_FAILED_INVALID_URI"
 
     return-object v0
 
+    .line 5811
     :pswitch_3
     const-string v0, "INSTALL_FAILED_INSUFFICIENT_STORAGE"
 
     return-object v0
 
+    .line 5812
     :pswitch_4
     const-string v0, "INSTALL_FAILED_DUPLICATE_PACKAGE"
 
     return-object v0
 
+    .line 5813
     :pswitch_5
     const-string v0, "INSTALL_FAILED_NO_SHARED_USER"
 
     return-object v0
 
+    .line 5814
     :pswitch_6
     const-string v0, "INSTALL_FAILED_UPDATE_INCOMPATIBLE"
 
     return-object v0
 
+    .line 5815
     :pswitch_7
     const-string v0, "INSTALL_FAILED_SHARED_USER_INCOMPATIBLE"
 
     return-object v0
 
+    .line 5816
     :pswitch_8
     const-string v0, "INSTALL_FAILED_MISSING_SHARED_LIBRARY"
 
     return-object v0
 
+    .line 5817
     :pswitch_9
     const-string v0, "INSTALL_FAILED_REPLACE_COULDNT_DELETE"
 
     return-object v0
 
+    .line 5818
     :pswitch_a
     const-string v0, "INSTALL_FAILED_DEXOPT"
 
     return-object v0
 
+    .line 5819
     :pswitch_b
     const-string v0, "INSTALL_FAILED_OLDER_SDK"
 
     return-object v0
 
+    .line 5820
     :pswitch_c
     const-string v0, "INSTALL_FAILED_CONFLICTING_PROVIDER"
 
     return-object v0
 
+    .line 5821
     :pswitch_d
     const-string v0, "INSTALL_FAILED_NEWER_SDK"
 
     return-object v0
 
+    .line 5822
     :pswitch_e
     const-string v0, "INSTALL_FAILED_TEST_ONLY"
 
     return-object v0
 
+    .line 5823
     :pswitch_f
     const-string v0, "INSTALL_FAILED_CPU_ABI_INCOMPATIBLE"
 
     return-object v0
 
+    .line 5824
     :pswitch_10
     const-string v0, "INSTALL_FAILED_MISSING_FEATURE"
 
     return-object v0
 
+    .line 5825
     :pswitch_11
     const-string v0, "INSTALL_FAILED_CONTAINER_ERROR"
 
     return-object v0
 
+    .line 5826
     :pswitch_12
     const-string v0, "INSTALL_FAILED_INVALID_INSTALL_LOCATION"
 
     return-object v0
 
+    .line 5827
     :pswitch_13
     const-string v0, "INSTALL_FAILED_MEDIA_UNAVAILABLE"
 
     return-object v0
 
+    .line 5828
     :pswitch_14
     const-string v0, "INSTALL_FAILED_VERIFICATION_TIMEOUT"
 
     return-object v0
 
+    .line 5829
     :pswitch_15
     const-string v0, "INSTALL_FAILED_VERIFICATION_FAILURE"
 
     return-object v0
 
+    .line 5830
     :pswitch_16
     const-string v0, "INSTALL_FAILED_PACKAGE_CHANGED"
 
     return-object v0
 
+    .line 5831
     :pswitch_17
     const-string v0, "INSTALL_FAILED_UID_CHANGED"
 
     return-object v0
 
+    .line 5832
     :pswitch_18
     const-string v0, "INSTALL_FAILED_VERSION_DOWNGRADE"
 
     return-object v0
 
+    .line 5833
     :pswitch_19
     const-string v0, "INSTALL_PARSE_FAILED_NOT_APK"
 
     return-object v0
 
+    .line 5834
     :pswitch_1a
     const-string v0, "INSTALL_PARSE_FAILED_BAD_MANIFEST"
 
     return-object v0
 
+    .line 5835
     :pswitch_1b
     const-string v0, "INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION"
 
     return-object v0
 
+    .line 5836
     :pswitch_1c
     const-string v0, "INSTALL_PARSE_FAILED_NO_CERTIFICATES"
 
     return-object v0
 
+    .line 5837
     :pswitch_1d
     const-string v0, "INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES"
 
     return-object v0
 
+    .line 5838
     :pswitch_1e
     const-string v0, "INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING"
 
     return-object v0
 
+    .line 5839
     :pswitch_1f
     const-string v0, "INSTALL_PARSE_FAILED_BAD_PACKAGE_NAME"
 
     return-object v0
 
+    .line 5840
     :pswitch_20
     const-string v0, "INSTALL_PARSE_FAILED_BAD_SHARED_USER_ID"
 
     return-object v0
 
+    .line 5841
     :pswitch_21
     const-string v0, "INSTALL_PARSE_FAILED_MANIFEST_MALFORMED"
 
     return-object v0
 
+    .line 5842
     :pswitch_22
     const-string v0, "INSTALL_PARSE_FAILED_MANIFEST_EMPTY"
 
     return-object v0
 
+    .line 5843
     :pswitch_23
     const-string v0, "INSTALL_FAILED_INTERNAL_ERROR"
 
     return-object v0
 
+    .line 5844
     :pswitch_24
     const-string v0, "INSTALL_FAILED_USER_RESTRICTED"
 
     return-object v0
 
+    .line 5845
     :pswitch_25
     const-string v0, "INSTALL_FAILED_DUPLICATE_PERMISSION"
 
     return-object v0
 
+    .line 5846
     :pswitch_26
     const-string v0, "INSTALL_FAILED_NO_MATCHING_ABIS"
 
     return-object v0
 
+    .line 5807
     :cond_0
     const-string v0, "INSTALL_SUCCEEDED"
 
     return-object v0
 
+    .line 5847
     :cond_1
     const-string v0, "INSTALL_FAILED_ABORTED"
 
     return-object v0
 
+    .line 5849
     :cond_2
     const-string v0, "INSTALL_FAILED_BAD_DEX_METADATA"
 
@@ -1521,13 +1640,19 @@
 
 .method public static installStatusToString(ILjava/lang/String;)Ljava/lang/String;
     .locals 3
+    .param p0, "status"    # I
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .line 5796
     invoke-static {p0}, Landroid/content/pm/PackageManager;->installStatusToString(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 5797
+    .local v0, "str":Ljava/lang/String;
     if-eqz p1, :cond_0
 
+    .line 5798
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1546,13 +1671,16 @@
 
     return-object v1
 
+    .line 5800
     :cond_0
     return-object v0
 .end method
 
 .method public static isMoveStatusFinished(I)Z
     .locals 1
+    .param p0, "status"    # I
 
+    .line 5703
     if-ltz p0, :cond_1
 
     const/16 v0, 0x64
@@ -1576,7 +1704,9 @@
 
 .method public static permissionFlagToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "flag"    # I
 
+    .line 5944
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_4
@@ -1599,42 +1729,50 @@
 
     packed-switch p0, :pswitch_data_0
 
+    .line 5952
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 5950
     :pswitch_0
     const-string v0, "USER_FIXED"
 
     return-object v0
 
+    .line 5948
     :pswitch_1
     const-string v0, "USER_SET"
 
     return-object v0
 
+    .line 5951
     :cond_0
     const-string v0, "REVIEW_REQUIRED"
 
     return-object v0
 
+    .line 5945
     :cond_1
     const-string v0, "GRANTED_BY_DEFAULT"
 
     return-object v0
 
+    .line 5947
     :cond_2
     const-string v0, "SYSTEM_FIXED"
 
     return-object v0
 
+    .line 5949
     :cond_3
     const-string v0, "REVOKE_ON_UPGRADE"
 
     return-object v0
 
+    .line 5946
     :cond_4
     const-string v0, "POLICY_FIXED"
 
@@ -1675,7 +1813,13 @@
 
 .method public addPreferredActivityAsUser(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
     .locals 2
+    .param p1, "filter"    # Landroid/content/IntentFilter;
+    .param p2, "match"    # I
+    .param p3, "set"    # [Landroid/content/ComponentName;
+    .param p4, "activity"    # Landroid/content/ComponentName;
+    .param p5, "userId"    # I
 
+    .line 5348
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -1687,31 +1831,40 @@
 
 .method public buildRequestPermissionsIntent([Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
+    .param p1, "permissions"    # [Ljava/lang/String;
 
+    .line 3678
     invoke-static {p1}, Lcom/android/internal/util/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 3681
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.content.pm.action.REQUEST_PERMISSIONS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 3682
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.content.pm.extra.REQUEST_PERMISSIONS_NAMES"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 3683
     invoke-virtual {p0}, Landroid/content/pm/PackageManager;->getPermissionControllerPackageName()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 3684
     return-object v0
 
+    .line 3679
+    .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1775,11 +1928,15 @@
 
 .method public freeStorage(JLandroid/content/IntentSender;)V
     .locals 1
+    .param p1, "freeStorageSize"    # J
+    .param p3, "pi"    # Landroid/content/IntentSender;
 
+    .line 5249
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->freeStorage(Ljava/lang/String;JLandroid/content/IntentSender;)V
 
+    .line 5250
     return-void
 .end method
 
@@ -1788,11 +1945,15 @@
 
 .method public freeStorageAndNotify(JLandroid/content/pm/IPackageDataObserver;)V
     .locals 1
+    .param p1, "freeStorageSize"    # J
+    .param p3, "observer"    # Landroid/content/pm/IPackageDataObserver;
 
+    .line 5218
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->freeStorageAndNotify(Ljava/lang/String;JLandroid/content/pm/IPackageDataObserver;)V
 
+    .line 5219
     return-void
 .end method
 
@@ -1953,6 +2114,7 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 6092
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getArtManager not implemented in subclass"
@@ -1984,9 +2146,11 @@
 
 .method public getHarmfulAppWarning(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 6125
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getHarmfulAppWarning not implemented in subclass"
@@ -2151,21 +2315,29 @@
 
 .method public getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 12
+    .param p1, "archiveFilePath"    # Ljava/lang/String;
+    .param p2, "flags"    # I
 
+    .line 4825
     new-instance v0, Landroid/content/pm/PackageParser;
 
     invoke-direct {v0}, Landroid/content/pm/PackageParser;-><init>()V
 
+    .line 4826
+    .local v0, "parser":Landroid/content/pm/PackageParser;
     new-instance v1, Landroid/content/pm/PackageParser$CallbackImpl;
 
     invoke-direct {v1, p0}, Landroid/content/pm/PackageParser$CallbackImpl;-><init>(Landroid/content/pm/PackageManager;)V
 
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageParser;->setCallback(Landroid/content/pm/PackageParser$Callback;)V
 
+    .line 4827
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 4829
+    .local v1, "apkFile":Ljava/io/File;
     const/high16 v2, 0xc0000
 
     and-int v3, p2, v2
@@ -2174,9 +2346,11 @@
 
     goto :goto_0
 
+    .line 4835
     :cond_0
     or-int/2addr p2, v2
 
+    .line 4838
     :goto_0
     const/4 v2, 0x0
 
@@ -2187,17 +2361,23 @@
 
     move-object v11, v3
 
+    .line 4839
+    .local v11, "pkg":Landroid/content/pm/PackageParser$Package;
     and-int/lit8 v3, p2, 0x40
 
     if-eqz v3, :cond_1
 
+    .line 4840
     invoke-static {v11, v2}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;Z)V
 
+    .line 4842
     :cond_1
     new-instance v10, Landroid/content/pm/PackageUserState;
 
     invoke-direct {v10}, Landroid/content/pm/PackageUserState;-><init>()V
 
+    .line 4843
+    .local v10, "state":Landroid/content/pm/PackageUserState;
     const/4 v3, 0x0
 
     const-wide/16 v5, 0x0
@@ -2218,9 +2398,14 @@
 
     return-object v2
 
+    .line 4844
+    .end local v10    # "state":Landroid/content/pm/PackageUserState;
+    .end local v11    # "pkg":Landroid/content/pm/PackageParser$Package;
     :catch_0
     move-exception v2
 
+    .line 4845
+    .local v2, "e":Landroid/content/pm/PackageParser$PackageParserException;
     const/4 v3, 0x0
 
     return-object v3
@@ -2287,15 +2472,19 @@
 
 .method public getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
     .locals 1
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "observer"    # Landroid/content/pm/IPackageStatsObserver;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 5287
     invoke-virtual {p0}, Landroid/content/pm/PackageManager;->getUserId()I
 
     move-result v0
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/content/pm/PackageManager;->getPackageSizeInfoAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
 
+    .line 5288
     return-void
 .end method
 
@@ -2499,6 +2688,7 @@
 .method public getSuspendedPackageAppExtras()Landroid/os/Bundle;
     .locals 2
 
+    .line 5685
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getSuspendedPackageAppExtras not implemented"
@@ -2517,6 +2707,7 @@
 .method public getSystemTextClassifierPackageName()Ljava/lang/String;
     .locals 2
 
+    .line 6198
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getSystemTextClassifierPackageName not implemented in subclass"
@@ -2555,6 +2746,7 @@
 .method public getUserId()I
     .locals 1
 
+    .line 2998
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -2575,7 +2767,11 @@
 
 .method public hasSigningCertificate(I[BI)Z
     .locals 2
+    .param p1, "uid"    # I
+    .param p2, "certificate"    # [B
+    .param p3, "type"    # I
 
+    .line 6188
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "hasSigningCertificate not implemented in subclass"
@@ -2587,7 +2783,11 @@
 
 .method public hasSigningCertificate(Ljava/lang/String;[BI)Z
     .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "certificate"    # [B
+    .param p3, "type"    # I
 
+    .line 6164
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "hasSigningCertificate not implemented in subclass"
@@ -2644,7 +2844,10 @@
 
 .method public isPackageStateProtected(Ljava/lang/String;I)Z
     .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "userId"    # I
 
+    .line 6209
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "isPackageStateProtected not implemented in subclass"
@@ -2657,6 +2860,7 @@
 .method public isPackageSuspended()Z
     .locals 2
 
+    .line 5661
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "isPackageSuspended not implemented"
@@ -2668,6 +2872,7 @@
 
 .method public isPackageSuspended(Ljava/lang/String;)Z
     .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
@@ -2677,6 +2882,7 @@
         }
     .end annotation
 
+    .line 5635
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "isPackageSuspended not implemented"
@@ -2734,6 +2940,9 @@
 
 .method public queryBroadcastReceivers(Landroid/content/Intent;II)Ljava/util/List;
     .locals 3
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "flags"    # I
+    .param p3, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2748,8 +2957,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 4215
     const-string v0, "Shame on you for calling the hidden API queryBroadcastReceivers(). Shame!"
 
+    .line 4217
+    .local v0, "msg":Ljava/lang/String;
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v1
@@ -2762,18 +2974,21 @@
 
     if-ge v1, v2, :cond_0
 
+    .line 4220
     const-string v1, "PackageManager"
 
     const-string v2, "Shame on you for calling the hidden API queryBroadcastReceivers(). Shame!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4221
     invoke-virtual {p0, p1, p2, p3}, Landroid/content/pm/PackageManager;->queryBroadcastReceiversAsUser(Landroid/content/Intent;II)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 
+    .line 4218
     :cond_0
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
@@ -2799,6 +3014,9 @@
 
 .method public queryBroadcastReceiversAsUser(Landroid/content/Intent;ILandroid/os/UserHandle;)Ljava/util/List;
     .locals 1
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "flags"    # I
+    .param p3, "userHandle"    # Landroid/os/UserHandle;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
@@ -2815,6 +3033,7 @@
         }
     .end annotation
 
+    .line 4201
     invoke-virtual {p3}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v0
@@ -2841,6 +3060,10 @@
 
 .method public queryContentProviders(Ljava/lang/String;IILjava/lang/String;)Ljava/util/List;
     .locals 1
+    .param p1, "processName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "flags"    # I
+    .param p4, "metaDataKey"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2854,6 +3077,7 @@
         }
     .end annotation
 
+    .line 4363
     invoke-virtual {p0, p1, p2, p3}, Landroid/content/pm/PackageManager;->queryContentProviders(Ljava/lang/String;II)Ljava/util/List;
 
     move-result-object v0
@@ -3015,9 +3239,15 @@
 
 .method public replacePreferredActivityAsUser(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
     .locals 2
+    .param p1, "filter"    # Landroid/content/IntentFilter;
+    .param p2, "match"    # I
+    .param p3, "set"    # [Landroid/content/ComponentName;
+    .param p4, "activity"    # Landroid/content/ComponentName;
+    .param p5, "userId"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 5382
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -3075,9 +3305,12 @@
 
 .method public setHarmfulAppWarning(Ljava/lang/String;Ljava/lang/CharSequence;)V
     .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "warning"    # Ljava/lang/CharSequence;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 6111
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "setHarmfulAppWarning not implemented in subclass"
@@ -3095,9 +3328,15 @@
 
 .method public setPackagesSuspended([Ljava/lang/String;ZLandroid/os/PersistableBundle;Landroid/os/PersistableBundle;Ljava/lang/String;)[Ljava/lang/String;
     .locals 2
+    .param p1, "packageNames"    # [Ljava/lang/String;
+    .param p2, "suspended"    # Z
+    .param p3, "appExtras"    # Landroid/os/PersistableBundle;
+    .param p4, "launcherExtras"    # Landroid/os/PersistableBundle;
+    .param p5, "dialogMessage"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 5610
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "setPackagesSuspended not implemented"

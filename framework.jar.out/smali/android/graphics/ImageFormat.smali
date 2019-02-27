@@ -53,6 +53,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +61,9 @@
 
 .method public static getBitsPerPixel(I)I
     .locals 3
+    .param p0, "format"    # I
 
+    .line 717
     const/16 v0, 0xc
 
     const/16 v1, 0x10
@@ -73,58 +76,74 @@
 
     sparse-switch p0, :sswitch_data_0
 
+    .line 751
     const/4 v0, -0x1
 
     return v0
 
+    .line 725
     :sswitch_0
     return v0
 
+    .line 730
     :sswitch_1
     return v1
 
+    .line 727
     :sswitch_2
     const/16 v0, 0x8
 
     return v0
 
+    .line 734
     :sswitch_3
     return v0
 
+    .line 745
     :sswitch_4
     return v1
 
+    .line 723
     :sswitch_5
     return v1
 
+    .line 719
     :sswitch_6
     return v1
 
+    .line 742
     :pswitch_0
     const/16 v0, 0x20
 
     return v0
 
+    .line 740
     :pswitch_1
     return v2
 
+    .line 738
     :pswitch_2
     return v2
 
+    .line 736
     :pswitch_3
     return v1
 
+    .line 749
     :pswitch_4
     return v0
 
+    .line 747
     :pswitch_5
     const/16 v0, 0xa
 
     return v0
 
+    .line 732
     :pswitch_6
     return v0
 
+    .line 721
     :pswitch_7
     return v1
 
@@ -160,7 +179,9 @@
 
 .method public static isPublicFormat(I)Z
     .locals 1
+    .param p0, "format"    # I
 
+    .line 767
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_0
@@ -191,10 +212,12 @@
 
     packed-switch p0, :pswitch_data_2
 
+    .line 790
     const/4 v0, 0x0
 
     return v0
 
+    .line 787
     :cond_0
     :pswitch_0
     const/4 v0, 0x1

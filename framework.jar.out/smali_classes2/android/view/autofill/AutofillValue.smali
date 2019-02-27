@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 238
     new-instance v0, Landroid/view/autofill/AutofillValue$1;
 
     invoke-direct {v0}, Landroid/view/autofill/AutofillValue$1;-><init>()V
@@ -39,31 +40,42 @@
 
 .method private constructor <init>(ILjava/lang/Object;)V
     .locals 0
+    .param p1, "type"    # I
+    .param p2, "value"    # Ljava/lang/Object;
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 48
     iput p1, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
+    .line 49
     iput-object p2, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
+    .line 50
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 3
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 216
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 217
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
+    .line 219
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 234
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,6 +102,7 @@
 
     throw v0
 
+    .line 231
     :pswitch_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
@@ -101,8 +114,10 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
+    .line 232
     goto :goto_1
 
+    .line 228
     :pswitch_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -114,13 +129,17 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
+    .line 229
     goto :goto_1
 
+    .line 224
     :pswitch_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 225
+    .local v0, "rawValue":I
     if-eqz v0, :cond_0
 
     const/4 v1, 0x1
@@ -137,8 +156,11 @@
 
     iput-object v1, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
+    .line 226
     goto :goto_1
 
+    .line 221
+    .end local v0    # "rawValue":I
     :pswitch_3
     invoke-virtual {p1}, Landroid/os/Parcel;->readCharSequence()Ljava/lang/CharSequence;
 
@@ -146,8 +168,10 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
+    .line 222
     nop
 
+    .line 236
     :goto_1
     return-void
 
@@ -164,7 +188,10 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/view/autofill/AutofillValue$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/view/autofill/AutofillValue$1;
 
+    .line 43
     invoke-direct {p0, p1}, Landroid/view/autofill/AutofillValue;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -172,7 +199,9 @@
 
 .method public static forDate(J)Landroid/view/autofill/AutofillValue;
     .locals 3
+    .param p0, "value"    # J
 
+    .line 291
     new-instance v0, Landroid/view/autofill/AutofillValue;
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -188,7 +217,9 @@
 
 .method public static forList(I)Landroid/view/autofill/AutofillValue;
     .locals 3
+    .param p0, "value"    # I
 
+    .line 282
     new-instance v0, Landroid/view/autofill/AutofillValue;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -204,7 +235,9 @@
 
 .method public static forText(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;
     .locals 3
+    .param p0, "value"    # Ljava/lang/CharSequence;
 
+    .line 261
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -216,19 +249,23 @@
 
     const/4 v1, 0x1
 
+    .line 262
     invoke-static {p0}, Landroid/text/TextUtils;->trimNoCopySpans(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
     invoke-direct {v0, v1, v2}, Landroid/view/autofill/AutofillValue;-><init>(ILjava/lang/Object;)V
 
+    .line 261
     :goto_0
     return-object v0
 .end method
 
 .method public static forToggle(Z)Landroid/view/autofill/AutofillValue;
     .locals 3
+    .param p0, "value"    # Z
 
+    .line 272
     new-instance v0, Landroid/view/autofill/AutofillValue;
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -247,6 +284,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 193
     const/4 v0, 0x0
 
     return v0
@@ -254,13 +292,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 158
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
+    .line 159
     :cond_0
     const/4 v0, 0x0
 
@@ -268,6 +309,7 @@
 
     return v0
 
+    .line 160
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -281,11 +323,14 @@
 
     return v0
 
+    .line 161
     :cond_2
     move-object v1, p1
 
     check-cast v1, Landroid/view/autofill/AutofillValue;
 
+    .line 163
+    .local v1, "other":Landroid/view/autofill/AutofillValue;
     iget v2, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     iget v3, v1, Landroid/view/autofill/AutofillValue;->mType:I
@@ -294,6 +339,7 @@
 
     return v0
 
+    .line 165
     :cond_3
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isText()Z
 
@@ -301,6 +347,7 @@
 
     if-eqz v0, :cond_4
 
+    .line 166
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -319,6 +366,7 @@
 
     return v0
 
+    .line 168
     :cond_4
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
@@ -334,6 +382,7 @@
 .method public getDateValue()J
     .locals 3
 
+    .line 123
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isDate()Z
 
     move-result v0
@@ -356,6 +405,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
+    .line 124
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Long;
@@ -370,6 +420,7 @@
 .method public getListValue()I
     .locals 3
 
+    .line 102
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isList()Z
 
     move-result v0
@@ -392,6 +443,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
+    .line 103
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -406,6 +458,7 @@
 .method public getTextValue()Ljava/lang/CharSequence;
     .locals 3
 
+    .line 60
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isText()Z
 
     move-result v0
@@ -428,6 +481,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
+    .line 61
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/CharSequence;
@@ -438,6 +492,7 @@
 .method public getToggleValue()Z
     .locals 3
 
+    .line 81
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isToggle()Z
 
     move-result v0
@@ -460,6 +515,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
+    .line 82
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -474,6 +530,7 @@
 .method public hashCode()I
     .locals 2
 
+    .line 153
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     iget-object v1, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
@@ -490,6 +547,7 @@
 .method public isDate()Z
     .locals 2
 
+    .line 133
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     const/4 v1, 0x4
@@ -510,6 +568,7 @@
 .method public isEmpty()Z
     .locals 1
 
+    .line 144
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isText()Z
 
     move-result v0
@@ -540,6 +599,7 @@
 .method public isList()Z
     .locals 2
 
+    .line 112
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     const/4 v1, 0x3
@@ -560,6 +620,7 @@
 .method public isText()Z
     .locals 2
 
+    .line 70
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     const/4 v1, 0x1
@@ -578,6 +639,7 @@
 .method public isToggle()Z
     .locals 2
 
+    .line 91
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     const/4 v1, 0x2
@@ -598,6 +660,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 174
     sget-boolean v0, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-nez v0, :cond_0
@@ -608,6 +671,7 @@
 
     return-object v0
 
+    .line 176
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -615,6 +679,7 @@
 
     const-string v1, "[type="
 
+    .line 177
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/view/autofill/AutofillValue;->mType:I
@@ -623,16 +688,20 @@
 
     const-string v1, ", value="
 
+    .line 178
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
+    .line 179
+    .local v0, "string":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isText()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
+    .line 180
     iget-object v1, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -641,11 +710,13 @@
 
     goto :goto_0
 
+    .line 182
     :cond_1
     iget-object v1, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 184
     :goto_0
     const/16 v1, 0x5d
 
@@ -660,17 +731,22 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "parcel"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 198
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 200
     iget v0, p0, Landroid/view/autofill/AutofillValue;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
+    .line 211
     :pswitch_0
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
@@ -684,6 +760,7 @@
 
     goto :goto_0
 
+    .line 208
     :pswitch_1
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
@@ -695,8 +772,10 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 209
     goto :goto_0
 
+    .line 205
     :pswitch_2
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
@@ -708,8 +787,10 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 206
     goto :goto_0
 
+    .line 202
     :pswitch_3
     iget-object v0, p0, Landroid/view/autofill/AutofillValue;->mValue:Ljava/lang/Object;
 
@@ -717,8 +798,10 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeCharSequence(Ljava/lang/CharSequence;)V
 
+    .line 203
     nop
 
+    .line 214
     :goto_0
     return-void
 

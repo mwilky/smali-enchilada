@@ -25,7 +25,12 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Ljava/lang/String;[Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/AccountManager;
+    .param p2, "activity"    # Landroid/app/Activity;
+    .param p3, "handler"    # Landroid/os/Handler;
 
+    .line 2553
+    .local p4, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$19;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$19;->val$accountType:Ljava/lang/String;
@@ -47,6 +52,7 @@
         }
     .end annotation
 
+    .line 2556
     iget-object v0, p0, Landroid/accounts/AccountManager$19;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -61,6 +67,7 @@
 
     iget-object v4, p0, Landroid/accounts/AccountManager$19;->this$0:Landroid/accounts/AccountManager;
 
+    .line 2557
     invoke-static {v4}, Landroid/accounts/AccountManager;->access$100(Landroid/accounts/AccountManager;)Landroid/content/Context;
 
     move-result-object v4
@@ -69,7 +76,9 @@
 
     move-result-object v4
 
+    .line 2556
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/accounts/IAccountManager;->getAccountByTypeAndFeatures(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2558
     return-void
 .end method

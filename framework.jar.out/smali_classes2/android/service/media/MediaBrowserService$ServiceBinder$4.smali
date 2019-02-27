@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/media/MediaBrowserService$ServiceBinder;Landroid/service/media/IMediaBrowserServiceCallbacks;Ljava/lang/String;Landroid/os/IBinder;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/media/MediaBrowserService$ServiceBinder;
 
+    .line 311
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$4;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
     iput-object p2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$4;->val$callbacks:Landroid/service/media/IMediaBrowserServiceCallbacks;
@@ -49,12 +51,15 @@
 .method public run()V
     .locals 5
 
+    .line 314
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$4;->val$callbacks:Landroid/service/media/IMediaBrowserServiceCallbacks;
 
     invoke-interface {v0}, Landroid/service/media/IMediaBrowserServiceCallbacks;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 316
+    .local v0, "b":Landroid/os/IBinder;
     iget-object v1, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$4;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
     iget-object v1, v1, Landroid/service/media/MediaBrowserService$ServiceBinder;->this$0:Landroid/service/media/MediaBrowserService;
@@ -69,8 +74,11 @@
 
     check-cast v1, Landroid/service/media/MediaBrowserService$ConnectionRecord;
 
+    .line 317
+    .local v1, "connection":Landroid/service/media/MediaBrowserService$ConnectionRecord;
     if-nez v1, :cond_0
 
+    .line 318
     const-string v2, "MediaBrowserService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -91,8 +99,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 320
     return-void
 
+    .line 322
     :cond_0
     iget-object v2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$4;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
@@ -108,6 +118,7 @@
 
     if-nez v2, :cond_1
 
+    .line 323
     const-string v2, "MediaBrowserService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -132,6 +143,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 326
     :cond_1
     return-void
 .end method

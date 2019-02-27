@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor$SpanController;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/widget/Editor$SpanController;
 
+    .line 2946
     iput-object p1, p0, Landroid/widget/Editor$SpanController$1;->this$1:Landroid/widget/Editor$SpanController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +39,11 @@
 .method public run()V
     .locals 1
 
+    .line 2949
     iget-object v0, p0, Landroid/widget/Editor$SpanController$1;->this$1:Landroid/widget/Editor$SpanController;
 
     invoke-virtual {v0}, Landroid/widget/Editor$SpanController;->hide()V
 
+    .line 2950
     return-void
 .end method

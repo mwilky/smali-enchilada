@@ -48,6 +48,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 430
     const-string/jumbo v0, "package_name"
 
     filled-new-array {v0}, [Ljava/lang/String;
@@ -56,6 +57,7 @@
 
     sput-object v0, Landroid/os/storage/StorageVolume$ScopedAccessProviderContract;->TABLE_PACKAGES_COLUMNS:[Ljava/lang/String;
 
+    .line 431
     const-string/jumbo v0, "package_name"
 
     const-string/jumbo v1, "volume_uuid"
@@ -76,8 +78,10 @@
 .method private constructor <init>()V
     .locals 2
 
+    .line 416
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 417
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "contains constants only"

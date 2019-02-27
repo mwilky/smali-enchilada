@@ -11,6 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,6 +30,7 @@
         }
     .end annotation
 
+    .line 28
     invoke-virtual {p0}, Landroid/webkit/WebBackForwardList;->clone()Landroid/webkit/WebBackForwardList;
 
     move-result-object v0

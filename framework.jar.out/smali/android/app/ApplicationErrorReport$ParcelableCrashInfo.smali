@@ -33,6 +33,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 486
     new-instance v0, Landroid/app/ApplicationErrorReport$ParcelableCrashInfo$1;
 
     invoke-direct {v0}, Landroid/app/ApplicationErrorReport$ParcelableCrashInfo$1;-><init>()V
@@ -45,24 +46,32 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 468
     invoke-direct {p0}, Landroid/app/ApplicationErrorReport$CrashInfo;-><init>()V
 
+    .line 469
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 479
     invoke-direct {p0, p1}, Landroid/app/ApplicationErrorReport$CrashInfo;-><init>(Landroid/os/Parcel;)V
 
+    .line 480
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
+    .param p1, "tr"    # Ljava/lang/Throwable;
 
+    .line 475
     invoke-direct {p0, p1}, Landroid/app/ApplicationErrorReport$CrashInfo;-><init>(Ljava/lang/Throwable;)V
 
+    .line 476
     return-void
 .end method
 
@@ -71,6 +80,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 483
     const/4 v0, 0x0
 
     return v0

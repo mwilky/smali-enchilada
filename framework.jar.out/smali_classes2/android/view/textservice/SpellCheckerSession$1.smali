@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/textservice/SpellCheckerSession;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/textservice/SpellCheckerSession;
 
+    .line 106
     iput-object p1, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,13 +35,16 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 109
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
+    .line 114
     :pswitch_0
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
 
@@ -51,6 +56,7 @@
 
     goto :goto_0
 
+    .line 111
     :pswitch_1
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
 
@@ -60,8 +66,10 @@
 
     invoke-static {v0, v1}, Landroid/view/textservice/SpellCheckerSession;->access$000(Landroid/view/textservice/SpellCheckerSession;[Landroid/view/textservice/SuggestionsInfo;)V
 
+    .line 112
     nop
 
+    .line 117
     :goto_0
     return-void
 

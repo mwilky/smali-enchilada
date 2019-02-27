@@ -29,6 +29,7 @@
 .method constructor <init>(Ljava/io/StringWriter;Lcom/android/internal/util/DumpUtils$Dump;Ljava/lang/String;)V
     .locals 0
 
+    .line 56
     iput-object p1, p0, Lcom/android/internal/util/DumpUtils$1;->val$sw:Ljava/io/StringWriter;
 
     iput-object p2, p0, Lcom/android/internal/util/DumpUtils$1;->val$dump:Lcom/android/internal/util/DumpUtils$Dump;
@@ -45,19 +46,24 @@
 .method public run()V
     .locals 3
 
+    .line 59
     new-instance v0, Lcom/android/internal/util/FastPrintWriter;
 
     iget-object v1, p0, Lcom/android/internal/util/DumpUtils$1;->val$sw:Ljava/io/StringWriter;
 
     invoke-direct {v0, v1}, Lcom/android/internal/util/FastPrintWriter;-><init>(Ljava/io/Writer;)V
 
+    .line 60
+    .local v0, "lpw":Ljava/io/PrintWriter;
     iget-object v1, p0, Lcom/android/internal/util/DumpUtils$1;->val$dump:Lcom/android/internal/util/DumpUtils$Dump;
 
     iget-object v2, p0, Lcom/android/internal/util/DumpUtils$1;->val$prefix:Ljava/lang/String;
 
     invoke-interface {v1, v0, v2}, Lcom/android/internal/util/DumpUtils$Dump;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
+    .line 61
     invoke-virtual {v0}, Ljava/io/PrintWriter;->close()V
 
+    .line 62
     return-void
 .end method

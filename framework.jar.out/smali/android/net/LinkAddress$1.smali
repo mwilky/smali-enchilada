@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 337
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,9 +40,13 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/LinkAddress;
     .locals 5
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 339
     const/4 v0, 0x0
 
+    .line 341
+    .local v0, "address":Ljava/net/InetAddress;
     :try_start_0
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
@@ -55,24 +60,33 @@
 
     move-object v0, v1
 
+    .line 346
     goto :goto_0
 
+    .line 342
     :catch_0
     move-exception v1
 
+    .line 347
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 348
+    .local v1, "prefixLength":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 349
+    .local v2, "flags":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
+    .line 350
+    .local v3, "scope":I
     new-instance v4, Landroid/net/LinkAddress;
 
     invoke-direct {v4, v0, v1, v2, v3}, Landroid/net/LinkAddress;-><init>(Ljava/net/InetAddress;III)V
@@ -83,6 +97,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 337
     invoke-virtual {p0, p1}, Landroid/net/LinkAddress$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/LinkAddress;
 
     move-result-object p1
@@ -92,7 +107,9 @@
 
 .method public newArray(I)[Landroid/net/LinkAddress;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 354
     new-array v0, p1, [Landroid/net/LinkAddress;
 
     return-object v0
@@ -101,6 +118,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 337
     invoke-virtual {p0, p1}, Landroid/net/LinkAddress$1;->newArray(I)[Landroid/net/LinkAddress;
 
     move-result-object p1

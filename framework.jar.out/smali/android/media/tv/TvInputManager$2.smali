@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputManager;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputManager;
 
+    .line 1103
     iput-object p1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-direct {p0}, Landroid/media/tv/ITvInputManagerCallback$Stub;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public onInputAdded(Ljava/lang/String;)V
     .locals 3
+    .param p1, "inputId"    # Ljava/lang/String;
 
+    .line 1106
     iget-object v0, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager;->access$800(Landroid/media/tv/TvInputManager;)Ljava/lang/Object;
@@ -42,6 +46,7 @@
 
     monitor-enter v0
 
+    .line 1107
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -57,6 +62,7 @@
 
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1108
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->access$1000(Landroid/media/tv/TvInputManager;)Ljava/util/List;
@@ -80,15 +86,22 @@
 
     check-cast v2, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
+    .line 1109
+    .local v2, "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     invoke-virtual {v2, p1}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputAdded(Ljava/lang/String;)V
 
+    .line 1110
+    .end local v2    # "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     goto :goto_0
 
+    .line 1111
     :cond_0
     monitor-exit v0
 
+    .line 1112
     return-void
 
+    .line 1111
     :catchall_0
     move-exception v1
 
@@ -101,7 +114,9 @@
 
 .method public onInputRemoved(Ljava/lang/String;)V
     .locals 3
+    .param p1, "inputId"    # Ljava/lang/String;
 
+    .line 1116
     iget-object v0, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager;->access$800(Landroid/media/tv/TvInputManager;)Ljava/lang/Object;
@@ -110,6 +125,7 @@
 
     monitor-enter v0
 
+    .line 1117
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -119,6 +135,7 @@
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1118
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->access$1000(Landroid/media/tv/TvInputManager;)Ljava/util/List;
@@ -142,15 +159,22 @@
 
     check-cast v2, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
+    .line 1119
+    .local v2, "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     invoke-virtual {v2, p1}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputRemoved(Ljava/lang/String;)V
 
+    .line 1120
+    .end local v2    # "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     goto :goto_0
 
+    .line 1121
     :cond_0
     monitor-exit v0
 
+    .line 1122
     return-void
 
+    .line 1121
     :catchall_0
     move-exception v1
 
@@ -163,7 +187,10 @@
 
 .method public onInputStateChanged(Ljava/lang/String;I)V
     .locals 3
+    .param p1, "inputId"    # Ljava/lang/String;
+    .param p2, "state"    # I
 
+    .line 1135
     iget-object v0, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager;->access$800(Landroid/media/tv/TvInputManager;)Ljava/lang/Object;
@@ -172,6 +199,7 @@
 
     monitor-enter v0
 
+    .line 1136
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -185,6 +213,7 @@
 
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1137
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->access$1000(Landroid/media/tv/TvInputManager;)Ljava/util/List;
@@ -208,15 +237,22 @@
 
     check-cast v2, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
+    .line 1138
+    .local v2, "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     invoke-virtual {v2, p1, p2}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputStateChanged(Ljava/lang/String;I)V
 
+    .line 1139
+    .end local v2    # "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     goto :goto_0
 
+    .line 1140
     :cond_0
     monitor-exit v0
 
+    .line 1141
     return-void
 
+    .line 1140
     :catchall_0
     move-exception v1
 
@@ -229,7 +265,9 @@
 
 .method public onInputUpdated(Ljava/lang/String;)V
     .locals 3
+    .param p1, "inputId"    # Ljava/lang/String;
 
+    .line 1126
     iget-object v0, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager;->access$800(Landroid/media/tv/TvInputManager;)Ljava/lang/Object;
@@ -238,6 +276,7 @@
 
     monitor-enter v0
 
+    .line 1127
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -262,15 +301,22 @@
 
     check-cast v2, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
+    .line 1128
+    .local v2, "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     invoke-virtual {v2, p1}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputUpdated(Ljava/lang/String;)V
 
+    .line 1129
+    .end local v2    # "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     goto :goto_0
 
+    .line 1130
     :cond_0
     monitor-exit v0
 
+    .line 1131
     return-void
 
+    .line 1130
     :catchall_0
     move-exception v1
 
@@ -283,7 +329,9 @@
 
 .method public onTvInputInfoUpdated(Landroid/media/tv/TvInputInfo;)V
     .locals 3
+    .param p1, "inputInfo"    # Landroid/media/tv/TvInputInfo;
 
+    .line 1145
     iget-object v0, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager;->access$800(Landroid/media/tv/TvInputManager;)Ljava/lang/Object;
@@ -292,6 +340,7 @@
 
     monitor-enter v0
 
+    .line 1146
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$2;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -316,15 +365,22 @@
 
     check-cast v2, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
+    .line 1147
+    .local v2, "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     invoke-virtual {v2, p1}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postTvInputInfoUpdated(Landroid/media/tv/TvInputInfo;)V
 
+    .line 1148
+    .end local v2    # "record":Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     goto :goto_0
 
+    .line 1149
     :cond_0
     monitor-exit v0
 
+    .line 1150
     return-void
 
+    .line 1149
     :catchall_0
     move-exception v1
 

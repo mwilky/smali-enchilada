@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 537
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,12 +36,14 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/telephony/SubscriptionManager;
     .locals 2
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 540
     new-instance v0, Landroid/telephony/SubscriptionManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -60,6 +63,7 @@
         }
     .end annotation
 
+    .line 537
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$41;->createService(Landroid/app/ContextImpl;)Landroid/telephony/SubscriptionManager;
 
     move-result-object p1

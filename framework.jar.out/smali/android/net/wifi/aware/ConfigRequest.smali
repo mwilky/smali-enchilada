@@ -54,6 +54,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 115
     new-instance v0, Landroid/net/wifi/aware/ConfigRequest$1;
 
     invoke-direct {v0}, Landroid/net/wifi/aware/ConfigRequest$1;-><init>()V
@@ -65,25 +66,44 @@
 
 .method private constructor <init>(ZIII[I)V
     .locals 0
+    .param p1, "support5gBand"    # Z
+    .param p2, "masterPreference"    # I
+    .param p3, "clusterLow"    # I
+    .param p4, "clusterHigh"    # I
+    .param p5, "discoveryWindowInterval"    # [I
 
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 86
     iput-boolean p1, p0, Landroid/net/wifi/aware/ConfigRequest;->mSupport5gBand:Z
 
+    .line 87
     iput p2, p0, Landroid/net/wifi/aware/ConfigRequest;->mMasterPreference:I
 
+    .line 88
     iput p3, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
+    .line 89
     iput p4, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
+    .line 90
     iput-object p5, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
+    .line 91
     return-void
 .end method
 
 .method synthetic constructor <init>(ZIII[ILandroid/net/wifi/aware/ConfigRequest$1;)V
     .locals 0
+    .param p1, "x0"    # Z
+    .param p2, "x1"    # I
+    .param p3, "x2"    # I
+    .param p4, "x3"    # I
+    .param p5, "x4"    # [I
+    .param p6, "x5"    # Landroid/net/wifi/aware/ConfigRequest$1;
 
+    .line 34
     invoke-direct/range {p0 .. p5}, Landroid/net/wifi/aware/ConfigRequest;-><init>(ZIII[I)V
 
     return-void
@@ -94,6 +114,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 103
     const/4 v0, 0x0
 
     return v0
@@ -101,13 +122,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 136
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 137
     return v0
 
+    .line 140
     :cond_0
     instance-of v1, p1, Landroid/net/wifi/aware/ConfigRequest;
 
@@ -115,13 +140,17 @@
 
     if-nez v1, :cond_1
 
+    .line 141
     return v2
 
+    .line 144
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/net/wifi/aware/ConfigRequest;
 
+    .line 146
+    .local v1, "lhs":Landroid/net/wifi/aware/ConfigRequest;
     iget-boolean v3, p0, Landroid/net/wifi/aware/ConfigRequest;->mSupport5gBand:Z
 
     iget-boolean v4, v1, Landroid/net/wifi/aware/ConfigRequest;->mSupport5gBand:Z
@@ -150,6 +179,7 @@
 
     iget-object v4, v1, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
+    .line 148
     invoke-static {v3, v4}, Ljava/util/Arrays;->equals([I[I)Z
 
     move-result v3
@@ -158,6 +188,7 @@
 
     goto :goto_0
 
+    .line 146
     :cond_2
     move v0, v2
 
@@ -168,8 +199,11 @@
 .method public hashCode()I
     .locals 4
 
+    .line 153
     const/16 v0, 0x11
 
+    .line 155
+    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -178,24 +212,36 @@
 
     add-int/2addr v2, v3
 
+    .line 156
+    .end local v0    # "result":I
+    .local v2, "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/net/wifi/aware/ConfigRequest;->mMasterPreference:I
 
     add-int/2addr v0, v3
 
+    .line 157
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int v2, v1, v0
 
     iget v3, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
     add-int/2addr v2, v3
 
+    .line 158
+    .end local v0    # "result":I
+    .restart local v2    # "result":I
     mul-int v0, v1, v2
 
     iget v3, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
     add-int/2addr v0, v3
 
+    .line 159
+    .end local v2    # "result":I
+    .restart local v0    # "result":I
     mul-int/2addr v1, v0
 
     iget-object v2, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
@@ -206,12 +252,16 @@
 
     add-int/2addr v1, v2
 
+    .line 161
+    .end local v0    # "result":I
+    .local v1, "result":I
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 95
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -254,6 +304,7 @@
 
     iget-object v1, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
+    .line 98
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v1
@@ -268,6 +319,7 @@
 
     move-result-object v0
 
+    .line 95
     return-object v0
 .end method
 
@@ -279,10 +331,12 @@
         }
     .end annotation
 
+    .line 169
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mMasterPreference:I
 
     if-ltz v0, :cond_b
 
+    .line 173
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mMasterPreference:I
 
     const/4 v1, 0x1
@@ -299,30 +353,36 @@
 
     if-gt v0, v2, :cond_a
 
+    .line 177
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
     if-ltz v0, :cond_9
 
+    .line 180
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
     const v2, 0xffff
 
     if-gt v0, v2, :cond_8
 
+    .line 183
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
     if-ltz v0, :cond_7
 
+    .line 186
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
     if-gt v0, v2, :cond_6
 
+    .line 189
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
     iget v2, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
     if-gt v0, v2, :cond_5
 
+    .line 193
     iget-object v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
     array-length v0, v0
@@ -331,6 +391,7 @@
 
     if-ne v0, v2, :cond_4
 
+    .line 197
     iget-object v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
     const/4 v2, 0x0
@@ -357,6 +418,7 @@
 
     goto :goto_0
 
+    .line 200
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -366,6 +428,7 @@
 
     throw v0
 
+    .line 203
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
@@ -388,6 +451,7 @@
 
     goto :goto_1
 
+    .line 206
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -397,10 +461,12 @@
 
     throw v0
 
+    .line 210
     :cond_3
     :goto_1
     return-void
 
+    .line 194
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -410,6 +476,7 @@
 
     throw v0
 
+    .line 190
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -419,6 +486,7 @@
 
     throw v0
 
+    .line 187
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -428,6 +496,7 @@
 
     throw v0
 
+    .line 184
     :cond_7
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -437,6 +506,7 @@
 
     throw v0
 
+    .line 181
     :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -446,6 +516,7 @@
 
     throw v0
 
+    .line 178
     :cond_9
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -455,6 +526,7 @@
 
     throw v0
 
+    .line 174
     :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -464,6 +536,7 @@
 
     throw v0
 
+    .line 170
     :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -476,26 +549,34 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 108
     iget-boolean v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mSupport5gBand:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 109
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mMasterPreference:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 110
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterLow:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 111
     iget v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mClusterHigh:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 112
     iget-object v0, p0, Landroid/net/wifi/aware/ConfigRequest;->mDiscoveryWindowInterval:[I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
+    .line 113
     return-void
 .end method

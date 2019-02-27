@@ -103,6 +103,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -110,7 +111,9 @@
 
 .method static synthetic access$000(I)[I
     .locals 1
+    .param p0, "x0"    # I
 
+    .line 35
     invoke-static {p0}, Landroid/security/keystore/KeyProperties;->getSetFlags(I)[I
 
     move-result-object v0
@@ -120,43 +123,57 @@
 
 .method private static getSetBitCount(I)I
     .locals 2
+    .param p0, "value"    # I
 
+    .line 741
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
+    .line 742
     return v0
 
+    .line 744
     :cond_0
     nop
 
+    .line 745
+    .local v0, "result":I
     :goto_0
     if-eqz p0, :cond_2
 
+    .line 746
     and-int/lit8 v1, p0, 0x1
 
     if-eqz v1, :cond_1
 
+    .line 747
     add-int/lit8 v0, v0, 0x1
 
+    .line 749
     :cond_1
     ushr-int/lit8 p0, p0, 0x1
 
     goto :goto_0
 
+    .line 751
     :cond_2
     return v0
 .end method
 
 .method private static getSetFlags(I)[I
     .locals 4
+    .param p0, "flags"    # I
 
+    .line 723
     if-nez p0, :cond_0
 
+    .line 724
     sget-object v0, Llibcore/util/EmptyArray;->INT:[I
 
     return-object v0
 
+    .line 726
     :cond_0
     invoke-static {p0}, Landroid/security/keystore/KeyProperties;->getSetBitCount(I)I
 
@@ -164,28 +181,40 @@
 
     new-array v0, v0, [I
 
+    .line 727
+    .local v0, "result":[I
     const/4 v1, 0x0
 
+    .line 728
+    .local v1, "resultOffset":I
     const/4 v2, 0x1
 
+    .line 729
+    .local v2, "flag":I
     :goto_0
     if-eqz p0, :cond_2
 
+    .line 730
     and-int/lit8 v3, p0, 0x1
 
     if-eqz v3, :cond_1
 
+    .line 731
     aput v2, v0, v1
 
+    .line 732
     add-int/lit8 v1, v1, 0x1
 
+    .line 734
     :cond_1
     ushr-int/lit8 p0, p0, 0x1
 
+    .line 735
     shl-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 737
     :cond_2
     return-object v0
 .end method

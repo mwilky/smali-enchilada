@@ -35,16 +35,26 @@
 # direct methods
 .method constructor <init>(ILandroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;Landroid/animation/Animator;I)V
     .locals 0
+    .param p1, "id"    # I
+    .param p2, "info"    # Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;
+    .param p3, "anim"    # Landroid/animation/Animator;
+    .param p4, "animType"    # I
 
+    .line 1063
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1064
     iput p1, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->id:I
 
+    .line 1065
     iput-object p2, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->menuItemLayoutInfo:Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;
 
+    .line 1066
     iput-object p3, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->animator:Landroid/animation/Animator;
 
+    .line 1067
     iput p4, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->animType:I
 
+    .line 1068
     return-void
 .end method

@@ -34,9 +34,12 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 522
     new-instance v0, Landroid/accounts/AbstractAccountAuthenticator$Transport;
 
     const/4 v1, 0x0
@@ -45,14 +48,18 @@
 
     iput-object v0, p0, Landroid/accounts/AbstractAccountAuthenticator;->mTransport:Landroid/accounts/AbstractAccountAuthenticator$Transport;
 
+    .line 152
     iput-object p1, p0, Landroid/accounts/AbstractAccountAuthenticator;->mContext:Landroid/content/Context;
 
+    .line 153
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/accounts/AbstractAccountAuthenticator;)V
     .locals 0
+    .param p0, "x0"    # Landroid/accounts/AbstractAccountAuthenticator;
 
+    .line 110
     invoke-direct {p0}, Landroid/accounts/AbstractAccountAuthenticator;->checkBinderPermission()V
 
     return-void
@@ -60,12 +67,18 @@
 
 .method static synthetic access$100(Landroid/accounts/AbstractAccountAuthenticator;Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
     .locals 0
+    .param p0, "x0"    # Landroid/accounts/AbstractAccountAuthenticator;
+    .param p1, "x1"    # Landroid/accounts/IAccountAuthenticatorResponse;
+    .param p2, "x2"    # Ljava/lang/String;
+    .param p3, "x3"    # Ljava/lang/String;
+    .param p4, "x4"    # Ljava/lang/Exception;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 110
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/accounts/AbstractAccountAuthenticator;->handleException(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
 
     return-void
@@ -74,12 +87,17 @@
 .method private checkBinderPermission()V
     .locals 5
 
+    .line 515
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
+    .line 516
+    .local v0, "uid":I
     const-string v1, "android.permission.ACCOUNT_MANAGER"
 
+    .line 517
+    .local v1, "perm":Ljava/lang/String;
     iget-object v2, p0, Landroid/accounts/AbstractAccountAuthenticator;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.ACCOUNT_MANAGER"
@@ -90,8 +108,10 @@
 
     if-nez v2, :cond_0
 
+    .line 520
     return-void
 
+    .line 518
     :cond_0
     new-instance v2, Ljava/lang/SecurityException;
 
@@ -124,18 +144,24 @@
 
 .method private handleException(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
     .locals 3
+    .param p1, "response"    # Landroid/accounts/IAccountAuthenticatorResponse;
+    .param p2, "method"    # Ljava/lang/String;
+    .param p3, "data"    # Ljava/lang/String;
+    .param p4, "e"    # Ljava/lang/Exception;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 490
     instance-of v0, p4, Landroid/accounts/NetworkErrorException;
 
     const/4 v1, 0x2
 
     if-eqz v0, :cond_1
 
+    .line 491
     const-string v0, "AccountAuthenticator"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -144,6 +170,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 492
     const-string v0, "AccountAuthenticator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -168,6 +195,7 @@
 
     invoke-static {v0, v1, p4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 494
     :cond_0
     const/4 v0, 0x3
 
@@ -179,11 +207,13 @@
 
     goto/16 :goto_0
 
+    .line 495
     :cond_1
     instance-of v0, p4, Ljava/lang/UnsupportedOperationException;
 
     if-eqz v0, :cond_3
 
+    .line 496
     const-string v0, "AccountAuthenticator"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -192,6 +222,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 497
     const-string v0, "AccountAuthenticator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -216,6 +247,7 @@
 
     invoke-static {v0, v1, p4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 499
     :cond_2
     const/4 v0, 0x6
 
@@ -237,11 +269,13 @@
 
     goto :goto_0
 
+    .line 501
     :cond_3
     instance-of v0, p4, Ljava/lang/IllegalArgumentException;
 
     if-eqz v0, :cond_5
 
+    .line 502
     const-string v0, "AccountAuthenticator"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -250,6 +284,7 @@
 
     if-eqz v0, :cond_4
 
+    .line 503
     const-string v0, "AccountAuthenticator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -274,6 +309,7 @@
 
     invoke-static {v0, v1, p4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 505
     :cond_4
     const/4 v0, 0x7
 
@@ -295,6 +331,7 @@
 
     goto :goto_0
 
+    .line 508
     :cond_5
     const-string v0, "AccountAuthenticator"
 
@@ -320,6 +357,7 @@
 
     invoke-static {v0, v1, p4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 509
     const/4 v0, 0x1
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -338,6 +376,7 @@
 
     invoke-interface {p1, v0, v1}, Landroid/accounts/IAccountAuthenticatorResponse;->onError(ILjava/lang/String;)V
 
+    .line 512
     :goto_0
     return-void
 .end method
@@ -354,12 +393,16 @@
 
 .method public addAccountFromCredentials(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 2
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "account"    # Landroid/accounts/Account;
+    .param p3, "accountCredentials"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 748
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Landroid/accounts/AbstractAccountAuthenticator$2;
@@ -368,8 +411,10 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
+    .line 755
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 756
     const/4 v0, 0x0
 
     return-object v0
@@ -388,12 +433,16 @@
 
 .method public finishSession(Landroid/accounts/AccountAuthenticatorResponse;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 12
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "accountType"    # Ljava/lang/String;
+    .param p3, "sessionBundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 909
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -402,53 +451,69 @@
 
     if-eqz v0, :cond_0
 
+    .line 910
     const-string v0, "AccountAuthenticator"
 
     const-string v2, "Account type cannot be empty."
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 911
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 912
+    .local v0, "result":Landroid/os/Bundle;
     const-string v2, "errorCode"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
+    .line 913
     const-string v1, "errorMessage"
 
     const-string v2, "accountType cannot be empty."
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 915
     return-object v0
 
+    .line 918
+    .end local v0    # "result":Landroid/os/Bundle;
     :cond_0
     if-nez p3, :cond_1
 
+    .line 919
     const-string v0, "AccountAuthenticator"
 
     const-string v2, "Session bundle cannot be null."
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 920
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 921
+    .restart local v0    # "result":Landroid/os/Bundle;
     const-string v2, "errorCode"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
+    .line 922
     const-string v1, "errorMessage"
 
     const-string/jumbo v2, "sessionBundle cannot be null."
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 924
     return-object v0
 
+    .line 927
+    .end local v0    # "result":Landroid/os/Bundle;
     :cond_1
     const-string v0, "android.accounts.AbstractAccountAuthenticato.KEY_AUTH_TOKEN_TYPE"
 
@@ -458,26 +523,34 @@
 
     if-nez v0, :cond_2
 
+    .line 930
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 931
+    .restart local v0    # "result":Landroid/os/Bundle;
     const-string v1, "errorCode"
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
+    .line 933
     const-string v1, "errorMessage"
 
     const-string v2, "Authenticator must override finishSession if startAddAccountSession or startUpdateCredentialsSession is overridden."
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 936
     invoke-virtual {p1, v0}, Landroid/accounts/AccountAuthenticatorResponse;->onResult(Landroid/os/Bundle;)V
 
+    .line 937
     return-object v0
 
+    .line 939
+    .end local v0    # "result":Landroid/os/Bundle;
     :cond_2
     const-string v0, "android.accounts.AbstractAccountAuthenticato.KEY_AUTH_TOKEN_TYPE"
 
@@ -485,18 +558,24 @@
 
     move-result-object v0
 
+    .line 940
+    .local v0, "authTokenType":Ljava/lang/String;
     const-string v1, "android.accounts.AbstractAccountAuthenticator.KEY_OPTIONS"
 
     invoke-virtual {p3, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v7
 
+    .line 941
+    .local v7, "options":Landroid/os/Bundle;
     const-string v1, "android.accounts.AbstractAccountAuthenticator.KEY_REQUIRED_FEATURES"
 
     invoke-virtual {p3, v1}, Landroid/os/Bundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v8
 
+    .line 942
+    .local v8, "requiredFeatures":[Ljava/lang/String;
     const-string v1, "android.accounts.AbstractAccountAuthenticator.KEY_ACCOUNT"
 
     invoke-virtual {p3, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -507,49 +586,66 @@
 
     check-cast v9, Landroid/accounts/Account;
 
+    .line 943
+    .local v9, "account":Landroid/accounts/Account;
     const-string v1, "android.accounts.AbstractAccountAuthenticator.KEY_ACCOUNT"
 
     invoke-virtual {p3, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v10
 
+    .line 946
+    .local v10, "containsKeyAccount":Z
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1, p3}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
+    .line 949
+    .local v1, "sessionOptions":Landroid/os/Bundle;
     const-string v2, "android.accounts.AbstractAccountAuthenticato.KEY_AUTH_TOKEN_TYPE"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
+    .line 950
     const-string v2, "android.accounts.AbstractAccountAuthenticator.KEY_REQUIRED_FEATURES"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
+    .line 951
     const-string v2, "android.accounts.AbstractAccountAuthenticator.KEY_OPTIONS"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
+    .line 952
     const-string v2, "android.accounts.AbstractAccountAuthenticator.KEY_ACCOUNT"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
+    .line 954
     if-eqz v7, :cond_3
 
+    .line 959
     invoke-virtual {v7, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
+    .line 960
     move-object v1, v7
 
+    .line 965
+    .end local v1    # "sessionOptions":Landroid/os/Bundle;
+    .local v11, "sessionOptions":Landroid/os/Bundle;
     :cond_3
     move-object v11, v1
 
     if-eqz v10, :cond_4
 
+    .line 966
     invoke-virtual {p0, p1, v9, v0, v7}, Landroid/accounts/AbstractAccountAuthenticator;->updateCredentials(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object v1
 
     return-object v1
 
+    .line 969
     :cond_4
     move-object v1, p0
 
@@ -572,12 +668,15 @@
 
 .method public getAccountCredentialsForCloning(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;
     .locals 2
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "account"    # Landroid/accounts/Account;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 722
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Landroid/accounts/AbstractAccountAuthenticator$1;
@@ -586,8 +685,10 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
+    .line 729
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 730
     const/4 v0, 0x0
 
     return-object v0
@@ -595,22 +696,28 @@
 
 .method public getAccountRemovalAllowed(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;
     .locals 3
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "account"    # Landroid/accounts/Account;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 704
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 705
+    .local v0, "result":Landroid/os/Bundle;
     const-string v1, "booleanResult"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
+    .line 706
     return-object v0
 .end method
 
@@ -628,6 +735,7 @@
 .method public final getIBinder()Landroid/os/IBinder;
     .locals 1
 
+    .line 528
     iget-object v0, p0, Landroid/accounts/AbstractAccountAuthenticator;->mTransport:Landroid/accounts/AbstractAccountAuthenticator$Transport;
 
     invoke-virtual {v0}, Landroid/accounts/AbstractAccountAuthenticator$Transport;->asBinder()Landroid/os/IBinder;
@@ -647,33 +755,46 @@
 
 .method public isCredentialsUpdateSuggested(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;)Landroid/os/Bundle;
     .locals 3
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "account"    # Landroid/accounts/Account;
+    .param p3, "statusToken"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 993
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 994
+    .local v0, "result":Landroid/os/Bundle;
     const-string v1, "booleanResult"
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
+    .line 995
     return-object v0
 .end method
 
 .method public startAddAccountSession(Landroid/accounts/AccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 8
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "accountType"    # Ljava/lang/String;
+    .param p3, "authTokenType"    # Ljava/lang/String;
+    .param p4, "requiredFeatures"    # [Ljava/lang/String;
+    .param p5, "options"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 801
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v7, Landroid/accounts/AbstractAccountAuthenticator$3;
@@ -694,8 +815,10 @@
 
     invoke-direct {v0, v7}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
+    .line 813
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 814
     const/4 v0, 0x0
 
     return-object v0
@@ -703,12 +826,17 @@
 
 .method public startUpdateCredentialsSession(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 8
+    .param p1, "response"    # Landroid/accounts/AccountAuthenticatorResponse;
+    .param p2, "account"    # Landroid/accounts/Account;
+    .param p3, "authTokenType"    # Ljava/lang/String;
+    .param p4, "options"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/accounts/NetworkErrorException;
         }
     .end annotation
 
+    .line 855
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v7, Landroid/accounts/AbstractAccountAuthenticator$4;
@@ -729,8 +857,10 @@
 
     invoke-direct {v0, v7}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
+    .line 867
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 868
     const/4 v0, 0x0
 
     return-object v0

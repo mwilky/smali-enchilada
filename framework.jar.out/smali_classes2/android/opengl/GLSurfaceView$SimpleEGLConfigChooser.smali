@@ -21,9 +21,12 @@
 # direct methods
 .method public constructor <init>(Landroid/opengl/GLSurfaceView;Z)V
     .locals 9
+    .param p2, "withDepthBuffer"    # Z
 
+    .line 1005
     iput-object p1, p0, Landroid/opengl/GLSurfaceView$SimpleEGLConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
+    .line 1006
     if-eqz p2, :cond_0
 
     const/16 v0, 0x10
@@ -55,5 +58,6 @@
 
     invoke-direct/range {v1 .. v8}, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;-><init>(Landroid/opengl/GLSurfaceView;IIIIII)V
 
+    .line 1007
     return-void
 .end method

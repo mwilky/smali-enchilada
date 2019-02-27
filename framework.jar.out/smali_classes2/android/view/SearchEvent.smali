@@ -10,11 +10,15 @@
 # direct methods
 .method public constructor <init>(Landroid/view/InputDevice;)V
     .locals 0
+    .param p1, "inputDevice"    # Landroid/view/InputDevice;
 
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 28
     iput-object p1, p0, Landroid/view/SearchEvent;->mInputDevice:Landroid/view/InputDevice;
 
+    .line 29
     return-void
 .end method
 
@@ -23,6 +27,7 @@
 .method public getInputDevice()Landroid/view/InputDevice;
     .locals 1
 
+    .line 36
     iget-object v0, p0, Landroid/view/SearchEvent;->mInputDevice:Landroid/view/InputDevice;
 
     return-object v0

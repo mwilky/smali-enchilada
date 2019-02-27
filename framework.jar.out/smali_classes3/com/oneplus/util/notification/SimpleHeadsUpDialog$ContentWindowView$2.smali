@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$1"    # Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
+    .line 157
     iput-object p1, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->this$1:Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
     iput-object p2, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->val$view:Landroid/view/View;
@@ -40,7 +42,9 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .line 170
     iget-object v0, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->this$1:Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
     iget-object v0, v0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->this$0:Lcom/oneplus/util/notification/SimpleHeadsUpDialog;
@@ -51,6 +55,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 171
     iget-object v0, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->this$1:Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
     iget-object v0, v0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->this$0:Lcom/oneplus/util/notification/SimpleHeadsUpDialog;
@@ -63,13 +68,16 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->removeView(Landroid/view/View;)V
 
+    .line 173
     :cond_0
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .line 163
     iget-object v0, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->this$1:Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
     iget-object v0, v0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->this$0:Lcom/oneplus/util/notification/SimpleHeadsUpDialog;
@@ -80,6 +88,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 164
     iget-object v0, p0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView$2;->this$1:Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;
 
     iget-object v0, v0, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->this$0:Lcom/oneplus/util/notification/SimpleHeadsUpDialog;
@@ -92,18 +101,23 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/util/notification/SimpleHeadsUpDialog$ContentWindowView;->removeView(Landroid/view/View;)V
 
+    .line 166
     :cond_0
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .line 176
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .line 159
     return-void
 .end method

@@ -27,16 +27,26 @@
 # direct methods
 .method constructor <init>(IJJF)V
     .locals 0
+    .param p1, "state"    # I
+    .param p2, "stateChangeTimeMs"    # J
+    .param p4, "currentPosMs"    # J
+    .param p6, "speed"    # F
 
+    .line 679
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 680
     iput p1, p0, Landroid/media/RemoteController$PlaybackInfo;->mState:I
 
+    .line 681
     iput-wide p2, p0, Landroid/media/RemoteController$PlaybackInfo;->mStateChangeTimeMs:J
 
+    .line 682
     iput-wide p4, p0, Landroid/media/RemoteController$PlaybackInfo;->mCurrentPosMs:J
 
+    .line 683
     iput p6, p0, Landroid/media/RemoteController$PlaybackInfo;->mSpeed:F
 
+    .line 684
     return-void
 .end method

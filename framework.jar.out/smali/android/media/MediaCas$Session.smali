@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaCas;Ljava/util/ArrayList;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaCas;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,12 +44,16 @@
         }
     .end annotation
 
+    .line 220
+    .local p2, "sessionId":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     iput-object p1, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 221
     iput-object p2, p0, Landroid/media/MediaCas$Session;->mSessionId:Ljava/util/ArrayList;
 
+    .line 222
     return-void
 .end method
 
@@ -57,13 +62,16 @@
 .method public close()V
     .locals 2
 
+    .line 292
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v0}, Landroid/media/MediaCas;->access$300(Landroid/media/MediaCas;)V
 
+    .line 295
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
+    .line 296
     invoke-static {v0}, Landroid/media/MediaCas;->access$500(Landroid/media/MediaCas;)Landroid/hardware/cas/V1_0/ICas;
 
     move-result-object v0
@@ -74,55 +82,71 @@
 
     move-result v0
 
+    .line 295
     invoke-static {v0}, Landroid/media/MediaCasStateException;->throwExceptionIfNeeded(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 299
     goto :goto_0
 
+    .line 297
     :catch_0
     move-exception v0
 
+    .line 298
+    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v1}, Landroid/media/MediaCas;->access$600(Landroid/media/MediaCas;)V
 
+    .line 300
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public processEcm([B)V
     .locals 2
+    .param p1, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCasException;
         }
     .end annotation
 
+    .line 281
     array-length v0, p1
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, v1, v0}, Landroid/media/MediaCas$Session;->processEcm([BII)V
 
+    .line 282
     return-void
 .end method
 
 .method public processEcm([BII)V
     .locals 3
+    .param p1, "data"    # [B
+    .param p2, "offset"    # I
+    .param p3, "length"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCasException;
         }
     .end annotation
 
+    .line 259
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v0}, Landroid/media/MediaCas;->access$300(Landroid/media/MediaCas;)V
 
+    .line 262
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
+    .line 263
     invoke-static {v0}, Landroid/media/MediaCas;->access$500(Landroid/media/MediaCas;)Landroid/hardware/cas/V1_0/ICas;
 
     move-result-object v0
@@ -139,38 +163,49 @@
 
     move-result v0
 
+    .line 262
     invoke-static {v0}, Landroid/media/MediaCasException;->throwExceptionIfNeeded(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 266
     goto :goto_0
 
+    .line 264
     :catch_0
     move-exception v0
 
+    .line 265
+    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v1}, Landroid/media/MediaCas;->access$600(Landroid/media/MediaCas;)V
 
+    .line 267
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public setPrivateData([B)V
     .locals 5
+    .param p1, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCasException;
         }
     .end annotation
 
+    .line 235
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v0}, Landroid/media/MediaCas;->access$300(Landroid/media/MediaCas;)V
 
+    .line 238
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
+    .line 239
     invoke-static {v0}, Landroid/media/MediaCas;->access$500(Landroid/media/MediaCas;)Landroid/hardware/cas/V1_0/ICas;
 
     move-result-object v0
@@ -191,19 +226,26 @@
 
     move-result v0
 
+    .line 238
     invoke-static {v0}, Landroid/media/MediaCasException;->throwExceptionIfNeeded(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 242
     goto :goto_0
 
+    .line 240
     :catch_0
     move-exception v0
 
+    .line 241
+    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Landroid/media/MediaCas$Session;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v1}, Landroid/media/MediaCas;->access$600(Landroid/media/MediaCas;)V
 
+    .line 243
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AbsListView;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/AbsListView;
 
+    .line 5139
     iput-object p1, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +39,14 @@
 .method public run()V
     .locals 3
 
+    .line 5142
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     iget-boolean v0, v0, Landroid/widget/AbsListView;->mCachingStarted:Z
 
     if-eqz v0, :cond_1
 
+    .line 5143
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
@@ -53,10 +57,12 @@
 
     iput-boolean v2, v0, Landroid/widget/AbsListView;->mCachingStarted:Z
 
+    .line 5144
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v0, v2}, Landroid/widget/AbsListView;->access$4000(Landroid/widget/AbsListView;Z)V
 
+    .line 5145
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v0}, Landroid/widget/AbsListView;->access$4100(Landroid/widget/AbsListView;)I
@@ -67,10 +73,12 @@
 
     if-nez v0, :cond_0
 
+    .line 5146
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v0, v2}, Landroid/widget/AbsListView;->access$4200(Landroid/widget/AbsListView;Z)V
 
+    .line 5148
     :cond_0
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
@@ -80,10 +88,12 @@
 
     if-nez v0, :cond_1
 
+    .line 5149
     iget-object v0, p0, Landroid/widget/AbsListView$4;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 5152
     :cond_1
     return-void
 .end method

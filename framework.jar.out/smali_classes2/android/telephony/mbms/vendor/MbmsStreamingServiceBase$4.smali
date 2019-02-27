@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;II)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
+    .line 229
     iput-object p1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$4;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iput p2, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$4;->val$uid:I
@@ -45,6 +47,7 @@
 .method public binderDied()V
     .locals 3
 
+    .line 232
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$4;->this$0:Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;
 
     iget v1, p0, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase$4;->val$uid:I
@@ -53,5 +56,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/mbms/vendor/MbmsStreamingServiceBase;->onAppCallbackDied(II)V
 
+    .line 233
     return-void
 .end method

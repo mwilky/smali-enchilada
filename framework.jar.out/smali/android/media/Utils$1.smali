@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,6 +50,9 @@
         }
     .end annotation
 
+    .line 50
+    .local p1, "lhs":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
+    .local p2, "rhs":Landroid/util/Range;, "Landroid/util/Range<TT;>;"
     invoke-virtual {p1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -63,10 +67,12 @@
 
     if-gez v0, :cond_0
 
+    .line 51
     const/4 v0, -0x1
 
     return v0
 
+    .line 52
     :cond_0
     invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
@@ -82,10 +88,12 @@
 
     if-lez v0, :cond_1
 
+    .line 53
     const/4 v0, 0x1
 
     return v0
 
+    .line 55
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -121,6 +129,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 47
     check-cast p1, Landroid/util/Range;
 
     check-cast p2, Landroid/util/Range;

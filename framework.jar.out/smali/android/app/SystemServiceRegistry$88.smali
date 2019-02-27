@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 969
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,26 +36,33 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/net/NetworkWatchlistManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 973
     const-string/jumbo v0, "network_watchlist"
 
+    .line 974
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 975
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/net/NetworkWatchlistManager;
 
+    .line 976
     invoke-static {v0}, Lcom/android/internal/net/INetworkWatchlistManager$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/net/INetworkWatchlistManager;
 
     move-result-object v2
 
     invoke-direct {v1, p1, v2}, Landroid/net/NetworkWatchlistManager;-><init>(Landroid/content/Context;Lcom/android/internal/net/INetworkWatchlistManager;)V
 
+    .line 975
     return-object v1
 .end method
 
@@ -66,6 +74,7 @@
         }
     .end annotation
 
+    .line 969
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$88;->createService(Landroid/app/ContextImpl;)Landroid/net/NetworkWatchlistManager;
 
     move-result-object p1

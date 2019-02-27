@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AdapterViewFlipper;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/AdapterViewFlipper;
 
+    .line 276
     iput-object p1, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public run()V
     .locals 1
 
+    .line 279
     iget-object v0, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-static {v0}, Landroid/widget/AdapterViewFlipper;->access$300(Landroid/widget/AdapterViewFlipper;)Z
@@ -45,10 +48,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 280
     iget-object v0, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-virtual {v0}, Landroid/widget/AdapterViewFlipper;->showNext()V
 
+    .line 282
     :cond_0
     return-void
 .end method

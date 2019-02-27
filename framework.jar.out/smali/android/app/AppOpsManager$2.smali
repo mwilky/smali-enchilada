@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/AppOpsManager;Landroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/app/AppOpsManager;
 
+    .line 2228
     iput-object p1, p0, Landroid/app/AppOpsManager$2;->this$0:Landroid/app/AppOpsManager;
 
     iput-object p2, p0, Landroid/app/AppOpsManager$2;->val$callback:Landroid/app/AppOpsManager$OnOpChangedListener;
@@ -37,19 +39,25 @@
 # virtual methods
 .method public opChanged(IILjava/lang/String;)V
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2230
     iget-object v0, p0, Landroid/app/AppOpsManager$2;->val$callback:Landroid/app/AppOpsManager$OnOpChangedListener;
 
     instance-of v0, v0, Landroid/app/AppOpsManager$OnOpChangedInternalListener;
 
     if-eqz v0, :cond_0
 
+    .line 2231
     iget-object v0, p0, Landroid/app/AppOpsManager$2;->val$callback:Landroid/app/AppOpsManager$OnOpChangedListener;
 
     check-cast v0, Landroid/app/AppOpsManager$OnOpChangedInternalListener;
 
     invoke-virtual {v0, p1, p3}, Landroid/app/AppOpsManager$OnOpChangedInternalListener;->onOpChanged(ILjava/lang/String;)V
 
+    .line 2233
     :cond_0
     invoke-static {}, Landroid/app/AppOpsManager;->access$000()[Ljava/lang/String;
 
@@ -59,6 +67,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 2234
     iget-object v0, p0, Landroid/app/AppOpsManager$2;->val$callback:Landroid/app/AppOpsManager$OnOpChangedListener;
 
     invoke-static {}, Landroid/app/AppOpsManager;->access$000()[Ljava/lang/String;
@@ -69,6 +78,7 @@
 
     invoke-interface {v0, v1, p3}, Landroid/app/AppOpsManager$OnOpChangedListener;->onOpChanged(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2236
     :cond_1
     return-void
 .end method

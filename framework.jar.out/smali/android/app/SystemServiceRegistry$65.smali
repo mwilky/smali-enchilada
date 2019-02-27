@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 747
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,14 +36,18 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/print/PrintManager;
     .locals 5
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 750
     const/4 v0, 0x0
 
+    .line 752
+    .local v0, "service":Landroid/print/IPrintManager;
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -55,21 +60,27 @@
 
     if-eqz v1, :cond_0
 
+    .line 753
     const-string/jumbo v1, "print"
 
+    .line 754
     invoke-static {v1}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
 
+    .line 753
     invoke-static {v1}, Landroid/print/IPrintManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/print/IPrintManager;
 
     move-result-object v0
 
+    .line 756
     :cond_0
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getUserId()I
 
     move-result v1
 
+    .line 757
+    .local v1, "userId":I
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v2
@@ -80,6 +91,8 @@
 
     move-result v2
 
+    .line 758
+    .local v2, "appId":I
     new-instance v3, Landroid/print/PrintManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -99,6 +112,7 @@
         }
     .end annotation
 
+    .line 747
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$65;->createService(Landroid/app/ContextImpl;)Landroid/print/PrintManager;
 
     move-result-object p1

@@ -95,7 +95,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/PsProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/PsProto;
 
+    .line 11
     iput-object p1, p0, Landroid/os/PsProto$Process;->this$0:Landroid/os/PsProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

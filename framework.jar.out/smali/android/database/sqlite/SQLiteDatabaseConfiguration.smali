@@ -47,52 +47,67 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 40
     const-string v0, "[\\w\\.\\-]+@[\\w\\.\\-]+"
 
+    .line 41
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->EMAIL_IN_DB_PATTERN:Ljava/util/regex/Pattern;
 
+    .line 40
     return-void
 .end method
 
 .method public constructor <init>(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
     .locals 2
+    .param p1, "other"    # Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
+    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
+    .line 97
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotSize:I
 
+    .line 104
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotCount:I
 
+    .line 111
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->idleConnectionTimeoutMs:J
 
+    .line 153
     if-eqz p1, :cond_0
 
+    .line 157
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
+    .line 158
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
+    .line 159
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->updateParametersFrom(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
 
+    .line 160
     return-void
 
+    .line 154
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -105,49 +120,64 @@
 
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 2
+    .param p1, "path"    # Ljava/lang/String;
+    .param p2, "openFlags"    # I
 
+    .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
+    .line 97
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotSize:I
 
+    .line 104
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotCount:I
 
+    .line 111
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->idleConnectionTimeoutMs:J
 
+    .line 134
     if-eqz p1, :cond_0
 
+    .line 138
     iput-object p1, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
+    .line 139
     invoke-static {p1}, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->stripPathForLogs(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
+    .line 140
     iput p2, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
+    .line 143
     const/16 v0, 0x19
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
+    .line 144
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
+    .line 145
     return-void
 
+    .line 135
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -160,7 +190,9 @@
 
 .method private static stripPathForLogs(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p0, "path"    # Ljava/lang/String;
 
+    .line 204
     const/16 v0, 0x40
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
@@ -171,8 +203,10 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 205
     return-object p0
 
+    .line 207
     :cond_0
     sget-object v0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->EMAIL_IN_DB_PATTERN:Ljava/util/regex/Pattern;
 
@@ -194,6 +228,7 @@
 .method public isInMemoryDb()Z
     .locals 2
 
+    .line 195
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
     const-string v1, ":memory:"
@@ -208,6 +243,7 @@
 .method isLookasideConfigSet()Z
     .locals 1
 
+    .line 211
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotCount:I
 
     if-ltz v0, :cond_0
@@ -229,9 +265,12 @@
 
 .method public updateParametersFrom(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
     .locals 2
+    .param p1, "other"    # Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
+    .line 169
     if-eqz p1, :cond_1
 
+    .line 172
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
     iget-object v1, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
@@ -242,54 +281,67 @@
 
     if-eqz v0, :cond_0
 
+    .line 177
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
+    .line 178
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
+    .line 179
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
+    .line 180
     iget-boolean v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
     iput-boolean v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
+    .line 181
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 182
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     iget-object v1, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
+    .line 183
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotSize:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotSize:I
 
+    .line 184
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotCount:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->lookasideSlotCount:I
 
+    .line 185
     iget-wide v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->idleConnectionTimeoutMs:J
 
     iput-wide v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->idleConnectionTimeoutMs:J
 
+    .line 186
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->journalMode:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->journalMode:Ljava/lang/String;
 
+    .line 187
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->syncMode:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->syncMode:Ljava/lang/String;
 
+    .line 188
     return-void
 
+    .line 173
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -299,6 +351,7 @@
 
     throw v0
 
+    .line 170
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -312,6 +365,7 @@
 .method useCompatibilityWal()Z
     .locals 2
 
+    .line 199
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->journalMode:Ljava/lang/String;
 
     if-nez v0, :cond_0

@@ -21,6 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 36
     invoke-direct {p0}, Ljavax/net/ssl/TrustManagerFactorySpi;-><init>()V
 
     return-void
@@ -31,10 +32,12 @@
 .method public engineGetTrustManagers()[Ljavax/net/ssl/TrustManager;
     .locals 3
 
+    .line 62
     iget-object v0, p0, Landroid/security/net/config/RootTrustManagerFactorySpi;->mApplicationConfig:Landroid/security/net/config/ApplicationConfig;
 
     if-eqz v0, :cond_0
 
+    .line 65
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljavax/net/ssl/TrustManager;
@@ -51,6 +54,7 @@
 
     return-object v0
 
+    .line 63
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -63,14 +67,17 @@
 
 .method public engineInit(Ljava/security/KeyStore;)V
     .locals 2
+    .param p1, "ks"    # Ljava/security/KeyStore;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/KeyStoreException;
         }
     .end annotation
 
+    .line 53
     if-eqz p1, :cond_0
 
+    .line 54
     new-instance v0, Landroid/security/net/config/ApplicationConfig;
 
     new-instance v1, Landroid/security/net/config/KeyStoreConfigSource;
@@ -83,6 +90,7 @@
 
     goto :goto_0
 
+    .line 56
     :cond_0
     invoke-static {}, Landroid/security/net/config/ApplicationConfig;->getDefaultInstance()Landroid/security/net/config/ApplicationConfig;
 
@@ -90,22 +98,26 @@
 
     iput-object v0, p0, Landroid/security/net/config/RootTrustManagerFactorySpi;->mApplicationConfig:Landroid/security/net/config/ApplicationConfig;
 
+    .line 58
     :goto_0
     return-void
 .end method
 
 .method public engineInit(Ljavax/net/ssl/ManagerFactoryParameters;)V
     .locals 3
+    .param p1, "spec"    # Ljavax/net/ssl/ManagerFactoryParameters;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidAlgorithmParameterException;
         }
     .end annotation
 
+    .line 43
     instance-of v0, p1, Landroid/security/net/config/RootTrustManagerFactorySpi$ApplicationConfigParameters;
 
     if-eqz v0, :cond_0
 
+    .line 48
     move-object v0, p1
 
     check-cast v0, Landroid/security/net/config/RootTrustManagerFactorySpi$ApplicationConfigParameters;
@@ -114,8 +126,10 @@
 
     iput-object v0, p0, Landroid/security/net/config/RootTrustManagerFactorySpi;->mApplicationConfig:Landroid/security/net/config/ApplicationConfig;
 
+    .line 49
     return-void
 
+    .line 44
     :cond_0
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
@@ -135,6 +149,7 @@
 
     const-class v2, Landroid/security/net/config/RootTrustManagerFactorySpi$ApplicationConfigParameters;
 
+    .line 45
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2

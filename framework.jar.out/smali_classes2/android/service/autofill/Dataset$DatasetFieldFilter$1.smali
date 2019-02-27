@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 575
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/Dataset$DatasetFieldFilter;
     .locals 3
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 579
     new-instance v0, Landroid/service/autofill/Dataset$DatasetFieldFilter;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
@@ -58,6 +61,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 575
     invoke-virtual {p0, p1}, Landroid/service/autofill/Dataset$DatasetFieldFilter$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/autofill/Dataset$DatasetFieldFilter;
 
     move-result-object p1
@@ -67,7 +71,9 @@
 
 .method public newArray(I)[Landroid/service/autofill/Dataset$DatasetFieldFilter;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 584
     new-array v0, p1, [Landroid/service/autofill/Dataset$DatasetFieldFilter;
 
     return-object v0
@@ -76,6 +82,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 575
     invoke-virtual {p0, p1}, Landroid/service/autofill/Dataset$DatasetFieldFilter$1;->newArray(I)[Landroid/service/autofill/Dataset$DatasetFieldFilter;
 
     move-result-object p1

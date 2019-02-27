@@ -24,19 +24,24 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/os/PowerProfile;)V
     .locals 2
+    .param p1, "profile"    # Lcom/android/internal/os/PowerProfile;
 
+    .line 33
     invoke-direct {p0}, Lcom/android/internal/os/PowerCalculator;-><init>()V
 
+    .line 31
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mTotalAppWifiRunningTimeMs:J
 
+    .line 34
     invoke-static {p1}, Lcom/android/internal/os/WifiPowerEstimator;->getWifiPowerPerPacket(Lcom/android/internal/os/PowerProfile;)D
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerPerPacket:D
 
+    .line 35
     const-string/jumbo v0, "wifi.on"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -45,6 +50,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerOn:D
 
+    .line 36
     const-string/jumbo v0, "wifi.scan"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -53,6 +59,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerScan:D
 
+    .line 37
     const-string/jumbo v0, "wifi.batchedscan"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -61,14 +68,19 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerBatchScan:D
 
+    .line 38
     return-void
 .end method
 
 .method private static getWifiPowerPerPacket(Lcom/android/internal/os/PowerProfile;)D
     .locals 8
+    .param p0, "profile"    # Lcom/android/internal/os/PowerProfile;
 
+    .line 44
     const-wide/32 v0, 0xf4240
 
+    .line 45
+    .local v0, "WIFI_BPS":J
     const-string/jumbo v2, "wifi.active"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/os/PowerProfile;->getAveragePower(Ljava/lang/String;)D
@@ -79,6 +91,8 @@
 
     div-double/2addr v2, v4
 
+    .line 48
+    .local v2, "WIFI_POWER":D
     const-wide v4, 0x404e848000000000L    # 61.03515625
 
     div-double v4, v2, v4
@@ -94,6 +108,11 @@
 # virtual methods
 .method public calculateApp(Lcom/android/internal/os/BatterySipper;Landroid/os/BatteryStats$Uid;JJI)V
     .locals 24
+    .param p1, "app"    # Lcom/android/internal/os/BatterySipper;
+    .param p2, "u"    # Landroid/os/BatteryStats$Uid;
+    .param p3, "rawRealtimeUs"    # J
+    .param p5, "rawUptimeUs"    # J
+    .param p7, "statsType"    # I
 
     move-object/from16 v0, p0
 
@@ -103,6 +122,7 @@
 
     move-wide/from16 v3, p3
 
+    .line 55
     move/from16 v5, p7
 
     const/4 v6, 0x2
@@ -113,6 +133,7 @@
 
     iput-wide v7, v1, Lcom/android/internal/os/BatterySipper;->wifiRxPackets:J
 
+    .line 57
     const/4 v7, 0x3
 
     invoke-virtual {v2, v7, v5}, Landroid/os/BatteryStats$Uid;->getNetworkActivityPackets(II)J
@@ -121,18 +142,21 @@
 
     iput-wide v8, v1, Lcom/android/internal/os/BatterySipper;->wifiTxPackets:J
 
+    .line 59
     invoke-virtual {v2, v6, v5}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v8
 
     iput-wide v8, v1, Lcom/android/internal/os/BatterySipper;->wifiRxBytes:J
 
+    .line 61
     invoke-virtual {v2, v7, v5}, Landroid/os/BatteryStats$Uid;->getNetworkActivityBytes(II)J
 
     move-result-wide v6
 
     iput-wide v6, v1, Lcom/android/internal/os/BatterySipper;->wifiTxBytes:J
 
+    .line 64
     iget-wide v6, v1, Lcom/android/internal/os/BatterySipper;->wifiRxPackets:J
 
     iget-wide v8, v1, Lcom/android/internal/os/BatterySipper;->wifiTxPackets:J
@@ -145,6 +169,8 @@
 
     mul-double/2addr v6, v8
 
+    .line 67
+    .local v6, "wifiPacketPower":D
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/BatteryStats$Uid;->getWifiRunningTime(JI)J
 
     move-result-wide v8
@@ -155,6 +181,7 @@
 
     iput-wide v8, v1, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
 
+    .line 68
     iget-wide v8, v0, Lcom/android/internal/os/WifiPowerEstimator;->mTotalAppWifiRunningTimeMs:J
 
     iget-wide v12, v1, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
@@ -163,6 +190,7 @@
 
     iput-wide v8, v0, Lcom/android/internal/os/WifiPowerEstimator;->mTotalAppWifiRunningTimeMs:J
 
+    .line 69
     iget-wide v8, v1, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
 
     long-to-double v8, v8
@@ -175,37 +203,54 @@
 
     div-double/2addr v8, v12
 
+    .line 71
+    .local v8, "wifiLockPower":D
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/BatteryStats$Uid;->getWifiScanTime(JI)J
 
     move-result-wide v14
 
     div-long/2addr v14, v10
 
+    .line 72
+    .local v14, "wifiScanTimeMs":J
     long-to-double v10, v14
 
     move-wide/from16 v18, v14
 
     iget-wide v14, v0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerScan:D
 
+    .end local v14    # "wifiScanTimeMs":J
+    .local v18, "wifiScanTimeMs":J
     mul-double/2addr v10, v14
 
     div-double/2addr v10, v12
 
+    .line 74
+    .local v10, "wifiScanPower":D
     const-wide/16 v14, 0x0
 
+    .line 75
+    .local v14, "wifiBatchScanPower":D
     const/16 v20, 0x0
 
+    .local v20, "bin":I
     :goto_0
     move/from16 v21, v20
 
+    .end local v20    # "bin":I
+    .local v21, "bin":I
     const/4 v12, 0x5
 
     move/from16 v13, v21
 
     if-ge v13, v12, :cond_0
 
+    .line 76
+    .end local v21    # "bin":I
+    .local v13, "bin":I
     nop
 
+    .line 77
     invoke-virtual {v2, v13, v3, v4, v5}, Landroid/os/BatteryStats$Uid;->getWifiBatchedScanTime(IJI)J
 
     move-result-wide v20
@@ -214,22 +259,33 @@
 
     div-long v2, v20, v16
 
+    .line 78
+    .local v2, "batchScanTimeMs":J
     long-to-double v4, v2
 
     move-wide/from16 v22, v2
 
     iget-wide v2, v0, Lcom/android/internal/os/WifiPowerEstimator;->mWifiPowerBatchScan:D
 
+    .end local v2    # "batchScanTimeMs":J
+    .local v22, "batchScanTimeMs":J
     mul-double/2addr v4, v2
 
     const-wide v2, 0x414b774000000000L    # 3600000.0
 
     div-double/2addr v4, v2
 
+    .line 79
+    .local v4, "batchScanPower":D
     add-double/2addr v14, v4
 
+    .line 75
+    .end local v4    # "batchScanPower":D
+    .end local v22    # "batchScanTimeMs":J
     add-int/lit8 v20, v13, 0x1
 
+    .end local v13    # "bin":I
+    .restart local v20    # "bin":I
     move-wide v12, v2
 
     move-object/from16 v2, p2
@@ -240,6 +296,8 @@
 
     goto :goto_0
 
+    .line 82
+    .end local v20    # "bin":I
     :cond_0
     add-double v2, v6, v8
 
@@ -249,12 +307,19 @@
 
     iput-wide v2, v1, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
+    .line 87
     return-void
 .end method
 
 .method public calculateRemaining(Lcom/android/internal/os/BatterySipper;Landroid/os/BatteryStats;JJI)V
     .locals 6
+    .param p1, "app"    # Lcom/android/internal/os/BatterySipper;
+    .param p2, "stats"    # Landroid/os/BatteryStats;
+    .param p3, "rawRealtimeUs"    # J
+    .param p5, "rawUptimeUs"    # J
+    .param p7, "statsType"    # I
 
+    .line 92
     invoke-virtual {p2, p3, p4, p7}, Landroid/os/BatteryStats;->getGlobalWifiRunningTime(JI)J
 
     move-result-wide v0
@@ -263,6 +328,8 @@
 
     div-long/2addr v0, v2
 
+    .line 94
+    .local v0, "totalRunningTimeMs":J
     iget-wide v2, p0, Lcom/android/internal/os/WifiPowerEstimator;->mTotalAppWifiRunningTimeMs:J
 
     sub-long v2, v0, v2
@@ -277,8 +344,11 @@
 
     div-double/2addr v2, v4
 
+    .line 96
+    .local v2, "powerDrain":D
     iput-wide v0, p1, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
 
+    .line 97
     const-wide/16 v4, 0x0
 
     invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->max(DD)D
@@ -287,15 +357,18 @@
 
     iput-wide v4, p1, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
+    .line 98
     return-void
 .end method
 
 .method public reset()V
     .locals 2
 
+    .line 102
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/os/WifiPowerEstimator;->mTotalAppWifiRunningTimeMs:J
 
+    .line 103
     return-void
 .end method

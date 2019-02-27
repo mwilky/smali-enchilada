@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/PeriodicAdvertisingManager$1;Landroid/bluetooth/le/PeriodicAdvertisingReport;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
+    .line 223
     iput-object p1, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$2;->this$1:Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
     iput-object p2, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$2;->val$report:Landroid/bluetooth/le/PeriodicAdvertisingReport;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 226
     iget-object v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$2;->this$1:Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
     iget-object v0, v0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$callback:Landroid/bluetooth/le/PeriodicAdvertisingCallback;
@@ -49,5 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/bluetooth/le/PeriodicAdvertisingCallback;->onPeriodicAdvertisingReport(Landroid/bluetooth/le/PeriodicAdvertisingReport;)V
 
+    .line 227
     return-void
 .end method

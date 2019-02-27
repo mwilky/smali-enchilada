@@ -15,6 +15,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +23,13 @@
 
 .method public static writeBinderSample(Ljava/lang/String;IILjava/lang/String;I)V
     .locals 3
+    .param p0, "descriptor"    # Ljava/lang/String;
+    .param p1, "methodNum"    # I
+    .param p2, "time"    # I
+    .param p3, "blockingPackage"    # Ljava/lang/String;
+    .param p4, "samplePercent"    # I
 
+    .line 31
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -63,12 +70,21 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 32
     return-void
 .end method
 
 .method public static writeContentQuerySample(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 3
+    .param p0, "uri"    # Ljava/lang/String;
+    .param p1, "projection"    # Ljava/lang/String;
+    .param p2, "selection"    # Ljava/lang/String;
+    .param p3, "sortorder"    # Ljava/lang/String;
+    .param p4, "time"    # I
+    .param p5, "blockingPackage"    # Ljava/lang/String;
+    .param p6, "samplePercent"    # I
 
+    .line 23
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -113,12 +129,20 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 24
     return-void
 .end method
 
 .method public static writeContentUpdateSample(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 3
+    .param p0, "uri"    # Ljava/lang/String;
+    .param p1, "operation"    # Ljava/lang/String;
+    .param p2, "selection"    # Ljava/lang/String;
+    .param p3, "time"    # I
+    .param p4, "blockingPackage"    # Ljava/lang/String;
+    .param p5, "samplePercent"    # I
 
+    .line 27
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -159,5 +183,6 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 28
     return-void
 .end method

@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 961
     const-string v0, "CN"
 
     sget-object v1, Landroid/os/Build;->REGION:Ljava/lang/String;
@@ -38,6 +39,7 @@
 
     sput-boolean v0, Landroid/os/Build$REGION_CODES;->IS_CHINA:Z
 
+    .line 967
     const-string v0, "OverSeas"
 
     sget-object v1, Landroid/os/Build;->REGION:Ljava/lang/String;
@@ -54,6 +56,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 943
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

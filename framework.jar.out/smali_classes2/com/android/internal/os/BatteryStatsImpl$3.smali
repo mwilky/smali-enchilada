@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/BatteryStatsImpl;Landroid/os/Parcel;J)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/os/BatteryStatsImpl;
 
+    .line 12452
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iput-object p2, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$parcel:Landroid/os/Parcel;
@@ -45,12 +47,14 @@
 .method public run()V
     .locals 9
 
+    .line 12454
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl;->mCheckinFile:Lcom/android/internal/os/AtomicFile;
 
     monitor-enter v0
 
+    .line 12455
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -58,8 +62,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
+    .line 12456
+    .local v1, "startTime2":J
     const/4 v3, 0x0
 
+    .line 12458
+    .local v3, "stream":Ljava/io/FileOutputStream;
     :try_start_1
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -71,6 +79,7 @@
 
     move-object v3, v4
 
+    .line 12459
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$parcel:Landroid/os/Parcel;
 
     invoke-virtual {v4}, Landroid/os/Parcel;->marshall()[B
@@ -79,22 +88,28 @@
 
     invoke-virtual {v3, v4}, Ljava/io/FileOutputStream;->write([B)V
 
+    .line 12460
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->flush()V
 
+    .line 12461
     invoke-static {v3}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
+    .line 12462
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
+    .line 12463
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v4, v4, Lcom/android/internal/os/BatteryStatsImpl;->mCheckinFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v4, v3}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
+    .line 12464
     const-string v4, "batterystats-checkin"
 
     iget-wide v5, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$initialTime:J
 
+    .line 12466
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v7
@@ -103,11 +118,13 @@
 
     sub-long/2addr v5, v1
 
+    .line 12464
     invoke-static {v4, v5, v6}, Lcom/android/internal/logging/EventLogTags;->writeCommitSysConfigFile(Ljava/lang/String;J)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 12472
     :try_start_2
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$parcel:Landroid/os/Parcel;
     :try_end_2
@@ -120,9 +137,12 @@
 
     goto :goto_1
 
+    .line 12467
     :catch_0
     move-exception v4
 
+    .line 12468
+    .local v4, "e":Ljava/io/IOException;
     :try_start_3
     const-string v5, "BatteryStats"
 
@@ -130,6 +150,7 @@
 
     invoke-static {v5, v6, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 12470
     iget-object v5, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     iget-object v5, v5, Lcom/android/internal/os/BatteryStatsImpl;->mCheckinFile:Lcom/android/internal/os/AtomicFile;
@@ -138,18 +159,28 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 12472
+    .end local v4    # "e":Ljava/io/IOException;
     :try_start_4
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$parcel:Landroid/os/Parcel;
 
     :goto_0
     invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
+    .line 12473
     nop
 
+    .line 12474
+    .end local v1    # "startTime2":J
+    .end local v3    # "stream":Ljava/io/FileOutputStream;
     monitor-exit v0
 
+    .line 12475
     return-void
 
+    .line 12472
+    .restart local v1    # "startTime2":J
+    .restart local v3    # "stream":Ljava/io/FileOutputStream;
     :goto_1
     iget-object v5, p0, Lcom/android/internal/os/BatteryStatsImpl$3;->val$parcel:Landroid/os/Parcel;
 
@@ -157,6 +188,9 @@
 
     throw v4
 
+    .line 12474
+    .end local v1    # "startTime2":J
+    .end local v3    # "stream":Ljava/io/FileOutputStream;
     :catchall_1
     move-exception v1
 

@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .line 34
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "ABSTRACT"
@@ -50,6 +51,7 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->ABSTRACT:Landroid/net/LocalSocketAddress$Namespace;
 
+    .line 39
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "RESERVED"
@@ -60,6 +62,7 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->RESERVED:Landroid/net/LocalSocketAddress$Namespace;
 
+    .line 43
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "FILESYSTEM"
@@ -70,6 +73,7 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->FILESYSTEM:Landroid/net/LocalSocketAddress$Namespace;
 
+    .line 32
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/net/LocalSocketAddress$Namespace;
@@ -93,22 +97,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 47
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 48
     iput p3, p0, Landroid/net/LocalSocketAddress$Namespace;->id:I
 
+    .line 49
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 32
     const-class v0, Landroid/net/LocalSocketAddress$Namespace;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -123,6 +133,7 @@
 .method public static values()[Landroid/net/LocalSocketAddress$Namespace;
     .locals 1
 
+    .line 32
     sget-object v0, Landroid/net/LocalSocketAddress$Namespace;->$VALUES:[Landroid/net/LocalSocketAddress$Namespace;
 
     invoke-virtual {v0}, [Landroid/net/LocalSocketAddress$Namespace;->clone()Ljava/lang/Object;
@@ -139,6 +150,7 @@
 .method getId()I
     .locals 1
 
+    .line 55
     iget v0, p0, Landroid/net/LocalSocketAddress$Namespace;->id:I
 
     return v0

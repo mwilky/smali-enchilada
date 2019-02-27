@@ -34,15 +34,20 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/core/FilterContext;)V
     .locals 1
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 25
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
+    .line 50
     iput-object p1, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
+    .line 51
     return-void
 .end method
 
@@ -51,12 +56,15 @@
 .method protected activateGlContext()Z
     .locals 2
 
+    .line 65
     iget-object v0, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     invoke-virtual {v0}, Landroid/filterfw/core/FilterContext;->getGLEnvironment()Landroid/filterfw/core/GLEnvironment;
 
     move-result-object v0
 
+    .line 66
+    .local v0, "glEnv":Landroid/filterfw/core/GLEnvironment;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/filterfw/core/GLEnvironment;->isActive()Z
@@ -65,12 +73,15 @@
 
     if-nez v1, :cond_0
 
+    .line 67
     invoke-virtual {v0}, Landroid/filterfw/core/GLEnvironment;->activate()V
 
+    .line 68
     const/4 v1, 0x1
 
     return v1
 
+    .line 70
     :cond_0
     const/4 v1, 0x0
 
@@ -83,16 +94,21 @@
 .method protected deactivateGlContext()V
     .locals 1
 
+    .line 77
     iget-object v0, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     invoke-virtual {v0}, Landroid/filterfw/core/FilterContext;->getGLEnvironment()Landroid/filterfw/core/GLEnvironment;
 
     move-result-object v0
 
+    .line 78
+    .local v0, "glEnv":Landroid/filterfw/core/GLEnvironment;
     if-eqz v0, :cond_0
 
+    .line 79
     invoke-virtual {v0}, Landroid/filterfw/core/GLEnvironment;->deactivate()V
 
+    .line 81
     :cond_0
     return-void
 .end method
@@ -100,6 +116,7 @@
 .method public getContext()Landroid/filterfw/core/FilterContext;
     .locals 1
 
+    .line 56
     iget-object v0, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     return-object v0

@@ -76,32 +76,41 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 145
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
+    .line 174
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
 
+    .line 48
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
+    .line 49
     iput-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->inPremultiplied:Z
 
+    .line 50
     return-void
 .end method
 
 .method static validate(Landroid/graphics/BitmapFactory$Options;)V
     .locals 2
+    .param p0, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
+    .line 439
     if-nez p0, :cond_0
 
     return-void
 
+    .line 441
     :cond_0
     iget-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
@@ -119,6 +128,7 @@
 
     goto :goto_0
 
+    .line 442
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -128,6 +138,7 @@
 
     throw v0
 
+    .line 445
     :cond_2
     :goto_0
     iget-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
@@ -142,6 +153,7 @@
 
     goto :goto_1
 
+    .line 446
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -151,18 +163,21 @@
 
     throw v0
 
+    .line 450
     :cond_4
     :goto_1
     iget-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
 
     if-eqz v0, :cond_7
 
+    .line 451
     iget-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
 
     instance-of v0, v0, Landroid/graphics/ColorSpace$Rgb;
 
     if-eqz v0, :cond_6
 
+    .line 455
     iget-object v0, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
 
     check-cast v0, Landroid/graphics/ColorSpace$Rgb;
@@ -175,6 +190,7 @@
 
     goto :goto_2
 
+    .line 456
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -184,6 +200,7 @@
 
     throw v0
 
+    .line 452
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -193,6 +210,7 @@
 
     throw v0
 
+    .line 460
     :cond_7
     :goto_2
     return-void
@@ -205,9 +223,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 435
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
 
+    .line 436
     return-void
 .end method

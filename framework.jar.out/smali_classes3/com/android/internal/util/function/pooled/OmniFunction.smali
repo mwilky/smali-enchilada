@@ -90,6 +90,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -105,6 +107,9 @@
         }
     .end annotation
 
+    .line 72
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -121,6 +126,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 73
     return-void
 .end method
 
@@ -132,6 +138,10 @@
         }
     .end annotation
 
+    .line 67
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
+    .local p2, "o2":Ljava/lang/Object;, "TB;"
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -148,6 +158,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 68
     return-void
 .end method
 
@@ -159,6 +170,11 @@
         }
     .end annotation
 
+    .line 112
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -175,6 +191,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 113
     return-void
 .end method
 
@@ -186,6 +203,12 @@
         }
     .end annotation
 
+    .line 132
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -202,6 +225,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 133
     return-void
 .end method
 
@@ -213,6 +237,13 @@
         }
     .end annotation
 
+    .line 137
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
+    .local p5, "e":Ljava/lang/Object;, "TE;"
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -229,6 +260,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 138
     return-void
 .end method
 
@@ -240,8 +272,17 @@
         }
     .end annotation
 
+    .line 142
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
+    .local p5, "e":Ljava/lang/Object;, "TE;"
+    .local p6, "f":Ljava/lang/Object;, "TF;"
     invoke-virtual/range {p0 .. p6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 143
     return-void
 .end method
 
@@ -262,6 +303,8 @@
 .method public bridge synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
     .locals 0
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0, p1}, Lcom/android/internal/util/function/pooled/OmniFunction;->andThen(Ljava/util/function/Function;)Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object p1
@@ -272,6 +315,8 @@
 .method public bridge synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/Function;
     .locals 0
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0, p1}, Lcom/android/internal/util/function/pooled/OmniFunction;->andThen(Ljava/util/function/Function;)Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object p1
@@ -287,6 +332,9 @@
         }
     .end annotation
 
+    .line 58
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -316,6 +364,10 @@
         }
     .end annotation
 
+    .line 53
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
+    .local p2, "o2":Ljava/lang/Object;, "TB;"
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -345,6 +397,11 @@
         }
     .end annotation
 
+    .line 107
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -374,6 +431,12 @@
         }
     .end annotation
 
+    .line 117
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -403,6 +466,13 @@
         }
     .end annotation
 
+    .line 122
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
+    .local p5, "e":Ljava/lang/Object;, "TE;"
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -432,6 +502,14 @@
         }
     .end annotation
 
+    .line 127
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "a":Ljava/lang/Object;, "TA;"
+    .local p2, "b":Ljava/lang/Object;, "TB;"
+    .local p3, "c":Ljava/lang/Object;, "TC;"
+    .local p4, "d":Ljava/lang/Object;, "TD;"
+    .local p5, "e":Ljava/lang/Object;, "TE;"
+    .local p6, "f":Ljava/lang/Object;, "TF;"
     invoke-virtual/range {p0 .. p6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -449,12 +527,16 @@
         }
     .end annotation
 
+    .line 102
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     return-object p0
 .end method
 
 .method public asRunnable()Lcom/android/internal/util/function/pooled/PooledRunnable;
     .locals 0
 
+    .line 97
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     return-object p0
 .end method
 
@@ -466,6 +548,8 @@
         }
     .end annotation
 
+    .line 82
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     const/4 v1, 0x0
 
     const/4 v2, 0x0
@@ -501,6 +585,8 @@
         }
     .end annotation
 
+    .line 152
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -529,6 +615,8 @@
 .method public bridge synthetic negate()Ljava/util/function/BiPredicate;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->negate()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -539,6 +627,8 @@
 .method public bridge synthetic negate()Ljava/util/function/Predicate;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->negate()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -559,6 +649,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledConsumer;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -569,6 +661,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledFunction;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -579,6 +673,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledLambda;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -589,6 +685,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledPredicate;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -599,6 +697,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledRunnable;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -609,6 +709,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier$OfDouble;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -619,6 +721,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier$OfInt;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -629,6 +733,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier$OfLong;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -639,6 +745,8 @@
 .method public bridge synthetic recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier;
     .locals 1
 
+    .line 40
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->recycleOnUse()Lcom/android/internal/util/function/pooled/OmniFunction;
 
     move-result-object v0
@@ -649,6 +757,8 @@
 .method public run()V
     .locals 7
 
+    .line 77
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     const/4 v1, 0x0
 
     const/4 v2, 0x0
@@ -665,6 +775,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/util/function/pooled/OmniFunction;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 78
     return-void
 .end method
 
@@ -676,8 +787,11 @@
         }
     .end annotation
 
+    .line 147
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
     invoke-virtual {p0}, Lcom/android/internal/util/function/pooled/OmniFunction;->run()V
 
+    .line 148
     return-void
 .end method
 
@@ -689,6 +803,9 @@
         }
     .end annotation
 
+    .line 92
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -724,6 +841,10 @@
         }
     .end annotation
 
+    .line 87
+    .local p0, "this":Lcom/android/internal/util/function/pooled/OmniFunction;, "Lcom/android/internal/util/function/pooled/OmniFunction<TA;TB;TC;TD;TE;TF;TR;>;"
+    .local p1, "o":Ljava/lang/Object;, "TA;"
+    .local p2, "o2":Ljava/lang/Object;, "TB;"
     const/4 v3, 0x0
 
     const/4 v4, 0x0

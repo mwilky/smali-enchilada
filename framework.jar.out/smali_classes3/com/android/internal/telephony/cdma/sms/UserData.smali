@@ -79,6 +79,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 73
     const/16 v0, 0x5f
 
     new-array v0, v0, [C
@@ -87,14 +88,17 @@
 
     sput-object v0, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
 
+    .line 95
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
+    .line 97
     const/4 v0, 0x0
 
+    .local v0, "i":I
     :goto_0
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
 
@@ -104,6 +108,7 @@
 
     if-ge v0, v1, :cond_0
 
+    .line 98
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     sget-object v3, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
@@ -114,10 +119,13 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/util/SparseIntArray;->put(II)V
 
+    .line 97
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 100
+    .end local v0    # "i":I
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
@@ -125,12 +133,14 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
 
+    .line 101
     sget-object v0, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     const/16 v1, 0xd
 
     invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
 
+    .line 129
     sget-object v0, Lcom/android/internal/telephony/cdma/sms/UserData;->ASCII_MAP:[C
 
     array-length v0, v0
@@ -246,8 +256,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 140
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cdma/sms/UserData;->msgEncodingSet:Z
@@ -257,18 +269,26 @@
 
 .method public static stringToAscii(Ljava/lang/String;)[B
     .locals 6
+    .param p0, "str"    # Ljava/lang/String;
 
+    .line 114
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
+    .line 115
+    .local v0, "len":I
     new-array v1, v0, [B
 
+    .line 116
+    .local v1, "result":[B
     const/4 v2, 0x0
 
+    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
+    .line 117
     sget-object v3, Lcom/android/internal/telephony/cdma/sms/UserData;->charToAscii:Landroid/util/SparseIntArray;
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -281,21 +301,28 @@
 
     move-result v3
 
+    .line 118
+    .local v3, "charCode":I
     if-ne v3, v5, :cond_0
 
     const/4 v4, 0x0
 
     return-object v4
 
+    .line 119
     :cond_0
     int-to-byte v4, v3
 
     aput-byte v4, v1, v2
 
+    .line 116
+    .end local v3    # "charCode":I
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 121
+    .end local v2    # "i":I
     :cond_1
     return-object v1
 .end method
@@ -305,14 +332,18 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 160
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 161
+    .local v0, "builder":Ljava/lang/StringBuilder;
     const-string v1, "UserData "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 162
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -345,6 +376,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 163
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -363,6 +395,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 164
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -381,6 +414,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 165
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -399,6 +433,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 166
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -417,6 +452,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 167
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -443,6 +479,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 168
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -465,10 +502,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 169
     const-string v1, " }"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 170
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

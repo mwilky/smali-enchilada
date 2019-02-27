@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 377
     const-string v0, "current"
 
     const-string v1, "disabled"
@@ -46,6 +47,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 368
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

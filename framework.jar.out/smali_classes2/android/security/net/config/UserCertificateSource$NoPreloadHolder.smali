@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 29
     new-instance v0, Landroid/security/net/config/UserCertificateSource;
 
     const/4 v1, 0x0
@@ -36,6 +37,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,6 +46,7 @@
 .method static synthetic access$100()Landroid/security/net/config/UserCertificateSource;
     .locals 1
 
+    .line 28
     sget-object v0, Landroid/security/net/config/UserCertificateSource$NoPreloadHolder;->INSTANCE:Landroid/security/net/config/UserCertificateSource;
 
     return-object v0

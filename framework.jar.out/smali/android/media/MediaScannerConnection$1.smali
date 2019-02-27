@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaScannerConnection;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaScannerConnection;
 
+    .line 63
     iput-object p1, p0, Landroid/media/MediaScannerConnection$1;->this$0:Landroid/media/MediaScannerConnection;
 
     invoke-direct {p0}, Landroid/media/IMediaScannerListener$Stub;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public scanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 6
+    .param p1, "path"    # Ljava/lang/String;
+    .param p2, "uri"    # Landroid/net/Uri;
 
+    .line 65
     invoke-static {}, Landroid/media/MediaScannerConnection;->access$000()Z
 
     move-result v0
@@ -58,6 +63,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 66
     :cond_0
     iget-object v0, p0, Landroid/media/MediaScannerConnection$1;->this$0:Landroid/media/MediaScannerConnection;
 
@@ -65,14 +71,18 @@
 
     move-result-object v0
 
+    .line 73
+    .local v0, "client":Landroid/media/MediaScannerConnection$MediaScannerConnectionClient;
     if-eqz v0, :cond_1
 
     if-eqz p2, :cond_1
 
+    .line 75
     invoke-interface {v0, p1, p2}, Landroid/media/MediaScannerConnection$MediaScannerConnectionClient;->onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
 
     goto/16 :goto_1
 
+    .line 77
     :cond_1
     invoke-static {}, Landroid/media/MediaScannerConnection;->access$000()Z
 
@@ -146,6 +156,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 81
     :cond_3
     invoke-static {}, Landroid/media/MediaScannerConnection;->access$300()[Ljava/lang/String;
 
@@ -153,6 +164,7 @@
 
     if-eqz v1, :cond_4
 
+    .line 82
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -181,6 +193,8 @@
 
     move-result-object v1
 
+    .line 83
+    .local v1, "strFiles":Ljava/lang/String;
     iget-object v2, p0, Landroid/media/MediaScannerConnection$1;->this$0:Landroid/media/MediaScannerConnection;
 
     invoke-static {v2}, Landroid/media/MediaScannerConnection;->access$200(Landroid/media/MediaScannerConnection;)Landroid/content/Context;
@@ -219,6 +233,8 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 87
+    .end local v1    # "strFiles":Ljava/lang/String;
     :cond_4
     :goto_1
     return-void

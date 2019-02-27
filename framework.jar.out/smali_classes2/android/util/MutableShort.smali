@@ -15,10 +15,14 @@
 # direct methods
 .method public constructor <init>(S)V
     .locals 0
+    .param p1, "value"    # S
 
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 27
     iput-short p1, p0, Landroid/util/MutableShort;->value:S
 
+    .line 28
     return-void
 .end method

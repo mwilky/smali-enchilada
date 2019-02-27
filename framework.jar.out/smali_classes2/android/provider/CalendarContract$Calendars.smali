@@ -35,6 +35,7 @@
 .method static constructor <clinit>()V
     .locals 26
 
+    .line 693
     const-string v0, "content://com.android.calendar/calendars"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,6 +44,7 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Calendars;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 720
     const-string v1, "account_name"
 
     const-string v2, "account_type"
@@ -105,6 +107,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 687
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

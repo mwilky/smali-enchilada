@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 53
     new-instance v0, Landroid/telephony/SmsMessage$MessageClass;
 
     const-string v1, "UNKNOWN"
@@ -90,6 +91,7 @@
 
     sput-object v0, Landroid/telephony/SmsMessage$MessageClass;->CLASS_3:Landroid/telephony/SmsMessage$MessageClass;
 
+    .line 52
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/telephony/SmsMessage$MessageClass;
@@ -127,6 +129,7 @@
         }
     .end annotation
 
+    .line 52
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -134,7 +137,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 52
     const-class v0, Landroid/telephony/SmsMessage$MessageClass;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -149,6 +154,7 @@
 .method public static values()[Landroid/telephony/SmsMessage$MessageClass;
     .locals 1
 
+    .line 52
     sget-object v0, Landroid/telephony/SmsMessage$MessageClass;->$VALUES:[Landroid/telephony/SmsMessage$MessageClass;
 
     invoke-virtual {v0}, [Landroid/telephony/SmsMessage$MessageClass;->clone()Ljava/lang/Object;

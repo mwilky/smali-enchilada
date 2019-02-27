@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/WindowManagerGlobal;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/WindowManagerGlobal;
 
+    .line 310
     iput-object p1, p0, Landroid/view/WindowManagerGlobal$2;->this$0:Landroid/view/WindowManagerGlobal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public run()V
     .locals 3
 
+    .line 312
     iget-object v0, p0, Landroid/view/WindowManagerGlobal$2;->this$0:Landroid/view/WindowManagerGlobal;
 
     invoke-static {v0}, Landroid/view/WindowManagerGlobal;->access$000(Landroid/view/WindowManagerGlobal;)Ljava/lang/Object;
@@ -45,6 +48,7 @@
 
     monitor-enter v0
 
+    .line 313
     :try_start_0
     iget-object v1, p0, Landroid/view/WindowManagerGlobal$2;->this$0:Landroid/view/WindowManagerGlobal;
 
@@ -58,9 +62,11 @@
 
     add-int/lit8 v1, v1, -0x1
 
+    .local v1, "i":I
     :goto_0
     if-ltz v1, :cond_0
 
+    .line 314
     iget-object v2, p0, Landroid/view/WindowManagerGlobal$2;->this$0:Landroid/view/WindowManagerGlobal;
 
     invoke-static {v2}, Landroid/view/WindowManagerGlobal;->access$100(Landroid/view/WindowManagerGlobal;)Ljava/util/ArrayList;
@@ -75,15 +81,20 @@
 
     invoke-virtual {v2}, Landroid/view/ViewRootImpl;->loadSystemProperties()V
 
+    .line 313
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
+    .line 316
+    .end local v1    # "i":I
     :cond_0
     monitor-exit v0
 
+    .line 317
     return-void
 
+    .line 316
     :catchall_0
     move-exception v1
 

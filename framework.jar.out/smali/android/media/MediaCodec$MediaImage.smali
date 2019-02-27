@@ -53,6 +53,13 @@
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;ZJIILandroid/graphics/Rect;)V
     .locals 20
+    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
+    .param p2, "info"    # Ljava/nio/ByteBuffer;
+    .param p3, "readOnly"    # Z
+    .param p4, "timestamp"    # J
+    .param p6, "xOffset"    # I
+    .param p7, "yOffset"    # I
+    .param p8, "cropRect"    # Landroid/graphics/Rect;
 
     move-object/from16 v0, p0
 
@@ -62,46 +69,58 @@
 
     move/from16 v3, p7
 
+    .line 3675
     invoke-direct/range {p0 .. p0}, Landroid/media/Image;-><init>()V
 
+    .line 3604
     const/4 v4, 0x0
 
     iput v4, v0, Landroid/media/MediaCodec$MediaImage;->mTransform:I
 
+    .line 3605
     iput v4, v0, Landroid/media/MediaCodec$MediaImage;->mScalingMode:I
 
+    .line 3676
     const/16 v5, 0x23
 
     iput v5, v0, Landroid/media/MediaCodec$MediaImage;->mFormat:I
 
+    .line 3677
     move-wide/from16 v5, p4
 
     iput-wide v5, v0, Landroid/media/MediaCodec$MediaImage;->mTimestamp:J
 
+    .line 3678
     const/4 v7, 0x1
 
     iput-boolean v7, v0, Landroid/media/MediaCodec$MediaImage;->mIsImageValid:Z
 
+    .line 3679
     invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->isReadOnly()Z
 
     move-result v8
 
     iput-boolean v8, v0, Landroid/media/MediaCodec$MediaImage;->mIsReadOnly:Z
 
+    .line 3680
     invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
     move-result-object v8
 
     iput-object v8, v0, Landroid/media/MediaCodec$MediaImage;->mBuffer:Ljava/nio/ByteBuffer;
 
+    .line 3683
     iput v2, v0, Landroid/media/MediaCodec$MediaImage;->mXOffset:I
 
+    .line 3684
     iput v3, v0, Landroid/media/MediaCodec$MediaImage;->mYOffset:I
 
+    .line 3685
     move-object/from16 v8, p2
 
     iput-object v8, v0, Landroid/media/MediaCodec$MediaImage;->mInfo:Ljava/nio/ByteBuffer;
 
+    .line 3688
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v9
@@ -110,32 +129,41 @@
 
     if-ne v9, v10, :cond_a
 
+    .line 3689
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v9
 
+    .line 3690
+    .local v9, "type":I
     if-ne v9, v7, :cond_9
 
+    .line 3693
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v10
 
+    .line 3694
+    .local v10, "numPlanes":I
     const/4 v11, 0x3
 
     if-ne v10, v11, :cond_8
 
+    .line 3697
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v11
 
     iput v11, v0, Landroid/media/MediaCodec$MediaImage;->mWidth:I
 
+    .line 3698
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v11
 
     iput v11, v0, Landroid/media/MediaCodec$MediaImage;->mHeight:I
 
+    .line 3699
     iget v11, v0, Landroid/media/MediaCodec$MediaImage;->mWidth:I
 
     if-lt v11, v7, :cond_7
@@ -144,49 +172,70 @@
 
     if-lt v11, v7, :cond_7
 
+    .line 3703
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v11
 
+    .line 3704
+    .local v11, "bitDepth":I
     const/16 v12, 0x8
 
     if-ne v11, v12, :cond_6
 
+    .line 3707
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v13
 
+    .line 3708
+    .local v13, "bitDepthAllocated":I
     if-ne v13, v12, :cond_5
 
+    .line 3712
     new-array v14, v10, [Landroid/media/MediaCodec$MediaImage$MediaPlane;
 
     iput-object v14, v0, Landroid/media/MediaCodec$MediaImage;->mPlanes:[Landroid/media/Image$Plane;
 
+    .line 3713
     move v14, v4
 
+    .line 3713
+    .local v14, "ix":I
     :goto_0
     if-ge v14, v10, :cond_3
 
+    .line 3714
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v15
 
+    .line 3715
+    .local v15, "planeOffset":I
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v4
 
+    .line 3716
+    .local v4, "colInc":I
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v12
 
+    .line 3717
+    .local v12, "rowInc":I
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v7
 
+    .line 3718
+    .local v7, "horiz":I
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v5
 
+    .line 3719
+    .local v5, "vert":I
     if-ne v7, v5, :cond_2
 
     if-nez v14, :cond_0
@@ -201,14 +250,17 @@
     :goto_1
     if-ne v7, v6, :cond_2
 
+    .line 3723
     const/4 v6, 0x1
 
     if-lt v4, v6, :cond_1
 
     if-lt v12, v6, :cond_1
 
+    .line 3728
     invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
+    .line 3729
     iget-object v6, v0, Landroid/media/MediaCodec$MediaImage;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->position()I
@@ -231,6 +283,7 @@
 
     invoke-virtual {v1, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 3731
     invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v6
@@ -243,6 +296,9 @@
 
     move-result v16
 
+    .line 3731
+    .end local v15    # "planeOffset":I
+    .local v18, "planeOffset":I
     add-int v6, v6, v16
 
     iget v15, v0, Landroid/media/MediaCodec$MediaImage;->mHeight:I
@@ -269,6 +325,7 @@
 
     invoke-virtual {v1, v6}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 3733
     iget-object v6, v0, Landroid/media/MediaCodec$MediaImage;->mPlanes:[Landroid/media/Image$Plane;
 
     new-instance v15, Landroid/media/MediaCodec$MediaImage$MediaPlane;
@@ -281,6 +338,12 @@
 
     aput-object v15, v6, v14
 
+    .line 3713
+    .end local v4    # "colInc":I
+    .end local v5    # "vert":I
+    .end local v7    # "horiz":I
+    .end local v12    # "rowInc":I
+    .end local v18    # "planeOffset":I
     add-int/lit8 v14, v14, 0x1
 
     move/from16 v7, v16
@@ -295,9 +358,18 @@
 
     goto :goto_0
 
+    .line 3724
+    .restart local v4    # "colInc":I
+    .restart local v5    # "vert":I
+    .restart local v7    # "horiz":I
+    .restart local v12    # "rowInc":I
+    .restart local v15    # "planeOffset":I
     :cond_1
     move/from16 v18, v15
 
+    .line 3724
+    .end local v15    # "planeOffset":I
+    .restart local v18    # "planeOffset":I
     new-instance v6, Ljava/lang/UnsupportedOperationException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -330,9 +402,15 @@
 
     throw v6
 
+    .line 3720
+    .end local v18    # "planeOffset":I
+    .restart local v15    # "planeOffset":I
     :cond_2
     move/from16 v18, v15
 
+    .line 3720
+    .end local v15    # "planeOffset":I
+    .restart local v18    # "planeOffset":I
     new-instance v6, Ljava/lang/UnsupportedOperationException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -365,11 +443,24 @@
 
     throw v6
 
+    .line 3735
+    .end local v4    # "colInc":I
+    .end local v5    # "vert":I
+    .end local v7    # "horiz":I
+    .end local v9    # "type":I
+    .end local v10    # "numPlanes":I
+    .end local v11    # "bitDepth":I
+    .end local v12    # "rowInc":I
+    .end local v13    # "bitDepthAllocated":I
+    .end local v14    # "ix":I
+    .end local v18    # "planeOffset":I
     :cond_3
     nop
 
+    .line 3740
     if-nez p8, :cond_4
 
+    .line 3741
     new-instance v5, Landroid/graphics/Rect;
 
     iget v6, v0, Landroid/media/MediaCodec$MediaImage;->mWidth:I
@@ -382,11 +473,20 @@
 
     move-object v4, v5
 
+    .line 3741
+    .end local p8    # "cropRect":Landroid/graphics/Rect;
+    .local v4, "cropRect":Landroid/graphics/Rect;
     goto :goto_2
 
+    .line 3743
+    .end local v4    # "cropRect":Landroid/graphics/Rect;
+    .restart local p8    # "cropRect":Landroid/graphics/Rect;
     :cond_4
     move-object/from16 v4, p8
 
+    .line 3743
+    .end local p8    # "cropRect":Landroid/graphics/Rect;
+    .restart local v4    # "cropRect":Landroid/graphics/Rect;
     :goto_2
     neg-int v5, v2
 
@@ -394,10 +494,19 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->offset(II)V
 
+    .line 3744
     invoke-super {v0, v4}, Landroid/media/Image;->setCropRect(Landroid/graphics/Rect;)V
 
+    .line 3745
     return-void
 
+    .line 3709
+    .end local v4    # "cropRect":Landroid/graphics/Rect;
+    .restart local v9    # "type":I
+    .restart local v10    # "numPlanes":I
+    .restart local v11    # "bitDepth":I
+    .restart local v13    # "bitDepthAllocated":I
+    .restart local p8    # "cropRect":Landroid/graphics/Rect;
     :cond_5
     new-instance v5, Ljava/lang/UnsupportedOperationException;
 
@@ -419,6 +528,8 @@
 
     throw v5
 
+    .line 3705
+    .end local v13    # "bitDepthAllocated":I
     :cond_6
     new-instance v5, Ljava/lang/UnsupportedOperationException;
 
@@ -440,6 +551,8 @@
 
     throw v5
 
+    .line 3700
+    .end local v11    # "bitDepth":I
     :cond_7
     new-instance v5, Ljava/lang/UnsupportedOperationException;
 
@@ -471,6 +584,7 @@
 
     throw v5
 
+    .line 3695
     :cond_8
     new-instance v5, Ljava/lang/RuntimeException;
 
@@ -492,6 +606,8 @@
 
     throw v5
 
+    .line 3691
+    .end local v10    # "numPlanes":I
     :cond_9
     new-instance v5, Ljava/lang/UnsupportedOperationException;
 
@@ -513,6 +629,8 @@
 
     throw v5
 
+    .line 3736
+    .end local v9    # "type":I
     :cond_a
     new-instance v5, Ljava/lang/UnsupportedOperationException;
 
@@ -524,6 +642,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 3737
     invoke-virtual/range {p2 .. p2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v7
@@ -544,18 +663,22 @@
 .method public close()V
     .locals 1
 
+    .line 3652
     iget-boolean v0, p0, Landroid/media/MediaCodec$MediaImage;->mIsImageValid:Z
 
     if-eqz v0, :cond_0
 
+    .line 3653
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Ljava/nio/NioUtils;->freeDirectBuffer(Ljava/nio/ByteBuffer;)V
 
+    .line 3654
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/MediaCodec$MediaImage;->mIsImageValid:Z
 
+    .line 3656
     :cond_0
     return-void
 .end method
@@ -563,8 +686,10 @@
 .method public getFormat()I
     .locals 1
 
+    .line 3609
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3610
     iget v0, p0, Landroid/media/MediaCodec$MediaImage;->mFormat:I
 
     return v0
@@ -573,8 +698,10 @@
 .method public getHeight()I
     .locals 1
 
+    .line 3615
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3616
     iget v0, p0, Landroid/media/MediaCodec$MediaImage;->mHeight:I
 
     return v0
@@ -583,8 +710,10 @@
 .method public getPlanes()[Landroid/media/Image$Plane;
     .locals 2
 
+    .line 3646
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3647
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage;->mPlanes:[Landroid/media/Image$Plane;
 
     iget-object v1, p0, Landroid/media/MediaCodec$MediaImage;->mPlanes:[Landroid/media/Image$Plane;
@@ -603,8 +732,10 @@
 .method public getScalingMode()I
     .locals 1
 
+    .line 3633
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3634
     const/4 v0, 0x0
 
     return v0
@@ -613,8 +744,10 @@
 .method public getTimestamp()J
     .locals 2
 
+    .line 3639
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3640
     iget-wide v0, p0, Landroid/media/MediaCodec$MediaImage;->mTimestamp:J
 
     return-wide v0
@@ -623,8 +756,10 @@
 .method public getTransform()I
     .locals 1
 
+    .line 3627
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3628
     const/4 v0, 0x0
 
     return v0
@@ -633,8 +768,10 @@
 .method public getWidth()I
     .locals 1
 
+    .line 3621
     invoke-virtual {p0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
+    .line 3622
     iget v0, p0, Landroid/media/MediaCodec$MediaImage;->mWidth:I
 
     return v0
@@ -642,15 +779,20 @@
 
 .method public setCropRect(Landroid/graphics/Rect;)V
     .locals 1
+    .param p1, "cropRect"    # Landroid/graphics/Rect;
 
+    .line 3666
     iget-boolean v0, p0, Landroid/media/MediaCodec$MediaImage;->mIsReadOnly:Z
 
     if-nez v0, :cond_0
 
+    .line 3669
     invoke-super {p0, p1}, Landroid/media/Image;->setCropRect(Landroid/graphics/Rect;)V
 
+    .line 3670
     return-void
 
+    .line 3667
     :cond_0
     new-instance v0, Ljava/nio/ReadOnlyBufferException;
 

@@ -111,6 +111,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 138
     new-instance v0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent$1;
 
     invoke-direct {v0}, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent$1;-><init>()V
@@ -122,33 +123,44 @@
 
 .method public constructor <init>(IJ)V
     .locals 0
+    .param p1, "eventName"    # I
+    .param p2, "timestamp"    # J
 
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 156
     iput p1, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mEventName:I
 
+    .line 157
     iput-wide p2, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mTimeSinceLastEvent:J
 
+    .line 158
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 161
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mEventName:I
 
+    .line 162
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mTimeSinceLastEvent:J
 
+    .line 163
     return-void
 .end method
 
@@ -157,6 +169,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 175
     const/4 v0, 0x0
 
     return v0
@@ -165,6 +178,7 @@
 .method public getEventName()I
     .locals 1
 
+    .line 166
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mEventName:I
 
     return v0
@@ -173,6 +187,7 @@
 .method public getTimeSinceLastEvent()J
     .locals 2
 
+    .line 170
     iget-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mTimeSinceLastEvent:J
 
     return-wide v0
@@ -180,14 +195,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 180
     iget v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mEventName:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 181
     iget-wide v0, p0, Landroid/telecom/ParcelableCallAnalytics$AnalyticsEvent;->mTimeSinceLastEvent:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 182
     return-void
 .end method

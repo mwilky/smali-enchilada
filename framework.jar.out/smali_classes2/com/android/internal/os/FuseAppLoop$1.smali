@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +31,9 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 2
+    .param p1, "r"    # Ljava/lang/Runnable;
 
+    .line 44
     new-instance v0, Ljava/lang/Thread;
 
     const-string v1, "FuseAppLoop"

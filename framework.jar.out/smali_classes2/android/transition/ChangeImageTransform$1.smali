@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,11 @@
 # virtual methods
 .method public evaluate(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
     .locals 1
+    .param p1, "fraction"    # F
+    .param p2, "startValue"    # Landroid/graphics/Matrix;
+    .param p3, "endValue"    # Landroid/graphics/Matrix;
 
+    .line 56
     const/4 v0, 0x0
 
     return-object v0
@@ -48,6 +53,7 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 53
     check-cast p2, Landroid/graphics/Matrix;
 
     check-cast p3, Landroid/graphics/Matrix;

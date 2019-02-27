@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/content/pm/RegisteredServicesCache;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/content/pm/RegisteredServicesCache;
 
+    .line 218
+    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$2;, "Landroid/content/pm/RegisteredServicesCache$2;"
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$2;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,12 +36,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 222
+    .local p0, "this":Landroid/content/pm/RegisteredServicesCache$2;, "Landroid/content/pm/RegisteredServicesCache$2;"
     iget-object v0, p0, Landroid/content/pm/RegisteredServicesCache$2;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     const/4 v1, 0x0
 
     invoke-static {v0, p2, v1}, Landroid/content/pm/RegisteredServicesCache;->access$100(Landroid/content/pm/RegisteredServicesCache;Landroid/content/Intent;I)V
 
+    .line 223
     return-void
 .end method

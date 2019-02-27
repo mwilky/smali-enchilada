@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/mtp/MtpDatabase;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/mtp/MtpDatabase;
 
+    .line 258
     iput-object p1, p0, Landroid/mtp/MtpDatabase$2;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-direct {p0}, Landroid/mtp/MtpStorageManager$MtpNotifier;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public sendObjectAdded(I)V
     .locals 1
+    .param p1, "id"    # I
 
+    .line 261
     iget-object v0, p0, Landroid/mtp/MtpDatabase$2;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v0}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -42,6 +46,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 262
     iget-object v0, p0, Landroid/mtp/MtpDatabase$2;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v0}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -50,13 +55,16 @@
 
     invoke-virtual {v0, p1}, Landroid/mtp/MtpServer;->sendObjectAdded(I)V
 
+    .line 263
     :cond_0
     return-void
 .end method
 
 .method public sendObjectRemoved(I)V
     .locals 1
+    .param p1, "id"    # I
 
+    .line 267
     iget-object v0, p0, Landroid/mtp/MtpDatabase$2;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v0}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -65,6 +73,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 268
     iget-object v0, p0, Landroid/mtp/MtpDatabase$2;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v0}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -73,6 +82,7 @@
 
     invoke-virtual {v0, p1}, Landroid/mtp/MtpServer;->sendObjectRemoved(I)V
 
+    .line 269
     :cond_0
     return-void
 .end method

@@ -25,6 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +33,9 @@
 
 .method public static isInteractive(I)Z
     .locals 2
+    .param p0, "wakefulness"    # I
 
+    .line 99
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_1
@@ -55,26 +58,33 @@
 
 .method public static wakefulnessToProtoEnum(I)I
     .locals 1
+    .param p0, "wakefulness"    # I
 
+    .line 80
     packed-switch p0, :pswitch_data_0
 
+    .line 90
     return p0
 
+    .line 88
     :pswitch_0
     const/4 v0, 0x3
 
     return v0
 
+    .line 86
     :pswitch_1
     const/4 v0, 0x2
 
     return v0
 
+    .line 84
     :pswitch_2
     const/4 v0, 0x1
 
     return v0
 
+    .line 82
     :pswitch_3
     const/4 v0, 0x0
 
@@ -91,30 +101,37 @@
 
 .method public static wakefulnessToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "wakefulness"    # I
 
+    .line 62
     packed-switch p0, :pswitch_data_0
 
+    .line 72
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 70
     :pswitch_0
     const-string v0, "Dozing"
 
     return-object v0
 
+    .line 68
     :pswitch_1
     const-string v0, "Dreaming"
 
     return-object v0
 
+    .line 66
     :pswitch_2
     const-string v0, "Awake"
 
     return-object v0
 
+    .line 64
     :pswitch_3
     const-string v0, "Asleep"
 
@@ -167,6 +184,7 @@
 
 .method public registerLowPowerModeObserver(ILjava/util/function/Consumer;)V
     .locals 1
+    .param p1, "serviceType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -176,12 +194,15 @@
         }
     .end annotation
 
+    .line 163
+    .local p2, "listener":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Landroid/os/PowerSaveState;>;"
     new-instance v0, Landroid/os/PowerManagerInternal$1;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/os/PowerManagerInternal$1;-><init>(Landroid/os/PowerManagerInternal;ILjava/util/function/Consumer;)V
 
     invoke-virtual {p0, v0}, Landroid/os/PowerManagerInternal;->registerLowPowerModeObserver(Landroid/os/PowerManagerInternal$LowPowerModeListener;)V
 
+    .line 174
     return-void
 .end method
 
@@ -222,6 +243,9 @@
 .end method
 
 .method public abstract setMaximumScreenOffTimeoutFromDeviceAdmin(IJ)V
+.end method
+
+.method public abstract setPackageNameWithScreenFlag(Ljava/lang/String;)V
 .end method
 
 .method public abstract setScreenBrightnessOverrideFromWindowManager(I)V

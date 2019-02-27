@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZ[B)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 3714
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$33;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p4, p0, Landroid/media/MediaPlayer2Impl$33;->val$keySetId:[B
@@ -43,6 +47,7 @@
         }
     .end annotation
 
+    .line 3717
     const-string v0, "MediaPlayer2Impl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -63,6 +68,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3719
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$33;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$4800(Landroid/media/MediaPlayer2Impl;)Ljava/lang/Object;
@@ -71,6 +77,7 @@
 
     monitor-enter v0
 
+    .line 3721
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$33;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -82,6 +89,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 3728
     :try_start_1
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$33;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -102,16 +110,22 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 3732
     nop
 
+    .line 3734
     :try_start_2
     monitor-exit v0
 
+    .line 3735
     return-void
 
+    .line 3729
     :catch_0
     move-exception v1
 
+    .line 3730
+    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "MediaPlayer2Impl"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -130,8 +144,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3731
     throw v1
 
+    .line 3722
+    .end local v1    # "e":Ljava/lang/Exception;
     :cond_0
     const-string v1, "MediaPlayer2Impl"
 
@@ -139,6 +156,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3723
     new-instance v1, Landroid/media/MediaPlayer2Impl$NoDrmSchemeExceptionImpl;
 
     const-string/jumbo v2, "restoreDrmKeys: Has to set a DRM scheme first."
@@ -147,6 +165,7 @@
 
     throw v1
 
+    .line 3734
     :catchall_0
     move-exception v1
 

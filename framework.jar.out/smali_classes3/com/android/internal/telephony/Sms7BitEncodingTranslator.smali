@@ -33,22 +33,28 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 35
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     sput-boolean v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
+    .line 36
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mIs7BitTranslationTableLoaded:Z
 
+    .line 37
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTable:Landroid/util/SparseIntArray;
 
+    .line 38
     sput-object v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
+    .line 39
     sput-object v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
+    .line 40
     sput-object v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
     return-void
@@ -57,6 +63,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -65,14 +72,20 @@
 .method private static load7BitTranslationTableFromXml()V
     .locals 8
 
+    .line 177
     const/4 v0, 0x0
 
+    .line 178
+    .local v0, "parser":Landroid/content/res/XmlResourceParser;
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v1
 
+    .line 180
+    .local v1, "r":Landroid/content/res/Resources;
     if-nez v0, :cond_1
 
+    .line 181
     sget-boolean v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v2, :cond_0
@@ -83,6 +96,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 182
     :cond_0
     const v2, 0x1170013
 
@@ -90,23 +104,29 @@
 
     move-result-object v0
 
+    .line 186
     :cond_1
     :try_start_0
     const-string v2, "SmsEnforce7BitTranslationTable"
 
     invoke-static {v0, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
+    .line 188
     :goto_0
     invoke-static {v0}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
+    .line 189
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 190
+    .local v2, "tag":Ljava/lang/String;
     sget-boolean v3, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v3, :cond_2
 
+    .line 191
     const-string v3, "Sms7BitEncodingTranslator"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -125,6 +145,7 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 193
     :cond_2
     const-string v3, "TranslationType"
 
@@ -136,16 +157,20 @@
 
     if-eqz v3, :cond_7
 
+    .line 194
     const-string v3, "Type"
 
     invoke-interface {v0, v4, v3}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 195
+    .local v3, "type":Ljava/lang/String;
     sget-boolean v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v4, :cond_3
 
+    .line 196
     const-string v4, "Sms7BitEncodingTranslator"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -164,6 +189,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 198
     :cond_3
     const-string v4, "common"
 
@@ -173,12 +199,14 @@
 
     if-eqz v4, :cond_4
 
+    .line 199
     sget-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
     sput-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTable:Landroid/util/SparseIntArray;
 
     goto :goto_1
 
+    .line 200
     :cond_4
     const-string v4, "gsm"
 
@@ -188,12 +216,14 @@
 
     if-eqz v4, :cond_5
 
+    .line 201
     sget-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
     sput-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTable:Landroid/util/SparseIntArray;
 
     goto :goto_1
 
+    .line 202
     :cond_5
     const-string v4, "cdma"
 
@@ -203,12 +233,14 @@
 
     if-eqz v4, :cond_6
 
+    .line 203
     sget-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
     sput-object v4, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTable:Landroid/util/SparseIntArray;
 
     goto :goto_1
 
+    .line 205
     :cond_6
     const-string v4, "Sms7BitEncodingTranslator"
 
@@ -228,6 +260,8 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 207
+    .end local v3    # "type":Ljava/lang/String;
     :goto_1
     goto :goto_2
 
@@ -244,6 +278,7 @@
 
     if-eqz v3, :cond_a
 
+    .line 208
     const-string v3, "from"
 
     const/4 v5, -0x1
@@ -252,20 +287,26 @@
 
     move-result v3
 
+    .line 210
+    .local v3, "from":I
     const-string v6, "to"
 
     invoke-interface {v0, v4, v6, v5}, Landroid/content/res/XmlResourceParser;->getAttributeUnsignedIntValue(Ljava/lang/String;Ljava/lang/String;I)I
 
     move-result v4
 
+    .line 212
+    .local v4, "to":I
     if-eq v3, v5, :cond_9
 
     if-eq v4, v5, :cond_9
 
+    .line 213
     sget-boolean v5, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v5, :cond_8
 
+    .line 214
     const-string v5, "Sms7BitEncodingTranslator"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -280,6 +321,7 @@
 
     move-result-object v7
 
+    .line 215
     invoke-virtual {v7}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v7
@@ -294,6 +336,7 @@
 
     move-result-object v7
 
+    .line 216
     invoke-virtual {v7}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v7
@@ -304,8 +347,10 @@
 
     move-result-object v6
 
+    .line 214
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 218
     :cond_8
     sget-object v5, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTable:Landroid/util/SparseIntArray;
 
@@ -313,6 +358,7 @@
 
     goto :goto_2
 
+    .line 220
     :cond_9
     const-string v5, "Sms7BitEncodingTranslator"
 
@@ -320,9 +366,14 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 225
+    .end local v2    # "tag":Ljava/lang/String;
+    .end local v3    # "from":I
+    .end local v4    # "to":I
     :goto_2
     goto/16 :goto_0
 
+    .line 226
     :cond_a
     sget-boolean v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
@@ -337,6 +388,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 230
     :cond_b
     instance-of v2, v0, Landroid/content/res/XmlResourceParser;
 
@@ -349,9 +401,12 @@
 
     goto :goto_4
 
+    .line 227
     :catch_0
     move-exception v2
 
+    .line 228
+    .local v2, "e":Ljava/lang/Exception;
     :try_start_1
     const-string v3, "Sms7BitEncodingTranslator"
 
@@ -361,21 +416,27 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 230
+    .end local v2    # "e":Ljava/lang/Exception;
     instance-of v2, v0, Landroid/content/res/XmlResourceParser;
 
     if-eqz v2, :cond_c
 
+    .line 231
     :goto_3
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
+    .line 234
     :cond_c
     return-void
 
+    .line 230
     :goto_4
     instance-of v3, v0, Landroid/content/res/XmlResourceParser;
 
     if-eqz v3, :cond_d
 
+    .line 231
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_d
@@ -384,9 +445,13 @@
 
 .method private static noTranslationNeeded(CZ)Z
     .locals 2
+    .param p0, "c"    # C
+    .param p1, "isCdmaFormat"    # Z
 
+    .line 154
     if-eqz p1, :cond_1
 
+    .line 155
     invoke-static {p0}, Lcom/android/internal/telephony/GsmAlphabet;->isGsmSeptets(C)Z
 
     move-result v0
@@ -413,6 +478,7 @@
     :goto_0
     return v0
 
+    .line 158
     :cond_1
     invoke-static {p0}, Lcom/android/internal/telephony/GsmAlphabet;->isGsmSeptets(C)Z
 
@@ -423,59 +489,74 @@
 
 .method public static translate(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 5
+    .param p0, "message"    # Ljava/lang/CharSequence;
 
+    .line 61
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
+    .line 62
     const-string v1, "Sms7BitEncodingTranslator"
 
     const-string v2, "Null message can not be translated"
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 63
     return-object v0
 
+    .line 66
     :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
+    .line 67
+    .local v1, "size":I
     if-gtz v1, :cond_1
 
+    .line 68
     const-string v0, ""
 
     return-object v0
 
+    .line 71
     :cond_1
     sget-boolean v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mIs7BitTranslationTableLoaded:Z
 
     if-nez v2, :cond_2
 
+    .line 72
     new-instance v2, Landroid/util/SparseIntArray;
 
     invoke-direct {v2}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
+    .line 73
     new-instance v2, Landroid/util/SparseIntArray;
 
     invoke-direct {v2}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
+    .line 74
     new-instance v2, Landroid/util/SparseIntArray;
 
     invoke-direct {v2}, Landroid/util/SparseIntArray;-><init>()V
 
     sput-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
+    .line 75
     invoke-static {}, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->load7BitTranslationTableFromXml()V
 
+    .line 76
     const/4 v2, 0x1
 
     sput-boolean v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mIs7BitTranslationTableLoaded:Z
 
+    .line 79
     :cond_2
     sget-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
@@ -496,6 +577,7 @@
 
     sget-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
+    .line 80
     invoke-virtual {v2}, Landroid/util/SparseIntArray;->size()I
 
     move-result v2
@@ -509,24 +591,32 @@
 
     sget-object v2, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
+    .line 81
     invoke-virtual {v2}, Landroid/util/SparseIntArray;->size()I
 
     move-result v2
 
     if-lez v2, :cond_7
 
+    .line 82
     :cond_5
     new-array v0, v1, [C
 
+    .line 83
+    .local v0, "output":[C
     invoke-static {}, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->useCdmaFormatForMoSms()Z
 
     move-result v2
 
+    .line 84
+    .local v2, "isCdmaFormat":Z
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_0
     if-ge v3, v1, :cond_6
 
+    .line 85
     invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -537,10 +627,13 @@
 
     aput-char v4, v0, v3
 
+    .line 84
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 88
+    .end local v3    # "i":I
     :cond_6
     invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
@@ -548,23 +641,31 @@
 
     return-object v3
 
+    .line 91
+    .end local v0    # "output":[C
+    .end local v2    # "isCdmaFormat":Z
     :cond_7
     return-object v0
 .end method
 
 .method private static translateIfNeeded(CZ)C
     .locals 4
+    .param p0, "c"    # C
+    .param p1, "isCdmaFormat"    # Z
 
+    .line 106
     invoke-static {p0, p1}, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->noTranslationNeeded(CZ)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
+    .line 107
     sget-boolean v0, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v0, :cond_0
 
+    .line 108
     const-string v0, "Sms7BitEncodingTranslator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -587,33 +688,42 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 110
     :cond_0
     return p0
 
+    .line 120
     :cond_1
     const/4 v0, -0x1
 
+    .line 122
+    .local v0, "translation":I
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
     const/4 v2, -0x1
 
     if-eqz v1, :cond_2
 
+    .line 123
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCommon:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p0, v2}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v0
 
+    .line 126
     :cond_2
     if-ne v0, v2, :cond_4
 
+    .line 127
     if-eqz p1, :cond_3
 
+    .line 128
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
     if-eqz v1, :cond_4
 
+    .line 129
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableCDMA:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p0, v2}, Landroid/util/SparseIntArray;->get(II)I
@@ -622,25 +732,30 @@
 
     goto :goto_0
 
+    .line 132
     :cond_3
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
     if-eqz v1, :cond_4
 
+    .line 133
     sget-object v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->mTranslationTableGSM:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p0, v2}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v0
 
+    .line 138
     :cond_4
     :goto_0
     if-eq v0, v2, :cond_6
 
+    .line 139
     sget-boolean v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v1, :cond_5
 
+    .line 140
     const-string v1, "Sms7BitEncodingTranslator"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -663,6 +778,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 141
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -685,18 +801,22 @@
 
     move-result-object v2
 
+    .line 140
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 143
     :cond_5
     int-to-char v1, v0
 
     return v1
 
+    .line 145
     :cond_6
     sget-boolean v1, Lcom/android/internal/telephony/Sms7BitEncodingTranslator;->DBG:Z
 
     if-eqz v1, :cond_7
 
+    .line 146
     const-string v1, "Sms7BitEncodingTranslator"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -723,6 +843,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 149
     :cond_7
     const/16 v1, 0x20
 
@@ -732,6 +853,7 @@
 .method private static useCdmaFormatForMoSms()Z
     .locals 2
 
+    .line 163
     invoke-static {}, Landroid/telephony/SmsManager;->getDefault()Landroid/telephony/SmsManager;
 
     move-result-object v0
@@ -742,6 +864,7 @@
 
     if-nez v0, :cond_1
 
+    .line 165
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -764,6 +887,7 @@
     :goto_0
     return v0
 
+    .line 169
     :cond_1
     const-string v0, "3gpp2"
 

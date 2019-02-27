@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1003
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,22 +36,28 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/view/autofill/AutofillManager;
     .locals 4
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 1007
     const-string v0, "autofill"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 1008
+    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/view/autofill/IAutoFillManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/view/autofill/IAutoFillManager;
 
     move-result-object v1
 
+    .line 1009
+    .local v1, "service":Landroid/view/autofill/IAutoFillManager;
     new-instance v2, Landroid/view/autofill/AutofillManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -70,6 +77,7 @@
         }
     .end annotation
 
+    .line 1003
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$92;->createService(Landroid/app/ContextImpl;)Landroid/view/autofill/AutofillManager;
 
     move-result-object p1

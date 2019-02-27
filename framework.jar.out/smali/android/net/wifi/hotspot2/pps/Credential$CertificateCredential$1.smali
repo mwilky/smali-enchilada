@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,29 +40,36 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 606
     new-instance v0, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
     invoke-direct {v0}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;-><init>()V
 
+    .line 607
+    .local v0, "certCredential":Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;->setCertType(Ljava/lang/String;)V
 
+    .line 608
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;->setCertSha256Fingerprint([B)V
 
+    .line 609
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 603
     invoke-virtual {p0, p1}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
     move-result-object p1
@@ -71,7 +79,9 @@
 
 .method public newArray(I)[Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 614
     new-array v0, p1, [Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
     return-object v0
@@ -80,6 +90,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 603
     invoke-virtual {p0, p1}, Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential$1;->newArray(I)[Landroid/net/wifi/hotspot2/pps/Credential$CertificateCredential;
 
     move-result-object p1

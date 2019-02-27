@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/SwipeDismissLayout;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/SwipeDismissLayout;
 
+    .line 134
     iput-object p1, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,6 +34,7 @@
 .method public static synthetic lambda$onReceive$0(Lcom/android/internal/widget/SwipeDismissLayout$1;)V
     .locals 1
 
+    .line 138
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/SwipeDismissLayout;->access$000(Lcom/android/internal/widget/SwipeDismissLayout;)Z
@@ -40,22 +43,26 @@
 
     if-eqz v0, :cond_0
 
+    .line 139
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/SwipeDismissLayout;->access$100(Lcom/android/internal/widget/SwipeDismissLayout;)V
 
     goto :goto_0
 
+    .line 141
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/SwipeDismissLayout;->cancel()V
 
+    .line 143
     :goto_0
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/SwipeDismissLayout;->access$200(Lcom/android/internal/widget/SwipeDismissLayout;)V
 
+    .line 144
     return-void
 .end method
 
@@ -63,7 +70,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 137
     iget-object v0, p0, Lcom/android/internal/widget/SwipeDismissLayout$1;->this$0:Lcom/android/internal/widget/SwipeDismissLayout;
 
     new-instance v1, Lcom/android/internal/widget/-$$Lambda$SwipeDismissLayout$1$NDXsqpv65OVP2OutTHt-hDxJywg;
@@ -72,5 +82,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/SwipeDismissLayout;->post(Ljava/lang/Runnable;)Z
 
+    .line 145
     return-void
 .end method

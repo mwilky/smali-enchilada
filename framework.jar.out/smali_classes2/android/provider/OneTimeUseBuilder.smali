@@ -22,8 +22,11 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 29
+    .local p0, "this":Landroid/provider/OneTimeUseBuilder;, "Landroid/provider/OneTimeUseBuilder<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 30
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/provider/OneTimeUseBuilder;->used:Z
@@ -44,12 +47,16 @@
 .method protected checkNotUsed()V
     .locals 2
 
+    .line 38
+    .local p0, "this":Landroid/provider/OneTimeUseBuilder;, "Landroid/provider/OneTimeUseBuilder<TT;>;"
     iget-boolean v0, p0, Landroid/provider/OneTimeUseBuilder;->used:Z
 
     if-nez v0, :cond_0
 
+    .line 42
     return-void
 
+    .line 39
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -63,11 +70,15 @@
 .method protected markUsed()V
     .locals 1
 
+    .line 33
+    .local p0, "this":Landroid/provider/OneTimeUseBuilder;, "Landroid/provider/OneTimeUseBuilder<TT;>;"
     invoke-virtual {p0}, Landroid/provider/OneTimeUseBuilder;->checkNotUsed()V
 
+    .line 34
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/provider/OneTimeUseBuilder;->used:Z
 
+    .line 35
     return-void
 .end method

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/impl/CameraDeviceImpl;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
+    .line 153
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,14 +39,18 @@
 .method public run()V
     .locals 3
 
+    .line 156
     const/4 v0, 0x0
 
+    .line 157
+    .local v0, "sessionCallback":Landroid/hardware/camera2/impl/CameraDeviceImpl$StateCallbackKK;
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     iget-object v1, v1, Landroid/hardware/camera2/impl/CameraDeviceImpl;->mInterfaceLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 158
     :try_start_0
     iget-object v2, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
@@ -58,6 +64,7 @@
 
     return-void
 
+    .line 160
     :cond_0
     iget-object v2, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
@@ -67,19 +74,24 @@
 
     move-object v0, v2
 
+    .line 161
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 162
     if-eqz v0, :cond_1
 
+    .line 163
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$2;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/impl/CameraDeviceImpl$StateCallbackKK;->onUnconfigured(Landroid/hardware/camera2/CameraDevice;)V
 
+    .line 165
     :cond_1
     return-void
 
+    .line 161
     :catchall_0
     move-exception v2
 

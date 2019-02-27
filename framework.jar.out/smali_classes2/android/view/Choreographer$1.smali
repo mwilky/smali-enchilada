@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 109
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -36,12 +37,16 @@
 .method protected initialValue()Landroid/view/Choreographer;
     .locals 4
 
+    .line 112
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
+    .line 113
+    .local v0, "looper":Landroid/os/Looper;
     if-eqz v0, :cond_1
 
+    .line 116
     new-instance v1, Landroid/view/Choreographer;
 
     const/4 v2, 0x0
@@ -50,17 +55,23 @@
 
     invoke-direct {v1, v0, v2, v3}, Landroid/view/Choreographer;-><init>(Landroid/os/Looper;ILandroid/view/Choreographer$1;)V
 
+    .line 117
+    .local v1, "choreographer":Landroid/view/Choreographer;
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v2
 
     if-ne v0, v2, :cond_0
 
+    .line 118
     invoke-static {v1}, Landroid/view/Choreographer;->access$102(Landroid/view/Choreographer;)Landroid/view/Choreographer;
 
+    .line 120
     :cond_0
     return-object v1
 
+    .line 114
+    .end local v1    # "choreographer":Landroid/view/Choreographer;
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -74,6 +85,7 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
+    .line 109
     invoke-virtual {p0}, Landroid/view/Choreographer$1;->initialValue()Landroid/view/Choreographer;
 
     move-result-object v0

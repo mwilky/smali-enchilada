@@ -38,6 +38,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .line 183
     new-instance v0, Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     const-string v1, "DSDS"
@@ -48,6 +49,7 @@
 
     sput-object v0, Landroid/telephony/TelephonyManager$MultiSimVariants;->DSDS:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
+    .line 184
     new-instance v0, Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     const-string v1, "DSDA"
@@ -58,6 +60,7 @@
 
     sput-object v0, Landroid/telephony/TelephonyManager$MultiSimVariants;->DSDA:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
+    .line 185
     new-instance v0, Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     const-string v1, "TSTS"
@@ -68,6 +71,7 @@
 
     sput-object v0, Landroid/telephony/TelephonyManager$MultiSimVariants;->TSTS:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
+    .line 186
     new-instance v0, Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     const-string v1, "UNKNOWN"
@@ -78,6 +82,7 @@
 
     sput-object v0, Landroid/telephony/TelephonyManager$MultiSimVariants;->UNKNOWN:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
+    .line 182
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/telephony/TelephonyManager$MultiSimVariants;
@@ -111,6 +116,7 @@
         }
     .end annotation
 
+    .line 182
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -118,7 +124,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/telephony/TelephonyManager$MultiSimVariants;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 182
     const-class v0, Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -133,6 +141,7 @@
 .method public static values()[Landroid/telephony/TelephonyManager$MultiSimVariants;
     .locals 1
 
+    .line 182
     sget-object v0, Landroid/telephony/TelephonyManager$MultiSimVariants;->$VALUES:[Landroid/telephony/TelephonyManager$MultiSimVariants;
 
     invoke-virtual {v0}, [Landroid/telephony/TelephonyManager$MultiSimVariants;->clone()Ljava/lang/Object;

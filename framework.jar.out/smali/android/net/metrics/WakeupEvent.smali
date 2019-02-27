@@ -29,6 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,6 +40,7 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
+    .line 42
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ", "
@@ -49,6 +51,8 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
+    .line 43
+    .local v0, "j":Ljava/util/StringJoiner;
     const-string v1, "%tT.%tL"
 
     const/4 v2, 0x2
@@ -81,10 +85,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 44
     iget-object v1, p0, Landroid/net/metrics/WakeupEvent;->iface:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 45
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -107,6 +113,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 46
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -129,6 +136,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 47
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -147,10 +155,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 48
     iget v1, p0, Landroid/net/metrics/WakeupEvent;->ipNextHeader:I
 
     if-lez v1, :cond_1
 
+    .line 49
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -169,6 +179,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 50
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -187,6 +198,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 51
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -205,12 +217,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 52
     iget v1, p0, Landroid/net/metrics/WakeupEvent;->srcPort:I
 
     const/4 v2, -0x1
 
     if-le v1, v2, :cond_0
 
+    .line 53
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -229,11 +243,13 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 55
     :cond_0
     iget v1, p0, Landroid/net/metrics/WakeupEvent;->dstPort:I
 
     if-le v1, v2, :cond_1
 
+    .line 56
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -252,6 +268,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
+    .line 59
     :cond_1
     invoke-virtual {v0}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
 

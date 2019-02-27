@@ -33,7 +33,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/job/StateControllerProto$ContentObserverController;)V
     .locals 0
+    .param p1, "this$1"    # Lcom/android/server/job/StateControllerProto$ContentObserverController;
 
+    .line 118
     iput-object p1, p0, Lcom/android/server/job/StateControllerProto$ContentObserverController$Observer;->this$1:Lcom/android/server/job/StateControllerProto$ContentObserverController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

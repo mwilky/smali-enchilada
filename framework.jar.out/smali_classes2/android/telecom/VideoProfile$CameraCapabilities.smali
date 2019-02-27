@@ -43,6 +43,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 390
     new-instance v0, Landroid/telecom/VideoProfile$CameraCapabilities$1;
 
     invoke-direct {v0}, Landroid/telecom/VideoProfile$CameraCapabilities$1;-><init>()V
@@ -54,29 +55,43 @@
 
 .method public constructor <init>(II)V
     .locals 2
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
+    .line 367
     const/4 v0, 0x0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/telecom/VideoProfile$CameraCapabilities;-><init>(IIZF)V
 
+    .line 368
     return-void
 .end method
 
 .method public constructor <init>(IIZF)V
     .locals 0
+    .param p1, "width"    # I
+    .param p2, "height"    # I
+    .param p3, "zoomSupported"    # Z
+    .param p4, "maxZoom"    # F
 
+    .line 380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 381
     iput p1, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mWidth:I
 
+    .line 382
     iput p2, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mHeight:I
 
+    .line 383
     iput-boolean p3, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mZoomSupported:Z
 
+    .line 384
     iput p4, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mMaxZoom:F
 
+    .line 385
     return-void
 .end method
 
@@ -85,6 +100,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 423
     const/4 v0, 0x0
 
     return v0
@@ -93,6 +109,7 @@
 .method public getHeight()I
     .locals 1
 
+    .line 452
     iget v0, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mHeight:I
 
     return v0
@@ -101,6 +118,7 @@
 .method public getMaxZoom()F
     .locals 1
 
+    .line 468
     iget v0, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mMaxZoom:F
 
     return v0
@@ -109,6 +127,7 @@
 .method public getWidth()I
     .locals 1
 
+    .line 445
     iget v0, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mWidth:I
 
     return v0
@@ -117,6 +136,7 @@
 .method public isZoomSupported()Z
     .locals 1
 
+    .line 460
     iget-boolean v0, p0, Landroid/telecom/VideoProfile$CameraCapabilities;->mZoomSupported:Z
 
     return v0
@@ -124,19 +144,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 435
     invoke-virtual {p0}, Landroid/telecom/VideoProfile$CameraCapabilities;->getWidth()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 436
     invoke-virtual {p0}, Landroid/telecom/VideoProfile$CameraCapabilities;->getHeight()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 437
     invoke-virtual {p0}, Landroid/telecom/VideoProfile$CameraCapabilities;->isZoomSupported()Z
 
     move-result v0
@@ -145,11 +170,13 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 438
     invoke-virtual {p0}, Landroid/telecom/VideoProfile$CameraCapabilities;->getMaxZoom()F
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 439
     return-void
 .end method

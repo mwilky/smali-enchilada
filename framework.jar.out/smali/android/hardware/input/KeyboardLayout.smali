@@ -51,6 +51,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 42
     new-instance v0, Landroid/hardware/input/KeyboardLayout$1;
 
     invoke-direct {v0}, Landroid/hardware/input/KeyboardLayout$1;-><init>()V
@@ -62,33 +63,40 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 64
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mDescriptor:Ljava/lang/String;
 
+    .line 65
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
+    .line 66
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
+    .line 67
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/input/KeyboardLayout;->mPriority:I
 
+    .line 68
     sget-object v0, Landroid/os/LocaleList;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -99,24 +107,30 @@
 
     iput-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLocales:Landroid/os/LocaleList;
 
+    .line 69
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/input/KeyboardLayout;->mVendorId:I
 
+    .line 70
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/input/KeyboardLayout;->mProductId:I
 
+    .line 71
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/input/KeyboardLayout$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/hardware/input/KeyboardLayout$1;
 
+    .line 31
     invoke-direct {p0, p1}, Landroid/hardware/input/KeyboardLayout;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -124,23 +138,39 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/os/LocaleList;II)V
     .locals 0
+    .param p1, "descriptor"    # Ljava/lang/String;
+    .param p2, "label"    # Ljava/lang/String;
+    .param p3, "collection"    # Ljava/lang/String;
+    .param p4, "priority"    # I
+    .param p5, "locales"    # Landroid/os/LocaleList;
+    .param p6, "vid"    # I
+    .param p7, "pid"    # I
 
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 54
     iput-object p1, p0, Landroid/hardware/input/KeyboardLayout;->mDescriptor:Ljava/lang/String;
 
+    .line 55
     iput-object p2, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
+    .line 56
     iput-object p3, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
+    .line 57
     iput p4, p0, Landroid/hardware/input/KeyboardLayout;->mPriority:I
 
+    .line 58
     iput-object p5, p0, Landroid/hardware/input/KeyboardLayout;->mLocales:Landroid/os/LocaleList;
 
+    .line 59
     iput p6, p0, Landroid/hardware/input/KeyboardLayout;->mVendorId:I
 
+    .line 60
     iput p7, p0, Landroid/hardware/input/KeyboardLayout;->mProductId:I
 
+    .line 61
     return-void
 .end method
 
@@ -148,7 +178,9 @@
 # virtual methods
 .method public compareTo(Landroid/hardware/input/KeyboardLayout;)I
     .locals 3
+    .param p1, "another"    # Landroid/hardware/input/KeyboardLayout;
 
+    .line 148
     iget v0, p1, Landroid/hardware/input/KeyboardLayout;->mPriority:I
 
     iget v1, p0, Landroid/hardware/input/KeyboardLayout;->mPriority:I
@@ -157,8 +189,11 @@
 
     move-result v0
 
+    .line 149
+    .local v0, "result":I
     if-nez v0, :cond_0
 
+    .line 150
     iget-object v1, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
     iget-object v2, p1, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
@@ -167,9 +202,11 @@
 
     move-result v0
 
+    .line 152
     :cond_0
     if-nez v0, :cond_1
 
+    .line 153
     iget-object v1, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
     iget-object v2, p1, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
@@ -178,6 +215,7 @@
 
     move-result v0
 
+    .line 155
     :cond_1
     return v0
 .end method
@@ -185,6 +223,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
+    .line 31
     check-cast p1, Landroid/hardware/input/KeyboardLayout;
 
     invoke-virtual {p0, p1}, Landroid/hardware/input/KeyboardLayout;->compareTo(Landroid/hardware/input/KeyboardLayout;)I
@@ -197,6 +236,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 130
     const/4 v0, 0x0
 
     return v0
@@ -205,6 +245,7 @@
 .method public getCollection()Ljava/lang/String;
     .locals 1
 
+    .line 98
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
     return-object v0
@@ -213,6 +254,7 @@
 .method public getDescriptor()Ljava/lang/String;
     .locals 1
 
+    .line 81
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mDescriptor:Ljava/lang/String;
 
     return-object v0
@@ -221,6 +263,7 @@
 .method public getLabel()Ljava/lang/String;
     .locals 1
 
+    .line 89
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
     return-object v0
@@ -229,6 +272,7 @@
 .method public getLocales()Landroid/os/LocaleList;
     .locals 1
 
+    .line 107
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLocales:Landroid/os/LocaleList;
 
     return-object v0
@@ -237,6 +281,7 @@
 .method public getProductId()I
     .locals 1
 
+    .line 125
     iget v0, p0, Landroid/hardware/input/KeyboardLayout;->mProductId:I
 
     return v0
@@ -245,6 +290,7 @@
 .method public getVendorId()I
     .locals 1
 
+    .line 116
     iget v0, p0, Landroid/hardware/input/KeyboardLayout;->mVendorId:I
 
     return v0
@@ -253,6 +299,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 160
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
@@ -261,10 +308,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 161
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
     return-object v0
 
+    .line 163
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -291,36 +340,46 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 135
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mDescriptor:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 136
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLabel:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 137
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mCollection:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 138
     iget v0, p0, Landroid/hardware/input/KeyboardLayout;->mPriority:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 139
     iget-object v0, p0, Landroid/hardware/input/KeyboardLayout;->mLocales:Landroid/os/LocaleList;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Landroid/os/LocaleList;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 140
     iget v0, p0, Landroid/hardware/input/KeyboardLayout;->mVendorId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 141
     iget v0, p0, Landroid/hardware/input/KeyboardLayout;->mProductId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 142
     return-void
 .end method

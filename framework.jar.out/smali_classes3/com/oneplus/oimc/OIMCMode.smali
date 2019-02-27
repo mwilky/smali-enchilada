@@ -25,6 +25,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 33
     const-string v0, "GameMode"
 
     const-string v1, "ReadMode"
@@ -45,6 +46,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

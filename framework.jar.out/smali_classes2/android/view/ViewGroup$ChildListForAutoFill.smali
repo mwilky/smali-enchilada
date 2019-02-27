@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 8465
     new-instance v0, Landroid/util/Pools$SimplePool;
 
     const/16 v1, 0x20
@@ -54,6 +55,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 8462
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     return-void
@@ -62,6 +64,7 @@
 .method public static obtain()Landroid/view/ViewGroup$ChildListForAutoFill;
     .locals 2
 
+    .line 8469
     sget-object v0, Landroid/view/ViewGroup$ChildListForAutoFill;->sPool:Landroid/util/Pools$SimplePool;
 
     invoke-virtual {v0}, Landroid/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
@@ -70,14 +73,18 @@
 
     check-cast v0, Landroid/view/ViewGroup$ChildListForAutoFill;
 
+    .line 8470
+    .local v0, "list":Landroid/view/ViewGroup$ChildListForAutoFill;
     if-nez v0, :cond_0
 
+    .line 8471
     new-instance v1, Landroid/view/ViewGroup$ChildListForAutoFill;
 
     invoke-direct {v1}, Landroid/view/ViewGroup$ChildListForAutoFill;-><init>()V
 
     move-object v0, v1
 
+    .line 8473
     :cond_0
     return-object v0
 .end method
@@ -87,11 +94,14 @@
 .method public recycle()V
     .locals 1
 
+    .line 8477
     invoke-virtual {p0}, Landroid/view/ViewGroup$ChildListForAutoFill;->clear()V
 
+    .line 8478
     sget-object v0, Landroid/view/ViewGroup$ChildListForAutoFill;->sPool:Landroid/util/Pools$SimplePool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
+    .line 8479
     return-void
 .end method

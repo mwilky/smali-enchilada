@@ -41,7 +41,9 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeech;Ljava/lang/CharSequence;ILandroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/speech/tts/TextToSpeech;
 
+    .line 1105
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$2;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$2;->val$text:Ljava/lang/CharSequence;
@@ -61,12 +63,14 @@
 # virtual methods
 .method public run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
     .locals 8
+    .param p1, "service"    # Landroid/speech/tts/ITextToSpeechService;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 1108
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$2;->this$0:Landroid/speech/tts/TextToSpeech;
 
     invoke-static {v0}, Landroid/speech/tts/TextToSpeech;->access$400(Landroid/speech/tts/TextToSpeech;)Ljava/util/Map;
@@ -81,8 +85,11 @@
 
     check-cast v0, Landroid/net/Uri;
 
+    .line 1109
+    .local v0, "utteranceUri":Landroid/net/Uri;
     if-eqz v0, :cond_0
 
+    .line 1110
     iget-object v1, p0, Landroid/speech/tts/TextToSpeech$2;->this$0:Landroid/speech/tts/TextToSpeech;
 
     invoke-static {v1}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Landroid/os/IBinder;
@@ -95,12 +102,14 @@
 
     iget-object v3, p0, Landroid/speech/tts/TextToSpeech$2;->val$params:Landroid/os/Bundle;
 
+    .line 1111
     invoke-static {v1, v3}, Landroid/speech/tts/TextToSpeech;->access$500(Landroid/speech/tts/TextToSpeech;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object v5
 
     iget-object v6, p0, Landroid/speech/tts/TextToSpeech$2;->val$utteranceId:Ljava/lang/String;
 
+    .line 1110
     move-object v1, p1
 
     move-object v3, v0
@@ -115,6 +124,7 @@
 
     return-object v1
 
+    .line 1113
     :cond_0
     iget-object v1, p0, Landroid/speech/tts/TextToSpeech$2;->this$0:Landroid/speech/tts/TextToSpeech;
 
@@ -157,6 +167,7 @@
         }
     .end annotation
 
+    .line 1105
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$2;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object p1

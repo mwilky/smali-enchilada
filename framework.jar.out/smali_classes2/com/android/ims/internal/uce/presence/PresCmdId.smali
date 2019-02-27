@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 84
     new-instance v0, Lcom/android/ims/internal/uce/presence/PresCmdId$1;
 
     invoke-direct {v0}, Lcom/android/ims/internal/uce/presence/PresCmdId$1;-><init>()V
@@ -52,32 +53,43 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 45
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
+    .line 69
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 45
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
+    .line 100
     invoke-virtual {p0, p1}, Lcom/android/ims/internal/uce/presence/PresCmdId;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 101
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/ims/internal/uce/presence/PresCmdId$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Lcom/android/ims/internal/uce/presence/PresCmdId$1;
 
+    .line 23
     invoke-direct {p0, p1}, Lcom/android/ims/internal/uce/presence/PresCmdId;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -88,6 +100,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 75
     const/4 v0, 0x0
 
     return v0
@@ -96,6 +109,7 @@
 .method public getCmdId()I
     .locals 1
 
+    .line 53
     iget v0, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
     return v0
@@ -103,30 +117,40 @@
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 105
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
+    .line 106
     return-void
 .end method
 
 .method public setCmdId(I)V
     .locals 0
+    .param p1, "nCmdId"    # I
 
+    .line 61
     iput p1, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
+    .line 62
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 80
     iget v0, p0, Lcom/android/ims/internal/uce/presence/PresCmdId;->mCmdId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 81
     return-void
 .end method

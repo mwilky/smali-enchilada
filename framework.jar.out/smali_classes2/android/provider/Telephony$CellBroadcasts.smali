@@ -71,6 +71,7 @@
 .method static constructor <clinit>()V
     .locals 21
 
+    .line 2995
     const-string v0, "content://cellbroadcasts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -79,6 +80,7 @@
 
     sput-object v0, Landroid/provider/Telephony$CellBroadcasts;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 3132
     const-string v1, "_id"
 
     const-string v2, "geo_scope"
@@ -131,6 +133,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 2990
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

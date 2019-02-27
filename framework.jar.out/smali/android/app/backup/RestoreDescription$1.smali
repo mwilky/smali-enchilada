@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,13 +40,17 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/backup/RestoreDescription;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 95
     new-instance v0, Landroid/app/backup/RestoreDescription;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Landroid/app/backup/RestoreDescription;-><init>(Landroid/os/Parcel;Landroid/app/backup/RestoreDescription$1;)V
 
+    .line 96
+    .local v0, "unparceled":Landroid/app/backup/RestoreDescription;
     const-string v1, "NO_MORE_PACKAGES"
 
     invoke-static {v0}, Landroid/app/backup/RestoreDescription;->access$100(Landroid/app/backup/RestoreDescription;)Ljava/lang/String;
@@ -58,13 +63,16 @@
 
     if-eqz v1, :cond_0
 
+    .line 97
     sget-object v1, Landroid/app/backup/RestoreDescription;->NO_MORE_PACKAGES:Landroid/app/backup/RestoreDescription;
 
     goto :goto_0
 
+    .line 98
     :cond_0
     nop
 
+    .line 96
     move-object v1, v0
 
     :goto_0
@@ -74,6 +82,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 93
     invoke-virtual {p0, p1}, Landroid/app/backup/RestoreDescription$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/backup/RestoreDescription;
 
     move-result-object p1
@@ -83,7 +92,9 @@
 
 .method public newArray(I)[Landroid/app/backup/RestoreDescription;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 102
     new-array v0, p1, [Landroid/app/backup/RestoreDescription;
 
     return-object v0
@@ -92,6 +103,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 93
     invoke-virtual {p0, p1}, Landroid/app/backup/RestoreDescription$1;->newArray(I)[Landroid/app/backup/RestoreDescription;
 
     move-result-object p1

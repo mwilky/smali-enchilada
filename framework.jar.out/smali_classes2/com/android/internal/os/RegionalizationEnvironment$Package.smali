@@ -25,15 +25,23 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "priority"    # I
+    .param p3, "storage"    # Ljava/lang/String;
 
+    .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 282
     iput-object p1, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mName:Ljava/lang/String;
 
+    .line 283
     iput p2, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mPriority:I
 
+    .line 284
     iput-object p3, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mStorage:Ljava/lang/String;
 
+    .line 285
     return-void
 .end method
 
@@ -42,6 +50,7 @@
 .method public getDirectory()Ljava/io/File;
     .locals 3
 
+    .line 300
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mStorage:Ljava/lang/String;
@@ -56,6 +65,7 @@
 .method public getExcludedListFilePath()Ljava/lang/String;
     .locals 2
 
+    .line 304
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,6 +94,7 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .line 288
     iget-object v0, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mName:Ljava/lang/String;
 
     return-object v0
@@ -92,6 +103,7 @@
 .method public getPriority()I
     .locals 1
 
+    .line 292
     iget v0, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mPriority:I
 
     return v0
@@ -100,6 +112,7 @@
 .method public getStoragePos()Ljava/lang/String;
     .locals 1
 
+    .line 296
     iget-object v0, p0, Lcom/android/internal/os/RegionalizationEnvironment$Package;->mStorage:Ljava/lang/String;
 
     return-object v0

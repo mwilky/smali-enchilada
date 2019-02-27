@@ -30,8 +30,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 119
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -45,9 +47,12 @@
 # virtual methods
 .method public addAccessPoint(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/rtt/RangingRequest$Builder;
     .locals 2
+    .param p1, "apInfo"    # Landroid/net/wifi/ScanResult;
 
+    .line 136
     if-eqz p1, :cond_0
 
+    .line 139
     invoke-static {p1}, Landroid/net/wifi/rtt/ResponderConfig;->fromScanResult(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/rtt/ResponderConfig;
 
     move-result-object v0
@@ -58,6 +63,7 @@
 
     return-object v0
 
+    .line 137
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -80,8 +86,11 @@
         }
     .end annotation
 
+    .line 157
+    .local p1, "apInfos":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-eqz p1, :cond_1
 
+    .line 160
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -99,13 +108,19 @@
 
     check-cast v1, Landroid/net/wifi/ScanResult;
 
+    .line 161
+    .local v1, "scanResult":Landroid/net/wifi/ScanResult;
     invoke-virtual {p0, v1}, Landroid/net/wifi/rtt/RangingRequest$Builder;->addAccessPoint(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/rtt/RangingRequest$Builder;
 
+    .line 162
+    .end local v1    # "scanResult":Landroid/net/wifi/ScanResult;
     goto :goto_0
 
+    .line 163
     :cond_0
     return-object p0
 
+    .line 158
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -118,17 +133,22 @@
 
 .method public addResponder(Landroid/net/wifi/rtt/ResponderConfig;)Landroid/net/wifi/rtt/RangingRequest$Builder;
     .locals 2
+    .param p1, "responder"    # Landroid/net/wifi/rtt/ResponderConfig;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 230
     if-eqz p1, :cond_0
 
+    .line 234
     iget-object v0, p0, Landroid/net/wifi/rtt/RangingRequest$Builder;->mRttPeers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 235
     return-object p0
 
+    .line 231
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -141,21 +161,27 @@
 
 .method public addWifiAwarePeer(Landroid/net/MacAddress;)Landroid/net/wifi/rtt/RangingRequest$Builder;
     .locals 2
+    .param p1, "peerMacAddress"    # Landroid/net/MacAddress;
 
+    .line 186
     if-eqz p1, :cond_0
 
+    .line 189
     nop
 
+    .line 190
     invoke-static {p1}, Landroid/net/wifi/rtt/ResponderConfig;->fromWifiAwarePeerMacAddressWithDefaults(Landroid/net/MacAddress;)Landroid/net/wifi/rtt/ResponderConfig;
 
     move-result-object v0
 
+    .line 189
     invoke-virtual {p0, v0}, Landroid/net/wifi/rtt/RangingRequest$Builder;->addResponder(Landroid/net/wifi/rtt/ResponderConfig;)Landroid/net/wifi/rtt/RangingRequest$Builder;
 
     move-result-object v0
 
     return-object v0
 
+    .line 187
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -168,9 +194,12 @@
 
 .method public addWifiAwarePeer(Landroid/net/wifi/aware/PeerHandle;)Landroid/net/wifi/rtt/RangingRequest$Builder;
     .locals 2
+    .param p1, "peerHandle"    # Landroid/net/wifi/aware/PeerHandle;
 
+    .line 211
     if-eqz p1, :cond_0
 
+    .line 215
     invoke-static {p1}, Landroid/net/wifi/rtt/ResponderConfig;->fromWifiAwarePeerHandleWithDefaults(Landroid/net/wifi/aware/PeerHandle;)Landroid/net/wifi/rtt/ResponderConfig;
 
     move-result-object v0
@@ -181,6 +210,7 @@
 
     return-object v0
 
+    .line 212
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -194,6 +224,7 @@
 .method public build()Landroid/net/wifi/rtt/RangingRequest;
     .locals 3
 
+    .line 243
     new-instance v0, Landroid/net/wifi/rtt/RangingRequest;
 
     iget-object v1, p0, Landroid/net/wifi/rtt/RangingRequest$Builder;->mRttPeers:Ljava/util/List;

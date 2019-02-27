@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer;
 
+    .line 2795
     iput-object p1, p0, Landroid/media/MediaPlayer$3;->this$0:Landroid/media/MediaPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +38,16 @@
 # virtual methods
 .method public onSubtitleData(Landroid/media/MediaPlayer;Landroid/media/SubtitleData;)V
     .locals 5
+    .param p1, "mp"    # Landroid/media/MediaPlayer;
+    .param p2, "data"    # Landroid/media/SubtitleData;
 
+    .line 2798
     invoke-virtual {p2}, Landroid/media/SubtitleData;->getTrackIndex()I
 
     move-result v0
 
+    .line 2799
+    .local v0, "index":I
     iget-object v1, p0, Landroid/media/MediaPlayer$3;->this$0:Landroid/media/MediaPlayer;
 
     invoke-static {v1}, Landroid/media/MediaPlayer;->access$300(Landroid/media/MediaPlayer;)Ljava/util/Vector;
@@ -49,6 +56,7 @@
 
     monitor-enter v1
 
+    .line 2800
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaPlayer$3;->this$0:Landroid/media/MediaPlayer;
 
@@ -73,6 +81,8 @@
 
     check-cast v3, Landroid/util/Pair;
 
+    .line 2801
+    .local v3, "p":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/media/SubtitleTrack;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     if-eqz v4, :cond_0
@@ -91,20 +101,29 @@
 
     if-eqz v4, :cond_0
 
+    .line 2803
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Landroid/media/SubtitleTrack;
 
+    .line 2804
+    .local v4, "track":Landroid/media/SubtitleTrack;
     invoke-virtual {v4, p2}, Landroid/media/SubtitleTrack;->onData(Landroid/media/SubtitleData;)V
 
+    .line 2806
+    .end local v3    # "p":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/media/SubtitleTrack;>;"
+    .end local v4    # "track":Landroid/media/SubtitleTrack;
     :cond_0
     goto :goto_0
 
+    .line 2807
     :cond_1
     monitor-exit v1
 
+    .line 2808
     return-void
 
+    .line 2807
     :catchall_0
     move-exception v2
 

@@ -23,12 +23,18 @@
 # direct methods
 .method public constructor <init>([[Ljava/security/cert/X509Certificate;[B)V
     .locals 0
+    .param p1, "certs"    # [[Ljava/security/cert/X509Certificate;
+    .param p2, "verityRootHash"    # [B
 
+    .line 458
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 459
     iput-object p1, p0, Landroid/util/apk/ApkSignatureSchemeV2Verifier$VerifiedSigner;->certs:[[Ljava/security/cert/X509Certificate;
 
+    .line 460
     iput-object p2, p0, Landroid/util/apk/ApkSignatureSchemeV2Verifier$VerifiedSigner;->verityRootHash:[B
 
+    .line 461
     return-void
 .end method

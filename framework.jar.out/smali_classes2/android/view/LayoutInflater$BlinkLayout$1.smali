@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/LayoutInflater$BlinkLayout;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/LayoutInflater$BlinkLayout;
 
+    .line 1050
     iput-object p1, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +38,16 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 3
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 1053
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x42
 
     if-ne v0, v1, :cond_1
 
+    .line 1054
     iget-object v0, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
     invoke-static {v0}, Landroid/view/LayoutInflater$BlinkLayout;->access$000(Landroid/view/LayoutInflater$BlinkLayout;)Z
@@ -53,6 +58,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 1055
     iget-object v0, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
     iget-object v2, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
@@ -65,17 +71,21 @@
 
     invoke-static {v0, v2}, Landroid/view/LayoutInflater$BlinkLayout;->access$102(Landroid/view/LayoutInflater$BlinkLayout;Z)Z
 
+    .line 1056
     iget-object v0, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
     invoke-static {v0}, Landroid/view/LayoutInflater$BlinkLayout;->access$200(Landroid/view/LayoutInflater$BlinkLayout;)V
 
+    .line 1058
     :cond_0
     iget-object v0, p0, Landroid/view/LayoutInflater$BlinkLayout$1;->this$0:Landroid/view/LayoutInflater$BlinkLayout;
 
     invoke-virtual {v0}, Landroid/view/LayoutInflater$BlinkLayout;->invalidate()V
 
+    .line 1059
     return v1
 
+    .line 1061
     :cond_1
     const/4 v0, 0x0
 

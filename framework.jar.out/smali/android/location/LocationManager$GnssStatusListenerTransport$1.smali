@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/location/LocationManager$GnssStatusListenerTransport;Landroid/location/LocationManager;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/location/LocationManager$GnssStatusListenerTransport;
 
+    .line 1785
     iput-object p1, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     iput-object p2, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->val$this$0:Landroid/location/LocationManager;
@@ -37,7 +39,9 @@
 # virtual methods
 .method public onFirstFix(I)V
     .locals 2
+    .param p1, "ttff"    # I
 
+    .line 1798
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->access$800(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GpsStatus$Listener;
@@ -48,12 +52,15 @@
 
     invoke-interface {v0, v1}, Landroid/location/GpsStatus$Listener;->onGpsStatusChanged(I)V
 
+    .line 1799
     return-void
 .end method
 
 .method public onSatelliteStatusChanged(Landroid/location/GnssStatus;)V
     .locals 2
+    .param p1, "status"    # Landroid/location/GnssStatus;
 
+    .line 1803
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->access$800(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GpsStatus$Listener;
@@ -64,12 +71,14 @@
 
     invoke-interface {v0, v1}, Landroid/location/GpsStatus$Listener;->onGpsStatusChanged(I)V
 
+    .line 1804
     return-void
 .end method
 
 .method public onStarted()V
     .locals 2
 
+    .line 1788
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->access$800(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GpsStatus$Listener;
@@ -80,12 +89,14 @@
 
     invoke-interface {v0, v1}, Landroid/location/GpsStatus$Listener;->onGpsStatusChanged(I)V
 
+    .line 1789
     return-void
 .end method
 
 .method public onStopped()V
     .locals 2
 
+    .line 1793
     iget-object v0, p0, Landroid/location/LocationManager$GnssStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GnssStatusListenerTransport;
 
     invoke-static {v0}, Landroid/location/LocationManager$GnssStatusListenerTransport;->access$800(Landroid/location/LocationManager$GnssStatusListenerTransport;)Landroid/location/GpsStatus$Listener;
@@ -96,5 +107,6 @@
 
     invoke-interface {v0, v1}, Landroid/location/GpsStatus$Listener;->onGpsStatusChanged(I)V
 
+    .line 1794
     return-void
 .end method

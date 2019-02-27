@@ -20,19 +20,28 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/content/UndoManager;)V
     .locals 2
+    .param p1, "tag"    # Ljava/lang/String;
+    .param p2, "manager"    # Landroid/content/UndoManager;
 
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 36
     if-eqz p1, :cond_1
 
+    .line 39
     if-eqz p2, :cond_0
 
+    .line 42
     iput-object p1, p0, Landroid/content/UndoOwner;->mTag:Ljava/lang/String;
 
+    .line 43
     iput-object p2, p0, Landroid/content/UndoOwner;->mManager:Landroid/content/UndoManager;
 
+    .line 44
     return-void
 
+    .line 40
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -42,6 +51,7 @@
 
     throw v0
 
+    .line 37
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -57,6 +67,7 @@
 .method public getData()Ljava/lang/Object;
     .locals 1
 
+    .line 62
     iget-object v0, p0, Landroid/content/UndoOwner;->mData:Ljava/lang/Object;
 
     return-object v0
@@ -65,6 +76,7 @@
 .method public getTag()Ljava/lang/String;
     .locals 1
 
+    .line 52
     iget-object v0, p0, Landroid/content/UndoOwner;->mTag:Ljava/lang/String;
 
     return-object v0
@@ -73,6 +85,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 67
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

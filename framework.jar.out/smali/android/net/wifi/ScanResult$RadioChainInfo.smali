@@ -24,6 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,13 +34,17 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "otherObj"    # Ljava/lang/Object;
 
+    .line 316
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 317
     return v0
 
+    .line 319
     :cond_0
     instance-of v1, p1, Landroid/net/wifi/ScanResult$RadioChainInfo;
 
@@ -47,13 +52,17 @@
 
     if-nez v1, :cond_1
 
+    .line 320
     return v2
 
+    .line 322
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/net/wifi/ScanResult$RadioChainInfo;
 
+    .line 323
+    .local v1, "other":Landroid/net/wifi/ScanResult$RadioChainInfo;
     iget v3, p0, Landroid/net/wifi/ScanResult$RadioChainInfo;->id:I
 
     iget v4, v1, Landroid/net/wifi/ScanResult$RadioChainInfo;->id:I
@@ -78,6 +87,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 328
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -112,6 +122,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

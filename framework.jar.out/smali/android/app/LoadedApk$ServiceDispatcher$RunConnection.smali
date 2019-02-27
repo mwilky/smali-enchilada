@@ -32,19 +32,29 @@
 # direct methods
 .method constructor <init>(Landroid/app/LoadedApk$ServiceDispatcher;Landroid/content/ComponentName;Landroid/os/IBinder;IZ)V
     .locals 0
+    .param p2, "name"    # Landroid/content/ComponentName;
+    .param p3, "service"    # Landroid/os/IBinder;
+    .param p4, "command"    # I
+    .param p5, "dead"    # Z
 
+    .line 1793
     iput-object p1, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->this$0:Landroid/app/LoadedApk$ServiceDispatcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1794
     iput-object p2, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mName:Landroid/content/ComponentName;
 
+    .line 1795
     iput-object p3, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mService:Landroid/os/IBinder;
 
+    .line 1796
     iput p4, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mCommand:I
 
+    .line 1797
     iput-boolean p5, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mDead:Z
 
+    .line 1798
     return-void
 .end method
 
@@ -53,10 +63,12 @@
 .method public run()V
     .locals 4
 
+    .line 1801
     iget v0, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mCommand:I
 
     if-nez v0, :cond_0
 
+    .line 1802
     iget-object v0, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->this$0:Landroid/app/LoadedApk$ServiceDispatcher;
 
     iget-object v1, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mName:Landroid/content/ComponentName;
@@ -69,6 +81,7 @@
 
     goto :goto_0
 
+    .line 1803
     :cond_0
     iget v0, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mCommand:I
 
@@ -76,6 +89,7 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 1804
     iget-object v0, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->this$0:Landroid/app/LoadedApk$ServiceDispatcher;
 
     iget-object v1, p0, Landroid/app/LoadedApk$ServiceDispatcher$RunConnection;->mName:Landroid/content/ComponentName;
@@ -84,6 +98,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/LoadedApk$ServiceDispatcher;->doDeath(Landroid/content/ComponentName;Landroid/os/IBinder;)V
 
+    .line 1806
     :cond_1
     :goto_0
     return-void

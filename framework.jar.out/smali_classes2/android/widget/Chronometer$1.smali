@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Chronometer;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/Chronometer;
 
+    .line 334
     iput-object p1, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public run()V
     .locals 4
 
+    .line 337
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-static {v0}, Landroid/widget/Chronometer;->access$000(Landroid/widget/Chronometer;)Z
@@ -45,6 +48,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 338
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -53,10 +57,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/widget/Chronometer;->access$100(Landroid/widget/Chronometer;J)V
 
+    .line 339
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-virtual {v0}, Landroid/widget/Chronometer;->dispatchChronometerTick()V
 
+    .line 340
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     iget-object v1, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
@@ -69,6 +75,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/Chronometer;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 342
     :cond_0
     return-void
 .end method

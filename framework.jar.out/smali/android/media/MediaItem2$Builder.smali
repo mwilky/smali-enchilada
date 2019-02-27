@@ -21,9 +21,12 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
+    .param p1, "flags"    # I
 
+    .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 166
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -34,6 +37,7 @@
 
     iput-object v0, p0, Landroid/media/MediaItem2$Builder;->mProvider:Landroid/media/update/MediaItem2Provider$BuilderProvider;
 
+    .line 167
     return-void
 .end method
 
@@ -42,6 +46,7 @@
 .method public build()Landroid/media/MediaItem2;
     .locals 1
 
+    .line 217
     iget-object v0, p0, Landroid/media/MediaItem2$Builder;->mProvider:Landroid/media/update/MediaItem2Provider$BuilderProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaItem2Provider$BuilderProvider;->build_impl()Landroid/media/MediaItem2;
@@ -53,7 +58,9 @@
 
 .method public setDataSourceDesc(Landroid/media/DataSourceDesc;)Landroid/media/MediaItem2$Builder;
     .locals 1
+    .param p1, "dataSourceDesc"    # Landroid/media/DataSourceDesc;
 
+    .line 208
     iget-object v0, p0, Landroid/media/MediaItem2$Builder;->mProvider:Landroid/media/update/MediaItem2Provider$BuilderProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaItem2Provider$BuilderProvider;->setDataSourceDesc_impl(Landroid/media/DataSourceDesc;)Landroid/media/MediaItem2$Builder;
@@ -65,7 +72,9 @@
 
 .method public setMediaId(Ljava/lang/String;)Landroid/media/MediaItem2$Builder;
     .locals 1
+    .param p1, "mediaId"    # Ljava/lang/String;
 
+    .line 183
     iget-object v0, p0, Landroid/media/MediaItem2$Builder;->mProvider:Landroid/media/update/MediaItem2Provider$BuilderProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaItem2Provider$BuilderProvider;->setMediaId_impl(Ljava/lang/String;)Landroid/media/MediaItem2$Builder;
@@ -77,7 +86,9 @@
 
 .method public setMetadata(Landroid/media/MediaMetadata2;)Landroid/media/MediaItem2$Builder;
     .locals 1
+    .param p1, "metadata"    # Landroid/media/MediaMetadata2;
 
+    .line 198
     iget-object v0, p0, Landroid/media/MediaItem2$Builder;->mProvider:Landroid/media/update/MediaItem2Provider$BuilderProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaItem2Provider$BuilderProvider;->setMetadata_impl(Landroid/media/MediaMetadata2;)Landroid/media/MediaItem2$Builder;

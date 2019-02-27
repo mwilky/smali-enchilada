@@ -41,6 +41,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 2262
     new-instance v0, Lcom/android/internal/widget/LinearLayoutManager$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/LinearLayoutManager$SavedState$1;-><init>()V
@@ -53,28 +54,35 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 2226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2228
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 2230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2231
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
+    .line 2232
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
+    .line 2233
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -91,26 +99,33 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
+    .line 2234
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/internal/widget/LinearLayoutManager$SavedState;)V
     .locals 1
+    .param p1, "other"    # Lcom/android/internal/widget/LinearLayoutManager$SavedState;
 
+    .line 2236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2237
     iget v0, p1, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
+    .line 2238
     iget v0, p1, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
+    .line 2239
     iget-boolean v0, p1, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     iput-boolean v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
+    .line 2240
     return-void
 .end method
 
@@ -119,6 +134,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 2252
     const/4 v0, 0x0
 
     return v0
@@ -127,6 +143,7 @@
 .method hasValidAnchor()Z
     .locals 1
 
+    .line 2243
     iget v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     if-ltz v0, :cond_0
@@ -145,27 +162,35 @@
 .method invalidateAnchor()V
     .locals 1
 
+    .line 2247
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
+    .line 2248
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 2257
     iget v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2258
     iget v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2259
     iget-boolean v0, p0, Lcom/android/internal/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2260
     return-void
 .end method

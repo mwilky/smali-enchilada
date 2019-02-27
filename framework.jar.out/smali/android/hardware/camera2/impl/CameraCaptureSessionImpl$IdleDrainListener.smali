@@ -25,6 +25,7 @@
 .method private constructor <init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)V
     .locals 0
 
+    .line 935
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$IdleDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +35,10 @@
 
 .method synthetic constructor <init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
+    .param p2, "x1"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;
 
+    .line 935
     invoke-direct {p0, p1}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$IdleDrainListener;-><init>(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)V
 
     return-void
@@ -45,6 +49,7 @@
 .method public onDrained()V
     .locals 5
 
+    .line 942
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$IdleDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->access$1000(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;)Landroid/hardware/camera2/impl/CameraDeviceImpl;
@@ -55,6 +60,7 @@
 
     monitor-enter v0
 
+    .line 957
     :try_start_0
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$IdleDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
@@ -64,12 +70,14 @@
 
     if-eqz v1, :cond_0
 
+    .line 958
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
+    .line 965
     :cond_0
     :try_start_1
     iget-object v1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$IdleDrainListener;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
@@ -88,17 +96,22 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 977
     :goto_0
     goto :goto_1
 
+    .line 973
     :catch_0
     move-exception v1
 
     goto :goto_1
 
+    .line 968
     :catch_1
     move-exception v1
 
+    .line 970
+    .local v1, "e":Landroid/hardware/camera2/CameraAccessException;
     :try_start_2
     const-string v2, "CameraCaptureSession"
 
@@ -124,13 +137,17 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .end local v1    # "e":Landroid/hardware/camera2/CameraAccessException;
     goto :goto_0
 
+    .line 978
     :goto_1
     monitor-exit v0
 
+    .line 979
     return-void
 
+    .line 978
     :catchall_0
     move-exception v1
 

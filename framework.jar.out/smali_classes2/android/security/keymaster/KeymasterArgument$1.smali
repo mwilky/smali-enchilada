@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,15 +40,21 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/security/keymaster/KeymasterArgument;
     .locals 5
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 37
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
+    .line 38
+    .local v0, "pos":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 39
+    .local v1, "tag":I
     invoke-static {v1}, Landroid/security/keymaster/KeymasterDefs;->getTagType(I)I
 
     move-result v2
@@ -92,12 +99,14 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 54
     new-instance v2, Landroid/security/keymaster/KeymasterBooleanArgument;
 
     invoke-direct {v2, v1, p1}, Landroid/security/keymaster/KeymasterBooleanArgument;-><init>(ILandroid/os/Parcel;)V
 
     return-object v2
 
+    .line 56
     :cond_0
     new-instance v2, Landroid/os/ParcelFormatException;
 
@@ -125,6 +134,7 @@
 
     throw v2
 
+    .line 49
     :cond_1
     new-instance v2, Landroid/security/keymaster/KeymasterDateArgument;
 
@@ -132,6 +142,7 @@
 
     return-object v2
 
+    .line 44
     :cond_2
     new-instance v2, Landroid/security/keymaster/KeymasterIntArgument;
 
@@ -139,6 +150,7 @@
 
     return-object v2
 
+    .line 47
     :cond_3
     new-instance v2, Landroid/security/keymaster/KeymasterLongArgument;
 
@@ -146,6 +158,7 @@
 
     return-object v2
 
+    .line 52
     :cond_4
     new-instance v2, Landroid/security/keymaster/KeymasterBlobArgument;
 
@@ -157,6 +170,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 34
     invoke-virtual {p0, p1}, Landroid/security/keymaster/KeymasterArgument$1;->createFromParcel(Landroid/os/Parcel;)Landroid/security/keymaster/KeymasterArgument;
 
     move-result-object p1
@@ -166,7 +180,9 @@
 
 .method public newArray(I)[Landroid/security/keymaster/KeymasterArgument;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 62
     new-array v0, p1, [Landroid/security/keymaster/KeymasterArgument;
 
     return-object v0
@@ -175,6 +191,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 34
     invoke-virtual {p0, p1}, Landroid/security/keymaster/KeymasterArgument$1;->newArray(I)[Landroid/security/keymaster/KeymasterArgument;
 
     move-result-object p1

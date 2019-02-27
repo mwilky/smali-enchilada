@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 176
     invoke-static {}, Landroid/net/wifi/SupplicantState;->values()[Landroid/net/wifi/SupplicantState;
 
     move-result-object v0

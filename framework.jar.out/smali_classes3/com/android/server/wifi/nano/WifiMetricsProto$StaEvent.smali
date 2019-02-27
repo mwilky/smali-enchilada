@@ -144,35 +144,43 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 4327
     invoke-direct {p0}, Lcom/android/framework/protobuf/nano/MessageNano;-><init>()V
 
+    .line 4328
     invoke-virtual {p0}, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->clear()Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
+    .line 4329
     return-void
 .end method
 
 .method public static emptyArray()[Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
     .locals 2
 
+    .line 4274
     sget-object v0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->_emptyArray:[Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     if-nez v0, :cond_1
 
+    .line 4275
     sget-object v0, Lcom/android/framework/protobuf/nano/InternalNano;->LAZY_INIT_LOCK:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 4277
     :try_start_0
     sget-object v1, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->_emptyArray:[Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     if-nez v1, :cond_0
 
+    .line 4278
     const/4 v1, 0x0
 
     new-array v1, v1, [Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     sput-object v1, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->_emptyArray:[Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
+    .line 4280
     :cond_0
     monitor-exit v0
 
@@ -187,6 +195,7 @@
 
     throw v1
 
+    .line 4282
     :cond_1
     :goto_0
     sget-object v0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->_emptyArray:[Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
@@ -196,12 +205,14 @@
 
 .method public static parseFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
     .locals 1
+    .param p0, "input"    # Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 4588
     new-instance v0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     invoke-direct {v0}, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;-><init>()V
@@ -215,12 +226,14 @@
 
 .method public static parseFrom([B)Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
     .locals 1
+    .param p0, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
         }
     .end annotation
 
+    .line 4582
     new-instance v0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     invoke-direct {v0}, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;-><init>()V
@@ -239,70 +252,92 @@
 .method public clear()Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
     .locals 4
 
+    .line 4332
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
+    .line 4333
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
+    .line 4334
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
+    .line 4335
     iput-boolean v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
+    .line 4336
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
+    .line 4337
     const/16 v2, -0x7f
 
     iput v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
+    .line 4338
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
+    .line 4339
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
+    .line 4340
     iput v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
+    .line 4341
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
+    .line 4342
     iput v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
+    .line 4343
     iput-boolean v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
+    .line 4344
     iput v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
+    .line 4345
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
+    .line 4346
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->cachedSize:I
 
+    .line 4347
     return-object p0
 .end method
 
 .method protected computeSerializedSize()I
     .locals 7
 
+    .line 4400
     invoke-super {p0}, Lcom/android/framework/protobuf/nano/MessageNano;->computeSerializedSize()I
 
     move-result v0
 
+    .line 4401
+    .local v0, "size":I
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
     if-eqz v1, :cond_0
 
+    .line 4402
     const/4 v1, 0x1
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
+    .line 4403
     invoke-static {v1, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4405
     :cond_0
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
@@ -310,61 +345,73 @@
 
     if-eq v1, v2, :cond_1
 
+    .line 4406
     const/4 v1, 0x2
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
+    .line 4407
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4409
     :cond_1
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
     if-eq v1, v2, :cond_2
 
+    .line 4410
     const/4 v1, 0x3
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
+    .line 4411
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4413
     :cond_2
     iget-boolean v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
     if-eqz v1, :cond_3
 
+    .line 4414
     const/4 v1, 0x4
 
     iget-boolean v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
+    .line 4415
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeBoolSize(IZ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4417
     :cond_3
     iget-object v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     if-eqz v1, :cond_4
 
+    .line 4418
     const/4 v1, 0x5
 
     iget-object v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
+    .line 4419
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeMessageSize(ILcom/android/framework/protobuf/nano/MessageNano;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4421
     :cond_4
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
@@ -372,61 +419,73 @@
 
     if-eq v1, v3, :cond_5
 
+    .line 4422
     const/4 v1, 0x6
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
+    .line 4423
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4425
     :cond_5
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
     if-eq v1, v2, :cond_6
 
+    .line 4426
     const/4 v1, 0x7
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
+    .line 4427
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4429
     :cond_6
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
     if-eq v1, v2, :cond_7
 
+    .line 4430
     const/16 v1, 0x8
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
+    .line 4431
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4433
     :cond_7
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
     if-eqz v1, :cond_8
 
+    .line 4434
     const/16 v1, 0x9
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
+    .line 4435
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeUInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4437
     :cond_8
     iget-wide v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
@@ -436,76 +495,91 @@
 
     if-eqz v1, :cond_9
 
+    .line 4438
     const/16 v1, 0xa
 
     iget-wide v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
+    .line 4439
     invoke-static {v1, v3, v4}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt64Size(IJ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4441
     :cond_9
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
     if-eqz v1, :cond_a
 
+    .line 4442
     const/16 v1, 0xb
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
+    .line 4443
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4445
     :cond_a
     iget-boolean v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
     if-eqz v1, :cond_b
 
+    .line 4446
     const/16 v1, 0xc
 
     iget-boolean v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
+    .line 4447
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeBoolSize(IZ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4449
     :cond_b
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
     if-eqz v1, :cond_c
 
+    .line 4450
     const/16 v1, 0xd
 
     iget v3, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
+    .line 4451
     invoke-static {v1, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4453
     :cond_c
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
     if-eq v1, v2, :cond_d
 
+    .line 4454
     const/16 v1, 0xe
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
+    .line 4455
     invoke-static {v1, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
+    .line 4457
     :cond_d
     return v0
 .end method
@@ -518,6 +592,7 @@
         }
     .end annotation
 
+    .line 3983
     invoke-virtual {p0, p1}, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
 
     move-result-object p1
@@ -527,27 +602,34 @@
 
 .method public mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;
     .locals 3
+    .param p1, "input"    # Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 4465
     :goto_0
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readTag()I
 
     move-result v0
 
+    .line 4466
+    .local v0, "tag":I
     sparse-switch v0, :sswitch_data_0
 
+    .line 4470
     invoke-static {p1, v0}, Lcom/android/framework/protobuf/nano/WireFormatNano;->parseUnknownField(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;I)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
+    .line 4471
     return-object p0
 
+    .line 4573
     :sswitch_0
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -555,23 +637,32 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
+    .end local v0    # "tag":I
     goto/16 :goto_4
 
+    .line 4560
+    .restart local v0    # "tag":I
     :sswitch_1
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
     move-result v1
 
+    .line 4561
+    .local v1, "value":I
     packed-switch v1, :pswitch_data_0
 
     goto :goto_1
 
+    .line 4567
     :pswitch_0
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
+    .line 4570
     :goto_1
     goto/16 :goto_4
 
+    .line 4556
+    .end local v1    # "value":I
     :sswitch_2
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readBool()Z
 
@@ -579,23 +670,31 @@
 
     iput-boolean v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
+    .line 4557
     goto :goto_4
 
+    .line 4541
     :sswitch_3
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
     move-result v1
 
+    .line 4542
+    .restart local v1    # "value":I
     packed-switch v1, :pswitch_data_1
 
     goto :goto_2
 
+    .line 4550
     :pswitch_1
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
+    .line 4553
     :goto_2
     goto :goto_4
 
+    .line 4537
+    .end local v1    # "value":I
     :sswitch_4
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt64()J
 
@@ -603,8 +702,10 @@
 
     iput-wide v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
+    .line 4538
     goto :goto_4
 
+    .line 4533
     :sswitch_5
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readUInt32()I
 
@@ -612,8 +713,10 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
+    .line 4534
     goto :goto_4
 
+    .line 4529
     :sswitch_6
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -621,8 +724,10 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
+    .line 4530
     goto :goto_4
 
+    .line 4525
     :sswitch_7
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -630,8 +735,10 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
+    .line 4526
     goto :goto_4
 
+    .line 4521
     :sswitch_8
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -639,26 +746,32 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
+    .line 4522
     goto :goto_4
 
+    .line 4514
     :sswitch_9
     iget-object v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     if-nez v1, :cond_0
 
+    .line 4515
     new-instance v1, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     invoke-direct {v1}, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
+    .line 4517
     :cond_0
     iget-object v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     invoke-virtual {p1, v1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readMessage(Lcom/android/framework/protobuf/nano/MessageNano;)V
 
+    .line 4518
     goto :goto_4
 
+    .line 4510
     :sswitch_a
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readBool()Z
 
@@ -666,8 +779,10 @@
 
     iput-boolean v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
+    .line 4511
     goto :goto_4
 
+    .line 4506
     :sswitch_b
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -675,8 +790,10 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
+    .line 4507
     goto :goto_4
 
+    .line 4502
     :sswitch_c
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
@@ -684,26 +801,36 @@
 
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
+    .line 4503
     goto :goto_4
 
+    .line 4476
     :sswitch_d
     invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readInt32()I
 
     move-result v1
 
+    .line 4477
+    .restart local v1    # "value":I
     packed-switch v1, :pswitch_data_2
 
     goto :goto_3
 
+    .line 4496
     :pswitch_2
     iput v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
+    .line 4499
     :goto_3
     goto :goto_4
 
+    .line 4468
+    .end local v1    # "value":I
     :sswitch_e
     return-object p0
 
+    .line 4577
+    .end local v0    # "tag":I
     :cond_1
     :goto_4
     goto/16 :goto_0
@@ -774,22 +901,26 @@
 
 .method public writeTo(Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;)V
     .locals 6
+    .param p1, "output"    # Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 4353
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
     if-eqz v0, :cond_0
 
+    .line 4354
     const/4 v0, 0x1
 
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->type:I
 
     invoke-virtual {p1, v0, v1}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4356
     :cond_0
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
@@ -797,45 +928,53 @@
 
     if-eq v0, v1, :cond_1
 
+    .line 4357
     const/4 v0, 0x2
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->reason:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4359
     :cond_1
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
     if-eq v0, v1, :cond_2
 
+    .line 4360
     const/4 v0, 0x3
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->status:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4362
     :cond_2
     iget-boolean v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
     if-eqz v0, :cond_3
 
+    .line 4363
     const/4 v0, 0x4
 
     iget-boolean v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->localGen:Z
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeBool(IZ)V
 
+    .line 4365
     :cond_3
     iget-object v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     if-eqz v0, :cond_4
 
+    .line 4366
     const/4 v0, 0x5
 
     iget-object v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->configInfo:Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent$ConfigInfo;
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeMessage(ILcom/android/framework/protobuf/nano/MessageNano;)V
 
+    .line 4368
     :cond_4
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
@@ -843,45 +982,53 @@
 
     if-eq v0, v2, :cond_5
 
+    .line 4369
     const/4 v0, 0x6
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastRssi:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4371
     :cond_5
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
     if-eq v0, v1, :cond_6
 
+    .line 4372
     const/4 v0, 0x7
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastLinkSpeed:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4374
     :cond_6
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
     if-eq v0, v1, :cond_7
 
+    .line 4375
     const/16 v0, 0x8
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastFreq:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4377
     :cond_7
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
     if-eqz v0, :cond_8
 
+    .line 4378
     const/16 v0, 0x9
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->supplicantStateChangesBitmask:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeUInt32(II)V
 
+    .line 4380
     :cond_8
     iget-wide v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
@@ -891,58 +1038,69 @@
 
     if-eqz v0, :cond_9
 
+    .line 4381
     const/16 v0, 0xa
 
     iget-wide v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->startTimeMillis:J
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt64(IJ)V
 
+    .line 4383
     :cond_9
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
     if-eqz v0, :cond_a
 
+    .line 4384
     const/16 v0, 0xb
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->frameworkDisconnectReason:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4386
     :cond_a
     iget-boolean v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
     if-eqz v0, :cond_b
 
+    .line 4387
     const/16 v0, 0xc
 
     iget-boolean v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->associationTimedOut:Z
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeBool(IZ)V
 
+    .line 4389
     :cond_b
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
     if-eqz v0, :cond_c
 
+    .line 4390
     const/16 v0, 0xd
 
     iget v2, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->authFailureReason:I
 
     invoke-virtual {p1, v0, v2}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4392
     :cond_c
     iget v0, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
     if-eq v0, v1, :cond_d
 
+    .line 4393
     const/16 v0, 0xe
 
     iget v1, p0, Lcom/android/server/wifi/nano/WifiMetricsProto$StaEvent;->lastScore:I
 
     invoke-virtual {p1, v0, v1}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeInt32(II)V
 
+    .line 4395
     :cond_d
     invoke-super {p0, p1}, Lcom/android/framework/protobuf/nano/MessageNano;->writeTo(Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;)V
 
+    .line 4396
     return-void
 .end method

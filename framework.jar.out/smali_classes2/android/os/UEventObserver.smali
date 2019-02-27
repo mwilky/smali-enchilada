@@ -24,14 +24,17 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 53
     return-void
 .end method
 
 .method static synthetic access$000()V
     .locals 0
 
+    .line 41
     invoke-static {}, Landroid/os/UEventObserver;->nativeSetup()V
 
     return-void
@@ -40,6 +43,7 @@
 .method static synthetic access$100()Ljava/lang/String;
     .locals 1
 
+    .line 41
     invoke-static {}, Landroid/os/UEventObserver;->nativeWaitForNextEvent()Ljava/lang/String;
 
     move-result-object v0
@@ -49,7 +53,9 @@
 
 .method static synthetic access$200(Ljava/lang/String;)V
     .locals 0
+    .param p0, "x0"    # Ljava/lang/String;
 
+    .line 41
     invoke-static {p0}, Landroid/os/UEventObserver;->nativeAddMatch(Ljava/lang/String;)V
 
     return-void
@@ -57,7 +63,9 @@
 
 .method static synthetic access$300(Ljava/lang/String;)V
     .locals 0
+    .param p0, "x0"    # Ljava/lang/String;
 
+    .line 41
     invoke-static {p0}, Landroid/os/UEventObserver;->nativeRemoveMatch(Ljava/lang/String;)V
 
     return-void
@@ -66,25 +74,30 @@
 .method private static getThread()Landroid/os/UEventObserver$UEventThread;
     .locals 2
 
+    .line 65
     const-class v0, Landroid/os/UEventObserver;
 
     monitor-enter v0
 
+    .line 66
     :try_start_0
     sget-object v1, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
     if-nez v1, :cond_0
 
+    .line 67
     new-instance v1, Landroid/os/UEventObserver$UEventThread;
 
     invoke-direct {v1}, Landroid/os/UEventObserver$UEventThread;-><init>()V
 
     sput-object v1, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
+    .line 68
     sget-object v1, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
     invoke-virtual {v1}, Landroid/os/UEventObserver$UEventThread;->start()V
 
+    .line 70
     :cond_0
     sget-object v1, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
@@ -92,6 +105,7 @@
 
     return-object v1
 
+    .line 71
     :catchall_0
     move-exception v1
 
@@ -117,10 +131,12 @@
 .method private static peekThread()Landroid/os/UEventObserver$UEventThread;
     .locals 2
 
+    .line 75
     const-class v0, Landroid/os/UEventObserver;
 
     monitor-enter v0
 
+    .line 76
     :try_start_0
     sget-object v1, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
@@ -128,6 +144,7 @@
 
     return-object v1
 
+    .line 77
     :catchall_0
     move-exception v1
 
@@ -148,17 +165,22 @@
         }
     .end annotation
 
+    .line 58
     :try_start_0
     invoke-virtual {p0}, Landroid/os/UEventObserver;->stopObserving()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 60
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 61
     nop
 
+    .line 62
     return-void
 
+    .line 60
     :catchall_0
     move-exception v0
 
@@ -172,7 +194,9 @@
 
 .method public final startObserving(Ljava/lang/String;)V
     .locals 2
+    .param p1, "match"    # Ljava/lang/String;
 
+    .line 97
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -181,14 +205,20 @@
 
     if-nez v0, :cond_0
 
+    .line 101
     invoke-static {}, Landroid/os/UEventObserver;->getThread()Landroid/os/UEventObserver$UEventThread;
 
     move-result-object v0
 
+    .line 102
+    .local v0, "t":Landroid/os/UEventObserver$UEventThread;
     invoke-virtual {v0, p1, p0}, Landroid/os/UEventObserver$UEventThread;->addObserver(Ljava/lang/String;Landroid/os/UEventObserver;)V
 
+    .line 103
     return-void
 
+    .line 98
+    .end local v0    # "t":Landroid/os/UEventObserver$UEventThread;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -202,14 +232,19 @@
 .method public final stopObserving()V
     .locals 1
 
+    .line 111
     invoke-static {}, Landroid/os/UEventObserver;->peekThread()Landroid/os/UEventObserver$UEventThread;
 
     move-result-object v0
 
+    .line 112
+    .local v0, "t":Landroid/os/UEventObserver$UEventThread;
     if-eqz v0, :cond_0
 
+    .line 113
     invoke-virtual {v0, p0}, Landroid/os/UEventObserver$UEventThread;->removeObserver(Landroid/os/UEventObserver;)V
 
+    .line 115
     :cond_0
     return-void
 .end method

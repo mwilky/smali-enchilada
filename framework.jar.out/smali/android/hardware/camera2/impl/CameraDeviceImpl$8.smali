@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/impl/CameraDeviceImpl;ZI)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
+    .line 351
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$8;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     iput-boolean p2, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$8;->val$isError:Z
@@ -45,10 +47,12 @@
 .method public run()V
     .locals 3
 
+    .line 354
     iget-boolean v0, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$8;->val$isError:Z
 
     if-eqz v0, :cond_0
 
+    .line 355
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$8;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->access$200(Landroid/hardware/camera2/impl/CameraDeviceImpl;)Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -63,6 +67,7 @@
 
     goto :goto_0
 
+    .line 357
     :cond_0
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$8;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
@@ -74,6 +79,7 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraDevice$StateCallback;->onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
 
+    .line 359
     :goto_0
     return-void
 .end method

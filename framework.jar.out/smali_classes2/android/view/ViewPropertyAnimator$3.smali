@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/ViewPropertyAnimator;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/ViewPropertyAnimator;
 
+    .line 785
     iput-object p1, p0, Landroid/view/ViewPropertyAnimator$3;->this$0:Landroid/view/ViewPropertyAnimator;
 
     iput p2, p0, Landroid/view/ViewPropertyAnimator$3;->val$currentLayerType:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 788
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$3;->this$0:Landroid/view/ViewPropertyAnimator;
 
     iget-object v0, v0, Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -51,5 +54,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
+    .line 789
     return-void
 .end method

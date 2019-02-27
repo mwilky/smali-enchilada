@@ -45,12 +45,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 1193
     const/4 v0, 0x0
 
     new-array v0, v0, [Landroid/view/Display$Mode;
 
     sput-object v0, Landroid/view/Display$Mode;->EMPTY_ARRAY:[Landroid/view/Display$Mode;
 
+    .line 1318
     new-instance v0, Landroid/view/Display$Mode$1;
 
     invoke-direct {v0}, Landroid/view/Display$Mode$1;-><init>()V
@@ -62,23 +64,35 @@
 
 .method public constructor <init>(IIIF)V
     .locals 0
+    .param p1, "modeId"    # I
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+    .param p4, "refreshRate"    # F
 
+    .line 1203
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1204
     iput p1, p0, Landroid/view/Display$Mode;->mModeId:I
 
+    .line 1205
     iput p2, p0, Landroid/view/Display$Mode;->mWidth:I
 
+    .line 1206
     iput p3, p0, Landroid/view/Display$Mode;->mHeight:I
 
+    .line 1207
     iput p4, p0, Landroid/view/Display$Mode;->mRefreshRate:F
 
+    .line 1208
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 1306
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -97,12 +111,16 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Landroid/view/Display$Mode;-><init>(IIIF)V
 
+    .line 1307
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/view/Display$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/view/Display$1;
 
+    .line 1189
     invoke-direct {p0, p1}, Landroid/view/Display$Mode;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -113,6 +131,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 1302
     const/4 v0, 0x0
 
     return v0
@@ -120,13 +139,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1, "other"    # Ljava/lang/Object;
 
+    .line 1269
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 1270
     return v0
 
+    .line 1272
     :cond_0
     instance-of v1, p1, Landroid/view/Display$Mode;
 
@@ -134,13 +157,17 @@
 
     if-nez v1, :cond_1
 
+    .line 1273
     return v2
 
+    .line 1275
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroid/view/Display$Mode;
 
+    .line 1276
+    .local v1, "that":Landroid/view/Display$Mode;
     iget v3, p0, Landroid/view/Display$Mode;->mModeId:I
 
     iget v4, v1, Landroid/view/Display$Mode;->mModeId:I
@@ -171,6 +198,7 @@
 .method public getModeId()I
     .locals 1
 
+    .line 1214
     iget v0, p0, Landroid/view/Display$Mode;->mModeId:I
 
     return v0
@@ -179,6 +207,7 @@
 .method public getPhysicalHeight()I
     .locals 1
 
+    .line 1246
     iget v0, p0, Landroid/view/Display$Mode;->mHeight:I
 
     return v0
@@ -187,6 +216,7 @@
 .method public getPhysicalWidth()I
     .locals 1
 
+    .line 1230
     iget v0, p0, Landroid/view/Display$Mode;->mWidth:I
 
     return v0
@@ -195,6 +225,7 @@
 .method public getRefreshRate()F
     .locals 1
 
+    .line 1253
     iget v0, p0, Landroid/view/Display$Mode;->mRefreshRate:F
 
     return v0
@@ -203,26 +234,38 @@
 .method public hashCode()I
     .locals 3
 
+    .line 1281
     const/4 v0, 0x1
 
+    .line 1282
+    .local v0, "hash":I
     mul-int/lit8 v1, v0, 0x11
 
     iget v2, p0, Landroid/view/Display$Mode;->mModeId:I
 
     add-int/2addr v1, v2
 
+    .line 1283
+    .end local v0    # "hash":I
+    .local v1, "hash":I
     mul-int/lit8 v0, v1, 0x11
 
     iget v2, p0, Landroid/view/Display$Mode;->mWidth:I
 
     add-int/2addr v0, v2
 
+    .line 1284
+    .end local v1    # "hash":I
+    .restart local v0    # "hash":I
     mul-int/lit8 v1, v0, 0x11
 
     iget v2, p0, Landroid/view/Display$Mode;->mHeight:I
 
     add-int/2addr v1, v2
 
+    .line 1285
+    .end local v0    # "hash":I
+    .restart local v1    # "hash":I
     mul-int/lit8 v0, v1, 0x11
 
     iget v2, p0, Landroid/view/Display$Mode;->mRefreshRate:F
@@ -233,12 +276,19 @@
 
     add-int/2addr v0, v2
 
+    .line 1286
+    .end local v1    # "hash":I
+    .restart local v0    # "hash":I
     return v0
 .end method
 
 .method public matches(IIF)Z
     .locals 2
+    .param p1, "width"    # I
+    .param p2, "height"    # I
+    .param p3, "refreshRate"    # F
 
+    .line 1262
     iget v0, p0, Landroid/view/Display$Mode;->mWidth:I
 
     if-ne v0, p1, :cond_0
@@ -249,6 +299,7 @@
 
     iget v0, p0, Landroid/view/Display$Mode;->mRefreshRate:F
 
+    .line 1264
     invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v0
@@ -266,6 +317,7 @@
     :cond_0
     const/4 v0, 0x0
 
+    .line 1262
     :goto_0
     return v0
 .end method
@@ -273,6 +325,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 1291
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "{"
@@ -281,6 +334,7 @@
 
     const-string v1, "id="
 
+    .line 1292
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/view/Display$Mode;->mModeId:I
@@ -289,6 +343,7 @@
 
     const-string v1, ", width="
 
+    .line 1293
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/view/Display$Mode;->mWidth:I
@@ -297,6 +352,7 @@
 
     const-string v1, ", height="
 
+    .line 1294
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/view/Display$Mode;->mHeight:I
@@ -305,6 +361,7 @@
 
     const-string v1, ", fps="
 
+    .line 1295
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroid/view/Display$Mode;->mRefreshRate:F
@@ -313,33 +370,43 @@
 
     const-string/jumbo v1, "}"
 
+    .line 1296
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1297
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1291
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "parcelableFlags"    # I
 
+    .line 1311
     iget v0, p0, Landroid/view/Display$Mode;->mModeId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1312
     iget v0, p0, Landroid/view/Display$Mode;->mWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1313
     iget v0, p0, Landroid/view/Display$Mode;->mHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1314
     iget v0, p0, Landroid/view/Display$Mode;->mRefreshRate:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 1315
     return-void
 .end method

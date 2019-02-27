@@ -29,6 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 1747
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,18 +40,21 @@
 .method public createBitmap()Landroid/graphics/Bitmap;
     .locals 2
 
+    .line 1775
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 1776
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
     iget-boolean v1, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mEnabledHwBitmapsInSwMode:Z
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setHwBitmapsInSwModeEnabled(Z)V
 
+    .line 1777
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -58,7 +62,11 @@
 
 .method public getCanvas(Landroid/view/View;II)Landroid/graphics/Canvas;
     .locals 2
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
 
+    .line 1755
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -75,10 +83,12 @@
 
     iput-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mBitmap:Landroid/graphics/Bitmap;
 
+    .line 1757
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_2
 
+    .line 1760
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -93,27 +103,32 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->setDensity(I)V
 
+    .line 1762
     iget-object v0, p1, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     if-eqz v0, :cond_0
 
+    .line 1763
     iget-object v0, p1, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v0, Landroid/view/View$AttachInfo;->mCanvas:Landroid/graphics/Canvas;
 
     iput-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
+    .line 1765
     :cond_0
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
     if-nez v0, :cond_1
 
+    .line 1766
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
+    .line 1768
     :cond_1
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
@@ -123,16 +138,19 @@
 
     iput-boolean v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mEnabledHwBitmapsInSwMode:Z
 
+    .line 1769
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
     iget-object v1, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 1770
     iget-object v0, p0, Landroid/view/ViewDebug$SoftwareCanvasProvider;->mCanvas:Landroid/graphics/Canvas;
 
     return-object v0
 
+    .line 1758
     :cond_2
     new-instance v0, Ljava/lang/OutOfMemoryError;
 

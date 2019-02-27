@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/view/AbsSavedState;
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 88
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/view/AbsSavedState;
@@ -51,17 +54,24 @@
 
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/view/AbsSavedState;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
+    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
+    .line 93
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
 
+    .line 94
+    .local v0, "superState":Landroid/os/Parcelable;
     if-nez v0, :cond_0
 
+    .line 97
     sget-object v1, Landroid/view/AbsSavedState;->EMPTY_STATE:Landroid/view/AbsSavedState;
 
     return-object v1
 
+    .line 95
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -75,6 +85,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 84
     invoke-virtual {p0, p1}, Landroid/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;)Landroid/view/AbsSavedState;
 
     move-result-object p1
@@ -85,6 +96,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
     .locals 0
 
+    .line 84
     invoke-virtual {p0, p1, p2}, Landroid/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/view/AbsSavedState;
 
     move-result-object p1
@@ -94,7 +106,9 @@
 
 .method public newArray(I)[Landroid/view/AbsSavedState;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 102
     new-array v0, p1, [Landroid/view/AbsSavedState;
 
     return-object v0
@@ -103,6 +117,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 84
     invoke-virtual {p0, p1}, Landroid/view/AbsSavedState$2;->newArray(I)[Landroid/view/AbsSavedState;
 
     move-result-object p1

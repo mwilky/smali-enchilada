@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 2824
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +37,10 @@
 
 .method public onRoutePresentationDisplayChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 0
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
+    .line 2913
     return-void
 .end method
 

@@ -29,7 +29,12 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Ljava/lang/String;Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/AccountManager;
+    .param p2, "activity"    # Landroid/app/Activity;
+    .param p3, "handler"    # Landroid/os/Handler;
 
+    .line 3168
+    .local p4, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$22;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$22;->val$account:Landroid/accounts/Account;
@@ -55,6 +60,7 @@
         }
     .end annotation
 
+    .line 3171
     iget-object v0, p0, Landroid/accounts/AccountManager$22;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -88,5 +94,6 @@
 
     invoke-interface/range {v1 .. v6}, Landroid/accounts/IAccountManager;->startUpdateCredentialsSession(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;ZLandroid/os/Bundle;)V
 
+    .line 3177
     return-void
 .end method

@@ -24,6 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +32,9 @@
 
 .method synthetic constructor <init>(Landroid/app/backup/BackupDataInput$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/app/backup/BackupDataInput$1;
 
+    .line 69
     invoke-direct {p0}, Landroid/app/backup/BackupDataInput$EntityHeader;-><init>()V
 
     return-void

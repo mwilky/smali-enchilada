@@ -51,6 +51,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 6267
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "emails"
@@ -61,6 +62,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 6285
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "lookup"
@@ -71,16 +73,19 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
+    .line 6336
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "lookup_enterprise"
 
+    .line 6337
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->ENTERPRISE_CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
+    .line 6356
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -91,6 +96,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_FILTER_URI:Landroid/net/Uri;
 
+    .line 6364
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter_enterprise"
@@ -107,6 +113,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 6252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -114,7 +121,11 @@
 
 .method public static final getTypeLabel(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 2
+    .param p0, "res"    # Landroid/content/res/Resources;
+    .param p1, "type"    # I
+    .param p2, "label"    # Ljava/lang/CharSequence;
 
+    .line 6405
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -123,13 +134,17 @@
 
     if-nez v0, :cond_0
 
+    .line 6406
     return-object p2
 
+    .line 6408
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Email;->getTypeLabelResource(I)I
 
     move-result v0
 
+    .line 6409
+    .local v0, "labelRes":I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -139,30 +154,37 @@
 
 .method public static final getTypeLabelResource(I)I
     .locals 1
+    .param p0, "type"    # I
 
+    .line 6389
     packed-switch p0, :pswitch_data_0
 
-    const v0, 0x10401e1
+    .line 6394
+    const v0, 0x10401e2
 
     return v0
 
+    .line 6393
     :pswitch_0
-    const v0, 0x10401e3
-
-    return v0
-
-    :pswitch_1
     const v0, 0x10401e4
 
     return v0
 
-    :pswitch_2
+    .line 6392
+    :pswitch_1
     const v0, 0x10401e5
 
     return v0
 
+    .line 6391
+    :pswitch_2
+    const v0, 0x10401e6
+
+    return v0
+
+    .line 6390
     :pswitch_3
-    const v0, 0x10401e2
+    const v0, 0x10401e3
 
     return v0
 

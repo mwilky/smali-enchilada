@@ -22,8 +22,10 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 100
     const-string/jumbo v0, "log.closeguard.Animation"
 
+    .line 101
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -32,12 +34,14 @@
 
     sput-boolean v0, Landroid/view/animation/Animation$NoImagePreloadHolder;->USE_CLOSEGUARD:Z
 
+    .line 100
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

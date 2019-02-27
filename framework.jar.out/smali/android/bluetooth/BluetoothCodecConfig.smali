@@ -90,6 +90,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 211
     new-instance v0, Landroid/bluetooth/BluetoothCodecConfig$1;
 
     invoke-direct {v0}, Landroid/bluetooth/BluetoothCodecConfig$1;-><init>()V
@@ -101,37 +102,62 @@
 
 .method public constructor <init>(IIIIIJJJJ)V
     .locals 0
+    .param p1, "codecType"    # I
+    .param p2, "codecPriority"    # I
+    .param p3, "sampleRate"    # I
+    .param p4, "bitsPerSample"    # I
+    .param p5, "channelMode"    # I
+    .param p6, "codecSpecific1"    # J
+    .param p8, "codecSpecific2"    # J
+    .param p10, "codecSpecific3"    # J
+    .param p12, "codecSpecific4"    # J
 
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 80
     iput p1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
+    .line 81
     iput p2, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecPriority:I
 
+    .line 82
     iput p3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
+    .line 83
     iput p4, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
+    .line 84
     iput p5, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
+    .line 85
     iput-wide p6, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific1:J
 
+    .line 86
     iput-wide p8, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific2:J
 
+    .line 87
     iput-wide p10, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific3:J
 
+    .line 88
     iput-wide p12, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific4:J
 
+    .line 89
     return-void
 .end method
 
 .method private static appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p0, "prevStr"    # Ljava/lang/String;
+    .param p1, "capStr"    # Ljava/lang/String;
 
+    .line 135
     if-nez p0, :cond_0
 
+    .line 136
     return-object p1
 
+    .line 138
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -157,6 +183,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 208
     const/4 v0, 0x0
 
     return v0
@@ -164,17 +191,22 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 93
     instance-of v0, p1, Landroid/bluetooth/BluetoothCodecConfig;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
+    .line 94
     move-object v0, p1
 
     check-cast v0, Landroid/bluetooth/BluetoothCodecConfig;
 
+    .line 95
+    .local v0, "other":Landroid/bluetooth/BluetoothCodecConfig;
     iget v2, v0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
     iget v3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
@@ -244,6 +276,8 @@
     :cond_0
     return v1
 
+    .line 105
+    .end local v0    # "other":Landroid/bluetooth/BluetoothCodecConfig;
     :cond_1
     return v1
 .end method
@@ -251,6 +285,7 @@
 .method public getBitsPerSample()I
     .locals 1
 
+    .line 342
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
     return v0
@@ -259,6 +294,7 @@
 .method public getChannelMode()I
     .locals 1
 
+    .line 355
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
     return v0
@@ -267,6 +303,7 @@
 .method public getCodecName()Ljava/lang/String;
     .locals 2
 
+    .line 254
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
     const v1, 0xf4240
@@ -275,6 +312,7 @@
 
     packed-switch v0, :pswitch_data_0
 
+    .line 270
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -297,31 +335,37 @@
 
     return-object v0
 
+    .line 264
     :pswitch_0
     const-string v0, "LDAC"
 
     return-object v0
 
+    .line 262
     :pswitch_1
     const-string v0, "aptX HD"
 
     return-object v0
 
+    .line 260
     :pswitch_2
     const-string v0, "aptX"
 
     return-object v0
 
+    .line 258
     :pswitch_3
     const-string v0, "AAC"
 
     return-object v0
 
+    .line 256
     :pswitch_4
     const-string v0, "SBC"
 
     return-object v0
 
+    .line 266
     :cond_0
     const-string v0, "INVALID CODEC"
 
@@ -342,6 +386,7 @@
 .method public getCodecPriority()I
     .locals 1
 
+    .line 300
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecPriority:I
 
     return v0
@@ -350,6 +395,7 @@
 .method public getCodecSpecific1()J
     .locals 2
 
+    .line 364
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific1:J
 
     return-wide v0
@@ -358,6 +404,7 @@
 .method public getCodecSpecific2()J
     .locals 2
 
+    .line 373
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific2:J
 
     return-wide v0
@@ -366,6 +413,7 @@
 .method public getCodecSpecific3()J
     .locals 2
 
+    .line 382
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific3:J
 
     return-wide v0
@@ -374,6 +422,7 @@
 .method public getCodecSpecific4()J
     .locals 2
 
+    .line 391
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific4:J
 
     return-wide v0
@@ -382,6 +431,7 @@
 .method public getCodecType()I
     .locals 1
 
+    .line 280
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
     return v0
@@ -390,6 +440,7 @@
 .method public getSampleRate()I
     .locals 1
 
+    .line 328
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
     return v0
@@ -398,6 +449,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 110
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -434,6 +486,7 @@
 
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
+    .line 111
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -464,6 +517,7 @@
 
     iget-wide v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific2:J
 
+    .line 112
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -492,6 +546,7 @@
 
     aput-object v1, v0, v2
 
+    .line 110
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
     move-result v0
@@ -502,6 +557,7 @@
 .method public isMandatoryCodec()Z
     .locals 1
 
+    .line 289
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
     if-nez v0, :cond_0
@@ -520,6 +576,7 @@
 .method public isValid()Z
     .locals 1
 
+    .line 121
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
     if-eqz v0, :cond_0
@@ -545,7 +602,9 @@
 
 .method public sameAudioFeedingParameters(Landroid/bluetooth/BluetoothCodecConfig;)Z
     .locals 2
+    .param p1, "other"    # Landroid/bluetooth/BluetoothCodecConfig;
 
+    .line 401
     if-eqz p1, :cond_0
 
     iget v0, p1, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
@@ -579,27 +638,35 @@
 
 .method public setCodecPriority(I)V
     .locals 0
+    .param p1, "codecPriority"    # I
 
+    .line 311
     iput p1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecPriority:I
 
+    .line 312
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 9
 
+    .line 143
     const/4 v0, 0x0
 
+    .line 144
+    .local v0, "sampleRateStr":Ljava/lang/String;
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
     if-nez v1, :cond_0
 
+    .line 145
     const-string v1, "NONE"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 147
     :cond_0
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -609,12 +676,14 @@
 
     if-eqz v1, :cond_1
 
+    .line 148
     const-string v1, "44100"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 150
     :cond_1
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -622,12 +691,14 @@
 
     if-eqz v1, :cond_2
 
+    .line 151
     const-string v1, "48000"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 153
     :cond_2
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -635,12 +706,14 @@
 
     if-eqz v1, :cond_3
 
+    .line 154
     const-string v1, "88200"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 156
     :cond_3
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -648,12 +721,14 @@
 
     if-eqz v1, :cond_4
 
+    .line 157
     const-string v1, "96000"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 159
     :cond_4
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -661,12 +736,14 @@
 
     if-eqz v1, :cond_5
 
+    .line 160
     const-string v1, "176400"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 162
     :cond_5
     iget v1, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
@@ -674,25 +751,31 @@
 
     if-eqz v1, :cond_6
 
+    .line 163
     const-string v1, "192000"
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 166
     :cond_6
     const/4 v1, 0x0
 
+    .line 167
+    .local v1, "bitsPerSampleStr":Ljava/lang/String;
     iget v3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
     if-nez v3, :cond_7
 
+    .line 168
     const-string v3, "NONE"
 
     invoke-static {v1, v3}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 170
     :cond_7
     iget v3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
@@ -700,12 +783,14 @@
 
     if-eqz v3, :cond_8
 
+    .line 171
     const-string v3, "16"
 
     invoke-static {v1, v3}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 173
     :cond_8
     iget v3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
@@ -713,12 +798,14 @@
 
     if-eqz v3, :cond_9
 
+    .line 174
     const-string v3, "24"
 
     invoke-static {v1, v3}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 176
     :cond_9
     iget v3, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
@@ -726,25 +813,31 @@
 
     if-eqz v3, :cond_a
 
+    .line 177
     const-string v3, "32"
 
     invoke-static {v1, v3}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 180
     :cond_a
     const/4 v3, 0x0
 
+    .line 181
+    .local v3, "channelModeStr":Ljava/lang/String;
     iget v4, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
     if-nez v4, :cond_b
 
+    .line 182
     const-string v4, "NONE"
 
     invoke-static {v3, v4}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 184
     :cond_b
     iget v4, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
@@ -752,12 +845,14 @@
 
     if-eqz v4, :cond_c
 
+    .line 185
     const-string v4, "MONO"
 
     invoke-static {v3, v4}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 187
     :cond_c
     iget v4, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
@@ -765,12 +860,14 @@
 
     if-eqz v4, :cond_d
 
+    .line 188
     const-string v4, "STEREO"
 
     invoke-static {v3, v4}, Landroid/bluetooth/BluetoothCodecConfig;->appendCapabilityToString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 191
     :cond_d
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -812,6 +909,7 @@
 
     iget v7, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
+    .line 194
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -842,6 +940,7 @@
 
     iget v7, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
+    .line 196
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -870,6 +969,7 @@
 
     iget v6, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
+    .line 198
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -928,47 +1028,60 @@
 
     move-result-object v2
 
+    .line 191
     return-object v2
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 237
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 238
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecPriority:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 239
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mSampleRate:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 240
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mBitsPerSample:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 241
     iget v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mChannelMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 242
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific1:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 243
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific2:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 244
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific3:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 245
     iget-wide v0, p0, Landroid/bluetooth/BluetoothCodecConfig;->mCodecSpecific4:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 246
     return-void
 .end method

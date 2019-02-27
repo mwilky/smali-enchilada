@@ -27,7 +27,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/job/DataSetProto$PackageEntryProto;)V
     .locals 0
+    .param p1, "this$1"    # Lcom/android/server/job/DataSetProto$PackageEntryProto;
 
+    .line 25
     iput-object p1, p0, Lcom/android/server/job/DataSetProto$PackageEntryProto$StopReasonCount;->this$1:Lcom/android/server/job/DataSetProto$PackageEntryProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

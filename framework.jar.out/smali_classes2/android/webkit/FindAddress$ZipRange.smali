@@ -27,17 +27,27 @@
 # direct methods
 .method constructor <init>(IIII)V
     .locals 0
+    .param p1, "low"    # I
+    .param p2, "high"    # I
+    .param p3, "exception1"    # I
+    .param p4, "exception2"    # I
 
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 36
     iput p1, p0, Landroid/webkit/FindAddress$ZipRange;->mLow:I
 
+    .line 37
     iput p2, p0, Landroid/webkit/FindAddress$ZipRange;->mHigh:I
 
+    .line 38
     iput p3, p0, Landroid/webkit/FindAddress$ZipRange;->mException1:I
 
+    .line 39
     iput p3, p0, Landroid/webkit/FindAddress$ZipRange;->mException2:I
 
+    .line 40
     return-void
 .end method
 
@@ -45,7 +55,9 @@
 # virtual methods
 .method matches(Ljava/lang/String;)Z
     .locals 3
+    .param p1, "zipCode"    # Ljava/lang/String;
 
+    .line 42
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -58,6 +70,8 @@
 
     move-result v1
 
+    .line 43
+    .local v1, "prefix":I
     iget v2, p0, Landroid/webkit/FindAddress$ZipRange;->mLow:I
 
     if-gt v2, v1, :cond_0

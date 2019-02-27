@@ -52,6 +52,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 163
     invoke-direct {p0}, Landroid/provider/OneTimeUseBuilder;-><init>()V
 
     return-void
@@ -61,9 +62,13 @@
 # virtual methods
 .method public addServiceUuid(Landroid/os/ParcelUuid;Landroid/os/ParcelUuid;)Landroid/companion/BluetoothDeviceFilter$Builder;
     .locals 1
+    .param p1, "serviceUuid"    # Landroid/os/ParcelUuid;
+    .param p2, "serviceUuidMask"    # Landroid/os/ParcelUuid;
 
+    .line 201
     invoke-virtual {p0}, Landroid/companion/BluetoothDeviceFilter$Builder;->checkNotUsed()V
 
+    .line 202
     iget-object v0, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mServiceUuid:Ljava/util/ArrayList;
 
     invoke-static {v0, p1}, Lcom/android/internal/util/ArrayUtils;->add(Ljava/util/ArrayList;Ljava/lang/Object;)Ljava/util/ArrayList;
@@ -72,6 +77,7 @@
 
     iput-object v0, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mServiceUuid:Ljava/util/ArrayList;
 
+    .line 203
     iget-object v0, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mServiceUuidMask:Ljava/util/ArrayList;
 
     invoke-static {v0, p2}, Lcom/android/internal/util/ArrayUtils;->add(Ljava/util/ArrayList;Ljava/lang/Object;)Ljava/util/ArrayList;
@@ -80,14 +86,17 @@
 
     iput-object v0, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mServiceUuidMask:Ljava/util/ArrayList;
 
+    .line 204
     return-object p0
 .end method
 
 .method public build()Landroid/companion/BluetoothDeviceFilter;
     .locals 7
 
+    .line 211
     invoke-virtual {p0}, Landroid/companion/BluetoothDeviceFilter$Builder;->markUsed()V
 
+    .line 212
     new-instance v6, Landroid/companion/BluetoothDeviceFilter;
 
     iget-object v1, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mNamePattern:Ljava/util/regex/Pattern;
@@ -110,6 +119,7 @@
 .method public bridge synthetic build()Ljava/lang/Object;
     .locals 1
 
+    .line 163
     invoke-virtual {p0}, Landroid/companion/BluetoothDeviceFilter$Builder;->build()Landroid/companion/BluetoothDeviceFilter;
 
     move-result-object v0
@@ -119,20 +129,28 @@
 
 .method public setAddress(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;
     .locals 0
+    .param p1, "address"    # Ljava/lang/String;
 
+    .line 185
     invoke-virtual {p0}, Landroid/companion/BluetoothDeviceFilter$Builder;->checkNotUsed()V
 
+    .line 186
     iput-object p1, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mAddress:Ljava/lang/String;
 
+    .line 187
     return-object p0
 .end method
 
 .method public setNamePattern(Ljava/util/regex/Pattern;)Landroid/companion/BluetoothDeviceFilter$Builder;
     .locals 0
+    .param p1, "regex"    # Ljava/util/regex/Pattern;
 
+    .line 174
     invoke-virtual {p0}, Landroid/companion/BluetoothDeviceFilter$Builder;->checkNotUsed()V
 
+    .line 175
     iput-object p1, p0, Landroid/companion/BluetoothDeviceFilter$Builder;->mNamePattern:Ljava/util/regex/Pattern;
 
+    .line 176
     return-object p0
 .end method

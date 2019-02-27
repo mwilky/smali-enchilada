@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 241
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/location/NanoAppBinary;
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 244
     new-instance v0, Landroid/hardware/location/NanoAppBinary;
 
     const/4 v1, 0x0
@@ -52,6 +55,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 241
     invoke-virtual {p0, p1}, Landroid/hardware/location/NanoAppBinary$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/location/NanoAppBinary;
 
     move-result-object p1
@@ -61,7 +65,9 @@
 
 .method public newArray(I)[Landroid/hardware/location/NanoAppBinary;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 249
     new-array v0, p1, [Landroid/hardware/location/NanoAppBinary;
 
     return-object v0
@@ -70,6 +76,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 241
     invoke-virtual {p0, p1}, Landroid/hardware/location/NanoAppBinary$1;->newArray(I)[Landroid/hardware/location/NanoAppBinary;
 
     move-result-object p1

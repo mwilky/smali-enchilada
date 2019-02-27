@@ -23,19 +23,27 @@
 # direct methods
 .method public constructor <init>(Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;Landroid/os/Handler;)V
     .locals 0
+    .param p1, "listener"    # Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 999
     invoke-direct {p0}, Landroid/media/session/IOnVolumeKeyLongPressListener$Stub;-><init>()V
 
+    .line 1000
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
 
+    .line 1001
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->mHandler:Landroid/os/Handler;
 
+    .line 1002
     return-void
 .end method
 
 .method static synthetic access$1100(Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;)Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
     .locals 1
+    .param p0, "x0"    # Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;
 
+    .line 993
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
 
     return-object v0
@@ -45,7 +53,9 @@
 # virtual methods
 .method public onVolumeKeyLongPress(Landroid/view/KeyEvent;)V
     .locals 2
+    .param p1, "event"    # Landroid/view/KeyEvent;
 
+    .line 1006
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->mListener:Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListener;
 
     if-eqz v0, :cond_1
@@ -56,6 +66,7 @@
 
     goto :goto_0
 
+    .line 1011
     :cond_0
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$OnVolumeKeyLongPressListenerImpl;->mHandler:Landroid/os/Handler;
 
@@ -65,8 +76,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1017
     return-void
 
+    .line 1007
     :cond_1
     :goto_0
     const-string v0, "SessionManager"
@@ -75,5 +88,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1009
     return-void
 .end method

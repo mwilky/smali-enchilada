@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 778
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,11 +40,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/ScanResult;
     .locals 22
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 780
     move-object/from16 v0, p1
 
     const/4 v1, 0x0
 
+    .line 781
+    .local v1, "wifiSsid":Landroid/net/wifi/WifiSsid;
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -52,6 +57,7 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 782
     sget-object v2, Landroid/net/wifi/WifiSsid;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -62,57 +68,71 @@
 
     check-cast v1, Landroid/net/wifi/WifiSsid;
 
+    .line 784
     :cond_0
     new-instance v2, Landroid/net/wifi/ScanResult;
 
+    .line 786
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
+    .line 787
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
+    .line 788
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v8
 
+    .line 789
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
+    .line 790
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v11
 
+    .line 791
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v12
 
+    .line 792
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v13
 
+    .line 793
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v14
 
+    .line 794
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
+    .line 795
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
+    .line 796
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
+    .line 797
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v19
 
+    .line 798
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v20
@@ -125,12 +145,15 @@
 
     invoke-direct/range {v4 .. v21}, Landroid/net/wifi/ScanResult;-><init>(Landroid/net/wifi/WifiSsid;Ljava/lang/String;Ljava/lang/String;JILjava/lang/String;IIJIIIIIZ)V
 
+    .line 803
+    .local v2, "sr":Landroid/net/wifi/ScanResult;
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v4
 
     iput-wide v4, v2, Landroid/net/wifi/ScanResult;->seen:J
 
+    .line 804
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -149,45 +172,56 @@
     :goto_0
     iput-boolean v4, v2, Landroid/net/wifi/ScanResult;->untrusted:Z
 
+    .line 805
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v2, Landroid/net/wifi/ScanResult;->numUsage:I
 
+    .line 806
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v2, Landroid/net/wifi/ScanResult;->venueName:Ljava/lang/CharSequence;
 
+    .line 807
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v2, Landroid/net/wifi/ScanResult;->operatorFriendlyName:Ljava/lang/CharSequence;
 
+    .line 808
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v6
 
     iput-wide v6, v2, Landroid/net/wifi/ScanResult;->flags:J
 
+    .line 809
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 810
+    .local v4, "n":I
     if-eqz v4, :cond_2
 
+    .line 811
     new-array v6, v4, [Landroid/net/wifi/ScanResult$InformationElement;
 
     iput-object v6, v2, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
+    .line 812
     move v6, v5
 
+    .local v6, "i":I
     :goto_1
     if-ge v6, v4, :cond_2
 
+    .line 813
     iget-object v7, v2, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
     new-instance v8, Landroid/net/wifi/ScanResult$InformationElement;
@@ -196,6 +230,7 @@
 
     aput-object v8, v7, v6
 
+    .line 814
     iget-object v7, v2, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
     aget-object v7, v7, v6
@@ -206,10 +241,13 @@
 
     iput v8, v7, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
+    .line 815
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
+    .line 816
+    .local v7, "len":I
     iget-object v8, v2, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
     aget-object v8, v8, v6
@@ -218,6 +256,7 @@
 
     iput-object v9, v8, Landroid/net/wifi/ScanResult$InformationElement;->bytes:[B
 
+    .line 817
     iget-object v8, v2, Landroid/net/wifi/ScanResult;->informationElements:[Landroid/net/wifi/ScanResult$InformationElement;
 
     aget-object v8, v8, v6
@@ -226,28 +265,37 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Parcel;->readByteArray([B)V
 
+    .line 812
+    .end local v7    # "len":I
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
+    .line 821
+    .end local v6    # "i":I
     :cond_2
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 822
     if-eqz v4, :cond_3
 
+    .line 823
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v6, v2, Landroid/net/wifi/ScanResult;->anqpLines:Ljava/util/List;
 
+    .line 824
     move v6, v5
 
+    .restart local v6    # "i":I
     :goto_2
     if-ge v6, v4, :cond_3
 
+    .line 825
     iget-object v7, v2, Landroid/net/wifi/ScanResult;->anqpLines:Ljava/util/List;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -256,42 +304,59 @@
 
     invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 824
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
+    .line 828
+    .end local v6    # "i":I
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 829
     if-eqz v4, :cond_4
 
+    .line 830
     new-array v6, v4, [Landroid/net/wifi/AnqpInformationElement;
 
     iput-object v6, v2, Landroid/net/wifi/ScanResult;->anqpElements:[Landroid/net/wifi/AnqpInformationElement;
 
+    .line 831
     move v6, v5
 
+    .restart local v6    # "i":I
     :goto_3
     if-ge v6, v4, :cond_4
 
+    .line 832
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
+    .line 833
+    .local v7, "vendorId":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
+    .line 834
+    .local v8, "elementId":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
+    .line 835
+    .local v9, "len":I
     new-array v10, v9, [B
 
+    .line 836
+    .local v10, "payload":[B
     invoke-virtual {v0, v10}, Landroid/os/Parcel;->readByteArray([B)V
 
+    .line 837
     iget-object v11, v2, Landroid/net/wifi/ScanResult;->anqpElements:[Landroid/net/wifi/AnqpInformationElement;
 
     new-instance v12, Landroid/net/wifi/AnqpInformationElement;
@@ -300,10 +365,17 @@
 
     aput-object v12, v11, v6
 
+    .line 831
+    .end local v7    # "vendorId":I
+    .end local v8    # "elementId":I
+    .end local v9    # "len":I
+    .end local v10    # "payload":[B
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
+    .line 841
+    .end local v6    # "i":I
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
@@ -319,35 +391,47 @@
     :goto_4
     iput-boolean v3, v2, Landroid/net/wifi/ScanResult;->isCarrierAp:Z
 
+    .line 842
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     iput v3, v2, Landroid/net/wifi/ScanResult;->carrierApEapType:I
 
+    .line 843
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Landroid/net/wifi/ScanResult;->carrierName:Ljava/lang/String;
 
+    .line 844
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
+    .line 845
+    .end local v4    # "n":I
+    .local v3, "n":I
     if-eqz v3, :cond_6
 
+    .line 846
     new-array v4, v3, [Landroid/net/wifi/ScanResult$RadioChainInfo;
 
     iput-object v4, v2, Landroid/net/wifi/ScanResult;->radioChainInfos:[Landroid/net/wifi/ScanResult$RadioChainInfo;
 
+    .line 847
     nop
 
+    .local v5, "i":I
     :goto_5
     move v4, v5
 
+    .end local v5    # "i":I
+    .local v4, "i":I
     if-ge v4, v3, :cond_6
 
+    .line 848
     iget-object v5, v2, Landroid/net/wifi/ScanResult;->radioChainInfos:[Landroid/net/wifi/ScanResult$RadioChainInfo;
 
     new-instance v6, Landroid/net/wifi/ScanResult$RadioChainInfo;
@@ -356,6 +440,7 @@
 
     aput-object v6, v5, v4
 
+    .line 849
     iget-object v5, v2, Landroid/net/wifi/ScanResult;->radioChainInfos:[Landroid/net/wifi/ScanResult$RadioChainInfo;
 
     aget-object v5, v5, v4
@@ -366,6 +451,7 @@
 
     iput v6, v5, Landroid/net/wifi/ScanResult$RadioChainInfo;->id:I
 
+    .line 850
     iget-object v5, v2, Landroid/net/wifi/ScanResult;->radioChainInfos:[Landroid/net/wifi/ScanResult$RadioChainInfo;
 
     aget-object v5, v5, v4
@@ -376,10 +462,15 @@
 
     iput v6, v5, Landroid/net/wifi/ScanResult$RadioChainInfo;->level:I
 
+    .line 847
     add-int/lit8 v5, v4, 0x1
 
+    .end local v4    # "i":I
+    .restart local v5    # "i":I
     goto :goto_5
 
+    .line 853
+    .end local v5    # "i":I
     :cond_6
     return-object v2
 .end method
@@ -387,6 +478,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 778
     invoke-virtual {p0, p1}, Landroid/net/wifi/ScanResult$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/ScanResult;
 
     move-result-object p1
@@ -396,7 +488,9 @@
 
 .method public newArray(I)[Landroid/net/wifi/ScanResult;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 857
     new-array v0, p1, [Landroid/net/wifi/ScanResult;
 
     return-object v0
@@ -405,6 +499,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 778
     invoke-virtual {p0, p1}, Landroid/net/wifi/ScanResult$1;->newArray(I)[Landroid/net/wifi/ScanResult;
 
     move-result-object p1

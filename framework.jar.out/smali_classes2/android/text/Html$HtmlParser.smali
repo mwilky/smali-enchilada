@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 205
     new-instance v0, Lorg/ccil/cowan/tagsoup/HTMLSchema;
 
     invoke-direct {v0}, Lorg/ccil/cowan/tagsoup/HTMLSchema;-><init>()V
@@ -34,6 +35,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,6 +44,7 @@
 .method static synthetic access$000()Lorg/ccil/cowan/tagsoup/HTMLSchema;
     .locals 1
 
+    .line 204
     sget-object v0, Landroid/text/Html$HtmlParser;->schema:Lorg/ccil/cowan/tagsoup/HTMLSchema;
 
     return-object v0

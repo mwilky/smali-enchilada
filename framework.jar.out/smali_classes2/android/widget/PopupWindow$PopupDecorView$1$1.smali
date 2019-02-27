@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/PopupWindow$PopupDecorView$1;Landroid/graphics/Rect;)V
     .locals 0
+    .param p1, "this$2"    # Landroid/widget/PopupWindow$PopupDecorView$1;
 
+    .line 2445
     iput-object p1, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->this$2:Landroid/widget/PopupWindow$PopupDecorView$1;
 
     iput-object p2, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->val$epicenter:Landroid/graphics/Rect;
@@ -37,7 +39,9 @@
 # virtual methods
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
     .locals 1
+    .param p1, "transition"    # Landroid/transition/Transition;
 
+    .line 2448
     iget-object v0, p0, Landroid/widget/PopupWindow$PopupDecorView$1$1;->val$epicenter:Landroid/graphics/Rect;
 
     return-object v0

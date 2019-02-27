@@ -24,6 +24,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .line 63
     invoke-static {}, Lcom/android/internal/telephony/PhoneConstants$DataState;->values()[Lcom/android/internal/telephony/PhoneConstants$DataState;
 
     move-result-object v0
@@ -96,6 +97,7 @@
     :catch_2
     move-exception v2
 
+    .line 33
     :goto_2
     invoke-static {}, Lcom/android/internal/telephony/PhoneConstants$State;->values()[Lcom/android/internal/telephony/PhoneConstants$State;
 

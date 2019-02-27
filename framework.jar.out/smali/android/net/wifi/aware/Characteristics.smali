@@ -32,6 +32,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 90
     new-instance v0, Landroid/net/wifi/aware/Characteristics$1;
 
     invoke-direct {v0}, Landroid/net/wifi/aware/Characteristics$1;-><init>()V
@@ -43,17 +44,22 @@
 
 .method public constructor <init>(Landroid/os/Bundle;)V
     .locals 1
+    .param p1, "characteristics"    # Landroid/os/Bundle;
 
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 35
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
+    .line 39
     iput-object p1, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
+    .line 40
     return-void
 .end method
 
@@ -62,6 +68,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 87
     const/4 v0, 0x0
 
     return v0
@@ -70,6 +77,7 @@
 .method public getMaxMatchFilterLength()I
     .locals 2
 
+    .line 77
     iget-object v0, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
     const-string/jumbo v1, "key_max_match_filter_length"
@@ -84,6 +92,7 @@
 .method public getMaxServiceNameLength()I
     .locals 2
 
+    .line 50
     iget-object v0, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
     const-string/jumbo v1, "key_max_service_name_length"
@@ -98,6 +107,7 @@
 .method public getMaxServiceSpecificInfoLength()I
     .locals 2
 
+    .line 65
     iget-object v0, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
     const-string/jumbo v1, "key_max_service_specific_info_length"
@@ -111,10 +121,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 82
     iget-object v0, p0, Landroid/net/wifi/aware/Characteristics;->mCharacteristics:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
+    .line 83
     return-void
 .end method

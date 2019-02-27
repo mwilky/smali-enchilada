@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/animation/PathKeyframes;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/animation/PathKeyframes;
 
+    .line 198
     iput-object p1, p0, Landroid/animation/PathKeyframes$4;->this$0:Landroid/animation/PathKeyframes;
 
     invoke-direct {p0}, Landroid/animation/PathKeyframes$IntKeyframesBase;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public getIntValue(F)I
     .locals 2
+    .param p1, "fraction"    # F
 
+    .line 201
     iget-object v0, p0, Landroid/animation/PathKeyframes$4;->this$0:Landroid/animation/PathKeyframes;
 
     invoke-virtual {v0, p1}, Landroid/animation/PathKeyframes;->getValue(F)Ljava/lang/Object;
@@ -42,6 +46,8 @@
 
     check-cast v0, Landroid/graphics/PointF;
 
+    .line 202
+    .local v0, "pointF":Landroid/graphics/PointF;
     iget v1, v0, Landroid/graphics/PointF;->y:F
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I

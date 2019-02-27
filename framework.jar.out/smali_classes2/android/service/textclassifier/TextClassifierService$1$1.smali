@@ -35,7 +35,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/textclassifier/TextClassifierService$1;Landroid/service/textclassifier/ITextSelectionCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/textclassifier/TextClassifierService$1;
 
+    .line 103
     iput-object p1, p0, Landroid/service/textclassifier/TextClassifierService$1$1;->this$1:Landroid/service/textclassifier/TextClassifierService$1;
 
     iput-object p2, p0, Landroid/service/textclassifier/TextClassifierService$1$1;->val$callback:Landroid/service/textclassifier/ITextSelectionCallback;
@@ -49,7 +51,9 @@
 # virtual methods
 .method public onFailure(Ljava/lang/CharSequence;)V
     .locals 3
+    .param p1, "error"    # Ljava/lang/CharSequence;
 
+    .line 116
     :try_start_0
     iget-object v0, p0, Landroid/service/textclassifier/TextClassifierService$1$1;->val$callback:Landroid/service/textclassifier/ITextSelectionCallback;
 
@@ -63,31 +67,40 @@
 
     if-eqz v0, :cond_0
 
+    .line 117
     iget-object v0, p0, Landroid/service/textclassifier/TextClassifierService$1$1;->val$callback:Landroid/service/textclassifier/ITextSelectionCallback;
 
     invoke-interface {v0}, Landroid/service/textclassifier/ITextSelectionCallback;->onFailure()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 121
     :cond_0
     goto :goto_0
 
+    .line 119
     :catch_0
     move-exception v0
 
+    .line 120
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "TextClassifierService"
 
     const-string v2, "Error calling callback"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 122
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public onSuccess(Landroid/view/textclassifier/TextSelection;)V
     .locals 3
+    .param p1, "result"    # Landroid/view/textclassifier/TextSelection;
 
+    .line 107
     :try_start_0
     iget-object v0, p0, Landroid/service/textclassifier/TextClassifierService$1$1;->val$callback:Landroid/service/textclassifier/ITextSelectionCallback;
 
@@ -95,17 +108,23 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 110
     goto :goto_0
 
+    .line 108
     :catch_0
     move-exception v0
 
+    .line 109
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "TextClassifierService"
 
     const-string v2, "Error calling callback"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 111
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -113,6 +132,7 @@
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
     .locals 0
 
+    .line 103
     check-cast p1, Landroid/view/textclassifier/TextSelection;
 
     invoke-virtual {p0, p1}, Landroid/service/textclassifier/TextClassifierService$1$1;->onSuccess(Landroid/view/textclassifier/TextSelection;)V

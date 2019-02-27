@@ -17,18 +17,22 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 27
     const/16 v0, 0x20e3
 
     sput v0, Landroid/text/Emoji;->COMBINING_ENCLOSING_KEYCAP:I
 
+    .line 29
     const/16 v0, 0x200d
 
     sput v0, Landroid/text/Emoji;->ZERO_WIDTH_JOINER:I
 
+    .line 31
     const v0, 0xfe0f
 
     sput v0, Landroid/text/Emoji;->VARIATION_SELECTOR_16:I
 
+    .line 33
     const v0, 0xe007f
 
     sput v0, Landroid/text/Emoji;->CANCEL_TAG:I
@@ -39,6 +43,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +51,9 @@
 
 .method public static isEmoji(I)Z
     .locals 1
+    .param p0, "codePoint"    # I
 
+    .line 98
     invoke-static {p0}, Landroid/text/Emoji;->isNewEmoji(I)Z
 
     move-result v0
@@ -78,7 +85,9 @@
 
 .method public static isEmojiModifier(I)Z
     .locals 1
+    .param p0, "codePoint"    # I
 
+    .line 46
     const/16 v0, 0x3b
 
     invoke-static {p0, v0}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
@@ -90,7 +99,9 @@
 
 .method public static isEmojiModifierBase(I)Z
     .locals 2
+    .param p0, "c"    # I
 
+    .line 60
     const/4 v0, 0x1
 
     const v1, 0x1f91d
@@ -103,6 +114,7 @@
 
     goto :goto_0
 
+    .line 66
     :cond_0
     const v1, 0x1f9b5
 
@@ -121,9 +133,11 @@
 
     if-gt p0, v1, :cond_3
 
+    .line 67
     :cond_2
     return v0
 
+    .line 69
     :cond_3
     const/16 v0, 0x3c
 
@@ -133,6 +147,7 @@
 
     return v0
 
+    .line 61
     :cond_4
     :goto_0
     return v0
@@ -140,7 +155,9 @@
 
 .method public static isKeycapBase(I)Z
     .locals 1
+    .param p0, "codePoint"    # I
 
+    .line 103
     const/16 v0, 0x30
 
     if-gt v0, p0, :cond_0
@@ -175,7 +192,9 @@
 
 .method public static isNewEmoji(I)Z
     .locals 4
+    .param p0, "c"    # I
 
+    .line 79
     const/4 v0, 0x0
 
     const v1, 0x1f6f9
@@ -188,6 +207,7 @@
 
     goto :goto_2
 
+    .line 83
     :cond_0
     const/16 v3, 0x265f
 
@@ -284,6 +304,7 @@
     :goto_1
     return v0
 
+    .line 81
     :cond_a
     :goto_2
     return v0
@@ -291,7 +312,9 @@
 
 .method public static isRegionalIndicatorSymbol(I)Z
     .locals 1
+    .param p0, "codePoint"    # I
 
+    .line 39
     const v0, 0x1f1e6
 
     if-gt v0, p0, :cond_0
@@ -313,7 +336,9 @@
 
 .method public static isTagSpecChar(I)Z
     .locals 1
+    .param p0, "codePoint"    # I
 
+    .line 112
     const v0, 0xe0020
 
     if-gt v0, p0, :cond_0

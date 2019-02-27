@@ -23,9 +23,13 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Rect;I)V
     .locals 1
+    .param p1, "rect"    # Landroid/graphics/Rect;
+    .param p2, "weight"    # I
 
+    .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 135
     const-string/jumbo v0, "rect must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -36,16 +40,25 @@
 
     iput-object v0, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
+    .line 136
     iput p2, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->weight:I
 
+    .line 137
     return-void
 .end method
 
 .method private static clip(IIILandroid/graphics/Rect;Ljava/lang/String;)I
     .locals 3
+    .param p0, "value"    # I
+    .param p1, "lo"    # I
+    .param p2, "hi"    # I
+    .param p3, "rect"    # Landroid/graphics/Rect;
+    .param p4, "name"    # Ljava/lang/String;
 
+    .line 213
     if-ge p0, p1, :cond_0
 
+    .line 214
     const-string v0, "ParameterUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,13 +89,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 216
     move p0, p1
 
     goto :goto_0
 
+    .line 217
     :cond_0
     if-le p0, p2, :cond_1
 
+    .line 218
     const-string v0, "ParameterUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -113,8 +129,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 220
     move p0, p2
 
+    .line 223
     :cond_1
     :goto_0
     return p0
@@ -122,7 +140,12 @@
 
 .method private static clipLower(IILandroid/graphics/Rect;Ljava/lang/String;)I
     .locals 1
+    .param p0, "value"    # I
+    .param p1, "lo"    # I
+    .param p2, "rect"    # Landroid/graphics/Rect;
+    .param p3, "name"    # Ljava/lang/String;
 
+    .line 209
     const v0, 0x7fffffff
 
     invoke-static {p0, p1, v0, p2, p3}, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->clip(IIILandroid/graphics/Rect;Ljava/lang/String;)I
@@ -137,6 +160,7 @@
 .method public toFace()Landroid/hardware/camera2/params/Face;
     .locals 5
 
+    .line 199
     iget v0, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->weight:I
 
     iget-object v1, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
@@ -151,6 +175,8 @@
 
     move-result v0
 
+    .line 205
+    .local v0, "score":I
     new-instance v1, Landroid/hardware/camera2/params/Face;
 
     iget-object v2, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
@@ -162,7 +188,12 @@
 
 .method public toFace(ILandroid/graphics/Point;Landroid/graphics/Point;Landroid/graphics/Point;)Landroid/hardware/camera2/params/Face;
     .locals 10
+    .param p1, "id"    # I
+    .param p2, "leftEyePosition"    # Landroid/graphics/Point;
+    .param p3, "rightEyePosition"    # Landroid/graphics/Point;
+    .param p4, "mouthPosition"    # Landroid/graphics/Point;
 
+    .line 177
     iget-object v0, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
     const-string v1, "id"
@@ -173,6 +204,8 @@
 
     move-result v0
 
+    .line 178
+    .local v0, "idSafe":I
     iget v1, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->weight:I
 
     iget-object v2, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
@@ -187,6 +220,8 @@
 
     move-result v1
 
+    .line 184
+    .local v1, "score":I
     new-instance v2, Landroid/hardware/camera2/params/Face;
 
     iget-object v4, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
@@ -211,6 +246,7 @@
 .method public toMetering()Landroid/hardware/camera2/params/MeteringRectangle;
     .locals 12
 
+    .line 147
     iget v0, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->weight:I
 
     iget-object v1, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
@@ -225,6 +261,8 @@
 
     move-result v0
 
+    .line 153
+    .local v0, "weight":I
     iget-object v1, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
@@ -237,6 +275,8 @@
 
     move-result v1
 
+    .line 154
+    .local v1, "x":I
     iget-object v2, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->top:I
@@ -249,6 +289,8 @@
 
     move-result v2
 
+    .line 155
+    .local v2, "y":I
     iget-object v4, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
@@ -263,6 +305,8 @@
 
     move-result v4
 
+    .line 156
+    .local v4, "w":I
     iget-object v5, p0, Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
@@ -277,6 +321,8 @@
 
     move-result v3
 
+    .line 158
+    .local v3, "h":I
     new-instance v11, Landroid/hardware/camera2/params/MeteringRectangle;
 
     move-object v5, v11

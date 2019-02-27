@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputManager$SessionCallbackRecord;J)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
+    .line 680
     iput-object p1, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$14;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     iput-wide p2, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$14;->val$timeMs:J
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 4
 
+    .line 683
     iget-object v0, p0, Landroid/media/tv/TvInputManager$SessionCallbackRecord$14;->this$0:Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->access$000(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$SessionCallback;
@@ -57,5 +60,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/tv/TvInputManager$SessionCallback;->onTimeShiftStartPositionChanged(Landroid/media/tv/TvInputManager$Session;J)V
 
+    .line 684
     return-void
 .end method

@@ -31,7 +31,9 @@
 # direct methods
 .method public constructor <init>(Landroid/util/BoostFramework;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/util/BoostFramework;
 
+    .line 104
     iput-object p1, p0, Landroid/util/BoostFramework$Launch;->this$0:Landroid/util/BoostFramework;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

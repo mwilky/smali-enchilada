@@ -25,15 +25,23 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ContentResolver;Ljava/lang/String;I)V
     .locals 0
+    .param p1, "contentResolver"    # Landroid/content/ContentResolver;
+    .param p2, "name"    # Ljava/lang/String;
+    .param p3, "userId"    # I
 
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 162
     iput-object p1, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mContentResolver:Landroid/content/ContentResolver;
 
+    .line 163
     iput p3, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mUserId:I
 
+    .line 164
     iput-object p2, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mSettingName:Ljava/lang/String;
 
+    .line 165
     return-void
 .end method
 
@@ -51,6 +59,8 @@
         }
     .end annotation
 
+    .line 178
+    .local p1, "change":Ljava/util/function/Function;, "Ljava/util/function/Function<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/provider/SettingsStringUtil$SettingStringHelper;->read()Ljava/lang/String;
 
     move-result-object v0
@@ -71,6 +81,7 @@
 .method public read()Ljava/lang/String;
     .locals 3
 
+    .line 168
     iget-object v0, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mSettingName:Ljava/lang/String;
@@ -86,7 +97,9 @@
 
 .method public write(Ljava/lang/String;)Z
     .locals 3
+    .param p1, "value"    # Ljava/lang/String;
 
+    .line 173
     iget-object v0, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/provider/SettingsStringUtil$SettingStringHelper;->mSettingName:Ljava/lang/String;

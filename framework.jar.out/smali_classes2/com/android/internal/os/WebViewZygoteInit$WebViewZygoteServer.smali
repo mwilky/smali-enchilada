@@ -18,6 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 49
     invoke-direct {p0}, Lcom/android/internal/os/ZygoteServer;-><init>()V
 
     return-void
@@ -25,7 +26,9 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/os/WebViewZygoteInit$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/os/WebViewZygoteInit$1;
 
+    .line 49
     invoke-direct {p0}, Lcom/android/internal/os/WebViewZygoteInit$WebViewZygoteServer;-><init>()V
 
     return-void
@@ -35,12 +38,15 @@
 # virtual methods
 .method protected createNewConnection(Landroid/net/LocalSocket;Ljava/lang/String;)Lcom/android/internal/os/ZygoteConnection;
     .locals 1
+    .param p1, "socket"    # Landroid/net/LocalSocket;
+    .param p2, "abiList"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 53
     new-instance v0, Lcom/android/internal/os/WebViewZygoteInit$WebViewZygoteConnection;
 
     invoke-direct {v0, p1, p2}, Lcom/android/internal/os/WebViewZygoteInit$WebViewZygoteConnection;-><init>(Landroid/net/LocalSocket;Ljava/lang/String;)V

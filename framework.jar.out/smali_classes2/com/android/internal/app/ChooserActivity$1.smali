@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ChooserActivity;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/app/ChooserActivity;
 
+    .line 144
     iput-object p1, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,26 +35,32 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 147
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     packed-switch v0, :pswitch_data_0
 
+    .line 182
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto/16 :goto_0
 
+    .line 176
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/ChooserActivity;->unbindRemainingServices()V
 
+    .line 177
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/ChooserActivity;->sendVoiceChoicesIfNeeded()V
 
+    .line 178
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v0}, Lcom/android/internal/app/ChooserActivity;->access$100(Lcom/android/internal/app/ChooserActivity;)Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;
@@ -61,8 +69,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;->setShowServiceTargets(Z)V
 
+    .line 179
     goto/16 :goto_0
 
+    .line 150
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
@@ -74,11 +84,14 @@
 
     goto/16 :goto_0
 
+    .line 151
     :cond_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;
 
+    .line 152
+    .local v0, "sri":Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$000(Lcom/android/internal/app/ChooserActivity;)Ljava/util/List;
@@ -93,6 +106,7 @@
 
     if-nez v2, :cond_1
 
+    .line 153
     const-string v1, "ChooserActivity"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,13 +131,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 156
     goto :goto_0
 
+    .line 158
     :cond_1
     iget-object v2, v0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;->resultTargets:Ljava/util/List;
 
     if-eqz v2, :cond_2
 
+    .line 159
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$100(Lcom/android/internal/app/ChooserActivity;)Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;
@@ -136,6 +153,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;->addServiceResults(Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;Ljava/util/List;)V
 
+    .line 162
     :cond_2
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
@@ -143,10 +161,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/app/ChooserActivity;->unbindService(Landroid/content/ServiceConnection;)V
 
+    .line 163
     iget-object v2, v0, Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;->connection:Lcom/android/internal/app/ChooserActivity$ChooserTargetServiceConnection;
 
     invoke-virtual {v2}, Lcom/android/internal/app/ChooserActivity$ChooserTargetServiceConnection;->destroy()V
 
+    .line 164
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$000(Lcom/android/internal/app/ChooserActivity;)Ljava/util/List;
@@ -157,6 +177,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
+    .line 165
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$000(Lcom/android/internal/app/ChooserActivity;)Ljava/util/List;
@@ -169,6 +190,7 @@
 
     if-eqz v2, :cond_3
 
+    .line 166
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$200(Lcom/android/internal/app/ChooserActivity;)Landroid/os/Handler;
@@ -179,10 +201,12 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
 
+    .line 167
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-virtual {v2}, Lcom/android/internal/app/ChooserActivity;->sendVoiceChoicesIfNeeded()V
 
+    .line 168
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$1;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v2}, Lcom/android/internal/app/ChooserActivity;->access$100(Lcom/android/internal/app/ChooserActivity;)Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;
@@ -191,6 +215,8 @@
 
     invoke-virtual {v2, v1}, Lcom/android/internal/app/ChooserActivity$ChooserListAdapter;->setShowServiceTargets(Z)V
 
+    .line 184
+    .end local v0    # "sri":Lcom/android/internal/app/ChooserActivity$ServiceResultInfo;
     :cond_3
     :goto_0
     return-void

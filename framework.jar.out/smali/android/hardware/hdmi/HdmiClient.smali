@@ -21,17 +21,23 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/hdmi/IHdmiControlService;)V
     .locals 0
+    .param p1, "service"    # Landroid/hardware/hdmi/IHdmiControlService;
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 26
     iput-object p1, p0, Landroid/hardware/hdmi/HdmiClient;->mService:Landroid/hardware/hdmi/IHdmiControlService;
 
+    .line 27
     return-void
 .end method
 
 .method private static getListenerWrapper(Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;)Landroid/hardware/hdmi/IHdmiVendorCommandListener;
     .locals 1
+    .param p0, "listener"    # Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;
 
+    .line 98
     new-instance v0, Landroid/hardware/hdmi/HdmiClient$1;
 
     invoke-direct {v0, p0}, Landroid/hardware/hdmi/HdmiClient$1;-><init>(Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;)V
@@ -44,6 +50,7 @@
 .method public getActiveSource()Landroid/hardware/hdmi/HdmiDeviceInfo;
     .locals 3
 
+    .line 37
     :try_start_0
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiClient;->mService:Landroid/hardware/hdmi/IHdmiControlService;
 
@@ -55,15 +62,20 @@
 
     return-object v0
 
+    .line 38
     :catch_0
     move-exception v0
 
+    .line 39
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "HdmiClient"
 
     const-string v2, "getActiveSource threw exception "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 41
+    .end local v0    # "e":Landroid/os/RemoteException;
     const/4 v0, 0x0
 
     return-object v0
@@ -74,7 +86,10 @@
 
 .method public sendKeyEvent(IZ)V
     .locals 3
+    .param p1, "keyCode"    # I
+    .param p2, "isPressed"    # Z
 
+    .line 52
     :try_start_0
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiClient;->mService:Landroid/hardware/hdmi/IHdmiControlService;
 
@@ -86,24 +101,34 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 55
     goto :goto_0
 
+    .line 53
     :catch_0
     move-exception v0
 
+    .line 54
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "HdmiClient"
 
     const-string/jumbo v2, "sendKeyEvent threw exception "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 56
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public sendVendorCommand(I[BZ)V
     .locals 3
+    .param p1, "targetAddress"    # I
+    .param p2, "params"    # [B
+    .param p3, "hasVendorId"    # Z
 
+    .line 69
     :try_start_0
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiClient;->mService:Landroid/hardware/hdmi/IHdmiControlService;
 
@@ -115,35 +140,47 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 72
     goto :goto_0
 
+    .line 70
     :catch_0
     move-exception v0
 
+    .line 71
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "HdmiClient"
 
     const-string v2, "failed to send vendor command: "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 73
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public setVendorCommandListener(Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;)V
     .locals 3
+    .param p1, "listener"    # Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;
 
+    .line 81
     if-eqz p1, :cond_1
 
+    .line 84
     iget-object v0, p0, Landroid/hardware/hdmi/HdmiClient;->mIHdmiVendorCommandListener:Landroid/hardware/hdmi/IHdmiVendorCommandListener;
 
     if-nez v0, :cond_0
 
+    .line 88
     :try_start_0
     invoke-static {p1}, Landroid/hardware/hdmi/HdmiClient;->getListenerWrapper(Landroid/hardware/hdmi/HdmiControlManager$VendorCommandListener;)Landroid/hardware/hdmi/IHdmiVendorCommandListener;
 
     move-result-object v0
 
+    .line 89
+    .local v0, "wrappedListener":Landroid/hardware/hdmi/IHdmiVendorCommandListener;
     iget-object v1, p0, Landroid/hardware/hdmi/HdmiClient;->mService:Landroid/hardware/hdmi/IHdmiControlService;
 
     invoke-virtual {p0}, Landroid/hardware/hdmi/HdmiClient;->getDeviceType()I
@@ -152,24 +189,33 @@
 
     invoke-interface {v1, v0, v2}, Landroid/hardware/hdmi/IHdmiControlService;->addVendorCommandListener(Landroid/hardware/hdmi/IHdmiVendorCommandListener;I)V
 
+    .line 90
     iput-object v0, p0, Landroid/hardware/hdmi/HdmiClient;->mIHdmiVendorCommandListener:Landroid/hardware/hdmi/IHdmiVendorCommandListener;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 93
+    .end local v0    # "wrappedListener":Landroid/hardware/hdmi/IHdmiVendorCommandListener;
     goto :goto_0
 
+    .line 91
     :catch_0
     move-exception v0
 
+    .line 92
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "HdmiClient"
 
     const-string v2, "failed to set vendor command listener: "
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 94
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 
+    .line 85
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -179,6 +225,7 @@
 
     throw v0
 
+    .line 82
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

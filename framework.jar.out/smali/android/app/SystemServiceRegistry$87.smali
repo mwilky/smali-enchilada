@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 961
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,18 +36,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/content/pm/ShortcutManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 964
     const-string/jumbo v0, "shortcut"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 965
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/content/pm/ShortcutManager;
 
     invoke-static {v0}, Landroid/content/pm/IShortcutService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IShortcutService;
@@ -66,6 +71,7 @@
         }
     .end annotation
 
+    .line 961
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$87;->createService(Landroid/app/ContextImpl;)Landroid/content/pm/ShortcutManager;
 
     move-result-object p1

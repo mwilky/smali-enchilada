@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 386
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/SyncStatusInfo;
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 388
     new-instance v0, Landroid/content/SyncStatusInfo;
 
     invoke-direct {v0, p1}, Landroid/content/SyncStatusInfo;-><init>(Landroid/os/Parcel;)V
@@ -50,6 +53,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 386
     invoke-virtual {p0, p1}, Landroid/content/SyncStatusInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/SyncStatusInfo;
 
     move-result-object p1
@@ -59,7 +63,9 @@
 
 .method public newArray(I)[Landroid/content/SyncStatusInfo;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 392
     new-array v0, p1, [Landroid/content/SyncStatusInfo;
 
     return-object v0
@@ -68,6 +74,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 386
     invoke-virtual {p0, p1}, Landroid/content/SyncStatusInfo$1;->newArray(I)[Landroid/content/SyncStatusInfo;
 
     move-result-object p1

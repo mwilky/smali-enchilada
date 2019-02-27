@@ -22,33 +22,43 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Looper;)V
     .locals 1
+    .param p1, "looper"    # Landroid/os/Looper;
 
+    .line 77
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/view/DisplayEventReceiver;-><init>(Landroid/os/Looper;I)V
 
+    .line 78
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Looper;I)V
     .locals 2
+    .param p1, "looper"    # Landroid/os/Looper;
+    .param p2, "vsyncSource"    # I
 
+    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 57
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
+    .line 87
     if-eqz p1, :cond_0
 
+    .line 91
     invoke-virtual {p1}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/DisplayEventReceiver;->mMessageQueue:Landroid/os/MessageQueue;
 
+    .line 92
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -61,14 +71,17 @@
 
     iput-wide v0, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
+    .line 95
     iget-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v1, "dispose"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
+    .line 96
     return-void
 
+    .line 88
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -81,38 +94,54 @@
 
 .method private dispatchHotplug(JIZ)V
     .locals 0
+    .param p1, "timestampNanos"    # J
+    .param p3, "builtInDisplayId"    # I
+    .param p4, "connected"    # Z
 
+    .line 177
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/DisplayEventReceiver;->onHotplug(JIZ)V
 
+    .line 178
     return-void
 .end method
 
 .method private dispatchVsync(JII)V
     .locals 0
+    .param p1, "timestampNanos"    # J
+    .param p3, "builtInDisplayId"    # I
+    .param p4, "frame"    # I
 
+    .line 171
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/DisplayEventReceiver;->onVsync(JII)V
 
+    .line 172
     return-void
 .end method
 
 .method private dispose(Z)V
     .locals 4
+    .param p1, "finalized"    # Z
 
+    .line 115
     iget-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_1
 
+    .line 116
     if-eqz p1, :cond_0
 
+    .line 117
     iget-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
+    .line 119
     :cond_0
     iget-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
+    .line 122
     :cond_1
     iget-wide v0, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
@@ -122,17 +151,21 @@
 
     if-eqz v0, :cond_2
 
+    .line 123
     iget-wide v0, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
     invoke-static {v0, v1}, Landroid/view/DisplayEventReceiver;->nativeDispose(J)V
 
+    .line 124
     iput-wide v2, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
+    .line 126
     :cond_2
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/DisplayEventReceiver;->mMessageQueue:Landroid/os/MessageQueue;
 
+    .line 127
     return-void
 .end method
 
@@ -162,10 +195,12 @@
 .method public dispose()V
     .locals 1
 
+    .line 111
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/view/DisplayEventReceiver;->dispose(Z)V
 
+    .line 112
     return-void
 .end method
 
@@ -177,6 +212,7 @@
         }
     .end annotation
 
+    .line 101
     const/4 v0, 0x1
 
     :try_start_0
@@ -184,12 +220,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 103
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 104
     nop
 
+    .line 105
     return-void
 
+    .line 103
     :catchall_0
     move-exception v0
 
@@ -200,19 +240,28 @@
 
 .method public onHotplug(JIZ)V
     .locals 0
+    .param p1, "timestampNanos"    # J
+    .param p3, "builtInDisplayId"    # I
+    .param p4, "connected"    # Z
 
+    .line 153
     return-void
 .end method
 
 .method public onVsync(JII)V
     .locals 0
+    .param p1, "timestampNanos"    # J
+    .param p3, "builtInDisplayId"    # I
+    .param p4, "frame"    # I
 
+    .line 141
     return-void
 .end method
 
 .method public scheduleVsync()V
     .locals 4
 
+    .line 160
     iget-wide v0, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
     const-wide/16 v2, 0x0
@@ -221,6 +270,7 @@
 
     if-nez v0, :cond_0
 
+    .line 161
     const-string v0, "DisplayEventReceiver"
 
     const-string v1, "Attempted to schedule a vertical sync pulse but the display event receiver has already been disposed."
@@ -229,11 +279,13 @@
 
     goto :goto_0
 
+    .line 164
     :cond_0
     iget-wide v0, p0, Landroid/view/DisplayEventReceiver;->mReceiverPtr:J
 
     invoke-static {v0, v1}, Landroid/view/DisplayEventReceiver;->nativeScheduleVsync(J)V
 
+    .line 166
     :goto_0
     return-void
 .end method

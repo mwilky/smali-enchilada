@@ -28,6 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,9 +36,12 @@
 
 .method private static getBadgedWifiSignalResource(I)I
     .locals 3
+    .param p0, "signalLevel"    # I
 
+    .line 114
     packed-switch p0, :pswitch_data_0
 
+    .line 126
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -58,26 +62,31 @@
 
     throw v0
 
+    .line 124
     :pswitch_0
     const v0, 0x10804da
 
     return v0
 
+    .line 122
     :pswitch_1
     const v0, 0x10804d9
 
     return v0
 
+    .line 120
     :pswitch_2
     const v0, 0x10804d8
 
     return v0
 
+    .line 118
     :pswitch_3
     const v0, 0x10804d7
 
     return v0
 
+    .line 116
     :pswitch_4
     const v0, 0x10804d6
 
@@ -95,7 +104,11 @@
 
 .method public static getWifiIcon(IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .param p0, "signalLevel"    # I
+    .param p1, "badging"    # I
+    .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
+    .line 69
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -113,9 +126,12 @@
 
 .method private static getWifiSignalResource(I)I
     .locals 3
+    .param p0, "signalLevel"    # I
 
+    .line 84
     packed-switch p0, :pswitch_data_0
 
+    .line 96
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -136,26 +152,31 @@
 
     throw v0
 
+    .line 94
     :pswitch_0
     const v0, 0x1080501
 
     return v0
 
+    .line 92
     :pswitch_1
     const v0, 0x1080500
 
     return v0
 
+    .line 90
     :pswitch_2
     const v0, 0x10804ff
 
     return v0
 
+    .line 88
     :pswitch_3
     const v0, 0x10804fe
 
     return v0
 
+    .line 86
     :pswitch_4
     const v0, 0x10804fd
 

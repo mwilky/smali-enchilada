@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 109
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "NORMAL"
@@ -52,6 +53,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->NORMAL:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 110
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "FROZEN"
@@ -62,6 +64,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->FROZEN:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 111
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "FROZEN_ADDED"
@@ -72,6 +75,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->FROZEN_ADDED:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 112
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "FROZEN_REMOVED"
@@ -82,6 +86,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->FROZEN_REMOVED:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 113
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "FROZEN_ONESHOT_ADD"
@@ -92,6 +97,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->FROZEN_ONESHOT_ADD:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 114
     new-instance v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     const-string v1, "FROZEN_ONESHOT_DEL"
@@ -102,6 +108,7 @@
 
     sput-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->FROZEN_ONESHOT_DEL:Landroid/mtp/MtpStorageManager$MtpObjectState;
 
+    .line 108
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/mtp/MtpStorageManager$MtpObjectState;
@@ -143,6 +150,7 @@
         }
     .end annotation
 
+    .line 108
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -150,7 +158,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/mtp/MtpStorageManager$MtpObjectState;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 108
     const-class v0, Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,6 +175,7 @@
 .method public static values()[Landroid/mtp/MtpStorageManager$MtpObjectState;
     .locals 1
 
+    .line 108
     sget-object v0, Landroid/mtp/MtpStorageManager$MtpObjectState;->$VALUES:[Landroid/mtp/MtpStorageManager$MtpObjectState;
 
     invoke-virtual {v0}, [Landroid/mtp/MtpStorageManager$MtpObjectState;->clone()Ljava/lang/Object;

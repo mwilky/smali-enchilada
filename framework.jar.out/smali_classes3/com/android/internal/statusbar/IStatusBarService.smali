@@ -295,6 +295,14 @@
     .end annotation
 .end method
 
+.method public abstract op_reboot(ZLjava/lang/String;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract reboot(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

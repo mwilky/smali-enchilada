@@ -25,15 +25,23 @@
 # direct methods
 .method constructor <init>(II[Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;)V
     .locals 0
+    .param p1, "startIndex"    # I
+    .param p2, "endIndex"    # I
+    .param p3, "classification"    # [Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;
 
+    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 191
     iput p1, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mStartIndex:I
 
+    .line 192
     iput p2, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mEndIndex:I
 
+    .line 193
     iput-object p3, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mClassification:[Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;
 
+    .line 194
     return-void
 .end method
 
@@ -42,6 +50,7 @@
 .method public getClassification()[Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;
     .locals 1
 
+    .line 205
     iget-object v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mClassification:[Landroid/view/textclassifier/TextClassifierImplNative$ClassificationResult;
 
     return-object v0
@@ -50,6 +59,7 @@
 .method public getEndIndex()I
     .locals 1
 
+    .line 201
     iget v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mEndIndex:I
 
     return v0
@@ -58,6 +68,7 @@
 .method public getStartIndex()I
     .locals 1
 
+    .line 197
     iget v0, p0, Landroid/view/textclassifier/TextClassifierImplNative$AnnotatedSpan;->mStartIndex:I
 
     return v0

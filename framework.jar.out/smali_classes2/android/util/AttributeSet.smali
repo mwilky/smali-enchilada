@@ -39,7 +39,9 @@
 
 .method public getAttributeNamespace(I)Ljava/lang/String;
     .locals 1
+    .param p1, "index"    # I
 
+    .line 86
     const/4 v0, 0x0
 
     return-object v0

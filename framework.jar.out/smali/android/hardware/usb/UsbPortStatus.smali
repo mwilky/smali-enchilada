@@ -32,6 +32,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 127
     new-instance v0, Landroid/hardware/usb/UsbPortStatus$1;
 
     invoke-direct {v0}, Landroid/hardware/usb/UsbPortStatus$1;-><init>()V
@@ -43,17 +44,27 @@
 
 .method public constructor <init>(IIII)V
     .locals 0
+    .param p1, "currentMode"    # I
+    .param p2, "currentPowerRole"    # I
+    .param p3, "currentDataRole"    # I
+    .param p4, "supportedRoleCombinations"    # I
 
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
     iput p1, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentMode:I
 
+    .line 40
     iput p2, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentPowerRole:I
 
+    .line 41
     iput p3, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentDataRole:I
 
+    .line 42
     iput p4, p0, Landroid/hardware/usb/UsbPortStatus;->mSupportedRoleCombinations:I
 
+    .line 43
     return-void
 .end method
 
@@ -62,6 +73,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 116
     const/4 v0, 0x0
 
     return v0
@@ -70,6 +82,7 @@
 .method public getCurrentDataRole()I
     .locals 1
 
+    .line 81
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentDataRole:I
 
     return v0
@@ -78,6 +91,7 @@
 .method public getCurrentMode()I
     .locals 1
 
+    .line 61
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentMode:I
 
     return v0
@@ -86,6 +100,7 @@
 .method public getCurrentPowerRole()I
     .locals 1
 
+    .line 71
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentPowerRole:I
 
     return v0
@@ -94,6 +109,7 @@
 .method public getSupportedRoleCombinations()I
     .locals 1
 
+    .line 100
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mSupportedRoleCombinations:I
 
     return v0
@@ -102,6 +118,7 @@
 .method public isConnected()Z
     .locals 1
 
+    .line 51
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentMode:I
 
     if-eqz v0, :cond_0
@@ -119,9 +136,13 @@
 
 .method public isRoleCombinationSupported(II)Z
     .locals 2
+    .param p1, "powerRole"    # I
+    .param p2, "dataRole"    # I
 
+    .line 94
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mSupportedRoleCombinations:I
 
+    .line 95
     invoke-static {p1, p2}, Landroid/hardware/usb/UsbPort;->combineRolesAsBit(II)I
 
     move-result v1
@@ -137,6 +158,7 @@
     :cond_0
     const/4 v0, 0x0
 
+    .line 94
     :goto_0
     return v0
 .end method
@@ -144,6 +166,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 105
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -164,6 +187,7 @@
 
     iget v1, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentMode:I
 
+    .line 106
     invoke-static {v1}, Landroid/hardware/usb/UsbPort;->modeToString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -176,6 +200,7 @@
 
     iget v1, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentPowerRole:I
 
+    .line 107
     invoke-static {v1}, Landroid/hardware/usb/UsbPort;->powerRoleToString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -188,6 +213,7 @@
 
     iget v1, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentDataRole:I
 
+    .line 108
     invoke-static {v1}, Landroid/hardware/usb/UsbPort;->dataRoleToString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -200,6 +226,7 @@
 
     iget v1, p0, Landroid/hardware/usb/UsbPortStatus;->mSupportedRoleCombinations:I
 
+    .line 110
     invoke-static {v1}, Landroid/hardware/usb/UsbPort;->roleCombinationsToString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -214,27 +241,35 @@
 
     move-result-object v0
 
+    .line 105
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 121
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 122
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentPowerRole:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 123
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mCurrentDataRole:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 124
     iget v0, p0, Landroid/hardware/usb/UsbPortStatus;->mSupportedRoleCombinations:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 125
     return-void
 .end method

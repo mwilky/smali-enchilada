@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 618
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,34 +36,42 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/net/lowpan/LowpanManager;
     .locals 5
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 621
     const-string/jumbo v0, "lowpan"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 622
+    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/net/lowpan/ILowpanManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/lowpan/ILowpanManager;
 
     move-result-object v1
 
+    .line 623
+    .local v1, "service":Landroid/net/lowpan/ILowpanManager;
     new-instance v2, Landroid/net/lowpan/LowpanManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v3
 
+    .line 624
     invoke-static {}, Landroid/net/ConnectivityThread;->getInstanceLooper()Landroid/os/Looper;
 
     move-result-object v4
 
     invoke-direct {v2, v3, v1, v4}, Landroid/net/lowpan/LowpanManager;-><init>(Landroid/content/Context;Landroid/net/lowpan/ILowpanManager;Landroid/os/Looper;)V
 
+    .line 623
     return-object v2
 .end method
 
@@ -74,6 +83,7 @@
         }
     .end annotation
 
+    .line 618
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$51;->createService(Landroid/app/ContextImpl;)Landroid/net/lowpan/LowpanManager;
 
     move-result-object p1

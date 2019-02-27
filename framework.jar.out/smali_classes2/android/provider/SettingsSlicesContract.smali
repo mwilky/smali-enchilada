@@ -27,35 +27,42 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 58
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
 
     const-string v1, "content"
 
+    .line 59
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
     const-string v1, "android.settings.slices"
 
+    .line 60
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
+    .line 61
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/SettingsSlicesContract;->BASE_URI:Landroid/net/Uri;
 
+    .line 58
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 48
     return-void
 .end method

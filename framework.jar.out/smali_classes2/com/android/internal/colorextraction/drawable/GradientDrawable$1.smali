@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/colorextraction/drawable/GradientDrawable;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/colorextraction/drawable/GradientDrawable;
 
+    .line 105
     iput-object p1, p0, Lcom/android/internal/colorextraction/drawable/GradientDrawable$1;->this$0:Lcom/android/internal/colorextraction/drawable/GradientDrawable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;Z)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p2, "isReverse"    # Z
 
+    .line 108
     iget-object v0, p0, Lcom/android/internal/colorextraction/drawable/GradientDrawable$1;->this$0:Lcom/android/internal/colorextraction/drawable/GradientDrawable;
 
     invoke-static {v0}, Lcom/android/internal/colorextraction/drawable/GradientDrawable;->access$000(Lcom/android/internal/colorextraction/drawable/GradientDrawable;)Landroid/animation/ValueAnimator;
@@ -42,12 +47,14 @@
 
     if-ne v0, p1, :cond_0
 
+    .line 109
     iget-object v0, p0, Lcom/android/internal/colorextraction/drawable/GradientDrawable$1;->this$0:Lcom/android/internal/colorextraction/drawable/GradientDrawable;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/internal/colorextraction/drawable/GradientDrawable;->access$002(Lcom/android/internal/colorextraction/drawable/GradientDrawable;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
+    .line 111
     :cond_0
     return-void
 .end method

@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer;
 
+    .line 1349
     iput-object p1, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
     iput p2, p0, Landroid/media/MediaPlayer$1;->val$delay:I
@@ -38,6 +40,7 @@
 .method public run()V
     .locals 2
 
+    .line 1352
     :try_start_0
     iget v0, p0, Landroid/media/MediaPlayer$1;->val$delay:I
 
@@ -47,13 +50,19 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1355
     goto :goto_0
 
+    .line 1353
     :catch_0
     move-exception v0
 
+    .line 1354
+    .local v0, "e":Ljava/lang/InterruptedException;
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
+    .line 1356
+    .end local v0    # "e":Ljava/lang/InterruptedException;
     :goto_0
     iget-object v0, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
@@ -61,6 +70,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->baseSetStartDelayMs(I)V
 
+    .line 1358
     :try_start_1
     iget-object v0, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
@@ -68,11 +78,14 @@
     :try_end_1
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 1363
     goto :goto_1
 
+    .line 1359
     :catch_1
     move-exception v0
 
+    .line 1364
     :goto_1
     return-void
 .end method

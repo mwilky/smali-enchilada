@@ -42,8 +42,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 83
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
@@ -56,6 +58,7 @@
 .method private insertRow()Landroid/net/Uri;
     .locals 3
 
+    .line 128
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
@@ -72,37 +75,48 @@
 
     move-result-object v0
 
+    .line 129
+    .local v0, "u":Landroid/net/Uri;
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
+    .line 130
     return-object v0
 .end method
 
 .method private parseRow(Lorg/xml/sax/Attributes;)V
     .locals 5
+    .param p1, "atts"    # Lorg/xml/sax/Attributes;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 100
     const-string/jumbo v0, "uri"
 
     invoke-interface {p1, v0}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 102
+    .local v0, "uriStr":Ljava/lang/String;
     if-eqz v0, :cond_1
 
+    .line 104
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
+    .line 105
+    .local v1, "uri":Landroid/net/Uri;
     if-eqz v1, :cond_0
 
     goto :goto_1
 
+    .line 106
     :cond_0
     new-instance v2, Lorg/xml/sax/SAXException;
 
@@ -114,6 +128,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 107
     const-string/jumbo v4, "uri"
 
     invoke-interface {p1, v4}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
@@ -134,6 +149,8 @@
 
     throw v2
 
+    .line 110
+    .end local v1    # "uri":Landroid/net/Uri;
     :cond_1
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
@@ -143,14 +160,18 @@
 
     if-lez v1, :cond_3
 
+    .line 112
     const-string/jumbo v1, "postfix"
 
     invoke-interface {p1, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 113
+    .local v1, "postfix":Ljava/lang/String;
     if-eqz v1, :cond_2
 
+    .line 114
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v2}, Ljava/util/Stack;->lastElement()Ljava/lang/Object;
@@ -163,8 +184,12 @@
 
     move-result-object v2
 
+    .line 114
+    .local v2, "uri":Landroid/net/Uri;
     goto :goto_0
 
+    .line 117
+    .end local v2    # "uri":Landroid/net/Uri;
     :cond_2
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
@@ -174,20 +199,31 @@
 
     check-cast v2, Landroid/net/Uri;
 
+    .line 117
+    .end local v1    # "postfix":Ljava/lang/String;
+    .restart local v2    # "uri":Landroid/net/Uri;
     :goto_0
     move-object v1, v2
 
+    .line 119
+    .end local v2    # "uri":Landroid/net/Uri;
+    .local v1, "uri":Landroid/net/Uri;
     nop
 
+    .line 120
     :goto_1
     nop
 
+    .line 123
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v2, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 125
     return-void
 
+    .line 120
+    .end local v1    # "uri":Landroid/net/Uri;
     :cond_3
     new-instance v1, Lorg/xml/sax/SAXException;
 
@@ -202,12 +238,16 @@
 # virtual methods
 .method public characters([CII)V
     .locals 0
+    .param p1, "ch"    # [C
+    .param p2, "start"    # I
+    .param p3, "length"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 217
     return-void
 .end method
 
@@ -219,17 +259,22 @@
         }
     .end annotation
 
+    .line 222
     return-void
 .end method
 
 .method public endElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
+    .param p1, "uri"    # Ljava/lang/String;
+    .param p2, "localName"    # Ljava/lang/String;
+    .param p3, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 201
     const-string/jumbo v0, "row"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -238,6 +283,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 202
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->empty()Z
@@ -246,12 +292,15 @@
 
     if-nez v0, :cond_1
 
+    .line 205
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
     if-eqz v0, :cond_0
 
+    .line 206
     invoke-direct {p0}, Landroid/content/DefaultDataHandler;->insertRow()Landroid/net/Uri;
 
+    .line 208
     :cond_0
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
@@ -259,6 +308,7 @@
 
     goto :goto_0
 
+    .line 203
     :cond_1
     new-instance v0, Lorg/xml/sax/SAXException;
 
@@ -268,6 +318,7 @@
 
     throw v0
 
+    .line 210
     :cond_2
     :goto_0
     return-void
@@ -275,28 +326,36 @@
 
 .method public endPrefixMapping(Ljava/lang/String;)V
     .locals 0
+    .param p1, "prefix"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 227
     return-void
 .end method
 
 .method public ignorableWhitespace([CII)V
     .locals 0
+    .param p1, "ch"    # [C
+    .param p2, "start"    # I
+    .param p3, "length"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 233
     return-void
 .end method
 
 .method public insert(Landroid/content/ContentResolver;Ljava/io/InputStream;)V
     .locals 1
+    .param p1, "contentResolver"    # Landroid/content/ContentResolver;
+    .param p2, "in"    # Ljava/io/InputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -304,55 +363,70 @@
         }
     .end annotation
 
+    .line 89
     iput-object p1, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
+    .line 90
     sget-object v0, Landroid/util/Xml$Encoding;->UTF_8:Landroid/util/Xml$Encoding;
 
     invoke-static {p2, v0, p0}, Landroid/util/Xml;->parse(Ljava/io/InputStream;Landroid/util/Xml$Encoding;Lorg/xml/sax/ContentHandler;)V
 
+    .line 91
     return-void
 .end method
 
 .method public insert(Landroid/content/ContentResolver;Ljava/lang/String;)V
     .locals 0
+    .param p1, "contentResolver"    # Landroid/content/ContentResolver;
+    .param p2, "in"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 95
     iput-object p1, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
+    .line 96
     invoke-static {p2, p0}, Landroid/util/Xml;->parse(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V
 
+    .line 97
     return-void
 .end method
 
 .method public processingInstruction(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "target"    # Ljava/lang/String;
+    .param p2, "data"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 239
     return-void
 .end method
 
 .method public setDocumentLocator(Lorg/xml/sax/Locator;)V
     .locals 0
+    .param p1, "locator"    # Lorg/xml/sax/Locator;
 
+    .line 244
     return-void
 .end method
 
 .method public skippedEntity(Ljava/lang/String;)V
     .locals 0
+    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 249
     return-void
 .end method
 
@@ -364,17 +438,23 @@
         }
     .end annotation
 
+    .line 254
     return-void
 .end method
 
 .method public startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
     .locals 6
+    .param p1, "uri"    # Ljava/lang/String;
+    .param p2, "localName"    # Ljava/lang/String;
+    .param p3, "name"    # Ljava/lang/String;
+    .param p4, "atts"    # Lorg/xml/sax/Attributes;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 135
     const-string/jumbo v0, "row"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -383,10 +463,12 @@
 
     if-eqz v0, :cond_4
 
+    .line 136
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
     if-eqz v0, :cond_2
 
+    .line 138
     iget-object v0, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->empty()Z
@@ -395,24 +477,34 @@
 
     if-nez v0, :cond_1
 
+    .line 141
     invoke-direct {p0}, Landroid/content/DefaultDataHandler;->insertRow()Landroid/net/Uri;
 
     move-result-object v0
 
+    .line 142
+    .local v0, "nextUri":Landroid/net/Uri;
     if-eqz v0, :cond_0
 
+    .line 147
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
+    .line 148
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     invoke-virtual {v1, v0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 149
     invoke-direct {p0, p4}, Landroid/content/DefaultDataHandler;->parseRow(Lorg/xml/sax/Attributes;)V
 
+    .line 151
+    .end local v0    # "nextUri":Landroid/net/Uri;
     goto/16 :goto_3
 
+    .line 143
+    .restart local v0    # "nextUri":Landroid/net/Uri;
     :cond_0
     new-instance v1, Lorg/xml/sax/SAXException;
 
@@ -426,6 +518,7 @@
 
     iget-object v3, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
+    .line 144
     invoke-virtual {v3}, Ljava/util/Stack;->lastElement()Ljava/lang/Object;
 
     move-result-object v3
@@ -450,6 +543,8 @@
 
     throw v1
 
+    .line 139
+    .end local v0    # "nextUri":Landroid/net/Uri;
     :cond_1
     new-instance v0, Lorg/xml/sax/SAXException;
 
@@ -459,13 +554,17 @@
 
     throw v0
 
+    .line 152
     :cond_2
     invoke-interface {p4}, Lorg/xml/sax/Attributes;->getLength()I
 
     move-result v0
 
+    .line 153
+    .local v0, "attrLen":I
     if-nez v0, :cond_3
 
+    .line 155
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
 
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mUris:Ljava/util/Stack;
@@ -480,12 +579,16 @@
 
     goto :goto_0
 
+    .line 157
     :cond_3
     invoke-direct {p0, p4}, Landroid/content/DefaultDataHandler;->parseRow(Lorg/xml/sax/Attributes;)V
 
+    .line 159
+    .end local v0    # "attrLen":I
     :goto_0
     goto/16 :goto_3
 
+    .line 160
     :cond_4
     const-string v0, "col"
 
@@ -501,20 +604,28 @@
 
     if-eqz v0, :cond_8
 
+    .line 161
     invoke-interface {p4}, Lorg/xml/sax/Attributes;->getLength()I
 
     move-result v0
 
+    .line 162
+    .restart local v0    # "attrLen":I
     if-ne v0, v2, :cond_7
 
+    .line 165
     invoke-interface {p4, v1}, Lorg/xml/sax/Attributes;->getValue(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 166
+    .local v1, "key":Ljava/lang/String;
     invoke-interface {p4, v3}, Lorg/xml/sax/Attributes;->getValue(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 167
+    .local v2, "value":Ljava/lang/String;
     if-eqz v1, :cond_6
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -531,23 +642,34 @@
 
     if-lez v3, :cond_6
 
+    .line 168
     iget-object v3, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
     if-nez v3, :cond_5
 
+    .line 169
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
     iput-object v3, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
+    .line 171
     :cond_5
     iget-object v3, p0, Landroid/content/DefaultDataHandler;->mValues:Landroid/content/ContentValues;
 
     invoke-virtual {v3, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 175
+    .end local v0    # "attrLen":I
+    .end local v1    # "key":Ljava/lang/String;
+    .end local v2    # "value":Ljava/lang/String;
     goto :goto_3
 
+    .line 173
+    .restart local v0    # "attrLen":I
+    .restart local v1    # "key":Ljava/lang/String;
+    .restart local v2    # "value":Ljava/lang/String;
     :cond_6
     new-instance v3, Lorg/xml/sax/SAXException;
 
@@ -557,6 +679,9 @@
 
     throw v3
 
+    .line 163
+    .end local v1    # "key":Ljava/lang/String;
+    .end local v2    # "value":Ljava/lang/String;
     :cond_7
     new-instance v1, Lorg/xml/sax/SAXException;
 
@@ -578,6 +703,8 @@
 
     throw v1
 
+    .line 175
+    .end local v0    # "attrLen":I
     :cond_8
     const-string v0, "del"
 
@@ -587,6 +714,7 @@
 
     if-eqz v0, :cond_d
 
+    .line 176
     const-string/jumbo v0, "uri"
 
     invoke-interface {p4, v0}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
@@ -597,23 +725,34 @@
 
     move-result-object v0
 
+    .line 177
+    .local v0, "u":Landroid/net/Uri;
     if-eqz v0, :cond_c
 
+    .line 181
     invoke-interface {p4}, Lorg/xml/sax/Attributes;->getLength()I
 
     move-result v4
 
     sub-int/2addr v4, v2
 
+    .line 182
+    .local v4, "attrLen":I
     if-lez v4, :cond_a
 
+    .line 183
     new-array v2, v4, [Ljava/lang/String;
 
+    .line 184
+    .local v2, "selectionArgs":[Ljava/lang/String;
     nop
 
+    .line 184
+    .local v1, "i":I
     :goto_1
     if-ge v1, v4, :cond_9
 
+    .line 185
     add-int/lit8 v5, v1, 0x2
 
     invoke-interface {p4, v5}, Lorg/xml/sax/Attributes;->getValue(I)Ljava/lang/String;
@@ -622,10 +761,13 @@
 
     aput-object v5, v2, v1
 
+    .line 184
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 187
+    .end local v1    # "i":I
     :cond_9
     iget-object v1, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -635,6 +777,8 @@
 
     invoke-virtual {v1, v0, v3, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 188
+    .end local v2    # "selectionArgs":[Ljava/lang/String;
     goto :goto_2
 
     :cond_a
@@ -642,6 +786,7 @@
 
     if-nez v4, :cond_b
 
+    .line 189
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-interface {p4, v3}, Lorg/xml/sax/Attributes;->getValue(I)Ljava/lang/String;
@@ -652,17 +797,24 @@
 
     goto :goto_2
 
+    .line 191
     :cond_b
     iget-object v2, p0, Landroid/content/DefaultDataHandler;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v2, v0, v1, v1}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 194
+    .end local v0    # "u":Landroid/net/Uri;
+    .end local v4    # "attrLen":I
     :goto_2
     nop
 
+    .line 197
     :goto_3
     return-void
 
+    .line 178
+    .restart local v0    # "u":Landroid/net/Uri;
     :cond_c
     new-instance v1, Lorg/xml/sax/SAXException;
 
@@ -674,6 +826,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 179
     const-string/jumbo v3, "uri"
 
     invoke-interface {p4, v3}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
@@ -694,6 +847,8 @@
 
     throw v1
 
+    .line 195
+    .end local v0    # "u":Landroid/net/Uri;
     :cond_d
     new-instance v0, Lorg/xml/sax/SAXException;
 
@@ -718,11 +873,14 @@
 
 .method public startPrefixMapping(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "prefix"    # Ljava/lang/String;
+    .param p2, "uri"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
+    .line 260
     return-void
 .end method

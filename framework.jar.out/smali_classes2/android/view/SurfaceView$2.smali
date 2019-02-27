@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/SurfaceView;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/SurfaceView;
 
+    .line 138
     iput-object p1, p0, Landroid/view/SurfaceView$2;->this$0:Landroid/view/SurfaceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public onPreDraw()Z
     .locals 3
 
+    .line 142
     iget-object v0, p0, Landroid/view/SurfaceView$2;->this$0:Landroid/view/SurfaceView;
 
     iget-object v1, p0, Landroid/view/SurfaceView$2;->this$0:Landroid/view/SurfaceView;
@@ -67,9 +70,11 @@
     :goto_0
     iput-boolean v1, v0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
+    .line 143
     iget-object v0, p0, Landroid/view/SurfaceView$2;->this$0:Landroid/view/SurfaceView;
 
     invoke-virtual {v0}, Landroid/view/SurfaceView;->updateSurface()V
 
+    .line 144
     return v2
 .end method

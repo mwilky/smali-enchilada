@@ -23,19 +23,27 @@
 # direct methods
 .method public constructor <init>(Landroid/media/session/MediaSessionManager$Callback;Landroid/os/Handler;)V
     .locals 0
+    .param p1, "callback"    # Landroid/media/session/MediaSessionManager$Callback;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 1055
     invoke-direct {p0}, Landroid/media/session/ICallback$Stub;-><init>()V
 
+    .line 1056
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mCallback:Landroid/media/session/MediaSessionManager$Callback;
 
+    .line 1057
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mHandler:Landroid/os/Handler;
 
+    .line 1058
     return-void
 .end method
 
 .method static synthetic access$1300(Landroid/media/session/MediaSessionManager$CallbackImpl;)Landroid/media/session/MediaSessionManager$Callback;
     .locals 1
+    .param p0, "x0"    # Landroid/media/session/MediaSessionManager$CallbackImpl;
 
+    .line 1051
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mCallback:Landroid/media/session/MediaSessionManager$Callback;
 
     return-object v0
@@ -45,7 +53,9 @@
 # virtual methods
 .method public onAddressedPlayerChangedToMediaButtonReceiver(Landroid/content/ComponentName;)V
     .locals 2
+    .param p1, "mediaButtonReceiver"    # Landroid/content/ComponentName;
 
+    .line 1095
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/media/session/MediaSessionManager$CallbackImpl$4;
@@ -54,12 +64,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1101
     return-void
 .end method
 
 .method public onAddressedPlayerChangedToMediaSession(Landroid/media/session/MediaSession$Token;)V
     .locals 2
+    .param p1, "sessionToken"    # Landroid/media/session/MediaSession$Token;
 
+    .line 1084
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/media/session/MediaSessionManager$CallbackImpl$3;
@@ -68,12 +81,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1090
     return-void
 .end method
 
 .method public onMediaKeyEventDispatchedToMediaButtonReceiver(Landroid/view/KeyEvent;Landroid/content/ComponentName;)V
     .locals 2
+    .param p1, "event"    # Landroid/view/KeyEvent;
+    .param p2, "mediaButtonReceiver"    # Landroid/content/ComponentName;
 
+    .line 1074
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/media/session/MediaSessionManager$CallbackImpl$2;
@@ -82,12 +99,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1080
     return-void
 .end method
 
 .method public onMediaKeyEventDispatchedToMediaSession(Landroid/view/KeyEvent;Landroid/media/session/MediaSession$Token;)V
     .locals 2
+    .param p1, "event"    # Landroid/view/KeyEvent;
+    .param p2, "sessionToken"    # Landroid/media/session/MediaSession$Token;
 
+    .line 1063
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/media/session/MediaSessionManager$CallbackImpl$1;
@@ -96,5 +117,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1069
     return-void
 .end method

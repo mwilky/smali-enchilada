@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/location/CountryDetector$ListenerTransport;Landroid/location/Country;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/location/CountryDetector$ListenerTransport;
 
+    .line 72
     iput-object p1, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     iput-object p2, p0, Landroid/location/CountryDetector$ListenerTransport$1;->val$country:Landroid/location/Country;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 74
     iget-object v0, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     invoke-static {v0}, Landroid/location/CountryDetector$ListenerTransport;->access$000(Landroid/location/CountryDetector$ListenerTransport;)Landroid/location/CountryListener;
@@ -51,5 +54,6 @@
 
     invoke-interface {v0, v1}, Landroid/location/CountryListener;->onCountryDetected(Landroid/location/Country;)V
 
+    .line 75
     return-void
 .end method

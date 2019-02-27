@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -14,7 +15,9 @@
 
 .method static from(Landroid/speech/tts/TextToSpeech$OnUtteranceCompletedListener;)Landroid/speech/tts/UtteranceProgressListener;
     .locals 1
+    .param p0, "listener"    # Landroid/speech/tts/TextToSpeech$OnUtteranceCompletedListener;
 
+    .line 159
     new-instance v0, Landroid/speech/tts/UtteranceProgressListener$1;
 
     invoke-direct {v0, p0}, Landroid/speech/tts/UtteranceProgressListener$1;-><init>(Landroid/speech/tts/TextToSpeech$OnUtteranceCompletedListener;)V
@@ -26,13 +29,21 @@
 # virtual methods
 .method public onAudioAvailable(Ljava/lang/String;[B)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "audio"    # [B
 
+    .line 122
     return-void
 .end method
 
 .method public onBeginSynthesis(Ljava/lang/String;III)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "sampleRateInHz"    # I
+    .param p3, "audioFormat"    # I
+    .param p4, "channelCount"    # I
 
+    .line 100
     return-void
 .end method
 
@@ -46,17 +57,27 @@
 
 .method public onError(Ljava/lang/String;I)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "errorCode"    # I
 
+    .line 61
     invoke-virtual {p0, p1}, Landroid/speech/tts/UtteranceProgressListener;->onError(Ljava/lang/String;)V
 
+    .line 62
     return-void
 .end method
 
 .method public onRangeStart(Ljava/lang/String;III)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "start"    # I
+    .param p3, "end"    # I
+    .param p4, "frame"    # I
 
+    .line 144
     invoke-virtual {p0, p1, p2, p3}, Landroid/speech/tts/UtteranceProgressListener;->onUtteranceRangeStart(Ljava/lang/String;II)V
 
+    .line 145
     return-void
 .end method
 
@@ -65,14 +86,21 @@
 
 .method public onStop(Ljava/lang/String;Z)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "interrupted"    # Z
 
+    .line 76
     return-void
 .end method
 
 .method public onUtteranceRangeStart(Ljava/lang/String;II)V
     .locals 0
+    .param p1, "utteranceId"    # Ljava/lang/String;
+    .param p2, "start"    # I
+    .param p3, "end"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 150
     return-void
 .end method

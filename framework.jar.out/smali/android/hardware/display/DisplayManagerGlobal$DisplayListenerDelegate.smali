@@ -21,7 +21,10 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
     .locals 3
+    .param p1, "listener"    # Landroid/hardware/display/DisplayManager$DisplayListener;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 620
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -42,8 +45,10 @@
 
     invoke-direct {p0, v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
+    .line 621
     iput-object p1, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->mListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
+    .line 622
     return-void
 .end method
 
@@ -52,22 +57,27 @@
 .method public clearEvents()V
     .locals 1
 
+    .line 630
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
+    .line 631
     return-void
 .end method
 
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 635
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
+    .line 643
     :pswitch_0
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->mListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
@@ -77,6 +87,7 @@
 
     goto :goto_0
 
+    .line 640
     :pswitch_1
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->mListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
@@ -84,8 +95,10 @@
 
     invoke-interface {v0, v1}, Landroid/hardware/display/DisplayManager$DisplayListener;->onDisplayChanged(I)V
 
+    .line 641
     goto :goto_0
 
+    .line 637
     :pswitch_2
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->mListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
@@ -93,8 +106,10 @@
 
     invoke-interface {v0, v1}, Landroid/hardware/display/DisplayManager$DisplayListener;->onDisplayAdded(I)V
 
+    .line 638
     nop
 
+    .line 646
     :goto_0
     return-void
 
@@ -110,14 +125,20 @@
 
 .method public sendDisplayEvent(II)V
     .locals 1
+    .param p1, "displayId"    # I
+    .param p2, "event"    # I
 
+    .line 625
     const/4 v0, 0x0
 
     invoke-virtual {p0, p2, p1, v0}, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
+    .line 626
+    .local v0, "msg":Landroid/os/Message;
     invoke-virtual {p0, v0}, Landroid/hardware/display/DisplayManagerGlobal$DisplayListenerDelegate;->sendMessage(Landroid/os/Message;)Z
 
+    .line 627
     return-void
 .end method

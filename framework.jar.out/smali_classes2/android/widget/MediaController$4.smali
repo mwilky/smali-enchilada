@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/MediaController;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/MediaController;
 
+    .line 409
     iput-object p1, p0, Landroid/widget/MediaController$4;->this$0:Landroid/widget/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +39,15 @@
 .method public run()V
     .locals 5
 
+    .line 412
     iget-object v0, p0, Landroid/widget/MediaController$4;->this$0:Landroid/widget/MediaController;
 
     invoke-static {v0}, Landroid/widget/MediaController;->access$500(Landroid/widget/MediaController;)I
 
     move-result v0
 
+    .line 413
+    .local v0, "pos":I
     iget-object v1, p0, Landroid/widget/MediaController$4;->this$0:Landroid/widget/MediaController;
 
     invoke-static {v1}, Landroid/widget/MediaController;->access$600(Landroid/widget/MediaController;)Z
@@ -71,6 +76,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 414
     iget-object v1, p0, Landroid/widget/MediaController$4;->this$0:Landroid/widget/MediaController;
 
     iget-object v2, p0, Landroid/widget/MediaController$4;->this$0:Landroid/widget/MediaController;
@@ -87,6 +93,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/MediaController;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 416
     :cond_0
     return-void
 .end method

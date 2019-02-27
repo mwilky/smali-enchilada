@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/util/MemoryIntArray;
     .locals 3
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 246
     :try_start_0
     new-instance v0, Landroid/util/MemoryIntArray;
 
@@ -51,9 +54,12 @@
 
     return-object v0
 
+    .line 247
     :catch_0
     move-exception v0
 
+    .line 248
+    .local v0, "ioe":Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Error unparceling MemoryIntArray"
@@ -66,6 +72,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 242
     invoke-virtual {p0, p1}, Landroid/util/MemoryIntArray$1;->createFromParcel(Landroid/os/Parcel;)Landroid/util/MemoryIntArray;
 
     move-result-object p1
@@ -75,7 +82,9 @@
 
 .method public newArray(I)[Landroid/util/MemoryIntArray;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 254
     new-array v0, p1, [Landroid/util/MemoryIntArray;
 
     return-object v0
@@ -84,6 +93,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 242
     invoke-virtual {p0, p1}, Landroid/util/MemoryIntArray$1;->newArray(I)[Landroid/util/MemoryIntArray;
 
     move-result-object p1

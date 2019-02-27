@@ -29,11 +29,14 @@
 # direct methods
 .method constructor <init>(Landroid/view/Surface;Z)V
     .locals 4
+    .param p2, "isWideColorGamut"    # Z
 
+    .line 883
     iput-object p1, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 884
     const-string v0, "HwuiCanvas"
 
     const/4 v1, 0x0
@@ -44,14 +47,17 @@
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
+    .line 885
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->setClipToBounds(Z)Z
 
+    .line 886
     iput-boolean p2, p0, Landroid/view/Surface$HwuiContext;->mIsWideColorGamut:Z
 
+    .line 887
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     iget-wide v0, v0, Landroid/view/RenderNode;->mNativeRenderNode:J
@@ -64,6 +70,7 @@
 
     iput-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
+    .line 889
     return-void
 .end method
 
@@ -72,6 +79,7 @@
 .method destroy()V
     .locals 4
 
+    .line 914
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     const-wide/16 v2, 0x0
@@ -80,12 +88,15 @@
 
     if-eqz v0, :cond_0
 
+    .line 915
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     invoke-static {v0, v1}, Landroid/view/Surface;->access$500(J)V
 
+    .line 916
     iput-wide v2, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
+    .line 918
     :cond_0
     return-void
 .end method
@@ -93,6 +104,7 @@
 .method isWideColorGamut()Z
     .locals 1
 
+    .line 921
     iget-boolean v0, p0, Landroid/view/Surface$HwuiContext;->mIsWideColorGamut:Z
 
     return v0
@@ -100,11 +112,15 @@
 
 .method lockCanvas(II)Landroid/graphics/Canvas;
     .locals 2
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
+    .line 892
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     if-nez v0, :cond_0
 
+    .line 895
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/RenderNode;->start(II)Landroid/view/DisplayListCanvas;
@@ -113,10 +129,12 @@
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
+    .line 896
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     return-object v0
 
+    .line 893
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -129,27 +147,34 @@
 
 .method unlockAndPost(Landroid/graphics/Canvas;)V
     .locals 2
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
+    .line 900
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     if-ne p1, v0, :cond_0
 
+    .line 904
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     iget-object v1, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->end(Landroid/view/DisplayListCanvas;)V
 
+    .line 905
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
+    .line 906
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     invoke-static {v0, v1}, Landroid/view/Surface;->access$300(J)V
 
+    .line 907
     return-void
 
+    .line 901
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -163,6 +188,7 @@
 .method updateSurface()V
     .locals 4
 
+    .line 910
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     iget-object v2, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
@@ -171,5 +197,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/Surface;->access$400(JJ)V
 
+    .line 911
     return-void
 .end method

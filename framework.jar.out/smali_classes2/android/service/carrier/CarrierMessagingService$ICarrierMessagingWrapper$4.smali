@@ -35,7 +35,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;Landroid/service/carrier/ICarrierMessagingCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;
 
+    .line 504
     iput-object p1, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;->this$1:Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;
 
     iput-object p2, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;->val$callback:Landroid/service/carrier/ICarrierMessagingCallback;
@@ -49,14 +51,17 @@
 # virtual methods
 .method public onReceiveResult(Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;)V
     .locals 3
+    .param p1, "result"    # Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 508
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;->val$callback:Landroid/service/carrier/ICarrierMessagingCallback;
 
+    .line 509
     invoke-virtual {p1}, Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;->getSendStatus()I
 
     move-result v1
@@ -65,8 +70,10 @@
 
     move-result-object v2
 
+    .line 508
     invoke-interface {v0, v1, v2}, Landroid/service/carrier/ICarrierMessagingCallback;->onSendMultipartSmsComplete(I[I)V
 
+    .line 510
     return-void
 .end method
 
@@ -78,6 +85,7 @@
         }
     .end annotation
 
+    .line 504
     check-cast p1, Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;
 
     invoke-virtual {p0, p1}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;->onReceiveResult(Landroid/service/carrier/CarrierMessagingService$SendMultipartSmsResult;)V

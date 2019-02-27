@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 61
     new-instance v0, Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
     const-string v1, "UNKNOWN"
@@ -90,6 +91,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/SmsConstants$MessageClass;->CLASS_3:Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
+    .line 60
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/telephony/SmsConstants$MessageClass;
@@ -127,6 +129,7 @@
         }
     .end annotation
 
+    .line 60
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -134,7 +137,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/SmsConstants$MessageClass;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 60
     const-class v0, Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -149,6 +154,7 @@
 .method public static values()[Lcom/android/internal/telephony/SmsConstants$MessageClass;
     .locals 1
 
+    .line 60
     sget-object v0, Lcom/android/internal/telephony/SmsConstants$MessageClass;->$VALUES:[Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/SmsConstants$MessageClass;->clone()Ljava/lang/Object;

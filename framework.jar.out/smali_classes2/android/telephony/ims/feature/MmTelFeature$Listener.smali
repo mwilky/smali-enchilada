@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 317
     invoke-direct {p0}, Landroid/telephony/ims/aidl/IImsMmTelListener$Stub;-><init>()V
 
     return-void
@@ -27,18 +28,26 @@
 # virtual methods
 .method public onIncomingCall(Lcom/android/ims/internal/IImsCallSession;Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "c"    # Lcom/android/ims/internal/IImsCallSession;
+    .param p2, "extras"    # Landroid/os/Bundle;
 
+    .line 326
     return-void
 .end method
 
 .method public onRejectedCall(Landroid/telephony/ims/ImsCallProfile;Landroid/telephony/ims/ImsReasonInfo;)V
     .locals 0
+    .param p1, "callProfile"    # Landroid/telephony/ims/ImsCallProfile;
+    .param p2, "reason"    # Landroid/telephony/ims/ImsReasonInfo;
 
+    .line 336
     return-void
 .end method
 
 .method public onVoiceMessageCountUpdate(I)V
     .locals 0
+    .param p1, "count"    # I
 
+    .line 345
     return-void
 .end method

@@ -30,6 +30,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 579
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,6 +40,8 @@
 # virtual methods
 .method public onTime(J)V
     .locals 0
+    .param p1, "timeMs"    # J
 
+    .line 588
     return-void
 .end method

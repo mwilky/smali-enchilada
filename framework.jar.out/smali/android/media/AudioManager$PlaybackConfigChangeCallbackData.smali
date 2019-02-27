@@ -31,6 +31,7 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioManager$AudioPlaybackCallback;Ljava/util/List;)V
     .locals 0
+    .param p1, "cb"    # Landroid/media/AudioManager$AudioPlaybackCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,11 +42,16 @@
         }
     .end annotation
 
+    .line 3375
+    .local p2, "configs":Ljava/util/List;, "Ljava/util/List<Landroid/media/AudioPlaybackConfiguration;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 3376
     iput-object p1, p0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioPlaybackCallback;
 
+    .line 3377
     iput-object p2, p0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;->mConfigs:Ljava/util/List;
 
+    .line 3378
     return-void
 .end method

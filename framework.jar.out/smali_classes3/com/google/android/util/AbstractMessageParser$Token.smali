@@ -29,13 +29,19 @@
 # direct methods
 .method protected constructor <init>(Lcom/google/android/util/AbstractMessageParser$Token$Type;Ljava/lang/String;)V
     .locals 0
+    .param p1, "type"    # Lcom/google/android/util/AbstractMessageParser$Token$Type;
+    .param p2, "text"    # Ljava/lang/String;
 
+    .line 686
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 687
     iput-object p1, p0, Lcom/google/android/util/AbstractMessageParser$Token;->type:Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
+    .line 688
     iput-object p2, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
+    .line 689
     return-void
 .end method
 
@@ -44,6 +50,7 @@
 .method public controlCaps()Z
     .locals 1
 
+    .line 716
     const/4 v0, 0x0
 
     return v0
@@ -60,10 +67,13 @@
         }
     .end annotation
 
+    .line 701
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 702
+    .local v0, "info":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->getType()Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
     move-result-object v1
@@ -74,12 +84,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 703
     return-object v0
 .end method
 
 .method public getRawText()Ljava/lang/String;
     .locals 1
 
+    .line 707
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     return-object v0
@@ -88,6 +100,7 @@
 .method public getType()Lcom/google/android/util/AbstractMessageParser$Token$Type;
     .locals 1
 
+    .line 692
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->type:Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
     return-object v0
@@ -96,6 +109,7 @@
 .method public isArray()Z
     .locals 1
 
+    .line 711
     invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->isHtml()Z
 
     move-result v0
@@ -111,6 +125,7 @@
 .method public isMedia()Z
     .locals 1
 
+    .line 709
     const/4 v0, 0x0
 
     return v0
@@ -119,6 +134,7 @@
 .method public setCaps()Z
     .locals 1
 
+    .line 717
     const/4 v0, 0x0
 
     return v0
@@ -126,7 +142,9 @@
 
 .method public toHtml(Z)Ljava/lang/String;
     .locals 2
+    .param p1, "caps"    # Z
 
+    .line 713
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "not html"

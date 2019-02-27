@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/os/PowerManagerInternal;ILjava/util/function/Consumer;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/PowerManagerInternal;
 
+    .line 163
     iput-object p1, p0, Landroid/os/PowerManagerInternal$1;->this$0:Landroid/os/PowerManagerInternal;
 
     iput p2, p0, Landroid/os/PowerManagerInternal$1;->val$serviceType:I
@@ -45,6 +47,7 @@
 .method public getServiceType()I
     .locals 1
 
+    .line 166
     iget v0, p0, Landroid/os/PowerManagerInternal$1;->val$serviceType:I
 
     return v0
@@ -52,10 +55,13 @@
 
 .method public onLowPowerModeChanged(Landroid/os/PowerSaveState;)V
     .locals 1
+    .param p1, "state"    # Landroid/os/PowerSaveState;
 
+    .line 171
     iget-object v0, p0, Landroid/os/PowerManagerInternal$1;->val$listener:Ljava/util/function/Consumer;
 
     invoke-interface {v0, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
+    .line 172
     return-void
 .end method

@@ -17,11 +17,14 @@
 # static fields
 .field static final synthetic $SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
+.field static final synthetic $SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 7
 
+    .line 67
     invoke-static {}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     move-result-object v0
@@ -32,131 +35,218 @@
 
     sput-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
+    const/4 v0, 0x1
+
     :try_start_0
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+    sget-object v1, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->YYB:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+    sget-object v2, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->YYB:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+    invoke-virtual {v2}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
+    aput v0, v1, v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
     :goto_0
+    const/4 v1, 0x2
+
     :try_start_1
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+    sget-object v2, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->MYH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+    sget-object v3, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->MYH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+    invoke-virtual {v3}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
 
-    move-result v1
+    move-result v3
 
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
+    aput v1, v2, v3
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_1
 
     :catch_1
-    move-exception v0
+    move-exception v2
 
     :goto_1
-    :try_start_2
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
-
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->HPH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
-
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
-
-    move-result v1
-
     const/4 v2, 0x3
 
-    aput v2, v0, v1
+    :try_start_2
+    sget-object v3, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+
+    sget-object v4, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->HPH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+
+    invoke-virtual {v4}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+
+    move-result v4
+
+    aput v2, v3, v4
     :try_end_2
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_2
 
     :catch_2
-    move-exception v0
+    move-exception v3
 
     :goto_2
+    const/4 v3, 0x4
+
     :try_start_3
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+    sget-object v4, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->LCH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+    sget-object v5, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->LCH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+    invoke-virtual {v5}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
 
-    move-result v1
+    move-result v5
 
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
+    aput v3, v4, v5
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     goto :goto_3
 
     :catch_3
-    move-exception v0
+    move-exception v4
 
     :goto_3
     :try_start_4
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+    sget-object v4, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->DGZ:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+    sget-object v5, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->DGZ:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+    invoke-virtual {v5}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
 
-    move-result v1
+    move-result v5
 
-    const/4 v2, 0x5
+    const/4 v6, 0x5
 
-    aput v2, v0, v1
+    aput v6, v4, v5
     :try_end_4
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     goto :goto_4
 
     :catch_4
-    move-exception v0
+    move-exception v4
 
     :goto_4
     :try_start_5
-    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
+    sget-object v4, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_BACK_COVER_TYPE:[I
 
-    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
+    sget-object v5, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
-    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
+    invoke-virtual {v5}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->ordinal()I
 
-    move-result v1
+    move-result v5
 
-    const/4 v2, 0x6
+    const/4 v6, 0x6
 
-    aput v2, v0, v1
+    aput v6, v4, v5
     :try_end_5
     .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     goto :goto_5
 
     :catch_5
+    move-exception v4
+
+    .line 42
+    :goto_5
+    invoke-static {}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    move-result-object v4
+
+    array-length v4, v4
+
+    new-array v4, v4, [I
+
+    sput-object v4, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
+    :try_start_6
+    sget-object v4, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
+    sget-object v5, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->JCC:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    invoke-virtual {v5}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->ordinal()I
+
+    move-result v5
+
+    aput v0, v4, v5
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    goto :goto_6
+
+    :catch_6
     move-exception v0
 
-    :goto_5
+    :goto_6
+    :try_start_7
+    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
+    sget-object v4, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->SW:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    invoke-virtual {v4}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->ordinal()I
+
+    move-result v4
+
+    aput v1, v0, v4
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    goto :goto_7
+
+    :catch_7
+    move-exception v0
+
+    :goto_7
+    :try_start_8
+    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
+    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->AVG:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->ordinal()I
+
+    move-result v1
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
+
+    goto :goto_8
+
+    :catch_8
+    move-exception v0
+
+    :goto_8
+    :try_start_9
+    sget-object v0, Lcom/oneplus/customization/OpWallpaperHelper$1;->$SwitchMap$com$oneplus$customization$CustomizationSettings$CUSTOM_TYPE:[I
+
+    sget-object v1, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    invoke-virtual {v1}, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->ordinal()I
+
+    move-result v1
+
+    aput v3, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+
+    goto :goto_9
+
+    :catch_9
+    move-exception v0
+
+    :goto_9
     return-void
 .end method

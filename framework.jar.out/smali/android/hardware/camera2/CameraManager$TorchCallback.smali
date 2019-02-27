@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,12 +28,17 @@
 # virtual methods
 .method public onTorchModeChanged(Ljava/lang/String;Z)V
     .locals 0
+    .param p1, "cameraId"    # Ljava/lang/String;
+    .param p2, "enabled"    # Z
 
+    .line 762
     return-void
 .end method
 
 .method public onTorchModeUnavailable(Ljava/lang/String;)V
     .locals 0
+    .param p1, "cameraId"    # Ljava/lang/String;
 
+    .line 745
     return-void
 .end method

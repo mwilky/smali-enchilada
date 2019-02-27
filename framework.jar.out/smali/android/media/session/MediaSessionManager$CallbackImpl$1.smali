@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$CallbackImpl;Landroid/view/KeyEvent;Landroid/media/session/MediaSession$Token;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/session/MediaSessionManager$CallbackImpl;
 
+    .line 1063
     iput-object p1, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$1;->this$0:Landroid/media/session/MediaSessionManager$CallbackImpl;
 
     iput-object p2, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$1;->val$event:Landroid/view/KeyEvent;
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 3
 
+    .line 1066
     iget-object v0, p0, Landroid/media/session/MediaSessionManager$CallbackImpl$1;->this$0:Landroid/media/session/MediaSessionManager$CallbackImpl;
 
     invoke-static {v0}, Landroid/media/session/MediaSessionManager$CallbackImpl;->access$1300(Landroid/media/session/MediaSessionManager$CallbackImpl;)Landroid/media/session/MediaSessionManager$Callback;
@@ -57,5 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/session/MediaSessionManager$Callback;->onMediaKeyEventDispatched(Landroid/view/KeyEvent;Landroid/media/session/MediaSession$Token;)V
 
+    .line 1067
     return-void
 .end method

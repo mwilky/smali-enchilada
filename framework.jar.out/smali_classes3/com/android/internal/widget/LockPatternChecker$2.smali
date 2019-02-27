@@ -50,6 +50,7 @@
 .method constructor <init>(Ljava/util/List;Lcom/android/internal/widget/LockPatternUtils;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)V
     .locals 0
 
+    .line 110
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$pattern:Ljava/util/List;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
@@ -67,7 +68,9 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
     .locals 5
+    .param p1, "args"    # [Ljava/lang/Void;
 
+    .line 124
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -95,15 +98,19 @@
 
     return-object v0
 
+    .line 125
     :catch_0
     move-exception v0
 
+    .line 126
+    .local v0, "ex":Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;->getTimeoutMs()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/widget/LockPatternChecker$2;->mThrottleTimeout:I
 
+    .line 127
     const/4 v1, 0x0
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -116,6 +123,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 110
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternChecker$2;->doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
@@ -128,16 +136,20 @@
 .method protected onCancelled()V
     .locals 1
 
+    .line 138
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$callback:Lcom/android/internal/widget/LockPatternChecker$OnCheckCallback;
 
     invoke-interface {v0}, Lcom/android/internal/widget/LockPatternChecker$OnCheckCallback;->onCancelled()V
 
+    .line 139
     return-void
 .end method
 
 .method protected onPostExecute(Ljava/lang/Boolean;)V
     .locals 3
+    .param p1, "result"    # Ljava/lang/Boolean;
 
+    .line 133
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$callback:Lcom/android/internal/widget/LockPatternChecker$OnCheckCallback;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -148,12 +160,14 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/widget/LockPatternChecker$OnCheckCallback;->onChecked(ZI)V
 
+    .line 134
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
+    .line 110
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternChecker$2;->onPostExecute(Ljava/lang/Boolean;)V
@@ -164,6 +178,7 @@
 .method protected onPreExecute()V
     .locals 2
 
+    .line 118
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternChecker$2;->val$pattern:Ljava/util/List;
@@ -172,5 +187,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$2;->patternCopy:Ljava/util/List;
 
+    .line 119
     return-void
 .end method

@@ -25,13 +25,17 @@
 # direct methods
 .method public constructor <init>([I)V
     .locals 0
+    .param p1, "dirs"    # [I
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
         visibility = .enum Lcom/android/internal/annotations/VisibleForTesting$Visibility;->PACKAGE:Lcom/android/internal/annotations/VisibleForTesting$Visibility;
     .end annotation
 
+    .line 2330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2331
     iput-object p1, p0, Landroid/text/Layout$Directions;->mDirections:[I
 
+    .line 2332
     return-void
 .end method

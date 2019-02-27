@@ -28,45 +28,62 @@
 # direct methods
 .method public constructor <init>(Landroid/media/MediaScanner;Ljava/lang/String;Landroid/net/Uri;Landroid/database/Cursor;)V
     .locals 5
+    .param p1, "this$0"    # Landroid/media/MediaScanner;
+    .param p2, "playListDirectory"    # Ljava/lang/String;
+    .param p3, "uri"    # Landroid/net/Uri;
+    .param p4, "fileList"    # Landroid/database/Cursor;
 
+    .line 2146
     iput-object p1, p0, Landroid/media/MediaScanner$WplHandler;->this$0:Landroid/media/MediaScanner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2147
     iput-object p2, p0, Landroid/media/MediaScanner$WplHandler;->playListDirectory:Ljava/lang/String;
 
+    .line 2149
     new-instance v0, Landroid/sax/RootElement;
 
     const-string/jumbo v1, "smil"
 
     invoke-direct {v0, v1}, Landroid/sax/RootElement;-><init>(Ljava/lang/String;)V
 
+    .line 2150
+    .local v0, "root":Landroid/sax/RootElement;
     const-string v1, "body"
 
     invoke-virtual {v0, v1}, Landroid/sax/RootElement;->getChild(Ljava/lang/String;)Landroid/sax/Element;
 
     move-result-object v1
 
+    .line 2151
+    .local v1, "body":Landroid/sax/Element;
     const-string/jumbo v2, "seq"
 
     invoke-virtual {v1, v2}, Landroid/sax/Element;->getChild(Ljava/lang/String;)Landroid/sax/Element;
 
     move-result-object v2
 
+    .line 2152
+    .local v2, "seq":Landroid/sax/Element;
     const-string/jumbo v3, "media"
 
     invoke-virtual {v2, v3}, Landroid/sax/Element;->getChild(Ljava/lang/String;)Landroid/sax/Element;
 
     move-result-object v3
 
+    .line 2153
+    .local v3, "media":Landroid/sax/Element;
     invoke-virtual {v3, p0}, Landroid/sax/Element;->setElementListener(Landroid/sax/ElementListener;)V
 
+    .line 2155
     invoke-virtual {v0}, Landroid/sax/RootElement;->getContentHandler()Lorg/xml/sax/ContentHandler;
 
     move-result-object v4
 
     iput-object v4, p0, Landroid/media/MediaScanner$WplHandler;->handler:Lorg/xml/sax/ContentHandler;
 
+    .line 2156
     return-void
 .end method
 
@@ -75,12 +92,14 @@
 .method public end()V
     .locals 0
 
+    .line 2168
     return-void
 .end method
 
 .method getContentHandler()Lorg/xml/sax/ContentHandler;
     .locals 1
 
+    .line 2171
     iget-object v0, p0, Landroid/media/MediaScanner$WplHandler;->handler:Lorg/xml/sax/ContentHandler;
 
     return-object v0
@@ -88,7 +107,9 @@
 
 .method public start(Lorg/xml/sax/Attributes;)V
     .locals 3
+    .param p1, "attributes"    # Lorg/xml/sax/Attributes;
 
+    .line 2160
     const-string v0, ""
 
     const-string/jumbo v1, "src"
@@ -97,14 +118,18 @@
 
     move-result-object v0
 
+    .line 2161
+    .local v0, "path":Ljava/lang/String;
     if-eqz v0, :cond_0
 
+    .line 2162
     iget-object v1, p0, Landroid/media/MediaScanner$WplHandler;->this$0:Landroid/media/MediaScanner;
 
     iget-object v2, p0, Landroid/media/MediaScanner$WplHandler;->playListDirectory:Ljava/lang/String;
 
     invoke-static {v1, v0, v2}, Landroid/media/MediaScanner;->access$3500(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2164
     :cond_0
     return-void
 .end method

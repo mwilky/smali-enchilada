@@ -41,15 +41,20 @@
 # direct methods
 .method constructor <init>(Landroid/view/autofill/AutofillManager;[Landroid/view/autofill/AutofillId;)V
     .locals 6
+    .param p2, "trackedIds"    # [Landroid/view/autofill/AutofillId;
 
+    .line 2524
     iput-object p1, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->this$0:Landroid/view/autofill/AutofillManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2525
     invoke-static {p1}, Landroid/view/autofill/AutofillManager;->access$400(Landroid/view/autofill/AutofillManager;)Landroid/view/autofill/AutofillManager$AutofillClient;
 
     move-result-object v0
 
+    .line 2526
+    .local v0, "client":Landroid/view/autofill/AutofillManager$AutofillClient;
     invoke-static {p2}, Lcom/android/internal/util/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
 
     move-result v1
@@ -58,12 +63,14 @@
 
     if-eqz v0, :cond_3
 
+    .line 2529
     invoke-interface {v0}, Landroid/view/autofill/AutofillManager$AutofillClient;->autofillClientIsVisibleForAutofill()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
+    .line 2530
     sget-boolean v1, Landroid/view/autofill/Helper;->sVerbose:Z
 
     if-eqz v1, :cond_0
@@ -74,32 +81,45 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2531
     :cond_0
     invoke-interface {v0, p2}, Landroid/view/autofill/AutofillManager$AutofillClient;->autofillClientGetViewVisibility([Landroid/view/autofill/AutofillId;)[Z
 
     move-result-object v1
 
+    .local v1, "isVisible":[Z
     goto :goto_0
 
+    .line 2534
+    .end local v1    # "isVisible":[Z
     :cond_1
     array-length v1, p2
 
     new-array v1, v1, [Z
 
+    .line 2537
+    .restart local v1    # "isVisible":[Z
     :goto_0
     array-length v2, p2
 
+    .line 2538
+    .local v2, "numIds":I
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_1
     if-ge v3, v2, :cond_3
 
+    .line 2539
     aget-object v4, p2, v3
 
+    .line 2541
+    .local v4, "id":Landroid/view/autofill/AutofillId;
     aget-boolean v5, v1, v3
 
     if-eqz v5, :cond_2
 
+    .line 2542
     iget-object v5, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v5, v4}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
@@ -110,6 +130,7 @@
 
     goto :goto_2
 
+    .line 2544
     :cond_2
     iget-object v5, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
@@ -119,16 +140,23 @@
 
     iput-object v5, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2538
+    .end local v4    # "id":Landroid/view/autofill/AutofillId;
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
+    .line 2549
+    .end local v1    # "isVisible":[Z
+    .end local v2    # "numIds":I
+    .end local v3    # "i":I
     :cond_3
     sget-boolean v1, Landroid/view/autofill/Helper;->sVerbose:Z
 
     if-eqz v1, :cond_4
 
+    .line 2550
     const-string v1, "AutofillManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -167,20 +195,25 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2555
     :cond_4
     iget-object v1, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     if-nez v1, :cond_5
 
+    .line 2556
     invoke-static {p1}, Landroid/view/autofill/AutofillManager;->access$600(Landroid/view/autofill/AutofillManager;)V
 
+    .line 2558
     :cond_5
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/view/autofill/AutofillManager$TrackedViews;)Landroid/util/ArraySet;
     .locals 1
+    .param p0, "x0"    # Landroid/view/autofill/AutofillManager$TrackedViews;
 
+    .line 2453
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     return-object v0
@@ -188,7 +221,9 @@
 
 .method static synthetic access$100(Landroid/view/autofill/AutofillManager$TrackedViews;)Landroid/util/ArraySet;
     .locals 1
+    .param p0, "x0"    # Landroid/view/autofill/AutofillManager$TrackedViews;
 
+    .line 2453
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
     return-object v0
@@ -208,8 +243,12 @@
         }
     .end annotation
 
+    .line 2485
+    .local p1, "set":Landroid/util/ArraySet;, "Landroid/util/ArraySet<TT;>;"
+    .local p2, "valueToAdd":Ljava/lang/Object;, "TT;"
     if-nez p1, :cond_0
 
+    .line 2486
     new-instance v0, Landroid/util/ArraySet;
 
     const/4 v1, 0x1
@@ -218,9 +257,11 @@
 
     move-object p1, v0
 
+    .line 2489
     :cond_0
     invoke-virtual {p1, p2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
+    .line 2491
     return-object p1
 .end method
 
@@ -236,6 +277,9 @@
         }
     .end annotation
 
+    .line 2470
+    .local p1, "set":Landroid/util/ArraySet;, "Landroid/util/ArraySet<TT;>;"
+    .local p2, "value":Ljava/lang/Object;, "TT;"
     if-eqz p1, :cond_0
 
     invoke-virtual {p1, p2}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
@@ -269,23 +313,31 @@
         }
     .end annotation
 
+    .line 2506
+    .local p1, "set":Landroid/util/ArraySet;, "Landroid/util/ArraySet<TT;>;"
+    .local p2, "valueToRemove":Ljava/lang/Object;, "TT;"
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
+    .line 2507
     return-object v0
 
+    .line 2510
     :cond_0
     invoke-virtual {p1, p2}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
+    .line 2512
     invoke-virtual {p1}, Landroid/util/ArraySet;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
+    .line 2513
     return-object v0
 
+    .line 2516
     :cond_1
     return-object p1
 .end method
@@ -294,14 +346,18 @@
 # virtual methods
 .method notifyViewVisibilityChangedLocked(Landroid/view/autofill/AutofillId;Z)V
     .locals 3
+    .param p1, "id"    # Landroid/view/autofill/AutofillId;
+    .param p2, "isVisible"    # Z
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
+    .line 2568
     sget-boolean v0, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-eqz v0, :cond_0
 
+    .line 2569
     const-string v0, "AutofillManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -326,6 +382,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2573
     :cond_0
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->this$0:Landroid/view/autofill/AutofillManager;
 
@@ -335,8 +392,10 @@
 
     if-eqz v0, :cond_2
 
+    .line 2574
     if-eqz p2, :cond_1
 
+    .line 2575
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v0, p1}, Landroid/view/autofill/AutofillManager$TrackedViews;->isInSet(Landroid/util/ArraySet;Ljava/lang/Object;)Z
@@ -345,6 +404,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 2576
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v0, p1}, Landroid/view/autofill/AutofillManager$TrackedViews;->removeFromSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
@@ -353,6 +413,7 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2577
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v0, p1}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
@@ -363,6 +424,7 @@
 
     goto :goto_0
 
+    .line 2580
     :cond_1
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
@@ -372,6 +434,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 2581
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v0, p1}, Landroid/view/autofill/AutofillManager$TrackedViews;->removeFromSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
@@ -380,6 +443,7 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2582
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {p0, v0, p1}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
@@ -388,16 +452,19 @@
 
     iput-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2587
     :cond_2
     :goto_0
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     if-nez v0, :cond_4
 
+    .line 2588
     sget-boolean v0, Landroid/view/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_3
 
+    .line 2589
     const-string v0, "AutofillManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -418,11 +485,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2591
     :cond_3
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->this$0:Landroid/view/autofill/AutofillManager;
 
     invoke-static {v0}, Landroid/view/autofill/AutofillManager;->access$600(Landroid/view/autofill/AutofillManager;)V
 
+    .line 2593
     :cond_4
     return-void
 .end method
@@ -433,22 +502,31 @@
         value = "mLock"
     .end annotation
 
+    .line 2604
     iget-object v0, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->this$0:Landroid/view/autofill/AutofillManager;
 
     invoke-static {v0}, Landroid/view/autofill/AutofillManager;->access$400(Landroid/view/autofill/AutofillManager;)Landroid/view/autofill/AutofillManager$AutofillClient;
 
     move-result-object v0
 
+    .line 2605
+    .local v0, "client":Landroid/view/autofill/AutofillManager$AutofillClient;
     const/4 v1, 0x0
 
+    .line 2606
+    .local v1, "updatedVisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
     const/4 v2, 0x0
 
+    .line 2607
+    .local v2, "updatedInvisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
     if-eqz v0, :cond_8
 
+    .line 2608
     sget-boolean v3, Landroid/view/autofill/Helper;->sVerbose:Z
 
     if-eqz v3, :cond_0
 
+    .line 2609
     const-string v3, "AutofillManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -477,6 +555,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2612
     :cond_0
     iget-object v3, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
@@ -484,53 +563,72 @@
 
     if-eqz v3, :cond_4
 
+    .line 2613
     new-instance v3, Ljava/util/ArrayList;
 
     iget-object v5, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
+    .line 2615
+    .local v3, "orderedInvisibleIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/autofill/AutofillId;>;"
     nop
 
+    .line 2616
     invoke-static {v3}, Landroid/view/autofill/Helper;->toArray(Ljava/util/Collection;)[Landroid/view/autofill/AutofillId;
 
     move-result-object v5
 
+    .line 2615
     invoke-interface {v0, v5}, Landroid/view/autofill/AutofillManager$AutofillClient;->autofillClientGetViewVisibility([Landroid/view/autofill/AutofillId;)[Z
 
     move-result-object v5
 
+    .line 2618
+    .local v5, "isVisible":[Z
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
+    .line 2619
+    .local v6, "numInvisibleTrackedIds":I
     move-object v7, v2
 
     move-object v2, v1
 
     move v1, v4
 
+    .line 2619
+    .local v1, "i":I
+    .local v2, "updatedVisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
+    .local v7, "updatedInvisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
     :goto_0
     if-ge v1, v6, :cond_3
 
+    .line 2620
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/view/autofill/AutofillId;
 
+    .line 2621
+    .local v8, "id":Landroid/view/autofill/AutofillId;
     aget-boolean v9, v5, v1
 
     if-eqz v9, :cond_1
 
+    .line 2622
     invoke-direct {p0, v2, v8}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v2
 
+    .line 2624
     sget-boolean v9, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-eqz v9, :cond_2
 
+    .line 2625
     const-string v9, "AutofillManager"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -555,77 +653,107 @@
 
     goto :goto_1
 
+    .line 2628
     :cond_1
     invoke-direct {p0, v7, v8}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v7
 
+    .line 2619
+    .end local v8    # "id":Landroid/view/autofill/AutofillId;
     :cond_2
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 2633
+    .end local v1    # "i":I
+    .end local v3    # "orderedInvisibleIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/autofill/AutofillId;>;"
+    .end local v5    # "isVisible":[Z
+    .end local v6    # "numInvisibleTrackedIds":I
     :cond_3
     move-object v1, v2
 
     move-object v2, v7
 
+    .line 2633
+    .end local v7    # "updatedInvisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
+    .local v1, "updatedVisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
+    .local v2, "updatedInvisibleTrackedIds":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/view/autofill/AutofillId;>;"
     :cond_4
     iget-object v3, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     if-eqz v3, :cond_7
 
+    .line 2634
     new-instance v3, Ljava/util/ArrayList;
 
     iget-object v5, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
+    .line 2636
+    .local v3, "orderedVisibleIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/autofill/AutofillId;>;"
     nop
 
+    .line 2637
     invoke-static {v3}, Landroid/view/autofill/Helper;->toArray(Ljava/util/Collection;)[Landroid/view/autofill/AutofillId;
 
     move-result-object v5
 
+    .line 2636
     invoke-interface {v0, v5}, Landroid/view/autofill/AutofillManager$AutofillClient;->autofillClientGetViewVisibility([Landroid/view/autofill/AutofillId;)[Z
 
     move-result-object v5
 
+    .line 2639
+    .restart local v5    # "isVisible":[Z
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
+    .line 2640
+    .local v6, "numVisibleTrackedIds":I
     nop
 
+    .line 2640
+    .local v4, "i":I
     :goto_2
     if-ge v4, v6, :cond_7
 
+    .line 2641
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Landroid/view/autofill/AutofillId;
 
+    .line 2643
+    .local v7, "id":Landroid/view/autofill/AutofillId;
     aget-boolean v8, v5, v4
 
     if-eqz v8, :cond_5
 
+    .line 2644
     invoke-direct {p0, v1, v7}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v1
 
     goto :goto_3
 
+    .line 2646
     :cond_5
     invoke-direct {p0, v2, v7}, Landroid/view/autofill/AutofillManager$TrackedViews;->addToSet(Landroid/util/ArraySet;Ljava/lang/Object;)Landroid/util/ArraySet;
 
     move-result-object v2
 
+    .line 2648
     sget-boolean v8, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-eqz v8, :cond_6
 
+    .line 2649
     const-string v8, "AutofillManager"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -648,37 +776,50 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2640
+    .end local v7    # "id":Landroid/view/autofill/AutofillId;
     :cond_6
     :goto_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
+    .line 2655
+    .end local v3    # "orderedVisibleIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/autofill/AutofillId;>;"
+    .end local v4    # "i":I
+    .end local v5    # "isVisible":[Z
+    .end local v6    # "numVisibleTrackedIds":I
     :cond_7
     iput-object v2, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mInvisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2656
     iput-object v1, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
+    .line 2659
     :cond_8
     iget-object v3, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->mVisibleTrackedIds:Landroid/util/ArraySet;
 
     if-nez v3, :cond_a
 
+    .line 2660
     sget-boolean v3, Landroid/view/autofill/Helper;->sVerbose:Z
 
     if-eqz v3, :cond_9
 
+    .line 2661
     const-string v3, "AutofillManager"
 
     const-string/jumbo v4, "onVisibleForAutofillChangedLocked(): no more visible ids"
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2663
     :cond_9
     iget-object v3, p0, Landroid/view/autofill/AutofillManager$TrackedViews;->this$0:Landroid/view/autofill/AutofillManager;
 
     invoke-static {v3}, Landroid/view/autofill/AutofillManager;->access$600(Landroid/view/autofill/AutofillManager;)V
 
+    .line 2665
     :cond_a
     return-void
 .end method

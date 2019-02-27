@@ -21,11 +21,16 @@
 # direct methods
 .method public constructor <init>(Landroid/media/RemoteController;Landroid/media/RemoteController;Landroid/os/Looper;)V
     .locals 0
+    .param p2, "rc"    # Landroid/media/RemoteController;
+    .param p3, "looper"    # Landroid/os/Looper;
 
+    .line 507
     iput-object p1, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
+    .line 508
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
+    .line 509
     return-void
 .end method
 
@@ -33,11 +38,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 513
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 524
     const-string v0, "RemoteController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -60,6 +68,7 @@
 
     goto :goto_1
 
+    .line 521
     :pswitch_0
     iget-object v0, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -69,8 +78,10 @@
 
     invoke-static {v0, v1}, Landroid/media/RemoteController;->access$500(Landroid/media/RemoteController;Landroid/media/MediaMetadata;)V
 
+    .line 522
     goto :goto_1
 
+    .line 518
     :pswitch_1
     iget-object v0, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -80,8 +91,10 @@
 
     invoke-static {v0, v1}, Landroid/media/RemoteController;->access$400(Landroid/media/RemoteController;Landroid/media/session/PlaybackState;)V
 
+    .line 519
     goto :goto_1
 
+    .line 515
     :pswitch_2
     iget-object v0, p0, Landroid/media/RemoteController$EventHandler;->this$0:Landroid/media/RemoteController;
 
@@ -99,8 +112,10 @@
     :goto_0
     invoke-static {v0, v2}, Landroid/media/RemoteController;->access$700(Landroid/media/RemoteController;Z)V
 
+    .line 516
     nop
 
+    .line 526
     :goto_1
     return-void
 

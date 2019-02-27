@@ -26,13 +26,19 @@
 # direct methods
 .method public constructor <init>(FF)V
     .locals 0
+    .param p1, "min"    # F
+    .param p2, "max"    # F
 
+    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 211
     iput p1, p0, Landroid/provider/SettingsValidators$InclusiveFloatRangeValidator;->mMin:F
 
+    .line 212
     iput p2, p0, Landroid/provider/SettingsValidators$InclusiveFloatRangeValidator;->mMax:F
 
+    .line 213
     return-void
 .end method
 
@@ -40,7 +46,9 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 3
+    .param p1, "value"    # Ljava/lang/String;
 
+    .line 218
     const/4 v0, 0x0
 
     :try_start_0
@@ -48,6 +56,8 @@
 
     move-result v1
 
+    .line 219
+    .local v1, "floatValue":F
     iget v2, p0, Landroid/provider/SettingsValidators$InclusiveFloatRangeValidator;->mMin:F
 
     cmpl-float v2, v1, v2
@@ -70,8 +80,12 @@
     :cond_0
     return v0
 
+    .line 220
+    .end local v1    # "floatValue":F
     :catch_0
     move-exception v1
 
+    .line 221
+    .local v1, "e":Ljava/lang/RuntimeException;
     return v0
 .end method

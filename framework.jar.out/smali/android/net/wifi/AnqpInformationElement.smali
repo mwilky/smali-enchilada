@@ -74,15 +74,23 @@
 # direct methods
 .method public constructor <init>(II[B)V
     .locals 0
+    .param p1, "vendorId"    # I
+    .param p2, "elementId"    # I
+    .param p3, "payload"    # [B
 
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 64
     iput p1, p0, Landroid/net/wifi/AnqpInformationElement;->mVendorId:I
 
+    .line 65
     iput p2, p0, Landroid/net/wifi/AnqpInformationElement;->mElementId:I
 
+    .line 66
     iput-object p3, p0, Landroid/net/wifi/AnqpInformationElement;->mPayload:[B
 
+    .line 67
     return-void
 .end method
 
@@ -91,6 +99,7 @@
 .method public getElementId()I
     .locals 1
 
+    .line 74
     iget v0, p0, Landroid/net/wifi/AnqpInformationElement;->mElementId:I
 
     return v0
@@ -99,6 +108,7 @@
 .method public getPayload()[B
     .locals 1
 
+    .line 78
     iget-object v0, p0, Landroid/net/wifi/AnqpInformationElement;->mPayload:[B
 
     return-object v0
@@ -107,6 +117,7 @@
 .method public getVendorId()I
     .locals 1
 
+    .line 70
     iget v0, p0, Landroid/net/wifi/AnqpInformationElement;->mVendorId:I
 
     return v0

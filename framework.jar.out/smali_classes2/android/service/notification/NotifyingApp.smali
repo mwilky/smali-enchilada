@@ -43,6 +43,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 77
     new-instance v0, Landroid/service/notification/NotifyingApp$1;
 
     invoke-direct {v0}, Landroid/service/notification/NotifyingApp$1;-><init>()V
@@ -55,6 +56,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,27 +64,33 @@
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 36
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/service/notification/NotifyingApp;->mUid:I
 
+    .line 37
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/notification/NotifyingApp;->mPkg:Ljava/lang/String;
 
+    .line 38
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/service/notification/NotifyingApp;->mLastNotified:J
 
+    .line 39
     return-void
 .end method
 
@@ -90,7 +98,9 @@
 # virtual methods
 .method public compareTo(Landroid/service/notification/NotifyingApp;)I
     .locals 4
+    .param p1, "o"    # Landroid/service/notification/NotifyingApp;
 
+    .line 121
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getLastNotified()J
 
     move-result-wide v0
@@ -103,6 +113,7 @@
 
     if-nez v0, :cond_1
 
+    .line 122
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getUid()I
 
     move-result v0
@@ -113,6 +124,7 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 123
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getPackage()Ljava/lang/String;
 
     move-result-object v0
@@ -127,6 +139,7 @@
 
     return v0
 
+    .line 125
     :cond_0
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getUid()I
 
@@ -142,6 +155,7 @@
 
     return v0
 
+    .line 128
     :cond_1
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getLastNotified()J
 
@@ -163,6 +177,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
+    .line 27
     check-cast p1, Landroid/service/notification/NotifyingApp;
 
     invoke-virtual {p0, p1}, Landroid/service/notification/NotifyingApp;->compareTo(Landroid/service/notification/NotifyingApp;)I
@@ -175,6 +190,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 91
     const/4 v0, 0x0
 
     return v0
@@ -182,13 +198,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 103
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
+    .line 104
     :cond_0
     const/4 v1, 0x0
 
@@ -206,11 +225,14 @@
 
     goto :goto_1
 
+    .line 105
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/service/notification/NotifyingApp;
 
+    .line 106
+    .local v2, "that":Landroid/service/notification/NotifyingApp;
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getUid()I
 
     move-result v3
@@ -221,6 +243,7 @@
 
     if-ne v3, v4, :cond_2
 
+    .line 107
     invoke-virtual {p0}, Landroid/service/notification/NotifyingApp;->getLastNotified()J
 
     move-result-wide v3
@@ -237,6 +260,7 @@
 
     iget-object v4, v2, Landroid/service/notification/NotifyingApp;->mPkg:Ljava/lang/String;
 
+    .line 108
     invoke-static {v3, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -245,12 +269,15 @@
 
     goto :goto_0
 
+    .line 106
     :cond_2
     move v0, v1
 
     :goto_0
     return v0
 
+    .line 104
+    .end local v2    # "that":Landroid/service/notification/NotifyingApp;
     :cond_3
     :goto_1
     return v1
@@ -259,6 +286,7 @@
 .method public getLastNotified()J
     .locals 2
 
+    .line 66
     iget-wide v0, p0, Landroid/service/notification/NotifyingApp;->mLastNotified:J
 
     return-wide v0
@@ -267,6 +295,7 @@
 .method public getPackage()Ljava/lang/String;
     .locals 1
 
+    .line 54
     iget-object v0, p0, Landroid/service/notification/NotifyingApp;->mPkg:Ljava/lang/String;
 
     return-object v0
@@ -275,6 +304,7 @@
 .method public getUid()I
     .locals 1
 
+    .line 42
     iget v0, p0, Landroid/service/notification/NotifyingApp;->mUid:I
 
     return v0
@@ -283,6 +313,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 113
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -326,31 +357,41 @@
 
 .method public setLastNotified(J)Landroid/service/notification/NotifyingApp;
     .locals 0
+    .param p1, "mLastNotified"    # J
 
+    .line 73
     iput-wide p1, p0, Landroid/service/notification/NotifyingApp;->mLastNotified:J
 
+    .line 74
     return-object p0
 .end method
 
 .method public setPackage(Ljava/lang/String;)Landroid/service/notification/NotifyingApp;
     .locals 0
+    .param p1, "mPkg"    # Ljava/lang/String;
 
+    .line 61
     iput-object p1, p0, Landroid/service/notification/NotifyingApp;->mPkg:Ljava/lang/String;
 
+    .line 62
     return-object p0
 .end method
 
 .method public setUid(I)Landroid/service/notification/NotifyingApp;
     .locals 0
+    .param p1, "mUid"    # I
 
+    .line 49
     iput p1, p0, Landroid/service/notification/NotifyingApp;->mUid:I
 
+    .line 50
     return-object p0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 133
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -396,18 +437,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 96
     iget v0, p0, Landroid/service/notification/NotifyingApp;->mUid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 97
     iget-object v0, p0, Landroid/service/notification/NotifyingApp;->mPkg:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 98
     iget-wide v0, p0, Landroid/service/notification/NotifyingApp;->mLastNotified:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 99
     return-void
 .end method

@@ -19,8 +19,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 30
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
+    .line 45
     new-instance v0, Landroid/service/media/CameraPrewarmService$1;
 
     invoke-direct {v0, p0}, Landroid/service/media/CameraPrewarmService$1;-><init>(Landroid/service/media/CameraPrewarmService;)V
@@ -32,7 +34,10 @@
 
 .method static synthetic access$002(Landroid/service/media/CameraPrewarmService;Z)Z
     .locals 0
+    .param p0, "x0"    # Landroid/service/media/CameraPrewarmService;
+    .param p1, "x1"    # Z
 
+    .line 30
     iput-boolean p1, p0, Landroid/service/media/CameraPrewarmService;->mCameraIntentFired:Z
 
     return p1
@@ -42,7 +47,9 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 62
     const-string v0, "android.service.media.CameraPrewarmService.ACTION_PREWARM"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -55,8 +62,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 63
     invoke-virtual {p0}, Landroid/service/media/CameraPrewarmService;->onPrewarm()V
 
+    .line 64
     new-instance v0, Landroid/os/Messenger;
 
     iget-object v1, p0, Landroid/service/media/CameraPrewarmService;->mHandler:Landroid/os/Handler;
@@ -69,6 +78,7 @@
 
     return-object v0
 
+    .line 66
     :cond_0
     const/4 v0, 0x0
 
@@ -83,7 +93,9 @@
 
 .method public onUnbind(Landroid/content/Intent;)Z
     .locals 2
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 72
     const-string v0, "android.service.media.CameraPrewarmService.ACTION_PREWARM"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -96,10 +108,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 73
     iget-boolean v0, p0, Landroid/service/media/CameraPrewarmService;->mCameraIntentFired:Z
 
     invoke-virtual {p0, v0}, Landroid/service/media/CameraPrewarmService;->onCooldown(Z)V
 
+    .line 75
     :cond_0
     const/4 v0, 0x0
 

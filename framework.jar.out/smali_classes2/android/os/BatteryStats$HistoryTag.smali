@@ -26,6 +26,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 1359
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,13 +36,16 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 1390
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
+    .line 1391
     :cond_0
     const/4 v1, 0x0
 
@@ -59,11 +63,14 @@
 
     goto :goto_0
 
+    .line 1393
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/os/BatteryStats$HistoryTag;
 
+    .line 1395
+    .local v2, "that":Landroid/os/BatteryStats$HistoryTag;
     iget v3, p0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     iget v4, v2, Landroid/os/BatteryStats$HistoryTag;->uid:I
@@ -72,6 +79,7 @@
 
     return v1
 
+    .line 1396
     :cond_2
     iget-object v3, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
@@ -85,9 +93,12 @@
 
     return v1
 
+    .line 1398
     :cond_3
     return v0
 
+    .line 1391
+    .end local v2    # "that":Landroid/os/BatteryStats$HistoryTag;
     :cond_4
     :goto_0
     return v1
@@ -96,12 +107,15 @@
 .method public hashCode()I
     .locals 3
 
+    .line 1403
     iget-object v0, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
+    .line 1404
+    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int/2addr v1, v0
@@ -110,73 +124,97 @@
 
     add-int/2addr v1, v2
 
+    .line 1405
+    .end local v0    # "result":I
+    .local v1, "result":I
     return v1
 .end method
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "src"    # Landroid/os/Parcel;
 
+    .line 1383
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
+    .line 1384
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
+    .line 1385
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
+    .line 1386
     return-void
 .end method
 
 .method public setTo(Landroid/os/BatteryStats$HistoryTag;)V
     .locals 1
+    .param p1, "o"    # Landroid/os/BatteryStats$HistoryTag;
 
+    .line 1366
     iget-object v0, p1, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
+    .line 1367
     iget v0, p1, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
+    .line 1368
     iget v0, p1, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
+    .line 1369
     return-void
 .end method
 
 .method public setTo(Ljava/lang/String;I)V
     .locals 1
+    .param p1, "_string"    # Ljava/lang/String;
+    .param p2, "_uid"    # I
 
+    .line 1372
     iput-object p1, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
+    .line 1373
     iput p2, p0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
+    .line 1374
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
+    .line 1375
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 1378
     iget-object v0, p0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1379
     iget v0, p0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1380
     return-void
 .end method

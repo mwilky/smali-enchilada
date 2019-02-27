@@ -32,7 +32,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/location/ContextHubManager$4;Landroid/hardware/location/ContextHubManager$Callback;IILandroid/hardware/location/ContextHubMessage;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/hardware/location/ContextHubManager$4;
 
+    .line 734
     iput-object p1, p0, Landroid/hardware/location/ContextHubManager$4$1;->this$1:Landroid/hardware/location/ContextHubManager$4;
 
     iput-object p2, p0, Landroid/hardware/location/ContextHubManager$4$1;->val$callback:Landroid/hardware/location/ContextHubManager$Callback;
@@ -53,6 +55,7 @@
 .method public run()V
     .locals 4
 
+    .line 737
     iget-object v0, p0, Landroid/hardware/location/ContextHubManager$4$1;->val$callback:Landroid/hardware/location/ContextHubManager$Callback;
 
     iget v1, p0, Landroid/hardware/location/ContextHubManager$4$1;->val$hubId:I
@@ -63,5 +66,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/location/ContextHubManager$Callback;->onMessageReceipt(IILandroid/hardware/location/ContextHubMessage;)V
 
+    .line 738
     return-void
 .end method

@@ -18,6 +18,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 26
+    .local p0, "this":Landroid/telecom/TimedEvent;, "Landroid/telecom/TimedEvent<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,14 +43,20 @@
         }
     .end annotation
 
+    .line 31
+    .local p0, "events":Ljava/util/Collection;, "Ljava/util/Collection<+Landroid/telecom/TimedEvent<TT;>;>;"
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
+    .line 32
+    .local v0, "counts":Ljava/util/HashMap;, "Ljava/util/HashMap<TT;Ljava/lang/Integer;>;"
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
+    .line 34
+    .local v1, "result":Ljava/util/HashMap;, "Ljava/util/HashMap<TT;Ljava/lang/Double;>;"
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -66,6 +74,8 @@
 
     check-cast v3, Landroid/telecom/TimedEvent;
 
+    .line 35
+    .local v3, "entry":Landroid/telecom/TimedEvent;, "Landroid/telecom/TimedEvent<TT;>;"
     invoke-virtual {v3}, Landroid/telecom/TimedEvent;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -78,6 +88,7 @@
 
     if-eqz v4, :cond_0
 
+    .line 36
     invoke-virtual {v3}, Landroid/telecom/TimedEvent;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -104,6 +115,7 @@
 
     invoke-virtual {v0, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 37
     invoke-virtual {v3}, Landroid/telecom/TimedEvent;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -138,6 +150,7 @@
 
     goto :goto_1
 
+    .line 39
     :cond_0
     invoke-virtual {v3}, Landroid/telecom/TimedEvent;->getKey()Ljava/lang/Object;
 
@@ -149,6 +162,7 @@
 
     invoke-virtual {v0, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 40
     invoke-virtual {v3}, Landroid/telecom/TimedEvent;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -165,9 +179,12 @@
 
     invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 42
+    .end local v3    # "entry":Landroid/telecom/TimedEvent;, "Landroid/telecom/TimedEvent<TT;>;"
     :goto_1
     goto :goto_0
 
+    .line 44
     :cond_1
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -190,6 +207,8 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
+    .line 45
+    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TT;Ljava/lang/Double;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -228,8 +247,11 @@
 
     invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 46
+    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TT;Ljava/lang/Double;>;"
     goto :goto_2
 
+    .line 48
     :cond_2
     return-object v1
 .end method

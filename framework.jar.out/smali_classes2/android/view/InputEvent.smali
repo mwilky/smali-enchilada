@@ -38,12 +38,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 34
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     sput-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
+    .line 225
     new-instance v0, Landroid/view/InputEvent$1;
 
     invoke-direct {v0}, Landroid/view/InputEvent$1;-><init>()V
@@ -56,8 +58,10 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     sget-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -66,6 +70,7 @@
 
     iput v0, p0, Landroid/view/InputEvent;->mSeq:I
 
+    .line 47
     return-void
 .end method
 
@@ -80,6 +85,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 222
     const/4 v0, 0x0
 
     return v0
@@ -88,6 +94,7 @@
 .method public final getDevice()Landroid/view/InputDevice;
     .locals 1
 
+    .line 66
     invoke-virtual {p0}, Landroid/view/InputEvent;->getDeviceId()I
 
     move-result v0
@@ -111,6 +118,7 @@
 .method public getSequenceNumber()I
     .locals 1
 
+    .line 218
     iget v0, p0, Landroid/view/InputEvent;->mSeq:I
 
     return v0
@@ -121,7 +129,9 @@
 
 .method public isFromSource(I)Z
     .locals 1
+    .param p1, "source"    # I
 
+    .line 94
     invoke-virtual {p0}, Landroid/view/InputEvent;->getSource()I
 
     move-result v0
@@ -147,14 +157,17 @@
 .method protected prepareForReuse()V
     .locals 1
 
+    .line 146
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
+    .line 147
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/InputEvent;->mRecycledLocation:Ljava/lang/RuntimeException;
 
+    .line 148
     sget-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -163,22 +176,27 @@
 
     iput v0, p0, Landroid/view/InputEvent;->mSeq:I
 
+    .line 149
     return-void
 .end method
 
 .method public recycle()V
     .locals 3
 
+    .line 119
     iget-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
     if-nez v0, :cond_0
 
+    .line 122
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
+    .line 124
     return-void
 
+    .line 120
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -208,8 +226,10 @@
 .method public recycleIfNeededAfterDispatch()V
     .locals 0
 
+    .line 138
     invoke-virtual {p0}, Landroid/view/InputEvent;->recycle()V
 
+    .line 139
     return-void
 .end method
 

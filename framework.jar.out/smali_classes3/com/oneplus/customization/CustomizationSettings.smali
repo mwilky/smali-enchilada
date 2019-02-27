@@ -20,6 +20,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 16
     const-string v0, "ro.boot.project_name"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -34,6 +35,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,8 +44,11 @@
 .method public static getCustomBackCoverType()Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
     .locals 4
 
+    .line 54
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 55
+    .local v0, "result":Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
     const-string v1, "17819"
 
     sget-object v2, Lcom/oneplus/customization/CustomizationSettings;->sProjectName:Ljava/lang/String;
@@ -68,12 +73,14 @@
 
     sget-object v2, Lcom/oneplus/customization/CustomizationSettings;->sProjectName:Ljava/lang/String;
 
+    .line 56
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
+    .line 57
     :cond_0
     invoke-static {}, Lcom/oneplus/customization/ParamReader;->getBackCoverColorVal()Ljava/lang/String;
 
@@ -158,31 +165,42 @@
 
     goto :goto_1
 
+    .line 71
     :pswitch_0
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->DGZ:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 72
     goto :goto_1
 
+    .line 68
     :pswitch_1
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->HPH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 69
     goto :goto_1
 
+    .line 65
     :pswitch_2
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->YYB:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 66
     goto :goto_1
 
+    .line 62
     :pswitch_3
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->LCH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 63
     goto :goto_1
 
+    .line 59
     :pswitch_4
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->MYH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 60
     nop
 
+    .line 77
     :cond_2
     :goto_1
     return-object v0
@@ -209,8 +227,11 @@
 .method public static getCustomization()Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
     .locals 3
 
+    .line 19
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
+    .line 20
+    .local v0, "result":Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
     const-string v1, "16859"
 
     sget-object v2, Lcom/oneplus/customization/CustomizationSettings;->sProjectName:Ljava/lang/String;
@@ -219,7 +240,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_5
 
     const-string v1, "17801"
 
@@ -233,6 +254,7 @@
 
     goto :goto_0
 
+    .line 31
     :cond_0
     const-string v1, "17819"
 
@@ -244,6 +266,7 @@
 
     if-eqz v1, :cond_2
 
+    .line 32
     invoke-static {}, Lcom/oneplus/customization/ParamReader;->getCustFlagVal()I
 
     move-result v1
@@ -252,19 +275,55 @@
 
     if-eq v1, v2, :cond_1
 
+    .line 37
     goto :goto_1
 
+    .line 34
     :cond_1
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->AVG:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
+    .line 35
     goto :goto_1
 
+    .line 39
     :cond_2
+    const-string v1, "18801"
+
+    sget-object v2, Lcom/oneplus/customization/CustomizationSettings;->sProjectName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    .line 40
+    invoke-static {}, Lcom/oneplus/customization/ParamReader;->getCustFlagVal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    if-eq v1, v2, :cond_3
+
+    .line 45
+    goto :goto_1
+
+    .line 42
+    :cond_3
+    sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
+
+    .line 43
+    goto :goto_1
+
+    .line 48
+    :cond_4
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
     goto :goto_1
 
-    :cond_3
+    .line 21
+    :cond_5
     :goto_0
     invoke-static {}, Lcom/oneplus/customization/ParamReader;->getCustFlagVal()I
 
@@ -272,20 +331,28 @@
 
     packed-switch v1, :pswitch_data_0
 
+    .line 29
     goto :goto_1
 
+    .line 26
     :pswitch_0
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->SW:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
+    .line 27
     goto :goto_1
 
+    .line 23
     :pswitch_1
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;->JCC:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_TYPE;
 
+    .line 24
     nop
 
+    .line 50
     :goto_1
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

@@ -23,6 +23,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 67
     new-instance v0, Landroid/service/autofill/NegationValidator$1;
 
     invoke-direct {v0}, Landroid/service/autofill/NegationValidator$1;-><init>()V
@@ -34,9 +35,12 @@
 
 .method constructor <init>(Landroid/service/autofill/InternalValidator;)V
     .locals 1
+    .param p1, "validator"    # Landroid/service/autofill/InternalValidator;
 
+    .line 35
     invoke-direct {p0}, Landroid/service/autofill/InternalValidator;-><init>()V
 
+    .line 36
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -45,6 +49,7 @@
 
     iput-object v0, p0, Landroid/service/autofill/NegationValidator;->mValidator:Landroid/service/autofill/InternalValidator;
 
+    .line 37
     return-void
 .end method
 
@@ -53,6 +58,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 59
     const/4 v0, 0x0
 
     return v0
@@ -60,7 +66,9 @@
 
 .method public isValid(Landroid/service/autofill/ValueFinder;)Z
     .locals 1
+    .param p1, "finder"    # Landroid/service/autofill/ValueFinder;
 
+    .line 41
     iget-object v0, p0, Landroid/service/autofill/NegationValidator;->mValidator:Landroid/service/autofill/InternalValidator;
 
     invoke-virtual {v0, p1}, Landroid/service/autofill/InternalValidator;->isValid(Landroid/service/autofill/ValueFinder;)Z
@@ -75,6 +83,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 49
     sget-boolean v0, Landroid/view/autofill/Helper;->sDebug:Z
 
     if-nez v0, :cond_0
@@ -85,6 +94,7 @@
 
     return-object v0
 
+    .line 51
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -111,10 +121,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 64
     iget-object v0, p0, Landroid/service/autofill/NegationValidator;->mValidator:Landroid/service/autofill/InternalValidator;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 65
     return-void
 .end method

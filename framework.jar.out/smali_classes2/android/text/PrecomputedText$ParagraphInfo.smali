@@ -23,12 +23,18 @@
 # direct methods
 .method public constructor <init>(ILandroid/text/MeasuredParagraph;)V
     .locals 0
+    .param p1, "paraEnd"    # I
+    .param p2, "measured"    # Landroid/text/MeasuredParagraph;
 
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 288
     iput p1, p0, Landroid/text/PrecomputedText$ParagraphInfo;->paragraphEnd:I
 
+    .line 289
     iput-object p2, p0, Landroid/text/PrecomputedText$ParagraphInfo;->measured:Landroid/text/MeasuredParagraph;
 
+    .line 290
     return-void
 .end method

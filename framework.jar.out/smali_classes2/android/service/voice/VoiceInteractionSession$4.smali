@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/voice/VoiceInteractionSession;Lcom/android/internal/app/IVoiceInteractionSessionShowCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/service/voice/VoiceInteractionSession;
 
+    .line 1011
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionSession$4;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iput-object p2, p0, Landroid/service/voice/VoiceInteractionSession$4;->val$showCallback:Lcom/android/internal/app/IVoiceInteractionSessionShowCallback;
@@ -41,6 +43,7 @@
 .method public onPreDraw()Z
     .locals 3
 
+    .line 1014
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionSession$4;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v0, v0, Landroid/service/voice/VoiceInteractionSession;->mRootView:Landroid/view/View;
@@ -51,6 +54,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
+    .line 1016
     :try_start_0
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionSession$4;->val$showCallback:Lcom/android/internal/app/IVoiceInteractionSessionShowCallback;
 
@@ -58,17 +62,23 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1019
     goto :goto_0
 
+    .line 1017
     :catch_0
     move-exception v0
 
+    .line 1018
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "VoiceInteractionSession"
 
     const-string v2, "Error calling onShown"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 1020
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     const/4 v0, 0x1
 

@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 72
     new-instance v0, Landroid/net/DataUsageRequest$1;
 
     invoke-direct {v0}, Landroid/net/DataUsageRequest$1;-><init>()V
@@ -45,15 +46,23 @@
 
 .method public constructor <init>(ILandroid/net/NetworkTemplate;J)V
     .locals 0
+    .param p1, "requestId"    # I
+    .param p2, "template"    # Landroid/net/NetworkTemplate;
+    .param p3, "thresholdInBytes"    # J
 
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 55
     iput p1, p0, Landroid/net/DataUsageRequest;->requestId:I
 
+    .line 56
     iput-object p2, p0, Landroid/net/DataUsageRequest;->template:Landroid/net/NetworkTemplate;
 
+    .line 57
     iput-wide p3, p0, Landroid/net/DataUsageRequest;->thresholdInBytes:J
 
+    .line 58
     return-void
 .end method
 
@@ -62,6 +71,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 62
     const/4 v0, 0x0
 
     return v0
@@ -69,7 +79,9 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 99
     instance-of v0, p1, Landroid/net/DataUsageRequest;
 
     const/4 v1, 0x0
@@ -78,11 +90,14 @@
 
     return v1
 
+    .line 100
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/net/DataUsageRequest;
 
+    .line 101
+    .local v0, "that":Landroid/net/DataUsageRequest;
     iget v2, v0, Landroid/net/DataUsageRequest;->requestId:I
 
     iget v3, p0, Landroid/net/DataUsageRequest;->requestId:I
@@ -93,6 +108,7 @@
 
     iget-object v3, p0, Landroid/net/DataUsageRequest;->template:Landroid/net/NetworkTemplate;
 
+    .line 102
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -111,6 +127,7 @@
 
     nop
 
+    .line 101
     :cond_1
     return v1
 .end method
@@ -118,6 +135,7 @@
 .method public hashCode()I
     .locals 3
 
+    .line 108
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -158,6 +176,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 92
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -199,18 +218,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 67
     iget v0, p0, Landroid/net/DataUsageRequest;->requestId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 68
     iget-object v0, p0, Landroid/net/DataUsageRequest;->template:Landroid/net/NetworkTemplate;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 69
     iget-wide v0, p0, Landroid/net/DataUsageRequest;->thresholdInBytes:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 70
     return-void
 .end method

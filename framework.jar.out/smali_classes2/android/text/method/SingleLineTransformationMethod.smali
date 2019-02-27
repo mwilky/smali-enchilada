@@ -15,6 +15,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 26
     const/4 v0, 0x2
 
     new-array v1, v0, [C
@@ -23,6 +24,7 @@
 
     sput-object v1, Landroid/text/method/SingleLineTransformationMethod;->ORIGINAL:[C
 
+    .line 27
     new-array v0, v0, [C
 
     fill-array-data v0, :array_1
@@ -47,6 +49,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 24
     invoke-direct {p0}, Landroid/text/method/ReplacementTransformationMethod;-><init>()V
 
     return-void
@@ -55,14 +58,17 @@
 .method public static getInstance()Landroid/text/method/SingleLineTransformationMethod;
     .locals 1
 
+    .line 45
     sget-object v0, Landroid/text/method/SingleLineTransformationMethod;->sInstance:Landroid/text/method/SingleLineTransformationMethod;
 
     if-eqz v0, :cond_0
 
+    .line 46
     sget-object v0, Landroid/text/method/SingleLineTransformationMethod;->sInstance:Landroid/text/method/SingleLineTransformationMethod;
 
     return-object v0
 
+    .line 48
     :cond_0
     new-instance v0, Landroid/text/method/SingleLineTransformationMethod;
 
@@ -70,6 +76,7 @@
 
     sput-object v0, Landroid/text/method/SingleLineTransformationMethod;->sInstance:Landroid/text/method/SingleLineTransformationMethod;
 
+    .line 49
     sget-object v0, Landroid/text/method/SingleLineTransformationMethod;->sInstance:Landroid/text/method/SingleLineTransformationMethod;
 
     return-object v0
@@ -80,6 +87,7 @@
 .method protected getOriginal()[C
     .locals 1
 
+    .line 33
     sget-object v0, Landroid/text/method/SingleLineTransformationMethod;->ORIGINAL:[C
 
     return-object v0
@@ -88,6 +96,7 @@
 .method protected getReplacement()[C
     .locals 1
 
+    .line 41
     sget-object v0, Landroid/text/method/SingleLineTransformationMethod;->REPLACEMENT:[C
 
     return-object v0

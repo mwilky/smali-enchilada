@@ -33,14 +33,17 @@
 .method private constructor <init>()V
     .locals 1
 
+    .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 142
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/app/ResourcesManager$ActivityResources;->overrideConfig:Landroid/content/res/Configuration;
 
+    .line 143
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -52,7 +55,9 @@
 
 .method synthetic constructor <init>(Landroid/app/ResourcesManager$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/app/ResourcesManager$1;
 
+    .line 141
     invoke-direct {p0}, Landroid/app/ResourcesManager$ActivityResources;-><init>()V
 
     return-void

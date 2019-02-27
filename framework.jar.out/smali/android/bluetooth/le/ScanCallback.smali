@@ -23,6 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,17 +42,24 @@
         }
     .end annotation
 
+    .line 79
+    .local p1, "results":Ljava/util/List;, "Ljava/util/List<Landroid/bluetooth/le/ScanResult;>;"
     return-void
 .end method
 
 .method public onScanFailed(I)V
     .locals 0
+    .param p1, "errorCode"    # I
 
+    .line 87
     return-void
 .end method
 
 .method public onScanResult(ILandroid/bluetooth/le/ScanResult;)V
     .locals 0
+    .param p1, "callbackType"    # I
+    .param p2, "result"    # Landroid/bluetooth/le/ScanResult;
 
+    .line 71
     return-void
 .end method

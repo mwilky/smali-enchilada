@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/os/UpdateEngine$1;I)V
     .locals 0
+    .param p1, "this$1"    # Landroid/os/UpdateEngine$1;
 
+    .line 130
     iput-object p1, p0, Landroid/os/UpdateEngine$1$2;->this$1:Landroid/os/UpdateEngine$1;
 
     iput p2, p0, Landroid/os/UpdateEngine$1$2;->val$errorCode:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 133
     iget-object v0, p0, Landroid/os/UpdateEngine$1$2;->this$1:Landroid/os/UpdateEngine$1;
 
     iget-object v0, v0, Landroid/os/UpdateEngine$1;->val$callback:Landroid/os/UpdateEngineCallback;
@@ -49,5 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/UpdateEngineCallback;->onPayloadApplicationComplete(I)V
 
+    .line 134
     return-void
 .end method

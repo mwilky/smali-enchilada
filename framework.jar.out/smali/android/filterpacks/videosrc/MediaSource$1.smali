@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/filterpacks/videosrc/MediaSource;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/filterpacks/videosrc/MediaSource;
 
+    .line 512
     iput-object p1, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,11 @@
 # virtual methods
 .method public onVideoSizeChanged(Landroid/media/MediaPlayer;II)V
     .locals 3
+    .param p1, "mp"    # Landroid/media/MediaPlayer;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
 
+    .line 514
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-static {v0}, Landroid/filterpacks/videosrc/MediaSource;->access$000(Landroid/filterpacks/videosrc/MediaSource;)Z
@@ -69,6 +75,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 515
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
@@ -78,6 +85,7 @@
 
     if-nez v0, :cond_3
 
+    .line 516
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-static {v0}, Landroid/filterpacks/videosrc/MediaSource;->access$200(Landroid/filterpacks/videosrc/MediaSource;)I
@@ -98,6 +106,7 @@
 
     goto :goto_0
 
+    .line 519
     :cond_1
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
@@ -109,6 +118,7 @@
 
     goto :goto_1
 
+    .line 517
     :cond_2
     :goto_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
@@ -119,17 +129,20 @@
 
     invoke-virtual {v0, p2, p3}, Landroid/filterfw/core/MutableFrameFormat;->setDimensions(II)V
 
+    .line 521
     :goto_1
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-static {v0, p2}, Landroid/filterpacks/videosrc/MediaSource;->access$402(Landroid/filterpacks/videosrc/MediaSource;I)I
 
+    .line 522
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-static {v0, p3}, Landroid/filterpacks/videosrc/MediaSource;->access$502(Landroid/filterpacks/videosrc/MediaSource;I)I
 
     goto :goto_2
 
+    .line 524
     :cond_3
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
@@ -145,6 +158,7 @@
 
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
+    .line 525
     invoke-static {v0}, Landroid/filterpacks/videosrc/MediaSource;->access$300(Landroid/filterpacks/videosrc/MediaSource;)Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
@@ -155,6 +169,7 @@
 
     if-eq v0, p3, :cond_5
 
+    .line 526
     :cond_4
     const-string v0, "MediaSource"
 
@@ -162,12 +177,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 529
     :cond_5
     :goto_2
     iget-object v0, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     monitor-enter v0
 
+    .line 530
     :try_start_0
     iget-object v1, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
@@ -175,14 +192,18 @@
 
     invoke-static {v1, v2}, Landroid/filterpacks/videosrc/MediaSource;->access$102(Landroid/filterpacks/videosrc/MediaSource;Z)Z
 
+    .line 531
     iget-object v1, p0, Landroid/filterpacks/videosrc/MediaSource$1;->this$0:Landroid/filterpacks/videosrc/MediaSource;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
+    .line 532
     monitor-exit v0
 
+    .line 533
     return-void
 
+    .line 532
     :catchall_0
     move-exception v1
 

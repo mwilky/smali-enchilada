@@ -40,6 +40,7 @@
 .method private constructor <init>(Landroid/media/MediaPlayer;)V
     .locals 0
 
+    .line 5333
     iput-object p1, p0, Landroid/media/MediaPlayer$ProvisioningThread;->this$0:Landroid/media/MediaPlayer;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -49,7 +50,10 @@
 
 .method synthetic constructor <init>(Landroid/media/MediaPlayer;Landroid/media/MediaPlayer$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/media/MediaPlayer;
+    .param p2, "x1"    # Landroid/media/MediaPlayer$1;
 
+    .line 5333
     invoke-direct {p0, p1}, Landroid/media/MediaPlayer$ProvisioningThread;-><init>(Landroid/media/MediaPlayer;)V
 
     return-void
@@ -59,21 +63,28 @@
 # virtual methods
 .method public initialize(Landroid/media/MediaDrm$ProvisionRequest;Ljava/util/UUID;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer$ProvisioningThread;
     .locals 3
+    .param p1, "request"    # Landroid/media/MediaDrm$ProvisionRequest;
+    .param p2, "uuid"    # Ljava/util/UUID;
+    .param p3, "mediaPlayer"    # Landroid/media/MediaPlayer;
 
+    .line 5351
     invoke-static {p3}, Landroid/media/MediaPlayer;->access$1100(Landroid/media/MediaPlayer;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaPlayer$ProvisioningThread;->drmLock:Ljava/lang/Object;
 
+    .line 5352
     invoke-static {p3}, Landroid/media/MediaPlayer;->access$3700(Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer$OnDrmPreparedHandlerDelegate;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaPlayer$ProvisioningThread;->onDrmPreparedHandlerDelegate:Landroid/media/MediaPlayer$OnDrmPreparedHandlerDelegate;
 
+    .line 5353
     iput-object p3, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
+    .line 5355
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -104,12 +115,15 @@
 
     iput-object v0, p0, Landroid/media/MediaPlayer$ProvisioningThread;->urlStr:Ljava/lang/String;
 
+    .line 5356
     iput-object p2, p0, Landroid/media/MediaPlayer$ProvisioningThread;->uuid:Ljava/util/UUID;
 
+    .line 5358
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
+    .line 5360
     const-string v0, "MediaPlayer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -130,18 +144,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 5361
     return-object p0
 .end method
 
 .method public run()V
     .locals 10
 
+    .line 5366
     const/4 v0, 0x0
 
+    .line 5367
+    .local v0, "response":[B
     const/4 v1, 0x0
 
     move v2, v1
 
+    .line 5369
+    .local v2, "provisioningSucceeded":Z
     const/4 v3, 0x1
 
     :try_start_0
@@ -151,6 +171,8 @@
 
     invoke-direct {v4, v5}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
+    .line 5370
+    .local v4, "url":Ljava/net/URL;
     invoke-virtual {v4}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v5
@@ -159,23 +181,31 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 5372
+    .local v5, "connection":Ljava/net/HttpURLConnection;
     :try_start_1
     const-string v6, "POST"
 
     invoke-virtual {v5, v6}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
+    .line 5373
     invoke-virtual {v5, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
+    .line 5374
     invoke-virtual {v5, v3}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
 
+    .line 5375
     const v6, 0xea60
 
     invoke-virtual {v5, v6}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
+    .line 5376
     invoke-virtual {v5, v6}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
+    .line 5378
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->connect()V
 
+    .line 5379
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v6
@@ -186,6 +216,7 @@
 
     move-object v0, v6
 
+    .line 5381
     const-string v6, "MediaPlayer"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -215,6 +246,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 5387
     :try_start_2
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_2
@@ -227,12 +259,16 @@
 
     goto :goto_1
 
+    .line 5383
     :catch_0
     move-exception v6
 
+    .line 5384
+    .local v6, "e":Ljava/lang/Exception;
     :try_start_3
     iput v3, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
+    .line 5385
     const-string v7, "MediaPlayer"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -259,14 +295,23 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 5387
+    .end local v6    # "e":Ljava/lang/Exception;
     :try_start_4
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->disconnect()V
 
+    .line 5388
     :goto_0
     nop
 
+    .line 5392
+    .end local v4    # "url":Ljava/net/URL;
+    .end local v5    # "connection":Ljava/net/HttpURLConnection;
     goto :goto_2
 
+    .line 5387
+    .restart local v4    # "url":Ljava/net/URL;
+    .restart local v5    # "connection":Ljava/net/HttpURLConnection;
     :goto_1
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->disconnect()V
 
@@ -274,11 +319,17 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
+    .line 5389
+    .end local v4    # "url":Ljava/net/URL;
+    .end local v5    # "connection":Ljava/net/HttpURLConnection;
     :catch_1
     move-exception v4
 
+    .line 5390
+    .local v4, "e":Ljava/lang/Exception;
     iput v3, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
+    .line 5391
     const-string v5, "MediaPlayer"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -297,9 +348,12 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 5394
+    .end local v4    # "e":Ljava/lang/Exception;
     :goto_2
     if-eqz v0, :cond_0
 
+    .line 5396
     :try_start_5
     iget-object v4, p0, Landroid/media/MediaPlayer$ProvisioningThread;->this$0:Landroid/media/MediaPlayer;
 
@@ -309,6 +363,7 @@
 
     invoke-virtual {v4, v0}, Landroid/media/MediaDrm;->provideProvisionResponse([B)V
 
+    .line 5397
     const-string v4, "MediaPlayer"
 
     const-string v5, "HandleProvisioninig: Thread run: provideProvisionResponse SUCCEEDED!"
@@ -317,17 +372,23 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
 
+    .line 5400
     const/4 v2, 0x1
 
+    .line 5405
     goto :goto_3
 
+    .line 5401
     :catch_2
     move-exception v4
 
+    .line 5402
+    .restart local v4    # "e":Ljava/lang/Exception;
     const/4 v5, 0x2
 
     iput v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
+    .line 5403
     const-string v5, "MediaPlayer"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -346,22 +407,29 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 5408
+    .end local v4    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_3
     const/4 v4, 0x0
 
+    .line 5411
+    .local v4, "succeeded":Z
     iget-object v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->onDrmPreparedHandlerDelegate:Landroid/media/MediaPlayer$OnDrmPreparedHandlerDelegate;
 
     const/4 v6, 0x3
 
     if-eqz v5, :cond_4
 
+    .line 5413
     iget-object v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->drmLock:Ljava/lang/Object;
 
     monitor-enter v5
 
+    .line 5415
     if-eqz v2, :cond_2
 
+    .line 5416
     :try_start_6
     iget-object v7, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
@@ -373,10 +441,13 @@
 
     move v4, v7
 
+    .line 5417
     if-eqz v4, :cond_1
 
+    .line 5418
     nop
 
+    .line 5419
     move v6, v1
 
     nop
@@ -386,32 +457,39 @@
 
     goto :goto_4
 
+    .line 5426
     :catchall_1
     move-exception v1
 
     goto :goto_5
 
+    .line 5421
     :cond_2
     :goto_4
     iget-object v6, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-static {v6, v1}, Landroid/media/MediaPlayer;->access$4002(Landroid/media/MediaPlayer;Z)Z
 
+    .line 5422
     iget-object v6, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-static {v6, v1}, Landroid/media/MediaPlayer;->access$4102(Landroid/media/MediaPlayer;Z)Z
 
+    .line 5423
     if-nez v4, :cond_3
 
+    .line 5424
     iget-object v1, p0, Landroid/media/MediaPlayer$ProvisioningThread;->this$0:Landroid/media/MediaPlayer;
 
     invoke-static {v1}, Landroid/media/MediaPlayer;->access$4200(Landroid/media/MediaPlayer;)V
 
+    .line 5426
     :cond_3
     monitor-exit v5
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
+    .line 5429
     iget-object v1, p0, Landroid/media/MediaPlayer$ProvisioningThread;->onDrmPreparedHandlerDelegate:Landroid/media/MediaPlayer$OnDrmPreparedHandlerDelegate;
 
     iget v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
@@ -420,6 +498,7 @@
 
     goto :goto_6
 
+    .line 5426
     :goto_5
     :try_start_7
     monitor-exit v5
@@ -428,9 +507,11 @@
 
     throw v1
 
+    .line 5433
     :cond_4
     if-eqz v2, :cond_6
 
+    .line 5434
     iget-object v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
     iget-object v7, p0, Landroid/media/MediaPlayer$ProvisioningThread;->uuid:Ljava/util/UUID;
@@ -439,10 +520,13 @@
 
     move-result v4
 
+    .line 5435
     if-eqz v4, :cond_5
 
+    .line 5436
     nop
 
+    .line 5437
     move v6, v1
 
     nop
@@ -450,31 +534,38 @@
     :cond_5
     iput v6, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
+    .line 5439
     :cond_6
     iget-object v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-static {v5, v1}, Landroid/media/MediaPlayer;->access$4002(Landroid/media/MediaPlayer;Z)Z
 
+    .line 5440
     iget-object v5, p0, Landroid/media/MediaPlayer$ProvisioningThread;->mediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-static {v5, v1}, Landroid/media/MediaPlayer;->access$4102(Landroid/media/MediaPlayer;Z)Z
 
+    .line 5441
     if-nez v4, :cond_7
 
+    .line 5442
     iget-object v1, p0, Landroid/media/MediaPlayer$ProvisioningThread;->this$0:Landroid/media/MediaPlayer;
 
     invoke-static {v1}, Landroid/media/MediaPlayer;->access$4200(Landroid/media/MediaPlayer;)V
 
+    .line 5446
     :cond_7
     :goto_6
     iput-boolean v3, p0, Landroid/media/MediaPlayer$ProvisioningThread;->finished:Z
 
+    .line 5447
     return-void
 .end method
 
 .method public status()I
     .locals 1
 
+    .line 5345
     iget v0, p0, Landroid/media/MediaPlayer$ProvisioningThread;->status:I
 
     return v0

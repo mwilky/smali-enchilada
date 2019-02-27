@@ -24,11 +24,15 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "message"    # Ljava/lang/String;
 
+    .line 1202
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1203
     iput-object p1, p0, Landroid/app/backup/BackupAgent$FailRunnable;->mMessage:Ljava/lang/String;
 
+    .line 1204
     return-void
 .end method
 
@@ -37,6 +41,7 @@
 .method public run()V
     .locals 2
 
+    .line 1208
     new-instance v0, Ljava/lang/IllegalStateException;
 
     iget-object v1, p0, Landroid/app/backup/BackupAgent$FailRunnable;->mMessage:Ljava/lang/String;

@@ -7,6 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -14,7 +15,9 @@
 
 .method public static first(J)I
     .locals 2
+    .param p0, "intPair"    # J
 
+    .line 32
     const/16 v0, 0x20
 
     shr-long v0, p0, v0
@@ -26,7 +29,10 @@
 
 .method public static of(II)J
     .locals 6
+    .param p0, "first"    # I
+    .param p1, "second"    # I
 
+    .line 28
     int-to-long v0, p0
 
     const/16 v2, 0x20
@@ -46,7 +52,9 @@
 
 .method public static second(J)I
     .locals 1
+    .param p0, "intPair"    # J
 
+    .line 36
     long-to-int v0, p0
 
     return v0

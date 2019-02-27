@@ -46,6 +46,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 52
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "POINT"
@@ -56,6 +57,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->POINT:Landroid/renderscript/Mesh$Primitive;
 
+    .line 57
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "LINE"
@@ -66,6 +68,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->LINE:Landroid/renderscript/Mesh$Primitive;
 
+    .line 62
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "LINE_STRIP"
@@ -76,6 +79,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->LINE_STRIP:Landroid/renderscript/Mesh$Primitive;
 
+    .line 67
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "TRIANGLE"
@@ -86,6 +90,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->TRIANGLE:Landroid/renderscript/Mesh$Primitive;
 
+    .line 74
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "TRIANGLE_STRIP"
@@ -96,6 +101,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->TRIANGLE_STRIP:Landroid/renderscript/Mesh$Primitive;
 
+    .line 80
     new-instance v0, Landroid/renderscript/Mesh$Primitive;
 
     const-string v1, "TRIANGLE_FAN"
@@ -106,6 +112,7 @@
 
     sput-object v0, Landroid/renderscript/Mesh$Primitive;->TRIANGLE_FAN:Landroid/renderscript/Mesh$Primitive;
 
+    .line 47
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/renderscript/Mesh$Primitive;
@@ -141,22 +148,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 83
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 84
     iput p3, p0, Landroid/renderscript/Mesh$Primitive;->mID:I
 
+    .line 85
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/renderscript/Mesh$Primitive;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 47
     const-class v0, Landroid/renderscript/Mesh$Primitive;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -171,6 +184,7 @@
 .method public static values()[Landroid/renderscript/Mesh$Primitive;
     .locals 1
 
+    .line 47
     sget-object v0, Landroid/renderscript/Mesh$Primitive;->$VALUES:[Landroid/renderscript/Mesh$Primitive;
 
     invoke-virtual {v0}, [Landroid/renderscript/Mesh$Primitive;->clone()Ljava/lang/Object;

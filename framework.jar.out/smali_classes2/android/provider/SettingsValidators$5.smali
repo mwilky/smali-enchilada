@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +31,9 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 1
+    .param p1, "value"    # Ljava/lang/String;
 
+    .line 88
     if-eqz p1, :cond_0
 
     invoke-static {p1}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;

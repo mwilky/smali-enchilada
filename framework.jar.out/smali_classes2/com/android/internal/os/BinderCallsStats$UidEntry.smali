@@ -36,17 +36,22 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
+    .param p1, "uid"    # I
 
+    .line 260
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 265
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/os/BinderCallsStats$UidEntry;->mCallStats:Ljava/util/Map;
 
+    .line 261
     iput p1, p0, Lcom/android/internal/os/BinderCallsStats$UidEntry;->uid:I
 
+    .line 262
     return-void
 .end method
 
@@ -54,18 +59,24 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 278
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
+    .line 279
     return v0
 
+    .line 282
     :cond_0
     move-object v1, p1
 
     check-cast v1, Lcom/android/internal/os/BinderCallsStats$UidEntry;
 
+    .line 283
+    .local v1, "uidEntry":Lcom/android/internal/os/BinderCallsStats$UidEntry;
     iget v2, p0, Lcom/android/internal/os/BinderCallsStats$UidEntry;->uid:I
 
     iget v3, v1, Lcom/android/internal/os/BinderCallsStats$UidEntry;->uid:I
@@ -84,6 +95,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 288
     iget v0, p0, Lcom/android/internal/os/BinderCallsStats$UidEntry;->uid:I
 
     return v0
@@ -92,6 +104,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 269
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

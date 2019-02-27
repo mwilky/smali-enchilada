@@ -63,12 +63,14 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 154
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/String;
 
     sput-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
+    .line 156
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     const-string v1, "CMD_CHANNEL_HALF_CONNECTED"
@@ -77,6 +79,7 @@
 
     aput-object v1, v0, v2
 
+    .line 157
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     const-string v1, "CMD_CHANNEL_FULL_CONNECTION"
@@ -85,6 +88,7 @@
 
     aput-object v1, v0, v2
 
+    .line 158
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     const-string v1, "CMD_CHANNEL_FULLY_CONNECTED"
@@ -93,6 +97,7 @@
 
     aput-object v1, v0, v2
 
+    .line 159
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     const-string v1, "CMD_CHANNEL_DISCONNECT"
@@ -101,6 +106,7 @@
 
     aput-object v1, v0, v2
 
+    .line 160
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     const-string v1, "CMD_CHANNEL_DISCONNECTED"
@@ -109,20 +115,26 @@
 
     aput-object v1, v0, v2
 
+    .line 161
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .line 207
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 208
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/util/AsyncChannel;I)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/internal/util/AsyncChannel;
+    .param p1, "x1"    # I
 
+    .line 86
     invoke-direct {p0, p1}, Lcom/android/internal/util/AsyncChannel;->replyHalfConnected(I)V
 
     return-void
@@ -130,7 +142,10 @@
 
 .method static synthetic access$502(Lcom/android/internal/util/AsyncChannel;Landroid/os/Messenger;)Landroid/os/Messenger;
     .locals 0
+    .param p0, "x0"    # Lcom/android/internal/util/AsyncChannel;
+    .param p1, "x1"    # Landroid/os/Messenger;
 
+    .line 86
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     return-object p1
@@ -138,7 +153,10 @@
 
 .method static synthetic access$600(Lcom/android/internal/util/AsyncChannel;I)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/internal/util/AsyncChannel;
+    .param p1, "x1"    # I
 
+    .line 86
     invoke-direct {p0, p1}, Lcom/android/internal/util/AsyncChannel;->replyDisconnected(I)V
 
     return-void
@@ -146,11 +164,14 @@
 
 .method protected static cmdToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "cmd"    # I
 
+    .line 163
     const v0, 0x11000
 
     sub-int/2addr p0, v0
 
+    .line 164
     if-ltz p0, :cond_0
 
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
@@ -159,12 +180,14 @@
 
     if-ge p0, v0, :cond_0
 
+    .line 165
     sget-object v0, Lcom/android/internal/util/AsyncChannel;->sCmdToString:[Ljava/lang/String;
 
     aget-object v0, v0, p0
 
     return-object v0
 
+    .line 167
     :cond_0
     const/4 v0, 0x0
 
@@ -174,6 +197,7 @@
 .method private linkToDeathMonitor()Z
     .locals 3
 
+    .line 865
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     if-nez v0, :cond_0
@@ -182,12 +206,14 @@
 
     if-nez v0, :cond_0
 
+    .line 866
     new-instance v0, Lcom/android/internal/util/AsyncChannel$DeathMonitor;
 
     invoke-direct {v0, p0}, Lcom/android/internal/util/AsyncChannel$DeathMonitor;-><init>(Lcom/android/internal/util/AsyncChannel;)V
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
 
+    .line 868
     const/4 v0, 0x0
 
     :try_start_0
@@ -203,17 +229,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 872
     goto :goto_0
 
+    .line 869
     :catch_0
     move-exception v1
 
+    .line 870
+    .local v1, "e":Landroid/os/RemoteException;
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
 
+    .line 871
     return v0
 
+    .line 874
+    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     const/4 v0, 0x1
@@ -223,23 +256,29 @@
 
 .method private static log(Ljava/lang/String;)V
     .locals 1
+    .param p0, "s"    # Ljava/lang/String;
 
+    .line 919
     const-string v0, "AsyncChannel"
 
     invoke-static {v0, p0}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 920
     return-void
 .end method
 
 .method private replyDisconnected(I)V
     .locals 2
+    .param p1, "status"    # I
 
+    .line 885
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
     return-void
 
+    .line 886
     :cond_0
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
@@ -249,24 +288,32 @@
 
     move-result-object v0
 
+    .line 887
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
+    .line 888
     iput-object p0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 889
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     iput-object v1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 890
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 891
     return-void
 .end method
 
 .method private replyHalfConnected(I)V
     .locals 2
+    .param p1, "status"    # I
 
+    .line 847
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     const v1, 0x11000
@@ -275,29 +322,37 @@
 
     move-result-object v0
 
+    .line 848
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
+    .line 849
     iput-object p0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 850
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     iput-object v1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 851
     invoke-direct {p0}, Lcom/android/internal/util/AsyncChannel;->linkToDeathMonitor()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
+    .line 853
     const/4 v1, 0x1
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
+    .line 856
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 857
     return-void
 .end method
 
@@ -305,30 +360,43 @@
 # virtual methods
 .method public connect(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Handler;)V
     .locals 1
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstHandler"    # Landroid/os/Handler;
 
+    .line 417
     new-instance v0, Landroid/os/Messenger;
 
     invoke-direct {v0, p3}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/util/AsyncChannel;->connect(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
 
+    .line 418
     return-void
 .end method
 
 .method public connect(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
     .locals 1
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstMessenger"    # Landroid/os/Messenger;
 
+    .line 377
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/util/AsyncChannel;->connected(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
 
+    .line 380
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/AsyncChannel;->replyHalfConnected(I)V
 
+    .line 383
     return-void
 .end method
 
 .method public connect(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/Class;)V
     .locals 2
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -339,6 +407,8 @@
         }
     .end annotation
 
+    .line 359
+    .local p3, "klass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p3}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
     move-result-object v0
@@ -353,12 +423,18 @@
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/android/internal/util/AsyncChannel;->connect(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 360
     return-void
 .end method
 
 .method public connect(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
     .locals 7
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstPackageName"    # Ljava/lang/String;
+    .param p4, "dstClassName"    # Ljava/lang/String;
 
+    .line 341
     new-instance v6, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;
 
     move-object v0, v6
@@ -375,58 +451,78 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;-><init>(Lcom/android/internal/util/AsyncChannel;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 342
+    .local v0, "ca":Lcom/android/internal/util/AsyncChannel$1ConnectAsync;
     new-instance v1, Ljava/lang/Thread;
 
     invoke-direct {v1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
+    .line 345
     return-void
 .end method
 
 .method public connect(Lcom/android/internal/util/AsyncService;Landroid/os/Messenger;)V
     .locals 1
+    .param p1, "srcAsyncService"    # Lcom/android/internal/util/AsyncService;
+    .param p2, "dstMessenger"    # Landroid/os/Messenger;
 
+    .line 431
     invoke-virtual {p1}, Lcom/android/internal/util/AsyncService;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/internal/util/AsyncChannel;->connect(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
 
+    .line 432
     return-void
 .end method
 
 .method public connectSrcHandlerToPackageSync(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)I
     .locals 3
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstPackageName"    # Ljava/lang/String;
+    .param p4, "dstClassName"    # Ljava/lang/String;
 
+    .line 226
     new-instance v0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     invoke-direct {v0, p0}, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;-><init>(Lcom/android/internal/util/AsyncChannel;)V
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
+    .line 229
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcContext:Landroid/content/Context;
 
+    .line 230
     iput-object p2, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
+    .line 231
     new-instance v0, Landroid/os/Messenger;
 
     invoke-direct {v0, p2}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
+    .line 238
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
+    .line 241
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 242
+    .local v0, "intent":Landroid/content/Intent;
     invoke-virtual {v0, p3, p4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 243
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     const/4 v2, 0x1
@@ -435,6 +531,8 @@
 
     move-result v1
 
+    .line 245
+    .local v1, "result":Z
     xor-int/lit8 v2, v1, 0x1
 
     return v2
@@ -442,7 +540,11 @@
 
 .method public connectSync(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Handler;)I
     .locals 1
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstHandler"    # Landroid/os/Handler;
 
+    .line 279
     new-instance v0, Landroid/os/Messenger;
 
     invoke-direct {v0, p3}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
@@ -456,9 +558,14 @@
 
 .method public connectSync(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)I
     .locals 1
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstMessenger"    # Landroid/os/Messenger;
 
+    .line 262
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/util/AsyncChannel;->connected(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
 
+    .line 265
     const/4 v0, 0x0
 
     return v0
@@ -466,11 +573,17 @@
 
 .method public connected(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Messenger;)V
     .locals 2
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstMessenger"    # Landroid/os/Messenger;
 
+    .line 399
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcContext:Landroid/content/Context;
 
+    .line 400
     iput-object p2, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
+    .line 401
     new-instance v0, Landroid/os/Messenger;
 
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
@@ -479,14 +592,17 @@
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
+    .line 404
     iput-object p3, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
+    .line 406
     return-void
 .end method
 
 .method public disconnect()V
     .locals 4
 
+    .line 450
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     const/4 v1, 0x0
@@ -497,46 +613,59 @@
 
     if-eqz v0, :cond_0
 
+    .line 451
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
+    .line 452
     iput-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
+    .line 457
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 458
+    .local v0, "msg":Landroid/os/Message;
     const v2, 0x11004
 
     iput v2, v0, Landroid/os/Message;->what:I
 
+    .line 459
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
     iput-object v2, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 460
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     invoke-virtual {v2, v0}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 462
+    .end local v0    # "msg":Landroid/os/Message;
     goto :goto_0
 
+    .line 461
     :catch_0
     move-exception v0
 
+    .line 464
     :goto_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/AsyncChannel;->replyDisconnected(I)V
 
+    .line 465
     iput-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
+    .line 467
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
     if-nez v2, :cond_1
@@ -549,6 +678,7 @@
 
     if-eqz v2, :cond_1
 
+    .line 468
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     invoke-virtual {v2}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
@@ -559,8 +689,10 @@
 
     invoke-interface {v2, v3, v0}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
+    .line 469
     iput-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
 
+    .line 471
     :cond_1
     return-void
 .end method
@@ -568,147 +700,222 @@
 .method public disconnected()V
     .locals 1
 
+    .line 438
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcContext:Landroid/content/Context;
 
+    .line 439
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
+    .line 440
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
+    .line 441
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
+    .line 442
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
 
+    .line 443
     iput-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
 
+    .line 444
     return-void
 .end method
 
 .method public fullyConnectSync(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Handler;)I
     .locals 2
+    .param p1, "srcContext"    # Landroid/content/Context;
+    .param p2, "srcHandler"    # Landroid/os/Handler;
+    .param p3, "dstHandler"    # Landroid/os/Handler;
 
+    .line 293
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/util/AsyncChannel;->connectSync(Landroid/content/Context;Landroid/os/Handler;Landroid/os/Handler;)I
 
     move-result v0
 
+    .line 294
+    .local v0, "status":I
     if-nez v0, :cond_0
 
+    .line 295
     const v1, 0x11001
 
     invoke-virtual {p0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(I)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 296
+    .local v1, "response":Landroid/os/Message;
     iget v0, v1, Landroid/os/Message;->arg1:I
 
+    .line 298
+    .end local v1    # "response":Landroid/os/Message;
     :cond_0
     return v0
 .end method
 
 .method public replyToMessage(Landroid/os/Message;I)V
     .locals 1
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "what"    # I
 
+    .line 579
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 580
+    .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->what:I
 
+    .line 581
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/AsyncChannel;->replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
 
+    .line 582
     return-void
 .end method
 
 .method public replyToMessage(Landroid/os/Message;II)V
     .locals 1
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "what"    # I
+    .param p3, "arg1"    # I
 
+    .line 592
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 593
+    .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->what:I
 
+    .line 594
     iput p3, v0, Landroid/os/Message;->arg1:I
 
+    .line 595
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/AsyncChannel;->replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
 
+    .line 596
     return-void
 .end method
 
 .method public replyToMessage(Landroid/os/Message;III)V
     .locals 1
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "what"    # I
+    .param p3, "arg1"    # I
+    .param p4, "arg2"    # I
 
+    .line 607
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 608
+    .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->what:I
 
+    .line 609
     iput p3, v0, Landroid/os/Message;->arg1:I
 
+    .line 610
     iput p4, v0, Landroid/os/Message;->arg2:I
 
+    .line 611
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/AsyncChannel;->replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
 
+    .line 612
     return-void
 .end method
 
 .method public replyToMessage(Landroid/os/Message;IIILjava/lang/Object;)V
     .locals 1
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "what"    # I
+    .param p3, "arg1"    # I
+    .param p4, "arg2"    # I
+    .param p5, "obj"    # Ljava/lang/Object;
 
+    .line 624
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 625
+    .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->what:I
 
+    .line 626
     iput p3, v0, Landroid/os/Message;->arg1:I
 
+    .line 627
     iput p4, v0, Landroid/os/Message;->arg2:I
 
+    .line 628
     iput-object p5, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 629
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/AsyncChannel;->replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
 
+    .line 630
     return-void
 .end method
 
 .method public replyToMessage(Landroid/os/Message;ILjava/lang/Object;)V
     .locals 1
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
 
+    .line 640
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 641
+    .local v0, "msg":Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->what:I
 
+    .line 642
     iput-object p3, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 643
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/AsyncChannel;->replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
 
+    .line 644
     return-void
 .end method
 
 .method public replyToMessage(Landroid/os/Message;Landroid/os/Message;)V
     .locals 3
+    .param p1, "srcMsg"    # Landroid/os/Message;
+    .param p2, "dstMsg"    # Landroid/os/Message;
 
+    .line 564
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
     iput-object v0, p2, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 565
     iget-object v0, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
     invoke-virtual {v0, p2}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 569
     goto :goto_0
 
+    .line 566
     :catch_0
     move-exception v0
 
+    .line 567
+    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -725,103 +932,153 @@
 
     invoke-static {v1}, Lcom/android/internal/util/AsyncChannel;->log(Ljava/lang/String;)V
 
+    .line 568
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
+    .line 570
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public sendMessage(I)V
     .locals 1
+    .param p1, "what"    # I
 
+    .line 493
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 494
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 495
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
 
+    .line 496
     return-void
 .end method
 
 .method public sendMessage(II)V
     .locals 1
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
 
+    .line 505
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 506
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 507
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 508
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
 
+    .line 509
     return-void
 .end method
 
 .method public sendMessage(III)V
     .locals 1
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
+    .param p3, "arg2"    # I
 
+    .line 519
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 520
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 521
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 522
     iput p3, v0, Landroid/os/Message;->arg2:I
 
+    .line 523
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
 
+    .line 524
     return-void
 .end method
 
 .method public sendMessage(IIILjava/lang/Object;)V
     .locals 1
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
+    .param p3, "arg2"    # I
+    .param p4, "obj"    # Ljava/lang/Object;
 
+    .line 535
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 536
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 537
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 538
     iput p3, v0, Landroid/os/Message;->arg2:I
 
+    .line 539
     iput-object p4, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 540
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
 
+    .line 541
     return-void
 .end method
 
 .method public sendMessage(ILjava/lang/Object;)V
     .locals 1
+    .param p1, "what"    # I
+    .param p2, "obj"    # Ljava/lang/Object;
 
+    .line 550
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 551
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 552
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 553
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
 
+    .line 554
     return-void
 .end method
 
 .method public sendMessage(Landroid/os/Message;)V
     .locals 2
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 479
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mSrcMessenger:Landroid/os/Messenger;
 
     iput-object v0, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 481
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
@@ -829,121 +1086,180 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 484
     goto :goto_0
 
+    .line 482
     :catch_0
     move-exception v0
 
+    .line 483
+    .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x2
 
     invoke-direct {p0, v1}, Lcom/android/internal/util/AsyncChannel;->replyDisconnected(I)V
 
+    .line 485
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method public sendMessageSynchronously(I)Landroid/os/Message;
     .locals 2
+    .param p1, "what"    # I
 
+    .line 664
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 665
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 666
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 667
+    .local v1, "resultMsg":Landroid/os/Message;
     return-object v1
 .end method
 
 .method public sendMessageSynchronously(II)Landroid/os/Message;
     .locals 2
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
 
+    .line 678
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 679
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 680
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 681
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 682
+    .local v1, "resultMsg":Landroid/os/Message;
     return-object v1
 .end method
 
 .method public sendMessageSynchronously(III)Landroid/os/Message;
     .locals 2
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
+    .param p3, "arg2"    # I
 
+    .line 694
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 695
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 696
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 697
     iput p3, v0, Landroid/os/Message;->arg2:I
 
+    .line 698
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 699
+    .local v1, "resultMsg":Landroid/os/Message;
     return-object v1
 .end method
 
 .method public sendMessageSynchronously(IIILjava/lang/Object;)Landroid/os/Message;
     .locals 2
+    .param p1, "what"    # I
+    .param p2, "arg1"    # I
+    .param p3, "arg2"    # I
+    .param p4, "obj"    # Ljava/lang/Object;
 
+    .line 712
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 713
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 714
     iput p2, v0, Landroid/os/Message;->arg1:I
 
+    .line 715
     iput p3, v0, Landroid/os/Message;->arg2:I
 
+    .line 716
     iput-object p4, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 717
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 718
+    .local v1, "resultMsg":Landroid/os/Message;
     return-object v1
 .end method
 
 .method public sendMessageSynchronously(ILjava/lang/Object;)Landroid/os/Message;
     .locals 2
+    .param p1, "what"    # I
+    .param p2, "obj"    # Ljava/lang/Object;
 
+    .line 729
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 730
+    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 731
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 732
     invoke-virtual {p0, v0}, Lcom/android/internal/util/AsyncChannel;->sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 733
+    .local v1, "resultMsg":Landroid/os/Message;
     return-object v1
 .end method
 
 .method public sendMessageSynchronously(Landroid/os/Message;)Landroid/os/Message;
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 653
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     invoke-static {v0, p1}, Lcom/android/internal/util/AsyncChannel$SyncMessenger;->access$100(Landroid/os/Messenger;Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v0
 
+    .line 654
+    .local v0, "resultMsg":Landroid/os/Message;
     return-object v0
 .end method

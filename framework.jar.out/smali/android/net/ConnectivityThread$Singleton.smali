@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 36
     invoke-static {}, Landroid/net/ConnectivityThread;->access$000()Landroid/net/ConnectivityThread;
 
     move-result-object v0
@@ -34,6 +35,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,6 +44,7 @@
 .method static synthetic access$100()Landroid/net/ConnectivityThread;
     .locals 1
 
+    .line 35
     sget-object v0, Landroid/net/ConnectivityThread$Singleton;->INSTANCE:Landroid/net/ConnectivityThread;
 
     return-object v0

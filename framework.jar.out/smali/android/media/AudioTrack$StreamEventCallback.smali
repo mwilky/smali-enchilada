@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 3143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,18 +28,24 @@
 # virtual methods
 .method public onStreamDataRequest(Landroid/media/AudioTrack;)V
     .locals 0
+    .param p1, "track"    # Landroid/media/AudioTrack;
 
+    .line 3162
     return-void
 .end method
 
 .method public onStreamPresentationEnd(Landroid/media/AudioTrack;)V
     .locals 0
+    .param p1, "track"    # Landroid/media/AudioTrack;
 
+    .line 3157
     return-void
 .end method
 
 .method public onTearDown(Landroid/media/AudioTrack;)V
     .locals 0
+    .param p1, "track"    # Landroid/media/AudioTrack;
 
+    .line 3150
     return-void
 .end method

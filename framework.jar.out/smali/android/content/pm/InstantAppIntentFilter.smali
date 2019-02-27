@@ -41,6 +41,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 71
     new-instance v0, Landroid/content/pm/InstantAppIntentFilter$1;
 
     invoke-direct {v0}, Landroid/content/pm/InstantAppIntentFilter$1;-><init>()V
@@ -52,32 +53,39 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
+    .line 48
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mSplitName:Ljava/lang/String;
 
+    .line 49
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->readList(Ljava/util/List;Ljava/lang/ClassLoader;)V
 
+    .line 50
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
     .locals 1
+    .param p1, "splitName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,14 +96,18 @@
         }
     .end annotation
 
+    .line 39
+    .local p2, "filters":Ljava/util/List;, "Ljava/util/List<Landroid/content/IntentFilter;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
+    .line 40
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -104,14 +116,18 @@
 
     if-eqz v0, :cond_0
 
+    .line 43
     iput-object p1, p0, Landroid/content/pm/InstantAppIntentFilter;->mSplitName:Ljava/lang/String;
 
+    .line 44
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
+    .line 45
     return-void
 
+    .line 41
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -125,6 +141,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 62
     const/4 v0, 0x0
 
     return v0
@@ -141,6 +158,7 @@
         }
     .end annotation
 
+    .line 57
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
     return-object v0
@@ -149,6 +167,7 @@
 .method public getSplitName()Ljava/lang/String;
     .locals 1
 
+    .line 53
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mSplitName:Ljava/lang/String;
 
     return-object v0
@@ -156,14 +175,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 67
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mSplitName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 68
     iget-object v0, p0, Landroid/content/pm/InstantAppIntentFilter;->mFilters:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
+    .line 69
     return-void
 .end method

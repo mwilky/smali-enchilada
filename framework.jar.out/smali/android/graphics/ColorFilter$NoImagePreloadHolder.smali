@@ -22,10 +22,12 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 29
     new-instance v6, Llibcore/util/NativeAllocationRegistry;
 
     const-class v0, Landroid/graphics/ColorFilter;
 
+    .line 30
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
@@ -42,12 +44,14 @@
 
     sput-object v6, Landroid/graphics/ColorFilter$NoImagePreloadHolder;->sRegistry:Llibcore/util/NativeAllocationRegistry;
 
+    .line 29
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

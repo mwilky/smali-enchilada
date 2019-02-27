@@ -21,13 +21,18 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;)V
     .locals 0
+    .param p1, "handler"    # Landroid/os/Handler;
 
+    .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 292
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 293
     iput-object p1, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;->mHandler:Landroid/os/Handler;
 
+    .line 294
     return-void
 .end method
 
@@ -55,6 +60,8 @@
         }
     .end annotation
 
+    .line 298
+    .local p1, "updatedNetworks":Ljava/util/List;, "Ljava/util/List<Landroid/net/ScoredNetwork;>;"
     iget-object v0, p0, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener$1;
@@ -63,5 +70,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 304
     return-void
 .end method

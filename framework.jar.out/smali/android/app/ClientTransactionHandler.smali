@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,19 +17,24 @@
 # virtual methods
 .method public executeTransaction(Landroid/app/servertransaction/ClientTransaction;)V
     .locals 1
+    .param p1, "transaction"    # Landroid/app/servertransaction/ClientTransaction;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
+    .line 54
     invoke-virtual {p1, p0}, Landroid/app/servertransaction/ClientTransaction;->preExecute(Landroid/app/ClientTransactionHandler;)V
 
+    .line 55
     invoke-virtual {p0}, Landroid/app/ClientTransactionHandler;->getTransactionExecutor()Landroid/app/servertransaction/TransactionExecutor;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/app/servertransaction/TransactionExecutor;->execute(Landroid/app/servertransaction/ClientTransaction;)V
 
+    .line 56
     invoke-virtual {p1}, Landroid/app/servertransaction/ClientTransaction;->recycle()V
 
+    .line 57
     return-void
 .end method
 
@@ -132,13 +138,17 @@
 
 .method scheduleTransaction(Landroid/app/servertransaction/ClientTransaction;)V
     .locals 1
+    .param p1, "transaction"    # Landroid/app/servertransaction/ClientTransaction;
 
+    .line 44
     invoke-virtual {p1, p0}, Landroid/app/servertransaction/ClientTransaction;->preExecute(Landroid/app/ClientTransactionHandler;)V
 
+    .line 45
     const/16 v0, 0x9f
 
     invoke-virtual {p0, v0, p1}, Landroid/app/ClientTransactionHandler;->sendMessage(ILjava/lang/Object;)V
 
+    .line 46
     return-void
 .end method
 

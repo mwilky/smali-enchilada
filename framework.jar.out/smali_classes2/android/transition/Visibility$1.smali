@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/transition/Visibility;Landroid/view/ViewGroup;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/transition/Visibility;
 
+    .line 431
     iput-object p1, p0, Landroid/transition/Visibility$1;->this$0:Landroid/transition/Visibility;
 
     iput-object p2, p0, Landroid/transition/Visibility$1;->val$finalSceneRoot:Landroid/view/ViewGroup;
@@ -41,7 +43,9 @@
 # virtual methods
 .method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 2
+    .param p1, "transition"    # Landroid/transition/Transition;
 
+    .line 434
     iget-object v0, p0, Landroid/transition/Visibility$1;->val$finalSceneRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getOverlay()Landroid/view/ViewGroupOverlay;
@@ -52,7 +56,9 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
+    .line 435
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
+    .line 436
     return-void
 .end method

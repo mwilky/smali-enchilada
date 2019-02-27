@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
 
+    .line 1189
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -35,7 +37,9 @@
 # virtual methods
 .method public get(Landroid/graphics/drawable/VectorDrawable$VGroup;)Ljava/lang/Float;
     .locals 1
+    .param p1, "object"    # Landroid/graphics/drawable/VectorDrawable$VGroup;
 
+    .line 1197
     invoke-virtual {p1}, Landroid/graphics/drawable/VectorDrawable$VGroup;->getTranslateY()F
 
     move-result v0
@@ -50,6 +54,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 1189
     check-cast p1, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/VectorDrawable$VGroup$3;->get(Landroid/graphics/drawable/VectorDrawable$VGroup;)Ljava/lang/Float;
@@ -61,15 +66,20 @@
 
 .method public setValue(Landroid/graphics/drawable/VectorDrawable$VGroup;F)V
     .locals 0
+    .param p1, "object"    # Landroid/graphics/drawable/VectorDrawable$VGroup;
+    .param p2, "value"    # F
 
+    .line 1192
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/VectorDrawable$VGroup;->setTranslateY(F)V
 
+    .line 1193
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
+    .line 1189
     check-cast p1, Landroid/graphics/drawable/VectorDrawable$VGroup;
 
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/VectorDrawable$VGroup$3;->setValue(Landroid/graphics/drawable/VectorDrawable$VGroup;F)V

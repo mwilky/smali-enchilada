@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,13 +40,18 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telephony/CellInfo;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 257
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 258
+    .local v0, "type":I
     packed-switch v0, :pswitch_data_0
 
+    .line 263
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Bad CellInfo Parcel"
@@ -54,6 +60,7 @@
 
     throw v1
 
+    .line 262
     :pswitch_0
     invoke-static {p1}, Landroid/telephony/CellInfoWcdma;->createFromParcelBody(Landroid/os/Parcel;)Landroid/telephony/CellInfoWcdma;
 
@@ -61,6 +68,7 @@
 
     return-object v1
 
+    .line 261
     :pswitch_1
     invoke-static {p1}, Landroid/telephony/CellInfoLte;->createFromParcelBody(Landroid/os/Parcel;)Landroid/telephony/CellInfoLte;
 
@@ -68,6 +76,7 @@
 
     return-object v1
 
+    .line 260
     :pswitch_2
     invoke-static {p1}, Landroid/telephony/CellInfoCdma;->createFromParcelBody(Landroid/os/Parcel;)Landroid/telephony/CellInfoCdma;
 
@@ -75,6 +84,7 @@
 
     return-object v1
 
+    .line 259
     :pswitch_3
     invoke-static {p1}, Landroid/telephony/CellInfoGsm;->createFromParcelBody(Landroid/os/Parcel;)Landroid/telephony/CellInfoGsm;
 
@@ -96,6 +106,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 254
     invoke-virtual {p0, p1}, Landroid/telephony/CellInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/CellInfo;
 
     move-result-object p1
@@ -105,7 +116,9 @@
 
 .method public newArray(I)[Landroid/telephony/CellInfo;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 269
     new-array v0, p1, [Landroid/telephony/CellInfo;
 
     return-object v0
@@ -114,6 +127,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 254
     invoke-virtual {p0, p1}, Landroid/telephony/CellInfo$1;->newArray(I)[Landroid/telephony/CellInfo;
 
     move-result-object p1

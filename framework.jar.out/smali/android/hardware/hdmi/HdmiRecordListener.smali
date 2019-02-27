@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,13 +28,19 @@
 # virtual methods
 .method public onClearTimerRecordingResult(II)V
     .locals 0
+    .param p1, "recorderAddress"    # I
+    .param p2, "result"    # I
 
+    .line 249
     return-void
 .end method
 
 .method public onOneTouchRecordResult(II)V
     .locals 0
+    .param p1, "recorderAddress"    # I
+    .param p2, "result"    # I
 
+    .line 53
     return-void
 .end method
 
@@ -42,6 +49,9 @@
 
 .method public onTimerRecordingResult(ILandroid/hardware/hdmi/HdmiRecordListener$TimerStatusData;)V
     .locals 0
+    .param p1, "recorderAddress"    # I
+    .param p2, "data"    # Landroid/hardware/hdmi/HdmiRecordListener$TimerStatusData;
 
+    .line 63
     return-void
 .end method

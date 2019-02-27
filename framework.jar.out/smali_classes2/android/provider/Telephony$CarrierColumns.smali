@@ -43,6 +43,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 1249
     const-string v0, "content://carrier_information/carrier"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;

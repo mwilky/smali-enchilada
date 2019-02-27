@@ -17,7 +17,11 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;)V
     .locals 2
+    .param p1, "property"    # Ljava/lang/String;
+    .param p2, "value"    # Ljava/lang/Object;
+    .param p3, "requestedType"    # Ljava/lang/String;
 
+    .line 420
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -50,5 +54,6 @@
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 422
     return-void
 .end method

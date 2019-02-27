@@ -85,6 +85,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 476
     const-string v0, "content://com.android.voicemail/status"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -99,14 +100,18 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 483
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 484
     return-void
 .end method
 
 .method public static buildSourceUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
+    .param p0, "packageName"    # Ljava/lang/String;
 
+    .line 695
     sget-object v0, Landroid/provider/VoicemailContract$Status;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -115,6 +120,7 @@
 
     const-string/jumbo v1, "source_package"
 
+    .line 696
     invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
@@ -123,5 +129,6 @@
 
     move-result-object v0
 
+    .line 695
     return-object v0
 .end method

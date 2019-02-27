@@ -81,6 +81,14 @@
     .end annotation
 .end method
 
+.method public abstract reportJank(Ljava/lang/String;Ljava/lang/String;II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setAppControlMode(Ljava/lang/String;II)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

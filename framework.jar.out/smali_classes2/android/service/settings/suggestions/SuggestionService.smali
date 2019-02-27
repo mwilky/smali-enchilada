@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 34
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
@@ -27,7 +28,9 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 41
     new-instance v0, Landroid/service/settings/suggestions/SuggestionService$1;
 
     invoke-direct {v0, p0}, Landroid/service/settings/suggestions/SuggestionService$1;-><init>(Landroid/service/settings/suggestions/SuggestionService;)V

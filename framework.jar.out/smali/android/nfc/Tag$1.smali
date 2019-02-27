@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 421
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,19 +40,26 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/nfc/Tag;
     .locals 12
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 427
     invoke-static {p1}, Landroid/nfc/Tag;->readBytesWithNull(Landroid/os/Parcel;)[B
 
     move-result-object v6
 
+    .line 428
+    .local v6, "id":[B
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     new-array v7, v0, [I
 
+    .line 429
+    .local v7, "techList":[I
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->readIntArray([I)V
 
+    .line 430
     sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -62,16 +70,23 @@
 
     check-cast v8, [Landroid/os/Bundle;
 
+    .line 431
+    .local v8, "techExtras":[Landroid/os/Bundle;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
+    .line 432
+    .local v9, "serviceHandle":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
+    .line 433
+    .local v10, "isMock":I
     if-nez v10, :cond_0
 
+    .line 434
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -80,16 +95,21 @@
 
     move-result-object v0
 
+    .line 437
+    .local v5, "tagService":Landroid/nfc/INfcTag;
     :goto_0
     move-object v5, v0
 
     goto :goto_1
 
+    .end local v5    # "tagService":Landroid/nfc/INfcTag;
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
+    .line 440
+    .restart local v5    # "tagService":Landroid/nfc/INfcTag;
     :goto_1
     new-instance v11, Landroid/nfc/Tag;
 
@@ -111,6 +131,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 421
     invoke-virtual {p0, p1}, Landroid/nfc/Tag$1;->createFromParcel(Landroid/os/Parcel;)Landroid/nfc/Tag;
 
     move-result-object p1
@@ -120,7 +141,9 @@
 
 .method public newArray(I)[Landroid/nfc/Tag;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 445
     new-array v0, p1, [Landroid/nfc/Tag;
 
     return-object v0
@@ -129,6 +152,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 421
     invoke-virtual {p0, p1}, Landroid/nfc/Tag$1;->newArray(I)[Landroid/nfc/Tag;
 
     move-result-object p1

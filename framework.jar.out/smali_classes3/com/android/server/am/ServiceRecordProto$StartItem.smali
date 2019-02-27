@@ -37,7 +37,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ServiceRecordProto;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/server/am/ServiceRecordProto;
 
+    .line 87
     iput-object p1, p0, Lcom/android/server/am/ServiceRecordProto$StartItem;->this$0:Lcom/android/server/am/ServiceRecordProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

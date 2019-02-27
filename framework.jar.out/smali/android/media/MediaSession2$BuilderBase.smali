@@ -52,8 +52,12 @@
         }
     .end annotation
 
+    .line 553
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
+    .local p1, "creator":Landroid/media/update/ProviderCreator;, "Landroid/media/update/ProviderCreator<Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;Landroid/media/update/MediaSession2Provider$BuilderBaseProvider<TT;TC;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 554
     invoke-interface {p1, p0}, Landroid/media/update/ProviderCreator;->createProvider(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -62,6 +66,7 @@
 
     iput-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
+    .line 555
     return-void
 .end method
 
@@ -75,6 +80,8 @@
         }
     .end annotation
 
+    .line 643
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->build_impl()Landroid/media/MediaSession2;
@@ -86,6 +93,7 @@
 
 .method setId(Ljava/lang/String;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "id"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,15 +102,19 @@
         }
     .end annotation
 
+    .line 618
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setId_impl(Ljava/lang/String;)V
 
+    .line 619
     return-object p0
 .end method
 
 .method setPlayer(Landroid/media/MediaPlayerBase;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "player"    # Landroid/media/MediaPlayerBase;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,15 +123,19 @@
         }
     .end annotation
 
+    .line 564
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setPlayer_impl(Landroid/media/MediaPlayerBase;)V
 
+    .line 565
     return-object p0
 .end method
 
 .method setPlaylistAgent(Landroid/media/MediaPlaylistAgent;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "playlistAgent"    # Landroid/media/MediaPlaylistAgent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,15 +144,19 @@
         }
     .end annotation
 
+    .line 580
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setPlaylistAgent_impl(Landroid/media/MediaPlaylistAgent;)V
 
+    .line 581
     return-object p0
 .end method
 
 .method setSessionActivity(Landroid/app/PendingIntent;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "pi"    # Landroid/app/PendingIntent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -145,15 +165,19 @@
         }
     .end annotation
 
+    .line 603
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setSessionActivity_impl(Landroid/app/PendingIntent;)V
 
+    .line 604
     return-object p0
 .end method
 
 .method setSessionCallback(Ljava/util/concurrent/Executor;Landroid/media/MediaSession2$SessionCallback;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "executor"    # Ljava/util/concurrent/Executor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -162,15 +186,20 @@
         }
     .end annotation
 
+    .line 631
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
+    .local p2, "callback":Landroid/media/MediaSession2$SessionCallback;, "TC;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1, p2}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setSessionCallback_impl(Ljava/util/concurrent/Executor;Landroid/media/MediaSession2$SessionCallback;)V
 
+    .line 632
     return-object p0
 .end method
 
 .method setVolumeProvider(Landroid/media/VolumeProvider2;)Landroid/media/MediaSession2$BuilderBase;
     .locals 1
+    .param p1, "volumeProvider"    # Landroid/media/VolumeProvider2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,9 +208,12 @@
         }
     .end annotation
 
+    .line 591
+    .local p0, "this":Landroid/media/MediaSession2$BuilderBase;, "Landroid/media/MediaSession2$BuilderBase<TT;TU;TC;>;"
     iget-object v0, p0, Landroid/media/MediaSession2$BuilderBase;->mProvider:Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;
 
     invoke-interface {v0, p1}, Landroid/media/update/MediaSession2Provider$BuilderBaseProvider;->setVolumeProvider_impl(Landroid/media/VolumeProvider2;)V
 
+    .line 592
     return-object p0
 .end method

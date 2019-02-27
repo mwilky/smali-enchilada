@@ -51,6 +51,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 2643
     new-instance v0, Landroid/app/ActivityManager$MemoryInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$MemoryInfo$1;-><init>()V
@@ -63,24 +64,33 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 2614
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2615
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 2653
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2654
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$MemoryInfo;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 2655
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/app/ActivityManager$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/app/ActivityManager$1;
 
+    .line 2576
     invoke-direct {p0, p1}, Landroid/app/ActivityManager$MemoryInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -91,6 +101,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 2618
     const/4 v0, 0x0
 
     return v0
@@ -98,25 +109,30 @@
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 2633
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
+    .line 2634
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->totalMem:J
 
+    .line 2635
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->threshold:J
 
+    .line 2636
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -133,67 +149,83 @@
     :goto_0
     iput-boolean v0, p0, Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z
 
+    .line 2637
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->hiddenAppThreshold:J
 
+    .line 2638
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
+    .line 2639
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->visibleAppThreshold:J
 
+    .line 2640
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->foregroundAppThreshold:J
 
+    .line 2641
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 2622
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->availMem:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2623
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->totalMem:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2624
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->threshold:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2625
     iget-boolean v0, p0, Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2626
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->hiddenAppThreshold:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2627
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2628
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->visibleAppThreshold:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2629
     iget-wide v0, p0, Landroid/app/ActivityManager$MemoryInfo;->foregroundAppThreshold:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 2630
     return-void
 .end method

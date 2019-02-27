@@ -27,19 +27,28 @@
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
     .locals 1
+    .param p1, "bufID"    # I
+    .param p2, "priority"    # I
+    .param p3, "tag"    # Ljava/lang/String;
 
+    .line 457
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
+    .line 451
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/util/Log$ImmediateLogWriter;->written:I
 
+    .line 458
     iput p1, p0, Landroid/util/Log$ImmediateLogWriter;->bufID:I
 
+    .line 459
     iput p2, p0, Landroid/util/Log$ImmediateLogWriter;->priority:I
 
+    .line 460
     iput-object p3, p0, Landroid/util/Log$ImmediateLogWriter;->tag:Ljava/lang/String;
 
+    .line 461
     return-void
 .end method
 
@@ -48,18 +57,21 @@
 .method public close()V
     .locals 0
 
+    .line 483
     return-void
 .end method
 
 .method public flush()V
     .locals 0
 
+    .line 478
     return-void
 .end method
 
 .method public getWritten()I
     .locals 1
 
+    .line 464
     iget v0, p0, Landroid/util/Log$ImmediateLogWriter;->written:I
 
     return v0
@@ -67,7 +79,11 @@
 
 .method public write([CII)V
     .locals 5
+    .param p1, "cbuf"    # [C
+    .param p2, "off"    # I
+    .param p3, "len"    # I
 
+    .line 472
     iget v0, p0, Landroid/util/Log$ImmediateLogWriter;->written:I
 
     iget v1, p0, Landroid/util/Log$ImmediateLogWriter;->bufID:I
@@ -88,5 +104,6 @@
 
     iput v0, p0, Landroid/util/Log$ImmediateLogWriter;->written:I
 
+    .line 473
     return-void
 .end method

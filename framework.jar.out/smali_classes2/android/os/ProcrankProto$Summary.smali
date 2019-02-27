@@ -36,7 +36,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/ProcrankProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/ProcrankProto;
 
+    .line 46
     iput-object p1, p0, Landroid/os/ProcrankProto$Summary;->this$0:Landroid/os/ProcrankProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

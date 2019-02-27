@@ -147,6 +147,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 537
     new-instance v0, Landroid/hardware/radio/ProgramSelector$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/ProgramSelector$1;-><init>()V
@@ -158,20 +159,28 @@
 
 .method public constructor <init>(ILandroid/hardware/radio/ProgramSelector$Identifier;[Landroid/hardware/radio/ProgramSelector$Identifier;[J)V
     .locals 2
+    .param p1, "programType"    # I
+    .param p2, "primaryId"    # Landroid/hardware/radio/ProgramSelector$Identifier;
+    .param p3, "secondaryIds"    # [Landroid/hardware/radio/ProgramSelector$Identifier;
+    .param p4, "vendorIds"    # [J
 
+    .line 272
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 273
     const/4 v0, 0x0
 
     if-nez p3, :cond_0
 
     new-array p3, v0, [Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 274
     :cond_0
     if-nez p4, :cond_1
 
     new-array p4, v0, [J
 
+    .line 275
     :cond_1
     invoke-static {p3}, Ljava/util/stream/Stream;->of([Ljava/lang/Object;)Ljava/util/stream/Stream;
 
@@ -185,8 +194,10 @@
 
     if-nez v0, :cond_2
 
+    .line 278
     iput p1, p0, Landroid/hardware/radio/ProgramSelector;->mProgramType:I
 
+    .line 279
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -195,12 +206,16 @@
 
     iput-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 280
     iput-object p3, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 281
     iput-object p4, p0, Landroid/hardware/radio/ProgramSelector;->mVendorIds:[J
 
+    .line 282
     return-void
 
+    .line 276
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -213,15 +228,19 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 514
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 515
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/hardware/radio/ProgramSelector;->mProgramType:I
 
+    .line 516
     sget-object v0, Landroid/hardware/radio/ProgramSelector$Identifier;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -232,6 +251,7 @@
 
     iput-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 517
     sget-object v0, Landroid/hardware/radio/ProgramSelector$Identifier;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -242,6 +262,7 @@
 
     iput-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 518
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-static {v0}, Ljava/util/stream/Stream;->of([Ljava/lang/Object;)Ljava/util/stream/Stream;
@@ -256,14 +277,17 @@
 
     if-nez v0, :cond_0
 
+    .line 521
     invoke-virtual {p1}, Landroid/os/Parcel;->createLongArray()[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mVendorIds:[J
 
+    .line 522
     return-void
 
+    .line 519
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -276,7 +300,10 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/radio/ProgramSelector$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/hardware/radio/ProgramSelector$1;
 
+    .line 62
     invoke-direct {p0, p1}, Landroid/hardware/radio/ProgramSelector;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -284,7 +311,10 @@
 
 .method public static createAmFmSelector(II)Landroid/hardware/radio/ProgramSelector;
     .locals 1
+    .param p0, "band"    # I
+    .param p1, "frequencyKhz"    # I
 
+    .line 408
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/hardware/radio/ProgramSelector;->createAmFmSelector(III)Landroid/hardware/radio/ProgramSelector;
@@ -296,7 +326,11 @@
 
 .method public static createAmFmSelector(III)Landroid/hardware/radio/ProgramSelector;
     .locals 11
+    .param p0, "band"    # I
+    .param p1, "frequencyKhz"    # I
+    .param p2, "subChannel"    # I
 
+    .line 445
     const/4 v0, 0x2
 
     const/4 v1, 0x3
@@ -309,10 +343,12 @@
 
     if-ne p0, v4, :cond_3
 
+    .line 447
     const v4, 0xc350
 
     if-ge p1, v4, :cond_1
 
+    .line 448
     if-gtz p2, :cond_0
 
     move v4, v2
@@ -327,6 +363,7 @@
 
     goto :goto_2
 
+    .line 450
     :cond_1
     if-gtz p2, :cond_2
 
@@ -340,6 +377,7 @@
     :goto_1
     move p0, v4
 
+    .line 454
     :cond_3
     :goto_2
     if-eqz p0, :cond_5
@@ -357,6 +395,8 @@
     :goto_3
     move v4, v3
 
+    .line 455
+    .local v4, "isAm":Z
     :goto_4
     if-eq p0, v1, :cond_7
 
@@ -373,6 +413,8 @@
     :goto_5
     move v1, v3
 
+    .line 456
+    .local v1, "isDigital":Z
     :goto_6
     if-nez v4, :cond_9
 
@@ -382,6 +424,7 @@
 
     goto :goto_7
 
+    .line 457
     :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -403,6 +446,7 @@
 
     throw v0
 
+    .line 459
     :cond_9
     :goto_7
     if-ltz p2, :cond_f
@@ -411,12 +455,14 @@
 
     if-gt p2, v5, :cond_f
 
+    .line 462
     if-lez p2, :cond_b
 
     if-eqz v1, :cond_a
 
     goto :goto_8
 
+    .line 463
     :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -426,6 +472,7 @@
 
     throw v0
 
+    .line 465
     :cond_b
     :goto_8
     invoke-static {v4, p1}, Landroid/hardware/radio/ProgramSelector;->isValidAmFmFrequency(ZI)Z
@@ -434,12 +481,15 @@
 
     if-eqz v5, :cond_e
 
+    .line 471
     if-eqz v4, :cond_c
 
     move v0, v3
 
     nop
 
+    .line 472
+    .local v0, "programType":I
     :cond_c
     new-instance v5, Landroid/hardware/radio/ProgramSelector$Identifier;
 
@@ -447,10 +497,15 @@
 
     invoke-direct {v5, v3, v6, v7}, Landroid/hardware/radio/ProgramSelector$Identifier;-><init>(IJ)V
 
+    .line 474
+    .local v5, "primary":Landroid/hardware/radio/ProgramSelector$Identifier;
     const/4 v6, 0x0
 
+    .line 475
+    .local v6, "secondary":[Landroid/hardware/radio/ProgramSelector$Identifier;
     if-lez p2, :cond_d
 
+    .line 481
     new-array v3, v3, [Landroid/hardware/radio/ProgramSelector$Identifier;
 
     new-instance v7, Landroid/hardware/radio/ProgramSelector$Identifier;
@@ -467,6 +522,7 @@
 
     move-object v6, v3
 
+    .line 485
     :cond_d
     new-instance v2, Landroid/hardware/radio/ProgramSelector;
 
@@ -476,6 +532,10 @@
 
     return-object v2
 
+    .line 466
+    .end local v0    # "programType":I
+    .end local v5    # "primary":Landroid/hardware/radio/ProgramSelector$Identifier;
+    .end local v6    # "secondary":[Landroid/hardware/radio/ProgramSelector$Identifier;
     :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -497,6 +557,7 @@
 
     throw v0
 
+    .line 460
     :cond_f
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -521,13 +582,17 @@
 
 .method private static isValidAmFmFrequency(ZI)Z
     .locals 3
+    .param p0, "isAm"    # Z
+    .param p1, "frequencyKhz"    # I
 
+    .line 423
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     if-eqz p0, :cond_1
 
+    .line 424
     const/16 v2, 0x96
 
     if-le p1, v2, :cond_0
@@ -543,6 +608,7 @@
     :cond_0
     return v0
 
+    .line 426
     :cond_1
     const v2, 0xea60
 
@@ -562,7 +628,9 @@
 
 .method static synthetic lambda$new$0(Landroid/hardware/radio/ProgramSelector$Identifier;)Z
     .locals 1
+    .param p0, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 275
     if-nez p0, :cond_0
 
     const/4 v0, 0x1
@@ -578,7 +646,9 @@
 
 .method static synthetic lambda$new$3(Landroid/hardware/radio/ProgramSelector$Identifier;)Z
     .locals 1
+    .param p0, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 518
     if-nez p0, :cond_0
 
     const/4 v0, 0x1
@@ -594,7 +664,10 @@
 
 .method static synthetic lambda$withSecondaryPreferred$1(ILandroid/hardware/radio/ProgramSelector$Identifier;)Z
     .locals 1
+    .param p0, "preferredType"    # I
+    .param p1, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 386
     invoke-virtual {p1}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
 
     move-result v0
@@ -614,7 +687,9 @@
 
 .method static synthetic lambda$withSecondaryPreferred$2(I)[Landroid/hardware/radio/ProgramSelector$Identifier;
     .locals 1
+    .param p0, "x$0"    # I
 
+    .line 388
     new-array v0, p0, [Landroid/hardware/radio/ProgramSelector$Identifier;
 
     return-object v0
@@ -625,6 +700,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 534
     const/4 v0, 0x0
 
     return v0
@@ -632,13 +708,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 506
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
+    .line 507
     :cond_0
     instance-of v0, p1, Landroid/hardware/radio/ProgramSelector;
 
@@ -648,11 +727,14 @@
 
     return v0
 
+    .line 508
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/hardware/radio/ProgramSelector;
 
+    .line 511
+    .local v0, "other":Landroid/hardware/radio/ProgramSelector;
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-virtual {v0}, Landroid/hardware/radio/ProgramSelector;->getPrimaryId()Landroid/hardware/radio/ProgramSelector$Identifier;
@@ -668,11 +750,15 @@
 
 .method public getAllIds(I)[Landroid/hardware/radio/ProgramSelector$Identifier;
     .locals 6
+    .param p1, "type"    # I
 
+    .line 343
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 345
+    .local v0, "out":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/radio/ProgramSelector$Identifier;>;"
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-virtual {v1}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
@@ -685,6 +771,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 346
     :cond_0
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
@@ -697,6 +784,8 @@
 
     aget-object v4, v1, v3
 
+    .line 347
+    .local v4, "id":Landroid/hardware/radio/ProgramSelector$Identifier;
     invoke-virtual {v4}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
 
     move-result v5
@@ -705,11 +794,14 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 346
+    .end local v4    # "id":Landroid/hardware/radio/ProgramSelector$Identifier;
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 350
     :cond_2
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -728,7 +820,9 @@
 
 .method public getFirstId(I)J
     .locals 5
+    .param p1, "type"    # I
 
+    .line 326
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-virtual {v0}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
@@ -745,6 +839,7 @@
 
     return-wide v0
 
+    .line 327
     :cond_0
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
@@ -757,6 +852,8 @@
 
     aget-object v3, v0, v2
 
+    .line 328
+    .local v3, "id":Landroid/hardware/radio/ProgramSelector$Identifier;
     invoke-virtual {v3}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
 
     move-result v4
@@ -769,11 +866,14 @@
 
     return-wide v0
 
+    .line 327
+    .end local v3    # "id":Landroid/hardware/radio/ProgramSelector$Identifier;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 330
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -803,6 +903,7 @@
 .method public getPrimaryId()Landroid/hardware/radio/ProgramSelector$Identifier;
     .locals 1
 
+    .line 302
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     return-object v0
@@ -813,6 +914,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 292
     iget v0, p0, Landroid/hardware/radio/ProgramSelector;->mProgramType:I
 
     return v0
@@ -821,6 +923,7 @@
 .method public getSecondaryIds()[Landroid/hardware/radio/ProgramSelector$Identifier;
     .locals 1
 
+    .line 312
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
     return-object v0
@@ -831,6 +934,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 363
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mVendorIds:[J
 
     return-object v0
@@ -839,6 +943,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 501
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-virtual {v0}, Landroid/hardware/radio/ProgramSelector$Identifier;->hashCode()I
@@ -851,6 +956,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 490
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "ProgramSelector(type="
@@ -863,6 +969,7 @@
 
     const-string v1, ", primary="
 
+    .line 491
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
@@ -871,6 +978,8 @@
 
     move-result-object v0
 
+    .line 492
+    .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
     array-length v1, v1
@@ -885,6 +994,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 493
     :cond_0
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mVendorIds:[J
 
@@ -900,11 +1010,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 494
     :cond_1
     const-string v1, ")"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 495
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -914,13 +1026,18 @@
 
 .method public withSecondaryPreferred(Landroid/hardware/radio/ProgramSelector$Identifier;)Landroid/hardware/radio/ProgramSelector;
     .locals 6
+    .param p1, "preferred"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 383
     invoke-virtual {p1}, Landroid/hardware/radio/ProgramSelector$Identifier;->getType()I
 
     move-result v0
 
+    .line 384
+    .local v0, "preferredType":I
     iget-object v1, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 386
     invoke-static {v1}, Ljava/util/Arrays;->stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
 
     move-result-object v1
@@ -933,22 +1050,27 @@
 
     move-result-object v1
 
+    .line 388
     invoke-static {p1}, Ljava/util/stream/Stream;->of(Ljava/lang/Object;)Ljava/util/stream/Stream;
 
     move-result-object v2
 
+    .line 384
     invoke-static {v1, v2}, Ljava/util/stream/Stream;->concat(Ljava/util/stream/Stream;Ljava/util/stream/Stream;)Ljava/util/stream/Stream;
 
     move-result-object v1
 
     sget-object v2, Landroid/hardware/radio/-$$Lambda$ProgramSelector$kEsOH_p_eN5KvKLjoDTGZXYtuP4;->INSTANCE:Landroid/hardware/radio/-$$Lambda$ProgramSelector$kEsOH_p_eN5KvKLjoDTGZXYtuP4;
 
+    .line 388
     invoke-interface {v1, v2}, Ljava/util/stream/Stream;->toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, [Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 390
+    .local v1, "secondaryIds":[Landroid/hardware/radio/ProgramSelector$Identifier;
     new-instance v2, Landroid/hardware/radio/ProgramSelector;
 
     iget v3, p0, Landroid/hardware/radio/ProgramSelector;->mProgramType:I
@@ -964,24 +1086,31 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 526
     iget v0, p0, Landroid/hardware/radio/ProgramSelector;->mProgramType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 527
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mPrimaryId:Landroid/hardware/radio/ProgramSelector$Identifier;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
+    .line 528
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mSecondaryIds:[Landroid/hardware/radio/ProgramSelector$Identifier;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
+    .line 529
     iget-object v0, p0, Landroid/hardware/radio/ProgramSelector;->mVendorIds:[J
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
 
+    .line 530
     return-void
 .end method

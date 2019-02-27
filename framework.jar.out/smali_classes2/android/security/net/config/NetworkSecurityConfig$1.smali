@@ -33,7 +33,9 @@
 # direct methods
 .method constructor <init>(Landroid/security/net/config/NetworkSecurityConfig;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/security/net/config/NetworkSecurityConfig;
 
+    .line 60
     iput-object p1, p0, Landroid/security/net/config/NetworkSecurityConfig$1;->this$0:Landroid/security/net/config/NetworkSecurityConfig;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,13 +47,17 @@
 # virtual methods
 .method public compare(Landroid/security/net/config/CertificatesEntryRef;Landroid/security/net/config/CertificatesEntryRef;)I
     .locals 1
+    .param p1, "lhs"    # Landroid/security/net/config/CertificatesEntryRef;
+    .param p2, "rhs"    # Landroid/security/net/config/CertificatesEntryRef;
 
+    .line 63
     invoke-virtual {p1}, Landroid/security/net/config/CertificatesEntryRef;->overridesPins()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
+    .line 64
     invoke-virtual {p2}, Landroid/security/net/config/CertificatesEntryRef;->overridesPins()Z
 
     move-result v0
@@ -68,6 +74,7 @@
     :goto_0
     return v0
 
+    .line 66
     :cond_1
     invoke-virtual {p2}, Landroid/security/net/config/CertificatesEntryRef;->overridesPins()Z
 
@@ -79,6 +86,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 60
     check-cast p1, Landroid/security/net/config/CertificatesEntryRef;
 
     check-cast p2, Landroid/security/net/config/CertificatesEntryRef;

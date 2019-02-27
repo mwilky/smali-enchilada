@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 88
     const-string v0, "[\\w%+,./=_-]+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -36,6 +37,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 847
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,48 +28,71 @@
 # virtual methods
 .method public onAddressChanged(Landroid/telecom/Connection;Landroid/net/Uri;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "newAddress"    # Landroid/net/Uri;
+    .param p3, "presentation"    # I
 
+    .line 849
     return-void
 .end method
 
 .method public onAudioModeIsVoipChanged(Landroid/telecom/Connection;Z)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "isVoip"    # Z
 
+    .line 863
     return-void
 .end method
 
 .method public onAudioRouteChanged(Landroid/telecom/Connection;ILjava/lang/String;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "audioRoute"    # I
+    .param p3, "bluetoothAddress"    # Ljava/lang/String;
 
+    .line 878
     return-void
 .end method
 
 .method public onCallerDisplayNameChanged(Landroid/telecom/Connection;Ljava/lang/String;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "callerDisplayName"    # Ljava/lang/String;
+    .param p3, "presentation"    # I
 
+    .line 851
     return-void
 .end method
 
 .method public onCdmaConnectionTimeReset(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 885
     return-void
 .end method
 
 .method public onConferenceChanged(Landroid/telecom/Connection;Landroid/telecom/Conference;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "conference"    # Landroid/telecom/Conference;
 
+    .line 867
     return-void
 .end method
 
 .method public onConferenceMergeFailed(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 872
     return-void
 .end method
 
 .method public onConferenceParticipantsChanged(Landroid/telecom/Connection;Ljava/util/List;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,23 +103,30 @@
         }
     .end annotation
 
+    .line 870
+    .local p2, "participants":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/ConferenceParticipant;>;"
     return-void
 .end method
 
 .method public onConferenceStarted()V
     .locals 0
 
+    .line 871
     return-void
 .end method
 
 .method public onConferenceSupportedChanged(Landroid/telecom/Connection;Z)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "isConferenceSupported"    # Z
 
+    .line 877
     return-void
 .end method
 
 .method public onConferenceablesChanged(Landroid/telecom/Connection;Ljava/util/List;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,47 +137,68 @@
         }
     .end annotation
 
+    .line 866
+    .local p2, "conferenceables":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Conferenceable;>;"
     return-void
 .end method
 
 .method public onConnectionCapabilitiesChanged(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "capabilities"    # I
 
+    .line 858
     return-void
 .end method
 
 .method public onConnectionEvent(Landroid/telecom/Connection;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "event"    # Ljava/lang/String;
+    .param p3, "extras"    # Landroid/os/Bundle;
 
+    .line 875
     return-void
 .end method
 
 .method public onConnectionPropertiesChanged(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "properties"    # I
 
+    .line 859
     return-void
 .end method
 
 .method public onDestroyed(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 857
     return-void
 .end method
 
 .method public onDisconnected(Landroid/telecom/Connection;Landroid/telecom/DisconnectCause;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
+    .line 853
     return-void
 .end method
 
 .method public onExtrasChanged(Landroid/telecom/Connection;Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "extras"    # Landroid/os/Bundle;
 
+    .line 873
     return-void
 .end method
 
 .method public onExtrasRemoved(Landroid/telecom/Connection;Ljava/util/List;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,83 +209,121 @@
         }
     .end annotation
 
+    .line 874
+    .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
 
 .method public onPhoneAccountChanged(Landroid/telecom/Connection;Landroid/telecom/PhoneAccountHandle;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "pHandle"    # Landroid/telecom/PhoneAccountHandle;
 
+    .line 884
     return-void
 .end method
 
 .method public onPostDialChar(Landroid/telecom/Connection;C)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "nextChar"    # C
 
+    .line 855
     return-void
 .end method
 
 .method public onPostDialWait(Landroid/telecom/Connection;Ljava/lang/String;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "remaining"    # Ljava/lang/String;
 
+    .line 854
     return-void
 .end method
 
 .method public onRemoteRttRequest(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 882
     return-void
 .end method
 
 .method public onRingbackRequested(Landroid/telecom/Connection;Z)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "ringback"    # Z
 
+    .line 856
     return-void
 .end method
 
 .method public onRttInitiationFailure(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "reason"    # I
 
+    .line 880
     return-void
 .end method
 
 .method public onRttInitiationSuccess(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 879
     return-void
 .end method
 
 .method public onRttSessionRemotelyTerminated(Landroid/telecom/Connection;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 881
     return-void
 .end method
 
 .method public onStateChanged(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "state"    # I
 
+    .line 848
     return-void
 .end method
 
 .method public onStatusHintsChanged(Landroid/telecom/Connection;Landroid/telecom/StatusHints;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
+    .line 864
     return-void
 .end method
 
 .method public onSupportedAudioRoutesChanged(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "supportedAudioRoutes"    # I
 
+    .line 860
     return-void
 .end method
 
 .method public onVideoProviderChanged(Landroid/telecom/Connection;Landroid/telecom/Connection$VideoProvider;)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
+    .line 862
     return-void
 .end method
 
 .method public onVideoStateChanged(Landroid/telecom/Connection;I)V
     .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "videoState"    # I
 
+    .line 852
     return-void
 .end method

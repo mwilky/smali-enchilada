@@ -27,17 +27,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/app/ChooserActivity;Landroid/widget/AbsListView;)V
     .locals 1
+    .param p1, "this$0"    # Lcom/android/internal/app/ChooserActivity;
+    .param p2, "listView"    # Landroid/widget/AbsListView;
 
+    .line 1664
     iput-object p1, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
+    .line 1661
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedViewType:I
 
+    .line 1665
     iput-object p2, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mListView:Landroid/widget/AbsListView;
 
+    .line 1666
     return-void
 .end method
 
@@ -46,14 +52,17 @@
 .method public onChanged()V
     .locals 8
 
+    .line 1670
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/ChooserActivity;->mResolverDrawerLayout:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     if-nez v0, :cond_0
 
+    .line 1671
     return-void
 
+    .line 1674
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
@@ -65,13 +74,19 @@
 
     move-result v0
 
+    .line 1675
+    .local v0, "chooserTargetRows":I
     const/4 v1, 0x0
 
+    .line 1676
+    .local v1, "offset":I
     const/4 v2, 0x0
 
+    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_3
 
+    .line 1677
     iget-object v3, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v3}, Lcom/android/internal/app/ChooserActivity;->access$1100(Lcom/android/internal/app/ChooserActivity;)Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
@@ -84,6 +99,8 @@
 
     add-int/2addr v3, v2
 
+    .line 1678
+    .local v3, "pos":I
     iget-object v4, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
     invoke-static {v4}, Lcom/android/internal/app/ChooserActivity;->access$1100(Lcom/android/internal/app/ChooserActivity;)Lcom/android/internal/app/ChooserActivity$ChooserRowAdapter;
@@ -94,14 +111,18 @@
 
     move-result v4
 
+    .line 1679
+    .local v4, "vt":I
     iget v5, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedViewType:I
 
     if-eq v4, v5, :cond_1
 
+    .line 1680
     const/4 v5, 0x0
 
     iput-object v5, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedView:Landroid/view/View;
 
+    .line 1682
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
@@ -117,6 +138,8 @@
 
     move-result-object v5
 
+    .line 1683
+    .local v5, "v":Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v6
@@ -125,26 +148,39 @@
 
     iget v6, v6, Lcom/android/internal/app/ChooserActivity$RowViewHolder;->measuredRowHeight:I
 
+    .line 1685
+    .local v6, "height":I
     add-int/2addr v1, v6
 
+    .line 1687
     if-ltz v4, :cond_2
 
+    .line 1688
     iput v4, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedViewType:I
 
+    .line 1689
     iput-object v5, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedView:Landroid/view/View;
 
     goto :goto_1
 
+    .line 1691
     :cond_2
     const/4 v7, -0x1
 
     iput v7, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->mCachedViewType:I
 
+    .line 1676
+    .end local v3    # "pos":I
+    .end local v4    # "vt":I
+    .end local v5    # "v":Landroid/view/View;
+    .end local v6    # "height":I
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 1695
+    .end local v2    # "i":I
     :cond_3
     iget-object v2, p0, Lcom/android/internal/app/ChooserActivity$OffsetDataSetObserver;->this$0:Lcom/android/internal/app/ChooserActivity;
 
@@ -152,5 +188,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/ResolverDrawerLayout;->setCollapsibleHeightReserved(I)V
 
+    .line 1696
     return-void
 .end method

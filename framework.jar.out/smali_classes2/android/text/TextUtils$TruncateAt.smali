@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 1173
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "START"
@@ -50,6 +51,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->START:Landroid/text/TextUtils$TruncateAt;
 
+    .line 1174
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "MIDDLE"
@@ -60,6 +62,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->MIDDLE:Landroid/text/TextUtils$TruncateAt;
 
+    .line 1175
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "END"
@@ -70,6 +73,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
+    .line 1176
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "MARQUEE"
@@ -80,6 +84,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->MARQUEE:Landroid/text/TextUtils$TruncateAt;
 
+    .line 1180
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "END_SMALL"
@@ -90,6 +95,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->END_SMALL:Landroid/text/TextUtils$TruncateAt;
 
+    .line 1172
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/text/TextUtils$TruncateAt;
@@ -127,6 +133,7 @@
         }
     .end annotation
 
+    .line 1172
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -134,7 +141,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/text/TextUtils$TruncateAt;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 1172
     const-class v0, Landroid/text/TextUtils$TruncateAt;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -149,6 +158,7 @@
 .method public static values()[Landroid/text/TextUtils$TruncateAt;
     .locals 1
 
+    .line 1172
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->$VALUES:[Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0}, [Landroid/text/TextUtils$TruncateAt;->clone()Ljava/lang/Object;

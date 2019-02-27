@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,43 +40,63 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothCodecConfig;
     .locals 28
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 214
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v14
 
+    .line 215
+    .local v14, "codecType":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
+    .line 216
+    .local v15, "codecPriority":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
+    .line 217
+    .local v16, "sampleRate":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
+    .line 218
+    .local v17, "bitsPerSample":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
+    .line 219
+    .local v18, "channelMode":I
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v19
 
+    .line 220
+    .local v19, "codecSpecific1":J
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v21
 
+    .line 221
+    .local v21, "codecSpecific2":J
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v23
 
+    .line 222
+    .local v23, "codecSpecific3":J
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v25
 
+    .line 223
+    .local v25, "codecSpecific4":J
     new-instance v27, Landroid/bluetooth/BluetoothCodecConfig;
 
     move-object/from16 v0, v27
@@ -106,6 +127,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 212
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothCodecConfig$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothCodecConfig;
 
     move-result-object p1
@@ -115,7 +137,9 @@
 
 .method public newArray(I)[Landroid/bluetooth/BluetoothCodecConfig;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 231
     new-array v0, p1, [Landroid/bluetooth/BluetoothCodecConfig;
 
     return-object v0
@@ -124,6 +148,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 212
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothCodecConfig$1;->newArray(I)[Landroid/bluetooth/BluetoothCodecConfig;
 
     move-result-object p1

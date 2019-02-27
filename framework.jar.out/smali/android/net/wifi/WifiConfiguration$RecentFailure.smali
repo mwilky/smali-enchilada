@@ -28,8 +28,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 1628
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1642
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$RecentFailure;->mAssociationStatus:I
@@ -42,16 +44,19 @@
 .method public clear()V
     .locals 1
 
+    .line 1654
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$RecentFailure;->mAssociationStatus:I
 
+    .line 1655
     return-void
 .end method
 
 .method public getAssociationStatus()I
     .locals 1
 
+    .line 1660
     iget v0, p0, Landroid/net/wifi/WifiConfiguration$RecentFailure;->mAssociationStatus:I
 
     return v0
@@ -59,8 +64,11 @@
 
 .method public setAssociationStatus(I)V
     .locals 0
+    .param p1, "status"    # I
 
+    .line 1648
     iput p1, p0, Landroid/net/wifi/WifiConfiguration$RecentFailure;->mAssociationStatus:I
 
+    .line 1649
     return-void
 .end method

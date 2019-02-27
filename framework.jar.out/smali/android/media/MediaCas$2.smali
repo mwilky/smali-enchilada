@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaCas;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaCas;
 
+    .line 145
     iput-object p1, p0, Landroid/media/MediaCas$2;->this$0:Landroid/media/MediaCas;
 
     invoke-direct {p0}, Landroid/hardware/cas/V1_0/ICasListener$Stub;-><init>()V
@@ -33,6 +35,8 @@
 # virtual methods
 .method public onEvent(IILjava/util/ArrayList;)V
     .locals 3
+    .param p1, "event"    # I
+    .param p2, "arg"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -48,6 +52,8 @@
         }
     .end annotation
 
+    .line 149
+    .local p3, "data":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     iget-object v0, p0, Landroid/media/MediaCas$2;->this$0:Landroid/media/MediaCas;
 
     invoke-static {v0}, Landroid/media/MediaCas;->access$200(Landroid/media/MediaCas;)Landroid/media/MediaCas$EventHandler;
@@ -68,5 +74,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaCas$EventHandler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 151
     return-void
 .end method

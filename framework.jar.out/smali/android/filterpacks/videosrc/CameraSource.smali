@@ -78,6 +78,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 80
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -111,45 +112,56 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 105
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
+    .line 47
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraId:I
 
+    .line 51
     const/16 v0, 0x140
 
     iput v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
 
+    .line 55
     const/16 v0, 0xf0
 
     iput v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mHeight:I
 
+    .line 59
     const/16 v0, 0x1e
 
     iput v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mFps:I
 
+    .line 67
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mWaitForNewFrame:Z
 
+    .line 339
     new-instance v0, Landroid/filterpacks/videosrc/CameraSource$1;
 
     invoke-direct {v0, p0}, Landroid/filterpacks/videosrc/CameraSource$1;-><init>(Landroid/filterpacks/videosrc/CameraSource;)V
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->onCameraFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
+    .line 106
     const/16 v0, 0x10
 
     new-array v1, v0, [F
 
     iput-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraTransform:[F
 
+    .line 107
     new-array v0, v0, [F
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mMappedCoords:[F
 
+    .line 109
     const-string v0, "CameraSource"
 
     const/4 v1, 0x2
@@ -160,12 +172,15 @@
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
+    .line 110
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/filterpacks/videosrc/CameraSource;)Z
     .locals 1
+    .param p0, "x0"    # Landroid/filterpacks/videosrc/CameraSource;
 
+    .line 42
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     return v0
@@ -173,7 +188,10 @@
 
 .method static synthetic access$102(Landroid/filterpacks/videosrc/CameraSource;Z)Z
     .locals 0
+    .param p0, "x0"    # Landroid/filterpacks/videosrc/CameraSource;
+    .param p1, "x1"    # Z
 
+    .line 42
     iput-boolean p1, p0, Landroid/filterpacks/videosrc/CameraSource;->mNewFrameAvailable:Z
 
     return p1
@@ -182,6 +200,7 @@
 .method private createFormats()V
     .locals 3
 
+    .line 120
     iget v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
 
     iget v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mHeight:I
@@ -194,16 +213,22 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mOutputFormat:Landroid/filterfw/core/MutableFrameFormat;
 
+    .line 123
     return-void
 .end method
 
 .method private findClosestFpsRange(ILandroid/hardware/Camera$Parameters;)[I
     .locals 10
+    .param p1, "fps"    # I
+    .param p2, "params"    # Landroid/hardware/Camera$Parameters;
 
+    .line 317
     invoke-virtual {p2}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewFpsRange()Ljava/util/List;
 
     move-result-object v0
 
+    .line 318
+    .local v0, "supportedFpsRanges":Ljava/util/List;, "Ljava/util/List<[I>;"
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -212,6 +237,8 @@
 
     check-cast v2, [I
 
+    .line 319
+    .local v2, "closestRange":[I
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -231,6 +258,8 @@
 
     check-cast v4, [I
 
+    .line 320
+    .local v4, "range":[I
     aget v6, v4, v1
 
     mul-int/lit16 v7, p1, 0x3e8
@@ -255,11 +284,15 @@
 
     if-ge v6, v5, :cond_0
 
+    .line 326
     move-object v2, v4
 
+    .line 328
+    .end local v4    # "range":[I
     :cond_0
     goto :goto_0
 
+    .line 329
     :cond_1
     iget-boolean v3, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
@@ -313,21 +346,32 @@
 
     invoke-static {v3, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 336
     :cond_2
     return-object v2
 .end method
 
 .method private findClosestSize(IILandroid/hardware/Camera$Parameters;)[I
     .locals 9
+    .param p1, "width"    # I
+    .param p2, "height"    # I
+    .param p3, "parameters"    # Landroid/hardware/Camera$Parameters;
 
+    .line 277
     invoke-virtual {p3}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewSizes()Ljava/util/List;
 
     move-result-object v0
 
+    .line 278
+    .local v0, "previewSizes":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     const/4 v1, -0x1
 
+    .line 279
+    .local v1, "closestWidth":I
     const/4 v2, -0x1
 
+    .line 280
+    .local v2, "closestHeight":I
     const/4 v3, 0x0
 
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -338,6 +382,8 @@
 
     iget v4, v4, Landroid/hardware/Camera$Size;->width:I
 
+    .line 281
+    .local v4, "smallestWidth":I
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -346,6 +392,8 @@
 
     iget v5, v5, Landroid/hardware/Camera$Size;->height:I
 
+    .line 282
+    .local v5, "smallestHeight":I
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -363,6 +411,8 @@
 
     check-cast v7, Landroid/hardware/Camera$Size;
 
+    .line 287
+    .local v7, "size":Landroid/hardware/Camera$Size;
     iget v8, v7, Landroid/hardware/Camera$Size;->width:I
 
     if-gt v8, p1, :cond_0
@@ -379,10 +429,13 @@
 
     if-lt v8, v2, :cond_0
 
+    .line 291
     iget v1, v7, Landroid/hardware/Camera$Size;->width:I
 
+    .line 292
     iget v2, v7, Landroid/hardware/Camera$Size;->height:I
 
+    .line 294
     :cond_0
     iget v8, v7, Landroid/hardware/Camera$Size;->width:I
 
@@ -392,27 +445,36 @@
 
     if-ge v8, v5, :cond_1
 
+    .line 296
     iget v4, v7, Landroid/hardware/Camera$Size;->width:I
 
+    .line 297
     iget v5, v7, Landroid/hardware/Camera$Size;->height:I
 
+    .line 299
+    .end local v7    # "size":Landroid/hardware/Camera$Size;
     :cond_1
     goto :goto_0
 
+    .line 300
     :cond_2
     const/4 v6, -0x1
 
     if-ne v1, v6, :cond_3
 
+    .line 302
     move v1, v4
 
+    .line 303
     move v2, v5
 
+    .line 306
     :cond_3
     iget-boolean v6, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v6, :cond_4
 
+    .line 307
     const-string v6, "CameraSource"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -453,6 +515,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 312
     :cond_4
     const/4 v6, 0x2
 
@@ -466,6 +529,8 @@
 
     move-object v3, v6
 
+    .line 313
+    .local v3, "closestSize":[I
     return-object v3
 .end method
 
@@ -473,7 +538,9 @@
 # virtual methods
 .method public close(Landroid/filterfw/core/FilterContext;)V
     .locals 2
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 213
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -484,27 +551,35 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 215
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->release()V
 
+    .line 216
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
+    .line 217
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
 
+    .line 218
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
+    .line 219
     return-void
 .end method
 
 .method public fieldPortValueUpdated(Ljava/lang/String;Landroid/filterfw/core/FilterContext;)V
     .locals 4
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 230
     const-string v0, "framerate"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -513,8 +588,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 231
     invoke-virtual {p0}, Landroid/filterpacks/videosrc/CameraSource;->getCameraParameters()Landroid/hardware/Camera$Parameters;
 
+    .line 232
     iget v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mFps:I
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -523,6 +600,8 @@
 
     move-result-object v0
 
+    .line 233
+    .local v0, "closestRange":[I
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     const/4 v2, 0x0
@@ -535,12 +614,15 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/hardware/Camera$Parameters;->setPreviewFpsRange(II)V
 
+    .line 235
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     iget-object v2, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1, v2}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
+    .line 237
+    .end local v0    # "closestRange":[I
     :cond_0
     return-void
 .end method
@@ -550,17 +632,22 @@
 
     monitor-enter p0
 
+    .line 240
     const/4 v0, 0x0
 
+    .line 241
+    .local v0, "closeCamera":Z
     :try_start_0
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v1, :cond_1
 
+    .line 242
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     if-nez v1, :cond_0
 
+    .line 243
     iget v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraId:I
 
     invoke-static {v1}, Landroid/hardware/Camera;->open(I)Landroid/hardware/Camera;
@@ -569,8 +656,10 @@
 
     iput-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
+    .line 244
     const/4 v0, 0x1
 
+    .line 246
     :cond_0
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
@@ -580,16 +669,20 @@
 
     iput-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
+    .line 248
     if-eqz v0, :cond_1
 
+    .line 249
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v1}, Landroid/hardware/Camera;->release()V
 
+    .line 250
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
+    .line 254
     :cond_1
     iget v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
 
@@ -601,18 +694,22 @@
 
     move-result-object v1
 
+    .line 255
+    .local v1, "closestSize":[I
     const/4 v2, 0x0
 
     aget v3, v1, v2
 
     iput v3, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
 
+    .line 256
     const/4 v3, 0x1
 
     aget v4, v1, v3
 
     iput v4, p0, Landroid/filterpacks/videosrc/CameraSource;->mHeight:I
 
+    .line 257
     iget-object v4, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     iget v5, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
@@ -621,6 +718,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/hardware/Camera$Parameters;->setPreviewSize(II)V
 
+    .line 259
     iget v4, p0, Landroid/filterpacks/videosrc/CameraSource;->mFps:I
 
     iget-object v5, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -629,6 +727,8 @@
 
     move-result-object v4
 
+    .line 261
+    .local v4, "closestRange":[I
     iget-object v5, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     aget v2, v4, v2
@@ -637,6 +737,7 @@
 
     invoke-virtual {v5, v2, v3}, Landroid/hardware/Camera$Parameters;->setPreviewFpsRange(II)V
 
+    .line 264
     iget-object v2, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -645,17 +746,24 @@
 
     return-object v2
 
+    .line 239
+    .end local v0    # "closeCamera":Z
+    .end local v1    # "closestSize":[I
+    .end local v4    # "closestRange":[I
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
+    .end local p0    # "this":Landroid/filterpacks/videosrc/CameraSource;
     throw v0
 .end method
 
 .method public open(Landroid/filterfw/core/FilterContext;)V
     .locals 5
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 134
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -666,6 +774,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 136
     :cond_0
     iget v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraId:I
 
@@ -675,16 +784,20 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
+    .line 139
     invoke-virtual {p0}, Landroid/filterpacks/videosrc/CameraSource;->getCameraParameters()Landroid/hardware/Camera$Parameters;
 
+    .line 140
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v1}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
+    .line 143
     invoke-direct {p0}, Landroid/filterpacks/videosrc/CameraSource;->createFormats()V
 
+    .line 146
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v0
@@ -703,6 +816,7 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraFrame:Landroid/filterfw/core/GLFrame;
 
+    .line 149
     new-instance v0, Landroid/graphics/SurfaceTexture;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraFrame:Landroid/filterfw/core/GLFrame;
@@ -715,6 +829,7 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
+    .line 151
     :try_start_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
@@ -724,27 +839,35 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 155
     nop
 
+    .line 158
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->onCameraFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
     invoke-virtual {v0, v1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
+    .line 160
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mNewFrameAvailable:Z
 
+    .line 161
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
 
+    .line 162
     return-void
 
+    .line 152
     :catch_0
     move-exception v0
 
+    .line 153
+    .local v0, "e":Ljava/io/IOException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -755,6 +878,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 154
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v3
@@ -776,7 +900,9 @@
 
 .method public prepare(Landroid/filterfw/core/FilterContext;)V
     .locals 2
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 127
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -787,6 +913,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 129
     :cond_0
     new-instance v0, Landroid/filterfw/core/ShaderProgram;
 
@@ -796,14 +923,17 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
+    .line 130
     return-void
 .end method
 
 .method public process(Landroid/filterfw/core/FilterContext;)V
     .locals 19
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
     move-object/from16 v1, p0
 
+    .line 166
     iget-boolean v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -814,6 +944,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 168
     :cond_0
     iget-boolean v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mWaitForNewFrame:Z
 
@@ -821,19 +952,27 @@
 
     if-eqz v0, :cond_4
 
+    .line 169
     move v0, v2
 
+    .line 169
+    .local v0, "waitCount":I
     :goto_0
     move v3, v0
 
+    .line 170
+    .end local v0    # "waitCount":I
+    .local v3, "waitCount":I
     iget-boolean v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mNewFrameAvailable:Z
 
     if-nez v0, :cond_3
 
+    .line 171
     const/16 v0, 0xa
 
     if-eq v3, v0, :cond_2
 
+    .line 175
     const-wide/16 v4, 0x64
 
     :try_start_0
@@ -841,15 +980,19 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 178
     :cond_1
     :goto_1
     goto :goto_2
 
+    .line 176
     :catch_0
     move-exception v0
 
     move-object v4, v0
 
+    .line 177
+    .local v0, "e":Ljava/lang/InterruptedException;
     iget-boolean v4, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v4, :cond_1
@@ -860,13 +1003,17 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 177
+    .end local v0    # "e":Ljava/lang/InterruptedException;
     goto :goto_1
 
+    .line 169
     :goto_2
     move v0, v3
 
     goto :goto_0
 
+    .line 172
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -876,9 +1023,11 @@
 
     throw v0
 
+    .line 180
     :cond_3
     iput-boolean v2, v1, Landroid/filterpacks/videosrc/CameraSource;->mNewFrameAvailable:Z
 
+    .line 181
     iget-boolean v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_4
@@ -889,11 +1038,14 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 184
+    .end local v3    # "waitCount":I
     :cond_4
     iget-object v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
+    .line 186
     iget-boolean v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_5
@@ -920,6 +1072,7 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 187
     :cond_5
     iget-object v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
@@ -927,6 +1080,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
+    .line 188
     iget-object v4, v1, Landroid/filterpacks/videosrc/CameraSource;->mMappedCoords:[F
 
     const/4 v5, 0x0
@@ -941,6 +1095,7 @@
 
     invoke-static/range {v4 .. v9}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
+    .line 191
     iget-object v10, v1, Landroid/filterpacks/videosrc/CameraSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
     iget-object v0, v1, Landroid/filterpacks/videosrc/CameraSource;->mMappedCoords:[F
@@ -991,6 +1146,7 @@
 
     invoke-virtual/range {v10 .. v18}, Landroid/filterfw/core/ShaderProgram;->setSourceRegion(FFFFFFFF)Z
 
+    .line 196
     invoke-virtual/range {p1 .. p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v0
@@ -1001,18 +1157,23 @@
 
     move-result-object v0
 
+    .line 197
+    .local v0, "output":Landroid/filterfw/core/Frame;
     iget-object v2, v1, Landroid/filterpacks/videosrc/CameraSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
     iget-object v3, v1, Landroid/filterpacks/videosrc/CameraSource;->mCameraFrame:Landroid/filterfw/core/GLFrame;
 
     invoke-virtual {v2, v3, v0}, Landroid/filterfw/core/ShaderProgram;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
 
+    .line 199
     iget-object v2, v1, Landroid/filterpacks/videosrc/CameraSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v2}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
 
     move-result-wide v2
 
+    .line 200
+    .local v2, "timestamp":J
     iget-boolean v4, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v4, :cond_6
@@ -1045,15 +1206,19 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 201
     :cond_6
     invoke-virtual {v0, v2, v3}, Landroid/filterfw/core/Frame;->setTimestamp(J)V
 
+    .line 203
     const-string/jumbo v4, "video"
 
     invoke-virtual {v1, v4, v0}, Landroid/filterpacks/videosrc/CameraSource;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
+    .line 206
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
+    .line 208
     iget-boolean v4, v1, Landroid/filterpacks/videosrc/CameraSource;->mLogVerbose:Z
 
     if-eqz v4, :cond_7
@@ -1064,15 +1229,18 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 209
     :cond_7
     return-void
 .end method
 
 .method public declared-synchronized setCameraParameters(Landroid/hardware/Camera$Parameters;)V
     .locals 2
+    .param p1, "params"    # Landroid/hardware/Camera$Parameters;
 
     monitor-enter p0
 
+    .line 269
     :try_start_0
     iget v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mWidth:I
 
@@ -1080,14 +1248,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/hardware/Camera$Parameters;->setPreviewSize(II)V
 
+    .line 270
     iput-object p1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
 
+    .line 271
     invoke-virtual {p0}, Landroid/filterpacks/videosrc/CameraSource;->isOpen()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 272
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCamera:Landroid/hardware/Camera;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraParameters:Landroid/hardware/Camera$Parameters;
@@ -1096,22 +1267,27 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 274
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 268
+    .end local p1    # "params":Landroid/hardware/Camera$Parameters;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
+    .end local p0    # "this":Landroid/filterpacks/videosrc/CameraSource;
     throw p1
 .end method
 
 .method public setupPorts()V
     .locals 2
 
+    .line 115
     const-string/jumbo v0, "video"
 
     const/4 v1, 0x3
@@ -1122,20 +1298,25 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/videosrc/CameraSource;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
+    .line 117
     return-void
 .end method
 
 .method public tearDown(Landroid/filterfw/core/FilterContext;)V
     .locals 1
+    .param p1, "context"    # Landroid/filterfw/core/FilterContext;
 
+    .line 223
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraFrame:Landroid/filterfw/core/GLFrame;
 
     if-eqz v0, :cond_0
 
+    .line 224
     iget-object v0, p0, Landroid/filterpacks/videosrc/CameraSource;->mCameraFrame:Landroid/filterfw/core/GLFrame;
 
     invoke-virtual {v0}, Landroid/filterfw/core/GLFrame;->release()Landroid/filterfw/core/Frame;
 
+    .line 226
     :cond_0
     return-void
 .end method

@@ -32,7 +32,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;ILjava/lang/String;Ljava/lang/String;Landroid/service/euicc/IUpdateSubscriptionNicknameCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
+    .line 577
     iput-object p1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$11;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iput p2, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$11;->val$slotId:I
@@ -53,6 +55,7 @@
 .method public run()V
     .locals 4
 
+    .line 580
     iget-object v0, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$11;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iget-object v0, v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;->this$0:Landroid/service/euicc/EuiccService;
@@ -63,10 +66,13 @@
 
     iget-object v3, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$11;->val$nickname:Ljava/lang/String;
 
+    .line 581
     invoke-virtual {v0, v1, v2, v3}, Landroid/service/euicc/EuiccService;->onUpdateSubscriptionNickname(ILjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
+    .line 583
+    .local v0, "result":I
     :try_start_0
     iget-object v1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$11;->val$callback:Landroid/service/euicc/IUpdateSubscriptionNicknameCallback;
 
@@ -74,11 +80,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 586
     goto :goto_0
 
+    .line 584
     :catch_0
     move-exception v1
 
+    .line 587
     :goto_0
     return-void
 .end method

@@ -11,6 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,8 +19,11 @@
 
 .method public static setupDiskCache(Ljava/io/File;)V
     .locals 0
+    .param p0, "cacheDir"    # Ljava/io/File;
 
+    .line 35
     sput-object p0, Landroid/renderscript/RenderScriptCacheDir;->mCacheDir:Ljava/io/File;
 
+    .line 36
     return-void
 .end method

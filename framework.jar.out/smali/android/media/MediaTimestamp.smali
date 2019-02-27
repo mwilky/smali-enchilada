@@ -19,6 +19,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .line 42
     new-instance v6, Landroid/media/MediaTimestamp;
 
     const-wide/16 v1, -0x1
@@ -39,32 +40,45 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 86
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/media/MediaTimestamp;->mediaTimeUs:J
 
+    .line 87
     iput-wide v0, p0, Landroid/media/MediaTimestamp;->nanoTime:J
 
+    .line 88
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/media/MediaTimestamp;->clockRate:F
 
+    .line 89
     return-void
 .end method
 
 .method constructor <init>(JJF)V
     .locals 0
+    .param p1, "mediaUs"    # J
+    .param p3, "systemNs"    # J
+    .param p5, "rate"    # F
 
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 79
     iput-wide p1, p0, Landroid/media/MediaTimestamp;->mediaTimeUs:J
 
+    .line 80
     iput-wide p3, p0, Landroid/media/MediaTimestamp;->nanoTime:J
 
+    .line 81
     iput p5, p0, Landroid/media/MediaTimestamp;->clockRate:F
 
+    .line 82
     return-void
 .end method
 
@@ -72,13 +86,16 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
+    .param p1, "obj"    # Ljava/lang/Object;
 
+    .line 93
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
+    .line 94
     :cond_0
     const/4 v1, 0x0
 
@@ -96,11 +113,14 @@
 
     goto :goto_1
 
+    .line 96
     :cond_1
     move-object v2, p1
 
     check-cast v2, Landroid/media/MediaTimestamp;
 
+    .line 97
+    .local v2, "that":Landroid/media/MediaTimestamp;
     iget-wide v3, p0, Landroid/media/MediaTimestamp;->mediaTimeUs:J
 
     iget-wide v5, v2, Landroid/media/MediaTimestamp;->mediaTimeUs:J
@@ -133,6 +153,8 @@
     :goto_0
     return v0
 
+    .line 94
+    .end local v2    # "that":Landroid/media/MediaTimestamp;
     :cond_3
     :goto_1
     return v1
@@ -141,6 +163,7 @@
 .method public getAnchorMediaTimeUs()J
     .locals 2
 
+    .line 48
     iget-wide v0, p0, Landroid/media/MediaTimestamp;->mediaTimeUs:J
 
     return-wide v0
@@ -149,6 +172,7 @@
 .method public getAnchorSytemNanoTime()J
     .locals 2
 
+    .line 56
     iget-wide v0, p0, Landroid/media/MediaTimestamp;->nanoTime:J
 
     return-wide v0
@@ -157,6 +181,7 @@
 .method public getMediaClockRate()F
     .locals 1
 
+    .line 67
     iget v0, p0, Landroid/media/MediaTimestamp;->clockRate:F
 
     return v0
@@ -165,6 +190,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 104
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

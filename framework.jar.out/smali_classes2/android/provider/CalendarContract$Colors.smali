@@ -27,6 +27,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 2506
     const-string v0, "content://com.android.calendar/colors"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -41,7 +42,9 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 2511
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2512
     return-void
 .end method

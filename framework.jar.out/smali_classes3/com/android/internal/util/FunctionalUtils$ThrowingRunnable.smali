@@ -24,18 +24,24 @@
 .method public run()V
     .locals 2
 
+    .line 74
     :try_start_0
     invoke-interface {p0}, Lcom/android/internal/util/FunctionalUtils$ThrowingRunnable;->runOrThrow()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 77
     nop
 
+    .line 78
     return-void
 
+    .line 75
     :catch_0
     move-exception v0
 
+    .line 76
+    .local v0, "ex":Ljava/lang/Exception;
     invoke-static {v0}, Landroid/util/ExceptionUtils;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v1

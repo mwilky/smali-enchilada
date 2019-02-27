@@ -25,12 +25,18 @@
 # direct methods
 .method public constructor <init>([Ljava/security/cert/X509Certificate;Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedProofOfRotation;)V
     .locals 0
+    .param p1, "certs"    # [Ljava/security/cert/X509Certificate;
+    .param p2, "por"    # Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedProofOfRotation;
 
+    .line 599
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 600
     iput-object p1, p0, Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedSigner;->certs:[Ljava/security/cert/X509Certificate;
 
+    .line 601
     iput-object p2, p0, Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedSigner;->por:Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedProofOfRotation;
 
+    .line 602
     return-void
 .end method

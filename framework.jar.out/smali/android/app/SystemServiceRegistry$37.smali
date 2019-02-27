@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 503
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,12 +36,14 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/os/storage/StorageManager;
     .locals 2
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 506
     new-instance v0, Landroid/os/storage/StorageManager;
 
     iget-object v1, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
@@ -66,6 +69,7 @@
         }
     .end annotation
 
+    .line 503
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$37;->createService(Landroid/app/ContextImpl;)Landroid/os/storage/StorageManager;
 
     move-result-object p1

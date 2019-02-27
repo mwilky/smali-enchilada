@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/net/lowpan/LowpanManager;Ljava/lang/String;Landroid/net/lowpan/ILowpanInterface;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/net/lowpan/LowpanManager;
 
+    .line 153
     iput-object p1, p0, Landroid/net/lowpan/LowpanManager$1;->this$0:Landroid/net/lowpan/LowpanManager;
 
     iput-object p2, p0, Landroid/net/lowpan/LowpanManager$1;->val$ifaceName:Ljava/lang/String;
@@ -45,6 +47,7 @@
 .method public binderDied()V
     .locals 4
 
+    .line 156
     iget-object v0, p0, Landroid/net/lowpan/LowpanManager$1;->this$0:Landroid/net/lowpan/LowpanManager;
 
     invoke-static {v0}, Landroid/net/lowpan/LowpanManager;->access$000(Landroid/net/lowpan/LowpanManager;)Ljava/util/Map;
@@ -53,9 +56,11 @@
 
     monitor-enter v0
 
+    .line 157
     :try_start_0
     iget-object v1, p0, Landroid/net/lowpan/LowpanManager$1;->this$0:Landroid/net/lowpan/LowpanManager;
 
+    .line 158
     invoke-static {v1}, Landroid/net/lowpan/LowpanManager;->access$000(Landroid/net/lowpan/LowpanManager;)Ljava/util/Map;
 
     move-result-object v1
@@ -68,8 +73,11 @@
 
     check-cast v1, Landroid/net/lowpan/LowpanInterface;
 
+    .line 160
+    .local v1, "iface":Landroid/net/lowpan/LowpanInterface;
     if-eqz v1, :cond_0
 
+    .line 161
     invoke-virtual {v1}, Landroid/net/lowpan/LowpanInterface;->getService()Landroid/net/lowpan/ILowpanInterface;
 
     move-result-object v2
@@ -78,6 +86,7 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 162
     iget-object v2, p0, Landroid/net/lowpan/LowpanManager$1;->this$0:Landroid/net/lowpan/LowpanManager;
 
     invoke-static {v2}, Landroid/net/lowpan/LowpanManager;->access$000(Landroid/net/lowpan/LowpanManager;)Ljava/util/Map;
@@ -88,11 +97,15 @@
 
     invoke-interface {v2, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 164
+    .end local v1    # "iface":Landroid/net/lowpan/LowpanInterface;
     :cond_0
     monitor-exit v0
 
+    .line 165
     return-void
 
+    .line 164
     :catchall_0
     move-exception v1
 

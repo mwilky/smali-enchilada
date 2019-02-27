@@ -45,47 +45,50 @@
 
 .field public static final config_gestureKeyVibePattern:I = 0x502000e
 
-.field public static final config_oemBoostAppLaunchList:I = 0x502000f
+.field public static final config_nonBlockableNotificationPackages:I = 0x502000f
 
-.field public static final config_oemDeviceIdleWhiteList:I = 0x5020010
+.field public static final config_oemBoostAppLaunchList:I = 0x5020010
 
-.field public static final config_oemForegroundProcesses:I = 0x5020011
+.field public static final config_oemDeviceIdleWhiteList:I = 0x5020011
 
-.field public static final config_oemImportantProcesses:I = 0x5020012
+.field public static final config_oemForegroundProcesses:I = 0x5020012
 
-.field public static final config_oneplus_address_prefix:I = 0x5020013
+.field public static final config_oemImportantProcesses:I = 0x5020013
 
-.field public static final config_oneplus_address_segment:I = 0x5020014
+.field public static final config_oneplus_address_prefix:I = 0x5020014
 
-.field public static final embryo_blacklist:I = 0x5020015
+.field public static final config_oneplus_address_segment:I = 0x5020015
 
-.field public static final screen_compat_default_enabled_list:I = 0x5020016
+.field public static final embryo_blacklist:I = 0x5020016
 
-.field public static final screen_compat_default_fullscreen_list:I = 0x5020017
+.field public static final screen_compat_default_enabled_list:I = 0x5020017
 
-.field public static final screen_compat_third_party_list:I = 0x5020018
+.field public static final screen_compat_default_fullscreen_list:I = 0x5020018
 
-.field public static final system_app_list_h2:I = 0x5020019
+.field public static final screen_compat_third_party_list:I = 0x5020019
 
-.field public static final system_app_list_o2:I = 0x502001a
+.field public static final system_app_list_h2:I = 0x502001a
 
-.field public static final wifi_scan_whitelist:I = 0x502001b
+.field public static final system_app_list_o2:I = 0x502001b
 
-.field public static final zzz_op_im_call_game_mode_list:I = 0x502001c
+.field public static final wifi_scan_whitelist:I = 0x502001c
 
-.field public static final zzz_op_im_call_game_mode_special_action:I = 0x502001d
+.field public static final zzz_op_im_call_game_mode_list:I = 0x502001d
 
-.field public static final zzz_op_im_call_game_mode_special_intent:I = 0x502001e
+.field public static final zzz_op_im_call_game_mode_special_action:I = 0x502001e
 
-.field public static final zzz_op_quick_pay_payments_config:I = 0x502001f
+.field public static final zzz_op_im_call_game_mode_special_intent:I = 0x502001f
 
-.field public static final zzz_op_quick_pay_switch_strings:I = 0x5020020
+.field public static final zzz_op_quick_pay_payments_config:I = 0x5020020
+
+.field public static final zzz_op_quick_pay_switch_strings:I = 0x5020021
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

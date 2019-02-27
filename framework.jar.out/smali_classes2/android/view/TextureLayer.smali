@@ -12,9 +12,13 @@
 # direct methods
 .method private constructor <init>(Landroid/view/ThreadedRenderer;J)V
     .locals 3
+    .param p1, "renderer"    # Landroid/view/ThreadedRenderer;
+    .param p2, "deferredUpdater"    # J
 
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
     if-eqz p1, :cond_0
 
     const-wide/16 v0, 0x0
@@ -23,16 +27,20 @@
 
     if-eqz v0, :cond_0
 
+    .line 43
     iput-object p1, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
+    .line 44
     new-instance v0, Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-direct {v0, p2, p3}, Lcom/android/internal/util/VirtualRefBasePtr;-><init>(J)V
 
     iput-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
+    .line 45
     return-void
 
+    .line 40
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -67,7 +75,10 @@
 
 .method static adoptTextureLayer(Landroid/view/ThreadedRenderer;J)Landroid/view/TextureLayer;
     .locals 1
+    .param p0, "renderer"    # Landroid/view/ThreadedRenderer;
+    .param p1, "layer"    # J
 
+    .line 143
     new-instance v0, Landroid/view/TextureLayer;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/view/TextureLayer;-><init>(Landroid/view/ThreadedRenderer;J)V
@@ -94,7 +105,9 @@
 # virtual methods
 .method public copyInto(Landroid/graphics/Bitmap;)Z
     .locals 1
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
+    .line 93
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0, p1}, Landroid/view/ThreadedRenderer;->copyLayerInto(Landroid/view/TextureLayer;Landroid/graphics/Bitmap;)Z
@@ -107,35 +120,43 @@
 .method public destroy()V
     .locals 2
 
+    .line 71
     invoke-virtual {p0}, Landroid/view/TextureLayer;->isValid()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 73
     return-void
 
+    .line 75
     :cond_0
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0}, Landroid/view/ThreadedRenderer;->onLayerDestroyed(Landroid/view/TextureLayer;)V
 
+    .line 76
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
+    .line 77
     iget-object v1, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v1}, Lcom/android/internal/util/VirtualRefBasePtr;->release()V
 
+    .line 78
     iput-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
+    .line 79
     return-void
 .end method
 
 .method public detachSurfaceTexture()V
     .locals 3
 
+    .line 125
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     iget-object v1, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
@@ -146,12 +167,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ThreadedRenderer;->detachSurfaceTexture(J)V
 
+    .line 126
     return-void
 .end method
 
 .method public getDeferredLayerUpdater()J
     .locals 2
 
+    .line 82
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -164,6 +187,7 @@
 .method public getLayerHandle()J
     .locals 2
 
+    .line 129
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -176,6 +200,7 @@
 .method public isValid()Z
     .locals 4
 
+    .line 64
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     if-eqz v0, :cond_0
@@ -205,7 +230,11 @@
 
 .method public prepare(IIZ)Z
     .locals 2
+    .param p1, "width"    # I
+    .param p2, "height"    # I
+    .param p3, "isOpaque"    # Z
 
+    .line 108
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -221,7 +250,9 @@
 
 .method public setLayerPaint(Landroid/graphics/Paint;)V
     .locals 4
+    .param p1, "paint"    # Landroid/graphics/Paint;
 
+    .line 54
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -242,16 +273,20 @@
     :goto_0
     invoke-static {v0, v1, v2, v3}, Landroid/view/TextureLayer;->nSetLayerPaint(JJ)V
 
+    .line 55
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0}, Landroid/view/ThreadedRenderer;->pushLayerUpdate(Landroid/view/TextureLayer;)V
 
+    .line 56
     return-void
 .end method
 
 .method public setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
     .locals 2
+    .param p1, "surface"    # Landroid/graphics/SurfaceTexture;
 
+    .line 133
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -260,16 +295,20 @@
 
     invoke-static {v0, v1, p1}, Landroid/view/TextureLayer;->nSetSurfaceTexture(JLandroid/graphics/SurfaceTexture;)V
 
+    .line 134
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0}, Landroid/view/ThreadedRenderer;->pushLayerUpdate(Landroid/view/TextureLayer;)V
 
+    .line 135
     return-void
 .end method
 
 .method public setTransform(Landroid/graphics/Matrix;)V
     .locals 4
+    .param p1, "matrix"    # Landroid/graphics/Matrix;
 
+    .line 117
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -280,16 +319,19 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/TextureLayer;->nSetTransform(JJ)V
 
+    .line 118
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0}, Landroid/view/ThreadedRenderer;->pushLayerUpdate(Landroid/view/TextureLayer;)V
 
+    .line 119
     return-void
 .end method
 
 .method public updateSurfaceTexture()V
     .locals 2
 
+    .line 138
     iget-object v0, p0, Landroid/view/TextureLayer;->mFinalizer:Lcom/android/internal/util/VirtualRefBasePtr;
 
     invoke-virtual {v0}, Lcom/android/internal/util/VirtualRefBasePtr;->get()J
@@ -298,9 +340,11 @@
 
     invoke-static {v0, v1}, Landroid/view/TextureLayer;->nUpdateSurfaceTexture(J)V
 
+    .line 139
     iget-object v0, p0, Landroid/view/TextureLayer;->mRenderer:Landroid/view/ThreadedRenderer;
 
     invoke-virtual {v0, p0}, Landroid/view/ThreadedRenderer;->pushLayerUpdate(Landroid/view/TextureLayer;)V
 
+    .line 140
     return-void
 .end method

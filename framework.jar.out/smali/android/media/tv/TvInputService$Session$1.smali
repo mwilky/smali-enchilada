@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputService$Session;Z)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputService$Session;
 
+    .line 324
     iput-object p1, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
 
     iput-boolean p2, p0, Landroid/media/tv/TvInputService$Session$1;->val$enable:Z
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 327
     iget-boolean v0, p0, Landroid/media/tv/TvInputService$Session$1;->val$enable:Z
 
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
@@ -51,8 +54,10 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 328
     return-void
 
+    .line 330
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
 
@@ -60,10 +65,12 @@
 
     invoke-static {v0, v1}, Landroid/media/tv/TvInputService$Session;->access$402(Landroid/media/tv/TvInputService$Session;Z)Z
 
+    .line 331
     iget-boolean v0, p0, Landroid/media/tv/TvInputService$Session$1;->val$enable:Z
 
     if-eqz v0, :cond_1
 
+    .line 332
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
 
     invoke-static {v0}, Landroid/media/tv/TvInputService$Session;->access$500(Landroid/media/tv/TvInputService$Session;)Landroid/os/IBinder;
@@ -72,6 +79,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 333
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
 
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
@@ -90,6 +98,7 @@
 
     goto :goto_0
 
+    .line 336
     :cond_1
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$1;->this$0:Landroid/media/tv/TvInputService$Session;
 
@@ -97,6 +106,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/tv/TvInputService$Session;->removeOverlayView(Z)V
 
+    .line 338
     :cond_2
     :goto_0
     return-void

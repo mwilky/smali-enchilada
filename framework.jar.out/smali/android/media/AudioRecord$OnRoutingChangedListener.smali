@@ -26,17 +26,21 @@
 
 .method public onRoutingChanged(Landroid/media/AudioRouting;)V
     .locals 1
+    .param p1, "router"    # Landroid/media/AudioRouting;
 
+    .line 1574
     instance-of v0, p1, Landroid/media/AudioRecord;
 
     if-eqz v0, :cond_0
 
+    .line 1575
     move-object v0, p1
 
     check-cast v0, Landroid/media/AudioRecord;
 
     invoke-interface {p0, v0}, Landroid/media/AudioRecord$OnRoutingChangedListener;->onRoutingChanged(Landroid/media/AudioRecord;)V
 
+    .line 1577
     :cond_0
     return-void
 .end method

@@ -23,34 +23,48 @@
 # direct methods
 .method private constructor <init>(JJ)V
     .locals 3
+    .param p1, "numerator"    # J
+    .param p3, "denominator"    # J
 
+    .line 561
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 563
     const-wide/16 v0, 0x0
 
     cmp-long v2, p3, v0
 
     if-nez v2, :cond_0
 
+    .line 564
     iput-wide v0, p0, Landroid/media/ExifInterface$Rational;->numerator:J
 
+    .line 565
     const-wide/16 v0, 0x1
 
     iput-wide v0, p0, Landroid/media/ExifInterface$Rational;->denominator:J
 
+    .line 566
     return-void
 
+    .line 568
     :cond_0
     iput-wide p1, p0, Landroid/media/ExifInterface$Rational;->numerator:J
 
+    .line 569
     iput-wide p3, p0, Landroid/media/ExifInterface$Rational;->denominator:J
 
+    .line 570
     return-void
 .end method
 
 .method synthetic constructor <init>(JJLandroid/media/ExifInterface$1;)V
     .locals 0
+    .param p1, "x0"    # J
+    .param p3, "x1"    # J
+    .param p5, "x2"    # Landroid/media/ExifInterface$1;
 
+    .line 557
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/media/ExifInterface$Rational;-><init>(JJ)V
 
     return-void
@@ -61,6 +75,7 @@
 .method public calculate()D
     .locals 4
 
+    .line 578
     iget-wide v0, p0, Landroid/media/ExifInterface$Rational;->numerator:J
 
     long-to-double v0, v0
@@ -77,6 +92,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 574
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

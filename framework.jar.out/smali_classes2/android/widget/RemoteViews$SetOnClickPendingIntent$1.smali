@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/RemoteViews$SetOnClickPendingIntent;Landroid/widget/RemoteViews$OnClickHandler;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
+    .line 945
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
     iput-object p2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
@@ -40,17 +42,24 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
+    .param p1, "v"    # Landroid/view/View;
 
+    .line 949
     invoke-static {p1}, Landroid/widget/RemoteViews;->access$300(Landroid/view/View;)Landroid/graphics/Rect;
 
     move-result-object v0
 
+    .line 951
+    .local v0, "rect":Landroid/graphics/Rect;
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
+    .line 952
+    .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
+    .line 953
     iget-object v2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
 
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
@@ -59,5 +68,6 @@
 
     invoke-virtual {v2, p1, v3, v1}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
+    .line 954
     return-void
 .end method

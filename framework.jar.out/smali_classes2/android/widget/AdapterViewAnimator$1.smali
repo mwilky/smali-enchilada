@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AdapterViewAnimator;Landroid/view/View;Landroid/widget/AdapterViewAnimator$ViewAndMetaData;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/AdapterViewAnimator;
 
+    .line 647
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iput-object p2, p0, Landroid/widget/AdapterViewAnimator$1;->val$v:Landroid/view/View;
@@ -45,12 +47,14 @@
 .method public run()V
     .locals 2
 
+    .line 649
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/AdapterViewAnimator;->hideTapFeedback(Landroid/view/View;)V
 
+    .line 650
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     new-instance v1, Landroid/widget/AdapterViewAnimator$1$1;
@@ -59,5 +63,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/AdapterViewAnimator;->post(Ljava/lang/Runnable;)Z
 
+    .line 660
     return-void
 .end method

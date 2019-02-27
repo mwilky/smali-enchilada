@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/net/ConnectivityManager;Landroid/net/ConnectivityManager$OnNetworkActiveListener;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/net/ConnectivityManager;
 
+    .line 1972
     iput-object p1, p0, Landroid/net/ConnectivityManager$1;->this$0:Landroid/net/ConnectivityManager;
 
     iput-object p2, p0, Landroid/net/ConnectivityManager$1;->val$l:Landroid/net/ConnectivityManager$OnNetworkActiveListener;
@@ -43,9 +45,11 @@
         }
     .end annotation
 
+    .line 1975
     iget-object v0, p0, Landroid/net/ConnectivityManager$1;->val$l:Landroid/net/ConnectivityManager$OnNetworkActiveListener;
 
     invoke-interface {v0}, Landroid/net/ConnectivityManager$OnNetworkActiveListener;->onNetworkActive()V
 
+    .line 1976
     return-void
 .end method

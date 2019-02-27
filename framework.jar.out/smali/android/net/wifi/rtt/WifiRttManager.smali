@@ -20,13 +20,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/net/wifi/rtt/IWifiRttManager;)V
     .locals 0
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "service"    # Landroid/net/wifi/rtt/IWifiRttManager;
 
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 81
     iput-object p1, p0, Landroid/net/wifi/rtt/WifiRttManager;->mContext:Landroid/content/Context;
 
+    .line 82
     iput-object p2, p0, Landroid/net/wifi/rtt/WifiRttManager;->mService:Landroid/net/wifi/rtt/IWifiRttManager;
 
+    .line 83
     return-void
 .end method
 
@@ -34,9 +40,11 @@
 # virtual methods
 .method public cancelRanging(Landroid/os/WorkSource;)V
     .locals 2
+    .param p1, "workSource"    # Landroid/os/WorkSource;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 185
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/rtt/WifiRttManager;->mService:Landroid/net/wifi/rtt/IWifiRttManager;
 
@@ -44,13 +52,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 188
     nop
 
+    .line 189
     return-void
 
+    .line 186
     :catch_0
     move-exception v0
 
+    .line 187
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -61,6 +74,7 @@
 .method public isAvailable()Z
     .locals 2
 
+    .line 97
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/rtt/WifiRttManager;->mService:Landroid/net/wifi/rtt/IWifiRttManager;
 
@@ -72,9 +86,12 @@
 
     return v0
 
+    .line 98
     :catch_0
     move-exception v0
 
+    .line 99
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -84,27 +101,41 @@
 
 .method public startRanging(Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V
     .locals 1
+    .param p1, "request"    # Landroid/net/wifi/rtt/RangingRequest;
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
+    .param p3, "callback"    # Landroid/net/wifi/rtt/RangingResultCallback;
 
+    .line 115
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroid/net/wifi/rtt/WifiRttManager;->startRanging(Landroid/os/WorkSource;Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V
 
+    .line 116
     return-void
 .end method
 
 .method public startRanging(Landroid/os/WorkSource;Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V
     .locals 6
+    .param p1, "workSource"    # Landroid/os/WorkSource;
+    .param p2, "request"    # Landroid/net/wifi/rtt/RangingRequest;
+    .param p3, "executor"    # Ljava/util/concurrent/Executor;
+    .param p4, "callback"    # Landroid/net/wifi/rtt/RangingResultCallback;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 140
     if-eqz p3, :cond_1
 
+    .line 143
     if-eqz p4, :cond_0
 
+    .line 147
     new-instance v1, Landroid/os/Binder;
 
     invoke-direct {v1}, Landroid/os/Binder;-><init>()V
 
+    .line 149
+    .local v1, "binder":Landroid/os/Binder;
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/rtt/WifiRttManager;->mService:Landroid/net/wifi/rtt/IWifiRttManager;
 
@@ -126,19 +157,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 166
     nop
 
+    .line 167
     return-void
 
+    .line 164
     :catch_0
     move-exception v0
 
+    .line 165
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v2
 
     throw v2
 
+    .line 144
+    .end local v0    # "e":Landroid/os/RemoteException;
+    .end local v1    # "binder":Landroid/os/Binder;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -148,6 +187,7 @@
 
     throw v0
 
+    .line 141
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

@@ -604,6 +604,7 @@
 .method static constructor <clinit>()V
     .locals 87
 
+    .line 143
     const-string v0, "allow"
 
     const-string v1, "ignore"
@@ -620,6 +621,7 @@
 
     sput-object v0, Landroid/app/AppOpsManager;->MODE_NAMES:[Ljava/lang/String;
 
+    .line 693
     const/16 v0, 0x21
 
     new-array v0, v0, [I
@@ -628,6 +630,7 @@
 
     sput-object v0, Landroid/app/AppOpsManager;->RUNTIME_AND_APPOP_PERMISSIONS_OPS:[I
 
+    .line 749
     const/16 v0, 0x55
 
     new-array v1, v0, [I
@@ -636,6 +639,7 @@
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpToSwitch:[I
 
+    .line 849
     const-string v2, "android:coarse_location"
 
     const-string v3, "android:fine_location"
@@ -812,12 +816,14 @@
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
+    .line 955
     new-instance v1, Landroid/app/AppOpsManager$1;
 
     invoke-direct {v1}, Landroid/app/AppOpsManager$1;-><init>()V
 
     sput-object v1, Landroid/app/AppOpsManager;->sVendorOpStrList:Ljava/util/ArrayList;
 
+    .line 970
     const-string v2, "COARSE_LOCATION"
 
     const-string v3, "FINE_LOCATION"
@@ -994,6 +1000,7 @@
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
+    .line 1071
     const-string v2, "android.permission.ACCESS_COARSE_LOCATION"
 
     const-string v3, "android.permission.ACCESS_FINE_LOCATION"
@@ -1170,6 +1177,7 @@
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
 
+    .line 1173
     const-string/jumbo v2, "no_share_location"
 
     const-string/jumbo v3, "no_share_location"
@@ -1298,97 +1306,115 @@
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpRestrictions:[Ljava/lang/String;
 
+    .line 1273
     new-array v1, v0, [Z
 
     fill-array-data v1, :array_2
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpAllowSystemRestrictionBypass:[Z
 
+    .line 1373
     new-array v1, v0, [I
 
     fill-array-data v1, :array_3
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpDefaultMode:[I
 
+    .line 1477
     new-array v1, v0, [Z
 
     fill-array-data v1, :array_4
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpDisableReset:[Z
 
+    .line 1577
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpStrToOp:Ljava/util/HashMap;
 
+    .line 1582
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     sput-object v1, Landroid/app/AppOpsManager;->sPermToOp:Ljava/util/HashMap;
 
+    .line 1585
     sget-object v1, Landroid/app/AppOpsManager;->sOpToSwitch:[I
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_b
 
+    .line 1589
     sget-object v1, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_a
 
+    .line 1593
     sget-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_9
 
+    .line 1597
     sget-object v1, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_8
 
+    .line 1601
     sget-object v1, Landroid/app/AppOpsManager;->sOpDefaultMode:[I
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_7
 
+    .line 1605
     sget-object v1, Landroid/app/AppOpsManager;->sOpDisableReset:[Z
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_6
 
+    .line 1609
     sget-object v1, Landroid/app/AppOpsManager;->sOpRestrictions:[Ljava/lang/String;
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_5
 
+    .line 1613
     sget-object v1, Landroid/app/AppOpsManager;->sOpAllowSystemRestrictionBypass:[Z
 
     array-length v1, v1
 
     if-ne v1, v0, :cond_4
 
+    .line 1617
     const/4 v1, 0x0
 
     move v2, v1
 
+    .line 1617
+    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
+    .line 1618
     sget-object v3, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
     aget-object v3, v3, v2
 
     if-eqz v3, :cond_0
 
+    .line 1619
     sget-object v3, Landroid/app/AppOpsManager;->sOpStrToOp:Ljava/util/HashMap;
 
     sget-object v4, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
@@ -1401,11 +1427,14 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1617
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 1622
+    .end local v2    # "i":I
     :cond_1
     sget-object v0, Landroid/app/AppOpsManager;->RUNTIME_AND_APPOP_PERMISSIONS_OPS:[I
 
@@ -1416,12 +1445,15 @@
 
     aget v3, v0, v1
 
+    .line 1623
+    .local v3, "op":I
     sget-object v4, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
 
     aget-object v4, v4, v3
 
     if-eqz v4, :cond_2
 
+    .line 1624
     sget-object v4, Landroid/app/AppOpsManager;->sPermToOp:Ljava/util/HashMap;
 
     sget-object v5, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
@@ -1434,14 +1466,18 @@
 
     invoke-virtual {v4, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1622
+    .end local v3    # "op":I
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 1627
     :cond_3
     return-void
 
+    .line 1614
     :cond_4
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1473,6 +1509,7 @@
 
     throw v1
 
+    .line 1610
     :cond_5
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1504,6 +1541,7 @@
 
     throw v1
 
+    .line 1606
     :cond_6
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1535,6 +1573,7 @@
 
     throw v1
 
+    .line 1602
     :cond_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1566,6 +1605,7 @@
 
     throw v1
 
+    .line 1598
     :cond_8
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1597,6 +1637,7 @@
 
     throw v1
 
+    .line 1594
     :cond_9
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1628,6 +1669,7 @@
 
     throw v1
 
+    .line 1590
     :cond_a
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -1659,6 +1701,7 @@
 
     throw v1
 
+    .line 1586
     :cond_b
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -2092,31 +2135,40 @@
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/internal/app/IAppOpsService;)V
     .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "service"    # Lcom/android/internal/app/IAppOpsService;
 
+    .line 1969
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 90
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
+    .line 91
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
+    .line 1970
     iput-object p1, p0, Landroid/app/AppOpsManager;->mContext:Landroid/content/Context;
 
+    .line 1971
     iput-object p2, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
+    .line 1972
     return-void
 .end method
 
 .method static synthetic access$000()[Ljava/lang/String;
     .locals 1
 
+    .line 65
     sget-object v0, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
     return-object v0
@@ -2124,7 +2176,11 @@
 
 .method private buildSecurityExceptionMsg(IILjava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2340
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2159,6 +2215,7 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 2835
     const-string v0, "android.permission.cts"
 
     invoke-static {}, Landroid/app/ActivityThread;->currentPackageName()Ljava/lang/String;
@@ -2171,10 +2228,13 @@
 
     if-eqz v0, :cond_2
 
+    .line 2836
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 2837
+    .local v0, "opStrList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     sget-object v1, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
     array-length v2, v1
@@ -2186,6 +2246,8 @@
 
     aget-object v4, v1, v3
 
+    .line 2838
+    .local v4, "opString":Ljava/lang/String;
     sget-object v5, Landroid/app/AppOpsManager;->sVendorOpStrList:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -2194,13 +2256,17 @@
 
     if-nez v5, :cond_0
 
+    .line 2839
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 2837
+    .end local v4    # "opString":Ljava/lang/String;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 2842
     :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2216,6 +2282,8 @@
 
     return-object v1
 
+    .line 2845
+    .end local v0    # "opStrList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_2
     sget-object v0, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
@@ -2234,16 +2302,20 @@
 
 .method public static getToken(Lcom/android/internal/app/IAppOpsService;)Landroid/os/IBinder;
     .locals 3
+    .param p0, "service"    # Lcom/android/internal/app/IAppOpsService;
 
+    .line 2683
     const-class v0, Landroid/app/AppOpsManager;
 
     monitor-enter v0
 
+    .line 2684
     :try_start_0
     sget-object v1, Landroid/app/AppOpsManager;->sToken:Landroid/os/IBinder;
 
     if-eqz v1, :cond_0
 
+    .line 2685
     sget-object v1, Landroid/app/AppOpsManager;->sToken:Landroid/os/IBinder;
 
     monitor-exit v0
@@ -2252,6 +2324,7 @@
 
     return-object v1
 
+    .line 2688
     :cond_0
     :try_start_1
     new-instance v1, Landroid/os/Binder;
@@ -2267,8 +2340,10 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 2691
     nop
 
+    .line 2692
     :try_start_2
     sget-object v1, Landroid/app/AppOpsManager;->sToken:Landroid/os/IBinder;
 
@@ -2276,15 +2351,20 @@
 
     return-object v1
 
+    .line 2689
     :catch_0
     move-exception v1
 
+    .line 2690
+    .local v1, "e":Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v2
 
     throw v2
 
+    .line 2693
+    .end local v1    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
 
@@ -2297,36 +2377,51 @@
 
 .method public static maxTime([JII)J
     .locals 5
+    .param p0, "times"    # [J
+    .param p1, "start"    # I
+    .param p2, "end"    # I
 
+    .line 2852
     const-wide/16 v0, 0x0
 
+    .line 2853
+    .local v0, "time":J
     move-wide v1, v0
 
     move v0, p1
 
+    .local v0, "i":I
+    .local v1, "time":J
     :goto_0
     if-ge v0, p2, :cond_1
 
+    .line 2854
     aget-wide v3, p0, v0
 
     cmp-long v3, v3, v1
 
     if-lez v3, :cond_0
 
+    .line 2855
     aget-wide v1, p0, v0
 
+    .line 2853
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 2858
+    .end local v0    # "i":I
     :cond_1
     return-wide v1
 .end method
 
 .method public static modeToName(I)Ljava/lang/String;
     .locals 2
+    .param p0, "mode"    # I
 
+    .line 1707
     if-ltz p0, :cond_0
 
     sget-object v0, Landroid/app/AppOpsManager;->MODE_NAMES:[Ljava/lang/String;
@@ -2335,12 +2430,14 @@
 
     if-ge p0, v0, :cond_0
 
+    .line 1708
     sget-object v0, Landroid/app/AppOpsManager;->MODE_NAMES:[Ljava/lang/String;
 
     aget-object v0, v0, p0
 
     return-object v0
 
+    .line 1710
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2361,7 +2458,9 @@
 
 .method public static opAllowSystemBypassRestriction(I)Z
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1691
     sget-object v0, Landroid/app/AppOpsManager;->sOpAllowSystemRestrictionBypass:[Z
 
     aget-boolean v0, v0, p0
@@ -2371,7 +2470,9 @@
 
 .method public static opAllowsReset(I)Z
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1718
     sget-object v0, Landroid/app/AppOpsManager;->sOpDisableReset:[Z
 
     aget-boolean v0, v0, p0
@@ -2383,7 +2484,9 @@
 
 .method public static opToDefaultMode(I)I
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1699
     sget-object v0, Landroid/app/AppOpsManager;->sOpDefaultMode:[I
 
     aget v0, v0, p0
@@ -2393,7 +2496,9 @@
 
 .method public static opToName(I)Ljava/lang/String;
     .locals 2
+    .param p0, "op"    # I
 
+    .line 1642
     const/4 v0, -0x1
 
     if-ne p0, v0, :cond_0
@@ -2402,6 +2507,7 @@
 
     return-object v0
 
+    .line 1643
     :cond_0
     sget-object v0, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
@@ -2440,7 +2546,9 @@
 
 .method public static opToPermission(I)Ljava/lang/String;
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1663
     sget-object v0, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
 
     aget-object v0, v0, p0
@@ -2450,7 +2558,9 @@
 
 .method public static opToRestriction(I)Ljava/lang/String;
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1671
     sget-object v0, Landroid/app/AppOpsManager;->sOpRestrictions:[Ljava/lang/String;
 
     aget-object v0, v0, p0
@@ -2460,7 +2570,9 @@
 
 .method public static opToSwitch(I)I
     .locals 1
+    .param p0, "op"    # I
 
+    .line 1634
     sget-object v0, Landroid/app/AppOpsManager;->sOpToSwitch:[I
 
     aget v0, v0, p0
@@ -2470,7 +2582,9 @@
 
 .method public static permissionToOp(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
+    .param p0, "permission"    # Ljava/lang/String;
 
+    .line 2159
     sget-object v0, Landroid/app/AppOpsManager;->sPermToOp:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2479,12 +2593,16 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 2160
+    .local v0, "opCode":Ljava/lang/Integer;
     if-nez v0, :cond_0
 
+    .line 2161
     const/4 v1, 0x0
 
     return-object v1
 
+    .line 2163
     :cond_0
     sget-object v1, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
@@ -2499,7 +2617,9 @@
 
 .method public static permissionToOpCode(Ljava/lang/String;)I
     .locals 2
+    .param p0, "permission"    # Ljava/lang/String;
 
+    .line 1681
     sget-object v0, Landroid/app/AppOpsManager;->sPermToOp:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2508,6 +2628,8 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 1682
+    .local v0, "boxedOpCode":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -2525,9 +2647,12 @@
 
 .method public static strDebugOpToOp(Ljava/lang/String;)I
     .locals 3
+    .param p0, "op"    # Ljava/lang/String;
 
+    .line 1650
     const/4 v0, 0x0
 
+    .local v0, "i":I
     :goto_0
     sget-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
@@ -2535,6 +2660,7 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 1651
     sget-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
     aget-object v1, v1, v0
@@ -2545,13 +2671,17 @@
 
     if-eqz v1, :cond_0
 
+    .line 1652
     return v0
 
+    .line 1650
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 1655
+    .end local v0    # "i":I
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2576,7 +2706,9 @@
 
 .method public static strOpToOp(Ljava/lang/String;)I
     .locals 4
+    .param p0, "op"    # Ljava/lang/String;
 
+    .line 2347
     sget-object v0, Landroid/app/AppOpsManager;->sOpStrToOp:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2585,14 +2717,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 2348
+    .local v0, "val":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
+    .line 2351
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     return v1
 
+    .line 2349
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -2619,7 +2755,12 @@
 # virtual methods
 .method public checkAudioOp(IIILjava/lang/String;)I
     .locals 3
+    .param p1, "op"    # I
+    .param p2, "stream"    # I
+    .param p3, "uid"    # I
+    .param p4, "packageName"    # Ljava/lang/String;
 
+    .line 2574
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2627,12 +2768,16 @@
 
     move-result v0
 
+    .line 2575
+    .local v0, "mode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 2578
     return v0
 
+    .line 2576
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -2646,9 +2791,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2579
+    .end local v0    # "mode":I
     :catch_0
     move-exception v0
 
+    .line 2580
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2658,7 +2807,12 @@
 
 .method public checkAudioOpNoThrow(IIILjava/lang/String;)I
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "stream"    # I
+    .param p3, "uid"    # I
+    .param p4, "packageName"    # Ljava/lang/String;
 
+    .line 2591
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2670,9 +2824,12 @@
 
     return v0
 
+    .line 2592
     :catch_0
     move-exception v0
 
+    .line 2593
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2682,7 +2839,11 @@
 
 .method public checkOp(IILjava/lang/String;)I
     .locals 3
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2527
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2690,12 +2851,16 @@
 
     move-result v0
 
+    .line 2528
+    .local v0, "mode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 2531
     return v0
 
+    .line 2529
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -2709,9 +2874,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2532
+    .end local v0    # "mode":I
     :catch_0
     move-exception v0
 
+    .line 2533
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2721,7 +2890,11 @@
 
 .method public checkOp(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2382
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -2735,7 +2908,11 @@
 
 .method public checkOpNoThrow(IILjava/lang/String;)I
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2544
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2745,6 +2922,8 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2545
+    .local v0, "mode":I
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
@@ -2759,9 +2938,13 @@
     :goto_0
     return v1
 
+    .line 2546
+    .end local v0    # "mode":I
     :catch_0
     move-exception v0
 
+    .line 2547
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2771,7 +2954,11 @@
 
 .method public checkOpNoThrow(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2390
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -2785,7 +2972,10 @@
 
 .method public checkPackage(ILjava/lang/String;)V
     .locals 3
+    .param p1, "uid"    # I
+    .param p2, "packageName"    # Ljava/lang/String;
 
+    .line 2559
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2795,10 +2985,13 @@
 
     if-nez v0, :cond_0
 
+    .line 2565
     nop
 
+    .line 2566
     return-void
 
+    .line 2560
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -2828,9 +3021,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2563
     :catch_0
     move-exception v0
 
+    .line 2564
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2840,7 +3036,9 @@
 
 .method public finishOp(I)V
     .locals 2
+    .param p1, "op"    # I
 
+    .line 2799
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
@@ -2853,12 +3051,17 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/app/AppOpsManager;->finishOp(IILjava/lang/String;)V
 
+    .line 2800
     return-void
 .end method
 
 .method public finishOp(IILjava/lang/String;)V
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2791
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2872,13 +3075,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2794
     nop
 
+    .line 2795
     return-void
 
+    .line 2792
     :catch_0
     move-exception v0
 
+    .line 2793
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2888,18 +3096,26 @@
 
 .method public finishOp(Ljava/lang/String;ILjava/lang/String;)V
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2494
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p0, v0, p2, p3}, Landroid/app/AppOpsManager;->finishOp(IILjava/lang/String;)V
 
+    .line 2495
     return-void
 .end method
 
 .method public getOpsForPackage(ILjava/lang/String;[I)Ljava/util/List;
     .locals 2
+    .param p1, "uid"    # I
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "ops"    # [I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2911,6 +3127,7 @@
         }
     .end annotation
 
+    .line 2000
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2922,9 +3139,12 @@
 
     return-object v0
 
+    .line 2001
     :catch_0
     move-exception v0
 
+    .line 2002
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2934,6 +3154,7 @@
 
 .method public getPackagesForOps([I)Ljava/util/List;
     .locals 2
+    .param p1, "ops"    # [I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([I)",
@@ -2943,6 +3164,7 @@
         }
     .end annotation
 
+    .line 1983
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2954,9 +3176,12 @@
 
     return-object v0
 
+    .line 1984
     :catch_0
     move-exception v0
 
+    .line 1985
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2966,7 +3191,11 @@
 
 .method public isOperationActive(IILjava/lang/String;)Z
     .locals 2
+    .param p1, "code"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2819
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -2978,9 +3207,12 @@
 
     return v0
 
+    .line 2820
     :catch_0
     move-exception v0
 
+    .line 2821
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -2990,7 +3222,9 @@
 
 .method public noteOp(I)I
     .locals 2
+    .param p1, "op"    # I
 
+    .line 2678
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
@@ -3010,17 +3244,25 @@
 
 .method public noteOp(IILjava/lang/String;)I
     .locals 3
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2613
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/AppOpsManager;->noteOpNoThrow(IILjava/lang/String;)I
 
     move-result v0
 
+    .line 2614
+    .local v0, "mode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 2617
     return v0
 
+    .line 2615
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -3035,7 +3277,11 @@
 
 .method public noteOp(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2421
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3049,7 +3295,11 @@
 
 .method public noteOpNoThrow(IILjava/lang/String;)I
     .locals 2
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2670
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3061,9 +3311,12 @@
 
     return v0
 
+    .line 2671
     :catch_0
     move-exception v0
 
+    .line 2672
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3073,7 +3326,11 @@
 
 .method public noteOpNoThrow(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2429
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3087,17 +3344,24 @@
 
 .method public noteProxyOp(ILjava/lang/String;)I
     .locals 4
+    .param p1, "op"    # I
+    .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
+    .line 2639
     invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOpNoThrow(ILjava/lang/String;)I
 
     move-result v0
 
+    .line 2640
+    .local v0, "mode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 2646
     return v0
 
+    .line 2641
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -3121,6 +3385,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2642
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v3
@@ -3137,6 +3402,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2643
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
@@ -3164,7 +3430,10 @@
 
 .method public noteProxyOp(Ljava/lang/String;Ljava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
+    .line 2448
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3178,7 +3447,10 @@
 
 .method public noteProxyOpNoThrow(ILjava/lang/String;)I
     .locals 3
+    .param p1, "op"    # I
+    .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
+    .line 2656
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3188,10 +3460,12 @@
 
     move-result-object v1
 
+    .line 2657
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
+    .line 2656
     invoke-interface {v0, p1, v1, v2, p2}, Lcom/android/internal/app/IAppOpsService;->noteProxyOperation(ILjava/lang/String;ILjava/lang/String;)I
 
     move-result v0
@@ -3200,9 +3474,12 @@
 
     return v0
 
+    .line 2658
     :catch_0
     move-exception v0
 
+    .line 2659
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3212,7 +3489,10 @@
 
 .method public noteProxyOpNoThrow(Ljava/lang/String;Ljava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
+    .line 2456
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3227,6 +3507,7 @@
 .method public resetAllModes()V
     .locals 3
 
+    .line 2142
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3242,13 +3523,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2145
     nop
 
+    .line 2146
     return-void
 
+    .line 2143
     :catch_0
     move-exception v0
 
+    .line 2144
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3258,12 +3544,18 @@
 
 .method public setMode(IILjava/lang/String;I)V
     .locals 3
+    .param p1, "code"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
+    .param p4, "mode"    # I
 
+    .line 2084
     :try_start_0
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
 
+    .line 2085
     const-string v0, "AppOpsManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3300,6 +3592,7 @@
 
     const/4 v2, 0x6
 
+    .line 2086
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3310,8 +3603,10 @@
 
     move-result-object v1
 
+    .line 2085
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2089
     :cond_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3319,13 +3614,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2092
     nop
 
+    .line 2093
     return-void
 
+    .line 2090
     :catch_0
     move-exception v0
 
+    .line 2091
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3335,9 +3635,14 @@
 
 .method public setMode(Ljava/lang/String;ILjava/lang/String;I)V
     .locals 2
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
+    .param p4, "mode"    # I
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 2110
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3349,13 +3654,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2113
     nop
 
+    .line 2114
     return-void
 
+    .line 2111
     :catch_0
     move-exception v0
 
+    .line 2112
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3365,12 +3675,19 @@
 
 .method public setRestriction(III[Ljava/lang/String;)V
     .locals 6
+    .param p1, "code"    # I
+    .param p2, "usage"    # I
+    .param p3, "mode"    # I
+    .param p4, "exceptionPackages"    # [Ljava/lang/String;
 
+    .line 2131
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
 
+    .line 2132
+    .local v3, "uid":I
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
     move v1, p1
@@ -3385,13 +3702,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2135
+    .end local v3    # "uid":I
     nop
 
+    .line 2136
     return-void
 
+    .line 2133
     :catch_0
     move-exception v0
 
+    .line 2134
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3401,12 +3724,17 @@
 
 .method public setUidMode(III)V
     .locals 3
+    .param p1, "code"    # I
+    .param p2, "uid"    # I
+    .param p3, "mode"    # I
 
+    .line 2020
     :try_start_0
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
 
+    .line 2021
     const-string v0, "AppOpsManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3437,6 +3765,7 @@
 
     const/4 v2, 0x6
 
+    .line 2022
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3447,8 +3776,10 @@
 
     move-result-object v1
 
+    .line 2021
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2025
     :cond_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3456,13 +3787,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2028
     nop
 
+    .line 2029
     return-void
 
+    .line 2026
     :catch_0
     move-exception v0
 
+    .line 2027
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3472,14 +3808,19 @@
 
 .method public setUidMode(Ljava/lang/String;II)V
     .locals 3
+    .param p1, "appOp"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "mode"    # I
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 2046
     :try_start_0
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
 
+    .line 2047
     const-string v0, "AppOpsManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3510,6 +3851,7 @@
 
     const/4 v2, 0x6
 
+    .line 2048
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3520,8 +3862,10 @@
 
     move-result-object v1
 
+    .line 2047
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2051
     :cond_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3533,13 +3877,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2054
     nop
 
+    .line 2055
     return-void
 
+    .line 2052
     :catch_0
     move-exception v0
 
+    .line 2053
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3549,17 +3898,27 @@
 
 .method public setUserRestriction(IZLandroid/os/IBinder;)V
     .locals 1
+    .param p1, "code"    # I
+    .param p2, "restricted"    # Z
+    .param p3, "token"    # Landroid/os/IBinder;
 
+    .line 2059
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/app/AppOpsManager;->setUserRestriction(IZLandroid/os/IBinder;[Ljava/lang/String;)V
 
+    .line 2060
     return-void
 .end method
 
 .method public setUserRestriction(IZLandroid/os/IBinder;[Ljava/lang/String;)V
     .locals 7
+    .param p1, "code"    # I
+    .param p2, "restricted"    # Z
+    .param p3, "token"    # Landroid/os/IBinder;
+    .param p4, "exceptionPackages"    # [Ljava/lang/String;
 
+    .line 2065
     iget-object v0, p0, Landroid/app/AppOpsManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getUserId()I
@@ -3578,12 +3937,19 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/app/AppOpsManager;->setUserRestrictionForUser(IZLandroid/os/IBinder;[Ljava/lang/String;I)V
 
+    .line 2066
     return-void
 .end method
 
 .method public setUserRestrictionForUser(IZLandroid/os/IBinder;[Ljava/lang/String;I)V
     .locals 6
+    .param p1, "code"    # I
+    .param p2, "restricted"    # Z
+    .param p3, "token"    # Landroid/os/IBinder;
+    .param p4, "exceptionPackages"    # [Ljava/lang/String;
+    .param p5, "userId"    # I
 
+    .line 2072
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3601,13 +3967,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2075
     nop
 
+    .line 2076
     return-void
 
+    .line 2073
     :catch_0
     move-exception v0
 
+    .line 2074
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3617,7 +3988,9 @@
 
 .method public startOp(I)I
     .locals 2
+    .param p1, "op"    # I
 
+    .line 2698
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
@@ -3637,7 +4010,11 @@
 
 .method public startOp(IILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2720
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/app/AppOpsManager;->startOp(IILjava/lang/String;Z)I
@@ -3649,17 +4026,26 @@
 
 .method public startOp(IILjava/lang/String;Z)I
     .locals 3
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
+    .param p4, "startIfModeDefault"    # Z
 
+    .line 2743
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/app/AppOpsManager;->startOpNoThrow(IILjava/lang/String;Z)I
 
     move-result v0
 
+    .line 2744
+    .local v0, "mode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 2747
     return v0
 
+    .line 2745
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -3674,7 +4060,11 @@
 
 .method public startOp(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2476
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3688,7 +4078,11 @@
 
 .method public startOpNoThrow(IILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2756
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/app/AppOpsManager;->startOpNoThrow(IILjava/lang/String;Z)I
@@ -3700,7 +4094,12 @@
 
 .method public startOpNoThrow(IILjava/lang/String;Z)I
     .locals 6
+    .param p1, "op"    # I
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
+    .param p4, "startIfModeDefault"    # Z
 
+    .line 2775
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3726,9 +4125,12 @@
 
     return v0
 
+    .line 2777
     :catch_0
     move-exception v0
 
+    .line 2778
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -3738,7 +4140,11 @@
 
 .method public startOpNoThrow(Ljava/lang/String;ILjava/lang/String;)I
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2484
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
@@ -3752,19 +4158,25 @@
 
 .method public startWatchingActive([ILandroid/app/AppOpsManager$OnOpActiveChangedListener;)V
     .locals 3
+    .param p1, "ops"    # [I
+    .param p2, "callback"    # Landroid/app/AppOpsManager$OnOpActiveChangedListener;
 
+    .line 2290
     const-string/jumbo v0, "ops cannot be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 2291
     const-string v0, "callback cannot be null"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 2293
     iget-object v0, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
+    .line 2294
     :try_start_0
     iget-object v1, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
@@ -3774,12 +4186,16 @@
 
     check-cast v1, Lcom/android/internal/app/IAppOpsActiveCallback;
 
+    .line 2295
+    .local v1, "cb":Lcom/android/internal/app/IAppOpsActiveCallback;
     if-eqz v1, :cond_0
 
+    .line 2296
     monitor-exit v0
 
     return-void
 
+    .line 2298
     :cond_0
     new-instance v2, Landroid/app/AppOpsManager$3;
 
@@ -3787,14 +4203,17 @@
 
     move-object v1, v2
 
+    .line 2304
     iget-object v2, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p2, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 2305
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2307
     :try_start_1
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3802,19 +4221,27 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 2310
     nop
 
+    .line 2311
     return-void
 
+    .line 2308
     :catch_0
     move-exception v0
 
+    .line 2309
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v2
 
     throw v2
 
+    .line 2305
+    .end local v0    # "e":Landroid/os/RemoteException;
+    .end local v1    # "cb":Lcom/android/internal/app/IAppOpsActiveCallback;
     :catchall_0
     move-exception v1
 
@@ -3828,11 +4255,17 @@
 
 .method public startWatchingMode(ILjava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 4
+    .param p1, "op"    # I
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "flags"    # I
+    .param p4, "callback"    # Landroid/app/AppOpsManager$OnOpChangedListener;
 
+    .line 2225
     iget-object v0, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
+    .line 2226
     :try_start_0
     iget-object v1, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
@@ -3842,20 +4275,25 @@
 
     check-cast v1, Lcom/android/internal/app/IAppOpsCallback;
 
+    .line 2227
+    .local v1, "cb":Lcom/android/internal/app/IAppOpsCallback;
     if-nez v1, :cond_0
 
+    .line 2228
     new-instance v2, Landroid/app/AppOpsManager$2;
 
     invoke-direct {v2, p0, p4}, Landroid/app/AppOpsManager$2;-><init>(Landroid/app/AppOpsManager;Landroid/app/AppOpsManager$OnOpChangedListener;)V
 
     move-object v1, v2
 
+    .line 2238
     iget-object v2, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p4, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2241
     :cond_0
     :try_start_1
     iget-object v2, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
@@ -3865,22 +4303,33 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 2244
     nop
 
+    .line 2245
+    .end local v1    # "cb":Lcom/android/internal/app/IAppOpsCallback;
     :try_start_2
     monitor-exit v0
 
+    .line 2246
     return-void
 
+    .line 2242
+    .restart local v1    # "cb":Lcom/android/internal/app/IAppOpsCallback;
     :catch_0
     move-exception v2
 
+    .line 2243
+    .local v2, "e":Landroid/os/RemoteException;
     invoke-virtual {v2}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v3
 
     throw v3
 
+    .line 2245
+    .end local v1    # "cb":Lcom/android/internal/app/IAppOpsCallback;
+    .end local v2    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
 
@@ -3893,45 +4342,64 @@
 
 .method public startWatchingMode(ILjava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 1
+    .param p1, "op"    # I
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "callback"    # Landroid/app/AppOpsManager$OnOpChangedListener;
 
+    .line 2207
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Landroid/app/AppOpsManager;->startWatchingMode(ILjava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V
 
+    .line 2208
     return-void
 .end method
 
 .method public startWatchingMode(Ljava/lang/String;Ljava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "flags"    # I
+    .param p4, "callback"    # Landroid/app/AppOpsManager$OnOpChangedListener;
 
+    .line 2191
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p0, v0, p2, p3, p4}, Landroid/app/AppOpsManager;->startWatchingMode(ILjava/lang/String;ILandroid/app/AppOpsManager$OnOpChangedListener;)V
 
+    .line 2192
     return-void
 .end method
 
 .method public startWatchingMode(Ljava/lang/String;Ljava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 1
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "callback"    # Landroid/app/AppOpsManager$OnOpChangedListener;
 
+    .line 2176
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p0, v0, p2, p3}, Landroid/app/AppOpsManager;->startWatchingMode(ILjava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V
 
+    .line 2177
     return-void
 .end method
 
 .method public stopWatchingActive(Landroid/app/AppOpsManager$OnOpActiveChangedListener;)V
     .locals 4
+    .param p1, "callback"    # Landroid/app/AppOpsManager$OnOpActiveChangedListener;
 
+    .line 2327
     iget-object v0, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
+    .line 2328
     :try_start_0
     iget-object v1, p0, Landroid/app/AppOpsManager;->mActiveWatchers:Landroid/util/ArrayMap;
 
@@ -3943,8 +4411,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2329
+    .local v1, "cb":Lcom/android/internal/app/IAppOpsActiveCallback;
     if-eqz v1, :cond_0
 
+    .line 2331
     :try_start_1
     iget-object v2, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -3953,11 +4424,15 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 2334
     goto :goto_0
 
+    .line 2332
     :catch_0
     move-exception v2
 
+    .line 2333
+    .local v2, "e":Landroid/os/RemoteException;
     :try_start_2
     invoke-virtual {v2}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -3965,12 +4440,17 @@
 
     throw v3
 
+    .line 2336
+    .end local v1    # "cb":Lcom/android/internal/app/IAppOpsActiveCallback;
+    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     monitor-exit v0
 
+    .line 2337
     return-void
 
+    .line 2336
     :catchall_0
     move-exception v1
 
@@ -3983,11 +4463,14 @@
 
 .method public stopWatchingMode(Landroid/app/AppOpsManager$OnOpChangedListener;)V
     .locals 4
+    .param p1, "callback"    # Landroid/app/AppOpsManager$OnOpChangedListener;
 
+    .line 2253
     iget-object v0, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
+    .line 2254
     :try_start_0
     iget-object v1, p0, Landroid/app/AppOpsManager;->mModeWatchers:Landroid/util/ArrayMap;
 
@@ -3999,8 +4482,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2255
+    .local v1, "cb":Lcom/android/internal/app/IAppOpsCallback;
     if-eqz v1, :cond_0
 
+    .line 2257
     :try_start_1
     iget-object v2, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -4009,11 +4495,15 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 2260
     goto :goto_0
 
+    .line 2258
     :catch_0
     move-exception v2
 
+    .line 2259
+    .local v2, "e":Landroid/os/RemoteException;
     :try_start_2
     invoke-virtual {v2}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
@@ -4021,12 +4511,17 @@
 
     throw v3
 
+    .line 2262
+    .end local v1    # "cb":Lcom/android/internal/app/IAppOpsCallback;
+    .end local v2    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     monitor-exit v0
 
+    .line 2263
     return-void
 
+    .line 2262
     :catchall_0
     move-exception v1
 
@@ -4039,7 +4534,11 @@
 
 .method public unsafeCheckOpRaw(Ljava/lang/String;ILjava/lang/String;)I
     .locals 2
+    .param p1, "op"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "packageName"    # Ljava/lang/String;
 
+    .line 2400
     :try_start_0
     iget-object v0, p0, Landroid/app/AppOpsManager;->mService:Lcom/android/internal/app/IAppOpsService;
 
@@ -4055,9 +4554,12 @@
 
     return v0
 
+    .line 2401
     :catch_0
     move-exception v0
 
+    .line 2402
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1

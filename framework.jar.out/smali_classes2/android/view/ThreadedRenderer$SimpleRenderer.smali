@@ -31,15 +31,21 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/view/Surface;)V
     .locals 9
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "name"    # Ljava/lang/String;
+    .param p3, "surface"    # Landroid/view/Surface;
 
+    .line 991
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 989
     new-instance v0, Landroid/view/FrameInfo;
 
     invoke-direct {v0}, Landroid/view/FrameInfo;-><init>()V
 
     iput-object v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mFrameInfo:Landroid/view/FrameInfo;
 
+    .line 992
     sget-object v0, Lcom/android/internal/R$styleable;->Lighting:[I
 
     const/4 v1, 0x0
@@ -50,6 +56,8 @@
 
     move-result-object v0
 
+    .line 993
+    .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v2, 0x0
 
     const/4 v3, 0x3
@@ -60,6 +68,7 @@
 
     iput v3, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mLightY:F
 
+    .line 994
     const/4 v3, 0x4
 
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -68,14 +77,18 @@
 
     iput v3, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mLightZ:F
 
+    .line 995
     const/4 v3, 0x2
 
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v3
 
+    .line 996
+    .local v3, "lightRadius":F
     nop
 
+    .line 997
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v4
@@ -90,8 +103,11 @@
 
     float-to-int v4, v4
 
+    .line 998
+    .local v4, "ambientShadowAlpha":I
     nop
 
+    .line 999
     const/4 v7, 0x1
 
     invoke-virtual {v0, v7, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -104,52 +120,66 @@
 
     float-to-int v2, v5
 
+    .line 1000
+    .local v2, "spotShadowAlpha":I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
+    .line 1002
     invoke-static {}, Landroid/view/ThreadedRenderer;->access$000()J
 
     move-result-wide v5
 
+    .line 1003
+    .local v5, "rootNodePtr":J
     invoke-static {v5, v6}, Landroid/view/RenderNode;->adopt(J)Landroid/view/RenderNode;
 
     move-result-object v8
 
     iput-object v8, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mRootNode:Landroid/view/RenderNode;
 
+    .line 1004
     iget-object v8, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mRootNode:Landroid/view/RenderNode;
 
     invoke-virtual {v8, v1}, Landroid/view/RenderNode;->setClipToBounds(Z)Z
 
+    .line 1005
     invoke-static {v7, v5, v6}, Landroid/view/ThreadedRenderer;->access$100(ZJ)J
 
     move-result-wide v7
 
     iput-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
+    .line 1006
     iget-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v7, v8, p2}, Landroid/view/ThreadedRenderer;->access$200(JLjava/lang/String;)V
 
+    .line 1008
     sget-object v1, Landroid/view/ThreadedRenderer$ProcessInitializer;->sInstance:Landroid/view/ThreadedRenderer$ProcessInitializer;
 
     iget-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-virtual {v1, p1, v7, v8}, Landroid/view/ThreadedRenderer$ProcessInitializer;->init(Landroid/content/Context;J)V
 
+    .line 1009
     iget-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v7, v8}, Landroid/view/ThreadedRenderer;->access$300(J)Z
 
+    .line 1011
     iget-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v7, v8, v3, v4, v2}, Landroid/view/ThreadedRenderer;->access$400(JFII)V
 
+    .line 1013
     iput-object p3, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mSurface:Landroid/view/Surface;
 
+    .line 1014
     iget-wide v7, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v7, v8, p3}, Landroid/view/ThreadedRenderer;->access$500(JLandroid/view/Surface;)V
 
+    .line 1015
     return-void
 .end method
 
@@ -158,10 +188,12 @@
 .method public destroy()V
     .locals 4
 
+    .line 1052
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mSurface:Landroid/view/Surface;
 
+    .line 1053
     iget-wide v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     iget-object v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mRootNode:Landroid/view/RenderNode;
@@ -170,12 +202,15 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/ThreadedRenderer;->access$900(JJ)V
 
+    .line 1054
     return-void
 .end method
 
 .method public draw(Landroid/view/ThreadedRenderer$FrameDrawingCallback;)V
     .locals 6
+    .param p1, "callback"    # Landroid/view/ThreadedRenderer$FrameDrawingCallback;
 
+    .line 1039
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
@@ -184,22 +219,28 @@
 
     mul-long/2addr v0, v2
 
+    .line 1040
+    .local v0, "vsync":J
     iget-object v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mFrameInfo:Landroid/view/FrameInfo;
 
     invoke-virtual {v2, v0, v1, v0, v1}, Landroid/view/FrameInfo;->setVsync(JJ)V
 
+    .line 1041
     iget-object v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mFrameInfo:Landroid/view/FrameInfo;
 
     const-wide/16 v3, 0x4
 
     invoke-virtual {v2, v3, v4}, Landroid/view/FrameInfo;->addFlags(J)V
 
+    .line 1042
     if-eqz p1, :cond_0
 
+    .line 1043
     iget-wide v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v2, v3, p1}, Landroid/view/ThreadedRenderer;->access$700(JLandroid/view/ThreadedRenderer$FrameDrawingCallback;)V
 
+    .line 1045
     :cond_0
     iget-wide v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
@@ -215,6 +256,7 @@
 
     invoke-static {v2, v3, v4, v5}, Landroid/view/ThreadedRenderer;->access$800(J[JI)I
 
+    .line 1046
     return-void
 .end method
 
@@ -226,23 +268,29 @@
         }
     .end annotation
 
+    .line 1059
     :try_start_0
     iget-wide v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     invoke-static {v0, v1}, Landroid/view/ThreadedRenderer;->access$1000(J)V
 
+    .line 1060
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1062
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 1063
     nop
 
+    .line 1064
     return-void
 
+    .line 1062
     :catchall_0
     move-exception v0
 
@@ -254,6 +302,7 @@
 .method public getRootNode()Landroid/view/RenderNode;
     .locals 1
 
+    .line 1032
     iget-object v0, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mRootNode:Landroid/view/RenderNode;
 
     return-object v0
@@ -261,13 +310,20 @@
 
 .method public setLightCenter(Landroid/view/Display;II)V
     .locals 6
+    .param p1, "display"    # Landroid/view/Display;
+    .param p2, "windowLeft"    # I
+    .param p3, "windowTop"    # I
 
+    .line 1023
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
+    .line 1024
+    .local v0, "displaySize":Landroid/graphics/Point;
     invoke-virtual {p1, v0}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
+    .line 1025
     iget v1, v0, Landroid/graphics/Point;->x:I
 
     int-to-float v1, v1
@@ -280,17 +336,22 @@
 
     sub-float/2addr v1, v2
 
+    .line 1026
+    .local v1, "lightX":F
     iget v2, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mLightY:F
 
     int-to-float v3, p3
 
     sub-float/2addr v2, v3
 
+    .line 1028
+    .local v2, "lightY":F
     iget-wide v3, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mNativeProxy:J
 
     iget v5, p0, Landroid/view/ThreadedRenderer$SimpleRenderer;->mLightZ:F
 
     invoke-static {v3, v4, v1, v2, v5}, Landroid/view/ThreadedRenderer;->access$600(JFFF)V
 
+    .line 1029
     return-void
 .end method

@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 474
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,10 @@
 # virtual methods
 .method public compare(Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;)I
     .locals 2
+    .param p1, "lhs"    # Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;
+    .param p2, "rhs"    # Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;
 
+    .line 477
     invoke-virtual {p2}, Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;->getVolume()I
 
     move-result v0
@@ -56,6 +60,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 474
     check-cast p1, Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;
 
     check-cast p2, Lcom/android/internal/graphics/palette/ColorCutQuantizer$Vbox;

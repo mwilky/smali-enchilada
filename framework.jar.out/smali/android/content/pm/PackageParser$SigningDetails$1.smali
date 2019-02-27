@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 6225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,17 +40,21 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/PackageParser$SigningDetails;
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 6228
     invoke-virtual {p1}, Landroid/os/Parcel;->readBoolean()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 6229
     sget-object v0, Landroid/content/pm/PackageParser$SigningDetails;->UNKNOWN:Landroid/content/pm/PackageParser$SigningDetails;
 
     return-object v0
 
+    .line 6231
     :cond_0
     new-instance v0, Landroid/content/pm/PackageParser$SigningDetails;
 
@@ -61,6 +66,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 6225
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageParser$SigningDetails$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/PackageParser$SigningDetails;
 
     move-result-object p1
@@ -70,7 +76,9 @@
 
 .method public newArray(I)[Landroid/content/pm/PackageParser$SigningDetails;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 6236
     new-array v0, p1, [Landroid/content/pm/PackageParser$SigningDetails;
 
     return-object v0
@@ -79,6 +87,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 6225
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageParser$SigningDetails$1;->newArray(I)[Landroid/content/pm/PackageParser$SigningDetails;
 
     move-result-object p1

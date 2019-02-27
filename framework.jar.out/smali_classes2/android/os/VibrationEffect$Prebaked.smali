@@ -41,6 +41,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 754
     new-instance v0, Landroid/os/VibrationEffect$Prebaked$1;
 
     invoke-direct {v0}, Landroid/os/VibrationEffect$Prebaked$1;-><init>()V
@@ -52,23 +53,32 @@
 
 .method public constructor <init>(IZ)V
     .locals 1
+    .param p1, "effectId"    # I
+    .param p2, "fallback"    # Z
 
+    .line 645
     invoke-direct {p0}, Landroid/os/VibrationEffect;-><init>()V
 
+    .line 646
     iput p1, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
+    .line 647
     iput-boolean p2, p0, Landroid/os/VibrationEffect$Prebaked;->mFallback:Z
 
+    .line 648
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
+    .line 649
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 641
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -89,24 +99,30 @@
     :goto_0
     invoke-direct {p0, v0, v1}, Landroid/os/VibrationEffect$Prebaked;-><init>(IZ)V
 
+    .line 642
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
+    .line 643
     return-void
 .end method
 
 .method private static isValidEffectStrength(I)Z
     .locals 1
+    .param p0, "strength"    # I
 
+    .line 686
     packed-switch p0, :pswitch_data_0
 
+    .line 692
     const/4 v0, 0x0
 
     return v0
 
+    .line 690
     :pswitch_0
     const/4 v0, 0x1
 
@@ -126,20 +142,26 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 720
     instance-of v0, p1, Landroid/os/VibrationEffect$Prebaked;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
+    .line 721
     return v1
 
+    .line 723
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/os/VibrationEffect$Prebaked;
 
+    .line 724
+    .local v0, "other":Landroid/os/VibrationEffect$Prebaked;
     iget v2, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     iget v3, v0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
@@ -169,6 +191,7 @@
 .method public getDuration()J
     .locals 2
 
+    .line 665
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -177,6 +200,7 @@
 .method public getEffectStrength()I
     .locals 1
 
+    .line 682
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
     return v0
@@ -185,6 +209,7 @@
 .method public getId()I
     .locals 1
 
+    .line 652
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     return v0
@@ -193,8 +218,11 @@
 .method public hashCode()I
     .locals 3
 
+    .line 731
     const/16 v0, 0x11
 
+    .line 732
+    .local v0, "result":I
     iget v1, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     const/16 v2, 0x25
@@ -203,28 +231,35 @@
 
     add-int/2addr v0, v1
 
+    .line 733
     iget v1, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
     mul-int/2addr v2, v1
 
     add-int/2addr v0, v2
 
+    .line 734
     return v0
 .end method
 
 .method public setEffectStrength(I)V
     .locals 3
+    .param p1, "strength"    # I
 
+    .line 672
     invoke-static {p1}, Landroid/os/VibrationEffect$Prebaked;->isValidEffectStrength(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 675
     iput p1, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
+    .line 676
     return-void
 
+    .line 673
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -250,6 +285,7 @@
 .method public shouldFallback()Z
     .locals 1
 
+    .line 660
     iget-boolean v0, p0, Landroid/os/VibrationEffect$Prebaked;->mFallback:Z
 
     return v0
@@ -258,6 +294,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 739
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -300,10 +337,12 @@
 .method public validate()V
     .locals 3
 
+    .line 698
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 707
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     sget-object v1, Landroid/os/VibrationEffect$Prebaked;->RINGTONES:[I
@@ -330,9 +369,11 @@
 
     goto :goto_0
 
+    .line 705
     :pswitch_0
     nop
 
+    .line 712
     :goto_0
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
@@ -342,8 +383,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 716
     return-void
 
+    .line 713
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -371,6 +414,7 @@
 
     throw v0
 
+    .line 708
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -411,24 +455,31 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 748
     const/4 v0, 0x3
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 749
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 750
     iget-boolean v0, p0, Landroid/os/VibrationEffect$Prebaked;->mFallback:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 751
     iget v0, p0, Landroid/os/VibrationEffect$Prebaked;->mEffectStrength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 752
     return-void
 .end method

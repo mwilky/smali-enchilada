@@ -31,19 +31,25 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
+    .param p1, "id"    # Ljava/lang/String;
 
+    .line 167
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 168
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 171
     iput-object p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mId:Ljava/lang/String;
 
+    .line 172
     return-void
 
+    .line 169
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -56,7 +62,9 @@
 
 .method static synthetic access$000(Landroid/service/settings/suggestions/Suggestion$Builder;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget-object v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mId:Ljava/lang/String;
 
     return-object v0
@@ -64,7 +72,9 @@
 
 .method static synthetic access$100(Landroid/service/settings/suggestions/Suggestion$Builder;)Ljava/lang/CharSequence;
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget-object v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -72,7 +82,9 @@
 
 .method static synthetic access$200(Landroid/service/settings/suggestions/Suggestion$Builder;)Ljava/lang/CharSequence;
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget-object v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mSummary:Ljava/lang/CharSequence;
 
     return-object v0
@@ -80,7 +92,9 @@
 
 .method static synthetic access$300(Landroid/service/settings/suggestions/Suggestion$Builder;)Landroid/graphics/drawable/Icon;
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget-object v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mIcon:Landroid/graphics/drawable/Icon;
 
     return-object v0
@@ -88,7 +102,9 @@
 
 .method static synthetic access$400(Landroid/service/settings/suggestions/Suggestion$Builder;)I
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mFlags:I
 
     return v0
@@ -96,7 +112,9 @@
 
 .method static synthetic access$500(Landroid/service/settings/suggestions/Suggestion$Builder;)Landroid/app/PendingIntent;
     .locals 1
+    .param p0, "x0"    # Landroid/service/settings/suggestions/Suggestion$Builder;
 
+    .line 158
     iget-object v0, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mPendingIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -107,6 +125,7 @@
 .method public build()Landroid/service/settings/suggestions/Suggestion;
     .locals 2
 
+    .line 219
     new-instance v0, Landroid/service/settings/suggestions/Suggestion;
 
     const/4 v1, 0x0
@@ -118,40 +137,55 @@
 
 .method public setFlags(I)Landroid/service/settings/suggestions/Suggestion$Builder;
     .locals 0
+    .param p1, "flags"    # I
 
+    .line 203
     iput p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mFlags:I
 
+    .line 204
     return-object p0
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Icon;)Landroid/service/settings/suggestions/Suggestion$Builder;
     .locals 0
+    .param p1, "icon"    # Landroid/graphics/drawable/Icon;
 
+    .line 194
     iput-object p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mIcon:Landroid/graphics/drawable/Icon;
 
+    .line 195
     return-object p0
 .end method
 
 .method public setPendingIntent(Landroid/app/PendingIntent;)Landroid/service/settings/suggestions/Suggestion$Builder;
     .locals 0
+    .param p1, "pendingIntent"    # Landroid/app/PendingIntent;
 
+    .line 211
     iput-object p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mPendingIntent:Landroid/app/PendingIntent;
 
+    .line 212
     return-object p0
 .end method
 
 .method public setSummary(Ljava/lang/CharSequence;)Landroid/service/settings/suggestions/Suggestion$Builder;
     .locals 0
+    .param p1, "summary"    # Ljava/lang/CharSequence;
 
+    .line 186
     iput-object p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mSummary:Ljava/lang/CharSequence;
 
+    .line 187
     return-object p0
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;)Landroid/service/settings/suggestions/Suggestion$Builder;
     .locals 0
+    .param p1, "title"    # Ljava/lang/CharSequence;
 
+    .line 178
     iput-object p1, p0, Landroid/service/settings/suggestions/Suggestion$Builder;->mTitle:Ljava/lang/CharSequence;
 
+    .line 179
     return-object p0
 .end method

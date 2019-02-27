@@ -22,23 +22,33 @@
 # direct methods
 .method public constructor <init>(I[BI)V
     .locals 3
+    .param p1, "statusCode"    # I
+    .param p2, "convertedData"    # [B
+    .param p3, "offset"    # I
 
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 69
     invoke-direct {p0, p1}, Landroid/drm/DrmConvertedStatus;->isValidStatusCode(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 73
     iput p1, p0, Landroid/drm/DrmConvertedStatus;->statusCode:I
 
+    .line 74
     iput-object p2, p0, Landroid/drm/DrmConvertedStatus;->convertedData:[B
 
+    .line 75
     iput p3, p0, Landroid/drm/DrmConvertedStatus;->offset:I
 
+    .line 76
     return-void
 
+    .line 70
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -63,7 +73,9 @@
 
 .method private isValidStatusCode(I)Z
     .locals 2
+    .param p1, "statusCode"    # I
 
+    .line 79
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1

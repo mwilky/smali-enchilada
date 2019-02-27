@@ -24,12 +24,15 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 574
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 564
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/SoundPool$Builder;->mMaxStreams:I
 
+    .line 575
     return-void
 .end method
 
@@ -38,16 +41,19 @@
 .method public build()Landroid/media/SoundPool;
     .locals 4
 
+    .line 608
     iget-object v0, p0, Landroid/media/SoundPool$Builder;->mAudioAttributes:Landroid/media/AudioAttributes;
 
     if-nez v0, :cond_0
 
+    .line 609
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
     const/4 v1, 0x1
 
+    .line 610
     invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v0
@@ -58,6 +64,7 @@
 
     iput-object v0, p0, Landroid/media/SoundPool$Builder;->mAudioAttributes:Landroid/media/AudioAttributes;
 
+    .line 612
     :cond_0
     new-instance v0, Landroid/media/SoundPool;
 
@@ -74,18 +81,23 @@
 
 .method public setAudioAttributes(Landroid/media/AudioAttributes;)Landroid/media/SoundPool$Builder;
     .locals 2
+    .param p1, "attributes"    # Landroid/media/AudioAttributes;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
+    .line 600
     if-eqz p1, :cond_0
 
+    .line 603
     iput-object p1, p0, Landroid/media/SoundPool$Builder;->mAudioAttributes:Landroid/media/AudioAttributes;
 
+    .line 604
     return-object p0
 
+    .line 601
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -98,18 +110,23 @@
 
 .method public setMaxStreams(I)Landroid/media/SoundPool$Builder;
     .locals 2
+    .param p1, "maxStreams"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
+    .line 584
     if-lez p1, :cond_0
 
+    .line 588
     iput p1, p0, Landroid/media/SoundPool$Builder;->mMaxStreams:I
 
+    .line 589
     return-object p0
 
+    .line 585
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

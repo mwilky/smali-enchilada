@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebViewDelegate;Landroid/webkit/WebViewDelegate$OnTraceEnabledChangeListener;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/webkit/WebViewDelegate;
 
+    .line 62
     iput-object p1, p0, Landroid/webkit/WebViewDelegate$1;->this$0:Landroid/webkit/WebViewDelegate;
 
     iput-object p2, p0, Landroid/webkit/WebViewDelegate$1;->val$listener:Landroid/webkit/WebViewDelegate$OnTraceEnabledChangeListener;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 65
     iget-object v0, p0, Landroid/webkit/WebViewDelegate$1;->val$listener:Landroid/webkit/WebViewDelegate$OnTraceEnabledChangeListener;
 
     iget-object v1, p0, Landroid/webkit/WebViewDelegate$1;->this$0:Landroid/webkit/WebViewDelegate;
@@ -51,5 +54,6 @@
 
     invoke-interface {v0, v1}, Landroid/webkit/WebViewDelegate$OnTraceEnabledChangeListener;->onTraceEnabledChange(Z)V
 
+    .line 66
     return-void
 .end method

@@ -32,13 +32,19 @@
 # direct methods
 .method constructor <init>(IJ)V
     .locals 0
+    .param p1, "type"    # I
+    .param p2, "effectiveTime"    # J
 
+    .line 570
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 571
     iput p1, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mType:I
 
+    .line 572
     iput-wide p2, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mEffectiveTime:J
 
+    .line 573
     return-void
 .end method
 
@@ -47,6 +53,7 @@
 .method public getEffectiveTime()J
     .locals 2
 
+    .line 590
     iget-wide v0, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mEffectiveTime:J
 
     return-wide v0
@@ -55,6 +62,7 @@
 .method public getType()I
     .locals 1
 
+    .line 581
     iget v0, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mType:I
 
     return v0
@@ -62,7 +70,9 @@
 
 .method protected limitEffectiveTime(J)V
     .locals 2
+    .param p1, "otherTime"    # J
 
+    .line 595
     iget-wide v0, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mEffectiveTime:J
 
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Long;->min(JJ)J
@@ -71,5 +81,6 @@
 
     iput-wide v0, p0, Landroid/app/admin/SystemUpdatePolicy$InstallationOption;->mEffectiveTime:J
 
+    .line 596
     return-void
 .end method

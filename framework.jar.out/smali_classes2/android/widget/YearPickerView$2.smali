@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/YearPickerView;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/YearPickerView;
 
+    .line 87
     iput-object p1, p0, Landroid/widget/YearPickerView$2;->this$0:Landroid/widget/YearPickerView;
 
     iput p2, p0, Landroid/widget/YearPickerView$2;->val$year:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 90
     iget-object v0, p0, Landroid/widget/YearPickerView$2;->this$0:Landroid/widget/YearPickerView;
 
     invoke-static {v0}, Landroid/widget/YearPickerView;->access$000(Landroid/widget/YearPickerView;)Landroid/widget/YearPickerView$YearAdapter;
@@ -53,6 +56,8 @@
 
     move-result v0
 
+    .line 91
+    .local v0, "position":I
     if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroid/widget/YearPickerView$2;->this$0:Landroid/widget/YearPickerView;
@@ -63,10 +68,12 @@
 
     if-ge v0, v1, :cond_0
 
+    .line 92
     iget-object v1, p0, Landroid/widget/YearPickerView$2;->this$0:Landroid/widget/YearPickerView;
 
     invoke-virtual {v1, v0}, Landroid/widget/YearPickerView;->setSelectionCentered(I)V
 
+    .line 94
     :cond_0
     return-void
 .end method

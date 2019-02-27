@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/DefaultItemAnimator;Ljava/util/ArrayList;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/DefaultItemAnimator;
 
+    .line 146
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->val$changes:Ljava/util/ArrayList;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 149
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->val$changes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -60,17 +63,23 @@
 
     check-cast v1, Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;
 
+    .line 150
+    .local v1, "change":Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;
     iget-object v2, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/DefaultItemAnimator;->animateChangeImpl(Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;)V
 
+    .line 151
+    .end local v1    # "change":Lcom/android/internal/widget/DefaultItemAnimator$ChangeInfo;
     goto :goto_0
 
+    .line 152
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->val$changes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 153
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$2;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v0, v0, Lcom/android/internal/widget/DefaultItemAnimator;->mChangesList:Ljava/util/ArrayList;
@@ -79,5 +88,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
+    .line 154
     return-void
 .end method

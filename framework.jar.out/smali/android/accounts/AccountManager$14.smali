@@ -29,7 +29,12 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Landroid/os/Bundle;Landroid/app/Activity;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/AccountManager;
+    .param p2, "activity"    # Landroid/app/Activity;
+    .param p3, "handler"    # Landroid/os/Handler;
 
+    .line 2046
+    .local p4, "callback":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$14;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$14;->val$account:Landroid/accounts/Account;
@@ -55,10 +60,12 @@
         }
     .end annotation
 
+    .line 2049
     const/16 v0, 0x1f
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
+    .line 2050
     iget-object v0, p0, Landroid/accounts/AccountManager$14;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -92,5 +99,6 @@
 
     invoke-interface/range {v1 .. v6}, Landroid/accounts/IAccountManager;->confirmCredentialsAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Landroid/os/Bundle;ZI)V
 
+    .line 2052
     return-void
 .end method

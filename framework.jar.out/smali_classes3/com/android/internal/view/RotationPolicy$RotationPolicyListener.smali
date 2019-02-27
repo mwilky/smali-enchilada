@@ -22,8 +22,10 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 197
     new-instance v0, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener$1;
 
     new-instance v1, Landroid/os/Handler;

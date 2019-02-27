@@ -35,23 +35,29 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;)V
     .locals 2
+    .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
+    .line 489
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 510
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mCollator:Ljava/text/Collator;
 
+    .line 490
     iput-object p1, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
+    .line 491
     iget-object v0, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mCollator:Ljava/text/Collator;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/text/Collator;->setStrength(I)V
 
+    .line 492
     return-void
 .end method
 
@@ -59,26 +65,33 @@
 # virtual methods
 .method public final compare(Landroid/content/pm/ResolveInfo;Landroid/content/pm/ResolveInfo;)I
     .locals 5
+    .param p1, "a"    # Landroid/content/pm/ResolveInfo;
+    .param p2, "b"    # Landroid/content/pm/ResolveInfo;
 
+    .line 496
     iget v0, p1, Landroid/content/pm/ResolveInfo;->targetUserId:I
 
     const/4 v1, -0x2
 
     if-eq v0, v1, :cond_0
 
+    .line 497
     const/4 v0, 0x1
 
     return v0
 
+    .line 499
     :cond_0
     iget v0, p2, Landroid/content/pm/ResolveInfo;->targetUserId:I
 
     if-eq v0, v1, :cond_1
 
+    .line 500
     const/4 v0, -0x1
 
     return v0
 
+    .line 502
     :cond_1
     iget-object v0, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
@@ -86,12 +99,15 @@
 
     move-result-object v0
 
+    .line 503
+    .local v0, "sa":Ljava/lang/CharSequence;
     if-nez v0, :cond_2
 
     iget-object v1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
+    .line 504
     :cond_2
     iget-object v1, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
@@ -99,12 +115,15 @@
 
     move-result-object v1
 
+    .line 505
+    .local v1, "sb":Ljava/lang/CharSequence;
     if-nez v1, :cond_3
 
     iget-object v2, p2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
+    .line 507
     :cond_3
     iget-object v2, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->mCollator:Ljava/text/Collator;
 
@@ -126,6 +145,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 487
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     check-cast p2, Landroid/content/pm/ResolveInfo;

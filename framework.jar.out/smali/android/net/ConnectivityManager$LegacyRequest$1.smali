@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/net/ConnectivityManager$LegacyRequest;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/net/ConnectivityManager$LegacyRequest;
 
+    .line 1523
     iput-object p1, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$0:Landroid/net/ConnectivityManager$LegacyRequest;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -33,11 +35,14 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 3
+    .param p1, "network"    # Landroid/net/Network;
 
+    .line 1526
     iget-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$0:Landroid/net/ConnectivityManager$LegacyRequest;
 
     iput-object p1, v0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
 
+    .line 1527
     const-string v0, "ConnectivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -56,14 +61,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1528
     invoke-static {p1}, Landroid/net/ConnectivityManager;->setProcessDefaultNetworkForHostResolution(Landroid/net/Network;)Z
 
+    .line 1529
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 3
+    .param p1, "network"    # Landroid/net/Network;
 
+    .line 1532
     iget-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$0:Landroid/net/ConnectivityManager$LegacyRequest;
 
     iget-object v0, v0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
@@ -78,6 +87,7 @@
 
     invoke-static {v0}, Landroid/net/ConnectivityManager$LegacyRequest;->access$000(Landroid/net/ConnectivityManager$LegacyRequest;)V
 
+    .line 1533
     :cond_0
     const-string v0, "ConnectivityManager"
 
@@ -97,5 +107,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1534
     return-void
 .end method

@@ -16,39 +16,50 @@
 # direct methods
 .method public constructor <init>(Ljavax/net/ssl/X509TrustManager;)V
     .locals 8
+    .param p1, "tm"    # Ljavax/net/ssl/X509TrustManager;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 55
     instance-of v0, p1, Lcom/android/org/conscrypt/TrustManagerImpl;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
+    .line 56
     move-object v0, p1
 
     check-cast v0, Lcom/android/org/conscrypt/TrustManagerImpl;
 
     iput-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mDelegate:Lcom/android/org/conscrypt/TrustManagerImpl;
 
+    .line 57
     iput-object v1, p0, Landroid/net/http/X509TrustManagerExtensions;->mTrustManager:Ljavax/net/ssl/X509TrustManager;
 
+    .line 58
     iput-object v1, p0, Landroid/net/http/X509TrustManagerExtensions;->mCheckServerTrusted:Ljava/lang/reflect/Method;
 
+    .line 59
     iput-object v1, p0, Landroid/net/http/X509TrustManagerExtensions;->mIsSameTrustConfiguration:Ljava/lang/reflect/Method;
 
+    .line 60
     return-void
 
+    .line 63
     :cond_0
     iput-object v1, p0, Landroid/net/http/X509TrustManagerExtensions;->mDelegate:Lcom/android/org/conscrypt/TrustManagerImpl;
 
+    .line 64
     iput-object p1, p0, Landroid/net/http/X509TrustManagerExtensions;->mTrustManager:Ljavax/net/ssl/X509TrustManager;
 
+    .line 67
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -86,10 +97,14 @@
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 74
     nop
 
+    .line 76
     move-object v0, v1
 
+    .line 78
+    .local v0, "isSameTrustConfiguration":Ljava/lang/reflect/Method;
     :try_start_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -115,19 +130,27 @@
 
     move-object v0, v1
 
+    .line 82
     goto :goto_0
 
+    .line 81
     :catch_0
     move-exception v1
 
+    .line 83
     :goto_0
     iput-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mIsSameTrustConfiguration:Ljava/lang/reflect/Method;
 
+    .line 84
     return-void
 
+    .line 71
+    .end local v0    # "isSameTrustConfiguration":Ljava/lang/reflect/Method;
     :catch_1
     move-exception v0
 
+    .line 72
+    .local v0, "e":Ljava/lang/NoSuchMethodException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Required method checkServerTrusted(X509Certificate[], String, String, String) missing"
@@ -141,6 +164,9 @@
 # virtual methods
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
     .locals 4
+    .param p1, "chain"    # [Ljava/security/cert/X509Certificate;
+    .param p2, "authType"    # Ljava/lang/String;
+    .param p3, "host"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -160,10 +186,12 @@
         }
     .end annotation
 
+    .line 98
     iget-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mDelegate:Lcom/android/org/conscrypt/TrustManagerImpl;
 
     if-eqz v0, :cond_0
 
+    .line 99
     iget-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mDelegate:Lcom/android/org/conscrypt/TrustManagerImpl;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/org/conscrypt/TrustManagerImpl;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
@@ -172,6 +200,7 @@
 
     return-object v0
 
+    .line 102
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mCheckServerTrusted:Ljava/lang/reflect/Method;
@@ -205,9 +234,12 @@
 
     return-object v0
 
+    .line 106
     :catch_0
     move-exception v0
 
+    .line 107
+    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -216,6 +248,7 @@
 
     if-nez v1, :cond_2
 
+    .line 110
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -224,6 +257,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 111
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -232,6 +266,7 @@
 
     throw v1
 
+    .line 113
     :cond_1
     new-instance v1, Ljava/security/cert/CertificateException;
 
@@ -245,6 +280,7 @@
 
     throw v1
 
+    .line 108
     :cond_2
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
@@ -254,9 +290,13 @@
 
     throw v1
 
+    .line 104
+    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v0
 
+    .line 105
+    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/security/cert/CertificateException;
 
     const-string v2, "Failed to call checkServerTrusted"
@@ -268,17 +308,22 @@
 
 .method public isSameTrustConfiguration(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 5
+    .param p1, "hostname1"    # Ljava/lang/String;
+    .param p2, "hostname2"    # Ljava/lang/String;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 138
     iget-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mIsSameTrustConfiguration:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
+    .line 139
     return v1
 
+    .line 142
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/net/http/X509TrustManagerExtensions;->mIsSameTrustConfiguration:Ljava/lang/reflect/Method;
@@ -310,9 +355,12 @@
 
     return v0
 
+    .line 145
     :catch_0
     move-exception v0
 
+    .line 146
+    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -321,6 +369,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 147
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -329,6 +378,7 @@
 
     throw v1
 
+    .line 149
     :cond_1
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -342,9 +392,13 @@
 
     throw v1
 
+    .line 143
+    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v0
 
+    .line 144
+    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Failed to call isSameTrustConfiguration"
@@ -356,7 +410,9 @@
 
 .method public isUserAddedCertificate(Ljava/security/cert/X509Certificate;)Z
     .locals 1
+    .param p1, "cert"    # Ljava/security/cert/X509Certificate;
 
+    .line 129
     invoke-static {}, Landroid/security/net/config/UserCertificateSource;->getInstance()Landroid/security/net/config/UserCertificateSource;
 
     move-result-object v0

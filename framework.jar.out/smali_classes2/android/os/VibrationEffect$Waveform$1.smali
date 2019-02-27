@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,9 +40,12 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/os/VibrationEffect$Waveform;
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 623
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
+    .line 624
     new-instance v0, Landroid/os/VibrationEffect$Waveform;
 
     invoke-direct {v0, p1}, Landroid/os/VibrationEffect$Waveform;-><init>(Landroid/os/Parcel;)V
@@ -52,6 +56,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 619
     invoke-virtual {p0, p1}, Landroid/os/VibrationEffect$Waveform$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/VibrationEffect$Waveform;
 
     move-result-object p1
@@ -61,7 +66,9 @@
 
 .method public newArray(I)[Landroid/os/VibrationEffect$Waveform;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 628
     new-array v0, p1, [Landroid/os/VibrationEffect$Waveform;
 
     return-object v0
@@ -70,6 +77,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 619
     invoke-virtual {p0, p1}, Landroid/os/VibrationEffect$Waveform$1;->newArray(I)[Landroid/os/VibrationEffect$Waveform;
 
     move-result-object p1

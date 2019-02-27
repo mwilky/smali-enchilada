@@ -40,25 +40,33 @@
 # direct methods
 .method private constructor <init>(Landroid/graphics/pdf/PdfRenderer;I)V
     .locals 4
+    .param p1, "this$0"    # Landroid/graphics/pdf/PdfRenderer;
+    .param p2, "index"    # I
 
+    .line 306
     iput-object p1, p0, Landroid/graphics/pdf/PdfRenderer$Page;->this$0:Landroid/graphics/pdf/PdfRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 288
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mCloseGuard:Ldalvik/system/CloseGuard;
 
+    .line 307
     invoke-static {p1}, Landroid/graphics/pdf/PdfRenderer;->access$100(Landroid/graphics/pdf/PdfRenderer;)Landroid/graphics/Point;
 
     move-result-object v0
 
+    .line 308
+    .local v0, "size":Landroid/graphics/Point;
     sget-object v1, Landroid/graphics/pdf/PdfRenderer;->sPdfiumLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 309
     :try_start_0
     invoke-static {p1}, Landroid/graphics/pdf/PdfRenderer;->access$200(Landroid/graphics/pdf/PdfRenderer;)J
 
@@ -70,28 +78,35 @@
 
     iput-wide v2, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
 
+    .line 310
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 311
     iput p2, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mIndex:I
 
+    .line 312
     iget v1, v0, Landroid/graphics/Point;->x:I
 
     iput v1, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mWidth:I
 
+    .line 313
     iget v1, v0, Landroid/graphics/Point;->y:I
 
     iput v1, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mHeight:I
 
+    .line 314
     iget-object v1, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v2, "close"
 
     invoke-virtual {v1, v2}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
+    .line 315
     return-void
 
+    .line 310
     :catchall_0
     move-exception v2
 
@@ -105,7 +120,11 @@
 
 .method synthetic constructor <init>(Landroid/graphics/pdf/PdfRenderer;ILandroid/graphics/pdf/PdfRenderer$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/graphics/pdf/PdfRenderer;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Landroid/graphics/pdf/PdfRenderer$1;
 
+    .line 286
     invoke-direct {p0, p1, p2}, Landroid/graphics/pdf/PdfRenderer$Page;-><init>(Landroid/graphics/pdf/PdfRenderer;I)V
 
     return-void
@@ -114,6 +133,7 @@
 .method private doClose()V
     .locals 6
 
+    .line 465
     iget-wide v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
 
     const-wide/16 v2, 0x0
@@ -122,23 +142,28 @@
 
     if-eqz v0, :cond_0
 
+    .line 466
     sget-object v0, Landroid/graphics/pdf/PdfRenderer;->sPdfiumLock:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 467
     :try_start_0
     iget-wide v4, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
 
     invoke-static {v4, v5}, Landroid/graphics/pdf/PdfRenderer;->access$500(J)V
 
+    .line 468
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 469
     iput-wide v2, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
 
     goto :goto_0
 
+    .line 468
     :catchall_0
     move-exception v1
 
@@ -149,24 +174,28 @@
 
     throw v1
 
+    .line 472
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
+    .line 473
     iget-object v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->this$0:Landroid/graphics/pdf/PdfRenderer;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/graphics/pdf/PdfRenderer;->access$602(Landroid/graphics/pdf/PdfRenderer;Landroid/graphics/pdf/PdfRenderer$Page;)Landroid/graphics/pdf/PdfRenderer$Page;
 
+    .line 474
     return-void
 .end method
 
 .method private throwIfClosed()V
     .locals 4
 
+    .line 477
     iget-wide v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
 
     const-wide/16 v2, 0x0
@@ -175,8 +204,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 480
     return-void
 
+    .line 478
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -192,10 +223,13 @@
 .method public close()V
     .locals 0
 
+    .line 447
     invoke-direct {p0}, Landroid/graphics/pdf/PdfRenderer$Page;->throwIfClosed()V
 
+    .line 448
     invoke-direct {p0}, Landroid/graphics/pdf/PdfRenderer$Page;->doClose()V
 
+    .line 449
     return-void
 .end method
 
@@ -207,26 +241,33 @@
         }
     .end annotation
 
+    .line 454
     :try_start_0
     iget-object v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
+    .line 455
     iget-object v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
+    .line 458
     :cond_0
     invoke-direct {p0}, Landroid/graphics/pdf/PdfRenderer$Page;->doClose()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 460
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 461
     nop
 
+    .line 462
     return-void
 
+    .line 460
     :catchall_0
     move-exception v0
 
@@ -238,6 +279,7 @@
 .method public getHeight()I
     .locals 1
 
+    .line 341
     iget v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mHeight:I
 
     return v0
@@ -246,6 +288,7 @@
 .method public getIndex()I
     .locals 1
 
+    .line 323
     iget v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mIndex:I
 
     return v0
@@ -254,6 +297,7 @@
 .method public getWidth()I
     .locals 1
 
+    .line 332
     iget v0, p0, Landroid/graphics/pdf/PdfRenderer$Page;->mWidth:I
 
     return v0
@@ -261,11 +305,16 @@
 
 .method public render(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Matrix;I)V
     .locals 25
+    .param p1, "destination"    # Landroid/graphics/Bitmap;
+    .param p2, "destClip"    # Landroid/graphics/Rect;
+    .param p3, "transform"    # Landroid/graphics/Matrix;
+    .param p4, "renderMode"    # I
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p2
 
+    .line 384
     move/from16 v15, p4
 
     iget-wide v3, v1, Landroid/graphics/pdf/PdfRenderer$Page;->mNativePage:J
@@ -276,6 +325,7 @@
 
     if-eqz v3, :cond_e
 
+    .line 388
     const-string v3, "bitmap null"
 
     move-object/from16 v4, p1
@@ -288,6 +338,9 @@
 
     check-cast v14, Landroid/graphics/Bitmap;
 
+    .line 390
+    .end local p1    # "destination":Landroid/graphics/Bitmap;
+    .local v14, "destination":Landroid/graphics/Bitmap;
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v3
@@ -296,8 +349,10 @@
 
     if-ne v3, v4, :cond_d
 
+    .line 394
     if-eqz v2, :cond_1
 
+    .line 395
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     if-ltz v3, :cond_0
@@ -308,6 +363,7 @@
 
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
+    .line 396
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -316,6 +372,7 @@
 
     iget v3, v2, Landroid/graphics/Rect;->bottom:I
 
+    .line 397
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
@@ -324,6 +381,7 @@
 
     goto :goto_0
 
+    .line 398
     :cond_0
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -333,6 +391,7 @@
 
     throw v3
 
+    .line 402
     :cond_1
     :goto_0
     if-eqz p3, :cond_3
@@ -345,6 +404,7 @@
 
     goto :goto_1
 
+    .line 403
     :cond_2
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -354,6 +414,7 @@
 
     throw v3
 
+    .line 406
     :cond_3
     :goto_1
     const/4 v3, 0x1
@@ -366,6 +427,7 @@
 
     goto :goto_2
 
+    .line 407
     :cond_4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -375,6 +437,7 @@
 
     throw v3
 
+    .line 410
     :cond_5
     :goto_2
     if-ne v15, v4, :cond_7
@@ -383,6 +446,7 @@
 
     goto :goto_3
 
+    .line 411
     :cond_6
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -392,6 +456,7 @@
 
     throw v3
 
+    .line 414
     :cond_7
     :goto_3
     const/4 v3, 0x0
@@ -408,6 +473,8 @@
     :goto_4
     move v12, v4
 
+    .line 415
+    .local v12, "contentLeft":I
     if-eqz v2, :cond_9
 
     iget v3, v2, Landroid/graphics/Rect;->top:I
@@ -417,12 +484,15 @@
     :cond_9
     move v13, v3
 
+    .line 416
+    .local v13, "contentTop":I
     if-eqz v2, :cond_a
 
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     goto :goto_5
 
+    .line 417
     :cond_a
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -431,12 +501,15 @@
     :goto_5
     move/from16 v16, v3
 
+    .line 418
+    .local v16, "contentRight":I
     if-eqz v2, :cond_b
 
     iget v3, v2, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_6
 
+    .line 419
     :cond_b
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -445,18 +518,28 @@
     :goto_6
     move/from16 v17, v3
 
+    .line 422
+    .local v17, "contentBottom":I
     if-nez p3, :cond_c
 
+    .line 423
     sub-int v3, v16, v12
 
+    .line 424
+    .local v3, "clipWidth":I
     sub-int v4, v17, v13
 
+    .line 426
+    .local v4, "clipHeight":I
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
     move-object v0, v5
 
+    .line 427
+    .end local p3    # "transform":Landroid/graphics/Matrix;
+    .local v0, "transform":Landroid/graphics/Matrix;
     int-to-float v5, v3
 
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/pdf/PdfRenderer$Page;->getWidth()I
@@ -469,6 +552,7 @@
 
     int-to-float v6, v4
 
+    .line 428
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/pdf/PdfRenderer$Page;->getHeight()I
 
     move-result v7
@@ -477,28 +561,42 @@
 
     div-float/2addr v6, v7
 
+    .line 427
     invoke-virtual {v0, v5, v6}, Landroid/graphics/Matrix;->postScale(FF)Z
 
+    .line 429
     int-to-float v5, v12
 
     int-to-float v6, v13
 
     invoke-virtual {v0, v5, v6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
+    .line 432
+    .end local v3    # "clipWidth":I
+    .end local v4    # "clipHeight":I
     move-object v11, v0
 
     goto :goto_7
 
+    .line 432
+    .end local v0    # "transform":Landroid/graphics/Matrix;
+    .restart local p3    # "transform":Landroid/graphics/Matrix;
     :cond_c
     move-object/from16 v11, p3
 
+    .line 432
+    .end local p3    # "transform":Landroid/graphics/Matrix;
+    .local v11, "transform":Landroid/graphics/Matrix;
     :goto_7
     iget-wide v9, v11, Landroid/graphics/Matrix;->native_instance:J
 
+    .line 434
+    .local v9, "transformPtr":J
     sget-object v18, Landroid/graphics/pdf/PdfRenderer;->sPdfiumLock:Ljava/lang/Object;
 
     monitor-enter v18
 
+    .line 435
     :try_start_0
     iget-object v0, v1, Landroid/graphics/pdf/PdfRenderer$Page;->this$0:Landroid/graphics/pdf/PdfRenderer;
 
@@ -518,29 +616,56 @@
 
     move v9, v13
 
+    .line 435
+    .end local v9    # "transformPtr":J
+    .local v19, "transformPtr":J
     move/from16 v10, v16
 
     move-object/from16 v21, v11
 
     move/from16 v11, v17
 
+    .line 435
+    .end local v11    # "transform":Landroid/graphics/Matrix;
+    .local v21, "transform":Landroid/graphics/Matrix;
     move/from16 v22, v12
 
     move/from16 v23, v13
 
     move-wide/from16 v12, v19
 
+    .line 435
+    .end local v12    # "contentLeft":I
+    .end local v13    # "contentTop":I
+    .local v22, "contentLeft":I
+    .local v23, "contentTop":I
     move-object/from16 v24, v14
 
     move v14, v15
 
+    .line 435
+    .end local v14    # "destination":Landroid/graphics/Bitmap;
+    .local v24, "destination":Landroid/graphics/Bitmap;
     :try_start_1
     invoke-static/range {v3 .. v14}, Landroid/graphics/pdf/PdfRenderer;->access$400(JJLandroid/graphics/Bitmap;IIIIJI)V
 
+    .line 437
     monitor-exit v18
 
+    .line 438
     return-void
 
+    .line 437
+    .end local v19    # "transformPtr":J
+    .end local v21    # "transform":Landroid/graphics/Matrix;
+    .end local v22    # "contentLeft":I
+    .end local v23    # "contentTop":I
+    .end local v24    # "destination":Landroid/graphics/Bitmap;
+    .restart local v9    # "transformPtr":J
+    .restart local v11    # "transform":Landroid/graphics/Matrix;
+    .restart local v12    # "contentLeft":I
+    .restart local v13    # "contentTop":I
+    .restart local v14    # "destination":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v0
 
@@ -554,6 +679,17 @@
 
     move-object/from16 v24, v14
 
+    .line 437
+    .end local v9    # "transformPtr":J
+    .end local v11    # "transform":Landroid/graphics/Matrix;
+    .end local v12    # "contentLeft":I
+    .end local v13    # "contentTop":I
+    .end local v14    # "destination":Landroid/graphics/Bitmap;
+    .restart local v19    # "transformPtr":J
+    .restart local v21    # "transform":Landroid/graphics/Matrix;
+    .restart local v22    # "contentLeft":I
+    .restart local v23    # "contentTop":I
+    .restart local v24    # "destination":Landroid/graphics/Bitmap;
     :goto_8
     monitor-exit v18
     :try_end_1
@@ -566,9 +702,22 @@
 
     goto :goto_8
 
+    .line 391
+    .end local v16    # "contentRight":I
+    .end local v17    # "contentBottom":I
+    .end local v19    # "transformPtr":J
+    .end local v21    # "transform":Landroid/graphics/Matrix;
+    .end local v22    # "contentLeft":I
+    .end local v23    # "contentTop":I
+    .end local v24    # "destination":Landroid/graphics/Bitmap;
+    .restart local v14    # "destination":Landroid/graphics/Bitmap;
+    .restart local p3    # "transform":Landroid/graphics/Matrix;
     :cond_d
     move-object/from16 v24, v14
 
+    .line 391
+    .end local v14    # "destination":Landroid/graphics/Bitmap;
+    .restart local v24    # "destination":Landroid/graphics/Bitmap;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "Unsupported pixel format"
@@ -577,6 +726,9 @@
 
     throw v3
 
+    .line 385
+    .end local v24    # "destination":Landroid/graphics/Bitmap;
+    .restart local p1    # "destination":Landroid/graphics/Bitmap;
     :cond_e
     move-object/from16 v4, p1
 

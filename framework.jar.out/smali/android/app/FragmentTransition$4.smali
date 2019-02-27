@@ -22,6 +22,7 @@
 .method constructor <init>(Landroid/graphics/Rect;)V
     .locals 0
 
+    .line 881
     iput-object p1, p0, Landroid/app/FragmentTransition$4;->val$epicenter:Landroid/graphics/Rect;
 
     invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
@@ -33,7 +34,9 @@
 # virtual methods
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
     .locals 1
+    .param p1, "transition"    # Landroid/transition/Transition;
 
+    .line 884
     iget-object v0, p0, Landroid/app/FragmentTransition$4;->val$epicenter:Landroid/graphics/Rect;
 
     return-object v0

@@ -39,23 +39,32 @@
 # direct methods
 .method public constructor <init>(Ljava/util/Locale;Z)V
     .locals 1
+    .param p1, "sortLocale"    # Ljava/util/Locale;
+    .param p2, "countryMode"    # Z
 
+    .line 229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 230
     invoke-static {p1}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/app/LocaleHelper$LocaleInfoComparator;->mCollator:Ljava/text/Collator;
 
+    .line 231
     iput-boolean p2, p0, Lcom/android/internal/app/LocaleHelper$LocaleInfoComparator;->mCountryMode:Z
 
+    .line 232
     return-void
 .end method
 
 .method private removePrefixForCompare(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p1, "locale"    # Ljava/util/Locale;
+    .param p2, "str"    # Ljava/lang/String;
 
+    .line 242
     const-string v0, "ar"
 
     invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -76,6 +85,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 243
     const-string/jumbo v0, "\u0627\u0644"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -88,6 +98,7 @@
 
     return-object v0
 
+    .line 245
     :cond_0
     return-object p2
 .end method
@@ -96,7 +107,10 @@
 # virtual methods
 .method public compare(Lcom/android/internal/app/LocaleStore$LocaleInfo;Lcom/android/internal/app/LocaleStore$LocaleInfo;)I
     .locals 4
+    .param p1, "lhs"    # Lcom/android/internal/app/LocaleStore$LocaleInfo;
+    .param p2, "rhs"    # Lcom/android/internal/app/LocaleStore$LocaleInfo;
 
+    .line 260
     invoke-virtual {p1}, Lcom/android/internal/app/LocaleStore$LocaleInfo;->isSuggested()Z
 
     move-result v0
@@ -107,8 +121,10 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 262
     iget-object v0, p0, Lcom/android/internal/app/LocaleHelper$LocaleInfoComparator;->mCollator:Ljava/text/Collator;
 
+    .line 263
     invoke-virtual {p1}, Lcom/android/internal/app/LocaleStore$LocaleInfo;->getLocale()Ljava/util/Locale;
 
     move-result-object v1
@@ -123,6 +139,7 @@
 
     move-result-object v1
 
+    .line 264
     invoke-virtual {p2}, Lcom/android/internal/app/LocaleStore$LocaleInfo;->getLocale()Ljava/util/Locale;
 
     move-result-object v2
@@ -137,12 +154,14 @@
 
     move-result-object v2
 
+    .line 262
     invoke-virtual {v0, v1, v2}, Ljava/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
     return v0
 
+    .line 267
     :cond_0
     invoke-virtual {p1}, Lcom/android/internal/app/LocaleStore$LocaleInfo;->isSuggested()Z
 
@@ -164,6 +183,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 219
     check-cast p1, Lcom/android/internal/app/LocaleStore$LocaleInfo;
 
     check-cast p2, Lcom/android/internal/app/LocaleStore$LocaleInfo;

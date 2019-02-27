@@ -29,6 +29,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 49
+    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,6 +40,7 @@
 # virtual methods
 .method public createMarshaler(Landroid/hardware/camera2/utils/TypeReference;I)Landroid/hardware/camera2/marshal/Marshaler;
     .locals 1
+    .param p2, "nativeType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,6 +51,9 @@
         }
     .end annotation
 
+    .line 159
+    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive<TT;>;"
+    .local p1, "managedType":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<TT;>;"
     new-instance v0, Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive$MarshalerPrimitive;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive$MarshalerPrimitive;-><init>(Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive;Landroid/hardware/camera2/utils/TypeReference;I)V
@@ -57,6 +63,7 @@
 
 .method public isTypeMappingSupported(Landroid/hardware/camera2/utils/TypeReference;I)Z
     .locals 4
+    .param p2, "nativeType"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,6 +72,9 @@
         }
     .end annotation
 
+    .line 164
+    .local p0, "this":Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive;, "Landroid/hardware/camera2/marshal/impl/MarshalQueryablePrimitive<TT;>;"
+    .local p1, "managedType":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<TT;>;"
     invoke-virtual {p1}, Landroid/hardware/camera2/utils/TypeReference;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -75,12 +85,15 @@
 
     if-eqz v0, :cond_10
 
+    .line 165
     invoke-virtual {p1}, Landroid/hardware/camera2/utils/TypeReference;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
+    .line 167
+    .local v0, "klass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     const/4 v3, 0x1
@@ -93,6 +106,7 @@
 
     goto :goto_4
 
+    .line 169
     :cond_0
     sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
@@ -104,6 +118,7 @@
 
     goto :goto_3
 
+    .line 171
     :cond_1
     sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
@@ -115,6 +130,7 @@
 
     goto :goto_2
 
+    .line 173
     :cond_2
     sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
@@ -126,6 +142,7 @@
 
     goto :goto_1
 
+    .line 175
     :cond_3
     sget-object v2, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
@@ -137,11 +154,13 @@
 
     goto :goto_0
 
+    .line 177
     :cond_4
     const-class v2, Landroid/util/Rational;
 
     if-ne v0, v2, :cond_10
 
+    .line 178
     const/4 v2, 0x5
 
     if-ne p2, v2, :cond_5
@@ -153,6 +172,7 @@
     :cond_5
     return v1
 
+    .line 176
     :cond_6
     :goto_0
     const/4 v2, 0x4
@@ -166,6 +186,7 @@
     :cond_7
     return v1
 
+    .line 174
     :cond_8
     :goto_1
     const/4 v2, 0x3
@@ -179,6 +200,7 @@
     :cond_9
     return v1
 
+    .line 172
     :cond_a
     :goto_2
     const/4 v2, 0x2
@@ -192,6 +214,7 @@
     :cond_b
     return v1
 
+    .line 170
     :cond_c
     :goto_3
     if-ne p2, v3, :cond_d
@@ -203,6 +226,7 @@
     :cond_d
     return v1
 
+    .line 168
     :cond_e
     :goto_4
     if-nez p2, :cond_f
@@ -214,6 +238,8 @@
     :cond_f
     return v1
 
+    .line 181
+    .end local v0    # "klass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_10
     return v1
 .end method

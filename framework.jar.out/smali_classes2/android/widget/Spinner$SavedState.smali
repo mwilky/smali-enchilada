@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 934
     new-instance v0, Landroid/widget/Spinner$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/Spinner$SavedState$1;-><init>()V
@@ -45,9 +46,12 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 924
     invoke-direct {p0, p1}, Landroid/widget/AbsSpinner$SavedState;-><init>(Landroid/os/Parcel;)V
 
+    .line 925
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -64,12 +68,16 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/Spinner$SavedState;->showDropdown:Z
 
+    .line 926
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/widget/Spinner$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/widget/Spinner$1;
 
+    .line 916
     invoke-direct {p0, p1}, Landroid/widget/Spinner$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -77,9 +85,12 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
+    .param p1, "superState"    # Landroid/os/Parcelable;
 
+    .line 920
     invoke-direct {p0, p1}, Landroid/widget/AbsSpinner$SavedState;-><init>(Landroid/os/Parcelable;)V
 
+    .line 921
     return-void
 .end method
 
@@ -87,14 +98,19 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 930
     invoke-super {p0, p1, p2}, Landroid/widget/AbsSpinner$SavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 931
     iget-boolean v0, p0, Landroid/widget/Spinner$SavedState;->showDropdown:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 932
     return-void
 .end method

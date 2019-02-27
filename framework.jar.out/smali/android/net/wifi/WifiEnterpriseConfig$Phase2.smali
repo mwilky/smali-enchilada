@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 315
     const-string v0, "NULL"
 
     const-string v1, "PAP"
@@ -70,6 +71,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 319
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

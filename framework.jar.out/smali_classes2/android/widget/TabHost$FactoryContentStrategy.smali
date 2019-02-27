@@ -30,15 +30,21 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/TabHost;Ljava/lang/CharSequence;Landroid/widget/TabHost$TabContentFactory;)V
     .locals 0
+    .param p2, "tag"    # Ljava/lang/CharSequence;
+    .param p3, "factory"    # Landroid/widget/TabHost$TabContentFactory;
 
+    .line 736
     iput-object p1, p0, Landroid/widget/TabHost$FactoryContentStrategy;->this$0:Landroid/widget/TabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 737
     iput-object p2, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTag:Ljava/lang/CharSequence;
 
+    .line 738
     iput-object p3, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mFactory:Landroid/widget/TabHost$TabContentFactory;
 
+    .line 739
     return-void
 .end method
 
@@ -47,10 +53,12 @@
 .method public getContentView()Landroid/view/View;
     .locals 2
 
+    .line 742
     iget-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTabContent:Landroid/view/View;
 
     if-nez v0, :cond_0
 
+    .line 743
     iget-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mFactory:Landroid/widget/TabHost$TabContentFactory;
 
     iget-object v1, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTag:Ljava/lang/CharSequence;
@@ -65,6 +73,7 @@
 
     iput-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTabContent:Landroid/view/View;
 
+    .line 745
     :cond_0
     iget-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTabContent:Landroid/view/View;
 
@@ -72,6 +81,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    .line 746
     iget-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTabContent:Landroid/view/View;
 
     return-object v0
@@ -80,11 +90,13 @@
 .method public tabClosed()V
     .locals 2
 
+    .line 750
     iget-object v0, p0, Landroid/widget/TabHost$FactoryContentStrategy;->mTabContent:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    .line 751
     return-void
 .end method

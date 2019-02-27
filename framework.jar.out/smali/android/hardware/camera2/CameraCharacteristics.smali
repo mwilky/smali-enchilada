@@ -1454,6 +1454,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 523
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.colorCorrection.availableAberrationModes"
@@ -1464,6 +1465,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 541
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeAvailableAntibandingModes"
@@ -1474,6 +1476,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_ANTIBANDING_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 566
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeAvailableModes"
@@ -1484,6 +1487,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 605
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeAvailableTargetFpsRanges"
@@ -1496,6 +1500,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 625
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeCompensationRange"
@@ -1508,6 +1513,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_COMPENSATION_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 642
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeCompensationStep"
@@ -1518,6 +1524,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_COMPENSATION_STEP:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 666
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.afAvailableModes"
@@ -1528,6 +1535,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AF_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 689
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.availableEffects"
@@ -1538,6 +1546,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_EFFECTS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 712
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.availableSceneModes"
@@ -1548,6 +1557,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_SCENE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 726
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.availableVideoStabilizationModes"
@@ -1558,6 +1568,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 750
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.awbAvailableModes"
@@ -1568,6 +1579,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AWB_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 770
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.maxRegions"
@@ -1578,6 +1590,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_MAX_REGIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 787
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.maxRegionsAe"
@@ -1588,6 +1601,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_MAX_REGIONS_AE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 803
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.maxRegionsAwb"
@@ -1598,6 +1612,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_MAX_REGIONS_AWB:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 819
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.maxRegionsAf"
@@ -1608,6 +1623,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_MAX_REGIONS_AF:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 875
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.availableHighSpeedVideoConfigurations"
@@ -1618,6 +1634,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_HIGH_SPEED_VIDEO_CONFIGURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 887
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.aeLockAvailable"
@@ -1628,6 +1645,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_LOCK_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 899
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.awbLockAvailable"
@@ -1638,6 +1656,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AWB_LOCK_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 915
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.availableModes"
@@ -1648,6 +1667,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 935
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.control.postRawSensitivityBoostRange"
@@ -1660,6 +1680,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 955
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.edge.availableEdgeModes"
@@ -1670,6 +1691,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->EDGE_AVAILABLE_EDGE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 967
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.flash.info.available"
@@ -1680,6 +1702,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->FLASH_INFO_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 981
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.hotPixel.availableHotPixelModes"
@@ -1690,6 +1713,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1007
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.jpeg.availableThumbnailSizes"
@@ -1700,6 +1724,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->JPEG_AVAILABLE_THUMBNAIL_SIZES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1027
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.availableApertures"
@@ -1710,6 +1735,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_APERTURES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1048
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.availableFilterDensities"
@@ -1720,6 +1746,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_FILTER_DENSITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1066
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.availableFocalLengths"
@@ -1730,6 +1757,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_FOCAL_LENGTHS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1085
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.availableOpticalStabilization"
@@ -1740,6 +1768,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1106
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.hyperfocalDistance"
@@ -1750,6 +1779,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_HYPERFOCAL_DISTANCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1126
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.minimumFocusDistance"
@@ -1760,6 +1790,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_MINIMUM_FOCUS_DISTANCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1143
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.shadingMapSize"
@@ -1770,6 +1801,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_SHADING_MAP_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1182
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.info.focusDistanceCalibration"
@@ -1780,6 +1812,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_FOCUS_DISTANCE_CALIBRATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1200
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.facing"
@@ -1790,6 +1823,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1237
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.poseRotation"
@@ -1800,6 +1834,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_POSE_ROTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1274
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.poseTranslation"
@@ -1810,6 +1845,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_POSE_TRANSLATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1337
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.intrinsicCalibration"
@@ -1820,6 +1856,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INTRINSIC_CALIBRATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1383
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.radialDistortion"
@@ -1830,6 +1867,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_RADIAL_DISTORTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1402
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.poseReference"
@@ -1840,6 +1878,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_POSE_REFERENCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1442
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.lens.distortion"
@@ -1850,6 +1889,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_DISTORTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1463
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.noiseReduction.availableNoiseReductionModes"
@@ -1860,6 +1900,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1482
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.quirks.usePartialResult"
@@ -1870,6 +1911,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->QUIRKS_USE_PARTIAL_RESULT:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1519
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.maxNumOutputStreams"
@@ -1880,6 +1922,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_MAX_NUM_OUTPUT_STREAMS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1549
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.maxNumOutputRaw"
@@ -1890,6 +1933,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_MAX_NUM_OUTPUT_RAW:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1584
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.maxNumOutputProc"
@@ -1900,6 +1944,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_MAX_NUM_OUTPUT_PROC:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1610
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.maxNumOutputProcStalling"
@@ -1910,6 +1955,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_MAX_NUM_OUTPUT_PROC_STALLING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1636
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.maxNumInputStreams"
@@ -1920,6 +1966,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_MAX_NUM_INPUT_STREAMS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1660
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.pipelineMaxDepth"
@@ -1930,6 +1977,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_PIPELINE_MAX_DEPTH:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1683
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.partialResultCount"
@@ -1940,6 +1988,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_PARTIAL_RESULT_COUNT:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1740
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availableCapabilities"
@@ -1950,6 +1999,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1758
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availableRequestKeys"
@@ -1960,6 +2010,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_REQUEST_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1783
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availableResultKeys"
@@ -1970,6 +2021,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_RESULT_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1795
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availableCharacteristicsKeys"
@@ -1980,6 +2032,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CHARACTERISTICS_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1841
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availableSessionKeys"
@@ -1990,6 +2043,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_SESSION_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1861
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.request.availablePhysicalCameraRequestKeys"
@@ -2000,6 +2054,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_PHYSICAL_CAMERA_REQUEST_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1876
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableFormats"
@@ -2010,6 +2065,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_FORMATS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1898
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableJpegMinDurations"
@@ -2020,6 +2076,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_JPEG_MIN_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1916
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableJpegSizes"
@@ -2030,6 +2087,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_JPEG_SIZES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1937
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableMaxDigitalZoom"
@@ -2040,6 +2098,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_MAX_DIGITAL_ZOOM:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1957
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableProcessedMinDurations"
@@ -2050,6 +2109,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_PROCESSED_MIN_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 1981
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableProcessedSizes"
@@ -2060,6 +2120,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_PROCESSED_SIZES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2036
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableInputOutputFormatsMap"
@@ -2070,6 +2131,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_INPUT_OUTPUT_FORMATS_MAP:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2128
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableStreamConfigurations"
@@ -2080,6 +2142,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_STREAM_CONFIGURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2150
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableMinFrameDurations"
@@ -2090,6 +2153,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_MIN_FRAME_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2218
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.availableStallDurations"
@@ -2100,6 +2164,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_STALL_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2324
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.streamConfigurationMap"
@@ -2110,6 +2175,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2351
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.scaler.croppingType"
@@ -2120,6 +2186,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_CROPPING_TYPE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2377
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.activeArraySize"
@@ -2130,6 +2197,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2396
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.sensitivityRange"
@@ -2142,6 +2210,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_SENSITIVITY_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2424
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.colorFilterArrangement"
@@ -2152,6 +2221,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_COLOR_FILTER_ARRANGEMENT:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2444
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.exposureTimeRange"
@@ -2164,6 +2234,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_EXPOSURE_TIME_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2468
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.maxFrameDuration"
@@ -2174,6 +2245,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_MAX_FRAME_DURATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2482
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.physicalSize"
@@ -2184,6 +2256,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_PHYSICAL_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2507
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.pixelArraySize"
@@ -2194,6 +2267,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_PIXEL_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2535
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.whiteLevel"
@@ -2204,6 +2278,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_WHITE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2554
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.timestampSource"
@@ -2214,6 +2289,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_TIMESTAMP_SOURCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2571
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.lensShadingApplied"
@@ -2224,6 +2300,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_LENS_SHADING_APPLIED:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2636
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.info.preCorrectionActiveArraySize"
@@ -2234,6 +2311,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2702
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.referenceIlluminant1"
@@ -2244,6 +2322,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_REFERENCE_ILLUMINANT1:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2724
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.referenceIlluminant2"
@@ -2254,6 +2333,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_REFERENCE_ILLUMINANT2:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2743
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.calibrationTransform1"
@@ -2264,6 +2344,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_CALIBRATION_TRANSFORM1:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2765
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.calibrationTransform2"
@@ -2274,6 +2355,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_CALIBRATION_TRANSFORM2:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2788
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.colorTransform1"
@@ -2284,6 +2366,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_COLOR_TRANSFORM1:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2813
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.colorTransform2"
@@ -2294,6 +2377,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_COLOR_TRANSFORM2:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2834
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.forwardMatrix1"
@@ -2304,6 +2388,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_FORWARD_MATRIX1:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2857
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.forwardMatrix2"
@@ -2314,6 +2399,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_FORWARD_MATRIX2:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2890
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.blackLevelPattern"
@@ -2324,6 +2410,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_BLACK_LEVEL_PATTERN:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2909
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.maxAnalogSensitivity"
@@ -2334,6 +2421,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_MAX_ANALOG_SENSITIVITY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2924
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.orientation"
@@ -2344,6 +2432,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2938
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.availableTestPatternModes"
@@ -2354,6 +2443,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_AVAILABLE_TEST_PATTERN_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2964
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sensor.opticalBlackRegions"
@@ -2364,6 +2454,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_OPTICAL_BLACK_REGIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2980
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.shading.availableModes"
@@ -2374,6 +2465,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SHADING_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 2994
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.statistics.info.availableFaceDetectModes"
@@ -2384,6 +2476,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3007
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.statistics.info.maxFaceCount"
@@ -2394,6 +2487,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->STATISTICS_INFO_MAX_FACE_COUNT:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3023
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.statistics.info.availableHotPixelMapModes"
@@ -2404,6 +2498,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3040
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.statistics.info.availableLensShadingMapModes"
@@ -2414,6 +2509,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3055
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.statistics.info.availableOisDataModes"
@@ -2424,6 +2520,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->STATISTICS_INFO_AVAILABLE_OIS_DATA_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3076
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.tonemap.maxCurvePoints"
@@ -2434,6 +2531,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->TONEMAP_MAX_CURVE_POINTS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3100
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.tonemap.availableToneMapModes"
@@ -2444,6 +2542,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->TONEMAP_AVAILABLE_TONE_MAP_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3113
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.led.availableLeds"
@@ -2454,6 +2553,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LED_AVAILABLE_LEDS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3184
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.info.supportedHardwareLevel"
@@ -2464,6 +2564,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3196
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.info.version"
@@ -2474,6 +2575,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_VERSION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3222
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.sync.maxLatency"
@@ -2484,6 +2586,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SYNC_MAX_LATENCY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3257
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.reprocess.maxCaptureStall"
@@ -2494,6 +2597,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REPROCESS_MAX_CAPTURE_STALL:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3283
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.depth.availableDepthStreamConfigurations"
@@ -2504,6 +2608,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->DEPTH_AVAILABLE_DEPTH_STREAM_CONFIGURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3309
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.depth.availableDepthMinFrameDurations"
@@ -2514,6 +2619,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->DEPTH_AVAILABLE_DEPTH_MIN_FRAME_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3332
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.depth.availableDepthStallDurations"
@@ -2524,6 +2630,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->DEPTH_AVAILABLE_DEPTH_STALL_DURATIONS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3355
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.depth.depthIsExclusive"
@@ -2534,6 +2641,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->DEPTH_DEPTH_IS_EXCLUSIVE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3375
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.logicalMultiCamera.physicalIds"
@@ -2544,6 +2652,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LOGICAL_MULTI_CAMERA_PHYSICAL_IDS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3403
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.logicalMultiCamera.sensorSyncType"
@@ -2554,6 +2663,7 @@
 
     sput-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LOGICAL_MULTI_CAMERA_SENSOR_SYNC_TYPE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 3418
     new-instance v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const-string v1, "android.distortionCorrection.availableModes"
@@ -2569,24 +2679,30 @@
 
 .method public constructor <init>(Landroid/hardware/camera2/impl/CameraMetadataNative;)V
     .locals 1
+    .param p1, "properties"    # Landroid/hardware/camera2/impl/CameraMetadataNative;
 
+    .line 194
     invoke-direct {p0}, Landroid/hardware/camera2/CameraMetadata;-><init>()V
 
+    .line 195
     invoke-static {p1}, Landroid/hardware/camera2/impl/CameraMetadataNative;->move(Landroid/hardware/camera2/impl/CameraMetadataNative;)Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mProperties:Landroid/hardware/camera2/impl/CameraMetadataNative;
 
+    .line 196
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mProperties:Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     invoke-virtual {p0, v0}, Landroid/hardware/camera2/CameraCharacteristics;->setNativeInstance(Landroid/hardware/camera2/impl/CameraMetadataNative;)V
 
+    .line 197
     return-void
 .end method
 
 .method private getAvailableKeyList(Ljava/lang/Class;Ljava/lang/Class;[I)Ljava/util/List;
     .locals 2
+    .param p3, "filterTags"    # [I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TKey:",
@@ -2601,6 +2717,9 @@
         }
     .end annotation
 
+    .line 450
+    .local p1, "metadataClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .local p2, "keyClass":Ljava/lang/Class;, "Ljava/lang/Class<TTKey;>;"
     const-class v0, Landroid/hardware/camera2/CameraMetadata;
 
     invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -2609,6 +2728,7 @@
 
     if-nez v0, :cond_1
 
+    .line 453
     const-class v0, Landroid/hardware/camera2/CameraMetadata;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -2617,18 +2737,23 @@
 
     if-eqz v0, :cond_0
 
+    .line 458
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0, p3}, Landroid/hardware/camera2/CameraCharacteristics;->getKeys(Ljava/lang/Class;Ljava/lang/Class;Landroid/hardware/camera2/CameraMetadata;[I)Ljava/util/ArrayList;
 
     move-result-object v0
 
+    .line 460
+    .local v0, "staticKeyList":Ljava/util/List;, "Ljava/util/List<TTKey;>;"
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 
+    .line 454
+    .end local v0    # "staticKeyList":Ljava/util/List;, "Ljava/util/List<TTKey;>;"
     :cond_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -2638,6 +2763,7 @@
 
     throw v0
 
+    .line 451
     :cond_1
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -2662,6 +2788,8 @@
         }
     .end annotation
 
+    .line 223
+    .local p1, "key":Landroid/hardware/camera2/CameraCharacteristics$Key;, "Landroid/hardware/camera2/CameraCharacteristics$Key<TT;>;"
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mProperties:Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/impl/CameraMetadataNative;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -2682,16 +2810,22 @@
         }
     .end annotation
 
+    .line 386
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableRequestKeys:Ljava/util/List;
 
     if-nez v0, :cond_1
 
+    .line 387
     const-class v0, Landroid/hardware/camera2/CaptureRequest$Key;
 
+    .line 388
+    .local v0, "crKey":Ljava/lang/Object;
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Class;
 
+    .line 390
+    .local v1, "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_REQUEST_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v2}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -2700,18 +2834,29 @@
 
     check-cast v2, [I
 
+    .line 391
+    .local v2, "filterTags":[I
     if-eqz v2, :cond_0
 
+    .line 395
     const-class v3, Landroid/hardware/camera2/CaptureRequest;
 
+    .line 396
     invoke-direct {p0, v3, v1, v2}, Landroid/hardware/camera2/CameraCharacteristics;->getAvailableKeyList(Ljava/lang/Class;Ljava/lang/Class;[I)Ljava/util/List;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableRequestKeys:Ljava/util/List;
 
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     goto :goto_0
 
+    .line 392
+    .restart local v0    # "crKey":Ljava/lang/Object;
+    .restart local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
+    .restart local v2    # "filterTags":[I
     :cond_0
     new-instance v3, Ljava/lang/AssertionError;
 
@@ -2721,6 +2866,10 @@
 
     throw v3
 
+    .line 398
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableRequestKeys:Ljava/util/List;
@@ -2739,16 +2888,22 @@
         }
     .end annotation
 
+    .line 418
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableResultKeys:Ljava/util/List;
 
     if-nez v0, :cond_1
 
+    .line 419
     const-class v0, Landroid/hardware/camera2/CaptureResult$Key;
 
+    .line 420
+    .local v0, "crKey":Ljava/lang/Object;
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Class;
 
+    .line 422
+    .local v1, "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureResult$Key<*>;>;"
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_RESULT_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v2}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -2757,8 +2912,11 @@
 
     check-cast v2, [I
 
+    .line 423
+    .local v2, "filterTags":[I
     if-eqz v2, :cond_0
 
+    .line 427
     const-class v3, Landroid/hardware/camera2/CaptureResult;
 
     invoke-direct {p0, v3, v1, v2}, Landroid/hardware/camera2/CameraCharacteristics;->getAvailableKeyList(Ljava/lang/Class;Ljava/lang/Class;[I)Ljava/util/List;
@@ -2767,8 +2925,15 @@
 
     iput-object v3, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableResultKeys:Ljava/util/List;
 
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureResult$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     goto :goto_0
 
+    .line 424
+    .restart local v0    # "crKey":Ljava/lang/Object;
+    .restart local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureResult$Key<*>;>;"
+    .restart local v2    # "filterTags":[I
     :cond_0
     new-instance v3, Ljava/lang/AssertionError;
 
@@ -2778,6 +2943,10 @@
 
     throw v3
 
+    .line 429
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureResult$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableResultKeys:Ljava/util/List;
@@ -2796,16 +2965,22 @@
         }
     .end annotation
 
+    .line 355
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailablePhysicalRequestKeys:Ljava/util/List;
 
     if-nez v0, :cond_1
 
+    .line 356
     const-class v0, Landroid/hardware/camera2/CaptureRequest$Key;
 
+    .line 357
+    .local v0, "crKey":Ljava/lang/Object;
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Class;
 
+    .line 359
+    .local v1, "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_PHYSICAL_CAMERA_REQUEST_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v2}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -2814,21 +2989,30 @@
 
     check-cast v2, [I
 
+    .line 360
+    .local v2, "filterTags":[I
     if-nez v2, :cond_0
 
+    .line 361
     const/4 v3, 0x0
 
     return-object v3
 
+    .line 363
     :cond_0
     const-class v3, Landroid/hardware/camera2/CaptureRequest;
 
+    .line 364
     invoke-direct {p0, v3, v1, v2}, Landroid/hardware/camera2/CameraCharacteristics;->getAvailableKeyList(Ljava/lang/Class;Ljava/lang/Class;[I)Ljava/util/List;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailablePhysicalRequestKeys:Ljava/util/List;
 
+    .line 366
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     :cond_1
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailablePhysicalRequestKeys:Ljava/util/List;
 
@@ -2846,16 +3030,22 @@
         }
     .end annotation
 
+    .line 316
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableSessionKeys:Ljava/util/List;
 
     if-nez v0, :cond_1
 
+    .line 317
     const-class v0, Landroid/hardware/camera2/CaptureRequest$Key;
 
+    .line 318
+    .local v0, "crKey":Ljava/lang/Object;
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Class;
 
+    .line 320
+    .local v1, "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_SESSION_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v2}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -2864,21 +3054,30 @@
 
     check-cast v2, [I
 
+    .line 321
+    .local v2, "filterTags":[I
     if-nez v2, :cond_0
 
+    .line 322
     const/4 v3, 0x0
 
     return-object v3
 
+    .line 324
     :cond_0
     const-class v3, Landroid/hardware/camera2/CaptureRequest;
 
+    .line 325
     invoke-direct {p0, v3, v1, v2}, Landroid/hardware/camera2/CameraCharacteristics;->getAvailableKeyList(Ljava/lang/Class;Ljava/lang/Class;[I)Ljava/util/List;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableSessionKeys:Ljava/util/List;
 
+    .line 327
+    .end local v0    # "crKey":Ljava/lang/Object;
+    .end local v1    # "crKeyTyped":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/hardware/camera2/CaptureRequest$Key<*>;>;"
+    .end local v2    # "filterTags":[I
     :cond_1
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mAvailableSessionKeys:Ljava/util/List;
 
@@ -2896,8 +3095,11 @@
         }
     .end annotation
 
+    .line 243
     const-class v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    .line 244
+    .local v0, "thisClass":Ljava/lang/Object;
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Class;
@@ -2916,14 +3118,17 @@
         }
     .end annotation
 
+    .line 254
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mKeys:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
+    .line 255
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mKeys:Ljava/util/List;
 
     return-object v0
 
+    .line 258
     :cond_0
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CHARACTERISTICS_KEYS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -2933,10 +3138,14 @@
 
     check-cast v0, [I
 
+    .line 259
+    .local v0, "filterTags":[I
     if-eqz v0, :cond_1
 
+    .line 264
     nop
 
+    .line 265
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -2949,16 +3158,19 @@
 
     move-result-object v1
 
+    .line 264
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/hardware/camera2/CameraCharacteristics;->mKeys:Ljava/util/List;
 
+    .line 266
     iget-object v1, p0, Landroid/hardware/camera2/CameraCharacteristics;->mKeys:Ljava/util/List;
 
     return-object v1
 
+    .line 260
     :cond_1
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -2972,6 +3184,7 @@
 .method public getNativeCopy()Landroid/hardware/camera2/impl/CameraMetadataNative;
     .locals 2
 
+    .line 204
     new-instance v0, Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     iget-object v1, p0, Landroid/hardware/camera2/CameraCharacteristics;->mProperties:Landroid/hardware/camera2/impl/CameraMetadataNative;
@@ -2992,6 +3205,7 @@
         }
     .end annotation
 
+    .line 478
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v0}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -3000,8 +3214,11 @@
 
     check-cast v0, [I
 
+    .line 479
+    .local v0, "availableCapabilities":[I
     if-eqz v0, :cond_1
 
+    .line 484
     const/16 v1, 0xb
 
     invoke-static {v0, v1}, Landroid/hardware/camera2/utils/ArrayUtils;->contains([II)Z
@@ -3010,12 +3227,14 @@
 
     if-nez v1, :cond_0
 
+    .line 486
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
 
     return-object v1
 
+    .line 488
     :cond_0
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LOGICAL_MULTI_CAMERA_PHYSICAL_IDS:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -3025,8 +3244,12 @@
 
     check-cast v1, [B
 
+    .line 490
+    .local v1, "physicalCamIds":[B
     const/4 v2, 0x0
 
+    .line 492
+    .local v2, "physicalCamIdString":Ljava/lang/String;
     :try_start_0
     new-instance v3, Ljava/lang/String;
 
@@ -3038,14 +3261,18 @@
 
     move-object v2, v3
 
+    .line 495
     nop
 
+    .line 496
     const-string v3, "\u0000"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
+    .line 498
+    .local v3, "physicalCameraIdArray":[Ljava/lang/String;
     new-instance v4, Ljava/util/HashSet;
 
     invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -3060,9 +3287,13 @@
 
     return-object v4
 
+    .line 493
+    .end local v3    # "physicalCameraIdArray":[Ljava/lang/String;
     :catch_0
     move-exception v3
 
+    .line 494
+    .local v3, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v4, Ljava/lang/AssertionError;
 
     const-string v5, "android.logicalCam.physicalIds must be UTF-8 string"
@@ -3071,6 +3302,10 @@
 
     throw v4
 
+    .line 480
+    .end local v1    # "physicalCamIds":[B
+    .end local v2    # "physicalCamIdString":Ljava/lang/String;
+    .end local v3    # "e":Ljava/io/UnsupportedEncodingException;
     :cond_1
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -3093,6 +3328,8 @@
         }
     .end annotation
 
+    .line 233
+    .local p1, "key":Landroid/hardware/camera2/CameraCharacteristics$Key;, "Landroid/hardware/camera2/CameraCharacteristics$Key<*>;"
     iget-object v0, p0, Landroid/hardware/camera2/CameraCharacteristics;->mProperties:Landroid/hardware/camera2/impl/CameraMetadataNative;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/impl/CameraMetadataNative;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -3105,6 +3342,7 @@
 .method protected bridge synthetic getProtected(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 48
     check-cast p1, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/CameraCharacteristics;->getProtected(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;

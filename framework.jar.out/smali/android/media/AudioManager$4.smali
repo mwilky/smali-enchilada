@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioManager;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/AudioManager;
 
+    .line 5087
     iput-object p1, p0, Landroid/media/AudioManager$4;->this$0:Landroid/media/AudioManager;
 
     invoke-direct {p0}, Landroid/media/IAudioServerStateDispatcher$Stub;-><init>()V
@@ -31,7 +33,9 @@
 
 .method static synthetic lambda$dispatchAudioServerStateChange$0(Landroid/media/AudioManager$AudioServerStateCallback;)V
     .locals 0
+    .param p0, "cb"    # Landroid/media/AudioManager$AudioServerStateCallback;
 
+    .line 5102
     invoke-virtual {p0}, Landroid/media/AudioManager$AudioServerStateCallback;->onAudioServerUp()V
 
     return-void
@@ -39,7 +43,9 @@
 
 .method static synthetic lambda$dispatchAudioServerStateChange$1(Landroid/media/AudioManager$AudioServerStateCallback;)V
     .locals 0
+    .param p0, "cb"    # Landroid/media/AudioManager$AudioServerStateCallback;
 
+    .line 5104
     invoke-virtual {p0}, Landroid/media/AudioManager$AudioServerStateCallback;->onAudioServerDown()V
 
     return-void
@@ -49,7 +55,9 @@
 # virtual methods
 .method public dispatchAudioServerStateChange(Z)V
     .locals 3
+    .param p1, "state"    # Z
 
+    .line 5093
     iget-object v0, p0, Landroid/media/AudioManager$4;->this$0:Landroid/media/AudioManager;
 
     invoke-static {v0}, Landroid/media/AudioManager;->access$1200(Landroid/media/AudioManager;)Ljava/lang/Object;
@@ -58,6 +66,7 @@
 
     monitor-enter v0
 
+    .line 5094
     :try_start_0
     iget-object v1, p0, Landroid/media/AudioManager$4;->this$0:Landroid/media/AudioManager;
 
@@ -65,25 +74,32 @@
 
     move-result-object v1
 
+    .line 5095
+    .local v1, "exec":Ljava/util/concurrent/Executor;
     iget-object v2, p0, Landroid/media/AudioManager$4;->this$0:Landroid/media/AudioManager;
 
     invoke-static {v2}, Landroid/media/AudioManager;->access$1400(Landroid/media/AudioManager;)Landroid/media/AudioManager$AudioServerStateCallback;
 
     move-result-object v2
 
+    .line 5096
+    .local v2, "cb":Landroid/media/AudioManager$AudioServerStateCallback;
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 5098
     if-eqz v1, :cond_2
 
     if-nez v2, :cond_0
 
     goto :goto_1
 
+    .line 5101
     :cond_0
     if-eqz p1, :cond_1
 
+    .line 5102
     new-instance v0, Landroid/media/-$$Lambda$AudioManager$4$Q85LmhgKDCoq1YI14giFabZrM7A;
 
     invoke-direct {v0, v2}, Landroid/media/-$$Lambda$AudioManager$4$Q85LmhgKDCoq1YI14giFabZrM7A;-><init>(Landroid/media/AudioManager$AudioServerStateCallback;)V
@@ -92,6 +108,7 @@
 
     goto :goto_0
 
+    .line 5104
     :cond_1
     new-instance v0, Landroid/media/-$$Lambda$AudioManager$4$7k7uSoMGULBCueASQSmf9jAil7I;
 
@@ -99,13 +116,18 @@
 
     invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 5106
     :goto_0
     return-void
 
+    .line 5099
     :cond_2
     :goto_1
     return-void
 
+    .line 5096
+    .end local v1    # "exec":Ljava/util/concurrent/Executor;
+    .end local v2    # "cb":Landroid/media/AudioManager$AudioServerStateCallback;
     :catchall_0
     move-exception v1
 

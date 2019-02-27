@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/TextView$Marquee;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/TextView$Marquee;
 
+    .line 12405
     iput-object p1, p0, Landroid/widget/TextView$Marquee$2;->this$0:Landroid/widget/TextView$Marquee;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +38,16 @@
 # virtual methods
 .method public doFrame(J)V
     .locals 3
+    .param p1, "frameTimeNanos"    # J
 
+    .line 12408
     iget-object v0, p0, Landroid/widget/TextView$Marquee$2;->this$0:Landroid/widget/TextView$Marquee;
 
     const/4 v1, 0x2
 
     invoke-static {v0, v1}, Landroid/widget/TextView$Marquee;->access$602(Landroid/widget/TextView$Marquee;B)B
 
+    .line 12409
     iget-object v0, p0, Landroid/widget/TextView$Marquee$2;->this$0:Landroid/widget/TextView$Marquee;
 
     iget-object v1, p0, Landroid/widget/TextView$Marquee$2;->this$0:Landroid/widget/TextView$Marquee;
@@ -57,9 +62,11 @@
 
     invoke-static {v0, v1, v2}, Landroid/widget/TextView$Marquee;->access$702(Landroid/widget/TextView$Marquee;J)J
 
+    .line 12410
     iget-object v0, p0, Landroid/widget/TextView$Marquee$2;->this$0:Landroid/widget/TextView$Marquee;
 
     invoke-virtual {v0}, Landroid/widget/TextView$Marquee;->tick()V
 
+    .line 12411
     return-void
 .end method

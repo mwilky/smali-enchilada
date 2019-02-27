@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;ILjava/lang/String;Landroid/service/euicc/IDeleteSubscriptionCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
+    .line 543
     iput-object p1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$9;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iput p2, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$9;->val$slotId:I
@@ -49,6 +51,7 @@
 .method public run()V
     .locals 3
 
+    .line 546
     iget-object v0, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$9;->this$1:Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;
 
     iget-object v0, v0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper;->this$0:Landroid/service/euicc/EuiccService;
@@ -61,6 +64,8 @@
 
     move-result v0
 
+    .line 548
+    .local v0, "result":I
     :try_start_0
     iget-object v1, p0, Landroid/service/euicc/EuiccService$IEuiccServiceWrapper$9;->val$callback:Landroid/service/euicc/IDeleteSubscriptionCallback;
 
@@ -68,11 +73,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 551
     goto :goto_0
 
+    .line 549
     :catch_0
     move-exception v1
 
+    .line 552
     :goto_0
     return-void
 .end method

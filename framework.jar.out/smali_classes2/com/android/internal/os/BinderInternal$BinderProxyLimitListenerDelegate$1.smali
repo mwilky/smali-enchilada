@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;I)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
+    .line 200
     iput-object p1, p0, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate$1;->this$0:Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     iput p2, p0, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate$1;->val$uid:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 203
     iget-object v0, p0, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate$1;->this$0:Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     invoke-static {v0}, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;->access$100(Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;)Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;
@@ -51,5 +54,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;->onLimitReached(I)V
 
+    .line 204
     return-void
 .end method

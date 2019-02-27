@@ -51,14 +51,18 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 45
     return-void
 .end method
 
 .method private static checkByteOrderLittleEndian(Ljava/nio/ByteBuffer;)V
     .locals 2
+    .param p0, "buffer"    # Ljava/nio/ByteBuffer;
 
+    .line 776
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
 
     move-result-object v0
@@ -67,8 +71,10 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 779
     return-void
 
+    .line 777
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -81,7 +87,10 @@
 
 .method private static compareContentDigestAlgorithm(II)I
     .locals 3
+    .param p0, "digestAlgorithm1"    # I
+    .param p1, "digestAlgorithm2"    # I
 
+    .line 433
     const/4 v0, 0x1
 
     const/4 v1, -0x1
@@ -90,6 +99,7 @@
 
     packed-switch p0, :pswitch_data_0
 
+    .line 469
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,9 +120,11 @@
 
     throw v0
 
+    .line 457
     :pswitch_0
     packed-switch p1, :pswitch_data_1
 
+    .line 465
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -133,18 +145,23 @@
 
     throw v0
 
+    .line 461
     :pswitch_1
     return v2
 
+    .line 459
     :pswitch_2
     return v1
 
+    .line 463
     :pswitch_3
     return v0
 
+    .line 446
     :pswitch_4
     packed-switch p1, :pswitch_data_2
 
+    .line 453
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -165,15 +182,19 @@
 
     throw v0
 
+    .line 451
     :pswitch_5
     return v2
 
+    .line 449
     :pswitch_6
     return v0
 
+    .line 435
     :pswitch_7
     packed-switch p1, :pswitch_data_3
 
+    .line 442
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -194,9 +215,11 @@
 
     throw v0
 
+    .line 440
     :pswitch_8
     return v1
 
+    .line 437
     :pswitch_9
     return v2
 
@@ -231,15 +254,22 @@
 
 .method static compareSignatureAlgorithm(II)I
     .locals 3
+    .param p0, "sigAlgorithm1"    # I
+    .param p1, "sigAlgorithm2"    # I
 
+    .line 427
     invoke-static {p0}, Landroid/util/apk/ApkSigningBlockUtils;->getSignatureAlgorithmContentDigestAlgorithm(I)I
 
     move-result v0
 
+    .line 428
+    .local v0, "digestAlgorithm1":I
     invoke-static {p1}, Landroid/util/apk/ApkSigningBlockUtils;->getSignatureAlgorithmContentDigestAlgorithm(I)I
 
     move-result v1
 
+    .line 429
+    .local v1, "digestAlgorithm2":I
     invoke-static {v0, v1}, Landroid/util/apk/ApkSigningBlockUtils;->compareContentDigestAlgorithm(II)I
 
     move-result v2
@@ -249,6 +279,8 @@
 
 .method private static computeContentDigestsPer1MbChunk([I[Landroid/util/apk/DataSource;)[[B
     .locals 36
+    .param p0, "digestAlgorithms"    # [I
+    .param p1, "contents"    # [Landroid/util/apk/DataSource;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/DigestException;
@@ -257,10 +289,13 @@
 
     move-object/from16 v1, p0
 
+    .line 196
     move-object/from16 v2, p1
 
     const-wide/16 v3, 0x0
 
+    .line 197
+    .local v3, "totalChunkCountLong":J
     array-length v0, v2
 
     const/4 v5, 0x0
@@ -269,11 +304,15 @@
 
     move v3, v5
 
+    .end local v3    # "totalChunkCountLong":J
+    .local v6, "totalChunkCountLong":J
     :goto_0
     if-ge v3, v0, :cond_0
 
     aget-object v4, v2, v3
 
+    .line 198
+    .local v4, "input":Landroid/util/apk/DataSource;
     invoke-interface {v4}, Landroid/util/apk/DataSource;->size()J
 
     move-result-wide v8
@@ -284,10 +323,13 @@
 
     add-long/2addr v6, v8
 
+    .line 197
+    .end local v4    # "input":Landroid/util/apk/DataSource;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 200
     :cond_0
     const-wide/32 v3, 0x1fffff
 
@@ -295,14 +337,20 @@
 
     if-gez v0, :cond_9
 
+    .line 203
     long-to-int v3, v6
 
+    .line 205
+    .local v3, "totalChunkCount":I
     array-length v0, v1
 
     new-array v4, v0, [[B
 
+    .line 206
+    .local v4, "digestsOfChunks":[[B
     move v0, v5
 
+    .local v0, "i":I
     :goto_1
     array-length v8, v1
 
@@ -312,60 +360,89 @@
 
     if-ge v0, v8, :cond_1
 
+    .line 207
     aget v8, v1, v0
 
+    .line 208
+    .local v8, "digestAlgorithm":I
     invoke-static {v8}, Landroid/util/apk/ApkSigningBlockUtils;->getContentDigestAlgorithmOutputSizeBytes(I)I
 
     move-result v11
 
+    .line 209
+    .local v11, "digestOutputSizeBytes":I
     mul-int v12, v3, v11
 
     add-int/2addr v9, v12
 
     new-array v9, v9, [B
 
+    .line 211
+    .local v9, "concatenationOfChunkCountAndChunkDigests":[B
     const/16 v12, 0x5a
 
     aput-byte v12, v9, v5
 
+    .line 212
     invoke-static {v3, v9, v10}, Landroid/util/apk/ApkSigningBlockUtils;->setUnsignedInt32LittleEndian(I[BI)V
 
+    .line 216
     aput-object v9, v4, v0
 
+    .line 206
+    .end local v8    # "digestAlgorithm":I
+    .end local v9    # "concatenationOfChunkCountAndChunkDigests":[B
+    .end local v11    # "digestOutputSizeBytes":I
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 219
+    .end local v0    # "i":I
     :cond_1
     new-array v8, v9, [B
 
+    .line 220
+    .local v8, "chunkContentPrefix":[B
     const/16 v0, -0x5b
 
     aput-byte v0, v8, v5
 
+    .line 221
     const/4 v11, 0x0
 
+    .line 222
+    .local v11, "chunkIndex":I
     array-length v0, v1
 
     new-array v12, v0, [Ljava/security/MessageDigest;
 
+    .line 223
+    .local v12, "mds":[Ljava/security/MessageDigest;
     move v0, v5
 
+    .restart local v0    # "i":I
     :goto_2
     move v13, v0
 
+    .end local v0    # "i":I
+    .local v13, "i":I
     array-length v0, v1
 
     if-ge v13, v0, :cond_2
 
+    .line 224
     aget v0, v1, v13
 
+    .line 225
     invoke-static {v0}, Landroid/util/apk/ApkSigningBlockUtils;->getContentDigestAlgorithmJcaDigestAlgorithm(I)Ljava/lang/String;
 
     move-result-object v0
 
     move-object v14, v0
 
+    .line 227
+    .local v14, "jcaAlgorithmName":Ljava/lang/String;
     :try_start_0
     invoke-static {v14}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
@@ -375,15 +452,26 @@
     :try_end_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 230
     nop
 
+    .line 223
+    .end local v14    # "jcaAlgorithmName":Ljava/lang/String;
     add-int/lit8 v0, v13, 0x1
 
+    .end local v13    # "i":I
+    .restart local v0    # "i":I
     goto :goto_2
 
+    .line 228
+    .end local v0    # "i":I
+    .restart local v13    # "i":I
+    .restart local v14    # "jcaAlgorithmName":Ljava/lang/String;
     :catch_0
     move-exception v0
 
+    .line 229
+    .local v0, "e":Ljava/security/NoSuchAlgorithmException;
     new-instance v5, Ljava/lang/RuntimeException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -404,6 +492,10 @@
 
     throw v5
 
+    .line 235
+    .end local v0    # "e":Ljava/security/NoSuchAlgorithmException;
+    .end local v13    # "i":I
+    .end local v14    # "jcaAlgorithmName":Ljava/lang/String;
     :cond_2
     new-instance v0, Landroid/util/apk/ApkSigningBlockUtils$MultipleDigestDataDigester;
 
@@ -411,57 +503,84 @@
 
     move-object v13, v0
 
+    .line 236
+    .local v13, "digester":Landroid/util/apk/DataDigester;
     const/4 v0, 0x0
 
+    .line 237
+    .local v0, "dataSourceIndex":I
     array-length v14, v2
 
     move v15, v0
 
     move v0, v5
 
+    .end local v0    # "dataSourceIndex":I
+    .local v15, "dataSourceIndex":I
     :goto_3
     if-ge v0, v14, :cond_7
 
     aget-object v5, v2, v0
 
+    .line 238
+    .local v5, "input":Landroid/util/apk/DataSource;
     const-wide/16 v17, 0x0
 
+    .line 239
+    .local v17, "inputOffset":J
     invoke-interface {v5}, Landroid/util/apk/DataSource;->size()J
 
     move-result-wide v19
 
     move-wide/from16 v21, v17
 
+    .end local v17    # "inputOffset":J
+    .local v19, "inputRemaining":J
+    .local v21, "inputOffset":J
     :goto_4
     move-wide/from16 v23, v19
 
+    .line 240
+    .end local v19    # "inputRemaining":J
+    .local v23, "inputRemaining":J
     const-wide/16 v17, 0x0
 
     move-wide/from16 v9, v23
 
     cmp-long v17, v9, v17
 
+    .end local v23    # "inputRemaining":J
+    .local v9, "inputRemaining":J
     if-lez v17, :cond_6
 
+    .line 241
     move/from16 v25, v3
 
     const-wide/32 v2, 0x100000
 
+    .end local v3    # "totalChunkCount":I
+    .local v25, "totalChunkCount":I
     invoke-static {v9, v10, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v2
 
     long-to-int v2, v2
 
+    .line 242
+    .local v2, "chunkSize":I
     const/4 v3, 0x1
 
     invoke-static {v2, v8, v3}, Landroid/util/apk/ApkSigningBlockUtils;->setUnsignedInt32LittleEndian(I[BI)V
 
+    .line 243
     const/16 v17, 0x0
 
+    .local v17, "i":I
     :goto_5
     move/from16 v26, v17
 
+    .end local v17    # "i":I
+    .local v26, "i":I
     array-length v3, v12
 
     move/from16 v27, v14
@@ -470,18 +589,26 @@
 
     if-ge v14, v3, :cond_3
 
+    .line 244
+    .end local v26    # "i":I
+    .local v14, "i":I
     aget-object v3, v12, v14
 
     invoke-virtual {v3, v8}, Ljava/security/MessageDigest;->update([B)V
 
+    .line 243
     add-int/lit8 v17, v14, 0x1
 
+    .end local v14    # "i":I
+    .restart local v17    # "i":I
     move/from16 v14, v27
 
     const/4 v3, 0x1
 
     goto :goto_5
 
+    .line 247
+    .end local v17    # "i":I
     :cond_3
     move-wide/from16 v28, v6
 
@@ -492,33 +619,52 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 253
+    .end local v21    # "inputOffset":J
+    .local v6, "inputOffset":J
+    .local v28, "totalChunkCountLong":J
     nop
 
+    .line 254
     const/4 v3, 0x0
 
+    .local v3, "i":I
     :goto_6
     array-length v14, v1
 
     if-ge v3, v14, :cond_5
 
+    .line 255
     aget v14, v1, v3
 
+    .line 256
+    .local v14, "digestAlgorithm":I
     move-object/from16 v30, v5
 
     aget-object v5, v4, v3
 
+    .line 257
+    .local v5, "concatenationOfChunkCountAndChunkDigests":[B
+    .local v30, "input":Landroid/util/apk/DataSource;
     nop
 
+    .line 258
     move-object/from16 v31, v8
 
     invoke-static {v14}, Landroid/util/apk/ApkSigningBlockUtils;->getContentDigestAlgorithmOutputSizeBytes(I)I
 
     move-result v8
 
+    .line 259
+    .local v8, "expectedDigestSizeBytes":I
+    .local v31, "chunkContentPrefix":[B
     move-object/from16 v32, v13
 
     aget-object v13, v12, v3
 
+    .line 260
+    .local v13, "md":Ljava/security/MessageDigest;
+    .local v32, "digester":Landroid/util/apk/DataDigester;
     mul-int v17, v11, v8
 
     move-object/from16 v33, v12
@@ -527,12 +673,23 @@
 
     add-int v12, v18, v17
 
+    .line 261
+    .end local v12    # "mds":[Ljava/security/MessageDigest;
+    .local v33, "mds":[Ljava/security/MessageDigest;
     invoke-virtual {v13, v5, v12, v8}, Ljava/security/MessageDigest;->digest([BII)I
 
     move-result v12
 
+    .line 265
+    .local v12, "actualDigestSizeBytes":I
     if-ne v12, v8, :cond_4
 
+    .line 254
+    .end local v5    # "concatenationOfChunkCountAndChunkDigests":[B
+    .end local v8    # "expectedDigestSizeBytes":I
+    .end local v12    # "actualDigestSizeBytes":I
+    .end local v13    # "md":Ljava/security/MessageDigest;
+    .end local v14    # "digestAlgorithm":I
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v5, v30
@@ -545,6 +702,12 @@
 
     goto :goto_6
 
+    .line 266
+    .restart local v5    # "concatenationOfChunkCountAndChunkDigests":[B
+    .restart local v8    # "expectedDigestSizeBytes":I
+    .restart local v12    # "actualDigestSizeBytes":I
+    .restart local v13    # "md":Ljava/security/MessageDigest;
+    .restart local v14    # "digestAlgorithm":I
     :cond_4
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -552,14 +715,19 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
+    .end local v3    # "i":I
+    .local v34, "i":I
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     move-object/from16 v35, v5
 
     const-string v5, "Unexpected output size of "
 
+    .end local v5    # "concatenationOfChunkCountAndChunkDigests":[B
+    .local v35, "concatenationOfChunkCountAndChunkDigests":[B
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 267
     invoke-virtual {v13}, Ljava/security/MessageDigest;->getAlgorithm()Ljava/lang/String;
 
     move-result-object v5
@@ -580,6 +748,18 @@
 
     throw v0
 
+    .line 271
+    .end local v14    # "digestAlgorithm":I
+    .end local v30    # "input":Landroid/util/apk/DataSource;
+    .end local v31    # "chunkContentPrefix":[B
+    .end local v32    # "digester":Landroid/util/apk/DataDigester;
+    .end local v33    # "mds":[Ljava/security/MessageDigest;
+    .end local v34    # "i":I
+    .end local v35    # "concatenationOfChunkCountAndChunkDigests":[B
+    .local v5, "input":Landroid/util/apk/DataSource;
+    .local v8, "chunkContentPrefix":[B
+    .local v12, "mds":[Ljava/security/MessageDigest;
+    .local v13, "digester":Landroid/util/apk/DataDigester;
     :cond_5
     move-object/from16 v30, v5
 
@@ -591,18 +771,35 @@
 
     const/16 v18, 0x5
 
+    .end local v5    # "input":Landroid/util/apk/DataSource;
+    .end local v8    # "chunkContentPrefix":[B
+    .end local v12    # "mds":[Ljava/security/MessageDigest;
+    .end local v13    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v30    # "input":Landroid/util/apk/DataSource;
+    .restart local v31    # "chunkContentPrefix":[B
+    .restart local v32    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v33    # "mds":[Ljava/security/MessageDigest;
     int-to-long v12, v2
 
     add-long v21, v6, v12
 
+    .line 272
+    .end local v6    # "inputOffset":J
+    .restart local v21    # "inputOffset":J
     int-to-long v5, v2
 
     sub-long v19, v9, v5
 
+    .line 273
+    .end local v9    # "inputRemaining":J
+    .restart local v19    # "inputRemaining":J
     add-int/lit8 v11, v11, 0x1
 
+    .line 274
+    .end local v2    # "chunkSize":I
     nop
 
+    .line 239
     move/from16 v9, v18
 
     move/from16 v3, v25
@@ -623,6 +820,20 @@
 
     goto/16 :goto_4
 
+    .line 248
+    .end local v19    # "inputRemaining":J
+    .end local v21    # "inputOffset":J
+    .end local v30    # "input":Landroid/util/apk/DataSource;
+    .end local v31    # "chunkContentPrefix":[B
+    .end local v32    # "digester":Landroid/util/apk/DataDigester;
+    .end local v33    # "mds":[Ljava/security/MessageDigest;
+    .restart local v2    # "chunkSize":I
+    .restart local v5    # "input":Landroid/util/apk/DataSource;
+    .restart local v6    # "inputOffset":J
+    .restart local v8    # "chunkContentPrefix":[B
+    .restart local v9    # "inputRemaining":J
+    .restart local v12    # "mds":[Ljava/security/MessageDigest;
+    .restart local v13    # "digester":Landroid/util/apk/DataDigester;
     :catch_1
     move-exception v0
 
@@ -634,8 +845,18 @@
 
     move-object/from16 v32, v13
 
+    .end local v5    # "input":Landroid/util/apk/DataSource;
+    .end local v8    # "chunkContentPrefix":[B
+    .end local v12    # "mds":[Ljava/security/MessageDigest;
+    .end local v13    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v30    # "input":Landroid/util/apk/DataSource;
+    .restart local v31    # "chunkContentPrefix":[B
+    .restart local v32    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v33    # "mds":[Ljava/security/MessageDigest;
     move-object v3, v0
 
+    .line 249
+    .local v0, "e":Ljava/io/IOException;
     new-instance v3, Ljava/security/DigestException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -662,6 +883,22 @@
 
     throw v3
 
+    .line 275
+    .end local v0    # "e":Ljava/io/IOException;
+    .end local v2    # "chunkSize":I
+    .end local v25    # "totalChunkCount":I
+    .end local v28    # "totalChunkCountLong":J
+    .end local v30    # "input":Landroid/util/apk/DataSource;
+    .end local v31    # "chunkContentPrefix":[B
+    .end local v32    # "digester":Landroid/util/apk/DataDigester;
+    .end local v33    # "mds":[Ljava/security/MessageDigest;
+    .local v3, "totalChunkCount":I
+    .restart local v5    # "input":Landroid/util/apk/DataSource;
+    .local v6, "totalChunkCountLong":J
+    .restart local v8    # "chunkContentPrefix":[B
+    .restart local v12    # "mds":[Ljava/security/MessageDigest;
+    .restart local v13    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v21    # "inputOffset":J
     :cond_6
     move/from16 v25, v3
 
@@ -681,8 +918,25 @@
 
     const/16 v18, 0x5
 
+    .end local v3    # "totalChunkCount":I
+    .end local v5    # "input":Landroid/util/apk/DataSource;
+    .end local v8    # "chunkContentPrefix":[B
+    .end local v12    # "mds":[Ljava/security/MessageDigest;
+    .end local v13    # "digester":Landroid/util/apk/DataDigester;
+    .end local v21    # "inputOffset":J
+    .local v6, "inputOffset":J
+    .restart local v25    # "totalChunkCount":I
+    .restart local v28    # "totalChunkCountLong":J
+    .restart local v30    # "input":Landroid/util/apk/DataSource;
+    .restart local v31    # "chunkContentPrefix":[B
+    .restart local v32    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v33    # "mds":[Ljava/security/MessageDigest;
     add-int/lit8 v15, v15, 0x1
 
+    .line 237
+    .end local v6    # "inputOffset":J
+    .end local v9    # "inputRemaining":J
+    .end local v30    # "input":Landroid/util/apk/DataSource;
     add-int/lit8 v0, v0, 0x1
 
     move/from16 v9, v18
@@ -697,6 +951,17 @@
 
     goto/16 :goto_3
 
+    .line 278
+    .end local v25    # "totalChunkCount":I
+    .end local v28    # "totalChunkCountLong":J
+    .end local v31    # "chunkContentPrefix":[B
+    .end local v32    # "digester":Landroid/util/apk/DataDigester;
+    .end local v33    # "mds":[Ljava/security/MessageDigest;
+    .restart local v3    # "totalChunkCount":I
+    .local v6, "totalChunkCountLong":J
+    .restart local v8    # "chunkContentPrefix":[B
+    .restart local v12    # "mds":[Ljava/security/MessageDigest;
+    .restart local v13    # "digester":Landroid/util/apk/DataDigester;
     :cond_7
     move/from16 v25, v3
 
@@ -708,29 +973,51 @@
 
     move-object/from16 v32, v13
 
+    .end local v3    # "totalChunkCount":I
+    .end local v6    # "totalChunkCountLong":J
+    .end local v8    # "chunkContentPrefix":[B
+    .end local v12    # "mds":[Ljava/security/MessageDigest;
+    .end local v13    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v25    # "totalChunkCount":I
+    .restart local v28    # "totalChunkCountLong":J
+    .restart local v31    # "chunkContentPrefix":[B
+    .restart local v32    # "digester":Landroid/util/apk/DataDigester;
+    .restart local v33    # "mds":[Ljava/security/MessageDigest;
     array-length v0, v1
 
     new-array v2, v0, [[B
 
+    .line 279
+    .local v2, "result":[[B
     const/16 v16, 0x0
 
+    .local v16, "i":I
     :goto_7
     move/from16 v3, v16
 
+    .end local v16    # "i":I
+    .local v3, "i":I
     array-length v0, v1
 
     if-ge v3, v0, :cond_8
 
+    .line 280
     aget v5, v1, v3
 
+    .line 281
+    .local v5, "digestAlgorithm":I
     aget-object v6, v4, v3
 
+    .line 282
+    .local v6, "input":[B
     invoke-static {v5}, Landroid/util/apk/ApkSigningBlockUtils;->getContentDigestAlgorithmJcaDigestAlgorithm(I)Ljava/lang/String;
 
     move-result-object v0
 
     move-object v7, v0
 
+    .line 285
+    .local v7, "jcaAlgorithmName":Ljava/lang/String;
     :try_start_2
     invoke-static {v7}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
@@ -738,25 +1025,47 @@
     :try_end_2
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 288
+    .local v0, "md":Ljava/security/MessageDigest;
     nop
 
+    .line 287
     nop
 
+    .line 289
     invoke-virtual {v0, v6}, Ljava/security/MessageDigest;->digest([B)[B
 
     move-result-object v8
 
+    .line 290
+    .local v8, "output":[B
     aput-object v8, v2, v3
 
+    .line 279
+    .end local v0    # "md":Ljava/security/MessageDigest;
+    .end local v5    # "digestAlgorithm":I
+    .end local v6    # "input":[B
+    .end local v7    # "jcaAlgorithmName":Ljava/lang/String;
+    .end local v8    # "output":[B
     add-int/lit8 v16, v3, 0x1
 
+    .end local v3    # "i":I
+    .restart local v16    # "i":I
     goto :goto_7
 
+    .line 286
+    .end local v16    # "i":I
+    .restart local v3    # "i":I
+    .restart local v5    # "digestAlgorithm":I
+    .restart local v6    # "input":[B
+    .restart local v7    # "jcaAlgorithmName":Ljava/lang/String;
     :catch_2
     move-exception v0
 
     move-object v8, v0
 
+    .line 287
+    .local v0, "e":Ljava/security/NoSuchAlgorithmException;
     new-instance v8, Ljava/lang/RuntimeException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -777,12 +1086,31 @@
 
     throw v8
 
+    .line 292
+    .end local v0    # "e":Ljava/security/NoSuchAlgorithmException;
+    .end local v3    # "i":I
+    .end local v5    # "digestAlgorithm":I
+    .end local v6    # "input":[B
+    .end local v7    # "jcaAlgorithmName":Ljava/lang/String;
     :cond_8
     return-object v2
 
+    .line 201
+    .end local v2    # "result":[[B
+    .end local v4    # "digestsOfChunks":[[B
+    .end local v11    # "chunkIndex":I
+    .end local v15    # "dataSourceIndex":I
+    .end local v25    # "totalChunkCount":I
+    .end local v28    # "totalChunkCountLong":J
+    .end local v31    # "chunkContentPrefix":[B
+    .end local v32    # "digester":Landroid/util/apk/DataDigester;
+    .end local v33    # "mds":[Ljava/security/MessageDigest;
+    .local v6, "totalChunkCountLong":J
     :cond_9
     move-wide/from16 v28, v6
 
+    .end local v6    # "totalChunkCountLong":J
+    .restart local v28    # "totalChunkCountLong":J
     new-instance v0, Ljava/security/DigestException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -797,6 +1125,8 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    .end local v28    # "totalChunkCountLong":J
+    .local v3, "totalChunkCountLong":J
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -808,14 +1138,18 @@
 
 .method static findApkSignatureSchemeBlock(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer;
     .locals 9
+    .param p0, "apkSigningBlock"    # Ljava/nio/ByteBuffer;
+    .param p1, "blockId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/util/apk/SignatureNotFoundException;
         }
     .end annotation
 
+    .line 735
     invoke-static {p0}, Landroid/util/apk/ApkSigningBlockUtils;->checkByteOrderLittleEndian(Ljava/nio/ByteBuffer;)V
 
+    .line 742
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
@@ -828,8 +1162,12 @@
 
     move-result-object v0
 
+    .line 744
+    .local v0, "pairs":Ljava/nio/ByteBuffer;
     const/4 v2, 0x0
 
+    .line 745
+    .local v2, "entryCount":I
     :goto_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
@@ -837,18 +1175,23 @@
 
     if-eqz v3, :cond_4
 
+    .line 746
     add-int/lit8 v2, v2, 0x1
 
+    .line 747
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
 
     if-lt v3, v1, :cond_3
 
+    .line 751
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getLong()J
 
     move-result-wide v3
 
+    .line 752
+    .local v3, "lenLong":J
     const-wide/16 v5, 0x4
 
     cmp-long v5, v3, v5
@@ -861,26 +1204,35 @@
 
     if-gtz v5, :cond_2
 
+    .line 757
     long-to-int v5, v3
 
+    .line 758
+    .local v5, "len":I
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v6
 
     add-int/2addr v6, v5
 
+    .line 759
+    .local v6, "nextEntryPos":I
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v7
 
     if-gt v5, v7, :cond_1
 
+    .line 764
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v7
 
+    .line 765
+    .local v7, "id":I
     if-ne v7, p1, :cond_0
 
+    .line 766
     add-int/lit8 v1, v5, -0x4
 
     invoke-static {v0, v1}, Landroid/util/apk/ApkSigningBlockUtils;->getByteBuffer(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer;
@@ -889,11 +1241,21 @@
 
     return-object v1
 
+    .line 768
     :cond_0
     invoke-virtual {v0, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 769
+    .end local v3    # "lenLong":J
+    .end local v5    # "len":I
+    .end local v6    # "nextEntryPos":I
+    .end local v7    # "id":I
     goto :goto_0
 
+    .line 760
+    .restart local v3    # "lenLong":J
+    .restart local v5    # "len":I
+    .restart local v6    # "nextEntryPos":I
     :cond_1
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -917,6 +1279,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 762
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v8
@@ -931,6 +1294,9 @@
 
     throw v1
 
+    .line 753
+    .end local v5    # "len":I
+    .end local v6    # "nextEntryPos":I
     :cond_2
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -958,6 +1324,8 @@
 
     throw v1
 
+    .line 748
+    .end local v3    # "lenLong":J
     :cond_3
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -979,6 +1347,7 @@
 
     throw v1
 
+    .line 771
     :cond_4
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1007,6 +1376,8 @@
 
 .method static findApkSigningBlock(Ljava/io/RandomAccessFile;J)Landroid/util/Pair;
     .locals 12
+    .param p0, "apk"    # Ljava/io/RandomAccessFile;
+    .param p1, "centralDirOffset"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1026,22 +1397,27 @@
         }
     .end annotation
 
+    .line 690
     const-wide/16 v0, 0x20
 
     cmp-long v0, p1, v0
 
     if-ltz v0, :cond_4
 
+    .line 698
     const/16 v0, 0x18
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
+    .line 699
+    .local v0, "footer":Ljava/nio/ByteBuffer;
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 700
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v1
@@ -1052,6 +1428,7 @@
 
     invoke-virtual {p0, v1, v2}, Ljava/io/RandomAccessFile;->seek(J)V
 
+    .line 701
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
@@ -1066,6 +1443,7 @@
 
     invoke-virtual {p0, v1, v2, v3}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
+    .line 702
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getLong(I)J
@@ -1080,6 +1458,7 @@
 
     const/16 v1, 0x10
 
+    .line 703
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getLong(I)J
 
     move-result-wide v1
@@ -1090,12 +1469,15 @@
 
     if-nez v1, :cond_3
 
+    .line 708
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getLong(I)J
 
     move-result-wide v2
 
+    .line 709
+    .local v2, "apkSigBlockSizeInFooter":J
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v4
@@ -1112,32 +1494,42 @@
 
     if-gtz v4, :cond_2
 
+    .line 714
     const-wide/16 v4, 0x8
 
     add-long/2addr v4, v2
 
     long-to-int v4, v4
 
+    .line 715
+    .local v4, "totalSize":I
     int-to-long v5, v4
 
     sub-long v5, p1, v5
 
+    .line 716
+    .local v5, "apkSigBlockOffset":J
     const-wide/16 v7, 0x0
 
     cmp-long v7, v5, v7
 
     if-ltz v7, :cond_1
 
+    .line 720
     invoke-static {v4}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v7
 
+    .line 721
+    .local v7, "apkSigBlock":Ljava/nio/ByteBuffer;
     sget-object v8, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 722
     invoke-virtual {p0, v5, v6}, Ljava/io/RandomAccessFile;->seek(J)V
 
+    .line 723
     invoke-virtual {v7}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v8
@@ -1152,14 +1544,18 @@
 
     invoke-virtual {p0, v8, v9, v10}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
+    .line 724
     invoke-virtual {v7, v1}, Ljava/nio/ByteBuffer;->getLong(I)J
 
     move-result-wide v8
 
+    .line 725
+    .local v8, "apkSigBlockSizeInHeader":J
     cmp-long v1, v8, v2
 
     if-nez v1, :cond_0
 
+    .line 730
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -1170,6 +1566,7 @@
 
     return-object v1
 
+    .line 726
     :cond_0
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1197,6 +1594,9 @@
 
     throw v1
 
+    .line 717
+    .end local v7    # "apkSigBlock":Ljava/nio/ByteBuffer;
+    .end local v8    # "apkSigBlockSizeInHeader":J
     :cond_1
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1218,6 +1618,9 @@
 
     throw v1
 
+    .line 711
+    .end local v4    # "totalSize":I
+    .end local v5    # "apkSigBlockOffset":J
     :cond_2
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1239,6 +1642,8 @@
 
     throw v1
 
+    .line 704
+    .end local v2    # "apkSigBlockSizeInFooter":J
     :cond_3
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1248,6 +1653,8 @@
 
     throw v1
 
+    .line 691
+    .end local v0    # "footer":Ljava/nio/ByteBuffer;
     :cond_4
     new-instance v0, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1272,6 +1679,8 @@
 
 .method static findSignature(Ljava/io/RandomAccessFile;I)Landroid/util/apk/SignatureInfo;
     .locals 22
+    .param p0, "apk"    # Ljava/io/RandomAccessFile;
+    .param p1, "blockId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -1281,14 +1690,19 @@
 
     move-object/from16 v0, p0
 
+    .line 61
     invoke-static/range {p0 .. p0}, Landroid/util/apk/ApkSigningBlockUtils;->getEocd(Ljava/io/RandomAccessFile;)Landroid/util/Pair;
 
     move-result-object v1
 
+    .line 62
+    .local v1, "eocdAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
     iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v2, Ljava/nio/ByteBuffer;
 
+    .line 63
+    .local v2, "eocd":Ljava/nio/ByteBuffer;
     iget-object v3, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v3, Ljava/lang/Long;
@@ -1297,28 +1711,38 @@
 
     move-result-wide v12
 
+    .line 64
+    .local v12, "eocdOffset":J
     invoke-static {v0, v12, v13}, Landroid/util/apk/ZipUtils;->isZip64EndOfCentralDirectoryLocatorPresent(Ljava/io/RandomAccessFile;J)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
+    .line 69
     invoke-static {v2, v12, v13}, Landroid/util/apk/ApkSigningBlockUtils;->getCentralDirOffset(Ljava/nio/ByteBuffer;J)J
 
     move-result-wide v14
 
+    .line 70
+    .local v14, "centralDirOffset":J
     nop
 
+    .line 71
     invoke-static {v0, v14, v15}, Landroid/util/apk/ApkSigningBlockUtils;->findApkSigningBlock(Ljava/io/RandomAccessFile;J)Landroid/util/Pair;
 
     move-result-object v11
 
+    .line 72
+    .local v11, "apkSigningBlockAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
     iget-object v3, v11, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     move-object v9, v3
 
     check-cast v9, Ljava/nio/ByteBuffer;
 
+    .line 73
+    .local v9, "apkSigningBlock":Ljava/nio/ByteBuffer;
     iget-object v3, v11, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v3, Ljava/lang/Long;
@@ -1327,12 +1751,16 @@
 
     move-result-wide v16
 
+    .line 76
+    .local v16, "apkSigningBlockOffset":J
     move/from16 v10, p1
 
     invoke-static {v9, v10}, Landroid/util/apk/ApkSigningBlockUtils;->findApkSignatureSchemeBlock(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer;
 
     move-result-object v18
 
+    .line 79
+    .local v18, "apkSignatureSchemeBlock":Ljava/nio/ByteBuffer;
     new-instance v19, Landroid/util/apk/SignatureInfo;
 
     move-object/from16 v3, v19
@@ -1347,14 +1775,24 @@
 
     move-wide v9, v12
 
+    .end local v9    # "apkSigningBlock":Ljava/nio/ByteBuffer;
+    .local v20, "apkSigningBlock":Ljava/nio/ByteBuffer;
     move-object/from16 v21, v11
 
     move-object v11, v2
 
+    .end local v11    # "apkSigningBlockAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
+    .local v21, "apkSigningBlockAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
     invoke-direct/range {v3 .. v11}, Landroid/util/apk/SignatureInfo;-><init>(Ljava/nio/ByteBuffer;JJJLjava/nio/ByteBuffer;)V
 
     return-object v19
 
+    .line 65
+    .end local v14    # "centralDirOffset":J
+    .end local v16    # "apkSigningBlockOffset":J
+    .end local v18    # "apkSignatureSchemeBlock":Ljava/nio/ByteBuffer;
+    .end local v20    # "apkSigningBlock":Ljava/nio/ByteBuffer;
+    .end local v21    # "apkSigningBlockAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
     :cond_0
     new-instance v3, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1367,6 +1805,9 @@
 
 .method public static generateApkVerity(Ljava/lang/String;Landroid/util/apk/ByteBufferFactory;Landroid/util/apk/SignatureInfo;)[B
     .locals 4
+    .param p0, "apkPath"    # Ljava/lang/String;
+    .param p1, "bufferFactory"    # Landroid/util/apk/ByteBufferFactory;
+    .param p2, "signatureInfo"    # Landroid/util/apk/SignatureInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -1377,12 +1818,15 @@
         }
     .end annotation
 
+    .line 363
     new-instance v0, Ljava/io/RandomAccessFile;
 
     const-string/jumbo v1, "r"
 
     invoke-direct {v0, p0, v1}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 364
+    .local v0, "apk":Ljava/io/RandomAccessFile;
     const/4 v1, 0x0
 
     :try_start_0
@@ -1390,20 +1834,27 @@
 
     move-result-object v2
 
+    .line 366
+    .local v2, "result":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     iget-object v3, v2, Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;->rootHash:[B
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 367
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
 
+    .line 366
     return-object v3
 
+    .line 367
+    .end local v2    # "result":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
+    .line 363
     :catch_0
     move-exception v1
 
@@ -1412,6 +1863,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 367
     :goto_0
     if-eqz v1, :cond_0
 
@@ -1438,51 +1890,71 @@
 
 .method static getByteBuffer(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer;
     .locals 5
+    .param p0, "source"    # Ljava/nio/ByteBuffer;
+    .param p1, "size"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/nio/BufferUnderflowException;
         }
     .end annotation
 
+    .line 620
     if-ltz p1, :cond_1
 
+    .line 623
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
+    .line 624
+    .local v0, "originalLimit":I
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
 
+    .line 625
+    .local v1, "position":I
     add-int v2, v1, p1
 
+    .line 626
+    .local v2, "limit":I
     if-lt v2, v1, :cond_0
 
     if-gt v2, v0, :cond_0
 
+    .line 629
     invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 631
     :try_start_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
+    .line 632
+    .local v3, "result":Ljava/nio/ByteBuffer;
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 633
     invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 634
     nop
 
+    .line 636
     invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 634
     return-object v3
 
+    .line 636
+    .end local v3    # "result":Ljava/nio/ByteBuffer;
     :catchall_0
     move-exception v3
 
@@ -1490,6 +1962,7 @@
 
     throw v3
 
+    .line 627
     :cond_0
     new-instance v3, Ljava/nio/BufferUnderflowException;
 
@@ -1497,6 +1970,10 @@
 
     throw v3
 
+    .line 621
+    .end local v0    # "originalLimit":I
+    .end local v1    # "position":I
+    .end local v2    # "limit":I
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1521,32 +1998,42 @@
 
 .method static getCentralDirOffset(Ljava/nio/ByteBuffer;J)J
     .locals 6
+    .param p0, "eocd"    # Ljava/nio/ByteBuffer;
+    .param p1, "eocdOffset"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/util/apk/SignatureNotFoundException;
         }
     .end annotation
 
+    .line 390
     invoke-static {p0}, Landroid/util/apk/ZipUtils;->getZipEocdCentralDirectoryOffset(Ljava/nio/ByteBuffer;)J
 
     move-result-wide v0
 
+    .line 391
+    .local v0, "centralDirOffset":J
     cmp-long v2, v0, p1
 
     if-gtz v2, :cond_1
 
+    .line 396
     invoke-static {p0}, Landroid/util/apk/ZipUtils;->getZipEocdCentralDirectorySizeBytes(Ljava/nio/ByteBuffer;)J
 
     move-result-wide v2
 
+    .line 397
+    .local v2, "centralDirSize":J
     add-long v4, v0, v2
 
     cmp-long v4, v4, p1
 
     if-nez v4, :cond_0
 
+    .line 402
     return-wide v0
 
+    .line 398
     :cond_0
     new-instance v4, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1556,6 +2043,8 @@
 
     throw v4
 
+    .line 392
+    .end local v2    # "centralDirSize":J
     :cond_1
     new-instance v2, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1586,7 +2075,9 @@
 
 .method private static getChunkCount(J)J
     .locals 6
+    .param p0, "inputSizeBytes"    # J
 
+    .line 406
     const-wide/32 v0, 0x100000
 
     add-long v2, p0, v0
@@ -1602,9 +2093,12 @@
 
 .method static getContentDigestAlgorithmJcaDigestAlgorithm(I)Ljava/lang/String;
     .locals 3
+    .param p0, "digestAlgorithm"    # I
 
+    .line 496
     packed-switch p0, :pswitch_data_0
 
+    .line 503
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1625,11 +2119,13 @@
 
     throw v0
 
+    .line 501
     :pswitch_0
     const-string v0, "SHA-512"
 
     return-object v0
 
+    .line 499
     :pswitch_1
     const-string v0, "SHA-256"
 
@@ -1645,9 +2141,12 @@
 
 .method private static getContentDigestAlgorithmOutputSizeBytes(I)I
     .locals 3
+    .param p0, "digestAlgorithm"    # I
 
+    .line 509
     packed-switch p0, :pswitch_data_0
 
+    .line 516
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1668,11 +2167,13 @@
 
     throw v0
 
+    .line 514
     :pswitch_0
     const/16 v0, 0x40
 
     return v0
 
+    .line 512
     :pswitch_1
     const/16 v0, 0x20
 
@@ -1688,6 +2189,7 @@
 
 .method static getEocd(Ljava/io/RandomAccessFile;)Landroid/util/Pair;
     .locals 3
+    .param p0, "apk"    # Ljava/io/RandomAccessFile;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1707,16 +2209,22 @@
         }
     .end annotation
 
+    .line 378
     nop
 
+    .line 379
     invoke-static {p0}, Landroid/util/apk/ZipUtils;->findZipEndOfCentralDirectoryRecord(Ljava/io/RandomAccessFile;)Landroid/util/Pair;
 
     move-result-object v0
 
+    .line 380
+    .local v0, "eocdAndOffsetInFile":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/nio/ByteBuffer;Ljava/lang/Long;>;"
     if-eqz v0, :cond_0
 
+    .line 384
     return-object v0
 
+    .line 381
     :cond_0
     new-instance v1, Landroid/util/apk/SignatureNotFoundException;
 
@@ -1729,12 +2237,14 @@
 
 .method static getLengthPrefixedSlice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
     .locals 4
+    .param p0, "source"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 641
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -1743,24 +2253,30 @@
 
     if-lt v0, v1, :cond_2
 
+    .line 646
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v0
 
+    .line 647
+    .local v0, "len":I
     if-ltz v0, :cond_1
 
+    .line 649
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
     if-gt v0, v1, :cond_0
 
+    .line 653
     invoke-static {p0, v0}, Landroid/util/apk/ApkSigningBlockUtils;->getByteBuffer(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
     return-object v1
 
+    .line 650
     :cond_0
     new-instance v1, Ljava/io/IOException;
 
@@ -1778,6 +2294,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 651
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
@@ -1792,6 +2309,7 @@
 
     throw v1
 
+    .line 648
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1801,6 +2319,8 @@
 
     throw v1
 
+    .line 642
+    .end local v0    # "len":I
     :cond_2
     new-instance v0, Ljava/io/IOException;
 
@@ -1812,6 +2332,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 644
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
@@ -1829,7 +2350,9 @@
 
 .method static getSignatureAlgorithmContentDigestAlgorithm(I)I
     .locals 4
+    .param p0, "sigAlgorithm"    # I
 
+    .line 474
     const/16 v0, 0x301
 
     if-eq p0, v0, :cond_1
@@ -1850,6 +2373,7 @@
 
     packed-switch p0, :pswitch_data_1
 
+    .line 489
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1864,6 +2388,7 @@
 
     int-to-long v2, v2
 
+    .line 491
     invoke-static {v2, v3}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v2
@@ -1878,16 +2403,19 @@
 
     throw v0
 
+    .line 483
     :pswitch_0
     const/4 v0, 0x2
 
     return v0
 
+    .line 487
     :cond_0
     const/4 v0, 0x3
 
     return v0
 
+    .line 479
     :cond_1
     :pswitch_1
     const/4 v0, 0x1
@@ -1911,7 +2439,9 @@
 
 .method static getSignatureAlgorithmJcaKeyAlgorithm(I)Ljava/lang/String;
     .locals 4
+    .param p0, "sigAlgorithm"    # I
 
+    .line 522
     const/16 v0, 0x301
 
     if-eq p0, v0, :cond_2
@@ -1932,6 +2462,7 @@
 
     packed-switch p0, :pswitch_data_1
 
+    .line 537
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1946,6 +2477,7 @@
 
     int-to-long v2, v2
 
+    .line 539
     invoke-static {v2, v3}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v2
@@ -1960,18 +2492,21 @@
 
     throw v0
 
+    .line 532
     :cond_0
     :pswitch_0
     const-string v0, "EC"
 
     return-object v0
 
+    .line 528
     :cond_1
     :pswitch_1
     const-string v0, "RSA"
 
     return-object v0
 
+    .line 535
     :cond_2
     const-string v0, "DSA"
 
@@ -1996,6 +2531,7 @@
 
 .method static getSignatureAlgorithmJcaSignatureAlgorithm(I)Landroid/util/Pair;
     .locals 8
+    .param p0, "sigAlgorithm"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -2007,6 +2543,7 @@
         }
     .end annotation
 
+    .line 545
     const/16 v0, 0x301
 
     const/4 v1, 0x0
@@ -2029,6 +2566,7 @@
 
     packed-switch p0, :pswitch_data_1
 
+    .line 570
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2043,6 +2581,7 @@
 
     int-to-long v2, v2
 
+    .line 572
     invoke-static {v2, v3}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object v2
@@ -2057,6 +2596,7 @@
 
     throw v0
 
+    .line 565
     :pswitch_0
     const-string v0, "SHA512withECDSA"
 
@@ -2066,6 +2606,7 @@
 
     return-object v0
 
+    .line 560
     :pswitch_1
     const-string v0, "SHA512withRSA"
 
@@ -2075,6 +2616,7 @@
 
     return-object v0
 
+    .line 552
     :pswitch_2
     const-string v0, "SHA512withRSA/PSS"
 
@@ -2100,6 +2642,7 @@
 
     return-object v0
 
+    .line 547
     :pswitch_3
     const-string v0, "SHA256withRSA/PSS"
 
@@ -2125,6 +2668,7 @@
 
     return-object v0
 
+    .line 563
     :cond_0
     :pswitch_4
     const-string v0, "SHA256withECDSA"
@@ -2135,6 +2679,7 @@
 
     return-object v0
 
+    .line 558
     :cond_1
     :pswitch_5
     const-string v0, "SHA256withRSA"
@@ -2145,6 +2690,7 @@
 
     return-object v0
 
+    .line 568
     :cond_2
     const-string v0, "SHA256withDSA"
 
@@ -2171,22 +2717,31 @@
 
 .method static parseVerityDigestAndVerifySourceLength([BJLandroid/util/apk/SignatureInfo;)[B
     .locals 9
+    .param p0, "data"    # [B
+    .param p1, "fileSize"    # J
+    .param p3, "signatureInfo"    # Landroid/util/apk/SignatureInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/SecurityException;
         }
     .end annotation
 
+    .line 309
     const/16 v0, 0x20
 
+    .line 310
+    .local v0, "kRootHashSize":I
     const/16 v1, 0x8
 
+    .line 312
+    .local v1, "kSourceLengthSize":I
     array-length v2, p0
 
     add-int v3, v0, v1
 
     if-ne v2, v3, :cond_1
 
+    .line 315
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v2
@@ -2197,24 +2752,32 @@
 
     move-result-object v2
 
+    .line 316
+    .local v2, "buffer":Ljava/nio/ByteBuffer;
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 317
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->getLong()J
 
     move-result-wide v3
 
+    .line 319
+    .local v3, "expectedSourceLength":J
     iget-wide v5, p3, Landroid/util/apk/SignatureInfo;->centralDirOffset:J
 
     iget-wide v7, p3, Landroid/util/apk/SignatureInfo;->apkSigningBlockOffset:J
 
     sub-long/2addr v5, v7
 
+    .line 321
+    .local v5, "signingBlockSize":J
     sub-long v7, p1, v5
 
     cmp-long v7, v3, v7
 
     if-nez v7, :cond_0
 
+    .line 325
     const/4 v7, 0x0
 
     invoke-static {p0, v7, v0}, Ljava/util/Arrays;->copyOfRange([BII)[B
@@ -2223,6 +2786,7 @@
 
     return-object v7
 
+    .line 322
     :cond_0
     new-instance v7, Ljava/lang/SecurityException;
 
@@ -2232,6 +2796,10 @@
 
     throw v7
 
+    .line 313
+    .end local v2    # "buffer":Ljava/nio/ByteBuffer;
+    .end local v3    # "expectedSourceLength":J
+    .end local v5    # "signingBlockSize":J
     :cond_1
     new-instance v2, Ljava/lang/SecurityException;
 
@@ -2258,30 +2826,41 @@
 
 .method static readLengthPrefixedByteArray(Ljava/nio/ByteBuffer;)[B
     .locals 4
+    .param p0, "buf"    # Ljava/nio/ByteBuffer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .line 657
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v0
 
+    .line 658
+    .local v0, "len":I
     if-ltz v0, :cond_1
 
+    .line 660
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
     if-gt v0, v1, :cond_0
 
+    .line 664
     new-array v1, v0, [B
 
+    .line 665
+    .local v1, "result":[B
     invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
+    .line 666
     return-object v1
 
+    .line 661
+    .end local v1    # "result":[B
     :cond_0
     new-instance v1, Ljava/io/IOException;
 
@@ -2299,6 +2878,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 662
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
@@ -2313,6 +2893,7 @@
 
     throw v1
 
+    .line 659
     :cond_1
     new-instance v1, Ljava/io/IOException;
 
@@ -2325,13 +2906,18 @@
 
 .method static setUnsignedInt32LittleEndian(I[BI)V
     .locals 2
+    .param p0, "value"    # I
+    .param p1, "result"    # [B
+    .param p2, "offset"    # I
 
+    .line 670
     and-int/lit16 v0, p0, 0xff
 
     int-to-byte v0, v0
 
     aput-byte v0, p1, p2
 
+    .line 671
     add-int/lit8 v0, p2, 0x1
 
     ushr-int/lit8 v1, p0, 0x8
@@ -2342,6 +2928,7 @@
 
     aput-byte v1, p1, v0
 
+    .line 672
     add-int/lit8 v0, p2, 0x2
 
     ushr-int/lit8 v1, p0, 0x10
@@ -2352,6 +2939,7 @@
 
     aput-byte v1, p1, v0
 
+    .line 673
     add-int/lit8 v0, p2, 0x3
 
     ushr-int/lit8 v1, p0, 0x18
@@ -2362,47 +2950,66 @@
 
     aput-byte v1, p1, v0
 
+    .line 674
     return-void
 .end method
 
 .method static sliceFromTo(Ljava/nio/ByteBuffer;II)Ljava/nio/ByteBuffer;
     .locals 6
+    .param p0, "source"    # Ljava/nio/ByteBuffer;
+    .param p1, "start"    # I
+    .param p2, "end"    # I
 
+    .line 583
     if-ltz p1, :cond_2
 
+    .line 586
     if-lt p2, p1, :cond_1
 
+    .line 589
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
 
+    .line 590
+    .local v0, "capacity":I
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v1
 
     if-gt p2, v1, :cond_0
 
+    .line 593
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v1
 
+    .line 594
+    .local v1, "originalLimit":I
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
 
+    .line 596
+    .local v2, "originalPosition":I
     const/4 v3, 0x0
 
     :try_start_0
     invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 597
     invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 598
     invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 599
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v4
 
+    .line 600
+    .local v4, "result":Ljava/nio/ByteBuffer;
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
 
     move-result-object v5
@@ -2411,27 +3018,39 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 601
     nop
 
+    .line 603
     invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 604
     invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 605
     invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 601
     return-object v4
 
+    .line 603
+    .end local v4    # "result":Ljava/nio/ByteBuffer;
     :catchall_0
     move-exception v4
 
     invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    .line 604
     invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 605
     invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     throw v4
 
+    .line 591
+    .end local v1    # "originalLimit":I
+    .end local v2    # "originalPosition":I
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -2459,6 +3078,8 @@
 
     throw v1
 
+    .line 587
+    .end local v0    # "capacity":I
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2486,6 +3107,7 @@
 
     throw v0
 
+    .line 584
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2510,6 +3132,8 @@
 
 .method static verifyIntegrity(Ljava/util/Map;Ljava/io/RandomAccessFile;Landroid/util/apk/SignatureInfo;)V
     .locals 5
+    .param p1, "apk"    # Ljava/io/RandomAccessFile;
+    .param p2, "signatureInfo"    # Landroid/util/apk/SignatureInfo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2528,18 +3152,25 @@
         }
     .end annotation
 
+    .line 91
+    .local p0, "expectedDigests":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;[B>;"
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
+    .line 95
     const/4 v0, 0x1
 
+    .line 97
+    .local v0, "neverVerified":Z
     new-instance v1, Landroid/util/ArrayMap;
 
     invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
 
+    .line 98
+    .local v1, "expected1MbChunkDigests":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;[B>;"
     const/4 v2, 0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2552,10 +3183,12 @@
 
     if-eqz v3, :cond_0
 
+    .line 99
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 100
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -2566,8 +3199,10 @@
 
     check-cast v2, [B
 
+    .line 99
     invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 102
     :cond_0
     const/4 v2, 0x2
 
@@ -2581,10 +3216,12 @@
 
     if-eqz v3, :cond_1
 
+    .line 103
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
+    .line 104
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -2595,8 +3232,10 @@
 
     check-cast v2, [B
 
+    .line 103
     invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 106
     :cond_1
     invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
 
@@ -2604,6 +3243,7 @@
 
     if-nez v2, :cond_2
 
+    .line 108
     :try_start_0
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->getFD()Ljava/io/FileDescriptor;
 
@@ -2613,13 +3253,18 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 110
     const/4 v0, 0x0
 
+    .line 113
     goto :goto_0
 
+    .line 111
     :catch_0
     move-exception v2
 
+    .line 112
+    .local v2, "e":Ljava/io/IOException;
     new-instance v3, Ljava/lang/SecurityException;
 
     const-string v4, "Cannot get FD"
@@ -2628,6 +3273,8 @@
 
     throw v3
 
+    .line 116
+    .end local v2    # "e":Ljava/io/IOException;
     :cond_2
     :goto_0
     const/4 v2, 0x3
@@ -2642,8 +3289,10 @@
 
     if-eqz v3, :cond_3
 
+    .line 117
     nop
 
+    .line 118
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -2654,15 +3303,20 @@
 
     check-cast v2, [B
 
+    .line 117
     invoke-static {v2, p1, p2}, Landroid/util/apk/ApkSigningBlockUtils;->verifyIntegrityForVerityBasedAlgorithm([BLjava/io/RandomAccessFile;Landroid/util/apk/SignatureInfo;)V
 
+    .line 119
     const/4 v0, 0x0
 
+    .line 122
     :cond_3
     if-nez v0, :cond_4
 
+    .line 125
     return-void
 
+    .line 123
     :cond_4
     new-instance v2, Ljava/lang/SecurityException;
 
@@ -2672,6 +3326,9 @@
 
     throw v2
 
+    .line 92
+    .end local v0    # "neverVerified":Z
+    .end local v1    # "expected1MbChunkDigests":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;[B>;"
     :cond_5
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -2684,6 +3341,8 @@
 
 .method private static verifyIntegrityFor1MbChunkBasedAlgorithm(Ljava/util/Map;Ljava/io/FileDescriptor;Landroid/util/apk/SignatureInfo;)V
     .locals 16
+    .param p1, "apkFileDescriptor"    # Ljava/io/FileDescriptor;
+    .param p2, "signatureInfo"    # Landroid/util/apk/SignatureInfo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2702,6 +3361,8 @@
         }
     .end annotation
 
+    .line 141
+    .local p0, "expectedDigests":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Integer;[B>;"
     move-object/from16 v1, p2
 
     new-instance v0, Landroid/util/apk/MemoryMappedFileDataSource;
@@ -2716,6 +3377,8 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/util/apk/MemoryMappedFileDataSource;-><init>(Ljava/io/FileDescriptor;JJ)V
 
+    .line 144
+    .local v2, "beforeApkSigningBlock":Landroid/util/apk/DataSource;
     new-instance v0, Landroid/util/apk/MemoryMappedFileDataSource;
 
     iget-wide v5, v1, Landroid/util/apk/SignatureInfo;->centralDirOffset:J
@@ -2732,34 +3395,46 @@
 
     invoke-direct/range {v3 .. v8}, Landroid/util/apk/MemoryMappedFileDataSource;-><init>(Ljava/io/FileDescriptor;JJ)V
 
+    .line 151
+    .local v3, "centralDir":Landroid/util/apk/DataSource;
     iget-object v0, v1, Landroid/util/apk/SignatureInfo;->eocd:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
     move-result-object v4
 
+    .line 152
+    .local v4, "eocdBuf":Ljava/nio/ByteBuffer;
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v4, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 153
     iget-wide v5, v1, Landroid/util/apk/SignatureInfo;->apkSigningBlockOffset:J
 
     invoke-static {v4, v5, v6}, Landroid/util/apk/ZipUtils;->setZipEocdCentralDirectoryOffset(Ljava/nio/ByteBuffer;J)V
 
+    .line 154
     new-instance v0, Landroid/util/apk/ByteBufferDataSource;
 
     invoke-direct {v0, v4}, Landroid/util/apk/ByteBufferDataSource;-><init>(Ljava/nio/ByteBuffer;)V
 
     move-object v5, v0
 
+    .line 156
+    .local v5, "eocd":Landroid/util/apk/DataSource;
     invoke-interface/range {p0 .. p0}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v6, v0, [I
 
+    .line 157
+    .local v6, "digestAlgorithms":[I
     const/4 v0, 0x0
 
+    .line 158
+    .local v0, "digestAlgorithmCount":I
     invoke-interface/range {p0 .. p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v7
@@ -2770,6 +3445,8 @@
 
     move v8, v0
 
+    .end local v0    # "digestAlgorithmCount":I
+    .local v8, "digestAlgorithmCount":I
     :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
@@ -2787,12 +3464,18 @@
 
     move-result v0
 
+    .line 159
+    .local v0, "digestAlgorithm":I
     aput v0, v6, v8
 
+    .line 160
     add-int/lit8 v8, v8, 0x1
 
+    .line 161
+    .end local v0    # "digestAlgorithm":I
     goto :goto_0
 
+    .line 164
     :cond_0
     const/4 v0, 0x3
 
@@ -2811,25 +3494,34 @@
 
     aput-object v5, v0, v9
 
+    .line 165
     invoke-static {v6, v0}, Landroid/util/apk/ApkSigningBlockUtils;->computeContentDigestsPer1MbChunk([I[Landroid/util/apk/DataSource;)[[B
 
     move-result-object v0
     :try_end_0
     .catch Ljava/security/DigestException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 170
+    .local v0, "actualDigests":[[B
     nop
 
+    .line 169
     nop
 
+    .line 171
     nop
 
+    .local v7, "i":I
     :goto_1
     array-length v9, v6
 
     if-ge v7, v9, :cond_2
 
+    .line 172
     aget v9, v6, v7
 
+    .line 173
+    .local v9, "digestAlgorithm":I
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -2842,18 +3534,30 @@
 
     check-cast v10, [B
 
+    .line 174
+    .local v10, "expectedDigest":[B
     aget-object v12, v0, v7
 
+    .line 175
+    .local v12, "actualDigest":[B
     invoke-static {v10, v12}, Ljava/security/MessageDigest;->isEqual([B[B)Z
 
     move-result v13
 
     if-eqz v13, :cond_1
 
+    .line 171
+    .end local v9    # "digestAlgorithm":I
+    .end local v10    # "expectedDigest":[B
+    .end local v12    # "actualDigest":[B
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
+    .line 176
+    .restart local v9    # "digestAlgorithm":I
+    .restart local v10    # "expectedDigest":[B
+    .restart local v12    # "actualDigest":[B
     :cond_1
     new-instance v13, Ljava/lang/SecurityException;
 
@@ -2861,6 +3565,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 177
     invoke-static {v9}, Landroid/util/apk/ApkSigningBlockUtils;->getContentDigestAlgorithmJcaDigestAlgorithm(I)Ljava/lang/String;
 
     move-result-object v15
@@ -2879,16 +3584,25 @@
 
     throw v13
 
+    .line 181
+    .end local v7    # "i":I
+    .end local v9    # "digestAlgorithm":I
+    .end local v10    # "expectedDigest":[B
+    .end local v12    # "actualDigest":[B
     :cond_2
     move-object/from16 v11, p0
 
     return-void
 
+    .line 168
+    .end local v0    # "actualDigests":[[B
     :catch_0
     move-exception v0
 
     move-object/from16 v11, p0
 
+    .line 169
+    .local v0, "e":Ljava/security/DigestException;
     new-instance v7, Ljava/lang/SecurityException;
 
     const-string v9, "Failed to compute digest(s) of contents"
@@ -2900,23 +3614,31 @@
 
 .method private static verifyIntegrityForVerityBasedAlgorithm([BLjava/io/RandomAccessFile;Landroid/util/apk/SignatureInfo;)V
     .locals 4
+    .param p0, "expectedDigest"    # [B
+    .param p1, "apk"    # Ljava/io/RandomAccessFile;
+    .param p2, "signatureInfo"    # Landroid/util/apk/SignatureInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/SecurityException;
         }
     .end annotation
 
+    .line 333
     nop
 
+    .line 334
     :try_start_0
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->length()J
 
     move-result-wide v0
 
+    .line 333
     invoke-static {p0, v0, v1, p2}, Landroid/util/apk/ApkSigningBlockUtils;->parseVerityDigestAndVerifySourceLength([BJLandroid/util/apk/SignatureInfo;)[B
 
     move-result-object v0
 
+    .line 335
+    .local v0, "expectedRootHash":[B
     new-instance v1, Landroid/util/apk/ApkSigningBlockUtils$1;
 
     invoke-direct {v1}, Landroid/util/apk/ApkSigningBlockUtils$1;-><init>()V
@@ -2925,6 +3647,8 @@
 
     move-result-object v1
 
+    .line 342
+    .local v1, "verity":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     iget-object v2, v1, Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;->rootHash:[B
 
     invoke-static {v0, v2}, Ljava/util/Arrays;->equals([B[B)Z
@@ -2933,10 +3657,17 @@
 
     if-eqz v2, :cond_0
 
+    .line 347
+    .end local v0    # "expectedRootHash":[B
+    .end local v1    # "verity":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     nop
 
+    .line 348
     return-void
 
+    .line 343
+    .restart local v0    # "expectedRootHash":[B
+    .restart local v1    # "verity":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     :cond_0
     new-instance v2, Ljava/lang/SecurityException;
 
@@ -2950,9 +3681,14 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 345
+    .end local v0    # "expectedRootHash":[B
+    .end local v1    # "verity":Landroid/util/apk/ApkVerityBuilder$ApkVerityResult;
     :catch_0
     move-exception v0
 
+    .line 346
+    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/SecurityException;
 
     const-string v2, "Error during verification"

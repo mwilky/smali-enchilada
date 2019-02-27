@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/secrecy/SecrecyManager;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/secrecy/SecrecyManager;
 
+    .line 382
     iput-object p1, p0, Landroid/secrecy/SecrecyManager$1;->this$0:Landroid/secrecy/SecrecyManager;
 
     invoke-direct {p0}, Landroid/secrecy/ISecrecyServiceReceiver$Stub;-><init>()V
@@ -33,9 +35,12 @@
 # virtual methods
 .method public onSecrecyStateChanged(Ljava/util/Map;)V
     .locals 3
+    .param p1, "map"    # Ljava/util/Map;
 
+    .line 387
     if-eqz p1, :cond_0
 
+    .line 388
     iget-object v0, p0, Landroid/secrecy/SecrecyManager$1;->this$0:Landroid/secrecy/SecrecyManager;
 
     invoke-static {v0}, Landroid/secrecy/SecrecyManager;->access$200(Landroid/secrecy/SecrecyManager;)Landroid/os/Handler;
@@ -52,6 +57,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    .line 390
     :cond_0
     return-void
 .end method

@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;Landroid/os/HwParcel;)V
     .locals 0
+    .param p1, "this$0"    # Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;
 
+    .line 502
     iput-object p1, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->this$0:Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;
 
     iput-object p2, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -40,24 +42,31 @@
 # virtual methods
 .method public onValues(ZI)V
     .locals 2
+    .param p1, "result"    # Z
+    .param p2, "value"    # I
 
+    .line 505
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
+    .line 506
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeBool(Z)V
 
+    .line 507
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p2}, Landroid/os/HwParcel;->writeInt32(I)V
 
+    .line 508
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
+    .line 509
     return-void
 .end method

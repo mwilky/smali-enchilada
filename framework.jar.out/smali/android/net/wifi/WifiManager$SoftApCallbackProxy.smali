@@ -23,57 +23,78 @@
 # direct methods
 .method constructor <init>(Landroid/os/Looper;Landroid/net/wifi/WifiManager$SoftApCallback;)V
     .locals 1
+    .param p1, "looper"    # Landroid/os/Looper;
+    .param p2, "callback"    # Landroid/net/wifi/WifiManager$SoftApCallback;
 
+    .line 2621
     invoke-direct {p0}, Landroid/net/wifi/ISoftApCallback$Stub;-><init>()V
 
+    .line 2622
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mHandler:Landroid/os/Handler;
 
+    .line 2623
     iput-object p2, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mCallback:Landroid/net/wifi/WifiManager$SoftApCallback;
 
+    .line 2624
     return-void
 .end method
 
 .method public static synthetic lambda$onNumClientsChanged$1(Landroid/net/wifi/WifiManager$SoftApCallbackProxy;I)V
     .locals 1
+    .param p1, "numClients"    # I
 
+    .line 2639
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mCallback:Landroid/net/wifi/WifiManager$SoftApCallback;
 
     invoke-interface {v0, p1}, Landroid/net/wifi/WifiManager$SoftApCallback;->onNumClientsChanged(I)V
 
+    .line 2640
     return-void
 .end method
 
 .method public static synthetic lambda$onStaConnected$2(Landroid/net/wifi/WifiManager$SoftApCallbackProxy;Ljava/lang/String;I)V
     .locals 1
+    .param p1, "Macaddr"    # Ljava/lang/String;
+    .param p2, "numClients"    # I
 
+    .line 2647
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mCallback:Landroid/net/wifi/WifiManager$SoftApCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/net/wifi/WifiManager$SoftApCallback;->onStaConnected(Ljava/lang/String;I)V
 
+    .line 2648
     return-void
 .end method
 
 .method public static synthetic lambda$onStaDisconnected$3(Landroid/net/wifi/WifiManager$SoftApCallbackProxy;Ljava/lang/String;I)V
     .locals 1
+    .param p1, "Macaddr"    # Ljava/lang/String;
+    .param p2, "numClients"    # I
 
+    .line 2655
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mCallback:Landroid/net/wifi/WifiManager$SoftApCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/net/wifi/WifiManager$SoftApCallback;->onStaDisconnected(Ljava/lang/String;I)V
 
+    .line 2656
     return-void
 .end method
 
 .method public static synthetic lambda$onStateChanged$0(Landroid/net/wifi/WifiManager$SoftApCallbackProxy;II)V
     .locals 1
+    .param p1, "state"    # I
+    .param p2, "failureReason"    # I
 
+    .line 2631
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mCallback:Landroid/net/wifi/WifiManager$SoftApCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/net/wifi/WifiManager$SoftApCallback;->onStateChanged(II)V
 
+    .line 2632
     return-void
 .end method
 
@@ -81,12 +102,14 @@
 # virtual methods
 .method public onNumClientsChanged(I)V
     .locals 3
+    .param p1, "numClients"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2637
     const-string v0, "WifiManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -105,6 +128,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2638
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$SoftApCallbackProxy$f44R8L0UcqgnIaD5lXMmeuRHCWI;
@@ -113,17 +137,21 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 2641
     return-void
 .end method
 
 .method public onStaConnected(Ljava/lang/String;I)V
     .locals 3
+    .param p1, "Macaddr"    # Ljava/lang/String;
+    .param p2, "numClients"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2645
     const-string v0, "WifiManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -148,6 +176,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2646
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$SoftApCallbackProxy$vo4E4HQhX8ezRZP1e1kxdx6MvpE;
@@ -156,17 +185,21 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 2649
     return-void
 .end method
 
 .method public onStaDisconnected(Ljava/lang/String;I)V
     .locals 3
+    .param p1, "Macaddr"    # Ljava/lang/String;
+    .param p2, "numClients"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2653
     const-string v0, "WifiManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -191,6 +224,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2654
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$SoftApCallbackProxy$X5LJgdNUCXHctJ7m4-CGDjDEfkU;
@@ -199,17 +233,21 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 2657
     return-void
 .end method
 
 .method public onStateChanged(II)V
     .locals 3
+    .param p1, "state"    # I
+    .param p2, "failureReason"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2628
     const-string v0, "WifiManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -234,6 +272,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2630
     iget-object v0, p0, Landroid/net/wifi/WifiManager$SoftApCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$SoftApCallbackProxy$vmSW5veUpC52oRINBy419US5snk;
@@ -242,5 +281,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 2633
     return-void
 .end method

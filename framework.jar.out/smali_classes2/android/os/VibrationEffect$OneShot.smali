@@ -39,6 +39,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 420
     new-instance v0, Landroid/os/VibrationEffect$OneShot$1;
 
     invoke-direct {v0}, Landroid/os/VibrationEffect$OneShot$1;-><init>()V
@@ -50,33 +51,44 @@
 
 .method public constructor <init>(JI)V
     .locals 0
+    .param p1, "milliseconds"    # J
+    .param p3, "amplitude"    # I
 
+    .line 331
     invoke-direct {p0}, Landroid/os/VibrationEffect;-><init>()V
 
+    .line 332
     iput-wide p1, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
+    .line 333
     iput p3, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
+    .line 334
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 326
     invoke-direct {p0}, Landroid/os/VibrationEffect;-><init>()V
 
+    .line 327
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
+    .line 328
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
+    .line 329
     return-void
 .end method
 
@@ -84,20 +96,26 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 393
     instance-of v0, p1, Landroid/os/VibrationEffect$OneShot;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
+    .line 394
     return v1
 
+    .line 396
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/os/VibrationEffect$OneShot;
 
+    .line 397
+    .local v0, "other":Landroid/os/VibrationEffect$OneShot;
     iget-wide v2, v0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
     iget-wide v4, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
@@ -123,6 +141,7 @@
 .method public getAmplitude()I
     .locals 1
 
+    .line 342
     iget v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     return v0
@@ -131,6 +150,7 @@
 .method public getDuration()J
     .locals 2
 
+    .line 338
     iget-wide v0, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
     return-wide v0
@@ -139,8 +159,11 @@
 .method public hashCode()I
     .locals 3
 
+    .line 402
     const/16 v0, 0x11
 
+    .line 403
+    .local v0, "result":I
     iget-wide v1, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
     long-to-int v1, v1
@@ -151,30 +174,36 @@
 
     add-int/2addr v0, v1
 
+    .line 404
     iget v1, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     mul-int/2addr v2, v1
 
     add-int/2addr v0, v2
 
+    .line 405
     return v0
 .end method
 
 .method public resolve(I)Landroid/os/VibrationEffect$OneShot;
     .locals 3
+    .param p1, "defaultAmplitude"    # I
 
+    .line 368
     const/16 v0, 0xff
 
     if-gt p1, v0, :cond_1
 
     if-ltz p1, :cond_1
 
+    .line 372
     iget v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
+    .line 373
     new-instance v0, Landroid/os/VibrationEffect$OneShot;
 
     iget-wide v1, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
@@ -183,9 +212,11 @@
 
     return-object v0
 
+    .line 375
     :cond_0
     return-object p0
 
+    .line 369
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -198,13 +229,18 @@
 
 .method public scale(FI)Landroid/os/VibrationEffect;
     .locals 4
+    .param p1, "gamma"    # F
+    .param p2, "maxAmplitude"    # I
 
+    .line 354
     iget v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     invoke-static {v0, p1, p2}, Landroid/os/VibrationEffect$OneShot;->scale(IFI)I
 
     move-result v0
 
+    .line 355
+    .local v0, "newAmplitude":I
     new-instance v1, Landroid/os/VibrationEffect$OneShot;
 
     iget-wide v2, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
@@ -217,6 +253,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 410
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -251,6 +288,7 @@
 .method public validate()V
     .locals 4
 
+    .line 380
     iget v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     const/4 v1, -0x1
@@ -267,6 +305,7 @@
 
     if-gt v0, v1, :cond_1
 
+    .line 385
     iget-wide v0, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
     const-wide/16 v2, 0x0
@@ -275,8 +314,10 @@
 
     if-lez v0, :cond_0
 
+    .line 389
     return-void
 
+    .line 386
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -304,6 +345,7 @@
 
     throw v0
 
+    .line 381
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -334,18 +376,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 415
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 416
     iget-wide v0, p0, Landroid/os/VibrationEffect$OneShot;->mDuration:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 417
     iget v0, p0, Landroid/os/VibrationEffect$OneShot;->mAmplitude:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 418
     return-void
 .end method

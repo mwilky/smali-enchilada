@@ -33,7 +33,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/graphics/palette/Palette$Builder;Lcom/android/internal/graphics/palette/Palette$PaletteAsyncListener;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/graphics/palette/Palette$Builder;
 
+    .line 881
     iput-object p1, p0, Lcom/android/internal/graphics/palette/Palette$Builder$1;->this$0:Lcom/android/internal/graphics/palette/Palette$Builder;
 
     iput-object p2, p0, Lcom/android/internal/graphics/palette/Palette$Builder$1;->val$listener:Lcom/android/internal/graphics/palette/Palette$PaletteAsyncListener;
@@ -47,7 +49,9 @@
 # virtual methods
 .method protected varargs doInBackground([Landroid/graphics/Bitmap;)Lcom/android/internal/graphics/palette/Palette;
     .locals 3
+    .param p1, "params"    # [Landroid/graphics/Bitmap;
 
+    .line 885
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/graphics/palette/Palette$Builder$1;->this$0:Lcom/android/internal/graphics/palette/Palette$Builder;
 
@@ -59,15 +63,19 @@
 
     return-object v0
 
+    .line 886
     :catch_0
     move-exception v0
 
+    .line 887
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "Palette"
 
     const-string v2, "Exception thrown during async generate"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 888
     const/4 v1, 0x0
 
     return-object v1
@@ -76,6 +84,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 881
     check-cast p1, [Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/graphics/palette/Palette$Builder$1;->doInBackground([Landroid/graphics/Bitmap;)Lcom/android/internal/graphics/palette/Palette;
@@ -87,17 +96,21 @@
 
 .method protected onPostExecute(Lcom/android/internal/graphics/palette/Palette;)V
     .locals 1
+    .param p1, "colorExtractor"    # Lcom/android/internal/graphics/palette/Palette;
 
+    .line 894
     iget-object v0, p0, Lcom/android/internal/graphics/palette/Palette$Builder$1;->val$listener:Lcom/android/internal/graphics/palette/Palette$PaletteAsyncListener;
 
     invoke-interface {v0, p1}, Lcom/android/internal/graphics/palette/Palette$PaletteAsyncListener;->onGenerated(Lcom/android/internal/graphics/palette/Palette;)V
 
+    .line 895
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
+    .line 881
     check-cast p1, Lcom/android/internal/graphics/palette/Palette;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/graphics/palette/Palette$Builder$1;->onPostExecute(Lcom/android/internal/graphics/palette/Palette;)V

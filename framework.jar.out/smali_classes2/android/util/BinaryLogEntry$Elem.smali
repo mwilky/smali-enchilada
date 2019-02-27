@@ -47,7 +47,9 @@
 # direct methods
 .method public constructor <init>(Landroid/util/BinaryLogEntry;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/util/BinaryLogEntry;
 
+    .line 11
     iput-object p1, p0, Landroid/util/BinaryLogEntry$Elem;->this$0:Landroid/util/BinaryLogEntry;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

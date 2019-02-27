@@ -15,18 +15,21 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 33
     new-instance v0, Landroid/view/ViewOutlineProvider$1;
 
     invoke-direct {v0}, Landroid/view/ViewOutlineProvider$1;-><init>()V
 
     sput-object v0, Landroid/view/ViewOutlineProvider;->BACKGROUND:Landroid/view/ViewOutlineProvider;
 
+    .line 52
     new-instance v0, Landroid/view/ViewOutlineProvider$2;
 
     invoke-direct {v0}, Landroid/view/ViewOutlineProvider$2;-><init>()V
 
     sput-object v0, Landroid/view/ViewOutlineProvider;->BOUNDS:Landroid/view/ViewOutlineProvider;
 
+    .line 65
     new-instance v0, Landroid/view/ViewOutlineProvider$3;
 
     invoke-direct {v0}, Landroid/view/ViewOutlineProvider$3;-><init>()V
@@ -39,6 +42,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -57,7 +57,9 @@
 # direct methods
 .method public constructor <init>(Landroid/util/EventLogTag;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/util/EventLogTag;
 
+    .line 11
     iput-object p1, p0, Landroid/util/EventLogTag$ValueDescriptor;->this$0:Landroid/util/EventLogTag;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

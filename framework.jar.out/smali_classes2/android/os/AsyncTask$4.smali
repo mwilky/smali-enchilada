@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 635
     invoke-static {}, Landroid/os/AsyncTask$Status;->values()[Landroid/os/AsyncTask$Status;
 
     move-result-object v0

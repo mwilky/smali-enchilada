@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/ActivityThread;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/app/ActivityThread;
 
+    .line 1966
     iput-object p1, p0, Landroid/app/ActivityThread$GcIdler;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +39,12 @@
 .method public final queueIdle()Z
     .locals 1
 
+    .line 1969
     iget-object v0, p0, Landroid/app/ActivityThread$GcIdler;->this$0:Landroid/app/ActivityThread;
 
     invoke-virtual {v0}, Landroid/app/ActivityThread;->doGcIfNeeded()V
 
+    .line 1970
     const/4 v0, 0x0
 
     return v0

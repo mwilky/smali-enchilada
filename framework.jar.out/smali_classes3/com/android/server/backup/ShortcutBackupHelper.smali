@@ -15,6 +15,7 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 32
     const-string v0, "shortcutuser.xml"
 
     filled-new-array {v0}, [Ljava/lang/String;
@@ -25,18 +26,22 @@
 
     invoke-direct {p0, v1, v0}, Landroid/app/backup/BlobBackupHelper;-><init>(I[Ljava/lang/String;)V
 
+    .line 33
     return-void
 .end method
 
 .method private getShortcutService()Landroid/content/pm/IShortcutService;
     .locals 1
 
+    .line 36
     const-string v0, "shortcut"
 
+    .line 37
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 36
     invoke-static {v0}, Landroid/content/pm/IShortcutService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IShortcutService;
 
     move-result-object v0
@@ -48,7 +53,10 @@
 # virtual methods
 .method protected applyRestoredPayload(Ljava/lang/String;[B)V
     .locals 3
+    .param p1, "key"    # Ljava/lang/String;
+    .param p2, "payload"    # [B
 
+    .line 58
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -81,6 +89,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
+    .line 67
     const-string v0, "ShortcutBackupAgent"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -101,6 +110,7 @@
 
     goto :goto_2
 
+    .line 61
     :cond_2
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/backup/ShortcutBackupHelper;->getShortcutService()Landroid/content/pm/IShortcutService;
@@ -111,26 +121,35 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 64
     goto :goto_2
 
+    .line 62
     :catch_0
     move-exception v0
 
+    .line 63
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ShortcutBackupAgent"
 
     const-string v2, "Restore failed"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 65
+    .end local v0    # "e":Ljava/lang/Exception;
     nop
 
+    .line 69
     :goto_2
     return-void
 .end method
 
 .method protected getBackupPayload(Ljava/lang/String;)[B
     .locals 3
+    .param p1, "key"    # Ljava/lang/String;
 
+    .line 42
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -163,6 +182,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
+    .line 51
     const-string v0, "ShortcutBackupAgent"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -183,6 +203,7 @@
 
     goto :goto_2
 
+    .line 45
     :cond_2
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/backup/ShortcutBackupHelper;->getShortcutService()Landroid/content/pm/IShortcutService;
@@ -197,17 +218,23 @@
 
     return-object v0
 
+    .line 46
     :catch_0
     move-exception v0
 
+    .line 47
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ShortcutBackupAgent"
 
     const-string v2, "Backup failed"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 49
+    .end local v0    # "e":Ljava/lang/Exception;
     nop
 
+    .line 53
     :goto_2
     const/4 v0, 0x0
 

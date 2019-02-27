@@ -31,6 +31,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 7572
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "callables"
@@ -41,6 +42,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 7578
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -51,6 +53,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_FILTER_URI:Landroid/net/Uri;
 
+    .line 7586
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Callable;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter_enterprise"
@@ -67,6 +70,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 7566
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

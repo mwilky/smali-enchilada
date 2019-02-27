@@ -23,6 +23,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +31,10 @@
 
 .method public static writeCommitSysConfigFile(Ljava/lang/String;J)V
     .locals 3
+    .param p0, "name"    # Ljava/lang/String;
+    .param p1, "time"    # J
 
+    .line 59
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -51,12 +55,16 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 60
     return-void
 .end method
 
 .method public static writeSysuiAction(ILjava/lang/String;)V
     .locals 3
+    .param p0, "category"    # I
+    .param p1, "pkg"    # Ljava/lang/String;
 
+    .line 39
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -77,12 +85,16 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 40
     return-void
 .end method
 
 .method public static writeSysuiCount(Ljava/lang/String;I)V
     .locals 3
+    .param p0, "name"    # Ljava/lang/String;
+    .param p1, "increment"    # I
 
+    .line 47
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -103,12 +115,16 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 48
     return-void
 .end method
 
 .method public static writeSysuiHistogram(Ljava/lang/String;I)V
     .locals 3
+    .param p0, "name"    # Ljava/lang/String;
+    .param p1, "bucket"    # I
 
+    .line 51
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -129,12 +145,16 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 52
     return-void
 .end method
 
 .method public static writeSysuiLatency(II)V
     .locals 3
+    .param p0, "action"    # I
+    .param p1, "latency"    # I
 
+    .line 55
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -159,22 +179,29 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 56
     return-void
 .end method
 
 .method public static writeSysuiMultiAction([Ljava/lang/Object;)V
     .locals 1
+    .param p0, "content"    # [Ljava/lang/Object;
 
+    .line 43
     const v0, 0x80004
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 44
     return-void
 .end method
 
 .method public static writeSysuiViewVisibility(II)V
     .locals 3
+    .param p0, "category"    # I
+    .param p1, "visible"    # I
 
+    .line 35
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -199,5 +226,6 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 36
     return-void
 .end method

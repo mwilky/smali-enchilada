@@ -17,6 +17,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 24
     invoke-direct {p0}, Landroid/content/res/ThemedResourceCache;-><init>()V
 
     return-void
@@ -26,21 +27,29 @@
 # virtual methods
 .method public getInstance(JLandroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .param p1, "key"    # J
+    .param p3, "resources"    # Landroid/content/res/Resources;
+    .param p4, "theme"    # Landroid/content/res/Resources$Theme;
 
+    .line 35
     invoke-virtual {p0, p1, p2, p4}, Landroid/content/res/DrawableCache;->get(JLandroid/content/res/Resources$Theme;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/graphics/drawable/Drawable$ConstantState;
 
+    .line 36
+    .local v0, "entry":Landroid/graphics/drawable/Drawable$ConstantState;
     if-eqz v0, :cond_0
 
+    .line 37
     invoke-virtual {v0, p3, p4}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     return-object v1
 
+    .line 40
     :cond_0
     const/4 v1, 0x0
 
@@ -49,7 +58,10 @@
 
 .method public shouldInvalidateEntry(Landroid/graphics/drawable/Drawable$ConstantState;I)Z
     .locals 1
+    .param p1, "entry"    # Landroid/graphics/drawable/Drawable$ConstantState;
+    .param p2, "configChanges"    # I
 
+    .line 45
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
 
     move-result v0
@@ -64,6 +76,7 @@
 .method public bridge synthetic shouldInvalidateEntry(Ljava/lang/Object;I)Z
     .locals 0
 
+    .line 24
     check-cast p1, Landroid/graphics/drawable/Drawable$ConstantState;
 
     invoke-virtual {p0, p1, p2}, Landroid/content/res/DrawableCache;->shouldInvalidateEntry(Landroid/graphics/drawable/Drawable$ConstantState;I)Z

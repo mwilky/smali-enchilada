@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,12 +28,17 @@
 # virtual methods
 .method public onEnumerate(Landroid/hardware/fingerprint/Fingerprint;)V
     .locals 0
+    .param p1, "fingerprint"    # Landroid/hardware/fingerprint/Fingerprint;
 
+    .line 373
     return-void
 .end method
 
 .method public onEnumerateError(ILjava/lang/CharSequence;)V
     .locals 0
+    .param p1, "errMsgId"    # I
+    .param p2, "errString"    # Ljava/lang/CharSequence;
 
+    .line 367
     return-void
 .end method

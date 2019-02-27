@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/preference/PreferenceFragment;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/preference/PreferenceFragment;
 
+    .line 129
     iput-object p1, p0, Landroid/preference/PreferenceFragment$1;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 132
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -42,11 +46,13 @@
 
     goto :goto_0
 
+    .line 135
     :cond_0
     iget-object v0, p0, Landroid/preference/PreferenceFragment$1;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-static {v0}, Landroid/preference/PreferenceFragment;->access$000(Landroid/preference/PreferenceFragment;)V
 
+    .line 138
     :goto_0
     return-void
 .end method

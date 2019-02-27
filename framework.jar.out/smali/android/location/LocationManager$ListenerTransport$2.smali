@@ -23,7 +23,10 @@
 # direct methods
 .method constructor <init>(Landroid/location/LocationManager$ListenerTransport;Landroid/os/Looper;Landroid/location/LocationManager;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/location/LocationManager$ListenerTransport;
+    .param p2, "x0"    # Landroid/os/Looper;
 
+    .line 323
     iput-object p1, p0, Landroid/location/LocationManager$ListenerTransport$2;->this$1:Landroid/location/LocationManager$ListenerTransport;
 
     iput-object p3, p0, Landroid/location/LocationManager$ListenerTransport$2;->val$this$0:Landroid/location/LocationManager;
@@ -37,10 +40,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 326
     iget-object v0, p0, Landroid/location/LocationManager$ListenerTransport$2;->this$1:Landroid/location/LocationManager$ListenerTransport;
 
     invoke-static {v0, p1}, Landroid/location/LocationManager$ListenerTransport;->access$000(Landroid/location/LocationManager$ListenerTransport;Landroid/os/Message;)V
 
+    .line 327
     return-void
 .end method

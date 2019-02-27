@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/helper/ItemTouchHelper;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/helper/ItemTouchHelper;
 
+    .line 249
     iput-object p1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public run()V
     .locals 2
 
+    .line 252
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper;->mSelected:Lcom/android/internal/widget/RecyclerView$ViewHolder;
@@ -51,12 +54,14 @@
 
     if-eqz v0, :cond_1
 
+    .line 253
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper;->mSelected:Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
     if-eqz v0, :cond_0
 
+    .line 254
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v1, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
@@ -65,6 +70,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/helper/ItemTouchHelper;->moveIfNecessary(Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
 
+    .line 256
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
@@ -76,12 +82,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/RecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
+    .line 257
     iget-object v0, p0, Lcom/android/internal/widget/helper/ItemTouchHelper$1;->this$0:Lcom/android/internal/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Lcom/android/internal/widget/helper/ItemTouchHelper;->mRecyclerView:Lcom/android/internal/widget/RecyclerView;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/widget/RecyclerView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 259
     :cond_1
     return-void
 .end method

@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 1251
     invoke-static {}, Lcom/google/android/util/AbstractMessageParser$Token$Type;->values()[Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
     move-result-object v0

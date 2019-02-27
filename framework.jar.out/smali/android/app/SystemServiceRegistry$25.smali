@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 393
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,7 +36,9 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/view/LayoutInflater;
     .locals 2
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
+    .line 396
     new-instance v0, Lcom/android/internal/policy/PhoneLayoutInflater;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -55,6 +58,7 @@
         }
     .end annotation
 
+    .line 393
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$25;->createService(Landroid/app/ContextImpl;)Landroid/view/LayoutInflater;
 
     move-result-object p1

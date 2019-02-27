@@ -31,6 +31,14 @@
     .end annotation
 .end method
 
+.method public abstract dumpJankBugreport(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract dumpLightBugreport(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

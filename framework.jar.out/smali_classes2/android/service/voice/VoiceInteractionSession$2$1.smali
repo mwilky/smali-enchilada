@@ -31,7 +31,10 @@
 # direct methods
 .method constructor <init>(Landroid/service/voice/VoiceInteractionSession$2;Ljava/lang/String;Landroid/app/assist/AssistStructure;Landroid/os/Bundle;Landroid/app/assist/AssistContent;II)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/voice/VoiceInteractionSession$2;
+    .param p2, "x0"    # Ljava/lang/String;
 
+    .line 240
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->this$1:Landroid/service/voice/VoiceInteractionSession$2;
 
     iput-object p3, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$structure:Landroid/app/assist/AssistStructure;
@@ -54,12 +57,16 @@
 .method public run()V
     .locals 10
 
+    .line 243
     const/4 v0, 0x0
 
+    .line 244
+    .local v0, "failure":Ljava/lang/Throwable;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$structure:Landroid/app/assist/AssistStructure;
 
     if-eqz v1, :cond_0
 
+    .line 246
     :try_start_0
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$structure:Landroid/app/assist/AssistStructure;
 
@@ -67,19 +74,26 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 250
     goto :goto_0
 
+    .line 247
     :catch_0
     move-exception v1
 
+    .line 248
+    .local v1, "e":Ljava/lang/Throwable;
     const-string v2, "VoiceInteractionSession"
 
     const-string v3, "Failure retrieving AssistStructure"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 249
     move-object v0, v1
 
+    .line 252
+    .end local v1    # "e":Ljava/lang/Throwable;
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->this$1:Landroid/service/voice/VoiceInteractionSession$2;
@@ -98,6 +112,7 @@
 
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$data:Landroid/os/Bundle;
 
+    .line 253
     if-nez v0, :cond_1
 
     iget-object v4, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$structure:Landroid/app/assist/AssistStructure;
@@ -114,6 +129,7 @@
 
     iget v8, p0, Landroid/service/voice/VoiceInteractionSession$2$1;->val$count:I
 
+    .line 252
     move-object v5, v0
 
     invoke-virtual/range {v1 .. v8}, Lcom/android/internal/os/HandlerCaller;->obtainMessageOOOOII(ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;II)Landroid/os/Message;
@@ -122,5 +138,6 @@
 
     invoke-virtual {v9, v1}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
+    .line 255
     return-void
 .end method

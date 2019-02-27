@@ -56,6 +56,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 142
     new-instance v0, Landroid/bluetooth/le/AdvertiseSettings$1;
 
     invoke-direct {v0}, Landroid/bluetooth/le/AdvertiseSettings$1;-><init>()V
@@ -67,23 +68,39 @@
 
 .method private constructor <init>(IIZI)V
     .locals 0
+    .param p1, "advertiseMode"    # I
+    .param p2, "advertiseTxPowerLevel"    # I
+    .param p3, "advertiseConnectable"    # Z
+    .param p4, "advertiseTimeout"    # I
 
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 80
     iput p1, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseMode:I
 
+    .line 81
     iput p2, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTxPowerLevel:I
 
+    .line 82
     iput-boolean p3, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseConnectable:Z
 
+    .line 83
     iput p4, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTimeoutMillis:I
 
+    .line 84
     return-void
 .end method
 
 .method synthetic constructor <init>(IIZILandroid/bluetooth/le/AdvertiseSettings$1;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Z
+    .param p4, "x3"    # I
+    .param p5, "x4"    # Landroid/bluetooth/le/AdvertiseSettings$1;
 
+    .line 27
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/bluetooth/le/AdvertiseSettings;-><init>(IIZI)V
 
     return-void
@@ -91,21 +108,26 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 87
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseMode:I
 
+    .line 88
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTxPowerLevel:I
 
+    .line 89
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -122,18 +144,23 @@
     :goto_0
     iput-boolean v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseConnectable:Z
 
+    .line 90
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTimeoutMillis:I
 
+    .line 91
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/bluetooth/le/AdvertiseSettings$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/bluetooth/le/AdvertiseSettings$1;
 
+    .line 27
     invoke-direct {p0, p1}, Landroid/bluetooth/le/AdvertiseSettings;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -144,6 +171,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 131
     const/4 v0, 0x0
 
     return v0
@@ -152,6 +180,7 @@
 .method public getMode()I
     .locals 1
 
+    .line 97
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseMode:I
 
     return v0
@@ -160,6 +189,7 @@
 .method public getTimeout()I
     .locals 1
 
+    .line 118
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTimeoutMillis:I
 
     return v0
@@ -168,6 +198,7 @@
 .method public getTxPowerLevel()I
     .locals 1
 
+    .line 104
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTxPowerLevel:I
 
     return v0
@@ -176,6 +207,7 @@
 .method public isConnectable()Z
     .locals 1
 
+    .line 111
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseConnectable:Z
 
     return v0
@@ -184,6 +216,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 123
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -233,22 +266,29 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 136
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 137
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTxPowerLevel:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 138
     iget-boolean v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseConnectable:Z
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 139
     iget v0, p0, Landroid/bluetooth/le/AdvertiseSettings;->mAdvertiseTimeoutMillis:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 140
     return-void
 .end method

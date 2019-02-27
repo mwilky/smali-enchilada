@@ -10,16 +10,21 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 42
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
+    .line 43
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .param p1, "src"    # Landroid/os/Parcel;
 
+    .line 48
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
+    .line 49
     return-void
 .end method
 
@@ -28,6 +33,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 64
     const/4 v0, 0x0
 
     return v0
@@ -36,6 +42,7 @@
 .method public getSpanTypeId()I
     .locals 1
 
+    .line 53
     invoke-virtual {p0}, Landroid/text/style/SuperscriptSpan;->getSpanTypeIdInternal()I
 
     move-result v0
@@ -46,6 +53,7 @@
 .method public getSpanTypeIdInternal()I
     .locals 1
 
+    .line 59
     const/16 v0, 0xe
 
     return v0
@@ -53,7 +61,9 @@
 
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 3
+    .param p1, "textPaint"    # Landroid/text/TextPaint;
 
+    .line 79
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -70,12 +80,15 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
+    .line 80
     return-void
 .end method
 
 .method public updateMeasureState(Landroid/text/TextPaint;)V
     .locals 3
+    .param p1, "textPaint"    # Landroid/text/TextPaint;
 
+    .line 84
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -92,19 +105,27 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
+    .line 85
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 69
     invoke-virtual {p0, p1, p2}, Landroid/text/style/SuperscriptSpan;->writeToParcelInternal(Landroid/os/Parcel;I)V
 
+    .line 70
     return-void
 .end method
 
 .method public writeToParcelInternal(Landroid/os/Parcel;I)V
     .locals 0
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 75
     return-void
 .end method

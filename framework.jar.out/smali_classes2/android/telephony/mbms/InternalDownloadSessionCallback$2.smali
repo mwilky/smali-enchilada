@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/InternalDownloadSessionCallback;Ljava/util/List;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telephony/mbms/InternalDownloadSessionCallback;
 
+    .line 62
     iput-object p1, p0, Landroid/telephony/mbms/InternalDownloadSessionCallback$2;->this$0:Landroid/telephony/mbms/InternalDownloadSessionCallback;
 
     iput-object p2, p0, Landroid/telephony/mbms/InternalDownloadSessionCallback$2;->val$services:Ljava/util/List;
@@ -41,10 +43,13 @@
 .method public run()V
     .locals 4
 
+    .line 65
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
+    .line 67
+    .local v0, "token":J
     :try_start_0
     iget-object v2, p0, Landroid/telephony/mbms/InternalDownloadSessionCallback$2;->this$0:Landroid/telephony/mbms/InternalDownloadSessionCallback;
 
@@ -58,12 +63,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 69
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 70
     nop
 
+    .line 71
     return-void
 
+    .line 69
     :catchall_0
     move-exception v2
 

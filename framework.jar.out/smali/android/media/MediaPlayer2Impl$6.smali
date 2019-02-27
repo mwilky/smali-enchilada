@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZLandroid/media/DataSourceDesc;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 392
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p4, p0, Landroid/media/MediaPlayer2Impl$6;->val$dsd:Landroid/media/DataSourceDesc;
@@ -38,12 +42,14 @@
 .method process()V
     .locals 6
 
+    .line 395
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$6;->val$dsd:Landroid/media/DataSourceDesc;
 
     const-string/jumbo v1, "the DataSourceDesc cannot be null"
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 397
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$400(Landroid/media/MediaPlayer2Impl;)Ljava/lang/Object;
@@ -52,6 +58,7 @@
 
     monitor-enter v0
 
+    .line 398
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -59,6 +66,7 @@
 
     invoke-static {v1, v2}, Landroid/media/MediaPlayer2Impl;->access$502(Landroid/media/MediaPlayer2Impl;Landroid/media/DataSourceDesc;)Landroid/media/DataSourceDesc;
 
+    .line 399
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iget-object v2, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
@@ -71,6 +79,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 401
     :try_start_1
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$6;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -89,17 +98,22 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 403
     goto :goto_0
 
+    .line 402
     :catch_0
     move-exception v1
 
+    .line 404
     :goto_0
     :try_start_2
     monitor-exit v0
 
+    .line 405
     return-void
 
+    .line 404
     :catchall_0
     move-exception v1
 

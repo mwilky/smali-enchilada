@@ -30,21 +30,29 @@
 # direct methods
 .method public constructor <init>(Landroid/media/MediaPlayer2Impl;IZ)V
     .locals 0
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 4741
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4742
     iput p2, p0, Landroid/media/MediaPlayer2Impl$Task;->mMediaCallType:I
 
+    .line 4743
     iput-boolean p3, p0, Landroid/media/MediaPlayer2Impl$Task;->mNeedToWaitForEventToComplete:Z
 
+    .line 4744
     return-void
 .end method
 
 .method static synthetic access$4300(Landroid/media/MediaPlayer2Impl$Task;)I
     .locals 1
+    .param p0, "x0"    # Landroid/media/MediaPlayer2Impl$Task;
 
+    .line 4736
     iget v0, p0, Landroid/media/MediaPlayer2Impl$Task;->mMediaCallType:I
 
     return v0
@@ -52,7 +60,9 @@
 
 .method static synthetic access$4400(Landroid/media/MediaPlayer2Impl$Task;)Landroid/media/DataSourceDesc;
     .locals 1
+    .param p0, "x0"    # Landroid/media/MediaPlayer2Impl$Task;
 
+    .line 4736
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$Task;->mDSD:Landroid/media/DataSourceDesc;
 
     return-object v0
@@ -60,7 +70,9 @@
 
 .method static synthetic access$4500(Landroid/media/MediaPlayer2Impl$Task;)Z
     .locals 1
+    .param p0, "x0"    # Landroid/media/MediaPlayer2Impl$Task;
 
+    .line 4736
     iget-boolean v0, p0, Landroid/media/MediaPlayer2Impl$Task;->mNeedToWaitForEventToComplete:Z
 
     return v0
@@ -68,7 +80,10 @@
 
 .method static synthetic access$4600(Landroid/media/MediaPlayer2Impl$Task;I)V
     .locals 0
+    .param p0, "x0"    # Landroid/media/MediaPlayer2Impl$Task;
+    .param p1, "x1"    # I
 
+    .line 4736
     invoke-direct {p0, p1}, Landroid/media/MediaPlayer2Impl$Task;->sendCompleteNotification(I)V
 
     return-void
@@ -76,7 +91,10 @@
 
 .method public static synthetic lambda$sendCompleteNotification$0(Landroid/media/MediaPlayer2Impl$Task;Landroid/util/Pair;I)V
     .locals 4
+    .param p1, "cb"    # Landroid/util/Pair;
+    .param p2, "status"    # I
 
+    .line 4790
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;
@@ -94,15 +112,19 @@
 
 .method private sendCompleteNotification(I)V
     .locals 5
+    .param p1, "status"    # I
 
+    .line 4785
     iget v0, p0, Landroid/media/MediaPlayer2Impl$Task;->mMediaCallType:I
 
     const/16 v1, 0x3eb
 
     if-ne v0, v1, :cond_0
 
+    .line 4786
     return-void
 
+    .line 4788
     :cond_0
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -112,6 +134,7 @@
 
     monitor-enter v0
 
+    .line 4789
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -136,6 +159,8 @@
 
     check-cast v2, Landroid/util/Pair;
 
+    .line 4790
+    .local v2, "cb":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/concurrent/Executor;Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;>;"
     iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v3, Ljava/util/concurrent/Executor;
@@ -146,13 +171,18 @@
 
     invoke-interface {v3, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 4792
+    .end local v2    # "cb":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/util/concurrent/Executor;Landroid/media/MediaPlayer2$MediaPlayer2EventCallback;>;"
     goto :goto_0
 
+    .line 4793
     :cond_1
     monitor-exit v0
 
+    .line 4794
     return-void
 
+    .line 4793
     :catchall_0
     move-exception v1
 
@@ -177,8 +207,11 @@
 .method public run()V
     .locals 4
 
+    .line 4750
     const/4 v0, 0x0
 
+    .line 4752
+    .local v0, "status":I
     :try_start_0
     invoke-virtual {p0}, Landroid/media/MediaPlayer2Impl$Task;->process()V
     :try_end_0
@@ -189,51 +222,77 @@
     .catch Landroid/media/MediaPlayer2$NoDrmSchemeException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 4765
     :goto_0
     goto :goto_1
 
+    .line 4763
     :catch_0
     move-exception v1
 
+    .line 4764
+    .local v1, "e":Ljava/lang/Exception;
     const/high16 v0, -0x80000000
 
+    .end local v1    # "e":Ljava/lang/Exception;
     goto :goto_1
 
+    .line 4761
     :catch_1
     move-exception v1
 
+    .line 4762
+    .local v1, "e":Landroid/media/MediaPlayer2$NoDrmSchemeException;
     const/4 v0, 0x5
 
+    .end local v1    # "e":Landroid/media/MediaPlayer2$NoDrmSchemeException;
     goto :goto_0
 
+    .line 4759
     :catch_2
     move-exception v1
 
+    .line 4760
+    .local v1, "e":Ljava/io/IOException;
     const/4 v0, 0x4
 
+    .end local v1    # "e":Ljava/io/IOException;
     goto :goto_0
 
+    .line 4757
     :catch_3
     move-exception v1
 
+    .line 4758
+    .local v1, "e":Ljava/lang/SecurityException;
     const/4 v0, 0x3
 
+    .end local v1    # "e":Ljava/lang/SecurityException;
     goto :goto_0
 
+    .line 4755
     :catch_4
     move-exception v1
 
+    .line 4756
+    .local v1, "e":Ljava/lang/IllegalArgumentException;
     const/4 v0, 0x2
 
+    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     goto :goto_0
 
+    .line 4753
     :catch_5
     move-exception v1
 
+    .line 4754
+    .local v1, "e":Ljava/lang/IllegalStateException;
     const/4 v0, 0x1
 
+    .end local v1    # "e":Ljava/lang/IllegalStateException;
     goto :goto_0
 
+    .line 4766
     :goto_1
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -243,6 +302,7 @@
 
     monitor-enter v1
 
+    .line 4767
     :try_start_1
     iget-object v2, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -252,19 +312,23 @@
 
     iput-object v2, p0, Landroid/media/MediaPlayer2Impl$Task;->mDSD:Landroid/media/DataSourceDesc;
 
+    .line 4768
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 4771
     iget-boolean v1, p0, Landroid/media/MediaPlayer2Impl$Task;->mNeedToWaitForEventToComplete:Z
 
     if-eqz v1, :cond_0
 
     if-eqz v0, :cond_1
 
+    .line 4773
     :cond_0
     invoke-direct {p0, v0}, Landroid/media/MediaPlayer2Impl$Task;->sendCompleteNotification(I)V
 
+    .line 4775
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$4100(Landroid/media/MediaPlayer2Impl;)Ljava/lang/Object;
@@ -273,6 +337,7 @@
 
     monitor-enter v2
 
+    .line 4776
     :try_start_2
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
@@ -280,15 +345,19 @@
 
     invoke-static {v1, v3}, Landroid/media/MediaPlayer2Impl;->access$4202(Landroid/media/MediaPlayer2Impl;Landroid/media/MediaPlayer2Impl$Task;)Landroid/media/MediaPlayer2Impl$Task;
 
+    .line 4777
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$Task;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$4700(Landroid/media/MediaPlayer2Impl;)V
 
+    .line 4778
     monitor-exit v2
 
+    .line 4780
     :cond_1
     return-void
 
+    .line 4778
     :catchall_0
     move-exception v1
 
@@ -298,6 +367,7 @@
 
     throw v1
 
+    .line 4768
     :catchall_1
     move-exception v2
 

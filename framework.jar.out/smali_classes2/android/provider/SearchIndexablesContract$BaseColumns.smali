@@ -32,14 +32,18 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 299
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/provider/SearchIndexablesContract$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/provider/SearchIndexablesContract$1;
 
+    .line 297
     invoke-direct {p0}, Landroid/provider/SearchIndexablesContract$BaseColumns;-><init>()V
 
     return-void

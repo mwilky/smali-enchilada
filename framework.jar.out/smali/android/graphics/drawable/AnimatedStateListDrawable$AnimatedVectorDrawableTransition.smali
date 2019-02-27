@@ -25,17 +25,25 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/AnimatedVectorDrawable;ZZ)V
     .locals 1
+    .param p1, "avd"    # Landroid/graphics/drawable/AnimatedVectorDrawable;
+    .param p2, "reversed"    # Z
+    .param p3, "hasReversibleFlag"    # Z
 
+    .line 320
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/graphics/drawable/AnimatedStateListDrawable$Transition;-><init>(Landroid/graphics/drawable/AnimatedStateListDrawable$1;)V
 
+    .line 321
     iput-object p1, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mAvd:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
+    .line 322
     iput-boolean p2, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mReversed:Z
 
+    .line 323
     iput-boolean p3, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mHasReversibleFlag:Z
 
+    .line 324
     return-void
 .end method
 
@@ -44,6 +52,7 @@
 .method public canReverse()Z
     .locals 1
 
+    .line 331
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mAvd:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->canReverse()Z
@@ -70,18 +79,21 @@
 .method public reverse()V
     .locals 2
 
+    .line 345
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->canReverse()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 346
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mAvd:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->reverse()V
 
     goto :goto_0
 
+    .line 348
     :cond_0
     invoke-static {}, Landroid/graphics/drawable/AnimatedStateListDrawable;->access$100()Ljava/lang/String;
 
@@ -91,6 +103,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 351
     :goto_0
     return-void
 .end method
@@ -98,19 +111,23 @@
 .method public start()V
     .locals 1
 
+    .line 336
     iget-boolean v0, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mReversed:Z
 
     if-eqz v0, :cond_0
 
+    .line 337
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->reverse()V
 
     goto :goto_0
 
+    .line 339
     :cond_0
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mAvd:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
+    .line 341
     :goto_0
     return-void
 .end method
@@ -118,9 +135,11 @@
 .method public stop()V
     .locals 1
 
+    .line 355
     iget-object v0, p0, Landroid/graphics/drawable/AnimatedStateListDrawable$AnimatedVectorDrawableTransition;->mAvd:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
 
+    .line 356
     return-void
 .end method

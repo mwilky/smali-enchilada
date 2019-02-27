@@ -48,6 +48,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 516
     const-string v0, "WHITE"
 
     const-string v1, "GREEN"
@@ -75,40 +76,57 @@
 
 .method constructor <init>(II)V
     .locals 0
+    .param p1, "style"    # I
+    .param p2, "color"    # I
 
+    .line 540
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 541
     iput p1, p0, Landroid/media/Cea608CCParser$StyleCode;->mStyle:I
 
+    .line 542
     iput p2, p0, Landroid/media/Cea608CCParser$StyleCode;->mColor:I
 
+    .line 543
     return-void
 .end method
 
 .method static fromByte(B)Landroid/media/Cea608CCParser$StyleCode;
     .locals 4
+    .param p0, "data2"    # B
 
+    .line 524
     const/4 v0, 0x0
 
+    .line 525
+    .local v0, "style":I
     shr-int/lit8 v1, p0, 0x1
 
     const/4 v2, 0x7
 
     and-int/2addr v1, v2
 
+    .line 527
+    .local v1, "color":I
     and-int/lit8 v3, p0, 0x1
 
     if-eqz v3, :cond_0
 
+    .line 528
     or-int/lit8 v0, v0, 0x2
 
+    .line 531
     :cond_0
     if-ne v1, v2, :cond_1
 
+    .line 533
     const/4 v1, 0x0
 
+    .line 534
     or-int/lit8 v0, v0, 0x1
 
+    .line 537
     :cond_1
     new-instance v2, Landroid/media/Cea608CCParser$StyleCode;
 
@@ -122,6 +140,7 @@
 .method getColor()I
     .locals 1
 
+    .line 554
     iget v0, p0, Landroid/media/Cea608CCParser$StyleCode;->mColor:I
 
     return v0
@@ -130,6 +149,7 @@
 .method isItalics()Z
     .locals 2
 
+    .line 546
     iget v0, p0, Landroid/media/Cea608CCParser$StyleCode;->mStyle:I
 
     const/4 v1, 0x1
@@ -150,6 +170,7 @@
 .method isUnderline()Z
     .locals 1
 
+    .line 550
     iget v0, p0, Landroid/media/Cea608CCParser$StyleCode;->mStyle:I
 
     and-int/lit8 v0, v0, 0x2
@@ -170,14 +191,18 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 559
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 560
+    .local v0, "str":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 561
     sget-object v1, Landroid/media/Cea608CCParser$StyleCode;->mColorMap:[Ljava/lang/String;
 
     iget v2, p0, Landroid/media/Cea608CCParser$StyleCode;->mColor:I
@@ -186,16 +211,19 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 562
     iget v1, p0, Landroid/media/Cea608CCParser$StyleCode;->mStyle:I
 
     and-int/lit8 v1, v1, 0x1
 
     if-eqz v1, :cond_0
 
+    .line 563
     const-string v1, ", ITALICS"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 565
     :cond_0
     iget v1, p0, Landroid/media/Cea608CCParser$StyleCode;->mStyle:I
 
@@ -203,15 +231,18 @@
 
     if-eqz v1, :cond_1
 
+    .line 566
     const-string v1, ", UNDERLINE"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 568
     :cond_1
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 570
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

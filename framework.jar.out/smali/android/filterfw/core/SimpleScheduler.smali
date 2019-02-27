@@ -6,9 +6,12 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/core/FilterGraph;)V
     .locals 0
+    .param p1, "graph"    # Landroid/filterfw/core/FilterGraph;
 
+    .line 29
     invoke-direct {p0, p1}, Landroid/filterfw/core/Scheduler;-><init>(Landroid/filterfw/core/FilterGraph;)V
 
+    .line 30
     return-void
 .end method
 
@@ -17,12 +20,14 @@
 .method public reset()V
     .locals 0
 
+    .line 34
     return-void
 .end method
 
 .method public scheduleNextNode()Landroid/filterfw/core/Filter;
     .locals 3
 
+    .line 38
     invoke-virtual {p0}, Landroid/filterfw/core/SimpleScheduler;->getGraph()Landroid/filterfw/core/FilterGraph;
 
     move-result-object v0
@@ -48,17 +53,23 @@
 
     check-cast v1, Landroid/filterfw/core/Filter;
 
+    .line 39
+    .local v1, "filter":Landroid/filterfw/core/Filter;
     invoke-virtual {v1}, Landroid/filterfw/core/Filter;->canProcess()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
+    .line 40
     return-object v1
 
+    .line 41
+    .end local v1    # "filter":Landroid/filterfw/core/Filter;
     :cond_0
     goto :goto_0
 
+    .line 42
     :cond_1
     const/4 v0, 0x0
 

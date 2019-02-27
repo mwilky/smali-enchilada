@@ -31,7 +31,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto;
 
+    .line 11
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto$LruProcesses;->this$0:Lcom/android/server/am/ActivityManagerServiceDumpProcessesProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

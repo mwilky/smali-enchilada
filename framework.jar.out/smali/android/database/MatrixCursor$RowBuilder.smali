@@ -27,13 +27,18 @@
 # direct methods
 .method constructor <init>(Landroid/database/MatrixCursor;I)V
     .locals 2
+    .param p1, "this$0"    # Landroid/database/MatrixCursor;
+    .param p2, "row"    # I
 
+    .line 201
     iput-object p1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 202
     iput p2, p0, Landroid/database/MatrixCursor$RowBuilder;->row:I
 
+    .line 203
     invoke-static {p1}, Landroid/database/MatrixCursor;->access$000(Landroid/database/MatrixCursor;)I
 
     move-result v0
@@ -42,6 +47,7 @@
 
     iput v0, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I
 
+    .line 204
     iget v0, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I
 
     invoke-static {p1}, Landroid/database/MatrixCursor;->access$000(Landroid/database/MatrixCursor;)I
@@ -52,6 +58,7 @@
 
     iput v0, p0, Landroid/database/MatrixCursor$RowBuilder;->endIndex:I
 
+    .line 205
     return-void
 .end method
 
@@ -59,13 +66,16 @@
 # virtual methods
 .method public add(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;
     .locals 3
+    .param p1, "columnValue"    # Ljava/lang/Object;
 
+    .line 215
     iget v0, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I
 
     iget v1, p0, Landroid/database/MatrixCursor$RowBuilder;->endIndex:I
 
     if-eq v0, v1, :cond_0
 
+    .line 220
     iget-object v0, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
     invoke-static {v0}, Landroid/database/MatrixCursor;->access$100(Landroid/database/MatrixCursor;)[Ljava/lang/Object;
@@ -80,8 +90,10 @@
 
     aput-object p1, v0, v1
 
+    .line 221
     return-object p0
 
+    .line 216
     :cond_0
     new-instance v0, Landroid/database/CursorIndexOutOfBoundsException;
 
@@ -94,9 +106,13 @@
 
 .method public add(Ljava/lang/String;Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;
     .locals 4
+    .param p1, "columnName"    # Ljava/lang/String;
+    .param p2, "value"    # Ljava/lang/Object;
 
+    .line 231
     const/4 v0, 0x0
 
+    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
@@ -108,6 +124,7 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 232
     iget-object v1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
     invoke-static {v1}, Landroid/database/MatrixCursor;->access$200(Landroid/database/MatrixCursor;)[Ljava/lang/String;
@@ -122,6 +139,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 233
     iget-object v1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
     invoke-static {v1}, Landroid/database/MatrixCursor;->access$100(Landroid/database/MatrixCursor;)[Ljava/lang/Object;
@@ -142,11 +160,14 @@
 
     aput-object p2, v1, v2
 
+    .line 231
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 236
+    .end local v0    # "i":I
     :cond_1
     return-object p0
 .end method

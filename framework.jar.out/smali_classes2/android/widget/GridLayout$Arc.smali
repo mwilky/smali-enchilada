@@ -25,17 +25,24 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/GridLayout$Interval;Landroid/widget/GridLayout$MutableInt;)V
     .locals 1
+    .param p1, "span"    # Landroid/widget/GridLayout$Interval;
+    .param p2, "value"    # Landroid/widget/GridLayout$MutableInt;
 
+    .line 2236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2234
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/GridLayout$Arc;->valid:Z
 
+    .line 2237
     iput-object p1, p0, Landroid/widget/GridLayout$Arc;->span:Landroid/widget/GridLayout$Interval;
 
+    .line 2238
     iput-object p2, p0, Landroid/widget/GridLayout$Arc;->value:Landroid/widget/GridLayout$MutableInt;
 
+    .line 2239
     return-void
 .end method
 
@@ -44,6 +51,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 2243
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

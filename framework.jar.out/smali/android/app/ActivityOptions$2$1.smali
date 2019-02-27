@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/ActivityOptions$2;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/app/ActivityOptions$2;
 
+    .line 426
     iput-object p1, p0, Landroid/app/ActivityOptions$2$1;->this$1:Landroid/app/ActivityOptions$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +39,13 @@
 .method public run()V
     .locals 1
 
+    .line 429
     iget-object v0, p0, Landroid/app/ActivityOptions$2$1;->this$1:Landroid/app/ActivityOptions$2;
 
     iget-object v0, v0, Landroid/app/ActivityOptions$2;->val$listener:Landroid/app/ActivityOptions$OnAnimationFinishedListener;
 
     invoke-interface {v0}, Landroid/app/ActivityOptions$OnAnimationFinishedListener;->onAnimationFinished()V
 
+    .line 430
     return-void
 .end method

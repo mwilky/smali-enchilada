@@ -351,6 +351,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 694
     new-instance v0, Landroid/telephony/ims/ImsReasonInfo$1;
 
     invoke-direct {v0}, Landroid/telephony/ims/ImsReasonInfo$1;-><init>()V
@@ -363,80 +364,109 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 627
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 628
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
+    .line 629
     iput v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
+    .line 630
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
+    .line 631
     return-void
 .end method
 
 .method public constructor <init>(II)V
     .locals 1
+    .param p1, "code"    # I
+    .param p2, "extraCode"    # I
 
+    .line 640
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 641
     iput p1, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
+    .line 642
     iput p2, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
+    .line 643
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
+    .line 644
     return-void
 .end method
 
 .method public constructor <init>(IILjava/lang/String;)V
     .locals 0
+    .param p1, "code"    # I
+    .param p2, "extraCode"    # I
+    .param p3, "extraMessage"    # Ljava/lang/String;
 
+    .line 646
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 647
     iput p1, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
+    .line 648
     iput p2, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
+    .line 649
     iput-object p3, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
+    .line 650
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 634
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
+    .line 635
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
+    .line 636
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
+    .line 637
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/telephony/ims/ImsReasonInfo$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/telephony/ims/ImsReasonInfo$1;
 
+    .line 29
     invoke-direct {p0, p1}, Landroid/telephony/ims/ImsReasonInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -447,6 +477,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 684
     const/4 v0, 0x0
 
     return v0
@@ -455,6 +486,7 @@
 .method public getCode()I
     .locals 1
 
+    .line 656
     iget v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
     return v0
@@ -463,6 +495,7 @@
 .method public getExtraCode()I
     .locals 1
 
+    .line 663
     iget v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
     return v0
@@ -471,6 +504,7 @@
 .method public getExtraMessage()Ljava/lang/String;
     .locals 1
 
+    .line 670
     iget-object v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
     return-object v0
@@ -479,6 +513,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 679
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -520,18 +555,24 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 689
     iget v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mCode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 690
     iget v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraCode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 691
     iget-object v0, p0, Landroid/telephony/ims/ImsReasonInfo;->mExtraMessage:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 692
     return-void
 .end method

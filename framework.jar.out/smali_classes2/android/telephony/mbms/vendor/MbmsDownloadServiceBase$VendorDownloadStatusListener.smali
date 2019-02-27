@@ -21,11 +21,15 @@
 # direct methods
 .method public constructor <init>(Landroid/telephony/mbms/IDownloadStatusListener;)V
     .locals 0
+    .param p1, "listener"    # Landroid/telephony/mbms/IDownloadStatusListener;
 
+    .line 58
     invoke-direct {p0}, Landroid/telephony/mbms/DownloadStatusListener;-><init>()V
 
+    .line 59
     iput-object p1, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$VendorDownloadStatusListener;->mListener:Landroid/telephony/mbms/IDownloadStatusListener;
 
+    .line 60
     return-void
 .end method
 
@@ -36,7 +40,11 @@
 
 .method public onStatusUpdated(Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/FileInfo;I)V
     .locals 1
+    .param p1, "request"    # Landroid/telephony/mbms/DownloadRequest;
+    .param p2, "fileInfo"    # Landroid/telephony/mbms/FileInfo;
+    .param p3, "state"    # I
 
+    .line 66
     :try_start_0
     iget-object v0, p0, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$VendorDownloadStatusListener;->mListener:Landroid/telephony/mbms/IDownloadStatusListener;
 
@@ -44,13 +52,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 69
     goto :goto_0
 
+    .line 67
     :catch_0
     move-exception v0
 
+    .line 68
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {p0, v0}, Landroid/telephony/mbms/vendor/MbmsDownloadServiceBase$VendorDownloadStatusListener;->onRemoteException(Landroid/os/RemoteException;)V
 
+    .line 70
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

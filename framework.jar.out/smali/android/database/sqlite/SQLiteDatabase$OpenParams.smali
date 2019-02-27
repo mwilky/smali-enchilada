@@ -41,31 +41,59 @@
 # direct methods
 .method private constructor <init>(ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;IIJLjava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p1, "openFlags"    # I
+    .param p2, "cursorFactory"    # Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
+    .param p3, "errorHandler"    # Landroid/database/DatabaseErrorHandler;
+    .param p4, "lookasideSlotSize"    # I
+    .param p5, "lookasideSlotCount"    # I
+    .param p6, "idleConnectionTimeout"    # J
+    .param p8, "journalMode"    # Ljava/lang/String;
+    .param p9, "syncMode"    # Ljava/lang/String;
 
+    .line 2386
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2387
     iput p1, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mOpenFlags:I
 
+    .line 2388
     iput-object p2, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mCursorFactory:Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
 
+    .line 2389
     iput-object p3, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mErrorHandler:Landroid/database/DatabaseErrorHandler;
 
+    .line 2390
     iput p4, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotSize:I
 
+    .line 2391
     iput p5, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotCount:I
 
+    .line 2392
     iput-wide p6, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mIdleConnectionTimeout:J
 
+    .line 2393
     iput-object p8, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mJournalMode:Ljava/lang/String;
 
+    .line 2394
     iput-object p9, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mSyncMode:Ljava/lang/String;
 
+    .line 2395
     return-void
 .end method
 
 .method synthetic constructor <init>(ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;IIJLjava/lang/String;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$1;)V
     .locals 0
+    .param p1, "x0"    # I
+    .param p2, "x1"    # Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
+    .param p3, "x2"    # Landroid/database/DatabaseErrorHandler;
+    .param p4, "x3"    # I
+    .param p5, "x4"    # I
+    .param p6, "x5"    # J
+    .param p8, "x6"    # Ljava/lang/String;
+    .param p9, "x7"    # Ljava/lang/String;
+    .param p10, "x8"    # Landroid/database/sqlite/SQLiteDatabase$1;
 
+    .line 2374
     invoke-direct/range {p0 .. p9}, Landroid/database/sqlite/SQLiteDatabase$OpenParams;-><init>(ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;IIJLjava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -73,7 +101,9 @@
 
 .method static synthetic access$000(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)I
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mOpenFlags:I
 
     return v0
@@ -81,7 +111,9 @@
 
 .method static synthetic access$100(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mCursorFactory:Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
 
     return-object v0
@@ -89,7 +121,9 @@
 
 .method static synthetic access$200(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/DatabaseErrorHandler;
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mErrorHandler:Landroid/database/DatabaseErrorHandler;
 
     return-object v0
@@ -97,7 +131,9 @@
 
 .method static synthetic access$300(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)I
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotSize:I
 
     return v0
@@ -105,7 +141,9 @@
 
 .method static synthetic access$400(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)I
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotCount:I
 
     return v0
@@ -113,7 +151,9 @@
 
 .method static synthetic access$500(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)J
     .locals 2
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget-wide v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mIdleConnectionTimeout:J
 
     return-wide v0
@@ -121,7 +161,9 @@
 
 .method static synthetic access$600(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mJournalMode:Ljava/lang/String;
 
     return-object v0
@@ -129,7 +171,9 @@
 
 .method static synthetic access$700(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Ljava/lang/String;
     .locals 1
+    .param p0, "x0"    # Landroid/database/sqlite/SQLiteDatabase$OpenParams;
 
+    .line 2374
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mSyncMode:Ljava/lang/String;
 
     return-object v0
@@ -140,6 +184,7 @@
 .method public getCursorFactory()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
     .locals 1
 
+    .line 2436
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mCursorFactory:Landroid/database/sqlite/SQLiteDatabase$CursorFactory;
 
     return-object v0
@@ -148,6 +193,7 @@
 .method public getErrorHandler()Landroid/database/DatabaseErrorHandler;
     .locals 1
 
+    .line 2446
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mErrorHandler:Landroid/database/DatabaseErrorHandler;
 
     return-object v0
@@ -156,6 +202,7 @@
 .method public getIdleConnectionTimeout()J
     .locals 2
 
+    .line 2457
     iget-wide v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mIdleConnectionTimeout:J
 
     return-wide v0
@@ -164,6 +211,7 @@
 .method public getJournalMode()Ljava/lang/String;
     .locals 1
 
+    .line 2468
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mJournalMode:Ljava/lang/String;
 
     return-object v0
@@ -172,6 +220,7 @@
 .method public getLookasideSlotCount()I
     .locals 1
 
+    .line 2415
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotCount:I
 
     return v0
@@ -180,6 +229,7 @@
 .method public getLookasideSlotSize()I
     .locals 1
 
+    .line 2404
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mLookasideSlotSize:I
 
     return v0
@@ -188,6 +238,7 @@
 .method public getOpenFlags()I
     .locals 1
 
+    .line 2425
     iget v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mOpenFlags:I
 
     return v0
@@ -196,6 +247,7 @@
 .method public getSynchronousMode()Ljava/lang/String;
     .locals 1
 
+    .line 2478
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$OpenParams;->mSyncMode:Ljava/lang/String;
 
     return-object v0
@@ -204,6 +256,7 @@
 .method public toBuilder()Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;
     .locals 1
 
+    .line 2488
     new-instance v0, Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;
 
     invoke-direct {v0, p0}, Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;-><init>(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)V

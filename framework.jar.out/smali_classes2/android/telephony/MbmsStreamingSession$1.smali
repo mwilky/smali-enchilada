@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/MbmsStreamingSession;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telephony/MbmsStreamingSession;
 
+    .line 76
     iput-object p1, p0, Landroid/telephony/MbmsStreamingSession$1;->this$0:Landroid/telephony/MbmsStreamingSession;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public binderDied()V
     .locals 3
 
+    .line 79
     invoke-static {}, Landroid/telephony/MbmsStreamingSession;->access$000()Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v0
@@ -45,6 +48,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
+    .line 80
     iget-object v0, p0, Landroid/telephony/MbmsStreamingSession$1;->this$0:Landroid/telephony/MbmsStreamingSession;
 
     const-string v1, "Received death notification"
@@ -53,5 +57,6 @@
 
     invoke-static {v0, v2, v1}, Landroid/telephony/MbmsStreamingSession;->access$100(Landroid/telephony/MbmsStreamingSession;ILjava/lang/String;)V
 
+    .line 81
     return-void
 .end method

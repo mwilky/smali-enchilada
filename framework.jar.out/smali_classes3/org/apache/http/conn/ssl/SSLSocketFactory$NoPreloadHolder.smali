@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 166
     new-instance v0, Lorg/apache/http/conn/ssl/SSLSocketFactory;
 
     const/4 v1, 0x0
@@ -36,6 +37,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,6 +46,7 @@
 .method static synthetic access$100()Lorg/apache/http/conn/ssl/SSLSocketFactory;
     .locals 1
 
+    .line 162
     sget-object v0, Lorg/apache/http/conn/ssl/SSLSocketFactory$NoPreloadHolder;->DEFAULT_FACTORY:Lorg/apache/http/conn/ssl/SSLSocketFactory;
 
     return-object v0

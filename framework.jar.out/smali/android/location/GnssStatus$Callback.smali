@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,24 +28,30 @@
 # virtual methods
 .method public onFirstFix(I)V
     .locals 0
+    .param p1, "ttffMillis"    # I
 
+    .line 82
     return-void
 .end method
 
 .method public onSatelliteStatusChanged(Landroid/location/GnssStatus;)V
     .locals 0
+    .param p1, "status"    # Landroid/location/GnssStatus;
 
+    .line 88
     return-void
 .end method
 
 .method public onStarted()V
     .locals 0
 
+    .line 71
     return-void
 .end method
 
 .method public onStopped()V
     .locals 0
 
+    .line 76
     return-void
 .end method

@@ -26,13 +26,19 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;Landroid/content/Intent;)V
     .locals 0
+    .param p1, "callback"    # Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 153
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$AsyncRemoteAdapterAction;->mCallback:Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
+    .line 154
     iput-object p2, p0, Landroid/widget/RemoteViewsAdapter$AsyncRemoteAdapterAction;->mIntent:Landroid/content/Intent;
 
+    .line 155
     return-void
 .end method
 
@@ -41,6 +47,7 @@
 .method public run()V
     .locals 3
 
+    .line 159
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$AsyncRemoteAdapterAction;->mCallback:Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
     iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$AsyncRemoteAdapterAction;->mIntent:Landroid/content/Intent;
@@ -49,5 +56,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;->setRemoteViewsAdapter(Landroid/content/Intent;Z)V
 
+    .line 160
     return-void
 .end method

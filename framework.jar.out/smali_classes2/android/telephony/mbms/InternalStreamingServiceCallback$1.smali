@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/telephony/mbms/InternalStreamingServiceCallback;ILjava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telephony/mbms/InternalStreamingServiceCallback;
 
+    .line 42
     iput-object p1, p0, Landroid/telephony/mbms/InternalStreamingServiceCallback$1;->this$0:Landroid/telephony/mbms/InternalStreamingServiceCallback;
 
     iput p2, p0, Landroid/telephony/mbms/InternalStreamingServiceCallback$1;->val$errorCode:I
@@ -45,10 +47,13 @@
 .method public run()V
     .locals 5
 
+    .line 45
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
+    .line 47
+    .local v0, "token":J
     :try_start_0
     iget-object v2, p0, Landroid/telephony/mbms/InternalStreamingServiceCallback$1;->this$0:Landroid/telephony/mbms/InternalStreamingServiceCallback;
 
@@ -64,12 +69,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 49
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 50
     nop
 
+    .line 51
     return-void
 
+    .line 49
     :catchall_0
     move-exception v2
 

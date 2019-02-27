@@ -42,6 +42,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1204
+    .local p0, "this":Landroid/app/SystemServiceRegistry$StaticServiceFetcher;, "Landroid/app/SystemServiceRegistry$StaticServiceFetcher<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -65,6 +67,7 @@
 
 .method public final getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -73,8 +76,11 @@
         }
     .end annotation
 
+    .line 1209
+    .local p0, "this":Landroid/app/SystemServiceRegistry$StaticServiceFetcher;, "Landroid/app/SystemServiceRegistry$StaticServiceFetcher<TT;>;"
     monitor-enter p0
 
+    .line 1210
     :try_start_0
     iget-object v0, p0, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;->mCachedInstance:Ljava/lang/Object;
     :try_end_0
@@ -82,6 +88,7 @@
 
     if-nez v0, :cond_0
 
+    .line 1212
     :try_start_1
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;->createService()Ljava/lang/Object;
 
@@ -92,14 +99,20 @@
     .catch Landroid/os/ServiceManager$ServiceNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 1215
     goto :goto_0
 
+    .line 1213
     :catch_0
     move-exception v0
 
+    .line 1214
+    .local v0, "e":Landroid/os/ServiceManager$ServiceNotFoundException;
     :try_start_2
     invoke-static {v0}, Landroid/app/SystemServiceRegistry;->onServiceNotFound(Landroid/os/ServiceManager$ServiceNotFoundException;)V
 
+    .line 1217
+    .end local v0    # "e":Landroid/os/ServiceManager$ServiceNotFoundException;
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;->mCachedInstance:Ljava/lang/Object;
@@ -108,6 +121,7 @@
 
     return-object v0
 
+    .line 1218
     :catchall_0
     move-exception v0
 

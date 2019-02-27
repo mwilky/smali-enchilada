@@ -25,7 +25,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZIJ)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 1547
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$20;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput p4, p0, Landroid/media/MediaPlayer2Impl$20;->val$mode:I
@@ -42,6 +46,7 @@
 .method process()V
     .locals 5
 
+    .line 1550
     iget v0, p0, Landroid/media/MediaPlayer2Impl$20;->val$mode:I
 
     if-ltz v0, :cond_2
@@ -52,14 +57,18 @@
 
     if-gt v0, v1, :cond_2
 
+    .line 1555
     iget-wide v0, p0, Landroid/media/MediaPlayer2Impl$20;->val$msec:J
 
+    .line 1556
+    .local v0, "posMs":J
     const-wide/32 v2, 0x7fffffff
 
     cmp-long v2, v0, v2
 
     if-lez v2, :cond_0
 
+    .line 1557
     const-string v2, "MediaPlayer2Impl"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -86,10 +95,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1559
     const-wide/32 v0, 0x7fffffff
 
     goto :goto_0
 
+    .line 1560
     :cond_0
     const-wide/32 v2, -0x80000000
 
@@ -97,6 +108,7 @@
 
     if-gez v2, :cond_1
 
+    .line 1561
     const-string v2, "MediaPlayer2Impl"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -123,8 +135,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1563
     const-wide/32 v0, -0x80000000
 
+    .line 1565
     :cond_1
     :goto_0
     iget-object v2, p0, Landroid/media/MediaPlayer2Impl$20;->this$0:Landroid/media/MediaPlayer2Impl;
@@ -133,8 +147,11 @@
 
     invoke-static {v2, v0, v1, v3}, Landroid/media/MediaPlayer2Impl;->access$2800(Landroid/media/MediaPlayer2Impl;JI)V
 
+    .line 1566
     return-void
 
+    .line 1551
+    .end local v0    # "posMs":J
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -152,6 +169,8 @@
 
     move-result-object v0
 
+    .line 1552
+    .local v0, "msg":Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V

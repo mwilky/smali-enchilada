@@ -34,6 +34,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 1043
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +42,9 @@
 
 .method protected static ts(J)Ljava/lang/String;
     .locals 2
+    .param p0, "time"    # J
 
+    .line 1098
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -74,14 +77,18 @@
 .method public copy()Landroid/service/notification/ZenModeConfig$ScheduleInfo;
     .locals 5
 
+    .line 1070
     new-instance v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;
 
     invoke-direct {v0}, Landroid/service/notification/ZenModeConfig$ScheduleInfo;-><init>()V
 
+    .line 1071
+    .local v0, "rt":Landroid/service/notification/ZenModeConfig$ScheduleInfo;
     iget-object v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
     if-eqz v1, :cond_0
 
+    .line 1072
     iget-object v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
     array-length v1, v1
@@ -90,6 +97,7 @@
 
     iput-object v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
+    .line 1073
     iget-object v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
     iget-object v2, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
@@ -102,37 +110,46 @@
 
     invoke-static {v1, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 1075
     :cond_0
     iget v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startHour:I
 
     iput v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startHour:I
 
+    .line 1076
     iget v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startMinute:I
 
     iput v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startMinute:I
 
+    .line 1077
     iget v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->endHour:I
 
     iput v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->endHour:I
 
+    .line 1078
     iget v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->endMinute:I
 
     iput v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->endMinute:I
 
+    .line 1079
     iget-boolean v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->exitAtAlarm:Z
 
     iput-boolean v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->exitAtAlarm:Z
 
+    .line 1080
     iget-wide v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->nextAlarm:J
 
     iput-wide v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->nextAlarm:J
 
+    .line 1081
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 1059
     instance-of v0, p1, Landroid/service/notification/ZenModeConfig$ScheduleInfo;
 
     const/4 v1, 0x0
@@ -141,11 +158,14 @@
 
     return v1
 
+    .line 1060
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;
 
+    .line 1061
+    .local v0, "other":Landroid/service/notification/ZenModeConfig$ScheduleInfo;
     iget-object v2, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
     invoke-static {v2}, Landroid/service/notification/ZenModeConfig;->access$200([I)Ljava/lang/String;
@@ -205,6 +225,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 1054
     const/4 v0, 0x0
 
     return v0
@@ -213,6 +234,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .line 1086
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -223,6 +245,7 @@
 
     iget-object v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
+    .line 1087
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v1
@@ -275,6 +298,7 @@
 
     iget-wide v1, p0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->nextAlarm:J
 
+    .line 1093
     invoke-static {v1, v2}, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->ts(J)Ljava/lang/String;
 
     move-result-object v1
@@ -289,5 +313,6 @@
 
     move-result-object v0
 
+    .line 1086
     return-object v0
 .end method

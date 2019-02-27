@@ -51,11 +51,17 @@
         }
     .end annotation
 
+    .line 582
+    .local p1, "certs":Ljava/util/List;, "Ljava/util/List<Ljava/security/cert/X509Certificate;>;"
+    .local p2, "flagsList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 583
     iput-object p1, p0, Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedProofOfRotation;->certs:Ljava/util/List;
 
+    .line 584
     iput-object p2, p0, Landroid/util/apk/ApkSignatureSchemeV3Verifier$VerifiedProofOfRotation;->flagsList:Ljava/util/List;
 
+    .line 585
     return-void
 .end method

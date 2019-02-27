@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 2930
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,18 +28,23 @@
 # virtual methods
 .method public onRegistered(Landroid/net/wifi/WifiManager$LocalOnlyHotspotSubscription;)V
     .locals 0
+    .param p1, "subscription"    # Landroid/net/wifi/WifiManager$LocalOnlyHotspotSubscription;
 
+    .line 2935
     return-void
 .end method
 
 .method public onStarted(Landroid/net/wifi/WifiConfiguration;)V
     .locals 0
+    .param p1, "config"    # Landroid/net/wifi/WifiConfiguration;
 
+    .line 2940
     return-void
 .end method
 
 .method public onStopped()V
     .locals 0
 
+    .line 2945
     return-void
 .end method

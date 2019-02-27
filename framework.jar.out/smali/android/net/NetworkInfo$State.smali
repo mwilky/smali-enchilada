@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 56
     new-instance v0, Landroid/net/NetworkInfo$State;
 
     const-string v1, "CONNECTING"
@@ -102,6 +103,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$State;->UNKNOWN:Landroid/net/NetworkInfo$State;
 
+    .line 55
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/net/NetworkInfo$State;
@@ -143,6 +145,7 @@
         }
     .end annotation
 
+    .line 55
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -150,7 +153,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/NetworkInfo$State;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 55
     const-class v0, Landroid/net/NetworkInfo$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,6 +170,7 @@
 .method public static values()[Landroid/net/NetworkInfo$State;
     .locals 1
 
+    .line 55
     sget-object v0, Landroid/net/NetworkInfo$State;->$VALUES:[Landroid/net/NetworkInfo$State;
 
     invoke-virtual {v0}, [Landroid/net/NetworkInfo$State;->clone()Ljava/lang/Object;

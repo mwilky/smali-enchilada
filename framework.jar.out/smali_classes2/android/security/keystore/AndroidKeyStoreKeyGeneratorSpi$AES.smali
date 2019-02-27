@@ -18,12 +18,14 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 48
     const/16 v0, 0x20
 
     const/16 v1, 0x80
 
     invoke-direct {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;-><init>(II)V
 
+    .line 49
     return-void
 .end method
 
@@ -31,14 +33,18 @@
 # virtual methods
 .method protected engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
     .locals 3
+    .param p1, "params"    # Ljava/security/spec/AlgorithmParameterSpec;
+    .param p2, "random"    # Ljava/security/SecureRandom;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidAlgorithmParameterException;
         }
     .end annotation
 
+    .line 54
     invoke-super {p0, p1, p2}, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
 
+    .line 55
     iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi$AES;->mKeySizeBits:I
 
     const/16 v1, 0x80
@@ -59,6 +65,7 @@
 
     goto :goto_0
 
+    .line 56
     :cond_0
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
@@ -86,6 +93,7 @@
 
     throw v0
 
+    .line 60
     :cond_1
     :goto_0
     return-void

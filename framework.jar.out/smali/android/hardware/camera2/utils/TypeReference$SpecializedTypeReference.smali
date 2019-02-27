@@ -35,9 +35,13 @@
         }
     .end annotation
 
+    .line 98
+    .local p0, "this":Landroid/hardware/camera2/utils/TypeReference$SpecializedTypeReference;, "Landroid/hardware/camera2/utils/TypeReference$SpecializedTypeReference<TT;>;"
+    .local p1, "klass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/hardware/camera2/utils/TypeReference;-><init>(Ljava/lang/reflect/Type;Landroid/hardware/camera2/utils/TypeReference$1;)V
 
+    .line 99
     return-void
 .end method

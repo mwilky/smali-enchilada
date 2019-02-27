@@ -24,12 +24,15 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 86
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;->mIncludeTxPower:Z
 
+    .line 87
     const v0, 0xffef
 
     iput v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;->mInterval:I
@@ -42,6 +45,7 @@
 .method public build()Landroid/bluetooth/le/PeriodicAdvertisingParameters;
     .locals 4
 
+    .line 118
     new-instance v0, Landroid/bluetooth/le/PeriodicAdvertisingParameters;
 
     iget-boolean v1, p0, Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;->mIncludeTxPower:Z
@@ -57,15 +61,20 @@
 
 .method public setIncludeTxPower(Z)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;
     .locals 0
+    .param p1, "includeTxPower"    # Z
 
+    .line 94
     iput-boolean p1, p0, Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;->mIncludeTxPower:Z
 
+    .line 95
     return-object p0
 .end method
 
 .method public setInterval(I)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;
     .locals 2
+    .param p1, "interval"    # I
 
+    .line 106
     const/16 v0, 0x50
 
     if-lt p1, v0, :cond_0
@@ -74,10 +83,13 @@
 
     if-gt p1, v0, :cond_0
 
+    .line 110
     iput p1, p0, Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;->mInterval:I
 
+    .line 111
     return-object p0
 
+    .line 107
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

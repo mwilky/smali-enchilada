@@ -30,6 +30,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .line 100
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -50,18 +51,21 @@
 
     move-result-object v1
 
+    .line 101
     invoke-static {v0, v1}, Lcom/android/internal/util/MessageUtils;->findMessageNames([Ljava/lang/Class;[Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object v0
 
     sput-object v0, Landroid/net/metrics/IpReachabilityEvent$Decoder;->constants:Landroid/util/SparseArray;
 
+    .line 100
     return-void
 .end method
 
 .method constructor <init>()V
     .locals 0
 
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

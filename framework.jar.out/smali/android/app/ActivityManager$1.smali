@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 4198
     invoke-direct {p0}, Landroid/util/Singleton;-><init>()V
 
     return-void
@@ -36,22 +37,28 @@
 .method protected create()Landroid/app/IActivityManager;
     .locals 2
 
+    .line 4201
     const-string v0, "activity"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 4202
+    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/app/IActivityManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/IActivityManager;
 
     move-result-object v1
 
+    .line 4203
+    .local v1, "am":Landroid/app/IActivityManager;
     return-object v1
 .end method
 
 .method protected bridge synthetic create()Ljava/lang/Object;
     .locals 1
 
+    .line 4198
     invoke-virtual {p0}, Landroid/app/ActivityManager$1;->create()Landroid/app/IActivityManager;
 
     move-result-object v0

@@ -31,6 +31,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 47
     new-instance v0, Landroid/util/Pools$SynchronizedPool;
 
     const/16 v1, 0x19
@@ -44,7 +45,11 @@
 
 .method private constructor <init>(Landroid/view/RenderNode;II)V
     .locals 2
+    .param p1, "node"    # Landroid/view/RenderNode;
+    .param p2, "width"    # I
+    .param p3, "height"    # I
 
+    .line 88
     iget-wide v0, p1, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p2, p3}, Landroid/view/DisplayListCanvas;->nCreateDisplayListCanvas(JII)J
@@ -53,10 +58,12 @@
 
     invoke-direct {p0, v0, v1}, Landroid/view/RecordingCanvas;-><init>(J)V
 
+    .line 89
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/DisplayListCanvas;->mDensity:I
 
+    .line 90
     return-void
 .end method
 
@@ -117,9 +124,14 @@
 
 .method static obtain(Landroid/view/RenderNode;II)Landroid/view/DisplayListCanvas;
     .locals 7
+    .param p0, "node"    # Landroid/view/RenderNode;
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
+    .line 55
     if-eqz p0, :cond_1
 
+    .line 56
     sget-object v0, Landroid/view/DisplayListCanvas;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0}, Landroid/util/Pools$SynchronizedPool;->acquire()Ljava/lang/Object;
@@ -128,8 +140,11 @@
 
     check-cast v0, Landroid/view/DisplayListCanvas;
 
+    .line 57
+    .local v0, "canvas":Landroid/view/DisplayListCanvas;
     if-nez v0, :cond_0
 
+    .line 58
     new-instance v1, Landroid/view/DisplayListCanvas;
 
     invoke-direct {v1, p0, p1, p2}, Landroid/view/DisplayListCanvas;-><init>(Landroid/view/RenderNode;II)V
@@ -138,6 +153,7 @@
 
     goto :goto_0
 
+    .line 60
     :cond_0
     iget-wide v1, v0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
@@ -149,15 +165,21 @@
 
     invoke-static/range {v1 .. v6}, Landroid/view/DisplayListCanvas;->nResetDisplayListCanvas(JJII)V
 
+    .line 63
     :goto_0
     iput-object p0, v0, Landroid/view/DisplayListCanvas;->mNode:Landroid/view/RenderNode;
 
+    .line 64
     iput p1, v0, Landroid/view/DisplayListCanvas;->mWidth:I
 
+    .line 65
     iput p2, v0, Landroid/view/DisplayListCanvas;->mHeight:I
 
+    .line 66
     return-object v0
 
+    .line 55
+    .end local v0    # "canvas":Landroid/view/DisplayListCanvas;
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -172,13 +194,16 @@
 # virtual methods
 .method public callDrawGLFunction2(J)V
     .locals 3
+    .param p1, "drawGLFunction"    # J
 
+    .line 162
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     const/4 v2, 0x0
 
     invoke-static {v0, v1, p1, p2, v2}, Landroid/view/DisplayListCanvas;->nCallDrawGLFunction(JJLjava/lang/Runnable;)V
 
+    .line 163
     return-void
 .end method
 
@@ -202,6 +227,11 @@
         }
     .end annotation
 
+    .line 214
+    .local p1, "cx":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p2, "cy":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p3, "radius":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p4, "paint":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Landroid/graphics/Paint;>;"
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     invoke-virtual {p1}, Landroid/graphics/CanvasProperty;->getNativeContainer()J
@@ -212,6 +242,7 @@
 
     move-result-wide v4
 
+    .line 215
     invoke-virtual {p3}, Landroid/graphics/CanvasProperty;->getNativeContainer()J
 
     move-result-wide v6
@@ -220,24 +251,32 @@
 
     move-result-wide v8
 
+    .line 214
     invoke-static/range {v0 .. v9}, Landroid/view/DisplayListCanvas;->nDrawCircle(JJJJJ)V
 
+    .line 216
     return-void
 .end method
 
 .method public drawGLFunctor2(JLjava/lang/Runnable;)V
     .locals 2
+    .param p1, "drawGLFunctor"    # J
+    .param p3, "releasedCallback"    # Ljava/lang/Runnable;
 
+    .line 178
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     invoke-static {v0, v1, p1, p2, p3}, Landroid/view/DisplayListCanvas;->nCallDrawGLFunction(JJLjava/lang/Runnable;)V
 
+    .line 179
     return-void
 .end method
 
 .method public drawRenderNode(Landroid/view/RenderNode;)V
     .locals 4
+    .param p1, "renderNode"    # Landroid/view/RenderNode;
 
+    .line 192
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     invoke-virtual {p1}, Landroid/view/RenderNode;->getNativeDisplayList()J
@@ -246,6 +285,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/DisplayListCanvas;->nDrawRenderNode(JJ)V
 
+    .line 193
     return-void
 .end method
 
@@ -278,6 +318,14 @@
         }
     .end annotation
 
+    .line 221
+    .local p1, "left":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p2, "top":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p3, "right":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p4, "bottom":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p5, "rx":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p6, "ry":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Ljava/lang/Float;>;"
+    .local p7, "paint":Landroid/graphics/CanvasProperty;, "Landroid/graphics/CanvasProperty<Landroid/graphics/Paint;>;"
     move-object/from16 v0, p0
 
     iget-wide v1, v0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
@@ -290,6 +338,7 @@
 
     move-result-wide v5
 
+    .line 222
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/CanvasProperty;->getNativeContainer()J
 
     move-result-wide v7
@@ -298,6 +347,7 @@
 
     move-result-wide v9
 
+    .line 223
     invoke-virtual/range {p5 .. p5}, Landroid/graphics/CanvasProperty;->getNativeContainer()J
 
     move-result-wide v11
@@ -306,18 +356,23 @@
 
     move-result-wide v13
 
+    .line 224
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/CanvasProperty;->getNativeContainer()J
 
     move-result-wide v15
 
+    .line 221
     invoke-static/range {v1 .. v16}, Landroid/view/DisplayListCanvas;->nDrawRoundRect(JJJJJJJJ)V
 
+    .line 225
     return-void
 .end method
 
 .method drawTextureLayer(Landroid/view/TextureLayer;)V
     .locals 4
+    .param p1, "layer"    # Landroid/view/TextureLayer;
 
+    .line 205
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     invoke-virtual {p1}, Landroid/view/TextureLayer;->getLayerHandle()J
@@ -326,12 +381,14 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/DisplayListCanvas;->nDrawTextureLayer(JJ)V
 
+    .line 206
     return-void
 .end method
 
 .method finishRecording()J
     .locals 2
 
+    .line 75
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     invoke-static {v0, v1}, Landroid/view/DisplayListCanvas;->nFinishRecording(J)J
@@ -344,6 +401,7 @@
 .method public getHeight()I
     .locals 1
 
+    .line 124
     iget v0, p0, Landroid/view/DisplayListCanvas;->mHeight:I
 
     return v0
@@ -352,6 +410,7 @@
 .method public getMaximumBitmapHeight()I
     .locals 1
 
+    .line 134
     invoke-static {}, Landroid/view/DisplayListCanvas;->nGetMaximumTextureHeight()I
 
     move-result v0
@@ -362,6 +421,7 @@
 .method public getMaximumBitmapWidth()I
     .locals 1
 
+    .line 129
     invoke-static {}, Landroid/view/DisplayListCanvas;->nGetMaximumTextureWidth()I
 
     move-result v0
@@ -372,6 +432,7 @@
 .method public getWidth()I
     .locals 1
 
+    .line 119
     iget v0, p0, Landroid/view/DisplayListCanvas;->mWidth:I
 
     return v0
@@ -380,30 +441,35 @@
 .method public insertInorderBarrier()V
     .locals 3
 
+    .line 148
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Landroid/view/DisplayListCanvas;->nInsertReorderBarrier(JZ)V
 
+    .line 149
     return-void
 .end method
 
 .method public insertReorderBarrier()V
     .locals 3
 
+    .line 143
     iget-wide v0, p0, Landroid/view/DisplayListCanvas;->mNativeCanvasWrapper:J
 
     const/4 v2, 0x1
 
     invoke-static {v0, v1, v2}, Landroid/view/DisplayListCanvas;->nInsertReorderBarrier(JZ)V
 
+    .line 144
     return-void
 .end method
 
 .method public isHardwareAccelerated()Z
     .locals 1
 
+    .line 104
     const/4 v0, 0x1
 
     return v0
@@ -412,6 +478,7 @@
 .method public isOpaque()Z
     .locals 1
 
+    .line 114
     const/4 v0, 0x0
 
     return v0
@@ -419,7 +486,9 @@
 
 .method public isRecordingFor(Ljava/lang/Object;)Z
     .locals 1
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 80
     iget-object v0, p0, Landroid/view/DisplayListCanvas;->mNode:Landroid/view/RenderNode;
 
     if-ne p1, v0, :cond_0
@@ -438,20 +507,25 @@
 .method recycle()V
     .locals 1
 
+    .line 70
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/DisplayListCanvas;->mNode:Landroid/view/RenderNode;
 
+    .line 71
     sget-object v0, Landroid/view/DisplayListCanvas;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z
 
+    .line 72
     return-void
 .end method
 
 .method public setBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
+    .line 109
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -461,25 +535,34 @@
 
 .method public setDensity(I)V
     .locals 0
+    .param p1, "density"    # I
 
+    .line 100
     return-void
 .end method
 
 .method protected throwIfCannotDraw(Landroid/graphics/Bitmap;)V
     .locals 4
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
+    .line 229
     invoke-super {p0, p1}, Landroid/view/RecordingCanvas;->throwIfCannotDraw(Landroid/graphics/Bitmap;)V
 
+    .line 230
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getByteCount()I
 
     move-result v0
 
+    .line 231
+    .local v0, "bitmapSize":I
     const/high16 v1, 0x19000000
 
     if-gt v0, v1, :cond_0
 
+    .line 235
     return-void
 
+    .line 232
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 

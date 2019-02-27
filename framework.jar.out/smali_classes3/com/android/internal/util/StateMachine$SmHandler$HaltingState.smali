@@ -22,6 +22,7 @@
 .method private constructor <init>(Lcom/android/internal/util/StateMachine$SmHandler;)V
     .locals 0
 
+    .line 769
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;->this$0:Lcom/android/internal/util/StateMachine$SmHandler;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -31,7 +32,10 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/StateMachine$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/util/StateMachine$SmHandler;
+    .param p2, "x1"    # Lcom/android/internal/util/StateMachine$1;
 
+    .line 769
     invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;-><init>(Lcom/android/internal/util/StateMachine$SmHandler;)V
 
     return-void
@@ -41,7 +45,9 @@
 # virtual methods
 .method public processMessage(Landroid/os/Message;)Z
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 772
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;->this$0:Lcom/android/internal/util/StateMachine$SmHandler;
 
     invoke-static {v0}, Lcom/android/internal/util/StateMachine$SmHandler;->access$300(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine;
@@ -50,6 +56,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/util/StateMachine;->haltedProcessMessage(Landroid/os/Message;)V
 
+    .line 773
     const/4 v0, 0x1
 
     return v0

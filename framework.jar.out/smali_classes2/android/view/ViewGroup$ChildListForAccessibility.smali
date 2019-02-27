@@ -54,6 +54,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 8490
     new-instance v0, Landroid/util/Pools$SynchronizedPool;
 
     const/16 v1, 0x20
@@ -68,14 +69,17 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 8486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8493
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mChildren:Ljava/util/ArrayList;
 
+    .line 8495
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -88,99 +92,145 @@
 .method private clear()V
     .locals 1
 
+    .line 8561
     iget-object v0, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 8562
     return-void
 .end method
 
 .method private init(Landroid/view/ViewGroup;Z)V
     .locals 7
+    .param p1, "parent"    # Landroid/view/ViewGroup;
+    .param p2, "sort"    # Z
 
+    .line 8520
     iget-object v0, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mChildren:Ljava/util/ArrayList;
 
+    .line 8521
+    .local v0, "children":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
+    .line 8522
+    .local v1, "childCount":I
     const/4 v2, 0x0
 
     move v3, v2
 
+    .local v3, "i":I
     :goto_0
     if-ge v3, v1, :cond_0
 
+    .line 8523
     invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
+    .line 8524
+    .local v4, "child":Landroid/view/View;
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 8522
+    .end local v4    # "child":Landroid/view/View;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 8526
+    .end local v3    # "i":I
     :cond_0
     if-eqz p2, :cond_3
 
+    .line 8527
     iget-object v3, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mHolders:Ljava/util/ArrayList;
 
+    .line 8528
+    .local v3, "holders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/ViewGroup$ViewLocationHolder;>;"
     move v4, v2
 
+    .local v4, "i":I
     :goto_1
     if-ge v4, v1, :cond_1
 
+    .line 8529
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/view/View;
 
+    .line 8530
+    .local v5, "child":Landroid/view/View;
     invoke-static {p1, v5}, Landroid/view/ViewGroup$ViewLocationHolder;->obtain(Landroid/view/ViewGroup;Landroid/view/View;)Landroid/view/ViewGroup$ViewLocationHolder;
 
     move-result-object v6
 
+    .line 8531
+    .local v6, "holder":Landroid/view/ViewGroup$ViewLocationHolder;
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 8528
+    .end local v5    # "child":Landroid/view/View;
+    .end local v6    # "holder":Landroid/view/ViewGroup$ViewLocationHolder;
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
+    .line 8533
+    .end local v4    # "i":I
     :cond_1
     invoke-direct {p0, v3}, Landroid/view/ViewGroup$ChildListForAccessibility;->sort(Ljava/util/ArrayList;)V
 
+    .line 8534
     nop
 
+    .local v2, "i":I
     :goto_2
     if-ge v2, v1, :cond_2
 
+    .line 8535
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/view/ViewGroup$ViewLocationHolder;
 
+    .line 8536
+    .local v4, "holder":Landroid/view/ViewGroup$ViewLocationHolder;
     iget-object v5, v4, Landroid/view/ViewGroup$ViewLocationHolder;->mView:Landroid/view/View;
 
     invoke-virtual {v0, v2, v5}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
+    .line 8537
     invoke-virtual {v4}, Landroid/view/ViewGroup$ViewLocationHolder;->recycle()V
 
+    .line 8534
+    .end local v4    # "holder":Landroid/view/ViewGroup$ViewLocationHolder;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
+    .line 8539
+    .end local v2    # "i":I
     :cond_2
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
+    .line 8541
+    .end local v3    # "holders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/ViewGroup$ViewLocationHolder;>;"
     :cond_3
     return-void
 .end method
 
 .method public static obtain(Landroid/view/ViewGroup;Z)Landroid/view/ViewGroup$ChildListForAccessibility;
     .locals 2
+    .param p0, "parent"    # Landroid/view/ViewGroup;
+    .param p1, "sort"    # Z
 
+    .line 8498
     sget-object v0, Landroid/view/ViewGroup$ChildListForAccessibility;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0}, Landroid/util/Pools$SynchronizedPool;->acquire()Ljava/lang/Object;
@@ -189,17 +239,22 @@
 
     check-cast v0, Landroid/view/ViewGroup$ChildListForAccessibility;
 
+    .line 8499
+    .local v0, "list":Landroid/view/ViewGroup$ChildListForAccessibility;
     if-nez v0, :cond_0
 
+    .line 8500
     new-instance v1, Landroid/view/ViewGroup$ChildListForAccessibility;
 
     invoke-direct {v1}, Landroid/view/ViewGroup$ChildListForAccessibility;-><init>()V
 
     move-object v0, v1
 
+    .line 8502
     :cond_0
     invoke-direct {v0, p0, p1}, Landroid/view/ViewGroup$ChildListForAccessibility;->init(Landroid/view/ViewGroup;Z)V
 
+    .line 8503
     return-object v0
 .end method
 
@@ -214,26 +269,36 @@
         }
     .end annotation
 
+    .line 8548
+    .local p1, "holders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/ViewGroup$ViewLocationHolder;>;"
     const/4 v0, 0x1
 
     :try_start_0
     invoke-static {v0}, Landroid/view/ViewGroup$ViewLocationHolder;->setComparisonStrategy(I)V
 
+    .line 8550
     invoke-static {p1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 8557
     goto :goto_0
 
+    .line 8551
     :catch_0
     move-exception v0
 
+    .line 8554
+    .local v0, "iae":Ljava/lang/IllegalArgumentException;
     const/4 v1, 0x2
 
     invoke-static {v1}, Landroid/view/ViewGroup$ViewLocationHolder;->setComparisonStrategy(I)V
 
+    .line 8556
     invoke-static {p1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
+    .line 8558
+    .end local v0    # "iae":Ljava/lang/IllegalArgumentException;
     :goto_0
     return-void
 .end method
@@ -242,7 +307,9 @@
 # virtual methods
 .method public getChildAt(I)Landroid/view/View;
     .locals 1
+    .param p1, "index"    # I
 
+    .line 8516
     iget-object v0, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -257,6 +324,7 @@
 .method public getChildCount()I
     .locals 1
 
+    .line 8512
     iget-object v0, p0, Landroid/view/ViewGroup$ChildListForAccessibility;->mChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -269,11 +337,14 @@
 .method public recycle()V
     .locals 1
 
+    .line 8507
     invoke-direct {p0}, Landroid/view/ViewGroup$ChildListForAccessibility;->clear()V
 
+    .line 8508
     sget-object v0, Landroid/view/ViewGroup$ChildListForAccessibility;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z
 
+    .line 8509
     return-void
 .end method

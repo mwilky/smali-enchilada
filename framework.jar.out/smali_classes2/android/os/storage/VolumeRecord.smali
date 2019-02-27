@@ -46,6 +46,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 130
     new-instance v0, Landroid/os/storage/VolumeRecord$1;
 
     invoke-direct {v0}, Landroid/os/storage/VolumeRecord$1;-><init>()V
@@ -57,11 +58,16 @@
 
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
+    .param p1, "type"    # I
+    .param p2, "fsUuid"    # Ljava/lang/String;
 
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 51
     iput p1, p0, Landroid/os/storage/VolumeRecord;->type:I
 
+    .line 52
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -70,62 +76,74 @@
 
     iput-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
+    .line 53
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 56
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/os/storage/VolumeRecord;->type:I
 
+    .line 57
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
+    .line 58
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/storage/VolumeRecord;->partGuid:Ljava/lang/String;
 
+    .line 59
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/storage/VolumeRecord;->nickname:Ljava/lang/String;
 
+    .line 60
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/os/storage/VolumeRecord;->userFlags:I
 
+    .line 61
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/storage/VolumeRecord;->createdMillis:J
 
+    .line 62
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/storage/VolumeRecord;->lastTrimMillis:J
 
+    .line 63
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/os/storage/VolumeRecord;->lastBenchMillis:J
 
+    .line 64
     return-void
 .end method
 
@@ -134,17 +152,22 @@
 .method public clone()Landroid/os/storage/VolumeRecord;
     .locals 2
 
+    .line 106
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
+    .line 108
+    .local v0, "temp":Landroid/os/Parcel;
     const/4 v1, 0x0
 
     :try_start_0
     invoke-virtual {p0, v0, v1}, Landroid/os/storage/VolumeRecord;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 109
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 110
     sget-object v1, Landroid/os/storage/VolumeRecord;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -155,10 +178,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 112
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 110
     return-object v1
 
+    .line 112
     :catchall_0
     move-exception v1
 
@@ -175,6 +201,7 @@
         }
     .end annotation
 
+    .line 34
     invoke-virtual {p0}, Landroid/os/storage/VolumeRecord;->clone()Landroid/os/storage/VolumeRecord;
 
     move-result-object v0
@@ -185,6 +212,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 144
     const/4 v0, 0x0
 
     return v0
@@ -192,13 +220,17 @@
 
 .method public dump(Lcom/android/internal/util/IndentingPrintWriter;)V
     .locals 4
+    .param p1, "pw"    # Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 87
     const-string v0, "VolumeRecord:"
 
     invoke-virtual {p1, v0}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
+    .line 88
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 89
     const-string/jumbo v0, "type"
 
     const-class v1, Landroid/os/storage/VolumeInfo;
@@ -213,26 +245,31 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 90
     const-string v0, "fsUuid"
 
     iget-object v1, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 91
     const-string/jumbo v0, "partGuid"
 
     iget-object v1, p0, Landroid/os/storage/VolumeRecord;->partGuid:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 92
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
 
+    .line 93
     const-string/jumbo v0, "nickname"
 
     iget-object v1, p0, Landroid/os/storage/VolumeRecord;->nickname:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 94
     const-string/jumbo v0, "userFlags"
 
     const-class v1, Landroid/os/storage/VolumeRecord;
@@ -241,14 +278,18 @@
 
     iget v3, p0, Landroid/os/storage/VolumeRecord;->userFlags:I
 
+    .line 95
     invoke-static {v1, v2, v3}, Landroid/util/DebugUtils;->flagsToString(Ljava/lang/Class;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 94
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 96
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
 
+    .line 97
     const-string v0, "createdMillis"
 
     iget-wide v1, p0, Landroid/os/storage/VolumeRecord;->createdMillis:J
@@ -259,6 +300,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 98
     const-string v0, "lastTrimMillis"
 
     iget-wide v1, p0, Landroid/os/storage/VolumeRecord;->lastTrimMillis:J
@@ -269,6 +311,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 99
     const-string v0, "lastBenchMillis"
 
     iget-wide v1, p0, Landroid/os/storage/VolumeRecord;->lastBenchMillis:J
@@ -279,20 +322,26 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/util/IndentingPrintWriter;->printPair(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 100
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
+    .line 101
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
 
+    .line 102
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 118
     instance-of v0, p1, Landroid/os/storage/VolumeRecord;
 
     if-eqz v0, :cond_0
 
+    .line 119
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
     move-object v1, p1
@@ -307,6 +356,7 @@
 
     return v0
 
+    .line 121
     :cond_0
     const/4 v0, 0x0
 
@@ -316,6 +366,7 @@
 .method public getFsUuid()Ljava/lang/String;
     .locals 1
 
+    .line 71
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
     return-object v0
@@ -324,6 +375,7 @@
 .method public getNickname()Ljava/lang/String;
     .locals 1
 
+    .line 75
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->nickname:Ljava/lang/String;
 
     return-object v0
@@ -332,6 +384,7 @@
 .method public getType()I
     .locals 1
 
+    .line 67
     iget v0, p0, Landroid/os/storage/VolumeRecord;->type:I
 
     return v0
@@ -340,6 +393,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 127
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -352,6 +406,7 @@
 .method public isInited()Z
     .locals 2
 
+    .line 79
     iget v0, p0, Landroid/os/storage/VolumeRecord;->userFlags:I
 
     const/4 v1, 0x1
@@ -372,6 +427,7 @@
 .method public isSnoozed()Z
     .locals 1
 
+    .line 83
     iget v0, p0, Landroid/os/storage/VolumeRecord;->userFlags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -391,38 +447,49 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "parcel"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 149
     iget v0, p0, Landroid/os/storage/VolumeRecord;->type:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 150
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->fsUuid:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 151
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->partGuid:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 152
     iget-object v0, p0, Landroid/os/storage/VolumeRecord;->nickname:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 153
     iget v0, p0, Landroid/os/storage/VolumeRecord;->userFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 154
     iget-wide v0, p0, Landroid/os/storage/VolumeRecord;->createdMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 155
     iget-wide v0, p0, Landroid/os/storage/VolumeRecord;->lastTrimMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 156
     iget-wide v0, p0, Landroid/os/storage/VolumeRecord;->lastBenchMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 157
     return-void
 .end method

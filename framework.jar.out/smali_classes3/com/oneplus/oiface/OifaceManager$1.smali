@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/oiface/OifaceManager;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/oneplus/oiface/OifaceManager;
 
+    .line 79
     iput-object p1, p0, Lcom/oneplus/oiface/OifaceManager$1;->this$0:Lcom/oneplus/oiface/OifaceManager;
 
     invoke-direct {p0}, Lcom/oneplus/oiface/IOIfaceNotifier$Stub;-><init>()V
@@ -33,12 +35,14 @@
 # virtual methods
 .method public onSystemNotify(Ljava/lang/String;)V
     .locals 2
+    .param p1, "result"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -55,6 +59,7 @@
 
     invoke-static {v0}, Lcom/oneplus/oiface/OifaceManager;->debugLog(Ljava/lang/String;)V
 
+    .line 83
     iget-object v0, p0, Lcom/oneplus/oiface/OifaceManager$1;->this$0:Lcom/oneplus/oiface/OifaceManager;
 
     invoke-static {v0}, Lcom/oneplus/oiface/OifaceManager;->access$000(Lcom/oneplus/oiface/OifaceManager;)Ljava/lang/ref/WeakReference;
@@ -63,6 +68,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 84
     iget-object v0, p0, Lcom/oneplus/oiface/OifaceManager$1;->this$0:Lcom/oneplus/oiface/OifaceManager;
 
     invoke-static {v0}, Lcom/oneplus/oiface/OifaceManager;->access$000(Lcom/oneplus/oiface/OifaceManager;)Ljava/lang/ref/WeakReference;
@@ -77,6 +83,7 @@
 
     invoke-interface {v0, p1}, Lcom/oneplus/oiface/CallBack;->systemCallBack(Ljava/lang/String;)V
 
+    .line 86
     :cond_0
     return-void
 .end method

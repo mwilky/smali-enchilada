@@ -35,23 +35,31 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/WifiManager;Landroid/os/Looper;Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;)V
     .locals 2
+    .param p1, "manager"    # Landroid/net/wifi/WifiManager;
+    .param p2, "looper"    # Landroid/os/Looper;
+    .param p3, "callback"    # Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;
 
+    .line 2823
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2824
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mWifiManager:Ljava/lang/ref/WeakReference;
 
+    .line 2825
     iput-object p2, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mLooper:Landroid/os/Looper;
 
+    .line 2827
     new-instance v0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;
 
     invoke-direct {v0, p0, p2, p3}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy$1;-><init>(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;Landroid/os/Looper;Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mHandler:Landroid/os/Handler;
 
+    .line 2866
     new-instance v0, Landroid/os/Messenger;
 
     iget-object v1, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mHandler:Landroid/os/Handler;
@@ -60,12 +68,15 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mMessenger:Landroid/os/Messenger;
 
+    .line 2867
     return-void
 .end method
 
 .method static synthetic access$100(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;)Ljava/lang/ref/WeakReference;
     .locals 1
+    .param p0, "x0"    # Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;
 
+    .line 2808
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mWifiManager:Ljava/lang/ref/WeakReference;
 
     return-object v0
@@ -76,6 +87,7 @@
 .method public getMessenger()Landroid/os/Messenger;
     .locals 1
 
+    .line 2870
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mMessenger:Landroid/os/Messenger;
 
     return-object v0
@@ -83,25 +95,32 @@
 
 .method public notifyFailed(I)V
     .locals 2
+    .param p1, "reason"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 2880
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 2881
+    .local v0, "msg":Landroid/os/Message;
     const/4 v1, 0x2
 
     iput v1, v0, Landroid/os/Message;->what:I
 
+    .line 2882
     iput p1, v0, Landroid/os/Message;->arg1:I
 
+    .line 2883
     iget-object v1, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallbackProxy;->mMessenger:Landroid/os/Messenger;
 
     invoke-virtual {v1, v0}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
 
+    .line 2884
     return-void
 .end method

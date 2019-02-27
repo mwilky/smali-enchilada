@@ -21,13 +21,17 @@
 # direct methods
 .method constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 1
+    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
 
+    .line 233
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/graphics/ImageDecoder$Source;-><init>(Landroid/graphics/ImageDecoder$1;)V
 
+    .line 234
     iput-object p1, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
+    .line 235
     return-void
 .end method
 
@@ -41,6 +45,7 @@
         }
     .end annotation
 
+    .line 240
     iget-object v0, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->isDirect()Z
@@ -57,6 +62,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 241
     iget-object v0, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->arrayOffset()I
@@ -71,6 +77,8 @@
 
     add-int/2addr v0, v1
 
+    .line 242
+    .local v0, "offset":I
     iget-object v1, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->limit()I
@@ -85,6 +93,8 @@
 
     sub-int/2addr v1, v2
 
+    .line 243
+    .local v1, "length":I
     iget-object v2, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->array()[B
@@ -97,6 +107,9 @@
 
     return-object v2
 
+    .line 245
+    .end local v0    # "offset":I
+    .end local v1    # "length":I
     :cond_0
     iget-object v0, p0, Landroid/graphics/ImageDecoder$ByteBufferSource;->mBuffer:Ljava/nio/ByteBuffer;
 
@@ -104,6 +117,8 @@
 
     move-result-object v0
 
+    .line 246
+    .local v0, "buffer":Ljava/nio/ByteBuffer;
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1

@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/DecorView;Lcom/android/internal/view/FloatingActionMode;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/policy/DecorView;
 
+    .line 1823
     iput-object p1, p0, Lcom/android/internal/policy/DecorView$5;->this$0:Lcom/android/internal/policy/DecorView;
 
     iput-object p2, p0, Lcom/android/internal/policy/DecorView$5;->val$mode:Lcom/android/internal/view/FloatingActionMode;
@@ -41,10 +43,12 @@
 .method public onPreDraw()Z
     .locals 1
 
+    .line 1826
     iget-object v0, p0, Lcom/android/internal/policy/DecorView$5;->val$mode:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode;->updateViewLocationInWindow()V
 
+    .line 1827
     const/4 v0, 0x1
 
     return v0

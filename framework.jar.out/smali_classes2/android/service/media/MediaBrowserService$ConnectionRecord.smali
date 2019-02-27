@@ -51,10 +51,12 @@
 .method private constructor <init>(Landroid/service/media/MediaBrowserService;)V
     .locals 0
 
+    .line 115
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$ConnectionRecord;->this$0:Landroid/service/media/MediaBrowserService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 122
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
@@ -66,7 +68,10 @@
 
 .method synthetic constructor <init>(Landroid/service/media/MediaBrowserService;Landroid/service/media/MediaBrowserService$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/service/media/MediaBrowserService;
+    .param p2, "x1"    # Landroid/service/media/MediaBrowserService$1;
 
+    .line 115
     invoke-direct {p0, p1}, Landroid/service/media/MediaBrowserService$ConnectionRecord;-><init>(Landroid/service/media/MediaBrowserService;)V
 
     return-void
@@ -77,6 +82,7 @@
 .method public binderDied()V
     .locals 2
 
+    .line 126
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$ConnectionRecord;->this$0:Landroid/service/media/MediaBrowserService;
 
     invoke-static {v0}, Landroid/service/media/MediaBrowserService;->access$100(Landroid/service/media/MediaBrowserService;)Landroid/os/Handler;
@@ -89,5 +95,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 132
     return-void
 .end method

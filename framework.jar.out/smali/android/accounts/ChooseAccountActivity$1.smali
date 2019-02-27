@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/ChooseAccountActivity;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/accounts/ChooseAccountActivity;
 
+    .line 112
     iput-object p1, p0, Landroid/accounts/ChooseAccountActivity$1;->this$0:Landroid/accounts/ChooseAccountActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,6 +38,9 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 6
+    .param p2, "v"    # Landroid/view/View;
+    .param p3, "position"    # I
+    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,6 +51,8 @@
         }
     .end annotation
 
+    .line 114
+    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/accounts/ChooseAccountActivity$1;->this$0:Landroid/accounts/ChooseAccountActivity;
 
     move-object v1, p1
@@ -60,5 +67,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/accounts/ChooseAccountActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
 
+    .line 115
     return-void
 .end method

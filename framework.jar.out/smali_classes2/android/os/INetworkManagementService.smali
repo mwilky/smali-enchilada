@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract OPgetDnsInfo()[I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract addIdleTimer(Ljava/lang/String;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -419,6 +427,14 @@
 .end method
 
 .method public abstract removeVpnUidRanges(I[Landroid/net/UidRange;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract resetPortForwardRules()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

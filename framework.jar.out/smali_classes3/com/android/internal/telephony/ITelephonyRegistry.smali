@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract notifyAnomalyStatusChange([I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract notifyCallForwardingChanged(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

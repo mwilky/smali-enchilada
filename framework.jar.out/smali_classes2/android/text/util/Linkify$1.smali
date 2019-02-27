@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,13 +31,19 @@
 # virtual methods
 .method public final acceptMatch(Ljava/lang/CharSequence;II)Z
     .locals 3
+    .param p1, "s"    # Ljava/lang/CharSequence;
+    .param p2, "start"    # I
+    .param p3, "end"    # I
 
+    .line 137
     const/4 v0, 0x1
 
     if-nez p2, :cond_0
 
+    .line 138
     return v0
 
+    .line 141
     :cond_0
     add-int/lit8 v1, p2, -0x1
 
@@ -48,10 +55,12 @@
 
     if-ne v1, v2, :cond_1
 
+    .line 142
     const/4 v0, 0x0
 
     return v0
 
+    .line 145
     :cond_1
     return v0
 .end method

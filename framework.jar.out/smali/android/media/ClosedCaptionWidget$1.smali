@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/ClosedCaptionWidget;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/ClosedCaptionWidget;
 
+    .line 224
     iput-object p1, p0, Landroid/media/ClosedCaptionWidget$1;->this$0:Landroid/media/ClosedCaptionWidget;
 
     invoke-direct {p0}, Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;-><init>()V
@@ -33,19 +35,24 @@
 # virtual methods
 .method public onFontScaleChanged(F)V
     .locals 1
+    .param p1, "fontScale"    # F
 
+    .line 233
     iget-object v0, p0, Landroid/media/ClosedCaptionWidget$1;->this$0:Landroid/media/ClosedCaptionWidget;
 
     iget-object v0, v0, Landroid/media/ClosedCaptionWidget;->mClosedCaptionLayout:Landroid/media/ClosedCaptionWidget$ClosedCaptionLayout;
 
     invoke-interface {v0, p1}, Landroid/media/ClosedCaptionWidget$ClosedCaptionLayout;->setFontScale(F)V
 
+    .line 234
     return-void
 .end method
 
 .method public onUserStyleChanged(Landroid/view/accessibility/CaptioningManager$CaptionStyle;)V
     .locals 2
+    .param p1, "userStyle"    # Landroid/view/accessibility/CaptioningManager$CaptionStyle;
 
+    .line 227
     iget-object v0, p0, Landroid/media/ClosedCaptionWidget$1;->this$0:Landroid/media/ClosedCaptionWidget;
 
     invoke-static {}, Landroid/media/ClosedCaptionWidget;->access$000()Landroid/view/accessibility/CaptioningManager$CaptionStyle;
@@ -58,6 +65,7 @@
 
     iput-object v1, v0, Landroid/media/ClosedCaptionWidget;->mCaptionStyle:Landroid/view/accessibility/CaptioningManager$CaptionStyle;
 
+    .line 228
     iget-object v0, p0, Landroid/media/ClosedCaptionWidget$1;->this$0:Landroid/media/ClosedCaptionWidget;
 
     iget-object v0, v0, Landroid/media/ClosedCaptionWidget;->mClosedCaptionLayout:Landroid/media/ClosedCaptionWidget$ClosedCaptionLayout;
@@ -68,5 +76,6 @@
 
     invoke-interface {v0, v1}, Landroid/media/ClosedCaptionWidget$ClosedCaptionLayout;->setCaptionStyle(Landroid/view/accessibility/CaptioningManager$CaptionStyle;)V
 
+    .line 229
     return-void
 .end method

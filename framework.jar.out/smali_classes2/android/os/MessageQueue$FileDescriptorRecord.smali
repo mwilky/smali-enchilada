@@ -27,14 +27,22 @@
 # direct methods
 .method public constructor <init>(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V
     .locals 0
+    .param p1, "descriptor"    # Ljava/io/FileDescriptor;
+    .param p2, "events"    # I
+    .param p3, "listener"    # Landroid/os/MessageQueue$OnFileDescriptorEventListener;
 
+    .line 938
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 939
     iput-object p1, p0, Landroid/os/MessageQueue$FileDescriptorRecord;->mDescriptor:Ljava/io/FileDescriptor;
 
+    .line 940
     iput p2, p0, Landroid/os/MessageQueue$FileDescriptorRecord;->mEvents:I
 
+    .line 941
     iput-object p3, p0, Landroid/os/MessageQueue$FileDescriptorRecord;->mListener:Landroid/os/MessageQueue$OnFileDescriptorEventListener;
 
+    .line 942
     return-void
 .end method

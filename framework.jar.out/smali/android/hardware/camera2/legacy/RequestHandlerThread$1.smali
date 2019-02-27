@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/RequestHandlerThread;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/legacy/RequestHandlerThread;
 
+    .line 88
     iput-object p1, p0, Landroid/hardware/camera2/legacy/RequestHandlerThread$1;->this$0:Landroid/hardware/camera2/legacy/RequestHandlerThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public queueIdle()Z
     .locals 1
 
+    .line 91
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestHandlerThread$1;->this$0:Landroid/hardware/camera2/legacy/RequestHandlerThread;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestHandlerThread;->access$000(Landroid/hardware/camera2/legacy/RequestHandlerThread;)Landroid/os/ConditionVariable;
@@ -45,6 +48,7 @@
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
+    .line 92
     const/4 v0, 0x0
 
     return v0

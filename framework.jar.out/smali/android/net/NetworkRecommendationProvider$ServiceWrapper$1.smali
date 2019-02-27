@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/net/NetworkRecommendationProvider$ServiceWrapper;[Landroid/net/NetworkKey;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/net/NetworkRecommendationProvider$ServiceWrapper;
 
+    .line 102
     iput-object p1, p0, Landroid/net/NetworkRecommendationProvider$ServiceWrapper$1;->this$1:Landroid/net/NetworkRecommendationProvider$ServiceWrapper;
 
     iput-object p2, p0, Landroid/net/NetworkRecommendationProvider$ServiceWrapper$1;->val$networks:[Landroid/net/NetworkKey;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 105
     iget-object v0, p0, Landroid/net/NetworkRecommendationProvider$ServiceWrapper$1;->this$1:Landroid/net/NetworkRecommendationProvider$ServiceWrapper;
 
     iget-object v0, v0, Landroid/net/NetworkRecommendationProvider$ServiceWrapper;->this$0:Landroid/net/NetworkRecommendationProvider;
@@ -49,5 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/net/NetworkRecommendationProvider;->onRequestScores([Landroid/net/NetworkKey;)V
 
+    .line 106
     return-void
 .end method

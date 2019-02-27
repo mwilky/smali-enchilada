@@ -21,6 +21,7 @@
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/ListAdapter;)V
     .locals 0
+    .param p3, "adapter"    # Landroid/widget/ListAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,14 +36,19 @@
         }
     .end annotation
 
+    .line 129
+    .local p1, "headerViewInfos":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/widget/ListView$FixedViewInfo;>;"
+    .local p2, "footerViewInfos":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/widget/ListView$FixedViewInfo;>;"
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/HeaderViewListAdapter;-><init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/ListAdapter;)V
 
+    .line 130
     return-void
 .end method
 
 .method private getTopPanelCount()I
     .locals 2
 
+    .line 137
     iget-object v0, p0, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->mTopPanel:Landroid/view/View;
 
     if-eqz v0, :cond_1
@@ -77,6 +83,7 @@
 .method public areAllItemsEnabled()Z
     .locals 1
 
+    .line 147
     invoke-direct {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getTopPanelCount()I
 
     move-result v0
@@ -103,6 +110,7 @@
 .method public getCount()I
     .locals 2
 
+    .line 142
     invoke-super {p0}, Landroid/widget/HeaderViewListAdapter;->getCount()I
 
     move-result v0
@@ -118,11 +126,15 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 2
+    .param p1, "position"    # I
 
+    .line 158
     invoke-direct {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getTopPanelCount()I
 
     move-result v0
 
+    .line 159
+    .local v0, "topPanelCount":I
     if-ge p1, v0, :cond_0
 
     const/4 v1, 0x0
@@ -142,7 +154,9 @@
 
 .method public getItemId(I)J
     .locals 5
+    .param p1, "position"    # I
 
+    .line 164
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getHeadersCount()I
 
     move-result v0
@@ -153,6 +167,8 @@
 
     add-int/2addr v0, v1
 
+    .line 165
+    .local v0, "numHeaders":I
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v1
@@ -161,8 +177,11 @@
 
     if-lt p1, v0, :cond_0
 
+    .line 166
     sub-int v1, p1, v0
 
+    .line 167
+    .local v1, "adjPosition":I
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v2
@@ -171,8 +190,11 @@
 
     move-result v2
 
+    .line 168
+    .local v2, "adapterCount":I
     if-ge v1, v2, :cond_0
 
+    .line 169
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v3
@@ -183,6 +205,9 @@
 
     return-wide v3
 
+    .line 172
+    .end local v1    # "adjPosition":I
+    .end local v2    # "adapterCount":I
     :cond_0
     const-wide/16 v1, -0x1
 
@@ -191,7 +216,9 @@
 
 .method public getItemViewType(I)I
     .locals 4
+    .param p1, "position"    # I
 
+    .line 184
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getHeadersCount()I
 
     move-result v0
@@ -202,6 +229,8 @@
 
     add-int/2addr v0, v1
 
+    .line 185
+    .local v0, "numHeaders":I
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v1
@@ -210,8 +239,11 @@
 
     if-lt p1, v0, :cond_0
 
+    .line 186
     sub-int v1, p1, v0
 
+    .line 187
+    .local v1, "adjPosition":I
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v2
@@ -220,8 +252,11 @@
 
     move-result v2
 
+    .line 188
+    .local v2, "adapterCount":I
     if-ge v1, v2, :cond_0
 
+    .line 189
     invoke-virtual {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v3
@@ -232,6 +267,9 @@
 
     return v3
 
+    .line 193
+    .end local v1    # "adjPosition":I
+    .end local v2    # "adapterCount":I
     :cond_0
     const/4 v1, -0x2
 
@@ -240,13 +278,20 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 2
+    .param p1, "position"    # I
+    .param p2, "convertView"    # Landroid/view/View;
+    .param p3, "parent"    # Landroid/view/ViewGroup;
 
+    .line 177
     invoke-direct {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getTopPanelCount()I
 
     move-result v0
 
+    .line 178
+    .local v0, "topPanelCount":I
     if-ge p1, v0, :cond_0
 
+    .line 179
     iget-object v1, p0, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->mTopPanel:Landroid/view/View;
 
     goto :goto_0
@@ -258,17 +303,22 @@
 
     move-result-object v1
 
+    .line 178
     :goto_0
     return-object v1
 .end method
 
 .method public isEnabled(I)Z
     .locals 2
+    .param p1, "position"    # I
 
+    .line 152
     invoke-direct {p0}, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->getTopPanelCount()I
 
     move-result v0
 
+    .line 153
+    .local v0, "topPanelCount":I
     if-ge p1, v0, :cond_0
 
     const/4 v1, 0x0
@@ -288,8 +338,11 @@
 
 .method public setTopPanel(Landroid/view/View;)V
     .locals 0
+    .param p1, "v"    # Landroid/view/View;
 
+    .line 133
     iput-object p1, p0, Lcom/android/internal/widget/WatchHeaderListView$WatchHeaderListAdapter;->mTopPanel:Landroid/view/View;
 
+    .line 134
     return-void
 .end method

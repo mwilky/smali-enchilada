@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ColorDisplayController;Landroid/os/Handler;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/app/ColorDisplayController;
+    .param p2, "x0"    # Landroid/os/Handler;
 
+    .line 142
     iput-object p1, p0, Lcom/android/internal/app/ColorDisplayController$1;->this$0:Lcom/android/internal/app/ColorDisplayController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -33,9 +36,13 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 2
+    .param p1, "selfChange"    # Z
+    .param p2, "uri"    # Landroid/net/Uri;
 
+    .line 145
     invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
+    .line 147
     if-nez p2, :cond_0
 
     const/4 v0, 0x0
@@ -47,13 +54,17 @@
 
     move-result-object v0
 
+    .line 148
+    .local v0, "setting":Ljava/lang/String;
     :goto_0
     if-eqz v0, :cond_1
 
+    .line 149
     iget-object v1, p0, Lcom/android/internal/app/ColorDisplayController$1;->this$0:Lcom/android/internal/app/ColorDisplayController;
 
     invoke-static {v1, v0}, Lcom/android/internal/app/ColorDisplayController;->access$000(Lcom/android/internal/app/ColorDisplayController;Ljava/lang/String;)V
 
+    .line 151
     :cond_1
     return-void
 .end method

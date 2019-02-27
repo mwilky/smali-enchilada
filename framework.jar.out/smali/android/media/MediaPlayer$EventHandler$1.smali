@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer$EventHandler;Landroid/media/MediaPlayer$OnSubtitleDataListener;Landroid/media/SubtitleData;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/media/MediaPlayer$EventHandler;
 
+    .line 3639
     iput-object p1, p0, Landroid/media/MediaPlayer$EventHandler$1;->this$1:Landroid/media/MediaPlayer$EventHandler;
 
     iput-object p2, p0, Landroid/media/MediaPlayer$EventHandler$1;->val$extSubtitleListener:Landroid/media/MediaPlayer$OnSubtitleDataListener;
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 3
 
+    .line 3642
     iget-object v0, p0, Landroid/media/MediaPlayer$EventHandler$1;->val$extSubtitleListener:Landroid/media/MediaPlayer$OnSubtitleDataListener;
 
     iget-object v1, p0, Landroid/media/MediaPlayer$EventHandler$1;->this$1:Landroid/media/MediaPlayer$EventHandler;
@@ -57,5 +60,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/media/MediaPlayer$OnSubtitleDataListener;->onSubtitleData(Landroid/media/MediaPlayer;Landroid/media/SubtitleData;)V
 
+    .line 3643
     return-void
 .end method

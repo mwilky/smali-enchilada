@@ -26,10 +26,12 @@
 .method private constructor <init>(Landroid/filterfw/core/AsyncRunner;)V
     .locals 0
 
+    .line 38
     iput-object p1, p0, Landroid/filterfw/core/AsyncRunner$RunnerResult;->this$0:Landroid/filterfw/core/AsyncRunner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
     const/4 p1, 0x0
 
     iput p1, p0, Landroid/filterfw/core/AsyncRunner$RunnerResult;->status:I
@@ -39,7 +41,10 @@
 
 .method synthetic constructor <init>(Landroid/filterfw/core/AsyncRunner;Landroid/filterfw/core/AsyncRunner$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/filterfw/core/AsyncRunner;
+    .param p2, "x1"    # Landroid/filterfw/core/AsyncRunner$1;
 
+    .line 38
     invoke-direct {p0, p1}, Landroid/filterfw/core/AsyncRunner$RunnerResult;-><init>(Landroid/filterfw/core/AsyncRunner;)V
 
     return-void

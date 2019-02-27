@@ -29,8 +29,11 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 29
+    .local p0, "this":Landroid/database/Observable;, "Landroid/database/Observable<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 34
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -50,12 +53,17 @@
         }
     .end annotation
 
+    .line 44
+    .local p0, "this":Landroid/database/Observable;, "Landroid/database/Observable<TT;>;"
+    .local p1, "observer":Ljava/lang/Object;, "TT;"
     if-eqz p1, :cond_1
 
+    .line 47
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v0
 
+    .line 48
     :try_start_0
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -65,14 +73,18 @@
 
     if-nez v1, :cond_0
 
+    .line 51
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 52
     monitor-exit v0
 
+    .line 53
     return-void
 
+    .line 49
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -98,6 +110,7 @@
 
     throw v1
 
+    .line 52
     :catchall_0
     move-exception v1
 
@@ -107,6 +120,7 @@
 
     throw v1
 
+    .line 45
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -120,19 +134,25 @@
 .method public unregisterAll()V
     .locals 2
 
+    .line 79
+    .local p0, "this":Landroid/database/Observable;, "Landroid/database/Observable<TT;>;"
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v0
 
+    .line 80
     :try_start_0
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
+    .line 81
     monitor-exit v0
 
+    .line 82
     return-void
 
+    .line 81
     :catchall_0
     move-exception v1
 
@@ -151,12 +171,17 @@
         }
     .end annotation
 
+    .line 63
+    .local p0, "this":Landroid/database/Observable;, "Landroid/database/Observable<TT;>;"
+    .local p1, "observer":Ljava/lang/Object;, "TT;"
     if-eqz p1, :cond_1
 
+    .line 66
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v0
 
+    .line 67
     :try_start_0
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -164,18 +189,26 @@
 
     move-result v1
 
+    .line 68
+    .local v1, "index":I
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_0
 
+    .line 71
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
+    .line 72
+    .end local v1    # "index":I
     monitor-exit v0
 
+    .line 73
     return-void
 
+    .line 69
+    .restart local v1    # "index":I
     :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -201,6 +234,8 @@
 
     throw v2
 
+    .line 72
+    .end local v1    # "index":I
     :catchall_0
     move-exception v1
 
@@ -210,6 +245,7 @@
 
     throw v1
 
+    .line 64
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

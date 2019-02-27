@@ -36,6 +36,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 34
     new-instance v0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult$1;
 
     invoke-direct {v0}, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult$1;-><init>()V
@@ -47,29 +48,39 @@
 
 .method public constructor <init>(I[Landroid/telephony/euicc/DownloadableSubscription;)V
     .locals 3
+    .param p1, "result"    # I
+    .param p2, "subscriptions"    # [Landroid/telephony/euicc/DownloadableSubscription;
 
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 89
     iput p1, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->result:I
 
+    .line 90
     iget v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->result:I
 
     if-nez v0, :cond_0
 
+    .line 91
     iput-object p2, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
     goto :goto_0
 
+    .line 93
     :cond_0
     if-nez p2, :cond_1
 
+    .line 97
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
+    .line 99
     :goto_0
     return-void
 
+    .line 94
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -94,15 +105,19 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 102
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->result:I
 
+    .line 103
     sget-object v0, Landroid/telephony/euicc/DownloadableSubscription;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -113,12 +128,16 @@
 
     iput-object v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
+    .line 104
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult$1;
 
+    .line 32
     invoke-direct {p0, p1}, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -129,6 +148,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 114
     const/4 v0, 0x0
 
     return v0
@@ -145,6 +165,7 @@
         }
     .end annotation
 
+    .line 74
     iget-object v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
     if-nez v0, :cond_0
@@ -153,6 +174,7 @@
 
     return-object v0
 
+    .line 75
     :cond_0
     iget-object v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
@@ -166,6 +188,7 @@
 .method public getResult()I
     .locals 1
 
+    .line 64
     iget v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->result:I
 
     return v0
@@ -173,14 +196,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 108
     iget v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->result:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 109
     iget-object v0, p0, Landroid/service/euicc/GetDefaultDownloadableSubscriptionListResult;->mSubscriptions:[Landroid/telephony/euicc/DownloadableSubscription;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
+    .line 110
     return-void
 .end method

@@ -36,14 +36,18 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 1117
+    .local p0, "this":Landroid/app/SystemServiceRegistry$CachedServiceFetcher;, "Landroid/app/SystemServiceRegistry$CachedServiceFetcher<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1121
     invoke-static {}, Landroid/app/SystemServiceRegistry;->access$008()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
+    .line 1122
     return-void
 .end method
 
@@ -67,6 +71,7 @@
 
 .method public final getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 8
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,20 +80,31 @@
         }
     .end annotation
 
+    .line 1127
+    .local p0, "this":Landroid/app/SystemServiceRegistry$CachedServiceFetcher;, "Landroid/app/SystemServiceRegistry$CachedServiceFetcher<TT;>;"
     iget-object v0, p1, Landroid/app/ContextImpl;->mServiceCache:[Ljava/lang/Object;
 
+    .line 1128
+    .local v0, "cache":[Ljava/lang/Object;
     iget-object v1, p1, Landroid/app/ContextImpl;->mServiceInitializationStateArray:[I
 
+    .line 1131
+    .local v1, "gates":[I
     :goto_0
     const/4 v2, 0x0
 
+    .line 1132
+    .local v2, "doInitialize":Z
     monitor-enter v0
 
+    .line 1134
     :try_start_0
     iget v3, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aget-object v3, v0, v3
 
+    .line 1135
+    .local v3, "service":Ljava/lang/Object;, "TT;"
     if-nez v3, :cond_5
 
     iget v4, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
@@ -101,6 +117,7 @@
 
     goto/16 :goto_4
 
+    .line 1144
     :cond_0
     iget v4, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
@@ -110,12 +127,14 @@
 
     if-ne v4, v6, :cond_1
 
+    .line 1145
     iget v4, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     const/4 v7, 0x0
 
     aput v7, v1, v4
 
+    .line 1152
     :cond_1
     iget v4, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
@@ -123,25 +142,35 @@
 
     if-nez v4, :cond_2
 
+    .line 1153
     const/4 v2, 0x1
 
+    .line 1154
     iget v4, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     const/4 v7, 0x1
 
     aput v7, v1, v4
 
+    .line 1156
+    .end local v3    # "service":Ljava/lang/Object;, "TT;"
     :cond_2
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
+    .line 1158
     if-eqz v2, :cond_3
 
+    .line 1161
     const/4 v3, 0x0
 
+    .line 1162
+    .restart local v3    # "service":Ljava/lang/Object;, "TT;"
     move v4, v5
 
+    .line 1166
+    .local v4, "newState":I
     :try_start_1
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
 
@@ -150,31 +179,44 @@
     .catch Landroid/os/ServiceManager$ServiceNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 1167
+    .end local v3    # "service":Ljava/lang/Object;, "TT;"
+    .local v5, "service":Ljava/lang/Object;, "TT;"
     const/4 v6, 0x2
 
+    .line 1173
+    .end local v4    # "newState":I
+    .local v6, "newState":I
     monitor-enter v0
 
+    .line 1174
     :try_start_2
     iget v3, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput-object v5, v0, v3
 
+    .line 1175
     iget v3, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput v6, v1, v3
 
+    .line 1176
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 1177
     monitor-exit v0
 
+    .line 1178
     nop
 
+    .line 1179
     move-object v3, v5
 
     move v4, v6
 
     goto :goto_1
 
+    .line 1177
     :catchall_0
     move-exception v3
 
@@ -184,39 +226,56 @@
 
     throw v3
 
+    .line 1173
+    .end local v5    # "service":Ljava/lang/Object;, "TT;"
+    .end local v6    # "newState":I
+    .restart local v3    # "service":Ljava/lang/Object;, "TT;"
+    .restart local v4    # "newState":I
     :catchall_1
     move-exception v5
 
     goto :goto_2
 
+    .line 1169
     :catch_0
     move-exception v5
 
+    .line 1170
+    .local v5, "e":Landroid/os/ServiceManager$ServiceNotFoundException;
     :try_start_3
     invoke-static {v5}, Landroid/app/SystemServiceRegistry;->onServiceNotFound(Landroid/os/ServiceManager$ServiceNotFoundException;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
+    .line 1173
+    .end local v5    # "e":Landroid/os/ServiceManager$ServiceNotFoundException;
     monitor-enter v0
 
+    .line 1174
     :try_start_4
     iget v5, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput-object v3, v0, v5
 
+    .line 1175
     iget v5, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput v4, v1, v5
 
+    .line 1176
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 1177
     monitor-exit v0
 
+    .line 1178
     nop
 
+    .line 1179
     :goto_1
     return-object v3
 
+    .line 1177
     :catchall_2
     move-exception v5
 
@@ -226,20 +285,25 @@
 
     throw v5
 
+    .line 1173
     :goto_2
     monitor-enter v0
 
+    .line 1174
     :try_start_5
     iget v6, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput-object v3, v0, v6
 
+    .line 1175
     iget v6, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput v4, v1, v6
 
+    .line 1176
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 1177
     monitor-exit v0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
@@ -256,9 +320,13 @@
 
     throw v5
 
+    .line 1183
+    .end local v3    # "service":Ljava/lang/Object;, "TT;"
+    .end local v4    # "newState":I
     :cond_3
     monitor-enter v0
 
+    .line 1184
     :goto_3
     :try_start_7
     iget v3, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
@@ -269,17 +337,22 @@
 
     if-ge v3, v6, :cond_4
 
+    .line 1186
     :try_start_8
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
     :try_end_8
     .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_1
     .catchall {:try_start_8 .. :try_end_8} :catchall_4
 
+    .line 1191
     goto :goto_3
 
+    .line 1187
     :catch_1
     move-exception v3
 
+    .line 1188
+    .local v3, "e":Ljava/lang/InterruptedException;
     :try_start_9
     const-string v4, "SystemServiceRegistry"
 
@@ -287,23 +360,31 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1189
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
 
     invoke-virtual {v4}, Ljava/lang/Thread;->interrupt()V
 
+    .line 1190
     const/4 v4, 0x0
 
     monitor-exit v0
 
     return-object v4
 
+    .line 1193
+    .end local v3    # "e":Ljava/lang/InterruptedException;
     :cond_4
     monitor-exit v0
 
+    .line 1194
+    .end local v2    # "doInitialize":Z
     goto/16 :goto_0
 
+    .line 1193
+    .restart local v2    # "doInitialize":Z
     :catchall_4
     move-exception v3
 
@@ -313,6 +394,8 @@
 
     throw v3
 
+    .line 1136
+    .local v3, "service":Ljava/lang/Object;, "TT;"
     :cond_5
     :goto_4
     :try_start_a
@@ -320,6 +403,8 @@
 
     return-object v3
 
+    .line 1156
+    .end local v3    # "service":Ljava/lang/Object;, "TT;"
     :catchall_5
     move-exception v3
 

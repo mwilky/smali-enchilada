@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,12 +29,15 @@
 .method public onComplete()V
     .locals 0
 
+    .line 74
     return-void
 .end method
 
 .method public onError(I)V
     .locals 0
+    .param p1, "error"    # I
 
+    .line 84
     return-void
 .end method
 
@@ -48,5 +52,7 @@
         }
     .end annotation
 
+    .line 66
+    .local p1, "results":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/CellInfo;>;"
     return-void
 .end method

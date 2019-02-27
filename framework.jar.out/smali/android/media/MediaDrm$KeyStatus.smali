@@ -41,13 +41,19 @@
 # direct methods
 .method constructor <init>([BI)V
     .locals 0
+    .param p1, "keyId"    # [B
+    .param p2, "statusCode"    # I
 
+    .line 413
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 414
     iput-object p1, p0, Landroid/media/MediaDrm$KeyStatus;->mKeyId:[B
 
+    .line 415
     iput p2, p0, Landroid/media/MediaDrm$KeyStatus;->mStatusCode:I
 
+    .line 416
     return-void
 .end method
 
@@ -56,6 +62,7 @@
 .method public getKeyId()[B
     .locals 1
 
+    .line 431
     iget-object v0, p0, Landroid/media/MediaDrm$KeyStatus;->mKeyId:[B
 
     return-object v0
@@ -64,6 +71,7 @@
 .method public getStatusCode()I
     .locals 1
 
+    .line 425
     iget v0, p0, Landroid/media/MediaDrm$KeyStatus;->mStatusCode:I
 
     return v0

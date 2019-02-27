@@ -24,6 +24,7 @@
 .method constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
+    .line 827
     iput-object p1, p0, Landroid/os/RecoverySystem$4;->val$wipingSucceeded:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     iput-object p2, p0, Landroid/os/RecoverySystem$4;->val$euiccFactoryResetLatch:Ljava/util/concurrent/CountDownLatch;
@@ -37,7 +38,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 830
     const-string v0, "com.android.internal.action.EUICC_FACTORY_RESET"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -50,12 +54,14 @@
 
     if-eqz v0, :cond_1
 
+    .line 831
     invoke-virtual {p0}, Landroid/os/RecoverySystem$4;->getResultCode()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 832
     const-string v0, "android.telephony.euicc.extra.EMBEDDED_SUBSCRIPTION_DETAILED_CODE"
 
     const/4 v1, 0x0
@@ -64,6 +70,8 @@
 
     move-result v0
 
+    .line 834
+    .local v0, "detailedCode":I
     const-string v1, "RecoverySystem"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -82,8 +90,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 836
+    .end local v0    # "detailedCode":I
     goto :goto_0
 
+    .line 837
     :cond_0
     const-string v0, "RecoverySystem"
 
@@ -91,17 +102,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 838
     iget-object v0, p0, Landroid/os/RecoverySystem$4;->val$wipingSucceeded:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
+    .line 840
     :goto_0
     iget-object v0, p0, Landroid/os/RecoverySystem$4;->val$euiccFactoryResetLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
+    .line 842
     :cond_1
     return-void
 .end method

@@ -40,8 +40,10 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 54
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
+    .line 80
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mWrapper:Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;
@@ -51,7 +53,10 @@
 
 .method static synthetic access$100(Ljava/util/List;Landroid/service/resolver/IResolverRankerResult;)V
     .locals 0
+    .param p0, "x0"    # Ljava/util/List;
+    .param p1, "x1"    # Landroid/service/resolver/IResolverRankerResult;
 
+    .line 54
     invoke-static {p0, p1}, Landroid/service/resolver/ResolverRankerService;->sendResult(Ljava/util/List;Landroid/service/resolver/IResolverRankerResult;)V
 
     return-void
@@ -59,7 +64,9 @@
 
 .method static synthetic access$200(Landroid/service/resolver/ResolverRankerService;)Landroid/os/Handler;
     .locals 1
+    .param p0, "x0"    # Landroid/service/resolver/ResolverRankerService;
 
+    .line 54
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -67,6 +74,7 @@
 
 .method private static sendResult(Ljava/util/List;Landroid/service/resolver/IResolverRankerResult;)V
     .locals 4
+    .param p1, "result"    # Landroid/service/resolver/IResolverRankerResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,16 +86,22 @@
         }
     .end annotation
 
+    .line 139
+    .local p0, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/resolver/ResolverTarget;>;"
     :try_start_0
     invoke-interface {p1, p0}, Landroid/service/resolver/IResolverRankerResult;->sendResult(Ljava/util/List;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 142
     goto :goto_0
 
+    .line 140
     :catch_0
     move-exception v0
 
+    .line 141
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ResolverRankerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -106,6 +120,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 143
+    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -114,7 +130,9 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 3
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 113
     const-string v0, "android.service.resolver.ResolverRankerService"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -129,13 +147,16 @@
 
     if-nez v0, :cond_0
 
+    .line 115
     return-object v1
 
+    .line 117
     :cond_0
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     if-nez v0, :cond_1
 
+    .line 118
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v2, "RESOLVER_RANKER_SERVICE"
@@ -144,10 +165,12 @@
 
     iput-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
 
+    .line 119
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
+    .line 120
     new-instance v0, Landroid/os/Handler;
 
     iget-object v2, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
@@ -160,17 +183,20 @@
 
     iput-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandler:Landroid/os/Handler;
 
+    .line 122
     :cond_1
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mWrapper:Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;
 
     if-nez v0, :cond_2
 
+    .line 123
     new-instance v0, Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;
 
     invoke-direct {v0, p0, v1}, Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;-><init>(Landroid/service/resolver/ResolverRankerService;Landroid/service/resolver/ResolverRankerService$1;)V
 
     iput-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mWrapper:Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;
 
+    .line 125
     :cond_2
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mWrapper:Landroid/service/resolver/ResolverRankerService$ResolverRankerServiceWrapper;
 
@@ -180,21 +206,26 @@
 .method public onDestroy()V
     .locals 1
 
+    .line 130
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandler:Landroid/os/Handler;
 
+    .line 131
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     if-eqz v0, :cond_0
 
+    .line 132
     iget-object v0, p0, Landroid/service/resolver/ResolverRankerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
+    .line 134
     :cond_0
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
+    .line 135
     return-void
 .end method
 
@@ -209,11 +240,14 @@
         }
     .end annotation
 
+    .line 92
+    .local p1, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/resolver/ResolverTarget;>;"
     return-void
 .end method
 
 .method public onTrainRankingModel(Ljava/util/List;I)V
     .locals 0
+    .param p2, "selectedPosition"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -223,5 +257,7 @@
         }
     .end annotation
 
+    .line 104
+    .local p1, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/resolver/ResolverTarget;>;"
     return-void
 .end method

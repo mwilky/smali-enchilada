@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/BluetoothLeAdvertiser$2;I)V
     .locals 0
+    .param p1, "this$1"    # Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
+    .line 574
     iput-object p1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iput p2, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->val$advertiserId:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 577
     iget-object v0, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v0, v0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -61,12 +64,15 @@
 
     check-cast v0, Landroid/bluetooth/le/AdvertisingSet;
 
+    .line 578
+    .local v0, "advertisingSet":Landroid/bluetooth/le/AdvertisingSet;
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->val$callback:Landroid/bluetooth/le/AdvertisingSetCallback;
 
     invoke-virtual {v1, v0}, Landroid/bluetooth/le/AdvertisingSetCallback;->onAdvertisingSetStopped(Landroid/bluetooth/le/AdvertisingSet;)V
 
+    .line 579
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -83,6 +89,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 580
     iget-object v1, p0, Landroid/bluetooth/le/BluetoothLeAdvertiser$2$3;->this$1:Landroid/bluetooth/le/BluetoothLeAdvertiser$2;
 
     iget-object v1, v1, Landroid/bluetooth/le/BluetoothLeAdvertiser$2;->this$0:Landroid/bluetooth/le/BluetoothLeAdvertiser;
@@ -97,5 +104,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 581
     return-void
 .end method

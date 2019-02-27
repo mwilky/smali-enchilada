@@ -17,6 +17,8 @@
 # static fields
 .field public static final dlg_game_mode_more_settings:I = 0x5070000
 
+.field public static final game_mode_detail_body:I = 0x5070001
+
 .field public static final game_mode_ic_check_1:I = 0x5070002
 
 .field public static final game_mode_ic_check_2:I = 0x5070003
@@ -108,6 +110,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

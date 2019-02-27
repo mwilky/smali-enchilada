@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 88
     new-instance v0, Landroid/app/admin/NetworkEvent$1;
 
     invoke-direct {v0}, Landroid/app/admin/NetworkEvent$1;-><init>()V
@@ -46,20 +47,28 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/String;J)V
     .locals 0
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "timestamp"    # J
 
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 50
     iput-object p1, p0, Landroid/app/admin/NetworkEvent;->mPackageName:Ljava/lang/String;
 
+    .line 51
     iput-wide p2, p0, Landroid/app/admin/NetworkEvent;->mTimestamp:J
 
+    .line 52
     return-void
 .end method
 
@@ -68,6 +77,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 85
     const/4 v0, 0x0
 
     return v0
@@ -76,6 +86,7 @@
 .method public getId()J
     .locals 2
 
+    .line 80
     iget-wide v0, p0, Landroid/app/admin/NetworkEvent;->mId:J
 
     return-wide v0
@@ -84,6 +95,7 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
+    .line 59
     iget-object v0, p0, Landroid/app/admin/NetworkEvent;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -92,6 +104,7 @@
 .method public getTimestamp()J
     .locals 2
 
+    .line 67
     iget-wide v0, p0, Landroid/app/admin/NetworkEvent;->mTimestamp:J
 
     return-wide v0
@@ -99,9 +112,12 @@
 
 .method public setId(J)V
     .locals 0
+    .param p1, "id"    # J
 
+    .line 72
     iput-wide p1, p0, Landroid/app/admin/NetworkEvent;->mId:J
 
+    .line 73
     return-void
 .end method
 

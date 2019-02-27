@@ -24,12 +24,15 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 109
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->pss:J
 
+    .line 110
     iput-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->samples:J
 
     return-void
@@ -39,7 +42,10 @@
 # virtual methods
 .method add(JJ)V
     .locals 6
+    .param p1, "newPss"    # J
+    .param p3, "newSamples"    # J
 
+    .line 113
     iget-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->pss:J
 
     long-to-double v0, v0
@@ -68,11 +74,13 @@
 
     iput-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->pss:J
 
+    .line 115
     iget-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->samples:J
 
     add-long/2addr v0, p3
 
     iput-wide v0, p0, Lcom/android/internal/app/procstats/ProcessState$PssAggr;->samples:J
 
+    .line 116
     return-void
 .end method

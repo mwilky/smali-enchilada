@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/GridLayout$7;)V
     .locals 1
+    .param p1, "this$0"    # Landroid/widget/GridLayout$7;
 
+    .line 2935
     iput-object p1, p0, Landroid/widget/GridLayout$7$1;->this$0:Landroid/widget/GridLayout$7;
 
     const/4 v0, 0x0
@@ -37,7 +39,13 @@
 # virtual methods
 .method protected getOffset(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Alignment;IZ)I
     .locals 2
+    .param p1, "gl"    # Landroid/widget/GridLayout;
+    .param p2, "c"    # Landroid/view/View;
+    .param p3, "a"    # Landroid/widget/GridLayout$Alignment;
+    .param p4, "size"    # I
+    .param p5, "hrz"    # Z
 
+    .line 2963
     invoke-super/range {p0 .. p5}, Landroid/widget/GridLayout$Bounds;->getOffset(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Alignment;IZ)I
 
     move-result v0
@@ -53,9 +61,13 @@
 
 .method protected include(II)V
     .locals 2
+    .param p1, "before"    # I
+    .param p2, "after"    # I
 
+    .line 2952
     invoke-super {p0, p1, p2}, Landroid/widget/GridLayout$Bounds;->include(II)V
 
+    .line 2953
     iget v0, p0, Landroid/widget/GridLayout$7$1;->size:I
 
     add-int v1, p1, p2
@@ -66,24 +78,30 @@
 
     iput v0, p0, Landroid/widget/GridLayout$7$1;->size:I
 
+    .line 2954
     return-void
 .end method
 
 .method protected reset()V
     .locals 1
 
+    .line 2946
     invoke-super {p0}, Landroid/widget/GridLayout$Bounds;->reset()V
 
+    .line 2947
     const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/widget/GridLayout$7$1;->size:I
 
+    .line 2948
     return-void
 .end method
 
 .method protected size(Z)I
     .locals 2
+    .param p1, "min"    # Z
 
+    .line 2958
     invoke-super {p0, p1}, Landroid/widget/GridLayout$Bounds;->size(Z)I
 
     move-result v0

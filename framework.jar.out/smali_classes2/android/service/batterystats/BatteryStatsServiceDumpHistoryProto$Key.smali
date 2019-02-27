@@ -29,7 +29,9 @@
 # direct methods
 .method public constructor <init>(Landroid/service/batterystats/BatteryStatsServiceDumpHistoryProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/service/batterystats/BatteryStatsServiceDumpHistoryProto;
 
+    .line 11
     iput-object p1, p0, Landroid/service/batterystats/BatteryStatsServiceDumpHistoryProto$Key;->this$0:Landroid/service/batterystats/BatteryStatsServiceDumpHistoryProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

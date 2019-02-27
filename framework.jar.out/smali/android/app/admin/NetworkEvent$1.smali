@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,19 +40,27 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/admin/NetworkEvent;
     .locals 5
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 91
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
+    .line 92
+    .local v0, "initialPosition":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 94
+    .local v1, "parcelToken":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 95
     packed-switch v1, :pswitch_data_0
 
+    .line 101
     new-instance v2, Landroid/os/ParcelFormatException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -72,6 +81,7 @@
 
     throw v2
 
+    .line 99
     :pswitch_0
     sget-object v2, Landroid/app/admin/ConnectEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -83,6 +93,7 @@
 
     return-object v2
 
+    .line 97
     :pswitch_1
     sget-object v2, Landroid/app/admin/DnsEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -106,6 +117,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 89
     invoke-virtual {p0, p1}, Landroid/app/admin/NetworkEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/admin/NetworkEvent;
 
     move-result-object p1
@@ -115,7 +127,9 @@
 
 .method public newArray(I)[Landroid/app/admin/NetworkEvent;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 107
     new-array v0, p1, [Landroid/app/admin/NetworkEvent;
 
     return-object v0
@@ -124,6 +138,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 89
     invoke-virtual {p0, p1}, Landroid/app/admin/NetworkEvent$1;->newArray(I)[Landroid/app/admin/NetworkEvent;
 
     move-result-object p1

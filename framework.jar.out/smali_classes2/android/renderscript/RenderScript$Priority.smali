@@ -38,6 +38,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .line 1218
     new-instance v0, Landroid/renderscript/RenderScript$Priority;
 
     const-string v1, "LOW"
@@ -50,6 +51,7 @@
 
     sput-object v0, Landroid/renderscript/RenderScript$Priority;->LOW:Landroid/renderscript/RenderScript$Priority;
 
+    .line 1219
     new-instance v0, Landroid/renderscript/RenderScript$Priority;
 
     const-string v1, "NORMAL"
@@ -62,6 +64,7 @@
 
     sput-object v0, Landroid/renderscript/RenderScript$Priority;->NORMAL:Landroid/renderscript/RenderScript$Priority;
 
+    .line 1215
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/renderscript/RenderScript$Priority;
@@ -81,22 +84,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 1222
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 1223
     iput p3, p0, Landroid/renderscript/RenderScript$Priority;->mID:I
 
+    .line 1224
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/renderscript/RenderScript$Priority;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 1215
     const-class v0, Landroid/renderscript/RenderScript$Priority;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -111,6 +120,7 @@
 .method public static values()[Landroid/renderscript/RenderScript$Priority;
     .locals 1
 
+    .line 1215
     sget-object v0, Landroid/renderscript/RenderScript$Priority;->$VALUES:[Landroid/renderscript/RenderScript$Priority;
 
     invoke-virtual {v0}, [Landroid/renderscript/RenderScript$Priority;->clone()Ljava/lang/Object;

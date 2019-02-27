@@ -17,24 +17,33 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Exception;)V
     .locals 0
+    .param p1, "ex"    # Ljava/lang/Exception;
 
+    .line 345
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
+    .line 346
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "message"    # Ljava/lang/String;
 
+    .line 348
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    .line 349
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
+    .param p1, "t"    # Ljava/lang/Throwable;
 
+    .line 354
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
+    .line 355
     return-void
 .end method

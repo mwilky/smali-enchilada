@@ -56,38 +56,47 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 2959
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2978
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mEnterTransition:Landroid/transition/Transition;
 
+    .line 2979
     invoke-static {}, Landroid/app/Fragment;->access$800()Landroid/transition/Transition;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/app/Fragment$AnimationInfo;->mReturnTransition:Landroid/transition/Transition;
 
+    .line 2980
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mExitTransition:Landroid/transition/Transition;
 
+    .line 2981
     invoke-static {}, Landroid/app/Fragment;->access$800()Landroid/transition/Transition;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/app/Fragment$AnimationInfo;->mReenterTransition:Landroid/transition/Transition;
 
+    .line 2982
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementEnterTransition:Landroid/transition/Transition;
 
+    .line 2983
     invoke-static {}, Landroid/app/Fragment;->access$800()Landroid/transition/Transition;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementReturnTransition:Landroid/transition/Transition;
 
+    .line 2987
     sget-object v0, Landroid/app/SharedElementCallback;->NULL_CALLBACK:Landroid/app/SharedElementCallback;
 
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mEnterTransitionCallback:Landroid/app/SharedElementCallback;
 
+    .line 2988
     sget-object v0, Landroid/app/SharedElementCallback;->NULL_CALLBACK:Landroid/app/SharedElementCallback;
 
     iput-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mExitTransitionCallback:Landroid/app/SharedElementCallback;
@@ -97,7 +106,9 @@
 
 .method static synthetic access$000(Landroid/app/Fragment$AnimationInfo;)Ljava/lang/Boolean;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mAllowEnterTransitionOverlap:Ljava/lang/Boolean;
 
     return-object v0
@@ -105,7 +116,10 @@
 
 .method static synthetic access$002(Landroid/app/Fragment$AnimationInfo;Ljava/lang/Boolean;)Ljava/lang/Boolean;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Ljava/lang/Boolean;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mAllowEnterTransitionOverlap:Ljava/lang/Boolean;
 
     return-object p1
@@ -113,7 +127,9 @@
 
 .method static synthetic access$100(Landroid/app/Fragment$AnimationInfo;)Ljava/lang/Boolean;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mAllowReturnTransitionOverlap:Ljava/lang/Boolean;
 
     return-object v0
@@ -121,7 +137,10 @@
 
 .method static synthetic access$102(Landroid/app/Fragment$AnimationInfo;Ljava/lang/Boolean;)Ljava/lang/Boolean;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Ljava/lang/Boolean;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mAllowReturnTransitionOverlap:Ljava/lang/Boolean;
 
     return-object p1
@@ -129,7 +148,9 @@
 
 .method static synthetic access$200(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mEnterTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -137,7 +158,10 @@
 
 .method static synthetic access$202(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mEnterTransition:Landroid/transition/Transition;
 
     return-object p1
@@ -145,7 +169,9 @@
 
 .method static synthetic access$300(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mReturnTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -153,7 +179,10 @@
 
 .method static synthetic access$302(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mReturnTransition:Landroid/transition/Transition;
 
     return-object p1
@@ -161,7 +190,9 @@
 
 .method static synthetic access$400(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mExitTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -169,7 +200,10 @@
 
 .method static synthetic access$402(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mExitTransition:Landroid/transition/Transition;
 
     return-object p1
@@ -177,7 +211,9 @@
 
 .method static synthetic access$500(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mReenterTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -185,7 +221,10 @@
 
 .method static synthetic access$502(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mReenterTransition:Landroid/transition/Transition;
 
     return-object p1
@@ -193,7 +232,9 @@
 
 .method static synthetic access$600(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementEnterTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -201,7 +242,10 @@
 
 .method static synthetic access$602(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementEnterTransition:Landroid/transition/Transition;
 
     return-object p1
@@ -209,7 +253,9 @@
 
 .method static synthetic access$700(Landroid/app/Fragment$AnimationInfo;)Landroid/transition/Transition;
     .locals 1
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
 
+    .line 2959
     iget-object v0, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementReturnTransition:Landroid/transition/Transition;
 
     return-object v0
@@ -217,7 +263,10 @@
 
 .method static synthetic access$702(Landroid/app/Fragment$AnimationInfo;Landroid/transition/Transition;)Landroid/transition/Transition;
     .locals 0
+    .param p0, "x0"    # Landroid/app/Fragment$AnimationInfo;
+    .param p1, "x1"    # Landroid/transition/Transition;
 
+    .line 2959
     iput-object p1, p0, Landroid/app/Fragment$AnimationInfo;->mSharedElementReturnTransition:Landroid/transition/Transition;
 
     return-object p1

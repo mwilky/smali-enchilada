@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/browse/MediaBrowser$MediaServiceConnection;Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
+    .line 975
     iput-object p1, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
     iput-object p2, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->val$name:Landroid/content/ComponentName;
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 4
 
+    .line 986
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
     const-string/jumbo v1, "onServiceConnected"
@@ -55,8 +58,10 @@
 
     if-nez v0, :cond_0
 
+    .line 987
     return-void
 
+    .line 991
     :cond_0
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
@@ -70,6 +75,7 @@
 
     invoke-static {v0, v1}, Landroid/media/browse/MediaBrowser;->access$102(Landroid/media/browse/MediaBrowser;Landroid/service/media/IMediaBrowserService;)Landroid/service/media/IMediaBrowserService;
 
+    .line 995
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
     iget-object v0, v0, Landroid/media/browse/MediaBrowser$MediaServiceConnection;->this$0:Landroid/media/browse/MediaBrowser;
@@ -84,6 +90,7 @@
 
     invoke-static {v0, v1}, Landroid/media/browse/MediaBrowser;->access$202(Landroid/media/browse/MediaBrowser;Landroid/service/media/IMediaBrowserServiceCallbacks;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
+    .line 996
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
     iget-object v0, v0, Landroid/media/browse/MediaBrowser$MediaServiceConnection;->this$0:Landroid/media/browse/MediaBrowser;
@@ -92,6 +99,7 @@
 
     invoke-static {v0, v1}, Landroid/media/browse/MediaBrowser;->access$002(Landroid/media/browse/MediaBrowser;I)I
 
+    .line 1005
     :try_start_0
     iget-object v0, p0, Landroid/media/browse/MediaBrowser$MediaServiceConnection$1;->this$1:Landroid/media/browse/MediaBrowser$MediaServiceConnection;
 
@@ -125,19 +133,25 @@
 
     iget-object v3, v3, Landroid/media/browse/MediaBrowser$MediaServiceConnection;->this$0:Landroid/media/browse/MediaBrowser;
 
+    .line 1006
     invoke-static {v3}, Landroid/media/browse/MediaBrowser;->access$200(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
     move-result-object v3
 
+    .line 1005
     invoke-interface {v0, v1, v2, v3}, Landroid/service/media/IMediaBrowserService;->connect(Ljava/lang/String;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1017
     goto :goto_0
 
+    .line 1007
     :catch_0
     move-exception v0
 
+    .line 1012
+    .local v0, "ex":Landroid/os/RemoteException;
     const-string v1, "MediaBrowser"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -164,6 +178,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1018
+    .end local v0    # "ex":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

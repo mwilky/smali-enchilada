@@ -36,22 +36,27 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 4955
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4956
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/widget/RecyclerView$RecycledViewPool$ScrapData;->mScrapHeap:Ljava/util/ArrayList;
 
+    .line 4957
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/internal/widget/RecyclerView$RecycledViewPool$ScrapData;->mMaxScrap:I
 
+    .line 4958
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/widget/RecyclerView$RecycledViewPool$ScrapData;->mCreateRunningAverageNs:J
 
+    .line 4959
     iput-wide v0, p0, Lcom/android/internal/widget/RecyclerView$RecycledViewPool$ScrapData;->mBindRunningAverageNs:J
 
     return-void

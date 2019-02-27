@@ -38,8 +38,10 @@
 .method constructor <init>()V
     .locals 1
 
+    .line 6310
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6312
     new-instance v0, Landroid/view/inputmethod/ExtractedText;
 
     invoke-direct {v0}, Landroid/view/inputmethod/ExtractedText;-><init>()V

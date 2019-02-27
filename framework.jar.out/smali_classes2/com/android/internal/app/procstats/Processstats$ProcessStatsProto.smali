@@ -31,7 +31,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/app/procstats/Processstats;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/app/procstats/Processstats;
 
+    .line 10
     iput-object p1, p0, Lcom/android/internal/app/procstats/Processstats$ProcessStatsProto;->this$0:Lcom/android/internal/app/procstats/Processstats;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

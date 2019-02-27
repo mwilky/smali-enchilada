@@ -93,31 +93,40 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "widgetType"    # I
 
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 87
     new-instance v0, Lcom/android/internal/logging/MetricsLogger;
 
     invoke-direct {v0}, Lcom/android/internal/logging/MetricsLogger;-><init>()V
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
+    .line 93
     const/4 v0, 0x2
 
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
 
+    .line 94
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
+    .line 103
     iput p2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetType:I
 
+    .line 104
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetVersion:Ljava/lang/String;
 
+    .line 105
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -126,34 +135,45 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mContext:Landroid/content/Context;
 
+    .line 106
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILjava/lang/String;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "widgetType"    # I
+    .param p3, "widgetVersion"    # Ljava/lang/String;
 
+    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 87
     new-instance v0, Lcom/android/internal/logging/MetricsLogger;
 
     invoke-direct {v0}, Lcom/android/internal/logging/MetricsLogger;-><init>()V
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
+    .line 93
     const/4 v0, 0x2
 
     new-array v1, v0, [I
 
     iput-object v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
 
+    .line 94
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
+    .line 110
     iput p2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetType:I
 
+    .line 111
     iput-object p3, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetVersion:Ljava/lang/String;
 
+    .line 112
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -162,12 +182,14 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mContext:Landroid/content/Context;
 
+    .line 113
     return-void
 .end method
 
 .method private static createSessionId()Ljava/lang/String;
     .locals 1
 
+    .line 319
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
@@ -181,7 +203,9 @@
 
 .method private static debugLog(Landroid/metrics/LogMaker;)V
     .locals 18
+    .param p0, "log"    # Landroid/metrics/LogMaker;
 
+    .line 325
     move-object/from16 v0, p0
 
     const/16 v1, 0x4e7
@@ -196,6 +220,8 @@
 
     move-result-object v1
 
+    .line 326
+    .local v1, "widgetType":Ljava/lang/String;
     const/16 v2, 0x4ee
 
     invoke-virtual {v0, v2}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
@@ -208,12 +234,15 @@
 
     move-result-object v2
 
+    .line 327
+    .local v2, "widgetVersion":Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
+    .line 328
     move-object v3, v1
 
     goto :goto_0
@@ -235,6 +264,8 @@
 
     move-result-object v3
 
+    .line 329
+    .local v3, "widget":Ljava/lang/String;
     :goto_0
     const/16 v4, 0x460
 
@@ -252,6 +283,8 @@
 
     move-result v4
 
+    .line 330
+    .local v4, "index":I
     invoke-virtual/range {p0 .. p0}, Landroid/metrics/LogMaker;->getType()I
 
     move-result v5
@@ -266,6 +299,7 @@
 
     if-ne v5, v6, :cond_1
 
+    .line 331
     const/16 v5, 0x45f
 
     invoke-virtual {v0, v5}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
@@ -278,6 +312,8 @@
 
     move-result-object v5
 
+    .line 332
+    .local v5, "sessionId":Ljava/lang/String;
     const-string v6, "-"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
@@ -290,6 +326,7 @@
 
     move-result-object v5
 
+    .line 333
     const-string v6, "SmartSelectEventTracker"
 
     const-string v10, "New selection session: %s (%s)"
@@ -306,6 +343,8 @@
 
     invoke-static {v6, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 336
+    .end local v5    # "sessionId":Ljava/lang/String;
     :cond_1
     const/16 v5, 0x4e8
 
@@ -319,6 +358,8 @@
 
     move-result-object v5
 
+    .line 337
+    .local v5, "model":Ljava/lang/String;
     const/16 v6, 0x4e6
 
     invoke-virtual {v0, v6}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
@@ -331,6 +372,8 @@
 
     move-result-object v6
 
+    .line 338
+    .local v6, "entity":Ljava/lang/String;
     invoke-virtual/range {p0 .. p0}, Landroid/metrics/LogMaker;->getType()I
 
     move-result v10
@@ -339,8 +382,11 @@
 
     move-result-object v10
 
+    .line 339
+    .local v10, "type":Ljava/lang/String;
     const/16 v11, 0x4e4
 
+    .line 340
     invoke-virtual {v0, v11}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -351,12 +397,16 @@
 
     move-result-object v11
 
+    .line 339
     invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v11
 
+    .line 341
+    .local v11, "smartStart":I
     const/16 v12, 0x4e5
 
+    .line 342
     invoke-virtual {v0, v12}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
 
     move-result-object v12
@@ -367,12 +417,16 @@
 
     move-result-object v12
 
+    .line 341
     invoke-static {v12}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v12
 
+    .line 343
+    .local v12, "smartEnd":I
     const/16 v13, 0x4e2
 
+    .line 344
     invoke-virtual {v0, v13}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
 
     move-result-object v13
@@ -383,12 +437,16 @@
 
     move-result-object v13
 
+    .line 343
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v13
 
+    .line 345
+    .local v13, "eventStart":I
     const/16 v14, 0x4e3
 
+    .line 346
     invoke-virtual {v0, v14}, Landroid/metrics/LogMaker;->getTaggedData(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -399,10 +457,13 @@
 
     move-result-object v14
 
+    .line 345
     invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v14
 
+    .line 348
+    .local v14, "eventEnd":I
     const-string v15, "SmartSelectEventTracker"
 
     const-string v8, "%2d: %s/%s, range=%d,%d - smart_range=%d,%d (%s/%s)"
@@ -411,6 +472,7 @@
 
     new-array v9, v9, [Ljava/lang/Object;
 
+    .line 349
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v17
@@ -465,22 +527,26 @@
 
     aput-object v5, v9, v7
 
+    .line 348
     invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-static {v15, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 350
     return-void
 .end method
 
 .method private endSession()V
     .locals 4
 
+    .line 192
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mOrigStart:I
 
+    .line 193
     iget-object v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
 
     iget-object v2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
@@ -491,6 +557,7 @@
 
     aput v0, v1, v0
 
+    .line 194
     iget-object v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
     iget-object v2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
@@ -499,16 +566,21 @@
 
     aput v0, v1, v0
 
+    .line 195
     iput v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mIndex:I
 
+    .line 196
     const-wide/16 v1, 0x0
 
     iput-wide v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionStartTime:J
 
+    .line 197
     iput-wide v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mLastEventTime:J
 
+    .line 198
     iput-boolean v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartSelectionTriggered:Z
 
+    .line 199
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getModelName(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Ljava/lang/String;
@@ -517,14 +589,18 @@
 
     iput-object v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mModelName:Ljava/lang/String;
 
+    .line 200
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionId:Ljava/lang/String;
 
+    .line 201
     return-void
 .end method
 
 .method private static getLogType(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
     .locals 1
+    .param p0, "event"    # Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;
 
+    .line 204
     invoke-static {p0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$000(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v0
@@ -535,85 +611,102 @@
 
     packed-switch v0, :pswitch_data_2
 
+    .line 238
     const/4 v0, 0x0
 
     return v0
 
+    .line 226
     :pswitch_0
     const/16 v0, 0x450
 
     return v0
 
+    .line 224
     :pswitch_1
     const/16 v0, 0x44f
 
     return v0
 
+    .line 222
     :pswitch_2
     const/16 v0, 0x45c
 
     return v0
 
+    .line 220
     :pswitch_3
     const/16 v0, 0x45b
 
     return v0
 
+    .line 218
     :pswitch_4
     const/16 v0, 0x45a
 
     return v0
 
+    .line 216
     :pswitch_5
     const/16 v0, 0x459
 
     return v0
 
+    .line 214
     :pswitch_6
     const/16 v0, 0x458
 
     return v0
 
+    .line 212
     :pswitch_7
     const/16 v0, 0x457
 
     return v0
 
+    .line 210
     :pswitch_8
     const/16 v0, 0x456
 
     return v0
 
+    .line 208
     :pswitch_9
     const/16 v0, 0x455
 
     return v0
 
+    .line 206
     :pswitch_a
     const/16 v0, 0x454
 
     return v0
 
+    .line 236
     :pswitch_b
     const/16 v0, 0x453
 
     return v0
 
+    .line 234
     :pswitch_c
     const/16 v0, 0x452
 
     return v0
 
+    .line 232
     :pswitch_d
     const/16 v0, 0x451
 
     return v0
 
+    .line 230
     :pswitch_e
     const/16 v0, 0x44e
 
     return v0
 
+    .line 228
     :pswitch_f
     const/16 v0, 0x44d
 
@@ -652,88 +745,107 @@
 
 .method private static getLogTypeString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "logType"    # I
 
+    .line 243
     packed-switch p0, :pswitch_data_0
 
+    .line 277
     const-string/jumbo v0, "unknown"
 
     return-object v0
 
+    .line 261
     :pswitch_0
     const-string v0, "OTHER"
 
     return-object v0
 
+    .line 259
     :pswitch_1
     const-string v0, "ABANDON"
 
     return-object v0
 
+    .line 257
     :pswitch_2
     const-string v0, "DRAG"
 
     return-object v0
 
+    .line 255
     :pswitch_3
     const-string v0, "SMART_SHARE"
 
     return-object v0
 
+    .line 253
     :pswitch_4
     const-string v0, "SHARE"
 
     return-object v0
 
+    .line 251
     :pswitch_5
     const-string v0, "CUT"
 
     return-object v0
 
+    .line 249
     :pswitch_6
     const-string v0, "PASTE"
 
     return-object v0
 
+    .line 247
     :pswitch_7
     const-string v0, "COPY"
 
     return-object v0
 
+    .line 245
     :pswitch_8
     const-string v0, "OVERTYPE"
 
     return-object v0
 
+    .line 275
     :pswitch_9
     const-string v0, "AUTO_SELECTION"
 
     return-object v0
 
+    .line 273
     :pswitch_a
     const-string v0, "SMART_SELECTION_MULTI"
 
     return-object v0
 
+    .line 271
     :pswitch_b
     const-string v0, "SMART_SELECTION_SINGLE"
 
     return-object v0
 
+    .line 265
     :pswitch_c
     const-string v0, "RESET"
 
     return-object v0
 
+    .line 263
     :pswitch_d
     const-string v0, "SELECT_ALL"
 
     return-object v0
 
+    .line 269
     :pswitch_e
     const-string v0, "SELECTION_MODIFIED"
 
     return-object v0
 
+    .line 267
     :pswitch_f
     const-string v0, "SELECTION_STARTED"
 
@@ -764,13 +876,17 @@
 
 .method private getModelName(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Ljava/lang/String;
     .locals 2
+    .param p1, "event"    # Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;
 
+    .line 313
     if-nez p1, :cond_0
 
+    .line 314
     const-string v0, ""
 
     goto :goto_0
 
+    .line 315
     :cond_0
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$500(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Ljava/lang/String;
 
@@ -782,13 +898,16 @@
 
     move-result-object v0
 
+    .line 313
     :goto_0
     return-object v0
 .end method
 
 .method private getRangeDelta(I)I
     .locals 1
+    .param p1, "offset"    # I
 
+    .line 282
     iget v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mOrigStart:I
 
     sub-int v0, p1, v0
@@ -798,7 +917,9 @@
 
 .method private getSmartRangeDelta(I)I
     .locals 1
+    .param p1, "offset"    # I
 
+    .line 286
     iget-boolean v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartSelectionTriggered:Z
 
     if-eqz v0, :cond_0
@@ -819,49 +940,59 @@
 .method private getWidgetTypeName()Ljava/lang/String;
     .locals 1
 
+    .line 290
     iget v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetType:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 308
     const-string/jumbo v0, "unknown"
 
     return-object v0
 
+    .line 306
     :pswitch_0
     const-string/jumbo v0, "nosel-customview"
 
     return-object v0
 
+    .line 304
     :pswitch_1
     const-string v0, "customedit"
 
     return-object v0
 
+    .line 302
     :pswitch_2
     const-string v0, "customview"
 
     return-object v0
 
+    .line 300
     :pswitch_3
     const-string/jumbo v0, "nosel-textview"
 
     return-object v0
 
+    .line 298
     :pswitch_4
     const-string v0, "edit-webview"
 
     return-object v0
 
+    .line 296
     :pswitch_5
     const-string v0, "edittext"
 
     return-object v0
 
+    .line 294
     :pswitch_6
     const-string/jumbo v0, "webview"
 
     return-object v0
 
+    .line 292
     :pswitch_7
     const-string/jumbo v0, "textview"
 
@@ -885,14 +1016,17 @@
 .method private startNewSession()Ljava/lang/String;
     .locals 1
 
+    .line 185
     invoke-direct {p0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->endSession()V
 
+    .line 186
     invoke-static {}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->createSessionId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionId:Ljava/lang/String;
 
+    .line 187
     iget-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionId:Ljava/lang/String;
 
     return-object v0
@@ -900,7 +1034,10 @@
 
 .method private writeEvent(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;J)V
     .locals 7
+    .param p1, "event"    # Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;
+    .param p2, "now"    # J
 
+    .line 159
     iget-wide v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mLastEventTime:J
 
     const-wide/16 v2, 0x0
@@ -919,12 +1056,15 @@
     :goto_0
     move-wide v0, v2
 
+    .line 160
+    .local v0, "prevEventDelta":J
     new-instance v2, Landroid/metrics/LogMaker;
 
     const/16 v3, 0x44c
 
     invoke-direct {v2, v3}, Landroid/metrics/LogMaker;-><init>(I)V
 
+    .line 161
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getLogType(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v3
@@ -933,6 +1073,7 @@
 
     move-result-object v2
 
+    .line 162
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/metrics/LogMaker;->setSubtype(I)Landroid/metrics/LogMaker;
@@ -941,6 +1082,7 @@
 
     iget-object v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mContext:Landroid/content/Context;
 
+    .line 163
     invoke-virtual {v4}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -955,6 +1097,7 @@
 
     sub-long v5, p2, v5
 
+    .line 164
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -965,6 +1108,7 @@
 
     const/16 v4, 0x45e
 
+    .line 165
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -977,6 +1121,7 @@
 
     iget v5, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mIndex:I
 
+    .line 166
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -987,6 +1132,7 @@
 
     const/16 v4, 0x4e7
 
+    .line 167
     invoke-direct {p0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getWidgetTypeName()Ljava/lang/String;
 
     move-result-object v5
@@ -999,6 +1145,7 @@
 
     iget-object v5, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mWidgetVersion:Ljava/lang/String;
 
+    .line 168
     invoke-virtual {v2, v4, v5}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
 
     move-result-object v2
@@ -1007,12 +1154,14 @@
 
     iget-object v5, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mModelName:Ljava/lang/String;
 
+    .line 169
     invoke-virtual {v2, v4, v5}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
 
     move-result-object v2
 
     const/16 v4, 0x4e6
 
+    .line 170
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$400(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Ljava/lang/String;
 
     move-result-object v5
@@ -1029,6 +1178,7 @@
 
     aget v5, v5, v6
 
+    .line 171
     invoke-direct {p0, v5}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getSmartRangeDelta(I)I
 
     move-result v5
@@ -1047,6 +1197,7 @@
 
     aget v5, v5, v3
 
+    .line 172
     invoke-direct {p0, v5}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getSmartRangeDelta(I)I
 
     move-result v5
@@ -1061,6 +1212,7 @@
 
     const/16 v4, 0x4e2
 
+    .line 173
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$200(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v5
@@ -1079,6 +1231,7 @@
 
     const/16 v4, 0x4e3
 
+    .line 174
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$100(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v5
@@ -1099,18 +1252,24 @@
 
     iget-object v5, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionId:Ljava/lang/String;
 
+    .line 175
     invoke-virtual {v2, v4, v5}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
 
     move-result-object v2
 
+    .line 176
+    .local v2, "log":Landroid/metrics/LogMaker;
     iget-object v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mMetricsLogger:Lcom/android/internal/logging/MetricsLogger;
 
     invoke-virtual {v4, v2}, Lcom/android/internal/logging/MetricsLogger;->write(Landroid/metrics/LogMaker;)V
 
+    .line 177
     invoke-static {v2}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->debugLog(Landroid/metrics/LogMaker;)V
 
+    .line 178
     iput-wide p2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mLastEventTime:J
 
+    .line 179
     iget-object v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$200(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
@@ -1119,6 +1278,7 @@
 
     aput v5, v4, v6
 
+    .line 180
     iget-object v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$100(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
@@ -1127,12 +1287,14 @@
 
     aput v5, v4, v3
 
+    .line 181
     iget v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mIndex:I
 
     add-int/2addr v4, v3
 
     iput v4, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mIndex:I
 
+    .line 182
     return-void
 .end method
 
@@ -1140,9 +1302,12 @@
 # virtual methods
 .method public logEvent(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)V
     .locals 6
+    .param p1, "event"    # Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;
 
+    .line 121
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 123
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$000(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v0
@@ -1155,19 +1320,24 @@
 
     if-nez v0, :cond_0
 
+    .line 125
     const-string v0, "SmartSelectEventTracker"
 
     const-string v1, "Selection session not yet started. Ignoring event"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 126
     return-void
 
+    .line 129
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
+    .line 130
+    .local v2, "now":J
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$000(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v0
@@ -1178,15 +1348,18 @@
 
     goto :goto_1
 
+    .line 139
     :pswitch_0
     iput-boolean v1, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartSelectionTriggered:Z
 
+    .line 140
     invoke-direct {p0, p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->getModelName(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mModelName:Ljava/lang/String;
 
+    .line 141
     iget-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
 
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$200(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
@@ -1195,6 +1368,7 @@
 
     aput v5, v0, v4
 
+    .line 142
     iget-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSmartIndices:[I
 
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$100(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
@@ -1203,8 +1377,10 @@
 
     aput v4, v0, v1
 
+    .line 143
     goto :goto_1
 
+    .line 146
     :pswitch_1
     iget-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mPrevIndices:[I
 
@@ -1226,8 +1402,10 @@
 
     if-ne v0, v1, :cond_2
 
+    .line 148
     return-void
 
+    .line 132
     :pswitch_2
     invoke-direct {p0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->startNewSession()Ljava/lang/String;
 
@@ -1235,6 +1413,7 @@
 
     iput-object v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionId:Ljava/lang/String;
 
+    .line 133
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$100(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v0
@@ -1255,28 +1434,35 @@
     :goto_0
     invoke-static {v1}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
+    .line 134
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$200(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mOrigStart:I
 
+    .line 135
     iput-wide v2, p0, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->mSessionStartTime:J
 
+    .line 136
     nop
 
+    .line 151
     :cond_2
     :goto_1
     invoke-direct {p0, p1, v2, v3}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->writeEvent(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;J)V
 
+    .line 153
     invoke-static {p1}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;->access$300(Landroid/view/textclassifier/logging/SmartSelectionEventTracker$SelectionEvent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
+    .line 154
     invoke-direct {p0}, Landroid/view/textclassifier/logging/SmartSelectionEventTracker;->endSession()V
 
+    .line 156
     :cond_3
     return-void
 

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
+    .line 552
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$4;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,9 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
+    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
+    .line 555
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$4;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$300(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/RelativeLayout$LayoutParams;
@@ -55,6 +59,7 @@
 
     iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
+    .line 556
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$4;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-static {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$400(Lcom/android/internal/widget/ResolverDrawerLayout;)Landroid/widget/ImageView;
@@ -69,5 +74,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 557
     return-void
 .end method

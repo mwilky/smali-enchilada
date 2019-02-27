@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/impl/CameraDeviceImpl;ILandroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallbackHolder;Landroid/hardware/camera2/impl/CameraDeviceImpl$RequestLastFrameNumbersHolder;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
+    .line 1854
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$10;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     iput p2, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$10;->val$requestId:I
@@ -49,6 +51,7 @@
 .method public run()V
     .locals 5
 
+    .line 1857
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$10;->this$0:Landroid/hardware/camera2/impl/CameraDeviceImpl;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->access$300(Landroid/hardware/camera2/impl/CameraDeviceImpl;)Z
@@ -57,6 +60,7 @@
 
     if-nez v0, :cond_0
 
+    .line 1864
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$10;->val$holder:Landroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallbackHolder;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallbackHolder;->getCallback()Landroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallback;
@@ -69,12 +73,15 @@
 
     iget-object v3, p0, Landroid/hardware/camera2/impl/CameraDeviceImpl$10;->val$requestLastFrameNumbers:Landroid/hardware/camera2/impl/CameraDeviceImpl$RequestLastFrameNumbersHolder;
 
+    .line 1867
     invoke-virtual {v3}, Landroid/hardware/camera2/impl/CameraDeviceImpl$RequestLastFrameNumbersHolder;->getLastFrameNumber()J
 
     move-result-wide v3
 
+    .line 1864
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallback;->onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraDevice;IJ)V
 
+    .line 1869
     :cond_0
     return-void
 .end method

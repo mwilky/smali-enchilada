@@ -25,14 +25,22 @@
 # direct methods
 .method public constructor <init>([[Ljava/security/cert/Certificate;[Landroid/content/pm/Signature;I)V
     .locals 0
+    .param p1, "certs"    # [[Ljava/security/cert/Certificate;
+    .param p2, "sigs"    # [Landroid/content/pm/Signature;
+    .param p3, "signingVersion"    # I
 
+    .line 560
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 561
     iput-object p1, p0, Landroid/util/apk/ApkSignatureVerifier$Result;->certs:[[Ljava/security/cert/Certificate;
 
+    .line 562
     iput-object p2, p0, Landroid/util/apk/ApkSignatureVerifier$Result;->sigs:[Landroid/content/pm/Signature;
 
+    .line 563
     iput p3, p0, Landroid/util/apk/ApkSignatureVerifier$Result;->signatureSchemeVersion:I
 
+    .line 564
     return-void
 .end method

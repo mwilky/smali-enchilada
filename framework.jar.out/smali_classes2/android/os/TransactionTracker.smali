@@ -20,18 +20,23 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     invoke-direct {p0}, Landroid/os/TransactionTracker;->resetTraces()V
 
+    .line 44
     return-void
 .end method
 
 .method private resetTraces()V
     .locals 1
 
+    .line 37
     monitor-enter p0
 
+    .line 38
     :try_start_0
     new-instance v0, Ljava/util/HashMap;
 
@@ -39,10 +44,13 @@
 
     iput-object v0, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
+    .line 39
     monitor-exit p0
 
+    .line 40
     return-void
 
+    .line 39
     :catchall_0
     move-exception v0
 
@@ -57,13 +65,18 @@
 # virtual methods
 .method public addTrace(Ljava/lang/Throwable;)V
     .locals 6
+    .param p1, "tr"    # Ljava/lang/Throwable;
 
+    .line 47
     invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 48
+    .local v0, "trace":Ljava/lang/String;
     monitor-enter p0
 
+    .line 49
     :try_start_0
     iget-object v1, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
@@ -75,6 +88,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 50
     iget-object v1, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
     iget-object v4, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
@@ -99,6 +113,7 @@
 
     goto :goto_0
 
+    .line 52
     :cond_0
     iget-object v1, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
@@ -108,11 +123,14 @@
 
     invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 54
     :goto_0
     monitor-exit p0
 
+    .line 55
     return-void
 
+    .line 54
     :catchall_0
     move-exception v1
 
@@ -126,14 +144,18 @@
 .method public clearTraces()V
     .locals 0
 
+    .line 74
     invoke-direct {p0}, Landroid/os/TransactionTracker;->resetTraces()V
 
+    .line 75
     return-void
 .end method
 
 .method public writeTracesToFile(Landroid/os/ParcelFileDescriptor;)V
     .locals 5
+    .param p1, "fd"    # Landroid/os/ParcelFileDescriptor;
 
+    .line 58
     iget-object v0, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -142,8 +164,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 59
     return-void
 
+    .line 62
     :cond_0
     new-instance v0, Lcom/android/internal/util/FastPrintWriter;
 
@@ -157,8 +181,11 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/util/FastPrintWriter;-><init>(Ljava/io/OutputStream;)V
 
+    .line 63
+    .local v0, "pw":Ljava/io/PrintWriter;
     monitor-enter p0
 
+    .line 64
     :try_start_0
     iget-object v1, p0, Landroid/os/TransactionTracker;->mTraces:Ljava/util/Map;
 
@@ -183,6 +210,8 @@
 
     check-cast v2, Ljava/lang/String;
 
+    .line 65
+    .local v2, "trace":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -205,6 +234,7 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 66
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -221,19 +251,26 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 67
     invoke-virtual {v0}, Ljava/io/PrintWriter;->println()V
 
+    .line 68
+    .end local v2    # "trace":Ljava/lang/String;
     goto :goto_0
 
+    .line 69
     :cond_1
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 70
     invoke-virtual {v0}, Ljava/io/PrintWriter;->flush()V
 
+    .line 71
     return-void
 
+    .line 69
     :catchall_0
     move-exception v1
 

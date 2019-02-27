@@ -47,6 +47,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 41
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     new-instance v1, Lcom/android/internal/os/BinderInternal$GcWatcher;
@@ -57,18 +58,21 @@
 
     sput-object v0, Lcom/android/internal/os/BinderInternal;->sGcWatcher:Ljava/lang/ref/WeakReference;
 
+    .line 43
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/android/internal/os/BinderInternal;->sGcWatchers:Ljava/util/ArrayList;
 
+    .line 44
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Runnable;
 
     sput-object v0, Lcom/android/internal/os/BinderInternal;->sTmpWatchers:[Ljava/lang/Runnable;
 
+    .line 46
     new-instance v0, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     const/4 v1, 0x0
@@ -83,6 +87,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -90,20 +95,26 @@
 
 .method public static addGcWatcher(Ljava/lang/Runnable;)V
     .locals 2
+    .param p0, "watcher"    # Ljava/lang/Runnable;
 
+    .line 67
     sget-object v0, Lcom/android/internal/os/BinderInternal;->sGcWatchers:Ljava/util/ArrayList;
 
     monitor-enter v0
 
+    .line 68
     :try_start_0
     sget-object v1, Lcom/android/internal/os/BinderInternal;->sGcWatchers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 69
     monitor-exit v0
 
+    .line 70
     return-void
 
+    .line 69
     :catchall_0
     move-exception v1
 
@@ -116,23 +127,28 @@
 
 .method public static binderProxyLimitCallbackFromNative(I)V
     .locals 1
+    .param p0, "uid"    # I
 
+    .line 162
     sget-object v0, Lcom/android/internal/os/BinderInternal;->sBinderProxyLimitListenerDelegate:Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;->notifyClient(I)V
 
+    .line 163
     return-void
 .end method
 
 .method public static clearBinderProxyCountCallback()V
     .locals 2
 
+    .line 183
     sget-object v0, Lcom/android/internal/os/BinderInternal;->sBinderProxyLimitListenerDelegate:Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1}, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;->setListener(Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;Landroid/os/Handler;)V
 
+    .line 184
     return-void
 .end method
 
@@ -142,26 +158,32 @@
 .method static forceBinderGc()V
     .locals 1
 
+    .line 116
     const-string v0, "Binder"
 
     invoke-static {v0}, Lcom/android/internal/os/BinderInternal;->forceGc(Ljava/lang/String;)V
 
+    .line 117
     return-void
 .end method
 
 .method public static forceGc(Ljava/lang/String;)V
     .locals 1
+    .param p0, "reason"    # Ljava/lang/String;
 
+    .line 111
     const/16 v0, 0xab5
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
+    .line 112
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ldalvik/system/VMRuntime;->requestConcurrentGC()V
 
+    .line 113
     return-void
 .end method
 
@@ -171,6 +193,7 @@
 .method public static getLastGcTime()J
     .locals 2
 
+    .line 89
     sget-wide v0, Lcom/android/internal/os/BinderInternal;->sLastGcTime:J
 
     return-wide v0
@@ -196,15 +219,20 @@
 
 .method public static setBinderProxyCountCallback(Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;Landroid/os/Handler;)V
     .locals 1
+    .param p0, "listener"    # Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;
+    .param p1, "handler"    # Landroid/os/Handler;
 
+    .line 173
     const-string v0, "Must provide NonNull Handler to setBinderProxyCountCallback when setting BinderProxyLimitListener"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 176
     sget-object v0, Lcom/android/internal/os/BinderInternal;->sBinderProxyLimitListenerDelegate:Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/internal/os/BinderInternal$BinderProxyLimitListenerDelegate;->setListener(Lcom/android/internal/os/BinderInternal$BinderProxyLimitListener;Landroid/os/Handler;)V
 
+    .line 177
     return-void
 .end method
 

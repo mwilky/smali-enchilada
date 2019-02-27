@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/os/SimpleClock;Ljava/time/ZoneId;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/SimpleClock;
+    .param p2, "zone"    # Ljava/time/ZoneId;
 
+    .line 38
     iput-object p1, p0, Landroid/os/SimpleClock$1;->this$0:Landroid/os/SimpleClock;
 
     invoke-direct {p0, p2}, Landroid/os/SimpleClock;-><init>(Ljava/time/ZoneId;)V
@@ -34,6 +37,7 @@
 .method public millis()J
     .locals 2
 
+    .line 41
     iget-object v0, p0, Landroid/os/SimpleClock$1;->this$0:Landroid/os/SimpleClock;
 
     invoke-virtual {v0}, Landroid/os/SimpleClock;->millis()J

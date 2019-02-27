@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/dreams/DreamService$DreamServiceWrapper;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
+    .line 1181
     iput-object p1, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$2;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +39,13 @@
 .method public run()V
     .locals 1
 
+    .line 1184
     iget-object v0, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$2;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iget-object v0, v0, Landroid/service/dreams/DreamService$DreamServiceWrapper;->this$0:Landroid/service/dreams/DreamService;
 
     invoke-static {v0}, Landroid/service/dreams/DreamService;->access$800(Landroid/service/dreams/DreamService;)V
 
+    .line 1185
     return-void
 .end method

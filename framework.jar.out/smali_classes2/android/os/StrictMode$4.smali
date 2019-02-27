@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1419
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -36,6 +37,7 @@
 .method protected initialValue()Landroid/os/StrictMode$AndroidBlockGuardPolicy;
     .locals 2
 
+    .line 1422
     new-instance v0, Landroid/os/StrictMode$AndroidBlockGuardPolicy;
 
     const/4 v1, 0x0
@@ -48,6 +50,7 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
+    .line 1419
     invoke-virtual {p0}, Landroid/os/StrictMode$4;->initialValue()Landroid/os/StrictMode$AndroidBlockGuardPolicy;
 
     move-result-object v0

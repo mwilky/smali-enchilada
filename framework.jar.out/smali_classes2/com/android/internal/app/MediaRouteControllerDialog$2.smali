@@ -26,11 +26,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/MediaRouteControllerDialog;)V
     .locals 1
+    .param p1, "this$0"    # Lcom/android/internal/app/MediaRouteControllerDialog;
 
+    .line 165
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 166
     new-instance v0, Lcom/android/internal/app/MediaRouteControllerDialog$2$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/MediaRouteControllerDialog$2$1;-><init>(Lcom/android/internal/app/MediaRouteControllerDialog$2;)V
@@ -44,9 +47,14 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 1
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+    .param p2, "progress"    # I
+    .param p3, "fromUser"    # Z
 
+    .line 195
     if-eqz p3, :cond_0
 
+    .line 196
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$100(Lcom/android/internal/app/MediaRouteControllerDialog;)Landroid/media/MediaRouter$RouteInfo;
@@ -55,13 +63,16 @@
 
     invoke-virtual {v0, p2}, Landroid/media/MediaRouter$RouteInfo;->requestSetVolume(I)V
 
+    .line 198
     :cond_0
     return-void
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 2
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
+    .line 178
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$300(Lcom/android/internal/app/MediaRouteControllerDialog;)Z
@@ -70,6 +81,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 179
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$500(Lcom/android/internal/app/MediaRouteControllerDialog;)Landroid/widget/SeekBar;
@@ -82,6 +94,7 @@
 
     goto :goto_0
 
+    .line 181
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
@@ -89,13 +102,16 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$302(Lcom/android/internal/app/MediaRouteControllerDialog;Z)Z
 
+    .line 183
     :goto_0
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 4
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
+    .line 190
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$2;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$500(Lcom/android/internal/app/MediaRouteControllerDialog;)Landroid/widget/SeekBar;
@@ -108,5 +124,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/SeekBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 191
     return-void
 .end method

@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(II)V
     .locals 2
+    .param p1, "position"    # I
+    .param p2, "limit"    # I
 
+    .line 970
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -48,5 +51,6 @@
 
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
+    .line 972
     return-void
 .end method

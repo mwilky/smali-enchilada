@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputService$Session;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputService$Session;
 
+    .line 629
     iput-object p1, p0, Landroid/media/tv/TvInputService$Session$10;->this$0:Landroid/media/tv/TvInputService$Session;
 
     iput p2, p0, Landroid/media/tv/TvInputService$Session$10;->val$status:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 633
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$10;->this$0:Landroid/media/tv/TvInputService$Session;
 
     iget v1, p0, Landroid/media/tv/TvInputService$Session$10;->val$status:I
@@ -59,6 +62,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/media/tv/TvInputService$Session;->timeShiftEnablePositionTracking(Z)V
 
+    .line 637
     :try_start_0
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$10;->this$0:Landroid/media/tv/TvInputService$Session;
 
@@ -68,6 +72,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 638
     iget-object v0, p0, Landroid/media/tv/TvInputService$Session$10;->this$0:Landroid/media/tv/TvInputService$Session;
 
     invoke-static {v0}, Landroid/media/tv/TvInputService$Session;->access$700(Landroid/media/tv/TvInputService$Session;)Landroid/media/tv/ITvInputSessionCallback;
@@ -80,18 +85,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 642
     :cond_1
     goto :goto_1
 
+    .line 640
     :catch_0
     move-exception v0
 
+    .line 641
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "TvInputService"
 
     const-string v2, "error in notifyTimeShiftStatusChanged"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 643
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_1
     return-void
 .end method

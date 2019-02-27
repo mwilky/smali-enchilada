@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 32
     new-instance v0, Landroid/webkit/WebViewProviderResponse$1;
 
     invoke-direct {v0}, Landroid/webkit/WebViewProviderResponse$1;-><init>()V
@@ -39,21 +40,30 @@
 
 .method public constructor <init>(Landroid/content/pm/PackageInfo;I)V
     .locals 0
+    .param p1, "packageInfo"    # Landroid/content/pm/PackageInfo;
+    .param p2, "status"    # I
 
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 27
     iput-object p1, p0, Landroid/webkit/WebViewProviderResponse;->packageInfo:Landroid/content/pm/PackageInfo;
 
+    .line 28
     iput p2, p0, Landroid/webkit/WebViewProviderResponse;->status:I
 
+    .line 29
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 44
     sget-object v0, Landroid/content/pm/PackageInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -64,18 +74,23 @@
 
     iput-object v0, p0, Landroid/webkit/WebViewProviderResponse;->packageInfo:Landroid/content/pm/PackageInfo;
 
+    .line 45
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/webkit/WebViewProviderResponse;->status:I
 
+    .line 46
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/webkit/WebViewProviderResponse$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/webkit/WebViewProviderResponse$1;
 
+    .line 24
     invoke-direct {p0, p1}, Landroid/webkit/WebViewProviderResponse;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -86,6 +101,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -93,14 +109,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 55
     iget-object v0, p0, Landroid/webkit/WebViewProviderResponse;->packageInfo:Landroid/content/pm/PackageInfo;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
+    .line 56
     iget v0, p0, Landroid/webkit/WebViewProviderResponse;->status:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 57
     return-void
 .end method

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/RequestThreadManager;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/legacy/RequestThreadManager;
 
+    .line 212
     iput-object p1, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onPictureTaken([BLandroid/hardware/Camera;)V
     .locals 9
+    .param p1, "data"    # [B
+    .param p2, "camera"    # Landroid/hardware/Camera;
 
+    .line 215
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$100(Landroid/hardware/camera2/legacy/RequestThreadManager;)Ljava/lang/String;
@@ -47,6 +52,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 216
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$200(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CaptureCollector;
@@ -57,6 +63,8 @@
 
     move-result-object v0
 
+    .line 217
+    .local v0, "captureInfo":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/hardware/camera2/legacy/RequestHolder;Ljava/lang/Long;>;"
     if-eqz v0, :cond_3
 
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -65,11 +73,14 @@
 
     goto :goto_2
 
+    .line 221
     :cond_0
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Landroid/hardware/camera2/legacy/RequestHolder;
 
+    .line 222
+    .local v1, "holder":Landroid/hardware/camera2/legacy/RequestHolder;
     iget-object v2, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/Long;
@@ -78,6 +89,8 @@
 
     move-result-wide v2
 
+    .line 223
+    .local v2, "timestamp":J
     invoke-virtual {v1}, Landroid/hardware/camera2/legacy/RequestHolder;->getHolderTargets()Ljava/util/Collection;
 
     move-result-object v4
@@ -99,6 +112,8 @@
 
     check-cast v5, Landroid/view/Surface;
 
+    .line 225
+    .local v5, "s":Landroid/view/Surface;
     :try_start_0
     iget-object v6, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
@@ -112,6 +127,7 @@
 
     if-eqz v6, :cond_1
 
+    .line 226
     iget-object v6, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v6}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$100(Landroid/hardware/camera2/legacy/RequestThreadManager;)Ljava/lang/String;
@@ -122,6 +138,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 228
     array-length v6, p1
 
     invoke-static {}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->nativeGetJpegFooterSize()I
@@ -130,16 +147,21 @@
 
     add-int/2addr v6, v7
 
+    .line 229
+    .local v6, "totalSize":I
     add-int/lit8 v7, v6, 0x3
 
     and-int/lit8 v6, v7, -0x4
 
+    .line 230
     invoke-static {v5, v2, v3}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->setNextTimestamp(Landroid/view/Surface;J)V
 
+    .line 234
     const/4 v7, 0x1
 
     invoke-static {v5, v7}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->setSurfaceFormat(Landroid/view/Surface;I)V
 
+    .line 237
     int-to-double v7, v6
 
     invoke-static {v7, v8}, Ljava/lang/Math;->sqrt(D)D
@@ -152,24 +174,34 @@
 
     double-to-int v7, v7
 
+    .line 238
+    .local v7, "dimen":I
     add-int/lit8 v8, v7, 0xf
 
     and-int/lit8 v7, v8, -0x10
 
+    .line 239
     invoke-static {v5, v7, v7}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->setSurfaceDimens(Landroid/view/Surface;II)V
 
+    .line 240
     const/16 v8, 0x21
 
     invoke-static {v5, p1, v7, v7, v8}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->produceFrame(Landroid/view/Surface;[BIII)V
     :try_end_0
     .catch Landroid/hardware/camera2/legacy/LegacyExceptionUtils$BufferQueueAbandonedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 250
+    .end local v6    # "totalSize":I
+    .end local v7    # "dimen":I
     :cond_1
     goto :goto_1
 
+    .line 248
     :catch_0
     move-exception v6
 
+    .line 249
+    .local v6, "e":Landroid/hardware/camera2/legacy/LegacyExceptionUtils$BufferQueueAbandonedException;
     iget-object v7, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v7}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$100(Landroid/hardware/camera2/legacy/RequestThreadManager;)Ljava/lang/String;
@@ -180,9 +212,13 @@
 
     invoke-static {v7, v8, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 251
+    .end local v5    # "s":Landroid/view/Surface;
+    .end local v6    # "e":Landroid/hardware/camera2/legacy/LegacyExceptionUtils$BufferQueueAbandonedException;
     :goto_1
     goto :goto_0
 
+    .line 253
     :cond_2
     iget-object v4, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
@@ -192,8 +228,12 @@
 
     invoke-virtual {v4}, Landroid/os/ConditionVariable;->open()V
 
+    .line 254
     return-void
 
+    .line 218
+    .end local v1    # "holder":Landroid/hardware/camera2/legacy/RequestHolder;
+    .end local v2    # "timestamp":J
     :cond_3
     :goto_2
     iget-object v1, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$2;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
@@ -206,5 +246,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 219
     return-void
 .end method

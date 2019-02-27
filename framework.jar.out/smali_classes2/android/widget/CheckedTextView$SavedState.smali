@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 486
     new-instance v0, Landroid/widget/CheckedTextView$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/CheckedTextView$SavedState$1;-><init>()V
@@ -45,9 +46,12 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 469
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
+    .line 470
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
@@ -62,12 +66,16 @@
 
     iput-boolean v0, p0, Landroid/widget/CheckedTextView$SavedState;->checked:Z
 
+    .line 471
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/widget/CheckedTextView$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/widget/CheckedTextView$1;
 
+    .line 455
     invoke-direct {p0, p1}, Landroid/widget/CheckedTextView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -75,9 +83,12 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
+    .param p1, "superState"    # Landroid/os/Parcelable;
 
+    .line 462
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
+    .line 463
     return-void
 .end method
 
@@ -86,6 +97,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 481
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -94,6 +106,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 482
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -120,14 +133,19 @@
 
     move-result-object v0
 
+    .line 481
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 475
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 476
     iget-boolean v0, p0, Landroid/widget/CheckedTextView$SavedState;->checked:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -136,5 +154,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
+    .line 477
     return-void
 .end method

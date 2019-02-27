@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ActivityChooserView;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/ActivityChooserView;
 
+    .line 291
     iput-object p1, p0, Landroid/widget/ActivityChooserView$5;->this$0:Landroid/widget/ActivityChooserView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -34,11 +36,14 @@
 .method public onChanged()V
     .locals 1
 
+    .line 294
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
+    .line 295
     iget-object v0, p0, Landroid/widget/ActivityChooserView$5;->this$0:Landroid/widget/ActivityChooserView;
 
     invoke-static {v0}, Landroid/widget/ActivityChooserView;->access$400(Landroid/widget/ActivityChooserView;)V
 
+    .line 296
     return-void
 .end method

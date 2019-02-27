@@ -27,31 +27,43 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
     .locals 2
+    .param p1, "action"    # Ljava/lang/String;
+    .param p2, "name"    # Ljava/lang/CharSequence;
+    .param p3, "icon"    # I
 
+    .line 772
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 773
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
+    .line 777
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
+    .line 781
     if-eqz p3, :cond_0
 
+    .line 785
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
 
+    .line 786
     iput-object p2, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mName:Ljava/lang/CharSequence;
 
+    .line 787
     iput p3, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mIcon:I
 
+    .line 788
     return-void
 
+    .line 782
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -61,6 +73,7 @@
 
     throw v0
 
+    .line 778
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -70,6 +83,7 @@
 
     throw v0
 
+    .line 774
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -85,6 +99,7 @@
 .method public build()Landroid/media/session/PlaybackState$CustomAction;
     .locals 7
 
+    .line 809
     new-instance v6, Landroid/media/session/PlaybackState$CustomAction;
 
     iget-object v1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
@@ -106,8 +121,11 @@
 
 .method public setExtras(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$CustomAction$Builder;
     .locals 0
+    .param p1, "extras"    # Landroid/os/Bundle;
 
+    .line 799
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mExtras:Landroid/os/Bundle;
 
+    .line 800
     return-object p0
 .end method

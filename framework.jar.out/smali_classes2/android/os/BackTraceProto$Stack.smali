@@ -29,7 +29,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/BackTraceProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/BackTraceProto;
 
+    .line 11
     iput-object p1, p0, Landroid/os/BackTraceProto$Stack;->this$0:Landroid/os/BackTraceProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

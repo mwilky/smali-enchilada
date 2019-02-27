@@ -71,6 +71,14 @@
     .end annotation
 .end method
 
+.method public abstract addAppLockerPassedPackage(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract addAppTask(Landroid/os/IBinder;Landroid/content/Intent;Landroid/app/ActivityManager$TaskDescription;Landroid/graphics/Bitmap;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

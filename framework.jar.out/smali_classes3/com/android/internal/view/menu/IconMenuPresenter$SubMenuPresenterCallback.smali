@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/menu/IconMenuPresenter;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/view/menu/IconMenuPresenter;
 
+    .line 178
     iput-object p1, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,40 +38,50 @@
 # virtual methods
 .method public onCloseMenu(Lcom/android/internal/view/menu/MenuBuilder;Z)V
     .locals 2
+    .param p1, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
+    .param p2, "allMenusAreClosing"    # Z
 
+    .line 181
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/android/internal/view/menu/IconMenuPresenter;->mOpenSubMenuId:I
 
+    .line 182
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuPresenter;->mOpenSubMenu:Lcom/android/internal/view/menu/MenuDialogHelper;
 
     if-eqz v0, :cond_0
 
+    .line 183
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuPresenter;->mOpenSubMenu:Lcom/android/internal/view/menu/MenuDialogHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuDialogHelper;->dismiss()V
 
+    .line 184
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/internal/view/menu/IconMenuPresenter;->mOpenSubMenu:Lcom/android/internal/view/menu/MenuDialogHelper;
 
+    .line 186
     :cond_0
     return-void
 .end method
 
 .method public onOpenSubMenu(Lcom/android/internal/view/menu/MenuBuilder;)Z
     .locals 2
+    .param p1, "subMenu"    # Lcom/android/internal/view/menu/MenuBuilder;
 
+    .line 190
     if-eqz p1, :cond_0
 
+    .line 191
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuPresenter$SubMenuPresenterCallback;->this$0:Lcom/android/internal/view/menu/IconMenuPresenter;
 
     move-object v1, p1
@@ -86,6 +98,7 @@
 
     iput v1, v0, Lcom/android/internal/view/menu/IconMenuPresenter;->mOpenSubMenuId:I
 
+    .line 193
     :cond_0
     const/4 v0, 0x0
 

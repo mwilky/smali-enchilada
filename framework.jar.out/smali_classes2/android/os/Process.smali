@@ -171,6 +171,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 445
     new-instance v0, Landroid/os/ZygoteProcess;
 
     const-string/jumbo v1, "zygote"
@@ -187,6 +188,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -206,23 +208,30 @@
 
 .method public static final getParentPid(I)I
     .locals 5
+    .param p0, "pid"    # I
 
+    .line 663
     const-string v0, "PPid:"
 
     filled-new-array {v0}, [Ljava/lang/String;
 
     move-result-object v0
 
+    .line 664
+    .local v0, "procStatusLabels":[Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v1, v1, [J
 
+    .line 665
+    .local v1, "procStatusValues":[J
     const/4 v2, 0x0
 
     const-wide/16 v3, -0x1
 
     aput-wide v3, v1, v2
 
+    .line 666
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -243,6 +252,7 @@
 
     invoke-static {v3, v0, v1}, Landroid/os/Process;->readProcLines(Ljava/lang/String;[Ljava/lang/String;[J)V
 
+    .line 667
     aget-wide v2, v1, v2
 
     long-to-int v2, v2
@@ -271,6 +281,7 @@
 .method public static final getStartElapsedRealtime()J
     .locals 2
 
+    .line 530
     sget-wide v0, Landroid/os/Process;->sStartElapsedRealtime:J
 
     return-wide v0
@@ -279,6 +290,7 @@
 .method public static final getStartUptimeMillis()J
     .locals 2
 
+    .line 537
     sget-wide v0, Landroid/os/Process;->sStartUptimeMillis:J
 
     return-wide v0
@@ -286,23 +298,30 @@
 
 .method public static final getThreadGroupLeader(I)I
     .locals 5
+    .param p0, "tid"    # I
 
+    .line 678
     const-string v0, "Tgid:"
 
     filled-new-array {v0}, [Ljava/lang/String;
 
     move-result-object v0
 
+    .line 679
+    .local v0, "procStatusLabels":[Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v1, v1, [J
 
+    .line 680
+    .local v1, "procStatusValues":[J
     const/4 v2, 0x0
 
     const-wide/16 v3, -0x1
 
     aput-wide v3, v1, v2
 
+    .line 681
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -323,6 +342,7 @@
 
     invoke-static {v3, v0, v1}, Landroid/os/Process;->readProcLines(Ljava/lang/String;[Ljava/lang/String;[J)V
 
+    .line 682
     aget-wide v2, v1, v2
 
     long-to-int v2, v2
@@ -354,23 +374,30 @@
 
 .method public static final getUidForPid(I)I
     .locals 5
+    .param p0, "pid"    # I
 
+    .line 649
     const-string v0, "Uid:"
 
     filled-new-array {v0}, [Ljava/lang/String;
 
     move-result-object v0
 
+    .line 650
+    .local v0, "procStatusLabels":[Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v1, v1, [J
 
+    .line 651
+    .local v1, "procStatusValues":[J
     const/4 v2, 0x0
 
     const-wide/16 v3, -0x1
 
     aput-wide v3, v1, v2
 
+    .line 652
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -391,6 +418,7 @@
 
     invoke-static {v3, v0, v1}, Landroid/os/Process;->readProcLines(Ljava/lang/String;[Ljava/lang/String;[J)V
 
+    .line 653
     aget-wide v2, v1, v2
 
     long-to-int v2, v2
@@ -401,6 +429,7 @@
 .method public static final is64Bit()Z
     .locals 1
 
+    .line 550
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
@@ -414,7 +443,9 @@
 
 .method public static isApplicationUid(I)Z
     .locals 1
+    .param p0, "uid"    # I
 
+    .line 612
     invoke-static {p0}, Landroid/os/UserHandle;->isApp(I)Z
 
     move-result v0
@@ -424,7 +455,9 @@
 
 .method public static isCoreUid(I)Z
     .locals 1
+    .param p0, "uid"    # I
 
+    .line 602
     invoke-static {p0}, Landroid/os/UserHandle;->isCore(I)Z
 
     move-result v0
@@ -435,6 +468,7 @@
 .method public static final isIsolated()Z
     .locals 1
 
+    .line 619
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
@@ -448,11 +482,14 @@
 
 .method public static final isIsolated(I)Z
     .locals 1
+    .param p0, "uid"    # I
 
+    .line 624
     invoke-static {p0}, Landroid/os/UserHandle;->getAppId(I)I
 
     move-result p0
 
+    .line 625
     const v0, 0x182b8
 
     if-lt p0, v0, :cond_0
@@ -474,11 +511,16 @@
 
 .method public static final isThreadInProcess(II)Z
     .locals 4
+    .param p0, "tid"    # I
+    .param p1, "pid"    # I
 
+    .line 1102
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v0
 
+    .line 1104
+    .local v0, "oldPolicy":Landroid/os/StrictMode$ThreadPolicy;
     const/4 v1, 0x0
 
     :try_start_0
@@ -513,19 +555,26 @@
 
     if-eqz v2, :cond_0
 
+    .line 1105
     const/4 v1, 0x1
 
+    .line 1112
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 1105
     return v1
 
+    .line 1107
     :cond_0
     nop
 
+    .line 1112
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 1107
     return v1
 
+    .line 1112
     :catchall_0
     move-exception v1
 
@@ -533,19 +582,26 @@
 
     throw v1
 
+    .line 1109
     :catch_0
     move-exception v2
 
+    .line 1110
+    .local v2, "e":Ljava/lang/Exception;
     nop
 
+    .line 1112
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 1110
     return v1
 .end method
 
 .method private static isZygoteProcess(I)Z
     .locals 6
+    .param p0, "pid"    # I
 
+    .line 1120
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -568,10 +624,14 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 1121
+    .local v0, "file":Ljava/io/File;
     const/4 v1, 0x0
 
     move-object v2, v1
 
+    .line 1123
+    .local v2, "br":Ljava/io/BufferedReader;
     const/4 v3, 0x0
 
     :try_start_0
@@ -581,6 +641,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 1124
     new-instance v4, Ljava/io/BufferedReader;
 
     new-instance v5, Ljava/io/FileReader;
@@ -591,8 +652,11 @@
 
     move-object v2, v4
 
+    .line 1125
     nop
 
+    .line 1126
+    .local v1, "line":Ljava/lang/String;
     :cond_0
     invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -602,6 +666,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 1128
     const-string/jumbo v4, "zygote"
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -610,6 +675,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 1129
     const-string v4, "Process"
 
     const-string/jumbo v5, "try to kill zygote, ignore"
@@ -619,25 +685,35 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1130
     const/4 v3, 0x1
 
+    .line 1140
     nop
 
+    .line 1142
     :try_start_1
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 1145
     goto :goto_0
 
+    .line 1143
     :catch_0
     move-exception v4
 
+    .line 1144
+    .local v4, "e":Ljava/io/IOException;
     invoke-virtual {v4}, Ljava/io/IOException;->printStackTrace()V
 
+    .line 1130
+    .end local v4    # "e":Ljava/io/IOException;
     :goto_0
     return v3
 
+    .line 1131
     :cond_1
     :try_start_2
     const-string/jumbo v4, "system_server"
@@ -648,6 +724,7 @@
 
     if-eqz v4, :cond_0
 
+    .line 1132
     const-string v4, "Process"
 
     const-string/jumbo v5, "try to kill system_server"
@@ -657,58 +734,83 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 1133
     nop
 
+    .line 1140
     nop
 
+    .line 1142
     :try_start_3
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
+    .line 1145
     goto :goto_1
 
+    .line 1143
     :catch_1
     move-exception v4
 
+    .line 1144
+    .restart local v4    # "e":Ljava/io/IOException;
     invoke-virtual {v4}, Ljava/io/IOException;->printStackTrace()V
 
+    .line 1133
+    .end local v4    # "e":Ljava/io/IOException;
     :goto_1
     return v3
 
+    .line 1140
+    .end local v1    # "line":Ljava/lang/String;
     :cond_2
     if-eqz v2, :cond_3
 
+    .line 1142
     :try_start_4
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
+    .line 1145
     :goto_2
     goto :goto_3
 
+    .line 1143
     :catch_2
     move-exception v1
 
+    .line 1144
+    .local v1, "e":Ljava/io/IOException;
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 
+    .line 1144
+    .end local v1    # "e":Ljava/io/IOException;
     goto :goto_2
 
+    .line 1140
     :catchall_0
     move-exception v1
 
     goto :goto_4
 
+    .line 1137
     :catch_3
     move-exception v1
 
+    .line 1138
+    .local v1, "e":Ljava/lang/Exception;
     :try_start_5
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
+    .line 1140
+    .end local v1    # "e":Ljava/lang/Exception;
     if-eqz v2, :cond_3
 
+    .line 1142
     :try_start_6
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_6
@@ -716,25 +818,34 @@
 
     goto :goto_2
 
+    .line 1148
     :cond_3
     :goto_3
     return v3
 
+    .line 1140
     :goto_4
     if-eqz v2, :cond_4
 
+    .line 1142
     :try_start_7
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
 
+    .line 1145
     goto :goto_5
 
+    .line 1143
     :catch_4
     move-exception v3
 
+    .line 1144
+    .local v3, "e":Ljava/io/IOException;
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
+    .line 1145
+    .end local v3    # "e":Ljava/io/IOException;
     :cond_4
     :goto_5
     throw v1
@@ -742,20 +853,25 @@
 
 .method public static final killProcess(I)V
     .locals 1
+    .param p0, "pid"    # I
 
+    .line 962
     invoke-static {p0}, Landroid/os/Process;->isZygoteProcess(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 963
     return-void
 
+    .line 966
     :cond_0
     const/16 v0, 0x9
 
     invoke-static {p0, v0}, Landroid/os/Process;->sendSignal(II)V
 
+    .line 967
     return-void
 .end method
 
@@ -764,26 +880,32 @@
 
 .method public static final killProcessQuiet(I)V
     .locals 1
+    .param p0, "pid"    # I
 
+    .line 992
     invoke-static {p0}, Landroid/os/Process;->isZygoteProcess(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 993
     return-void
 
+    .line 996
     :cond_0
     const/16 v0, 0x9
 
     invoke-static {p0, v0}, Landroid/os/Process;->sendSignalQuiet(II)V
 
+    .line 997
     return-void
 .end method
 
 .method public static final myPid()I
     .locals 1
 
+    .line 558
     invoke-static {}, Landroid/system/Os;->getpid()I
 
     move-result v0
@@ -794,6 +916,7 @@
 .method public static final myPpid()I
     .locals 1
 
+    .line 566
     invoke-static {}, Landroid/system/Os;->getppid()I
 
     move-result v0
@@ -804,6 +927,7 @@
 .method public static final myTid()I
     .locals 1
 
+    .line 574
     invoke-static {}, Landroid/system/Os;->gettid()I
 
     move-result v0
@@ -814,6 +938,7 @@
 .method public static final myUid()I
     .locals 1
 
+    .line 584
     invoke-static {}, Landroid/system/Os;->getuid()I
 
     move-result v0
@@ -824,6 +949,7 @@
 .method public static myUserHandle()Landroid/os/UserHandle;
     .locals 1
 
+    .line 594
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
@@ -895,11 +1021,16 @@
 
 .method public static final setStartTimes(JJ)V
     .locals 0
+    .param p0, "elapsedRealtime"    # J
+    .param p2, "uptimeMillis"    # J
 
+    .line 542
     sput-wide p0, Landroid/os/Process;->sStartElapsedRealtime:J
 
+    .line 543
     sput-wide p2, Landroid/os/Process;->sStartUptimeMillis:J
 
+    .line 544
     return-void
 .end method
 
@@ -955,7 +1086,22 @@
 
 .method public static final start(Ljava/lang/String;Ljava/lang/String;II[IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/os/Process$ProcessStartResult;
     .locals 15
+    .param p0, "processClass"    # Ljava/lang/String;
+    .param p1, "niceName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "gid"    # I
+    .param p4, "gids"    # [I
+    .param p5, "runtimeFlags"    # I
+    .param p6, "mountExternal"    # I
+    .param p7, "targetSdkVersion"    # I
+    .param p8, "seInfo"    # Ljava/lang/String;
+    .param p9, "abi"    # Ljava/lang/String;
+    .param p10, "instructionSet"    # Ljava/lang/String;
+    .param p11, "appDataDir"    # Ljava/lang/String;
+    .param p12, "invokeWith"    # Ljava/lang/String;
+    .param p13, "zygoteArgs"    # [Ljava/lang/String;
 
+    .line 498
     sget-object v0, Landroid/os/Process;->zygoteProcess:Landroid/os/ZygoteProcess;
 
     move-object v1, p0
@@ -995,7 +1141,22 @@
 
 .method public static final startWebView(Ljava/lang/String;Ljava/lang/String;II[IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/os/Process$ProcessStartResult;
     .locals 15
+    .param p0, "processClass"    # Ljava/lang/String;
+    .param p1, "niceName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "gid"    # I
+    .param p4, "gids"    # [I
+    .param p5, "runtimeFlags"    # I
+    .param p6, "mountExternal"    # I
+    .param p7, "targetSdkVersion"    # I
+    .param p8, "seInfo"    # Ljava/lang/String;
+    .param p9, "abi"    # Ljava/lang/String;
+    .param p10, "instructionSet"    # Ljava/lang/String;
+    .param p11, "appDataDir"    # Ljava/lang/String;
+    .param p12, "invokeWith"    # Ljava/lang/String;
+    .param p13, "zygoteArgs"    # [Ljava/lang/String;
 
+    .line 515
     invoke-static {}, Landroid/webkit/WebViewZygote;->getProcess()Landroid/os/ZygoteProcess;
 
     move-result-object v0
@@ -1040,6 +1201,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 922
     const/4 v0, 0x1
 
     return v0

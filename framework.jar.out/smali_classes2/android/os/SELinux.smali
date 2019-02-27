@@ -21,6 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,12 +53,14 @@
 
 .method public static restorecon(Ljava/io/File;)Z
     .locals 5
+    .param p0, "file"    # Ljava/io/File;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NullPointerException;
         }
     .end annotation
 
+    .line 145
     const/4 v0, 0x0
 
     :try_start_0
@@ -73,9 +76,12 @@
 
     return v1
 
+    .line 146
     :catch_0
     move-exception v1
 
+    .line 147
+    .local v1, "e":Ljava/io/IOException;
     const-string v2, "SELinux"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -86,6 +92,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 148
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v4
@@ -96,21 +103,26 @@
 
     move-result-object v3
 
+    .line 147
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 149
     return v0
 .end method
 
 .method public static restorecon(Ljava/lang/String;)Z
     .locals 1
+    .param p0, "pathname"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NullPointerException;
         }
     .end annotation
 
+    .line 116
     if-eqz p0, :cond_0
 
+    .line 117
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/os/SELinux;->native_restorecon(Ljava/lang/String;I)Z
@@ -119,6 +131,7 @@
 
     return v0
 
+    .line 116
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -129,7 +142,9 @@
 
 .method public static restoreconRecursive(Ljava/io/File;)Z
     .locals 4
+    .param p0, "file"    # Ljava/io/File;
 
+    .line 163
     :try_start_0
     invoke-virtual {p0}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
 
@@ -145,9 +160,12 @@
 
     return v0
 
+    .line 164
     :catch_0
     move-exception v0
 
+    .line 165
+    .local v0, "e":Ljava/io/IOException;
     const-string v1, "SELinux"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -158,6 +176,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 166
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
@@ -168,8 +187,10 @@
 
     move-result-object v2
 
+    .line 165
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 167
     const/4 v1, 0x0
 
     return v1

@@ -23,37 +23,49 @@
 # direct methods
 .method constructor <init>(Landroid/os/Looper;Landroid/net/wifi/hotspot2/ProvisioningCallback;)V
     .locals 1
+    .param p1, "looper"    # Landroid/os/Looper;
+    .param p2, "callback"    # Landroid/net/wifi/hotspot2/ProvisioningCallback;
 
+    .line 3882
     invoke-direct {p0}, Landroid/net/wifi/hotspot2/IProvisioningCallback$Stub;-><init>()V
 
+    .line 3883
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mHandler:Landroid/os/Handler;
 
+    .line 3884
     iput-object p2, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mCallback:Landroid/net/wifi/hotspot2/ProvisioningCallback;
 
+    .line 3885
     return-void
 .end method
 
 .method public static synthetic lambda$onProvisioningFailure$1(Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;I)V
     .locals 1
+    .param p1, "status"    # I
 
+    .line 3896
     iget-object v0, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mCallback:Landroid/net/wifi/hotspot2/ProvisioningCallback;
 
     invoke-virtual {v0, p1}, Landroid/net/wifi/hotspot2/ProvisioningCallback;->onProvisioningFailure(I)V
 
+    .line 3897
     return-void
 .end method
 
 .method public static synthetic lambda$onProvisioningStatus$0(Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;I)V
     .locals 1
+    .param p1, "status"    # I
 
+    .line 3889
     iget-object v0, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mCallback:Landroid/net/wifi/hotspot2/ProvisioningCallback;
 
     invoke-virtual {v0, p1}, Landroid/net/wifi/hotspot2/ProvisioningCallback;->onProvisioningStatus(I)V
 
+    .line 3890
     return-void
 .end method
 
@@ -61,7 +73,9 @@
 # virtual methods
 .method public onProvisioningFailure(I)V
     .locals 2
+    .param p1, "status"    # I
 
+    .line 3895
     iget-object v0, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$ProvisioningCallbackProxy$rgPeSRj_1qriYZtaCu57EZHtc_Q;
@@ -70,12 +84,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 3898
     return-void
 .end method
 
 .method public onProvisioningStatus(I)V
     .locals 2
+    .param p1, "status"    # I
 
+    .line 3888
     iget-object v0, p0, Landroid/net/wifi/WifiManager$ProvisioningCallbackProxy;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/net/wifi/-$$Lambda$WifiManager$ProvisioningCallbackProxy$0_NXiwyrbrT_579x-6QMO0y3rzc;
@@ -84,5 +101,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 3891
     return-void
 .end method

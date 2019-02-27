@@ -35,7 +35,9 @@
 # direct methods
 .method constructor <init>(Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport;I)V
     .locals 0
+    .param p1, "this$1"    # Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport;
 
+    .line 69
     iput-object p1, p0, Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport$2;->this$1:Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport;
 
     iput p2, p0, Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport$2;->val$status:I
@@ -49,16 +51,19 @@
 # virtual methods
 .method public execute(Landroid/location/GnssNavigationMessage$Callback;)V
     .locals 1
+    .param p1, "callback"    # Landroid/location/GnssNavigationMessage$Callback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 73
     iget v0, p0, Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport$2;->val$status:I
 
     invoke-virtual {p1, v0}, Landroid/location/GnssNavigationMessage$Callback;->onStatusChanged(I)V
 
+    .line 74
     return-void
 .end method
 
@@ -70,6 +75,7 @@
         }
     .end annotation
 
+    .line 69
     check-cast p1, Landroid/location/GnssNavigationMessage$Callback;
 
     invoke-virtual {p0, p1}, Landroid/location/GnssNavigationMessageCallbackTransport$ListenerTransport$2;->execute(Landroid/location/GnssNavigationMessage$Callback;)V

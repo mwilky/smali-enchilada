@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
 
+    .line 457
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -35,7 +37,9 @@
 # virtual methods
 .method public get(Landroid/graphics/drawable/RippleForeground;)Ljava/lang/Float;
     .locals 1
+    .param p1, "object"    # Landroid/graphics/drawable/RippleForeground;
 
+    .line 466
     invoke-static {p1}, Landroid/graphics/drawable/RippleForeground;->access$900(Landroid/graphics/drawable/RippleForeground;)F
 
     move-result v0
@@ -50,6 +54,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    .line 457
     check-cast p1, Landroid/graphics/drawable/RippleForeground;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/RippleForeground$4;->get(Landroid/graphics/drawable/RippleForeground;)Ljava/lang/Float;
@@ -61,17 +66,23 @@
 
 .method public setValue(Landroid/graphics/drawable/RippleForeground;F)V
     .locals 0
+    .param p1, "object"    # Landroid/graphics/drawable/RippleForeground;
+    .param p2, "value"    # F
 
+    .line 460
     invoke-static {p1, p2}, Landroid/graphics/drawable/RippleForeground;->access$902(Landroid/graphics/drawable/RippleForeground;F)F
 
+    .line 461
     invoke-static {p1}, Landroid/graphics/drawable/RippleForeground;->access$600(Landroid/graphics/drawable/RippleForeground;)V
 
+    .line 462
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
+    .line 457
     check-cast p1, Landroid/graphics/drawable/RippleForeground;
 
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/RippleForeground$4;->setValue(Landroid/graphics/drawable/RippleForeground;F)V

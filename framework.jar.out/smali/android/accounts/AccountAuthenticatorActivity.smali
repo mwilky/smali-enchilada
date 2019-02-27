@@ -13,12 +13,15 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 36
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
+    .line 37
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
+    .line 38
     iput-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mResultBundle:Landroid/os/Bundle;
 
     return-void
@@ -29,14 +32,17 @@
 .method public finish()V
     .locals 3
 
+    .line 70
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
     if-eqz v0, :cond_1
 
+    .line 72
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mResultBundle:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
+    .line 73
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
     iget-object v1, p0, Landroid/accounts/AccountAuthenticatorActivity;->mResultBundle:Landroid/os/Bundle;
@@ -45,6 +51,7 @@
 
     goto :goto_0
 
+    .line 75
     :cond_0
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
@@ -54,24 +61,31 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/accounts/AccountAuthenticatorResponse;->onError(ILjava/lang/String;)V
 
+    .line 78
     :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
+    .line 80
     :cond_1
     invoke-super {p0}, Landroid/app/Activity;->finish()V
 
+    .line 81
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
+    .param p1, "icicle"    # Landroid/os/Bundle;
 
+    .line 56
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
+    .line 58
     nop
 
+    .line 59
     invoke-virtual {p0}, Landroid/accounts/AccountAuthenticatorActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -86,22 +100,28 @@
 
     iput-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
+    .line 61
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
     if-eqz v0, :cond_0
 
+    .line 62
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorActivity;->mAccountAuthenticatorResponse:Landroid/accounts/AccountAuthenticatorResponse;
 
     invoke-virtual {v0}, Landroid/accounts/AccountAuthenticatorResponse;->onRequestContinued()V
 
+    .line 64
     :cond_0
     return-void
 .end method
 
 .method public final setAccountAuthenticatorResult(Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "result"    # Landroid/os/Bundle;
 
+    .line 47
     iput-object p1, p0, Landroid/accounts/AccountAuthenticatorActivity;->mResultBundle:Landroid/os/Bundle;
 
+    .line 48
     return-void
 .end method

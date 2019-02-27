@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 232
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,22 +36,28 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/app/AlarmManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 235
     const-string v0, "alarm"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 236
+    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/app/IAlarmManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/IAlarmManager;
 
     move-result-object v1
 
+    .line 237
+    .local v1, "service":Landroid/app/IAlarmManager;
     new-instance v2, Landroid/app/AlarmManager;
 
     invoke-direct {v2, v1, p1}, Landroid/app/AlarmManager;-><init>(Landroid/app/IAlarmManager;Landroid/content/Context;)V
@@ -66,6 +73,7 @@
         }
     .end annotation
 
+    .line 232
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$5;->createService(Landroid/app/ContextImpl;)Landroid/app/AlarmManager;
 
     move-result-object p1

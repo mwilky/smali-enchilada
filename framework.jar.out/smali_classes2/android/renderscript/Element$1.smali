@@ -24,6 +24,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .line 1246
     invoke-static {}, Landroid/renderscript/Element$DataKind;->values()[Landroid/renderscript/Element$DataKind;
 
     move-result-object v0
@@ -117,6 +118,7 @@
     :catch_3
     move-exception v4
 
+    .line 1175
     :goto_3
     invoke-static {}, Landroid/renderscript/Element$DataType;->values()[Landroid/renderscript/Element$DataType;
 

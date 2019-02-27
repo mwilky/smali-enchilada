@@ -401,24 +401,31 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 21
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
+    .line 22
     const-string v0, "com.android.internal.telephony.ITelephony"
 
     invoke-virtual {p0, p0, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
+    .line 23
     return-void
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
     .locals 2
+    .param p0, "obj"    # Landroid/os/IBinder;
 
+    .line 30
     if-nez p0, :cond_0
 
+    .line 31
     const/4 v0, 0x0
 
     return-object v0
 
+    .line 33
     :cond_0
     const-string v0, "com.android.internal.telephony.ITelephony"
 
@@ -426,18 +433,22 @@
 
     move-result-object v0
 
+    .line 34
+    .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
     instance-of v1, v0, Lcom/android/internal/telephony/ITelephony;
 
     if-eqz v1, :cond_1
 
+    .line 35
     move-object v1, v0
 
     check-cast v1, Lcom/android/internal/telephony/ITelephony;
 
     return-object v1
 
+    .line 37
     :cond_1
     new-instance v1, Lcom/android/internal/telephony/ITelephony$Stub$Proxy;
 
@@ -451,11 +462,16 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
+    .line 41
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 23
+    .param p1, "code"    # I
+    .param p2, "data"    # Landroid/os/Parcel;
+    .param p3, "reply"    # Landroid/os/Parcel;
+    .param p4, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -470,8 +486,11 @@
 
     move-object/from16 v12, p3
 
+    .line 45
     const-string v13, "com.android.internal.telephony.ITelephony"
 
+    .line 46
+    .local v13, "descriptor":Ljava/lang/String;
     const v0, 0x5f4e5446
 
     const/4 v14, 0x1
@@ -484,77 +503,113 @@
 
     packed-switch v10, :pswitch_data_0
 
+    .line 2183
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
     return v0
 
+    .line 2174
     :pswitch_0
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2176
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2177
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->refreshUiccProfile(I)V
 
+    .line 2178
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2179
     return v14
 
+    .line 2164
+    .end local v0    # "_arg0":I
     :pswitch_1
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2166
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2167
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCarrierIdListVersion(I)I
 
     move-result v1
 
+    .line 2168
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2169
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2170
     return v14
 
+    .line 2141
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_2
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2143
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
+    .line 2145
+    .local v15, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v16
 
+    .line 2147
+    .local v16, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v17
 
+    .line 2149
+    .local v17, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v18
 
+    .line 2151
+    .local v18, "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v19
 
+    .line 2153
+    .local v19, "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v20
 
+    .line 2155
+    .local v20, "_arg5":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v21
 
+    .line 2157
+    .local v21, "_arg6":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v22
 
+    .line 2158
+    .local v22, "_arg7":Ljava/lang/String;
     move-object v0, v9
 
     move v1, v15
@@ -575,171 +630,275 @@
 
     invoke-virtual/range {v0 .. v8}, Lcom/android/internal/telephony/ITelephony$Stub;->setCarrierTestOverride(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2159
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2160
     return v14
 
+    .line 2128
+    .end local v15    # "_arg0":I
+    .end local v16    # "_arg1":Ljava/lang/String;
+    .end local v17    # "_arg2":Ljava/lang/String;
+    .end local v18    # "_arg3":Ljava/lang/String;
+    .end local v19    # "_arg4":Ljava/lang/String;
+    .end local v20    # "_arg5":Ljava/lang/String;
+    .end local v21    # "_arg6":Ljava/lang/String;
+    .end local v22    # "_arg7":Ljava/lang/String;
     :pswitch_3
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2130
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2132
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 2134
+    .local v1, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 2135
+    .local v2, "_arg2":I
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->setRadioIndicationUpdateMode(III)V
 
+    .line 2136
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2137
     return v14
 
+    .line 2118
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_arg2":I
     :pswitch_4
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2120
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object v0
 
+    .line 2121
+    .local v0, "_arg0":[I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->switchSlots([I)Z
 
     move-result v1
 
+    .line 2122
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2123
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2124
     return v14
 
+    .line 2110
+    .end local v0    # "_arg0":[I
+    .end local v1    # "_result":Z
     :pswitch_5
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2111
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getUiccSlotsInfo()[Landroid/telephony/UiccSlotInfo;
 
     move-result-object v0
 
+    .line 2112
+    .local v0, "_result":[Landroid/telephony/UiccSlotInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2113
     invoke-virtual {v12, v0, v14}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
+    .line 2114
     return v14
 
+    .line 2094
+    .end local v0    # "_result":[Landroid/telephony/UiccSlotInfo;
     :pswitch_6
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2096
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2097
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getSignalStrength(I)Landroid/telephony/SignalStrength;
 
     move-result-object v2
 
+    .line 2098
+    .local v2, "_result":Landroid/telephony/SignalStrength;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2099
     if-eqz v2, :cond_0
 
+    .line 2100
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2101
     invoke-virtual {v2, v12, v14}, Landroid/telephony/SignalStrength;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 2104
     :cond_0
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2106
     :goto_0
     return v14
 
+    .line 2084
+    .end local v0    # "_arg0":I
+    .end local v2    # "_result":Landroid/telephony/SignalStrength;
     :pswitch_7
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2086
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2087
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getEmergencyCallbackMode(I)Z
 
     move-result v1
 
+    .line 2088
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2089
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2090
     return v14
 
+    .line 2070
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_8
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2072
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2074
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 2076
+    .local v1, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 2077
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getForbiddenPlmns(IILjava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
+    .line 2078
+    .local v3, "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2079
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
+    .line 2080
     return v14
 
+    .line 2059
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":[Ljava/lang/String;
     :pswitch_9
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2061
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2063
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 2064
+    .restart local v1    # "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setSimPowerStateForSlot(II)V
 
+    .line 2065
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2066
     return v14
 
+    .line 2047
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
     :pswitch_a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2049
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 2051
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 2052
+    .restart local v1    # "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getClientRequestStats(Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object v2
 
+    .line 2053
+    .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/ClientRequestStats;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2054
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    .line 2055
     return v14
 
+    .line 2036
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/ClientRequestStats;>;"
     :pswitch_b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2038
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -753,23 +912,35 @@
     :cond_1
     move v0, v1
 
+    .line 2040
+    .local v0, "_arg0":Z
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 2041
+    .restart local v1    # "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setPolicyDataEnabled(ZI)V
 
+    .line 2042
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2043
     return v14
 
+    .line 2018
+    .end local v0    # "_arg0":Z
+    .end local v1    # "_arg1":I
     :pswitch_c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2020
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2022
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -783,34 +954,50 @@
     :cond_2
     move v2, v1
 
+    .line 2023
+    .local v2, "_arg1":Z
     :goto_1
     invoke-virtual {v9, v0, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getVtDataUsage(IZ)Landroid/net/NetworkStats;
 
     move-result-object v3
 
+    .line 2024
+    .local v3, "_result":Landroid/net/NetworkStats;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2025
     if-eqz v3, :cond_3
 
+    .line 2026
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2027
     invoke-virtual {v3, v12, v14}, Landroid/net/NetworkStats;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_2
 
+    .line 2030
     :cond_3
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 2032
     :goto_2
     return v14
 
+    .line 2007
+    .end local v0    # "_arg0":I
+    .end local v2    # "_arg1":Z
+    .end local v3    # "_result":Landroid/net/NetworkStats;
     :pswitch_d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 2009
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2011
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -821,20 +1008,30 @@
 
     nop
 
+    .line 2012
+    .local v1, "_arg1":Z
     :cond_4
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->carrierActionReportDefaultNetworkStatus(IZ)V
 
+    .line 2013
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2014
     return v14
 
+    .line 1996
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
     :pswitch_e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1998
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 2000
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -845,20 +1042,30 @@
 
     nop
 
+    .line 2001
+    .restart local v1    # "_arg1":Z
     :cond_5
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->carrierActionSetRadioEnabled(IZ)V
 
+    .line 2002
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 2003
     return v14
 
+    .line 1985
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
     :pswitch_f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1987
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1989
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -869,181 +1076,282 @@
 
     nop
 
+    .line 1990
+    .restart local v1    # "_arg1":Z
     :cond_6
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->carrierActionSetMeteredApnsEnabled(IZ)V
 
+    .line 1991
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1992
     return v14
 
+    .line 1975
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
     :pswitch_10
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1977
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1978
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getSubscriptionCarrierName(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1979
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1980
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1981
     return v14
 
+    .line 1965
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_11
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1967
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1968
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getSubscriptionCarrierId(I)I
 
     move-result v1
 
+    .line 1969
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1970
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1971
     return v14
 
+    .line 1955
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_12
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1957
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1958
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getAllowedCarriers(I)Ljava/util/List;
 
     move-result-object v1
 
+    .line 1959
+    .local v1, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1960
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    .line 1961
     return v14
 
+    .line 1943
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     :pswitch_13
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1945
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1947
+    .restart local v0    # "_arg0":I
     sget-object v1, Landroid/service/carrier/CarrierIdentifier;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v11, v1}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v1
 
+    .line 1948
+    .local v1, "_arg1":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setAllowedCarriers(ILjava/util/List;)I
 
     move-result v2
 
+    .line 1949
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1950
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1951
     return v14
 
+    .line 1935
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
+    .end local v2    # "_result":I
     :pswitch_14
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1936
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getTelephonyHistograms()Ljava/util/List;
 
     move-result-object v0
 
+    .line 1937
+    .local v0, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/TelephonyHistogram;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1938
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    .line 1939
     return v14
 
+    .line 1925
+    .end local v0    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/TelephonyHistogram;>;"
     :pswitch_15
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1927
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1928
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaPrlVersion(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1929
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1930
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1931
     return v14
 
+    .line 1915
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_16
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1917
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1918
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getEsn(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1919
+    .restart local v1    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1920
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1921
     return v14
 
+    .line 1903
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_17
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1905
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1907
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1908
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getAidForAppType(II)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1909
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1910
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1911
     return v14
 
+    .line 1895
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_18
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1896
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getPackagesWithCarrierPrivileges()Ljava/util/List;
 
     move-result-object v0
 
+    .line 1897
+    .local v0, "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1898
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
+    .line 1899
     return v14
 
+    .line 1877
+    .end local v0    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :pswitch_19
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1879
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1881
+    .local v2, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_7
 
+    .line 1882
     sget-object v0, Landroid/telecom/PhoneAccountHandle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1052,11 +1360,16 @@
 
     check-cast v0, Landroid/telecom/PhoneAccountHandle;
 
+    .local v0, "_arg1":Landroid/telecom/PhoneAccountHandle;
     goto :goto_3
 
+    .line 1885
+    .end local v0    # "_arg1":Landroid/telecom/PhoneAccountHandle;
     :cond_7
     nop
 
+    .line 1888
+    .restart local v0    # "_arg1":Landroid/telecom/PhoneAccountHandle;
     :goto_3
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -1068,22 +1381,32 @@
 
     nop
 
+    .line 1889
+    .local v1, "_arg2":Z
     :cond_8
     invoke-virtual {v9, v2, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setVoicemailVibrationEnabled(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;Z)V
 
+    .line 1890
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1891
     return v14
 
+    .line 1862
+    .end local v0    # "_arg1":Landroid/telecom/PhoneAccountHandle;
+    .end local v1    # "_arg2":Z
+    .end local v2    # "_arg0":Ljava/lang/String;
     :pswitch_1a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1864
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     if-eqz v1, :cond_9
 
+    .line 1865
     sget-object v0, Landroid/telecom/PhoneAccountHandle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1092,35 +1415,51 @@
 
     check-cast v0, Landroid/telecom/PhoneAccountHandle;
 
+    .local v0, "_arg0":Landroid/telecom/PhoneAccountHandle;
     goto :goto_4
 
+    .line 1868
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
     :cond_9
     nop
 
+    .line 1870
+    .restart local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
     :goto_4
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isVoicemailVibrationEnabled(Landroid/telecom/PhoneAccountHandle;)Z
 
     move-result v1
 
+    .line 1871
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1872
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1873
     return v14
 
+    .line 1839
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
+    .end local v1    # "_result":Z
     :pswitch_1b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1841
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1843
+    .local v1, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     if-eqz v2, :cond_a
 
+    .line 1844
     sget-object v2, Landroid/telecom/PhoneAccountHandle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1129,11 +1468,16 @@
 
     check-cast v2, Landroid/telecom/PhoneAccountHandle;
 
+    .local v2, "_arg1":Landroid/telecom/PhoneAccountHandle;
     goto :goto_5
 
+    .line 1847
+    .end local v2    # "_arg1":Landroid/telecom/PhoneAccountHandle;
     :cond_a
     move-object v2, v0
 
+    .line 1850
+    .restart local v2    # "_arg1":Landroid/telecom/PhoneAccountHandle;
     :goto_5
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -1141,6 +1485,7 @@
 
     if-eqz v3, :cond_b
 
+    .line 1851
     sget-object v0, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1149,27 +1494,40 @@
 
     check-cast v0, Landroid/net/Uri;
 
+    .local v0, "_arg2":Landroid/net/Uri;
     goto :goto_6
 
+    .line 1854
+    .end local v0    # "_arg2":Landroid/net/Uri;
     :cond_b
     nop
 
+    .line 1856
+    .restart local v0    # "_arg2":Landroid/net/Uri;
     :goto_6
     invoke-virtual {v9, v1, v2, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setVoicemailRingtoneUri(Ljava/lang/String;Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;)V
 
+    .line 1857
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1858
     return v14
 
+    .line 1818
+    .end local v0    # "_arg2":Landroid/net/Uri;
+    .end local v1    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":Landroid/telecom/PhoneAccountHandle;
     :pswitch_1c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1820
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     if-eqz v2, :cond_c
 
+    .line 1821
     sget-object v0, Landroid/telecom/PhoneAccountHandle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1178,72 +1536,105 @@
 
     check-cast v0, Landroid/telecom/PhoneAccountHandle;
 
+    .local v0, "_arg0":Landroid/telecom/PhoneAccountHandle;
     goto :goto_7
 
+    .line 1824
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
     :cond_c
     nop
 
+    .line 1826
+    .restart local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
     :goto_7
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getVoicemailRingtoneUri(Landroid/telecom/PhoneAccountHandle;)Landroid/net/Uri;
 
     move-result-object v2
 
+    .line 1827
+    .local v2, "_result":Landroid/net/Uri;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1828
     if-eqz v2, :cond_d
 
+    .line 1829
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1830
     invoke-virtual {v2, v12, v14}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_8
 
+    .line 1833
     :cond_d
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1835
     :goto_8
     return v14
 
+    .line 1800
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccountHandle;
+    .end local v2    # "_result":Landroid/net/Uri;
     :pswitch_1d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1802
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1804
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1805
+    .local v2, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getServiceStateForSubscriber(ILjava/lang/String;)Landroid/telephony/ServiceState;
 
     move-result-object v3
 
+    .line 1806
+    .local v3, "_result":Landroid/telephony/ServiceState;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1807
     if-eqz v3, :cond_e
 
+    .line 1808
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1809
     invoke-virtual {v3, v12, v14}, Landroid/telephony/ServiceState;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_9
 
+    .line 1812
     :cond_e
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1814
     :goto_9
     return v14
 
+    .line 1787
+    .end local v0    # "_arg0":I
+    .end local v2    # "_arg1":Ljava/lang/String;
+    .end local v3    # "_result":Landroid/telephony/ServiceState;
     :pswitch_1e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1789
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     if-eqz v1, :cond_f
 
+    .line 1790
     sget-object v0, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1252,51 +1643,75 @@
 
     check-cast v0, Landroid/os/ResultReceiver;
 
+    .local v0, "_arg0":Landroid/os/ResultReceiver;
     goto :goto_a
 
+    .line 1793
+    .end local v0    # "_arg0":Landroid/os/ResultReceiver;
     :cond_f
     nop
 
+    .line 1795
+    .restart local v0    # "_arg0":Landroid/os/ResultReceiver;
     :goto_a
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->requestModemActivityInfo(Landroid/os/ResultReceiver;)V
 
+    .line 1796
     return v14
 
+    .line 1779
+    .end local v0    # "_arg0":Landroid/os/ResultReceiver;
     :pswitch_1f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1780
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getLocaleFromDefaultSim()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1781
+    .local v0, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1782
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1783
     return v14
 
+    .line 1770
+    .end local v0    # "_result":Ljava/lang/String;
     :pswitch_20
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1772
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1773
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->factoryReset(I)V
 
+    .line 1774
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1775
     return v14
 
+    .line 1755
+    .end local v0    # "_arg0":I
     :pswitch_21
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1757
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     if-eqz v1, :cond_10
 
+    .line 1758
     sget-object v0, Landroid/telecom/PhoneAccount;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1305,259 +1720,409 @@
 
     check-cast v0, Landroid/telecom/PhoneAccount;
 
+    .local v0, "_arg0":Landroid/telecom/PhoneAccount;
     goto :goto_b
 
+    .line 1761
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccount;
     :cond_10
     nop
 
+    .line 1763
+    .restart local v0    # "_arg0":Landroid/telecom/PhoneAccount;
     :goto_b
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getSubIdForPhoneAccount(Landroid/telecom/PhoneAccount;)I
 
     move-result v1
 
+    .line 1764
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1765
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1766
     return v14
 
+    .line 1743
+    .end local v0    # "_arg0":Landroid/telecom/PhoneAccount;
+    .end local v1    # "_result":I
     :pswitch_22
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1745
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1747
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1748
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getDeviceSoftwareVersionForSlot(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1749
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1750
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1751
     return v14
 
+    .line 1731
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_23
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1733
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1735
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1736
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getMeidForSlot(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1737
+    .restart local v2    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1738
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1739
     return v14
 
+    .line 1719
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_24
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1721
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1723
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1724
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getImeiForSlot(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1725
+    .restart local v2    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1726
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1727
     return v14
 
+    .line 1709
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_25
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1711
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1712
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDeviceId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1713
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1714
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1715
     return v14
 
+    .line 1699
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_26
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1701
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1702
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getImsRegTechnologyForMmTel(I)I
 
     move-result v1
 
+    .line 1703
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1704
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1705
     return v14
 
+    .line 1689
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_27
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1691
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1692
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isVideoTelephonyAvailable(I)Z
 
     move-result v1
 
+    .line 1693
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1694
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1695
     return v14
 
+    .line 1679
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_28
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1681
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1682
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isVolteAvailable(I)Z
 
     move-result v1
 
+    .line 1683
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1684
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1685
     return v14
 
+    .line 1669
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_29
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1671
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1672
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isWifiCallingAvailable(I)Z
 
     move-result v1
 
+    .line 1673
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1674
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1675
     return v14
 
+    .line 1659
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_2a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1661
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1662
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isImsRegistered(I)Z
 
     move-result v1
 
+    .line 1663
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1664
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1665
     return v14
 
+    .line 1651
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_2b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1652
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->isHearingAidCompatibilitySupported()Z
 
     move-result v0
 
+    .line 1653
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1654
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1655
     return v14
 
+    .line 1643
+    .end local v0    # "_result":Z
     :pswitch_2c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1644
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->isTtyModeSupported()Z
 
     move-result v0
 
+    .line 1645
+    .restart local v0    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1646
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1647
     return v14
 
+    .line 1635
+    .end local v0    # "_result":Z
     :pswitch_2d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1636
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->isWorldPhone()Z
 
     move-result v0
 
+    .line 1637
+    .restart local v0    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1638
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1639
     return v14
 
+    .line 1627
+    .end local v0    # "_result":Z
     :pswitch_2e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1628
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->canChangeDtmfToneLength()Z
 
     move-result v0
 
+    .line 1629
+    .restart local v0    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1630
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1631
     return v14
 
+    .line 1617
+    .end local v0    # "_result":Z
     :pswitch_2f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1619
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1620
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isVideoCallingEnabled(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 1621
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1622
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1623
     return v14
 
+    .line 1608
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_30
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1610
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -1571,36 +2136,56 @@
     :cond_11
     move v0, v1
 
+    .line 1611
+    .local v0, "_arg0":Z
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableVideoCalling(Z)V
 
+    .line 1612
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1613
     return v14
 
+    .line 1596
+    .end local v0    # "_arg0":Z
     :pswitch_31
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1598
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1600
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1601
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getRadioAccessFamily(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 1602
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1603
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1604
     return v14
 
+    .line 1587
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_32
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1589
     sget-object v0, Landroid/telephony/RadioAccessFamily;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v11, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -1609,90 +2194,139 @@
 
     check-cast v0, [Landroid/telephony/RadioAccessFamily;
 
+    .line 1590
+    .local v0, "_arg0":[Landroid/telephony/RadioAccessFamily;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setRadioCapability([Landroid/telephony/RadioAccessFamily;)V
 
+    .line 1591
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1592
     return v14
 
+    .line 1580
+    .end local v0    # "_arg0":[Landroid/telephony/RadioAccessFamily;
     :pswitch_33
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1581
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->shutdownMobileRadios()V
 
+    .line 1582
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1583
     return v14
 
+    .line 1572
     :pswitch_34
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1573
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->needMobileRadioShutdown()Z
 
     move-result v0
 
+    .line 1574
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1575
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1576
     return v14
 
+    .line 1553
+    .end local v0    # "_result":Z
     :pswitch_35
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1555
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
 
+    .line 1557
+    .local v0, "_arg0":[B
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1558
+    .local v1, "_arg1_length":I
     if-gez v1, :cond_12
 
+    .line 1559
     const/4 v2, 0x0
 
+    .local v2, "_arg1":[B
     goto :goto_c
 
+    .line 1562
+    .end local v2    # "_arg1":[B
     :cond_12
     new-array v2, v1, [B
 
+    .line 1564
+    .restart local v2    # "_arg1":[B
     :goto_c
     invoke-virtual {v9, v0, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->invokeOemRilRequestRaw([B[B)I
 
     move-result v3
 
+    .line 1565
+    .local v3, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1566
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1567
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeByteArray([B)V
 
+    .line 1568
     return v14
 
+    .line 1535
+    .end local v0    # "_arg0":[B
+    .end local v1    # "_arg1_length":I
+    .end local v2    # "_arg1":[B
+    .end local v3    # "_result":I
     :pswitch_36
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1537
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
+    .line 1539
+    .local v6, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v7
 
+    .line 1541
+    .local v7, "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v8
 
+    .line 1543
+    .local v8, "_arg2":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v15
 
+    .line 1545
+    .local v15, "_arg3":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v16
 
+    .line 1546
+    .local v16, "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     move-object v0, v9
 
     move v1, v6
@@ -1709,126 +2343,204 @@
 
     move-result v0
 
+    .line 1547
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1548
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1549
     return v14
 
+    .line 1523
+    .end local v0    # "_result":Z
+    .end local v6    # "_arg0":I
+    .end local v7    # "_arg1":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v8    # "_arg2":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v15    # "_arg3":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v16    # "_arg4":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :pswitch_37
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1525
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1527
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1528
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setOperatorBrandOverride(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 1529
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1530
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1531
     return v14
 
+    .line 1513
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_38
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1515
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1516
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getMergedSubscriberIds(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1517
+    .local v1, "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1518
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
+    .line 1519
     return v14
 
+    .line 1501
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":[Ljava/lang/String;
     :pswitch_39
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1503
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1505
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1506
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getLine1AlphaTagForDisplay(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1507
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1508
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1509
     return v14
 
+    .line 1489
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_3a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1491
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1493
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1494
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getLine1NumberForDisplay(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1495
+    .restart local v2    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1496
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1497
     return v14
 
+    .line 1475
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_3b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1477
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1479
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1481
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1482
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->setLine1NumberForDisplayForSubscriber(ILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
+    .line 1483
+    .local v3, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1484
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1485
     return v14
 
+    .line 1458
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":Z
     :pswitch_3c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1460
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     if-eqz v1, :cond_13
 
+    .line 1461
     sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1837,135 +2549,214 @@
 
     check-cast v0, Landroid/content/Intent;
 
+    .local v0, "_arg0":Landroid/content/Intent;
     goto :goto_d
 
+    .line 1464
+    .end local v0    # "_arg0":Landroid/content/Intent;
     :cond_13
     nop
 
+    .line 1467
+    .restart local v0    # "_arg0":Landroid/content/Intent;
     :goto_d
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1468
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getCarrierPackageNamesForIntentAndPhone(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v2
 
+    .line 1469
+    .local v2, "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1470
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
+    .line 1471
     return v14
 
+    .line 1448
+    .end local v0    # "_arg0":Landroid/content/Intent;
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :pswitch_3d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1450
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1451
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->checkCarrierPrivilegesForPackageAnyPhone(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 1452
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1453
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1454
     return v14
 
+    .line 1438
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_3e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1440
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1441
+    .restart local v0    # "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->checkCarrierPrivilegesForPackage(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 1442
+    .restart local v1    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1443
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1444
     return v14
 
+    .line 1426
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_3f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1428
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1430
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1431
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getCarrierPrivilegeStatusForUid(II)I
 
     move-result v2
 
+    .line 1432
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1433
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1434
     return v14
 
+    .line 1416
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":I
     :pswitch_40
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1418
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1419
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCarrierPrivilegeStatus(I)I
 
     move-result v1
 
+    .line 1420
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1421
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1422
     return v14
 
+    .line 1406
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_41
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1408
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1409
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaMin(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1410
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1411
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1412
     return v14
 
+    .line 1396
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_42
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1398
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1399
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaMdn(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1400
+    .restart local v1    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1401
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1402
     return v14
 
+    .line 1387
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_43
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1389
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -1979,91 +2770,143 @@
     :cond_14
     move v0, v1
 
+    .line 1390
+    .local v0, "_arg0":Z
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setImsRegistrationState(Z)V
 
+    .line 1391
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1392
     return v14
 
+    .line 1375
+    .end local v0    # "_arg0":Z
     :pswitch_44
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1377
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1379
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1380
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getPcscfAddress(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1381
+    .local v2, "_result":[Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1382
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
+    .line 1383
     return v14
 
+    .line 1365
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":[Ljava/lang/String;
     :pswitch_45
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1367
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1368
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isDataEnabled(I)Z
 
     move-result v1
 
+    .line 1369
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1370
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1371
     return v14
 
+    .line 1355
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_46
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1357
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1358
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isUserDataEnabled(I)Z
 
     move-result v1
 
+    .line 1359
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1360
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1361
     return v14
 
+    .line 1345
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_47
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1347
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1348
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataEnabled(I)Z
 
     move-result v1
 
+    .line 1349
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1350
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1351
     return v14
 
+    .line 1334
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_48
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1336
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1338
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -2074,45 +2917,70 @@
 
     nop
 
+    .line 1339
+    .local v1, "_arg1":Z
     :cond_15
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setUserDataEnabled(IZ)V
 
+    .line 1340
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1341
     return v14
 
+    .line 1322
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
     :pswitch_49
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1324
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1326
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1327
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setPreferredNetworkType(II)Z
 
     move-result v2
 
+    .line 1328
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1329
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1330
     return v14
 
+    .line 1308
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Z
     :pswitch_4a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1310
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1312
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1314
+    .local v2, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -2123,47 +2991,72 @@
 
     nop
 
+    .line 1315
+    .local v1, "_arg2":Z
     :cond_16
     invoke-virtual {v9, v0, v2, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setNetworkSelectionModeManual(ILjava/lang/String;Z)Z
 
     move-result v3
 
+    .line 1316
+    .restart local v3    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1317
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1318
     return v14
 
+    .line 1297
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg2":Z
+    .end local v2    # "_arg1":Ljava/lang/String;
+    .end local v3    # "_result":Z
     :pswitch_4b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1299
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1301
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1302
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->stopNetworkScan(II)V
 
+    .line 1303
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1304
     return v14
 
+    .line 1271
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
     :pswitch_4c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1273
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1275
+    .local v1, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     if-eqz v2, :cond_17
 
+    .line 1276
     sget-object v2, Landroid/telephony/NetworkScanRequest;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -2172,11 +3065,16 @@
 
     check-cast v2, Landroid/telephony/NetworkScanRequest;
 
+    .local v2, "_arg1":Landroid/telephony/NetworkScanRequest;
     goto :goto_e
 
+    .line 1279
+    .end local v2    # "_arg1":Landroid/telephony/NetworkScanRequest;
     :cond_17
     move-object v2, v0
 
+    .line 1282
+    .restart local v2    # "_arg1":Landroid/telephony/NetworkScanRequest;
     :goto_e
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -2184,6 +3082,7 @@
 
     if-eqz v3, :cond_18
 
+    .line 1283
     sget-object v0, Landroid/os/Messenger;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -2192,73 +3091,113 @@
 
     check-cast v0, Landroid/os/Messenger;
 
+    .local v0, "_arg2":Landroid/os/Messenger;
     goto :goto_f
 
+    .line 1286
+    .end local v0    # "_arg2":Landroid/os/Messenger;
     :cond_18
     nop
 
+    .line 1289
+    .restart local v0    # "_arg2":Landroid/os/Messenger;
     :goto_f
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
+    .line 1290
+    .local v3, "_arg3":Landroid/os/IBinder;
     invoke-virtual {v9, v1, v2, v0, v3}, Lcom/android/internal/telephony/ITelephony$Stub;->requestNetworkScan(ILandroid/telephony/NetworkScanRequest;Landroid/os/Messenger;Landroid/os/IBinder;)I
 
     move-result v4
 
+    .line 1291
+    .local v4, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1292
     invoke-virtual {v12, v4}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1293
     return v14
 
+    .line 1255
+    .end local v0    # "_arg2":Landroid/os/Messenger;
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Landroid/telephony/NetworkScanRequest;
+    .end local v3    # "_arg3":Landroid/os/IBinder;
+    .end local v4    # "_result":I
     :pswitch_4d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1257
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1258
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCellNetworkScanResults(I)Lcom/android/internal/telephony/CellNetworkScanResult;
 
     move-result-object v2
 
+    .line 1259
+    .local v2, "_result":Lcom/android/internal/telephony/CellNetworkScanResult;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1260
     if-eqz v2, :cond_19
 
+    .line 1261
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1262
     invoke-virtual {v2, v12, v14}, Lcom/android/internal/telephony/CellNetworkScanResult;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_10
 
+    .line 1265
     :cond_19
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1267
     :goto_10
     return v14
 
+    .line 1246
+    .end local v0    # "_arg0":I
+    .end local v2    # "_result":Lcom/android/internal/telephony/CellNetworkScanResult;
     :pswitch_4e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1248
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1249
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setNetworkSelectionModeAutomatic(I)V
 
+    .line 1250
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1251
     return v14
 
+    .line 1234
+    .end local v0    # "_arg0":I
     :pswitch_4f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1236
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1238
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -2269,24 +3208,37 @@
 
     nop
 
+    .line 1239
+    .local v1, "_arg1":Z
     :cond_1a
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getImsService(IZ)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1240
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1241
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1242
     return v14
 
+    .line 1220
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_50
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1222
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1224
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -2297,51 +3249,79 @@
 
     nop
 
+    .line 1226
+    .restart local v1    # "_arg1":Z
     :cond_1b
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1227
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->setImsService(IZLjava/lang/String;)Z
 
     move-result v3
 
+    .line 1228
+    .local v3, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1229
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1230
     return v14
 
+    .line 1212
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":Z
     :pswitch_51
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1213
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->isResolvingImsBinding()Z
 
     move-result v0
 
+    .line 1214
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1215
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1216
     return v14
 
+    .line 1200
+    .end local v0    # "_result":Z
     :pswitch_52
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1202
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1204
+    .local v1, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 1205
+    .local v2, "_arg1":I
     invoke-virtual {v9, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getImsConfig(II)Landroid/telephony/ims/aidl/IImsConfig;
 
     move-result-object v3
 
+    .line 1206
+    .local v3, "_result":Landroid/telephony/ims/aidl/IImsConfig;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1207
     if-eqz v3, :cond_1c
 
     invoke-interface {v3}, Landroid/telephony/ims/aidl/IImsConfig;->asBinder()Landroid/os/IBinder;
@@ -2353,25 +3333,38 @@
     :cond_1c
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 1208
     return v14
 
+    .line 1188
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":I
+    .end local v3    # "_result":Landroid/telephony/ims/aidl/IImsConfig;
     :pswitch_53
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1190
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1192
+    .restart local v1    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 1193
+    .restart local v2    # "_arg1":I
     invoke-virtual {v9, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getImsRegistration(II)Landroid/telephony/ims/aidl/IImsRegistration;
 
     move-result-object v3
 
+    .line 1194
+    .local v3, "_result":Landroid/telephony/ims/aidl/IImsRegistration;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1195
     if-eqz v3, :cond_1d
 
     invoke-interface {v3}, Landroid/telephony/ims/aidl/IImsRegistration;->asBinder()Landroid/os/IBinder;
@@ -2383,15 +3376,23 @@
     :cond_1d
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 1196
     return v14
 
+    .line 1176
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":I
+    .end local v3    # "_result":Landroid/telephony/ims/aidl/IImsRegistration;
     :pswitch_54
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1178
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1180
+    .restart local v1    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v2
@@ -2400,12 +3401,17 @@
 
     move-result-object v2
 
+    .line 1181
+    .local v2, "_arg1":Lcom/android/ims/internal/IImsServiceFeatureCallback;
     invoke-virtual {v9, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getRcsFeatureAndListen(ILcom/android/ims/internal/IImsServiceFeatureCallback;)Landroid/telephony/ims/aidl/IImsRcsFeature;
 
     move-result-object v3
 
+    .line 1182
+    .local v3, "_result":Landroid/telephony/ims/aidl/IImsRcsFeature;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1183
     if-eqz v3, :cond_1e
 
     invoke-interface {v3}, Landroid/telephony/ims/aidl/IImsRcsFeature;->asBinder()Landroid/os/IBinder;
@@ -2417,15 +3423,23 @@
     :cond_1e
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 1184
     return v14
 
+    .line 1164
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Lcom/android/ims/internal/IImsServiceFeatureCallback;
+    .end local v3    # "_result":Landroid/telephony/ims/aidl/IImsRcsFeature;
     :pswitch_55
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1166
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 1168
+    .restart local v1    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v2
@@ -2434,12 +3448,17 @@
 
     move-result-object v2
 
+    .line 1169
+    .restart local v2    # "_arg1":Lcom/android/ims/internal/IImsServiceFeatureCallback;
     invoke-virtual {v9, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getMmTelFeatureAndListen(ILcom/android/ims/internal/IImsServiceFeatureCallback;)Landroid/telephony/ims/aidl/IImsMmTelFeature;
 
     move-result-object v3
 
+    .line 1170
+    .local v3, "_result":Landroid/telephony/ims/aidl/IImsMmTelFeature;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1171
     if-eqz v3, :cond_1f
 
     invoke-interface {v3}, Landroid/telephony/ims/aidl/IImsMmTelFeature;->asBinder()Landroid/os/IBinder;
@@ -2451,205 +3470,322 @@
     :cond_1f
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 1172
     return v14
 
+    .line 1155
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Lcom/android/ims/internal/IImsServiceFeatureCallback;
+    .end local v3    # "_result":Landroid/telephony/ims/aidl/IImsMmTelFeature;
     :pswitch_56
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1157
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1158
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->disableIms(I)V
 
+    .line 1159
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1160
     return v14
 
+    .line 1146
+    .end local v0    # "_arg0":I
     :pswitch_57
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1148
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1149
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableIms(I)V
 
+    .line 1150
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1151
     return v14
 
+    .line 1138
+    .end local v0    # "_arg0":I
     :pswitch_58
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1139
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getTetherApnRequired()I
 
     move-result v0
 
+    .line 1140
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1141
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1142
     return v14
 
+    .line 1128
+    .end local v0    # "_result":I
     :pswitch_59
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1130
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1131
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getPreferredNetworkType(I)I
 
     move-result v1
 
+    .line 1132
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1133
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1134
     return v14
 
+    .line 1118
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_5a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1120
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1121
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCalculatedPreferredNetworkType(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 1122
+    .restart local v1    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1123
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1124
     return v14
 
+    .line 1108
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_5b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1110
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1111
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->nvResetConfig(I)Z
 
     move-result v1
 
+    .line 1112
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1113
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1114
     return v14
 
+    .line 1098
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_5c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1100
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
 
+    .line 1101
+    .local v0, "_arg0":[B
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->nvWriteCdmaPrl([B)Z
 
     move-result v1
 
+    .line 1102
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1103
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1104
     return v14
 
+    .line 1086
+    .end local v0    # "_arg0":[B
+    .end local v1    # "_result":Z
     :pswitch_5d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1088
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1090
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1091
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->nvWriteItem(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 1092
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1093
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1094
     return v14
 
+    .line 1076
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_5e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1078
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1079
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->nvReadItem(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1080
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1081
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1082
     return v14
 
+    .line 1064
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_5f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1066
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1068
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1069
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->sendEnvelopeWithStatus(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1070
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1071
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1072
     return v14
 
+    .line 1042
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_60
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1044
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
+    .line 1046
+    .local v8, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
+    .line 1048
+    .local v15, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
+    .line 1050
+    .local v16, "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
+    .line 1052
+    .local v17, "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
+    .line 1054
+    .local v18, "_arg4":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v19
 
+    .line 1056
+    .local v19, "_arg5":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v20
 
+    .line 1057
+    .local v20, "_arg6":Ljava/lang/String;
     move-object v0, v9
 
     move v1, v8
@@ -2670,47 +3806,77 @@
 
     move-result-object v0
 
+    .line 1058
+    .local v0, "_result":[B
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1059
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
+    .line 1060
     return v14
 
+    .line 1018
+    .end local v0    # "_result":[B
+    .end local v8    # "_arg0":I
+    .end local v15    # "_arg1":I
+    .end local v16    # "_arg2":I
+    .end local v17    # "_arg3":I
+    .end local v18    # "_arg4":I
+    .end local v19    # "_arg5":I
+    .end local v20    # "_arg6":Ljava/lang/String;
     :pswitch_61
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 1020
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
+    .line 1022
+    .local v15, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v16
 
+    .line 1024
+    .local v16, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
+    .line 1026
+    .local v17, "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
+    .line 1028
+    .local v18, "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v19
 
+    .line 1030
+    .local v19, "_arg4":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v20
 
+    .line 1032
+    .local v20, "_arg5":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v21
 
+    .line 1034
+    .local v21, "_arg6":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v22
 
+    .line 1035
+    .restart local v22    # "_arg7":Ljava/lang/String;
     move-object v0, v9
 
     move v1, v15
@@ -2733,47 +3899,78 @@
 
     move-result-object v0
 
+    .line 1036
+    .local v0, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1037
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1038
     return v14
 
+    .line 994
+    .end local v0    # "_result":Ljava/lang/String;
+    .end local v15    # "_arg0":I
+    .end local v16    # "_arg1":Ljava/lang/String;
+    .end local v17    # "_arg2":I
+    .end local v18    # "_arg3":I
+    .end local v19    # "_arg4":I
+    .end local v20    # "_arg5":I
+    .end local v21    # "_arg6":I
+    .end local v22    # "_arg7":Ljava/lang/String;
     :pswitch_62
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 996
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v15
 
+    .line 998
+    .restart local v15    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
+    .line 1000
+    .local v16, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
+    .line 1002
+    .restart local v17    # "_arg2":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
+    .line 1004
+    .restart local v18    # "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v19
 
+    .line 1006
+    .restart local v19    # "_arg4":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v20
 
+    .line 1008
+    .restart local v20    # "_arg5":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v21
 
+    .line 1010
+    .restart local v21    # "_arg6":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v22
 
+    .line 1011
+    .restart local v22    # "_arg7":Ljava/lang/String;
     move-object v0, v9
 
     move v1, v15
@@ -2796,322 +3993,513 @@
 
     move-result-object v0
 
+    .line 1012
+    .restart local v0    # "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 1013
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1014
     return v14
 
+    .line 982
+    .end local v0    # "_result":Ljava/lang/String;
+    .end local v15    # "_arg0":I
+    .end local v16    # "_arg1":I
+    .end local v17    # "_arg2":I
+    .end local v18    # "_arg3":I
+    .end local v19    # "_arg4":I
+    .end local v20    # "_arg5":I
+    .end local v21    # "_arg6":I
+    .end local v22    # "_arg7":Ljava/lang/String;
     :pswitch_63
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 984
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 986
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 987
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->iccCloseLogicalChannel(II)Z
 
     move-result v2
 
+    .line 988
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 989
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 990
     return v14
 
+    .line 960
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Z
     :pswitch_64
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 962
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 964
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 966
+    .local v2, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
+    .line 968
+    .local v3, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 969
+    .local v4, "_arg3":I
     invoke-virtual {v9, v0, v2, v3, v4}, Lcom/android/internal/telephony/ITelephony$Stub;->iccOpenLogicalChannel(ILjava/lang/String;Ljava/lang/String;I)Landroid/telephony/IccOpenLogicalChannelResponse;
 
     move-result-object v5
 
+    .line 970
+    .local v5, "_result":Landroid/telephony/IccOpenLogicalChannelResponse;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 971
     if-eqz v5, :cond_20
 
+    .line 972
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 973
     invoke-virtual {v5, v12, v14}, Landroid/telephony/IccOpenLogicalChannelResponse;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_11
 
+    .line 976
     :cond_20
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 978
     :goto_11
     return v14
 
+    .line 952
+    .end local v0    # "_arg0":I
+    .end local v2    # "_arg1":Ljava/lang/String;
+    .end local v3    # "_arg2":Ljava/lang/String;
+    .end local v4    # "_arg3":I
+    .end local v5    # "_result":Landroid/telephony/IccOpenLogicalChannelResponse;
     :pswitch_65
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 953
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDefaultSim()I
 
     move-result v0
 
+    .line 954
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 955
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 956
     return v14
 
+    .line 943
+    .end local v0    # "_result":I
     :pswitch_66
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 945
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 946
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setCellInfoListRate(I)V
 
+    .line 947
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 948
     return v14
 
+    .line 933
+    .end local v0    # "_arg0":I
     :pswitch_67
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 935
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 936
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getAllCellInfo(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
+    .line 937
+    .local v1, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/CellInfo;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 938
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    .line 939
     return v14
 
+    .line 921
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/CellInfo;>;"
     :pswitch_68
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 923
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 925
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 926
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getLteOnCdmaModeForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 927
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 928
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 929
     return v14
 
+    .line 911
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_69
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 913
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 914
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getLteOnCdmaMode(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 915
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 916
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 917
     return v14
 
+    .line 901
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_6a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 903
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 904
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->hasIccCardUsingSlotIndex(I)Z
 
     move-result v1
 
+    .line 905
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 906
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 907
     return v14
 
+    .line 893
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_6b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 894
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->hasIccCard()Z
 
     move-result v0
 
+    .line 895
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 896
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 897
     return v14
 
+    .line 881
+    .end local v0    # "_result":Z
     :pswitch_6c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 883
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 885
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 886
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getVoiceNetworkTypeForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 887
+    .restart local v2    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 888
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 889
     return v14
 
+    .line 869
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_6d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 871
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 873
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 874
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataNetworkTypeForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 875
+    .restart local v2    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 876
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 877
     return v14
 
+    .line 859
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_6e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 861
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 862
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataNetworkType(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 863
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 864
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 865
     return v14
 
+    .line 847
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_6f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 849
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 851
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 852
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getNetworkTypeForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 853
+    .restart local v2    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 854
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 855
     return v14
 
+    .line 839
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_70
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 840
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getNetworkType()I
 
     move-result v0
 
+    .line 841
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 842
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 843
     return v14
 
+    .line 828
+    .end local v0    # "_result":I
     :pswitch_71
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 830
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 832
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 833
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->sendDialerSpecialCode(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 834
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 835
     return v14
 
+    .line 804
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Ljava/lang/String;
     :pswitch_72
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 806
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
+    .line 808
+    .local v7, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
+    .line 810
+    .local v8, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v15
 
+    .line 812
+    .local v15, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
+    .line 814
+    .local v16, "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v17
 
+    .line 816
+    .local v17, "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     if-eqz v1, :cond_21
 
+    .line 817
     sget-object v0, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -3120,14 +4508,19 @@
 
     check-cast v0, Landroid/app/PendingIntent;
 
+    .line 820
+    .local v6, "_arg5":Landroid/app/PendingIntent;
     :goto_12
     move-object v6, v0
 
     goto :goto_13
 
+    .end local v6    # "_arg5":Landroid/app/PendingIntent;
     :cond_21
     goto :goto_12
 
+    .line 822
+    .restart local v6    # "_arg5":Landroid/app/PendingIntent;
     :goto_13
     move-object v0, v9
 
@@ -3143,100 +4536,153 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/ITelephony$Stub;->sendVisualVoicemailSmsForSubscriber(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;Landroid/app/PendingIntent;)V
 
+    .line 823
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 824
     return v14
 
+    .line 788
+    .end local v6    # "_arg5":Landroid/app/PendingIntent;
+    .end local v7    # "_arg0":Ljava/lang/String;
+    .end local v8    # "_arg1":I
+    .end local v15    # "_arg2":Ljava/lang/String;
+    .end local v16    # "_arg3":I
+    .end local v17    # "_arg4":Ljava/lang/String;
     :pswitch_73
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 790
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 791
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getActiveVisualVoicemailSmsFilterSettings(I)Landroid/telephony/VisualVoicemailSmsFilterSettings;
 
     move-result-object v2
 
+    .line 792
+    .local v2, "_result":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 793
     if-eqz v2, :cond_22
 
+    .line 794
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 795
     invoke-virtual {v2, v12, v14}, Landroid/telephony/VisualVoicemailSmsFilterSettings;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_14
 
+    .line 798
     :cond_22
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 800
     :goto_14
     return v14
 
+    .line 770
+    .end local v0    # "_arg0":I
+    .end local v2    # "_result":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :pswitch_74
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 772
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 774
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 775
+    .local v2, "_arg1":I
     invoke-virtual {v9, v0, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getVisualVoicemailSmsFilterSettings(Ljava/lang/String;I)Landroid/telephony/VisualVoicemailSmsFilterSettings;
 
     move-result-object v3
 
+    .line 776
+    .local v3, "_result":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 777
     if-eqz v3, :cond_23
 
+    .line 778
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 779
     invoke-virtual {v3, v12, v14}, Landroid/telephony/VisualVoicemailSmsFilterSettings;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_15
 
+    .line 782
     :cond_23
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 784
     :goto_15
     return v14
 
+    .line 760
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":I
+    .end local v3    # "_result":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :pswitch_75
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 762
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 764
+    .restart local v0    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 765
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->disableVisualVoicemailSmsFilter(Ljava/lang/String;I)V
 
+    .line 766
     return v14
 
+    .line 742
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":I
     :pswitch_76
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 744
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 746
+    .local v1, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 748
+    .restart local v2    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_24
 
+    .line 749
     sget-object v0, Landroid/telephony/VisualVoicemailSmsFilterSettings;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -3245,604 +4691,948 @@
 
     check-cast v0, Landroid/telephony/VisualVoicemailSmsFilterSettings;
 
+    .local v0, "_arg2":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     goto :goto_16
 
+    .line 752
+    .end local v0    # "_arg2":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :cond_24
     nop
 
+    .line 754
+    .restart local v0    # "_arg2":Landroid/telephony/VisualVoicemailSmsFilterSettings;
     :goto_16
     invoke-virtual {v9, v1, v2, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableVisualVoicemailSmsFilter(Ljava/lang/String;ILandroid/telephony/VisualVoicemailSmsFilterSettings;)V
 
+    .line 755
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 756
     return v14
 
+    .line 730
+    .end local v0    # "_arg2":Landroid/telephony/VisualVoicemailSmsFilterSettings;
+    .end local v1    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":I
     :pswitch_77
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 732
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 734
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 735
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getVisualVoicemailPackageName(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 736
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 737
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 738
     return v14
 
+    .line 712
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":I
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_78
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 714
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 716
+    .restart local v0    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 717
+    .local v2, "_arg1":I
     invoke-virtual {v9, v0, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->getVisualVoicemailSettings(Ljava/lang/String;I)Landroid/os/Bundle;
 
     move-result-object v3
 
+    .line 718
+    .local v3, "_result":Landroid/os/Bundle;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 719
     if-eqz v3, :cond_25
 
+    .line 720
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 721
     invoke-virtual {v3, v12, v14}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_17
 
+    .line 724
     :cond_25
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 726
     :goto_17
     return v14
 
+    .line 702
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_arg1":I
+    .end local v3    # "_result":Landroid/os/Bundle;
     :pswitch_79
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 704
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 705
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isConcurrentVoiceAndDataAllowed(I)Z
 
     move-result v1
 
+    .line 706
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 707
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 708
     return v14
 
+    .line 692
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_7a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 694
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 695
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getVoiceMessageCountForSubscriber(I)I
 
     move-result v1
 
+    .line 696
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 697
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 698
     return v14
 
+    .line 684
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_7b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 685
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getVoiceMessageCount()I
 
     move-result v0
 
+    .line 686
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 687
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 688
     return v14
 
+    .line 672
+    .end local v0    # "_result":I
     :pswitch_7c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 674
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 676
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 677
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataActivationState(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 678
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 679
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 680
     return v14
 
+    .line 660
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_7d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 662
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 664
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 665
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getVoiceActivationState(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 666
+    .restart local v2    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 667
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 668
     return v14
 
+    .line 649
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_7e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 651
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 653
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 654
+    .local v1, "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setDataActivationState(II)V
 
+    .line 655
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 656
     return v14
 
+    .line 638
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
     :pswitch_7f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 640
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 642
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 643
+    .restart local v1    # "_arg1":I
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setVoiceActivationState(II)V
 
+    .line 644
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 645
     return v14
 
+    .line 624
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
     :pswitch_80
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 626
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 628
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 630
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 631
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->setVoiceMailNumber(ILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
+    .line 632
+    .local v3, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 633
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 634
     return v14
 
+    .line 616
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":Z
     :pswitch_81
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 617
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->needsOtaServiceProvisioning()Z
 
     move-result v0
 
+    .line 618
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 619
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 620
     return v14
 
+    .line 604
+    .end local v0    # "_result":Z
     :pswitch_82
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 606
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 608
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 609
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriTextForSubscriber(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 610
+    .local v2, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 611
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 612
     return v14
 
+    .line 594
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Ljava/lang/String;
     :pswitch_83
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 596
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 597
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriText(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 598
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 599
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 600
     return v14
 
+    .line 582
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_84
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 584
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 586
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 587
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriIconModeForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 588
+    .local v2, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 589
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 590
     return v14
 
+    .line 572
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_85
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 574
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 575
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriIconMode(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 576
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 577
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 578
     return v14
 
+    .line 560
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_86
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 562
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 564
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 565
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriIconIndexForSubscriber(ILjava/lang/String;)I
 
     move-result v2
 
+    .line 566
+    .restart local v2    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 567
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 568
     return v14
 
+    .line 550
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":I
     :pswitch_87
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 552
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 553
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCdmaEriIconIndex(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 554
+    .local v1, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 555
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 556
     return v14
 
+    .line 540
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":I
     :pswitch_88
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 542
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 543
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getActivePhoneTypeForSlot(I)I
 
     move-result v1
 
+    .line 544
+    .restart local v1    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 545
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 546
     return v14
 
+    .line 532
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_89
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 533
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getActivePhoneType()I
 
     move-result v0
 
+    .line 534
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 535
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 536
     return v14
 
+    .line 524
+    .end local v0    # "_result":I
     :pswitch_8a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 525
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataState()I
 
     move-result v0
 
+    .line 526
+    .restart local v0    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 527
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 528
     return v14
 
+    .line 516
+    .end local v0    # "_result":I
     :pswitch_8b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 517
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getDataActivity()I
 
     move-result v0
 
+    .line 518
+    .restart local v0    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 519
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 520
     return v14
 
+    .line 506
+    .end local v0    # "_result":I
     :pswitch_8c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 508
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 509
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCallStateForSlot(I)I
 
     move-result v1
 
+    .line 510
+    .restart local v1    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 511
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 512
     return v14
 
+    .line 498
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":I
     :pswitch_8d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 499
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCallState()I
 
     move-result v0
 
+    .line 500
+    .local v0, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 501
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 502
     return v14
 
+    .line 488
+    .end local v0    # "_result":I
     :pswitch_8e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 490
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 491
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getNeighboringCellInfo(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
+    .line 492
+    .local v1, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/NeighboringCellInfo;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 493
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
+    .line 494
     return v14
 
+    .line 478
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/NeighboringCellInfo;>;"
     :pswitch_8f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 480
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 481
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getNetworkCountryIsoForPhone(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 482
+    .local v1, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 483
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 484
     return v14
 
+    .line 462
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Ljava/lang/String;
     :pswitch_90
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 464
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 465
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->getCellLocation(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v2
 
+    .line 466
+    .local v2, "_result":Landroid/os/Bundle;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 467
     if-eqz v2, :cond_26
 
+    .line 468
     invoke-virtual {v12, v14}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 469
     invoke-virtual {v2, v12, v14}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_18
 
+    .line 472
     :cond_26
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 474
     :goto_18
     return v14
 
+    .line 452
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v2    # "_result":Landroid/os/Bundle;
     :pswitch_91
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 454
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 455
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isDataConnectivityPossible(I)Z
 
     move-result v1
 
+    .line 456
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 457
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 458
     return v14
 
+    .line 444
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_92
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 445
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->disableDataConnectivity()Z
 
     move-result v0
 
+    .line 446
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 447
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 448
     return v14
 
+    .line 436
+    .end local v0    # "_result":Z
     :pswitch_93
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 437
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableDataConnectivity()Z
 
     move-result v0
 
+    .line 438
+    .restart local v0    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 439
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 440
     return v14
 
+    .line 427
+    .end local v0    # "_result":Z
     :pswitch_94
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 429
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 430
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->disableLocationUpdatesForSubscriber(I)V
 
+    .line 431
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 432
     return v14
 
+    .line 420
+    .end local v0    # "_arg0":I
     :pswitch_95
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 421
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->disableLocationUpdates()V
 
+    .line 422
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 423
     return v14
 
+    .line 411
     :pswitch_96
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 413
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 414
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableLocationUpdatesForSubscriber(I)V
 
+    .line 415
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 416
     return v14
 
+    .line 404
+    .end local v0    # "_arg0":I
     :pswitch_97
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 405
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->enableLocationUpdates()V
 
+    .line 406
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 407
     return v14
 
+    .line 395
     :pswitch_98
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 397
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 398
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->updateServiceLocationForSubscriber(I)V
 
+    .line 399
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 400
     return v14
 
+    .line 388
+    .end local v0    # "_arg0":I
     :pswitch_99
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 389
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->updateServiceLocation()V
 
+    .line 390
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 391
     return v14
 
+    .line 378
     :pswitch_9a
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 380
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -3856,23 +5646,35 @@
     :cond_27
     move v0, v1
 
+    .line 381
+    .local v0, "_arg0":Z
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setRadioPower(Z)Z
 
     move-result v1
 
+    .line 382
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 383
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 384
     return v14
 
+    .line 366
+    .end local v0    # "_arg0":Z
+    .end local v1    # "_result":Z
     :pswitch_9b
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 368
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 370
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -3883,20 +5685,31 @@
 
     nop
 
+    .line 371
+    .local v1, "_arg1":Z
     :cond_28
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->setRadioForSubscriber(IZ)Z
 
     move-result v2
 
+    .line 372
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 373
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 374
     return v14
 
+    .line 356
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Z
+    .end local v2    # "_result":Z
     :pswitch_9c
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 358
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -3910,76 +5723,115 @@
     :cond_29
     move v0, v1
 
+    .line 359
+    .local v0, "_arg0":Z
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->setRadio(Z)Z
 
     move-result v1
 
+    .line 360
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 361
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 362
     return v14
 
+    .line 347
+    .end local v0    # "_arg0":Z
+    .end local v1    # "_result":Z
     :pswitch_9d
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 349
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 350
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->toggleRadioOnOffForSubscriber(I)V
 
+    .line 351
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 352
     return v14
 
+    .line 340
+    .end local v0    # "_arg0":I
     :pswitch_9e
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 341
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->toggleRadioOnOff()V
 
+    .line 342
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 343
     return v14
 
+    .line 328
     :pswitch_9f
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 330
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 332
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 333
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->handlePinMmiForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 334
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 335
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 336
     return v14
 
+    .line 310
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_a0
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 312
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 314
+    .local v1, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 316
+    .local v2, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_2a
 
+    .line 317
     sget-object v0, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, v11}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -3988,449 +5840,716 @@
 
     check-cast v0, Landroid/os/ResultReceiver;
 
+    .local v0, "_arg2":Landroid/os/ResultReceiver;
     goto :goto_19
 
+    .line 320
+    .end local v0    # "_arg2":Landroid/os/ResultReceiver;
     :cond_2a
     nop
 
+    .line 322
+    .restart local v0    # "_arg2":Landroid/os/ResultReceiver;
     :goto_19
     invoke-virtual {v9, v1, v2, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->handleUssdRequest(ILjava/lang/String;Landroid/os/ResultReceiver;)V
 
+    .line 323
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 324
     return v14
 
+    .line 300
+    .end local v0    # "_arg2":Landroid/os/ResultReceiver;
+    .end local v1    # "_arg0":I
+    .end local v2    # "_arg1":Ljava/lang/String;
     :pswitch_a1
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 302
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 303
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->handlePinMmi(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 304
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 305
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 306
     return v14
 
+    .line 286
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_a2
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 288
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 290
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 292
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 293
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPukReportResultForSubscriber(ILjava/lang/String;Ljava/lang/String;)[I
 
     move-result-object v3
 
+    .line 294
+    .local v3, "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 295
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeIntArray([I)V
 
+    .line 296
     return v14
 
+    .line 274
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":[I
     :pswitch_a3
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 276
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 278
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 279
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPukReportResult(Ljava/lang/String;Ljava/lang/String;)[I
 
     move-result-object v2
 
+    .line 280
+    .local v2, "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 281
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeIntArray([I)V
 
+    .line 282
     return v14
 
+    .line 262
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":[I
     :pswitch_a4
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 264
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 266
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 267
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPinReportResultForSubscriber(ILjava/lang/String;)[I
 
     move-result-object v2
 
+    .line 268
+    .restart local v2    # "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 269
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeIntArray([I)V
 
+    .line 270
     return v14
 
+    .line 252
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":[I
     :pswitch_a5
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 254
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 255
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPinReportResult(Ljava/lang/String;)[I
 
     move-result-object v1
 
+    .line 256
+    .local v1, "_result":[I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 257
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeIntArray([I)V
 
+    .line 258
     return v14
 
+    .line 238
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":[I
     :pswitch_a6
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 240
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 242
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 244
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 245
+    .local v2, "_arg2":Ljava/lang/String;
     invoke-virtual {v9, v0, v1, v2}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPukForSubscriber(ILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
+    .line 246
+    .local v3, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 247
     invoke-virtual {v12, v3}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 248
     return v14
 
+    .line 226
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_arg2":Ljava/lang/String;
+    .end local v3    # "_result":Z
     :pswitch_a7
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 228
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 230
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 231
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPuk(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v2
 
+    .line 232
+    .local v2, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 233
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 234
     return v14
 
+    .line 214
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_a8
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 216
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 218
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 219
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPinForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 220
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 221
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 222
     return v14
 
+    .line 204
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_a9
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 206
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 207
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->supplyPin(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 208
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 209
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 210
     return v14
 
+    .line 192
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_aa
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 194
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 196
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 197
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->isRadioOnForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 198
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 199
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 200
     return v14
 
+    .line 182
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_ab
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 184
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 185
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isRadioOn(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 186
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 187
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 188
     return v14
 
+    .line 170
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_ac
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 172
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 174
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 175
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->isIdleForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 176
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 177
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 178
     return v14
 
+    .line 160
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_ad
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 162
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 163
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isIdle(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 164
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 165
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 166
     return v14
 
+    .line 150
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_ae
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 152
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 153
+    .restart local v0    # "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isRinging(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 154
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 155
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 156
     return v14
 
+    .line 138
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_af
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 140
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 142
+    .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 143
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->isRingingForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 144
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 145
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 146
     return v14
 
+    .line 126
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_b0
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 128
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 130
+    .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 131
+    .restart local v1    # "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->isOffhookForSubscriber(ILjava/lang/String;)Z
 
     move-result v2
 
+    .line 132
+    .restart local v2    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 133
     invoke-virtual {v12, v2}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 134
     return v14
 
+    .line 116
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Ljava/lang/String;
+    .end local v2    # "_result":Z
     :pswitch_b1
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 118
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 119
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->isOffhook(Ljava/lang/String;)Z
 
     move-result v1
 
+    .line 120
+    .local v1, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 121
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 122
     return v14
 
+    .line 109
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_result":Z
     :pswitch_b2
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 110
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->silenceRinger()V
 
+    .line 111
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 112
     return v14
 
+    .line 100
     :pswitch_b3
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 102
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 103
+    .local v0, "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->answerRingingCallForSubscriber(I)V
 
+    .line 104
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 105
     return v14
 
+    .line 93
+    .end local v0    # "_arg0":I
     :pswitch_b4
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 94
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->answerRingingCall()V
 
+    .line 95
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 96
     return v14
 
+    .line 83
     :pswitch_b5
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 85
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 86
+    .restart local v0    # "_arg0":I
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->endCallForSubscriber(I)Z
 
     move-result v1
 
+    .line 87
+    .restart local v1    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 88
     invoke-virtual {v12, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 89
     return v14
 
+    .line 75
+    .end local v0    # "_arg0":I
+    .end local v1    # "_result":Z
     :pswitch_b6
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 76
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/ITelephony$Stub;->endCall()Z
 
     move-result v0
 
+    .line 77
+    .local v0, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 78
     invoke-virtual {v12, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 79
     return v14
 
+    .line 64
+    .end local v0    # "_result":Z
     :pswitch_b7
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 66
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 68
+    .local v0, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 69
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual {v9, v0, v1}, Lcom/android/internal/telephony/ITelephony$Stub;->call(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 70
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 71
     return v14
 
+    .line 55
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Ljava/lang/String;
     :pswitch_b8
     invoke-virtual {v11, v13}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 57
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 58
+    .restart local v0    # "_arg0":Ljava/lang/String;
     invoke-virtual {v9, v0}, Lcom/android/internal/telephony/ITelephony$Stub;->dial(Ljava/lang/String;)V
 
+    .line 59
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 60
     return v14
 
+    .line 50
+    .end local v0    # "_arg0":Ljava/lang/String;
     :cond_2b
     invoke-virtual {v12, v13}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 51
     return v14
 
     :pswitch_data_0

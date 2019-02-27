@@ -35,6 +35,7 @@
 .method constructor <init>(Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/reflect/Method;Landroid/view/View;[Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
+    .line 1694
     iput-object p1, p0, Landroid/view/ViewDebug$5;->val$result:Ljava/util/concurrent/atomic/AtomicReference;
 
     iput-object p2, p0, Landroid/view/ViewDebug$5;->val$method:Ljava/lang/reflect/Method;
@@ -57,6 +58,7 @@
 .method public run()V
     .locals 4
 
+    .line 1698
     :try_start_0
     iget-object v0, p0, Landroid/view/ViewDebug$5;->val$result:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -77,18 +79,25 @@
 
     goto :goto_0
 
+    .line 1701
     :catch_0
     move-exception v0
 
+    .line 1702
+    .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Landroid/view/ViewDebug$5;->val$exception:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
+    .end local v0    # "e":Ljava/lang/Exception;
     goto :goto_1
 
+    .line 1699
     :catch_1
     move-exception v0
 
+    .line 1700
+    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     iget-object v1, p0, Landroid/view/ViewDebug$5;->val$exception:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
@@ -97,13 +106,17 @@
 
     invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
+    .line 1703
+    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :goto_0
     nop
 
+    .line 1705
     :goto_1
     iget-object v0, p0, Landroid/view/ViewDebug$5;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
+    .line 1706
     return-void
 .end method

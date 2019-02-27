@@ -46,12 +46,15 @@
 .method constructor <init>()V
     .locals 2
 
+    .line 6005
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6031
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6032
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
@@ -63,7 +66,11 @@
 # virtual methods
 .method collect(FJLjava/lang/String;)F
     .locals 10
+    .param p1, "off"    # F
+    .param p2, "time"    # J
+    .param p4, "axis"    # Ljava/lang/String;
 
+    .line 6057
     const/4 v0, 0x0
 
     cmpl-float v1, p1, v0
@@ -78,22 +85,30 @@
 
     if-lez v1, :cond_1
 
+    .line 6058
     mul-float/2addr v3, p1
 
     float-to-long v7, v3
 
+    .line 6059
+    .local v7, "normTime":J
     iget v1, p0, Landroid/view/ViewRootImpl$TrackballAxis;->dir:I
 
     if-gez v1, :cond_0
 
+    .line 6061
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6062
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
+    .line 6063
     iput v6, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6064
     iput-wide v4, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
 
+    .line 6066
     :cond_0
     const/4 v0, 0x1
 
@@ -101,29 +116,39 @@
 
     goto :goto_0
 
+    .line 6067
+    .end local v7    # "normTime":J
     :cond_1
     cmpg-float v1, p1, v0
 
     if-gez v1, :cond_3
 
+    .line 6068
     neg-float v1, p1
 
     mul-float/2addr v1, v3
 
     float-to-long v7, v1
 
+    .line 6069
+    .restart local v7    # "normTime":J
     iget v1, p0, Landroid/view/ViewRootImpl$TrackballAxis;->dir:I
 
     if-lez v1, :cond_2
 
+    .line 6071
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6072
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
+    .line 6073
     iput v6, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6074
     iput-wide v4, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
 
+    .line 6076
     :cond_2
     const/4 v0, -0x1
 
@@ -131,42 +156,58 @@
 
     goto :goto_0
 
+    .line 6078
+    .end local v7    # "normTime":J
     :cond_3
     move-wide v7, v4
 
+    .restart local v7    # "normTime":J
     :goto_0
     move-wide v0, v7
 
+    .line 6084
+    .end local v7    # "normTime":J
+    .local v0, "normTime":J
     cmp-long v2, v0, v4
 
     if-lez v2, :cond_9
 
+    .line 6085
     iget-wide v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
 
     sub-long v2, p2, v2
 
+    .line 6086
+    .local v2, "delta":J
     iput-wide p2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
 
+    .line 6087
     iget v4, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6088
+    .local v4, "acc":F
     cmp-long v5, v2, v0
 
     const v7, 0x3ccccccd    # 0.025f
 
     if-gez v5, :cond_6
 
+    .line 6090
     sub-long v8, v0, v2
 
     long-to-float v5, v8
 
     mul-float/2addr v5, v7
 
+    .line 6091
+    .local v5, "scale":F
     cmpl-float v6, v5, v6
 
     if-lez v6, :cond_4
 
     mul-float/2addr v4, v5
 
+    .line 6095
     :cond_4
     const/high16 v6, 0x41a00000    # 20.0f
 
@@ -181,8 +222,11 @@
     :cond_5
     iput v6, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6096
+    .end local v5    # "scale":F
     goto :goto_1
 
+    .line 6098
     :cond_6
     sub-long v8, v2, v0
 
@@ -190,12 +234,15 @@
 
     mul-float/2addr v5, v7
 
+    .line 6099
+    .restart local v5    # "scale":F
     cmpl-float v7, v5, v6
 
     if-lez v7, :cond_7
 
     div-float/2addr v4, v5
 
+    .line 6103
     :cond_7
     cmpl-float v7, v4, v6
 
@@ -208,6 +255,10 @@
     :cond_8
     iput v6, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6106
+    .end local v2    # "delta":J
+    .end local v4    # "acc":F
+    .end local v5    # "scale":F
     :cond_9
     :goto_1
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
@@ -216,6 +267,7 @@
 
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6107
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
@@ -228,12 +280,16 @@
 .method generate()I
     .locals 5
 
+    .line 6119
     const/4 v0, 0x0
 
+    .line 6120
+    .local v0, "movement":I
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/view/ViewRootImpl$TrackballAxis;->nonAccelMovement:I
 
+    .line 6122
     :goto_0
     iget v1, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
@@ -252,11 +308,14 @@
     :cond_0
     const/4 v1, -0x1
 
+    .line 6123
+    .local v1, "dir":I
     :goto_1
     iget v3, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
     packed-switch v3, :pswitch_data_0
 
+    .line 6155
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
@@ -269,8 +328,10 @@
 
     if-gez v2, :cond_3
 
+    .line 6156
     return v0
 
+    .line 6139
     :pswitch_0
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
@@ -284,17 +345,21 @@
 
     if-gez v2, :cond_1
 
+    .line 6140
     return v0
 
+    .line 6142
     :cond_1
     add-int/2addr v0, v1
 
+    .line 6143
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->nonAccelMovement:I
 
     add-int/2addr v2, v1
 
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->nonAccelMovement:I
 
+    .line 6144
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
     int-to-float v4, v1
@@ -305,12 +370,15 @@
 
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6145
     const/4 v2, 0x2
 
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
+    .line 6146
     goto :goto_3
 
+    .line 6128
     :pswitch_1
     iget v3, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
@@ -324,24 +392,31 @@
 
     if-gez v3, :cond_2
 
+    .line 6129
     return v0
 
+    .line 6131
     :cond_2
     add-int/2addr v0, v1
 
+    .line 6132
     iget v3, p0, Landroid/view/ViewRootImpl$TrackballAxis;->nonAccelMovement:I
 
     add-int/2addr v3, v1
 
     iput v3, p0, Landroid/view/ViewRootImpl$TrackballAxis;->nonAccelMovement:I
 
+    .line 6133
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
+    .line 6134
     goto :goto_3
 
+    .line 6158
     :cond_3
     add-int/2addr v0, v1
 
+    .line 6159
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
     int-to-float v4, v1
@@ -352,12 +427,16 @@
 
     iput v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6160
     iget v2, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6161
+    .local v2, "acc":F
     const v3, 0x3f8ccccd    # 1.1f
 
     mul-float/2addr v2, v3
 
+    .line 6162
     const/high16 v3, 0x41a00000    # 20.0f
 
     cmpg-float v3, v2, v3
@@ -374,6 +453,9 @@
     :goto_2
     iput v3, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6165
+    .end local v1    # "dir":I
+    .end local v2    # "acc":F
     :goto_3
     goto :goto_0
 
@@ -386,24 +468,31 @@
 
 .method reset(I)V
     .locals 2
+    .param p1, "_step"    # I
 
+    .line 6038
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->position:F
 
+    .line 6039
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->acceleration:F
 
+    .line 6040
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->lastMoveTime:J
 
+    .line 6041
     iput p1, p0, Landroid/view/ViewRootImpl$TrackballAxis;->step:I
 
+    .line 6042
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewRootImpl$TrackballAxis;->dir:I
 
+    .line 6043
     return-void
 .end method

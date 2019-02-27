@@ -21,19 +21,25 @@
 # direct methods
 .method public constructor <init>(Landroid/telecom/DisconnectCause;)V
     .locals 1
+    .param p1, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
+    .line 3041
     invoke-direct {p0}, Landroid/telecom/Connection;-><init>()V
 
+    .line 3040
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
+    .line 3042
     invoke-virtual {p0, p1}, Landroid/telecom/Connection$FailureSignalingConnection;->setDisconnected(Landroid/telecom/DisconnectCause;)V
 
+    .line 3043
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
+    .line 3044
     return-void
 .end method
 
@@ -42,12 +48,15 @@
 .method public checkImmutable()V
     .locals 2
 
+    .line 3047
     iget-boolean v0, p0, Landroid/telecom/Connection$FailureSignalingConnection;->mImmutable:Z
 
     if-nez v0, :cond_0
 
+    .line 3050
     return-void
 
+    .line 3048
     :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

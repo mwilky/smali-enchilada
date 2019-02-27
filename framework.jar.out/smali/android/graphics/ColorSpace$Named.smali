@@ -62,6 +62,7 @@
 .method static constructor <clinit>()V
     .locals 17
 
+    .line 262
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "SRGB"
@@ -72,6 +73,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 289
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "LINEAR_SRGB"
@@ -82,6 +84,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->LINEAR_SRGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 328
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "EXTENDED_SRGB"
@@ -92,6 +95,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 355
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "LINEAR_EXTENDED_SRGB"
@@ -102,6 +106,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->LINEAR_EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 390
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "BT709"
@@ -112,6 +117,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->BT709:Landroid/graphics/ColorSpace$Named;
 
+    .line 425
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "BT2020"
@@ -122,6 +128,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->BT2020:Landroid/graphics/ColorSpace$Named;
 
+    .line 452
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "DCI_P3"
@@ -132,6 +139,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->DCI_P3:Landroid/graphics/ColorSpace$Named;
 
+    .line 487
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "DISPLAY_P3"
@@ -142,6 +150,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
+    .line 522
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "NTSC_1953"
@@ -152,6 +161,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->NTSC_1953:Landroid/graphics/ColorSpace$Named;
 
+    .line 557
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "SMPTE_C"
@@ -162,6 +172,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->SMPTE_C:Landroid/graphics/ColorSpace$Named;
 
+    .line 584
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "ADOBE_RGB"
@@ -172,6 +183,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->ADOBE_RGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 619
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "PRO_PHOTO_RGB"
@@ -182,6 +194,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->PRO_PHOTO_RGB:Landroid/graphics/ColorSpace$Named;
 
+    .line 646
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "ACES"
@@ -192,6 +205,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->ACES:Landroid/graphics/ColorSpace$Named;
 
+    .line 673
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "ACESCG"
@@ -202,6 +216,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->ACESCG:Landroid/graphics/ColorSpace$Named;
 
+    .line 684
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "CIE_XYZ"
@@ -212,6 +227,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->CIE_XYZ:Landroid/graphics/ColorSpace$Named;
 
+    .line 695
     new-instance v0, Landroid/graphics/ColorSpace$Named;
 
     const-string v1, "CIE_LAB"
@@ -222,6 +238,7 @@
 
     sput-object v0, Landroid/graphics/ColorSpace$Named;->CIE_LAB:Landroid/graphics/ColorSpace$Named;
 
+    .line 226
     const/16 v0, 0x10
 
     new-array v0, v0, [Landroid/graphics/ColorSpace$Named;
@@ -309,6 +326,7 @@
         }
     .end annotation
 
+    .line 226
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -316,7 +334,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/ColorSpace$Named;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 226
     const-class v0, Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -331,6 +351,7 @@
 .method public static values()[Landroid/graphics/ColorSpace$Named;
     .locals 1
 
+    .line 226
     sget-object v0, Landroid/graphics/ColorSpace$Named;->$VALUES:[Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v0}, [Landroid/graphics/ColorSpace$Named;->clone()Ljava/lang/Object;

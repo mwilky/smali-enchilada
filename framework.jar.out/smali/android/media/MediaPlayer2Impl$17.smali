@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZLandroid/media/BufferingParams;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 1395
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$17;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iput-object p4, p0, Landroid/media/MediaPlayer2Impl$17;->val$params:Landroid/media/BufferingParams;
@@ -38,17 +42,20 @@
 .method process()V
     .locals 2
 
+    .line 1398
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$17;->val$params:Landroid/media/BufferingParams;
 
     const-string/jumbo v1, "the BufferingParams cannot be null"
 
     invoke-static {v0, v1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1399
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$17;->this$0:Landroid/media/MediaPlayer2Impl;
 
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$17;->val$params:Landroid/media/BufferingParams;
 
     invoke-static {v0, v1}, Landroid/media/MediaPlayer2Impl;->access$2600(Landroid/media/MediaPlayer2Impl;Landroid/media/BufferingParams;)V
 
+    .line 1400
     return-void
 .end method

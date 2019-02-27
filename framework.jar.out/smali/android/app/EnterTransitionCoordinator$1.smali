@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/EnterTransitionCoordinator;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/app/EnterTransitionCoordinator;
 
+    .line 84
     iput-object p1, p0, Landroid/app/EnterTransitionCoordinator$1;->this$0:Landroid/app/EnterTransitionCoordinator;
 
     iput-object p2, p0, Landroid/app/EnterTransitionCoordinator$1;->val$viewTreeObserver:Landroid/view/ViewTreeObserver;
@@ -45,6 +47,7 @@
 .method public onPreDraw()Z
     .locals 1
 
+    .line 87
     iget-object v0, p0, Landroid/app/EnterTransitionCoordinator$1;->this$0:Landroid/app/EnterTransitionCoordinator;
 
     invoke-static {v0}, Landroid/app/EnterTransitionCoordinator;->access$000(Landroid/app/EnterTransitionCoordinator;)Z
@@ -53,6 +56,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 88
     iget-object v0, p0, Landroid/app/EnterTransitionCoordinator$1;->val$viewTreeObserver:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
@@ -61,12 +65,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 89
     iget-object v0, p0, Landroid/app/EnterTransitionCoordinator$1;->val$viewTreeObserver:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     goto :goto_0
 
+    .line 91
     :cond_0
     iget-object v0, p0, Landroid/app/EnterTransitionCoordinator$1;->val$decorView:Landroid/view/View;
 
@@ -76,6 +82,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
+    .line 94
     :cond_1
     :goto_0
     const/4 v0, 0x0

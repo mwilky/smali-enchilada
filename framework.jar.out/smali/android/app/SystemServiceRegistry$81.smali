@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 909
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,18 +36,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/media/midi/MidiManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 912
     const-string/jumbo v0, "midi"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 913
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/media/midi/MidiManager;
 
     invoke-static {v0}, Landroid/media/midi/IMidiManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/midi/IMidiManager;
@@ -66,6 +71,7 @@
         }
     .end annotation
 
+    .line 909
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$81;->createService(Landroid/app/ContextImpl;)Landroid/media/midi/MidiManager;
 
     move-result-object p1

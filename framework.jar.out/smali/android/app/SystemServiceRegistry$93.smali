@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1012
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,18 +36,22 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/app/VrManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 1015
     const-string/jumbo v0, "vrmanager"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 1016
+    .local v0, "b":Landroid/os/IBinder;
     new-instance v1, Landroid/app/VrManager;
 
     invoke-static {v0}, Landroid/service/vr/IVrManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/vr/IVrManager;
@@ -66,6 +71,7 @@
         }
     .end annotation
 
+    .line 1012
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$93;->createService(Landroid/app/ContextImpl;)Landroid/app/VrManager;
 
     move-result-object p1

@@ -28,27 +28,34 @@
 # direct methods
 .method public constructor <init>(Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiConfiguration;)V
     .locals 2
+    .param p1, "this$0"    # Landroid/net/wifi/WifiManager;
+    .param p2, "config"    # Landroid/net/wifi/WifiConfiguration;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
+    .line 2735
     iput-object p1, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->this$0:Landroid/net/wifi/WifiManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2730
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mCloseGuard:Ldalvik/system/CloseGuard;
 
+    .line 2736
     iput-object p2, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
+    .line 2737
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v1, "close"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
+    .line 2738
     return-void
 .end method
 
@@ -57,28 +64,36 @@
 .method public close()V
     .locals 3
 
+    .line 2747
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->this$0:Landroid/net/wifi/WifiManager;
 
     invoke-static {v0}, Landroid/net/wifi/WifiManager;->access$000(Landroid/net/wifi/WifiManager;)V
 
+    .line 2748
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2751
     goto :goto_0
 
+    .line 2749
     :catch_0
     move-exception v0
 
+    .line 2750
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "WifiManager"
 
     const-string v2, "Failed to stop Local Only Hotspot."
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2752
+    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -91,26 +106,33 @@
         }
     .end annotation
 
+    .line 2757
     :try_start_0
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
+    .line 2758
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
+    .line 2760
     :cond_0
     invoke-virtual {p0}, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2762
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 2763
     nop
 
+    .line 2764
     return-void
 
+    .line 2762
     :catchall_0
     move-exception v0
 
@@ -122,6 +144,7 @@
 .method public getWifiConfiguration()Landroid/net/wifi/WifiConfiguration;
     .locals 1
 
+    .line 2741
     iget-object v0, p0, Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
     return-object v0

@@ -39,8 +39,11 @@
 .method private constructor <init>()V
     .locals 2
 
+    .line 227
+    .local p0, "this":Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;, "Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 229
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -54,7 +57,10 @@
 
 .method synthetic constructor <init>(Landroid/view/textclassifier/SystemTextClassifier$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/view/textclassifier/SystemTextClassifier$1;
 
+    .line 227
+    .local p0, "this":Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;, "Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver<TT;>;"
     invoke-direct {p0}, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;-><init>()V
 
     return-void
@@ -76,6 +82,8 @@
         }
     .end annotation
 
+    .line 249
+    .local p0, "this":Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;, "Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver<TT;>;"
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -86,6 +94,7 @@
 
     if-eq v0, v1, :cond_0
 
+    .line 250
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
     const-wide/16 v1, 0x2
@@ -94,6 +103,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
 
+    .line 252
     :cond_0
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->mResponse:Ljava/lang/Object;
 
@@ -103,6 +113,8 @@
 .method public onFailure()V
     .locals 3
 
+    .line 239
+    .local p0, "this":Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;, "Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver<TT;>;"
     const-string v0, "SystemTextClassifier"
 
     const-string v1, "Request failed."
@@ -111,10 +123,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/view/textclassifier/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 240
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
+    .line 241
     return-void
 .end method
 
@@ -126,11 +140,16 @@
         }
     .end annotation
 
+    .line 234
+    .local p0, "this":Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;, "Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver<TT;>;"
+    .local p1, "response":Ljava/lang/Object;, "TT;"
     iput-object p1, p0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->mResponse:Ljava/lang/Object;
 
+    .line 235
     iget-object v0, p0, Landroid/view/textclassifier/SystemTextClassifier$ResponseReceiver;->mLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
+    .line 236
     return-void
 .end method

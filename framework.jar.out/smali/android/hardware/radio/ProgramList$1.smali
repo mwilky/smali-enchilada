@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/radio/ProgramList;Ljava/util/concurrent/Executor;Landroid/hardware/radio/ProgramList$ListCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/radio/ProgramList;
 
+    .line 90
     iput-object p1, p0, Landroid/hardware/radio/ProgramList$1;->this$0:Landroid/hardware/radio/ProgramList;
 
     iput-object p2, p0, Landroid/hardware/radio/ProgramList$1;->val$executor:Ljava/util/concurrent/Executor;
@@ -39,7 +41,10 @@
 
 .method static synthetic lambda$onItemChanged$0(Landroid/hardware/radio/ProgramList$ListCallback;Landroid/hardware/radio/ProgramSelector$Identifier;)V
     .locals 0
+    .param p0, "callback"    # Landroid/hardware/radio/ProgramList$ListCallback;
+    .param p1, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 92
     invoke-virtual {p0, p1}, Landroid/hardware/radio/ProgramList$ListCallback;->onItemChanged(Landroid/hardware/radio/ProgramSelector$Identifier;)V
 
     return-void
@@ -47,7 +52,10 @@
 
 .method static synthetic lambda$onItemRemoved$1(Landroid/hardware/radio/ProgramList$ListCallback;Landroid/hardware/radio/ProgramSelector$Identifier;)V
     .locals 0
+    .param p0, "callback"    # Landroid/hardware/radio/ProgramList$ListCallback;
+    .param p1, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 96
     invoke-virtual {p0, p1}, Landroid/hardware/radio/ProgramList$ListCallback;->onItemRemoved(Landroid/hardware/radio/ProgramSelector$Identifier;)V
 
     return-void
@@ -57,7 +65,9 @@
 # virtual methods
 .method public onItemChanged(Landroid/hardware/radio/ProgramSelector$Identifier;)V
     .locals 3
+    .param p1, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 92
     iget-object v0, p0, Landroid/hardware/radio/ProgramList$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/radio/ProgramList$1;->val$callback:Landroid/hardware/radio/ProgramList$ListCallback;
@@ -68,12 +78,15 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 93
     return-void
 .end method
 
 .method public onItemRemoved(Landroid/hardware/radio/ProgramSelector$Identifier;)V
     .locals 3
+    .param p1, "id"    # Landroid/hardware/radio/ProgramSelector$Identifier;
 
+    .line 96
     iget-object v0, p0, Landroid/hardware/radio/ProgramList$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/hardware/radio/ProgramList$1;->val$callback:Landroid/hardware/radio/ProgramList$ListCallback;
@@ -84,5 +97,6 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 97
     return-void
 .end method

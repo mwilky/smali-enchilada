@@ -25,7 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/admin/DevicePolicyManager;Ljava/util/concurrent/Executor;Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/app/admin/DevicePolicyManager;
 
+    .line 9189
     iput-object p1, p0, Landroid/app/admin/DevicePolicyManager$1;->this$0:Landroid/app/admin/DevicePolicyManager;
 
     iput-object p2, p0, Landroid/app/admin/DevicePolicyManager$1;->val$executor:Ljava/util/concurrent/Executor;
@@ -39,7 +41,11 @@
 
 .method static synthetic lambda$onRemoveCompleted$0(Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;Ljava/lang/String;Z)V
     .locals 0
+    .param p0, "listener"    # Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;
+    .param p1, "pkg"    # Ljava/lang/String;
+    .param p2, "succeeded"    # Z
 
+    .line 9192
     invoke-interface {p0, p1, p2}, Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;->onApplicationUserDataCleared(Ljava/lang/String;Z)V
 
     return-void
@@ -49,7 +55,10 @@
 # virtual methods
 .method public onRemoveCompleted(Ljava/lang/String;Z)V
     .locals 3
+    .param p1, "pkg"    # Ljava/lang/String;
+    .param p2, "succeeded"    # Z
 
+    .line 9191
     iget-object v0, p0, Landroid/app/admin/DevicePolicyManager$1;->val$executor:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager$1;->val$listener:Landroid/app/admin/DevicePolicyManager$OnClearApplicationUserDataListener;
@@ -60,5 +69,6 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
+    .line 9193
     return-void
 .end method

@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/accounts/AccountAuthenticatorResponse;
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 91
     new-instance v0, Landroid/accounts/AccountAuthenticatorResponse;
 
     invoke-direct {v0, p1}, Landroid/accounts/AccountAuthenticatorResponse;-><init>(Landroid/os/Parcel;)V
@@ -50,6 +53,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 89
     invoke-virtual {p0, p1}, Landroid/accounts/AccountAuthenticatorResponse$1;->createFromParcel(Landroid/os/Parcel;)Landroid/accounts/AccountAuthenticatorResponse;
 
     move-result-object p1
@@ -59,7 +63,9 @@
 
 .method public newArray(I)[Landroid/accounts/AccountAuthenticatorResponse;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 95
     new-array v0, p1, [Landroid/accounts/AccountAuthenticatorResponse;
 
     return-object v0
@@ -68,6 +74,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 89
     invoke-virtual {p0, p1}, Landroid/accounts/AccountAuthenticatorResponse$1;->newArray(I)[Landroid/accounts/AccountAuthenticatorResponse;
 
     move-result-object p1

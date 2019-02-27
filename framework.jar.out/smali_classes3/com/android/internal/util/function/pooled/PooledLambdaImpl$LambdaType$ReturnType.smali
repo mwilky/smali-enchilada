@@ -32,6 +32,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 564
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 
 .method static lambdaSuffix(I)Ljava/lang/String;
     .locals 2
+    .param p0, "type"    # I
 
+    .line 585
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -65,23 +68,29 @@
 
 .method private static prefix(I)Ljava/lang/String;
     .locals 1
+    .param p0, "type"    # I
 
+    .line 589
     packed-switch p0, :pswitch_data_0
 
+    .line 593
     const-string v0, ""
 
     return-object v0
 
+    .line 592
     :pswitch_0
     const-string v0, "Double"
 
     return-object v0
 
+    .line 591
     :pswitch_1
     const-string v0, "Long"
 
     return-object v0
 
+    .line 590
     :pswitch_2
     const-string v0, "Int"
 
@@ -99,23 +108,29 @@
 
 .method private static suffix(I)Ljava/lang/String;
     .locals 1
+    .param p0, "type"    # I
 
+    .line 598
     packed-switch p0, :pswitch_data_0
 
+    .line 602
     const-string v0, "Supplier"
 
     return-object v0
 
+    .line 601
     :pswitch_0
     const-string v0, "Function"
 
     return-object v0
 
+    .line 600
     :pswitch_1
     const-string v0, "Predicate"
 
     return-object v0
 
+    .line 599
     :pswitch_2
     const-string v0, "Consumer"
 
@@ -133,9 +148,12 @@
 
 .method static toString(I)Ljava/lang/String;
     .locals 2
+    .param p0, "returnType"    # I
 
+    .line 573
     packed-switch p0, :pswitch_data_0
 
+    .line 580
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -152,31 +170,37 @@
 
     return-object v0
 
+    .line 579
     :pswitch_0
     const-string v0, "DOUBLE"
 
     return-object v0
 
+    .line 578
     :pswitch_1
     const-string v0, "LONG"
 
     return-object v0
 
+    .line 577
     :pswitch_2
     const-string v0, "INT"
 
     return-object v0
 
+    .line 576
     :pswitch_3
     const-string v0, "OBJECT"
 
     return-object v0
 
+    .line 575
     :pswitch_4
     const-string v0, "BOOLEAN"
 
     return-object v0
 
+    .line 574
     :pswitch_5
     const-string v0, "VOID"
 

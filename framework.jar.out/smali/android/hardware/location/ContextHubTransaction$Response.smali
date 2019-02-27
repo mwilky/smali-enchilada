@@ -38,18 +38,25 @@
 # direct methods
 .method constructor <init>(ILjava/lang/Object;)V
     .locals 0
+    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITR;)V"
         }
     .end annotation
 
+    .line 139
+    .local p0, "this":Landroid/hardware/location/ContextHubTransaction$Response;, "Landroid/hardware/location/ContextHubTransaction$Response<TR;>;"
+    .local p2, "contents":Ljava/lang/Object;, "TR;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 140
     iput p1, p0, Landroid/hardware/location/ContextHubTransaction$Response;->mResult:I
 
+    .line 141
     iput-object p2, p0, Landroid/hardware/location/ContextHubTransaction$Response;->mContents:Ljava/lang/Object;
 
+    .line 142
     return-void
 .end method
 
@@ -63,6 +70,8 @@
         }
     .end annotation
 
+    .line 150
+    .local p0, "this":Landroid/hardware/location/ContextHubTransaction$Response;, "Landroid/hardware/location/ContextHubTransaction$Response<TR;>;"
     iget-object v0, p0, Landroid/hardware/location/ContextHubTransaction$Response;->mContents:Ljava/lang/Object;
 
     return-object v0
@@ -71,6 +80,8 @@
 .method public getResult()I
     .locals 1
 
+    .line 146
+    .local p0, "this":Landroid/hardware/location/ContextHubTransaction$Response;, "Landroid/hardware/location/ContextHubTransaction$Response<TR;>;"
     iget v0, p0, Landroid/hardware/location/ContextHubTransaction$Response;->mResult:I
 
     return v0

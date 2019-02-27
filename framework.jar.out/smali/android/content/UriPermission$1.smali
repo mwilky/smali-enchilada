@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/UriPermission;
     .locals 1
+    .param p1, "source"    # Landroid/os/Parcel;
 
+    .line 109
     new-instance v0, Landroid/content/UriPermission;
 
     invoke-direct {v0, p1}, Landroid/content/UriPermission;-><init>(Landroid/os/Parcel;)V
@@ -50,6 +53,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 106
     invoke-virtual {p0, p1}, Landroid/content/UriPermission$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/UriPermission;
 
     move-result-object p1
@@ -59,7 +63,9 @@
 
 .method public newArray(I)[Landroid/content/UriPermission;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 114
     new-array v0, p1, [Landroid/content/UriPermission;
 
     return-object v0
@@ -68,6 +74,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 106
     invoke-virtual {p0, p1}, Landroid/content/UriPermission$1;->newArray(I)[Landroid/content/UriPermission;
 
     move-result-object p1

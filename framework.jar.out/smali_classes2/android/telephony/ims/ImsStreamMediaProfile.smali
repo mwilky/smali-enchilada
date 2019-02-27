@@ -109,6 +109,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 220
     new-instance v0, Landroid/telephony/ims/ImsStreamMediaProfile$1;
 
     invoke-direct {v0}, Landroid/telephony/ims/ImsStreamMediaProfile$1;-><init>()V
@@ -121,114 +122,158 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 160
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
+    .line 161
     const/4 v1, 0x3
 
     iput v1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
+    .line 162
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
+    .line 163
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
+    .line 164
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 165
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .locals 0
+    .param p1, "rttMode"    # I
 
+    .line 177
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 178
     iput p1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 179
     return-void
 .end method
 
 .method public constructor <init>(IIII)V
     .locals 0
+    .param p1, "audioQuality"    # I
+    .param p2, "audioDirection"    # I
+    .param p3, "videoQuality"    # I
+    .param p4, "videoDirection"    # I
 
+    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 170
     iput p1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
+    .line 171
     iput p2, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
+    .line 172
     iput p3, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
+    .line 173
     iput p4, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
+    .line 174
     return-void
 .end method
 
 .method public constructor <init>(IIIII)V
     .locals 0
+    .param p1, "audioQuality"    # I
+    .param p2, "audioDirection"    # I
+    .param p3, "videoQuality"    # I
+    .param p4, "videoDirection"    # I
+    .param p5, "rttMode"    # I
 
+    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 151
     iput p1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
+    .line 152
     iput p2, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
+    .line 153
     iput p3, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
+    .line 154
     iput p4, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
+    .line 155
     iput p5, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 156
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 99
     invoke-direct {p0, p1}, Landroid/telephony/ims/ImsStreamMediaProfile;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 100
     return-void
 .end method
 
 .method private readFromParcel(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 213
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
+    .line 214
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
+    .line 215
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
+    .line 216
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
+    .line 217
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 218
     return-void
 .end method
 
@@ -236,33 +281,41 @@
 # virtual methods
 .method public copyFrom(Landroid/telephony/ims/ImsStreamMediaProfile;)V
     .locals 1
+    .param p1, "profile"    # Landroid/telephony/ims/ImsStreamMediaProfile;
 
+    .line 182
     iget v0, p1, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
+    .line 183
     iget v0, p1, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
+    .line 184
     iget v0, p1, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
+    .line 185
     iget v0, p1, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
+    .line 186
     iget v0, p1, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
     iput v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 187
     return-void
 .end method
 
 .method public describeContents()I
     .locals 1
 
+    .line 200
     const/4 v0, 0x0
 
     return v0
@@ -271,6 +324,7 @@
 .method public getAudioDirection()I
     .locals 1
 
+    .line 253
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
     return v0
@@ -279,6 +333,7 @@
 .method public getAudioQuality()I
     .locals 1
 
+    .line 249
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
     return v0
@@ -287,6 +342,7 @@
 .method public getRttMode()I
     .locals 1
 
+    .line 265
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
     return v0
@@ -295,6 +351,7 @@
 .method public getVideoDirection()I
     .locals 1
 
+    .line 261
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
     return v0
@@ -303,6 +360,7 @@
 .method public getVideoQuality()I
     .locals 1
 
+    .line 257
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
     return v0
@@ -311,6 +369,7 @@
 .method public isRttCall()Z
     .locals 2
 
+    .line 238
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
     const/4 v1, 0x1
@@ -328,15 +387,19 @@
 
 .method public setRttMode(I)V
     .locals 0
+    .param p1, "rttMode"    # I
 
+    .line 245
     iput p1, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
+    .line 246
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 191
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -394,26 +457,34 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 205
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioQuality:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 206
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 207
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoQuality:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 208
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mVideoDirection:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 209
     iget v0, p0, Landroid/telephony/ims/ImsStreamMediaProfile;->mRttMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 210
     return-void
 .end method

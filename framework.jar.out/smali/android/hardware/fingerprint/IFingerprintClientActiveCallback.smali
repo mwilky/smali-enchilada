@@ -30,3 +30,11 @@
         }
     .end annotation
 .end method
+
+.method public abstract onFingerprintEventCallback(IIII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

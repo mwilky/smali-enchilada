@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 278
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHeadsetClientCall;
     .locals 12
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 281
     new-instance v9, Landroid/bluetooth/BluetoothHeadsetClientCall;
 
     const/4 v0, 0x0
@@ -52,6 +55,7 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
+    .line 282
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -68,6 +72,7 @@
 
     move-result v4
 
+    .line 283
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
@@ -96,13 +101,16 @@
 
     if-ne v0, v7, :cond_1
 
+    .line 284
     move v10, v7
 
     goto :goto_1
 
+    .line 283
     :cond_1
     nop
 
+    .line 284
     move v10, v6
 
     :goto_1
@@ -130,12 +138,14 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/bluetooth/BluetoothHeadsetClientCall;-><init>(Landroid/bluetooth/BluetoothDevice;ILjava/util/UUID;ILjava/lang/String;ZZZ)V
 
+    .line 281
     return-object v9
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 278
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHeadsetClientCall$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHeadsetClientCall;
 
     move-result-object p1
@@ -145,7 +155,9 @@
 
 .method public newArray(I)[Landroid/bluetooth/BluetoothHeadsetClientCall;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 289
     new-array v0, p1, [Landroid/bluetooth/BluetoothHeadsetClientCall;
 
     return-object v0
@@ -154,6 +166,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 278
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHeadsetClientCall$1;->newArray(I)[Landroid/bluetooth/BluetoothHeadsetClientCall;
 
     move-result-object p1

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/animation/Animation;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/animation/Animation;
 
+    .line 377
     iput-object p1, p0, Landroid/view/animation/Animation$2;->this$0:Landroid/view/animation/Animation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +39,14 @@
 .method public run()V
     .locals 2
 
+    .line 379
     iget-object v0, p0, Landroid/view/animation/Animation$2;->this$0:Landroid/view/animation/Animation;
 
     iget-object v0, v0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v0, :cond_0
 
+    .line 380
     iget-object v0, p0, Landroid/view/animation/Animation$2;->this$0:Landroid/view/animation/Animation;
 
     iget-object v0, v0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
@@ -51,6 +55,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationRepeat(Landroid/view/animation/Animation;)V
 
+    .line 382
     :cond_0
     return-void
 .end method

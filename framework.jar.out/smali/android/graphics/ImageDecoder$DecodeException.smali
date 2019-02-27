@@ -37,7 +37,12 @@
 # direct methods
 .method constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;Landroid/graphics/ImageDecoder$Source;)V
     .locals 2
+    .param p1, "error"    # I
+    .param p2, "msg"    # Ljava/lang/String;
+    .param p3, "cause"    # Ljava/lang/Throwable;
+    .param p4, "source"    # Landroid/graphics/ImageDecoder$Source;
 
+    .line 671
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -56,48 +61,65 @@
 
     invoke-direct {p0, v0, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 672
     iput p1, p0, Landroid/graphics/ImageDecoder$DecodeException;->mError:I
 
+    .line 673
     iput-object p4, p0, Landroid/graphics/ImageDecoder$DecodeException;->mSource:Landroid/graphics/ImageDecoder$Source;
 
+    .line 674
     return-void
 .end method
 
 .method constructor <init>(ILjava/lang/Throwable;Landroid/graphics/ImageDecoder$Source;)V
     .locals 1
+    .param p1, "error"    # I
+    .param p2, "cause"    # Ljava/lang/Throwable;
+    .param p3, "source"    # Landroid/graphics/ImageDecoder$Source;
 
+    .line 660
     invoke-static {p1, p2}, Landroid/graphics/ImageDecoder$DecodeException;->errorMessage(ILjava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 661
     iput p1, p0, Landroid/graphics/ImageDecoder$DecodeException;->mError:I
 
+    .line 662
     iput-object p3, p0, Landroid/graphics/ImageDecoder$DecodeException;->mSource:Landroid/graphics/ImageDecoder$Source;
 
+    .line 663
     return-void
 .end method
 
 .method private static errorMessage(ILjava/lang/Throwable;)Ljava/lang/String;
     .locals 2
+    .param p0, "error"    # I
+    .param p1, "cause"    # Ljava/lang/Throwable;
 
+    .line 700
     packed-switch p0, :pswitch_data_0
 
+    .line 708
     const-string v0, ""
 
     return-object v0
 
+    .line 706
     :pswitch_0
     const-string v0, "Input contained an error."
 
     return-object v0
 
+    .line 704
     :pswitch_1
     const-string v0, "Input was incomplete."
 
     return-object v0
 
+    .line 702
     :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -128,6 +150,7 @@
 .method public getError()I
     .locals 1
 
+    .line 685
     iget v0, p0, Landroid/graphics/ImageDecoder$DecodeException;->mError:I
 
     return v0
@@ -136,6 +159,7 @@
 .method public getSource()Landroid/graphics/ImageDecoder$Source;
     .locals 1
 
+    .line 696
     iget-object v0, p0, Landroid/graphics/ImageDecoder$DecodeException;->mSource:Landroid/graphics/ImageDecoder$Source;
 
     return-object v0

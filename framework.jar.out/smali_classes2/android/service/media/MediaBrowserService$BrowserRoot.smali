@@ -31,17 +31,25 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 2
+    .param p1, "rootId"    # Ljava/lang/String;
+    .param p2, "extras"    # Landroid/os/Bundle;
 
+    .line 831
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 832
     if-eqz p1, :cond_0
 
+    .line 836
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$BrowserRoot;->mRootId:Ljava/lang/String;
 
+    .line 837
     iput-object p2, p0, Landroid/service/media/MediaBrowserService$BrowserRoot;->mExtras:Landroid/os/Bundle;
 
+    .line 838
     return-void
 
+    .line 833
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -57,6 +65,7 @@
 .method public getExtras()Landroid/os/Bundle;
     .locals 1
 
+    .line 851
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$BrowserRoot;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -65,6 +74,7 @@
 .method public getRootId()Ljava/lang/String;
     .locals 1
 
+    .line 844
     iget-object v0, p0, Landroid/service/media/MediaBrowserService$BrowserRoot;->mRootId:Ljava/lang/String;
 
     return-object v0

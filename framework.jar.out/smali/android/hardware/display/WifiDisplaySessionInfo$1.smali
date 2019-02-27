@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/WifiDisplaySessionInfo;
     .locals 11
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 43
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -58,23 +61,33 @@
 
     goto :goto_0
 
+    .line 44
+    .local v2, "client":Z
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 45
+    .local v0, "session":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
+    .line 46
+    .local v7, "group":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
+    .line 47
+    .local v8, "pp":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v9
 
+    .line 49
+    .local v9, "ip":Ljava/lang/String;
     new-instance v10, Landroid/hardware/display/WifiDisplaySessionInfo;
 
     move-object v1, v10
@@ -95,6 +108,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 40
     invoke-virtual {p0, p1}, Landroid/hardware/display/WifiDisplaySessionInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/display/WifiDisplaySessionInfo;
 
     move-result-object p1
@@ -104,7 +118,9 @@
 
 .method public newArray(I)[Landroid/hardware/display/WifiDisplaySessionInfo;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 54
     new-array v0, p1, [Landroid/hardware/display/WifiDisplaySessionInfo;
 
     return-object v0
@@ -113,6 +129,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 40
     invoke-virtual {p0, p1}, Landroid/hardware/display/WifiDisplaySessionInfo$1;->newArray(I)[Landroid/hardware/display/WifiDisplaySessionInfo;
 
     move-result-object p1

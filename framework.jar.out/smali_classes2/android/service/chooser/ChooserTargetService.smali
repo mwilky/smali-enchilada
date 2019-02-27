@@ -31,8 +31,10 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 76
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
+    .line 78
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -49,6 +51,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 79
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -69,6 +72,7 @@
 
     iput-object v0, p0, Landroid/service/chooser/ChooserTargetService;->TAG:Ljava/lang/String;
 
+    .line 101
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/service/chooser/ChooserTargetService;->mWrapper:Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;
@@ -80,7 +84,9 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 126
     const-string v0, "android.service.chooser.ChooserTargetService"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -95,19 +101,23 @@
 
     if-nez v0, :cond_0
 
+    .line 128
     return-object v1
 
+    .line 131
     :cond_0
     iget-object v0, p0, Landroid/service/chooser/ChooserTargetService;->mWrapper:Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;
 
     if-nez v0, :cond_1
 
+    .line 132
     new-instance v0, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;
 
     invoke-direct {v0, p0, v1}, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;-><init>(Landroid/service/chooser/ChooserTargetService;Landroid/service/chooser/ChooserTargetService$1;)V
 
     iput-object v0, p0, Landroid/service/chooser/ChooserTargetService;->mWrapper:Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;
 
+    .line 134
     :cond_1
     iget-object v0, p0, Landroid/service/chooser/ChooserTargetService;->mWrapper:Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;
 

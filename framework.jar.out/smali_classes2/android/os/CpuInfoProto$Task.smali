@@ -67,7 +67,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/CpuInfoProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/CpuInfoProto;
 
+    .line 83
     iput-object p1, p0, Landroid/os/CpuInfoProto$Task;->this$0:Landroid/os/CpuInfoProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

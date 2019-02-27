@@ -21,13 +21,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 43
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
+    .line 39
     const/16 v0, 0x50
 
     iput v0, p0, Landroid/filterpacks/imageproc/ImageEncoder;->mQuality:I
 
+    .line 44
     return-void
 .end method
 
@@ -35,17 +39,23 @@
 # virtual methods
 .method public process(Landroid/filterfw/core/FilterContext;)V
     .locals 5
+    .param p1, "env"    # Landroid/filterfw/core/FilterContext;
 
+    .line 54
     const-string v0, "image"
 
     invoke-virtual {p0, v0}, Landroid/filterpacks/imageproc/ImageEncoder;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
     move-result-object v0
 
+    .line 55
+    .local v0, "input":Landroid/filterfw/core/Frame;
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
+    .line 56
+    .local v1, "bitmap":Landroid/graphics/Bitmap;
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     iget v3, p0, Landroid/filterpacks/imageproc/ImageEncoder;->mQuality:I
@@ -54,12 +64,14 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
+    .line 57
     return-void
 .end method
 
 .method public setupPorts()V
     .locals 3
 
+    .line 48
     const-string v0, "image"
 
     const/4 v1, 0x3
@@ -72,5 +84,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/ImageEncoder;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
+    .line 50
     return-void
 .end method

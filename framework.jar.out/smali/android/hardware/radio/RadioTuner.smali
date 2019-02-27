@@ -59,6 +59,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -82,7 +83,9 @@
 
 .method public getDynamicProgramList(Landroid/hardware/radio/ProgramList$Filter;)Landroid/hardware/radio/ProgramList;
     .locals 1
+    .param p1, "filter"    # Landroid/hardware/radio/ProgramList$Filter;
 
+    .line 309
     const/4 v0, 0x0
 
     return-object v0
@@ -109,6 +112,8 @@
         }
     .end annotation
 
+    .line 430
+    .local p1, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -154,7 +159,9 @@
 
 .method public isConfigFlagSet(I)Z
     .locals 1
+    .param p1, "flag"    # I
 
+    .line 361
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -164,7 +171,9 @@
 
 .method public isConfigFlagSupported(I)Z
     .locals 1
+    .param p1, "flag"    # I
 
+    .line 347
     const/4 v0, 0x0
 
     return v0
@@ -180,7 +189,10 @@
 
 .method public setConfigFlag(IZ)V
     .locals 1
+    .param p1, "flag"    # I
+    .param p2, "value"    # Z
 
+    .line 375
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -212,6 +224,8 @@
         }
     .end annotation
 
+    .line 406
+    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

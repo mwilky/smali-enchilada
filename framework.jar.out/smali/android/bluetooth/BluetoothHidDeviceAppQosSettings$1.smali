@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,29 +40,37 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
     .locals 8
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 107
     new-instance v7, Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
 
+    .line 108
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 109
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 110
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
+    .line 111
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
+    .line 113
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -70,12 +79,14 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;-><init>(IIIIII)V
 
+    .line 107
     return-object v7
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 102
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHidDeviceAppQosSettings$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
 
     move-result-object p1
@@ -85,7 +96,9 @@
 
 .method public newArray(I)[Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 118
     new-array v0, p1, [Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
 
     return-object v0
@@ -94,6 +107,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 102
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothHidDeviceAppQosSettings$1;->newArray(I)[Landroid/bluetooth/BluetoothHidDeviceAppQosSettings;
 
     move-result-object p1

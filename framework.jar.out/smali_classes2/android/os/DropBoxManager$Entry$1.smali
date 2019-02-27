@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,23 +31,32 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/os/DropBoxManager$Entry;
     .locals 12
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 228
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
+    .line 229
+    .local v6, "tag":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v7
 
+    .line 230
+    .local v7, "millis":J
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
+    .line 231
+    .local v9, "flags":I
     and-int/lit8 v0, v9, 0x8
 
     if-eqz v0, :cond_0
 
+    .line 232
     new-instance v10, Landroid/os/DropBoxManager$Entry;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
@@ -65,6 +75,7 @@
 
     return-object v10
 
+    .line 234
     :cond_0
     sget-object v0, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -76,6 +87,8 @@
 
     check-cast v10, Landroid/os/ParcelFileDescriptor;
 
+    .line 235
+    .local v10, "pfd":Landroid/os/ParcelFileDescriptor;
     new-instance v11, Landroid/os/DropBoxManager$Entry;
 
     move-object v0, v11
@@ -96,6 +109,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 225
     invoke-virtual {p0, p1}, Landroid/os/DropBoxManager$Entry$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/DropBoxManager$Entry;
 
     move-result-object p1
@@ -105,7 +119,9 @@
 
 .method public newArray(I)[Landroid/os/DropBoxManager$Entry;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 226
     new-array v0, p1, [Landroid/os/DropBoxManager$Entry;
 
     return-object v0
@@ -114,6 +130,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 225
     invoke-virtual {p0, p1}, Landroid/os/DropBoxManager$Entry$1;->newArray(I)[Landroid/os/DropBoxManager$Entry;
 
     move-result-object p1

@@ -35,6 +35,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 28
     invoke-direct {p0}, Landroid/app/servertransaction/ClientTransactionItem;-><init>()V
 
     return-void
@@ -48,5 +49,6 @@
 .method public recycle()V
     .locals 0
 
+    .line 60
     return-void
 .end method

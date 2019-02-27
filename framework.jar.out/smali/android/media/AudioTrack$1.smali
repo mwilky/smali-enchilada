@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioTrack;I)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/AudioTrack;
 
+    .line 2150
     iput-object p1, p0, Landroid/media/AudioTrack$1;->this$0:Landroid/media/AudioTrack;
 
     iput p2, p0, Landroid/media/AudioTrack$1;->val$delay:I
@@ -38,6 +40,7 @@
 .method public run()V
     .locals 2
 
+    .line 2153
     :try_start_0
     iget v0, p0, Landroid/media/AudioTrack$1;->val$delay:I
 
@@ -47,13 +50,19 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2156
     goto :goto_0
 
+    .line 2154
     :catch_0
     move-exception v0
 
+    .line 2155
+    .local v0, "e":Ljava/lang/InterruptedException;
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
+    .line 2157
+    .end local v0    # "e":Ljava/lang/InterruptedException;
     :goto_0
     iget-object v0, p0, Landroid/media/AudioTrack$1;->this$0:Landroid/media/AudioTrack;
 
@@ -61,6 +70,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioTrack;->baseSetStartDelayMs(I)V
 
+    .line 2159
     :try_start_1
     iget-object v0, p0, Landroid/media/AudioTrack$1;->this$0:Landroid/media/AudioTrack;
 
@@ -68,11 +78,14 @@
     :try_end_1
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 2164
     goto :goto_1
 
+    .line 2160
     :catch_1
     move-exception v0
 
+    .line 2165
     :goto_1
     return-void
 .end method

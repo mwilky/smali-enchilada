@@ -23,9 +23,12 @@
 # direct methods
 .method constructor <init>(Landroid/mtp/MtpStorageManager;Landroid/mtp/MtpStorageManager$MtpObject;)V
     .locals 1
+    .param p2, "object"    # Landroid/mtp/MtpStorageManager$MtpObject;
 
+    .line 58
     iput-object p1, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->this$0:Landroid/mtp/MtpStorageManager;
 
+    .line 59
     invoke-virtual {p2}, Landroid/mtp/MtpStorageManager$MtpObject;->getPath()Ljava/nio/file/Path;
 
     move-result-object p1
@@ -38,8 +41,10 @@
 
     invoke-direct {p0, p1, v0}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
+    .line 61
     iput-object p2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->mObject:Landroid/mtp/MtpStorageManager$MtpObject;
 
+    .line 62
     return-void
 .end method
 
@@ -48,20 +53,26 @@
 .method public finalize()V
     .locals 0
 
+    .line 102
     return-void
 .end method
 
 .method public onEvent(ILjava/lang/String;)V
     .locals 5
+    .param p1, "event"    # I
+    .param p2, "path"    # Ljava/lang/String;
 
+    .line 66
     iget-object v0, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->this$0:Landroid/mtp/MtpStorageManager;
 
     monitor-enter v0
 
+    .line 67
     and-int/lit16 v1, p1, 0x4000
 
     if-eqz v1, :cond_0
 
+    .line 69
     :try_start_0
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
@@ -73,11 +84,13 @@
 
     goto :goto_0
 
+    .line 93
     :catchall_0
     move-exception v1
 
     goto/16 :goto_5
 
+    .line 71
     :cond_0
     :goto_0
     iget-object v1, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->mObject:Landroid/mtp/MtpStorageManager$MtpObject;
@@ -86,6 +99,8 @@
 
     move-result-object v1
 
+    .line 72
+    .local v1, "obj":Landroid/mtp/MtpStorageManager$MtpObject;
     and-int/lit16 v2, p1, 0x80
 
     if-nez v2, :cond_9
@@ -96,6 +111,7 @@
 
     goto/16 :goto_2
 
+    .line 76
     :cond_1
     and-int/lit8 v2, p1, 0x40
 
@@ -107,6 +123,7 @@
 
     goto :goto_1
 
+    .line 84
     :cond_2
     const v2, 0x8000
 
@@ -114,10 +131,12 @@
 
     if-eqz v2, :cond_5
 
+    .line 85
     sget-boolean v2, Landroid/mtp/MtpStorageManager;->sDebug:Z
 
     if-eqz v2, :cond_3
 
+    .line 86
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -148,6 +167,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 87
     :cond_3
     iget-object v2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->mObject:Landroid/mtp/MtpStorageManager$MtpObject;
 
@@ -157,6 +177,7 @@
 
     if-eqz v2, :cond_4
 
+    .line 88
     iget-object v2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->mObject:Landroid/mtp/MtpStorageManager$MtpObject;
 
     invoke-static {v2}, Landroid/mtp/MtpStorageManager$MtpObject;->access$400(Landroid/mtp/MtpStorageManager$MtpObject;)Landroid/os/FileObserver;
@@ -165,6 +186,7 @@
 
     invoke-virtual {v2}, Landroid/os/FileObserver;->stopWatching()V
 
+    .line 89
     :cond_4
     iget-object v2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->mObject:Landroid/mtp/MtpStorageManager$MtpObject;
 
@@ -174,6 +196,7 @@
 
     goto/16 :goto_4
 
+    .line 91
     :cond_5
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
@@ -201,12 +224,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .end local v1    # "obj":Landroid/mtp/MtpStorageManager$MtpObject;
     goto/16 :goto_4
 
+    .line 77
+    .restart local v1    # "obj":Landroid/mtp/MtpStorageManager$MtpObject;
     :cond_6
     :goto_1
     if-nez v1, :cond_7
 
+    .line 78
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -227,15 +254,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 79
     monitor-exit v0
 
     return-void
 
+    .line 81
     :cond_7
     sget-boolean v2, Landroid/mtp/MtpStorageManager;->sDebug:Z
 
     if-eqz v2, :cond_8
 
+    .line 82
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -262,6 +292,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 83
     :cond_8
     iget-object v2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->this$0:Landroid/mtp/MtpStorageManager;
 
@@ -269,12 +300,14 @@
 
     goto :goto_4
 
+    .line 73
     :cond_9
     :goto_2
     sget-boolean v2, Landroid/mtp/MtpStorageManager;->sDebug:Z
 
     if-eqz v2, :cond_a
 
+    .line 74
     invoke-static {}, Landroid/mtp/MtpStorageManager;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -301,6 +334,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 75
     :cond_a
     iget-object v2, p0, Landroid/mtp/MtpStorageManager$MtpObjectObserver;->this$0:Landroid/mtp/MtpStorageManager;
 
@@ -322,11 +356,15 @@
     :goto_3
     invoke-static {v2, v3, p2, v4}, Landroid/mtp/MtpStorageManager;->access$200(Landroid/mtp/MtpStorageManager;Landroid/mtp/MtpStorageManager$MtpObject;Ljava/lang/String;Z)V
 
+    .line 93
+    .end local v1    # "obj":Landroid/mtp/MtpStorageManager$MtpObject;
     :goto_4
     monitor-exit v0
 
+    .line 94
     return-void
 
+    .line 93
     :goto_5
     monitor-exit v0
     :try_end_0

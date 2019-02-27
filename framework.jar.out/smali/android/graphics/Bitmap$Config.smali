@@ -51,6 +51,7 @@
 .method static constructor <clinit>()V
     .locals 10
 
+    .line 449
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ALPHA_8"
@@ -63,6 +64,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
+    .line 470
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "RGB_565"
@@ -73,6 +75,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
+    .line 491
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ARGB_4444"
@@ -85,6 +88,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
+    .line 507
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ARGB_8888"
@@ -95,6 +99,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
+    .line 522
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "RGBA_F16"
@@ -105,6 +110,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
+    .line 531
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "HARDWARE"
@@ -115,6 +121,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
+    .line 440
     new-array v0, v8, [Landroid/graphics/Bitmap$Config;
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
@@ -143,6 +150,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
+    .line 535
     const/16 v0, 0x8
 
     new-array v0, v0, [Landroid/graphics/Bitmap$Config;
@@ -184,22 +192,28 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .param p3, "ni"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .line 539
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 540
     iput p3, p0, Landroid/graphics/Bitmap$Config;->nativeInt:I
 
+    .line 541
     return-void
 .end method
 
 .method static nativeToConfig(I)Landroid/graphics/Bitmap$Config;
     .locals 1
+    .param p0, "ni"    # I
 
+    .line 544
     sget-object v0, Landroid/graphics/Bitmap$Config;->sConfigs:[Landroid/graphics/Bitmap$Config;
 
     aget-object v0, v0, p0
@@ -209,7 +223,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 440
     const-class v0, Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -224,6 +240,7 @@
 .method public static values()[Landroid/graphics/Bitmap$Config;
     .locals 1
 
+    .line 440
     sget-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
     invoke-virtual {v0}, [Landroid/graphics/Bitmap$Config;->clone()Ljava/lang/Object;

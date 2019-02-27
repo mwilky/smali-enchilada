@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/ConnectionService;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/ConnectionService;
 
+    .line 1939
     iput-object p1, p0, Landroid/telecom/ConnectionService$5;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-direct {p0}, Lcom/android/internal/telecom/RemoteServiceCallback$Stub;-><init>()V
@@ -34,6 +36,7 @@
 .method public onError()V
     .locals 4
 
+    .line 1960
     iget-object v0, p0, Landroid/telecom/ConnectionService$5;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->access$000(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -48,12 +51,15 @@
 
     invoke-direct {v1, p0, v2, v3}, Landroid/telecom/ConnectionService$5$2;-><init>(Landroid/telecom/ConnectionService$5;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1965
     invoke-virtual {v1}, Landroid/telecom/ConnectionService$5$2;->prepare()Ljava/lang/Runnable;
 
     move-result-object v1
 
+    .line 1960
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1966
     return-void
 .end method
 
@@ -71,6 +77,9 @@
         }
     .end annotation
 
+    .line 1944
+    .local p1, "componentNames":Ljava/util/List;, "Ljava/util/List<Landroid/content/ComponentName;>;"
+    .local p2, "services":Ljava/util/List;, "Ljava/util/List<Landroid/os/IBinder;>;"
     iget-object v0, p0, Landroid/telecom/ConnectionService$5;->this$0:Landroid/telecom/ConnectionService;
 
     invoke-static {v0}, Landroid/telecom/ConnectionService;->access$000(Landroid/telecom/ConnectionService;)Landroid/os/Handler;
@@ -93,11 +102,14 @@
 
     invoke-direct/range {v1 .. v6}, Landroid/telecom/ConnectionService$5$1;-><init>(Landroid/telecom/ConnectionService$5;Ljava/lang/String;Ljava/lang/Object;Ljava/util/List;Ljava/util/List;)V
 
+    .line 1955
     invoke-virtual {v7}, Landroid/telecom/ConnectionService$5$1;->prepare()Ljava/lang/Runnable;
 
     move-result-object v1
 
+    .line 1944
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1956
     return-void
 .end method

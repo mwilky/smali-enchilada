@@ -22,6 +22,7 @@
 .method private constructor <init>(Lcom/android/internal/app/MediaRouteControllerDialog;)V
     .locals 0
 
+    .line 326
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-direct {p0}, Landroid/media/MediaRouter$SimpleCallback;-><init>()V
@@ -31,7 +32,10 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/app/MediaRouteControllerDialog;Lcom/android/internal/app/MediaRouteControllerDialog$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/app/MediaRouteControllerDialog;
+    .param p2, "x1"    # Lcom/android/internal/app/MediaRouteControllerDialog$1;
 
+    .line 326
     invoke-direct {p0, p1}, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;-><init>(Lcom/android/internal/app/MediaRouteControllerDialog;)V
 
     return-void
@@ -41,47 +45,70 @@
 # virtual methods
 .method public onRouteChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 1
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
+    .line 334
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$600(Lcom/android/internal/app/MediaRouteControllerDialog;)Z
 
+    .line 335
     return-void
 .end method
 
 .method public onRouteGrouped(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;I)V
     .locals 1
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
+    .param p3, "group"    # Landroid/media/MediaRouter$RouteGroup;
+    .param p4, "index"    # I
 
+    .line 347
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$600(Lcom/android/internal/app/MediaRouteControllerDialog;)Z
 
+    .line 348
     return-void
 .end method
 
 .method public onRouteUngrouped(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;)V
     .locals 1
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
+    .param p3, "group"    # Landroid/media/MediaRouter$RouteGroup;
 
+    .line 352
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$600(Lcom/android/internal/app/MediaRouteControllerDialog;)Z
 
+    .line 353
     return-void
 .end method
 
 .method public onRouteUnselected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 1
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "type"    # I
+    .param p3, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
+    .line 329
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$600(Lcom/android/internal/app/MediaRouteControllerDialog;)Z
 
+    .line 330
     return-void
 .end method
 
 .method public onRouteVolumeChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 1
+    .param p1, "router"    # Landroid/media/MediaRouter;
+    .param p2, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
+    .line 339
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$100(Lcom/android/internal/app/MediaRouteControllerDialog;)Landroid/media/MediaRouter$RouteInfo;
@@ -90,10 +117,12 @@
 
     if-ne p2, v0, :cond_0
 
+    .line 340
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Lcom/android/internal/app/MediaRouteControllerDialog;
 
     invoke-static {v0}, Lcom/android/internal/app/MediaRouteControllerDialog;->access$400(Lcom/android/internal/app/MediaRouteControllerDialog;)V
 
+    .line 342
     :cond_0
     return-void
 .end method

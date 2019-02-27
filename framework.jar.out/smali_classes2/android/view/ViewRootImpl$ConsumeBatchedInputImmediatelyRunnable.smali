@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/ViewRootImpl;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
+    .line 7837
     iput-object p1, p0, Landroid/view/ViewRootImpl$ConsumeBatchedInputImmediatelyRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +39,13 @@
 .method public run()V
     .locals 3
 
+    .line 7840
     iget-object v0, p0, Landroid/view/ViewRootImpl$ConsumeBatchedInputImmediatelyRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     const-wide/16 v1, -0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewRootImpl;->doConsumeBatchedInput(J)V
 
+    .line 7841
     return-void
 .end method

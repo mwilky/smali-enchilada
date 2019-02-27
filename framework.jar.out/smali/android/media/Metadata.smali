@@ -143,10 +143,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 208
     sget-object v0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
 
     sput-object v0, Landroid/media/Metadata;->MATCH_NONE:Ljava/util/Set;
 
+    .line 212
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -165,20 +167,25 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 267
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 261
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
+    .line 267
     return-void
 .end method
 
 .method private checkMetadataId(I)Z
     .locals 3
+    .param p1, "val"    # I
 
+    .line 533
     if-lez p1, :cond_1
 
     const/16 v0, 0x1f
@@ -191,11 +198,13 @@
 
     goto :goto_0
 
+    .line 537
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 534
     :cond_1
     :goto_0
     const-string/jumbo v0, "media.Metadata"
@@ -216,6 +225,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 535
     const/4 v0, 0x0
 
     return v0
@@ -223,7 +233,10 @@
 
 .method private checkType(II)V
     .locals 5
+    .param p1, "key"    # I
+    .param p2, "expectedType"    # I
 
+    .line 544
     iget-object v0, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -240,20 +253,27 @@
 
     move-result v0
 
+    .line 546
+    .local v0, "pos":I
     iget-object v1, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 548
     iget-object v1, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 549
+    .local v1, "type":I
     if-ne v1, p2, :cond_0
 
+    .line 552
     return-void
 
+    .line 550
     :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -285,6 +305,7 @@
 .method public static firstCustomId()I
     .locals 1
 
+    .line 519
     const/16 v0, 0x2000
 
     return v0
@@ -293,6 +314,7 @@
 .method public static lastSytemId()I
     .locals 1
 
+    .line 513
     const/16 v0, 0x1f
 
     return v0
@@ -301,6 +323,7 @@
 .method public static lastType()I
     .locals 1
 
+    .line 525
     const/4 v0, 0x7
 
     return v0
@@ -308,55 +331,77 @@
 
 .method private scanAllRecords(Landroid/os/Parcel;I)Z
     .locals 10
+    .param p1, "parcel"    # Landroid/os/Parcel;
+    .param p2, "bytesLeft"    # I
 
+    .line 294
     const/4 v0, 0x0
 
+    .line 295
+    .local v0, "recCount":I
     const/4 v1, 0x0
 
+    .line 297
+    .local v1, "error":Z
     iget-object v2, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
+    .line 298
     :goto_0
     const/16 v2, 0xc
 
     if-le p2, v2, :cond_5
 
+    .line 299
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v3
 
+    .line 301
+    .local v3, "start":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
+    .line 303
+    .local v4, "size":I
     if-gt v4, v2, :cond_0
 
+    .line 304
     const-string/jumbo v2, "media.Metadata"
 
     const-string v5, "Record is too short"
 
     invoke-static {v2, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 305
     const/4 v1, 0x1
 
+    .line 306
     goto/16 :goto_2
 
+    .line 310
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 311
+    .local v2, "metadataId":I
     invoke-direct {p0, v2}, Landroid/media/Metadata;->checkMetadataId(I)Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
+    .line 312
     const/4 v1, 0x1
 
+    .line 313
     goto :goto_2
 
+    .line 319
     :cond_1
     iget-object v5, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
@@ -370,16 +415,20 @@
 
     if-eqz v5, :cond_2
 
+    .line 320
     const-string/jumbo v5, "media.Metadata"
 
     const-string v6, "Duplicate metadata ID found"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 321
     const/4 v1, 0x1
 
+    .line 322
     goto :goto_2
 
+    .line 325
     :cond_2
     iget-object v5, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
@@ -397,10 +446,13 @@
 
     invoke-virtual {v5, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 328
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
+    .line 329
+    .local v5, "metadataType":I
     if-lez v5, :cond_4
 
     const/4 v6, 0x7
@@ -409,6 +461,7 @@
 
     goto :goto_1
 
+    .line 337
     :cond_3
     :try_start_0
     invoke-static {v3, v4}, Landroid/util/MathUtils;->addOrThrow(II)I
@@ -419,17 +472,32 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 342
     nop
 
+    .line 344
     sub-int/2addr p2, v4
 
+    .line 345
     add-int/lit8 v0, v0, 0x1
 
+    .line 346
+    .end local v2    # "metadataId":I
+    .end local v3    # "start":I
+    .end local v4    # "size":I
+    .end local v5    # "metadataType":I
     goto :goto_0
 
+    .line 338
+    .restart local v2    # "metadataId":I
+    .restart local v3    # "start":I
+    .restart local v4    # "size":I
+    .restart local v5    # "metadataType":I
     :catch_0
     move-exception v6
 
+    .line 339
+    .local v6, "e":Ljava/lang/IllegalArgumentException;
     const-string/jumbo v7, "media.Metadata"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -452,10 +520,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 340
     const/4 v1, 0x1
 
+    .line 341
     goto :goto_2
 
+    .line 330
+    .end local v6    # "e":Ljava/lang/IllegalArgumentException;
     :cond_4
     :goto_1
     const-string/jumbo v6, "media.Metadata"
@@ -476,10 +548,17 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 331
     const/4 v1, 0x1
 
+    .line 332
     nop
 
+    .line 348
+    .end local v2    # "metadataId":I
+    .end local v3    # "start":I
+    .end local v4    # "size":I
+    .end local v5    # "metadataType":I
     :cond_5
     :goto_2
     if-nez p2, :cond_7
@@ -488,11 +567,13 @@
 
     goto :goto_3
 
+    .line 353
     :cond_6
     const/4 v2, 0x1
 
     return v2
 
+    .line 349
     :cond_7
     :goto_3
     const-string/jumbo v2, "media.Metadata"
@@ -513,10 +594,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 350
     iget-object v2, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
+    .line 351
     const/4 v2, 0x0
 
     return v2
@@ -526,11 +609,14 @@
 # virtual methods
 .method public getBoolean(I)Z
     .locals 2
+    .param p1, "key"    # I
 
+    .line 459
     const/4 v0, 0x3
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 460
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
@@ -552,11 +638,14 @@
 
 .method public getByteArray(I)[B
     .locals 1
+    .param p1, "key"    # I
 
+    .line 485
     const/4 v0, 0x7
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 486
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->createByteArray()[B
@@ -568,46 +657,60 @@
 
 .method public getDate(I)Ljava/util/Date;
     .locals 6
+    .param p1, "key"    # I
 
+    .line 493
     const/4 v0, 0x6
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 494
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
+    .line 495
+    .local v0, "timeSinceEpoch":J
     iget-object v2, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 497
+    .local v2, "timeZone":Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
+    .line 498
     new-instance v3, Ljava/util/Date;
 
     invoke-direct {v3, v0, v1}, Ljava/util/Date;-><init>(J)V
 
     return-object v3
 
+    .line 500
     :cond_0
     invoke-static {v2}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v3
 
+    .line 501
+    .local v3, "tz":Ljava/util/TimeZone;
     invoke-static {v3}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
 
     move-result-object v4
 
+    .line 503
+    .local v4, "cal":Ljava/util/Calendar;
     invoke-virtual {v4, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
+    .line 504
     invoke-virtual {v4}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v5
@@ -617,11 +720,14 @@
 
 .method public getDouble(I)D
     .locals 2
+    .param p1, "key"    # I
 
+    .line 477
     const/4 v0, 0x5
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 478
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readDouble()D
@@ -633,11 +739,14 @@
 
 .method public getInt(I)I
     .locals 1
+    .param p1, "key"    # I
 
+    .line 451
     const/4 v0, 0x2
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 452
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
@@ -649,11 +758,14 @@
 
 .method public getLong(I)J
     .locals 2
+    .param p1, "key"    # I
 
+    .line 467
     const/4 v0, 0x4
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 470
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readLong()J
@@ -665,11 +777,14 @@
 
 .method public getString(I)Ljava/lang/String;
     .locals 1
+    .param p1, "key"    # I
 
+    .line 443
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Landroid/media/Metadata;->checkType(II)V
 
+    .line 444
     iget-object v0, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -681,13 +796,16 @@
 
 .method public has(I)Z
     .locals 3
+    .param p1, "metadataId"    # I
 
+    .line 429
     invoke-direct {p0, p1}, Landroid/media/Metadata;->checkMetadataId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 432
     iget-object v0, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -700,6 +818,7 @@
 
     return v0
 
+    .line 430
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -733,6 +852,7 @@
         }
     .end annotation
 
+    .line 422
     iget-object v0, p0, Landroid/media/Metadata;->mKeyToPosMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -744,7 +864,9 @@
 
 .method public parse(Landroid/os/Parcel;)Z
     .locals 7
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
+    .line 386
     invoke-virtual {p1}, Landroid/os/Parcel;->dataAvail()I
 
     move-result v0
@@ -755,6 +877,7 @@
 
     if-ge v0, v1, :cond_0
 
+    .line 387
     const-string/jumbo v0, "media.Metadata"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -777,17 +900,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 388
     return v2
 
+    .line 391
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
+    .line 392
+    .local v0, "pin":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
+    .line 395
+    .local v3, "size":I
     invoke-virtual {p1}, Landroid/os/Parcel;->dataAvail()I
 
     move-result v4
@@ -800,15 +929,19 @@
 
     goto :goto_0
 
+    .line 402
     :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 403
+    .local v1, "kShouldBeMetaMarker":I
     const v4, 0x4d455441    # 2.06914576E8f
 
     if-eq v1, v4, :cond_2
 
+    .line 404
     const-string/jumbo v4, "media.Metadata"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -831,10 +964,13 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 405
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 406
     return v2
 
+    .line 410
     :cond_2
     add-int/lit8 v4, v3, -0x8
 
@@ -844,17 +980,23 @@
 
     if-nez v4, :cond_3
 
+    .line 411
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 412
     return v2
 
+    .line 414
     :cond_3
     iput-object p1, p0, Landroid/media/Metadata;->mParcel:Landroid/os/Parcel;
 
+    .line 415
     const/4 v2, 0x1
 
     return v2
 
+    .line 396
+    .end local v1    # "kShouldBeMetaMarker":I
     :cond_4
     :goto_0
     const-string/jumbo v1, "media.Metadata"
@@ -891,7 +1033,9 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 397
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
+    .line 398
     return v2
 .end method

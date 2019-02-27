@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/TextToSpeechService$SynthHandler;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
+    .line 664
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$3;->this$1:Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +39,13 @@
 .method public run()V
     .locals 2
 
+    .line 667
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SynthHandler$3;->this$1:Landroid/speech/tts/TextToSpeechService$SynthHandler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/speech/tts/TextToSpeechService$SynthHandler;->access$400(Landroid/speech/tts/TextToSpeechService$SynthHandler;Ljava/lang/Object;)V
 
+    .line 668
     return-void
 .end method

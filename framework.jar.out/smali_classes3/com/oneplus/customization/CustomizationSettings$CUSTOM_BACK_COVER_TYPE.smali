@@ -42,6 +42,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 141
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "NONE"
@@ -52,6 +53,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->NONE:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 145
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "LCH"
@@ -62,6 +64,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->LCH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 149
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "MYH"
@@ -72,6 +75,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->MYH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 153
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "YYB"
@@ -82,6 +86,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->YYB:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 158
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "HPH"
@@ -92,6 +97,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->HPH:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 163
     new-instance v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     const-string v1, "DGZ"
@@ -102,6 +108,7 @@
 
     sput-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->DGZ:Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
+    .line 137
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
@@ -143,6 +150,7 @@
         }
     .end annotation
 
+    .line 137
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -150,7 +158,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 137
     const-class v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,6 +175,7 @@
 .method public static values()[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
     .locals 1
 
+    .line 137
     sget-object v0, Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->$VALUES:[Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;
 
     invoke-virtual {v0}, [Lcom/oneplus/customization/CustomizationSettings$CUSTOM_BACK_COVER_TYPE;->clone()Ljava/lang/Object;

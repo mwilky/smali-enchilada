@@ -21,10 +21,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "ssid"    # Ljava/lang/String;
 
+    .line 201
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 202
     iput-object p1, p0, Landroid/net/wifi/WifiScanner$ScanSettings$HiddenNetwork;->ssid:Ljava/lang/String;
 
+    .line 203
     return-void
 .end method

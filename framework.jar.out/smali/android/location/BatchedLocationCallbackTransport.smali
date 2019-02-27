@@ -28,11 +28,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/location/ILocationManager;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "locationManager"    # Landroid/location/ILocationManager;
 
+    .line 36
     const-string v0, "BatchedLocationCallbackTransport"
 
     invoke-direct {p0, p1, v0}, Landroid/location/LocalListenerHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
+    .line 33
     new-instance v0, Landroid/location/BatchedLocationCallbackTransport$CallbackTransport;
 
     const/4 v1, 0x0
@@ -41,8 +45,10 @@
 
     iput-object v0, p0, Landroid/location/BatchedLocationCallbackTransport;->mCallbackTransport:Landroid/location/IBatchedLocationCallback;
 
+    .line 37
     iput-object p2, p0, Landroid/location/BatchedLocationCallbackTransport;->mLocationManager:Landroid/location/ILocationManager;
 
+    .line 38
     return-void
 .end method
 
@@ -56,10 +62,12 @@
         }
     .end annotation
 
+    .line 42
     iget-object v0, p0, Landroid/location/BatchedLocationCallbackTransport;->mLocationManager:Landroid/location/ILocationManager;
 
     iget-object v1, p0, Landroid/location/BatchedLocationCallbackTransport;->mCallbackTransport:Landroid/location/IBatchedLocationCallback;
 
+    .line 44
     invoke-virtual {p0}, Landroid/location/BatchedLocationCallbackTransport;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -68,6 +76,7 @@
 
     move-result-object v2
 
+    .line 42
     invoke-interface {v0, v1, v2}, Landroid/location/ILocationManager;->addGnssBatchingCallback(Landroid/location/IBatchedLocationCallback;Ljava/lang/String;)Z
 
     move-result v0
@@ -83,9 +92,11 @@
         }
     .end annotation
 
+    .line 49
     iget-object v0, p0, Landroid/location/BatchedLocationCallbackTransport;->mLocationManager:Landroid/location/ILocationManager;
 
     invoke-interface {v0}, Landroid/location/ILocationManager;->removeGnssBatchingCallback()V
 
+    .line 50
     return-void
 .end method

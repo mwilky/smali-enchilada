@@ -31,7 +31,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/PageTypeInfoProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/PageTypeInfoProto;
 
+    .line 11
     iput-object p1, p0, Landroid/os/PageTypeInfoProto$MigrateType;->this$0:Landroid/os/PageTypeInfoProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

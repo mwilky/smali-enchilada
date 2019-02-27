@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/SharedPreferencesImpl$EditorImpl;Ljava/lang/Runnable;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/app/SharedPreferencesImpl$EditorImpl;
 
+    .line 475
     iput-object p1, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->this$1:Landroid/app/SharedPreferencesImpl$EditorImpl;
 
     iput-object p2, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
@@ -41,13 +43,16 @@
 .method public run()V
     .locals 1
 
+    .line 478
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 479
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
 
     invoke-static {v0}, Landroid/app/QueuedWork;->removeFinisher(Ljava/lang/Runnable;)V
 
+    .line 480
     return-void
 .end method

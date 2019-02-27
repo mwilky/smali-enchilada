@@ -27,7 +27,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/PopupWindow;Landroid/widget/PopupWindow$PopupDecorView;Landroid/view/ViewGroup;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/PopupWindow;
 
+    .line 1923
     iput-object p1, p0, Landroid/widget/PopupWindow$3;->this$0:Landroid/widget/PopupWindow;
 
     iput-object p2, p0, Landroid/widget/PopupWindow$3;->val$decorView:Landroid/widget/PopupWindow$PopupDecorView;
@@ -45,7 +47,9 @@
 # virtual methods
 .method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 4
+    .param p1, "transition"    # Landroid/transition/Transition;
 
+    .line 1926
     iget-object v0, p0, Landroid/widget/PopupWindow$3;->this$0:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/PopupWindow$3;->val$decorView:Landroid/widget/PopupWindow$PopupDecorView;
@@ -56,5 +60,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/widget/PopupWindow;->access$200(Landroid/widget/PopupWindow;Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/View;)V
 
+    .line 1927
     return-void
 .end method

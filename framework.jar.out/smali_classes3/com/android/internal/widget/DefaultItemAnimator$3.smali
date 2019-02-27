@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/DefaultItemAnimator;Ljava/util/ArrayList;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/DefaultItemAnimator;
 
+    .line 169
     iput-object p1, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iput-object p2, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 3
 
+    .line 172
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -60,17 +63,23 @@
 
     check-cast v1, Lcom/android/internal/widget/RecyclerView$ViewHolder;
 
+    .line 173
+    .local v1, "holder":Lcom/android/internal/widget/RecyclerView$ViewHolder;
     iget-object v2, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/DefaultItemAnimator;->animateAddImpl(Lcom/android/internal/widget/RecyclerView$ViewHolder;)V
 
+    .line 174
+    .end local v1    # "holder":Lcom/android/internal/widget/RecyclerView$ViewHolder;
     goto :goto_0
 
+    .line 175
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 176
     iget-object v0, p0, Lcom/android/internal/widget/DefaultItemAnimator$3;->this$0:Lcom/android/internal/widget/DefaultItemAnimator;
 
     iget-object v0, v0, Lcom/android/internal/widget/DefaultItemAnimator;->mAdditionsList:Ljava/util/ArrayList;
@@ -79,5 +88,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
+    .line 177
     return-void
 .end method

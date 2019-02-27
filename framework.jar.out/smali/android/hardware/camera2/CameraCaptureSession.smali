@@ -23,6 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -68,6 +69,8 @@
 
 .method public captureBurstRequests(Ljava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I
     .locals 2
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
+    .param p3, "listener"    # Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,6 +89,8 @@
         }
     .end annotation
 
+    .line 507
+    .local p1, "requests":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/camera2/CaptureRequest;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"
@@ -97,12 +102,16 @@
 
 .method public captureSingleRequest(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I
     .locals 2
+    .param p1, "request"    # Landroid/hardware/camera2/CaptureRequest;
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
+    .param p3, "listener"    # Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
         }
     .end annotation
 
+    .line 398
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"
@@ -179,6 +188,8 @@
 
 .method public setRepeatingBurstRequests(Ljava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I
     .locals 2
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
+    .param p3, "listener"    # Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -197,6 +208,8 @@
         }
     .end annotation
 
+    .line 726
+    .local p1, "requests":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/camera2/CaptureRequest;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"
@@ -216,12 +229,16 @@
 
 .method public setSingleRepeatingRequest(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I
     .locals 2
+    .param p1, "request"    # Landroid/hardware/camera2/CaptureRequest;
+    .param p2, "executor"    # Ljava/util/concurrent/Executor;
+    .param p3, "listener"    # Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
         }
     .end annotation
 
+    .line 613
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"
@@ -249,12 +266,14 @@
 
 .method public updateOutputConfiguration(Landroid/hardware/camera2/params/OutputConfiguration;)V
     .locals 2
+    .param p1, "config"    # Landroid/hardware/camera2/params/OutputConfiguration;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
         }
     .end annotation
 
+    .line 854
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Subclasses must override this method"

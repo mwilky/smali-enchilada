@@ -24,16 +24,19 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 1123
     invoke-static {}, Landroid/os/BinderProxy;->access$200()J
 
     move-result-wide v0
 
     sput-wide v0, Landroid/os/BinderProxy$NoImagePreloadHolder;->sNativeFinalizer:J
 
+    .line 1124
     new-instance v0, Llibcore/util/NativeAllocationRegistry;
 
     const-class v1, Landroid/os/BinderProxy;
 
+    .line 1125
     invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v3
@@ -48,12 +51,14 @@
 
     sput-object v0, Landroid/os/BinderProxy$NoImagePreloadHolder;->sRegistry:Llibcore/util/NativeAllocationRegistry;
 
+    .line 1124
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .line 1122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -30,23 +30,36 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioPort;IIILandroid/media/AudioGainConfig;)V
     .locals 1
+    .param p1, "port"    # Landroid/media/AudioPort;
+    .param p2, "samplingRate"    # I
+    .param p3, "channelMask"    # I
+    .param p4, "format"    # I
+    .param p5, "gain"    # Landroid/media/AudioGainConfig;
 
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 50
     iput-object p1, p0, Landroid/media/AudioPortConfig;->mPort:Landroid/media/AudioPort;
 
+    .line 51
     iput p2, p0, Landroid/media/AudioPortConfig;->mSamplingRate:I
 
+    .line 52
     iput p3, p0, Landroid/media/AudioPortConfig;->mChannelMask:I
 
+    .line 53
     iput p4, p0, Landroid/media/AudioPortConfig;->mFormat:I
 
+    .line 54
     iput-object p5, p0, Landroid/media/AudioPortConfig;->mGain:Landroid/media/AudioGainConfig;
 
+    .line 55
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioPortConfig;->mConfigMask:I
 
+    .line 56
     return-void
 .end method
 
@@ -55,6 +68,7 @@
 .method public channelMask()I
     .locals 1
 
+    .line 76
     iget v0, p0, Landroid/media/AudioPortConfig;->mChannelMask:I
 
     return v0
@@ -63,6 +77,7 @@
 .method public format()I
     .locals 1
 
+    .line 83
     iget v0, p0, Landroid/media/AudioPortConfig;->mFormat:I
 
     return v0
@@ -71,6 +86,7 @@
 .method public gain()Landroid/media/AudioGainConfig;
     .locals 1
 
+    .line 91
     iget-object v0, p0, Landroid/media/AudioPortConfig;->mGain:Landroid/media/AudioGainConfig;
 
     return-object v0
@@ -79,6 +95,7 @@
 .method public port()Landroid/media/AudioPort;
     .locals 1
 
+    .line 62
     iget-object v0, p0, Landroid/media/AudioPortConfig;->mPort:Landroid/media/AudioPort;
 
     return-object v0
@@ -87,6 +104,7 @@
 .method public samplingRate()I
     .locals 1
 
+    .line 69
     iget v0, p0, Landroid/media/AudioPortConfig;->mSamplingRate:I
 
     return v0
@@ -95,6 +113,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 96
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

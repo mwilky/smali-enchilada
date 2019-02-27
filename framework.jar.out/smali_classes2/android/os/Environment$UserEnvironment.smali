@@ -21,11 +21,15 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
+    .param p1, "userId"    # I
 
+    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 87
     iput p1, p0, Landroid/os/Environment$UserEnvironment;->mUserId:I
 
+    .line 88
     return-void
 .end method
 
@@ -34,6 +38,7 @@
 .method public buildExternalStorageAndroidDataDirs()[Ljava/io/File;
     .locals 3
 
+    .line 115
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -56,6 +61,7 @@
 .method public buildExternalStorageAndroidObbDirs()[Ljava/io/File;
     .locals 3
 
+    .line 119
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -77,7 +83,9 @@
 
 .method public buildExternalStorageAppCacheDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 4
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 139
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -117,7 +125,9 @@
 
 .method public buildExternalStorageAppDataDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 4
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 123
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -151,7 +161,9 @@
 
 .method public buildExternalStorageAppFilesDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 4
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 135
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -191,7 +203,9 @@
 
 .method public buildExternalStorageAppMediaDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 4
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 127
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -225,7 +239,9 @@
 
 .method public buildExternalStorageAppObbDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 4
+    .param p1, "packageName"    # Ljava/lang/String;
 
+    .line 131
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -259,7 +275,9 @@
 
 .method public buildExternalStoragePublicDirs(Ljava/lang/String;)[Ljava/io/File;
     .locals 3
+    .param p1, "type"    # Ljava/lang/String;
 
+    .line 111
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -282,6 +300,7 @@
 .method public getExternalDirs()[Ljava/io/File;
     .locals 4
 
+    .line 91
     iget v0, p0, Landroid/os/Environment$UserEnvironment;->mUserId:I
 
     const/16 v1, 0x100
@@ -290,17 +309,23 @@
 
     move-result-object v0
 
+    .line 93
+    .local v0, "volumes":[Landroid/os/storage/StorageVolume;
     array-length v1, v0
 
     new-array v1, v1, [Ljava/io/File;
 
+    .line 94
+    .local v1, "files":[Ljava/io/File;
     const/4 v2, 0x0
 
+    .local v2, "i":I
     :goto_0
     array-length v3, v0
 
     if-ge v2, v3, :cond_0
 
+    .line 95
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Landroid/os/storage/StorageVolume;->getPathFile()Ljava/io/File;
@@ -309,10 +334,13 @@
 
     aput-object v3, v1, v2
 
+    .line 94
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 97
+    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
@@ -322,6 +350,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 102
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -335,9 +364,11 @@
 
 .method public getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 2
+    .param p1, "type"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 107
     invoke-virtual {p0, p1}, Landroid/os/Environment$UserEnvironment;->buildExternalStoragePublicDirs(Ljava/lang/String;)[Ljava/io/File;
 
     move-result-object v0

@@ -20,49 +20,63 @@
 # direct methods
 .method private constructor <init>(J)V
     .locals 3
+    .param p1, "nativePtr"    # J
 
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 156
     iput-wide p1, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
+    .line 157
     sget-object v0, Landroid/view/RenderNode$NoImagePreloadHolder;->sRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v1, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-virtual {v0, p0, v1, v2}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
 
+    .line 158
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
+    .line 159
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Landroid/view/View;)V
     .locals 3
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "owningView"    # Landroid/view/View;
 
+    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 147
     invoke-static {p1}, Landroid/view/RenderNode;->nCreate(Ljava/lang/String;)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
+    .line 148
     sget-object v0, Landroid/view/RenderNode$NoImagePreloadHolder;->sRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v1, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-virtual {v0, p0, v1, v2}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
 
+    .line 149
     iput-object p2, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
+    .line 150
     return-void
 .end method
 
 .method static synthetic access$000()J
     .locals 2
 
+    .line 134
     invoke-static {}, Landroid/view/RenderNode;->nGetNativeFinalizer()J
 
     move-result-wide v0
@@ -72,7 +86,9 @@
 
 .method public static adopt(J)Landroid/view/RenderNode;
     .locals 1
+    .param p0, "nativePtr"    # J
 
+    .line 189
     new-instance v0, Landroid/view/RenderNode;
 
     invoke-direct {v0, p0, p1}, Landroid/view/RenderNode;-><init>(J)V
@@ -82,7 +98,10 @@
 
 .method public static create(Ljava/lang/String;Landroid/view/View;)Landroid/view/RenderNode;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
+    .param p1, "owningView"    # Landroid/view/View;
 
+    .line 179
     new-instance v0, Landroid/view/RenderNode;
 
     invoke-direct {v0, p0, p1}, Landroid/view/RenderNode;-><init>(Ljava/lang/String;Landroid/view/View;)V
@@ -430,7 +449,9 @@
 # virtual methods
 .method public addAnimator(Landroid/view/RenderNodeAnimator;)V
     .locals 4
+    .param p1, "animator"    # Landroid/view/RenderNodeAnimator;
 
+    .line 823
     iget-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -441,6 +462,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 826
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-virtual {p1}, Landroid/view/RenderNodeAnimator;->getNativeAnimator()J
@@ -449,6 +471,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/RenderNode;->nAddAnimator(JJ)V
 
+    .line 827
     iget-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
     iget-object v0, v0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -457,8 +480,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewRootImpl;->registerAnimatingRenderNode(Landroid/view/RenderNode;)V
 
+    .line 828
     return-void
 
+    .line 824
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -472,50 +497,62 @@
 .method public destroy()V
     .locals 0
 
+    .line 168
     return-void
 .end method
 
 .method public discardDisplayList()V
     .locals 4
 
+    .line 241
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     const-wide/16 v2, 0x0
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/RenderNode;->nSetDisplayList(JJ)V
 
+    .line 242
     return-void
 .end method
 
 .method public end(Landroid/view/DisplayListCanvas;)V
     .locals 4
+    .param p1, "canvas"    # Landroid/view/DisplayListCanvas;
 
+    .line 230
     invoke-virtual {p1}, Landroid/view/DisplayListCanvas;->finishRecording()J
 
     move-result-wide v0
 
+    .line 231
+    .local v0, "displayList":J
     iget-wide v2, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v2, v3, v0, v1}, Landroid/view/RenderNode;->nSetDisplayList(JJ)V
 
+    .line 232
     invoke-virtual {p1}, Landroid/view/DisplayListCanvas;->recycle()V
 
+    .line 233
     return-void
 .end method
 
 .method public endAllAnimators()V
     .locals 2
 
+    .line 843
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nEndAllAnimators(J)V
 
+    .line 844
     return-void
 .end method
 
 .method public getAlpha()F
     .locals 2
 
+    .line 440
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetAlpha(J)F
@@ -528,6 +565,7 @@
 .method public getAmbientShadowColor()I
     .locals 2
 
+    .line 373
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetAmbientShadowColor(J)I
@@ -540,6 +578,7 @@
 .method public getCameraDistance()F
     .locals 2
 
+    .line 715
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetCameraDistance(J)F
@@ -552,6 +591,7 @@
 .method public getClipToOutline()Z
     .locals 2
 
+    .line 386
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetClipToOutline(J)Z
@@ -564,6 +604,7 @@
 .method public getDebugSize()I
     .locals 2
 
+    .line 815
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetDebugSize(J)I
@@ -576,6 +617,7 @@
 .method public getElevation()F
     .locals 2
 
+    .line 475
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetElevation(J)F
@@ -587,41 +629,50 @@
 
 .method public getInverseMatrix(Landroid/graphics/Matrix;)V
     .locals 4
+    .param p1, "outMatrix"    # Landroid/graphics/Matrix;
 
+    .line 274
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     iget-wide v2, p1, Landroid/graphics/Matrix;->native_instance:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/RenderNode;->nGetInverseTransformMatrix(JJ)V
 
+    .line 275
     return-void
 .end method
 
 .method public getMatrix(Landroid/graphics/Matrix;)V
     .locals 4
+    .param p1, "outMatrix"    # Landroid/graphics/Matrix;
 
+    .line 270
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     iget-wide v2, p1, Landroid/graphics/Matrix;->native_instance:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/RenderNode;->nGetTransformMatrix(JJ)V
 
+    .line 271
     return-void
 .end method
 
 .method getNativeDisplayList()J
     .locals 2
 
+    .line 255
     invoke-virtual {p0}, Landroid/view/RenderNode;->isValid()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 258
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     return-wide v0
 
+    .line 256
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -635,6 +686,7 @@
 .method public getPivotX()F
     .locals 2
 
+    .line 662
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetPivotX(J)F
@@ -647,6 +699,7 @@
 .method public getPivotY()F
     .locals 2
 
+    .line 683
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetPivotY(J)F
@@ -659,6 +712,7 @@
 .method public getRotation()F
     .locals 2
 
+    .line 557
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetRotation(J)F
@@ -671,6 +725,7 @@
 .method public getRotationX()F
     .locals 2
 
+    .line 578
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetRotationX(J)F
@@ -683,6 +738,7 @@
 .method public getRotationY()F
     .locals 2
 
+    .line 599
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetRotationY(J)F
@@ -695,6 +751,7 @@
 .method public getScaleX()F
     .locals 2
 
+    .line 620
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetScaleX(J)F
@@ -707,6 +764,7 @@
 .method public getScaleY()F
     .locals 2
 
+    .line 641
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetScaleY(J)F
@@ -719,6 +777,7 @@
 .method public getSpotShadowColor()I
     .locals 2
 
+    .line 368
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetSpotShadowColor(J)I
@@ -731,6 +790,7 @@
 .method public getTranslationX()F
     .locals 2
 
+    .line 496
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetTranslationX(J)F
@@ -743,6 +803,7 @@
 .method public getTranslationY()F
     .locals 2
 
+    .line 517
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetTranslationY(J)F
@@ -755,6 +816,7 @@
 .method public getTranslationZ()F
     .locals 2
 
+    .line 536
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nGetTranslationZ(J)F
@@ -767,6 +829,7 @@
 .method public hasIdentityMatrix()Z
     .locals 2
 
+    .line 266
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nHasIdentityMatrix(J)Z
@@ -779,6 +842,7 @@
 .method public hasOverlappingRendering()Z
     .locals 2
 
+    .line 467
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nHasOverlappingRendering(J)Z
@@ -791,6 +855,7 @@
 .method public hasShadow()Z
     .locals 2
 
+    .line 353
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nHasShadow(J)Z
@@ -803,6 +868,7 @@
 .method public isAttached()Z
     .locals 1
 
+    .line 831
     iget-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -827,6 +893,7 @@
 .method public isPivotExplicitlySet()Z
     .locals 2
 
+    .line 687
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nIsPivotExplicitlySet(J)Z
@@ -839,6 +906,7 @@
 .method public isValid()Z
     .locals 2
 
+    .line 251
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nIsValid(J)Z
@@ -850,7 +918,9 @@
 
 .method public offsetLeftAndRight(I)Z
     .locals 2
+    .param p1, "offset"    # I
 
+    .line 788
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nOffsetLeftAndRight(JI)Z
@@ -862,7 +932,9 @@
 
 .method public offsetTopAndBottom(I)Z
     .locals 2
+    .param p1, "offset"    # I
 
+    .line 800
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nOffsetTopAndBottom(JI)Z
@@ -875,16 +947,20 @@
 .method public output()V
     .locals 2
 
+    .line 808
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nOutput(J)V
 
+    .line 809
     return-void
 .end method
 
 .method public registerVectorDrawableAnimator(Landroid/graphics/drawable/AnimatedVectorDrawable$VectorDrawableAnimatorRT;)V
     .locals 2
+    .param p1, "animatorSet"    # Landroid/graphics/drawable/AnimatedVectorDrawable$VectorDrawableAnimatorRT;
 
+    .line 836
     iget-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -895,6 +971,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 839
     iget-object v0, p0, Landroid/view/RenderNode;->mOwningView:Landroid/view/View;
 
     iget-object v0, v0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -903,8 +980,10 @@
 
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->registerVectorDrawableAnimator(Landroid/graphics/drawable/AnimatedVectorDrawable$VectorDrawableAnimatorRT;)V
 
+    .line 840
     return-void
 
+    .line 837
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -917,17 +996,21 @@
 
 .method public requestPositionUpdates(Landroid/view/SurfaceView;)V
     .locals 2
+    .param p1, "view"    # Landroid/view/SurfaceView;
 
+    .line 196
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nRequestPositionUpdates(JLandroid/view/SurfaceView;)V
 
+    .line 197
     return-void
 .end method
 
 .method public resetPivot()Z
     .locals 2
 
+    .line 692
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nResetPivot(J)Z
@@ -939,7 +1022,9 @@
 
 .method public setAlpha(F)Z
     .locals 2
+    .param p1, "alpha"    # F
 
+    .line 429
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetAlpha(JF)Z
@@ -951,7 +1036,9 @@
 
 .method public setAmbientShadowColor(I)Z
     .locals 2
+    .param p1, "color"    # I
 
+    .line 363
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetAmbientShadowColor(JI)Z
@@ -963,9 +1050,12 @@
 
 .method public setAnimationMatrix(Landroid/graphics/Matrix;)Z
     .locals 4
+    .param p1, "matrix"    # Landroid/graphics/Matrix;
 
+    .line 416
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
+    .line 417
     if-eqz p1, :cond_0
 
     iget-wide v2, p1, Landroid/graphics/Matrix;->native_instance:J
@@ -975,6 +1065,7 @@
     :cond_0
     const-wide/16 v2, 0x0
 
+    .line 416
     :goto_0
     invoke-static {v0, v1, v2, v3}, Landroid/view/RenderNode;->nSetAnimationMatrix(JJ)Z
 
@@ -985,7 +1076,9 @@
 
 .method public setBottom(I)Z
     .locals 2
+    .param p1, "bottom"    # I
 
+    .line 759
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetBottom(JI)Z
@@ -997,7 +1090,9 @@
 
 .method public setCameraDistance(F)Z
     .locals 2
+    .param p1, "distance"    # F
 
+    .line 706
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetCameraDistance(JF)Z
@@ -1009,9 +1104,12 @@
 
 .method public setClipBounds(Landroid/graphics/Rect;)Z
     .locals 7
+    .param p1, "rect"    # Landroid/graphics/Rect;
 
+    .line 290
     if-nez p1, :cond_0
 
+    .line 291
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nSetClipBoundsEmpty(J)Z
@@ -1020,6 +1118,7 @@
 
     return v0
 
+    .line 293
     :cond_0
     iget-wide v1, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
@@ -1040,7 +1139,9 @@
 
 .method public setClipToBounds(Z)Z
     .locals 2
+    .param p1, "clipToBounds"    # Z
 
+    .line 304
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetClipToBounds(JZ)Z
@@ -1052,7 +1153,9 @@
 
 .method public setClipToOutline(Z)Z
     .locals 2
+    .param p1, "clipToOutline"    # Z
 
+    .line 382
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetClipToOutline(JZ)Z
@@ -1064,7 +1167,9 @@
 
 .method public setElevation(F)Z
     .locals 2
+    .param p1, "lift"    # F
 
+    .line 471
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetElevation(JF)Z
@@ -1076,7 +1181,9 @@
 
 .method public setHasOverlappingRendering(Z)Z
     .locals 2
+    .param p1, "hasOverlappingRendering"    # Z
 
+    .line 455
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetHasOverlappingRendering(JZ)Z
@@ -1088,7 +1195,9 @@
 
 .method public setLayerPaint(Landroid/graphics/Paint;)Z
     .locals 4
+    .param p1, "paint"    # Landroid/graphics/Paint;
 
+    .line 286
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     if-eqz p1, :cond_0
@@ -1112,7 +1221,9 @@
 
 .method public setLayerType(I)Z
     .locals 2
+    .param p1, "layerType"    # I
 
+    .line 282
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetLayerType(JI)Z
@@ -1124,7 +1235,9 @@
 
 .method public setLeft(I)Z
     .locals 2
+    .param p1, "left"    # I
 
+    .line 726
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetLeft(JI)Z
@@ -1136,7 +1249,12 @@
 
 .method public setLeftTopRightBottom(IIII)Z
     .locals 6
+    .param p1, "left"    # I
+    .param p2, "top"    # I
+    .param p3, "right"    # I
+    .param p4, "bottom"    # I
 
+    .line 776
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     move v2, p1
@@ -1156,9 +1274,12 @@
 
 .method public setOutline(Landroid/graphics/Outline;)Z
     .locals 9
+    .param p1, "outline"    # Landroid/graphics/Outline;
 
+    .line 334
     if-nez p1, :cond_0
 
+    .line 335
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1}, Landroid/view/RenderNode;->nSetOutlineNone(J)Z
@@ -1167,11 +1288,13 @@
 
     return v0
 
+    .line 338
     :cond_0
     iget v0, p1, Landroid/graphics/Outline;->mMode:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 349
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Unrecognized outline?"
@@ -1180,6 +1303,7 @@
 
     throw v0
 
+    .line 345
     :pswitch_0
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
@@ -1195,6 +1319,7 @@
 
     return v0
 
+    .line 342
     :pswitch_1
     iget-wide v1, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
@@ -1224,6 +1349,7 @@
 
     return v0
 
+    .line 340
     :pswitch_2
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
@@ -1245,7 +1371,9 @@
 
 .method public setPivotX(F)Z
     .locals 2
+    .param p1, "pivotX"    # F
 
+    .line 653
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetPivotX(JF)Z
@@ -1257,7 +1385,9 @@
 
 .method public setPivotY(F)Z
     .locals 2
+    .param p1, "pivotY"    # F
 
+    .line 674
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetPivotY(JF)Z
@@ -1269,7 +1399,9 @@
 
 .method public setProjectBackwards(Z)Z
     .locals 2
+    .param p1, "shouldProject"    # Z
 
+    .line 315
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetProjectBackwards(JZ)Z
@@ -1281,7 +1413,9 @@
 
 .method public setProjectionReceiver(Z)Z
     .locals 2
+    .param p1, "shouldRecieve"    # Z
 
+    .line 324
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetProjectionReceiver(JZ)Z
@@ -1293,7 +1427,12 @@
 
 .method public setRevealClip(ZFFF)Z
     .locals 6
+    .param p1, "shouldClip"    # Z
+    .param p2, "x"    # F
+    .param p3, "y"    # F
+    .param p4, "radius"    # F
 
+    .line 394
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     move v2, p1
@@ -1313,7 +1452,9 @@
 
 .method public setRight(I)Z
     .locals 2
+    .param p1, "right"    # I
 
+    .line 748
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetRight(JI)Z
@@ -1325,7 +1466,9 @@
 
 .method public setRotation(F)Z
     .locals 2
+    .param p1, "rotation"    # F
 
+    .line 548
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetRotation(JF)Z
@@ -1337,7 +1480,9 @@
 
 .method public setRotationX(F)Z
     .locals 2
+    .param p1, "rotationX"    # F
 
+    .line 569
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetRotationX(JF)Z
@@ -1349,7 +1494,9 @@
 
 .method public setRotationY(F)Z
     .locals 2
+    .param p1, "rotationY"    # F
 
+    .line 590
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetRotationY(JF)Z
@@ -1361,7 +1508,9 @@
 
 .method public setScaleX(F)Z
     .locals 2
+    .param p1, "scaleX"    # F
 
+    .line 611
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetScaleX(JF)Z
@@ -1373,7 +1522,9 @@
 
 .method public setScaleY(F)Z
     .locals 2
+    .param p1, "scaleY"    # F
 
+    .line 632
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetScaleY(JF)Z
@@ -1385,7 +1536,9 @@
 
 .method public setSpotShadowColor(I)Z
     .locals 2
+    .param p1, "color"    # I
 
+    .line 358
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetSpotShadowColor(JI)Z
@@ -1397,7 +1550,9 @@
 
 .method public setStaticMatrix(Landroid/graphics/Matrix;)Z
     .locals 4
+    .param p1, "matrix"    # Landroid/graphics/Matrix;
 
+    .line 404
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     iget-wide v2, p1, Landroid/graphics/Matrix;->native_instance:J
@@ -1411,7 +1566,9 @@
 
 .method public setTop(I)Z
     .locals 2
+    .param p1, "top"    # I
 
+    .line 737
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetTop(JI)Z
@@ -1423,7 +1580,9 @@
 
 .method public setTranslationX(F)Z
     .locals 2
+    .param p1, "translationX"    # F
 
+    .line 487
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetTranslationX(JF)Z
@@ -1435,7 +1594,9 @@
 
 .method public setTranslationY(F)Z
     .locals 2
+    .param p1, "translationY"    # F
 
+    .line 508
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetTranslationY(JF)Z
@@ -1447,7 +1608,9 @@
 
 .method public setTranslationZ(F)Z
     .locals 2
+    .param p1, "translationZ"    # F
 
+    .line 527
     iget-wide v0, p0, Landroid/view/RenderNode;->mNativeRenderNode:J
 
     invoke-static {v0, v1, p1}, Landroid/view/RenderNode;->nSetTranslationZ(JF)Z
@@ -1459,7 +1622,10 @@
 
 .method public start(II)Landroid/view/DisplayListCanvas;
     .locals 1
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
+    .line 218
     invoke-static {p0, p1, p2}, Landroid/view/DisplayListCanvas;->obtain(Landroid/view/RenderNode;II)Landroid/view/DisplayListCanvas;
 
     move-result-object v0

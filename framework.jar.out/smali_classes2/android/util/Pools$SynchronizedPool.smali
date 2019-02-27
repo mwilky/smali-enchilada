@@ -31,23 +31,33 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
+    .param p1, "maxPoolSize"    # I
 
+    .line 155
+    .local p0, "this":Landroid/util/Pools$SynchronizedPool;, "Landroid/util/Pools$SynchronizedPool<TT;>;"
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     invoke-direct {p0, p1, v0}, Landroid/util/Pools$SynchronizedPool;-><init>(ILjava/lang/Object;)V
 
+    .line 156
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/Object;)V
     .locals 0
+    .param p1, "maxPoolSize"    # I
+    .param p2, "lock"    # Ljava/lang/Object;
 
+    .line 149
+    .local p0, "this":Landroid/util/Pools$SynchronizedPool;, "Landroid/util/Pools$SynchronizedPool<TT;>;"
     invoke-direct {p0, p1}, Landroid/util/Pools$SimplePool;-><init>(I)V
 
+    .line 150
     iput-object p2, p0, Landroid/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
+    .line 151
     return-void
 .end method
 
@@ -61,10 +71,13 @@
         }
     .end annotation
 
+    .line 160
+    .local p0, "this":Landroid/util/Pools$SynchronizedPool;, "Landroid/util/Pools$SynchronizedPool<TT;>;"
     iget-object v0, p0, Landroid/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 161
     :try_start_0
     invoke-super {p0}, Landroid/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
 
@@ -74,6 +87,7 @@
 
     return-object v1
 
+    .line 162
     :catchall_0
     move-exception v1
 
@@ -92,10 +106,14 @@
         }
     .end annotation
 
+    .line 167
+    .local p0, "this":Landroid/util/Pools$SynchronizedPool;, "Landroid/util/Pools$SynchronizedPool<TT;>;"
+    .local p1, "element":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Landroid/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
+    .line 168
     :try_start_0
     invoke-super {p0, p1}, Landroid/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
@@ -105,6 +123,7 @@
 
     return v1
 
+    .line 169
     :catchall_0
     move-exception v1
 

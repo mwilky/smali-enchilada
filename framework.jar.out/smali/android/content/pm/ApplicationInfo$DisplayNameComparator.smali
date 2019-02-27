@@ -35,17 +35,22 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;)V
     .locals 1
+    .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
+    .line 1423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1440
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->sCollator:Ljava/text/Collator;
 
+    .line 1424
     iput-object p1, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
+    .line 1425
     return-void
 .end method
 
@@ -53,17 +58,24 @@
 # virtual methods
 .method public final compare(Landroid/content/pm/ApplicationInfo;Landroid/content/pm/ApplicationInfo;)I
     .locals 5
+    .param p1, "aa"    # Landroid/content/pm/ApplicationInfo;
+    .param p2, "ab"    # Landroid/content/pm/ApplicationInfo;
 
+    .line 1428
     iget-object v0, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
+    .line 1429
+    .local v0, "sa":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
+    .line 1430
     iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
+    .line 1432
     :cond_0
     iget-object v1, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->mPM:Landroid/content/pm/PackageManager;
 
@@ -71,10 +83,14 @@
 
     move-result-object v1
 
+    .line 1433
+    .local v1, "sb":Ljava/lang/CharSequence;
     if-nez v1, :cond_1
 
+    .line 1434
     iget-object v1, p2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
+    .line 1437
     :cond_1
     iget-object v2, p0, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;->sCollator:Ljava/text/Collator;
 
@@ -96,6 +112,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 1421
     check-cast p1, Landroid/content/pm/ApplicationInfo;
 
     check-cast p2, Landroid/content/pm/ApplicationInfo;

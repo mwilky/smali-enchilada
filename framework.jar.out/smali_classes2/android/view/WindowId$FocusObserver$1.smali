@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/view/WindowId$FocusObserver;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/view/WindowId$FocusObserver;
 
+    .line 51
     iput-object p1, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     invoke-direct {p0}, Landroid/view/IWindowFocusObserver$Stub;-><init>()V
@@ -33,13 +35,16 @@
 # virtual methods
 .method public focusGained(Landroid/os/IBinder;)V
     .locals 4
+    .param p1, "inputToken"    # Landroid/os/IBinder;
 
+    .line 56
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mRegistrations:Ljava/util/HashMap;
 
     monitor-enter v0
 
+    .line 57
     :try_start_0
     iget-object v1, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
@@ -51,16 +56,20 @@
 
     check-cast v1, Landroid/view/WindowId;
 
+    .line 58
+    .local v1, "token":Landroid/view/WindowId;
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 59
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
+    .line 60
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mHandler:Landroid/os/Handler;
@@ -79,14 +88,18 @@
 
     goto :goto_0
 
+    .line 62
     :cond_0
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     invoke-virtual {v0, v1}, Landroid/view/WindowId$FocusObserver;->onFocusGained(Landroid/view/WindowId;)V
 
+    .line 64
     :goto_0
     return-void
 
+    .line 58
+    .end local v1    # "token":Landroid/view/WindowId;
     :catchall_0
     move-exception v1
 
@@ -100,13 +113,16 @@
 
 .method public focusLost(Landroid/os/IBinder;)V
     .locals 4
+    .param p1, "inputToken"    # Landroid/os/IBinder;
 
+    .line 69
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mRegistrations:Ljava/util/HashMap;
 
     monitor-enter v0
 
+    .line 70
     :try_start_0
     iget-object v1, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
@@ -118,16 +134,20 @@
 
     check-cast v1, Landroid/view/WindowId;
 
+    .line 71
+    .local v1, "token":Landroid/view/WindowId;
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 72
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
+    .line 73
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     iget-object v0, v0, Landroid/view/WindowId$FocusObserver;->mHandler:Landroid/os/Handler;
@@ -146,14 +166,18 @@
 
     goto :goto_0
 
+    .line 75
     :cond_0
     iget-object v0, p0, Landroid/view/WindowId$FocusObserver$1;->this$0:Landroid/view/WindowId$FocusObserver;
 
     invoke-virtual {v0, v1}, Landroid/view/WindowId$FocusObserver;->onFocusLost(Landroid/view/WindowId;)V
 
+    .line 77
     :goto_0
     return-void
 
+    .line 71
+    .end local v1    # "token":Landroid/view/WindowId;
     :catchall_0
     move-exception v1
 

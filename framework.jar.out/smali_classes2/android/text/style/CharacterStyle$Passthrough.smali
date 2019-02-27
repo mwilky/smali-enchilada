@@ -21,11 +21,15 @@
 # direct methods
 .method public constructor <init>(Landroid/text/style/CharacterStyle;)V
     .locals 0
+    .param p1, "cs"    # Landroid/text/style/CharacterStyle;
 
+    .line 66
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
+    .line 67
     iput-object p1, p0, Landroid/text/style/CharacterStyle$Passthrough;->mStyle:Landroid/text/style/CharacterStyle;
 
+    .line 68
     return-void
 .end method
 
@@ -34,6 +38,7 @@
 .method public getUnderlying()Landroid/text/style/CharacterStyle;
     .locals 1
 
+    .line 84
     iget-object v0, p0, Landroid/text/style/CharacterStyle$Passthrough;->mStyle:Landroid/text/style/CharacterStyle;
 
     invoke-virtual {v0}, Landroid/text/style/CharacterStyle;->getUnderlying()Landroid/text/style/CharacterStyle;
@@ -45,10 +50,13 @@
 
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
+    .param p1, "tp"    # Landroid/text/TextPaint;
 
+    .line 75
     iget-object v0, p0, Landroid/text/style/CharacterStyle$Passthrough;->mStyle:Landroid/text/style/CharacterStyle;
 
     invoke-virtual {v0, p1}, Landroid/text/style/CharacterStyle;->updateDrawState(Landroid/text/TextPaint;)V
 
+    .line 76
     return-void
 .end method

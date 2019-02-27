@@ -40,6 +40,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 49
     const-string v0, "content://com.android.browser"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -54,6 +55,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

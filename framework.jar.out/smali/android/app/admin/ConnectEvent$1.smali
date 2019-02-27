@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/admin/ConnectEvent;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 79
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -50,8 +53,10 @@
 
     if-eq v0, v2, :cond_0
 
+    .line 80
     return-object v1
 
+    .line 82
     :cond_0
     new-instance v0, Landroid/app/admin/ConnectEvent;
 
@@ -63,6 +68,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 76
     invoke-virtual {p0, p1}, Landroid/app/admin/ConnectEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/admin/ConnectEvent;
 
     move-result-object p1
@@ -72,7 +78,9 @@
 
 .method public newArray(I)[Landroid/app/admin/ConnectEvent;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 87
     new-array v0, p1, [Landroid/app/admin/ConnectEvent;
 
     return-object v0
@@ -81,6 +89,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 76
     invoke-virtual {p0, p1}, Landroid/app/admin/ConnectEvent$1;->newArray(I)[Landroid/app/admin/ConnectEvent;
 
     move-result-object p1

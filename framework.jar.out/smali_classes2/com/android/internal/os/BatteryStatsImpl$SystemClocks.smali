@@ -21,6 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 568
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,6 +32,7 @@
 .method public elapsedRealtime()J
     .locals 2
 
+    .line 570
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -41,6 +43,7 @@
 .method public uptimeMillis()J
     .locals 2
 
+    .line 574
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0

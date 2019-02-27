@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/location/ProviderProperties;
     .locals 13
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 116
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -57,6 +60,8 @@
     :cond_0
     move v4, v1
 
+    .line 117
+    .local v4, "requiresNetwork":Z
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -71,6 +76,8 @@
     :cond_1
     move v5, v1
 
+    .line 118
+    .local v5, "requiresSatellite":Z
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -85,6 +92,8 @@
     :cond_2
     move v6, v1
 
+    .line 119
+    .local v6, "requiresCell":Z
     :goto_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -99,6 +108,8 @@
     :cond_3
     move v7, v1
 
+    .line 120
+    .local v7, "hasMonetaryCost":Z
     :goto_3
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -113,6 +124,8 @@
     :cond_4
     move v8, v1
 
+    .line 121
+    .local v8, "supportsAltitude":Z
     :goto_4
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -127,6 +140,8 @@
     :cond_5
     move v9, v1
 
+    .line 122
+    .local v9, "supportsSpeed":Z
     :goto_5
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -141,15 +156,21 @@
     :cond_6
     move v10, v1
 
+    .line 123
+    .local v10, "supportsBearing":Z
     :goto_6
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 124
+    .local v0, "powerRequirement":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 125
+    .local v1, "accuracy":I
     new-instance v2, Lcom/android/internal/location/ProviderProperties;
 
     move-object v3, v2
@@ -166,6 +187,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 113
     invoke-virtual {p0, p1}, Lcom/android/internal/location/ProviderProperties$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/location/ProviderProperties;
 
     move-result-object p1
@@ -175,7 +197,9 @@
 
 .method public newArray(I)[Lcom/android/internal/location/ProviderProperties;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 131
     new-array v0, p1, [Lcom/android/internal/location/ProviderProperties;
 
     return-object v0
@@ -184,6 +208,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 113
     invoke-virtual {p0, p1}, Lcom/android/internal/location/ProviderProperties$1;->newArray(I)[Lcom/android/internal/location/ProviderProperties;
 
     move-result-object p1

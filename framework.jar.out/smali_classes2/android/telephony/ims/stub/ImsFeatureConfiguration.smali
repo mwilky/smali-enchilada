@@ -46,6 +46,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 168
     new-instance v0, Landroid/telephony/ims/stub/ImsFeatureConfiguration$1;
 
     invoke-direct {v0}, Landroid/telephony/ims/stub/ImsFeatureConfiguration$1;-><init>()V
@@ -58,37 +59,48 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 124
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
+    .line 125
     return-void
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .locals 6
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 159
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 161
+    .local v0, "featurePairLength":I
     new-instance v1, Landroid/util/ArraySet;
 
     invoke-direct {v1, v0}, Landroid/util/ArraySet;-><init>(I)V
 
     iput-object v1, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
+    .line 162
     const/4 v1, 0x0
 
+    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 164
     iget-object v2, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     new-instance v3, Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
@@ -105,10 +117,13 @@
 
     invoke-interface {v2, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
+    .line 162
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 166
+    .end local v1    # "i":I
     :cond_0
     return-void
 .end method
@@ -124,20 +139,26 @@
         }
     .end annotation
 
+    .line 134
+    .local p1, "features":Ljava/util/Set;, "Ljava/util/Set<Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 135
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
+    .line 137
     if-eqz p1, :cond_0
 
+    .line 138
     iget-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
+    .line 140
     :cond_0
     return-void
 .end method
@@ -146,7 +167,10 @@
 # virtual methods
 .method addFeature(II)V
     .locals 2
+    .param p1, "slotId"    # I
+    .param p2, "feature"    # I
 
+    .line 154
     iget-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     new-instance v1, Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
@@ -155,12 +179,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
+    .line 155
     return-void
 .end method
 
 .method public describeContents()I
     .locals 1
 
+    .line 183
     const/4 v0, 0x0
 
     return v0
@@ -168,13 +194,16 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 204
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
+    .line 205
     :cond_0
     instance-of v0, p1, Landroid/telephony/ims/stub/ImsFeatureConfiguration;
 
@@ -184,11 +213,14 @@
 
     return v0
 
+    .line 208
     :cond_1
     move-object v0, p1
 
     check-cast v0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;
 
+    .line 210
+    .local v0, "that":Landroid/telephony/ims/stub/ImsFeatureConfiguration;
     iget-object v1, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     iget-object v2, v0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
@@ -211,6 +243,7 @@
         }
     .end annotation
 
+    .line 147
     new-instance v0, Landroid/util/ArraySet;
 
     iget-object v1, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
@@ -223,6 +256,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 218
     iget-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->hashCode()I
@@ -234,7 +268,10 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 5
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 188
     iget-object v0, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
@@ -243,14 +280,18 @@
 
     new-array v0, v0, [Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
 
+    .line 189
+    .local v0, "featureSlotPairs":[Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
     iget-object v1, p0, Landroid/telephony/ims/stub/ImsFeatureConfiguration;->mFeatures:Ljava/util/Set;
 
     invoke-interface {v1, v0}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
+    .line 191
     array-length v1, v0
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 193
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -260,18 +301,24 @@
 
     aget-object v3, v0, v2
 
+    .line 194
+    .local v3, "featureSlotPair":Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
     iget v4, v3, Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;->slotId:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 195
     iget v4, v3, Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;->featureType:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 193
+    .end local v3    # "featureSlotPair":Landroid/telephony/ims/stub/ImsFeatureConfiguration$FeatureSlotPair;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 197
     :cond_0
     return-void
 .end method

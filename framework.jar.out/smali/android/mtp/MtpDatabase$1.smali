@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/mtp/MtpDatabase;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/mtp/MtpDatabase;
 
+    .line 230
     iput-object p1, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +35,16 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .line 233
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 234
+    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -46,6 +53,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 235
     iget-object v1, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     const-string/jumbo v2, "scale"
@@ -58,12 +66,15 @@
 
     invoke-static {v1, v2}, Landroid/mtp/MtpDatabase;->access$002(Landroid/mtp/MtpDatabase;I)I
 
+    .line 236
     const-string/jumbo v1, "level"
 
     invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
+    .line 237
+    .local v1, "newLevel":I
     iget-object v2, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v2}, Landroid/mtp/MtpDatabase;->access$100(Landroid/mtp/MtpDatabase;)I
@@ -72,10 +83,12 @@
 
     if-eq v1, v2, :cond_0
 
+    .line 238
     iget-object v2, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v2, v1}, Landroid/mtp/MtpDatabase;->access$102(Landroid/mtp/MtpDatabase;I)I
 
+    .line 239
     iget-object v2, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v2}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -84,6 +97,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 241
     iget-object v2, p0, Landroid/mtp/MtpDatabase$1;->this$0:Landroid/mtp/MtpDatabase;
 
     invoke-static {v2}, Landroid/mtp/MtpDatabase;->access$200(Landroid/mtp/MtpDatabase;)Landroid/mtp/MtpServer;
@@ -94,6 +108,8 @@
 
     invoke-virtual {v2, v3}, Landroid/mtp/MtpServer;->sendDevicePropertyChanged(I)V
 
+    .line 246
+    .end local v1    # "newLevel":I
     :cond_0
     return-void
 .end method

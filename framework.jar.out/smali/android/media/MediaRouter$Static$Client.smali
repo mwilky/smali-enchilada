@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaRouter$Static;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaRouter$Static;
 
+    .line 588
     iput-object p1, p0, Landroid/media/MediaRouter$Static$Client;->this$0:Landroid/media/MediaRouter$Static;
 
     invoke-direct {p0}, Landroid/media/IMediaRouterClient$Stub;-><init>()V
@@ -34,6 +36,7 @@
 .method public onRestoreRoute()V
     .locals 2
 
+    .line 603
     iget-object v0, p0, Landroid/media/MediaRouter$Static$Client;->this$0:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -44,12 +47,14 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 617
     return-void
 .end method
 
 .method public onStateChanged()V
     .locals 2
 
+    .line 591
     iget-object v0, p0, Landroid/media/MediaRouter$Static$Client;->this$0:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -60,5 +65,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 599
     return-void
 .end method

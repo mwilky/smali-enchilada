@@ -40,6 +40,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,6 +54,7 @@
 .method public getBufferedPosition()J
     .locals 2
 
+    .line 151
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -67,6 +69,7 @@
 .method public getCurrentPosition()J
     .locals 2
 
+    .line 139
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -75,6 +78,7 @@
 .method public getDuration()J
     .locals 2
 
+    .line 145
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -83,6 +87,7 @@
 .method public getMaxPlayerVolume()F
     .locals 1
 
+    .line 259
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
@@ -91,6 +96,7 @@
 .method public getPlaybackSpeed()F
     .locals 1
 
+    .line 228
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
@@ -105,6 +111,7 @@
 .method public isReversePlaybackSupported()Z
     .locals 1
 
+    .line 236
     const/4 v0, 0x0
 
     return v0

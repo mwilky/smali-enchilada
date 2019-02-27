@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,11 +40,15 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telephony/UssdResponse;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 70
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 71
+    .local v0, "request":Ljava/lang/String;
     sget-object v1, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -52,6 +57,8 @@
 
     check-cast v1, Ljava/lang/CharSequence;
 
+    .line 72
+    .local v1, "message":Ljava/lang/CharSequence;
     new-instance v2, Landroid/telephony/UssdResponse;
 
     invoke-direct {v2, v0, v1}, Landroid/telephony/UssdResponse;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;)V
@@ -62,6 +69,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 66
     invoke-virtual {p0, p1}, Landroid/telephony/UssdResponse$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/UssdResponse;
 
     move-result-object p1
@@ -71,7 +79,9 @@
 
 .method public newArray(I)[Landroid/telephony/UssdResponse;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 77
     new-array v0, p1, [Landroid/telephony/UssdResponse;
 
     return-object v0
@@ -80,6 +90,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 66
     invoke-virtual {p0, p1}, Landroid/telephony/UssdResponse$1;->newArray(I)[Landroid/telephony/UssdResponse;
 
     move-result-object p1

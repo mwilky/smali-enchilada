@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 943
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -35,24 +36,31 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/os/HardwarePropertiesManager;
     .locals 3
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/ServiceManager$ServiceNotFoundException;
         }
     .end annotation
 
+    .line 946
     const-string v0, "hardware_properties"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 947
+    .local v0, "b":Landroid/os/IBinder;
     nop
 
+    .line 948
     invoke-static {v0}, Landroid/os/IHardwarePropertiesManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IHardwarePropertiesManager;
 
     move-result-object v1
 
+    .line 949
+    .local v1, "service":Landroid/os/IHardwarePropertiesManager;
     new-instance v2, Landroid/os/HardwarePropertiesManager;
 
     invoke-direct {v2, p1, v1}, Landroid/os/HardwarePropertiesManager;-><init>(Landroid/content/Context;Landroid/os/IHardwarePropertiesManager;)V
@@ -68,6 +76,7 @@
         }
     .end annotation
 
+    .line 943
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$85;->createService(Landroid/app/ContextImpl;)Landroid/os/HardwarePropertiesManager;
 
     move-result-object p1

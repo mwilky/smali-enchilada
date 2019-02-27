@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,17 +40,24 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/nfc/NdefMessage;
     .locals 3
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 220
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 221
+    .local v0, "recordsLength":I
     new-array v1, v0, [Landroid/nfc/NdefRecord;
 
+    .line 222
+    .local v1, "records":[Landroid/nfc/NdefRecord;
     sget-object v2, Landroid/nfc/NdefRecord;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v1, v2}, Landroid/os/Parcel;->readTypedArray([Ljava/lang/Object;Landroid/os/Parcelable$Creator;)V
 
+    .line 223
     new-instance v2, Landroid/nfc/NdefMessage;
 
     invoke-direct {v2, v1}, Landroid/nfc/NdefMessage;-><init>([Landroid/nfc/NdefRecord;)V
@@ -60,6 +68,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 217
     invoke-virtual {p0, p1}, Landroid/nfc/NdefMessage$1;->createFromParcel(Landroid/os/Parcel;)Landroid/nfc/NdefMessage;
 
     move-result-object p1
@@ -69,7 +78,9 @@
 
 .method public newArray(I)[Landroid/nfc/NdefMessage;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 227
     new-array v0, p1, [Landroid/nfc/NdefMessage;
 
     return-object v0
@@ -78,6 +89,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 217
     invoke-virtual {p0, p1}, Landroid/nfc/NdefMessage$1;->newArray(I)[Landroid/nfc/NdefMessage;
 
     move-result-object p1

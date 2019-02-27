@@ -10,21 +10,32 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 0
+    .param p1, "tag"    # I
+    .param p2, "message"    # Ljava/lang/String;
 
+    .line 27
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
+    .line 28
     iput p1, p0, Lcom/android/internal/telephony/uicc/asn1/InvalidAsn1DataException;->mTag:I
 
+    .line 29
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
+    .param p1, "tag"    # I
+    .param p2, "message"    # Ljava/lang/String;
+    .param p3, "throwable"    # Ljava/lang/Throwable;
 
+    .line 32
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    .line 33
     iput p1, p0, Lcom/android/internal/telephony/uicc/asn1/InvalidAsn1DataException;->mTag:I
 
+    .line 34
     return-void
 .end method
 
@@ -33,6 +44,7 @@
 .method public getMessage()Ljava/lang/String;
     .locals 2
 
+    .line 43
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -65,6 +77,7 @@
 .method public getTag()I
     .locals 1
 
+    .line 38
     iget v0, p0, Lcom/android/internal/telephony/uicc/asn1/InvalidAsn1DataException;->mTag:I
 
     return v0

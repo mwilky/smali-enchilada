@@ -35,7 +35,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/job/JobPackageHistoryProto;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/server/job/JobPackageHistoryProto;
 
+    .line 18
     iput-object p1, p0, Lcom/android/server/job/JobPackageHistoryProto$HistoryEvent;->this$0:Lcom/android/server/job/JobPackageHistoryProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

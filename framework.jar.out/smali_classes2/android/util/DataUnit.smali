@@ -33,6 +33,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .line 36
     new-instance v0, Landroid/util/DataUnit$1;
 
     const-string v1, "KILOBYTES"
@@ -43,6 +44,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->KILOBYTES:Landroid/util/DataUnit;
 
+    .line 37
     new-instance v0, Landroid/util/DataUnit$2;
 
     const-string v1, "MEGABYTES"
@@ -53,6 +55,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->MEGABYTES:Landroid/util/DataUnit;
 
+    .line 38
     new-instance v0, Landroid/util/DataUnit$3;
 
     const-string v1, "GIGABYTES"
@@ -63,6 +66,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->GIGABYTES:Landroid/util/DataUnit;
 
+    .line 39
     new-instance v0, Landroid/util/DataUnit$4;
 
     const-string v1, "KIBIBYTES"
@@ -73,6 +77,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->KIBIBYTES:Landroid/util/DataUnit;
 
+    .line 40
     new-instance v0, Landroid/util/DataUnit$5;
 
     const-string v1, "MEBIBYTES"
@@ -83,6 +88,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->MEBIBYTES:Landroid/util/DataUnit;
 
+    .line 41
     new-instance v0, Landroid/util/DataUnit$6;
 
     const-string v1, "GIBIBYTES"
@@ -93,6 +99,7 @@
 
     sput-object v0, Landroid/util/DataUnit;->GIBIBYTES:Landroid/util/DataUnit;
 
+    .line 35
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/util/DataUnit;
@@ -134,6 +141,7 @@
         }
     .end annotation
 
+    .line 35
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -141,7 +149,11 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroid/util/DataUnit$1;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # Landroid/util/DataUnit$1;
 
+    .line 35
     invoke-direct {p0, p1, p2}, Landroid/util/DataUnit;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +161,9 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/util/DataUnit;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .line 35
     const-class v0, Landroid/util/DataUnit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -164,6 +178,7 @@
 .method public static values()[Landroid/util/DataUnit;
     .locals 1
 
+    .line 35
     sget-object v0, Landroid/util/DataUnit;->$VALUES:[Landroid/util/DataUnit;
 
     invoke-virtual {v0}, [Landroid/util/DataUnit;->clone()Ljava/lang/Object;
@@ -179,7 +194,9 @@
 # virtual methods
 .method public toBytes(J)J
     .locals 1
+    .param p1, "v"    # J
 
+    .line 44
     new-instance v0, Ljava/lang/AbstractMethodError;
 
     invoke-direct {v0}, Ljava/lang/AbstractMethodError;-><init>()V

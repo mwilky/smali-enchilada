@@ -25,7 +25,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/WorkSourceProto;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/os/WorkSourceProto;
 
+    .line 22
     iput-object p1, p0, Landroid/os/WorkSourceProto$WorkChain;->this$0:Landroid/os/WorkSourceProto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

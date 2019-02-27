@@ -19,6 +19,7 @@
 .method private constructor <init>()V
     .locals 3
 
+    .line 35
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -45,6 +46,7 @@
 
     invoke-direct {p0, v0}, Landroid/security/net/config/DirectoryCertificateSource;-><init>(Ljava/io/File;)V
 
+    .line 36
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -53,6 +55,8 @@
 
     move-result-object v0
 
+    .line 37
+    .local v0, "configDir":Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
     const-string v2, "cacerts-removed"
@@ -61,12 +65,15 @@
 
     iput-object v1, p0, Landroid/security/net/config/SystemCertificateSource;->mUserRemovedCaDir:Ljava/io/File;
 
+    .line 38
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/security/net/config/SystemCertificateSource$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/security/net/config/SystemCertificateSource$1;
 
+    .line 27
     invoke-direct {p0}, Landroid/security/net/config/SystemCertificateSource;-><init>()V
 
     return-void
@@ -75,6 +82,7 @@
 .method public static getInstance()Landroid/security/net/config/SystemCertificateSource;
     .locals 1
 
+    .line 41
     invoke-static {}, Landroid/security/net/config/SystemCertificateSource$NoPreloadHolder;->access$100()Landroid/security/net/config/SystemCertificateSource;
 
     move-result-object v0
@@ -87,6 +95,7 @@
 .method public bridge synthetic findAllByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
     .locals 0
 
+    .line 27
     invoke-super {p0, p1}, Landroid/security/net/config/DirectoryCertificateSource;->findAllByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
 
     move-result-object p1
@@ -97,6 +106,7 @@
 .method public bridge synthetic findByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
     .locals 0
 
+    .line 27
     invoke-super {p0, p1}, Landroid/security/net/config/DirectoryCertificateSource;->findByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
 
     move-result-object p1
@@ -107,6 +117,7 @@
 .method public bridge synthetic findBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
     .locals 0
 
+    .line 27
     invoke-super {p0, p1}, Landroid/security/net/config/DirectoryCertificateSource;->findBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
 
     move-result-object p1
@@ -117,6 +128,7 @@
 .method public bridge synthetic getCertificates()Ljava/util/Set;
     .locals 1
 
+    .line 27
     invoke-super {p0}, Landroid/security/net/config/DirectoryCertificateSource;->getCertificates()Ljava/util/Set;
 
     move-result-object v0
@@ -127,6 +139,7 @@
 .method public bridge synthetic handleTrustStorageUpdate()V
     .locals 0
 
+    .line 27
     invoke-super {p0}, Landroid/security/net/config/DirectoryCertificateSource;->handleTrustStorageUpdate()V
 
     return-void
@@ -134,7 +147,9 @@
 
 .method protected isCertMarkedAsRemoved(Ljava/lang/String;)Z
     .locals 2
+    .param p1, "caFile"    # Ljava/lang/String;
 
+    .line 46
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/security/net/config/SystemCertificateSource;->mUserRemovedCaDir:Ljava/io/File;

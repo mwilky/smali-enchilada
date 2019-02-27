@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,11 +18,14 @@
 .method public onAttachFailed()V
     .locals 0
 
+    .line 44
     return-void
 .end method
 
 .method public onAttached(Landroid/net/wifi/aware/WifiAwareSession;)V
     .locals 0
+    .param p1, "session"    # Landroid/net/wifi/aware/WifiAwareSession;
 
+    .line 36
     return-void
 .end method

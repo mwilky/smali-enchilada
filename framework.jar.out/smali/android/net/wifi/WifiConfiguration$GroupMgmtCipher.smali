@@ -28,6 +28,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 340
     const-string v0, "CMAC"
 
     const-string v1, "GMAC"
@@ -44,6 +45,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

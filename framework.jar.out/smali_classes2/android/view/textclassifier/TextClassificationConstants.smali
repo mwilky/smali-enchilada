@@ -119,6 +119,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 104
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ":"
@@ -127,42 +128,49 @@
 
     const-string v1, "address"
 
+    .line 105
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string v1, "email"
 
+    .line 106
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string/jumbo v1, "phone"
 
+    .line 107
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string/jumbo v1, "url"
 
+    .line 108
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string v1, "date"
 
+    .line 109
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string v1, "datetime"
 
+    .line 110
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
     const-string v1, "flight"
 
+    .line 111
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -173,30 +181,40 @@
 
     sput-object v0, Landroid/view/textclassifier/TextClassificationConstants;->ENTITY_LIST_DEFAULT_VALUE:Ljava/lang/String;
 
+    .line 104
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 5
+    .param p1, "settings"    # Ljava/lang/String;
 
+    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 129
     new-instance v0, Landroid/util/KeyValueListParser;
 
     const/16 v1, 0x2c
 
     invoke-direct {v0, v1}, Landroid/util/KeyValueListParser;-><init>(C)V
 
+    .line 131
+    .local v0, "parser":Landroid/util/KeyValueListParser;
     :try_start_0
     invoke-virtual {v0, p1}, Landroid/util/KeyValueListParser;->setString(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 135
     goto :goto_0
 
+    .line 132
     :catch_0
     move-exception v1
 
+    .line 134
+    .local v1, "e":Ljava/lang/IllegalArgumentException;
     const-string v2, "TextClassificationConstants"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -215,6 +233,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 136
+    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     const-string/jumbo v1, "system_textclassifier_enabled"
 
@@ -226,7 +246,8 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSystemTextClassifierEnabled:Z
 
-    const-string v1, "local_textclassifier_enabled"
+    .line 139
+    const-string/jumbo v1, "local_textclassifier_enabled"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -234,6 +255,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mLocalTextClassifierEnabled:Z
 
+    .line 142
     const-string/jumbo v1, "model_dark_launch_enabled"
 
     const/4 v3, 0x0
@@ -244,6 +266,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mModelDarkLaunchEnabled:Z
 
+    .line 145
     const-string/jumbo v1, "smart_selection_enabled"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getBoolean(Ljava/lang/String;Z)Z
@@ -252,6 +275,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartSelectionEnabled:Z
 
+    .line 148
     const-string/jumbo v1, "smart_text_share_enabled"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getBoolean(Ljava/lang/String;Z)Z
@@ -260,6 +284,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartTextShareEnabled:Z
 
+    .line 151
     const-string/jumbo v1, "smart_linkify_enabled"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getBoolean(Ljava/lang/String;Z)Z
@@ -268,6 +293,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartLinkifyEnabled:Z
 
+    .line 154
     const-string/jumbo v1, "smart_select_animation_enabled"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getBoolean(Ljava/lang/String;Z)Z
@@ -276,6 +302,7 @@
 
     iput-boolean v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartSelectionAnimationEnabled:Z
 
+    .line 157
     const-string/jumbo v1, "suggest_selection_max_range_length"
 
     const/16 v2, 0x2710
@@ -286,6 +313,7 @@
 
     iput v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSuggestSelectionMaxRangeLength:I
 
+    .line 160
     const-string v1, "classify_text_max_range_length"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/KeyValueListParser;->getInt(Ljava/lang/String;I)I
@@ -294,6 +322,7 @@
 
     iput v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mClassifyTextMaxRangeLength:I
 
+    .line 163
     const-string v1, "generate_links_max_text_length"
 
     const v2, 0x186a0
@@ -304,6 +333,7 @@
 
     iput v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mGenerateLinksMaxTextLength:I
 
+    .line 166
     const-string v1, "generate_links_log_sample_rate"
 
     const/16 v2, 0x64
@@ -314,6 +344,7 @@
 
     iput v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mGenerateLinksLogSampleRate:I
 
+    .line 169
     const-string v1, "entity_list_default"
 
     sget-object v2, Landroid/view/textclassifier/TextClassificationConstants;->ENTITY_LIST_DEFAULT_VALUE:Ljava/lang/String;
@@ -328,6 +359,7 @@
 
     iput-object v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListDefault:Ljava/util/List;
 
+    .line 172
     const-string v1, "entity_list_not_editable"
 
     sget-object v2, Landroid/view/textclassifier/TextClassificationConstants;->ENTITY_LIST_DEFAULT_VALUE:Ljava/lang/String;
@@ -342,6 +374,7 @@
 
     iput-object v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListNotEditable:Ljava/util/List;
 
+    .line 175
     const-string v1, "entity_list_editable"
 
     sget-object v2, Landroid/view/textclassifier/TextClassificationConstants;->ENTITY_LIST_DEFAULT_VALUE:Ljava/lang/String;
@@ -356,12 +389,15 @@
 
     iput-object v1, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListEditable:Ljava/util/List;
 
+    .line 178
     return-void
 .end method
 
 .method public static loadFromString(Ljava/lang/String;)Landroid/view/textclassifier/TextClassificationConstants;
     .locals 1
+    .param p0, "settings"    # Ljava/lang/String;
 
+    .line 182
     new-instance v0, Landroid/view/textclassifier/TextClassificationConstants;
 
     invoke-direct {v0, p0}, Landroid/view/textclassifier/TextClassificationConstants;-><init>(Ljava/lang/String;)V
@@ -371,6 +407,7 @@
 
 .method private static parseEntityList(Ljava/lang/String;)Ljava/util/List;
     .locals 1
+    .param p0, "listStr"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -382,6 +419,7 @@
         }
     .end annotation
 
+    .line 242
     const-string v0, ":"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -404,6 +442,7 @@
 .method public getClassifyTextMaxRangeLength()I
     .locals 1
 
+    .line 218
     iget v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mClassifyTextMaxRangeLength:I
 
     return v0
@@ -420,6 +459,7 @@
         }
     .end annotation
 
+    .line 230
     iget-object v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListDefault:Ljava/util/List;
 
     return-object v0
@@ -436,6 +476,7 @@
         }
     .end annotation
 
+    .line 238
     iget-object v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListEditable:Ljava/util/List;
 
     return-object v0
@@ -452,6 +493,7 @@
         }
     .end annotation
 
+    .line 234
     iget-object v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mEntityListNotEditable:Ljava/util/List;
 
     return-object v0
@@ -460,6 +502,7 @@
 .method public getGenerateLinksLogSampleRate()I
     .locals 1
 
+    .line 226
     iget v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mGenerateLinksLogSampleRate:I
 
     return v0
@@ -468,6 +511,7 @@
 .method public getGenerateLinksMaxTextLength()I
     .locals 1
 
+    .line 222
     iget v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mGenerateLinksMaxTextLength:I
 
     return v0
@@ -476,6 +520,7 @@
 .method public getSuggestSelectionMaxRangeLength()I
     .locals 1
 
+    .line 214
     iget v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSuggestSelectionMaxRangeLength:I
 
     return v0
@@ -484,6 +529,7 @@
 .method public isLocalTextClassifierEnabled()Z
     .locals 1
 
+    .line 186
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mLocalTextClassifierEnabled:Z
 
     return v0
@@ -492,6 +538,7 @@
 .method public isModelDarkLaunchEnabled()Z
     .locals 1
 
+    .line 194
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mModelDarkLaunchEnabled:Z
 
     return v0
@@ -500,6 +547,7 @@
 .method public isSmartLinkifyEnabled()Z
     .locals 1
 
+    .line 206
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartLinkifyEnabled:Z
 
     return v0
@@ -508,6 +556,7 @@
 .method public isSmartSelectionAnimationEnabled()Z
     .locals 1
 
+    .line 210
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartSelectionAnimationEnabled:Z
 
     return v0
@@ -516,6 +565,7 @@
 .method public isSmartSelectionEnabled()Z
     .locals 1
 
+    .line 198
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartSelectionEnabled:Z
 
     return v0
@@ -524,6 +574,7 @@
 .method public isSmartTextShareEnabled()Z
     .locals 1
 
+    .line 202
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSmartTextShareEnabled:Z
 
     return v0
@@ -532,6 +583,7 @@
 .method public isSystemTextClassifierEnabled()Z
     .locals 1
 
+    .line 190
     iget-boolean v0, p0, Landroid/view/textclassifier/TextClassificationConstants;->mSystemTextClassifierEnabled:Z
 
     return v0

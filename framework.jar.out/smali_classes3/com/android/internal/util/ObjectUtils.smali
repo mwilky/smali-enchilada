@@ -7,6 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,8 +23,12 @@
         }
     .end annotation
 
+    .line 33
+    .local p0, "a":Ljava/lang/Comparable;, "TT;"
+    .local p1, "b":Ljava/lang/Comparable;, "TT;"
     if-eqz p0, :cond_1
 
+    .line 34
     if-eqz p1, :cond_0
 
     invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
@@ -38,6 +43,7 @@
     :goto_0
     return v0
 
+    .line 36
     :cond_1
     if-eqz p1, :cond_2
 
@@ -62,6 +68,9 @@
         }
     .end annotation
 
+    .line 29
+    .local p0, "a":Ljava/lang/Object;, "TT;"
+    .local p1, "b":Ljava/lang/Object;, "TT;"
     if-eqz p0, :cond_0
 
     move-object v0, p0

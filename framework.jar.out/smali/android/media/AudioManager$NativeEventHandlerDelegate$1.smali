@@ -25,7 +25,10 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioManager$NativeEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioManager;Landroid/media/AudioDeviceCallback;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/media/AudioManager$NativeEventHandlerDelegate;
+    .param p2, "x0"    # Landroid/os/Looper;
 
+    .line 5263
     iput-object p1, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$NativeEventHandlerDelegate;
 
     iput-object p3, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->val$this$0:Landroid/media/AudioManager;
@@ -41,11 +44,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 5266
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 5281
     const-string v0, "AudioManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,11 +74,13 @@
 
     goto :goto_0
 
+    .line 5275
     :pswitch_0
     iget-object v0, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->val$callback:Landroid/media/AudioDeviceCallback;
 
     if-eqz v0, :cond_0
 
+    .line 5276
     iget-object v0, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->val$callback:Landroid/media/AudioDeviceCallback;
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -83,11 +91,13 @@
 
     goto :goto_0
 
+    .line 5269
     :pswitch_1
     iget-object v0, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->val$callback:Landroid/media/AudioDeviceCallback;
 
     if-eqz v0, :cond_0
 
+    .line 5270
     iget-object v0, p0, Landroid/media/AudioManager$NativeEventHandlerDelegate$1;->val$callback:Landroid/media/AudioDeviceCallback;
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -96,6 +106,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioDeviceCallback;->onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
 
+    .line 5284
     :cond_0
     :goto_0
     return-void

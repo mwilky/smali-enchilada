@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/legacy/RequestThreadManager;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/hardware/camera2/legacy/RequestThreadManager;
 
+    .line 257
     iput-object p1, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$3;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public onShutter()V
     .locals 3
 
+    .line 260
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$3;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->access$200(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CaptureCollector;
@@ -49,5 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/legacy/CaptureCollector;->jpegCaptured(J)Landroid/hardware/camera2/legacy/RequestHolder;
 
+    .line 261
     return-void
 .end method

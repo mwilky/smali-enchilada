@@ -26,6 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 880
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -41,24 +42,31 @@
         }
     .end annotation
 
+    .line 883
     const-string/jumbo v0, "oem_lock"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getServiceOrThrow(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 884
+    .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/service/oemlock/IOemLockService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/oemlock/IOemLockService;
 
     move-result-object v1
 
+    .line 885
+    .local v1, "oemLockService":Landroid/service/oemlock/IOemLockService;
     if-eqz v1, :cond_0
 
+    .line 886
     new-instance v2, Landroid/service/oemlock/OemLockManager;
 
     invoke-direct {v2, v1}, Landroid/service/oemlock/OemLockManager;-><init>(Landroid/service/oemlock/IOemLockService;)V
 
     return-object v2
 
+    .line 889
     :cond_0
     const/4 v2, 0x0
 
@@ -73,6 +81,7 @@
         }
     .end annotation
 
+    .line 880
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$78;->createService()Landroid/service/oemlock/OemLockManager;
 
     move-result-object v0

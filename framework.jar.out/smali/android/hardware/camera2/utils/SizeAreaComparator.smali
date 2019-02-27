@@ -21,6 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,10 +39,13 @@
         }
     .end annotation
 
+    .line 67
+    .local p0, "sizes":Ljava/util/List;, "Ljava/util/List<Landroid/util/Size;>;"
     const-string/jumbo v0, "sizes must not be null"
 
     invoke-static {p0, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 69
     new-instance v0, Landroid/hardware/camera2/utils/SizeAreaComparator;
 
     invoke-direct {v0}, Landroid/hardware/camera2/utils/SizeAreaComparator;-><init>()V
@@ -59,25 +63,32 @@
 # virtual methods
 .method public compare(Landroid/util/Size;Landroid/util/Size;)I
     .locals 11
+    .param p1, "size"    # Landroid/util/Size;
+    .param p2, "size2"    # Landroid/util/Size;
 
+    .line 38
     const-string/jumbo v0, "size must not be null"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 39
     const-string/jumbo v0, "size2 must not be null"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 41
     invoke-virtual {p1, p2}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 42
     const/4 v0, 0x0
 
     return v0
 
+    .line 45
     :cond_0
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
@@ -85,12 +96,16 @@
 
     int-to-long v0, v0
 
+    .line 46
+    .local v0, "width":J
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result v2
 
     int-to-long v2, v2
 
+    .line 47
+    .local v2, "width2":J
     invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
 
     move-result v4
@@ -99,6 +114,8 @@
 
     mul-long/2addr v4, v0
 
+    .line 48
+    .local v4, "area":J
     invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
 
     move-result v6
@@ -107,6 +124,8 @@
 
     mul-long/2addr v6, v2
 
+    .line 50
+    .local v6, "area2":J
     cmp-long v8, v4, v6
 
     const/4 v9, -0x1
@@ -115,6 +134,7 @@
 
     if-nez v8, :cond_2
 
+    .line 51
     cmp-long v8, v0, v2
 
     if-lez v8, :cond_1
@@ -126,6 +146,7 @@
     :cond_1
     return v9
 
+    .line 54
     :cond_2
     cmp-long v8, v4, v6
 
@@ -142,6 +163,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
+    .line 32
     check-cast p1, Landroid/util/Size;
 
     check-cast p2, Landroid/util/Size;

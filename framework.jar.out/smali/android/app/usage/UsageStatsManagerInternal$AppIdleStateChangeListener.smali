@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,6 +34,9 @@
 
 .method public onUserInteractionStarted(Ljava/lang/String;I)V
     .locals 0
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "userId"    # I
 
+    .line 166
     return-void
 .end method

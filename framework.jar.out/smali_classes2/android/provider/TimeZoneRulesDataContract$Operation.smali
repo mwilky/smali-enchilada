@@ -38,6 +38,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 63
     invoke-static {}, Landroid/provider/TimeZoneRulesDataContract;->access$000()Landroid/net/Uri;
 
     move-result-object v0
@@ -56,7 +57,9 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 51
     return-void
 .end method

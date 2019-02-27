@@ -13,6 +13,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .line 22
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -25,6 +26,7 @@
 
     sput-object v0, Lcom/android/internal/transition/TransitionConstants;->LINEAR_OUT_SLOW_IN:Landroid/animation/TimeInterpolator;
 
+    .line 23
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v4, 0x3ecccccd    # 0.4f
@@ -39,6 +41,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

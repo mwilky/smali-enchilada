@@ -34,7 +34,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/util/ScreenshotHelper;ILandroid/os/Handler;Ljava/lang/Runnable;ZZ)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/util/ScreenshotHelper;
 
+    .line 71
     iput-object p1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     iput p2, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$screenshotType:I
@@ -56,7 +58,10 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 9
+    .param p1, "name"    # Landroid/content/ComponentName;
+    .param p2, "service"    # Landroid/os/IBinder;
 
+    .line 74
     iget-object v0, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     invoke-static {v0}, Lcom/android/internal/util/ScreenshotHelper;->access$000(Lcom/android/internal/util/ScreenshotHelper;)Ljava/lang/Object;
@@ -65,6 +70,7 @@
 
     monitor-enter v0
 
+    .line 75
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
@@ -74,15 +80,19 @@
 
     if-eq v1, p0, :cond_0
 
+    .line 76
     monitor-exit v0
 
     return-void
 
+    .line 78
     :cond_0
     new-instance v1, Landroid/os/Messenger;
 
     invoke-direct {v1, p2}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
 
+    .line 79
+    .local v1, "messenger":Landroid/os/Messenger;
     const/4 v2, 0x0
 
     iget v3, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$screenshotType:I
@@ -91,8 +101,12 @@
 
     move-result-object v2
 
+    .line 80
+    .local v2, "msg":Landroid/os/Message;
     move-object v3, p0
 
+    .line 81
+    .local v3, "myConn":Landroid/content/ServiceConnection;
     new-instance v4, Lcom/android/internal/util/ScreenshotHelper$2$1;
 
     iget-object v5, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$handler:Landroid/os/Handler;
@@ -103,33 +117,42 @@
 
     invoke-direct {v4, p0, v5, v3}, Lcom/android/internal/util/ScreenshotHelper$2$1;-><init>(Lcom/android/internal/util/ScreenshotHelper$2;Landroid/os/Looper;Landroid/content/ServiceConnection;)V
 
+    .line 93
+    .local v4, "h":Landroid/os/Handler;
     new-instance v5, Landroid/os/Messenger;
 
     invoke-direct {v5, v4}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
     iput-object v5, v2, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
+    .line 94
     iget-boolean v5, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$hasStatus:Z
 
     iput v5, v2, Landroid/os/Message;->arg1:I
 
+    .line 95
     iget-boolean v5, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$hasNav:Z
 
     iput v5, v2, Landroid/os/Message;->arg2:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 97
     :try_start_1
     invoke-virtual {v1, v2}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 100
     goto :goto_0
 
+    .line 98
     :catch_0
     move-exception v5
 
+    .line 99
+    .local v5, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v6, "ScreenshotHelper"
 
@@ -149,11 +172,19 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 101
+    .end local v1    # "messenger":Landroid/os/Messenger;
+    .end local v2    # "msg":Landroid/os/Message;
+    .end local v3    # "myConn":Landroid/content/ServiceConnection;
+    .end local v4    # "h":Landroid/os/Handler;
+    .end local v5    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
+    .line 102
     return-void
 
+    .line 101
     :catchall_0
     move-exception v1
 
@@ -166,7 +197,9 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 3
+    .param p1, "name"    # Landroid/content/ComponentName;
 
+    .line 106
     iget-object v0, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     invoke-static {v0}, Lcom/android/internal/util/ScreenshotHelper;->access$000(Lcom/android/internal/util/ScreenshotHelper;)Ljava/lang/Object;
@@ -175,6 +208,7 @@
 
     monitor-enter v0
 
+    .line 107
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
@@ -184,6 +218,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 108
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     invoke-static {v1}, Lcom/android/internal/util/ScreenshotHelper;->access$200(Lcom/android/internal/util/ScreenshotHelper;)Landroid/content/Context;
@@ -198,27 +233,33 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
+    .line 109
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/internal/util/ScreenshotHelper;->access$102(Lcom/android/internal/util/ScreenshotHelper;Landroid/content/ServiceConnection;)Landroid/content/ServiceConnection;
 
+    .line 110
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$handler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/internal/util/ScreenshotHelper$2;->val$mScreenshotTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 111
     iget-object v1, p0, Lcom/android/internal/util/ScreenshotHelper$2;->this$0:Lcom/android/internal/util/ScreenshotHelper;
 
     invoke-static {v1}, Lcom/android/internal/util/ScreenshotHelper;->access$300(Lcom/android/internal/util/ScreenshotHelper;)V
 
+    .line 113
     :cond_0
     monitor-exit v0
 
+    .line 114
     return-void
 
+    .line 113
     :catchall_0
     move-exception v1
 

@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AbsListView;Landroid/view/View;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/widget/AbsListView;
 
+    .line 4129
     iput-object p1, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     iput-object p2, p0, Landroid/widget/AbsListView$3;->val$child:Landroid/view/View;
@@ -41,27 +43,32 @@
 .method public run()V
     .locals 2
 
+    .line 4132
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/widget/AbsListView;->access$1602(Landroid/widget/AbsListView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
+    .line 4133
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, -0x1
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4134
     iget-object v0, p0, Landroid/widget/AbsListView$3;->val$child:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
+    .line 4135
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->setPressed(Z)V
 
+    .line 4136
     return-void
 .end method

@@ -23,14 +23,17 @@
 .method static constructor <clinit>()V
     .locals 13
 
+    .line 41
     const-string v0, "FontFamily"
 
     sput-object v0, Landroid/graphics/FontFamily;->TAG:Ljava/lang/String;
 
+    .line 43
     new-instance v0, Llibcore/util/NativeAllocationRegistry;
 
     const-class v1, Landroid/graphics/FontFamily;
 
+    .line 44
     invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v2
@@ -47,10 +50,12 @@
 
     sput-object v0, Landroid/graphics/FontFamily;->sBuilderRegistry:Llibcore/util/NativeAllocationRegistry;
 
+    .line 48
     new-instance v0, Llibcore/util/NativeAllocationRegistry;
 
     const-class v1, Landroid/graphics/FontFamily;
 
+    .line 49
     invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v8
@@ -67,14 +72,17 @@
 
     sput-object v0, Landroid/graphics/FontFamily;->sFamilyRegistry:Llibcore/util/NativeAllocationRegistry;
 
+    .line 48
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 3
 
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 60
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -85,6 +93,7 @@
 
     iput-wide v0, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
+    .line 61
     sget-object v0, Landroid/graphics/FontFamily;->sBuilderRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v1, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
@@ -95,14 +104,19 @@
 
     iput-object v0, p0, Landroid/graphics/FontFamily;->mNativeBuilderCleaner:Ljava/lang/Runnable;
 
+    .line 62
     return-void
 .end method
 
 .method public constructor <init>([Ljava/lang/String;I)V
     .locals 4
+    .param p1, "langs"    # [Ljava/lang/String;
+    .param p2, "variant"    # I
 
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 66
     if-eqz p1, :cond_2
 
     array-length v0, p1
@@ -111,6 +125,7 @@
 
     goto :goto_0
 
+    .line 68
     :cond_0
     array-length v0, p1
 
@@ -118,12 +133,14 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 69
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
 
     goto :goto_1
 
+    .line 71
     :cond_1
     const-string v0, ","
 
@@ -133,19 +150,24 @@
 
     goto :goto_1
 
+    .line 67
     :cond_2
     :goto_0
     const/4 v0, 0x0
 
+    .line 71
+    .local v0, "langsString":Ljava/lang/String;
     :goto_1
     nop
 
+    .line 73
     invoke-static {v0, p2}, Landroid/graphics/FontFamily;->nInitBuilder(Ljava/lang/String;I)J
 
     move-result-wide v1
 
     iput-wide v1, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
+    .line 74
     sget-object v1, Landroid/graphics/FontFamily;->sBuilderRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v2, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
@@ -156,6 +178,7 @@
 
     iput-object v1, p0, Landroid/graphics/FontFamily;->mNativeBuilderCleaner:Ljava/lang/Runnable;
 
+    .line 75
     return-void
 .end method
 
@@ -166,7 +189,11 @@
 
 .method private static nAddFont(JLjava/nio/ByteBuffer;I)Z
     .locals 6
+    .param p0, "builderPtr"    # J
+    .param p2, "font"    # Ljava/nio/ByteBuffer;
+    .param p3, "ttcIndex"    # I
 
+    .line 167
     const/4 v4, -0x1
 
     const/4 v5, -0x1
@@ -216,6 +243,7 @@
 .method public abortCreation()V
     .locals 4
 
+    .line 97
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     const-wide/16 v2, 0x0
@@ -224,14 +252,18 @@
 
     if-eqz v0, :cond_0
 
+    .line 100
     iget-object v0, p0, Landroid/graphics/FontFamily;->mNativeBuilderCleaner:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 101
     iput-wide v2, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
+    .line 102
     return-void
 
+    .line 98
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -244,6 +276,11 @@
 
 .method public addFont(Ljava/lang/String;I[Landroid/graphics/fonts/FontVariationAxis;II)Z
     .locals 20
+    .param p1, "path"    # Ljava/lang/String;
+    .param p2, "ttcIndex"    # I
+    .param p3, "axes"    # [Landroid/graphics/fonts/FontVariationAxis;
+    .param p4, "weight"    # I
+    .param p5, "italic"    # I
 
     move-object/from16 v1, p0
 
@@ -251,6 +288,7 @@
 
     move-object/from16 v3, p3
 
+    .line 106
     iget-wide v4, v1, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     const-wide/16 v6, 0x0
@@ -259,6 +297,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 109
     const/4 v4, 0x0
 
     :try_start_0
@@ -270,15 +309,21 @@
 
     move-object v5, v0
 
+    .line 110
+    .local v5, "file":Ljava/io/FileInputStream;
     :try_start_1
     invoke-virtual {v5}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object v0
 
+    .line 111
+    .local v0, "fileChannel":Ljava/nio/channels/FileChannel;
     invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->size()J
 
     move-result-wide v11
 
+    .line 112
+    .local v11, "fontSize":J
     sget-object v8, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
 
     const-wide/16 v9, 0x0
@@ -289,8 +334,11 @@
 
     move-result-object v15
 
+    .line 113
+    .local v15, "fontBuffer":Ljava/nio/ByteBuffer;
     if-eqz v3, :cond_0
 
+    .line 114
     array-length v7, v3
 
     move v8, v4
@@ -300,6 +348,8 @@
 
     aget-object v9, v3, v8
 
+    .line 115
+    .local v9, "axis":Landroid/graphics/fonts/FontVariationAxis;
     iget-wide v13, v1, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     invoke-virtual {v9}, Landroid/graphics/fonts/FontVariationAxis;->getOpenTypeTagValue()I
@@ -312,10 +362,13 @@
 
     invoke-static {v13, v14, v10, v6}, Landroid/graphics/FontFamily;->nAddAxisValue(JIF)V
 
+    .line 114
+    .end local v9    # "axis":Landroid/graphics/fonts/FontVariationAxis;
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
+    .line 118
     :cond_0
     iget-wide v13, v1, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
@@ -332,13 +385,19 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 119
     :try_start_2
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 118
     return v6
 
+    .line 119
+    .end local v0    # "fileChannel":Ljava/nio/channels/FileChannel;
+    .end local v11    # "fontSize":J
+    .end local v15    # "fontBuffer":Ljava/nio/ByteBuffer;
     :catchall_0
     move-exception v0
 
@@ -348,6 +407,7 @@
 
     goto :goto_1
 
+    .line 109
     :catch_0
     move-exception v0
 
@@ -358,6 +418,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
+    .line 119
     :catchall_1
     move-exception v0
 
@@ -394,9 +455,12 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
+    .end local v5    # "file":Ljava/io/FileInputStream;
     :catch_2
     move-exception v0
 
+    .line 120
+    .local v0, "e":Ljava/io/IOException;
     sget-object v5, Landroid/graphics/FontFamily;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -415,8 +479,11 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 121
     return v4
 
+    .line 107
+    .end local v0    # "e":Ljava/io/IOException;
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -429,9 +496,18 @@
 
 .method public addFontFromAssetManager(Landroid/content/res/AssetManager;Ljava/lang/String;IZIII[Landroid/graphics/fonts/FontVariationAxis;)Z
     .locals 13
+    .param p1, "mgr"    # Landroid/content/res/AssetManager;
+    .param p2, "path"    # Ljava/lang/String;
+    .param p3, "cookie"    # I
+    .param p4, "isAsset"    # Z
+    .param p5, "ttcIndex"    # I
+    .param p6, "weight"    # I
+    .param p7, "isItalic"    # I
+    .param p8, "axes"    # [Landroid/graphics/fonts/FontVariationAxis;
 
     move-object v0, p0
 
+    .line 153
     move-object/from16 v1, p8
 
     iget-wide v2, v0, Landroid/graphics/FontFamily;->mBuilderPtr:J
@@ -442,8 +518,10 @@
 
     if-eqz v2, :cond_1
 
+    .line 156
     if-eqz v1, :cond_0
 
+    .line 157
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -453,6 +531,8 @@
 
     aget-object v4, v1, v3
 
+    .line 158
+    .local v4, "axis":Landroid/graphics/fonts/FontVariationAxis;
     iget-wide v5, v0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     invoke-virtual {v4}, Landroid/graphics/fonts/FontVariationAxis;->getOpenTypeTagValue()I
@@ -465,10 +545,13 @@
 
     invoke-static {v5, v6, v7, v8}, Landroid/graphics/FontFamily;->nAddAxisValue(JIF)V
 
+    .line 157
+    .end local v4    # "axis":Landroid/graphics/fonts/FontVariationAxis;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 161
     :cond_0
     iget-wide v4, v0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
@@ -492,6 +575,7 @@
 
     return v2
 
+    .line 154
     :cond_1
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -504,7 +588,13 @@
 
 .method public addFontFromBuffer(Ljava/nio/ByteBuffer;I[Landroid/graphics/fonts/FontVariationAxis;II)Z
     .locals 8
+    .param p1, "font"    # Ljava/nio/ByteBuffer;
+    .param p2, "ttcIndex"    # I
+    .param p3, "axes"    # [Landroid/graphics/fonts/FontVariationAxis;
+    .param p4, "weight"    # I
+    .param p5, "italic"    # I
 
+    .line 127
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     const-wide/16 v2, 0x0
@@ -513,8 +603,10 @@
 
     if-eqz v0, :cond_1
 
+    .line 130
     if-eqz p3, :cond_0
 
+    .line 131
     array-length v0, p3
 
     const/4 v1, 0x0
@@ -524,6 +616,8 @@
 
     aget-object v2, p3, v1
 
+    .line 132
+    .local v2, "axis":Landroid/graphics/fonts/FontVariationAxis;
     iget-wide v3, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     invoke-virtual {v2}, Landroid/graphics/fonts/FontVariationAxis;->getOpenTypeTagValue()I
@@ -536,10 +630,13 @@
 
     invoke-static {v3, v4, v5, v6}, Landroid/graphics/FontFamily;->nAddAxisValue(JIF)V
 
+    .line 131
+    .end local v2    # "axis":Landroid/graphics/fonts/FontVariationAxis;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 135
     :cond_0
     iget-wide v2, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
@@ -557,6 +654,7 @@
 
     return v0
 
+    .line 128
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -570,6 +668,7 @@
 .method public freeze()Z
     .locals 6
 
+    .line 84
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     const-wide/16 v2, 0x0
@@ -578,6 +677,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 87
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
     invoke-static {v0, v1}, Landroid/graphics/FontFamily;->nCreateFamily(J)J
@@ -586,24 +686,29 @@
 
     iput-wide v0, p0, Landroid/graphics/FontFamily;->mNativePtr:J
 
+    .line 88
     iget-object v0, p0, Landroid/graphics/FontFamily;->mNativeBuilderCleaner:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 89
     iput-wide v2, p0, Landroid/graphics/FontFamily;->mBuilderPtr:J
 
+    .line 90
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mNativePtr:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
+    .line 91
     sget-object v0, Landroid/graphics/FontFamily;->sFamilyRegistry:Llibcore/util/NativeAllocationRegistry;
 
     iget-wide v4, p0, Landroid/graphics/FontFamily;->mNativePtr:J
 
     invoke-virtual {v0, p0, v4, v5}, Llibcore/util/NativeAllocationRegistry;->registerNativeAllocation(Ljava/lang/Object;J)Ljava/lang/Runnable;
 
+    .line 93
     :cond_0
     iget-wide v0, p0, Landroid/graphics/FontFamily;->mNativePtr:J
 
@@ -621,6 +726,7 @@
     :goto_0
     return v0
 
+    .line 85
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 

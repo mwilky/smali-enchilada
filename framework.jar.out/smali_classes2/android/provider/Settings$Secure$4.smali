@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 8534
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,13 +31,17 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 7
+    .param p1, "value"    # Ljava/lang/String;
 
+    .line 8537
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
+    .line 8538
     return v0
 
+    .line 8540
     :cond_0
     const-string v1, ","
 
@@ -44,19 +49,27 @@
 
     move-result-object v1
 
+    .line 8541
+    .local v1, "tiles":[Ljava/lang/String;
     const/4 v2, 0x1
 
+    .line 8542
+    .local v2, "valid":Z
     array-length v3, v1
 
     move v4, v2
 
     move v2, v0
 
+    .end local v2    # "valid":Z
+    .local v4, "valid":Z
     :goto_0
     if-ge v2, v3, :cond_2
 
     aget-object v5, v1, v2
 
+    .line 8544
+    .local v5, "tile":Ljava/lang/String;
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -81,10 +94,13 @@
     :goto_1
     or-int/2addr v4, v6
 
+    .line 8542
+    .end local v5    # "tile":Ljava/lang/String;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 8546
     :cond_2
     return v4
 .end method

@@ -30,7 +30,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConnection$Callback;Landroid/telecom/RemoteConnection;Z)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/RemoteConnection;
 
+    .line 1369
     iput-object p1, p0, Landroid/telecom/RemoteConnection$11;->this$0:Landroid/telecom/RemoteConnection;
 
     iput-object p2, p0, Landroid/telecom/RemoteConnection$11;->val$callback:Landroid/telecom/RemoteConnection$Callback;
@@ -49,6 +51,7 @@
 .method public run()V
     .locals 3
 
+    .line 1372
     iget-object v0, p0, Landroid/telecom/RemoteConnection$11;->val$callback:Landroid/telecom/RemoteConnection$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConnection$11;->val$connection:Landroid/telecom/RemoteConnection;
@@ -57,5 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/RemoteConnection$Callback;->onVoipAudioChanged(Landroid/telecom/RemoteConnection;Z)V
 
+    .line 1373
     return-void
 .end method

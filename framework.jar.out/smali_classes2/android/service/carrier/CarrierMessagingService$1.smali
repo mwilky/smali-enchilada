@@ -35,7 +35,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/carrier/CarrierMessagingService;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/service/carrier/CarrierMessagingService;
 
+    .line 156
     iput-object p1, p0, Landroid/service/carrier/CarrierMessagingService$1;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
     iput-object p2, p0, Landroid/service/carrier/CarrierMessagingService$1;->val$callback:Landroid/service/carrier/CarrierMessagingService$ResultCallback;
@@ -49,12 +51,14 @@
 # virtual methods
 .method public onReceiveResult(Ljava/lang/Boolean;)V
     .locals 2
+    .param p1, "result"    # Ljava/lang/Boolean;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 159
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$1;->val$callback:Landroid/service/carrier/CarrierMessagingService$ResultCallback;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -67,9 +71,11 @@
 
     goto :goto_0
 
+    .line 160
     :cond_0
     const/4 v1, 0x3
 
+    .line 159
     :goto_0
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -77,6 +83,7 @@
 
     invoke-interface {v0, v1}, Landroid/service/carrier/CarrierMessagingService$ResultCallback;->onReceiveResult(Ljava/lang/Object;)V
 
+    .line 161
     return-void
 .end method
 
@@ -88,6 +95,7 @@
         }
     .end annotation
 
+    .line 156
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroid/service/carrier/CarrierMessagingService$1;->onReceiveResult(Ljava/lang/Boolean;)V

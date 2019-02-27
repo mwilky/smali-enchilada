@@ -21,6 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 10463
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +31,9 @@
 # virtual methods
 .method public validate(Ljava/lang/String;)Z
     .locals 1
+    .param p1, "value"    # Ljava/lang/String;
 
+    .line 10466
     if-eqz p1, :cond_1
 
     sget-object v0, Landroid/provider/SettingsValidators;->PACKAGE_NAME_VALIDATOR:Landroid/provider/SettingsValidators$Validator;

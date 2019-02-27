@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothA2dp;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/bluetooth/BluetoothA2dp;
 
+    .line 209
     iput-object p1, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public onBluetoothStateChange(Z)V
     .locals 3
+    .param p1, "up"    # Z
 
+    .line 211
     const-string v0, "BluetoothA2dp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -52,8 +56,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 212
     if-nez p1, :cond_0
 
+    .line 215
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
@@ -67,12 +73,14 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
+    .line 216
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothA2dp;->access$102(Landroid/bluetooth/BluetoothA2dp;Landroid/bluetooth/IBluetoothA2dp;)Landroid/bluetooth/IBluetoothA2dp;
 
+    .line 217
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothA2dp;->access$300(Landroid/bluetooth/BluetoothA2dp;)Landroid/content/Context;
@@ -92,14 +100,18 @@
 
     goto :goto_0
 
+    .line 221
     :catchall_0
     move-exception v0
 
     goto :goto_1
 
+    .line 218
     :catch_0
     move-exception v0
 
+    .line 219
+    .local v0, "re":Ljava/lang/Exception;
     :try_start_1
     const-string v1, "BluetoothA2dp"
 
@@ -109,6 +121,8 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 221
+    .end local v0    # "re":Ljava/lang/Exception;
     :goto_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
@@ -122,8 +136,10 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->unlock()V
 
+    .line 222
     goto :goto_3
 
+    .line 221
     :goto_1
     iget-object v1, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
@@ -139,6 +155,7 @@
 
     throw v0
 
+    .line 225
     :cond_0
     :try_start_2
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
@@ -153,6 +170,7 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
+    .line 226
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothA2dp;->access$100(Landroid/bluetooth/BluetoothA2dp;)Landroid/bluetooth/IBluetoothA2dp;
@@ -161,6 +179,7 @@
 
     if-nez v0, :cond_1
 
+    .line 228
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothA2dp;->doBind()Z
@@ -170,14 +189,18 @@
 
     goto :goto_2
 
+    .line 233
     :catchall_1
     move-exception v0
 
     goto :goto_4
 
+    .line 230
     :catch_1
     move-exception v0
 
+    .line 231
+    .restart local v0    # "re":Ljava/lang/Exception;
     :try_start_3
     const-string v1, "BluetoothA2dp"
 
@@ -187,6 +210,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
+    .line 233
+    .end local v0    # "re":Ljava/lang/Exception;
     :cond_1
     :goto_2
     iget-object v0, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
@@ -201,11 +226,14 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
+    .line 234
     nop
 
+    .line 236
     :goto_3
     return-void
 
+    .line 233
     :goto_4
     iget-object v1, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 

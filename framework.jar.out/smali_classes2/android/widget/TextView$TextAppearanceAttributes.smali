@@ -66,40 +66,55 @@
 .method private constructor <init>()V
     .locals 3
 
+    .line 3423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 3424
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTextColorHighlight:I
 
+    .line 3425
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTextColor:Landroid/content/res/ColorStateList;
 
+    .line 3426
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTextColorHint:Landroid/content/res/ColorStateList;
 
+    .line 3427
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTextColorLink:Landroid/content/res/ColorStateList;
 
+    .line 3428
     iput v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTextSize:I
 
+    .line 3429
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFontFamily:Ljava/lang/String;
 
+    .line 3430
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFontTypeface:Landroid/graphics/Typeface;
 
+    .line 3431
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFontFamilyExplicit:Z
 
+    .line 3432
     const/4 v2, -0x1
 
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mTypefaceIndex:I
 
+    .line 3433
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mStyleIndex:I
 
+    .line 3434
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFontWeight:I
 
+    .line 3435
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mAllCaps:Z
 
+    .line 3436
     iput v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mShadowColor:I
 
+    .line 3437
     const/4 v2, 0x0
 
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mShadowDx:F
@@ -108,18 +123,25 @@
 
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mShadowRadius:F
 
+    .line 3438
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mHasElegant:Z
 
+    .line 3439
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mElegant:Z
 
+    .line 3440
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mHasFallbackLineSpacing:Z
 
+    .line 3441
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFallbackLineSpacing:Z
 
+    .line 3442
     iput-boolean v0, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mHasLetterSpacing:Z
 
+    .line 3443
     iput v2, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mLetterSpacing:F
 
+    .line 3444
     iput-object v1, p0, Landroid/widget/TextView$TextAppearanceAttributes;->mFontFeatureSettings:Ljava/lang/String;
 
     return-void
@@ -127,7 +149,9 @@
 
 .method synthetic constructor <init>(Landroid/widget/TextView$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/widget/TextView$1;
 
+    .line 3423
     invoke-direct {p0}, Landroid/widget/TextView$TextAppearanceAttributes;-><init>()V
 
     return-void
@@ -138,6 +162,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 3448
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

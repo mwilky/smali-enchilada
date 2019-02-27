@@ -32,6 +32,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 2674
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,12 +42,19 @@
 # virtual methods
 .method public onAutofillEvent(Landroid/view/View;I)V
     .locals 0
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "event"    # I
 
+    .line 2718
     return-void
 .end method
 
 .method public onAutofillEvent(Landroid/view/View;II)V
     .locals 0
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "virtualId"    # I
+    .param p3, "event"    # I
 
+    .line 2730
     return-void
 .end method

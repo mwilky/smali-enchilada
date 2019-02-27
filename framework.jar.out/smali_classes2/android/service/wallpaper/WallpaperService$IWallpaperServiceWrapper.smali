@@ -23,13 +23,18 @@
 # direct methods
 .method public constructor <init>(Landroid/service/wallpaper/WallpaperService;Landroid/service/wallpaper/WallpaperService;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/service/wallpaper/WallpaperService;
+    .param p2, "context"    # Landroid/service/wallpaper/WallpaperService;
 
+    .line 1429
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$IWallpaperServiceWrapper;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     invoke-direct {p0}, Landroid/service/wallpaper/IWallpaperService$Stub;-><init>()V
 
+    .line 1430
     iput-object p2, p0, Landroid/service/wallpaper/WallpaperService$IWallpaperServiceWrapper;->mTarget:Landroid/service/wallpaper/WallpaperService;
 
+    .line 1431
     return-void
 .end method
 
@@ -37,9 +42,17 @@
 # virtual methods
 .method public attach(Landroid/service/wallpaper/IWallpaperConnection;Landroid/os/IBinder;IZIILandroid/graphics/Rect;)V
     .locals 11
+    .param p1, "conn"    # Landroid/service/wallpaper/IWallpaperConnection;
+    .param p2, "windowToken"    # Landroid/os/IBinder;
+    .param p3, "windowType"    # I
+    .param p4, "isPreview"    # Z
+    .param p5, "reqWidth"    # I
+    .param p6, "reqHeight"    # I
+    .param p7, "padding"    # Landroid/graphics/Rect;
 
     move-object v0, p0
 
+    .line 1436
     new-instance v1, Landroid/service/wallpaper/WallpaperService$IWallpaperEngineWrapper;
 
     iget-object v2, v0, Landroid/service/wallpaper/WallpaperService$IWallpaperServiceWrapper;->this$0:Landroid/service/wallpaper/WallpaperService;
@@ -62,5 +75,6 @@
 
     invoke-direct/range {v1 .. v10}, Landroid/service/wallpaper/WallpaperService$IWallpaperEngineWrapper;-><init>(Landroid/service/wallpaper/WallpaperService;Landroid/service/wallpaper/WallpaperService;Landroid/service/wallpaper/IWallpaperConnection;Landroid/os/IBinder;IZIILandroid/graphics/Rect;)V
 
+    .line 1438
     return-void
 .end method

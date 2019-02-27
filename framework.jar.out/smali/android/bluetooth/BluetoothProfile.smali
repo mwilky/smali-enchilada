@@ -86,28 +86,35 @@
 # direct methods
 .method public static getConnectionStateName(I)Ljava/lang/String;
     .locals 1
+    .param p0, "connectionState"    # I
 
+    .line 302
     packed-switch p0, :pswitch_data_0
 
+    .line 312
     const-string v0, "STATE_UNKNOWN"
 
     return-object v0
 
+    .line 310
     :pswitch_0
     const-string v0, "STATE_DISCONNECTING"
 
     return-object v0
 
+    .line 308
     :pswitch_1
     const-string v0, "STATE_CONNECTED"
 
     return-object v0
 
+    .line 306
     :pswitch_2
     const-string v0, "STATE_CONNECTING"
 
     return-object v0
 
+    .line 304
     :pswitch_3
     const-string v0, "STATE_DISCONNECTED"
 

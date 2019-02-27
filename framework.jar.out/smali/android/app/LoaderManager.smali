@@ -18,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,9 +26,12 @@
 
 .method public static enableDebugLogging(Z)V
     .locals 0
+    .param p0, "enabled"    # Z
 
+    .line 204
     sput-boolean p0, Landroid/app/LoaderManagerImpl;->DEBUG:Z
 
+    .line 205
     return-void
 .end method
 
@@ -42,6 +46,7 @@
 .method public getFragmentHostCallback()Landroid/app/FragmentHostCallback;
     .locals 1
 
+    .line 208
     const/4 v0, 0x0
 
     return-object v0

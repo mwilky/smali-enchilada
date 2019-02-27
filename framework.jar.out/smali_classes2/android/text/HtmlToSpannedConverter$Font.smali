@@ -21,10 +21,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "face"    # Ljava/lang/String;
 
+    .line 1278
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1279
     iput-object p1, p0, Landroid/text/HtmlToSpannedConverter$Font;->mFace:Ljava/lang/String;
 
+    .line 1280
     return-void
 .end method

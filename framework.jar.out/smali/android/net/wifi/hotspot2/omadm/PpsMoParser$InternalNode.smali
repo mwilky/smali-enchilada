@@ -29,6 +29,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
     .locals 0
+    .param p1, "nodeName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,10 +40,14 @@
         }
     .end annotation
 
+    .line 308
+    .local p2, "children":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;>;"
     invoke-direct {p0, p1}, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$PPSNode;-><init>(Ljava/lang/String;)V
 
+    .line 309
     iput-object p2, p0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$InternalNode;->mChildren:Ljava/util/List;
 
+    .line 310
     return-void
 .end method
 
@@ -59,6 +64,7 @@
         }
     .end annotation
 
+    .line 319
     iget-object v0, p0, Landroid/net/wifi/hotspot2/omadm/PpsMoParser$InternalNode;->mChildren:Ljava/util/List;
 
     return-object v0
@@ -67,6 +73,7 @@
 .method public getValue()Ljava/lang/String;
     .locals 1
 
+    .line 314
     const/4 v0, 0x0
 
     return-object v0
@@ -75,6 +82,7 @@
 .method public isLeaf()Z
     .locals 1
 
+    .line 324
     const/4 v0, 0x0
 
     return v0

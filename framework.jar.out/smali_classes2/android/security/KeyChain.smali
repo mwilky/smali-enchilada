@@ -77,7 +77,10 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
+    .param p0, "x0"    # Ljava/lang/Throwable;
+    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
+    .line 528
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -104,6 +107,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -111,12 +115,14 @@
 
 .method public static bind(Landroid/content/Context;)Landroid/security/KeyChain$KeyChainConnection;
     .locals 1
+    .param p0, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
         }
     .end annotation
 
+    .line 721
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -130,26 +136,35 @@
 
 .method public static bindAsUser(Landroid/content/Context;Landroid/os/UserHandle;)Landroid/security/KeyChain$KeyChainConnection;
     .locals 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "user"    # Landroid/os/UserHandle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
         }
     .end annotation
 
+    .line 730
     if-eqz p0, :cond_1
 
+    .line 733
     invoke-static {p0}, Landroid/security/KeyChain;->ensureNotOnMainThread(Landroid/content/Context;)V
 
+    .line 734
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
+    .line 735
+    .local v0, "q":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Landroid/security/IKeyChainService;>;"
     new-instance v2, Landroid/security/KeyChain$1;
 
     invoke-direct {v2, v0}, Landroid/security/KeyChain$1;-><init>(Ljava/util/concurrent/BlockingQueue;)V
 
+    .line 749
+    .local v2, "keyChainServiceConnection":Landroid/content/ServiceConnection;
     new-instance v3, Landroid/content/Intent;
 
     const-class v4, Landroid/security/IKeyChainService;
@@ -160,6 +175,8 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 750
+    .local v3, "intent":Landroid/content/Intent;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
@@ -170,8 +187,11 @@
 
     move-result-object v4
 
+    .line 751
+    .local v4, "comp":Landroid/content/ComponentName;
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
+    .line 752
     if-eqz v4, :cond_0
 
     invoke-virtual {p0, v3, v2, v1, p1}, Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
@@ -180,6 +200,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 756
     new-instance v1, Landroid/security/KeyChain$KeyChainConnection;
 
     invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->take()Ljava/lang/Object;
@@ -192,6 +213,7 @@
 
     return-object v1
 
+    .line 754
     :cond_0
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -201,6 +223,11 @@
 
     throw v1
 
+    .line 731
+    .end local v0    # "q":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Landroid/security/IKeyChainService;>;"
+    .end local v2    # "keyChainServiceConnection":Landroid/content/ServiceConnection;
+    .end local v3    # "intent":Landroid/content/Intent;
+    .end local v4    # "comp":Landroid/content/ComponentName;
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -213,21 +240,33 @@
 
 .method public static choosePrivateKeyAlias(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Landroid/net/Uri;Ljava/lang/String;)V
     .locals 4
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p1, "response"    # Landroid/security/KeyChainAliasCallback;
+    .param p2, "keyTypes"    # [Ljava/lang/String;
+    .param p3, "issuers"    # [Ljava/security/Principal;
+    .param p4, "uri"    # Landroid/net/Uri;
+    .param p5, "alias"    # Ljava/lang/String;
 
+    .line 462
     if-eqz p0, :cond_1
 
+    .line 465
     if-eqz p1, :cond_0
 
+    .line 468
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.android.keychain.CHOOSER"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 469
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.keychain"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 470
     const-string/jumbo v1, "response"
 
     new-instance v2, Landroid/security/KeyChain$AliasResponse;
@@ -238,14 +277,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/IBinder;)Landroid/content/Intent;
 
+    .line 471
     const-string/jumbo v1, "uri"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
+    .line 472
     const-string v1, "alias"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 474
     const-string/jumbo v1, "sender"
 
     new-instance v2, Landroid/content/Intent;
@@ -260,10 +302,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
+    .line 475
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
+    .line 476
     return-void
 
+    .line 466
+    .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -273,6 +319,7 @@
 
     throw v0
 
+    .line 463
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -285,11 +332,22 @@
 
 .method public static choosePrivateKeyAlias(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Ljava/lang/String;ILjava/lang/String;)V
     .locals 7
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p1, "response"    # Landroid/security/KeyChainAliasCallback;
+    .param p2, "keyTypes"    # [Ljava/lang/String;
+    .param p3, "issuers"    # [Ljava/security/Principal;
+    .param p4, "host"    # Ljava/lang/String;
+    .param p5, "port"    # I
+    .param p6, "alias"    # Ljava/lang/String;
 
+    .line 394
     const/4 v0, 0x0
 
+    .line 395
+    .local v0, "uri":Landroid/net/Uri;
     if-eqz p4, :cond_1
 
+    .line 396
     new-instance v1, Landroid/net/Uri$Builder;
 
     invoke-direct {v1}, Landroid/net/Uri$Builder;-><init>()V
@@ -300,6 +358,7 @@
 
     invoke-virtual {v2, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 397
     const/4 v3, -0x1
 
     if-eq p5, v3, :cond_0
@@ -334,10 +393,12 @@
 
     move-result-object v1
 
+    .line 398
     invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
+    .line 400
     :cond_1
     move-object v1, p0
 
@@ -353,34 +414,43 @@
 
     invoke-static/range {v1 .. v6}, Landroid/security/KeyChain;->choosePrivateKeyAlias(Landroid/app/Activity;Landroid/security/KeyChainAliasCallback;[Ljava/lang/String;[Ljava/security/Principal;Landroid/net/Uri;Ljava/lang/String;)V
 
+    .line 401
     return-void
 .end method
 
 .method public static createInstallIntent()Landroid/content/Intent;
     .locals 3
 
+    .line 343
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.credentials.INSTALL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 344
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.certinstaller"
 
     const-string v2, "com.android.certinstaller.CertInstallerMain"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 346
     return-object v0
 .end method
 
 .method private static ensureNotOnMainThread(Landroid/content/Context;)V
     .locals 3
+    .param p0, "context"    # Landroid/content/Context;
 
+    .line 760
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
+    .line 761
+    .local v0, "looper":Landroid/os/Looper;
     if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -391,6 +461,7 @@
 
     goto :goto_0
 
+    .line 762
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -400,6 +471,7 @@
 
     throw v1
 
+    .line 765
     :cond_1
     :goto_0
     return-void
@@ -407,6 +479,8 @@
 
 .method public static getCertificateChain(Landroid/content/Context;Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
     .locals 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/KeyChainException;,
@@ -414,8 +488,10 @@
         }
     .end annotation
 
+    .line 570
     if-eqz p1, :cond_5
 
+    .line 576
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -428,6 +504,8 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
 
+    .line 577
+    .local v0, "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     const/4 v1, 0x0
 
     :try_start_1
@@ -435,6 +513,8 @@
 
     move-result-object v2
 
+    .line 578
+    .local v2, "keyChainService":Landroid/security/IKeyChainService;
     invoke-interface {v2, p1}, Landroid/security/IKeyChainService;->getCertificate(Ljava/lang/String;)[B
 
     move-result-object v3
@@ -442,10 +522,14 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 579
+    .local v3, "certificateBytes":[B
     if-nez v3, :cond_1
 
+    .line 580
     nop
 
+    .line 583
     if-eqz v0, :cond_0
 
     :try_start_2
@@ -454,9 +538,11 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 580
     :cond_0
     return-object v1
 
+    .line 582
     :cond_1
     :try_start_3
     invoke-interface {v2, p1}, Landroid/security/IKeyChainService;->getCaCertificates(Ljava/lang/String;)[B
@@ -466,8 +552,11 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .end local v2    # "keyChainService":Landroid/security/IKeyChainService;
     move-object v2, v4
 
+    .line 583
+    .local v2, "certChainBytes":[B
     if-eqz v0, :cond_2
 
     :try_start_4
@@ -476,30 +565,43 @@
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_2
 
+    .end local v0    # "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :cond_2
     move-object v0, v3
 
+    .end local v3    # "certificateBytes":[B
+    .local v0, "certificateBytes":[B
     move-object v1, v2
 
+    .line 588
+    .end local v2    # "certChainBytes":[B
+    .local v1, "certChainBytes":[B
     nop
 
+    .line 587
     nop
 
+    .line 591
     :try_start_5
     invoke-static {v0}, Landroid/security/KeyChain;->toCertificate([B)Ljava/security/cert/X509Certificate;
 
     move-result-object v2
 
+    .line 594
+    .local v2, "leafCert":Ljava/security/cert/X509Certificate;
     if-eqz v1, :cond_3
 
     array-length v3, v1
 
     if-eqz v3, :cond_3
 
+    .line 595
     invoke-static {v1}, Landroid/security/KeyChain;->toCertificates([B)Ljava/util/Collection;
 
     move-result-object v3
 
+    .line 596
+    .local v3, "chain":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/security/cert/X509Certificate;>;"
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-interface {v3}, Ljava/util/Collection;->size()I
@@ -510,10 +612,14 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
+    .line 597
+    .local v4, "fullChain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/security/cert/X509Certificate;>;"
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 598
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
+    .line 599
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -528,15 +634,22 @@
 
     return-object v5
 
+    .line 611
+    .end local v3    # "chain":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/security/cert/X509Certificate;>;"
+    .end local v4    # "fullChain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/security/cert/X509Certificate;>;"
     :cond_3
     new-instance v3, Lcom/android/org/conscrypt/TrustedCertificateStore;
 
     invoke-direct {v3}, Lcom/android/org/conscrypt/TrustedCertificateStore;-><init>()V
 
+    .line 612
+    .local v3, "store":Lcom/android/org/conscrypt/TrustedCertificateStore;
     invoke-virtual {v3, v2}, Lcom/android/org/conscrypt/TrustedCertificateStore;->getCertificateChain(Ljava/security/cert/X509Certificate;)Ljava/util/List;
 
     move-result-object v4
 
+    .line 613
+    .local v4, "chain":Ljava/util/List;, "Ljava/util/List<Ljava/security/cert/X509Certificate;>;"
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v5
@@ -554,20 +667,31 @@
 
     return-object v5
 
+    .line 615
+    .end local v2    # "leafCert":Ljava/security/cert/X509Certificate;
+    .end local v3    # "store":Lcom/android/org/conscrypt/TrustedCertificateStore;
+    .end local v4    # "chain":Ljava/util/List;, "Ljava/util/List<Ljava/security/cert/X509Certificate;>;"
     :catch_0
     move-exception v2
 
+    .line 616
+    .local v2, "e":Ljava/lang/Exception;
     new-instance v3, Landroid/security/KeyChainException;
 
     invoke-direct {v3, v2}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v3
 
+    .line 583
+    .end local v1    # "certChainBytes":[B
+    .end local v2    # "e":Ljava/lang/Exception;
+    .local v0, "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
+    .line 576
     :catch_1
     move-exception v1
 
@@ -576,6 +700,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
+    .line 583
     :goto_0
     if-eqz v0, :cond_4
 
@@ -588,24 +713,34 @@
     .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_7} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_7} :catch_2
 
+    .line 585
+    .end local v0    # "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :catch_2
     move-exception v0
 
+    .line 587
+    .local v0, "e":Ljava/lang/RuntimeException;
     new-instance v1, Landroid/security/KeyChainException;
 
     invoke-direct {v1, v0}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 583
+    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_3
     move-exception v0
 
+    .line 584
+    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Landroid/security/KeyChainException;
 
     invoke-direct {v1, v0}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 571
+    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_5
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -618,6 +753,8 @@
 
 .method public static getKeyPair(Landroid/content/Context;Ljava/lang/String;)Ljava/security/KeyPair;
     .locals 3
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/KeyChainException;,
@@ -625,10 +762,13 @@
         }
     .end annotation
 
+    .line 518
     if-eqz p1, :cond_4
 
+    .line 521
     if-eqz p0, :cond_3
 
+    .line 526
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -641,6 +781,8 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
 
+    .line 527
+    .local v0, "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     const/4 v1, 0x0
 
     :try_start_1
@@ -655,6 +797,8 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 528
+    .local v2, "keyId":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     :try_start_2
@@ -663,17 +807,25 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
 
+    .end local v0    # "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :cond_0
     move-object v0, v2
 
+    .line 533
+    .end local v2    # "keyId":Ljava/lang/String;
+    .local v0, "keyId":Ljava/lang/String;
     nop
 
+    .line 532
     nop
 
+    .line 535
     if-nez v0, :cond_1
 
+    .line 536
     return-object v1
 
+    .line 540
     :cond_1
     :try_start_3
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
@@ -682,6 +834,7 @@
 
     const/4 v2, -0x1
 
+    .line 539
     invoke-static {v1, v0, v2}, Landroid/security/keystore/AndroidKeyStoreProvider;->loadAndroidKeyStoreKeyPairFromKeystore(Landroid/security/KeyStore;Ljava/lang/String;I)Ljava/security/KeyPair;
 
     move-result-object v1
@@ -691,20 +844,27 @@
 
     return-object v1
 
+    .line 541
     :catch_0
     move-exception v1
 
+    .line 542
+    .local v1, "e":Ljava/lang/Exception;
     new-instance v2, Landroid/security/KeyChainException;
 
     invoke-direct {v2, v1}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v2
 
+    .line 528
+    .end local v1    # "e":Ljava/lang/Exception;
+    .local v0, "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
+    .line 526
     :catch_1
     move-exception v1
 
@@ -713,6 +873,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
+    .line 528
     :goto_0
     if-eqz v0, :cond_2
 
@@ -725,24 +886,34 @@
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_2
 
+    .line 530
+    .end local v0    # "keyChainConnection":Landroid/security/KeyChain$KeyChainConnection;
     :catch_2
     move-exception v0
 
+    .line 532
+    .local v0, "e":Ljava/lang/RuntimeException;
     new-instance v1, Landroid/security/KeyChainException;
 
     invoke-direct {v1, v0}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 528
+    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_3
     move-exception v0
 
+    .line 529
+    .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Landroid/security/KeyChainException;
 
     invoke-direct {v1, v0}, Landroid/security/KeyChainException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 522
+    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_3
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -752,6 +923,7 @@
 
     throw v0
 
+    .line 519
     :cond_4
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -764,6 +936,8 @@
 
 .method public static getPrivateKey(Landroid/content/Context;Ljava/lang/String;)Ljava/security/PrivateKey;
     .locals 2
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/security/KeyChainException;,
@@ -771,18 +945,23 @@
         }
     .end annotation
 
+    .line 506
     invoke-static {p0, p1}, Landroid/security/KeyChain;->getKeyPair(Landroid/content/Context;Ljava/lang/String;)Ljava/security/KeyPair;
 
     move-result-object v0
 
+    .line 507
+    .local v0, "keyPair":Ljava/security/KeyPair;
     if-eqz v0, :cond_0
 
+    .line 508
     invoke-virtual {v0}, Ljava/security/KeyPair;->getPrivate()Ljava/security/PrivateKey;
 
     move-result-object v1
 
     return-object v1
 
+    .line 511
     :cond_0
     const/4 v1, 0x0
 
@@ -791,19 +970,23 @@
 
 .method public static isBoundKeyAlgorithm(Ljava/lang/String;)Z
     .locals 1
+    .param p0, "algorithm"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .line 654
     invoke-static {p0}, Landroid/security/KeyChain;->isKeyAlgorithmSupported(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 655
     const/4 v0, 0x0
 
     return v0
 
+    .line 658
     :cond_0
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
 
@@ -818,13 +1001,17 @@
 
 .method public static isKeyAlgorithmSupported(Ljava/lang/String;)Z
     .locals 2
+    .param p0, "algorithm"    # Ljava/lang/String;
 
+    .line 627
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 628
+    .local v0, "algUpper":Ljava/lang/String;
     const-string v1, "EC"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -835,6 +1022,7 @@
 
     const-string v1, "RSA"
 
+    .line 629
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -852,15 +1040,19 @@
     :goto_0
     const/4 v1, 0x1
 
+    .line 628
     :goto_1
     return v1
 .end method
 
 .method public static toCertificate([B)Ljava/security/cert/X509Certificate;
     .locals 3
+    .param p0, "bytes"    # [B
 
+    .line 664
     if-eqz p0, :cond_0
 
+    .line 668
     :try_start_0
     const-string v0, "X.509"
 
@@ -868,6 +1060,8 @@
 
     move-result-object v0
 
+    .line 669
+    .local v0, "certFactory":Ljava/security/cert/CertificateFactory;
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
@@ -876,6 +1070,8 @@
 
     move-result-object v1
 
+    .line 670
+    .local v1, "cert":Ljava/security/cert/Certificate;
     move-object v2, v1
 
     check-cast v2, Ljava/security/cert/X509Certificate;
@@ -884,15 +1080,22 @@
 
     return-object v2
 
+    .line 671
+    .end local v0    # "certFactory":Ljava/security/cert/CertificateFactory;
+    .end local v1    # "cert":Ljava/security/cert/Certificate;
     :catch_0
     move-exception v0
 
+    .line 672
+    .local v0, "e":Ljava/security/cert/CertificateException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
+    .line 665
+    .end local v0    # "e":Ljava/security/cert/CertificateException;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -905,6 +1108,7 @@
 
 .method public static toCertificates([B)Ljava/util/Collection;
     .locals 2
+    .param p0, "bytes"    # [B
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -914,8 +1118,10 @@
         }
     .end annotation
 
+    .line 679
     if-eqz p0, :cond_0
 
+    .line 683
     :try_start_0
     const-string v0, "X.509"
 
@@ -923,6 +1129,8 @@
 
     move-result-object v0
 
+    .line 684
+    .local v0, "certFactory":Ljava/security/cert/CertificateFactory;
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
@@ -935,15 +1143,21 @@
 
     return-object v1
 
+    .line 686
+    .end local v0    # "certFactory":Ljava/security/cert/CertificateFactory;
     :catch_0
     move-exception v0
 
+    .line 687
+    .local v0, "e":Ljava/security/cert/CertificateException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
+    .line 680
+    .end local v0    # "e":Ljava/security/cert/CertificateException;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

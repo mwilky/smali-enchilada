@@ -26,7 +26,9 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/le/PeriodicAdvertisingManager$1;I)V
     .locals 0
+    .param p1, "this$1"    # Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
+    .line 232
     iput-object p1, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$3;->this$1:Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
     iput p2, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$3;->val$syncHandle:I
@@ -41,6 +43,7 @@
 .method public run()V
     .locals 2
 
+    .line 235
     iget-object v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$3;->this$1:Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
     iget-object v0, v0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->val$callback:Landroid/bluetooth/le/PeriodicAdvertisingCallback;
@@ -49,6 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/bluetooth/le/PeriodicAdvertisingCallback;->onSyncLost(I)V
 
+    .line 238
     iget-object v0, p0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1$3;->this$1:Landroid/bluetooth/le/PeriodicAdvertisingManager$1;
 
     iget-object v0, v0, Landroid/bluetooth/le/PeriodicAdvertisingManager$1;->this$0:Landroid/bluetooth/le/PeriodicAdvertisingManager;
@@ -61,5 +65,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 239
     return-void
 .end method

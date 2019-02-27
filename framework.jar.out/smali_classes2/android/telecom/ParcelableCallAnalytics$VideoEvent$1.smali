@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 44
     new-instance v0, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
 
     invoke-direct {v0, p1}, Landroid/telecom/ParcelableCallAnalytics$VideoEvent;-><init>(Landroid/os/Parcel;)V
@@ -50,6 +53,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 40
     invoke-virtual {p0, p1}, Landroid/telecom/ParcelableCallAnalytics$VideoEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
 
     move-result-object p1
@@ -59,7 +63,9 @@
 
 .method public newArray(I)[Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 49
     new-array v0, p1, [Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
 
     return-object v0
@@ -68,6 +74,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 40
     invoke-virtual {p0, p1}, Landroid/telecom/ParcelableCallAnalytics$VideoEvent$1;->newArray(I)[Landroid/telecom/ParcelableCallAnalytics$VideoEvent;
 
     move-result-object p1

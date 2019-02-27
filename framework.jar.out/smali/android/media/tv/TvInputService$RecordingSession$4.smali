@@ -28,7 +28,9 @@
 # direct methods
 .method constructor <init>(Landroid/media/tv/TvInputService$RecordingSession;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvInputService$RecordingSession;
 
+    .line 1644
     iput-object p1, p0, Landroid/media/tv/TvInputService$RecordingSession$4;->this$0:Landroid/media/tv/TvInputService$RecordingSession;
 
     iput-object p2, p0, Landroid/media/tv/TvInputService$RecordingSession$4;->val$eventType:Ljava/lang/String;
@@ -45,6 +47,7 @@
 .method public run()V
     .locals 4
 
+    .line 1650
     :try_start_0
     iget-object v0, p0, Landroid/media/tv/TvInputService$RecordingSession$4;->this$0:Landroid/media/tv/TvInputService$RecordingSession;
 
@@ -54,6 +57,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 1651
     iget-object v0, p0, Landroid/media/tv/TvInputService$RecordingSession$4;->this$0:Landroid/media/tv/TvInputService$RecordingSession;
 
     invoke-static {v0}, Landroid/media/tv/TvInputService$RecordingSession;->access$1400(Landroid/media/tv/TvInputService$RecordingSession;)Landroid/media/tv/ITvInputSessionCallback;
@@ -68,12 +72,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1655
     :cond_0
     goto :goto_0
 
+    .line 1653
     :catch_0
     move-exception v0
 
+    .line 1654
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "TvInputService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -98,6 +106,8 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 1656
+    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

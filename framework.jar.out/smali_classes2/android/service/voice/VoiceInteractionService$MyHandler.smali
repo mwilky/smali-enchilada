@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/service/voice/VoiceInteractionService;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/service/voice/VoiceInteractionService;
 
+    .line 103
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionService$MyHandler;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,43 +35,55 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 106
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 120
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto :goto_0
 
+    .line 117
     :pswitch_0
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$MyHandler;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-virtual {v0}, Landroid/service/voice/VoiceInteractionService;->onLaunchVoiceAssistFromKeyguard()V
 
+    .line 118
     goto :goto_0
 
+    .line 114
     :pswitch_1
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$MyHandler;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-static {v0}, Landroid/service/voice/VoiceInteractionService;->access$100(Landroid/service/voice/VoiceInteractionService;)V
 
+    .line 115
     goto :goto_0
 
+    .line 111
     :pswitch_2
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$MyHandler;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-static {v0}, Landroid/service/voice/VoiceInteractionService;->access$000(Landroid/service/voice/VoiceInteractionService;)V
 
+    .line 112
     goto :goto_0
 
+    .line 108
     :pswitch_3
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionService$MyHandler;->this$0:Landroid/service/voice/VoiceInteractionService;
 
     invoke-virtual {v0}, Landroid/service/voice/VoiceInteractionService;->onReady()V
 
+    .line 109
     nop
 
+    .line 122
     :goto_0
     return-void
 

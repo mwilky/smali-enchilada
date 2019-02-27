@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Editor$SuggestionsPopupWindow;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/widget/Editor$SuggestionsPopupWindow;
 
+    .line 3649
     iput-object p1, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,9 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
+    .param p1, "v"    # Landroid/view/View;
 
+    .line 3651
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -51,6 +55,8 @@
 
     check-cast v0, Landroid/text/Editable;
 
+    .line 3653
+    .local v0, "editable":Landroid/text/Editable;
     iget-object v1, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v1, v1, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -61,6 +67,8 @@
 
     move-result v1
 
+    .line 3654
+    .local v1, "spanUnionStart":I
     iget-object v2, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v2, v2, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -71,16 +79,20 @@
 
     move-result v2
 
+    .line 3655
+    .local v2, "spanUnionEnd":I
     if-ltz v1, :cond_2
 
     if-le v2, v1, :cond_2
 
+    .line 3658
     invoke-interface {v0}, Landroid/text/Editable;->length()I
 
     move-result v3
 
     if-ge v2, v3, :cond_1
 
+    .line 3659
     invoke-interface {v0, v2}, Landroid/text/Editable;->charAt(I)C
 
     move-result v3
@@ -95,19 +107,23 @@
 
     add-int/lit8 v3, v1, -0x1
 
+    .line 3662
     invoke-interface {v0, v3}, Landroid/text/Editable;->charAt(I)C
 
     move-result v3
 
+    .line 3661
     invoke-static {v3}, Ljava/lang/Character;->isSpaceChar(C)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
+    .line 3663
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
+    .line 3665
     :cond_1
     iget-object v3, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
@@ -119,10 +135,12 @@
 
     invoke-virtual {v3, v1, v2}, Landroid/widget/TextView;->deleteText_internal(II)V
 
+    .line 3667
     :cond_2
     iget-object v3, p0, Landroid/widget/Editor$SuggestionsPopupWindow$2;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     invoke-static {v3}, Landroid/widget/Editor$SuggestionsPopupWindow;->access$3500(Landroid/widget/Editor$SuggestionsPopupWindow;)V
 
+    .line 3668
     return-void
 .end method

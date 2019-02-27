@@ -22,6 +22,7 @@
 .method constructor <init>(Landroid/view/View;)V
     .locals 0
 
+    .line 194
     iput-object p1, p0, Lcom/android/internal/widget/MessagingPropertyAnimator$3;->val$v:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,7 +34,9 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .line 197
     iget-object v0, p0, Lcom/android/internal/widget/MessagingPropertyAnimator$3;->val$v:Landroid/view/View;
 
     const v1, 0x1020438
@@ -42,11 +45,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
 
+    .line 198
     iget-object v0, p0, Lcom/android/internal/widget/MessagingPropertyAnimator$3;->val$v:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/internal/widget/MessagingPropertyAnimator;->access$100(Landroid/view/View;Z)V
 
+    .line 199
     return-void
 .end method

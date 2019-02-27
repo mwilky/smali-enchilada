@@ -82,6 +82,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .line 46
     new-instance v0, Landroid/telecom/TelecomAnalytics$SessionTiming$1;
 
     invoke-direct {v0}, Landroid/telecom/TelecomAnalytics$SessionTiming$1;-><init>()V
@@ -93,39 +94,53 @@
 
 .method public constructor <init>(IJ)V
     .locals 0
+    .param p1, "id"    # I
+    .param p2, "time"    # J
 
+    .line 82
     invoke-direct {p0}, Landroid/telecom/TimedEvent;-><init>()V
 
+    .line 83
     iput p1, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mId:I
 
+    .line 84
     iput-wide p2, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mTime:J
 
+    .line 85
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .line 87
     invoke-direct {p0}, Landroid/telecom/TimedEvent;-><init>()V
 
+    .line 88
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mId:I
 
+    .line 89
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mTime:J
 
+    .line 90
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/telecom/TelecomAnalytics$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Landroid/telecom/TelecomAnalytics$1;
 
+    .line 45
     invoke-direct {p0, p1}, Landroid/telecom/TelecomAnalytics$SessionTiming;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -136,6 +151,7 @@
 .method public describeContents()I
     .locals 1
 
+    .line 104
     const/4 v0, 0x0
 
     return v0
@@ -144,6 +160,7 @@
 .method public getKey()Ljava/lang/Integer;
     .locals 1
 
+    .line 94
     iget v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mId:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -156,6 +173,7 @@
 .method public bridge synthetic getKey()Ljava/lang/Object;
     .locals 1
 
+    .line 45
     invoke-virtual {p0}, Landroid/telecom/TelecomAnalytics$SessionTiming;->getKey()Ljava/lang/Integer;
 
     move-result-object v0
@@ -166,6 +184,7 @@
 .method public getTime()J
     .locals 2
 
+    .line 99
     iget-wide v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mTime:J
 
     return-wide v0
@@ -173,14 +192,19 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .line 109
     iget v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 110
     iget-wide v0, p0, Landroid/telecom/TelecomAnalytics$SessionTiming;->mTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 111
     return-void
 .end method

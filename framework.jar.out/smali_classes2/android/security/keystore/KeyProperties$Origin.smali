@@ -18,6 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 704
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,11 +26,14 @@
 
 .method public static fromKeymaster(I)I
     .locals 3
+    .param p0, "origin"    # I
 
+    .line 707
     if-eqz p0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
+    .line 717
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -50,21 +54,25 @@
 
     throw v0
 
+    .line 715
     :pswitch_0
     const/16 v0, 0x8
 
     return v0
 
+    .line 713
     :pswitch_1
     const/4 v0, 0x4
 
     return v0
 
+    .line 711
     :pswitch_2
     const/4 v0, 0x2
 
     return v0
 
+    .line 709
     :cond_0
     const/4 v0, 0x1
 

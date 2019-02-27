@@ -23,7 +23,10 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioManager$ServiceEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioManager;)V
     .locals 0
+    .param p1, "this$1"    # Landroid/media/AudioManager$ServiceEventHandlerDelegate;
+    .param p2, "x0"    # Landroid/os/Looper;
 
+    .line 2423
     iput-object p1, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$ServiceEventHandlerDelegate;
 
     iput-object p3, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->val$this$0:Landroid/media/AudioManager;
@@ -37,11 +40,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 2426
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 2457
     const-string v0, "AudioManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,42 +70,55 @@
 
     goto :goto_0
 
+    .line 2447
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;
 
+    .line 2449
+    .local v0, "cbData":Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;
     iget-object v1, v0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioPlaybackCallback;
 
     if-eqz v1, :cond_0
 
+    .line 2453
     iget-object v1, v0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioPlaybackCallback;
 
     iget-object v2, v0, Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;->mConfigs:Ljava/util/List;
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager$AudioPlaybackCallback;->onPlaybackConfigChanged(Ljava/util/List;)V
 
+    .line 2455
+    .end local v0    # "cbData":Landroid/media/AudioManager$PlaybackConfigChangeCallbackData;
     :cond_0
     goto :goto_0
 
+    .line 2440
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;
 
+    .line 2442
+    .local v0, "cbData":Landroid/media/AudioManager$RecordConfigChangeCallbackData;
     iget-object v1, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
     if-eqz v1, :cond_1
 
+    .line 2443
     iget-object v1, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mCb:Landroid/media/AudioManager$AudioRecordingCallback;
 
     iget-object v2, v0, Landroid/media/AudioManager$RecordConfigChangeCallbackData;->mConfigs:Ljava/util/List;
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager$AudioRecordingCallback;->onRecordingConfigChanged(Ljava/util/List;)V
 
+    .line 2445
+    .end local v0    # "cbData":Landroid/media/AudioManager$RecordConfigChangeCallbackData;
     :cond_1
     goto :goto_0
 
+    .line 2428
     :pswitch_2
     iget-object v0, p0, Landroid/media/AudioManager$ServiceEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$ServiceEventHandlerDelegate;
 
@@ -113,16 +132,23 @@
 
     move-result-object v0
 
+    .line 2429
+    .local v0, "fri":Landroid/media/AudioManager$FocusRequestInfo;
     if-eqz v0, :cond_2
 
+    .line 2430
     iget-object v1, v0, Landroid/media/AudioManager$FocusRequestInfo;->mRequest:Landroid/media/AudioFocusRequest;
 
+    .line 2431
     invoke-virtual {v1}, Landroid/media/AudioFocusRequest;->getOnAudioFocusChangeListener()Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
     move-result-object v1
 
+    .line 2432
+    .local v1, "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     if-eqz v1, :cond_2
 
+    .line 2433
     const-string v2, "AudioManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -151,13 +177,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2435
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     invoke-interface {v1, v2}, Landroid/media/AudioManager$OnAudioFocusChangeListener;->onAudioFocusChange(I)V
 
+    .line 2438
+    .end local v0    # "fri":Landroid/media/AudioManager$FocusRequestInfo;
+    .end local v1    # "listener":Landroid/media/AudioManager$OnAudioFocusChangeListener;
     :cond_2
     nop
 
+    .line 2459
     :goto_0
     return-void
 

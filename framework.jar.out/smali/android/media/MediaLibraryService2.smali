@@ -20,6 +20,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 58
     invoke-direct {p0}, Landroid/media/MediaSessionService2;-><init>()V
 
     return-void
@@ -30,6 +31,7 @@
 .method createProvider()Landroid/media/update/MediaSessionService2Provider;
     .locals 1
 
+    .line 311
     invoke-static {}, Landroid/media/update/ApiLoader;->getProvider()Landroid/media/update/StaticProvider;
 
     move-result-object v0
@@ -47,6 +49,7 @@
 .method public bridge synthetic onCreateSession(Ljava/lang/String;)Landroid/media/MediaSession2;
     .locals 0
 
+    .line 58
     invoke-virtual {p0, p1}, Landroid/media/MediaLibraryService2;->onCreateSession(Ljava/lang/String;)Landroid/media/MediaLibraryService2$MediaLibrarySession;
 
     move-result-object p1

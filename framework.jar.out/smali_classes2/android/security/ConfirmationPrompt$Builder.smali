@@ -25,11 +25,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1, "context"    # Landroid/content/Context;
 
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 162
     iput-object p1, p0, Landroid/security/ConfirmationPrompt$Builder;->mContext:Landroid/content/Context;
 
+    .line 163
     return-void
 .end method
 
@@ -38,6 +42,7 @@
 .method public build()Landroid/security/ConfirmationPrompt;
     .locals 5
 
+    .line 194
     iget-object v0, p0, Landroid/security/ConfirmationPrompt$Builder;->mPromptText:Ljava/lang/CharSequence;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -46,10 +51,12 @@
 
     if-nez v0, :cond_1
 
+    .line 197
     iget-object v0, p0, Landroid/security/ConfirmationPrompt$Builder;->mExtraData:[B
 
     if-eqz v0, :cond_0
 
+    .line 200
     new-instance v0, Landroid/security/ConfirmationPrompt;
 
     iget-object v1, p0, Landroid/security/ConfirmationPrompt$Builder;->mContext:Landroid/content/Context;
@@ -64,6 +71,7 @@
 
     return-object v0
 
+    .line 198
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -73,6 +81,7 @@
 
     throw v0
 
+    .line 195
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -85,16 +94,22 @@
 
 .method public setExtraData([B)Landroid/security/ConfirmationPrompt$Builder;
     .locals 0
+    .param p1, "extraData"    # [B
 
+    .line 183
     iput-object p1, p0, Landroid/security/ConfirmationPrompt$Builder;->mExtraData:[B
 
+    .line 184
     return-object p0
 .end method
 
 .method public setPromptText(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;
     .locals 0
+    .param p1, "promptText"    # Ljava/lang/CharSequence;
 
+    .line 172
     iput-object p1, p0, Landroid/security/ConfirmationPrompt$Builder;->mPromptText:Ljava/lang/CharSequence;
 
+    .line 173
     return-object p0
 .end method

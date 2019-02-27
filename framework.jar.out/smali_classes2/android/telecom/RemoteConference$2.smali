@@ -32,7 +32,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/RemoteConference;Landroid/telecom/RemoteConference$Callback;Landroid/telecom/RemoteConference;II)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/RemoteConference;
 
+    .line 195
     iput-object p1, p0, Landroid/telecom/RemoteConference$2;->this$0:Landroid/telecom/RemoteConference;
 
     iput-object p2, p0, Landroid/telecom/RemoteConference$2;->val$callback:Landroid/telecom/RemoteConference$Callback;
@@ -53,6 +55,7 @@
 .method public run()V
     .locals 4
 
+    .line 198
     iget-object v0, p0, Landroid/telecom/RemoteConference$2;->val$callback:Landroid/telecom/RemoteConference$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConference$2;->val$conference:Landroid/telecom/RemoteConference;
@@ -63,5 +66,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/telecom/RemoteConference$Callback;->onStateChanged(Landroid/telecom/RemoteConference;II)V
 
+    .line 199
     return-void
 .end method

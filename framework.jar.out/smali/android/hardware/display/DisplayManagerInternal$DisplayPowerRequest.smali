@@ -54,52 +54,70 @@
 .method public constructor <init>()V
     .locals 3
 
+    .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 257
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
 
+    .line 258
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useProximitySensor:Z
 
+    .line 259
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenBrightnessOverride:I
 
+    .line 260
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useAutoBrightness:Z
 
+    .line 261
     const/high16 v2, 0x7fc00000    # NaNf
 
     iput v2, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenAutoBrightnessAdjustmentOverride:F
 
+    .line 262
     const/high16 v2, 0x3f000000    # 0.5f
 
     iput v2, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenLowPowerBrightnessFactor:F
 
+    .line 263
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->blockScreenOn:Z
 
+    .line 264
     iput v1, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenBrightness:I
 
+    .line 265
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
 
+    .line 266
     return-void
 .end method
 
 .method public constructor <init>(Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;)V
     .locals 0
+    .param p1, "other"    # Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
+    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 269
     invoke-virtual {p0, p1}, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->copyFrom(Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;)V
 
+    .line 270
     return-void
 .end method
 
 .method private floatEquals(FF)Z
     .locals 1
+    .param p1, "f1"    # F
+    .param p2, "f2"    # F
 
+    .line 318
     cmpl-float v0, p1, p2
 
     if-eqz v0, :cond_1
@@ -133,35 +151,43 @@
 
 .method public static policyToString(I)Ljava/lang/String;
     .locals 1
+    .param p0, "policy"    # I
 
+    .line 343
     packed-switch p0, :pswitch_data_0
 
+    .line 355
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
+    .line 353
     :pswitch_0
     const-string v0, "VR"
 
     return-object v0
 
+    .line 351
     :pswitch_1
     const-string v0, "BRIGHT"
 
     return-object v0
 
+    .line 349
     :pswitch_2
     const-string v0, "DIM"
 
     return-object v0
 
+    .line 347
     :pswitch_3
     const-string v0, "DOZE"
 
     return-object v0
 
+    .line 345
     :pswitch_4
     const-string v0, "OFF"
 
@@ -183,57 +209,72 @@
 # virtual methods
 .method public copyFrom(Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;)V
     .locals 1
+    .param p1, "other"    # Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
+    .line 281
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
 
+    .line 282
     iget-boolean v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useProximitySensor:Z
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useProximitySensor:Z
 
+    .line 283
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenBrightnessOverride:I
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenBrightnessOverride:I
 
+    .line 284
     iget-boolean v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useAutoBrightness:Z
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->useAutoBrightness:Z
 
+    .line 285
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenAutoBrightnessAdjustmentOverride:F
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenAutoBrightnessAdjustmentOverride:F
 
+    .line 286
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenLowPowerBrightnessFactor:F
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenLowPowerBrightnessFactor:F
 
+    .line 287
     iget-boolean v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->blockScreenOn:Z
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->blockScreenOn:Z
 
+    .line 288
     iget-boolean v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->lowPowerMode:Z
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->lowPowerMode:Z
 
+    .line 289
     iget-boolean v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->boostScreenBrightness:Z
 
     iput-boolean v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->boostScreenBrightness:Z
 
+    .line 290
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenBrightness:I
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenBrightness:I
 
+    .line 291
     iget v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
 
     iput v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
 
+    .line 292
     return-void
 .end method
 
 .method public equals(Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;)Z
     .locals 2
+    .param p1, "other"    # Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
+    .line 301
     if-eqz p1, :cond_0
 
     iget v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
@@ -264,6 +305,7 @@
 
     iget v1, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->screenAutoBrightnessAdjustmentOverride:F
 
+    .line 306
     invoke-direct {p0, v0, v1}, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->floatEquals(FF)Z
 
     move-result v0
@@ -315,13 +357,16 @@
     :cond_0
     const/4 v0, 0x0
 
+    .line 301
     :goto_0
     return v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .line 296
     instance-of v0, p1, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
     if-eqz v0, :cond_0
@@ -330,6 +375,7 @@
 
     check-cast v0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
+    .line 297
     invoke-virtual {p0, v0}, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->equals(Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;)Z
 
     move-result v0
@@ -343,6 +389,7 @@
     :cond_0
     const/4 v0, 0x0
 
+    .line 296
     :goto_0
     return v0
 .end method
@@ -350,6 +397,7 @@
 .method public hashCode()I
     .locals 1
 
+    .line 323
     const/4 v0, 0x0
 
     return v0
@@ -358,6 +406,7 @@
 .method public isBrightOrDim()Z
     .locals 2
 
+    .line 273
     iget v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
 
     const/4 v1, 0x3
@@ -388,6 +437,7 @@
 .method public isVr()Z
     .locals 2
 
+    .line 277
     iget v0, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->policy:I
 
     const/4 v1, 0x4
@@ -408,6 +458,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .line 328
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -502,6 +553,7 @@
 
     iget v1, p0, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenState:I
 
+    .line 339
     invoke-static {v1}, Landroid/view/Display;->stateToString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -512,5 +564,6 @@
 
     move-result-object v0
 
+    .line 328
     return-object v0
 .end method

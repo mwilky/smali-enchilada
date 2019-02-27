@@ -10,15 +10,19 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "description"    # Ljava/lang/String;
 
+    .line 45
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
+    .line 46
     return-void
 .end method
 
 .method static invalidEndTag()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 73
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "Protocol message end-group tag did not match expected tag."
@@ -31,6 +35,7 @@
 .method static invalidTag()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 68
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "Protocol message contained an invalid tag (zero)."
@@ -43,6 +48,7 @@
 .method static invalidWireType()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 78
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "Protocol message tag had invalid wire type."
@@ -55,6 +61,7 @@
 .method static malformedVarint()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 63
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "CodedInputStream encountered a malformed varint."
@@ -67,6 +74,7 @@
 .method static negativeSize()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 57
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "CodedInputStream encountered an embedded string or message which claimed to have negative size."
@@ -79,6 +87,7 @@
 .method static recursionLimitExceeded()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 83
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit."
@@ -91,6 +100,7 @@
 .method static sizeLimitExceeded()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 89
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit."
@@ -103,6 +113,7 @@
 .method static truncatedMessage()Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
+    .line 49
     new-instance v0, Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
 
     const-string v1, "While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length."

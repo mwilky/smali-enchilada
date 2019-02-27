@@ -21,17 +21,24 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1, "name"    # Ljava/lang/String;
 
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 52
     iput-object p1, p0, Lcom/android/internal/util/dump/DualDumpOutputStream$Dumpable;->name:Ljava/lang/String;
 
+    .line 53
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Lcom/android/internal/util/dump/DualDumpOutputStream$1;)V
     .locals 0
+    .param p1, "x0"    # Ljava/lang/String;
+    .param p2, "x1"    # Lcom/android/internal/util/dump/DualDumpOutputStream$1;
 
+    .line 48
     invoke-direct {p0, p1}, Lcom/android/internal/util/dump/DualDumpOutputStream$Dumpable;-><init>(Ljava/lang/String;)V
 
     return-void

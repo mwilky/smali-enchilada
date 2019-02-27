@@ -33,10 +33,12 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .line 222
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
+    .line 223
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
@@ -49,30 +51,50 @@
 
     sput-object v0, Landroid/media/AudioFocusRequest;->FOCUS_DEFAULT_ATTR:Landroid/media/AudioAttributes;
 
+    .line 222
     return-void
 .end method
 
 .method private constructor <init>(Landroid/media/AudioManager$OnAudioFocusChangeListener;Landroid/os/Handler;Landroid/media/AudioAttributes;II)V
     .locals 0
+    .param p1, "listener"    # Landroid/media/AudioManager$OnAudioFocusChangeListener;
+    .param p2, "handler"    # Landroid/os/Handler;
+    .param p3, "attr"    # Landroid/media/AudioAttributes;
+    .param p4, "focusGain"    # I
+    .param p5, "flags"    # I
 
+    .line 235
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 236
     iput-object p1, p0, Landroid/media/AudioFocusRequest;->mFocusListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
+    .line 237
     iput-object p2, p0, Landroid/media/AudioFocusRequest;->mListenerHandler:Landroid/os/Handler;
 
+    .line 238
     iput p4, p0, Landroid/media/AudioFocusRequest;->mFocusGain:I
 
+    .line 239
     iput-object p3, p0, Landroid/media/AudioFocusRequest;->mAttr:Landroid/media/AudioAttributes;
 
+    .line 240
     iput p5, p0, Landroid/media/AudioFocusRequest;->mFlags:I
 
+    .line 241
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/media/AudioManager$OnAudioFocusChangeListener;Landroid/os/Handler;Landroid/media/AudioAttributes;IILandroid/media/AudioFocusRequest$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/media/AudioManager$OnAudioFocusChangeListener;
+    .param p2, "x1"    # Landroid/os/Handler;
+    .param p3, "x2"    # Landroid/media/AudioAttributes;
+    .param p4, "x3"    # I
+    .param p5, "x4"    # I
+    .param p6, "x5"    # Landroid/media/AudioFocusRequest$1;
 
+    .line 219
     invoke-direct/range {p0 .. p5}, Landroid/media/AudioFocusRequest;-><init>(Landroid/media/AudioManager$OnAudioFocusChangeListener;Landroid/os/Handler;Landroid/media/AudioAttributes;II)V
 
     return-void
@@ -81,6 +103,7 @@
 .method static synthetic access$000()Landroid/media/AudioAttributes;
     .locals 1
 
+    .line 219
     sget-object v0, Landroid/media/AudioFocusRequest;->FOCUS_DEFAULT_ATTR:Landroid/media/AudioAttributes;
 
     return-object v0
@@ -88,7 +111,9 @@
 
 .method static synthetic access$100(Landroid/media/AudioFocusRequest;)Landroid/media/AudioAttributes;
     .locals 1
+    .param p0, "x0"    # Landroid/media/AudioFocusRequest;
 
+    .line 219
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mAttr:Landroid/media/AudioAttributes;
 
     return-object v0
@@ -96,7 +121,9 @@
 
 .method static synthetic access$200(Landroid/media/AudioFocusRequest;)Landroid/media/AudioManager$OnAudioFocusChangeListener;
     .locals 1
+    .param p0, "x0"    # Landroid/media/AudioFocusRequest;
 
+    .line 219
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mFocusListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
     return-object v0
@@ -104,7 +131,9 @@
 
 .method static synthetic access$300(Landroid/media/AudioFocusRequest;)Landroid/os/Handler;
     .locals 1
+    .param p0, "x0"    # Landroid/media/AudioFocusRequest;
 
+    .line 219
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mListenerHandler:Landroid/os/Handler;
 
     return-object v0
@@ -112,7 +141,9 @@
 
 .method static synthetic access$400(Landroid/media/AudioFocusRequest;)I
     .locals 1
+    .param p0, "x0"    # Landroid/media/AudioFocusRequest;
 
+    .line 219
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFocusGain:I
 
     return v0
@@ -120,13 +151,17 @@
 
 .method static final isValidFocusGain(I)Z
     .locals 1
+    .param p0, "focusGain"    # I
 
+    .line 250
     packed-switch p0, :pswitch_data_0
 
+    .line 257
     const/4 v0, 0x0
 
     return v0
 
+    .line 255
     :pswitch_0
     const/4 v0, 0x1
 
@@ -148,6 +183,7 @@
 .method public acceptsDelayedFocusGain()Z
     .locals 2
 
+    .line 318
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFlags:I
 
     const/4 v1, 0x1
@@ -168,6 +204,7 @@
 .method public getAudioAttributes()Landroid/media/AudioAttributes;
     .locals 1
 
+    .line 288
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mAttr:Landroid/media/AudioAttributes;
 
     return-object v0
@@ -176,6 +213,7 @@
 .method getFlags()I
     .locals 1
 
+    .line 335
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFlags:I
 
     return v0
@@ -184,6 +222,7 @@
 .method public getFocusGain()I
     .locals 1
 
+    .line 299
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFocusGain:I
 
     return v0
@@ -192,6 +231,7 @@
 .method public getOnAudioFocusChangeListener()Landroid/media/AudioManager$OnAudioFocusChangeListener;
     .locals 1
 
+    .line 268
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mFocusListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
     return-object v0
@@ -200,6 +240,7 @@
 .method public getOnAudioFocusChangeListenerHandler()Landroid/os/Handler;
     .locals 1
 
+    .line 279
     iget-object v0, p0, Landroid/media/AudioFocusRequest;->mListenerHandler:Landroid/os/Handler;
 
     return-object v0
@@ -210,6 +251,7 @@
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 330
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFlags:I
 
     const/4 v1, 0x4
@@ -232,6 +274,7 @@
 .method public willPauseWhenDucked()Z
     .locals 2
 
+    .line 308
     iget v0, p0, Landroid/media/AudioFocusRequest;->mFlags:I
 
     const/4 v1, 0x2

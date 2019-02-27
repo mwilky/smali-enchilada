@@ -777,14 +777,17 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 167
     const-string v0, "ro.telephony.default_network"
 
+    .line 170
     const/4 v1, 0x0
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 167
     invoke-static {v1, v0, v2}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0

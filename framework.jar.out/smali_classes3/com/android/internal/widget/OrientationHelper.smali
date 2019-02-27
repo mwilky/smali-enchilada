@@ -22,27 +22,36 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;)V
     .locals 1
+    .param p1, "layoutManager"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     const/high16 v0, -0x80000000
 
     iput v0, p0, Lcom/android/internal/widget/OrientationHelper;->mLastTotalSpace:I
 
+    .line 45
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/widget/OrientationHelper;->mTmpRect:Landroid/graphics/Rect;
 
+    .line 48
     iput-object p1, p0, Lcom/android/internal/widget/OrientationHelper;->mLayoutManager:Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
+    .line 49
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;Lcom/android/internal/widget/OrientationHelper$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
+    .param p2, "x1"    # Lcom/android/internal/widget/OrientationHelper$1;
 
+    .line 33
     invoke-direct {p0, p1}, Lcom/android/internal/widget/OrientationHelper;-><init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;)V
 
     return-void
@@ -50,7 +59,9 @@
 
 .method public static createHorizontalHelper(Lcom/android/internal/widget/RecyclerView$LayoutManager;)Lcom/android/internal/widget/OrientationHelper;
     .locals 1
+    .param p0, "layoutManager"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
+    .line 251
     new-instance v0, Lcom/android/internal/widget/OrientationHelper$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/OrientationHelper$1;-><init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;)V
@@ -60,9 +71,13 @@
 
 .method public static createOrientationHelper(Lcom/android/internal/widget/RecyclerView$LayoutManager;I)Lcom/android/internal/widget/OrientationHelper;
     .locals 2
+    .param p0, "layoutManager"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
+    .param p1, "orientation"    # I
 
+    .line 234
     packed-switch p1, :pswitch_data_0
 
+    .line 240
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid orientation"
@@ -71,6 +86,7 @@
 
     throw v0
 
+    .line 238
     :pswitch_0
     invoke-static {p0}, Lcom/android/internal/widget/OrientationHelper;->createVerticalHelper(Lcom/android/internal/widget/RecyclerView$LayoutManager;)Lcom/android/internal/widget/OrientationHelper;
 
@@ -78,6 +94,7 @@
 
     return-object v0
 
+    .line 236
     :pswitch_1
     invoke-static {p0}, Lcom/android/internal/widget/OrientationHelper;->createHorizontalHelper(Lcom/android/internal/widget/RecyclerView$LayoutManager;)Lcom/android/internal/widget/OrientationHelper;
 
@@ -96,7 +113,9 @@
 
 .method public static createVerticalHelper(Lcom/android/internal/widget/RecyclerView$LayoutManager;)Lcom/android/internal/widget/OrientationHelper;
     .locals 1
+    .param p0, "layoutManager"    # Lcom/android/internal/widget/RecyclerView$LayoutManager;
 
+    .line 349
     new-instance v0, Lcom/android/internal/widget/OrientationHelper$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/OrientationHelper$2;-><init>(Lcom/android/internal/widget/RecyclerView$LayoutManager;)V
@@ -142,6 +161,7 @@
 .method public getTotalSpaceChange()I
     .locals 2
 
+    .line 71
     iget v0, p0, Lcom/android/internal/widget/OrientationHelper;->mLastTotalSpace:I
 
     const/high16 v1, -0x80000000
@@ -180,11 +200,13 @@
 .method public onLayoutComplete()V
     .locals 1
 
+    .line 57
     invoke-virtual {p0}, Lcom/android/internal/widget/OrientationHelper;->getTotalSpace()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/widget/OrientationHelper;->mLastTotalSpace:I
 
+    .line 58
     return-void
 .end method

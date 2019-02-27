@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
+    .line 144
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,9 @@
 # virtual methods
 .method public onTouchModeChanged(Z)V
     .locals 3
+    .param p1, "isInTouchMode"    # Z
 
+    .line 147
     if-nez p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
@@ -61,6 +65,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 148
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     const/4 v1, 0x0
@@ -69,6 +74,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/internal/widget/ResolverDrawerLayout;->access$100(Lcom/android/internal/widget/ResolverDrawerLayout;IF)V
 
+    .line 150
     :cond_0
     return-void
 .end method

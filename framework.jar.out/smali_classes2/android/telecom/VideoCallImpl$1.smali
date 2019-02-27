@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/VideoCallImpl;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/VideoCallImpl;
 
+    .line 51
     iput-object p1, p0, Landroid/telecom/VideoCallImpl$1;->this$0:Landroid/telecom/VideoCallImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,7 @@
 .method public binderDied()V
     .locals 2
 
+    .line 54
     iget-object v0, p0, Landroid/telecom/VideoCallImpl$1;->this$0:Landroid/telecom/VideoCallImpl;
 
     invoke-static {v0}, Landroid/telecom/VideoCallImpl;->access$000(Landroid/telecom/VideoCallImpl;)Lcom/android/internal/telecom/IVideoProvider;
@@ -51,5 +54,6 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
+    .line 55
     return-void
 .end method

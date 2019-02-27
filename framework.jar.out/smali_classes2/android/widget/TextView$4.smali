@@ -22,6 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .line 9050
     invoke-static {}, Landroid/text/Layout$Alignment;->values()[Landroid/text/Layout$Alignment;
 
     move-result-object v0

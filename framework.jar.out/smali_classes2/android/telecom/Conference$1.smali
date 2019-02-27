@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/Conference;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/Conference;
 
+    .line 90
     iput-object p1, p0, Landroid/telecom/Conference$1;->this$0:Landroid/telecom/Conference;
 
     invoke-direct {p0}, Landroid/telecom/Connection$Listener;-><init>()V
@@ -33,7 +35,9 @@
 # virtual methods
 .method public onDestroyed(Landroid/telecom/Connection;)V
     .locals 1
+    .param p1, "c"    # Landroid/telecom/Connection;
 
+    .line 93
     iget-object v0, p0, Landroid/telecom/Conference$1;->this$0:Landroid/telecom/Conference;
 
     invoke-static {v0}, Landroid/telecom/Conference;->access$000(Landroid/telecom/Conference;)Ljava/util/List;
@@ -46,10 +50,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 94
     iget-object v0, p0, Landroid/telecom/Conference$1;->this$0:Landroid/telecom/Conference;
 
     invoke-static {v0}, Landroid/telecom/Conference;->access$100(Landroid/telecom/Conference;)V
 
+    .line 96
     :cond_0
     return-void
 .end method

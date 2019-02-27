@@ -35,6 +35,7 @@
 .method constructor <init>(Landroid/util/apk/ApkSignatureVerifier$1VerificationData;Landroid/util/ArrayMap;[Landroid/util/jar/StrictJarFile;Ljava/util/zip/ZipEntry;Ljava/lang/String;[Landroid/content/pm/Signature;)V
     .locals 0
 
+    .line 252
     iput-object p1, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iput-object p2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$strictJarFiles:Landroid/util/ArrayMap;
@@ -57,6 +58,7 @@
 .method public run()V
     .locals 8
 
+    .line 255
     :try_start_0
     iget-object v0, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
@@ -64,6 +66,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 256
     const-string v0, "ApkSignatureVerifier"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -86,8 +89,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 257
     return-void
 
+    .line 259
     :cond_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -101,6 +106,8 @@
 
     move-result-object v0
 
+    .line 261
+    .local v0, "tid":Ljava/lang/String;
     iget-object v1, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$strictJarFiles:Landroid/util/ArrayMap;
 
     monitor-enter v1
@@ -108,6 +115,7 @@
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/content/pm/PackageParser$PackageParserException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 262
     :try_start_1
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$strictJarFiles:Landroid/util/ArrayMap;
 
@@ -117,8 +125,11 @@
 
     check-cast v2, Landroid/util/jar/StrictJarFile;
 
+    .line 263
+    .local v2, "tempJarFile":Landroid/util/jar/StrictJarFile;
     if-nez v2, :cond_2
 
+    .line 264
     iget-object v3, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iget v3, v3, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->index:I
@@ -129,12 +140,14 @@
 
     if-lt v3, v4, :cond_1
 
+    .line 265
     iget-object v3, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     const/4 v4, 0x0
 
     iput v4, v3, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->index:I
 
+    .line 267
     :cond_1
     iget-object v3, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$jarFile:[Landroid/util/jar/StrictJarFile;
 
@@ -150,10 +163,12 @@
 
     move-object v2, v3
 
+    .line 268
     iget-object v3, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$strictJarFiles:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v0, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 270
     :cond_2
     monitor-exit v1
     :try_end_1
@@ -161,6 +176,9 @@
 
     move-object v1, v2
 
+    .line 271
+    .end local v2    # "tempJarFile":Landroid/util/jar/StrictJarFile;
+    .local v1, "tempJarFile":Landroid/util/jar/StrictJarFile;
     :try_start_2
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$entry:Ljava/util/zip/ZipEntry;
 
@@ -168,16 +186,21 @@
 
     move-result-object v2
 
+    .line 272
+    .local v2, "entryCerts":[[Ljava/security/cert/Certificate;
     invoke-static {v2}, Lcom/android/internal/util/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_4
 
+    .line 279
     invoke-static {v2}, Landroid/util/apk/ApkSignatureVerifier;->convertToSignatures([[Ljava/security/cert/Certificate;)[Landroid/content/pm/Signature;
 
     move-result-object v3
 
+    .line 280
+    .local v3, "entrySigs":[Landroid/content/pm/Signature;
     iget-object v4, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$lastSigs:[Landroid/content/pm/Signature;
 
     invoke-static {v4, v3}, Landroid/content/pm/Signature;->areExactMatch([Landroid/content/pm/Signature;[Landroid/content/pm/Signature;)Z
@@ -186,8 +209,17 @@
 
     if-eqz v4, :cond_3
 
+    .end local v0    # "tid":Ljava/lang/String;
+    .end local v1    # "tempJarFile":Landroid/util/jar/StrictJarFile;
+    .end local v2    # "entryCerts":[[Ljava/security/cert/Certificate;
+    .end local v3    # "entrySigs":[Landroid/content/pm/Signature;
     goto/16 :goto_0
 
+    .line 281
+    .restart local v0    # "tid":Ljava/lang/String;
+    .restart local v1    # "tempJarFile":Landroid/util/jar/StrictJarFile;
+    .restart local v2    # "entryCerts":[[Ljava/security/cert/Certificate;
+    .restart local v3    # "entrySigs":[Landroid/content/pm/Signature;
     :cond_3
     new-instance v4, Landroid/content/pm/PackageParser$PackageParserException;
 
@@ -211,6 +243,7 @@
 
     iget-object v7, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$entry:Ljava/util/zip/ZipEntry;
 
+    .line 284
     invoke-virtual {v7}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
     move-result-object v7
@@ -225,6 +258,8 @@
 
     throw v4
 
+    .line 273
+    .end local v3    # "entrySigs":[Landroid/content/pm/Signature;
     :cond_4
     new-instance v3, Landroid/content/pm/PackageParser$PackageParserException;
 
@@ -248,6 +283,7 @@
 
     iget-object v6, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$entry:Ljava/util/zip/ZipEntry;
 
+    .line 275
     invoke-virtual {v6}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
     move-result-object v6
@@ -265,6 +301,9 @@
     .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Landroid/content/pm/PackageParser$PackageParserException; {:try_start_2 .. :try_end_2} :catch_0
 
+    .line 270
+    .end local v1    # "tempJarFile":Landroid/util/jar/StrictJarFile;
+    .end local v2    # "entryCerts":[[Ljava/security/cert/Certificate;
     :catchall_0
     move-exception v2
 
@@ -279,15 +318,20 @@
     .catch Ljava/security/GeneralSecurityException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Landroid/content/pm/PackageParser$PackageParserException; {:try_start_4 .. :try_end_4} :catch_0
 
+    .line 291
+    .end local v0    # "tid":Ljava/lang/String;
     :catch_0
     move-exception v0
 
+    .line 292
+    .local v0, "e":Landroid/content/pm/PackageParser$PackageParserException;
     iget-object v1, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iget-object v1, v1, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->objWaitAll:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 293
     :try_start_5
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
@@ -295,10 +339,12 @@
 
     iput v3, v2, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->exceptionFlag:I
 
+    .line 294
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iput-object v0, v2, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->exception:Ljava/lang/Exception;
 
+    .line 295
     monitor-exit v1
 
     goto :goto_1
@@ -312,15 +358,20 @@
 
     throw v2
 
+    .line 286
+    .end local v0    # "e":Landroid/content/pm/PackageParser$PackageParserException;
     :catch_1
     move-exception v0
 
+    .line 287
+    .local v0, "e":Ljava/security/GeneralSecurityException;
     iget-object v1, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iget-object v1, v1, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->objWaitAll:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 288
     :try_start_6
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
@@ -328,18 +379,25 @@
 
     iput v3, v2, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->exceptionFlag:I
 
+    .line 289
     iget-object v2, p0, Landroid/util/apk/ApkSignatureVerifier$1;->val$vData:Landroid/util/apk/ApkSignatureVerifier$1VerificationData;
 
     iput-object v0, v2, Landroid/util/apk/ApkSignatureVerifier$1VerificationData;->exception:Ljava/lang/Exception;
 
+    .line 290
     monitor-exit v1
 
+    .line 296
+    .end local v0    # "e":Ljava/security/GeneralSecurityException;
     :goto_0
     nop
 
+    .line 297
     :goto_1
     return-void
 
+    .line 290
+    .restart local v0    # "e":Ljava/security/GeneralSecurityException;
     :catchall_2
     move-exception v2
 

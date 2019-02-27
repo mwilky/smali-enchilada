@@ -29,7 +29,10 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)V
     .locals 3
+    .param p1, "callback"    # Landroid/hardware/display/VirtualDisplay$Callback;
+    .param p2, "handler"    # Landroid/os/Handler;
 
+    .line 689
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -50,8 +53,10 @@
 
     invoke-direct {p0, v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
+    .line 690
     iput-object p1, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->mCallback:Landroid/hardware/display/VirtualDisplay$Callback;
 
+    .line 691
     return-void
 .end method
 
@@ -59,13 +64,16 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 695
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
+    .line 703
     :pswitch_0
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->mCallback:Landroid/hardware/display/VirtualDisplay$Callback;
 
@@ -73,20 +81,25 @@
 
     goto :goto_0
 
+    .line 700
     :pswitch_1
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->mCallback:Landroid/hardware/display/VirtualDisplay$Callback;
 
     invoke-virtual {v0}, Landroid/hardware/display/VirtualDisplay$Callback;->onResumed()V
 
+    .line 701
     goto :goto_0
 
+    .line 697
     :pswitch_2
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->mCallback:Landroid/hardware/display/VirtualDisplay$Callback;
 
     invoke-virtual {v0}, Landroid/hardware/display/VirtualDisplay$Callback;->onPaused()V
 
+    .line 698
     nop
 
+    .line 706
     :goto_0
     return-void
 

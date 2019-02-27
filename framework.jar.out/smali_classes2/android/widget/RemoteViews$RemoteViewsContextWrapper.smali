@@ -21,11 +21,16 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "contextForResources"    # Landroid/content/Context;
 
+    .line 558
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
+    .line 559
     iput-object p2, p0, Landroid/widget/RemoteViews$RemoteViewsContextWrapper;->mContextForResources:Landroid/content/Context;
 
+    .line 560
     return-void
 .end method
 
@@ -34,6 +39,7 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
+    .line 574
     iget-object v0, p0, Landroid/widget/RemoteViews$RemoteViewsContextWrapper;->mContextForResources:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -46,6 +52,7 @@
 .method public getResources()Landroid/content/res/Resources;
     .locals 1
 
+    .line 564
     iget-object v0, p0, Landroid/widget/RemoteViews$RemoteViewsContextWrapper;->mContextForResources:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -58,6 +65,7 @@
 .method public getTheme()Landroid/content/res/Resources$Theme;
     .locals 1
 
+    .line 569
     iget-object v0, p0, Landroid/widget/RemoteViews$RemoteViewsContextWrapper;->mContextForResources:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;

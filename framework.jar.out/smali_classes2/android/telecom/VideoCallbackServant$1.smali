@@ -21,7 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/telecom/VideoCallbackServant;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/telecom/VideoCallbackServant;
 
+    .line 45
     iput-object p1, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -31,18 +33,21 @@
 
 .method private internalHandleMessage(Landroid/os/Message;)V
     .locals 5
+    .param p1, "msg"    # Landroid/os/Message;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .line 56
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto/16 :goto_0
 
+    .line 105
     :pswitch_0
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -56,6 +61,7 @@
 
     goto/16 :goto_0
 
+    .line 101
     :pswitch_1
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -69,13 +75,17 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telecom/IVideoCallback;->changeCameraCapabilities(Landroid/telecom/VideoProfile$CameraCapabilities;)V
 
+    .line 102
     goto/16 :goto_0
 
+    .line 92
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
+    .line 94
+    .local v0, "args":Lcom/android/internal/os/SomeArgs;
     :try_start_0
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -95,12 +105,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 96
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
+    .line 97
     nop
 
+    .line 98
     goto :goto_0
 
+    .line 96
     :catchall_0
     move-exception v1
 
@@ -108,11 +122,15 @@
 
     throw v1
 
+    .line 83
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
+    .line 85
+    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_1
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -128,12 +146,16 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 87
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
+    .line 88
     nop
 
+    .line 89
     goto :goto_0
 
+    .line 87
     :catchall_1
     move-exception v1
 
@@ -141,11 +163,15 @@
 
     throw v1
 
+    .line 74
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
+    .line 76
+    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_2
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -159,12 +185,16 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
+    .line 78
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
+    .line 79
     nop
 
+    .line 80
     goto :goto_0
 
+    .line 78
     :catchall_2
     move-exception v1
 
@@ -172,11 +202,15 @@
 
     throw v1
 
+    .line 62
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
+    .line 64
+    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_3
     iget-object v1, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -198,12 +232,16 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
+    .line 69
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
+    .line 70
     nop
 
+    .line 71
     goto :goto_0
 
+    .line 69
     :catchall_3
     move-exception v1
 
@@ -211,6 +249,8 @@
 
     throw v1
 
+    .line 58
+    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_6
     iget-object v0, p0, Landroid/telecom/VideoCallbackServant$1;->this$0:Landroid/telecom/VideoCallbackServant;
 
@@ -224,8 +264,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telecom/IVideoCallback;->receiveSessionModifyRequest(Landroid/telecom/VideoProfile;)V
 
+    .line 59
     nop
 
+    .line 109
     :goto_0
     return-void
 
@@ -245,17 +287,22 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
+    .param p1, "msg"    # Landroid/os/Message;
 
+    .line 49
     :try_start_0
     invoke-direct {p0, p1}, Landroid/telecom/VideoCallbackServant$1;->internalHandleMessage(Landroid/os/Message;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 51
     goto :goto_0
 
+    .line 50
     :catch_0
     move-exception v0
 
+    .line 52
     :goto_0
     return-void
 .end method

@@ -18,6 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,8 +35,12 @@
         }
     .end annotation
 
+    .line 126
+    .local p0, "purposes":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Integer;>;"
     const/4 v0, 0x0
 
+    .line 127
+    .local v0, "result":I
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -57,32 +62,43 @@
 
     move-result v2
 
+    .line 128
+    .local v2, "keymasterPurpose":I
     invoke-static {v2}, Landroid/security/keystore/KeyProperties$Purpose;->fromKeymaster(I)I
 
     move-result v3
 
     or-int/2addr v0, v3
 
+    .line 129
+    .end local v2    # "keymasterPurpose":I
     goto :goto_0
 
+    .line 130
     :cond_0
     return v0
 .end method
 
 .method public static allToKeymaster(I)[I
     .locals 3
+    .param p0, "purposes"    # I
 
+    .line 118
     invoke-static {p0}, Landroid/security/keystore/KeyProperties;->access$000(I)[I
 
     move-result-object v0
 
+    .line 119
+    .local v0, "result":[I
     const/4 v1, 0x0
 
+    .local v1, "i":I
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_0
 
+    .line 120
     aget v2, v0, v1
 
     invoke-static {v2}, Landroid/security/keystore/KeyProperties$Purpose;->toKeymaster(I)I
@@ -91,23 +107,29 @@
 
     aput v2, v0, v1
 
+    .line 119
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 122
+    .end local v1    # "i":I
     :cond_0
     return-object v0
 .end method
 
 .method public static fromKeymaster(I)I
     .locals 3
+    .param p0, "purpose"    # I
 
+    .line 100
     const/4 v0, 0x5
 
     if-eq p0, v0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
+    .line 112
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -128,26 +150,31 @@
 
     throw v0
 
+    .line 108
     :pswitch_0
     const/16 v0, 0x8
 
     return v0
 
+    .line 106
     :pswitch_1
     const/4 v0, 0x4
 
     return v0
 
+    .line 104
     :pswitch_2
     const/4 v0, 0x2
 
     return v0
 
+    .line 102
     :pswitch_3
     const/4 v0, 0x1
 
     return v0
 
+    .line 110
     :cond_0
     const/16 v0, 0x20
 
@@ -166,7 +193,9 @@
 
 .method public static toKeymaster(I)I
     .locals 3
+    .param p0, "purpose"    # I
 
+    .line 83
     const/4 v0, 0x4
 
     if-eq p0, v0, :cond_2
@@ -181,6 +210,7 @@
 
     packed-switch p0, :pswitch_data_0
 
+    .line 95
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -201,26 +231,31 @@
 
     throw v0
 
+    .line 87
     :pswitch_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 85
     :pswitch_1
     const/4 v0, 0x0
 
     return v0
 
+    .line 93
     :cond_0
     const/4 v0, 0x5
 
     return v0
 
+    .line 91
     :cond_1
     const/4 v0, 0x3
 
     return v0
 
+    .line 89
     :cond_2
     const/4 v0, 0x2
 

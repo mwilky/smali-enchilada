@@ -7,6 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 33
     invoke-direct {p0}, Landroid/graphics/drawable/shapes/RectShape;-><init>()V
 
     return-void
@@ -22,6 +23,7 @@
         }
     .end annotation
 
+    .line 49
     invoke-super {p0}, Landroid/graphics/drawable/shapes/RectShape;->clone()Landroid/graphics/drawable/shapes/RectShape;
 
     move-result-object v0
@@ -39,6 +41,7 @@
         }
     .end annotation
 
+    .line 31
     invoke-virtual {p0}, Landroid/graphics/drawable/shapes/OvalShape;->clone()Landroid/graphics/drawable/shapes/OvalShape;
 
     move-result-object v0
@@ -54,6 +57,7 @@
         }
     .end annotation
 
+    .line 31
     invoke-virtual {p0}, Landroid/graphics/drawable/shapes/OvalShape;->clone()Landroid/graphics/drawable/shapes/OvalShape;
 
     move-result-object v0
@@ -69,6 +73,7 @@
         }
     .end annotation
 
+    .line 31
     invoke-virtual {p0}, Landroid/graphics/drawable/shapes/OvalShape;->clone()Landroid/graphics/drawable/shapes/OvalShape;
 
     move-result-object v0
@@ -78,23 +83,31 @@
 
 .method public draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
     .locals 1
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .param p2, "paint"    # Landroid/graphics/Paint;
 
+    .line 37
     invoke-virtual {p0}, Landroid/graphics/drawable/shapes/OvalShape;->rect()Landroid/graphics/RectF;
 
     move-result-object v0
 
     invoke-virtual {p1, v0, p2}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
+    .line 38
     return-void
 .end method
 
 .method public getOutline(Landroid/graphics/Outline;)V
     .locals 6
+    .param p1, "outline"    # Landroid/graphics/Outline;
 
+    .line 42
     invoke-virtual {p0}, Landroid/graphics/drawable/shapes/OvalShape;->rect()Landroid/graphics/RectF;
 
     move-result-object v0
 
+    .line 43
+    .local v0, "rect":Landroid/graphics/RectF;
     iget v1, v0, Landroid/graphics/RectF;->left:F
 
     float-to-double v1, v1
@@ -119,6 +132,7 @@
 
     float-to-double v3, v3
 
+    .line 44
     invoke-static {v3, v4}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v3
@@ -135,7 +149,9 @@
 
     double-to-int v4, v4
 
+    .line 43
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Outline;->setOval(IIII)V
 
+    .line 45
     return-void
 .end method

@@ -24,7 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/AudioPlaybackQueueItem;)V
     .locals 0
+    .param p1, "this$0"    # Landroid/speech/tts/AudioPlaybackQueueItem;
 
+    .line 75
     iput-object p1, p0, Landroid/speech/tts/AudioPlaybackQueueItem$2;->this$0:Landroid/speech/tts/AudioPlaybackQueueItem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +38,16 @@
 # virtual methods
 .method public onCompletion(Landroid/media/MediaPlayer;)V
     .locals 2
+    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
+    .line 78
     iget-object v0, p0, Landroid/speech/tts/AudioPlaybackQueueItem$2;->this$0:Landroid/speech/tts/AudioPlaybackQueueItem;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Landroid/speech/tts/AudioPlaybackQueueItem;->access$102(Landroid/speech/tts/AudioPlaybackQueueItem;Z)Z
 
+    .line 79
     iget-object v0, p0, Landroid/speech/tts/AudioPlaybackQueueItem$2;->this$0:Landroid/speech/tts/AudioPlaybackQueueItem;
 
     invoke-static {v0}, Landroid/speech/tts/AudioPlaybackQueueItem;->access$000(Landroid/speech/tts/AudioPlaybackQueueItem;)Landroid/os/ConditionVariable;
@@ -51,5 +56,6 @@
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
+    .line 80
     return-void
 .end method

@@ -47,8 +47,10 @@
 .method public constructor <init>()V
     .locals 2
 
+    .line 77
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
+    .line 103
     new-instance v0, Landroid/media/tv/TvInputService$ServiceHandler;
 
     const/4 v1, 0x0
@@ -57,6 +59,7 @@
 
     iput-object v0, p0, Landroid/media/tv/TvInputService;->mServiceHandler:Landroid/os/Handler;
 
+    .line 104
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
@@ -68,7 +71,9 @@
 
 .method static synthetic access$100(Landroid/media/tv/TvInputService;)Landroid/os/RemoteCallbackList;
     .locals 1
+    .param p0, "x0"    # Landroid/media/tv/TvInputService;
 
+    .line 77
     iget-object v0, p0, Landroid/media/tv/TvInputService;->mCallbacks:Landroid/os/RemoteCallbackList;
 
     return-object v0
@@ -76,7 +81,10 @@
 
 .method static synthetic access$1900(Landroid/media/tv/TvInputService;Ljava/lang/String;)Z
     .locals 1
+    .param p0, "x0"    # Landroid/media/tv/TvInputService;
+    .param p1, "x1"    # Ljava/lang/String;
 
+    .line 77
     invoke-direct {p0, p1}, Landroid/media/tv/TvInputService;->isPassthroughInput(Ljava/lang/String;)Z
 
     move-result v0
@@ -86,7 +94,9 @@
 
 .method static synthetic access$200(Landroid/media/tv/TvInputService;)Landroid/os/Handler;
     .locals 1
+    .param p0, "x0"    # Landroid/media/tv/TvInputService;
 
+    .line 77
     iget-object v0, p0, Landroid/media/tv/TvInputService;->mServiceHandler:Landroid/os/Handler;
 
     return-object v0
@@ -94,13 +104,17 @@
 
 .method public static isNavigationKey(I)Z
     .locals 1
+    .param p0, "keyCode"    # I
 
+    .line 1938
     sparse-switch p0, :sswitch_data_0
 
+    .line 1953
     const/4 v0, 0x0
 
     return v0
 
+    .line 1951
     :sswitch_0
     const/4 v0, 0x1
 
@@ -127,11 +141,14 @@
 
 .method private isPassthroughInput(Ljava/lang/String;)Z
     .locals 2
+    .param p1, "inputId"    # Ljava/lang/String;
 
+    .line 262
     iget-object v0, p0, Landroid/media/tv/TvInputService;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
     if-nez v0, :cond_0
 
+    .line 263
     const-string/jumbo v0, "tv_input"
 
     invoke-virtual {p0, v0}, Landroid/media/tv/TvInputService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -142,6 +159,7 @@
 
     iput-object v0, p0, Landroid/media/tv/TvInputService;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
+    .line 265
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvInputService;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
@@ -149,6 +167,8 @@
 
     move-result-object v0
 
+    .line 266
+    .local v0, "info":Landroid/media/tv/TvInputInfo;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputInfo;->isPassthroughInput()Z
@@ -172,7 +192,9 @@
 # virtual methods
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .line 111
     new-instance v0, Landroid/media/tv/TvInputService$1;
 
     invoke-direct {v0, p0}, Landroid/media/tv/TvInputService$1;-><init>(Landroid/media/tv/TvInputService;)V
@@ -182,7 +204,9 @@
 
 .method public onCreateRecordingSession(Ljava/lang/String;)Landroid/media/tv/TvInputService$RecordingSession;
     .locals 1
+    .param p1, "inputId"    # Ljava/lang/String;
 
+    .line 202
     const/4 v0, 0x0
 
     return-object v0
@@ -193,9 +217,11 @@
 
 .method public onHardwareAdded(Landroid/media/tv/TvInputHardwareInfo;)Landroid/media/tv/TvInputInfo;
     .locals 1
+    .param p1, "hardwareInfo"    # Landroid/media/tv/TvInputHardwareInfo;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 216
     const/4 v0, 0x0
 
     return-object v0
@@ -203,9 +229,11 @@
 
 .method public onHardwareRemoved(Landroid/media/tv/TvInputHardwareInfo;)Ljava/lang/String;
     .locals 1
+    .param p1, "hardwareInfo"    # Landroid/media/tv/TvInputHardwareInfo;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 230
     const/4 v0, 0x0
 
     return-object v0
@@ -213,9 +241,11 @@
 
 .method public onHdmiDeviceAdded(Landroid/hardware/hdmi/HdmiDeviceInfo;)Landroid/media/tv/TvInputInfo;
     .locals 1
+    .param p1, "deviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 244
     const/4 v0, 0x0
 
     return-object v0
@@ -223,9 +253,11 @@
 
 .method public onHdmiDeviceRemoved(Landroid/hardware/hdmi/HdmiDeviceInfo;)Ljava/lang/String;
     .locals 1
+    .param p1, "deviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
     .annotation runtime Landroid/annotation/SystemApi;
     .end annotation
 
+    .line 258
     const/4 v0, 0x0
 
     return-object v0

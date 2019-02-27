@@ -60,41 +60,50 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
+    .param p1, "code"    # I
 
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 44
     iput p1, p0, Landroid/mtp/MtpPropertyList;->mCode:I
 
+    .line 45
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/mtp/MtpPropertyList;->mObjectHandles:Ljava/util/List;
 
+    .line 46
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/mtp/MtpPropertyList;->mPropertyCodes:Ljava/util/List;
 
+    .line 47
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/mtp/MtpPropertyList;->mDataTypes:Ljava/util/List;
 
+    .line 48
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/mtp/MtpPropertyList;->mLongValues:Ljava/util/List;
 
+    .line 49
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/mtp/MtpPropertyList;->mStringValues:Ljava/util/List;
 
+    .line 50
     return-void
 .end method
 
@@ -122,7 +131,12 @@
 # virtual methods
 .method public append(IIIJ)V
     .locals 2
+    .param p1, "handle"    # I
+    .param p2, "property"    # I
+    .param p3, "type"    # I
+    .param p4, "value"    # J
 
+    .line 53
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mObjectHandles:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -131,6 +145,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 54
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mPropertyCodes:Ljava/util/List;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -139,6 +154,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 55
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mDataTypes:Ljava/util/List;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -147,6 +163,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 56
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mLongValues:Ljava/util/List;
 
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -155,18 +172,24 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 57
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mStringValues:Ljava/util/List;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 58
     return-void
 .end method
 
 .method public append(IILjava/lang/String;)V
     .locals 3
+    .param p1, "handle"    # I
+    .param p2, "property"    # I
+    .param p3, "value"    # Ljava/lang/String;
 
+    .line 61
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mObjectHandles:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -175,6 +198,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 62
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mPropertyCodes:Ljava/util/List;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -183,6 +207,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 63
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mDataTypes:Ljava/util/List;
 
     const v1, 0xffff
@@ -193,10 +218,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 64
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mStringValues:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 65
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mLongValues:Ljava/util/List;
 
     const-wide/16 v1, 0x0
@@ -207,12 +234,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 66
     return-void
 .end method
 
 .method public getCode()I
     .locals 1
 
+    .line 69
     iget v0, p0, Landroid/mtp/MtpPropertyList;->mCode:I
 
     return v0
@@ -221,6 +250,7 @@
 .method public getCount()I
     .locals 1
 
+    .line 73
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mObjectHandles:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -233,6 +263,7 @@
 .method public getDataTypes()[I
     .locals 2
 
+    .line 85
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mDataTypes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -255,6 +286,7 @@
 .method public getLongValues()[J
     .locals 2
 
+    .line 89
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mLongValues:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -277,6 +309,7 @@
 .method public getObjectHandles()[I
     .locals 2
 
+    .line 77
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mObjectHandles:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -299,6 +332,7 @@
 .method public getPropertyCodes()[I
     .locals 2
 
+    .line 81
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mPropertyCodes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -321,6 +355,7 @@
 .method public getStringValues()[Ljava/lang/String;
     .locals 2
 
+    .line 93
     iget-object v0, p0, Landroid/mtp/MtpPropertyList;->mStringValues:Ljava/util/List;
 
     const/4 v1, 0x0

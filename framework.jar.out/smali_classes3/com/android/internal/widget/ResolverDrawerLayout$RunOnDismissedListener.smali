@@ -25,6 +25,7 @@
 .method private constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
     .locals 0
 
+    .line 1225
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$RunOnDismissedListener;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +35,10 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/widget/ResolverDrawerLayout;Lcom/android/internal/widget/ResolverDrawerLayout$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
+    .param p2, "x1"    # Lcom/android/internal/widget/ResolverDrawerLayout$1;
 
+    .line 1225
     invoke-direct {p0, p1}, Lcom/android/internal/widget/ResolverDrawerLayout$RunOnDismissedListener;-><init>(Lcom/android/internal/widget/ResolverDrawerLayout;)V
 
     return-void
@@ -45,9 +49,11 @@
 .method public run()V
     .locals 1
 
+    .line 1228
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$RunOnDismissedListener;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->dispatchOnDismissed()V
 
+    .line 1229
     return-void
 .end method

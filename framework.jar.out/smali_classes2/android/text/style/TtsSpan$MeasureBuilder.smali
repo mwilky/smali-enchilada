@@ -26,10 +26,12 @@
 .method public constructor <init>()V
     .locals 1
 
+    .line 986
     const-string v0, "android.type.measure"
 
     invoke-direct {p0, v0}, Landroid/text/style/TtsSpan$SemioticClassBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 987
     return-void
 .end method
 
@@ -37,7 +39,9 @@
 # virtual methods
 .method public setDenominator(J)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "denominator"    # J
 
+    .line 1068
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
@@ -51,7 +55,9 @@
 
 .method public setDenominator(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "denominator"    # Ljava/lang/String;
 
+    .line 1078
     const-string v0, "android.arg.denominator"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -65,7 +71,9 @@
 
 .method public setFractionalPart(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "fractionalPart"    # Ljava/lang/String;
 
+    .line 1037
     const-string v0, "android.arg.fractional_part"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -79,7 +87,9 @@
 
 .method public setIntegerPart(J)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "integerPart"    # J
 
+    .line 1016
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
@@ -93,7 +103,9 @@
 
 .method public setIntegerPart(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "integerPart"    # Ljava/lang/String;
 
+    .line 1027
     const-string v0, "android.arg.integer_part"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -107,7 +119,9 @@
 
 .method public setNumber(J)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "number"    # J
 
+    .line 996
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
@@ -121,7 +135,9 @@
 
 .method public setNumber(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "number"    # Ljava/lang/String;
 
+    .line 1006
     const-string v0, "android.arg.number"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -135,7 +151,9 @@
 
 .method public setNumerator(J)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "numerator"    # J
 
+    .line 1048
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
@@ -149,7 +167,9 @@
 
 .method public setNumerator(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "numerator"    # Ljava/lang/String;
 
+    .line 1058
     const-string v0, "android.arg.numerator"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;
@@ -163,7 +183,9 @@
 
 .method public setUnit(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;
     .locals 1
+    .param p1, "unit"    # Ljava/lang/String;
 
+    .line 1088
     const-string v0, "android.arg.unit"
 
     invoke-virtual {p0, v0, p1}, Landroid/text/style/TtsSpan$MeasureBuilder;->setStringArgument(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;

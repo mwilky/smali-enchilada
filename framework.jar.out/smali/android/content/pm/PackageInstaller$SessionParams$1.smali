@@ -30,6 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
+    .line 1404
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +40,9 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/PackageInstaller$SessionParams;
     .locals 1
+    .param p1, "p"    # Landroid/os/Parcel;
 
+    .line 1407
     new-instance v0, Landroid/content/pm/PackageInstaller$SessionParams;
 
     invoke-direct {v0, p1}, Landroid/content/pm/PackageInstaller$SessionParams;-><init>(Landroid/os/Parcel;)V
@@ -50,6 +53,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
+    .line 1404
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageInstaller$SessionParams$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/PackageInstaller$SessionParams;
 
     move-result-object p1
@@ -59,7 +63,9 @@
 
 .method public newArray(I)[Landroid/content/pm/PackageInstaller$SessionParams;
     .locals 1
+    .param p1, "size"    # I
 
+    .line 1412
     new-array v0, p1, [Landroid/content/pm/PackageInstaller$SessionParams;
 
     return-object v0
@@ -68,6 +74,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
+    .line 1404
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageInstaller$SessionParams$1;->newArray(I)[Landroid/content/pm/PackageInstaller$SessionParams;
 
     move-result-object p1

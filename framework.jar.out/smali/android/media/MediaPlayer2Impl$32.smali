@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaPlayer2Impl;IZ)V
     .locals 0
+    .param p1, "this$0"    # Landroid/media/MediaPlayer2Impl;
+    .param p2, "mediaCallType"    # I
+    .param p3, "needToWaitForEventToComplete"    # Z
 
+    .line 3525
     iput-object p1, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-direct {p0, p1, p2, p3}, Landroid/media/MediaPlayer2Impl$Task;-><init>(Landroid/media/MediaPlayer2Impl;IZ)V
@@ -39,6 +43,7 @@
         }
     .end annotation
 
+    .line 3528
     iget-object v0, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/media/MediaPlayer2Impl;->access$4800(Landroid/media/MediaPlayer2Impl;)Ljava/lang/Object;
@@ -47,6 +52,7 @@
 
     monitor-enter v0
 
+    .line 3529
     :try_start_0
     const-string v1, "MediaPlayer2Impl"
 
@@ -54,6 +60,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3531
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$5700(Landroid/media/MediaPlayer2Impl;)Z
@@ -64,15 +71,18 @@
 
     if-eqz v1, :cond_0
 
+    .line 3542
     :try_start_1
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$5800(Landroid/media/MediaPlayer2Impl;)V
 
+    .line 3545
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/media/MediaPlayer2Impl;->access$5900(Landroid/media/MediaPlayer2Impl;)V
 
+    .line 3547
     iget-object v1, p0, Landroid/media/MediaPlayer2Impl$32;->this$0:Landroid/media/MediaPlayer2Impl;
 
     const/4 v2, 0x0
@@ -83,11 +93,15 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 3554
     goto :goto_0
 
+    .line 3552
     :catch_0
     move-exception v1
 
+    .line 3553
+    .local v1, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v2, "MediaPlayer2Impl"
 
@@ -95,20 +109,27 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 3555
+    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     monitor-exit v0
 
+    .line 3556
     return-void
 
+    .line 3548
     :catch_1
     move-exception v1
 
+    .line 3549
+    .local v1, "e":Ljava/lang/IllegalStateException;
     const-string v2, "MediaPlayer2Impl"
 
     const-string/jumbo v3, "releaseDrm: Exception "
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 3550
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v3, "releaseDrm: The player is not in a valid state."
@@ -117,6 +138,8 @@
 
     throw v2
 
+    .line 3532
+    .end local v1    # "e":Ljava/lang/IllegalStateException;
     :cond_0
     const-string v1, "MediaPlayer2Impl"
 
@@ -124,6 +147,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3533
     new-instance v1, Landroid/media/MediaPlayer2Impl$NoDrmSchemeExceptionImpl;
 
     const-string/jumbo v2, "releaseDrm: No active DRM scheme to release."
@@ -132,6 +156,7 @@
 
     throw v1
 
+    .line 3555
     :catchall_0
     move-exception v1
 

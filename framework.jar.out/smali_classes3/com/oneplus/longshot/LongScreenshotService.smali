@@ -18,25 +18,36 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;ZZ)V
     .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "statusBarVisible"    # Z
+    .param p3, "navBarVisible"    # Z
 
+    .line 40
     invoke-direct {p0}, Lcom/oneplus/longshot/ILongScreenshot$Stub;-><init>()V
 
+    .line 18
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/longshot/LongScreenshotService;->mContext:Landroid/content/Context;
 
+    .line 23
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/longshot/LongScreenshotService;->mStatusBarVisible:Z
 
+    .line 28
     iput-boolean v0, p0, Lcom/oneplus/longshot/LongScreenshotService;->mNavBarVisible:Z
 
+    .line 41
     iput-object p1, p0, Lcom/oneplus/longshot/LongScreenshotService;->mContext:Landroid/content/Context;
 
+    .line 42
     iput-boolean p2, p0, Lcom/oneplus/longshot/LongScreenshotService;->mStatusBarVisible:Z
 
+    .line 43
     iput-boolean p3, p0, Lcom/oneplus/longshot/LongScreenshotService;->mNavBarVisible:Z
 
+    .line 44
     return-void
 .end method
 
@@ -45,6 +56,7 @@
 .method public isHandleState()Z
     .locals 1
 
+    .line 62
     const/4 v0, 0x0
 
     return v0
@@ -53,6 +65,7 @@
 .method public isMoveState()Z
     .locals 1
 
+    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -60,18 +73,23 @@
 
 .method public notifyScroll(Z)V
     .locals 0
+    .param p1, "isOverScroll"    # Z
 
+    .line 53
     return-void
 .end method
 
 .method public start(Lcom/oneplus/longshot/ILongScreenshotCallback;)V
     .locals 0
+    .param p1, "callback"    # Lcom/oneplus/longshot/ILongScreenshotCallback;
 
+    .line 50
     return-void
 .end method
 
 .method public stopLongshot()V
     .locals 0
 
+    .line 66
     return-void
 .end method

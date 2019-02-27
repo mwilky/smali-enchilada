@@ -23,9 +23,13 @@
 
 .method public onAnimationEnd(Landroid/animation/Animator;Z)V
     .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p2, "isReverse"    # Z
 
+    .line 552
     invoke-interface {p0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;)V
 
+    .line 553
     return-void
 .end method
 
@@ -37,8 +41,12 @@
 
 .method public onAnimationStart(Landroid/animation/Animator;Z)V
     .locals 0
+    .param p1, "animation"    # Landroid/animation/Animator;
+    .param p2, "isReverse"    # Z
 
+    .line 536
     invoke-interface {p0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationStart(Landroid/animation/Animator;)V
 
+    .line 537
     return-void
 .end method

@@ -35,6 +35,7 @@
         }
     .end annotation
 
+    .line 25
     invoke-interface {p0, p1}, Landroid/text/Editable;->append(C)Landroid/text/Editable;
 
     move-result-object p1
@@ -50,6 +51,7 @@
         }
     .end annotation
 
+    .line 25
     invoke-interface {p0, p1}, Landroid/text/Editable;->append(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
     move-result-object p1
@@ -65,6 +67,7 @@
         }
     .end annotation
 
+    .line 25
     invoke-interface {p0, p1, p2, p3}, Landroid/text/Editable;->append(Ljava/lang/CharSequence;II)Landroid/text/Editable;
 
     move-result-object p1
