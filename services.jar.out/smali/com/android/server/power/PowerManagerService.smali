@@ -18587,21 +18587,21 @@
     throw v1
 .end method
 
-.method public getRearFlashCameraId()Ljava/lang/String;
-    .locals 7
+.method private getCameraId()Ljava/lang/String;
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
         }
     .end annotation
-
+    
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_mw
 
     return-object v0
 
-    :cond_0
+    :cond_mw
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
@@ -18613,76 +18613,77 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_2
+    const/4 v3, 0x0
 
-    aget-object v3, v0, v2
+    if-ge v2, v1, :cond_1
 
-    iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+    aget-object v4, v0, v2
 
-    invoke-virtual {v4, v3}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+    :try_start_0
+    iget-object v5, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
-    move-result-object v4
-
-    sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->FLASH_INFO_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {v4, v5}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
 
     move-result-object v5
 
-    check-cast v5, Ljava/lang/Boolean;
+    sget-object v6, Landroid/hardware/camera2/CameraCharacteristics;->FLASH_INFO_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v5, v6}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
-    move-result v5
+    move-result-object v6
 
-    sget-object v6, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    check-cast v6, Ljava/lang/Boolean;
 
-    invoke-virtual {v4, v6}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    sget-object v7, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    move-result-object v4
+    invoke-virtual {v5, v7}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
-    check-cast v4, Ljava/lang/Integer;
+    move-result-object v7
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    check-cast v7, Ljava/lang/Integer;
 
-    move-result v4
+    if-eqz v6, :cond_0
 
-    if-eqz v5, :cond_1
+    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const/4 v5, 0x1
+    move-result v8
 
-    if-ne v4, v5, :cond_1
+    if-eqz v8, :cond_0
 
-    iput-object v3, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
+    if-eqz v7, :cond_0
 
-    :cond_1
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 v3, 0x1
+
+    if-ne v8, v3, :cond_0
+
+    return-object v4
+
+    :cond_0
+    nop
+
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_2
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mRearFlashCameraId:Ljava/lang/String;
+    :catch_0
+    move-exception v1
 
-    return-object v0
-.end method
+    const-string v2, "PowerManagerService"
 
-.method public turnOffFlashlight()V
-    .locals 3
+    const-string v5, "Couldn\'t get torch mode characteristics."
 
-    invoke-virtual {p0}, Lcom/android/server/power/PowerManagerService;->getRearFlashCameraId()Ljava/lang/String;
+    invoke-static {v2, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result-object v0
+    return-object v3
 
-    if-eqz v0, :cond_mw
-
-    iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Landroid/hardware/camera2/CameraManager;->setTorchMode(Ljava/lang/String;Z)V
-
-    :cond_mw
-    return-void
+    :cond_1
+    return-object v3
 .end method
 
 .method public static setTorchAutoOff(Landroid/content/Context;)V
@@ -18734,3 +18735,46 @@
     .line 964
     return-void
 .end method
+
+.method public turnOffFlashlight()V
+    .registers 4
+
+    .line 296
+    :try_start_0
+    invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->getCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 297
+    .local v0, "rearFlashCameraId":Ljava/lang/String;
+    if-eqz v0, :cond_d
+
+    .line 298
+    iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/hardware/camera2/CameraManager;->setTorchMode(Ljava/lang/String;Z)V
+    :try_end_c
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_c} :catch_f
+
+    goto :goto_e
+
+    .line 297
+    :cond_d
+    nop
+
+    .line 301
+    .end local v0    # "rearFlashCameraId":Ljava/lang/String;
+    :goto_e
+    goto :goto_10
+
+    .line 300
+    :catch_f
+    move-exception v0
+
+    .line 302
+    :goto_10
+    return-void
+.end method
+
