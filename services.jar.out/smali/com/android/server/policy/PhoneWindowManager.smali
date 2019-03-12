@@ -24,11 +24,7 @@
 # static fields
 .field public static mSensorCovered:Z
 
-.field public static mWakeWithTorch:Z
-
 .field public static mTorchPowerScreenOff:Z
-
-.field public static mTorchAutoOff:Z
 
 .field public static mAllowCustomNavBarHeight:Z
 
@@ -2490,19 +2486,6 @@
 
     if-nez v0, :cond_1
     
-    sget-boolean v2, Lcom/android/server/policy/PhoneWindowManager;->mTorchAutoOff:Z
-    
-    if-eqz v2, :cond_disabled
-    
-    iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mDeviceKeyHandler:Lcom/android/server/policy/DeviceKeyHandler;
-	
-    iget-boolean v2, v3, Lcom/android/server/policy/DeviceKeyHandler;->mFlashlightEnabled:Z
-    	
-    if-eqz v2, :cond_disabled
-    
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->turnOffFlashlight()V
-
-    :cond_disabled  
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -31863,8 +31846,6 @@
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setTorchPower()V
     
-    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setTorchAutoOff()V
-    
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowNavBarHeightTweak()V
     
     invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getNavBarHeightTweak()V
@@ -32954,26 +32935,3 @@
 
     return v0
 .end method
-
-.method public setTorchAutoOff()V
-    .locals 2
-
-    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo p0, "tweaks_torch_auto_off"
-
-    const/4 v0, 0x0
-
-    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mTorchAutoOff:Z
-
-    return-void
-.end method
-
