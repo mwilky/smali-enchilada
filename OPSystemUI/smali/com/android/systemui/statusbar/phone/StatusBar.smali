@@ -17038,6 +17038,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setOreoQs(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->unlockColors(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setCenterClock(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -21462,6 +21464,8 @@
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
     
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
+    
     #invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationsOnDensityOrFontScaleChanged()V
 
     :cond_obm
@@ -21805,6 +21809,23 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQsBackground()V
 
     :cond_qbc
+    const-string v0, "tweaks_center_clock"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_hcc
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setCenterClock(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
+
+    :cond_hcc
 	return-void
 .end method
 
@@ -22046,6 +22067,10 @@
     const-string v4, "tweaks_qs_background_color"
     
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v4, "tweaks_center_clock"
+    
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     new-instance v1, Lcom/android/wubydax/GearContentObserver;
 
@@ -22279,7 +22304,7 @@
 
     move-result-object v0
     
-    if-eqz v0, :cond_right
+    if-eqz v0, :cond_center
 
     check-cast v0, Lcom/android/systemui/statusbar/policy/Clock;
     
@@ -22288,6 +22313,29 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTag()V
+    
+    :cond_center
+    const-string v0, "clock_center"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+    
+    if-eqz v0, :cond_right
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockCenter;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockCenter;->updateCenterClock()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     :cond_right
     const-string v0, "clock_right"
