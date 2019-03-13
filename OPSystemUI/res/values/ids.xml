@@ -1058,4 +1058,5 @@
     <item type="id" name="clock_right">false</item>
     <item type="id" name="battery_left">false</item>
     <item type="id" name="battery_left_visible_tag">false</item>
+    <item type="id" name="clock_center">false</item>
 </resources>
