@@ -12252,151 +12252,109 @@
 
     move-result-object v5
 
-    const/high16 v6, 0x60000
+    iget v6, v5, Landroid/app/admin/PasswordMetrics;->quality:I
 
-    if-eqz v4, :cond_2
+    const/high16 v7, 0x60000
 
-    iget v7, v5, Landroid/app/admin/PasswordMetrics;->quality:I
+    if-ge v6, v4, :cond_1
 
-    if-ge v7, v4, :cond_1
-
-    if-eq v4, v6, :cond_1
+    if-eq v4, v7, :cond_1
 
     const-string v0, "DevicePolicyManager"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v8, "resetPassword: password quality 0x"
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v7}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, " does not meet required quality 0x"
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v0, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     monitor-exit v3
 
     return v12
 
     :cond_1
-    invoke-static {v7, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v6, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v8
 
     move v4, v8
 
-    :cond_2
     invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumLength(Landroid/content/ComponentName;IZ)I
-
-    move-result v7
-
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
     move-result v8
 
-    if-ge v8, v7, :cond_3
+    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    if-ge v9, v8, :cond_2
 
     const-string v0, "DevicePolicyManager"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "resetPassword: password length "
+    const-string/jumbo v9, "resetPassword: password length "
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
-    move-result v8
+    move-result v9
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v8, " does not meet required length "
+    const-string v9, " does not meet required length "
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v0, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     monitor-exit v3
 
     return v12
 
-    :cond_3
-    if-ne v4, v6, :cond_9
+    :cond_2
+    if-ne v4, v7, :cond_8
 
     invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumLetters(Landroid/content/ComponentName;IZ)I
 
-    move-result v6
-
-    iget v8, v5, Landroid/app/admin/PasswordMetrics;->letters:I
-
-    if-ge v8, v6, :cond_4
-
-    const-string v0, "DevicePolicyManager"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "resetPassword: number of letters "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v7
 
     iget v9, v5, Landroid/app/admin/PasswordMetrics;->letters:I
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v9, " does not meet required number of letters "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v0, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    monitor-exit v3
-
-    return v12
-
-    :cond_4
-    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumNumeric(Landroid/content/ComponentName;IZ)I
-
-    move-result v8
-
-    iget v9, v5, Landroid/app/admin/PasswordMetrics;->numeric:I
-
-    if-ge v9, v8, :cond_5
+    if-ge v9, v7, :cond_3
 
     const-string v0, "DevicePolicyManager"
 
@@ -12404,19 +12362,19 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "resetPassword: number of numerical digits "
+    const-string/jumbo v10, "resetPassword: number of letters "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v10, v5, Landroid/app/admin/PasswordMetrics;->numeric:I
+    iget v10, v5, Landroid/app/admin/PasswordMetrics;->letters:I
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v10, " does not meet required number of numerical digits "
+    const-string v10, " does not meet required number of letters "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -12428,14 +12386,14 @@
 
     return v12
 
-    :cond_5
-    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumLowerCase(Landroid/content/ComponentName;IZ)I
+    :cond_3
+    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumNumeric(Landroid/content/ComponentName;IZ)I
 
     move-result v9
 
-    iget v10, v5, Landroid/app/admin/PasswordMetrics;->lowerCase:I
+    iget v10, v5, Landroid/app/admin/PasswordMetrics;->numeric:I
 
-    if-ge v10, v9, :cond_6
+    if-ge v10, v9, :cond_4
 
     const-string v0, "DevicePolicyManager"
 
@@ -12443,15 +12401,15 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "resetPassword: number of lowercase letters "
+    const-string/jumbo v13, "resetPassword: number of numerical digits "
 
     invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v13, v5, Landroid/app/admin/PasswordMetrics;->lowerCase:I
+    iget v13, v5, Landroid/app/admin/PasswordMetrics;->numeric:I
 
     invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v13, " does not meet required number of lowercase letters "
+    const-string v13, " does not meet required number of numerical digits "
 
     invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12467,14 +12425,14 @@
 
     return v12
 
-    :cond_6
-    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumUpperCase(Landroid/content/ComponentName;IZ)I
+    :cond_4
+    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumLowerCase(Landroid/content/ComponentName;IZ)I
 
     move-result v10
 
-    iget v13, v5, Landroid/app/admin/PasswordMetrics;->upperCase:I
+    iget v13, v5, Landroid/app/admin/PasswordMetrics;->lowerCase:I
 
-    if-ge v13, v10, :cond_7
+    if-ge v13, v10, :cond_5
 
     const-string v0, "DevicePolicyManager"
 
@@ -12482,15 +12440,15 @@
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v14, "resetPassword: number of uppercase letters "
+    const-string/jumbo v14, "resetPassword: number of lowercase letters "
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v14, v5, Landroid/app/admin/PasswordMetrics;->upperCase:I
+    iget v14, v5, Landroid/app/admin/PasswordMetrics;->lowerCase:I
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v14, " does not meet required number of uppercase letters "
+    const-string v14, " does not meet required number of lowercase letters "
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12506,14 +12464,14 @@
 
     return v12
 
-    :cond_7
-    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumSymbols(Landroid/content/ComponentName;IZ)I
+    :cond_5
+    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumUpperCase(Landroid/content/ComponentName;IZ)I
 
     move-result v13
 
-    iget v14, v5, Landroid/app/admin/PasswordMetrics;->symbols:I
+    iget v14, v5, Landroid/app/admin/PasswordMetrics;->upperCase:I
 
-    if-ge v14, v13, :cond_8
+    if-ge v14, v13, :cond_6
 
     const-string v0, "DevicePolicyManager"
 
@@ -12521,15 +12479,15 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v12, "resetPassword: number of special symbols "
+    const-string/jumbo v12, "resetPassword: number of uppercase letters "
 
     invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v12, v5, Landroid/app/admin/PasswordMetrics;->symbols:I
+    iget v12, v5, Landroid/app/admin/PasswordMetrics;->upperCase:I
 
     invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v12, " does not meet required number of special symbols "
+    const-string v12, " does not meet required number of uppercase letters "
 
     invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12547,18 +12505,18 @@
 
     return v0
 
-    :cond_8
+    :cond_6
     const/4 v12, 0x0
 
-    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumNonLetter(Landroid/content/ComponentName;IZ)I
+    invoke-virtual {v1, v0, v11, v12}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumSymbols(Landroid/content/ComponentName;IZ)I
 
     move-result v14
 
     move v12, v14
 
-    iget v14, v5, Landroid/app/admin/PasswordMetrics;->nonLetter:I
+    iget v14, v5, Landroid/app/admin/PasswordMetrics;->symbols:I
 
-    if-ge v14, v12, :cond_9
+    if-ge v14, v12, :cond_7
 
     const-string v0, "DevicePolicyManager"
 
@@ -12568,15 +12526,15 @@
 
     move/from16 v16, v6
 
-    const-string/jumbo v6, "resetPassword: number of non-letter characters "
+    const-string/jumbo v6, "resetPassword: number of special symbols "
 
     invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v6, v5, Landroid/app/admin/PasswordMetrics;->nonLetter:I
+    iget v6, v5, Landroid/app/admin/PasswordMetrics;->symbols:I
 
     invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v6, " does not meet required number of non-letter characters "
+    const-string v6, " does not meet required number of special symbols "
 
     invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12594,7 +12552,56 @@
 
     return v0
 
-    :cond_9
+    :cond_7
+    move/from16 v16, v6
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v1, v0, v11, v6}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getPasswordMinimumNonLetter(Landroid/content/ComponentName;IZ)I
+
+    move-result v14
+
+    move v6, v14
+
+    iget v14, v5, Landroid/app/admin/PasswordMetrics;->nonLetter:I
+
+    if-ge v14, v6, :cond_8
+
+    const-string v0, "DevicePolicyManager"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    move/from16 v17, v7
+
+    const-string/jumbo v7, "resetPassword: number of non-letter characters "
+
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v7, v5, Landroid/app/admin/PasswordMetrics;->nonLetter:I
+
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, " does not meet required number of non-letter characters "
+
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v3
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_8
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_9
@@ -12607,11 +12614,11 @@
 
     iget v3, v13, Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;->mPasswordOwner:I
 
-    if-ltz v3, :cond_a
+    if-ltz v3, :cond_9
 
     iget v3, v13, Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;->mPasswordOwner:I
 
-    if-eq v3, v2, :cond_a
+    if-eq v3, v2, :cond_9
 
     const-string v0, "DevicePolicyManager"
 
@@ -12623,7 +12630,7 @@
 
     return v14
 
-    :cond_a
+    :cond_9
     const/4 v14, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->isCallerDeviceOwner(I)Z
@@ -12634,25 +12641,25 @@
 
     const/16 v16, 0x1
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_a
 
     move/from16 v3, v16
 
     goto :goto_0
 
-    :cond_b
+    :cond_a
     move v3, v14
 
     :goto_0
     move/from16 v17, v3
 
-    if-eqz v15, :cond_c
+    if-eqz v15, :cond_b
 
-    if-eqz v17, :cond_c
+    if-eqz v17, :cond_b
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->setDoNotAskCredentialsOnBoot()V
 
-    :cond_c
+    :cond_b
     iget-object v3, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mInjector:Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;
 
     invoke-virtual {v3}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->binderClearCallingIdentity()J
@@ -12665,14 +12672,14 @@
 
     const/4 v8, 0x2
 
-    if-nez p4, :cond_e
+    if-nez p4, :cond_d
 
     :try_start_1
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_c
 
     iget-object v3, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
     :try_end_1
@@ -12685,7 +12692,7 @@
 
     goto :goto_1
 
-    :cond_d
+    :cond_c
     move-object/from16 v6, p1
 
     iget-object v3, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -12722,7 +12729,7 @@
 
     goto/16 :goto_9
 
-    :cond_e
+    :cond_d
     move-object/from16 v6, p1
 
     :try_start_3
@@ -12734,13 +12741,13 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_8
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     move v5, v7
 
     goto :goto_3
 
-    :cond_f
+    :cond_e
     nop
 
     move v5, v8
@@ -12772,17 +12779,17 @@
     :goto_4
     and-int/lit8 v4, p5, 0x1
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_f
 
     goto :goto_5
 
-    :cond_10
+    :cond_f
     const/16 v16, 0x0
 
     :goto_5
     move/from16 v4, v16
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_10
 
     :try_start_5
     iget-object v5, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -12800,7 +12807,7 @@
 
     goto :goto_9
 
-    :cond_11
+    :cond_10
     :goto_6
     :try_start_6
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->getLockObject()Ljava/lang/Object;
@@ -12811,13 +12818,13 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_7
 
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_11
 
     move v14, v2
 
     nop
 
-    :cond_12
+    :cond_11
     move v0, v14
 
     :try_start_7
@@ -12825,7 +12832,7 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
-    if-eq v6, v0, :cond_13
+    if-eq v6, v0, :cond_12
 
     :try_start_8
     iput v0, v13, Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;->mPasswordOwner:I
@@ -12843,7 +12850,7 @@
 
     goto :goto_8
 
-    :cond_13
+    :cond_12
     :goto_7
     :try_start_9
     monitor-exit v5

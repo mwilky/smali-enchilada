@@ -2843,6 +2843,29 @@
     return v1
 
     :cond_2
+    iget-object v0, p0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpIdleWhiltelistManager:Lcom/android/server/am/OnePlusIdleWhiltelistManager;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
+
+    sget-object v0, Lcom/android/server/am/ActivityManagerService;->mOpIdleWhiltelistManager:Lcom/android/server/am/OnePlusIdleWhiltelistManager;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/am/OnePlusIdleWhiltelistManager;->isServiceNeeded(Lcom/android/server/am/ServiceRecord;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    return v1
+
+    :cond_3
     const/4 v0, 0x0
 
     return v0

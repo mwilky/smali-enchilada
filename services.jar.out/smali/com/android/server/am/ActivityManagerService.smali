@@ -104885,7 +104885,7 @@
 
     invoke-static {v0, v1, v4, v3}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;ZI)V
 
-    const-string v0, "gfxinfo"
+    const-string/jumbo v0, "gfxinfo"
 
     new-instance v1, Lcom/android/server/am/ActivityManagerService$GraphicsBinder;
 
