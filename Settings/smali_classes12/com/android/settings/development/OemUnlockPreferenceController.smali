@@ -130,12 +130,6 @@
     :goto_1
     iput-object p2, p0, Lcom/android/settings/development/OemUnlockPreferenceController;->mActivity:Landroid/app/Activity;
 
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportUstMode()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
     invoke-static {p1}, Lcom/android/settings/development/OemUnlockPreferenceController;->isUimLockServiceEnable(Landroid/content/Context;)Z
 
     move-result v1
