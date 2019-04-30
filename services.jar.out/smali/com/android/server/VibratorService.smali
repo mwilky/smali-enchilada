@@ -247,7 +247,7 @@
 
     iput v4, v0, Lcom/android/server/VibratorService;->intensityMiddle:I
 
-    const/16 v4, 0x776
+    const/16 v4, 0x910
 
     iput v4, v0, Lcom/android/server/VibratorService;->intensityStrong:I
 
