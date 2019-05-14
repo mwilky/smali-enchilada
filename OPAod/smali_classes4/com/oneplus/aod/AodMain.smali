@@ -5,6 +5,8 @@
 # static fields
 .field private static mMinutesSinceLastReposition:I
 
+.field private static mRepositionMinutes:I
+
 
 # instance fields
 .field private TAG:Ljava/lang/String;
@@ -204,9 +206,21 @@
     
     if-nez v0, :cond_move
     
+    sget v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+    
+    const/4 v2, 0x1
+    
+    add-int/2addr v0, v2
+
+    sput v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+    
     return-void
    
 	:cond_move
+	const/4 v0, 0x0
+	
+	sput v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+	
 	iget-object v2, p0, Lcom/oneplus/aod/AodMain;->mDisplay:Landroid/view/Display;
 
     iget-object v3, p0, Lcom/oneplus/aod/AodMain;->mDisplayMetrics:Landroid/util/DisplayMetrics;
@@ -293,31 +307,47 @@
 .end method
 
 .method public shouldReposition()Z
-    .registers 5
-
-    .line 369
-    sget v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x5
-
-    if-ne v0, v3, :cond_a
+    .registers 3
 
     .line 370
-    sput v1, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+    invoke-virtual {p0}, Lcom/oneplus/aod/AodMain;->setRepositionMinutes()V
+    
+    sget v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+
+    sget v1, Lcom/oneplus/aod/AodMain;->mRepositionMinutes:I
+
+    if-eq v0, v1, :cond_8
 
     .line 371
-    return v2
+    const/4 v0, 0x0
+
+    return v0
 
     .line 373
-    :cond_a
-    add-int/2addr v0, v2
+    :cond_8
+    const/4 v0, 0x1
 
-    sput v0, Lcom/oneplus/aod/AodMain;->mMinutesSinceLastReposition:I
+    return v0
+.end method
 
-    .line 374
-    return v1
+.method public setRepositionMinutes()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/oneplus/aod/AodMain;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "tweaks_aod_reposition_offset"
+
+    const v0, 0x5
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    sput v0, Lcom/oneplus/aod/AodMain;->mRepositionMinutes:I
+
+    return-void
 .end method
