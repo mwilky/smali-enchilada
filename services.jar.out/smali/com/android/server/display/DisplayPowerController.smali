@@ -18,10 +18,6 @@
 
 
 # static fields
-.field public static mAllowCustomDozeBrightness:Z
-
-.field public static mCustomDozeBrightness:I
-
 .field static final synthetic $assertionsDisabled:Z = false
 
 .field private static final BRIGHTNESS_RAMP_RATE_BRIGHTEN:I = 0x78
@@ -492,10 +488,6 @@
     iput-object v9, v15, Lcom/android/server/display/DisplayPowerController;->mBlanker:Lcom/android/server/display/DisplayBlanker;
 
     iput-object v13, v15, Lcom/android/server/display/DisplayPowerController;->mContext:Landroid/content/Context;
-    
-    invoke-virtual {v15}, Lcom/android/server/display/DisplayPowerController;->setAllowCustomDozeBrightness()V
-    
-    invoke-virtual {v15}, Lcom/android/server/display/DisplayPowerController;->setCustomDozeBrightness()V
 
     sput-boolean v0, Lcom/android/server/display/DisplayPowerController;->mQuicklyApplyDimming:Z
 
@@ -2938,10 +2930,6 @@
 
 .method private handleSettingsChange(Z)V
     .locals 1
-    
-    invoke-virtual {p0}, Lcom/android/server/display/DisplayPowerController;->setAllowCustomDozeBrightness()V
-    
-    invoke-virtual {p0}, Lcom/android/server/display/DisplayPowerController;->setCustomDozeBrightness()V
 
     invoke-direct {p0}, Lcom/android/server/display/DisplayPowerController;->getScreenBrightnessSetting()I
 
@@ -2983,46 +2971,6 @@
 
 .method private initialize()V
     .locals 6
-    
-    iget-object v1, p0, Lcom/android/server/display/DisplayPowerController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "tweaks_allow_custom_doze_brightness"
-
-    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/android/server/display/DisplayPowerController;->mSettingsObserver:Lcom/android/server/display/DisplayPowerController$SettingsObserver;
-
-    const/4 v5, -0x1
-    
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
-    
-    iget-object v1, p0, Lcom/android/server/display/DisplayPowerController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "tweaks_custom_doze_brightness"
-
-    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/android/server/display/DisplayPowerController;->mSettingsObserver:Lcom/android/server/display/DisplayPowerController$SettingsObserver;
-
-    const/4 v5, -0x1
-    
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     new-instance v0, Lcom/android/server/display/DisplayPowerState;
 
@@ -4242,31 +4190,14 @@
     move v7, v9
 
     :goto_1
-    sget-boolean v8, Lcom/android/server/display/DisplayPowerController;->mAllowCustomDozeBrightness:Z
-    
-    if-eqz v8, :cond_stock
-
-    const/4 v8, 0x0
-	
-    goto :goto_mw
-    
-    :cond_stock
     iget-boolean v8, v1, Lcom/android/server/display/DisplayPowerController;->mAllowAutoBrightnessWhileDozingConfig:Z
 
-    :goto_mw
     if-nez v8, :cond_6
 
     iget-object v8, v1, Lcom/android/server/display/DisplayPowerController;->mPowerRequest:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;
 
     iget v3, v8, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;->dozeScreenBrightness:I
-    
-    sget-boolean v8, Lcom/android/server/display/DisplayPowerController;->mAllowCustomDozeBrightness:Z
-    
-    if-eqz v8, :cond_stock1
 
-	sget v3, Lcom/android/server/display/DisplayPowerController;->mCustomDozeBrightness:I
-    
-    :cond_stock1
     goto :goto_2
 
     :pswitch_1
@@ -4779,18 +4710,8 @@
     iput-boolean v0, v1, Lcom/android/server/display/DisplayPowerController;->mAppliedScreenBrightnessOverride:Z
 
     :goto_6
-    sget-boolean v12, Lcom/android/server/display/DisplayPowerController;->mAllowCustomDozeBrightness:Z
-    
-    if-eqz v12, :cond_stock2
-
-	const/4 v12, 0x0
-	
-	goto :goto_mw2
-    
-    :cond_stock2
     iget-boolean v12, v1, Lcom/android/server/display/DisplayPowerController;->mAllowAutoBrightnessWhileDozingConfig:Z
 
-    :goto_mw2
     if-eqz v12, :cond_21
 
     invoke-static {v7}, Landroid/view/Display;->isDozeState(I)Z
@@ -6829,50 +6750,6 @@
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/display/DisplayPowerController;->sendUpdatePowerState()V
-
-    return-void
-.end method
-
-.method public setAllowCustomDozeBrightness()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/android/server/display/DisplayPowerController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "tweaks_allow_custom_doze_brightness"
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    sput-boolean v0, Lcom/android/server/display/DisplayPowerController;->mAllowCustomDozeBrightness:Z
-
-    return-void
-.end method
-
-.method public setCustomDozeBrightness()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/android/server/display/DisplayPowerController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "tweaks_custom_doze_brightness"
-
-    const v2, 0x32
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    sput v0, Lcom/android/server/display/DisplayPowerController;->mCustomDozeBrightness:I
 
     return-void
 .end method
