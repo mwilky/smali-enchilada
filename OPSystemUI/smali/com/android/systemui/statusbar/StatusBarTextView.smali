@@ -476,7 +476,6 @@
     return-void
 .end method
 
-
 .method public getLockscreenIconColors()I
     .locals 2
     
@@ -491,6 +490,8 @@
 
 .method public updateViews(F)V
     .locals 1
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarTextView;->readRenovateMods()V
     
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarTextView;->applyColors()V
     
