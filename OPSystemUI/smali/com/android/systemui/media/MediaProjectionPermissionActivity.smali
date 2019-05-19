@@ -369,7 +369,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f1103c2
+    const v12, 0x7f1103b6
 
     const/4 v13, 0x1
 
@@ -420,7 +420,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f1103c1
+    const v6, 0x7f1103b5
 
     invoke-virtual {v4, v6, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -432,7 +432,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0d01c2
+    const v6, 0x7f0d01b1
 
     invoke-virtual {v4, v6}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
@@ -466,7 +466,7 @@
 
     iget-object v4, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mDialog:Landroid/app/AlertDialog;
 
-    const v6, 0x7f0a0377
+    const v6, 0x7f0a0348
 
     invoke-virtual {v4, v6}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
 
