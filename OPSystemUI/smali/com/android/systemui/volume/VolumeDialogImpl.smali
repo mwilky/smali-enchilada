@@ -2645,6 +2645,17 @@
     return v2
     
     :cond_call
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideCallSlider:Z
+    
+    if-eqz v0, :cond_call2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->isInCall()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_bcall
+    
+    :cond_call2
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
 
     move-result v0
@@ -2659,7 +2670,18 @@
 
     return v2
     
-    :cond_bcall    
+    :cond_bcall
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideCallSlider:Z
+    
+    if-eqz v0, :cond_bcall2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->isInCall()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_remove
+
+    :cond_bcall2
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
 
     move-result v0
@@ -5480,4 +5502,24 @@
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->updateOutputChooserLayout()V
 
     return-void
+.end method
+
+.method public isInCall()Z
+	.locals 2
+
+	iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v1, "telecom"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/telecom/TelecomManager;
+
+    invoke-virtual {v0}, Landroid/telecom/TelecomManager;->isInCall()Z
+    
+    move-result v0
+    
+    return v0
 .end method
