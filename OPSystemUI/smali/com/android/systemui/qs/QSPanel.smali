@@ -2048,7 +2048,7 @@
 .end method
 
 .method public updateResources()V
-    .locals 4
+    .locals 6
 
     sget-object v0, Lcom/android/systemui/qs/QSPanel;->TAG:Ljava/lang/String;
 
@@ -2063,7 +2063,19 @@
     move-result-object v0
 
     const v1, 0x7f070596
+    
+    sget v4, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
 
+    const/4 v5, 0x1
+
+    if-eq v4, v5, :cond_mw
+    
+    goto :goto_0
+    
+    :cond_mw
+	const v1, 0x7f0706ed
+    
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1

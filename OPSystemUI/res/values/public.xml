@@ -4826,6 +4826,9 @@
     <public type="dimen" name="qs_brightness_padding_top" id="0x7f070559" />
     <public type="dimen" name="picture_in_picture_button_start_margin" id="0x7f07052a" />
     <public type="dimen" name="picture_in_picture_button_width" id="0x7f07052b" />
+    <public type="dimen" name="quick_qs_total_height_tweak" id="0x7f0706eb" />
+    <public type="dimen" name="quick_qs_padding_top_tweak" id="0x7f0706ec" />
+    <public type="dimen" name="qs_panel_padding_top_tweak" id="0x7f0706ed" />
     <public type="drawable" name="$$fingerprint_dialog_error_to_fp__10__0" id="0x7f080000" />
     <public type="drawable" name="$$fingerprint_dialog_error_to_fp__10__1" id="0x7f080001" />
     <public type="drawable" name="$$fingerprint_dialog_error_to_fp__10__2" id="0x7f080002" />

@@ -3032,6 +3032,12 @@
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mBrightnessMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSPanel;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getQuickQsView()Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    move-result-object v0
+    
+    invoke-virtual {v0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
@@ -10546,8 +10552,17 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->refreshAllTiles()V
+    
+	:cond_7	   
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getQuickQsView()Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    move-result-object v0
+    
+    if-eqz v0, :cond_mw
 
-    :cond_7
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->refreshAllTiles()V
+
+    :cond_mw
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/StatusBar$H;
 
     const/16 v3, 0x3eb
@@ -17099,6 +17114,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setCenterClock(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideCallSlider(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setBrightnessSliderPosition(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -21910,6 +21927,23 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setHideCallSlider(Landroid/content/Context;)V
 
     :cond_hiv
+    const-string v0, "tweaks_brightness_slider_position"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_bsp
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setBrightnessSliderPosition(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateBrightnessSliderViews()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateQuickQsView()V
+
+    :cond_bsp
 	return-void
 .end method
 
@@ -22159,6 +22193,10 @@
     const-string v4, "tweaks_hide_incall_vol"
     
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v4, "tweaks_brightness_slider_position"
+    
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     new-instance v1, Lcom/android/wubydax/GearContentObserver;
 
@@ -22231,8 +22269,32 @@
     invoke-virtual {v0}, Lcom/android/systemui/qs/QuickQSPanel;->readRenovateMods()V
     
     invoke-virtual {v0}, Lcom/android/systemui/qs/QuickQSPanel;->updateTiles()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickQSPanel;->updatePadding()V
 
     return-void
+.end method
+
+.method getQuickQsView()Lcom/android/systemui/qs/QuickStatusBarHeader;
+    .locals 2
+    
+    const-string v0, "header"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
+
+    return-object v0
 .end method
 
 .method public updateQsTileView()V
@@ -22555,23 +22617,6 @@
     return-void
 .end method
 
-.method public reloadTiles()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
-
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->getHost()Lcom/android/systemui/qs/QSTileHost;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lcom/android/systemui/qs/QSTileHost;->reloadTiles()V
-
-    :cond_0
-    return-void
-.end method
-
 .method public updateQsBackground()V
     .locals 2
     
@@ -22583,5 +22628,88 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/qs/QSContainerImpl;->updateThemeColor()V
     
+    return-void
+.end method
+
+.method public updateBrightnessSliderViews()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    if-eqz v0, :cond_header
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->updateBrightnessMirror()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->refreshAllTiles()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->updateResources()V
+
+    :cond_header
+    const-string v0, "header"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    if-eqz v0, :cond_mirror
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->updateBrightnessMirror()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setSliderPosition()V
+    
+    :cond_mirror
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQs:Lcom/android/systemui/plugins/qs/QS;
+
+    instance-of v1, v0, Lcom/android/systemui/qs/QSFragment;
+
+    if-eqz v1, :cond_exit
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/android/systemui/qs/QSFragment;
+    
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    invoke-virtual {v2}, Lcom/android/systemui/qs/QSPanel;->getHost()Lcom/android/systemui/qs/QSTileHost;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSFragment;->setHost(Lcom/android/systemui/qs/QSTileHost;)V
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/android/systemui/qs/QSFragment;
+    
+    invoke-virtual {v1}, Lcom/android/systemui/qs/QSFragment;->updateBrightnessSliderViews()V
+
+    invoke-virtual {v1}, Lcom/android/systemui/qs/QSFragment;->getQsPanel()Lcom/android/systemui/qs/QSPanel;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mBrightnessMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/QSPanel;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->getQuickQsView()Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    move-result-object v0
+    
+    invoke-virtual {v0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBrightnessMirror(Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;)V
+    
+    :cond_exit
     return-void
 .end method

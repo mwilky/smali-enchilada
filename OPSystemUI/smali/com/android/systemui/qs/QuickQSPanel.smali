@@ -113,6 +113,8 @@
 
     invoke-super {p0, v1, v1, v1, v1}, Lcom/android/systemui/qs/QSPanel;->setPadding(IIII)V
     
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickQSPanel;->updatePadding()V
+    
     invoke-virtual {p0}, Lcom/android/systemui/qs/QuickQSPanel;->readRenovateMods()V
 
     return-void
@@ -483,4 +485,45 @@
 
     :goto_0
     return v0
+.end method
+
+.method public updatePadding()V
+    .locals 3
+    
+    sget v1, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
+
+    const/4 v2, 0x1
+
+    if-eq v1, v2, :cond_mw
+    
+    goto :goto_0
+    
+    :cond_mw
+    const v1, 0x7f070796
+    
+    invoke-static {}, Lcom/android/systemui/SystemUIApplication;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+    
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+    
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+    
+    const/4 v0, 0x0
+    
+    invoke-super {p0, v0, v1, v0, v0}, Lcom/android/systemui/qs/QSPanel;->setPadding(IIII)V
+    
+    goto :goto_exit
+
+    :goto_0  
+	const/4 v0, 0x0
+
+    invoke-super {p0, v0, v0, v0, v0}, Lcom/android/systemui/qs/QSPanel;->setPadding(IIII)V
+	
+    :goto_exit
+    return-void
 .end method

@@ -742,6 +742,12 @@
     .locals 2
 
     invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_header
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
@@ -752,7 +758,21 @@
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setListeningBrightness(Z)V
+    
+    goto :goto_panel
+    
+    :cond_header
+    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setListeningBrightness(Z)V
+
+    :goto_panel
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSFragment;->mListening:Z
 
@@ -1182,8 +1202,31 @@
 .end method
 
 .method public setKeyguardShowing(Z)V
-    .locals 4
+    .locals 7
 
+    sget-boolean v0, Lcom/android/systemui/qs/QSFragment;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "QS"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setKeyguardShowing "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSFragment;->mKeyguardShowing:Z
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -1192,18 +1235,18 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSAnimator:Lcom/android/systemui/qs/QSAnimator;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSAnimator:Lcom/android/systemui/qs/QSAnimator;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSAnimator;->setOnKeyguard(Z)V
 
-    :cond_0
+    :cond_1
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSFragment;->getContext()Landroid/content/Context;
 
@@ -1221,37 +1264,64 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
+    if-eqz v1, :cond_4
+    
+    sget v5, Lcom/android/mwilky/Renovate;->mBrightnessSliderPosition:I
 
-    invoke-virtual {v2, p1}, Lcom/android/systemui/qs/QSPanel;->setListeningBrightness(Z)V
+    const/4 v6, 0x1
 
-    iget-boolean v2, p0, Lcom/android/systemui/qs/QSFragment;->mQsExpanded:Z
+    if-eq v5, v6, :cond_header
 
-    const/4 v3, 0x1
+    iget-object v3, p0, Lcom/android/systemui/qs/QSFragment;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
-    if-eqz v2, :cond_1
+    const/4 v4, 0x1
 
-    invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
+    invoke-virtual {v3, v4}, Lcom/android/systemui/qs/QSPanel;->setListeningBrightness(Z)V
+    
+    goto :goto_panel
+    
+    :cond_header
+    iget-object v3, p0, Lcom/android/systemui/qs/QSFragment;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    goto :goto_0
+    const/4 v4, 0x1
 
-    :cond_1
-    iget-boolean v2, p0, Lcom/android/systemui/qs/QSFragment;->mKeyguardShowing:Z
+    invoke-virtual {v3, v4}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setListeningBrightness(Z)V    
+    
+    :goto_panel
+    iget-boolean v3, p0, Lcom/android/systemui/qs/QSFragment;->mQsExpanded:Z
 
-    xor-int/2addr v2, v3
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
+    invoke-virtual {v0, v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
 
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    iget-boolean v3, p0, Lcom/android/systemui/qs/QSFragment;->mKeyguardShowing:Z
 
-    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
+    if-nez v3, :cond_3
+
+    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUserUnlocked()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    move v2, v4
+
+    nop
 
     :cond_3
+    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setQSExpanded(Z)V
+
+    :cond_5
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mFooter:Lcom/android/systemui/qs/QSFooter;
 
@@ -1526,5 +1596,16 @@
     invoke-virtual {v0, p1}, Lcom/android/systemui/qs/QSAnimator;->setPosition(F)V
 
     :cond_6
+    return-void
+.end method
+
+
+.method public updateBrightnessSliderViews()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSFragment;->mQSAnimator:Lcom/android/systemui/qs/QSAnimator;
+
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSAnimator;->onRtlChanged()V
+
     return-void
 .end method

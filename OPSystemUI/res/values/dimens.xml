@@ -1424,6 +1424,7 @@
     <dimen name="qs_panel_padding">16.0dip</dimen>
     <dimen name="qs_panel_padding_bottom">0.0dip</dimen>
     <dimen name="qs_panel_padding_top">44.0dip</dimen>
+    <dimen name="qs_panel_padding_top_tweak">74.0dip</dimen>
     <item type="dimen" name="qs_panel_width">@dimen/notification_panel_width</item>
     <dimen name="qs_peek_height">0.0dip</dimen>
     <dimen name="qs_quick_tile_padding">16.0dip</dimen>
@@ -1452,6 +1453,8 @@
     <dimen name="qs_upper_frame_height">251.0dip</dimen>
     <dimen name="qs_upper_pager_height">245.0dip</dimen>
     <dimen name="quick_qs_total_height">209.0dip</dimen>
+    <dimen name="quick_qs_total_height_tweak">235.0dip</dimen>
+    <dimen name="quick_qs_padding_top_tweak">60.0dip</dimen>
     <dimen name="recents_drag_hint_text_size">14.0sp</dimen>
     <dimen name="recents_fast_fling_velocity">600.0dip</dimen>
     <dimen name="recents_fling_overscroll_distance">24.0dip</dimen>
