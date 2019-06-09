@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screenshot_saving_ticker">Išsaugoma ekrano kopija...</string>
+    <string name="screenshot_saving_title">Išsaugoma ekrano kopija...</string>
+    <string name="screenshot_saving_text">Išsaugoma ekrano kopija.</string>
+    <string name="screenshot_saved_title">Ekrano kopija užfiksuota.</string>
+    <string name="screenshot_saved_text">Palieskite, kad peržiūrėtumėte ekrano kopiją.</string>
+    <string name="screenshot_failed_title">Nepavyko užfiksuoti ekrano kopijos.</string>
+    <string name="screenshot_failed_text">Neg. daryti ekr. kopijų dėl ribotos saugyklos vietos arba to atlikti neleidžia progr. ar organiz.</string>
+    <string name="screenshot_failed_to_save_text">Negalima išsaugoti ekrano kopijos dėl ribotos saugyklos vietos.</string>
+    <string name="screenshot_failed_to_capture_text">Jūsų organizacijoje arba naudojant šią programą neleidžiama daryti ekrano kopijų</string>
+    <string name="screenshot_failed_to_save_unknown_text">Išsaugant ekrano kopiją iškilo problemų.</string>
+    <string name="notification_channel_screenshot">Ekrano kopijos</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screenshot_saving_ticker">Saglabā ekrānuzņēmumu…</string>
+    <string name="screenshot_saving_title">Notiek ekrānuzņēmuma saglabāšana...</string>
+    <string name="screenshot_saving_text">Notiek ekrānuzņēmuma saglabāšana.</string>
+    <string name="screenshot_saved_title">Ekrānuzņēmums ir uzņemts.</string>
+    <string name="screenshot_saved_text">Pieskarieties, lai skatītu ekrānuzņēmumu.</string>
+    <string name="screenshot_failed_title">Nevarēja uzņemt ekrānuzņēmumu.</string>
+    <string name="screenshot_failed_text">Nevar veikt ekrānuzņēmumu (krātuvē nepietiek vietas, vai to neļauj lietotne vai jūsu organizācija).</string>
+    <string name="screenshot_failed_to_save_text">Nevar saglabāt ekrānuzņēmumu, jo krātuvē nepietiek vietas.</string>
+    <string name="screenshot_failed_to_capture_text">Lietotne vai jūsu organizācija neatļauj veikt ekrānuzņēmumus.</string>
+    <string name="screenshot_failed_to_save_unknown_text">Saglabājot ekrānuzņēmumu, radās problēma.</string>
+    <string name="notification_channel_screenshot">Ekrānuzņēmumi</string>
+</resources>
