@@ -469,49 +469,20 @@
 
     move-result-object v2
 
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mStartAnimationAssets1:Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
+
     const/4 v3, 0x0
 
     move v4, v3
 
     :goto_0
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mStartAnimationAssets1:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_1
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mStartAnimationAssets1:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/graphics/Bitmap;
-
-    if-eqz v5, :cond_0
-
-    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
-
-    :cond_0
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mStartAnimationAssets1:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
-
-    move v4, v3
-
-    :goto_1
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->length()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_2
+    if-ge v4, v5, :cond_0
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -531,9 +502,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2
+    :cond_0
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -542,7 +513,7 @@
 
     sget-boolean v5, Lcom/android/systemui/util/OPUtils;->DEBUG_ONEPLUS:Z
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_1
 
     const-string v5, "OPWarpChargingView"
 
@@ -576,7 +547,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_1
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/OPWarpChargingView;->mHandler:Landroid/os/Handler;
 
     new-instance v6, Lcom/android/systemui/statusbar/phone/OPWarpChargingView$9;

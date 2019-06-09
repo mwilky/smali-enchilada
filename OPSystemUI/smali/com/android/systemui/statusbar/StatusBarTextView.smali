@@ -8,7 +8,13 @@
 
 
 # instance fields
+.field private mDarkIntensity:F
+
 .field private mDirty:Z
+
+.field private mNetSpeedColor:I
+
+.field private mDarkIconColor:I
 
 .field private mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
 
@@ -59,7 +65,7 @@
 .end method
 
 .method private applyColors()V
-    .locals 5
+    .locals 7
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mRect:Landroid/graphics/Rect;
 
@@ -69,18 +75,32 @@
 
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mRect:Landroid/graphics/Rect;
+    
+    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mDarkIntensity:F
+    
+    float-to-int v6, v1
 
-    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mTint:I
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
 
-    invoke-static {v0, p0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
-
-    move-result v2
-
+    move-result v5
+    
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mTextView:Landroid/widget/TextView;
+    
+    if-nez v5, :cond_notch
 
+    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mDarkIconColor:I #dark color
+
+    if-nez v6, :cond_mw #set to grey if dark intensity is 1
+    
+    :cond_notch
+    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mNetSpeedColor:I #custom color
+
+    :cond_mw
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
+    
+    iget v1, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mTint:I
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
 
@@ -145,6 +165,12 @@
 
     :goto_0
     invoke-direct {v0}, Lcom/android/systemui/statusbar/StatusBarTextView;->initDotView()V
+    
+    const/4 v1, 0x0
+    
+    int-to-float v1, v1
+    
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/StatusBarTextView;->updateViews(F)V
 
     return-object v0
 .end method
@@ -316,6 +342,8 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mRect:Landroid/graphics/Rect;
+    
+    iput p2, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mDarkIntensity:F
 
     iput p3, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mTint:I
 
@@ -445,5 +473,41 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarTextView;->updateState()V
 
     :cond_0
+    return-void
+.end method
+
+.method public getLockscreenIconColors()I
+    .locals 2
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mSlot:Ljava/lang/String;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getStatusbarColorFromSlotNameOP(Ljava/lang/String;)I
+    
+    move-result v0
+
+    return v0
+.end method
+
+.method public updateViews(F)V
+    .locals 1
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarTextView;->readRenovateMods()V
+    
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarTextView;->applyColors()V
+    
+    return-void
+.end method
+
+.method public readRenovateMods()V
+    .locals 1
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mNetSpeedColorOP:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mNetSpeedColor:I
+	
+	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
+	
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarTextView;->mDarkIconColor:I
+	
     return-void
 .end method

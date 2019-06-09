@@ -2478,6 +2478,10 @@
 
 .method private shouldBeVisibleH(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)Z
     .locals 6
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mExtendedVolumePanel:Z
+    
+    if-nez v0, :cond_extended
 
     invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
 
@@ -2596,6 +2600,106 @@
 
     :cond_6
     return v2
+    
+    :cond_extended
+    const/4 v2, 0x1
+    
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
+
+    move-result v0
+
+    const/4 v1, 0x3 #media
+
+    if-ne v0, v1, :cond_ringer
+
+    return v2
+    
+    :cond_ringer
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
+
+    move-result v0
+
+    const/4 v1, 0x2 #ringer
+
+    if-ne v0, v1, :cond_alarm
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelRinger:Z
+    
+    if-eqz v1, :cond_alarm
+
+    return v2
+    
+    :cond_alarm
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
+
+    move-result v0
+
+    const/4 v1, 0x4 #alarm
+
+    if-ne v0, v1, :cond_call
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelAlarm:Z
+    
+    if-eqz v1, :cond_call
+
+    return v2
+    
+    :cond_call
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideCallSlider:Z
+    
+    if-eqz v0, :cond_call2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->isInCall()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_bcall
+    
+    :cond_call2
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
+
+    move-result v0
+
+    const/4 v1, 0x0 #call
+
+    if-ne v0, v1, :cond_bcall
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelCall:Z
+    
+    if-eqz v1, :cond_bcall
+
+    return v2
+    
+    :cond_bcall
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideCallSlider:Z
+    
+    if-eqz v0, :cond_bcall2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->isInCall()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_remove
+
+    :cond_bcall2
+    invoke-static {p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$300(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)I
+
+    move-result v0
+
+    const/4 v1, 0x6 #bluetooth call
+
+    if-ne v0, v1, :cond_remove
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExtendedVolumePanelBCall:Z
+    
+    if-eqz v1, :cond_remove
+
+    return v2 
+    
+    :cond_remove
+    const/4 v0, 0x0
+    
+    return v0  
 .end method
 
 .method private showH(I)V
@@ -5398,4 +5502,24 @@
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumeDialogImpl;->updateOutputChooserLayout()V
 
     return-void
+.end method
+
+.method public isInCall()Z
+	.locals 2
+
+	iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v1, "telecom"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/telecom/TelecomManager;
+
+    invoke-virtual {v0}, Landroid/telecom/TelecomManager;->isInCall()Z
+    
+    move-result v0
+    
+    return v0
 .end method
