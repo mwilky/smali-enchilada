@@ -45,7 +45,7 @@
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$13;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
-    const v2, 0x7f120fcd
+    const v2, 0x7f120fee
 
     invoke-virtual {v1, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->getString(I)Ljava/lang/String;
 

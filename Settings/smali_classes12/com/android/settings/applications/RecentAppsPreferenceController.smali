@@ -296,7 +296,7 @@
 
     iget-object v0, v1, Lcom/android/settings/applications/RecentAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    const v2, 0x7f120ef1
+    const v2, 0x7f120f12
 
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 

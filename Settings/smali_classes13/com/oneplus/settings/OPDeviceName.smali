@@ -230,7 +230,7 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 3
 
-    const v0, 0x7f120ad6
+    const v0, 0x7f120ad8
 
     const/4 v1, 0x1
 
@@ -262,7 +262,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f0d015f
+    const v1, 0x7f0d0160
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -524,7 +524,7 @@
 
     move-result v2
 
-    const v3, 0x7f121498
+    const v3, 0x7f1214b9
 
     const/4 v4, 0x0
 

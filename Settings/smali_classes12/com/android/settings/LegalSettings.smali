@@ -97,7 +97,7 @@
     .end array-data
 .end method
 
-.method private startLegalActivity(I)V
+.method public static startLegalActivity(Landroid/content/Context;I)V
     .locals 3
 
     new-instance v0, Landroid/content/Intent;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/LegalSettings;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -222,7 +222,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d2b
+    const v3, 0x7f120d40
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -253,7 +253,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d2c
+    const v3, 0x7f120d41
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -276,7 +276,7 @@
 
     move-result v2
 
-    const v3, 0x7f120d2a
+    const v3, 0x7f120d3f
 
     if-nez v2, :cond_5
 
@@ -295,7 +295,7 @@
     :cond_3
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120ba9
+    const v4, 0x7f120bb5
 
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -309,7 +309,7 @@
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120baa
+    const v4, 0x7f120bb6
 
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d2e
+    const v3, 0x7f120d43
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -405,7 +405,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120d2d
+    const v3, 0x7f120d42
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -440,7 +440,11 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0, v1}, Lcom/android/settings/LegalSettings;->startLegalActivity(I)V
+    invoke-virtual {p0}, Lcom/android/settings/LegalSettings;->getPrefContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, v1}, Lcom/android/settings/LegalSettings;->startLegalActivity(Landroid/content/Context;I)V
 
     return v1
 
@@ -457,9 +461,13 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x2
+    invoke-virtual {p0}, Lcom/android/settings/LegalSettings;->getPrefContext()Landroid/content/Context;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/LegalSettings;->startLegalActivity(I)V
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    invoke-static {v0, v2}, Lcom/android/settings/LegalSettings;->startLegalActivity(Landroid/content/Context;I)V
 
     return v1
 
@@ -476,9 +484,13 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x3
+    invoke-virtual {p0}, Lcom/android/settings/LegalSettings;->getPrefContext()Landroid/content/Context;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/LegalSettings;->startLegalActivity(I)V
+    move-result-object v0
+
+    const/4 v2, 0x3
+
+    invoke-static {v0, v2}, Lcom/android/settings/LegalSettings;->startLegalActivity(Landroid/content/Context;I)V
 
     return v1
 
@@ -495,9 +507,13 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x4
+    invoke-virtual {p0}, Lcom/android/settings/LegalSettings;->getPrefContext()Landroid/content/Context;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/LegalSettings;->startLegalActivity(I)V
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-static {v0, v1}, Lcom/android/settings/LegalSettings;->startLegalActivity(Landroid/content/Context;I)V
 
     goto :goto_0
 
@@ -514,9 +530,13 @@
 
     if-eqz v0, :cond_4
 
-    const/16 v0, 0x9
+    invoke-virtual {p0}, Lcom/android/settings/LegalSettings;->getPrefContext()Landroid/content/Context;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/LegalSettings;->startLegalActivity(I)V
+    move-result-object v0
+
+    const/16 v1, 0x9
+
+    invoke-static {v0, v1}, Lcom/android/settings/LegalSettings;->startLegalActivity(Landroid/content/Context;I)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -490,7 +490,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f1600ae
+    const v0, 0x7f1600af
 
     invoke-virtual {p0, v0}, Lcom/android/settings/PrivacySettings;->addPreferencesFromResource(I)V
 

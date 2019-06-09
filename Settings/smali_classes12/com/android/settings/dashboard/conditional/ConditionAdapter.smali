@@ -234,7 +234,7 @@
     goto :goto_2
 
     :cond_2
-    const v6, 0x7f0a04b7
+    const v6, 0x7f0a04b8
 
     :goto_2
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -458,7 +458,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    const v0, 0x7f0d0054
+    const v0, 0x7f0d0055
 
     return v0
 .end method

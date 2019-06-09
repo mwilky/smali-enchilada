@@ -147,7 +147,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/PreviewSeekBarPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d00a0
+    const v0, 0x7f0d00a1
 
     iput v0, p0, Lcom/android/settings/accessibility/ToggleFontSizePreferenceFragment;->mActivityLayoutResId:I
 
@@ -157,7 +157,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d00a1
+    const v2, 0x7f0d00a2
 
     aput v2, v0, v1
 
@@ -239,7 +239,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f121204
+    const v5, 0x7f121225
 
     invoke-virtual {v1, v5}, Landroid/app/Activity;->setTitle(I)V
 

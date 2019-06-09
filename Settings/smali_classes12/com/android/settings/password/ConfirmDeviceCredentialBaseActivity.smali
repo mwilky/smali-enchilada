@@ -18,13 +18,27 @@
 # instance fields
 .field private mConfirmCredentialTheme:Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity$ConfirmCredentialTheme;
 
+.field protected mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+
+.field protected mEffectiveUserId:I
+
 .field private mEnterAnimationPending:Z
 
 .field private mFirstTimeVisible:Z
 
+.field protected mFrp:Z
+
 .field private mIsKeyguardLocked:Z
 
+.field protected mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
 .field private mRestoring:Z
+
+.field protected mReturnCredentials:Z
+
+.field protected mUserId:I
+
+.field protected mUserManager:Landroid/os/UserManager;
 
 
 # direct methods
@@ -40,6 +54,8 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mIsKeyguardLocked:Z
+
+    iput-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mReturnCredentials:Z
 
     return-void
 .end method
@@ -111,6 +127,94 @@
     return-object v0
 .end method
 
+.method protected isFingerprintDisabledByAdmin()Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+
+    iget v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mEffectiveUserId:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
+
+    move-result v0
+
+    and-int/lit8 v1, v0, 0x20
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
+.end method
+
+.method protected isFingerprintNeedShowDarkTheme()Z
+    .locals 3
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v1, "com.android.settings.ConfirmCredentials.allowFpAuthentication"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected isStrongAuthRequired()Z
+    .locals 2
+
+    iget-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mFrp:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    iget v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mEffectiveUserId:I
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->isFingerprintAllowedForUser(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserManager:Landroid/os/UserManager;
+
+    iget v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserId:I
+
+    invoke-virtual {v0, v1}, Landroid/os/UserManager;->isUserUnlocked(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
+.end method
+
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 5
 
@@ -148,7 +252,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f13041e
+    const v1, 0x7f13041f
 
     invoke-virtual {p0, v1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->setTheme(I)V
 
@@ -171,7 +275,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f13041d
+    const v1, 0x7f13041e
 
     invoke-virtual {p0, v1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->setTheme(I)V
 
@@ -182,7 +286,7 @@
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f13014e
+    const v1, 0x7f13014f
 
     invoke-virtual {p0, v1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->setTheme(I)V
 
@@ -191,15 +295,40 @@
     iput-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mConfirmCredentialTheme:Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity$ConfirmCredentialTheme;
 
     :goto_0
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->setDarkThemeIfNeeded()V
+
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->isFingerprintNeedShowDarkTheme()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    :cond_2
     iget-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mConfirmCredentialTheme:Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity$ConfirmCredentialTheme;
 
     sget-object v3, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity$ConfirmCredentialTheme;->NORMAL:Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity$ConfirmCredentialTheme;
 
     const/4 v4, 0x1
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v3, :cond_3
 
     const v1, 0x7f0a0134
 
@@ -211,7 +340,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->setFitsSystemWindows(Z)V
 
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -220,7 +349,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/Window;->addFlags(I)V
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_4
 
     const-class v1, Landroid/app/KeyguardManager;
 
@@ -236,7 +365,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const-string v1, "STATE_IS_KEYGUARD_LOCKED"
 
     invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
@@ -248,7 +377,7 @@
 
     iget-boolean v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mIsKeyguardLocked:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getIntent()Landroid/content/Intent;
 
@@ -260,7 +389,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getWindow()Landroid/view/Window;
 
@@ -270,7 +399,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/Window;->addFlags(I)V
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -287,7 +416,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getActionBar()Landroid/app/ActionBar;
 
@@ -301,14 +430,14 @@
 
     invoke-virtual {v3, v4}, Landroid/app/ActionBar;->setHomeButtonEnabled(Z)V
 
-    :cond_5
-    if-eqz p1, :cond_6
+    :cond_6
+    if-eqz p1, :cond_7
 
     move v2, v4
 
     nop
 
-    :cond_6
+    :cond_7
     iput-boolean v2, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mRestoring:Z
 
     return-void
@@ -420,6 +549,102 @@
 
     invoke-virtual {v0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->prepareEnterAnimation()V
 
+    return-void
+.end method
+
+.method protected setDarkThemeIfNeeded()V
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v1, "return_credentials"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mReturnCredentials:Z
+
+    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    invoke-direct {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->isInternalActivity()Z
+
+    move-result v3
+
+    invoke-static {p0, v1, v3}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;Z)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserId:I
+
+    iget v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserId:I
+
+    const/16 v3, -0x270f
+
+    if-ne v1, v3, :cond_0
+
+    const/4 v2, 0x1
+
+    nop
+
+    :cond_0
+    iput-boolean v2, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mFrp:Z
+
+    invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserManager:Landroid/os/UserManager;
+
+    iget-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserManager:Landroid/os/UserManager;
+
+    iget v2, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mUserId:I
+
+    invoke-virtual {v1, v2}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mEffectiveUserId:I
+
+    new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-direct {v1, p0}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    const-string v1, "device_policy"
+
+    invoke-virtual {p0, v1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/admin/DevicePolicyManager;
+
+    iput-object v1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->isFingerprintNeedShowDarkTheme()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const v1, 0x7f13014e
+
+    invoke-virtual {p0, v1}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseActivity;->setTheme(I)V
+
+    :cond_1
     return-void
 .end method
 

@@ -137,6 +137,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    new-instance v1, Lcom/oneplus/settings/OPSecurityDetectionSwitchPreferenceController;
+
+    invoke-direct {v1, p0, p1}, Lcom/oneplus/settings/OPSecurityDetectionSwitchPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
     new-instance v1, Lcom/android/settings/security/SimLockPreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/security/SimLockPreferenceController;-><init>(Landroid/content/Context;)V
@@ -303,7 +309,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600b6
+    const v0, 0x7f1600b7
 
     return v0
 .end method

@@ -2635,7 +2635,7 @@ La funzione di risparmio batteria è disattivata automaticamente quando il dispo
     <string name="oneplus_connected_device_management_title">Gestione dispositivi collegati</string>
     <string name="oneplus_connected_devices_count">%1$s dispositivi connessi</string>
     <string name="oneplus_connected_devices_dashboard_summary">NFC, casting, stampa</string>
-    <string name="oneplus_connected_devices_dashboard_title">Connessione del dispositivo Bluetooth per &amp;</string>
+    <string name="oneplus_connected_devices_dashboard_title">Connessione del dispositivo Bluetooth amp;</string>
     <string name="oneplus_cpu">CPU</string>
     <string name="oneplus_custom_time">Intervallo di tempo personalizzato</string>
     <string name="oneplus_customization">Personalizzazione della barra di navigazione</string>
@@ -5021,7 +5021,7 @@ Consetirlo a tutte le app che vogliono eseguire la ricerca?"</string>
     <string name="wifi_scan_notify_text">Per migliorare la precisione della posizione, le app e i servizi possono continuare a cercare reti Wi-Fi in qualsiasi momento, anche quando la connessione Wi-Fi è disattivata. Questo può avvenire, ad esempio, per migliorare le funzioni e i servizi basati sulla posizione. Puoi modificare questa impostazione nelle LINK_BEGINimpostazioni di ricercaLINK_END.</string>
     <string name="wifi_scan_notify_text_scanning_off">Per una maggiore precisione della geolocalizzazione, attiva la ricerca delle reti Wi-Fi nelle LINK_BEGINimpostazioni di ricercaLINK_END.</string>
     <string name="wifi_security">Sicurezza</string>
-    <string name="wifi_security_dialog">Grazie a Open security, qualsiasi dispositivo può collegarsi al tuo HotSpot mobile e usare la tua connessione dati rete mobile.</string>
+    <string name="wifi_security_dialog">Grazie alla sicurezza aperta, qualsiasi dispositivo può collegarsi al tuo HotSpot mobile e usare la tua connessione dati rete mobile.</string>
     <string name="wifi_security_none">Nessuna</string>
     <string name="wifi_security_open">Apri</string>
     <string name="wifi_select_network">Seleziona Wi-Fi</string>

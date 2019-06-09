@@ -204,7 +204,7 @@
 
     iget v2, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v3, 0x7f0d025c
+    const v3, 0x7f0d025d
 
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;
 
@@ -315,7 +315,7 @@
 
     iget v7, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v8, 0x7f0d025b
+    const v8, 0x7f0d025c
 
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;
 
@@ -513,7 +513,7 @@
 .method protected onSetContentView()V
     .locals 1
 
-    const v0, 0x7f0d0029
+    const v0, 0x7f0d002a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/shortcut/CreateShortcut;->setContentView(I)V
 

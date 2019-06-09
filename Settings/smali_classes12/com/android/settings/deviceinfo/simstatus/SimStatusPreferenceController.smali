@@ -135,7 +135,7 @@
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f121091
+    const v2, 0x7f1210b2
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -158,7 +158,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/simstatus/SimStatusPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f121090
+    const v1, 0x7f1210b1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

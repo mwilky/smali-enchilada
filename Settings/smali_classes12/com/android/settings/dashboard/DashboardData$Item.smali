@@ -21,17 +21,17 @@
 
 
 # static fields
-.field private static final TYPE_CONDITION_CONTAINER:I = 0x7f0d0050
+.field private static final TYPE_CONDITION_CONTAINER:I = 0x7f0d0051
 
-.field private static final TYPE_CONDITION_FOOTER:I = 0x7f0d0051
+.field private static final TYPE_CONDITION_FOOTER:I = 0x7f0d0052
 
-.field private static final TYPE_CONDITION_HEADER:I = 0x7f0d0052
+.field private static final TYPE_CONDITION_HEADER:I = 0x7f0d0053
 
-.field private static final TYPE_DASHBOARD_TILE:I = 0x7f0d0071
+.field private static final TYPE_DASHBOARD_TILE:I = 0x7f0d0072
 
-.field private static final TYPE_SUGGESTION_CONDITION_DIVIDER:I = 0x7f0d00a4
+.field private static final TYPE_SUGGESTION_CONDITION_DIVIDER:I = 0x7f0d00a5
 
-.field private static final TYPE_SUGGESTION_CONTAINER:I = 0x7f0d0272
+.field private static final TYPE_SUGGESTION_CONTAINER:I = 0x7f0d0273
 
 
 # instance fields
@@ -99,15 +99,15 @@
     :cond_2
     iget v3, p0, Lcom/android/settings/dashboard/DashboardData$Item;->type:I
 
-    const v4, 0x7f0d0050
+    const v4, 0x7f0d0051
 
     if-eq v3, v4, :cond_5
 
-    const v4, 0x7f0d0071
+    const v4, 0x7f0d0072
 
     if-eq v3, v4, :cond_3
 
-    const v4, 0x7f0d0272
+    const v4, 0x7f0d0273
 
     if-eq v3, v4, :cond_5
 

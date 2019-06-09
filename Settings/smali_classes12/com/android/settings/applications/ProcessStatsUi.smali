@@ -197,7 +197,7 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/ProcessStatsUi;->mPm:Landroid/content/pm/PackageManager;
 
-    const v0, 0x7f1600b0
+    const v0, 0x7f1600b1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/ProcessStatsUi;->addPreferencesFromResource(I)V
 
@@ -227,7 +227,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f1210a2
+    const v2, 0x7f1210c3
 
     invoke-interface {p1, v0, v1, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -237,7 +237,7 @@
 
     const/4 v1, 0x2
 
-    const v2, 0x7f1210a3
+    const v2, 0x7f1210c4
 
     invoke-interface {p1, v0, v1, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

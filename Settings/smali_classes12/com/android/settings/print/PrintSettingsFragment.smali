@@ -181,7 +181,7 @@
 
     invoke-direct {v1, v2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f120e59
+    const v2, 0x7f120e7a
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -313,7 +313,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1600ad
+    const v1, 0x7f1600ae
 
     invoke-virtual {p0, v1}, Lcom/android/settings/print/PrintSettingsFragment;->addPreferencesFromResource(I)V
 
@@ -421,7 +421,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0d008a
+    const v3, 0x7f0d008b
 
     invoke-virtual {v1, v3, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -435,7 +435,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f120e5d
+    const v4, 0x7f120e7e
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

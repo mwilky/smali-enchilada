@@ -115,7 +115,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0d008c
+    const v3, 0x7f0d008d
 
     invoke-virtual {v1, v3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -498,7 +498,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f121207
+    const v3, 0x7f121228
 
     invoke-static {v0, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

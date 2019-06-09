@@ -102,12 +102,12 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f120f5d
+    const v1, 0x7f120f7e
 
     return v1
 
     :cond_1
-    const v1, 0x7f120f5f
+    const v1, 0x7f120f80
 
     return v1
 
@@ -124,13 +124,13 @@
 
     if-eqz v1, :cond_3
 
-    const v1, 0x7f120f5e
+    const v1, 0x7f120f7f
 
     return v1
 
     :cond_3
     :goto_0
-    const v1, 0x7f120f5c
+    const v1, 0x7f120f7d
 
     return v1
 .end method
@@ -171,7 +171,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x7f120f5c
+    const v3, 0x7f120f7d
 
     if-eq v0, v3, :cond_0
 
@@ -326,7 +326,7 @@
 
     check-cast v0, Lcom/android/settings/SettingsActivity;
 
-    const v1, 0x7f120f5b
+    const v1, 0x7f120f7c
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SettingsActivity;->setTitle(I)V
 
@@ -482,7 +482,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0241
+    const v2, 0x7f0d0242
 
     const/4 v3, 0x0
 
@@ -519,7 +519,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f1600b5
+    const v1, 0x7f1600b6
 
     invoke-virtual {p0, v1}, Lcom/android/settings/security/ScreenPinningSettings;->addPreferencesFromResource(I)V
 

@@ -69,7 +69,7 @@
 
     move-result v0
 
-    const v1, 0x7f120c77
+    const v1, 0x7f120c89
 
     const/4 v2, 0x1
 
@@ -83,7 +83,7 @@
 
     sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v2, 0x7f120ade
+    const v2, 0x7f120ae0
 
     invoke-virtual {v1, v2}, Landroid/app/Application;->getString(I)Ljava/lang/String;
 
@@ -111,7 +111,7 @@
 
     sget-object v1, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v2, 0x7f120adf
+    const v2, 0x7f120ae1
 
     invoke-virtual {v1, v2}, Landroid/app/Application;->getString(I)Ljava/lang/String;
 
@@ -492,7 +492,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0160
+    const v1, 0x7f0d0161
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
@@ -645,7 +645,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f120ade
+    const v2, 0x7f120ae0
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -658,7 +658,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f120c77
+    const v2, 0x7f120c89
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -673,7 +673,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f120adf
+    const v2, 0x7f120ae1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

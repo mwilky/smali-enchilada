@@ -114,7 +114,7 @@
 
     move-result-object v10
 
-    const v0, 0x7f0d0089
+    const v0, 0x7f0d008a
 
     const/4 v1, 0x0
 
@@ -134,7 +134,7 @@
 
     move-result-object v12
 
-    const v0, 0x7f0a05cc
+    const v0, 0x7f0a05ce
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {v13, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0a05cd
+    const v0, 0x7f0a05cf
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
 
     invoke-direct {v0, v8}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120e87
+    const v1, 0x7f120ea8
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

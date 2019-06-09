@@ -1190,7 +1190,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0081
+    const v1, 0x7f0d0082
 
     const/4 v2, 0x0
 
@@ -1202,7 +1202,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a0440
+    const v1, 0x7f0a0441
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1214,7 +1214,7 @@
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mRootView:Landroid/view/View;
 
-    const v1, 0x7f0a043f
+    const v1, 0x7f0a0440
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

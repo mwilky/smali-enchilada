@@ -43,7 +43,7 @@
 .method public static constructTimezoneAdapter(Landroid/content/Context;Z)Landroid/widget/SimpleAdapter;
     .locals 1
 
-    const v0, 0x7f0d007c
+    const v0, 0x7f0d007d
 
     invoke-static {p0, p1, v0}, Lcom/android/settings/datetime/ZonePicker;->constructTimezoneAdapter(Landroid/content/Context;ZI)Landroid/widget/SimpleAdapter;
 
@@ -301,7 +301,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f12163a
+    const v2, 0x7f12165b
 
     invoke-interface {p1, v0, v1, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -313,7 +313,7 @@
 
     const/4 v1, 0x2
 
-    const v2, 0x7f12163b
+    const v2, 0x7f12165c
 
     invoke-interface {p1, v0, v1, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

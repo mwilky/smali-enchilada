@@ -419,7 +419,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0d0100
+    const v1, 0x7f0d0101
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -465,7 +465,7 @@
     return-object v1
 
     :cond_1
-    const v1, 0x7f0d00ff
+    const v1, 0x7f0d0100
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

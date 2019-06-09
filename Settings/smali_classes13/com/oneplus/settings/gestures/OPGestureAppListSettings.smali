@@ -160,7 +160,7 @@
 
     const-string v2, ""
 
-    const v1, 0x7f120aef
+    const v1, 0x7f120af1
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -180,7 +180,7 @@
 
     const-string v2, ""
 
-    const v1, 0x7f120b63
+    const v1, 0x7f120b6f
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -196,7 +196,7 @@
 
     const-string v3, ""
 
-    const v2, 0x7f120b65
+    const v2, 0x7f120b71
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -214,7 +214,7 @@
 
     const-string v4, ""
 
-    const v3, 0x7f120b67
+    const v3, 0x7f120b73
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -244,7 +244,7 @@
 
     aput-object v7, v4, v6
 
-    const v6, 0x7f120b64
+    const v6, 0x7f120b70
 
     invoke-virtual {p0, v6, v4}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -772,7 +772,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d017e
+    const v0, 0x7f0d017f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/gestures/OPGestureAppListSettings;->setContentView(I)V
 

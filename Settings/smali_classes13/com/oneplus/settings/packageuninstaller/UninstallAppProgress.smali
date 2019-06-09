@@ -221,7 +221,7 @@
 
     const/4 v3, -0x4
 
-    const v5, 0x7f121252
+    const v5, 0x7f121273
 
     if-eq v2, v3, :cond_b
 
@@ -264,7 +264,7 @@
     goto/16 :goto_a
 
     :cond_5
-    const v2, 0x7f121250
+    const v2, 0x7f121271
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -405,7 +405,7 @@
 
     invoke-interface {v4, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
-    const v1, 0x7f121254
+    const v1, 0x7f121275
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -445,7 +445,7 @@
 
     invoke-interface {v7, v4}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
-    const v7, 0x7f121255
+    const v7, 0x7f121276
 
     invoke-virtual {p0, v7}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -573,7 +573,7 @@
     :goto_8
     if-nez v7, :cond_f
 
-    const v1, 0x7f12124d
+    const v1, 0x7f12126e
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -627,7 +627,7 @@
 
     if-eqz v1, :cond_11
 
-    const v1, 0x7f121247
+    const v1, 0x7f121268
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -636,7 +636,7 @@
     goto :goto_9
 
     :cond_11
-    const v1, 0x7f12124e
+    const v1, 0x7f12126f    # 1.94163E38f
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -792,12 +792,12 @@
     :goto_1
     if-eqz v0, :cond_3
 
-    const v2, 0x7f12125b
+    const v2, 0x7f12127c
 
     goto :goto_2
 
     :cond_3
-    const v2, 0x7f12124c
+    const v2, 0x7f12126d
 
     :goto_2
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setTitle(I)V

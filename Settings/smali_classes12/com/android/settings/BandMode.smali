@@ -492,7 +492,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/BandMode;->requestWindowFeature(I)Z
 
-    const v0, 0x7f0d0038
+    const v0, 0x7f0d0039
 
     invoke-virtual {p0, v0}, Lcom/android/settings/BandMode;->setContentView(I)V
 

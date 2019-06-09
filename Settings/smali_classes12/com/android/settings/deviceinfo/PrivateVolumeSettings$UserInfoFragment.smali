@@ -111,7 +111,7 @@
 
     nop
 
-    const v4, 0x7f1210fd
+    const v4, 0x7f12111e
 
     invoke-virtual {p0, v4}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$UserInfoFragment;->getText(I)Ljava/lang/CharSequence;
 

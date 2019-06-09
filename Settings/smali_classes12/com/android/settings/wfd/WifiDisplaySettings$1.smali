@@ -44,7 +44,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    const v1, 0x7f121433
+    const v1, 0x7f121454
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a047e
+    const v1, 0x7f0a047f
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    const v1, 0x7f121434
+    const v1, 0x7f121455
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 

@@ -42,7 +42,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     :cond_0
-    const v0, 0x7f0d0105
+    const v0, 0x7f0d0106
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/HowItWorks;->setContentView(I)V
 

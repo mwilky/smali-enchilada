@@ -193,22 +193,22 @@
     goto :goto_0
 
     :pswitch_0
-    const v1, 0x7f16007a
-
-    goto :goto_0
-
-    :pswitch_1
     const v1, 0x7f16007b
 
     goto :goto_0
 
+    :pswitch_1
+    const v1, 0x7f16007c
+
+    goto :goto_0
+
     :pswitch_2
-    const v1, 0x7f160079
+    const v1, 0x7f16007a
 
     goto :goto_0
 
     :pswitch_3
-    const v1, 0x7f160078
+    const v1, 0x7f160079
 
     nop
 

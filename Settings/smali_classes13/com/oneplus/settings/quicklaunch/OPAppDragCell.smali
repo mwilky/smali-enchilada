@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mLabel:Landroid/widget/TextView;
 
-    const v0, 0x7f0a045a
+    const v0, 0x7f0a045b
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->mAppIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f0a04fb
+    const v0, 0x7f0a04fc
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/quicklaunch/OPAppDragCell;->findViewById(I)Landroid/view/View;
 

@@ -15,11 +15,11 @@
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/accessibility/ListDialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d00a2
+    const v0, 0x7f0d00a3
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ColorPreference;->setDialogLayoutResource(I)V
 
-    const v0, 0x7f0d004f
+    const v0, 0x7f0d0050
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ColorPreference;->setListItemLayoutResource(I)V
 
@@ -162,7 +162,7 @@
 
     if-eqz v4, :cond_2
 
-    const v5, 0x7f0a0532
+    const v5, 0x7f0a0533
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -288,7 +288,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0d01f1
+    const v0, 0x7f0d01f2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ColorPreference;->setWidgetLayoutResource(I)V
 

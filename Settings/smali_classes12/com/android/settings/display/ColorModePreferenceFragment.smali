@@ -60,7 +60,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d004e
+    const v2, 0x7f0d004f
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/applications/LayoutPreference;-><init>(Landroid/content/Context;I)V
 

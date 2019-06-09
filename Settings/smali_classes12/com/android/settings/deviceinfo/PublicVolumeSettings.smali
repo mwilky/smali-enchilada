@@ -382,7 +382,7 @@
 
     iput-object v1, p0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v1, 0x7f12111f
+    const v1, 0x7f121140
 
     invoke-direct {p0, v1}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/support/v7/preference/Preference;
 
@@ -402,7 +402,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mUnmount:Landroid/widget/Button;
 
-    const v2, 0x7f121122
+    const v2, 0x7f121143
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -412,7 +412,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f121119
+    const v1, 0x7f12113a
 
     invoke-direct {p0, v1}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/support/v7/preference/Preference;
 
@@ -424,7 +424,7 @@
 
     if-eqz v1, :cond_4
 
-    const v1, 0x7f12111a
+    const v1, 0x7f12113b
 
     invoke-direct {p0, v1}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/support/v7/preference/Preference;
 
@@ -645,7 +645,7 @@
 
     iget-object v12, v0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v13, 0x7f12112f
+    const v13, 0x7f121150
 
     invoke-virtual {v0, v13}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -673,7 +673,7 @@
 
     iget-object v12, v0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v13, 0x7f12113d
+    const v13, 0x7f12115e
 
     new-array v4, v4, [Ljava/lang/Object;
 

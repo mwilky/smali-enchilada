@@ -63,7 +63,7 @@
 
     new-instance v7, Lcom/android/settings/wifi/WifiDialog;
 
-    const v5, 0x7f130440
+    const v5, 0x7f130441
 
     const/4 v6, 0x0
 
@@ -104,7 +104,7 @@
     goto :goto_0
 
     :goto_1
-    const v5, 0x7f130455
+    const v5, 0x7f130456
 
     move-object v0, v7
 
@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02e3
+    const v1, 0x7f0d02e4
 
     const/4 v2, 0x0
 

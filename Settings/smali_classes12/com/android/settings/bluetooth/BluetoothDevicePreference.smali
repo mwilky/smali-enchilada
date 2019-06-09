@@ -315,7 +315,7 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    const v0, 0x7f0d0212
+    const v0, 0x7f0d0213
 
     return v0
 .end method
@@ -366,7 +366,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const v0, 0x7f0a04d7
+    const v0, 0x7f0a04d8
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

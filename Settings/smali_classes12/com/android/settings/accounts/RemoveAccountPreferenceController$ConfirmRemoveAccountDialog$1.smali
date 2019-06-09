@@ -54,21 +54,6 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/android/settings/accounts/RemoveAccountPreferenceController$ConfirmRemoveAccountDialog$1;->this$0:Lcom/android/settings/accounts/RemoveAccountPreferenceController$ConfirmRemoveAccountDialog;
-
-    invoke-virtual {v0}, Lcom/android/settings/accounts/RemoveAccountPreferenceController$ConfirmRemoveAccountDialog;->getTargetFragment()Landroid/app/Fragment;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Fragment;->isResumed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
     const/4 v0, 0x1
 
     :try_start_0
@@ -88,11 +73,11 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x0
 
-    :cond_1
+    :cond_0
     :goto_0
     goto :goto_1
 
@@ -122,15 +107,15 @@
 
     move-result-object v1
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     iget-object v2, p0, Lcom/android/settings/accounts/RemoveAccountPreferenceController$ConfirmRemoveAccountDialog$1;->this$0:Lcom/android/settings/accounts/RemoveAccountPreferenceController$ConfirmRemoveAccountDialog;
 
@@ -142,9 +127,12 @@
 
     goto :goto_2
 
-    :cond_2
+    :cond_1
+    if-eqz v1, :cond_2
+
     invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
+    :cond_2
     :goto_2
     return-void
 .end method

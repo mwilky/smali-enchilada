@@ -100,7 +100,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/datausage/DataUsageSummaryPreference;->mChartEnabled:Z
 
-    const v0, 0x7f0d007b
+    const v0, 0x7f0d007c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/DataUsageSummaryPreference;->setLayoutResource(I)V
 
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12141b
+    const v2, 0x7f12143c
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -631,7 +631,7 @@
 
     nop
 
-    const v9, 0x7f0a05bd
+    const v9, 0x7f0a05bf
 
     invoke-virtual {v1, v9}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -908,7 +908,7 @@
     :goto_0
     invoke-direct {p0, p1}, Lcom/android/settings/datausage/DataUsageSummaryPreference;->updateDataUsageLabels(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    const v1, 0x7f0a05bf
+    const v1, 0x7f0a05c1
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

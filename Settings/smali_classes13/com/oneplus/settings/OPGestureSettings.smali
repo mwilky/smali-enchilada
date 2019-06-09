@@ -1054,7 +1054,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPGestureSettings;->mUm:Landroid/os/UserManager;
 
-    const v0, 0x7f160084
+    const v0, 0x7f160085
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPGestureSettings;->addPreferencesFromResource(I)V
 
@@ -1234,7 +1234,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f120cc1
+    const v5, 0x7f120cd5
 
     invoke-static {v0, v5, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

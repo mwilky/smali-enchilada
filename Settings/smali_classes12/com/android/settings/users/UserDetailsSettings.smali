@@ -261,7 +261,7 @@
 
     iput-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->mUserManager:Landroid/os/UserManager;
 
-    const v1, 0x7f1600d4
+    const v1, 0x7f1600d5
 
     invoke-virtual {p0, v1}, Lcom/android/settings/users/UserDetailsSettings;->addPreferencesFromResource(I)V
 
@@ -363,7 +363,7 @@
 
     iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->mPhonePref:Landroid/support/v14/preference/SwitchPreference;
 
-    const v2, 0x7f121317
+    const v2, 0x7f121338
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 

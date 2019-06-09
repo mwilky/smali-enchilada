@@ -32,7 +32,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x10900f2
+    const v0, 0x10900f4
 
     invoke-direct {p0, p1, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
@@ -111,7 +111,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$KeyboardLayoutAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x10900f2
+    const v2, 0x10900f4
 
     const/4 v3, 0x0
 

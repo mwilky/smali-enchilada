@@ -145,7 +145,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f18
+    const v2, 0x7f120f39
 
     invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
@@ -275,7 +275,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600b3
+    const v0, 0x7f1600b4
 
     return v0
 .end method
@@ -350,7 +350,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f17
+    const v2, 0x7f120f38
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

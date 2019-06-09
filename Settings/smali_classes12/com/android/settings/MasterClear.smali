@@ -605,7 +605,7 @@
     :cond_7
     move-object/from16 v0, v27
 
-    const v8, 0x7f0d00fe
+    const v8, 0x7f0d00ff
 
     const/4 v10, 0x0
 
@@ -685,7 +685,7 @@
     :goto_d
     iget-object v8, v1, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
-    const v10, 0x7f0a03ef
+    const v10, 0x7f0a03f0
 
     invoke-virtual {v8, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1214,7 +1214,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f160090
+    const v0, 0x7f160091
 
     invoke-virtual {p0, v0}, Lcom/android/settings/MasterClear;->addPreferencesFromResource(I)V
 

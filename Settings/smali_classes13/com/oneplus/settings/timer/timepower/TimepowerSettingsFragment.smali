@@ -1042,7 +1042,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f121201
+    const v6, 0x7f121222
 
     invoke-virtual {p0, v6}, Lcom/oneplus/settings/timer/timepower/TimepowerSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -1325,7 +1325,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f130441
+    const v3, 0x7f130442
 
     invoke-direct {v1, v2, v3}, Landroid/support/v7/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -1333,7 +1333,7 @@
 
     iput-object v0, v7, Lcom/oneplus/settings/timer/timepower/TimepowerSettingsFragment;->mTimePicker:Lcom/oneplus/lib/widget/TimePicker;
 
-    const v0, 0x7f1211fb
+    const v0, 0x7f12121c
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -1375,7 +1375,7 @@
 
     if-nez v13, :cond_2
 
-    const v0, 0x7f1211ff
+    const v0, 0x7f121220
 
     :cond_1
     :goto_0
@@ -1386,7 +1386,7 @@
     :cond_2
     if-ne v13, v14, :cond_1
 
-    const v0, 0x7f1211fd
+    const v0, 0x7f12121e
 
     goto :goto_0
 
@@ -1846,7 +1846,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f16009a
+    const v0, 0x7f16009b
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/timer/timepower/TimepowerSettingsFragment;->addPreferencesFromResource(I)V
 

@@ -187,7 +187,7 @@
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$4;->this$0:Lcom/android/settings/CryptKeeper;
 
-    const v1, 0x7f0d0069
+    const v1, 0x7f0d006a
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CryptKeeper;->setContentView(I)V
 
@@ -208,7 +208,7 @@
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$4;->this$0:Lcom/android/settings/CryptKeeper;
 
-    const v1, 0x7f0d0067
+    const v1, 0x7f0d0068
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CryptKeeper;->setContentView(I)V
 
@@ -227,7 +227,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$4;->this$0:Lcom/android/settings/CryptKeeper;
 
-    const v1, 0x7f0d0065
+    const v1, 0x7f0d0066
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CryptKeeper;->setContentView(I)V
 
@@ -240,7 +240,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$4;->this$0:Lcom/android/settings/CryptKeeper;
 
-    const v1, 0x7f0a0516
+    const v1, 0x7f0a0517
 
     invoke-virtual {v0, v1}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -258,7 +258,7 @@
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$4;->this$0:Lcom/android/settings/CryptKeeper;
 
-    const v3, 0x7f0a03f0
+    const v3, 0x7f0a03f1
 
     invoke-virtual {v1, v3}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 

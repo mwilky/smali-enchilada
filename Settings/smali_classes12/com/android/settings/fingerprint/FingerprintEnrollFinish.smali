@@ -94,7 +94,7 @@
 .method protected applyActionBarTitle()I
     .locals 1
 
-    const v0, 0x7f120c03
+    const v0, 0x7f120c10
 
     return v0
 .end method
@@ -145,11 +145,11 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d009a
+    const v0, 0x7f0d009b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setContentView(I)V
 
-    const v0, 0x7f120fc3
+    const v0, 0x7f120fe4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setHeaderText(I)V
 

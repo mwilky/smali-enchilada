@@ -86,7 +86,7 @@
     :cond_0
     iget-object v0, p2, Lcom/android/settingslib/drawer/Tile;->metaData:Landroid/os/Bundle;
 
-    const v1, 0x7f121196
+    const v1, 0x7f1211b7
 
     if-eqz v0, :cond_1
 

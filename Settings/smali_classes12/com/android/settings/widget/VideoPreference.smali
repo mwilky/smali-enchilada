@@ -138,7 +138,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/VideoPreference;->setVisible(Z)V
 
-    const v4, 0x7f0d02d9
+    const v4, 0x7f0d02da
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/VideoPreference;->setLayoutResource(I)V
 
@@ -317,7 +317,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0a05dd
+    const v0, 0x7f0a05df
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -325,7 +325,7 @@
 
     check-cast v0, Landroid/view/TextureView;
 
-    const v1, 0x7f0a05da
+    const v1, 0x7f0a05dc
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -333,7 +333,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0a05d9
+    const v2, 0x7f0a05db
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +341,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v3, 0x7f0a05d6
+    const v3, 0x7f0a05d8
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

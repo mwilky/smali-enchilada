@@ -354,7 +354,7 @@
 
     invoke-virtual {v9, v4}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    const v10, 0x7f12156d
+    const v10, 0x7f12158e
 
     invoke-virtual {p0, v10}, Lcom/android/settings/notification/ZenAccessSettings;->getString(I)Ljava/lang/String;
 
@@ -404,7 +404,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600ea
+    const v0, 0x7f1600eb
 
     return v0
 .end method
@@ -525,7 +525,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/notification/EmptyTextSettings;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f12156e
+    const v0, 0x7f12158f
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenAccessSettings;->setEmptyText(I)V
 

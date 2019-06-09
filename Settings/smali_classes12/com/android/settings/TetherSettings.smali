@@ -1064,7 +1064,7 @@
     invoke-virtual {p0}, Lcom/android/settings/TetherSettings;->finish()V
 
     :cond_0
-    const v1, 0x7f1600ca
+    const v1, 0x7f1600cb
 
     invoke-virtual {p0, v1}, Lcom/android/settings/TetherSettings;->addPreferencesFromResource(I)V
 
@@ -1074,7 +1074,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1211d9
+    const v2, 0x7f1211fa
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 
@@ -1456,7 +1456,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1211dd
+    const v1, 0x7f1211fe
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

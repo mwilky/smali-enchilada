@@ -43,11 +43,11 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    const v0, 0x7f0d01ad
+    const v0, 0x7f0d01ae
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->setContentView(I)V
 
-    const v0, 0x7f0a046d
+    const v0, 0x7f0a046e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
     :cond_4
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v2, 0x7f120ba9
+    const v2, 0x7f120bb5
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
 
@@ -177,7 +177,7 @@
     :cond_5
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v2, 0x7f120baa
+    const v2, 0x7f120bb6
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
 

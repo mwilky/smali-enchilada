@@ -483,11 +483,11 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f0d0174
+    const v0, 0x7f0d0175
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/aboutphone/OPForumContributors;->setContentView(I)V
 
-    const v0, 0x7f0a0594
+    const v0, 0x7f0a0596
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/aboutphone/OPForumContributors;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
 
     check-cast v0, Landroid/widget/Toolbar;
 
-    const v1, 0x7f120fa6
+    const v1, 0x7f120fc7
 
     invoke-virtual {v0, v1}, Landroid/widget/Toolbar;->setTitle(I)V
 
@@ -521,7 +521,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120bfe
+    const v3, 0x7f120c0b
 
     invoke-virtual {v2, v3}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -532,7 +532,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120b6b
+    const v3, 0x7f120b77
 
     invoke-virtual {v2, v3}, Landroid/app/ActionBar;->setTitle(I)V
 

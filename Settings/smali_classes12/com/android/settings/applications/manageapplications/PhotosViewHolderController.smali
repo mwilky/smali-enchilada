@@ -125,7 +125,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/PhotosViewHolderController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1210ff
+    const v1, 0x7f121120
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

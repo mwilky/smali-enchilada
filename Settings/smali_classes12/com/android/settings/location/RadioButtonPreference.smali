@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lcom/android/settings/location/RadioButtonPreference;->mListener:Lcom/android/settings/location/RadioButtonPreference$OnClickListener;
 
-    const v0, 0x7f0d0217
+    const v0, 0x7f0d0218
 
     invoke-virtual {p0, v0}, Lcom/android/settings/location/RadioButtonPreference;->setWidgetLayoutResource(I)V
 

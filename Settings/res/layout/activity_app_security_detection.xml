@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@color/oneplus_contorl_bg_color_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/oneplus_contorl_margin_left2" android:paddingEnd="@dimen/oneplus_contorl_margin_right2">
+            <TextView android:textColor="@color/oneplus_contorl_text_color_primary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_margin_top2" android:text="@string/op_app_security_check_text_title" style="@style/oneplus_contorl_text_style_subheading" />
+            <TextView android:textColor="@color/oneplus_contorl_text_color_primary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="32.0dip" android:layout_marginBottom="@dimen/oneplus_contorl_margin_top1" android:text="@string/op_app_security_check_text_title1" style="@style/oneplus_contorl_text_style_body1" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/oneplus_contorl_margin_top1">
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.1" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right1" style="@style/oneplus_contorl_text_style_body1" />
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/op_app_security_check_text_summary1_1" style="@style/oneplus_contorl_text_style_body1" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.2" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right1" style="@style/oneplus_contorl_text_style_body1" />
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/op_app_security_check_text_summary1_2" style="@style/oneplus_contorl_text_style_body1" />
+            </LinearLayout>
+            <TextView android:textColor="@color/oneplus_contorl_text_color_primary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_margin_top2" android:layout_marginBottom="@dimen/oneplus_contorl_margin_top1" android:text="@string/op_app_security_check_text_title2" style="@style/oneplus_contorl_text_style_body1" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/oneplus_contorl_margin_top1">
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.1" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right1" style="@style/oneplus_contorl_text_style_body1" />
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/op_app_security_check_text_summary2_1" style="@style/oneplus_contorl_text_style_body1" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/oneplus_contorl_margin_top1">
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.2" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right1" style="@style/oneplus_contorl_text_style_body1" />
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/op_app_security_check_text_summary2_2" style="@style/oneplus_contorl_text_style_body1" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.3" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right1" style="@style/oneplus_contorl_text_style_body1" />
+                <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/op_app_security_check_text_summary2_3" style="@style/oneplus_contorl_text_style_body1" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="45.0dip" android:layout_marginEnd="@dimen/oneplus_contorl_margin_right2">
+            <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:id="@id/tencent_legal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32.0dip" style="@style/oneplus_contorl_text_style_body1" />
+            <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:id="@id/oppo_legal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_margin_top1" style="@style/oneplus_contorl_text_style_body1" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

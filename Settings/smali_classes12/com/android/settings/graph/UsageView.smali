@@ -21,11 +21,11 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02cd
+    const v1, 0x7f0d02ce
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0a05bc
+    const v0, 0x7f0a05be
 
     invoke-virtual {p0, v0}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -420,11 +420,11 @@
 .method public setSideLabelWeights(FF)V
     .locals 1
 
-    const v0, 0x7f0a0504
+    const v0, 0x7f0a0505
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 
-    const v0, 0x7f0a0505
+    const v0, 0x7f0a0506
 
     invoke-direct {p0, v0, p2}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 

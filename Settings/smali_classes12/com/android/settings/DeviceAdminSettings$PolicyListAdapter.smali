@@ -188,7 +188,7 @@
 
     iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d007f
+    const v1, 0x7f0d0080
 
     const/4 v2, 0x0
 

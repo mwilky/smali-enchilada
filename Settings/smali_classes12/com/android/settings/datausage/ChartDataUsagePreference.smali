@@ -61,7 +61,7 @@
 
     iput v0, p0, Lcom/android/settings/datausage/ChartDataUsagePreference;->mWarningColor:I
 
-    const v0, 0x7f0d0078
+    const v0, 0x7f0d0079
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/ChartDataUsagePreference;->setLayoutResource(I)V
 

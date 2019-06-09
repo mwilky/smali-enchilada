@@ -159,7 +159,7 @@
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment;->mVideoPreference:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
-    const v2, 0x7f0d00f9
+    const v2, 0x7f0d00fa
 
     invoke-virtual {v0, v2}, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;->setLayoutResource(I)V
 
@@ -381,7 +381,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a05d4
+    const v1, 0x7f0a05d6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

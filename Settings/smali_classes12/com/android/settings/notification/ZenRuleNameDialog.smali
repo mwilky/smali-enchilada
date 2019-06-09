@@ -51,20 +51,20 @@
 
     move-result v1
 
-    const v2, 0x7f1215e7
+    const v2, 0x7f121608
 
     if-eqz p2, :cond_1
 
     if-eqz v0, :cond_0
 
-    const v2, 0x7f12157f
+    const v2, 0x7f1215a0
 
     goto :goto_0
 
     :cond_0
     if-eqz v1, :cond_1
 
-    const v2, 0x7f121581
+    const v2, 0x7f1215a2
 
     :cond_1
     :goto_0
@@ -194,7 +194,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d02f6
+    const v9, 0x7f0d02f7
 
     const/4 v10, 0x0
 
@@ -202,7 +202,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0a060e
+    const v8, 0x7f0a0610
 
     invoke-virtual {v3, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -245,7 +245,7 @@
 
     if-eqz v5, :cond_2
 
-    const v9, 0x7f12157e
+    const v9, 0x7f12159f
 
     goto :goto_1
 

@@ -99,7 +99,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/aboutphone/OPSecurityPatchLevel;->mPackageManager:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    const v0, 0x7f0d01b9
+    const v0, 0x7f0d01ba
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/aboutphone/OPSecurityPatchLevel;->setLayoutResource(I)V
 
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a04bc
+    const v1, 0x7f0a04bd
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    const v2, 0x7f0a04be
+    const v2, 0x7f0a04bf
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

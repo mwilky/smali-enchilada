@@ -3711,156 +3711,20 @@
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
     move-result v0
-	
-	invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isAODAllowed()Z
-	
-	move-result v0
 
     return v0
 .end method
 
-.method public static isAODAllowed()Z
-    .registers 5
+.method public static isSupportAppSecureRecommd()Z
+    .locals 1
 
-    .line 22
-    new-instance v0, Ljava/lang/String;
+    const-string v0, "OP_FEATURE_INSTALL_FROM_MARKET"
 
-    const/16 v1, 0x13
+    invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
-    new-array v1, v1, [C
+    move-result v0
 
-    fill-array-data v1, :array_42
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
-
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 23
-    .local v0, "str":Ljava/lang/String;
-    new-instance v1, Ljava/lang/String;
-
-    const/16 v2, 0x14
-
-    new-array v2, v2, [C
-
-    fill-array-data v2, :array_5a
-
-    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
-
-    .line 24
-    .local v1, "path":Ljava/lang/String;
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 25
-    .local v2, "file":Ljava/io/File;
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3e
-
-    if-eqz v0, :cond_3e
-
-    new-instance v3, Ljava/lang/String;
-
-    const/16 v4, 0x8
-
-    new-array v4, v4, [C
-
-    fill-array-data v4, :array_72
-
-    invoke-direct {v3, v4}, Ljava/lang/String;-><init>([C)V
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3c
-
-    goto :goto_3e
-
-    .line 28
-    :cond_3c
-    const/4 v3, 0x1
-
-    return v3
-
-    .line 25
-    :cond_3e
-    :goto_3e
-    nop
-
-    .line 26
-    const/4 v3, 0x0
-
-    return v3
-
-    nop
-
-    :array_42
-    .array-data 2
-        0x72s
-        0x6fs
-        0x2es
-        0x62s
-        0x75s
-        0x69s
-        0x6cs
-        0x64s
-        0x2es
-        0x64s
-        0x69s
-        0x73s
-        0x70s
-        0x6cs
-        0x61s
-        0x79s
-        0x2es
-        0x69s
-        0x64s
-    .end array-data
-
-    nop
-
-    :array_5a
-    .array-data 2
-        0x2fs
-        0x73s
-        0x79s
-        0x73s
-        0x74s
-        0x65s
-        0x6ds
-        0x2fs
-        0x65s
-        0x74s
-        0x63s
-        0x2fs
-        0x72s
-        0x65s
-        0x6es
-        0x6fs
-        0x76s
-        0x61s
-        0x74s
-        0x65s
-    .end array-data
-
-    :array_72
-    .array-data 2
-        0x52s
-        0x45s
-        0x4es
-        0x4fs
-        0x56s
-        0x41s
-        0x54s
-        0x45s
-    .end array-data
+    return v0
 .end method
 
 .method public static isSupportCustomBlinkLight()Z
@@ -5486,6 +5350,184 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static parseLink(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
+    .locals 12
+
+    const/4 v0, 0x0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "<a href=\""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "\">"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "</a>"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/text/Spannable;
+
+    invoke-interface {v2}, Landroid/text/Spannable;->length()I
+
+    move-result v3
+
+    const-class v4, Landroid/text/style/URLSpan;
+
+    const/4 v5, 0x0
+
+    invoke-interface {v2, v5, v3, v4}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [Landroid/text/style/URLSpan;
+
+    new-instance v6, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v6, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    move-object v0, v6
+
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->clearSpans()V
+
+    array-length v6, v4
+
+    :goto_0
+    if-ge v5, v6, :cond_0
+
+    aget-object v7, v4, v5
+
+    new-instance v8, Landroid/text/style/URLSpan;
+
+    invoke-virtual {v7}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v2, v7}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v9
+
+    invoke-interface {v2, v7}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v10
+
+    const/16 v11, 0x21
+
+    invoke-virtual {v0, v8, v9, v10, v11}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public static parseLinkLaunchAction(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/style/ClickableSpan;)Landroid/text/SpannableStringBuilder;
+    .locals 11
+
+    const/4 v0, 0x0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "<a href=\"\">"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "</a>"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/text/Spannable;
+
+    invoke-interface {v2}, Landroid/text/Spannable;->length()I
+
+    move-result v3
+
+    const-class v4, Landroid/text/style/URLSpan;
+
+    const/4 v5, 0x0
+
+    invoke-interface {v2, v5, v3, v4}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [Landroid/text/style/URLSpan;
+
+    new-instance v6, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v6, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    move-object v0, v6
+
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->clearSpans()V
+
+    array-length v6, v4
+
+    :goto_0
+    if-ge v5, v6, :cond_0
+
+    aget-object v7, v4, v5
+
+    invoke-interface {v2, v7}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v8
+
+    invoke-interface {v2, v7}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v9
+
+    const/16 v10, 0x21
+
+    invoke-virtual {v0, p3, v8, v9, v10}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
 .end method
 
 .method public static px2dip(Landroid/content/Context;F)I

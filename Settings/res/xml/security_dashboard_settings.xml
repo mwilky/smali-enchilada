@@ -22,6 +22,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:key="security_settings_device_admin_category" android:order="50">
         <Preference android:title="@string/oneplus_emergency_rescue_settings" android:key="emergency_rescue_settings" android:summary="@string/oneplus_emergency_rescue_settings_summary" />
+        <com.android.settings.widget.MasterSwitchPreference android:title="@string/oneplus_security_detection_title" android:key="security_detection" android:summary="@string/oneplus_security_detection_summary" />
         <Preference android:title="@string/manage_device_admin" android:key="manage_device_admin" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.DeviceAdminSettings" />
         <Preference android:title="@string/enterprise_privacy_settings" android:key="enterprise_privacy" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.enterprise.EnterprisePrivacySettings" />
     </PreferenceCategory>

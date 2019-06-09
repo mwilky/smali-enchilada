@@ -171,7 +171,7 @@
 .method private setView(Landroid/view/View;)V
     .locals 2
 
-    const v0, 0x7f0d00ae
+    const v0, 0x7f0d00af
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/LayoutPreference;->setLayoutResource(I)V
 

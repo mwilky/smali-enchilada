@@ -285,6 +285,10 @@
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     :cond_1
+    const-string v3, "com.oppo.market"
+
+    invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
     return-object v0
 .end method
 

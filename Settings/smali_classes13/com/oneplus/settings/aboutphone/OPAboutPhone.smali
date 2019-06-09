@@ -100,7 +100,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040b
+    const v1, 0x7f0a040c
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -331,7 +331,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -397,7 +397,7 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120c5a
+    const v5, 0x7f120c6c
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -427,7 +427,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -501,7 +501,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f120c17
+    const v5, 0x7f120c24
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -554,7 +554,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f120b78
+    const v5, 0x7f120b84
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -623,7 +623,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -765,7 +765,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -805,7 +805,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f120b8a
+    const v4, 0x7f120b96
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -835,7 +835,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f120cec
+    const v4, 0x7f120d00
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -857,7 +857,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -875,7 +875,7 @@
 
     move-result v2
 
-    const v3, 0x7f120b36
+    const v3, 0x7f120b42
 
     const v4, 0x7f0802e9
 
@@ -904,7 +904,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120c29
+    const v5, 0x7f120c36
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -914,7 +914,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120c2b
+    const v5, 0x7f120c38
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -944,7 +944,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120b6b
+    const v3, 0x7f120b77
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -978,7 +978,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120bfe
+    const v3, 0x7f120c0b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1028,7 +1028,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->SoftWare5Preference:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a040d
+    const v1, 0x7f0a040e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1054,7 +1054,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120c29
+    const v3, 0x7f120c36
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1064,7 +1064,7 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f120c2b
+    const v3, 0x7f120c38
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1379,7 +1379,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120de5
+    const v2, 0x7f120e06
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1648,7 +1648,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba9
+    const v1, 0x7f120bb5
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1690,7 +1690,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120baa
+    const v1, 0x7f120bb6
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1835,7 +1835,7 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120ba9
+    const v1, 0x7f120bb5
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1845,7 +1845,7 @@
 
     move-result v0
 
-    const v1, 0x7f120ef6
+    const v1, 0x7f120f17
 
     if-nez v0, :cond_2
 
@@ -1884,7 +1884,7 @@
     :cond_0
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v2, 0x7f120baa
+    const v2, 0x7f120bb6
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->getString(I)Ljava/lang/String;
 
@@ -1950,7 +1950,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhone;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f120a6e
+    const v1, 0x7f120a70
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

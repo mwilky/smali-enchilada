@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0d002a
+    const v0, 0x7f0d002b
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 

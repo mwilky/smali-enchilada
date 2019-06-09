@@ -166,7 +166,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/applications/AppInfoWithHeader;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f1600a1
+    const v0, 0x7f1600a2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/appinfo/PictureInPictureDetails;->addPreferencesFromResource(I)V
 
@@ -182,7 +182,7 @@
 
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/PictureInPictureDetails;->mSwitchPref:Landroid/support/v14/preference/SwitchPreference;
 
-    const v1, 0x7f120e04
+    const v1, 0x7f120e25
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 

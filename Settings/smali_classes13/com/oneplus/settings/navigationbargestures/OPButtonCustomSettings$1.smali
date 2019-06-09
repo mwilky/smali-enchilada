@@ -55,7 +55,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const v1, 0x7f160074
+    const v1, 0x7f160075
 
     invoke-static {v1, p1}, Lcom/oneplus/settings/utils/XmlParseUtils;->parsePreferenceKeyFromResource(ILandroid/content/Context;)Ljava/util/List;
 
@@ -84,7 +84,7 @@
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f160074
+    const v1, 0x7f160075
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

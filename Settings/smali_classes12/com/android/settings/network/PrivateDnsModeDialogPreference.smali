@@ -70,7 +70,7 @@
 
     const-string v1, "off"
 
-    const v2, 0x7f0a0436
+    const v2, 0x7f0a0437
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -82,7 +82,7 @@
 
     const-string v1, "opportunistic"
 
-    const v2, 0x7f0a0437
+    const v2, 0x7f0a0438
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -94,7 +94,7 @@
 
     const-string v1, "hostname"
 
-    const v2, 0x7f0a0438
+    const v2, 0x7f0a0439
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -482,7 +482,7 @@
 
     iput-object v2, p0, Lcom/android/settings/network/PrivateDnsModeDialogPreference;->mMode:Ljava/lang/String;
 
-    const v2, 0x7f0a0439
+    const v2, 0x7f0a043a
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -504,7 +504,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const v2, 0x7f0a043a
+    const v2, 0x7f0a043b
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -524,7 +524,7 @@
 
     iget-object v4, p0, Lcom/android/settings/network/PrivateDnsModeDialogPreference;->mMode:Ljava/lang/String;
 
-    const v5, 0x7f0a0437
+    const v5, 0x7f0a0438
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -542,7 +542,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/RadioGroup;->check(I)V
 
-    const v2, 0x7f0a0435
+    const v2, 0x7f0a0436
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -588,7 +588,7 @@
 
     if-eqz v5, :cond_0
 
-    const v5, 0x7f120e6b
+    const v5, 0x7f120e8c
 
     invoke-virtual {v0, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -648,7 +648,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0a0436
+    .packed-switch 0x7f0a0437
         :pswitch_2
         :pswitch_1
         :pswitch_0

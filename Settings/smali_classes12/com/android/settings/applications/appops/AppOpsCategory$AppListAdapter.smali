@@ -124,7 +124,7 @@
 
     iget-object v1, p0, Lcom/android/settings/applications/appops/AppOpsCategory$AppListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0d0033
+    const v2, 0x7f0d0034
 
     invoke-virtual {v1, v2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

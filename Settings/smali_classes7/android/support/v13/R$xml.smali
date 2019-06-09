@@ -247,263 +247,265 @@
 
 .field public static final op_app_notification_list_settings:I = 0x7f160073
 
-.field public static final op_button_custom_settings:I = 0x7f160074
+.field public static final op_app_security_recommend:I = 0x7f160074
 
-.field public static final op_buttons_and_gesture_settings:I = 0x7f160075
+.field public static final op_button_custom_settings:I = 0x7f160075
 
-.field public static final op_buttons_settings:I = 0x7f160076
+.field public static final op_buttons_and_gesture_settings:I = 0x7f160076
 
-.field public static final op_custom_fingerprint_anim_settings:I = 0x7f160077
+.field public static final op_buttons_settings:I = 0x7f160077
 
-.field public static final op_default_camera_settings:I = 0x7f160078
+.field public static final op_custom_fingerprint_anim_settings:I = 0x7f160078
 
-.field public static final op_default_gallery_settings:I = 0x7f160079
+.field public static final op_default_camera_settings:I = 0x7f160079
 
-.field public static final op_default_mail_settings:I = 0x7f16007a
+.field public static final op_default_gallery_settings:I = 0x7f16007a
 
-.field public static final op_default_music_settings:I = 0x7f16007b
+.field public static final op_default_mail_settings:I = 0x7f16007b
 
-.field public static final op_earphone_mode:I = 0x7f16007c
+.field public static final op_default_music_settings:I = 0x7f16007c
 
-.field public static final op_experience_improvement_programs:I = 0x7f16007d
+.field public static final op_earphone_mode:I = 0x7f16007d
 
-.field public static final op_faceunlock_settings:I = 0x7f16007e
+.field public static final op_experience_improvement_programs:I = 0x7f16007e
 
-.field public static final op_fingerprint_edit:I = 0x7f16007f
+.field public static final op_faceunlock_settings:I = 0x7f16007f
 
-.field public static final op_game_mode_battery_saver:I = 0x7f160080
+.field public static final op_fingerprint_edit:I = 0x7f160080
 
-.field public static final op_gaming_mode:I = 0x7f160081
+.field public static final op_game_mode_battery_saver:I = 0x7f160081
 
-.field public static final op_gamingmode_notification_way_settings:I = 0x7f160082
+.field public static final op_gaming_mode:I = 0x7f160082
 
-.field public static final op_gesture_answercall_settings:I = 0x7f160083
+.field public static final op_gamingmode_notification_way_settings:I = 0x7f160083
 
-.field public static final op_gesture_settings:I = 0x7f160084
+.field public static final op_gesture_answercall_settings:I = 0x7f160084
 
-.field public static final op_led_settings:I = 0x7f160085
+.field public static final op_gesture_settings:I = 0x7f160085
 
-.field public static final op_multitasking_clean_way:I = 0x7f160086
+.field public static final op_led_settings:I = 0x7f160086
 
-.field public static final op_navigation_bar_gestures_settings:I = 0x7f160087
+.field public static final op_multitasking_clean_way:I = 0x7f160087
 
-.field public static final op_night_mode:I = 0x7f160088
+.field public static final op_navigation_bar_gestures_settings:I = 0x7f160088
 
-.field public static final op_notification_not_disturb:I = 0x7f160089
+.field public static final op_night_mode:I = 0x7f160089
 
-.field public static final op_phone_control_way_settings:I = 0x7f16008a
+.field public static final op_notification_not_disturb:I = 0x7f16008a
 
-.field public static final op_pre_install_app_list:I = 0x7f16008b
+.field public static final op_phone_control_way_settings:I = 0x7f16008b
 
-.field public static final op_product_info:I = 0x7f16008c
+.field public static final op_pre_install_app_list:I = 0x7f16008c
 
-.field public static final op_quicklaunch_settings:I = 0x7f16008d
+.field public static final op_product_info:I = 0x7f16008d
 
-.field public static final op_quickpay_settings:I = 0x7f16008e
+.field public static final op_quicklaunch_settings:I = 0x7f16008e
 
-.field public static final op_reading_mode:I = 0x7f16008f
+.field public static final op_quickpay_settings:I = 0x7f16008f
 
-.field public static final op_reset_all_data_settings:I = 0x7f160090
+.field public static final op_reading_mode:I = 0x7f160090
 
-.field public static final op_ring_pattern:I = 0x7f160091
+.field public static final op_reset_all_data_settings:I = 0x7f160091
 
-.field public static final op_ring_switch_fragment:I = 0x7f160092
+.field public static final op_ring_pattern:I = 0x7f160092
 
-.field public static final op_ring_system_fragment:I = 0x7f160093
+.field public static final op_ring_switch_fragment:I = 0x7f160093
 
-.field public static final op_screen_color_mode:I = 0x7f160094
+.field public static final op_ring_system_fragment:I = 0x7f160094
 
-.field public static final op_screenbetter_settings:I = 0x7f160095
+.field public static final op_screen_color_mode:I = 0x7f160095
 
-.field public static final op_silent_mode:I = 0x7f160096
+.field public static final op_screenbetter_settings:I = 0x7f160096
 
-.field public static final op_statusbar_customize_icon_settings:I = 0x7f160097
+.field public static final op_silent_mode:I = 0x7f160097
 
-.field public static final op_statusbar_customize_settings:I = 0x7f160098
+.field public static final op_statusbar_customize_icon_settings:I = 0x7f160098
 
-.field public static final op_suw_screen_color_mode:I = 0x7f160099
+.field public static final op_statusbar_customize_settings:I = 0x7f160099
 
-.field public static final op_time_power_preference:I = 0x7f16009a
+.field public static final op_suw_screen_color_mode:I = 0x7f16009a
 
-.field public static final op_tools_settings:I = 0x7f16009b
+.field public static final op_time_power_preference:I = 0x7f16009b
 
-.field public static final op_vibrate_intensity:I = 0x7f16009c
+.field public static final op_tools_settings:I = 0x7f16009c
 
-.field public static final op_vibration_mode:I = 0x7f16009d
+.field public static final op_vibrate_intensity:I = 0x7f16009d
 
-.field public static final other_sound_settings:I = 0x7f16009e
+.field public static final op_vibration_mode:I = 0x7f16009e
 
-.field public static final physical_keyboard_settings:I = 0x7f16009f
+.field public static final other_sound_settings:I = 0x7f16009f
 
-.field public static final pick_up_gesture_settings:I = 0x7f1600a0
+.field public static final physical_keyboard_settings:I = 0x7f1600a0
 
-.field public static final picture_in_picture_permissions_details:I = 0x7f1600a1
+.field public static final pick_up_gesture_settings:I = 0x7f1600a1
 
-.field public static final picture_in_picture_settings:I = 0x7f1600a2
+.field public static final picture_in_picture_permissions_details:I = 0x7f1600a2
 
-.field public static final placeholder_prefs:I = 0x7f1600a3
+.field public static final picture_in_picture_settings:I = 0x7f1600a3
 
-.field public static final power_abnormal_detail:I = 0x7f1600a4
+.field public static final placeholder_prefs:I = 0x7f1600a4
 
-.field public static final power_usage_advanced:I = 0x7f1600a5
+.field public static final power_abnormal_detail:I = 0x7f1600a5
 
-.field public static final power_usage_detail:I = 0x7f1600a6
+.field public static final power_usage_advanced:I = 0x7f1600a6
 
-.field public static final power_usage_details:I = 0x7f1600a7
+.field public static final power_usage_detail:I = 0x7f1600a7
 
-.field public static final power_usage_summary:I = 0x7f1600a8
+.field public static final power_usage_details:I = 0x7f1600a8
 
-.field public static final premium_sms_settings:I = 0x7f1600a9
+.field public static final power_usage_summary:I = 0x7f1600a9
 
-.field public static final prevent_ringing_gesture_settings:I = 0x7f1600aa
+.field public static final premium_sms_settings:I = 0x7f1600aa
 
-.field public static final previously_connected_devices:I = 0x7f1600ab
+.field public static final prevent_ringing_gesture_settings:I = 0x7f1600ab
 
-.field public static final print_job_settings:I = 0x7f1600ac
+.field public static final previously_connected_devices:I = 0x7f1600ac
 
-.field public static final print_settings:I = 0x7f1600ad
+.field public static final print_job_settings:I = 0x7f1600ad
 
-.field public static final privacy_settings:I = 0x7f1600ae
+.field public static final print_settings:I = 0x7f1600ae
 
-.field public static final process_stats_summary:I = 0x7f1600af
+.field public static final privacy_settings:I = 0x7f1600af
 
-.field public static final process_stats_ui:I = 0x7f1600b0
+.field public static final process_stats_summary:I = 0x7f1600b0
 
-.field public static final profile_challenge_settings:I = 0x7f1600b1
+.field public static final process_stats_ui:I = 0x7f1600b1
 
-.field public static final reset_dashboard_fragment:I = 0x7f1600b2
+.field public static final profile_challenge_settings:I = 0x7f1600b2
 
-.field public static final restricted_apps_detail:I = 0x7f1600b3
+.field public static final reset_dashboard_fragment:I = 0x7f1600b3
 
-.field public static final screen_lock_settings:I = 0x7f1600b4
+.field public static final restricted_apps_detail:I = 0x7f1600b4
 
-.field public static final screen_pinning_settings:I = 0x7f1600b5
+.field public static final screen_lock_settings:I = 0x7f1600b5
 
-.field public static final security_dashboard_settings:I = 0x7f1600b6
+.field public static final screen_pinning_settings:I = 0x7f1600b6
 
-.field public static final security_lockscreen_settings:I = 0x7f1600b7
+.field public static final security_dashboard_settings:I = 0x7f1600b7
 
-.field public static final security_settings_fingerprint:I = 0x7f1600b8
+.field public static final security_lockscreen_settings:I = 0x7f1600b8
 
-.field public static final security_settings_picker:I = 0x7f1600b9
+.field public static final security_settings_fingerprint:I = 0x7f1600b9
 
-.field public static final setup_security_settings_picker:I = 0x7f1600ba
+.field public static final security_settings_picker:I = 0x7f1600ba
 
-.field public static final shortcuts:I = 0x7f1600bb
+.field public static final setup_security_settings_picker:I = 0x7f1600bb
 
-.field public static final sim_lock_settings:I = 0x7f1600bc
+.field public static final shortcuts:I = 0x7f1600bc
 
-.field public static final sim_settings:I = 0x7f1600bd
+.field public static final sim_lock_settings:I = 0x7f1600bd
 
-.field public static final smart_battery_detail:I = 0x7f1600be
+.field public static final sim_settings:I = 0x7f1600be
 
-.field public static final sound_settings:I = 0x7f1600bf
+.field public static final smart_battery_detail:I = 0x7f1600bf
 
-.field public static final special_access:I = 0x7f1600c0
+.field public static final sound_settings:I = 0x7f1600c0
 
-.field public static final spellchecker_prefs:I = 0x7f1600c1
+.field public static final special_access:I = 0x7f1600c1
 
-.field public static final storage_dashboard_fragment:I = 0x7f1600c2
+.field public static final spellchecker_prefs:I = 0x7f1600c2
 
-.field public static final storage_profile_fragment:I = 0x7f1600c3
+.field public static final storage_dashboard_fragment:I = 0x7f1600c3
 
-.field public static final swipe_to_notification_settings:I = 0x7f1600c4
+.field public static final storage_profile_fragment:I = 0x7f1600c4
 
-.field public static final swipe_up_gesture_settings:I = 0x7f1600c5
+.field public static final swipe_to_notification_settings:I = 0x7f1600c5
 
-.field public static final sync_settings:I = 0x7f1600c6
+.field public static final swipe_up_gesture_settings:I = 0x7f1600c6
 
-.field public static final system_dashboard_fragment:I = 0x7f1600c7
+.field public static final sync_settings:I = 0x7f1600c7
 
-.field public static final testing_settings:I = 0x7f1600c8
+.field public static final system_dashboard_fragment:I = 0x7f1600c8
 
-.field public static final testing_wifi_settings:I = 0x7f1600c9
+.field public static final testing_settings:I = 0x7f1600c9
 
-.field public static final tether_prefs:I = 0x7f1600ca
+.field public static final testing_wifi_settings:I = 0x7f1600ca
 
-.field public static final time_zone_prefs:I = 0x7f1600cb
+.field public static final tether_prefs:I = 0x7f1600cb
 
-.field public static final timezones:I = 0x7f1600cc
+.field public static final time_zone_prefs:I = 0x7f1600cc
 
-.field public static final trust_agent_settings:I = 0x7f1600cd
+.field public static final timezones:I = 0x7f1600cd
 
-.field public static final tts_engine_picker:I = 0x7f1600ce
+.field public static final trust_agent_settings:I = 0x7f1600ce
 
-.field public static final tts_settings:I = 0x7f1600cf
+.field public static final tts_engine_picker:I = 0x7f1600cf
 
-.field public static final unrestricted_data_access_settings:I = 0x7f1600d0
+.field public static final tts_settings:I = 0x7f1600d0
 
-.field public static final usage_access_settings:I = 0x7f1600d1
+.field public static final unrestricted_data_access_settings:I = 0x7f1600d1
 
-.field public static final usb_default_fragment:I = 0x7f1600d2
+.field public static final usage_access_settings:I = 0x7f1600d2
 
-.field public static final usb_details_fragment:I = 0x7f1600d3
+.field public static final usb_default_fragment:I = 0x7f1600d3
 
-.field public static final user_details_settings:I = 0x7f1600d4
+.field public static final usb_details_fragment:I = 0x7f1600d4
 
-.field public static final user_settings:I = 0x7f1600d5
+.field public static final user_details_settings:I = 0x7f1600d5
 
-.field public static final virtual_keyboard_settings:I = 0x7f1600d6
+.field public static final user_settings:I = 0x7f1600d6
 
-.field public static final voice_input_settings:I = 0x7f1600d7
+.field public static final virtual_keyboard_settings:I = 0x7f1600d7
 
-.field public static final vpn_app_management:I = 0x7f1600d8
+.field public static final voice_input_settings:I = 0x7f1600d8
 
-.field public static final vpn_settings2:I = 0x7f1600d9
+.field public static final vpn_app_management:I = 0x7f1600d9
 
-.field public static final vr_display_settings:I = 0x7f1600da
+.field public static final vpn_settings2:I = 0x7f1600da
 
-.field public static final vr_listeners_settings:I = 0x7f1600db
+.field public static final vr_display_settings:I = 0x7f1600db
 
-.field public static final wallpaper_settings:I = 0x7f1600dc
+.field public static final vr_listeners_settings:I = 0x7f1600dc
 
-.field public static final webview_app_settings:I = 0x7f1600dd
+.field public static final wallpaper_settings:I = 0x7f1600dd
 
-.field public static final when_to_dream_settings:I = 0x7f1600de
+.field public static final webview_app_settings:I = 0x7f1600de
 
-.field public static final wifi_access_points:I = 0x7f1600df
+.field public static final when_to_dream_settings:I = 0x7f1600df
 
-.field public static final wifi_access_points_for_wifi_setup_xl:I = 0x7f1600e0
+.field public static final wifi_access_points:I = 0x7f1600e0
 
-.field public static final wifi_calling_settings:I = 0x7f1600e1
+.field public static final wifi_access_points_for_wifi_setup_xl:I = 0x7f1600e1
 
-.field public static final wifi_configure_settings:I = 0x7f1600e2
+.field public static final wifi_calling_settings:I = 0x7f1600e2
 
-.field public static final wifi_display_saved_access_points:I = 0x7f1600e3
+.field public static final wifi_configure_settings:I = 0x7f1600e3
 
-.field public static final wifi_display_settings:I = 0x7f1600e4
+.field public static final wifi_display_saved_access_points:I = 0x7f1600e4
 
-.field public static final wifi_network_details_fragment:I = 0x7f1600e5
+.field public static final wifi_display_settings:I = 0x7f1600e5
 
-.field public static final wifi_p2p_settings:I = 0x7f1600e6
+.field public static final wifi_network_details_fragment:I = 0x7f1600e6
 
-.field public static final wifi_settings:I = 0x7f1600e7
+.field public static final wifi_p2p_settings:I = 0x7f1600e7
 
-.field public static final wifi_tether_settings:I = 0x7f1600e8
+.field public static final wifi_settings:I = 0x7f1600e8
 
-.field public static final write_system_settings_permissions_details:I = 0x7f1600e9
+.field public static final wifi_tether_settings:I = 0x7f1600e9
 
-.field public static final zen_access_settings:I = 0x7f1600ea
+.field public static final write_system_settings_permissions_details:I = 0x7f1600ea
 
-.field public static final zen_mode_automation_settings:I = 0x7f1600eb
+.field public static final zen_access_settings:I = 0x7f1600eb
 
-.field public static final zen_mode_behavior_settings:I = 0x7f1600ec
+.field public static final zen_mode_automation_settings:I = 0x7f1600ec
 
-.field public static final zen_mode_block_settings:I = 0x7f1600ed
+.field public static final zen_mode_behavior_settings:I = 0x7f1600ed
 
-.field public static final zen_mode_calls_settings:I = 0x7f1600ee
+.field public static final zen_mode_block_settings:I = 0x7f1600ee
 
-.field public static final zen_mode_event_rule_settings:I = 0x7f1600ef
+.field public static final zen_mode_calls_settings:I = 0x7f1600ef
 
-.field public static final zen_mode_msg_event_reminder_settings:I = 0x7f1600f0
+.field public static final zen_mode_event_rule_settings:I = 0x7f1600f0
 
-.field public static final zen_mode_restrict_notifications_settings:I = 0x7f1600f1
+.field public static final zen_mode_msg_event_reminder_settings:I = 0x7f1600f1
 
-.field public static final zen_mode_schedule_rule_settings:I = 0x7f1600f2
+.field public static final zen_mode_restrict_notifications_settings:I = 0x7f1600f2
 
-.field public static final zen_mode_settings:I = 0x7f1600f3
+.field public static final zen_mode_schedule_rule_settings:I = 0x7f1600f3
 
-.field public static final zen_mode_sound_vibration_settings:I = 0x7f1600f4
+.field public static final zen_mode_settings:I = 0x7f1600f4
+
+.field public static final zen_mode_sound_vibration_settings:I = 0x7f1600f5
 
 
 # direct methods

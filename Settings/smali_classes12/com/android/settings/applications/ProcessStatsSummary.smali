@@ -88,7 +88,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/applications/ProcessStatsBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f1600af
+    const v0, 0x7f1600b0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/ProcessStatsSummary;->addPreferencesFromResource(I)V
 

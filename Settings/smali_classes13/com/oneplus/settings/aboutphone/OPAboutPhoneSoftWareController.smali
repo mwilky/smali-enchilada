@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0138
+    const v2, 0x7f0d0139
 
     invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -423,7 +423,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v2, 0x7f0a0480
+    const v2, 0x7f0a0481
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -443,7 +443,7 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v4, 0x7f0a0484
+    const v4, 0x7f0a0485
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -463,7 +463,7 @@
 
     iget-object v5, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v6, 0x7f0a0483
+    const v6, 0x7f0a0484
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -481,7 +481,7 @@
 
     iget-object v7, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mSoftWareInfoView:Landroid/view/View;
 
-    const v8, 0x7f0a0486
+    const v8, 0x7f0a0487
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +550,7 @@
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/aboutphone/OPAboutPhoneSoftWareController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f12102c
+    const v2, 0x7f12104d
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

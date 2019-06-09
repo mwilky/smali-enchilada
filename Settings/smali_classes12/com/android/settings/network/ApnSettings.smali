@@ -2204,7 +2204,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f1600a3
+    const v0, 0x7f1600a4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/network/ApnSettings;->addPreferencesFromResource(I)V
 
@@ -2440,7 +2440,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120f13
+    const v2, 0x7f120f34
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

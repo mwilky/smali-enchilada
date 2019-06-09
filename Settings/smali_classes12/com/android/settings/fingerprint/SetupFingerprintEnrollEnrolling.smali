@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    const p2, 0x7f130435
+    const p2, 0x7f130436
 
     goto :goto_0
 

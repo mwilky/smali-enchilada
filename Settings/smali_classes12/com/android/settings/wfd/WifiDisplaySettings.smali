@@ -347,7 +347,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings;->mCertCategory:Landroid/support/v7/preference/PreferenceGroup;
 
-    const v1, 0x7f121427
+    const v1, 0x7f121448
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->setTitle(I)V
 
@@ -393,7 +393,7 @@
 
     invoke-direct {v0, v1}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f121435
+    const v1, 0x7f121456
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -439,7 +439,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings;->mCertCategory:Landroid/support/v7/preference/PreferenceGroup;
 
-    const v2, 0x7f0d02c6
+    const v2, 0x7f0d02c7
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/PreferenceGroup;->setLayoutResource(I)V
 
@@ -452,7 +452,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings$2;-><init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;)V
 
-    const v1, 0x7f12142c
+    const v1, 0x7f12144d
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -474,7 +474,7 @@
 
     move-object v0, v1
 
-    const v1, 0x7f121425
+    const v1, 0x7f121446
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -546,7 +546,7 @@
 
     invoke-virtual {v1, v4}, Landroid/support/v7/preference/ListPreference;->setKey(Ljava/lang/String;)V
 
-    const v4, 0x7f12143b
+    const v4, 0x7f12145c    # 1.94173E38f
 
     invoke-virtual {v1, v4}, Landroid/support/v7/preference/ListPreference;->setTitle(I)V
 
@@ -624,7 +624,7 @@
 
     invoke-virtual {v1, v6}, Landroid/support/v7/preference/ListPreference;->setKey(Ljava/lang/String;)V
 
-    const v6, 0x7f12142b
+    const v6, 0x7f12144c
 
     invoke-virtual {v1, v6}, Landroid/support/v7/preference/ListPreference;->setTitle(I)V
 
@@ -706,7 +706,7 @@
 
     invoke-virtual {v1, v8}, Landroid/support/v7/preference/ListPreference;->setKey(Ljava/lang/String;)V
 
-    const v8, 0x7f12142e
+    const v8, 0x7f12144f
 
     invoke-virtual {v1, v8}, Landroid/support/v7/preference/ListPreference;->setTitle(I)V
 
@@ -969,7 +969,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02e5
+    const v1, 0x7f0d02e6
 
     const/4 v2, 0x0
 
@@ -1013,7 +1013,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f121432
+    const v5, 0x7f121453
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1023,13 +1023,13 @@
 
     move-result-object v4
 
-    const v5, 0x7f12142f
+    const v5, 0x7f121450
 
     invoke-virtual {v4, v5, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    const v5, 0x7f121430
+    const v5, 0x7f121451
 
     invoke-virtual {v4, v5, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1378,7 +1378,7 @@
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings;->mEmptyView:Landroid/widget/TextView;
 
-    const v1, 0x7f12142d
+    const v1, 0x7f12144e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1442,7 +1442,7 @@
 
     iput-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings;->mWifiP2pChannel:Landroid/net/wifi/p2p/WifiP2pManager$Channel;
 
-    const v1, 0x7f1600e4
+    const v1, 0x7f1600e5
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->addPreferencesFromResource(I)V
 
@@ -1468,7 +1468,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f12142a
+    const v0, 0x7f12144b
 
     const/4 v1, 0x1
 

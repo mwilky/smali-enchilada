@@ -198,7 +198,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0d01b7
+    const v2, 0x7f0d01b8
 
     const/4 v3, 0x5
 
@@ -246,11 +246,11 @@
     move v6, v4
 
     :goto_1
-    const v7, 0x7f0d0272
+    const v7, 0x7f0d0273
 
     invoke-direct {p0, v5, v7, v4, v6}, Lcom/android/settings/dashboard/DashboardData;->addToItemList(Ljava/lang/Object;IIZ)V
 
-    const v7, 0x7f0d00a4
+    const v7, 0x7f0d00a5
 
     if-eqz v6, :cond_2
 
@@ -270,7 +270,7 @@
 
     invoke-direct {v7, v2}, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;-><init>(Ljava/util/List;)V
 
-    const v8, 0x7f0d0052
+    const v8, 0x7f0d0053
 
     const/4 v9, 0x2
 
@@ -290,7 +290,7 @@
     :goto_3
     invoke-direct {p0, v7, v8, v9, v10}, Lcom/android/settings/dashboard/DashboardData;->addToItemList(Ljava/lang/Object;IIZ)V
 
-    const v7, 0x7f0d0050
+    const v7, 0x7f0d0051
 
     const/4 v8, 0x4
 
@@ -310,7 +310,7 @@
     :goto_4
     invoke-direct {p0, v2, v7, v8, v9}, Lcom/android/settings/dashboard/DashboardData;->addToItemList(Ljava/lang/Object;IIZ)V
 
-    const v7, 0x7f0d0051
+    const v7, 0x7f0d0052
 
     const/4 v8, 0x3
 
@@ -355,7 +355,7 @@
 
     check-cast v8, Lcom/android/settingslib/drawer/Tile;
 
-    const v9, 0x7f0d0071
+    const v9, 0x7f0d0072
 
     new-array v10, v1, [Ljava/lang/Object;
 

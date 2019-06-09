@@ -131,7 +131,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/settings/display/TimeoutPreferenceController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f120f62
+    const v4, 0x7f120f83
 
     const/4 v5, 0x1
 

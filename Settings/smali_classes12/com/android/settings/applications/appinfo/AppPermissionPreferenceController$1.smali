@@ -71,7 +71,7 @@
 
     if-nez p2, :cond_1
 
-    const v3, 0x7f120f50
+    const v3, 0x7f120f71
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -117,7 +117,7 @@
 
     if-nez v2, :cond_3
 
-    const v2, 0x7f120f4f
+    const v2, 0x7f120f70
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -183,7 +183,7 @@
 
     invoke-direct {v2, v3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120e59
+    const v3, 0x7f120e7a
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 

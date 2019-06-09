@@ -47,7 +47,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f121196
+    const v2, 0x7f1211b7
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    const v3, 0x7f0a0514
+    const v3, 0x7f0a0515
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
 
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f0a0513
+    const v3, 0x7f0a0514
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a0514
+    const v1, 0x7f0a0515
 
     if-ne v0, v1, :cond_0
 

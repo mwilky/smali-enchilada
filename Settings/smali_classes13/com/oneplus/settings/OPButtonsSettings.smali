@@ -1505,7 +1505,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPButtonsSettings;->mWindow:Landroid/view/Window;
 
-    const v0, 0x7f160076
+    const v0, 0x7f160077
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPButtonsSettings;->addPreferencesFromResource(I)V
 

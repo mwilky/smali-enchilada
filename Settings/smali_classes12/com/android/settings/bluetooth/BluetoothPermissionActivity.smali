@@ -97,7 +97,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d003e
+    const v2, 0x7f0d003f
 
     const/4 v3, 0x0
 
@@ -155,7 +155,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d003e
+    const v2, 0x7f0d003f
 
     const/4 v3, 0x0
 
@@ -217,7 +217,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d003e
+    const v2, 0x7f0d003f
 
     const/4 v3, 0x0
 
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d003e
+    const v2, 0x7f0d003f
 
     const/4 v3, 0x0
 
@@ -587,7 +587,7 @@
     nop
 
     :goto_0
-    const v1, 0x7f12156c
+    const v1, 0x7f12158d
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->getString(I)Ljava/lang/String;
 

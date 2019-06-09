@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043c
+.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a043d
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -243,7 +243,7 @@
 
     const v2, 0x7f0a0343
 
-    const v3, 0x7f1210e7
+    const v3, 0x7f121108
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -254,7 +254,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a043c
+    const v2, 0x7f0a043d
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getCdmaPrlVersion()Ljava/lang/String;
 

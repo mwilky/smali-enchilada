@@ -675,7 +675,7 @@
 
     iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->mUm:Landroid/os/UserManager;
 
-    const v0, 0x7f0d0080
+    const v0, 0x7f0d0081
 
     const/4 v1, 0x0
 

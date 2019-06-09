@@ -61,7 +61,7 @@
 
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPNightModeLevelPreferenceCategory;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0d018f
+    const v0, 0x7f0d0190
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPNightModeLevelPreferenceCategory;->setLayoutResource(I)V
 
@@ -71,7 +71,7 @@
 .method private initSeekBar(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 4
 
-    const v0, 0x7f0a04c5
+    const v0, 0x7f0a04c6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

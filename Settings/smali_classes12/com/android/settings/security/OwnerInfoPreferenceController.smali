@@ -299,7 +299,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/settings/security/OwnerInfoPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120ded
+    const v2, 0x7f120e0e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

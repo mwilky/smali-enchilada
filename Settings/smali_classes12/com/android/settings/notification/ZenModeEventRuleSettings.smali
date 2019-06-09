@@ -428,7 +428,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const v2, 0x7f1215bb
+    const v2, 0x7f1215dc
 
     invoke-virtual {p0, v2}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->getString(I)Ljava/lang/String;
 
@@ -617,7 +617,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600ef
+    const v0, 0x7f1600f0
 
     return v0
 .end method
@@ -667,7 +667,7 @@
 
     new-array v4, v3, [Ljava/lang/CharSequence;
 
-    const v5, 0x7f1215bd
+    const v5, 0x7f1215de
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->getString(I)Ljava/lang/String;
 
@@ -677,7 +677,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f1215bf
+    const v5, 0x7f1215e0
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->getString(I)Ljava/lang/String;
 
@@ -685,7 +685,7 @@
 
     aput-object v5, v4, v0
 
-    const v5, 0x7f1215be
+    const v5, 0x7f1215df
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->getString(I)Ljava/lang/String;
 

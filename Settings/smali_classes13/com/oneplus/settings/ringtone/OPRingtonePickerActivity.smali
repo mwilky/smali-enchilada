@@ -391,7 +391,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f160092
+    const v0, 0x7f160093
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->addPreferencesFromResource(I)V
 
@@ -502,7 +502,7 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f160093
+    const v0, 0x7f160094
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->addPreferencesFromResource(I)V
 
@@ -683,7 +683,7 @@
 
     iget-object v4, v0, Lcom/oneplus/settings/ringtone/OPRingtoneManager$ResultRing;->title:Ljava/lang/String;
 
-    const v5, 0x7f120bd9
+    const v5, 0x7f120be5
 
     if-eqz v4, :cond_3
 
@@ -972,7 +972,7 @@
 
     move-result v2
 
-    const v4, 0x7f120bd6
+    const v4, 0x7f120be2
 
     const/4 v5, 0x0
 
@@ -1315,7 +1315,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f120bd6
+    const v3, 0x7f120be2
 
     const/4 v4, 0x0
 

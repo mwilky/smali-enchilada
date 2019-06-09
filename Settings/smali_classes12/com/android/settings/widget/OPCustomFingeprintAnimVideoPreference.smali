@@ -153,7 +153,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/OPCustomFingeprintAnimVideoPreference;->setVisible(Z)V
 
-    const v4, 0x7f0d014f
+    const v4, 0x7f0d0150
 
     sget-object v5, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->MCL:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -167,7 +167,7 @@
 
     if-eqz v5, :cond_0
 
-    const v4, 0x7f0d0150
+    const v4, 0x7f0d0151
 
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/OPCustomFingeprintAnimVideoPreference;->setLayoutResource(I)V
@@ -590,7 +590,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0a05d8
+    const v0, 0x7f0a05da
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -604,7 +604,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v1, 0x7f0a05d7
+    const v1, 0x7f0a05d9
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -642,7 +642,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     :goto_0
-    const v2, 0x7f0a05dd
+    const v2, 0x7f0a05df
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -650,7 +650,7 @@
 
     check-cast v2, Landroid/view/TextureView;
 
-    const v3, 0x7f0a05da
+    const v3, 0x7f0a05dc
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -658,7 +658,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    const v4, 0x7f0a05d9
+    const v4, 0x7f0a05db
 
     invoke-virtual {p1, v4}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -666,7 +666,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    const v5, 0x7f0a05d6
+    const v5, 0x7f0a05d8
 
     invoke-virtual {p1, v5}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

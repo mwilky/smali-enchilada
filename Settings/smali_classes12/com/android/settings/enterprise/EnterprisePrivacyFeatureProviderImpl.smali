@@ -479,7 +479,7 @@
 .end method
 
 .method public getNumberOfActiveDeviceAdminsForCurrentUserAndManagedProfile()I
-    .locals 5
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -517,6 +517,12 @@
     move-result-object v3
 
     if-eqz v3, :cond_0
+
+    iget v4, v2, Landroid/content/pm/UserInfo;->id:I
+
+    const/16 v5, 0x3e7
+
+    if-eq v4, v5, :cond_0
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 

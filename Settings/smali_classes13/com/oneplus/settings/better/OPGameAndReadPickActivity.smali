@@ -180,7 +180,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0179
+    const v0, 0x7f0d017a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->setContentView(I)V
 
@@ -214,7 +214,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const v1, 0x7f120b4c
+    const v1, 0x7f120b58
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 
@@ -231,7 +231,7 @@
 
     if-ne v1, v2, :cond_1
 
-    const v1, 0x7f120c4d
+    const v1, 0x7f120c5f
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 

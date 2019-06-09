@@ -174,14 +174,14 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f120b77
+    const v1, 0x7f120b83
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f120fc8
+    const v1, 0x7f120fe9
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -190,7 +190,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120fc7
+    const v2, 0x7f120fe8
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -204,7 +204,7 @@
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f120fc5
+    const v3, 0x7f120fe6
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
@@ -572,11 +572,11 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0d01c7
+    const v0, 0x7f0d01c8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->setContentView(I)V
 
-    const v0, 0x7f120b1f
+    const v0, 0x7f120b2a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->setHeaderText(I)V
 

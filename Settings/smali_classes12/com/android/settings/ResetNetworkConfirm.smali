@@ -273,7 +273,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f120f0b
+    const v0, 0x7f120f2c
 
     invoke-static {p1, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -363,7 +363,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0d0102
+    const v1, 0x7f0d0103
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -431,7 +431,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120c61
+    const v4, 0x7f120c73
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f0d0232
+    const v1, 0x7f0d0233
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

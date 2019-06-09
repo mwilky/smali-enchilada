@@ -367,7 +367,7 @@
 
     iget v2, v2, Landroid/content/pm/UserInfo;->id:I
 
-    const v3, 0x7f120bae
+    const v3, 0x7f120bba
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -1265,7 +1265,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120bb0
+    const v1, 0x7f120bbc
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1356,7 +1356,7 @@
 .method public getEnabledString(Lcom/oneplus/settings/better/OPAppModel;)Ljava/lang/String;
     .locals 4
 
-    const v0, 0x7f120bb5
+    const v0, 0x7f120bc1
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -1386,7 +1386,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d0144
+    const v0, 0x7f0d0145
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->setContentView(I)V
 
@@ -1577,7 +1577,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f120bae
+    const v3, 0x7f120bba
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->getString(I)Ljava/lang/String;
 

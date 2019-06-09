@@ -360,7 +360,7 @@
 
     if-ge v1, v2, :cond_1
 
-    const v4, 0x7f0d0053
+    const v4, 0x7f0d0054
 
     invoke-virtual {v0, v4, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -896,7 +896,7 @@
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1211c1
+    const v5, 0x7f1211e2
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -948,15 +948,15 @@
 
     move-result v0
 
-    const v1, 0x7f0d0071
+    const v1, 0x7f0d0072
 
     if-eq v0, v1, :cond_2
 
-    const v1, 0x7f0d01b7
+    const v1, 0x7f0d01b8
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0d0272
+    const v1, 0x7f0d0273
 
     if-eq v0, v1, :cond_0
 
@@ -1068,7 +1068,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0d0050
+    .packed-switch 0x7f0d0051
         :pswitch_2
         :pswitch_1
         :pswitch_0
@@ -1102,7 +1102,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01b7
+    const v1, 0x7f0d01b8
 
     if-ne p2, v1, :cond_0
 
@@ -1113,7 +1113,7 @@
     return-object v1
 
     :cond_0
-    const v1, 0x7f0d0052
+    const v1, 0x7f0d0053
 
     if-ne p2, v1, :cond_1
 
@@ -1124,7 +1124,7 @@
     return-object v1
 
     :cond_1
-    const v1, 0x7f0d0050
+    const v1, 0x7f0d0051
 
     if-ne p2, v1, :cond_2
 
@@ -1135,7 +1135,7 @@
     return-object v1
 
     :cond_2
-    const v1, 0x7f0d0272
+    const v1, 0x7f0d0273
 
     if-ne p2, v1, :cond_3
 

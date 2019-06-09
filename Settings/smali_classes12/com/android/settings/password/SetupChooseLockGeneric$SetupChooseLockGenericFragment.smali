@@ -36,14 +36,14 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0d0257
+    const v0, 0x7f0d0258
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f0d0258
+    const v0, 0x7f0d0259
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
@@ -63,7 +63,7 @@
     goto :goto_0
 
     :cond_0
-    const v0, 0x7f1600ba
+    const v0, 0x7f1600bb
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->addPreferencesFromResource(I)V
 
@@ -349,7 +349,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f12101b
+    const v1, 0x7f12103c
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->getActivity()Landroid/app/Activity;

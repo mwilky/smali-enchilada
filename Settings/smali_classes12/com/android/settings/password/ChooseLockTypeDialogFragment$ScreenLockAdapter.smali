@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    const v0, 0x7f0d0047
+    const v0, 0x7f0d0048
 
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0047
+    const v2, 0x7f0d0048
 
     const/4 v3, 0x0
 

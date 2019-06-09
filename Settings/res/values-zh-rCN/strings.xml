@@ -2527,6 +2527,8 @@
     <string name="oneplus_app_notification_not_allow_led">不允许呼吸灯的应用</string>
     <string name="oneplus_app_notification_show_on_keyguard_summary">允许此应用在锁屏中显示通知</string>
     <string name="oneplus_app_notification_show_on_keyguard_title">在锁屏显示通知</string>
+    <string name="oneplus_app_security_recommend">安全应用版本推荐</string>
+    <string name="oneplus_app_security_recommend_description">当安全检测结果存在病毒、广告等风险，或商店内有更高的正式版本时，推荐到一加商店安装。</string>
     <string name="oneplus_app_uninstall_remark">请安装以上支付应用后使用快捷支付</string>
     <string name="oneplus_app_wechat">微信</string>
     <string name="oneplus_applications_settings_summary">应用通知，双开，权限</string>
@@ -3072,6 +3074,8 @@
     <string name="oneplus_search_keyword_wifi_display_settings_screen">投屏, 投射屏幕</string>
     <string name="oneplus_security_dashboard_summary">指纹、人脸解锁、位置信息</string>
     <string name="oneplus_security_dashboard_summary_no_faceunlock">指纹、位置信息</string>
+    <string name="oneplus_security_detection_summary">对未知来源应用进行安全检测</string>
+    <string name="oneplus_security_detection_title">一加安全检测</string>
     <string name="oneplus_security_lock_settings_summary">解锁选项，位置信息，应用锁</string>
     <string name="oneplus_security_lock_settings_title">安全和隐私</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">录入失败</string>
@@ -3211,6 +3215,21 @@
     <string name="op_android_mode_cannot_change_color_accent">Android 主题下只能使用系统色</string>
     <string name="op_android_mode_title">Android 主题</string>
     <string name="op_app_already_uninstalled">该应用已卸载</string>
+    <string name="op_app_security_check_text_legal_oppo">相关云中飞隐私政策可参阅：</string>
+    <string name="op_app_security_check_text_legal_oppo_link">云中飞隐私政策</string>
+    <string name="op_app_security_check_text_legal_tencent">相关腾讯隐私政策可参阅：</string>
+    <string name="op_app_security_check_text_legal_tencent_link">腾讯隐私政策</string>
+    <string name="op_app_security_check_text_summary1_1">一加安全检测功能开启后，会在您安装应用程序时对安装包进行安全扫描，为您提供更好的设备安全性保障。</string>
+    <string name="op_app_security_check_text_summary1_2">当安全检测结果存在病毒、广告等风险或其他未知风险，以及商店内有更高的正式版本时，将推荐您到一加商店安装官方正式的安全版本。</string>
+    <string name="op_app_security_check_text_summary2_1">一加安全检测功能由腾讯科技（深圳）有限公司（以下统称“腾讯”）和深圳市云中飞网络科技有限公司及其关联公司（以下简称“云中飞”）提供技术支持。</string>
+    <string name="op_app_security_check_text_summary2_2">"为实现此功能：
+腾讯需采集您的 UUID、手机型号、Android 版本号、所在地区，以方便解决您在产品的使用过程中所遇到的问题；
+云中飞需采集您的机型、IMEI、Android 版本号，以便更高效地运营以及为您提供最佳的产品体验；
+一加在使用过程中不会收集您的个人数据，仅需要获取您的设备联网权限。"</string>
+    <string name="op_app_security_check_text_summary2_3">您可以随时通过关闭按钮停止使用一加安全检测功能，路径： 设置>安全和锁屏 ，选择关闭 “一加安全检测” 即可。</string>
+    <string name="op_app_security_check_text_title">我们为您提供更好的设备安全性保障</string>
+    <string name="op_app_security_check_text_title1">一．了解一加安全检测</string>
+    <string name="op_app_security_check_text_title2">二．利用数据信息打造更好的服务</string>
     <string name="op_apps">应用程序</string>
     <string name="op_audio_settings">耳机音效调节</string>
     <string name="op_battery_info_awake_battery">使用电池电量的未休眠时间：</string>

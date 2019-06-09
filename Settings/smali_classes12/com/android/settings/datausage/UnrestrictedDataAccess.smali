@@ -105,7 +105,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600d0
+    const v0, 0x7f1600d1
 
     return v0
 .end method

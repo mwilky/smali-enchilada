@@ -415,7 +415,7 @@
 
     iput-object v0, p0, Lcom/android/settings/security/trustagent/TrustAgentSettings;->mTrustAgentManager:Lcom/android/settings/security/trustagent/TrustAgentManager;
 
-    const v0, 0x7f1600cd
+    const v0, 0x7f1600ce
 
     invoke-virtual {p0, v0}, Lcom/android/settings/security/trustagent/TrustAgentSettings;->addPreferencesFromResource(I)V
 

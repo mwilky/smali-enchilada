@@ -564,8 +564,6 @@
     invoke-static {v1, v4, p2}, Lcom/android/settings/Utils;->isSystemPackage(Landroid/content/res/Resources;Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
 
     move-result v1
-    
-    const/4 v1, 0x0
 
     if-eqz v1, :cond_0
 
@@ -707,7 +705,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->mActionButtons:Lcom/android/settings/widget/ActionButtonPreference;
 
-    const v4, 0x7f121258
+    const v4, 0x7f121279
 
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 
@@ -930,7 +928,7 @@
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120a9e
+    const v2, 0x7f120aa0
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -948,7 +946,7 @@
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120a9f
+    const v2, 0x7f120aa1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

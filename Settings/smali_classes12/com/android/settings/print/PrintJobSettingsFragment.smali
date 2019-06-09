@@ -172,7 +172,7 @@
 
     if-eq v2, v3, :cond_4
 
-    const v6, 0x7f120e51
+    const v6, 0x7f120e72
 
     packed-switch v2, :pswitch_data_0
 
@@ -191,7 +191,7 @@
 
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e4f
+    const v6, 0x7f120e70
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -241,7 +241,7 @@
 
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e60
+    const v6, 0x7f120e81
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -281,7 +281,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e52
+    const v6, 0x7f120e73
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -302,7 +302,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e53
+    const v6, 0x7f120e74
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -323,7 +323,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e56
+    const v6, 0x7f120e77
 
     const/4 v7, 0x2
 
@@ -548,7 +548,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f120e50
+    const v1, 0x7f120e71
 
     invoke-virtual {p0, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -569,7 +569,7 @@
 
     const/4 v1, 0x2
 
-    const v4, 0x7f120e61
+    const v4, 0x7f120e82
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -592,7 +592,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1600ac
+    const v1, 0x7f1600ad
 
     invoke-virtual {p0, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->addPreferencesFromResource(I)V
 
@@ -646,7 +646,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120e5e
+    const v2, 0x7f120e7f
 
     invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(I)V
 

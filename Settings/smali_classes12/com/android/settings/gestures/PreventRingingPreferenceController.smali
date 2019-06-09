@@ -121,17 +121,17 @@
 
     packed-switch v0, :pswitch_data_0
 
-    const v1, 0x7f120e49
+    const v1, 0x7f120e6a
 
     goto :goto_0
 
     :pswitch_0
-    const v1, 0x7f120e47
+    const v1, 0x7f120e68
 
     goto :goto_0
 
     :pswitch_1
-    const v1, 0x7f120e4b
+    const v1, 0x7f120e6c
 
     nop
 

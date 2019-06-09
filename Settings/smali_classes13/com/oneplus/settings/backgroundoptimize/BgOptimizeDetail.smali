@@ -303,7 +303,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d00a8
+    const v1, 0x7f0d00a9
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
@@ -425,7 +425,7 @@
     goto :goto_1
 
     :cond_1
-    const v1, 0x7f120ddd
+    const v1, 0x7f120dfe
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V

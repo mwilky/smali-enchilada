@@ -121,7 +121,7 @@
 
     move-result-object v1
 
-    const v2, 0x10900c6
+    const v2, 0x10900c8
 
     invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 

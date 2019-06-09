@@ -37,11 +37,11 @@
 .method private initViews(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d019c
+    const v0, 0x7f0d019d
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPRestrictedSwitchPreference;->setLayoutResource(I)V
 
-    const v0, 0x7f0d01a5
+    const v0, 0x7f0d01a6
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPRestrictedSwitchPreference;->setWidgetLayoutResource(I)V
 

@@ -50,7 +50,7 @@
 .method public static getOxygenSettingTheme()I
     .locals 1
 
-    const v0, 0x7f130432
+    const v0, 0x7f130433
 
     return v0
 .end method
@@ -64,12 +64,12 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f130438
+    const v0, 0x7f130439
 
     return v0
 
     :cond_0
-    const v0, 0x7f130437
+    const v0, 0x7f130438
 
     return v0
 .end method
@@ -77,7 +77,7 @@
 .method public static getSettingTheme()I
     .locals 1
 
-    const v0, 0x7f130434
+    const v0, 0x7f130435
 
     return v0
 .end method
@@ -106,12 +106,12 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f130439
+    const v1, 0x7f13043a
 
     return v1
 
     :cond_1
-    const v1, 0x7f130436
+    const v1, 0x7f130437
 
     return v1
 .end method
@@ -156,7 +156,7 @@
 
     if-ne v0, v2, :cond_3
 
-    const v1, 0x7f130337
+    const v1, 0x7f130338
 
     goto :goto_0
 
@@ -165,7 +165,7 @@
 
     if-ne v0, v2, :cond_4
 
-    const v1, 0x7f130338
+    const v1, 0x7f130339
 
     :cond_4
     :goto_0

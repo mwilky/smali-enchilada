@@ -1607,6 +1607,32 @@
         <item name="onePlusPrimaryColor">@color/settings_accent_color</item>
         <item name="suwMarginSides">@dimen/oneplus_contorl_layout_margin_left2</item>
     </style>
+    <style name="OnePlusPasswordDarkTheme" parent="@style/Oneplus.Theme.Material">
+        <item name="android:windowBackground">@color/oneplus_fingerprint_enrolling_bg_ab</item>
+        <item name="android:colorPrimary">?onePlusActionbarBackgroundColor</item>
+        <item name="android:colorPrimaryDark">?onePlusActionbarBackgroundColor</item>
+        <item name="android:colorAccent">@color/settings_accent_color</item>
+        <item name="android:lockPatternStyle">@style/LockPatternStyle.Dark</item>
+        <item name="fingerprint_layout_theme">@style/FingerprintLayoutTheme</item>
+        <item name="onePlusActionbarBackgroundColor">@color/oneplus_fingerprint_enrolling_bg_ab</item>
+        <item name="onePlusPrimaryColor">@color/settings_accent_color</item>
+        <item name="preferenceBackgroundColor">?android:colorBackground</item>
+        <item name="side_margin">0.0dip</item>
+        <item name="suwColorPrimary">?onePlusActionbarBackgroundColor</item>
+        <item name="suwGlifHeaderGravity">start</item>
+        <item name="suwItemDescriptionStyle">@style/SuwItemContainer.Description.Glif</item>
+        <item name="suwItemDescriptionTitleStyle">@style/SuwItemTitle.GlifDescription</item>
+        <item name="suwListItemIconColor">@color/settings_accent_color</item>
+        <item name="suwMarginSides">@dimen/oneplus_contorl_layout_margin_left2</item>
+        <item name="suwScrollIndicators">bottom</item>
+        <item name="textAppearanceListItem">@style/TextAppearance.SuwGlifItemTitle</item>
+        <item name="textAppearanceListItemSmall">@style/TextAppearance.SuwGlifItemSummary</item>
+        <item name="wifi_friction">@drawable/wifi_friction</item>
+        <item name="wifi_signal">@drawable/wifi_signal</item>
+        <item name="wifi_signal_color">@color/setup_wizard_wifi_color_light</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
     <style name="OnePlusPasswordTheme" parent="@style/Theme.Settings">
         <item name="fingerprint_layout_theme">@style/FingerprintLayoutTheme</item>
         <item name="preferenceBackgroundColor">?android:colorBackground</item>

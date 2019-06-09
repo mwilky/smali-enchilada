@@ -2770,6 +2770,8 @@ This will also give the app the ability to turn Do Not Disturb on or off and cha
     <string name="oneplus_app_notification_not_allow_led">LED Off</string>
     <string name="oneplus_app_notification_show_on_keyguard_summary">@string/app_notification_show_on_keyguard_summary</string>
     <string name="oneplus_app_notification_show_on_keyguard_title">@string/app_notification_show_on_keyguard_title</string>
+    <string name="oneplus_app_security_recommend">Secure Apps Recommendations</string>
+    <string name="oneplus_app_security_recommend_description">It will be recommended to install in OnePlus market when the security check results have virus or ads, or there are higher official versions in the market.</string>
     <string name="oneplus_app_uninstall_remark">Please install the payment apps above to use quick pay</string>
     <string name="oneplus_app_wechat">WeChat</string>
     <string name="oneplus_applications_settings_summary">App notifications, Parallel Apps, permissions</string>
@@ -3374,6 +3376,8 @@ Go to \"Settings - Apps &amp; notifications\", click on the corresponding applic
     <string name="oneplus_search_keyword_wifi_display_settings_screen">cast</string>
     <string name="oneplus_security_dashboard_summary">Fingerprint, Face Unlock, location</string>
     <string name="oneplus_security_dashboard_summary_no_faceunlock">Fingerprint, location</string>
+    <string name="oneplus_security_detection_summary">Security detection for unknown source apps</string>
+    <string name="oneplus_security_detection_title">OnePlus security detection</string>
     <string name="oneplus_security_lock_settings_summary">Unlock preferences, location service, app locker</string>
     <string name="oneplus_security_lock_settings_title">Security &amp; privacy</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">Set up failed</string>
@@ -3532,6 +3536,21 @@ Just bring the devices together (typically back to back) and then touch your scr
     <string name="op_android_mode_cannot_change_color_accent">Default theme can only use the system color theme</string>
     <string name="op_android_mode_title">@string/locale_default</string>
     <string name="op_app_already_uninstalled">Uninstalled</string>
+    <string name="op_app_security_check_text_legal_oppo">Related Yunzhongfei privacy policy can be found in:</string>
+    <string name="op_app_security_check_text_legal_oppo_link">Yunzhongfei Privacy Policy</string>
+    <string name="op_app_security_check_text_legal_tencent">Related Tencent privacy policy can be found in:</string>
+    <string name="op_app_security_check_text_legal_tencent_link">Tencent Privacy Policy</string>
+    <string name="op_app_security_check_text_summary1_1">Once the OnePlus security detection function is enabled, the virus scan engine will start scanning your installation package, providing you with better device security.</string>
+    <string name="op_app_security_check_text_summary1_2">It will be recommended to install in OnePlus market when there are viruses, ads or other unknown risks in the safety detection results, or there are higher official versions in the market.</string>
+    <string name="op_app_security_check_text_summary2_1">OnePlus security detection function is supported by Tencent Technology (Shenzhen) Co., Ltd. (hereinafter referred to as \"Tencent\") and Shenzhen Yunzhongfei Network Technology Co., Ltd. (hereinafter referred to as “Yunzhongfei”).</string>
+    <string name="op_app_security_check_text_summary2_2">"To achieve this:
+Tencent needs to collect your UUID, model, Android version, and location to facilitate the problem you encounter during the use of the product; 
+Yunzhongfei needs to collect your model, IMEI, Android version, carrier information and location, in order to operate more efficiently and provide you with the best product experience; 
+OnePlus does not collect your personal data during use, we only need to call your device network privileges during use."</string>
+    <string name="op_app_security_check_text_summary2_3">You can stop this function at any time through the following method: Settings > Security &amp; lock screen and turn off the \"OnePlus security detection\" service.</string>
+    <string name="op_app_security_check_text_title">We provide you with better equipment security</string>
+    <string name="op_app_security_check_text_title1">1. Learn about OnePlus security detection</string>
+    <string name="op_app_security_check_text_title2">2. Use data to build better services</string>
     <string name="op_appbar_scrolling_view_behavior">com.oneplus.lib.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="op_apps">@string/running_processes_header_apps_prefix</string>
     <string name="op_audio_settings">Audio Tuner</string>
@@ -5972,25 +5991,35 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_a3e">false</item>
     <item type="string" name="APKTOOL_DUMMY_a3f">false</item>
     <item type="string" name="APKTOOL_DUMMY_a40">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a63">false</item>
-    <item type="string" name="APKTOOL_DUMMY_a64">false</item>
-    <item type="string" name="APKTOOL_DUMMY_aaa">false</item>
-    <item type="string" name="APKTOOL_DUMMY_acb">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b95">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b97">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b99">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bb9">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bba">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bfc">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bfd">false</item>
-    <item type="string" name="APKTOOL_DUMMY_d03">false</item>
-    <item type="string" name="APKTOOL_DUMMY_d04">false</item>
-    <item type="string" name="APKTOOL_DUMMY_1256">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
+    <item type="string" name="APKTOOL_DUMMY_a65">false</item>
+    <item type="string" name="APKTOOL_DUMMY_a66">false</item>
+    <item type="string" name="APKTOOL_DUMMY_aac">false</item>
+    <item type="string" name="APKTOOL_DUMMY_acd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_af9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_afa">false</item>
+    <item type="string" name="APKTOOL_DUMMY_afb">false</item>
+    <item type="string" name="APKTOOL_DUMMY_afc">false</item>
+    <item type="string" name="APKTOOL_DUMMY_afd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_afe">false</item>
+    <item type="string" name="APKTOOL_DUMMY_aff">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b00">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b01">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b3d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ba1">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ba3">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ba5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bc5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bc6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_be6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c09">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c0a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c48">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c49">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c4a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c4b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_c4c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d05">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d18">false</item>
+    <item type="string" name="APKTOOL_DUMMY_d19">false</item>
+    <item type="string" name="APKTOOL_DUMMY_1277">false</item>
 </resources>

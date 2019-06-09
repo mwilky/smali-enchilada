@@ -36,7 +36,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0d026d
+    const v0, 0x7f0d026e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardInit;->setContentView(I)V
 
@@ -70,7 +70,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/deviceinfo/StorageWizardInit;->mIsPermittedToAdopt:Z
 
-    const v0, 0x7f121156
+    const v0, 0x7f121177
 
     new-array v1, v1, [Ljava/lang/CharSequence;
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/deviceinfo/StorageWizardInit;->setHeaderText(I[Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0a0526
+    const v0, 0x7f0a0527
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardInit;->requireViewById(I)Landroid/view/View;
 
@@ -92,7 +92,7 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardInit;->mExternal:Landroid/widget/Button;
 
-    const v0, 0x7f0a0527
+    const v0, 0x7f0a0528
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardInit;->requireViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardInit;->mInternal:Landroid/widget/Button;
 
-    const v0, 0x7f121154
+    const v0, 0x7f121175
 
     new-array v1, v2, [Ljava/lang/CharSequence;
 

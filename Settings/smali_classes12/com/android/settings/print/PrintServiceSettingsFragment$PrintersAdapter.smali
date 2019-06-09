@@ -269,7 +269,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0224
+    const v2, 0x7f0d0225
 
     invoke-virtual {v1, v2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -306,7 +306,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a058a
+    const v5, 0x7f0a058c
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -316,7 +316,7 @@
 
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v6, 0x7f0a052f
+    const v6, 0x7f0a0530
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

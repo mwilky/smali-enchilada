@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.190119100817.0b40ffe">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.190505211940.cbf81f0">
     <original-package android:name="com.android.settings"/>
     <protected-broadcast android:name="com.android.settings.POWER_OP_ON"/>
     <protected-broadcast android:name="com.android.settings.action.REQUEST_POWER_OFF"/>
@@ -2374,6 +2374,13 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="oneplus.intent.action.ONEPLUS_LAB_FEATURE_DETAILS"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@mipmap/op_ic_launcher_settings" android:label="@string/oneplus_security_detection_title" android:name="com.oneplus.settings.OPSecurityDetectionActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.oneplus.action.APP_SECURITY_RECOMMEND_SETTINGS"/>
             </intent-filter>
         </activity>
     </application>

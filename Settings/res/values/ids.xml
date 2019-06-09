@@ -917,6 +917,7 @@
     <item type="id" name="opfingerprint_item_image">false</item>
     <item type="id" name="opfingerprint_item_summary">false</item>
     <item type="id" name="opfingerprint_item_title">false</item>
+    <item type="id" name="oppo_legal">false</item>
     <item type="id" name="opseekbar">false</item>
     <item type="id" name="options">false</item>
     <item type="id" name="other_users_present">false</item>
@@ -1296,6 +1297,7 @@
     <item type="id" name="tag_transition_group">false</item>
     <item type="id" name="tag_unhandled_key_event_manager">false</item>
     <item type="id" name="tag_unhandled_key_listeners">false</item>
+    <item type="id" name="tencent_legal">false</item>
     <item type="id" name="text">false</item>
     <item type="id" name="text1">false</item>
     <item type="id" name="text2">false</item>

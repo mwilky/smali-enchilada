@@ -13,11 +13,11 @@
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/accessibility/ListDialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0d002e
+    const v0, 0x7f0d002f
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/AppDomainsPreference;->setDialogLayoutResource(I)V
 
-    const v0, 0x7f0d002f
+    const v0, 0x7f0d0030
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/AppDomainsPreference;->setListItemLayoutResource(I)V
 

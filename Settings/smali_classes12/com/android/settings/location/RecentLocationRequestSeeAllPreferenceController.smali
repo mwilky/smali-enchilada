@@ -156,7 +156,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f120b6a
+    const v2, 0x7f120b76
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setSummary(I)V
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonEnable(Z)V
 
-    const v2, 0x7f120ced
+    const v2, 0x7f120d01
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

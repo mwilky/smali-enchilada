@@ -142,7 +142,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600d2
+    const v0, 0x7f1600d3
 
     return v0
 .end method
@@ -178,7 +178,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1212bb
+    const v2, 0x7f1212dc
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

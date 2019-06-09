@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120f4e
+    const v1, 0x7f120f6f
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -115,7 +115,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f12103e
+    const v2, 0x7f12105f
 
     invoke-interface {p1, v1, v0, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -125,7 +125,7 @@
 
     const/4 v0, 0x2
 
-    const v2, 0x7f12102a
+    const v2, 0x7f12104b
 
     invoke-interface {p1, v1, v0, v0, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -141,7 +141,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 4
 
-    const v0, 0x7f0d00fc
+    const v0, 0x7f0d00fd
 
     const/4 v1, 0x0
 
@@ -149,7 +149,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0496
+    const v1, 0x7f0a0497
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

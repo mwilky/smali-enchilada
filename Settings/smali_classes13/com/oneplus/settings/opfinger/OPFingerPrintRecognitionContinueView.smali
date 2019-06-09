@@ -67,7 +67,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintRecognitionContinueView;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d0168
+    const v1, 0x7f0d0169
 
     const/4 v2, 0x0
 
@@ -809,7 +809,7 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintRecognitionContinueView;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0d0167
+    const v1, 0x7f0d0168
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

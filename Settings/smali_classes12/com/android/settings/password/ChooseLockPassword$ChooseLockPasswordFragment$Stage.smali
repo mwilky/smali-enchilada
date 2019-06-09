@@ -64,11 +64,11 @@
 
     const v3, 0x7f120892
 
-    const v4, 0x7f120b96
+    const v4, 0x7f120ba2
 
     const v5, 0x7f120892
 
-    const v6, 0x7f120b9a
+    const v6, 0x7f120ba6
 
     const v7, 0x7f12088d
 

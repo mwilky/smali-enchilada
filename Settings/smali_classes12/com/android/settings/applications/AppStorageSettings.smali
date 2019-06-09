@@ -749,7 +749,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/settings/applications/AppStorageSettings;->mButtonsPref:Lcom/android/settings/widget/ActionButtonPreference;
 
-    const v4, 0x7f120ef4
+    const v4, 0x7f120f15
 
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 
@@ -1069,7 +1069,7 @@
 
     invoke-virtual {v10, v7}, Landroid/support/v7/preference/Preference;->setSelectable(Z)V
 
-    const v11, 0x7f0d00a5
+    const v11, 0x7f0d00a6
 
     invoke-virtual {v10, v11}, Landroid/support/v7/preference/Preference;->setLayoutResource(I)V
 

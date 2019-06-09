@@ -277,7 +277,7 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    const v0, 0x7f1600a2
+    const v0, 0x7f1600a3
 
     return v0
 .end method
@@ -449,7 +449,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/notification/EmptyTextSettings;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f120e06
+    const v0, 0x7f120e27
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/appinfo/PictureInPictureSettings;->setEmptyText(I)V
 

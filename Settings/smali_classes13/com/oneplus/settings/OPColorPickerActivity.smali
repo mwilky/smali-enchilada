@@ -417,7 +417,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f12147a
+    const v1, 0x7f12149b
 
     invoke-interface {p1, v0, v0, v0, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -568,7 +568,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/BaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0d014a
+    const v0, 0x7f0d014b
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPColorPickerActivity;->setContentView(I)V
 
@@ -813,7 +813,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0d0170
+    const v2, 0x7f0d0171
 
     invoke-virtual {v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -870,7 +870,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120d80
+    const v3, 0x7f120da1
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

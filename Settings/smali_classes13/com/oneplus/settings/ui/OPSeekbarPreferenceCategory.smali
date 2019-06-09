@@ -37,7 +37,7 @@
 .method private initViews(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d01ba
+    const v0, 0x7f0d01bb
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPSeekbarPreferenceCategory;->setLayoutResource(I)V
 

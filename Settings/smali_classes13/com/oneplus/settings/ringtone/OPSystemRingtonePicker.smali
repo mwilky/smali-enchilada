@@ -191,7 +191,7 @@
 
     invoke-super {p0, p1}, Lcom/oneplus/settings/ringtone/OPRingtoneBaseActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f160093
+    const v0, 0x7f160094
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPSystemRingtonePicker;->addPreferencesFromResource(I)V
 
@@ -337,7 +337,7 @@
 
     move-result v1
 
-    const v3, 0x7f120bd6
+    const v3, 0x7f120be2
 
     const/4 v4, 0x2
 
@@ -469,7 +469,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x7f120bd6
+    const v3, 0x7f120be2
 
     const/4 v4, 0x0
 

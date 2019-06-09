@@ -197,7 +197,7 @@
 
     const v2, 0x7f120243
 
-    const v3, 0x7f0a04a0
+    const v3, 0x7f0a04a1
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 
@@ -229,7 +229,7 @@
 
     const v2, 0x7f120245
 
-    const v3, 0x7f0a05f9
+    const v3, 0x7f0a05fb
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->bindData(Lcom/android/settings/fuelgauge/BatteryActiveView$BatteryActiveProvider;II)V
 
@@ -419,7 +419,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0d003c
+    const v0, 0x7f0d003d
 
     const/4 v1, 0x0
 
