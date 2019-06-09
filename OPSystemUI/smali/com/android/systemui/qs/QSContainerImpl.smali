@@ -157,25 +157,15 @@
     return-void
 .end method
 
-.method public updateThemeColor()V
+.method private updateThemeColor()V
     .locals 3
-    
-    sget-boolean v1, Lcom/android/mwilky/Renovate;->mUnlockQsColors:Z
 
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_PANEL_PRIMARY:I
-    
-    if-eqz v1, :cond_stock
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mQsBackgroundColor:I
-    
-    goto :goto_mw
 
-    :cond_stock
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-	
-	:goto_mw
+
     iget-object v1, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBackground:Landroid/view/View;
 
     invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -461,12 +451,8 @@
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->setImportantForAccessibility(I)V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/QSContainerImpl;->setMargins()V
-    
-    iget-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mContext:Landroid/content/Context;
-    
-    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsBackgroundColor(Landroid/content/Context;)V
 
-    invoke-virtual {p0}, Lcom/android/systemui/qs/QSContainerImpl;->updateThemeColor()V
+    invoke-direct {p0}, Lcom/android/systemui/qs/QSContainerImpl;->updateThemeColor()V
 
     return-void
 .end method

@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field public mQsColumns:I
-
 .field protected mCellHeight:I
 
 .field protected mCellMarginHorizontal:I
@@ -61,9 +59,7 @@
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/TileLayout;->setFocusableInTouchMode(Z)V
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/TileLayout;->readRenovateMods()V
-    
+
     invoke-virtual {p0}, Lcom/android/systemui/qs/TileLayout;->updateResources()Z
 
     return-void
@@ -543,8 +539,6 @@
     move-result v1
 
     const/4 v2, 0x1
-    
-    iget v1, p0, Lcom/android/systemui/qs/TileLayout;->mQsColumns:I
 
     invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
@@ -610,14 +604,4 @@
     const/4 v2, 0x0
 
     return v2
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-	
-	sget v0, Lcom/android/mwilky/Renovate;->mQsColumns:I
-	
-	iput v0, p0, Lcom/android/systemui/qs/TileLayout;->mQsColumns:I
-	
-    return-void
 .end method

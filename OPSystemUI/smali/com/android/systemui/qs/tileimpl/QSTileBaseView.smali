@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/plugins/qs/QSIconView;Z)V
-    .locals 7
+    .locals 6
 
     invoke-direct {p0, p1}, Lcom/android/systemui/plugins/qs/QSTileView;-><init>(Landroid/content/Context;)V
 
@@ -152,32 +152,6 @@
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mIcon:Lcom/android/systemui/plugins/qs/QSIconView;
 
     invoke-virtual {v4, v5, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v4, Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Lcom/airbnb/lottie/LottieAnimationView;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
-
-    sget-object v5, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v4, v5}, Lcom/airbnb/lottie/LottieAnimationView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mIconFrame:Landroid/widget/FrameLayout;
-
-    iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
-
-    new-instance v6, Landroid/widget/LinearLayout$LayoutParams;
-
-    invoke-direct {v6, v1, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v4, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mIconFrame:Landroid/widget/FrameLayout;
 
@@ -526,7 +500,7 @@
 .end method
 
 .method protected handleStateChanged(Lcom/android/systemui/plugins/qs/QSTile$State;)V
-    .locals 9
+    .locals 11
 
     iget v0, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->state:I
 
@@ -556,7 +530,7 @@
     :goto_0
     const/4 v4, 0x1
 
-    if-eq v0, v3, :cond_5
+    if-eq v0, v3, :cond_6
 
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
@@ -577,13 +551,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->animationsEnabled()Z
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     const/4 v5, 0x2
 
@@ -627,12 +601,57 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
     iget-boolean v7, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mClickedForAnim:Z
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
+    iget-object v7, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
+
+    if-nez v7, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    const v8, 0x7f07059a
+
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v7
+
+    new-instance v8, Lcom/airbnb/lottie/LottieAnimationView;
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Lcom/airbnb/lottie/LottieAnimationView;-><init>(Landroid/content/Context;)V
+
+    iput-object v8, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
+
+    iget-object v8, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
+
+    sget-object v9, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v8, v9}, Lcom/airbnb/lottie/LottieAnimationView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    iget-object v8, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mIconFrame:Landroid/widget/FrameLayout;
+
+    iget-object v9, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
+
+    new-instance v10, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v10, v7, v7}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v8, v9, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_3
     iget-object v7, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mLottieAnim:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-virtual {v7}, Lcom/airbnb/lottie/LottieAnimationView;->removeAllAnimatorListeners()V
@@ -671,7 +690,7 @@
 
     goto :goto_2
 
-    :cond_3
+    :cond_4
     iget-object v7, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
     invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -683,16 +702,16 @@
     :goto_2
     goto :goto_3
 
-    :cond_4
+    :cond_5
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mBg:Landroid/widget/ImageView;
 
     invoke-static {v5, v0}, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;->setTint(Landroid/widget/ImageView;I)V
 
-    :cond_5
+    :cond_6
     :goto_3
     sget-boolean v5, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     const-string v5, "QSTileBaseView"
 
@@ -742,14 +761,14 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
+    :cond_7
     iget v5, p1, Lcom/android/systemui/plugins/qs/QSTile$State;->state:I
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     move v4, v2
 
     :goto_4
@@ -769,7 +788,7 @@
 
     instance-of v4, p1, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_9
 
     move-object v4, p1
 
@@ -779,13 +798,13 @@
 
     iget-boolean v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mTileState:Z
 
-    if-eq v5, v4, :cond_8
+    if-eq v5, v4, :cond_9
 
     iput-boolean v2, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mClicked:Z
 
     iput-boolean v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;->mTileState:Z
 
-    :cond_8
+    :cond_9
     return-void
 .end method
 

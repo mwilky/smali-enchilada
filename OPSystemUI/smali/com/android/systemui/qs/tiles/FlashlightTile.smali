@@ -136,8 +136,6 @@
 .method protected handleClick()V
     .locals 3
 
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
-
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mOveHeatMode:Lcom/android/systemui/qs/GlobalSetting;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/GlobalSetting;->getValue()I

@@ -104,8 +104,6 @@
 
 .method protected handleClick()V
     .locals 3
-    
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     const-class v0, Lcom/android/systemui/plugins/ActivityStarter;
 

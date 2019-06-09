@@ -10,7 +10,7 @@
 # instance fields
 .field private final mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
 
-.field public mContainer:Lcom/android/systemui/qs/QSContainerImpl;
+.field private mContainer:Lcom/android/systemui/qs/QSContainerImpl;
 
 .field private mDelay:J
 

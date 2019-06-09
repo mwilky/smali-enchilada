@@ -8,7 +8,6 @@
         <FrameLayout android:id="@id/status_bar_contents_left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:paddingEnd="18.0dip">
             <include layout="@layout/heads_up_status_bar_layout" />
             <LinearLayout android:id="@id/status_bar_left_side" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            	<com.android.systemui.BatteryMeterViewLeft android:gravity="start|center" android:id="@id/battery_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingEnd="@dimen/status_bar_left_clock_end_padding" />
                 <com.android.systemui.statusbar.policy.Clock android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:gravity="start|center" android:id="@id/clock" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:paddingEnd="@dimen/status_bar_left_clock_end_padding" />
                 <include android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/highlight_hint_view" />
                 <com.android.systemui.statusbar.AlphaOptimizedFrameLayout android:orientation="horizontal" android:id="@id/notification_icon_area" android:clipChildren="false" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />

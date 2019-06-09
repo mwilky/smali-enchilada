@@ -3165,9 +3165,3 @@
 
     return-void
 .end method
-
-.method public updateViews(F)V
-    .locals 0
-	
-    return-void
-.end method

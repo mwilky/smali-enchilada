@@ -37,10 +37,6 @@
 
 .field protected TAG:Ljava/lang/String;
 
-.field public mVibrator:Landroid/os/Vibrator;
-
-.field protected final TAG:Ljava/lang/String;
-
 .field private mAnnounceNextStateChange:Z
 
 .field private final mCallbacks:Ljava/util/ArrayList;
@@ -281,18 +277,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
-    
-    const-string v1, "vibrator"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Vibrator;
-    
-    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
 
     return-void
 .end method
@@ -370,7 +354,7 @@
 .end method
 
 .method public static getCircleColorForState(I)I
-    .locals 3
+    .locals 2
 
     packed-switch p0, :pswitch_data_0
 
@@ -381,10 +365,6 @@
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-nez v2, :cond_oreo
 
     const/4 v0, -0x1
 
@@ -396,20 +376,8 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock
-    
-    const v0, 0x0
 
-    :cond_stock
     return v0
-    
-    :cond_oreo
-    const v0, 0x0
-    
-    goto :goto_0
 
     :pswitch_1
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_TILE_CIRCLE_DISABLE:I
@@ -417,14 +385,7 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock2
-    
-    const v0, 0x0
 
-    :cond_stock2
     return v0
 
     :cond_0
@@ -433,15 +394,8 @@
     invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
 
     move-result v0
-    
-    sget-boolean v2, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v2, :cond_stock3
-    
-    const v0, 0x0
 
     :goto_0
-    :cond_stock3
     return v0
 
     nop
@@ -454,7 +408,7 @@
 .end method
 
 .method public static getColorForState(Landroid/content/Context;I)I
-    .locals 4
+    .locals 3
 
     packed-switch p1, :pswitch_data_0
 
@@ -488,10 +442,6 @@
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
-    
-    sget-boolean v3, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-nez v3, :cond_white
 
     const/high16 v0, -0x1000000
 
@@ -503,29 +453,9 @@
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v0
-    
-    sget-boolean v3, Lcom/android/mwilky/Renovate;->mOreoQs:Z
-    
-    if-eqz v3, :cond_stock
-    
-    sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_ACCENT:I
-
-    invoke-static {v0}, Lcom/android/systemui/util/ThemeColorUtils;->getColor(I)I
-
-    move-result v0
 
     :goto_0
-    :cond_stock
     return v0
-    
-    :cond_white
-    const-string v0, "#FFF5F5F5"
-
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v0
-    
-    goto :goto_0
 
     :pswitch_1
     sget v0, Lcom/android/systemui/util/ThemeColorUtils;->QS_TILE_OFF:I
@@ -1709,22 +1639,5 @@
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_0
-    return-void
-.end method
-
-.method public setVibrateTweak()V
-	.locals 3
-	
-	sget-boolean v0, Lcom/android/mwilky/Renovate;->mQsVibration:Z
-	
-	if-eqz v0, :cond_stock
-
-	iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
-	
-    const-wide/16 v1, 0x64
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
-    
-    :cond_stock
     return-void
 .end method

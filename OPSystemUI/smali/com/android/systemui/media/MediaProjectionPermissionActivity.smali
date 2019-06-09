@@ -224,41 +224,38 @@
 
     nop
 
-    const/4 v0, 0x0
-
     :try_start_1
-    const-string v6, "com.oneplus.screenrecord"
+    iget-object v0, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mService:Landroid/media/projection/IMediaProjectionManager;
+
+    iget v6, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mUid:I
 
     iget-object v7, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mPackageName:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v0, v6, v7}, Landroid/media/projection/IMediaProjectionManager;->hasProjectionPermission(ILjava/lang/String;)Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_1
+    const/4 v6, -0x1
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_1
 
-    :cond_1
-    if-nez v0, :cond_8
+    iget v0, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mUid:I
 
-    iget-object v7, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mService:Landroid/media/projection/IMediaProjectionManager;
+    iget-object v7, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mPackageName:Ljava/lang/String;
 
-    iget v8, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mUid:I
+    invoke-direct {v1, v0, v7, v4}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->getMediaProjectionIntent(ILjava/lang/String;Z)Landroid/content/Intent;
 
-    iget-object v9, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mPackageName:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-interface {v7, v8, v9}, Landroid/media/projection/IMediaProjectionManager;->hasProjectionPermission(ILjava/lang/String;)Z
+    invoke-virtual {v1, v6, v0}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->setResult(ILandroid/content/Intent;)V
 
-    move-result v7
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->finish()V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-eqz v7, :cond_2
+    return-void
 
-    goto/16 :goto_2
-
-    :cond_2
+    :cond_1
     nop
 
     new-instance v0, Landroid/text/TextPaint;
@@ -284,7 +281,7 @@
     move v9, v4
 
     :goto_0
-    if-ge v9, v8, :cond_5
+    if-ge v9, v8, :cond_4
 
     invoke-virtual {v7, v9}, Ljava/lang/String;->codePointAt(I)I
 
@@ -296,19 +293,19 @@
 
     const/16 v12, 0xd
 
-    if-eq v11, v12, :cond_4
+    if-eq v11, v12, :cond_3
 
     const/16 v12, 0xf
 
-    if-eq v11, v12, :cond_4
+    if-eq v11, v12, :cond_3
 
     const/16 v12, 0xe
 
-    if-ne v11, v12, :cond_3
+    if-ne v11, v12, :cond_2
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     invoke-static {v10}, Ljava/lang/Character;->charCount(I)I
 
     move-result v12
@@ -317,7 +314,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     :goto_1
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -339,16 +336,16 @@
 
     nop
 
-    :cond_5
+    :cond_4
     invoke-virtual {v7}, Ljava/lang/String;->isEmpty()Z
 
     move-result v10
 
-    if-eqz v10, :cond_6
+    if-eqz v10, :cond_5
 
     iget-object v7, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mPackageName:Ljava/lang/String;
 
-    :cond_6
+    :cond_5
     const/high16 v10, 0x43fa0000    # 500.0f
 
     sget-object v11, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
@@ -389,7 +386,7 @@
 
     move-result v15
 
-    if-ltz v15, :cond_7
+    if-ltz v15, :cond_6
 
     new-instance v6, Landroid/text/style/StyleSpan;
 
@@ -403,7 +400,7 @@
 
     invoke-virtual {v14, v6, v15, v13, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_7
+    :cond_6
     new-instance v4, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v4, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -493,27 +490,6 @@
     iget-object v6, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v6}, Landroid/app/AlertDialog;->show()V
-
-    return-void
-
-    :cond_8
-    :goto_2
-    :try_start_2
-    iget v6, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mUid:I
-
-    iget-object v7, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mPackageName:Ljava/lang/String;
-
-    invoke-direct {v1, v6, v7, v4}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->getMediaProjectionIntent(ILjava/lang/String;Z)Landroid/content/Intent;
-
-    move-result-object v4
-
-    const/4 v6, -0x1
-
-    invoke-virtual {v1, v6, v4}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->setResult(ILandroid/content/Intent;)V
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->finish()V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     return-void
 
