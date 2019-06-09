@@ -3729,6 +3729,8 @@
     move-result v0
 
     return v0
+.end method
+
 .method public static isAODAllowed()Z
     .registers 5
 
