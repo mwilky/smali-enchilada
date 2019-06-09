@@ -57,12 +57,21 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$observer:Landroid/view/ViewTreeObserver;
+
+    invoke-virtual {v2}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$observer:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v2, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
+    :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     const v3, 0x7f0a00dc
@@ -73,7 +82,7 @@
 
     return v1
 
-    :cond_0
+    :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->this$0:Lcom/android/systemui/statusbar/NotificationShelf;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;

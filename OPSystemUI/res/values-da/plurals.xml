@@ -5,7 +5,7 @@
         <item quantity="one">Indtast pinkoden til SIM-kortet, du har %d forsøg tilbage, inden du skal kontakte dit teleselskab for at låse op for din enhed.</item>
     </plurals>
     <plurals name="kg_password_default_pin_message_multi_sim">
-        <item quantity="other">Enter SIM%1$d PIN, you have %2$d remaining attempts.</item>
+        <item quantity="other">Indtast pinkoden til SIM%1$d-kortet – du har %2$d forsøg tilbage.</item>
         <item quantity="one">Indtast SIM%1$d PIN-kode. Du har %2$d forsøg tilbage, før du skal kontakte dit teleselskab for at låse din enhed op.</item>
     </plurals>
     <plurals name="kg_password_default_puk_message">
@@ -17,7 +17,7 @@
         <item quantity="one">Forkert pinkode til SIM-kort. Du har %d forsøg tilbage.</item>
     </plurals>
     <plurals name="kg_password_wrong_pin_code_multi_sim">
-        <item quantity="other">Incorrect SIM%1$d PIN code, you have %2$d remaining attempts.</item>
+        <item quantity="other">Forkert pinkode til SIM%1$d-kortet, du har %2$d forsøg tilbage.</item>
         <item quantity="one">Forkert SIM%1$d PIN-kode. Du har %2$d forsøg tilbage, før du skal kontakte dit teleselskab for at låse din enhed op.</item>
     </plurals>
     <plurals name="kg_password_wrong_puk_code">

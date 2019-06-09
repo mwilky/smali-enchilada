@@ -1705,7 +1705,7 @@
     :cond_5
     iget-object v2, p0, Lcom/android/systemui/fingerprint/QLHelper;->mContext:Landroid/content/Context;
 
-    const v3, 0x50c0068
+    const v3, 0x50c0088
 
     invoke-static {v2, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

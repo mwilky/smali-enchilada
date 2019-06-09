@@ -294,7 +294,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setWindowAnimations(I)V
 
-    const v3, 0x10900ee
+    const v3, 0x10900f0
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->setContentView(I)V
 

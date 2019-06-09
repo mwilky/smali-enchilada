@@ -103,7 +103,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 8
+    .locals 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -307,60 +307,62 @@
 
     invoke-virtual {v1, v3, v0, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    iget-object v0, p0, Lcom/android/systemui/power/OverHeatProtector;->mBatteryReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v3, p0, Lcom/android/systemui/power/OverHeatProtector;->mBatteryReceiver:Landroid/content/BroadcastReceiver;
 
-    new-instance v3, Landroid/content/IntentFilter;
+    new-instance v4, Landroid/content/IntentFilter;
 
-    const-string v4, "android.intent.action.BATTERY_CHANGED"
+    const-string v5, "android.intent.action.BATTERY_CHANGED"
 
-    invoke-direct {v3, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p1, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v3
 
-    const v3, 0x10e0081
+    const v4, 0x10e0081
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    const v4, 0x10e0083
-
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v4
 
-    const v5, 0x10e0082
+    const v5, 0x10e0083
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v5
 
-    if-lez v3, :cond_0
+    const v6, 0x10e0082
+
+    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v6
 
     if-lez v4, :cond_0
 
     if-lez v5, :cond_0
 
-    invoke-virtual {p0, v3}, Lcom/android/systemui/power/OverHeatProtector;->setOrangeTemp(I)V
+    if-lez v6, :cond_0
 
-    invoke-virtual {p0, v4}, Lcom/android/systemui/power/OverHeatProtector;->setRedTemp(I)V
+    invoke-virtual {p0, v4}, Lcom/android/systemui/power/OverHeatProtector;->setOrangeTemp(I)V
 
-    invoke-virtual {p0, v5}, Lcom/android/systemui/power/OverHeatProtector;->setPurpleTemp(I)V
+    invoke-virtual {p0, v5}, Lcom/android/systemui/power/OverHeatProtector;->setRedTemp(I)V
+
+    invoke-virtual {p0, v6}, Lcom/android/systemui/power/OverHeatProtector;->setPurpleTemp(I)V
 
     goto :goto_0
 
     :cond_0
-    const-string v6, "OverHeatProtector"
+    const-string v7, "OverHeatProtector"
 
-    const-string v7, "can\'t find resources... "
+    const-string v8, "can\'t find resources... "
 
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
+    invoke-direct {p0, v0}, Lcom/android/systemui/power/OverHeatProtector;->notifyCurrentOverHeatStateLocked(I)V
+
     invoke-static {p1}, Lcom/android/systemui/power/OverHeatProtectorUtils;->init(Landroid/content/Context;)V
 
     return-void
