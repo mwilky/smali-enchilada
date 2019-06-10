@@ -457,13 +457,6 @@
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->access$100(Lcom/android/server/policy/PhoneWindowManager;)V
 
     goto :goto_3
-    
-    :pswitch_torch
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager;->toggleFlashlight()V
-
-    goto :goto_3
 
     :pswitch_1e
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -515,7 +508,6 @@
         :pswitch_4
         :pswitch_2
         :pswitch_3
-        :pswitch_torch
     .end packed-switch
 
     :pswitch_data_2

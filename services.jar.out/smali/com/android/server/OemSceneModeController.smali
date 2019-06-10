@@ -1955,7 +1955,7 @@
 
     iget-object v5, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
 
-    const v6, 0x50c0033
+    const v6, 0x50c0049
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2007,7 +2007,7 @@
 
     iget-object v4, p0, Lcom/android/server/OemSceneModeController;->mContext:Landroid/content/Context;
 
-    const v5, 0x50c0032
+    const v5, 0x50c0048
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

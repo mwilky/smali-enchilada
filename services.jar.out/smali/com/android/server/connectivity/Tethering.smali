@@ -4224,7 +4224,7 @@
 
     if-ne v2, v12, :cond_4
 
-    const v12, 0x50c004d
+    const v12, 0x50c006c
 
     invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

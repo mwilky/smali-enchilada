@@ -235,7 +235,7 @@
 
     iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mNotifyStyleDetail:Landroid/widget/TextView;
 
-    const v2, 0x50c001f
+    const v2, 0x50c0029
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -248,7 +248,7 @@
 
     iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mNotifyStyleDetail:Landroid/widget/TextView;
 
-    const v2, 0x50c001e
+    const v2, 0x50c0028
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -261,7 +261,7 @@
 
     iget-object v1, p0, Lcom/android/server/OemSceneGameModeDialog;->mNotifyStyleDetail:Landroid/widget/TextView;
 
-    const v2, 0x50c0020
+    const v2, 0x50c002a
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

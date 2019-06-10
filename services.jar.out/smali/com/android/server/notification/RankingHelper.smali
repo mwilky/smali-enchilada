@@ -3062,13 +3062,13 @@
     return-object v1
 .end method
 
-.method public getNotificationChannelGroups(Ljava/lang/String;IZZ)Landroid/content/pm/ParceledListSlice;
+.method public getNotificationChannelGroups(Ljava/lang/String;IZZZ)Landroid/content/pm/ParceledListSlice;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "IZZ)",
+            "IZZZ)",
             "Landroid/content/pm/ParceledListSlice<",
             "Landroid/app/NotificationChannelGroup;",
             ">;"
@@ -3216,6 +3216,51 @@
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_6
+    if-eqz p5, :cond_8
+
+    iget-object v3, v1, Lcom/android/server/notification/RankingHelper$Record;->groups:Ljava/util/Map;
+
+    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_2
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/app/NotificationChannelGroup;
+
+    invoke-virtual {v5}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v0, v6}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_7
+
+    invoke-virtual {v5}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v0, v6, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_7
+    goto :goto_2
+
+    :cond_8
     new-instance v3, Landroid/content/pm/ParceledListSlice;
 
     new-instance v5, Ljava/util/ArrayList;

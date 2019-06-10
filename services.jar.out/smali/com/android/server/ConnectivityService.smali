@@ -13313,6 +13313,16 @@
 
     move-result-object v5
 
+    if-eqz v5, :cond_5
+
+    iget-object v5, v4, Lcom/android/server/ConnectivityService$NetworkRequestInfo;->request:Landroid/net/NetworkRequest;
+
+    iget v5, v5, Landroid/net/NetworkRequest;->requestId:I
+
+    invoke-direct {p0, v5}, Lcom/android/server/ConnectivityService;->getNetworkForRequest(I)Lcom/android/server/connectivity/NetworkAgentInfo;
+
+    move-result-object v5
+
     invoke-virtual {v5}, Lcom/android/server/connectivity/NetworkAgentInfo;->getCurrentScore()I
 
     move-result v5

@@ -31,7 +31,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
-    const v1, 0x109007d
+    const v1, 0x109007f
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/LaunchWarningWindow;->setContentView(I)V
 

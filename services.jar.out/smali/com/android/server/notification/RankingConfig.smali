@@ -25,12 +25,12 @@
 .method public abstract getNotificationChannel(Ljava/lang/String;ILjava/lang/String;Z)Landroid/app/NotificationChannel;
 .end method
 
-.method public abstract getNotificationChannelGroups(Ljava/lang/String;IZZ)Landroid/content/pm/ParceledListSlice;
+.method public abstract getNotificationChannelGroups(Ljava/lang/String;IZZZ)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "IZZ)",
+            "IZZZ)",
             "Landroid/content/pm/ParceledListSlice<",
             "Landroid/app/NotificationChannelGroup;",
             ">;"
