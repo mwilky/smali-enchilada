@@ -499,7 +499,7 @@
     goto :goto_0
     
     :cond_mw
-    const v1, 0x7f070796
+    const v1, 0x7f0706ec
     
     invoke-static {}, Lcom/android/systemui/SystemUIApplication;->getContext()Landroid/content/Context;
 

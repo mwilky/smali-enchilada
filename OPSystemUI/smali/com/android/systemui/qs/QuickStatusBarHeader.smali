@@ -150,7 +150,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d01ac
+    const v2, 0x7f0d019b
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -164,7 +164,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessView:Landroid/view/View;
 
-    const v1, 0x7f0a03f5
+    const v1, 0x7f0a03c1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     new-instance v0, Lcom/android/systemui/settings/BrightnessController;
 
-    const v2, 0x7f0a009b
+    const v2, 0x7f0a008f
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v3, 0x7f0a009a
+    const v3, 0x7f0a008e
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -194,7 +194,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    const v4, 0x7f0a009e
+    const v4, 0x7f0a0092
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -2311,7 +2311,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0a009e
+    const v0, 0x7f0a0092
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
 
@@ -2353,7 +2353,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessMirror:Landroid/view/View;
 
-    const v3, 0x7f0a03f5
+    const v3, 0x7f0a03c1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2486,7 +2486,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessView:Landroid/view/View;
 
-    const v6, 0x7f0a03f5
+    const v6, 0x7f0a03c1
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2526,7 +2526,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessView:Landroid/view/View;
 
-    const v8, 0x7f0a009b
+    const v8, 0x7f0a008f
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2542,7 +2542,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessView:Landroid/view/View;
 
-    const v9, 0x7f0a009a
+    const v9, 0x7f0a008e
 
     invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2572,7 +2572,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBrightnessMirror:Landroid/view/View;
 
-    const v7, 0x7f0a009d
+    const v7, 0x7f0a0091
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
